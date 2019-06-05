@@ -1,32 +1,32 @@
-Return-Path: <usb-storage+bncBDUNBGN3R4KRB4NG4DTQKGQE6ICKTMA@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBDUNBGN3R4KRB4VG4DTQKGQEMDK3CRY@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-pl1-x646.google.com (mail-pl1-x646.google.com [IPv6:2607:f8b0:4864:20::646])
-	by mail.lfdr.de (Postfix) with ESMTPS id 942EE363EE
-	for <lists+usb-storage@lfdr.de>; Wed,  5 Jun 2019 21:09:38 +0200 (CEST)
-Received: by mail-pl1-x646.google.com with SMTP id q6sf14252121pll.22
-        for <lists+usb-storage@lfdr.de>; Wed, 05 Jun 2019 12:09:38 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1559761777; cv=pass;
+Received: from mail-pf1-x446.google.com (mail-pf1-x446.google.com [IPv6:2607:f8b0:4864:20::446])
+	by mail.lfdr.de (Postfix) with ESMTPS id 19781363EF
+	for <lists+usb-storage@lfdr.de>; Wed,  5 Jun 2019 21:09:40 +0200 (CEST)
+Received: by mail-pf1-x446.google.com with SMTP id x18sf10057790pfj.4
+        for <lists+usb-storage@lfdr.de>; Wed, 05 Jun 2019 12:09:40 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1559761778; cv=pass;
         d=google.com; s=arc-20160816;
-        b=UvO5KHavBpW8iHyeszqtZ6c2VEr+5t4oH+5LxgoOWK1j6YhWNBvayeaVjaiImjU5CV
-         qeenUUKy02LOFndlg7cL5tugJf4i8fmbfTGHwo5lnspoS08fLQg3xMrtqVHVEvPe3GDb
-         Xgc7B4rCc+ldoWsKEo1/ZX2D6ZoBEGnzmVP5jB8YRn1xfPo/WjfCdrR+T6MvBsf22xDk
-         ovU3cg6iRQgY82ubVfpOigf7wZDeHqUPJevBUE+UkbaL0XH96sDw/WRpVOyIOGCdwGOR
-         ojKgG+iDuLmyZpK5LBa7MPnFQTvcmY3XctamBUhTsWv5PbuU3u/5MFZAGGDPUX2IS4Rk
-         6CTw==
+        b=eZzt2LlQQSPyqfDDhltf0GRiBZvYf2RiCWSTuaRKQyAeXXzunwAddvP84812r4gRo1
+         aYB4vnOgSmdXH4CG8AwzpN5I1lCLbll6xQGtcckeeZ5AGlmwagE5Hy4Cee7TeHk4Dlgx
+         oP04scSLpGqKuvCrGtEGB7isJiybjeoUymTZzZwgQr2vaE7GdyOHjTqgNE09q/E68bP7
+         BYtD4PrSl33PXV0i1yhjw0meYVriwi3eofjRCVWMqjzLpSefBZvhe9/Hvgz4qF1fpsPo
+         F7Yxl4ZsMuONBmzw0luNunaJNy4f/Edtf/a54SEgQAL32qimYzVF/4YVGUiNoHWF+gpW
+         zY4A==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:sender:dkim-signature;
-        bh=tyLicbqB0g1xbKeciTKpEkB1GFqMSyz8BcCCPsDRlUI=;
-        b=g5YfEmf7ofPeDe9cmEBVEcJElsZDln1QUymxhl6bIc+B7VAmKKeUe4UHGP+hdTEMbt
-         C8V2eszI50d+IfQ6LVZnLJAr2PJA82Y4g9uUAg7CUzwgrNwu+ThwrHiLVsCh4Bf701Nv
-         tKRK8xPDuubsfLb3thBA8cZo8SJP2VBRWg4mXue7IsaTlPp+CPfdw7YtnFQKmlnD+v74
-         9TE5wekcUdxlDu1gXPxgyzSQVDKzXAIsQtOJDNewl8Iv/EV395v2Pz2xGTMtlbDtdKaJ
-         6H/sHq4RgHpiJyT9suy8sWRmV8GWVwYsupMtdUYUIIQ5gpHBAliuvmaX8xNLmd2GCJbV
-         iQEw==
+        bh=9HPke/43+yz/stza/sjQWbghvrMgWjGVftsRaQ9cv18=;
+        b=BAEvsybwzJH+RpWcKxTT0VgotBEvXLDcYT2ICHG82u9WC1rU5gHBHwbAfw/xrxKDgu
+         CL/C/J1N2q+1eEu+HGb3R62AIj0aS3YptRiwgPoTZaii35zvynB6ysodPJmnqz6BM1gX
+         qXbaEBDz5woObE9bcRPyFt6CdaQjBh9n5Tw6OQYO5nEdRjJqubUwphOrme2CsfgvIMuG
+         /GuktoSxtAlSCEnyIcf4h+/as+zJZHkYV3P5qmDyDDajh++bwe597HMx0Q0w5E2ilGSO
+         Hy3gCre8/ckRMYKXpL6ahRRHzpgBher6Y9Mtdq7alWFvKcp3b09rxgJHXJc8OEgZsiHu
+         rAXw==
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@infradead.org header.s=bombadil.20170209 header.b=DjtDAC+F;
+       dkim=pass header.i=@infradead.org header.s=bombadil.20170209 header.b=mGRP1yv+;
        spf=pass (google.com: best guess record for domain of batv+b63b843e11fda23eacb1+5764+infradead.org+hch@bombadil.srs.infradead.org designates 2607:7c80:54:e::133 as permitted sender) smtp.mailfrom=BATV+b63b843e11fda23eacb1+5764+infradead.org+hch@bombadil.srs.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
@@ -34,10 +34,10 @@ DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
          :mime-version:x-original-sender:x-original-authentication-results
          :precedence:mailing-list:list-id:list-post:list-help:list-archive
          :list-subscribe:list-unsubscribe;
-        bh=tyLicbqB0g1xbKeciTKpEkB1GFqMSyz8BcCCPsDRlUI=;
-        b=MQPaqAOh3SpArw1nEEcp1BKRfUmoqrIh5UeBQoKb4zrLgCsovF2Ryssl89x2gHh8rg
-         wx8Dtmfat1s9U5IfuPAQCE/Gx2A6vmTBW4FHOsklMkoiQ/jvuCyHuWYx8H/U2PkvAQaq
-         OSbxRmiV2yLCQrJ0i/rNBtnKnYOdY0dYlDTpo=
+        bh=9HPke/43+yz/stza/sjQWbghvrMgWjGVftsRaQ9cv18=;
+        b=T9P+FTm4/VUE7MmeXRbQqsTi9QmpC25YuL7p12wxKfY0gPJgGhZqSH7u4ajr/LgxRs
+         sMDFrq3AxkmEghXQoHOQvZkFjULFOnNSxkok+ynNrsKnNSJNBilVYkPQ/UDS/nlzXGxc
+         tm6m4S5XsTiDIvndSyynFsYLZag4bQ7tYkpv8=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
         h=sender:x-gm-message-state:from:to:cc:subject:date:message-id
@@ -45,54 +45,54 @@ X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
          :x-original-authentication-results:precedence:mailing-list:list-id
          :x-spam-checked-in-group:list-post:list-help:list-archive
          :list-subscribe:list-unsubscribe;
-        bh=tyLicbqB0g1xbKeciTKpEkB1GFqMSyz8BcCCPsDRlUI=;
-        b=eUeMDm/+fTTsBokHi1k6pDRf/N22Xxfm5UhOqZXsk72dWN2LaL0iCfWBZlkqqdd55x
-         21UKPnCJsZbfB3l7w1kQVYE/Z+aRBoN23E5N4c4NckWDGNa+JG72PgkXsa24ARab/lv3
-         9EWTRBsUZOKVpJCIaWvex+q72YkFrBsAPAgbcq5tX3Wqfsz/XWtXYVfsdwZxhnrmXrR6
-         OkhX2IpCJX3Kr6tb+vn4NZbBBubItwRmft9qEjuxrvTj2G3mv275EtXcJOPoZiBsGubZ
-         XIjuAiG0WFvI4jtbWCNNiArrfyuKHGVUhbQNLPug2q1vptlQyapKI/1kiQiPP8gYIGB3
-         aclg==
+        bh=9HPke/43+yz/stza/sjQWbghvrMgWjGVftsRaQ9cv18=;
+        b=iBDnKP5V39EWvI2oXksjw3ODEXQzF8+7qFNrnQdGl1uXEfULQC0KZVQkp1sp9TZSZm
+         RKL8FHHl4HeSW+qjmA0jRLjwT3DQuG38rm/lFQMUyvpRd8isI3bAfXJNUaIwgRrdW6d+
+         lH2M5HjOmwns60DXoXZeAXU1l6J7VqPmVxncpkTQrm+65IY+VzB5szdGj9ldloHZJItT
+         pnLREFay2CJqz/0j/J58af1KhNpTYINfc8Va5zBbXG3PBSZL/LcYPha/bwzM44UfvgFJ
+         HzgeHpz04muAGWTpXOBvUEtQBpQ3+4bF6VOrOaGPISKkjnrusBAL+Rfs4s8yzZ9EFyu3
+         2w4Q==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: APjAAAXF9gh6RFpSQuzCxE1D54CCVMisj2VenrssLh8UssAD3P0mOdgH
-	Y+NxFNtnPWgHEJogJ+qlj5c=
-X-Google-Smtp-Source: APXvYqydaHDiFrgKRuSF9XoRDiADv/8vtpxHNXWMQEQ65nCGDywYy9ChTdfkS4jKsj3x2CfEv2DVuQ==
-X-Received: by 2002:a63:2ac9:: with SMTP id q192mr369369pgq.144.1559761777263;
-        Wed, 05 Jun 2019 12:09:37 -0700 (PDT)
+X-Gm-Message-State: APjAAAV2t9jC5+NQ495VsgTufecti7ZA+RMNPDg3F0SF5+XTrCRDXLfj
+	+qdZ/VRW1A9ZqOB3ULbx7jE=
+X-Google-Smtp-Source: APXvYqx5QbZNpVsHf9F0qSM0l8J7nY0ESlR8h/IUo6/arDQlAmpFOU/mDVyaUulZDrLbIkFhz3G5yw==
+X-Received: by 2002:aa7:8294:: with SMTP id s20mr39979799pfm.75.1559761778796;
+        Wed, 05 Jun 2019 12:09:38 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a63:2a57:: with SMTP id q84ls710378pgq.15.gmail; Wed, 05 Jun
- 2019 12:09:36 -0700 (PDT)
-X-Received: by 2002:a62:e119:: with SMTP id q25mr12280153pfh.148.1559761776858;
-        Wed, 05 Jun 2019 12:09:36 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1559761776; cv=none;
+Received: by 2002:a63:e444:: with SMTP id i4ls709030pgk.13.gmail; Wed, 05 Jun
+ 2019 12:09:38 -0700 (PDT)
+X-Received: by 2002:a62:4e48:: with SMTP id c69mr26188835pfb.176.1559761778431;
+        Wed, 05 Jun 2019 12:09:38 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1559761778; cv=none;
         d=google.com; s=arc-20160816;
-        b=eD6KWai7TNIBs3Wgvk9riMQ7EauwGAHXBdS+JkxMJKWO/8JE8FgJ08xueEjssCoy7a
-         Wp8Fh7+N62WS+nshzjZXI8TCx/HnATtcRmVV78pRoqXgvLXHP2ArxCKz2N1f2eqZZnbh
-         8cvDKGH7zMeXhbT4gyPq284grxdmvjHDRi1kLBvcDpKWImfR5RZr9dvZg1ZBp0YlvJBn
-         K8/OiUE945qnkJhU/D3n+xRICQJvgC1ALuD0C90EoLNalctK/Jt+Cf3Cy7MjbFJlwqu+
-         XayWzNARndkcI6HSEWeLcxEUKIOgOaA3BVD1FO+39/y/cpA+9I6gI++GENaXS/yq8wzV
-         PXxQ==
+        b=pvNMW/biNPIusF5Sd6fBVMdKVRcIrRUnP/fqEYR44Cb+Bk/h6O3MY3dZc1HZLenDVm
+         5ZKqGC4XS2sWI8hoh6iCWyxw1AF+rynwE0mEs1/ZF4Ry9jHgEo4zaYIc2+XQ7PQkJJBY
+         q+eMHsXO1dyuZraBhdXGSlBCtKnk4QmAOlWag/NfcD9GcRRM2INg32TOhz9N93joeiM1
+         f8WxMC4h17YRQRCRfbmSgFjOfhXS3gevZu3M9gRas19h+NXwmvK7Cl14MFi0L+h1aaiB
+         SpzENxPCZTbvr6e7/i3xFQZFVrbXGnJ3W3kfZZiFqcbztonGpgc+78ugmuDdd6mMYMpv
+         dozg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:dkim-signature;
-        bh=iu6giSDQep7gyGP1lDKtlc6IYXmVnaTVrX/CCTaVb0M=;
-        b=rOs83T2PaSDxrdqqtUgL1m9jCMGEBrhHltxqiNMZueeO57JdMJRwm39MRhcIHv4yR1
-         X0Po04N+RS4Wp98St1eFyhswjdqszP9/eMMg46BWFpS1pgJ7C5gRrWNMz0i250ESNrSK
-         FBOA+G8kD+aKbXVoiHyDgshyrFO/tyoLKJlXZWhNMUAaMjTJCkPCl3R8vuNk1xZOv4eh
-         3UVZRIdV5WFht+zkSI2kbakqlBZ8kLkFHaMuOE9GrNKxvfHeEzGZ8HaFhCNA5bsd137S
-         8ZIKX0ezAKILhauqsQlqn16NW1ftJTYSFQinJ1w27frxNkBkvY1Z+wnX56W1hrdJlCAG
-         D1xg==
+        bh=3bkukSS82+wj1sa4UwaAnaEsPot66Pp1IhVKWWk3PRs=;
+        b=weHnfpVYoGUJAqFqtdcui90ZoAAVgC8UQGYePnjhnsBpSxhWF3xJtc1iy5CKH91VGo
+         /jJp6GRvaY+nqh78LSRMPMOuDkn4LSCw3cHc514bdeUB7Oy/jni8hmulsmz5NaKMYZqV
+         MQBPlIuk06groDyYpDB/kTzgq5ctt3+zm5ts+n/9EUmJ4haHD94WCc3GglQItqKL1hCG
+         p7ujfin47gSUX7jpvz95bxqiiMuQl7pXl2ktYMt9+yywlNzWRUj7hZ17+To/o+iPscPQ
+         5jMWtbFhod3qZS3x7OJZRxE7UTFCZ/ZkfHA+jvtCjyfK/gIZnKdSN+LGUoiQo1KCNzRB
+         HJAw==
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@infradead.org header.s=bombadil.20170209 header.b=DjtDAC+F;
+       dkim=pass header.i=@infradead.org header.s=bombadil.20170209 header.b=mGRP1yv+;
        spf=pass (google.com: best guess record for domain of batv+b63b843e11fda23eacb1+5764+infradead.org+hch@bombadil.srs.infradead.org designates 2607:7c80:54:e::133 as permitted sender) smtp.mailfrom=BATV+b63b843e11fda23eacb1+5764+infradead.org+hch@bombadil.srs.infradead.org
 Received: from bombadil.infradead.org (bombadil.infradead.org. [2607:7c80:54:e::133])
-        by mx.google.com with ESMTPS id q4si29194614pgc.108.2019.06.05.12.09.36
+        by mx.google.com with ESMTPS id m20si11337011pjn.40.2019.06.05.12.09.38
         for <usb-storage@lists.one-eyed-alien.net>
         (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
-        Wed, 05 Jun 2019 12:09:36 -0700 (PDT)
+        Wed, 05 Jun 2019 12:09:38 -0700 (PDT)
 Received-SPF: pass (google.com: best guess record for domain of batv+b63b843e11fda23eacb1+5764+infradead.org+hch@bombadil.srs.infradead.org designates 2607:7c80:54:e::133 as permitted sender) client-ip=2607:7c80:54:e::133;
 Received: from 089144193064.atnat0002.highway.a1.net ([89.144.193.64] helo=localhost)
 	by bombadil.infradead.org with esmtpsa (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYbHo-00067d-E1; Wed, 05 Jun 2019 19:09:25 +0000
+	id 1hYbHs-0006Cv-4J; Wed, 05 Jun 2019 19:09:28 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Jens Axboe <axboe@kernel.dk>
 Cc: Sebastian Ott <sebott@linux.ibm.com>,
@@ -113,10 +113,9 @@ Cc: Sebastian Ott <sebott@linux.ibm.com>,
 	linux-usb@vger.kernel.org,
 	usb-storage@lists.one-eyed-alien.net,
 	linux-kernel@vger.kernel.org
-Subject: [usb-storage] [PATCH 12/13] usb-storage: set virt_boundary_mask in
- the scsi host
-Date: Wed,  5 Jun 2019 21:08:35 +0200
-Message-Id: <20190605190836.32354-13-hch@lst.de>
+Subject: [usb-storage] [PATCH 13/13] uas: set virt_boundary_mask in the scsi host
+Date: Wed,  5 Jun 2019 21:08:36 +0200
+Message-Id: <20190605190836.32354-14-hch@lst.de>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190605190836.32354-1-hch@lst.de>
 References: <20190605190836.32354-1-hch@lst.de>
@@ -124,7 +123,7 @@ MIME-Version: 1.0
 X-SRS-Rewrite: SMTP reverse-path rewritten from <hch@infradead.org> by bombadil.infradead.org. See http://www.infradead.org/rpr.html
 X-Original-Sender: hch@lst.de
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@infradead.org header.s=bombadil.20170209 header.b=DjtDAC+F;
+ header.i=@infradead.org header.s=bombadil.20170209 header.b=mGRP1yv+;
        spf=pass (google.com: best guess record for domain of
  batv+b63b843e11fda23eacb1+5764+infradead.org+hch@bombadil.srs.infradead.org
  designates 2607:7c80:54:e::133 as permitted sender) smtp.mailfrom=BATV+b63b843e11fda23eacb1+5764+infradead.org+hch@bombadil.srs.infradead.org
@@ -149,59 +148,66 @@ SCSI midlayer.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 ---
- drivers/usb/storage/scsiglue.c | 10 ----------
- drivers/usb/storage/usb.c      | 10 ++++++++++
- 2 files changed, 10 insertions(+), 10 deletions(-)
+ drivers/usb/storage/uas.c | 36 ++++++++++++++++--------------------
+ 1 file changed, 16 insertions(+), 20 deletions(-)
 
-diff --git a/drivers/usb/storage/scsiglue.c b/drivers/usb/storage/scsiglue.c
-index 59190d88fa9f..02c3b66b3f78 100644
---- a/drivers/usb/storage/scsiglue.c
-+++ b/drivers/usb/storage/scsiglue.c
-@@ -65,7 +65,6 @@ static const char* host_info(struct Scsi_Host *host)
- static int slave_alloc (struct scsi_device *sdev)
+diff --git a/drivers/usb/storage/uas.c b/drivers/usb/storage/uas.c
+index 047c5922618f..d20919e7bbf4 100644
+--- a/drivers/usb/storage/uas.c
++++ b/drivers/usb/storage/uas.c
+@@ -789,29 +789,9 @@ static int uas_slave_alloc(struct scsi_device *sdev)
  {
- 	struct us_data *us = host_to_us(sdev->host);
+ 	struct uas_dev_info *devinfo =
+ 		(struct uas_dev_info *)sdev->host->hostdata;
 -	int maxp;
  
- 	/*
- 	 * Set the INQUIRY transfer length to 36.  We don't use any of
-@@ -74,15 +73,6 @@ static int slave_alloc (struct scsi_device *sdev)
- 	 */
- 	sdev->inquiry_len = 36;
+ 	sdev->hostdata = devinfo;
  
 -	/*
--	 * USB has unusual scatter-gather requirements: the length of each
--	 * scatterlist element except the last must be divisible by the
--	 * Bulk maxpacket value.  Fortunately this value is always a
--	 * power of 2.  Inform the block layer about this requirement.
+-	 * We have two requirements here. We must satisfy the requirements
+-	 * of the physical HC and the demands of the protocol, as we
+-	 * definitely want no additional memory allocation in this path
+-	 * ruling out using bounce buffers.
+-	 *
+-	 * For a transmission on USB to continue we must never send
+-	 * a package that is smaller than maxpacket. Hence the length of each
+-         * scatterlist element except the last must be divisible by the
+-         * Bulk maxpacket value.
+-	 * If the HC does not ensure that through SG,
+-	 * the upper layer must do that. We must assume nothing
+-	 * about the capabilities off the HC, so we use the most
+-	 * pessimistic requirement.
 -	 */
--	maxp = usb_maxpacket(us->pusb_dev, us->recv_bulk_pipe, 0);
+-
+-	maxp = usb_maxpacket(devinfo->udev, devinfo->data_in_pipe, 0);
 -	blk_queue_virt_boundary(sdev->request_queue, maxp - 1);
 -
  	/*
- 	 * Some host controllers may have alignment requirements.
- 	 * We'll play it safe by requiring 512-byte alignment always.
-diff --git a/drivers/usb/storage/usb.c b/drivers/usb/storage/usb.c
-index 9a79cd9762f3..b0f23f4f58e3 100644
---- a/drivers/usb/storage/usb.c
-+++ b/drivers/usb/storage/usb.c
-@@ -1050,6 +1050,16 @@ int usb_stor_probe2(struct us_data *us)
- 	usb_autopm_get_interface_no_resume(us->pusb_intf);
- 	snprintf(us->scsi_name, sizeof(us->scsi_name), "usb-storage %s",
- 					dev_name(&us->pusb_intf->dev));
-+
+ 	 * The protocol has no requirements on alignment in the strict sense.
+ 	 * Controllers may or may not have alignment restrictions.
+@@ -1004,6 +984,22 @@ static int uas_probe(struct usb_interface *intf, const struct usb_device_id *id)
+ 	 */
+ 	shost->can_queue = devinfo->qdepth - 2;
+ 
 +	/*
-+	 * USB has unusual scatter-gather requirements: the length of each
-+	 * scatterlist element except the last must be divisible by the
-+	 * Bulk maxpacket value.  Fortunately this value is always a
-+	 * power of 2.  Inform the block layer about this requirement.
++	 * We have two requirements here. We must satisfy the requirements of
++	 * the physical HC and the demands of the protocol, as we definitely
++	 * want no additional memory allocation in this path ruling out using
++	 * bounce buffers.
++	 *
++	 * For a transmission on USB to continue we must never send a package
++	 * that is smaller than maxpacket.  Hence the length of each scatterlist
++	 * element except the last must be divisible by the Bulk maxpacket
++	 * value.  If the HC does not ensure that through SG, the upper layer
++	 * must do that.  We must assume nothing about the capabilities off the
++	 * HC, so we use the most pessimistic requirement.
 +	 */
-+	us_to_host(us)->virt_boundary_mask =
-+		usb_maxpacket(us->pusb_dev, us->recv_bulk_pipe, 0) - 1;
++	shost->virt_boundary_mask =
++		usb_maxpacket(udev, devinfo->data_in_pipe, 0) - 1;
 +
- 	result = scsi_add_host(us_to_host(us), dev);
- 	if (result) {
- 		dev_warn(dev,
+ 	usb_set_intfdata(intf, shost);
+ 	result = scsi_add_host(shost, &intf->dev);
+ 	if (result)
 -- 
 2.20.1
 
@@ -210,5 +216,5 @@ You received this message because you are subscribed to the Google Groups "USB M
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
 To post to this group, send email to usb-storage@lists.one-eyed-alien.net.
 Visit this group at https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20190605190836.32354-13-hch%40lst.de.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20190605190836.32354-14-hch%40lst.de.
 For more options, visit https://groups.google.com/a/lists.one-eyed-alien.net/d/optout.
