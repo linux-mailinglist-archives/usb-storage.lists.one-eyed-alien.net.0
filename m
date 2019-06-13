@@ -1,34 +1,34 @@
-Return-Path: <usb-storage+bncBCCYRD4S2ALBB6OVRLUAKGQEQ5K7SJQ@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBCCYRD4S2ALBBQGYRLUAKGQECCUN4DY@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
 Received: from mail-io1-xd45.google.com (mail-io1-xd45.google.com [IPv6:2607:f8b0:4864:20::d45])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0947A44CB9
-	for <lists+usb-storage@lfdr.de>; Thu, 13 Jun 2019 21:58:51 +0200 (CEST)
-Received: by mail-io1-xd45.google.com with SMTP id h3sf16349161iob.20
-        for <lists+usb-storage@lfdr.de>; Thu, 13 Jun 2019 12:58:50 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1560455930; cv=pass;
+	by mail.lfdr.de (Postfix) with ESMTPS id 4077644CDA
+	for <lists+usb-storage@lfdr.de>; Thu, 13 Jun 2019 22:04:17 +0200 (CEST)
+Received: by mail-io1-xd45.google.com with SMTP id j18sf16360439ioj.4
+        for <lists+usb-storage@lfdr.de>; Thu, 13 Jun 2019 13:04:17 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1560456256; cv=pass;
         d=google.com; s=arc-20160816;
-        b=EULzo4v+6gSWYRPAlZabkYBxCnUCIMdDuzCqq+oi9aQ8GWXKoLuEIlOvp6V2+FEsO8
-         ULqUQXUZ2Kb6Jjq86bMLuYGqfgS7aWmuvUnaejEDtv1g89wUmfQvHAUJ1v78a8sAbBTH
-         AowWCK55bKFsS3wmY6RjSSA3ojeYPYZOl/FJm6Y4ETvwM+RKOajDkcn4ecmXyJ6lJHh7
-         PHalTUNJI+WZ3ytdSlhR6fTamEcvHzNfRxVCctgBBUnzW4fHKMCYckmgQnfLZ8VjFvn0
-         hD8jrVveoxg6jd+IEC3vmXl7gCkhmKH8N5nU9CJc/fD9jKgyXNSQetFnAcLXTHoNb+9e
-         zwlA==
+        b=qJUyhpKxbr7PEUNokqjjRXyNg8F6kwskXczL5orWBOlypykukG9L6GOPhr7qdJfUrA
+         ZZFAbaYGvoFrs9DK9WnX7yhEx25th4Z0AxYOZAsSkouXbEXfNePWWnf+yF4DHmmoJJdP
+         PzitQEaJWTlmOGoS8j5XSE6SfVjwZbW0pLkG2v9GWX1mvdJu+r61ikyokqGWsdc7ylF9
+         UZKFnzEJruQSLoyY5gM6YDI2Z0EHQycAppDsJvHgzohdDa4/TbpF2qUPg98kIS8Oiz0e
+         9dKM4NqtmktsqLjG58KecvJzZ94eG6j9nHXePZ09i1e+aMMAqtaiIihhazagQ065EvfE
+         1aiA==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:reply-to:cc:to:subject:message-id
          :date:thread-index:mime-version:in-reply-to:references:from
          :dkim-signature;
-        bh=OsVR8C/YgF+RW2Jxa68jaYCh/lYjJJUWg8pz48CMIJU=;
-        b=ntDYzXmCDKZ31WJSVtPm2SKaK5RPGzgFMKsY68BMcMcqbg/p5u8zOOKNGsXBRAhY25
-         vGiwuT7i1RGXDX0SrFXFA1Y3bEQLhskMhqgtw6/K6MkDCEcLNlBC9BFiOT8QTH5jXKj/
-         BWoDPSNK4WDa00vdO2P/01r+q41pGGFF3d6BLhAI8Prh/ByfRZ1Xo/6i2bWF7NXTD7F7
-         /6W3U1ymaNr3hHUTSTVEWlxYTPCcH2/HNnIX42MkdKS24eT0UwV6iqCxl5qHUTq55RVH
-         PUpd8JXqS56bMXX8bLoUS3QZaCtupr05RFEXVuSLcD9N36iepUZ9gS0H9LuZ1fZ+Ufg6
-         fnXg==
+        bh=taUcTspasoA2VQx1qjxd9coeW0JWUXPB9VCoKnvJBew=;
+        b=mUZxR4gjIpckWpaPyCgMAY9VXg6+JFsUbmsPnxdmV/jhHU66CmD1Z4mvQY1sxXS2mz
+         pFNx1ONdwPnn7OQ+7jtnjrR2N335KQI3el+9ETZhZ8kQoa2iTZ7jWxy2Gb5vL6jL6KJc
+         UBddaKWTegFbYhnDXA1EPdtFhQ1+n/iPbLMCX812sllvxArLTvWtb69HElg59uKL/4XE
+         BPKkoBUFSoSUOtyMP+dXYtDxaNanxeY1U17RskSPkWEayJ646ELKV6u/t3prSHH7S6df
+         4QEom0k7tF+D20JlQ9ia933g1MktZd3zGdLuZtpuYxS+1x6eVrOPxV+O3LfHjcuFqZWF
+         i2yg==
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@broadcom.com header.s=google header.b=VvRUdVRn;
-       spf=pass (google.com: domain of kashyap.desai@broadcom.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=kashyap.desai@broadcom.com;
+       dkim=pass header.i=@broadcom.com header.s=google header.b=Vf0Co9J1;
+       spf=pass (google.com: domain of kashyap.desai@broadcom.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=kashyap.desai@broadcom.com;
        dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=broadcom.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
@@ -37,10 +37,10 @@ DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
          :x-original-authentication-results:reply-to:precedence:mailing-list
          :list-id:list-post:list-help:list-archive:list-subscribe
          :list-unsubscribe;
-        bh=OsVR8C/YgF+RW2Jxa68jaYCh/lYjJJUWg8pz48CMIJU=;
-        b=Em6sKbJmPZCqb4WO0qd1smfA1/6X6sQp4sESTpufPM/89QJ0ksguQ3ibVl0xh61gCR
-         RRHtLYq4cy6F2JCpMler1i+lepaEXHwvhHzUO/D6bZgeS1PNd0qW/xclRcxj9Y058M6D
-         FTpHWBrEyLMb3hyXXXu88qcXftwdmYUml/qNw=
+        bh=taUcTspasoA2VQx1qjxd9coeW0JWUXPB9VCoKnvJBew=;
+        b=Mv0+T15kjWFb2TyrktV8pOuJKP78si8PpuLZh9/+9FsI0nKQDO/lFT1T95162slfEr
+         v1kpTYVF3gBxqe7EnlcLFeUaX5zjsH6xzC/pQ8VOYY2qr7+Tdc6p2accKTO2jSpMCgZb
+         y8APsgfj6kwVNU0yS32g99cOCZgz74XR24uUg=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
         h=x-gm-message-state:from:references:in-reply-to:mime-version
@@ -48,62 +48,62 @@ X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
          :x-original-authentication-results:reply-to:precedence:mailing-list
          :list-id:x-spam-checked-in-group:list-post:list-help:list-archive
          :list-subscribe:list-unsubscribe;
-        bh=OsVR8C/YgF+RW2Jxa68jaYCh/lYjJJUWg8pz48CMIJU=;
-        b=fpSfvgTD1sYGEmJBKloZeCb508sW+LZUbiQozrqb26Rc2mZ3fRy9YcwTPp9buxbsDh
-         yCJv/c3HHF60AgFvewIFiIJSOJyvJLyRO0StI7gwCULSP/mnM66+KmlZA/RkKhVBYDm/
-         GVi/f3/Ap7SZY+E8By8J4ErPG5p/m7tNraywqJNz5IRkMVkZ0uypXqb5sI6b9ojYpAjN
-         GRY1Pd1O9dIOR+ARvIr3+ocRrOA5joBLVJU8ew5VKQcIgQjyWaKX/oK71Lfw+t4GJcmf
-         +gpFc3ZTMAO4M+QeAqWe76mgbgVNxQ+HsTrwWBkHez1Skep0rTsPrxyz+fAg2qD0SVMl
-         TEHg==
-X-Gm-Message-State: APjAAAV6amMt18vObsoGuQ8xDwQgKpezCTa1qvy3BkdzOuEo6+HgUo++
-	K0uuKrBJ3Sc7mKkjAPseTQM=
-X-Google-Smtp-Source: APXvYqz/wcskr1oqLRQJhZKn4PmRqWLz1FhO0V4tg/T89ZXw5mBgOoKVMcjNDMF198m1ry14sxOoMA==
-X-Received: by 2002:a02:2a0f:: with SMTP id w15mr54034090jaw.52.1560455929906;
-        Thu, 13 Jun 2019 12:58:49 -0700 (PDT)
+        bh=taUcTspasoA2VQx1qjxd9coeW0JWUXPB9VCoKnvJBew=;
+        b=LQMTzsKTC+KDyqL49ryBnookNpGpDehX8eUb1nshmRzfVDRmAoccj4YJCdL/NIUlJF
+         Am39jZyZyF4tWGijHj+viWXRpEP2I4LZAZIqiG5oNi1AT5oyq2WNfYFlNdA1YL6zRv5s
+         WPYFqSeZLUcNRMGxXgC8V3RFKahy7ux8kHuVoM195EhS7jADaix6300Wf3AZTJUrD8Al
+         VLzuX8fWKnBXLJzFTKUVren6eniCpFxtx/I66t2VSIGE44tdRlE9L4qeV8xxgOQ/qm0Q
+         IFI/vHGd1tiSm5sQ0SIDgudkUP+by+zNyJoDUCnYviCFx152O3GLql+qwqU2QQgU+NKX
+         9uoQ==
+X-Gm-Message-State: APjAAAXxLSAew4UZS9U2Y8bqBztjGN4gvIR7V788l4kfylgfTl/K7Amq
+	C97SnNZG4jxRetTNQkZff6M=
+X-Google-Smtp-Source: APXvYqxp/089pqFYKZQWNz833IZWssV3Mk47I7hZ+pjavxLBuUFMvhG8HDKZRmnoX+vYvn9A9oxQIw==
+X-Received: by 2002:a5d:994b:: with SMTP id v11mr9268508ios.165.1560456256246;
+        Thu, 13 Jun 2019 13:04:16 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a6b:fb19:: with SMTP id h25ls75540iog.0.gmail; Thu, 13 Jun
- 2019 12:58:49 -0700 (PDT)
-X-Received: by 2002:a5e:da4b:: with SMTP id o11mr14239987iop.212.1560455929445;
-        Thu, 13 Jun 2019 12:58:49 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1560455929; cv=none;
+Received: by 2002:a6b:d018:: with SMTP id x24ls76463ioa.6.gmail; Thu, 13 Jun
+ 2019 13:04:15 -0700 (PDT)
+X-Received: by 2002:a5d:9e11:: with SMTP id h17mr54623920ioh.261.1560456255923;
+        Thu, 13 Jun 2019 13:04:15 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1560456255; cv=none;
         d=google.com; s=arc-20160816;
-        b=cAA7LUL6hurrlFmdcJPCpFvJ3gJo7nLBgVGxWcm1NuQhtDUDfea1hEiNKsm4SEa08E
-         +7r+W+7gpak1gM1bnC2KSGSqFPlakFuFcj8w5ybK8JHXYhaUIcTN05Fjja8MsRD4AfXZ
-         5NnecvzZ48wb4hle/rex0jULOnxN3kJnPnkj01V8aoS8SeKdVzgyQpQp6TOcWh8iqxpT
-         TSnpV/Lq+8gfxQgME0bapveXxwlYId5ckRumkoOcAFHhNfVvRuOqmlbEIy+4OjRUtvR6
-         dpSG7VVwU5BZd3mQzCNxEDTngc7wf/ydHx7zr5lyZSU4+sNiK6pQO5790dmrqoNQ9Msf
-         oIEQ==
+        b=WgG9Vo77JNRIgMpKE/W9qWp8X4wo2B5Ct0qh8dQPpPFEV77m2vAncp5nBinEJSylny
+         ViEBnW3OgqGN4T1YJW7U0oNv7saMCyKDlOqQGU+TPAgP3VYUBOHovv47McT4jlYgf+Hq
+         oFu5NJuopwjwvHd8Vrz88OODCQP7oFXzOLl9+bg+Un1E/moLYjx3R762RPUsobrVGdTD
+         HzGn71swuu9NgS+h8Oa/DaeDV3gqYhzYIUUxDSu4jFeSPRm9uJccHbaZc66f70aSL77a
+         KnDcqs/frvXfhRKFZq2dSlsZWOzslBNdx2OtefvUY1bOHbdtIrdsX1VKnRkHO0FQfL1L
+         QNiQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=cc:to:subject:message-id:date:thread-index:mime-version:in-reply-to
          :references:from:dkim-signature;
-        bh=0g3LShZij9OvLky32ww/mm8nsliTsm7gD3njRd6NCQk=;
-        b=GQMXU/b0y7cz/xk8seFojqFTg0VvZIVbPceM4ZEwd499Hzvlkn98/GBzhPng37pIVj
-         hIuqu79PbwjmpcuS28eyg/c+6WRJPgdQX02Z/OJWGVpeb97a/1fQNFFXbdtbHbDOXybh
-         0MrWLnI408fZJn9rHcYYcat39M9Lp9dnBsvMD3xNRmn5aPH14yc8OPx0GWXYLNAW7qVy
-         R9ATjEv2o7V1GHJt1q48YGAVMhDAKxn66Gw5IS/s0YhvkhEavdXGJoiPphdCEo61duW3
-         yntT3ksS8Fv4fwztHlA0xjkBg98MFaEk231RxixfQMNRQTs6uODnWufM4BXNcG+8yvDg
-         QQ/w==
+        bh=DI3nny5EkaaAj92ROhz8+oF1JyVO+F50iFiYFfny5cg=;
+        b=G/N0WmfitgqTwIRgaHKjmHyFPnnNEWGfoHdApqzIP3250pTy/Ql93hlci9SoY8JbvI
+         IpmAmuQq+rPGrJEtFfUOhg4pLFQdPAvILrRYxosbHnVtaNL/6xdiWEu9JR5XQiZD0SSi
+         uQpqitlAYvU682LmFRrlZ/P+nFN4wQoHpJ4jRiuvmy5ahWU1ltqVdHYnDm4mq6QEyT6W
+         dtZXyoNAjY36OG33GW4DsoXMg2oeF86IF8RKu7VawX5KjXDZYSXTI6B1/94MBwU9Zf/J
+         BFaHtelReV3oxFrQ71bRuwAfnkgm6ghnAoMu7W0zO8TpubAdJbBak8MmSL+8LQNTpfVG
+         Ewfw==
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@broadcom.com header.s=google header.b=VvRUdVRn;
-       spf=pass (google.com: domain of kashyap.desai@broadcom.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=kashyap.desai@broadcom.com;
+       dkim=pass header.i=@broadcom.com header.s=google header.b=Vf0Co9J1;
+       spf=pass (google.com: domain of kashyap.desai@broadcom.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=kashyap.desai@broadcom.com;
        dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=broadcom.com
-Received: from mail-sor-f65.google.com (mail-sor-f65.google.com. [209.85.220.65])
-        by mx.google.com with SMTPS id u26sor501962iof.144.2019.06.13.12.58.49
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id q5sor532507ioq.99.2019.06.13.13.04.15
         for <usb-storage@lists.one-eyed-alien.net>
         (Google Transport Security);
-        Thu, 13 Jun 2019 12:58:49 -0700 (PDT)
-Received-SPF: pass (google.com: domain of kashyap.desai@broadcom.com designates 209.85.220.65 as permitted sender) client-ip=209.85.220.65;
-X-Received: by 2002:a6b:f910:: with SMTP id j16mr7292522iog.256.1560455929090;
- Thu, 13 Jun 2019 12:58:49 -0700 (PDT)
+        Thu, 13 Jun 2019 13:04:15 -0700 (PDT)
+Received-SPF: pass (google.com: domain of kashyap.desai@broadcom.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+X-Received: by 2002:a5d:9b1a:: with SMTP id y26mr37376851ion.238.1560456255599;
+ Thu, 13 Jun 2019 13:04:15 -0700 (PDT)
 From: "'Kashyap Desai' via USB Mass Storage on Linux" <usb-storage@lists.one-eyed-alien.net>
 References: <20190605190836.32354-1-hch@lst.de> <20190605190836.32354-11-hch@lst.de>
- <cd713506efb9579d1f69a719d831c28d@mail.gmail.com> <20190608081400.GA19573@lst.de>
-In-Reply-To: <20190608081400.GA19573@lst.de>
+ <cd713506efb9579d1f69a719d831c28d@mail.gmail.com> <20190613084458.GB13221@lst.de>
+In-Reply-To: <20190613084458.GB13221@lst.de>
 MIME-Version: 1.0
 X-Mailer: Microsoft Outlook 15.0
-Thread-Index: AQNLjZIO2zMn7N+9xPobnDbFSu4o5gI2RJdJAgF+bYgBfxw4kaN/cE8Q
-Date: Fri, 14 Jun 2019 01:28:47 +0530
-Message-ID: <98f6557ae91a7cdfe8069fcf7d788c88@mail.gmail.com>
+Thread-Index: AQNLjZIO2zMn7N+9xPobnDbFSu4o5gI2RJdJAgF+bYgCEzcr9aN60eSw
+Date: Fri, 14 Jun 2019 01:34:00 +0530
+Message-ID: <d411baa1bdd34f1a1289480d13fe1cef@mail.gmail.com>
 Subject: [usb-storage] RE: [PATCH 10/13] megaraid_sas: set virt_boundary_mask
  in the scsi host
 To: Christoph Hellwig <hch@lst.de>
@@ -121,8 +121,8 @@ Cc: Jens Axboe <axboe@kernel.dk>, Sebastian Ott <sebott@linux.ibm.com>,
 Content-Type: text/plain; charset="UTF-8"
 X-Original-Sender: kashyap.desai@broadcom.com
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@broadcom.com header.s=google header.b=VvRUdVRn;       spf=pass
- (google.com: domain of kashyap.desai@broadcom.com designates 209.85.220.65 as
+ header.i=@broadcom.com header.s=google header.b=Vf0Co9J1;       spf=pass
+ (google.com: domain of kashyap.desai@broadcom.com designates 209.85.220.41 as
  permitted sender) smtp.mailfrom=kashyap.desai@broadcom.com;       dmarc=pass
  (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=broadcom.com
 X-Original-From: Kashyap Desai <kashyap.desai@broadcom.com>
@@ -143,27 +143,29 @@ List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegro
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
 >
-> On Thu, Jun 06, 2019 at 09:07:27PM +0530, Kashyap Desai wrote:
-> > Hi Christoph, Changes for <megaraid_sas> and <mpt3sas> looks good. We
-> > want to confirm few sanity before ACK. BTW, what benefit we will see
-> > moving virt_boundry setting to SCSI mid layer ? Is it just modular
-> > approach OR any functional fix ?
->
-> The big difference is that virt_boundary now also changes the
-> max_segment_size, and this ensures that this limit is also communicated
-to
-> the DMA mapping layer.
-Is there any changes in API  blk_queue_virt_boundary? I could not find
-relevant code which account for this. Can you help ?
-Which git repo shall I use for testing ? That way I can confirm, I didn't
-miss relevant changes.
+> So before I respin this series, can you help with a way to figure out
+for
+> mpt3sas and megaraid if a given controller supports NVMe devices at all,
+so
+> that we don't have to set the virt boundary if not?
 
-From your above explanation, it means (after this patch) max segment size
-of the MR controller will be set to 4K.
-Earlier it is possible to receive single SGE of 64K datalength (Since max
-seg size was 64K), but now the same buffer will reach the driver having 16
-SGEs (Each SGE will contain 4K length).
-Right ?
+
+In MegaRaid we have below enum -        VENTURA_SERIES and AERO_SERIES
+supports NVME
+
+enum MR_ADAPTER_TYPE {
+        MFI_SERIES = 1,
+        THUNDERBOLT_SERIES = 2,
+        INVADER_SERIES = 3,
+        VENTURA_SERIES = 4,
+        AERO_SERIES = 5,
+};
+
+In mpt3sas driver we have below method - If IOC FACT reports NVME Device
+support in Protocol Flags, we can consider it as HBA with NVME drive
+support.
+
+ioc->facts.ProtocolFlags & MPI2_IOCFACTS_PROTOCOL_NVME_DEVICES
 
 Kashyap
 
@@ -172,5 +174,5 @@ You received this message because you are subscribed to the Google Groups "USB M
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
 To post to this group, send email to usb-storage@lists.one-eyed-alien.net.
 Visit this group at https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/98f6557ae91a7cdfe8069fcf7d788c88%40mail.gmail.com.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/d411baa1bdd34f1a1289480d13fe1cef%40mail.gmail.com.
 For more options, visit https://groups.google.com/a/lists.one-eyed-alien.net/d/optout.
