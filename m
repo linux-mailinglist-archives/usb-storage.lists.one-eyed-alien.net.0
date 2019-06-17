@@ -1,31 +1,31 @@
-Return-Path: <usb-storage+bncBDUNBGN3R4KRBO7DTTUAKGQEPWV5M3I@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBDUNBGN3R4KRBEFGTXUAKGQEUXTFQLI@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-wr1-x446.google.com (mail-wr1-x446.google.com [IPv6:2a00:1450:4864:20::446])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3CB52479F4
-	for <lists+usb-storage@lfdr.de>; Mon, 17 Jun 2019 08:22:52 +0200 (CEST)
-Received: by mail-wr1-x446.google.com with SMTP id l11sf2439849wrv.9
-        for <lists+usb-storage@lfdr.de>; Sun, 16 Jun 2019 23:22:52 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1560752572; cv=pass;
+Received: from mail-wr1-x447.google.com (mail-wr1-x447.google.com [IPv6:2a00:1450:4864:20::447])
+	by mail.lfdr.de (Postfix) with ESMTPS id BD52B47D6B
+	for <lists+usb-storage@lfdr.de>; Mon, 17 Jun 2019 10:45:04 +0200 (CEST)
+Received: by mail-wr1-x447.google.com with SMTP id g2sf4402512wrq.19
+        for <lists+usb-storage@lfdr.de>; Mon, 17 Jun 2019 01:45:04 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1560761104; cv=pass;
         d=google.com; s=arc-20160816;
-        b=DPAKUveccO/EvnDPenlAgxVDIViNFvtlXL2+XuiL5upO18j22HRTo1oKa+QxLNzZkw
-         TJ6KtDKZvKnRtvKxSbm+pLg2mo2jjhsGqy23CBcVL1j3mTUhVsDpJmhZY7AFdppU1/em
-         6fziZbFtKMAUyphwUkuCJTLwMa7W1qN2BRcalUg0iUlEph+w/iUtUAbS4s/R8Qd1FpMQ
-         nkFDXXUIC+0MapRjju77Tpvq2nYALkCpt14n43wuNTapo/hjFLwJXF1TItN4t6HUKjYF
-         7CgxIsRx0N7G5lNuPvU86tud2YCTlvH6SpWE5GLlzO7wfnqqwGBmRiFceHPDje0NvmbJ
-         FQng==
+        b=bZP9H5LouOT6PZA9XnDBcNIJhzquZs4SHtGVFaquzHUtktbZwoWJuxCwswFSl6e9f4
+         /AnsKFKfBjOkeGbtcseZrInGh+8Uu2cP9ITOCeP5Sa+AcHoIS3atKqtVwaLtF3hjHIhh
+         5HhkDkVKC04kWiKSPakpGHp+0PnVdoz8weNxtujv0xjHtRopHQtVuCt3TexIXKIUqtv5
+         FcFPZ9rQhuAiF+6USxjwjPb52lQNjl0pttn9cWAa2PQtJAZrXT+y+Zg2IdIVrdYsS08O
+         N/GARDQ0Q3UEiytjADAZV5B0YW138uGf9P/uOFvjZ9dIC7ADulZPYmgyVsRZLsJ315s9
+         IlAA==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:user-agent:in-reply-to
          :content-disposition:mime-version:references:message-id:subject:cc
          :to:from:date:sender:dkim-signature;
-        bh=NyxWBq9ZpujXGlyVZLvbgn0NHwlXsXKgm1xa8P7C9zI=;
-        b=lYdYOofuQPKj5cHgppnFRupAhvVGdTTGULiX3rDexUz/6F9psJR6fyAohuAXmkMX8j
-         9KZ+Swvo9VRB8SuL8WNzZ1eNGVHe06ZJU1eTYaqFyi99Sj0SYLrXUifTNlx5vwz5u4J9
-         UbVnfldJXOfqtRR/Kl8zItiyxab3IUxlnCfkYcZK2IKjPkFIx96yOOP+nA/G7CJJ6/WL
-         cjHjkVTJ6Hs5EUbn7iz0tmCv6w2y5EH1iIpIrUMOel6d6Qm4YZxFsyY7oXUL6l02nWFe
-         c5k2W1T21eb7T4aAkMB5rdNQBV6VC/eGCXPVln9/fpNW0AaZfLsdnul5bX4dE06LA1Ag
-         tVTQ==
+        bh=PHlJCfPZ8/xFQDTiDIxFTPpjUxRELVAjLkR6DmA4IVc=;
+        b=YJ1ecCdTRDfsswvWE5uQVBNAc+s43E4dxATjYQH1mmI+JVN62xtCrcrEqKi3ItWyCy
+         0F4t9QI+lfQLMAjdOxlSsksqrBh2wAIt6lNQZtG0FJjsQlOCwn45T0K2RwhjpZflYQrc
+         5E08ypZqPrX5pmXCcTEkE7554poMyjy5eHcZOD5NwkPNzRD9nAIGbRua6YYaOVS+Oqs5
+         5VEpKPfHSj+MUlFh/8o7IxcAkgra03CAS1ZFc7m9XHxxjF2CvAx4vnDcl4qrOO+9d9K1
+         5aD3B/FeeD36GcsjXG4/v33akwK9O5eJiLzQ2daDCv5sCwZGekUQbalxwBBHPmjTB928
+         kS4A==
 ARC-Authentication-Results: i=2; mx.google.com;
        spf=pass (google.com: best guess record for domain of hch@lst.de designates 213.95.11.211 as permitted sender) smtp.mailfrom=hch@lst.de
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
@@ -34,10 +34,10 @@ DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
          :content-disposition:in-reply-to:user-agent:x-original-sender
          :x-original-authentication-results:precedence:mailing-list:list-id
          :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
-        bh=NyxWBq9ZpujXGlyVZLvbgn0NHwlXsXKgm1xa8P7C9zI=;
-        b=d7lK7l1vRabs5lFTZYTCOFj5+Ry+qnfbovyxVIlfdOnjAN74YddldO2b8oVGE0Rb8d
-         17lhPpFtRJ346OmaWOS+FasbqU6AJfphH111HCqF1aFeR3vwLGpW6FfAkwWgjt3pkwvA
-         eqXQYtopxgxpRnJa7H+K8bJegWvwffOkH4YlY=
+        bh=PHlJCfPZ8/xFQDTiDIxFTPpjUxRELVAjLkR6DmA4IVc=;
+        b=Bb/PrvUQNvoEuP4H2YS0q0dvcYJViWqGHXvlbl0q1ms89/zIHgHeQFcgCJ462Sw2fU
+         HsHsQITPCFUKgck7eJzm7Fns1Tr3Bsc3DEoh3qLNPV9mLGXf+/AIa+ySX2BOWvAXU7kh
+         TOZpnyhw5Qkq1s/28Ki+xu4jDdY7NTFdOMEX8=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
         h=sender:x-gm-message-state:date:from:to:cc:subject:message-id
@@ -45,68 +45,76 @@ X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
          :x-original-sender:x-original-authentication-results:precedence
          :mailing-list:list-id:x-spam-checked-in-group:list-post:list-help
          :list-archive:list-subscribe:list-unsubscribe;
-        bh=NyxWBq9ZpujXGlyVZLvbgn0NHwlXsXKgm1xa8P7C9zI=;
-        b=Etpkhcru5IepokhDJDE5PgAlo2i46ImgZu5kJUpT8fEw+1yT1v1if+UWUzywV1heLF
-         Po/D16YOBsxcWRyqMRdlybuudsSYznFGXlc1Qa9oc7agLCDUeF0rRxTH51IYmwDKeBvS
-         y1u5u+L1wQqyPBRwBZ+U+GbZir/GglcVIXWlNRbYbKGL1t48ky/D/AFYKFFZgqkpHhyU
-         MRdnOAIJp9893B8Oo8bP2OGQibemVKnzNplvdY6lp8wjSk5DSZEZPdFWS6RHgyDNmqTW
-         uAEagajx1mHPBf8jul2yTbwPWbCMekuOaRpsi4gZJCkYsIeU9A8RkrwkniNsnCC2g6UT
-         5rfA==
+        bh=PHlJCfPZ8/xFQDTiDIxFTPpjUxRELVAjLkR6DmA4IVc=;
+        b=pBF54Q8lGhy76bcgKBx+IgBuIp7CGGTCLeEXH3vAGhvufeTosATrjaXAgL1ADJO2zI
+         v5BH23vYy/P3vPPua/mMnyLGPZm3xdsgR29kVvHXME4lYcNaKJFTv9ugudLVxHwUbmzC
+         8Aw/3Ortt5BJ2R/D1kohECIZqfAs9oVfQ7KyDIsViXcN6MfdAjt6f7aarB91JDfBJanX
+         QyewQt0Z7WS1DXw6wkOzQz8RNVI7F60iMTw8ONu+HJFU1fW1MX5PZ11SLOcmqKEE1xwR
+         pG+0opsTWFH2Hq+W93tiCEKZxugJ8Yxc0HELcn8LYBSSIhB2ucnQT6P0CngC59XLyQ9h
+         h47w==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: APjAAAXMBLnUa/u/ETX9d1r7HodEt72sDa+Wf4BB3aEIna68e04gWfi0
-	pvKxPOfEblQxaQG6eN88mvMasg==
-X-Google-Smtp-Source: APXvYqzNTNgWXnXDGYjLNYM9Bh4+qKfC17W6HOWCFY3YDK3ZTL5DZZj6B2dDVszKUwTKdg6uvklBRA==
-X-Received: by 2002:a05:6000:100a:: with SMTP id a10mr4754149wrx.154.1560752571923;
-        Sun, 16 Jun 2019 23:22:51 -0700 (PDT)
+X-Gm-Message-State: APjAAAV/XOm3R3My751sexQL83m4zPpaGZLZigkQzsPdEgLlcYG6GvTE
+	nlPBlEaht7i4OPUn3jJMLgCqMA==
+X-Google-Smtp-Source: APXvYqzkGo4LqRo4+xjoTSIhLKtmw36abxYBMQLp51RG3JKtZypSD6AoPagodWG6URlXphxbLjsmYw==
+X-Received: by 2002:adf:e8d0:: with SMTP id k16mr62566593wrn.31.1560761104503;
+        Mon, 17 Jun 2019 01:45:04 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a1c:b6c3:: with SMTP id g186ls4528484wmf.5.gmail; Sun, 16
- Jun 2019 23:22:51 -0700 (PDT)
-X-Received: by 2002:a1c:f512:: with SMTP id t18mr16703184wmh.47.1560752571132;
-        Sun, 16 Jun 2019 23:22:51 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1560752571; cv=none;
+Received: by 2002:adf:ec02:: with SMTP id x2ls3703262wrn.6.gmail; Mon, 17 Jun
+ 2019 01:45:03 -0700 (PDT)
+X-Received: by 2002:a5d:4484:: with SMTP id j4mr7632489wrq.143.1560761103655;
+        Mon, 17 Jun 2019 01:45:03 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1560761103; cv=none;
         d=google.com; s=arc-20160816;
-        b=nVb1b7M5bsGdl6SOq4wSmb7NRL8qa/VsiFa6FdV5ax81vqAoy/FSTSM9opnWd4vVAa
-         myovZ9WOOwmi+J1RPOeVrZRX23u6Hyz5WVlfr5Hjemcjr2D1fNg/8LkWJrYBzp50dIPF
-         /EL4U4FuhhZKDSqonMMRflD4fhlbAhXp4vxq5yNT95mJpUFqfJboB9+ySB+6jsFkhR4y
-         nDBpUjPkW1BSpVaSH6Zh884KPaEIY1ZMV3RMGC5LY9a5M8HTkzMAh8oPXlIkJYD6GCDB
-         EDHwg0P5glHNXyixHWQ/SnKGOCKJA2YhULEvhJRanw6PcxsAw9aFzJQ+igyC/DLSB+I9
-         ZaSQ==
+        b=Ir1RYxCZjI3kuZVV4eh/rSurA2Z7wtdxHWXyfnnZpD1QcXkO01Fy34sUbvRiINpyXm
+         tx4Ulmca8Z1jG+EBmgMXDAhQqN/bKRDfnuiQeiVPC4yaj37vx+ugyEtgPja75nBZbUio
+         dJePg8Anq1rxa9Q+bwq7JP0gsluqjyi4J0TGCbq8KhMjSa8V7wX95aGNJQzMO043XI+j
+         hO/13Y4yqgNuXuCFZTtUfO39hMhzFsSeo3PT7mbQIe4AoNPdXpcwZFa/XNiH/ADrRfzp
+         7aJjWghoa4Xtud/hoM/FC9DeG68tVn2nmRC4lKyk6RAeixE8WDGWdIWpBIWFgYz0MM/6
+         u8RQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=user-agent:in-reply-to:content-disposition:mime-version:references
          :message-id:subject:cc:to:from:date;
-        bh=mhVDz6pOQxUAGhA2RbcrO+hrabJMvNOS7reELqViCXU=;
-        b=Psc6BXR9dbysgrsVCnSyXzZKK5YwUqHRvF5YyRYPfqrWEEOM27cEV8LUjMjpTTL5zm
-         sf7UnZkl3SvszP/ZybioAz64Is3QNiqRbKJduEftg+8tjSot432LM0rAuGhPyK47Ex6f
-         J9z2fzejMkxofRceay0Xseq4pzS2I8kIcu8DG4jlmK2HO3gUTUshJeL/GTSTj1MFdCQu
-         0zHAJF70VhF8qHAtCb05DqMezf8oPPgDCPkwOnmDgwgXgjdcO+lLZCW/ct9VcANp11dx
-         Zc8tXFs5Yhz+25m4HoVl+nW7bWnjRxJ73P1jbVkQQmM21ZqRD6BG+38wBeIc9cniOBCO
-         BKAg==
+        bh=W2L8YwhuK0dBbtup+XP5UTJXcciA1C0ZZQuQnVQws50=;
+        b=f8RIhKURQPn6+gH9Af6nuZf4D4gM4LNnLk4uHmPlwM65Y8qEmiJCQF5MVC3OkCs1Ft
+         qCFl+HFTFgfD+5eyRv0CQjPBLMITe3m1abV70jYyUkBTBmlSK43VSpdcjKkU0+XMKBCW
+         8FNfkFf76SnlEcQLaqiyt/Qtn1+Hwf7GrICB5jGgNV+AJJyFazstfXr3+OR5YCnSwK4O
+         hrnbmjnF0KQqlSe1XCGAJtyF42ADWFeEQrZG4SugUwuhg65tyF/bu1K6lvCCtbUeS5Zr
+         zc9jDUMkUN9u6WzvENCfEh073I1Yy6RAnWDoSEN1crIID8Smtf+IVh/FqMEe40mh9Umc
+         D0tA==
 ARC-Authentication-Results: i=1; mx.google.com;
        spf=pass (google.com: best guess record for domain of hch@lst.de designates 213.95.11.211 as permitted sender) smtp.mailfrom=hch@lst.de
 Received: from newverein.lst.de (verein.lst.de. [213.95.11.211])
-        by mx.google.com with ESMTPS id g18si9126806wrh.28.2019.06.16.23.22.51
+        by mx.google.com with ESMTPS id a66si7645wmh.32.2019.06.17.01.45.03
         for <usb-storage@lists.one-eyed-alien.net>
         (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
-        Sun, 16 Jun 2019 23:22:51 -0700 (PDT)
+        Mon, 17 Jun 2019 01:45:03 -0700 (PDT)
 Received-SPF: pass (google.com: best guess record for domain of hch@lst.de designates 213.95.11.211 as permitted sender) client-ip=213.95.11.211;
 Received: by newverein.lst.de (Postfix, from userid 2407)
-	id 8159768AA6; Mon, 17 Jun 2019 08:22:22 +0200 (CEST)
-Date: Mon, 17 Jun 2019 08:22:22 +0200
+	id 6715C68AFE; Mon, 17 Jun 2019 10:44:33 +0200 (CEST)
+Date: Mon, 17 Jun 2019 10:44:33 +0200
 From: Christoph Hellwig <hch@lst.de>
-To: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
-Cc: Alan Stern <stern@rowland.harvard.edu>,
-	"gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
-	"linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
-	"usb-storage@lists.one-eyed-alien.net" <usb-storage@lists.one-eyed-alien.net>,
-	"linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
-	Christoph Hellwig <hch@lst.de>
-Subject: [usb-storage] Re: [PATCH v2] usb-storage: Add a limitation for blk_queue_max_hw_sectors()
-Message-ID: <20190617062222.GA5069@lst.de>
-References: <20190613171112.GA22155@lst.de> <Pine.LNX.4.44L0.1906131317210.1307-100000@iolanthe.rowland.org> <OSBPR01MB359051D6F83101432E0F2549D8EB0@OSBPR01MB3590.jpnprd01.prod.outlook.com>
+To: Kashyap Desai <kashyap.desai@broadcom.com>
+Cc: Christoph Hellwig <hch@lst.de>, Jens Axboe <axboe@kernel.dk>,
+	Sebastian Ott <sebott@linux.ibm.com>,
+	Sagi Grimberg <sagi@grimberg.me>, Max Gurtovoy <maxg@mellanox.com>,
+	Bart Van Assche <bvanassche@acm.org>,
+	Ulf Hansson <ulf.hansson@linaro.org>,
+	Alan Stern <stern@rowland.harvard.edu>,
+	Oliver Neukum <oneukum@suse.com>, linux-block@vger.kernel.org,
+	linux-rdma@vger.kernel.org, linux-mmc@vger.kernel.org,
+	linux-nvme@lists.infradead.org, linux-scsi@vger.kernel.org,
+	"PDL,MEGARAIDLINUX" <megaraidlinux.pdl@broadcom.com>,
+	PDL-MPT-FUSIONLINUX <mpt-fusionlinux.pdl@broadcom.com>,
+	linux-hyperv@vger.kernel.org, linux-usb@vger.kernel.org,
+	usb-storage@lists.one-eyed-alien.net, linux-kernel@vger.kernel.org
+Subject: [usb-storage] Re: [PATCH 10/13] megaraid_sas: set virt_boundary_mask
+ in the scsi host
+Message-ID: <20190617084433.GA7969@lst.de>
+References: <20190605190836.32354-1-hch@lst.de> <20190605190836.32354-11-hch@lst.de> <cd713506efb9579d1f69a719d831c28d@mail.gmail.com> <20190608081400.GA19573@lst.de> <98f6557ae91a7cdfe8069fcf7d788c88@mail.gmail.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="UTF-8"
 Content-Disposition: inline
-In-Reply-To: <OSBPR01MB359051D6F83101432E0F2549D8EB0@OSBPR01MB3590.jpnprd01.prod.outlook.com>
+In-Reply-To: <98f6557ae91a7cdfe8069fcf7d788c88@mail.gmail.com>
 User-Agent: Mutt/1.5.17 (2007-11-01)
 X-Original-Sender: hch@lst.de
 X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
@@ -127,17 +135,34 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On Mon, Jun 17, 2019 at 04:17:43AM +0000, Yoshihiro Shimoda wrote:
-> Thank you for the comments. So, should I wait for getting rid of the
-> virt_boundary_mask stuff? If I revise the commit log of this patch,
-> is it acceptable for v5.2-stable as a workaround? In other words,
-> I worry about this issue exists on v5.2-stable.
+On Fri, Jun 14, 2019 at 01:28:47AM +0530, Kashyap Desai wrote:
+> Is there any changes in API  blk_queue_virt_boundary? I could not find
+> relevant code which account for this. Can you help ?
+> Which git repo shall I use for testing ? That way I can confirm, I didn't
+> miss relevant changes.
 
-It does exist on 5.2-stable and we should fix it.  I'll plan to resend
-my series to fix the virt_boundary issues for the other SCSI driver
-soon, but we'll still need to sort out usb-storage.
+Latest mainline plus the series (which is about to get resent).
+blk_queue_virt_boundary now forced an unlimited max_hw_sectors as that
+is how PRP-like schemes work, to work around a block driver merging
+bug.  But we also need to communicate that limit to the DMA layer so
+that we don't set a smaller iommu segment size limitation.
+
+> >From your above explanation, it means (after this patch) max segment size
+> of the MR controller will be set to 4K.
+> Earlier it is possible to receive single SGE of 64K datalength (Since max
+> seg size was 64K), but now the same buffer will reach the driver having 16
+> SGEs (Each SGE will contain 4K length).
+
+No, there is no more limit for the size of the segment at all,
+as for PRPs each PRP is sort of a segment from the hardware perspective.
+We just require the segments to not have gaps, as PRPs don't allow for
+that.
+
+That being said I think these patches are wrong for the case of megaraid
+or mpt having both NVMe and SAS/ATA devices behind a single controller.
+Is that a valid configuration?
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20190617062222.GA5069%40lst.de.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20190617084433.GA7969%40lst.de.
