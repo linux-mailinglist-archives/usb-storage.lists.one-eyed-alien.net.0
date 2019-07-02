@@ -1,126 +1,117 @@
-Return-Path: <usb-storage+bncBCUJ7YGL3QFBBY5E5TUAKGQEMV6BNHY@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBCTPRFE7TUKRBBGG5TUAKGQEFGTYDCA@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-pg1-x545.google.com (mail-pg1-x545.google.com [IPv6:2607:f8b0:4864:20::545])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0E5635CB92
-	for <lists+usb-storage@lfdr.de>; Tue,  2 Jul 2019 10:14:29 +0200 (CEST)
-Received: by mail-pg1-x545.google.com with SMTP id t2sf9162835pgs.21
-        for <lists+usb-storage@lfdr.de>; Tue, 02 Jul 2019 01:14:28 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1562055267; cv=pass;
+Received: from mail-ed1-x548.google.com (mail-ed1-x548.google.com [IPv6:2a00:1450:4864:20::548])
+	by mail.lfdr.de (Postfix) with ESMTPS id 2E5155CC9A
+	for <lists+usb-storage@lfdr.de>; Tue,  2 Jul 2019 11:25:25 +0200 (CEST)
+Received: by mail-ed1-x548.google.com with SMTP id s5sf19161196eda.10
+        for <lists+usb-storage@lfdr.de>; Tue, 02 Jul 2019 02:25:25 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1562059525; cv=pass;
         d=google.com; s=arc-20160816;
-        b=IPNpMm9S+NEtupMX1TyfkiWk4I4uri0lb/HmPs534v9PLzmmrOPN2wgoZksXt+eVnk
-         RAXgneCRR1ayXHdPZOEQzhfW04h1eTleQZ5wFjx0vOQcYjOHilXMZTb+3ejk18PfWRae
-         u7GpUkNj8ytHxESxZB2pwdEytt5LogwvnJr9mH2Pv6yx6y38NVWK64C91wRi5wv0f9ce
-         9zaf4wHeGdt68siJb+bbs2jxDUvPjg5/jZq50MtfStZFwNYC8hv3RjSv2hKbu7gRQZUA
-         b4BW49gJFujUgdScopPFLpPOPnSSOS3yM/H3pnyGnGccRxy7RPwYvSMMb2wCl+E8d++m
-         FhQw==
+        b=Y0hUM4G7dOxZyuCN0ANS8t115pk7rtDqOOBUjupNTA8qdvaeG3G5Qa2jEDuxsTUSlO
+         91Sq33wam5h4XRGL+n8subDjzLhofd4D/xxkxG+hlfytFbyV0tYW3QqWfvvmPBiARQ0B
+         t61hI6PYPA1vf7HlWY6CLDSt/ZpIq//KcTuoVzUuQKWYH54KQVVR+lQBM3Pp4+ZFHIMF
+         jefWCSyZoFSRY1VGmclBTRKkzAlVkDVkMfhCFUiAmNYpqWIjCBnyDPmAYEprgl16znnJ
+         ksN+NvrYJgWWYP3X1qtnuYIsuN8ipdlPRZLg84yj/eJzQj5/HTnn0O9vMZbkuuj68vNh
+         V9hw==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:user-agent:in-reply-to
-         :content-disposition:mime-version:references:message-id:subject:cc
-         :to:from:date:sender:dkim-signature;
-        bh=MUUvw7tsrKDlHStYB06KG8wDn311kfIq9TOIdSsYsyc=;
-        b=HyWy4kJqjP06trHuxOdrBSqDbOIGLBgvCF4aR1D9K8yozpXSvldXvx24eJ84IK18+L
-         UgK5gJWUbm28NuGRkzSz1teC1THbQnj5eRaZ9rpIgGqSOaDEJ9YlKXgUbq7QpTTLNDQ0
-         Y3RYCgfxhkd8xJSG5VPeSpbEE8w+t2YjEYv//aq91Mtt0cHRv2lgW43haOvl/hvTIdqL
-         PcHdcJgD3DkhTHfrodbUlqjRJFj2NFM4k4oBfs2SzX3HIDK7uRphWJ6xd1Wk9NNngE6J
-         /l90jMokTG0VWHI76uCymiVcZfyHWKwfGkXWhBEp8LyI3BZZ0p4URhUsai0v53/q3aPi
-         8hkA==
+         :list-id:mailing-list:precedence:mime-version:references:in-reply-to
+         :date:cc:to:from:subject:message-id:sender:dkim-signature;
+        bh=vJKlr/AYcNJnRWYkhclnLModoELZp4rTTzSRWQ7JtgQ=;
+        b=ZysGLB/eViX0fJOTziMc5uHtudWlaDgT/Il03nHmxKskY1gT07Z8jiO4AXwsyznFpZ
+         zKIs4tIgC2s3XMsOOMaPLW4g+KmmPrYXVldXOdC/gfNbyiqkVQfqqVkDVtnijxssPiiB
+         Eg0oU574IF+09bxeB3dk2kc27nowSLoYmLtRFArakob//rR5G1+vD78e/V+gwkF7+B98
+         ujE42WEpdMVIVtYOtZrZsgbxAxAtJYS1mdNKeBaSrKW162qLlCpaqbs9uBvh1V6NHdAo
+         hhGmJ3lZP3udx3e1pbCEDV+Azn6zxaVx+KCmnTUG4mwS64lTo1TVw72Ytjl8KKEBrRcf
+         Mbmw==
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@kernel.org header.s=default header.b=LY8IBqQZ;
-       spf=pass (google.com: domain of gregkh@linuxfoundation.org designates 198.145.29.99 as permitted sender) smtp.mailfrom=gregkh@linuxfoundation.org
+       spf=pass (google.com: domain of oneukum@suse.com designates 195.135.220.15 as permitted sender) smtp.mailfrom=oneukum@suse.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
-        h=sender:date:from:to:cc:subject:message-id:references:mime-version
-         :content-disposition:in-reply-to:user-agent:x-original-sender
-         :x-original-authentication-results:precedence:mailing-list:list-id
-         :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
-        bh=MUUvw7tsrKDlHStYB06KG8wDn311kfIq9TOIdSsYsyc=;
-        b=XMIuqjOGyyI49cqSOXNqlo2JA7bpblOWwzcSD+a6av4u7UllZfs4k1y0riZAXqDbMK
-         y6Uf8z4IBF2P0Te9X3e15D0CMQdqoOrS2yRJR7u+xXGnKbVmvpFVX45dH69arVc5Pu/A
-         OLQehbIegAjwhoj0s+GFdscA5VPqDGjPFAawo=
+        h=sender:message-id:subject:from:to:cc:date:in-reply-to:references
+         :mime-version:x-original-sender:x-original-authentication-results
+         :precedence:mailing-list:list-id:list-post:list-help:list-archive
+         :list-subscribe:list-unsubscribe;
+        bh=vJKlr/AYcNJnRWYkhclnLModoELZp4rTTzSRWQ7JtgQ=;
+        b=TSNN02MZnK2I7rXn9+F5SOKGoy1ZkodDx47NQyK0VaphipE0rgnB8PAPUYkpGkjm/c
+         kvPs22gKTMxgplPLmb0J0/CJtn0rjgvrcRE20FZOHe+pQlrkTMpmYd1yLV3QPLLPYYlq
+         joO8pd/DSdOtbfgKzJ+dlrDnKNsT28KqguSeU=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
-        h=sender:x-gm-message-state:date:from:to:cc:subject:message-id
-         :references:mime-version:content-disposition:in-reply-to:user-agent
-         :x-original-sender:x-original-authentication-results:precedence
-         :mailing-list:list-id:x-spam-checked-in-group:list-post:list-help
-         :list-archive:list-subscribe:list-unsubscribe;
-        bh=MUUvw7tsrKDlHStYB06KG8wDn311kfIq9TOIdSsYsyc=;
-        b=M3kj+y1E0xthSiE30FKXkOm5+yK0fFURcz7oZYaCfUuFomccx//d61SH/CzrvTHZgS
-         Uq1dmGWdtIr4K3LuCD/uWtVgdwjyxfSj6fSGB59MSlz0gY2ODdWa6nfyrOY7bx05D/Oj
-         WUrOI6wgekHNOk7KOhvzKgQq2FKwml+UL6SZmjISdwWCn++Ttwz1omSr5ziDIIdoRlTB
-         ZAf7FJaML1Z2TTonw29RdKzSkJepTiCaT4rp3jJDFyD0GUyIKfFCGFRN1rDUXB2GYEY7
-         Hnj11qy0mp2nz+QEaHDEVcM4Y0ofeiz5LJ0Km0z0qNUHR5DBEJ/UOW4pyRi6Td1Iapzc
-         NHmg==
+        h=sender:x-gm-message-state:message-id:subject:from:to:cc:date
+         :in-reply-to:references:mime-version:x-original-sender
+         :x-original-authentication-results:precedence:mailing-list:list-id
+         :x-spam-checked-in-group:list-post:list-help:list-archive
+         :list-subscribe:list-unsubscribe;
+        bh=vJKlr/AYcNJnRWYkhclnLModoELZp4rTTzSRWQ7JtgQ=;
+        b=lFk21NMpPQAyrK9rHwPr4GubKuIlUoLVrZgTxUzdrYLMkHMMyehaNaTONQfvZpHn/7
+         5miMM+kVWN50YaN/FWw85InWX1z/t8tgE0TF51pOPnw2KJqtxAz4updZo5QN2b5Pft0w
+         47VEbRA6mhLrb+fKrIIiTAVxCOSbOOtik2HeJ2X/nLrXJ3IdeZm54K9aI4YqbhXtF7dw
+         7dim0H1HgvZLTCWZVUgSVk2JIb1BG+zMCEbNi2Vp5f+67Bpdk0uJ1pLYahFASKTFygZl
+         GbyepkXA/P20nbUiu5X/SCjDakv6uaVlbDoFb2tSv2z+clG+zjypF68ZMzvv15uLrqYn
+         9MWw==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: APjAAAU4Cg57MD1Hy4ic/sM0Yp7xUSZdk7JeOjYk6Fi3namJ7aI5xdrw
-	OPhN8a8Bi84dHIoUPgp/JVSJ+w==
-X-Google-Smtp-Source: APXvYqwoMn0/5aIImEnRCktH376jXDk/Y9Bq32+dagjmw3Z2VUCtrVt/3CzgWSj2v65LG2YqGDtZNA==
-X-Received: by 2002:a17:902:8489:: with SMTP id c9mr34242695plo.327.1562055267595;
-        Tue, 02 Jul 2019 01:14:27 -0700 (PDT)
+X-Gm-Message-State: APjAAAUbYq18qtYzViKs6rrbNRXpHqAk2orrFsDBIUdedNWRVC9B3aO0
+	7DKI0/fRKlbBUX4VumpSpo+lQQ==
+X-Google-Smtp-Source: APXvYqw10WMtC/a1675iyfA4Kk9kI5msNcx39xNCj7ODCP/38oac7bXhOX40iPBioGW0IFhNUTzTVA==
+X-Received: by 2002:aa7:cdc6:: with SMTP id h6mr34346335edw.5.1562059524916;
+        Tue, 02 Jul 2019 02:25:24 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a17:90a:2029:: with SMTP id n38ls827572pjc.2.canary-gmail;
- Tue, 02 Jul 2019 01:14:27 -0700 (PDT)
-X-Received: by 2002:a17:90a:2190:: with SMTP id q16mr4010131pjc.23.1562055267174;
-        Tue, 02 Jul 2019 01:14:27 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1562055267; cv=none;
+Received: by 2002:a50:8efb:: with SMTP id x56ls3971580edx.9.gmail; Tue, 02 Jul
+ 2019 02:25:24 -0700 (PDT)
+X-Received: by 2002:a50:b6e6:: with SMTP id f35mr34329110ede.82.1562059524302;
+        Tue, 02 Jul 2019 02:25:24 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1562059524; cv=none;
         d=google.com; s=arc-20160816;
-        b=1AY/IDuz+KdhqvtNUbkcokhz8scdFexSCvfvdJMrIod2IqmkTTVZWA2XGnhuBN7rAU
-         7WwWhBbzcWpyTZoC1m6zdaanXw3OdtZ+R2zWE733jlYghtcptrEsssyd4z2VFeR9jQdn
-         azw7YmYutJuW8LrVapCT8Nf1/VZFCfEVTmd3sFx5pCP1LVB0mCvG8lvfMbHGXLXecf+8
-         0hkB9nN5IwBDAjXB+8poCh4d0O/7u6NnT+oT0bAJFHtU3c6LqhhrAMV4ghQPKtyF1Fji
-         IfLtB00v8+/kUYsXPAdl3I3iUAyzA2wbffKdlanAE7RWmNp36xVAVJ6AHKZQYS92WQ8e
-         ayRg==
+        b=J/OGHW0sE9RqAweVfP9Dwcri3AIGDS16T14Y6z5dirT8uWQeGhq5I9GUwDXNq3T7/e
+         fLyR6BSJJkBNw7rM9LM31skJhB3PnlsX0wmbYIYKHYxhAfeo7MyTEjtqGR1AaNJFSe+V
+         u5Ub3vxr7pqlehoIkhtgtliPgVImM518ObmPw6hmIUdW8XHsjjwCMnknorYow6N0h6g8
+         azkY1ljuqjNMiDhyx6FWwEdbaX/xZ9T7p5fnYUhTAvfGs5S0AeJFWnNKaCCmKSj2HWbF
+         5yz1gWMOnUcJ8TzwGCHISpMitxrabat3jE7c42dXwHcGBmND1QAmJPUB5qCkNnIMl/Go
+         H9xQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=user-agent:in-reply-to:content-disposition:mime-version:references
-         :message-id:subject:cc:to:from:date:dkim-signature;
-        bh=nnuU7sXiy6j5uAS5HoGrLumJLFGT5CL8GG44zozxI3g=;
-        b=E9yxgPglXw+8IJRgTaatRvmb0Fvs/gMllmxU2jfvvI2YbTeEvEus68kuSoJyfh1TxY
-         +nAW/JIWp7eeCPvUy6uJ5FoeTCxeEkU2KNtE75RRTo9HnRGfoqO6Hq/XRDg9ILWrvrhJ
-         V/XJ2Kb5Vd2U/QSJnxovFFXr6L5QWaO+pVGqVWOoy+8rJAeM/jVwcYXiJW9HUECzJ8AR
-         88Zf5M0kNJeJmJiCFuJdgCtCbCvHoS/aIVXIUFQzrtxtGnUX7g7z1cjbUOMWqbHuypU+
-         bj2Vsggej04vfKJRjsnfYRUhxIqlWMAB+6rim2gPG8Tx+qsVdKKKadNKLVMo2QmbU5gK
-         WEHA==
+        h=content-transfer-encoding:mime-version:references:in-reply-to:date
+         :cc:to:from:subject:message-id;
+        bh=yndzJIOEYPMmtZ6tOzeuiK9TeenuGwFH2hoVojiZSkA=;
+        b=VLpol7UhFxoCcu5jKHpoGgIpbtRsL6ce32MaXkEQrFdmqQr620YKlmjvYoh5rgas51
+         0L0doNKtmIra7+AkA3y+TiQ8Tl/av7Ac5Z/3HjNbd2McU5V527zHpDZD4f4BJ/g5AwY/
+         viykjg9i4eHQt5owNaD5dWqqh6yB4dYj7qXAJFqas0OZW6p8wb5aKZk0ZcTDpHXpSnpa
+         A7diG9J2IONtmnlQOuPEN+eUnZ2613QplOrWwiRB4CTgR3bSs2RcHbhC0g1wtIG1lJZD
+         IqOCbf+1XYWVhCu2yU2IhlL1WBDrN0biknyWp4evazQ83Zw1HEqp9OCu1jkLQmy2Qs00
+         KgKw==
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@kernel.org header.s=default header.b=LY8IBqQZ;
-       spf=pass (google.com: domain of gregkh@linuxfoundation.org designates 198.145.29.99 as permitted sender) smtp.mailfrom=gregkh@linuxfoundation.org
-Received: from mail.kernel.org (mail.kernel.org. [198.145.29.99])
-        by mx.google.com with ESMTPS id o19si13155864pgl.389.2019.07.02.01.14.27
+       spf=pass (google.com: domain of oneukum@suse.com designates 195.135.220.15 as permitted sender) smtp.mailfrom=oneukum@suse.com
+Received: from mx1.suse.de (mx2.suse.de. [195.135.220.15])
+        by mx.google.com with ESMTPS id rk18si4047149ejb.366.2019.07.02.02.25.24
         for <usb-storage@lists.one-eyed-alien.net>
         (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
-        Tue, 02 Jul 2019 01:14:27 -0700 (PDT)
-Received-SPF: pass (google.com: domain of gregkh@linuxfoundation.org designates 198.145.29.99 as permitted sender) client-ip=198.145.29.99;
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl [83.86.89.107])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPSA id 6FFE520645;
-	Tue,  2 Jul 2019 08:14:26 +0000 (UTC)
-Date: Tue, 2 Jul 2019 10:14:24 +0200
-From: Greg KH <gregkh@linuxfoundation.org>
-To: JC Kuo <jckuo@nvidia.com>
-Cc: linux-usb@vger.kernel.org, stern@rowland.harvard.edu,
-	usb-storage@lists.one-eyed-alien.net, oneukum@suse.com
+        Tue, 02 Jul 2019 02:25:24 -0700 (PDT)
+Received-SPF: pass (google.com: domain of oneukum@suse.com designates 195.135.220.15 as permitted sender) client-ip=195.135.220.15;
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+	by mx1.suse.de (Postfix) with ESMTP id 5513FB150;
+	Tue,  2 Jul 2019 09:25:23 +0000 (UTC)
+Message-ID: <1562058690.5819.9.camel@suse.com>
 Subject: [usb-storage] Re: [PATCH] usb: storage: skip only when uas driver is loaded
-Message-ID: <20190702081424.GA4162@kroah.com>
+From: Oliver Neukum <oneukum@suse.com>
+To: JC Kuo <jckuo@nvidia.com>, Greg KH <gregkh@linuxfoundation.org>
+Cc: usb-storage@lists.one-eyed-alien.net, stern@rowland.harvard.edu, 
+	linux-usb@vger.kernel.org
+Date: Tue, 02 Jul 2019 11:11:30 +0200
+In-Reply-To: <f43e7ecf-64d5-20d2-0461-85a55fa28a33@nvidia.com>
 References: <20190701084848.32502-1-jckuo@nvidia.com>
- <20190701085248.GA28681@kroah.com>
- <8e8e8703-8620-b625-4917-bbb8d999caa4@nvidia.com>
- <20190702044249.GA694@kroah.com>
- <f6ed2505-5da9-c217-a052-a19d197c5c8e@nvidia.com>
- <f43e7ecf-64d5-20d2-0461-85a55fa28a33@nvidia.com>
- <20190702073432.GA9265@kroah.com>
- <136cd205-6114-2be5-4244-f6689ce6bf3b@nvidia.com>
-MIME-Version: 1.0
+	 <20190701085248.GA28681@kroah.com>
+	 <8e8e8703-8620-b625-4917-bbb8d999caa4@nvidia.com>
+	 <20190702044249.GA694@kroah.com>
+	 <f6ed2505-5da9-c217-a052-a19d197c5c8e@nvidia.com>
+	 <f43e7ecf-64d5-20d2-0461-85a55fa28a33@nvidia.com>
 Content-Type: text/plain; charset="UTF-8"
-Content-Disposition: inline
-In-Reply-To: <136cd205-6114-2be5-4244-f6689ce6bf3b@nvidia.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
-X-Original-Sender: gregkh@linuxfoundation.org
-X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@kernel.org header.s=default header.b=LY8IBqQZ;       spf=pass
- (google.com: domain of gregkh@linuxfoundation.org designates 198.145.29.99 as
- permitted sender) smtp.mailfrom=gregkh@linuxfoundation.org
+X-Mailer: Evolution 3.26.6
+Mime-Version: 1.0
+X-Original-Sender: oneukum@suse.com
+X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
+ domain of oneukum@suse.com designates 195.135.220.15 as permitted sender) smtp.mailfrom=oneukum@suse.com
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -136,36 +127,31 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On Tue, Jul 02, 2019 at 03:57:04PM +0800, JC Kuo wrote:
-> On 7/2/19 3:34 PM, Greg KH wrote:
-> > 
-> > Footers like this are not allowed on public mailing lists, and forbid me
-> > to respond to...
-> > 
+Am Dienstag, den 02.07.2019, 14:56 +0800 schrieb JC Kuo:
 > 
-> Hi Greg,
-> I am truly sorry for that. I have just figured out how to tell mail server
-> not to add the footer. Please allow me to query again.
-> 
-> Since blacklisting uas kernel module is not a good idea and could break UAS 
-> capable storage functionality, although user-space should be blamed for the
-> improper configuration, do we consider forbidding making uas driver as
-> module? That means to make CONFIG_USB_UAS a bool option.
+> Since blacklisting uas kernel module is not a good idea and could break UAS
 
-Step back and try to describe the real problem that you are having here.
+Then don't do it. If you don't want a driver loaded for a device
+blacklisting the driver must not magically assign another driver.
 
-Why is the kernel responsible for fixing a broken userspace
-configuration?  What UAS devices are not working with Linux that could
-cause someone to want to blacklist the uas driver and who is telling
-them to do that?
+> capable storage functionality, do we consider forbidding making uas driver
+> as module? That means to make CONFIG_USB_UAS a bool option.
 
-Also see Oliver's response.
+No. Absolutely not. We cannot force people to build UAS into their
+kernel or not use it. Building either driver not at all, modular
+or statically are all valid use cases. Just not building UAS must
+trigger a fallback. And we must have a flag to override the kernel's
+decision
 
-thanks,
+Making driver assignments depend on module loading order is a very bad
+idea. We also have the necessary quirk in one way. I would accept a
+patch adding a flag to force usage of UAS, but other than that, the
+existing code is as it must be.
 
-greg k-h
+	Regards
+		Oliver
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20190702081424.GA4162%40kroah.com.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/1562058690.5819.9.camel%40suse.com.
