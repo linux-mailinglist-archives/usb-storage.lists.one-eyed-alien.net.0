@@ -1,142 +1,117 @@
-Return-Path: <usb-storage+bncBAABBWOK5XUAKGQECUUEKFI@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBD6LRVPZ6YGRB5GT5XUAKGQE6YXOH3I@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-oi1-x245.google.com (mail-oi1-x245.google.com [IPv6:2607:f8b0:4864:20::245])
-	by mail.lfdr.de (Postfix) with ESMTPS id EA8755D133
-	for <lists+usb-storage@lfdr.de>; Tue,  2 Jul 2019 16:08:26 +0200 (CEST)
-Received: by mail-oi1-x245.google.com with SMTP id 186sf6595271oid.17
-        for <lists+usb-storage@lfdr.de>; Tue, 02 Jul 2019 07:08:26 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1562076505; cv=pass;
+Received: from mail-qk1-x747.google.com (mail-qk1-x747.google.com [IPv6:2607:f8b0:4864:20::747])
+	by mail.lfdr.de (Postfix) with ESMTPS id DFC845D1BA
+	for <lists+usb-storage@lfdr.de>; Tue,  2 Jul 2019 16:28:05 +0200 (CEST)
+Received: by mail-qk1-x747.google.com with SMTP id x17sf16843764qkf.14
+        for <lists+usb-storage@lfdr.de>; Tue, 02 Jul 2019 07:28:05 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1562077684; cv=pass;
         d=google.com; s=arc-20160816;
-        b=j7tJCk8EiaBS9HtwQPKKbrLRWlNXlHmu6yTFjEmlMc58z4Zvz6z7U0y7XURfCVqT6Q
-         tBqqKwYQYH+HZOLWfmhxv6pJ+6Lbd4akd9mjt7keaM7TIrQ2dFx7PU2ymYhaN+Q0CZ1l
-         zV9RlVqcbs2hHZn2PwnI8PuXXtxsV7CNMO51Q2BJrHusPulwlBTMKFsDiubOLViqr+IF
-         5vzqmdhe0NV4nd2+RfnyElGg5M4ChdL6gsJOVf3v1maSXPLuR6i8qe5Q1dSpfUpXj2ge
-         zEed/JFwH6CQXucnaJxGAJuL+AKjUVR7YkmRkSHkfLMbo1Ibmtj81wcG9C4q8skJ2BQL
-         zWWw==
+        b=AQGh1uxtQ8pONpyyzAYZak8KpcLsnHJ52j7aBFoDkq6EdfynIPSHcXvxBXv084Wq7l
+         Dp9NCXnxhq8nL8mZOi2vPZbbJGZm1/XdXsB9BT91o8yDT4+Dv0fkzx9qk75crAIp0qTu
+         x5ojZa4Ik01lzWeTbUxAWoySZcJ0z8mtOHIH//Fty/1EGOKmzYYJ68yxUCPQoCp+kCm6
+         YpZwoa/Z7vmywv2Ku339xEAy8MCwdA+asbo5k4CvFSZ1vTnjKB094LK9ImG/kVRW7gWV
+         l5XUmJIi/C+aUQhlkSETYoN3bVGWit/LtU9n1J4I2OBRuob4UjejoSzMqRP6l2lmW9WZ
+         vNHw==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:content-language:in-reply-to
-         :mime-version:user-agent:date:message-id:from:references:cc:to
-         :subject:sender:dkim-signature;
-        bh=8Jfp3y0gFGI6CXFyIasY1rUTY/6Sb9P/IxUi5nlMeyE=;
-        b=dlLiWLB89/0UZ/NlqAesPJHKfB+X3wgZ0H7hrpjv+3EcoKTWeKTI7g+4EFadRbRJUS
-         eK6E5xCQ7yMkoq4tmjfCHp64uBvpVbSVEof8OxE2U4aPYy2+BwuWgyCTdXrhjbYidFFa
-         +r3RRwRTCpSvHApicqQ4GI9o6fZ2Ow3bOAuTaZ/lghyznW+dckJsirae7lVTW/TEdraK
-         w7PQts5GvkbO50ccm6yIIsXwb4vW2X22tNpmelJb5zaT31QkP+3z+mj8ylfNqmtrKswB
-         xm5NUs5fTBX2/ETLSs5Nz9/iUtlJwiKcpxPq+fBW0Ew9CKj8HyTQse4S65DB1kc16tjL
-         62WQ==
+         :list-id:mailing-list:precedence:mime-version:message-id:in-reply-to
+         :subject:cc:to:from:date:sender:dkim-signature;
+        bh=c2mw6Xhzl+AJaUG/uc8s8fu8K2ECeRmS5z8eNR59muc=;
+        b=U2us+cPKGZweNKXRTA4uUajA1OIqPpc/qAd5f0crxHrTCjD73xou5Oqigisk2BdtXP
+         20xLox/qs+LGuPkSxXtak1GsXJxEtGaFL+GqkufSJJeN0I8wOYblul+zFylMcVT2FVxQ
+         YsGqbojQcfaQJLdhwpvWIvFY4z0heWrlhBPAfR6St+tCyiP81oDbuwKyWs/6kpneYx/F
+         g4OPC7Q9yKQtMvD312OTk5gLKdIDJvopQExMHRAXtzZJrRzC8hoEk2UGxDyeO+if2BoA
+         6BH1KRWUB9BNsUg8JX9krtiJphrNu3en5JPNC23ujt+LF06u3h1nDtUYRoQ7MIdMCWoo
+         0qCA==
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@kernel.org header.s=default header.b=0e1+IcL+;
-       spf=pass (google.com: domain of shuah@kernel.org designates 198.145.29.99 as permitted sender) smtp.mailfrom=shuah@kernel.org;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=kernel.org
+       spf=pass (google.com: domain of stern+5d0bf768@rowland.harvard.edu designates 192.131.102.54 as permitted sender) smtp.mailfrom=stern+5d0bf768@rowland.harvard.edu
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
-        h=sender:subject:to:cc:references:from:message-id:date:user-agent
-         :mime-version:in-reply-to:content-language:x-original-sender
-         :x-original-authentication-results:precedence:mailing-list:list-id
-         :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
-        bh=8Jfp3y0gFGI6CXFyIasY1rUTY/6Sb9P/IxUi5nlMeyE=;
-        b=UDq/Vuu7EmPIQGIaBop99tf/LTzW+GBtY+V3rqyXeJyYC5g2KnEtecBtwqWTMoCl9U
-         qTQYfYKVuQxOBjUciTnRtppRAXM8dKQRf7roGrQ7TzSG9JECXRPmnGvHQBrASKCVz+6Z
-         YxuczSvEwf+Y0HgrshL/u9YEw4gROPJXV1vw0=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20161025;
-        h=sender:x-gm-message-state:subject:to:cc:references:from:message-id
-         :date:user-agent:mime-version:in-reply-to:content-language
+        h=sender:date:from:to:cc:subject:in-reply-to:message-id:mime-version
          :x-original-sender:x-original-authentication-results:precedence
          :mailing-list:list-id:list-post:list-help:list-archive
          :list-subscribe:list-unsubscribe;
-        bh=8Jfp3y0gFGI6CXFyIasY1rUTY/6Sb9P/IxUi5nlMeyE=;
-        b=dZSf53xD4USq5RjDAsDI2xtZY3VwvrxXcysGHtFytbqN/KnWkyloLqBUQREMRqNMTh
-         k/purvGcfcdsCBqhrwp7xRE7vmvGaJm//V9tEAqzscVji3Jbr1J5fil0gBx1QYtg4v2a
-         8/74CMJziQPnFQl9SkxGjUiimGxiCvNxglfZ2cKjFHwGZzCR/9FEN+gxl9hbFqVxabrF
-         WXmXRKCyL2fbIYbGZtK1sbYEgJhXiBaKk9rehokW8Z/QrpGdjz+W7g1g9EjTSv/MC5n6
-         WS6oABk1wlJQzKlle863sv7iXFTbqxZ6Qf3NPLAKAomg7AliWe4FSU2EHzMCjL+Gvq5o
-         rsAw==
+        bh=c2mw6Xhzl+AJaUG/uc8s8fu8K2ECeRmS5z8eNR59muc=;
+        b=chNdfGwk3RA/E8rX4jcogHI/wPyUDUa8ax+Kyt9MU5KyIu9lTFZNsKoOF3AoiAJNmH
+         V2bWm8kTUPmjNlygYCOxhKyLTGWDq8hmotQrfiWPSlMT4JXnl2zPFDKCxJ8+rPWAiz8l
+         JvypVXGn9MTGg0UaAtuoxk7RvYhqSJtY9zeoE=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=sender:x-gm-message-state:date:from:to:cc:subject:in-reply-to
+         :message-id:mime-version:x-original-sender
+         :x-original-authentication-results:precedence:mailing-list:list-id
+         :x-spam-checked-in-group:list-post:list-help:list-archive
+         :list-subscribe:list-unsubscribe;
+        bh=c2mw6Xhzl+AJaUG/uc8s8fu8K2ECeRmS5z8eNR59muc=;
+        b=Y/LpgJtDiy0FSU1lKzegODfWwsVzQXs8VOXTkWgZo4SFQvexL1q94/iHaGXy86LzMI
+         dVfoyXSl3FPce6fHuDC3KeROY5BgMPNVy3WBnlN9DsKsrZRQQDs4D16ZFiYyqPN6YE6Y
+         6NCjQQGpbY/AR4XTIPsaa/P9OKIwRK6fotY0LKT8vAyniIWAkgzrE1CHfJfQSSlvUjk+
+         AoilIcq7eOJ/6w0DaXF5bnwPqt1VRRwtKiDKcM6cv2vhJ5pFCyLmH8BdtpLVAG3f4Nri
+         3YBGEsyhnZI33sQI+Y0LGRoy+7FobgA25oWd+f4meOZqRe1cOuQlFMZ6TAoVUBxVkiXQ
+         mTSg==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: APjAAAX6Ys97N9Nz6ZBbD8db01MYHVQkNAIxgGAqmXyruMER01IYsmIB
-	n/6QOTt9oqhrnV8r+0ikHh0wgA==
-X-Google-Smtp-Source: APXvYqyQSbTgtK9Gla0RS8rx4NE4/fEAlXFFm6sVEd4FyHqBBBWHvZ+l1/wHyoA+gf26jILV+RVfnQ==
-X-Received: by 2002:a05:6830:1384:: with SMTP id d4mr22751122otq.246.1562076505421;
-        Tue, 02 Jul 2019 07:08:25 -0700 (PDT)
+X-Gm-Message-State: APjAAAUXEcxTecffN5kZnURje6XdL6lkKmCkrmsBzj3r62FbcI+Z7jHb
+	i0tW12LH2Ly08eWi90xA2YIoHg==
+X-Google-Smtp-Source: APXvYqx2baQmVhrq/fzIhtXhfg7JYRfb2Q2XebXjLPISmofBM9FwoorhM7ue4xjnFpKHJ7xDpf1RYw==
+X-Received: by 2002:a0c:9305:: with SMTP id d5mr26951964qvd.83.1562077684785;
+        Tue, 02 Jul 2019 07:28:04 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a9d:6d09:: with SMTP id o9ls1179056otp.7.gmail; Tue, 02 Jul
- 2019 07:08:25 -0700 (PDT)
-X-Received: by 2002:a9d:6d06:: with SMTP id o6mr20722315otp.225.1562076505294;
-        Tue, 02 Jul 2019 07:08:25 -0700 (PDT)
-Received: by 2002:aca:ec83:0:0:0:0:0 with SMTP id k125msoih;
-        Tue, 2 Jul 2019 07:06:56 -0700 (PDT)
-X-Received: by 2002:a17:90a:8c90:: with SMTP id b16mr5785310pjo.133.1562076416699;
-        Tue, 02 Jul 2019 07:06:56 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1562076416; cv=none;
+Received: by 2002:aed:3f50:: with SMTP id q16ls3674510qtf.6.gmail; Tue, 02 Jul
+ 2019 07:28:04 -0700 (PDT)
+X-Received: by 2002:ac8:738e:: with SMTP id t14mr25164860qtp.386.1562077684404;
+        Tue, 02 Jul 2019 07:28:04 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1562077684; cv=none;
         d=google.com; s=arc-20160816;
-        b=yXtJ62ZBAROqEvUqDRT2MERoG4AXk0JKbupctFi33GEdMh3adW4So7JcaRsgBitOC8
-         He7gB9KtnhzU5QC7CWAW+7gMv081ng4QCi6AjA51wDvf61Bq5uXwADswczqzQTjGrGUr
-         9Rs+g3nQwEscn7qN+HMWnogccekydrT5dljaUklqu6AgH4Ib34UPu/K3CVcw2yE+UMj2
-         4dpCNc0Wz6YjpylvuysXMEWAE2lekHUucqnJyuYbAFUPq8MjgaDs3KAyz+DnQGDZ6Olu
-         UkOx452y0SKu4C8P8WKsWO+TiWf3IDE/7RkP9zzczrmaEFcE8hKnhGlSNriGhMRydRr1
-         orog==
+        b=nsRyFdD0GFUhaY7hc2FBfzN57+c7ZaZIIk2lnaQpqM6X0LW0of5Yr2taas3REg4Huq
+         AQBSSGvMzzsbIC7P+hkIgc1ePHZdlEq54QFGhkbORPSvG74NPwSTWwbxPPMbiRoJ6jQS
+         WnEQOPHDGwqKIeeQRHM3i1nYTEmm7LGVaxZrix4hcFmAoy6G0M93WOUzB5HwXeVFRuRV
+         OFU1vVaJGxoIRyk7SWWkah96wLb5R0pWZlY+n5gVZLds/ToHSgH1GowH4qFeZEHhPLfa
+         IaV+GOLrvEYkcNa1yxEFZCuds3YEhMU/y8ln2xPy96rWyR63jZiEmM/Rs1hCMqogydip
+         tXEw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=content-transfer-encoding:content-language:in-reply-to:mime-version
-         :user-agent:date:message-id:from:references:cc:to:subject
-         :dkim-signature;
-        bh=HzpXN10ANLIswHnZ8kS4VYEuvuhowos7+GhkctN4SD8=;
-        b=kWegejD/3fhgLWOhSSKHojRaDS/tABg1qZ9H59TZTDCk5lMWOQ3yeIRzJNGGwjwcnt
-         iQnlOtdVeYHkrZ9DJh9NbEBrUUtdTzj78m7v3QXGCNKbAysf/pOBFp3za57Ju1xZRX+F
-         poyQBZwZ68v/KGJac1umrz1ggTnKGA6lFry51tGLA0a165K/zU/zWEAD+494aQyNqy17
-         1De05z/6BM5If8xeFoXhZEQLjN6+8hP94D4uBOP/HcuExnSkFqpxqOvyiMzOxaGfb1nO
-         qXYF+UyzL9SSznwKddFvYoC+dEA0y2cfW3/fNawn8BUEmZbwWN4FXJGJYrL/cGdzWLoP
-         UYWQ==
+        h=mime-version:message-id:in-reply-to:subject:cc:to:from:date;
+        bh=c2mw6Xhzl+AJaUG/uc8s8fu8K2ECeRmS5z8eNR59muc=;
+        b=zcOK7DzbCC2DmiZ9r5dI7ujWsE5+MRxvBdFAhY7ESoQd+mOG4UqkHMg472SkAEcPdq
+         8ouqxxxn9uaw9027fPmJknJvLce6FRsHuidVtyLDrtCaXBZcaJj8MrIJHQSMzuHsm65L
+         z00kzz6/L0ilsQ0kYSNmLAVw9VkqzzkQrbbLNJbQ7RLL/ygeJkuzhkzE5rbcmpuJw4DC
+         BQ7339hCvWNLFIdUUSXfSIPP/TfY150G3jFsgfSI5c05RuIHxZvOkj4Y+KGGUKPYS+7f
+         U4kXsIuOW6hmDD3F5xNT26Tf0GX4IAwXkv6HtCCz1zm86tpbl7dSrkrL8tI6ZC8Di597
+         zXhA==
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@kernel.org header.s=default header.b=0e1+IcL+;
-       spf=pass (google.com: domain of shuah@kernel.org designates 198.145.29.99 as permitted sender) smtp.mailfrom=shuah@kernel.org;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=kernel.org
-Received: from mail.kernel.org (mail.kernel.org. [198.145.29.99])
-        by mx.google.com with ESMTPS id s11si12234102pgp.326.2019.07.02.07.06.56
-        for <usb-storage@lists.one-eyed-alien.net>
-        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
-        Tue, 02 Jul 2019 07:06:56 -0700 (PDT)
-Received-SPF: pass (google.com: domain of shuah@kernel.org designates 198.145.29.99 as permitted sender) client-ip=198.145.29.99;
-Received: from [192.168.1.112] (c-24-9-64-241.hsd1.co.comcast.net [24.9.64.241])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
-	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPSA id DFEAD2146F;
-	Tue,  2 Jul 2019 14:06:55 +0000 (UTC)
-Subject: [usb-storage] Re: [PATCH v2] usb-storage: Add a limitation for blk_queue_max_hw_sectors()
-To: Suwan Kim <suwan.kim027@gmail.com>,
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
- Alan Stern <stern@rowland.harvard.edu>
-Cc: "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
- "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
- "usb-storage@lists.one-eyed-alien.net"
- <usb-storage@lists.one-eyed-alien.net>,
- "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
- Christoph Hellwig <hch@lst.de>, shuah <shuah@kernel.org>
-References: <20190613171112.GA22155@lst.de>
- <Pine.LNX.4.44L0.1906131317210.1307-100000@iolanthe.rowland.org>
- <OSBPR01MB359051D6F83101432E0F2549D8EB0@OSBPR01MB3590.jpnprd01.prod.outlook.com>
- <20190617062222.GA5069@lst.de>
- <TYAPR01MB454412603157D6DDCB512092D8F80@TYAPR01MB4544.jpnprd01.prod.outlook.com>
- <20190702134952.GA2414@localhost.localdomain>
-From: shuah <shuah@kernel.org>
-Message-ID: <eceb266f-618d-f27c-b103-da15d6001be1@kernel.org>
-Date: Tue, 2 Jul 2019 08:06:47 -0600
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.1
+       spf=pass (google.com: domain of stern+5d0bf768@rowland.harvard.edu designates 192.131.102.54 as permitted sender) smtp.mailfrom=stern+5d0bf768@rowland.harvard.edu
+Received: from iolanthe.rowland.org (iolanthe.rowland.org. [192.131.102.54])
+        by mx.google.com with SMTP id s21si9451288qte.82.2019.07.02.07.28.04
+        for <usb-storage@lists.one-eyed-alien.net>;
+        Tue, 02 Jul 2019 07:28:04 -0700 (PDT)
+Received-SPF: pass (google.com: domain of stern+5d0bf768@rowland.harvard.edu designates 192.131.102.54 as permitted sender) client-ip=192.131.102.54;
+Received: (qmail 2902 invoked by uid 2102); 2 Jul 2019 10:28:03 -0400
+Received: from localhost (sendmail-bs@127.0.0.1)
+  by localhost with SMTP; 2 Jul 2019 10:28:03 -0400
+Date: Tue, 2 Jul 2019 10:28:03 -0400 (EDT)
+From: Alan Stern <stern@rowland.harvard.edu>
+X-X-Sender: stern@iolanthe.rowland.org
+To: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>, 
+    Greg KH <greg@kroah.com>
+cc: shuah <shuah@kernel.org>, Suwan Kim <suwan.kim027@gmail.com>, 
+    "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>, 
+    "usb-storage@lists.one-eyed-alien.net" <usb-storage@lists.one-eyed-alien.net>, 
+    "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>, 
+    Christoph Hellwig <hch@lst.de>
+Subject: [usb-storage] RE: [PATCH v2] usb-storage: Add a limitation for blk_queue_max_hw_sectors()
+In-Reply-To: <TYAPR01MB454412603157D6DDCB512092D8F80@TYAPR01MB4544.jpnprd01.prod.outlook.com>
+Message-ID: <Pine.LNX.4.44L0.1907021018220.1647-100000@iolanthe.rowland.org>
 MIME-Version: 1.0
-In-Reply-To: <20190702134952.GA2414@localhost.localdomain>
-Content-Type: text/plain; charset="UTF-8"; format=flowed
-Content-Language: en-US
-X-Original-Sender: shuah@kernel.org
-X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@kernel.org header.s=default header.b=0e1+IcL+;       spf=pass
- (google.com: domain of shuah@kernel.org designates 198.145.29.99 as permitted
- sender) smtp.mailfrom=shuah@kernel.org;       dmarc=pass (p=NONE sp=NONE
- dis=NONE) header.from=kernel.org
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+X-Original-Sender: stern@rowland.harvard.edu
+X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
+ domain of stern+5d0bf768@rowland.harvard.edu designates 192.131.102.54 as
+ permitted sender) smtp.mailfrom=stern+5d0bf768@rowland.harvard.edu
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
+X-Spam-Checked-In-Group: usb-storage@lists.one-eyed-alien.net
 X-Google-Group-Id: 960895140360
 List-Post: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/post>,
  <mailto:usb-storage@lists.one-eyed-alien.net>
@@ -148,53 +123,47 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On 7/2/19 7:49 AM, Suwan Kim wrote:
-> On Tue, Jul 02, 2019 at 10:07:42AM +0000, Yoshihiro Shimoda wrote:
->> Hi Alan, shuah, Suwan,
->>
->>> From: Christoph Hellwig, Sent: Monday, June 17, 2019 3:22 PM
->>>
->>> On Mon, Jun 17, 2019 at 04:17:43AM +0000, Yoshihiro Shimoda wrote:
->>>> Thank you for the comments. So, should I wait for getting rid of the
->>>> virt_boundary_mask stuff? If I revise the commit log of this patch,
->>>> is it acceptable for v5.2-stable as a workaround? In other words,
->>>> I worry about this issue exists on v5.2-stable.
->>>
->>> It does exist on 5.2-stable and we should fix it.  I'll plan to resend
->>> my series to fix the virt_boundary issues for the other SCSI driver
->>> soon, but we'll still need to sort out usb-storage.
->>
->> I guess that getting rid of the virt_boundary_mask stuff [1] needs more time.
->> So, for v5.2-stable, would you accept my patch as a workaround?
->> JFYI, v5.2-rc7 still has this "swiotlb buffer is full" issue.
+On Tue, 2 Jul 2019, Yoshihiro Shimoda wrote:
+
+> Hi Alan, shuah, Suwan,
 > 
-> Hi, Yoshihiro,
+> > From: Christoph Hellwig, Sent: Monday, June 17, 2019 3:22 PM
+> > 
+> > On Mon, Jun 17, 2019 at 04:17:43AM +0000, Yoshihiro Shimoda wrote:
+> > > Thank you for the comments. So, should I wait for getting rid of the
+> > > virt_boundary_mask stuff? If I revise the commit log of this patch,
+> > > is it acceptable for v5.2-stable as a workaround? In other words,
+> > > I worry about this issue exists on v5.2-stable.
+> > 
+> > It does exist on 5.2-stable and we should fix it.  I'll plan to resend
+> > my series to fix the virt_boundary issues for the other SCSI driver
+> > soon, but we'll still need to sort out usb-storage.
 > 
-> I have been implementing v2 of this patch according to Alan's comment
-> (allocate small buffers and urbs instead of one big buffer) and it
-> takes some time. The implementation is almost done but I think it
-> will take a few days or more because of the test and bug fix...
+> I guess that getting rid of the virt_boundary_mask stuff [1] needs more time.
+> So, for v5.2-stable, would you accept my patch as a workaround?
+> JFYI, v5.2-rc7 still has this "swiotlb buffer is full" issue.
 > 
-> Regards
-> 
-> Suwan Kim
-> 
+> [1]
+> https://marc.info/?l=linux-kernel&m=156114524808042&w=2
 
-Hi Yoshihiro,
+I would really prefer to see a different solution.
 
-Suwan's patch series will definitely won't make it before 5.2 comes
-out. There is not enough time for that. Please send you work-around.
+The actual problem is that the usb_device and usb_interface structures
+are supposed to inherit all of their DMA properties from the bus's host
+controller.  But the existing code copies only the dma_mask and
+dma_pfn_offset fields in the embedded device structures.  If we copied
+all of the important DMA fields then this patch wouldn't be needed; the
+max_sectors value for the request queue would be set up correctly to
+begin with.
 
+So what I would like to see is a new subroutine -- perhaps in the
+driver core -- that copies the DMA fields from one struct device to
+another.  Then we could call this subroutine in usb_alloc_dev() and
+usb_set_configuration() instead of copying the information manually.
 
-Suwan,
+Greg and Christoph, does that make sense?
 
-I figured you have been working on Alan's feedback on your patch series.
-Thanks for working on the fixing the problem.
+Yoshihiro, would you like to write a patch that does this?
 
-thanks,
--- Shuah
+Alan Stern
 
--- 
-You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
-To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/eceb266f-618d-f27c-b103-da15d6001be1%40kernel.org.
