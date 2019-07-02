@@ -1,135 +1,116 @@
-Return-Path: <usb-storage+bncBCF37CNFREKRBLWX5PUAKGQESBR4WTI@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBCTPRFE7TUKRBR4F5TUAKGQEN3QSPBA@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-yw1-xc45.google.com (mail-yw1-xc45.google.com [IPv6:2607:f8b0:4864:20::c45])
-	by mail.lfdr.de (Postfix) with ESMTPS id E09C45C8C9
-	for <lists+usb-storage@lfdr.de>; Tue,  2 Jul 2019 07:29:19 +0200 (CEST)
-Received: by mail-yw1-xc45.google.com with SMTP id p18sf1610465ywe.17
-        for <lists+usb-storage@lfdr.de>; Mon, 01 Jul 2019 22:29:19 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1562045359; cv=pass;
+Received: from mail-ed1-x548.google.com (mail-ed1-x548.google.com [IPv6:2a00:1450:4864:20::548])
+	by mail.lfdr.de (Postfix) with ESMTPS id 73A1C5C9C2
+	for <lists+usb-storage@lfdr.de>; Tue,  2 Jul 2019 09:07:51 +0200 (CEST)
+Received: by mail-ed1-x548.google.com with SMTP id b12sf18822343ede.23
+        for <lists+usb-storage@lfdr.de>; Tue, 02 Jul 2019 00:07:51 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1562051271; cv=pass;
         d=google.com; s=arc-20160816;
-        b=Q7IOzt1atFx7ELb59uG29HY7iM8588+QsIcDikUb1CW3+h2sfSvT39IFI1QmnC93JV
-         RSt2e8ws9XZCGj/WUBlipUu835jxKA3dHjEVIWPBd7M6/Q9dPeB3R2vao7nq3wLL3iaM
-         gBYKaw7HaSZT1BSpbaHCbNySpmXpcfCzsBZgMeyN1zvdDzoz8x8ZuFCDUYxBO2S7WtwO
-         jls0neafJYCI1r6zG/dcmhB/E7ArLlbH/KvCuGU67mKp3R4ZmYr7N2TZEf+Bm82HOjFB
-         PY3/ftxaAqDqSwfCjmafIqMIPdBRjS5ZbLnkSG8JB2WTuDwplP0xGgQGx5hm0h0s9cmD
-         Tjiw==
+        b=kw/esABXUNL8FmHXgKzZzGDb+iwHEhQRfRRL4tKr/TNqNh0dLp81oiLvh64QL6F0pc
+         TMtjKLNLvcUoLF6L1ZkmWMDt+nWFFr3n5GSxzXlhlrC6VP01jLRkuNOSYl0Wg6FHQ1qF
+         QR3rFiR5h1UbaDEj40ajYbnUEAg/6fDJ4VfCqZlQzP5mqM7puxW8aDmZs2I6YYhkioNI
+         mHDY8w28vPPvUamEOryq4M/4AfhpKJ1tEsgSMWIrQukY0h+px9NZKKVcOYUTtzplJhj/
+         vsnTZrDmTxisILBMd5VHthscbsTo18ZekXKfSqZJkn4zwNBfvTXaZCEtMRZxXpTjcrih
+         LhGA==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:content-language:in-reply-to
-         :mime-version:user-agent:date:message-id:from:references:cc:to
-         :subject:sender:dkim-signature;
-        bh=etHvqTfSu7mNfhye2ABhse53gKAwwbME6IJjJQnWht0=;
-        b=n4HVNCwCqVdVCrrpLLSTh6N6A/DpdCoa575PCgjIrfMvUuh/SrnyatD16md8ulXyxy
-         Nm8AWIuhqUHIcFK//BHpVgFZJZ6RMQagEYXCy1NdUjBI1v7B085c2dzzxTAuYPesyANe
-         CWj6ZUNY0nB7PNZgRbUG6SGE23+opW4qzzM9u5FsVlEHsMGJ9BS0i4lIoLwcM6gYA1CF
-         dfIMjRD7okgmDfAglo39KjhbNqL2YpC4Yt0OjbWRYrMPTjMDBFrUSKufee2yrnvtKuzz
-         2c+5Vr65lh+BjWAdHE4Bw8vWclgxObHF95kNHw7wdMDk49xDBbBsF1aGGSZG5GDhYxwz
-         Z4Vw==
+         :list-id:mailing-list:precedence:content-transfer-encoding
+         :mime-version:references:in-reply-to:date:cc:to:from:subject
+         :message-id:sender:dkim-signature;
+        bh=4ICGS0Rw9eJFxRAGonqS1WldNY6cITbcWkf2JhpnkeE=;
+        b=Em0iAIR2sbFR+sA2iXuwGp9eW0t3Hy0JnRCoI28GRf+bWUgUSCYC2C/113Nl/9sjWZ
+         Z2ucpBWfJYC+0G5wj/iMgQEXq5VBO5TEh5XcQAE1/xKmvIJJx0IiEGos4wpsxCZZLpV2
+         H2Rx5PbhFC8mpMTT2saWmL4bWe+l3Uz01vaXXP4HFKwO5FBNqZAuq8sFvqlGOMzEM2Bg
+         y/0oE4itY6RgnNIqlp+2ZzpcX/hCouqsILKxjQCh5t4UQv4JSnK5yV1OsEUaJZxi8K+i
+         Y9NkIWfUe7ZrBbsbOOlCwn3xfaFLYH0WSJOtKiGv/CG2Mm35F+ajbulZOO7cBXEb5vaX
+         N0/g==
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@nvidia.com header.s=n1 header.b=BSjsVnTY;
-       spf=pass (google.com: domain of jckuo@nvidia.com designates 216.228.121.65 as permitted sender) smtp.mailfrom=jckuo@nvidia.com;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=nvidia.com
+       spf=pass (google.com: domain of oneukum@suse.com designates 195.135.220.15 as permitted sender) smtp.mailfrom=oneukum@suse.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
-        h=sender:subject:to:cc:references:from:message-id:date:user-agent
-         :mime-version:in-reply-to:content-language:x-original-sender
+        h=sender:message-id:subject:from:to:cc:date:in-reply-to:references
+         :mime-version:content-transfer-encoding:x-original-sender
          :x-original-authentication-results:precedence:mailing-list:list-id
          :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
-        bh=etHvqTfSu7mNfhye2ABhse53gKAwwbME6IJjJQnWht0=;
-        b=YrpJo9mi5RivDLYR/hlqwrmYDcXMKZ2mlNkbkR64kxTm5UjWnUzkioq09mqgoka0HJ
-         KObcLLCZ5c24TbOnITnrj3RWBWHSvd++Bs2toupmPcE6rewLeEFwjxNxxCbyNI78l6//
-         jIqnaE+QJ/xLPb67OWfEQ+F+NZEVrd9VxhDpE=
+        bh=4ICGS0Rw9eJFxRAGonqS1WldNY6cITbcWkf2JhpnkeE=;
+        b=P0UGJWQd1Mevc16KGQyQsGoqIIr1hT0dQmV30DyXNyrHV5X/BZDyTw1DKOIoqMwW5Y
+         6dPW1txtaUs4YwrMMQjQpvOda34tQBJzDFeh3A2uP+WbYqf+16jcPkd1BctT8MaTouuh
+         f1iQc0smDu4UvhCX3X85rhqXdUKBLlw4GidWY=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
-        h=sender:x-gm-message-state:subject:to:cc:references:from:message-id
-         :date:user-agent:mime-version:in-reply-to:content-language
+        h=sender:x-gm-message-state:message-id:subject:from:to:cc:date
+         :in-reply-to:references:mime-version:content-transfer-encoding
          :x-original-sender:x-original-authentication-results:precedence
          :mailing-list:list-id:x-spam-checked-in-group:list-post:list-help
          :list-archive:list-subscribe:list-unsubscribe;
-        bh=etHvqTfSu7mNfhye2ABhse53gKAwwbME6IJjJQnWht0=;
-        b=M+8X5T4obxcWk1bGMg8XNXtmida2NAqjsACyrq5d+HFs3ETVD15bXAn0f96uTPuW5H
-         h+SyDa6xsJZ7s8xQgVf+H1vkxTTQ8IygV3IhgvR8cF2p8dGiLAa6DQqWRqPbP2kkIB76
-         wU7S9HUxNqyV3gEHef39+JYy8xK2SCXpj7Nf9Ludpoi3LG/8M6S5EXbKkaAXSpKI7Pep
-         LN5bi8pJgX5lGz42dTp51mtXtIe0fPA3ozEQjnt8pgBu+Y6dWcOxK8bJ0yOf66pywh56
-         CQVUsv2UJb7YU0DS9015JnNgcMli6Wodw5VSQzgt3nWcmVsOnhscWpZ95Dr6Rh5M3CeF
-         cFTA==
+        bh=4ICGS0Rw9eJFxRAGonqS1WldNY6cITbcWkf2JhpnkeE=;
+        b=E4qNBFc0BikXzt/iKC2nVwXLO+/XgZLAZu0UtPwaAhd/XQPk+nQUzYIf+OHRBzz5Al
+         PI8ZxdUNUXrZEp41fDIlK44+Knz0cken1wdbcAzc5IrxYnXbgt1jeYEYVgIAoCBHAFAD
+         V17CxxfR/WZX1/tJJN8XOz/9GCMNHzo7FFMTXKhhVt1+xrGmAgM2OEZgZQEm+Ovv1fJJ
+         RUBS7SovPu459UO9pm7TfXJyVkpC4piVvMej5QdspEEoqF+llmHbUxBMMWS5B9vdxwRw
+         lf5LQ4jze41MUqeCYIVShDZughZfmuLGt2QaUvgA4nZfzfXTEt/U5nwFbuvlgNvDCoXj
+         Cppw==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: APjAAAWVuy/mARGupdwc01da6KpJQOg2U+uEfvwplEyDWOEv9V+/0FvS
-	ySEfAy6SmJJginKuEdPDVcGsdA==
-X-Google-Smtp-Source: APXvYqyDxVs+dxB2m2bKlkjoEb1ibkD72+lUjwuYKBLuCVkA2ZPvH4OHDfw+QAC3twzKtGJGWhTqPA==
-X-Received: by 2002:a81:9a8a:: with SMTP id r132mr17208468ywg.126.1562045358914;
-        Mon, 01 Jul 2019 22:29:18 -0700 (PDT)
+X-Gm-Message-State: APjAAAWtKauMlMAXq1//KW4/gxNSdBv28h0993qqRCDuIZMqDdfEUhpV
+	+9p3FmxBuhSDU9dBCIQH4ncRKg==
+X-Google-Smtp-Source: APXvYqxR2+Hpky+iM42Tp/Ha+3bVLGZLQo2SRsfIPZ3xoxD4elh20sH8pUvix1oI52jPGcwq/21r+A==
+X-Received: by 2002:a17:906:6986:: with SMTP id i6mr12122157ejr.89.1562051271166;
+        Tue, 02 Jul 2019 00:07:51 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a25:9d12:: with SMTP id i18ls556223ybp.8.gmail; Mon, 01 Jul
- 2019 22:29:18 -0700 (PDT)
-X-Received: by 2002:a25:abb3:: with SMTP id v48mr5117185ybi.506.1562045358586;
-        Mon, 01 Jul 2019 22:29:18 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1562045358; cv=none;
+Received: by 2002:a05:6402:2cf:: with SMTP id b15ls3858198edx.3.gmail; Tue, 02
+ Jul 2019 00:07:50 -0700 (PDT)
+X-Received: by 2002:a05:6402:397:: with SMTP id o23mr34528779edv.68.1562051270684;
+        Tue, 02 Jul 2019 00:07:50 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1562051270; cv=none;
         d=google.com; s=arc-20160816;
-        b=SC2c0LHfGQclkfTchW6PScTtl/35L3v5k83AMcba84QWeaTplWxkZRPP7SkoIOKVWC
-         b3vlm8W2CyVDrqOpNjOxCzhqrzKnc4F+zrhE8pyu6QiDrFTiDcjStx3UTFGZ9EytWbLd
-         6RK933m1/lvCO5gFmV2bwTa8AaUdXVlSIE7tRbzSQ1a92lRkJWHxFzv3PasgvznVQtHf
-         SVs6l3uYEKVpEkMqlSIK70yljnQFJ6RS1cA6qJjxEgc+OZF3OqbIMxab7gFGYMBL5Tf8
-         sc9GO7NXbTe/589jFKMp3YGbFIou7u0+O7puggtyNctb114FaC4j5XWByNlRyJzextvE
-         0b5A==
+        b=W8VQm/rRaBjlzHQ9alfdc4mYYdFTG4DThy5N4B1TKej0Lqz5n+eU/phavggkkNA3WP
+         Zfkc2xgMueh+T7DrhQlMoW/4hV/L6hsfWmTR9ZNj9czrqcEateg7xpxsc+/oR3NynIDL
+         4W76hXmppW5iyAaqUfbbNFrXcJVUASm8xThuJiTzNr+9KddL+NkRRWn5BUktlHXD8JXh
+         dsDyeTGsbeAQyfSZrSYMb6JR/4f/zgy+hs1+pm2+KMBf+ourBKlg6h+euw2IvFu8c6Ix
+         0PD7dySLLYHAxPLnHS/UuND/hWmK+kYW/LCOE2ZPW8/0q77aSEhHxWvl4L0gYvQT7MuR
+         BELw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=dkim-signature:content-transfer-encoding:content-language
-         :in-reply-to:mime-version:user-agent:date:message-id:from:references
-         :cc:to:subject;
-        bh=cGO5oVOl6Tcoyjq+IeJlWiq2/aXzxMPj3o/BESBGJtk=;
-        b=b8KVNFjX+LSM0qPcToPsXe/v917lMkcNhV2/vF12dQvciJgcnybtV8AOnTSMtYotVa
-         +wsx//zPouVXdE+JyaHaDWl/weazy27K9Ovikt/QORdLA4UXllCQ3NZcgrbuVTSw5aYZ
-         M29feiIy58uQ2z2Kn2ME0jYGfcdo58G56gxXci3fccng+rSNNjBWLpWj6QbwpNYAzU3B
-         m16Do8W5zn0gUIEV57n6IXlFujmXsnbB6RzHQVRRsnBok0IsqXXMxU1OpoNMAKicCYrZ
-         wT9+GTPsrluqOpf+HG+NaNke8sKWX6qsQg1fXFqKX3lcJm7+1WPcFgHBpuI8D0JbFYQt
-         HJxw==
+        h=content-transfer-encoding:mime-version:references:in-reply-to:date
+         :cc:to:from:subject:message-id;
+        bh=DwMQctunmEqHk8Hhx7ild5wbVoiFQ+1AsgQpd9zUKPI=;
+        b=MhJSguEBwEjkYA1D5cwJ0uoih5FxzKQ2ST6Q3BhlCcBwamDrqoOGuxtUkhYp8pkAtB
+         h3MGZfIUYa329Ewd9okBIT5dNxG2p9FVetHWmft115xp+EdZPUSMsKeCzhYdQlUa05hS
+         WMhLg8/jqL8MHjhcrWiWoGS8heerx5Lmh7f4Y9btMvdAwbjCY+3tEGFeNkjqyDMeJsM8
+         3gGhY47J7pkTptvbbrjbekN0HtauiUhFoxD5PEJr2RHo3+JgnXhiHXQfB1gSRHwMiLO3
+         A6wypG1gOlJaAY2KmYq9vxaf6PNviJ6t0PyqWu1PYvV2GrEFBhxMWqmhFgwZD+ve+eY6
+         j74A==
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@nvidia.com header.s=n1 header.b=BSjsVnTY;
-       spf=pass (google.com: domain of jckuo@nvidia.com designates 216.228.121.65 as permitted sender) smtp.mailfrom=jckuo@nvidia.com;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=nvidia.com
-Received: from hqemgate16.nvidia.com (hqemgate16.nvidia.com. [216.228.121.65])
-        by mx.google.com with ESMTPS id a8si4801817ywa.181.2019.07.01.22.29.18
+       spf=pass (google.com: domain of oneukum@suse.com designates 195.135.220.15 as permitted sender) smtp.mailfrom=oneukum@suse.com
+Received: from mx1.suse.de (mx2.suse.de. [195.135.220.15])
+        by mx.google.com with ESMTPS id z43si11389401edb.102.2019.07.02.00.07.50
         for <usb-storage@lists.one-eyed-alien.net>
         (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
-        Mon, 01 Jul 2019 22:29:18 -0700 (PDT)
-Received-SPF: pass (google.com: domain of jckuo@nvidia.com designates 216.228.121.65 as permitted sender) client-ip=216.228.121.65;
-Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by hqemgate16.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
-	id <B5d1aebac0000>; Mon, 01 Jul 2019 22:29:16 -0700
-Received: from hqmail.nvidia.com ([172.20.161.6])
-  by hqpgpgate101.nvidia.com (PGP Universal service);
-  Mon, 01 Jul 2019 22:29:17 -0700
-X-PGP-Universal: processed;
-	by hqpgpgate101.nvidia.com on Mon, 01 Jul 2019 22:29:17 -0700
-Received: from [10.19.108.127] (172.20.13.39) by HQMAIL107.nvidia.com
- (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Tue, 2 Jul
- 2019 05:29:16 +0000
+        Tue, 02 Jul 2019 00:07:50 -0700 (PDT)
+Received-SPF: pass (google.com: domain of oneukum@suse.com designates 195.135.220.15 as permitted sender) client-ip=195.135.220.15;
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+	by mx1.suse.de (Postfix) with ESMTP id B8490AFB1;
+	Tue,  2 Jul 2019 07:07:49 +0000 (UTC)
+Message-ID: <1562050423.5819.1.camel@suse.com>
 Subject: [usb-storage] Re: [PATCH] usb: storage: skip only when uas driver is loaded
-To: Greg KH <gregkh@linuxfoundation.org>
-CC: <linux-usb@vger.kernel.org>, <stern@rowland.harvard.edu>,
-	<usb-storage@lists.one-eyed-alien.net>, <oneukum@suse.com>
+From: Oliver Neukum <oneukum@suse.com>
+To: JC Kuo <jckuo@nvidia.com>, Greg KH <gregkh@linuxfoundation.org>
+Cc: usb-storage@lists.one-eyed-alien.net, stern@rowland.harvard.edu, 
+	linux-usb@vger.kernel.org
+Date: Tue, 02 Jul 2019 08:53:43 +0200
+In-Reply-To: <8e8e8703-8620-b625-4917-bbb8d999caa4@nvidia.com>
 References: <20190701084848.32502-1-jckuo@nvidia.com>
- <20190701085248.GA28681@kroah.com>
- <8e8e8703-8620-b625-4917-bbb8d999caa4@nvidia.com>
- <20190702044249.GA694@kroah.com>
-From: JC Kuo <jckuo@nvidia.com>
-Message-ID: <f6ed2505-5da9-c217-a052-a19d197c5c8e@nvidia.com>
-Date: Tue, 2 Jul 2019 13:29:14 +0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.1
-MIME-Version: 1.0
-In-Reply-To: <20190702044249.GA694@kroah.com>
-X-Originating-IP: [172.20.13.39]
-X-ClientProxiedBy: HQMAIL106.nvidia.com (172.18.146.12) To
- HQMAIL107.nvidia.com (172.20.187.13)
+	 <20190701085248.GA28681@kroah.com>
+	 <8e8e8703-8620-b625-4917-bbb8d999caa4@nvidia.com>
 Content-Type: text/plain; charset="UTF-8"
-Content-Language: en-US
-X-Original-Sender: jckuo@nvidia.com
-X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@nvidia.com header.s=n1 header.b=BSjsVnTY;       spf=pass
- (google.com: domain of jckuo@nvidia.com designates 216.228.121.65 as
- permitted sender) smtp.mailfrom=jckuo@nvidia.com;       dmarc=pass (p=NONE
- sp=NONE dis=NONE) header.from=nvidia.com
+X-Mailer: Evolution 3.26.6
+Mime-Version: 1.0
+Content-Transfer-Encoding: quoted-printable
+X-Original-Sender: oneukum@suse.com
+X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
+ domain of oneukum@suse.com designates 195.135.220.15 as permitted sender) smtp.mailfrom=oneukum@suse.com
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -145,94 +126,33 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On 7/2/19 12:42 PM, Greg KH wrote:
-> On Tue, Jul 02, 2019 at 10:36:59AM +0800, JC Kuo wrote:
->> On 7/1/19 4:52 PM, Greg KH wrote:
->>> On Mon, Jul 01, 2019 at 04:48:48PM +0800, JC Kuo wrote:
->>>> When usb-storage driver detects a UAS capable device, it ignores the
->>>> device if CONFIG_USB_UAS is enabled. usb-storage driver assumes uas
->>>> driver certainly will be loaded. However, it's possible that uas
->>>> driver will not be loaded, for example, uas kernel module is not
->>>> installed properly or it is in modprobe blacklist.
->>>>
->>>> In case of uas driver not being loaded, the UAS capable device will
->>>> not fallback to work at Bulk-only-transfer mode. The device just
->>>> disappears without any notification to user/userspace.
->>>>
->>>> This commit changes usb-storage driver to skip UAS capable device
->>>> only when uas driver is already loaded to make sure the device will
->>>> at least work with Bulk protocol.
->>>
->>> But what happens if the driver is loaded afterward, because 'modprobe'
->>> was called by the driver core (or it should have been, because this is a
->>> device that supports that protocol)?
->> If uas driver is loaded after usb-storage driver probed the device,
->> the device will still work with Bulk-only protocol, though it can't
->> make uses of streams.
-> 
-> Which is not a good thing, and is what the original code was there to
-> prevent happening.
-> 
->>> I think you just broke working systems :(
->>>
->>> Why wouldn't the UAS driver get loaded automatically if it is configured
->>> in the system as it is today?
->> An user might want to completely disable uas for some reason so he/she
->> adds "blacklist uas" to modprobe conf file. I think in case of this,
->> usb-storage driver has to enable this device with the legacy Bulk-only
->> protocol instead of ignoring the device.
-> 
-> Why would they want to do that?  Where are people doing this in ways
-> that breaks their systems?
+Am Dienstag, den 02.07.2019, 10:36 +0800 schrieb JC Kuo:
 
-I think that could be because user sees issues with UAS but he/she is not
-aware of the quirks parameter that usb-storage module offers to disable UAS
-for any particular device.
+> An user might want to completely disable uas for some reason so he/she ad=
+ds "blacklist uas" to modprobe conf file. I think in case of this, usb-stor=
+age driver has to enable this device with the legacy Bulk-only protocol ins=
+tead of ignoring the device.
+>=20
+> As an alternative to this patch, I thought I could get uas driver loaded =
+before usb-storage driver so I tried moving the functions in drivers/usb/st=
+orage/uas-detect.h into uas.c and letting usb-storage links uas_use_uas_dri=
+ver() of uas.ko. However, that didn't work because uas driver actually depe=
+nds on usb-storage driver for usb_stor_adjust_quirks(). There will be a rec=
+ursive dependency.
+>=20
+> Please let me know if there is better approach to avoid the issue.
 
-IMHO, blacklisting uas driver should not break the system because the UAS
-devices are supposed to be working fine with legacy Bulk-only protocol if
-system software doesn't have UAS support.
+Use US_FL_IGNORE_UAS. You can trigger this with a module parameter.
+We cannot just use another driver because the user block a module
+load.
 
-> 
->> As an alternative to this patch, I thought I could get uas driver
->> loaded before usb-storage driver so I tried moving the functions in
->> drivers/usb/storage/uas-detect.h into uas.c and letting usb-storage
->> links uas_use_uas_driver() of uas.ko. However, that didn't work
->> because uas driver actually depends on usb-storage driver for
->> usb_stor_adjust_quirks(). There will be a recursive dependency.
->>
->> Please let me know if there is better approach to avoid the issue.
-> 
-> If users blacklist the uas driver, that's their choice and they should
-> rebuild their kernel :)
-> 
-> Or better yet, talk to us to get the issue fixed for why they would want
-> to blacklist such a driver.
+	Regards
+		Oliver
 
-Agree. :)
-
-> 
-> As it is, this patch is not acceptable.
-
-Understood. Thanks for the comments. I will drop this patch.
-
-Thanks,
-JC
-
-> 
-> thanks,
-> 
-> greg k-h
-> 
-
------------------------------------------------------------------------------------
-This email message is for the sole use of the intended recipient(s) and may contain
-confidential information.  Any unauthorized review, use, disclosure or distribution
-is prohibited.  If you are not the intended recipient, please contact the sender by
-reply email and destroy all copies of the original message.
------------------------------------------------------------------------------------
-
--- 
-You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
-To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/f6ed2505-5da9-c217-a052-a19d197c5c8e%40nvidia.com.
+--=20
+You received this message because you are subscribed to the Google Groups "=
+USB Mass Storage on Linux" group.
+To unsubscribe from this group and stop receiving emails from it, send an e=
+mail to usb-storage+unsubscribe@lists.one-eyed-alien.net.
+To view this discussion on the web visit https://groups.google.com/a/lists.=
+one-eyed-alien.net/d/msgid/usb-storage/1562050423.5819.1.camel%40suse.com.
