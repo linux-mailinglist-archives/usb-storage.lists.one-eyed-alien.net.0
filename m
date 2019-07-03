@@ -1,126 +1,158 @@
-Return-Path: <usb-storage+bncBCWLFYFHWUPBBB6D57UAKGQENHY2BSQ@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBD7MTN773EGRBKVZ6DUAKGQEATAZUQY@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-pf1-x446.google.com (mail-pf1-x446.google.com [IPv6:2607:f8b0:4864:20::446])
-	by mail.lfdr.de (Postfix) with ESMTPS id 721905D840
-	for <lists+usb-storage@lfdr.de>; Wed,  3 Jul 2019 00:58:17 +0200 (CEST)
-Received: by mail-pf1-x446.google.com with SMTP id z1sf187302pfb.7
-        for <lists+usb-storage@lfdr.de>; Tue, 02 Jul 2019 15:58:17 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1562108295; cv=pass;
+Received: from mail-ot1-x345.google.com (mail-ot1-x345.google.com [IPv6:2607:f8b0:4864:20::345])
+	by mail.lfdr.de (Postfix) with ESMTPS id E1B295DCC8
+	for <lists+usb-storage@lfdr.de>; Wed,  3 Jul 2019 05:10:35 +0200 (CEST)
+Received: by mail-ot1-x345.google.com with SMTP id p7sf543068otk.22
+        for <lists+usb-storage@lfdr.de>; Tue, 02 Jul 2019 20:10:35 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1562123434; cv=pass;
         d=google.com; s=arc-20160816;
-        b=ohQRqwpWZyGgp0NbSzBD7s/GWPHgyUR6HAVwWfIYyrTW1N0fOFaJ+umE97wIceO7Gv
-         8Z1YDb56mbK3FyAg1UOVq44bysExSWUD9A/DGwkI+AvbgseK/6QYuxwHQ8GZP7kSRaki
-         flTS+NLQGfo4qMlab89AKPXC7BxOC+rZw6rNBLtWzd1du5+IXxHDAviU6Ah1m+2bBKSn
-         80WR2UkwoKMaYFJ7n7wIeTk6ZMRhJKFX/GEMNo6htcIk2nSIlYjxwujUxFyk7Fr86EaD
-         eIjI5ChyTd7xLGmWCUhllPIMijyfzHON3jKCodDWO4Zc4+W1ZDLO/fx6phNsUxe97Ekb
-         TEQg==
+        b=aDyhG7AcCWxejaNYoaqu7+xNC9gR/VjTS/z8uOLIAHydAFhcZN3r1CrqXHF+NrnUVo
+         9IAV0I+t/HjqxAcVH0MFz1hVtvmCCAKeFE8CqZyI0OROIY5FfmyaBTVZHlM/P4i+XECL
+         Nt85NOzyBX+JAoWfUKORuJJZX1/yoMka6tFDeHkxAgvU+k/iJSB38iDt9bbb+c3mNW8x
+         a1HSbE/zLfapUlPy7ypkJmGNgRcDSO5KcEvVdYjZ7lZAkI/AY1QHd3DT1AOYjcC/0EWY
+         TtohTJG2oRERzf4cFcoc5y3ZVgx1wsktn8Ai2wV8sLy6qpujgrZ7NoSCCqY49LMMu77t
+         OPsQ==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:user-agent:in-reply-to
-         :content-disposition:mime-version:references:message-id:subject:cc
-         :to:from:date:sender:dkim-signature;
-        bh=d/1YDtWahPX8bzHRiUyl9XZb2Ci0tJkfJIsLWuoVK4s=;
-        b=dh7m+BgEf9v9Z53ehpejgyjW5lFXxCxf7VrRjAXJgXe50mRaovqMWPCyE0xpfdUZq/
-         eU4wqg9nDSry05bh+vp4uNG4xi5Ebwn+6oDiHj9OcHS7vwRDMRiC2GKUgEOAskR4XbEV
-         W6eorE4SlEVFC/lRxBUOrL+FWVkvq+SH8NyZ+JbfFJiC6koDx7T7o6izuwjuOl5F55p6
-         jZMLaA13RYIT09hDMG5MFzXXfYUBwd4FcK0g8CS43qQT6InPHYZa0JGNooK8KJEIfKuS
-         6b0cZ3Td2Q1Bun5pSU3IP3UTjAZynfAYxUkZNDsI6sJXid9nvQCW5FWz5DPAhrgw5Hdr
-         7UKQ==
+         :list-id:mailing-list:precedence:mime-version:content-language
+         :accept-language:in-reply-to:references:message-id:date:thread-index
+         :thread-topic:subject:cc:to:from:sender:dkim-signature;
+        bh=zbKH2hBgQPr9R6ebyJPYJ68DDYuOb3W1M9kG1HM+f+Q=;
+        b=mUIJfaTaFWIo6qa03ILxuOEPNZmUYfEVMCU48wCyA5/4Q8y8qs6ZGiQ9Cb43I3oh6x
+         BfWDLQ87fKH1h8pnbB241Uw4F9pZ8pI3cxWxCWYs5oWKjpV/n/DC1Me2QPzxHkE5wvUz
+         9Wchcqd+CAYrVbmi3UvNkFvG175DiDFrygfo/8QR9O/Lfr/2jraWB9DpyaH9wndCUflH
+         vtJ9gPhQPCrBJeNB42Jf4hVPpozhYTR1paUbVI9B8jBZqekZBLrHevo3Mj5/OpYaMWjt
+         VaHEfO17Lsx/Fq5fyYgFURQZi6Qh+fLNBr+a9nGMI3rlq+sOYuAjWURZ5IFgIkrIFn1z
+         7aLQ==
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@gmail.com header.s=20161025 header.b=BpurX42x;
-       spf=pass (google.com: domain of marcos.souza.org@gmail.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=marcos.souza.org@gmail.com;
-       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+       dkim=pass header.i=@renesasgroup.onmicrosoft.com header.s=selector2-renesasgroup-onmicrosoft-com header.b=ktUAR1+5;
+       spf=pass (google.com: domain of yoshihiro.shimoda.uh@renesas.com designates 40.107.141.93 as permitted sender) smtp.mailfrom=yoshihiro.shimoda.uh@renesas.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
-        h=sender:date:from:to:cc:subject:message-id:references:mime-version
-         :content-disposition:in-reply-to:user-agent:x-original-sender
-         :x-original-authentication-results:precedence:mailing-list:list-id
-         :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
-        bh=d/1YDtWahPX8bzHRiUyl9XZb2Ci0tJkfJIsLWuoVK4s=;
-        b=ERKHXA5Hffr4YENTkpKDdSQubzeqf76Ut2zXfkuD4zRr/Q2yFGRGfOPeFB9PnnlfcV
-         0DKaSBsmyvICTgN/Kg7a2TATT+2Ds7ePORAfrkdTc96L7cAlir9FrhEwBLUjZa21dXQz
-         kYV7rLQlYsnITF9yGdUE8ICu6O5wXptgiGyII=
+        h=sender:from:to:cc:subject:thread-topic:thread-index:date:message-id
+         :references:in-reply-to:accept-language:content-language
+         :mime-version:x-original-sender:x-original-authentication-results
+         :precedence:mailing-list:list-id:list-post:list-help:list-archive
+         :list-subscribe:list-unsubscribe;
+        bh=zbKH2hBgQPr9R6ebyJPYJ68DDYuOb3W1M9kG1HM+f+Q=;
+        b=YqLPAYsx1ANFKKQ47UYLFOALYBzLua9uyCww92LlLLu4ZSDnQQbLT0zXjxwEFdkczA
+         3Z20pENFu0z8UwjAZs8TzPEvLFNHcjvHKhpW50/m5k3MV5PP28y4jUlPt6a4gLVikxm0
+         hCQyYi7/atyN4MIvhZUFT9qvPr8+WA6dOf4Go=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
-        h=sender:x-gm-message-state:date:from:to:cc:subject:message-id
-         :references:mime-version:content-disposition:in-reply-to:user-agent
-         :x-original-sender:x-original-authentication-results:precedence
-         :mailing-list:list-id:x-spam-checked-in-group:list-post:list-help
-         :list-archive:list-subscribe:list-unsubscribe;
-        bh=d/1YDtWahPX8bzHRiUyl9XZb2Ci0tJkfJIsLWuoVK4s=;
-        b=FyA34Z4fFkczmrEjAKkHQoNSGcmUBiBEqecwSAXMtfQ+aEs5jPvORQlEV1XZ9Wxqpy
-         vVYXzfJiI09QrJTHvJCWrEAbAk3UmHCW2O39AEKHfcf/OTNNmmu/+7LoGIzpYn+PM+zU
-         aSJhiryvsO1uLoFp5lFaSH9aDeOfwXwB+rZeoTu5UJ4bm6U6qU7Y3OTMToR9C3PX5itU
-         GitMwYc/gj5ZfWP7xnOSkxrviiyiVJDN5tqC4ZVbczzxq7FH+92lDT3D5hYQ8XBx8Bnm
-         1M3/UhggqRd/Zz64g2UDglwausq/ftqNlbIa+InWkzLYvQO1JlCad3b5bgPh4cPknNq3
-         zvlA==
+        h=sender:x-gm-message-state:from:to:cc:subject:thread-topic
+         :thread-index:date:message-id:references:in-reply-to:accept-language
+         :content-language:mime-version:x-original-sender
+         :x-original-authentication-results:precedence:mailing-list:list-id
+         :x-spam-checked-in-group:list-post:list-help:list-archive
+         :list-subscribe:list-unsubscribe;
+        bh=zbKH2hBgQPr9R6ebyJPYJ68DDYuOb3W1M9kG1HM+f+Q=;
+        b=Da/EMKEsRFSN3wMqiVG6aNd0V5dhPa4TTC/Mf1HJcUe8ytPLtxZLg5w2OwG6/u3NXK
+         Ew/Lj1TTd9vjJ8bFZAaua4/CMeBj5zBNVWIjSUqm1Qu3qm/otExFt4kxLQtqE8KfahzD
+         ljlr/IST75C1/la3hZxo8c0hR6E2NC3jeeoboB2jYf5O63qIQShV0dQNs0IIVxUTi3Dw
+         9q2UrxxQaN3uP/1Ts0xY+Vg0uaImLlKOvRXjUKAfdp0A6b86gJjCdBp1juIYWAQDi0I4
+         cQU3x1Ya3QrlZt5CB8JArCMM+NJL3iPFV7Lio1PVcFN2DLgtE3aZfpgEQ8d8GIN8cNmw
+         DWAA==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: APjAAAWrElpvgZJjwHXBTOcjlr25r1X+UuMsin95uxDMf7WP6dpIqqff
-	AbH9lrRMX62U9iq/QftYFMk=
-X-Google-Smtp-Source: APXvYqxdsxYW/WDfo6AzOa9B2psaauj11+hWML5Ufdxxc5pobqd6HWyWiAygi30UCwDwGNbEW9F6Yg==
-X-Received: by 2002:a17:90a:cf0d:: with SMTP id h13mr8326190pju.63.1562108295715;
-        Tue, 02 Jul 2019 15:58:15 -0700 (PDT)
+X-Gm-Message-State: APjAAAXs6fdHbyJMpUUKjkbDjld3PlLiUUerbMZ+ovU0ekHI18K4SYHO
+	5NEGlm99mN4AjUXR6+wTNVZ74A==
+X-Google-Smtp-Source: APXvYqw2X4mRH+g2lRqFaZPkH2po432XushHVVGhOZ44i3EVWaM7POBEN+1vmBbgmBE1GLMQzmMYCg==
+X-Received: by 2002:a9d:7847:: with SMTP id c7mr6478638otm.290.1562123434543;
+        Tue, 02 Jul 2019 20:10:34 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a17:902:f081:: with SMTP id go1ls51762plb.3.gmail; Tue, 02
- Jul 2019 15:58:15 -0700 (PDT)
-X-Received: by 2002:a17:902:4222:: with SMTP id g31mr39430974pld.41.1562108295086;
-        Tue, 02 Jul 2019 15:58:15 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1562108295; cv=none;
+Received: by 2002:a9d:3ea:: with SMTP id f97ls136615otf.5.gmail; Tue, 02 Jul
+ 2019 20:10:34 -0700 (PDT)
+X-Received: by 2002:a9d:6f0e:: with SMTP id n14mr25163048otq.38.1562123434200;
+        Tue, 02 Jul 2019 20:10:34 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1562123434; cv=none;
         d=google.com; s=arc-20160816;
-        b=Egk6txqxkqPYZwjX9+iT1ziXi0wtoL7CQdrfM3DU9PqZQ1ErqYdYUiEQXdU/qrJseX
-         aYISmjsis6hEERCduYmIyCx3egXmmGE+jSb3GxSrFaRRsjXorxXAwG8EJTTRhss51nM7
-         iMou591PBHJXKYpnWft4ezsgiqUqpyS+14lVHft6JfYdc0qpkkL1g7ohQnRA8bIys+l5
-         1mjRkdoa/goBOm8uLJpIBafkqmYYzhwwdHbbgbMaY817mEVXQ2+0UcHaLX3fMpiBPb1r
-         F2URs++LdLPzhzHvbzzicDVcJGr4jjty8Hc5EAleAdR8SVu/JiMyc9wq5tZ/BWSzb8vB
-         vH1g==
+        b=j4zBh0ZDvUGWqrxgkIXRyOzzi6k1CDZwMrOYtJ6vyG4f3nR/rooYRba7AwGSncvFkk
+         FuSkSYtynVr/c8EKovqcGrFrRpnkaRHwKIlI2LzXILawU+6jI1kDdlU951dvzPc6wWFh
+         az5g55MV41n5NsrvszEoYssVTZFRBl3mxknAxmfkbnmWrj6H1dWw+1nuYeZvshqqMEsb
+         uLeYwNtKHauisrJbNv4lTfJdge6JuY61x0hMxjODNV25cIWsqRxY6T6x1/I85KlqSqXD
+         Ow3+dUniJIZUsbQ1fJ3kQii6mSs8QkN/SNXdfJR+NbDqH/kAVgKDrsIn/rw1djOjuyRD
+         fF0Q==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=user-agent:in-reply-to:content-disposition:mime-version:references
-         :message-id:subject:cc:to:from:date:dkim-signature;
-        bh=EEyrpPr6crLLek2K+2wB7hfBX7/xhxYts0mMWfA15n0=;
-        b=hdM7liCRO+CTTyvRz3JSlrVm6mP483bwvj2gAOMmCViU1LbPJCyK40y4eHvIwQXhXr
-         Ws04GgznaIFsMetggBvKUVlH14tokzKDN22piympD6++B1x25/fgiqRFZYzA0XSyayIY
-         2+2iAE93GbKKFBhG1+73gH6yECLKnqPNmOEGuY/wop+9hhZ8a19SbYSLWsKt5gPX7jHz
-         zp/0h7WsXss4C1/urEbuWeOx/dItN5kOBD7YKTG+QMoVasE5tAkVaA2HQhDZMDmb/IJO
-         yaEyCceMs1pWCr0YmCPcCrsEBkKY6OmFYkUpaCKV51i3HMiWd/MrMzEP9EeAQEakZD+f
-         a3ig==
+        h=mime-version:content-transfer-encoding:content-language
+         :accept-language:in-reply-to:references:message-id:date:thread-index
+         :thread-topic:subject:cc:to:from:dkim-signature;
+        bh=ZYqLO6+U5LWl+wYzfaeZohAa2IS82Xjq5Bnl1d1ZbHk=;
+        b=JvpOSFVfs6h2W58zJf+wzuA+FfEFxqWkmBexqVR/7GPt7/S/sVyQAcCe9mmXJah7bP
+         qcTGSi8EOa+JzIki7HuepeStdFp+BYCMmOM2819gaYu6uNoo1JAlML9EwVRKdmb0Usue
+         8HXNW4ANt/OgDsSEaZaZitjfl1gKD9tu1oFSexOnWDNQr4gemdPW8O7z5sSiGtnV7Usk
+         E2pkKrMynw83PUA92YapOhRfv0VAWIZg8AQN+D4ZpL4NLsMXhxUuzQVuV0iwKfm6SL/B
+         UC6Y7ImyqBH97BVyCDafQ+xBC8zsll0SSN+l571aqs7fRyu7XP7DVqcVjazHTeZL2Sfe
+         xSQQ==
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@gmail.com header.s=20161025 header.b=BpurX42x;
-       spf=pass (google.com: domain of marcos.souza.org@gmail.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=marcos.souza.org@gmail.com;
-       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
-Received: from mail-sor-f65.google.com (mail-sor-f65.google.com. [209.85.220.65])
-        by mx.google.com with SMTPS id e8sor566958plb.48.2019.07.02.15.58.15
+       dkim=pass header.i=@renesasgroup.onmicrosoft.com header.s=selector2-renesasgroup-onmicrosoft-com header.b=ktUAR1+5;
+       spf=pass (google.com: domain of yoshihiro.shimoda.uh@renesas.com designates 40.107.141.93 as permitted sender) smtp.mailfrom=yoshihiro.shimoda.uh@renesas.com
+Received: from JPN01-OS2-obe.outbound.protection.outlook.com (mail-eopbgr1410093.outbound.protection.outlook.com. [40.107.141.93])
+        by mx.google.com with ESMTPS id a28si883347otd.173.2019.07.02.20.10.34
         for <usb-storage@lists.one-eyed-alien.net>
-        (Google Transport Security);
-        Tue, 02 Jul 2019 15:58:15 -0700 (PDT)
-Received-SPF: pass (google.com: domain of marcos.souza.org@gmail.com designates 209.85.220.65 as permitted sender) client-ip=209.85.220.65;
-X-Received: by 2002:a17:902:b713:: with SMTP id d19mr18675828pls.267.1562108294798;
-        Tue, 02 Jul 2019 15:58:14 -0700 (PDT)
-Received: from continental ([189.58.144.164])
-        by smtp.gmail.com with ESMTPSA id b24sm125821pfd.98.2019.07.02.15.58.10
-        (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
-        Tue, 02 Jul 2019 15:58:13 -0700 (PDT)
-Date: Tue, 2 Jul 2019 19:58:57 -0300
-From: Marcos Paulo de Souza <marcos.souza.org@gmail.com>
-To: linux-kernel@vger.kernel.org
-Cc: Alan Stern <stern@rowland.harvard.edu>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	"open list:USB MASS STORAGE DRIVER" <linux-usb@vger.kernel.org>,
-	"open list:USB MASS STORAGE DRIVER" <usb-storage@lists.one-eyed-alien.net>
-Subject: [usb-storage] Re: [PATCH v2] usb: storage: scsiglue: Do not skip VPD
- if try_vpd_pages is set
-Message-ID: <20190702225857.GA19791@continental>
-References: <20190618224454.16595-1-marcos.souza.org@gmail.com>
-MIME-Version: 1.0
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+        Tue, 02 Jul 2019 20:10:34 -0700 (PDT)
+Received-SPF: pass (google.com: domain of yoshihiro.shimoda.uh@renesas.com designates 40.107.141.93 as permitted sender) client-ip=40.107.141.93;
+Received: from TYAPR01MB4544.jpnprd01.prod.outlook.com (20.179.174.85) by
+ TYAPR01MB4880.jpnprd01.prod.outlook.com (20.179.175.215) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2032.20; Wed, 3 Jul 2019 03:10:31 +0000
+Received: from TYAPR01MB4544.jpnprd01.prod.outlook.com
+ ([fe80::602d:62cc:de62:eaba]) by TYAPR01MB4544.jpnprd01.prod.outlook.com
+ ([fe80::602d:62cc:de62:eaba%6]) with mapi id 15.20.2032.019; Wed, 3 Jul 2019
+ 03:10:31 +0000
+From: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
+To: Alan Stern <stern@rowland.harvard.edu>, Greg KH <greg@kroah.com>
+CC: shuah <shuah@kernel.org>, Suwan Kim <suwan.kim027@gmail.com>,
+	"linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
+	"usb-storage@lists.one-eyed-alien.net"
+	<usb-storage@lists.one-eyed-alien.net>, "linux-renesas-soc@vger.kernel.org"
+	<linux-renesas-soc@vger.kernel.org>, Christoph Hellwig <hch@lst.de>
+Subject: [usb-storage] RE: [PATCH v2] usb-storage: Add a limitation for blk_queue_max_hw_sectors()
+Thread-Topic: [PATCH v2] usb-storage: Add a limitation for
+ blk_queue_max_hw_sectors()
+Thread-Index: AQHVIcuW138W6xs/SU+mBATKJYat56aZ0SQAgAABRQCAAAL1gIAFZkqggAAqzACAF8/kEIAASseAgADLi2A=
+Date: Wed, 3 Jul 2019 03:10:31 +0000
+Message-ID: <TYAPR01MB454441748DB5CBCDFCF207D3D8FB0@TYAPR01MB4544.jpnprd01.prod.outlook.com>
+References: <TYAPR01MB454412603157D6DDCB512092D8F80@TYAPR01MB4544.jpnprd01.prod.outlook.com>
+ <Pine.LNX.4.44L0.1907021018220.1647-100000@iolanthe.rowland.org>
+In-Reply-To: <Pine.LNX.4.44L0.1907021018220.1647-100000@iolanthe.rowland.org>
+Accept-Language: ja-JP, en-US
+Content-Language: ja-JP
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [118.238.235.108]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 97391305-1046-4447-08b0-08d6ff640220
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0;PCL:0;RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);SRVR:TYAPR01MB4880;
+x-ms-traffictypediagnostic: TYAPR01MB4880:
+x-ms-exchange-purlcount: 2
+x-microsoft-antispam-prvs: <TYAPR01MB488062653B815BBF6F6AFBA8D8FB0@TYAPR01MB4880.jpnprd01.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
+x-forefront-prvs: 00872B689F
+x-forefront-antispam-report: SFV:NSPM;SFS:(10019020)(979002)(4636009)(376002)(346002)(366004)(136003)(396003)(39860400002)(189003)(43544003)(199004)(66946007)(64756008)(76116006)(66476007)(66446008)(66556008)(73956011)(305945005)(14444005)(74316002)(76176011)(316002)(7696005)(8936002)(81166006)(4326008)(5660300002)(52536014)(66066001)(71200400001)(71190400001)(7736002)(256004)(8676002)(81156014)(478600001)(25786009)(11346002)(229853002)(476003)(486006)(446003)(6116002)(55016002)(6246003)(102836004)(186003)(2171002)(6306002)(9686003)(6436002)(26005)(68736007)(14454004)(86362001)(99286004)(966005)(54906003)(33656002)(3846002)(53936002)(2906002)(110136005)(6506007)(6606295002)(969003)(989001)(999001)(1009001)(1019001);DIR:OUT;SFP:1102;SCL:1;SRVR:TYAPR01MB4880;H:TYAPR01MB4544.jpnprd01.prod.outlook.com;FPR:;SPF:None;LANG:en;PTR:InfoNoRecords;MX:1;A:1;
+received-spf: None (protection.outlook.com: renesas.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: giLm67VTVR5c9WnFZEsY+Nxn9+8XDt2LpHjKeq8DgLULkCGJl27cZC8wqVtGM9liEfFSteFkcI4WVQCasWR6JXafu5N8O5U4759aAJTrmM2MFFsQTAH+FAQb8sR0smQtRAAx7iLcKDQo84cEHE9f+q8kss/GIoTSwQK44QZzL/aciDupMXhG4cz4loClzaxuaXvMnpWsH1o6DhnCxS9EF0njrKIKzpRoIWLCmXcN8l+uU7/z0VmkhEMXYuEUX6vf+2qEc1E8HpQCV1nKE1Q+JmIFMwHfkHPHsyybphQGfU9ELPzrNdQOlksPvmhoqGhJ139rQc0mH2gNxegGvE3dAnqLP2/QViadHQ6AGJ6yRnZ5GL3sA5QhkqF90flNGn/OAucGYVsKD10TpOHmcCNptSYd37dhj1oYInH91fG4Arw=
 Content-Type: text/plain; charset="UTF-8"
-Content-Disposition: inline
-In-Reply-To: <20190618224454.16595-1-marcos.souza.org@gmail.com>
-User-Agent: Mutt/1.11.3 (2019-02-01)
-X-Original-Sender: marcos.souza.org@gmail.com
+MIME-Version: 1.0
+X-OriginatorOrg: renesas.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 97391305-1046-4447-08b0-08d6ff640220
+X-MS-Exchange-CrossTenant-originalarrivaltime: 03 Jul 2019 03:10:31.4631
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: yoshihiro.shimoda.uh@renesas.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYAPR01MB4880
+X-Original-Sender: yoshihiro.shimoda.uh@renesas.com
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@gmail.com header.s=20161025 header.b=BpurX42x;       spf=pass
- (google.com: domain of marcos.souza.org@gmail.com designates 209.85.220.65 as
- permitted sender) smtp.mailfrom=marcos.souza.org@gmail.com;       dmarc=pass
- (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+ header.i=@renesasgroup.onmicrosoft.com header.s=selector2-renesasgroup-onmicrosoft-com
+ header.b=ktUAR1+5;       spf=pass (google.com: domain of yoshihiro.shimoda.uh@renesas.com
+ designates 40.107.141.93 as permitted sender) smtp.mailfrom=yoshihiro.shimoda.uh@renesas.com
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -136,49 +168,72 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-ping?
+Hi Alan,
 
-On Tue, Jun 18, 2019 at 07:44:54PM -0300, Marcos Paulo de Souza wrote:
-> If BLIST_TRY_VPD_PAGES is set for a device, even for an USB, it should
-> be honored, so only set skip_vpd_pages is try_vpd_pages is not set.
+> From: Alan Stern, Sent: Tuesday, July 2, 2019 11:28 PM
 > 
-> Signed-off-by: Marcos Paulo de Souza <marcos.souza.org@gmail.com>
-> Acked-by: Alan Stern <stern@rowland.harvard.edu>
-> ---
+> On Tue, 2 Jul 2019, Yoshihiro Shimoda wrote:
 > 
->  Changes from v1:
->  changed the check of try_vpd_pages from:
->  	sdev->try_vpd_pages == 0;
->  to:
->  	!sdev->try_vpd_pages;
->  (as suggested by Alan Stern)
+> > Hi Alan, shuah, Suwan,
+> >
+> > > From: Christoph Hellwig, Sent: Monday, June 17, 2019 3:22 PM
+> > >
+> > > On Mon, Jun 17, 2019 at 04:17:43AM +0000, Yoshihiro Shimoda wrote:
+> > > > Thank you for the comments. So, should I wait for getting rid of the
+> > > > virt_boundary_mask stuff? If I revise the commit log of this patch,
+> > > > is it acceptable for v5.2-stable as a workaround? In other words,
+> > > > I worry about this issue exists on v5.2-stable.
+> > >
+> > > It does exist on 5.2-stable and we should fix it.  I'll plan to resend
+> > > my series to fix the virt_boundary issues for the other SCSI driver
+> > > soon, but we'll still need to sort out usb-storage.
+> >
+> > I guess that getting rid of the virt_boundary_mask stuff [1] needs more time.
+> > So, for v5.2-stable, would you accept my patch as a workaround?
+> > JFYI, v5.2-rc7 still has this "swiotlb buffer is full" issue.
+> >
+> > [1]
+> > https://marc.info/?l=linux-kernel&m=156114524808042&w=2
 > 
->  drivers/usb/storage/scsiglue.c | 7 +++++--
->  1 file changed, 5 insertions(+), 2 deletions(-)
+> I would really prefer to see a different solution.
 > 
-> diff --git a/drivers/usb/storage/scsiglue.c b/drivers/usb/storage/scsiglue.c
-> index 59190d88fa9f..30790240aec6 100644
-> --- a/drivers/usb/storage/scsiglue.c
-> +++ b/drivers/usb/storage/scsiglue.c
-> @@ -195,8 +195,11 @@ static int slave_configure(struct scsi_device *sdev)
->  		 */
->  		sdev->skip_ms_page_8 = 1;
->  
-> -		/* Some devices don't handle VPD pages correctly */
-> -		sdev->skip_vpd_pages = 1;
-> +		/*
-> +		 * Some devices don't handle VPD pages correctly, so skip vpd
-> +		 * pages if not forced by SCSI layer.
-> +		 */
-> +		sdev->skip_vpd_pages = !sdev->try_vpd_pages;
->  
->  		/* Do not attempt to use REPORT SUPPORTED OPERATION CODES */
->  		sdev->no_report_opcodes = 1;
-> -- 
-> 2.21.0
+> The actual problem is that the usb_device and usb_interface structures
+> are supposed to inherit all of their DMA properties from the bus's host
+> controller.  But the existing code copies only the dma_mask and
+> dma_pfn_offset fields in the embedded device structures.  If we copied
+> all of the important DMA fields then this patch wouldn't be needed; the
+> max_sectors value for the request queue would be set up correctly to
+> begin with.
+
+I'm sorry, but I cannot understand what are important DMA fields.
+IIUC, usb-storage driver should take care of calling blk_queue_ APIs anyway because:
+
+ - As Christoph mentioned before on the email [1], usb-storage has a special
+   max_sectors quirk for tape and SuperSpeed devices.
+ - Since blk_queue_* APIs don't take device structure pointer, the block layer
+   cannot call any DMA mapping APIs. So, even if any other DMA fields are copied,
+   the behavior is not changed.
+
+[1]
+https://www.spinics.net/lists/linux-usb/msg181527.html
+
+What do you think?
+
+Best regards,
+Yoshihiro Shimoda
+
+> So what I would like to see is a new subroutine -- perhaps in the
+> driver core -- that copies the DMA fields from one struct device to
+> another.  Then we could call this subroutine in usb_alloc_dev() and
+> usb_set_configuration() instead of copying the information manually.
 > 
+> Greg and Christoph, does that make sense?
+> 
+> Yoshihiro, would you like to write a patch that does this?
+> 
+> Alan Stern
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20190702225857.GA19791%40continental.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/TYAPR01MB454441748DB5CBCDFCF207D3D8FB0%40TYAPR01MB4544.jpnprd01.prod.outlook.com.
