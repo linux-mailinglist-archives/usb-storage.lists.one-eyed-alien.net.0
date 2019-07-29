@@ -1,114 +1,121 @@
-Return-Path: <usb-storage+bncBDUNBGN3R4KRBM6U3TUQKGQEOF3QD4Y@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBC46RKEB3EGRBCMK7PUQKGQEBPL3WII@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-wr1-x445.google.com (mail-wr1-x445.google.com [IPv6:2a00:1450:4864:20::445])
-	by mail.lfdr.de (Postfix) with ESMTPS id 974C371BEF
-	for <lists+usb-storage@lfdr.de>; Tue, 23 Jul 2019 17:39:31 +0200 (CEST)
-Received: by mail-wr1-x445.google.com with SMTP id h8sf20900624wrb.11
-        for <lists+usb-storage@lfdr.de>; Tue, 23 Jul 2019 08:39:31 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1563896371; cv=pass;
+Received: from mail-pf1-x447.google.com (mail-pf1-x447.google.com [IPv6:2607:f8b0:4864:20::447])
+	by mail.lfdr.de (Postfix) with ESMTPS id 1C1EE78936
+	for <lists+usb-storage@lfdr.de>; Mon, 29 Jul 2019 12:06:03 +0200 (CEST)
+Received: by mail-pf1-x447.google.com with SMTP id g21sf38182570pfb.13
+        for <lists+usb-storage@lfdr.de>; Mon, 29 Jul 2019 03:06:03 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1564394762; cv=pass;
         d=google.com; s=arc-20160816;
-        b=z7Xm0BnnQdoaWAf+qfA7jcpQa3DqCujRNlpTjjfKnt5Eb1x0wtnHef6h75ZgRKL42L
-         qhMkkGaLvXFR9kbSyZiKMZ8CgLWdmfI/sKmRq51IukJCgpReJWkIE9onGXZfcZGwRyqV
-         +IG7cOtEYdsS+tVlINVoLou0azSClpJXGdSY3A6f1W+7Tac8C6e+YU/ZW6J4S/g7FkeX
-         Rmf57DdUjWCYeuUitXLxLzRVVMIDKUZi38imXIgt4WZQTr+9Js6eEwFqrb4rxOyP++c3
-         lhl/oE9EToW5pLwSEulwK2zAL/Obsu3fRZOejjIlNxA0+rPrtIiQjaSzjQ291H/uDcYN
-         c8Lg==
+        b=JT1JKXzmwS2nKIdMevgIJ14V9Bl2BWOfCEkQ6AmoKRIF8nc42aWo0bTylYcONGcm9g
+         sVOPp9QU5rq0NV+qG/lOb/EQcdxJLCryVcxW/OTqXzPki1Bhh2vSWjgqoBRqoQsg7ZD8
+         PgHRrebWAJmdE4fOJWm9BlZGjfBSxIAFRTJuPVIg0c/bwC49G78BCBT9pqBmUMtTn93v
+         SwilPv22U1IkORHLS4mTDZccfGPOfl54UF50gbrvPYG9n+QQvrpvR5up9joVKMNRK6ZC
+         +vTZVWo1ShItktW0RmCQn5diq+4x5Opj8fBodtupTGX7BVfyKEabTx5fRlXAC3wCIX75
+         nTDA==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:user-agent:in-reply-to
-         :content-disposition:mime-version:references:message-id:subject:cc
-         :to:from:date:sender:dkim-signature;
-        bh=4pEtFmOtT43rkKSGBWTYzCQmJtHUaZUXEDeXf7bdbyw=;
-        b=VvsidRMXFH/HbM1fSIrCCli4yQAUu2+YIFgdDohWVLUWUTzw3deAmlFrbLLdX8OOAw
-         OgAoMqKzx9ZNpo+8d0xUqZVIHWKRlESAGFom4lM63guE6UL7C41UmfID9GW+HmWk+AZp
-         +k97uto2blfGB2kBpRBr+CSyo4CF/qSH1yG1BQlVc+0qHtEPv648TDeY+ZSAk6iPG2xc
-         gfxhJbxRtezzwxIdglFDjEDGdjYK+NqmHapxRgeb0ggsacIsLl5uZaPGu3IVciCr3sq4
-         gv7kD2Kjld+E1Uc5i/dQtsCDlE1o3pmxvpjJbtcQU5dYjdJ++4LN+7BVaT+06AtI+hnw
-         iwWA==
+         :list-id:mailing-list:precedence:message-id:date:subject:cc:to:from
+         :mime-version:sender:dkim-signature;
+        bh=7DITu0r/S4DdMCHTis7HxWjrKx2FPko8BW3b/JhJPKM=;
+        b=h69eEYXNjrii7MghEIBIX2eMgCkoP/6+lqaCGfP4QqRNDidxNoltQ/lz0JP3+pHcVb
+         ff+AF/Ecwf7bnV4+BClJIkstu9be/UnG5tB5SkEJtbqo0DDQYdiyDO+HdCHG+AcVqOUu
+         iRJeNYJ1trdnLfDzPgkf0j6R99GfLl082E3BpZ10JBWkA6iSOrjKQmPyvMvFTLfcPJVL
+         IQE6Q5twFouo6OQpZchAzdByyfW22k7DFHpxHttPHXo+HpqkFZRHJxxv2SB7Izoq/zij
+         pbRuyiHBMvcSnYPtnj7bBxC2qdF2pItPT1aJSXZcWypJ/WfnNubksOnf6ikDSEp88/cy
+         R/cg==
 ARC-Authentication-Results: i=2; mx.google.com;
-       spf=pass (google.com: best guess record for domain of hch@lst.de designates 213.95.11.211 as permitted sender) smtp.mailfrom=hch@lst.de
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b=I3Ym0l93;
+       spf=pass (google.com: domain of baijiaju1990@gmail.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=baijiaju1990@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
-        h=sender:date:from:to:cc:subject:message-id:references:mime-version
-         :content-disposition:in-reply-to:user-agent:x-original-sender
-         :x-original-authentication-results:precedence:mailing-list:list-id
-         :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
-        bh=4pEtFmOtT43rkKSGBWTYzCQmJtHUaZUXEDeXf7bdbyw=;
-        b=gh9vtG6PCBAQ0WkDiLGQSUbsxYDJN2Ev5NYxG/U6LUGdWRShD6QfLNTLNAJkayxGBe
-         +yqy7LIuvotBW0fSV9kBp+QyCqtGC6YPvKb8lsEcK6OLahdrXsjB8qiLgRDTKXSKnnJm
-         A4YZ8q+xlHdSTkfWxVdnhQY/WohvJoceQVCDE=
+        h=sender:mime-version:from:to:cc:subject:date:message-id
+         :x-original-sender:x-original-authentication-results:precedence
+         :mailing-list:list-id:list-post:list-help:list-archive
+         :list-subscribe:list-unsubscribe;
+        bh=7DITu0r/S4DdMCHTis7HxWjrKx2FPko8BW3b/JhJPKM=;
+        b=canP/PacbCqqK7zLrf66sJWlxn4u1zaWuM3bc5OwNwGvIImo0W6mNUt0YADxS0kGP3
+         2QntvS0FMTXdRP2iHYvyj4grOCqBg7UH9jqRy9om1Jg5U39A4zaTbx1RlRTYffNPI7wQ
+         I/agy+Pqplfi9WrC2KEFilvUpPwKPfZYDUyBg=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
-        h=sender:x-gm-message-state:date:from:to:cc:subject:message-id
-         :references:mime-version:content-disposition:in-reply-to:user-agent
-         :x-original-sender:x-original-authentication-results:precedence
-         :mailing-list:list-id:x-spam-checked-in-group:list-post:list-help
-         :list-archive:list-subscribe:list-unsubscribe;
-        bh=4pEtFmOtT43rkKSGBWTYzCQmJtHUaZUXEDeXf7bdbyw=;
-        b=f4ISCi3sfxB9te44V8JA+yKvpzu2dZz+cAteF2fiDLSFERALx4n3vzUQ2chtygR3yO
-         heftOr7XxPuw2cLdjW4WVfvnMzvXn/AJWzb1p6pwjld2cinPVohoKlAo8LfYiqiF2Qjc
-         mCBtWK2ttP/y7pKW4wV8QHtBEpnOtaNXcL4Ddlv0MOS0atVRBMu1Wai5tmwgel/kJ+nr
-         wgg4QTaGtZn3aVI7cmNhy+QxTH3z+AqfWBcTvOc1AcZE/C5Mtdr1875A+WCemIPAwCX8
-         JFxTvMS3HUeP+4UiJUueIYKvobcyi42c0F8ey9x1G+NSzAZUDI0jpaRJU0rFRNKUsTSU
-         QRjw==
+        h=sender:x-gm-message-state:mime-version:from:to:cc:subject:date
+         :message-id:x-original-sender:x-original-authentication-results
+         :precedence:mailing-list:list-id:x-spam-checked-in-group:list-post
+         :list-help:list-archive:list-subscribe:list-unsubscribe;
+        bh=7DITu0r/S4DdMCHTis7HxWjrKx2FPko8BW3b/JhJPKM=;
+        b=YBLdYPbbP2KvFJ/PSJSDeI2ti83IIxKqKcPJ29Oj0sZKwDuVIu02PHRVjGlWZ3qzCQ
+         Jv10LkgMk5TXZm6W0jBBjNnXvqWM2RC9BoqmD1kDBpHQCk43tnShgVy0cGn1QaWC+q2x
+         68rBn/ZBjTLT7pa/2b1GWNzonNEQgCs4x/Z4EcRDK1+5b8YauuOYKhbDCT1Q/zjgiCks
+         z/jstS9PZuWTBpQfSDD9tle/NF+H8eaNUZ0gbDazPyAHXO81VjitRYatEHyG6+f3NonU
+         BAjTIv/a8jS//ArLoWwtJ3mRdeh8bu/1fuu4XvZYt7c1Re5+E1laAutuf7PjRVgOfow0
+         XK4A==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: APjAAAU7jFqXAjoQpLGp/ynSF6Dw02GN4Mhp/hU0VSAKD10M3+S+2CKG
-	b1U0a0cdCbUxQywJj9iE0zg=
-X-Google-Smtp-Source: APXvYqygtTXkmTuR2svkmlr8XhgTktEREUhr88LuzF869MNQXiivaI4YgLItsvl0ZcSG4jaLxaVjtQ==
-X-Received: by 2002:a5d:6911:: with SMTP id t17mr12962817wru.268.1563896371359;
-        Tue, 23 Jul 2019 08:39:31 -0700 (PDT)
-X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:adf:97de:: with SMTP id t30ls10422890wrb.11.gmail; Tue, 23
- Jul 2019 08:39:30 -0700 (PDT)
-X-Received: by 2002:a5d:56c7:: with SMTP id m7mr6242532wrw.64.1563896370576;
-        Tue, 23 Jul 2019 08:39:30 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1563896370; cv=none;
-        d=google.com; s=arc-20160816;
-        b=xwnzQXH2uvgYWWZ+nVWvtz6JxISU42SQKItzcb43oyT30ech/gD02Io0pbi4OwMwf0
-         5xtP8KwINMbJ7c50Uy09COwf4fPS/1Egc9wihQMxdpvU8H3Gvf4hhZkZKWUdggLYDBmS
-         xmVnnADxmElEVZTO73YVgcLxlp7kQ1GPbYBLXT59Kz2+uVofSRMkpgBLx3qFSFY7Uvzv
-         7UqZzamW5M5tKsIin3o9Zkc0k9RC1JpgA/Nz5iglG2nqmPniK///8y4ra26BCjyNA4d1
-         ddt212wnjMqUjfnQHYqyPM7scU2+SgJNREF7nKBBAVjDcXgnZdcGiddfB04beKZZAZ0+
-         mT8Q==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=user-agent:in-reply-to:content-disposition:mime-version:references
-         :message-id:subject:cc:to:from:date;
-        bh=M7NmYC/Iylm9myghHwqILim55SAUt9QrM+UZYk0eJlw=;
-        b=zpqapxj4dH/+kEWKdzx44FRfzRdPoOnDtLmvuYEU9OyqidiWwDhENMm4Yks6Mlehsi
-         dk5eBMbR5ddpctlbpvNXZZWnbiU6EgbMZdX1fmMYCl2ixR7qO+QnjYB6Itqec6It7dcZ
-         jP2GIVjXZsh+m/oIzITCln0WPCLRpuMj7H6zPsH+X6JkDn0/kzMmSkKcAjTD0ciE6adj
-         IBCcgf0Q02uAagXJZX2Qicf/FM5z4ytJQy691gd6A0UlqCP1HFlq03WNWc8KBSyxmT3g
-         vrG7iIjKM7AeyKrk0EruFNx75gC0Ej3zsl/fv06hNKNESFhVIXVa4JGwOR86dW9NLYre
-         48zg==
-ARC-Authentication-Results: i=1; mx.google.com;
-       spf=pass (google.com: best guess record for domain of hch@lst.de designates 213.95.11.211 as permitted sender) smtp.mailfrom=hch@lst.de
-Received: from verein.lst.de (verein.lst.de. [213.95.11.211])
-        by mx.google.com with ESMTPS id y9si42650945wrh.107.2019.07.23.08.39.30
-        for <usb-storage@lists.one-eyed-alien.net>
-        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
-        Tue, 23 Jul 2019 08:39:30 -0700 (PDT)
-Received-SPF: pass (google.com: best guess record for domain of hch@lst.de designates 213.95.11.211 as permitted sender) client-ip=213.95.11.211;
-Received: by verein.lst.de (Postfix, from userid 2407)
-	id C0CA768B02; Tue, 23 Jul 2019 17:39:29 +0200 (CEST)
-Date: Tue, 23 Jul 2019 17:39:29 +0200
-From: Christoph Hellwig <hch@lst.de>
-To: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
-Cc: stern@rowland.harvard.edu, gregkh@linuxfoundation.org, hch@lst.de,
-	linux-usb@vger.kernel.org, usb-storage@lists.one-eyed-alien.net,
-	linux-renesas-soc@vger.kernel.org
-Subject: [usb-storage] Re: [PATCH v3] usb-storage: Add a limitation for blk_queue_max_hw_sectors()
-Message-ID: <20190723153929.GF720@lst.de>
-References: <1563793105-20597-1-git-send-email-yoshihiro.shimoda.uh@renesas.com>
+X-Gm-Message-State: APjAAAV6lyWm14DRdve8iSEJtUvDhsa2dhK1AkKFko3OKb5AKa212rBV
+	E9USD15SXPkUKyr3j/HKnaQ=
+X-Google-Smtp-Source: APXvYqw8ghdMI8ruiW9GhqOSzv1neMksfs8jVPDdsDRS6q5z54y2CIcImqJvStIuNRG60HmA+6LDuw==
+X-Received: by 2002:a17:90a:d593:: with SMTP id v19mr111116977pju.1.1564394761829;
+        Mon, 29 Jul 2019 03:06:01 -0700 (PDT)
 MIME-Version: 1.0
+X-BeenThere: usb-storage@lists.one-eyed-alien.net
+Received: by 2002:a63:90:: with SMTP id 138ls7210630pga.1.gmail; Mon, 29 Jul
+ 2019 03:06:01 -0700 (PDT)
+X-Received: by 2002:a63:6947:: with SMTP id e68mr67662056pgc.60.1564394761208;
+        Mon, 29 Jul 2019 03:06:01 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1564394761; cv=none;
+        d=google.com; s=arc-20160816;
+        b=XFZHl4VOICr23nxyG6ZwzfptLBfKIrzpZlBORCGKa1GIzOUKCxJ2lHV1mHg76qaxsY
+         ZqXG8ip1ePv0Ypux6a8QjOiDF5QC1ojP51A7ffWgnrTozae10xizDkmtLWBVd8sYcNtm
+         6BzEVz4qNEQMb97j7PjtXMswg9cIi0UTUTyHfXGNKiYGxRfNFUjzAimpK0oWbf8aotqa
+         A4aWfrABKxvfx2fL/XJIfd71kowgEJqfB4Ps3rvVJvM5uQl5fqA2I0SGi/aXj9beN2aY
+         xtV3us8Lx95Nr6NoW+/QNW8HTmuJJ8F5bbIVcuZJJcFMyy0dCtiPT84KEUm/yDVaMXnY
+         qC0g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=message-id:date:subject:cc:to:from:dkim-signature;
+        bh=hlsQgLiK4mBtl4yaP1HBcLTCJDJdOymPRcLvjAE6BgQ=;
+        b=Zyp0AXEcn/qHyoZCSggCnYK1nHJav3HhsKgX3VUKFjVj9Nhhe/9aqKKMkZXgxh0Icv
+         OTMIYSCAw8t4b+qdSFRxXlROhH/ShbNF6ks0VcsQ4G2rHpoFHJkW+GT44IKhouTTfwwk
+         tO/1iXep7TB8mkvADnwPv4Nfuel6qQgKj4U9sLhOLVGBXWmhFuBA0CdtKgqLulXznZ08
+         LKZ8RF6LXA3Jb2a2n1tJfbE9Fa/dg9mwqNlNWcZLdcKdRdthN918Go3Hkaey6fXYa2jT
+         jhtkmNPjd9xYi+WcyIffprR3iIxh68j5bWchBEK+j2Xhg1layWX4S0MUwLsSLcK5Mofg
+         w5Iw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b=I3Ym0l93;
+       spf=pass (google.com: domain of baijiaju1990@gmail.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=baijiaju1990@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Received: from mail-sor-f65.google.com (mail-sor-f65.google.com. [209.85.220.65])
+        by mx.google.com with SMTPS id j8sor74237376pjz.15.2019.07.29.03.06.01
+        for <usb-storage@lists.one-eyed-alien.net>
+        (Google Transport Security);
+        Mon, 29 Jul 2019 03:06:01 -0700 (PDT)
+Received-SPF: pass (google.com: domain of baijiaju1990@gmail.com designates 209.85.220.65 as permitted sender) client-ip=209.85.220.65;
+X-Received: by 2002:a17:90a:e397:: with SMTP id b23mr109888947pjz.140.1564394761032;
+        Mon, 29 Jul 2019 03:06:01 -0700 (PDT)
+Received: from oslab.tsinghua.edu.cn ([2402:f000:4:72:808::3ca])
+        by smtp.gmail.com with ESMTPSA id bo20sm45654982pjb.23.2019.07.29.03.05.59
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 29 Jul 2019 03:06:00 -0700 (PDT)
+From: Jia-Ju Bai <baijiaju1990@gmail.com>
+To: stern@rowland.harvard.edu,
+	gregkh@linuxfoundation.org
+Cc: linux-usb@vger.kernel.org,
+	usb-storage@lists.one-eyed-alien.net,
+	linux-kernel@vger.kernel.org,
+	Jia-Ju Bai <baijiaju1990@gmail.com>
+Subject: [usb-storage] [PATCH] usb: storage: sddr55: Fix a possible
+ null-pointer dereference in sddr55_transport()
+Date: Mon, 29 Jul 2019 18:05:55 +0800
+Message-Id: <20190729100555.2081-1-baijiaju1990@gmail.com>
+X-Mailer: git-send-email 2.17.0
+X-Original-Sender: baijiaju1990@gmail.com
+X-Original-Authentication-Results: mx.google.com;       dkim=pass
+ header.i=@gmail.com header.s=20161025 header.b=I3Ym0l93;       spf=pass
+ (google.com: domain of baijiaju1990@gmail.com designates 209.85.220.65 as
+ permitted sender) smtp.mailfrom=baijiaju1990@gmail.com;       dmarc=pass
+ (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
 Content-Type: text/plain; charset="UTF-8"
-Content-Disposition: inline
-In-Reply-To: <1563793105-20597-1-git-send-email-yoshihiro.shimoda.uh@renesas.com>
-User-Agent: Mutt/1.5.17 (2007-11-01)
-X-Original-Sender: hch@lst.de
-X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
- best guess record for domain of hch@lst.de designates 213.95.11.211 as
- permitted sender) smtp.mailfrom=hch@lst.de
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -124,11 +131,42 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-Looks good:
+In sddr55_transport(), there is an if statement on line 836 to check
+whether info->lba_to_pba is NULL:
+    if (info->lba_to_pba == NULL || ...)
 
-Reviewed-by: Christoph Hellwig <hch@lst.de>
+When info->lba_to_pba is NULL, it is used on line 948:
+    pba = info->lba_to_pba[lba];
+
+Thus, a possible null-pointer dereference may occur.
+
+To fix this bug, info->lba_to_pba is checked before being used.
+
+This bug is found by a static analysis tool STCheck written by us.
+
+Signed-off-by: Jia-Ju Bai <baijiaju1990@gmail.com>
+---
+ drivers/usb/storage/sddr55.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/usb/storage/sddr55.c b/drivers/usb/storage/sddr55.c
+index b8527c55335b..50afc39aa21d 100644
+--- a/drivers/usb/storage/sddr55.c
++++ b/drivers/usb/storage/sddr55.c
+@@ -945,7 +945,8 @@ static int sddr55_transport(struct scsi_cmnd *srb, struct us_data *us)
+ 			return USB_STOR_TRANSPORT_FAILED;
+ 		}
+ 
+-		pba = info->lba_to_pba[lba];
++		if (info->lba_to_pba)
++			pba = info->lba_to_pba[lba];
+ 
+ 		if (srb->cmnd[0] == WRITE_10) {
+ 			usb_stor_dbg(us, "WRITE_10: write block %04X (LBA %04X) page %01X pages %d\n",
+-- 
+2.17.0
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20190723153929.GF720%40lst.de.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20190729100555.2081-1-baijiaju1990%40gmail.com.
