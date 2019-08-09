@@ -1,118 +1,111 @@
-Return-Path: <usb-storage+bncBDU5DXUG4MFRBXO4W3VAKGQEQKZL3SY@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBD6LRVPZ6YGRBB4TW7VAKGQESVO5ERA@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-wm1-x345.google.com (mail-wm1-x345.google.com [IPv6:2a00:1450:4864:20::345])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7716E88140
-	for <lists+usb-storage@lfdr.de>; Fri,  9 Aug 2019 19:33:18 +0200 (CEST)
-Received: by mail-wm1-x345.google.com with SMTP id m25sf1494335wml.6
-        for <lists+usb-storage@lfdr.de>; Fri, 09 Aug 2019 10:33:18 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1565371998; cv=pass;
+Received: from mail-qt1-x847.google.com (mail-qt1-x847.google.com [IPv6:2607:f8b0:4864:20::847])
+	by mail.lfdr.de (Postfix) with ESMTPS id 49C3888340
+	for <lists+usb-storage@lfdr.de>; Fri,  9 Aug 2019 21:29:12 +0200 (CEST)
+Received: by mail-qt1-x847.google.com with SMTP id s9sf89851481qtn.14
+        for <lists+usb-storage@lfdr.de>; Fri, 09 Aug 2019 12:29:12 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1565378951; cv=pass;
         d=google.com; s=arc-20160816;
-        b=aYI97VIAXM1Kt8GWMUgmmhjD04QlgreiYxFQyeo2wfysY9OLe1fulZPWqMWD7LYpG6
-         vdV5QbsjwG8pX2uDVwXEgQJmGKwV+C+/D1fhJwOAy5vAcDGCsyb4+ywVTQjBVtB3TMEn
-         /BgWyctjehD4gBIOhocTbndIDFYypEakFRmAiLKa07KYTgHVrx/HjovSXqqTGlIlj1HT
-         XWujzLlGm5jpIoJ+ZOkeVs9riFyATR90gL36L/A80y+zcUTCLmEhI7UYvRFGL6MLIjjT
-         rkys/GsbgvFz1OSziNS1dtoqcuTUd+Bswg2cFQ8oNmQWDoUrxUWv9QsQO6WY4Nf/wLNa
-         u1Cg==
+        b=aGx5TJMAyd+DpfcJOPeL+zqFOSpFVrG6gaUFtWneL5kHwbgsIBn0bLjxD3axrYr203
+         2Vu46Th64epTawV93RprjUDGwBU3UDF2KX465sDDIDp0U3j01LzJfKHmzSHCs7OTf1Hx
+         PI0NEqTFgRXATA7LXVNPXqzPQGaK7/K73Dh3HQRmfdNXYoekyqzlr8XKUfs+P9SkwiWh
+         omz6tdw1WEpKRXJdzAd/lStbP2JQ1Zi8M9dU++76Fe/xQMMY+flT7pDyEnsEPayBlqjv
+         wZdK/OKqwTF80rLWdfU+K6EcFjEiVsHQqDA3og7HcupQ5wYQwqL6OzXFEgciByTJEVom
+         kafQ==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:mime-version:message-id:date
-         :subject:cc:to:from:sender:dkim-signature;
-        bh=l8VW6TX2WxDXuXpwCVeY/RdYsPPIuaZvauwtE0avecs=;
-        b=Aw/FUGKnZ7cWVhbUr4D98Vdsu4UqMFHnGg/rShDNbQxLVSM1oAiVP543GjXsOB63KP
-         9Gi0um0r3N1LMpy7XltBIVIwd9ojJmOVinszXfAMpFMDqJH1R3UCQEQ/AWTyS6OsBLEi
-         tQNBsPxIG2weUieqRjTNTP8uHxCcXYnATp4MNvd0fDh7KQwDeK1aMwWicV9cuW/BYoeT
-         nc0mKUVIpsmSJBkj6x9O0lPigjtqs+Y1kVvGhBhHXIL9GbFarfq+bobqsVW5mlMNKuqX
-         KPLAS9YNnPeoilre1chldiIJzjxHTqdchBtte9fKUO0vHJIJCQ0ycq7MiSI52Oz5atIb
-         qIwg==
+         :list-id:mailing-list:precedence:mime-version:message-id:in-reply-to
+         :subject:cc:to:from:date:sender:dkim-signature;
+        bh=1hNHC8YXF5jAHM4QnUC9L6PIIpJTjTQtG57gDTUroGs=;
+        b=qa+gn9JgVzljavtuqM6LNhSw3iGPpysBsiytko2m4NtvtFD7BzspJos9/jtht3AKly
+         4OPXQNLSElNSHxpn+kexjK7XpAvxNbNXhaOl4eZiMp4O0tzAIIGnjU6S3xMQBmzc3Ycc
+         JpBWUh4o05A8/UsjpHOC+tFwbXEDwLWR1YWL8s8C9jwjwgUOer36u0LYv6cfhHNmNcut
+         IzyfYSNVf7QKz2rigxejKFx+aXEmVasBM7tAf3PHU0FGJ69NgQzTqssyzt1YybGQTK1y
+         AwLGqMa896/QU4g0FMANQan5W5ReC/rIKfPTy609B7mdoWTCYk9Qc0D8wJRpv0kSMKcR
+         OBUA==
 ARC-Authentication-Results: i=2; mx.google.com;
-       spf=pass (google.com: best guess record for domain of colin.king@canonical.com designates 91.189.89.112 as permitted sender) smtp.mailfrom=colin.king@canonical.com;
-       dmarc=fail (p=NONE sp=NONE dis=NONE) header.from=canonical.com
+       spf=pass (google.com: domain of stern+5d4dbffe@rowland.harvard.edu designates 192.131.102.54 as permitted sender) smtp.mailfrom=stern+5d4dbffe@rowland.harvard.edu
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
-        h=sender:from:to:cc:subject:date:message-id:mime-version
+        h=sender:date:from:to:cc:subject:in-reply-to:message-id:mime-version
          :x-original-sender:x-original-authentication-results:precedence
          :mailing-list:list-id:list-post:list-help:list-archive
          :list-subscribe:list-unsubscribe;
-        bh=l8VW6TX2WxDXuXpwCVeY/RdYsPPIuaZvauwtE0avecs=;
-        b=Q7wzbi0TF29wn+tVjBrnJ8kJio6tZBLggAwNg4OpwrI3smcSctjHMWVnJDq8vudmfL
-         YMQ4HC4vFvIvjLjyjku1zcFpoXPJyec0NBGhecZFq2z/TAkTaIZYsFn9iDuP1kDcfsDX
-         M2saibO86imzOxLOlUjrEctPa0qNaDnobNkLw=
+        bh=1hNHC8YXF5jAHM4QnUC9L6PIIpJTjTQtG57gDTUroGs=;
+        b=lcxaHxaB4gIjKr8GStEEyofU8xqk6POmmV2cqVdOJavEL2Q1zqv8DzPJc41KOObv4o
+         sat++s5Elijc4vT3E8hiarzvRmLANpJMfoFUuQt7+fWAKJPpu4+w/FvL7XM/6a2kR4JN
+         tWF35VnwBs29LtC8D5JFNPhSxZaN80XqIllyI=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
-        h=sender:x-gm-message-state:from:to:cc:subject:date:message-id
-         :mime-version:x-original-sender:x-original-authentication-results
-         :precedence:mailing-list:list-id:x-spam-checked-in-group:list-post
-         :list-help:list-archive:list-subscribe:list-unsubscribe;
-        bh=l8VW6TX2WxDXuXpwCVeY/RdYsPPIuaZvauwtE0avecs=;
-        b=WVucN1W0cVeb57XgCoY1dkqQYzH99YywrGXL+NYsXm4iJo43QiAH0YGA7VlBfNomyQ
-         uk0AQ5timHyWXsjlkQGEiCf5WCdB9TACcgUQ5O/OYeLcmTvKztOmOgX7nuM6r7tXSnnZ
-         +5WwO/FIuk7Tn6ppl0P1t9uKNAHg/OKphpTYlcfPpg3t//wBNTB57oxPv7ApQj/FsiCy
-         IN8ev0+gI/N26yXkB/tpE2hDr5Gk1l4oAB83MPTwcW7bDLXwPDvuerjGncxvT4YFPhUa
-         XKfFvHUjdZyRHtRbz7ZQROoIYEkpkzvdvgp5eDtQ7g4wdLyINIjRVZRQRvx6tITYUjWF
-         6olg==
+        h=sender:x-gm-message-state:date:from:to:cc:subject:in-reply-to
+         :message-id:mime-version:x-original-sender
+         :x-original-authentication-results:precedence:mailing-list:list-id
+         :x-spam-checked-in-group:list-post:list-help:list-archive
+         :list-subscribe:list-unsubscribe;
+        bh=1hNHC8YXF5jAHM4QnUC9L6PIIpJTjTQtG57gDTUroGs=;
+        b=LG2cD8rTYWRmFKQhqPx8cMROVjS8IlCn56bVxOg+myWNHpJGVAa1asyGXA29KolwqG
+         M6lEKMX8K2I2Fr/mnEfste2JoIul9lNJo4W5Xru5G2s8P2WjPuRV4PVFmz2TYyhb+CFV
+         fDU7HDzoTKCb5nA91lsubEsMPxoJyiAVUTs0mz6EQ9qdsdksefhUBmT3YPYTZsr5O35z
+         7WUWHGuQNr0pw2b0wImMRtOJFFlg2u0ayJAe8alHk7wY1q6iFO3r0lRinzIpMH9Y96R4
+         CITPLsmPrI/Bly81eV8zx0X2tzhcmdx/OhyADn20bpp5/eQm2B7hwD1kUGDdzB6dKc/p
+         KyKQ==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: APjAAAXRAM6nll849NHR2kjnVgZ3rHONXO6G2DTf384y/Y54xyvRBbhZ
-	0ao6P3x8Gmlg7X7rhPFYsg9f8A==
-X-Google-Smtp-Source: APXvYqxQ5Wjk67IUUoo1wtX8RKcnNz3O2Rfdct1rYhuSeocV/oXlDjJZDoSvn4IGvswlkl0fmPms+g==
-X-Received: by 2002:a5d:4ecc:: with SMTP id s12mr26010427wrv.157.1565371998203;
-        Fri, 09 Aug 2019 10:33:18 -0700 (PDT)
+X-Gm-Message-State: APjAAAXYZxAG2EYGozA+QQa+u4QloAQKqPyiU5pC3Zqewa3di5Adh4H1
+	9Gpddj93jHf1I6tP5DTuAWgF7g==
+X-Google-Smtp-Source: APXvYqwVtXQEW8V/VRulZm84WYLib3okmRLqW91RF2rwA6V5DjnjbUiSxH1SezufgvseOlC5WHbO/A==
+X-Received: by 2002:a37:7144:: with SMTP id m65mr13354802qkc.149.1565378951374;
+        Fri, 09 Aug 2019 12:29:11 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a5d:5506:: with SMTP id b6ls2388895wrv.4.gmail; Fri, 09 Aug
- 2019 10:33:17 -0700 (PDT)
-X-Received: by 2002:a5d:5607:: with SMTP id l7mr26536351wrv.228.1565371997372;
-        Fri, 09 Aug 2019 10:33:17 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1565371997; cv=none;
+Received: by 2002:ac8:718b:: with SMTP id w11ls3055212qto.1.gmail; Fri, 09 Aug
+ 2019 12:29:10 -0700 (PDT)
+X-Received: by 2002:ac8:2774:: with SMTP id h49mr18653572qth.97.1565378950012;
+        Fri, 09 Aug 2019 12:29:10 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1565378950; cv=none;
         d=google.com; s=arc-20160816;
-        b=cLRplmnJVHi+Vm7yEPQSq5PZXstSIiF3aVc9kjnoizZeeqxmGrN5KaAg21UoefP2K2
-         nb/P8x9vowJ/9QxfbbDbXJjR0+l6cC84a5ozA1vAz0FgZ4z3aLAaoqq5vUhOKeUbIDDa
-         us7vr+O6C8crP8ZoUmN8QUZXVpp8410q/GdBlAfiZkDVli6czINgzr66LdbV/ugksy1j
-         m6i+gZmSX2xCeeBfP1ljvFrbvGGN6lokK7ucHzqhDb98+KsOSK1SiORhNK7lNsmoODe+
-         VAuPhE9/eiQHZOk+6J2ifS0zcv/C8Qi8rqaozQi+aLSjv5i83HzkHeR3bSYN3ivyY4kI
-         xb0w==
+        b=wUwVk5y8Lf4NXDg6uOEpVWEf3rB8x3ujkuTxX73HBqt0ixh1zwlKcX9EIOGKvbSS/G
+         ATt8gV8+yzxMCwrmN0/S9zi7SWVzQHc6J0+hu/iZNVi7/3sGD9wRFLMilvzoGZzTXvPz
+         /9TdrAuXiGNPcLkrbzjB2ut5h8Tr1kFm2qL2GZgld7hqEHKccflkcIYJ8eYgDbqVmFpi
+         vAkBXkHxcRdSBoAvirk1hhsi2LQFhZ/zp4KcXfuSgMvpv5Z53R5sLtfCNpB77kdl3ewE
+         J8/cDrxpbhF5FtK9NtYH1s75T2XMNfGawa/IS0f8sCSSmMa6rWQa0o60YTSVXcc1dAA2
+         ONow==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from;
-        bh=yh9DcWVWK4zjarKmfmpH5ZEABYBdEjZoj/w0oBOddsw=;
-        b=INv4/BPq8O6Cm7ZAns44uXaBgvJL1U90Xaw9sANb+kvhrDUhWB70/WmD556ViTfgv6
-         aSiCrpj9RupHdFGzq5V/TDd2aIFpKfwpdiGqYOOmc3SPz1nUo6PHyifukMw5EZv5fuzk
-         qY6L8JU2rZdBRo1YpWYvVT4cdPpzX2xN9eHG7VlcAMDRQ+0dpGrkhbDKkWGBUVxSeelY
-         AE8uipbnX2pchxqQY+1LR1KXAhmPk/hL3n4LxSQVzS3tMyhIzHtzJo3NifWU4rqyPn91
-         gz+Dy3BP79li8A4H5BqEwLEFeCLiOX5FC+OSViplPU2jmkriB0qa3U2ZY9mclYOAjTXJ
-         LPOA==
+        h=mime-version:message-id:in-reply-to:subject:cc:to:from:date;
+        bh=1hNHC8YXF5jAHM4QnUC9L6PIIpJTjTQtG57gDTUroGs=;
+        b=K5/eHIxAFQ5WxA9Le6DSigB03+CQw4yIHvZT0vSiX5+DGTLWHTA4p1f5NsWbpzo8b/
+         Fya+XUH2d578BSjIjqGj/2kZesm1u2n0EAKaofhixIQaZO5cbJSHmQjp8OC8wpeQiD9h
+         Tj5hwNbpa2AMF7GeUlgRIwmxtl919qmj7lTZADHHTbyhSQny50th5ILbxsJSU5U64/Kv
+         eH0QCFIrgn3grYTmObxxly9oHEJ6SInYzwFSoTMNSgHK+mQpyVBUhDiJ/N9mhiU0x9gF
+         f+OQfMeQ6tSlouZ5OBBO/vaDhamsUcSt40TR5lAvp1IlGgTNtDBFpwDhZC11Lt3p71U9
+         H1bg==
 ARC-Authentication-Results: i=1; mx.google.com;
-       spf=pass (google.com: best guess record for domain of colin.king@canonical.com designates 91.189.89.112 as permitted sender) smtp.mailfrom=colin.king@canonical.com;
-       dmarc=fail (p=NONE sp=NONE dis=NONE) header.from=canonical.com
-Received: from youngberry.canonical.com (youngberry.canonical.com. [91.189.89.112])
-        by mx.google.com with ESMTPS id q17si9714649wrc.112.2019.08.09.10.33.17
-        for <usb-storage@lists.one-eyed-alien.net>
-        (version=TLS1 cipher=AES128-SHA bits=128/128);
-        Fri, 09 Aug 2019 10:33:17 -0700 (PDT)
-Received-SPF: pass (google.com: best guess record for domain of colin.king@canonical.com designates 91.189.89.112 as permitted sender) client-ip=91.189.89.112;
-Received: from 1.general.cking.uk.vpn ([10.172.193.212] helo=localhost)
-	by youngberry.canonical.com with esmtpsa (TLS1.0:RSA_AES_256_CBC_SHA1:32)
-	(Exim 4.76)
-	(envelope-from <colin.king@canonical.com>)
-	id 1hw8lO-0000ju-Ky; Fri, 09 Aug 2019 17:33:14 +0000
-From: Colin King <colin.king@canonical.com>
-To: Alan Stern <stern@rowland.harvard.edu>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	linux-usb@vger.kernel.org,
-	usb-storage@lists.one-eyed-alien.net
-Cc: kernel-janitors@vger.kernel.org,
-	linux-kernel@vger.kernel.org
-Subject: [usb-storage] [PATCH] USB: storage: isd200: remove redundant
+       spf=pass (google.com: domain of stern+5d4dbffe@rowland.harvard.edu designates 192.131.102.54 as permitted sender) smtp.mailfrom=stern+5d4dbffe@rowland.harvard.edu
+Received: from iolanthe.rowland.org (iolanthe.rowland.org. [192.131.102.54])
+        by mx.google.com with SMTP id i3si38240114qtc.272.2019.08.09.12.29.09
+        for <usb-storage@lists.one-eyed-alien.net>;
+        Fri, 09 Aug 2019 12:29:10 -0700 (PDT)
+Received-SPF: pass (google.com: domain of stern+5d4dbffe@rowland.harvard.edu designates 192.131.102.54 as permitted sender) client-ip=192.131.102.54;
+Received: (qmail 5241 invoked by uid 2102); 9 Aug 2019 15:29:08 -0400
+Received: from localhost (sendmail-bs@127.0.0.1)
+  by localhost with SMTP; 9 Aug 2019 15:29:08 -0400
+Date: Fri, 9 Aug 2019 15:29:08 -0400 (EDT)
+From: Alan Stern <stern@rowland.harvard.edu>
+X-X-Sender: stern@iolanthe.rowland.org
+To: Colin King <colin.king@canonical.com>
+cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+     <linux-usb@vger.kernel.org>,  <usb-storage@lists.one-eyed-alien.net>, 
+     <kernel-janitors@vger.kernel.org>,  <linux-kernel@vger.kernel.org>
+Subject: [usb-storage] Re: [PATCH] USB: storage: isd200: remove redundant
  assignment to variable sendToTransport
-Date: Fri,  9 Aug 2019 18:33:14 +0100
-Message-Id: <20190809173314.4623-1-colin.king@canonical.com>
-X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190809173314.4623-1-colin.king@canonical.com>
+Message-ID: <Pine.LNX.4.44L0.1908091528040.1630-100000@iolanthe.rowland.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset="UTF-8"
-X-Original-Sender: colin.king@canonical.com
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+X-Original-Sender: stern@rowland.harvard.edu
 X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
- best guess record for domain of colin.king@canonical.com designates
- 91.189.89.112 as permitted sender) smtp.mailfrom=colin.king@canonical.com;
-       dmarc=fail (p=NONE sp=NONE dis=NONE) header.from=canonical.com
+ domain of stern+5d4dbffe@rowland.harvard.edu designates 192.131.102.54 as
+ permitted sender) smtp.mailfrom=stern+5d4dbffe@rowland.harvard.edu
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -128,35 +121,40 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-From: Colin Ian King <colin.king@canonical.com>
+On Fri, 9 Aug 2019, Colin King wrote:
 
-The variable sendToTransport is being initialized with a value that is
-never read and is being re-assigned a little later on. The assignment
-is redundant and hence can be removed.
+> From: Colin Ian King <colin.king@canonical.com>
+> 
+> The variable sendToTransport is being initialized with a value that is
+> never read and is being re-assigned a little later on. The assignment
+> is redundant and hence can be removed.
+> 
+> Addresses-Coverity: ("Unused value")
 
-Addresses-Coverity: ("Unused value")
-Signed-off-by: Colin Ian King <colin.king@canonical.com>
----
- drivers/usb/storage/isd200.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+Of what use is that tag to general kernel developers?
 
-diff --git a/drivers/usb/storage/isd200.c b/drivers/usb/storage/isd200.c
-index 2b474d60b4db..28e1128d53a4 100644
---- a/drivers/usb/storage/isd200.c
-+++ b/drivers/usb/storage/isd200.c
-@@ -1511,7 +1511,7 @@ static int isd200_Initialization(struct us_data *us)
- 
- static void isd200_ata_command(struct scsi_cmnd *srb, struct us_data *us)
- {
--	int sendToTransport = 1, orig_bufflen;
-+	int sendToTransport, orig_bufflen;
- 	union ata_cdb ataCdb;
- 
- 	/* Make sure driver was initialized */
--- 
-2.20.1
+> Signed-off-by: Colin Ian King <colin.king@canonical.com>
+> ---
+>  drivers/usb/storage/isd200.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/drivers/usb/storage/isd200.c b/drivers/usb/storage/isd200.c
+> index 2b474d60b4db..28e1128d53a4 100644
+> --- a/drivers/usb/storage/isd200.c
+> +++ b/drivers/usb/storage/isd200.c
+> @@ -1511,7 +1511,7 @@ static int isd200_Initialization(struct us_data *us)
+>  
+>  static void isd200_ata_command(struct scsi_cmnd *srb, struct us_data *us)
+>  {
+> -	int sendToTransport = 1, orig_bufflen;
+> +	int sendToTransport, orig_bufflen;
+>  	union ata_cdb ataCdb;
+>  
+>  	/* Make sure driver was initialized */
 
--- 
-You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
-To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20190809173314.4623-1-colin.king%40canonical.com.
+Otherwise:
+
+Acked-by: Alan Stern <stern@rowland.harvard.edu>
+
+Alan Stern
+
