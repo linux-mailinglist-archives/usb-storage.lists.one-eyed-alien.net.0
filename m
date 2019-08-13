@@ -1,168 +1,132 @@
-Return-Path: <usb-storage+bncBDU5DXUG4MFRBVUUW7VAKGQEL4NQQKQ@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBDZJXP7F6YLRBIG3ZLVAKGQEBPQ2XSY@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-wr1-x447.google.com (mail-wr1-x447.google.com [IPv6:2a00:1450:4864:20::447])
-	by mail.lfdr.de (Postfix) with ESMTPS id 342C78834C
-	for <lists+usb-storage@lfdr.de>; Fri,  9 Aug 2019 21:32:39 +0200 (CEST)
-Received: by mail-wr1-x447.google.com with SMTP id t9sf47295446wrx.9
-        for <lists+usb-storage@lfdr.de>; Fri, 09 Aug 2019 12:32:39 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1565379159; cv=pass;
+Received: from mail-wm1-x346.google.com (mail-wm1-x346.google.com [IPv6:2a00:1450:4864:20::346])
+	by mail.lfdr.de (Postfix) with ESMTPS id 93A1E8B891
+	for <lists+usb-storage@lfdr.de>; Tue, 13 Aug 2019 14:31:29 +0200 (CEST)
+Received: by mail-wm1-x346.google.com with SMTP id g127sf245006wme.0
+        for <lists+usb-storage@lfdr.de>; Tue, 13 Aug 2019 05:31:29 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1565699489; cv=pass;
         d=google.com; s=arc-20160816;
-        b=PT8vX/SAq5TEj8G5L47rhCtM2t6KvBCZMPcJerXudNn790KJuTNPrlzBQSol9d05Cy
-         FrPlvzn/ZihTkevBWrWodSMkaBruV9tA8H3ItoTXnELoVDgp/7Cog2SbM562R77KfpXu
-         PrARuIu8hgSVanEXev2OUe/JvXjC/4JKcde+7D2S+QjNZ6jCwE91EBrTXF6gEtYVugvq
-         kCKUAi+2u0MMTlfuKlnJxV16MAHrc4avkaXyMkxWD+4yXdAO4ppLMaec8ADzCG8oJfLV
-         feidG3AQ3Q8rf9g44XWHe8WP8xJ3yjkhxuvmmQK2DglHFR5fzaLnVwqTyGv1sT9ryjIV
-         RGSA==
+        b=01VvZ1SzgGJ9cnVpshcU6NbmcuJbmQ5AZMdzICw9shinm2MyataYNgW+YB8OdsjqOM
+         mPEfzHyxh2C/0EGpjyZmBrN82hFkOoQtIcDJfu80GJE3d2Ry+0fmlOsKSr7AGzp3FSCW
+         NzGvum7vmYqBcRu40LVL1eL+NeJ/bQZDQw/PZHMrdJv29/FvAtOOk4ku/FQ/fSf1+7CA
+         dq8K3Pz7khfdtdQ75eZU0x95+fyj4ubrvorxQEZwkGq33hj+MZlpiPF7Ci14iN/luV2a
+         KD9qI3rncKlKtmEW5pZVp5ki126AqMy5N3cAob8+KfPQFtGY0EHLiP9TOzjXLYkxxy29
+         JcYA==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:content-language:in-reply-to
-         :mime-version:user-agent:date:message-id:subject:autocrypt:openpgp
-         :from:references:cc:to:sender:dkim-signature;
-        bh=+3MzP4hW9ra5hHW+32Yo4RVu/JtogFzsmjpcvz0raZM=;
-        b=DCl84yS2sTOjGtMHKZZP7qBcpbliLMo6/nQ0qdeqSWDoEum/p/Nz8Bt64t7Z2H5AxQ
-         EfP4S+h2dcCdzwctHr2YH8pCRxG/bW/ANbphtvrey7/KoKtAI4U2Jnvsq9R/LG5jvu47
-         d05cGTnAdyrofksxtctdMwNxY8Z39l+0Pw+JEdrz/dN7agLtJaKI/tvU8mhkiTdJEoPi
-         RaGgceBoZtu8H96GDryx+jh3olCMkPDhAPztDhqqysCyRlPO0VGjT/wWQ+nW+Ofsi0YG
-         sJCTLw8CRwEhyiCdC0h+HQtKZrlPWplCw7ERW9+IlzFeVn0uLrscx3mhriwRCrcEL/db
-         czjw==
+         :list-id:mailing-list:precedence:mime-version:user-agent:references
+         :message-id:in-reply-to:subject:cc:to:from:date:sender
+         :dkim-signature;
+        bh=AHvKZWwoJMUOgxo4xOShyokLKet6jrDeAzi9e7SQuzo=;
+        b=IvaRnF+OOMHhehfEvsES7ejto3a5QaFL09wzpn79WzMw/nQdPWuZJCwK7zRjgzmXG4
+         yRZAKdLIhvbxk3rPrVLDMsdAUkSDdUbC0HbnFzTbF2QoDd5owqFrjDrJmTNH1EPGQ/IH
+         AYC5QelPBjtN8rSDxi1eLSvHHRDjk+sKh6AtuGJrGb/rhwix2+feeEFoPkiHwtiRpvHa
+         6JoPkXQ86YgFnaIuPSYXqUSsIrpZq0R0AyrKUh0L7Qs7nbiqc/CykvpAbEAs2VnjfiNh
+         CBv6omn5ViRKA0aHjFRPNyeN7L7M+71PQYv6kl94Hf2Cd0zFLF6F3737qLwZgVK4R9Pj
+         a11g==
 ARC-Authentication-Results: i=2; mx.google.com;
-       spf=pass (google.com: best guess record for domain of colin.king@canonical.com designates 91.189.89.112 as permitted sender) smtp.mailfrom=colin.king@canonical.com;
-       dmarc=fail (p=NONE sp=NONE dis=NONE) header.from=canonical.com
+       spf=neutral (google.com: 192.134.164.104 is neither permitted nor denied by domain of julia.lawall@lip6.fr) smtp.mailfrom=julia.lawall@lip6.fr
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
-        h=sender:to:cc:references:from:openpgp:autocrypt:subject:message-id
-         :date:user-agent:mime-version:in-reply-to:content-language
-         :x-original-sender:x-original-authentication-results:precedence
-         :mailing-list:list-id:list-post:list-help:list-archive
-         :list-subscribe:list-unsubscribe;
-        bh=+3MzP4hW9ra5hHW+32Yo4RVu/JtogFzsmjpcvz0raZM=;
-        b=LL9jc0zsIUaisqe2be5Ycb1ZpLrXB74DJob/abNeZoS2UwNIpRo41sDZ1IEvJ4Uii6
-         yNm/y9SprwoKkdukOKQ1VAHyI5DIvBw5E4Zpd7Cx5CkgClfq20xXR8UP3Jxn0s1ydqNV
-         xa65esnjXTC3W+QhHKNdXYIEXwB5+viAEkl6U=
+        h=sender:date:from:to:cc:subject:in-reply-to:message-id:references
+         :user-agent:mime-version:x-original-sender
+         :x-original-authentication-results:precedence:mailing-list:list-id
+         :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
+        bh=AHvKZWwoJMUOgxo4xOShyokLKet6jrDeAzi9e7SQuzo=;
+        b=A9+YA4ooDS13WMMMjANyukFZe13eKt7usxuJqoz4LOJKafLjpGX5NNcbxwdPX93fhF
+         yPFLrf0M7bJn+3kR1FC4vKydfFmE89c41ozEOgvSjL40NfCPgrjD26D8nUPq02hGcUkU
+         xUl3OnfJFUUwdycCd+zGSIYXZ0Eadtf9UKOKk=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
-        h=sender:x-gm-message-state:to:cc:references:from:openpgp:autocrypt
-         :subject:message-id:date:user-agent:mime-version:in-reply-to
-         :content-language:x-original-sender
+        h=sender:x-gm-message-state:date:from:to:cc:subject:in-reply-to
+         :message-id:references:user-agent:mime-version:x-original-sender
          :x-original-authentication-results:precedence:mailing-list:list-id
          :x-spam-checked-in-group:list-post:list-help:list-archive
          :list-subscribe:list-unsubscribe;
-        bh=+3MzP4hW9ra5hHW+32Yo4RVu/JtogFzsmjpcvz0raZM=;
-        b=UO65ceWdc7fObzhlFsqapgoH2KshPFKeU7pC3UG9mUsuochIxLVZJ6Z2e1fWzmsOZR
-         Qr11sXq14Euq9hbWLLskTbB7Xaey5F2ztfXxOX5lSWTi5FMmoirKK4P8Gu8CAc4iaQa4
-         bXneZ2SaH7pth52vMq9u9suD6F1uceTeUPoPfiqpSK4RkvrAHJg4IqNviXGexDw8I70n
-         t6g6vSz3IXFJtqdNgCCr3otPArfqyR4gFSXECbkArsQcNZi2UPEUqhyIJwq6u74W8X2Y
-         bITNowWsVVGHwf03NeNPKQJU7Dmz6MKtLqtENhUBHC+G8XTdOa/etrQsfmns2yUYxrcm
-         QdHQ==
+        bh=AHvKZWwoJMUOgxo4xOShyokLKet6jrDeAzi9e7SQuzo=;
+        b=WSPc6jhX42oksXBuEsqM7E0c7qYwFiXhgEMie0akId4fAdJRfS/QeZj9u6z05WvHdC
+         z3zVPHaQn3ad3ROZtZmLKzyGhdbP4VLoA7KbY71JpBrMOv/ODAgUDrH5jYP1avdpu7bo
+         DTwM7K8WPpxhOPpWni8UN3LRfZoGzQwX2UUk13YKPTsvPobraYvc8RTjImUjmy3+g9aD
+         0gpwRCALHS9kNmtiDPEbA6V+zXIXzghpF75xuCstCl29lDkqKbH4WFZnI3aiRLmkg4/T
+         a2F6xWQ43j5JpDcfcdLKVIYbBFo+OevOA/bFLTIMB/sV6WBnMjxtOQ39juJCz02OqLlB
+         H95w==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: APjAAAVq6Sl9dMoJKiSObiLrvwbeR/ientMhi7iw5fDhDxkk19J/2ord
-	PaR14FYW00I9cF+Bdcf02UagKQ==
-X-Google-Smtp-Source: APXvYqwZM8Idtj2QqyH949l8vqIV9NJh9Uxxeds/FgyL+VJjaGTmpimtrH3Qqis0O5UH4xz0F3Q8qg==
-X-Received: by 2002:a7b:c857:: with SMTP id c23mr13330819wml.51.1565379158890;
-        Fri, 09 Aug 2019 12:32:38 -0700 (PDT)
+X-Gm-Message-State: APjAAAUD9D0tbR+sLEbvo/yowwNDgpOaNbas8oDyZpSjIdgGwfKAL1Ef
+	UmHSHWTBIsjp0ihqNcUaCNptdQ==
+X-Google-Smtp-Source: APXvYqwxQXWmIYUjO35JxrU4/ltII+MOro3mJl4XULlF1+lYoVDkKo9SrqynDpzq/hQPeYWRezjTcA==
+X-Received: by 2002:adf:f14f:: with SMTP id y15mr40413206wro.28.1565699489202;
+        Tue, 13 Aug 2019 05:31:29 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a5d:4982:: with SMTP id r2ls3634103wrq.15.gmail; Fri, 09 Aug
- 2019 12:32:38 -0700 (PDT)
-X-Received: by 2002:a5d:6606:: with SMTP id n6mr18959235wru.346.1565379158094;
-        Fri, 09 Aug 2019 12:32:38 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1565379158; cv=none;
+Received: by 2002:a1c:6484:: with SMTP id y126ls540190wmb.1.canary-gmail; Tue,
+ 13 Aug 2019 05:31:28 -0700 (PDT)
+X-Received: by 2002:a1c:7ec7:: with SMTP id z190mr2856731wmc.17.1565699488444;
+        Tue, 13 Aug 2019 05:31:28 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1565699488; cv=none;
         d=google.com; s=arc-20160816;
-        b=IqcBWWSAI6dfKSEI1/75wgu1SlPVaGQ0b1Y1YcYN+XRDbTksOV4wswoAIkCbXXQyaL
-         VktpvlAo4qUasOFm2BiWLuTDEn6HiMIYaJBjpizlX1HIlZaDFdUZV74/h2eB+ZVRWdwt
-         ABkNcsGSR+yQZmJn37MeML3XCqnsiUNnbSUVPfMSwnxDEZlsVkRsmVIfD5QRDaEZFsRb
-         Brpz0+hn1UaHeDoUzF6RVabFpOlKxbcSarWrx6UItQtCZhA3kXwD9oRB95AXfLExeZUW
-         JnZPe4BfY78tknDZmei/q4fGV3AhDkQKqK7HMMttdy7yrtEcNyJZjumSSfiCRz0WLTue
-         Bgow==
+        b=o+ocTLmBwVakYAmHLmtShd9ZNUuoPkVS2+l2voac1tM7Xak7vZjZUf2ZFbD3+WxTVe
+         pxqRAogdasQ0jL2AGWNEI12e87qg2UVTlYHUGpL6angwf0P7gA2MTrEJJ5PBHrsS/OVK
+         0It1qlfO5QRLySOxx9N1XwD6ZgAJVlsrX8rIkaCtVxfjqH3TqZ7MAwtgU3jvVvfjaUKV
+         jXjXVw8hU2vlhg56d5IvyO5hA4FlUC2jfCJP0nUhsJcM8R/Q0/9/KoGltjoBWTtw/0NC
+         uTYe2u4l7hKexE8A96kCPd8CxBH0B+IbXyiwHaoXMdofyoxCorNe2yaK5Cr2UKgaLlke
+         cCuQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=content-transfer-encoding:content-language:in-reply-to:mime-version
-         :user-agent:date:message-id:subject:autocrypt:openpgp:from
-         :references:cc:to;
-        bh=P2DJ4poRTdrfvdmeHwLwusyTb9PO/io2P2JjQHQi7FU=;
-        b=UDLoyAvzKD7Av4qCqGOseJDGX4nKqGsCC3vGu4pEiW4LzmW9CX/g4tXYe/D8peyq6r
-         R/G2NKcLiMDMu/TxdSB4xugxupA/AaV2gylYTj8ALgPgFc8aL7yGTe5BFdGS2tF+hAVw
-         tsMaRbpYH3bb56EsoBJtWLDgJD7S5apwN0ss/ZnLMZ8wj9Bxp5gI7NVUUynTzI30SJjg
-         TDeDQyXdpDb9bLbIO2DagmC213DTvX76hHEH3Iyrw7u9UBd8l7yiLOP1L11LuvulUGdn
-         tDvQu9f5uiZgyO4KLMRYhmjHm6Q0YKbniZ8X41bagN5u/aibN/SpUNCDizdQs2xBPYVP
-         IsSg==
+        h=mime-version:user-agent:references:message-id:in-reply-to:subject
+         :cc:to:from:date;
+        bh=ftjDWRScXkBkxIYY8kr/Ua7vScN483s6IN1yLALZK88=;
+        b=GGIZRZQfLGAo3KPYUhpQTpSnXmGF+4ruKrVaOqMnW0LoOy/U9Dh5dFyL1jTRFEYxG5
+         0aTf3atfgz6HL+p2qkQZ35mg3SnsxpktKoUFRWuDWUC8NXGWKvCnsGAqvcvPM1MgI8Rp
+         ltmXFcWRPM2RcaW/uq7LQaxIBNNSGbZrTW/Dg8/+VbQHxDvRpOCwTFW89UoU/UU/mPyV
+         Guir+fJKdOqtVk16g24Vn1WklPLNs/WbcNDypxBpsYYZjDeIweieMKHiM80wfhXhLStw
+         BdLhozHbko7tTaFYADTcIqW5OZ7gk+y+5CEC0K4AGL9EJObw0JqYFGZaZOZhOjcNu1S6
+         BPPA==
 ARC-Authentication-Results: i=1; mx.google.com;
-       spf=pass (google.com: best guess record for domain of colin.king@canonical.com designates 91.189.89.112 as permitted sender) smtp.mailfrom=colin.king@canonical.com;
-       dmarc=fail (p=NONE sp=NONE dis=NONE) header.from=canonical.com
-Received: from youngberry.canonical.com (youngberry.canonical.com. [91.189.89.112])
-        by mx.google.com with ESMTPS id 2si4617396wmb.76.2019.08.09.12.32.38
+       spf=neutral (google.com: 192.134.164.104 is neither permitted nor denied by domain of julia.lawall@lip6.fr) smtp.mailfrom=julia.lawall@lip6.fr
+Received: from mail3-relais-sop.national.inria.fr (mail3-relais-sop.national.inria.fr. [192.134.164.104])
+        by mx.google.com with ESMTPS id n6si921007wme.175.2019.08.13.05.31.28
         for <usb-storage@lists.one-eyed-alien.net>
-        (version=TLS1 cipher=AES128-SHA bits=128/128);
-        Fri, 09 Aug 2019 12:32:38 -0700 (PDT)
-Received-SPF: pass (google.com: best guess record for domain of colin.king@canonical.com designates 91.189.89.112 as permitted sender) client-ip=91.189.89.112;
-Received: from 1.general.cking.uk.vpn ([10.172.193.212])
-	by youngberry.canonical.com with esmtpsa (TLS1.0:RSA_AES_128_CBC_SHA1:16)
-	(Exim 4.76)
-	(envelope-from <colin.king@canonical.com>)
-	id 1hwAcv-0000mF-EQ; Fri, 09 Aug 2019 19:32:37 +0000
-To: Alan Stern <stern@rowland.harvard.edu>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-usb@vger.kernel.org, usb-storage@lists.one-eyed-alien.net,
- kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org
-References: <Pine.LNX.4.44L0.1908091528040.1630-100000@iolanthe.rowland.org>
-From: Colin Ian King <colin.king@canonical.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=colin.king@canonical.com; prefer-encrypt=mutual; keydata=
- mQINBE6TJCgBEACo6nMNvy06zNKj5tiwDsXXS+LhT+LwtEsy9EnraKYXAf2xwazcICSjX06e
- fanlyhB0figzQO0n/tP7BcfMVNG7n1+DC71mSyRK1ZERcG1523ajvdZOxbBCTvTitYOy3bjs
- +LXKqeVMhK3mRvdTjjmVpWnWqJ1LL+Hn12ysDVVfkbtuIm2NoaSEC8Ae8LSSyCMecd22d9Pn
- LR4UeFgrWEkQsqROq6ZDJT9pBLGe1ZS0pVGhkRyBP9GP65oPev39SmfAx9R92SYJygCy0pPv
- BMWKvEZS/7bpetPNx6l2xu9UvwoeEbpzUvH26PHO3DDAv0ynJugPCoxlGPVf3zcfGQxy3oty
- dNTWkP6Wh3Q85m+AlifgKZudjZLrO6c+fAw/jFu1UMjNuyhgShtFU7NvEzL3RqzFf9O1qM2m
- uj83IeFQ1FZ65QAiCdTa3npz1vHc7N4uEQBUxyXgXfCI+A5yDnjHwzU0Y3RYS52TA3nfa08y
- LGPLTf5wyAREkFYou20vh5vRvPASoXx6auVf1MuxokDShVhxLpryBnlKCobs4voxN54BUO7m
- zuERXN8kadsxGFzItAyfKYzEiJrpUB1yhm78AecDyiPlMjl99xXk0zs9lcKriaByVUv/NsyJ
- FQj/kmdxox3XHi9K29kopFszm1tFiDwCFr/xumbZcMY17Yi2bQARAQABtCVDb2xpbiBLaW5n
- IDxjb2xpbi5raW5nQGNhbm9uaWNhbC5jb20+iQI2BBMBCAAhBQJOkyQoAhsDBQsJCAcDBRUK
- CQgLBRYCAwEAAh4BAheAAAoJEGjCh9/GqAImsBcP9i6C/qLewfi7iVcOwqF9avfGzOPf7CVr
- n8CayQnlWQPchmGKk6W2qgnWI2YLIkADh53TS0VeSQ7Tetj8f1gV75eP0Sr/oT/9ovn38QZ2
- vN8hpZp0GxOUrzkvvPjpH+zdmKSaUsHGp8idfPpZX7XeBO0yojAs669+3BrnBcU5wW45SjSV
- nfmVj1ZZj3/yBunb+hgNH1QRcm8ZPICpjvSsGFClTdB4xu2AR28eMiL/TTg9k8Gt72mOvhf0
- fS0/BUwcP8qp1TdgOFyiYpI8CGyzbfwwuGANPSupGaqtIRVf+/KaOdYUM3dx/wFozZb93Kws
- gXR4z6tyvYCkEg3x0Xl9BoUUyn9Jp5e6FOph2t7TgUvv9dgQOsZ+V9jFJplMhN1HPhuSnkvP
- 5/PrX8hNOIYuT/o1AC7K5KXQmr6hkkxasjx16PnCPLpbCF5pFwcXc907eQ4+b/42k+7E3fDA
- Erm9blEPINtt2yG2UeqEkL+qoebjFJxY9d4r8PFbEUWMT+t3+dmhr/62NfZxrB0nTHxDVIia
- u8xM+23iDRsymnI1w0R78yaa0Eea3+f79QsoRW27Kvu191cU7QdW1eZm05wO8QUvdFagVVdW
- Zg2DE63Fiin1AkGpaeZG9Dw8HL3pJAJiDe0KOpuq9lndHoGHs3MSa3iyQqpQKzxM6sBXWGfk
- EkK5Ag0ETpMkKAEQAMX6HP5zSoXRHnwPCIzwz8+inMW7mJ60GmXSNTOCVoqExkopbuUCvinN
- 4Tg+AnhnBB3R1KTHreFGoz3rcV7fmJeut6CWnBnGBtsaW5Emmh6gZbO5SlcTpl7QDacgIUuT
- v1pgewVHCcrKiX0zQDJkcK8FeLUcB2PXuJd6sJg39kgsPlI7R0OJCXnvT/VGnd3XPSXXoO4K
- cr5fcjsZPxn0HdYCvooJGI/Qau+imPHCSPhnX3WY/9q5/WqlY9cQA8tUC+7mgzt2VMjFft1h
- rp/CVybW6htm+a1d4MS4cndORsWBEetnC6HnQYwuC4bVCOEg9eXMTv88FCzOHnMbE+PxxHzW
- 3Gzor/QYZGcis+EIiU6hNTwv4F6fFkXfW6611JwfDUQCAHoCxF3B13xr0BH5d2EcbNB6XyQb
- IGngwDvnTyKHQv34wE+4KtKxxyPBX36Z+xOzOttmiwiFWkFp4c2tQymHAV70dsZTBB5Lq06v
- 6nJs601Qd6InlpTc2mjd5mRZUZ48/Y7i+vyuNVDXFkwhYDXzFRotO9VJqtXv8iqMtvS4xPPo
- 2DtJx6qOyDE7gnfmk84IbyDLzlOZ3k0p7jorXEaw0bbPN9dDpw2Sh9TJAUZVssK119DJZXv5
- 2BSc6c+GtMqkV8nmWdakunN7Qt/JbTcKlbH3HjIyXBy8gXDaEto5ABEBAAGJAh8EGAEIAAkF
- Ak6TJCgCGwwACgkQaMKH38aoAiZ4lg/+N2mkx5vsBmcsZVd3ys3sIsG18w6RcJZo5SGMxEBj
- t1UgyIXWI9lzpKCKIxKx0bskmEyMy4tPEDSRfZno/T7p1mU7hsM4owi/ic0aGBKP025Iok9G
- LKJcooP/A2c9dUV0FmygecRcbIAUaeJ27gotQkiJKbi0cl2gyTRlolKbC3R23K24LUhYfx4h
- pWj8CHoXEJrOdHO8Y0XH7059xzv5oxnXl2SD1dqA66INnX+vpW4TD2i+eQNPgfkECzKzGj+r
- KRfhdDZFBJj8/e131Y0t5cu+3Vok1FzBwgQqBnkA7dhBsQm3V0R8JTtMAqJGmyOcL+JCJAca
- 3Yi81yLyhmYzcRASLvJmoPTsDp2kZOdGr05Dt8aGPRJL33Jm+igfd8EgcDYtG6+F8MCBOult
- TTAu+QAijRPZv1KhEJXwUSke9HZvzo1tNTlY3h6plBsBufELu0mnqQvHZmfa5Ay99dF+dL1H
- WNp62+mTeHsX6v9EACH4S+Cw9Q1qJElFEu9/1vFNBmGY2vDv14gU2xEiS2eIvKiYl/b5Y85Q
- QLOHWV8up73KK5Qq/6bm4BqVd1rKGI9un8kezUQNGBKre2KKs6wquH8oynDP/baoYxEGMXBg
- GF/qjOC6OY+U7kNUW3N/A7J3M2VdOTLu3hVTzJMZdlMmmsg74azvZDV75dUigqXcwjE=
-Subject: [usb-storage] Re: [PATCH] USB: storage: isd200: remove redundant
- assignment to variable sendToTransport
-Message-ID: <b68ee52d-f6d6-c626-3ed7-9b590fb1ed1b@canonical.com>
-Date: Fri, 9 Aug 2019 20:32:36 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 13 Aug 2019 05:31:28 -0700 (PDT)
+Received-SPF: neutral (google.com: 192.134.164.104 is neither permitted nor denied by domain of julia.lawall@lip6.fr) client-ip=192.134.164.104;
+X-IronPort-AV: E=Sophos;i="5.64,381,1559512800"; 
+   d="scan'208";a="316282409"
+Received: from portablejulia.rsr.lip6.fr ([132.227.76.63])
+  by mail3-relais-sop.national.inria.fr with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384; 13 Aug 2019 14:31:18 +0200
+Date: Tue, 13 Aug 2019 14:31:18 +0200 (CEST)
+From: Julia Lawall <julia.lawall@lip6.fr>
+X-X-Sender: julia@hadrien
+To: Matthias Maennich <maennich@google.com>
+cc: linux-kernel@vger.kernel.org, maco@android.com, kernel-team@android.com, 
+    arnd@arndb.de, geert@linux-m68k.org, gregkh@linuxfoundation.org, 
+    hpa@zytor.com, jeyu@kernel.org, joel@joelfernandes.org, 
+    kstewart@linuxfoundation.org, linux-arch@vger.kernel.org, 
+    linux-kbuild@vger.kernel.org, linux-m68k@vger.kernel.org, 
+    linux-modules@vger.kernel.org, linux-scsi@vger.kernel.org, 
+    linux-usb@vger.kernel.org, lucas.de.marchi@gmail.com, maco@google.com, 
+    michal.lkml@markovi.net, mingo@redhat.com, oneukum@suse.com, 
+    pombredanne@nexb.com, sam@ravnborg.org, sboyd@codeaurora.org, 
+    sspatil@google.com, stern@rowland.harvard.edu, tglx@linutronix.de, 
+    usb-storage@lists.one-eyed-alien.net, x86@kernel.org, 
+    yamada.masahiro@socionext.com, Julia Lawall <Julia.Lawall@lip6.fr>, 
+    Gilles Muller <Gilles.Muller@lip6.fr>, 
+    Nicolas Palix <nicolas.palix@imag.fr>, 
+    Mauro Carvalho Chehab <mchehab+samsung@kernel.org>, 
+    "David S. Miller" <davem@davemloft.net>, 
+    Jonathan Cameron <Jonathan.Cameron@huawei.com>, 
+    Nicolas Ferre <nicolas.ferre@microchip.com>, cocci@systeme.lip6.fr
+Subject: [usb-storage] Re: [PATCH v2 08/10] scripts: Coccinelle script for
+ namespace dependencies.
+In-Reply-To: <20190813121733.52480-9-maennich@google.com>
+Message-ID: <alpine.DEB.2.21.1908131430530.4608@hadrien>
+References: <20180716122125.175792-1-maco@android.com> <20190813121733.52480-1-maennich@google.com> <20190813121733.52480-9-maennich@google.com>
+User-Agent: Alpine 2.21 (DEB 202 2017-01-01)
 MIME-Version: 1.0
-In-Reply-To: <Pine.LNX.4.44L0.1908091528040.1630-100000@iolanthe.rowland.org>
 Content-Type: text/plain; charset="UTF-8"
-Content-Language: en-US
-X-Original-Sender: colin.king@canonical.com
-X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
- best guess record for domain of colin.king@canonical.com designates
- 91.189.89.112 as permitted sender) smtp.mailfrom=colin.king@canonical.com;
-       dmarc=fail (p=NONE sp=NONE dis=NONE) header.from=canonical.com
+X-Original-Sender: julia.lawall@lip6.fr
+X-Original-Authentication-Results: mx.google.com;       spf=neutral
+ (google.com: 192.134.164.104 is neither permitted nor denied by domain of
+ julia.lawall@lip6.fr) smtp.mailfrom=julia.lawall@lip6.fr
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -178,55 +142,205 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On 09/08/2019 20:29, Alan Stern wrote:
-> On Fri, 9 Aug 2019, Colin King wrote:
-> 
->> From: Colin Ian King <colin.king@canonical.com>
->>
->> The variable sendToTransport is being initialized with a value that is
->> never read and is being re-assigned a little later on. The assignment
->> is redundant and hence can be removed.
->>
->> Addresses-Coverity: ("Unused value")
-> 
-> Of what use is that tag to general kernel developers?
 
-This is being informally used so that we can track which bugs are
-getting found with specific static analysis tools.  The public coverity
-bug reports also have a CID# number.  I'm working on range of coverity
-builds (different build configs) that are not public because I can crank
-multiple builds per day to find issues.
 
-Colin
+On Tue, 13 Aug 2019, Matthias Maennich wrote:
 
-> 
->> Signed-off-by: Colin Ian King <colin.king@canonical.com>
->> ---
->>  drivers/usb/storage/isd200.c | 2 +-
->>  1 file changed, 1 insertion(+), 1 deletion(-)
->>
->> diff --git a/drivers/usb/storage/isd200.c b/drivers/usb/storage/isd200.c
->> index 2b474d60b4db..28e1128d53a4 100644
->> --- a/drivers/usb/storage/isd200.c
->> +++ b/drivers/usb/storage/isd200.c
->> @@ -1511,7 +1511,7 @@ static int isd200_Initialization(struct us_data *us)
->>  
->>  static void isd200_ata_command(struct scsi_cmnd *srb, struct us_data *us)
->>  {
->> -	int sendToTransport = 1, orig_bufflen;
->> +	int sendToTransport, orig_bufflen;
->>  	union ata_cdb ataCdb;
->>  
->>  	/* Make sure driver was initialized */
-> 
-> Otherwise:
-> 
-> Acked-by: Alan Stern <stern@rowland.harvard.edu>
-> 
-> Alan Stern
-> 
+> A script that uses the '<module>.ns_deps' file generated by modpost to
+> automatically add the required symbol namespace dependencies to each
+> module.
+>
+> Usage:
+> 1) Move some symbols to a namespace with EXPORT_SYMBOL_NS() or define
+>    DEFAULT_SYMBOL_NAMESPACE
+> 2) Run 'make' (or 'make modules') and get warnings about modules not
+>    importing that namespace.
+> 3) Run 'make nsdeps' to automatically add required import statements
+>    to said modules.
+>
+> This makes it easer for subsystem maintainers to introduce and maintain
+> symbol namespaces into their codebase.
+>
+> Co-developed-by: Martijn Coenen <maco@android.com>
+> Signed-off-by: Martijn Coenen <maco@android.com>
+> Signed-off-by: Matthias Maennich <maennich@google.com>
+
+Acked-by: Julia Lawall <julia.lawall@lip6.fr>
+
+
+> ---
+>  MAINTAINERS                                 |  5 ++
+>  Makefile                                    | 12 +++++
+>  scripts/Makefile.modpost                    |  4 +-
+>  scripts/coccinelle/misc/add_namespace.cocci | 23 +++++++++
+>  scripts/nsdeps                              | 54 +++++++++++++++++++++
+>  5 files changed, 97 insertions(+), 1 deletion(-)
+>  create mode 100644 scripts/coccinelle/misc/add_namespace.cocci
+>  create mode 100644 scripts/nsdeps
+>
+> diff --git a/MAINTAINERS b/MAINTAINERS
+> index e81e60bd7c26..aa169070a052 100644
+> --- a/MAINTAINERS
+> +++ b/MAINTAINERS
+> @@ -11414,6 +11414,11 @@ S:	Maintained
+>  T:	git git://git.kernel.org/pub/scm/linux/kernel/git/wtarreau/nolibc.git
+>  F:	tools/include/nolibc/
+>
+> +NSDEPS
+> +M:	Matthias Maennich <maennich@google.com>
+> +S:	Maintained
+> +F:	scripts/nsdeps
+> +
+>  NTB AMD DRIVER
+>  M:	Shyam Sundar S K <Shyam-sundar.S-k@amd.com>
+>  L:	linux-ntb@googlegroups.com
+> diff --git a/Makefile b/Makefile
+> index 1b23f95db176..c5c3356e133c 100644
+> --- a/Makefile
+> +++ b/Makefile
+> @@ -1500,6 +1500,9 @@ help:
+>  	@echo  '  headerdep       - Detect inclusion cycles in headers'
+>  	@echo  '  coccicheck      - Check with Coccinelle'
+>  	@echo  ''
+> +	@echo  'Tools:'
+> +	@echo  '  nsdeps          - Generate missing symbol namespace dependencies'
+> +	@echo  ''
+>  	@echo  'Kernel selftest:'
+>  	@echo  '  kselftest       - Build and run kernel selftest (run as root)'
+>  	@echo  '                    Build, install, and boot kernel before'
+> @@ -1687,6 +1690,15 @@ quiet_cmd_tags = GEN     $@
+>  tags TAGS cscope gtags: FORCE
+>  	$(call cmd,tags)
+>
+> +# Script to generate missing namespace dependencies
+> +# ---------------------------------------------------------------------------
+> +
+> +PHONY += nsdeps
+> +
+> +nsdeps:
+> +	$(Q)$(MAKE) -f $(srctree)/scripts/Makefile.modpost nsdeps
+> +	$(Q)$(CONFIG_SHELL) $(srctree)/scripts/$@
+> +
+>  # Scripts to check various things for consistency
+>  # ---------------------------------------------------------------------------
+>
+> diff --git a/scripts/Makefile.modpost b/scripts/Makefile.modpost
+> index 26e6574ecd08..743fe3a2e885 100644
+> --- a/scripts/Makefile.modpost
+> +++ b/scripts/Makefile.modpost
+> @@ -56,7 +56,8 @@ MODPOST = scripts/mod/modpost						\
+>  	$(if $(KBUILD_EXTMOD),$(addprefix -e ,$(KBUILD_EXTRA_SYMBOLS)))	\
+>  	$(if $(KBUILD_EXTMOD),-o $(modulesymfile))			\
+>  	$(if $(CONFIG_SECTION_MISMATCH_WARN_ONLY),,-E)			\
+> -	$(if $(KBUILD_MODPOST_WARN),-w)
+> +	$(if $(KBUILD_MODPOST_WARN),-w)					\
+> +	$(if $(filter nsdeps,$(MAKECMDGOALS)),-d)
+>
+>  ifdef MODPOST_VMLINUX
+>
+> @@ -134,6 +135,7 @@ $(modules): %.ko :%.o %.mod.o FORCE
+>
+>  targets += $(modules)
+>
+> +nsdeps: __modpost
+>
+>  # Add FORCE to the prequisites of a target to force it to be always rebuilt.
+>  # ---------------------------------------------------------------------------
+> diff --git a/scripts/coccinelle/misc/add_namespace.cocci b/scripts/coccinelle/misc/add_namespace.cocci
+> new file mode 100644
+> index 000000000000..c832bb6445a8
+> --- /dev/null
+> +++ b/scripts/coccinelle/misc/add_namespace.cocci
+> @@ -0,0 +1,23 @@
+> +// SPDX-License-Identifier: GPL-2.0-only
+> +//
+> +/// Adds missing MODULE_IMPORT_NS statements to source files
+> +///
+> +/// This script is usually called from scripts/nsdeps with -D ns=<namespace> to
+> +/// add a missing namespace tag to a module source file.
+> +///
+> +
+> +@has_ns_import@
+> +declarer name MODULE_IMPORT_NS;
+> +identifier virtual.ns;
+> +@@
+> +MODULE_IMPORT_NS(ns);
+> +
+> +// Add missing imports, but only adjacent to a MODULE_LICENSE statement.
+> +// That ensures we are adding it only to the main module source file.
+> +@do_import depends on !has_ns_import@
+> +declarer name MODULE_LICENSE;
+> +expression license;
+> +identifier virtual.ns;
+> +@@
+> +MODULE_LICENSE(license);
+> ++ MODULE_IMPORT_NS(ns);
+> diff --git a/scripts/nsdeps b/scripts/nsdeps
+> new file mode 100644
+> index 000000000000..148db65a830f
+> --- /dev/null
+> +++ b/scripts/nsdeps
+> @@ -0,0 +1,54 @@
+> +#!/bin/bash
+> +# SPDX-License-Identifier: GPL-2.0
+> +# Linux kernel symbol namespace import generator
+> +#
+> +# This script requires at least spatch
+> +# version 1.0.4.
+> +SPATCH_REQ_VERSION="1.0.4"
+> +
+> +DIR="$(dirname $(readlink -f $0))/.."
+> +SPATCH="`which ${SPATCH:=spatch}`"
+> +if [ ! -x "$SPATCH" ]; then
+> +    echo 'spatch is part of the Coccinelle project and is available at http://coccinelle.lip6.fr/'
+> +    exit 1
+> +fi
+> +
+> +SPATCH_REQ_VERSION_NUM=$(echo $SPATCH_REQ_VERSION | ${DIR}/scripts/ld-version.sh)
+> +SPATCH_VERSION=$($SPATCH --version | head -1 | awk '{print $3}')
+> +SPATCH_VERSION_NUM=$(echo $SPATCH_VERSION | ${DIR}/scripts/ld-version.sh)
+> +
+> +if [ "$SPATCH_VERSION_NUM" -lt "$SPATCH_REQ_VERSION_NUM" ] ; then
+> +    echo 'spatch needs to be version 1.06 or higher'
+> +    exit 1
+> +fi
+> +
+> +generate_deps_for_ns() {
+> +    $SPATCH --very-quiet --in-place --sp-file \
+> +	    $srctree/scripts/coccinelle/misc/add_namespace.cocci -D ns=$1 $2
+> +}
+> +
+> +generate_deps() {
+> +    local mod_file=`echo $@ | sed -e 's/\.ns_deps/\.mod/'`
+> +    local mod_name=`cat $mod_file | sed -n 1p | sed -e 's/\/[^.]*$//'`
+> +    local mod_source_files=`cat $mod_file | sed -n 2p | sed -e 's/\.o/\.c/g'`
+> +    for ns in `cat $@`; do
+> +	echo "Adding namespace $ns to module $mod_name (if needed)."
+> +        generate_deps_for_ns $ns $mod_source_files
+> +	# sort the imports
+> +        for source_file in $mod_source_files; do
+> +            sed '/MODULE_IMPORT_NS/Q' $source_file > ${source_file}.tmp
+> +            offset=$(wc -l ${source_file}.tmp | awk '{print $1;}')
+> +            cat $source_file | grep MODULE_IMPORT_NS | sort -u >> ${source_file}.tmp
+> +            tail -n +$((offset +1)) ${source_file} | grep -v MODULE_IMPORT_NS >> ${source_file}.tmp
+> +            if ! diff -q ${source_file} ${source_file}.tmp; then
+> +                mv ${source_file}.tmp ${source_file}
+> +            else
+> +                rm ${source_file}.tmp
+> +            fi
+> +        done
+> +    done
+> +}
+> +
+> +for f in `find $srctree/.tmp_versions/ -name *.ns_deps`; do
+> +    generate_deps $f
+> +done
+> --
+> 2.23.0.rc1.153.gdeed80330f-goog
+>
+>
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/b68ee52d-f6d6-c626-3ed7-9b590fb1ed1b%40canonical.com.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/alpine.DEB.2.21.1908131430530.4608%40hadrien.
