@@ -1,111 +1,104 @@
-Return-Path: <usb-storage+bncBDMYPB44VAFRBINHZPVAKGQE5OFI4CI@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBCUJ7YGL3QFBBIVNZPVAKGQEY5VFSLY@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-qk1-x746.google.com (mail-qk1-x746.google.com [IPv6:2607:f8b0:4864:20::746])
-	by mail.lfdr.de (Postfix) with ESMTPS id D19F48BCC9
-	for <lists+usb-storage@lfdr.de>; Tue, 13 Aug 2019 17:13:38 +0200 (CEST)
-Received: by mail-qk1-x746.google.com with SMTP id k125sf96430935qkc.12
-        for <lists+usb-storage@lfdr.de>; Tue, 13 Aug 2019 08:13:38 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1565709217; cv=pass;
+Received: from mail-pg1-x545.google.com (mail-pg1-x545.google.com [IPv6:2607:f8b0:4864:20::545])
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C2C18BCFD
+	for <lists+usb-storage@lfdr.de>; Tue, 13 Aug 2019 17:26:28 +0200 (CEST)
+Received: by mail-pg1-x545.google.com with SMTP id h5sf66667446pgq.23
+        for <lists+usb-storage@lfdr.de>; Tue, 13 Aug 2019 08:26:28 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1565709987; cv=pass;
         d=google.com; s=arc-20160816;
-        b=Sa542Gp4f5CyFZZr06w6OF3wBkQDMcZxKNItZLnXmddf6QLXg2kA5tUi6jbfnl5fGg
-         OnKpyHu0xKqenCWj5az8h4d4k6UGv6q0/cyQyh0z0siCQfUImbnve9vtik+LAcek+xDy
-         zy6D8PU5rPscdhBKM8qgeL2OQla62ywvBppm8nYmQ2GlI4RkGcwTMrZi0Y3n61SRaPFe
-         DkwZLJqo+cTSxQQxXn0YJbVrMfFq51uWlrjcJv0bC6of5BwmAB5BGJPrVbGQU3ip8oIM
-         6HhLu5DKvuV4n5H3q2Ai0T5w77wuh8QuPwUi84x7xsMuL1xGuUPfAaQPBUpSLI3Y9jHn
-         ePAQ==
+        b=qhV5QgvSfF2UTFRKWYN4Nr/1Xu5NewlTvt7QL9/qzmrnVuPahfVzmNJuEThA0TuW10
+         eEyP8T3Ve9yFTFcQOl1O8R9NAvvbanvmR/IUNgPJVArTRyKg8ss6URPkcYV/ggR3C0dt
+         NgNQh+V3QtXY0t2sXccE1QvVl0JT1XHmXiLJ5v2MMSKvqE7+BvdJbqKK8AnnqOzZ6KlP
+         Lpa4shMHS8+uXy0QqGbHaY57ush2/0qLby0YWhXaxEhFWTcVMxt6lKqQinJ5kIVefl2B
+         6m7127iiwNXi5U2fDel2iT9czKVs+10oPdRb6U6wKqQu1kpC3t4rmsBZKF2hZFrv5p0g
+         kw+Q==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:reply-to:user-agent:in-reply-to
+         :list-id:mailing-list:precedence:user-agent:in-reply-to
          :content-disposition:mime-version:references:message-id:subject:cc
-         :to:from:date:dkim-signature;
-        bh=UsDEZlyOEK7SAXhrhTsAgDwB3b60hIG0D0HrtZvKLww=;
-        b=kHTpG0mEmAbdj2T3LlS5fWS2VjgKJaEKJ0xnvIhyHHfj9kJ1m/cegtLoZRBg1EnAkI
-         G+kRR5BTYsfQl7BDXpVCdQ/hlrjwyVRFRqYe6lrvchfyktNkBO7hGKRxqGSfVQ5gnPrS
-         6fVZIm5OrN5LE5OmYOrtrenjaCTTxVN6Bc9ggNPzrZMLhLDVKtP9MFJv1W+Yi0DLHU9C
-         eH6MVebjB/mwKsUCmAPZcGq71+86XUsRP8Iq9SoA76YU8dHc1zhLxRGFakwFNncCWXbq
-         7Ng7Z+lS/mCONCXb5TVBfV9RwnVIlfE0RticRZ5sq/GqOGiU8L++JxsSJMq82HFTgi4u
-         rkQw==
+         :to:from:date:sender:dkim-signature;
+        bh=dkxBYYjtpB86lhwtFJ4+giSjhwy/5PoRyFJwTfYKRGc=;
+        b=vn6nkoIPRq/U0A4agkmGefGpFRpT5bTf6K78PS6j/j+U9+7dbmdHoVUE4Vkp4g7ZMI
+         XWqcxViyEKtf3U+9E2DGkjYgHByTvBknxQY3P1GJ05/3Ggu8tjHIcxDLJ/mFy7if/pm+
+         xH2fe8Np+vGQDY8ODQNVhz/aqL9q3JXAcoRoFoaNhXMMeY09h6X+qwO+kzTMf94rv+HM
+         HLIDRSQQxtn0tLkCpYxeYFyDtksBx+/oZ4nknSj17X3nBlQ5AtEBK+6qkrnUkB13POfK
+         uOWPmeh9fYcv/CP4xxMdkDqFVhRvhQS1euzle8CJR4+J3s5Kh4kIw+dL2OtHS+CfyStf
+         HExQ==
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@google.com header.s=20161025 header.b=t2CeC6mt;
-       spf=pass (google.com: domain of maennich@google.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=maennich@google.com;
-       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
+       dkim=pass header.i=@kernel.org header.s=default header.b="gi/sr8eK";
+       spf=pass (google.com: domain of gregkh@linuxfoundation.org designates 198.145.29.99 as permitted sender) smtp.mailfrom=gregkh@linuxfoundation.org
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
-        h=date:from:to:cc:subject:message-id:references:mime-version
+        h=sender:date:from:to:cc:subject:message-id:references:mime-version
          :content-disposition:in-reply-to:user-agent:x-original-sender
-         :x-original-authentication-results:reply-to:precedence:mailing-list
-         :list-id:list-post:list-help:list-archive:list-subscribe
-         :list-unsubscribe;
-        bh=UsDEZlyOEK7SAXhrhTsAgDwB3b60hIG0D0HrtZvKLww=;
-        b=h1dXNXNJSs/Z9k1560auJ5loEnSHonJ7IIGHHVJxWsgml404ySn5yJMUItmi5SlzKA
-         iN3F6aQdS32zbaahsuvYleGRhNrk9vqF5lO8Bil4iXbVN4yCRYFjPVPH+Thrx+wXzEgi
-         Gh50AysgW5NVFlt/pu408HX3C6ffgbw7DG1ys=
+         :x-original-authentication-results:precedence:mailing-list:list-id
+         :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
+        bh=dkxBYYjtpB86lhwtFJ4+giSjhwy/5PoRyFJwTfYKRGc=;
+        b=UKUA4Nsfb77GrQTD2Uax73QnCOT/0jFg+qHW2t2ijmlmAOFE3ToUw2inFGGTEo2kCf
+         37/HA0bA9PVEUVDBE3sL6wB/FmnT+jyENR9I2tCUc7atrg1vPhe6EZObjEynuMfMqWx/
+         EvwJxQgFikONEo+R+853jtv/xbVelVznSpGSA=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
-        h=x-gm-message-state:date:from:to:cc:subject:message-id:references
-         :mime-version:content-disposition:in-reply-to:user-agent
-         :x-original-sender:x-original-authentication-results:reply-to
-         :precedence:mailing-list:list-id:list-post:list-help:list-archive
-         :list-subscribe:list-unsubscribe;
-        bh=UsDEZlyOEK7SAXhrhTsAgDwB3b60hIG0D0HrtZvKLww=;
-        b=JfjbqPE/G5P7Npsu8iV4j3MZzf7zWO444y8xR7I3hU0dDhaNzPWT45/osikyB+17BM
-         STuIbdbaotYZFPbAq4ZfMigOjTBAy2lzOLiYpDuWs4jWUL9E8S0j+4RjI7hb3ZF5ZbcV
-         5e9wm6FKbKdeL+3PlngjWDoKOzgijRm+aoYmoLzJ25lU+qWThmWqgNvSKBXhFycuABmH
-         /lnOJodzSq2wUPbuN6a0CxIr3q7iJV9Vlm4TzRSeUjhy5tJt7SDdcPfYz/qY/yM912JO
-         fVmytFZgnTA9qxmUIenRzoSmPZ+KrxwNLro2Yje0gY/G0QNk8NkRhSUt/PzGmTzTEDOJ
-         AOOg==
-X-Gm-Message-State: APjAAAUuR+54mnjftYgIlqyq+Fzj5rsrjeLfGHRchy7GHSGK9LgwOGnD
-	lRhWvGP+jv44xY4rZkn/LgvZgg==
-X-Google-Smtp-Source: APXvYqzP9Bl9HfsNB9c+zR+1V84gd7OIt3kZhxD1pCjovrhDhGeZdfJK7aTq2+eb0R7KUxShkV2Xrw==
-X-Received: by 2002:a37:48d8:: with SMTP id v207mr32884641qka.316.1565709217704;
-        Tue, 13 Aug 2019 08:13:37 -0700 (PDT)
+        h=sender:x-gm-message-state:date:from:to:cc:subject:message-id
+         :references:mime-version:content-disposition:in-reply-to:user-agent
+         :x-original-sender:x-original-authentication-results:precedence
+         :mailing-list:list-id:x-spam-checked-in-group:list-post:list-help
+         :list-archive:list-subscribe:list-unsubscribe;
+        bh=dkxBYYjtpB86lhwtFJ4+giSjhwy/5PoRyFJwTfYKRGc=;
+        b=BIPa1bCkb7pTqkL4mKSwufkQu4u+tLZ3YhZlRnXZ1JRGMetP+MubxLfX3vzg1B9n8E
+         nAwT0iJ6lGbUFKYVb9APXlq4rhROLf7caekGlub0e3ULh6yE0CkJO7GuawMQSGlmdvXQ
+         ly4MEX8UcKuuREkmflfHZtLEXAyhBdIYuACAVprP3wWzvTNLUMTs4grrZPZ3u24uwwfv
+         oeQCYwtRmIC/HhZcTqXfMTKFnGHyr/7aSz6/fNTDe6DaXWPWl/IU69W8tX9vnAuZMRNd
+         WNFLgu4Oq0f53phpNUKD86ddtJTpfLAKR9EcmisyCr4aYF7D40r0hf5SJFJ/UDOWBa7o
+         uM3g==
+Sender: usb-storage@lists.one-eyed-alien.net
+X-Gm-Message-State: APjAAAVJLSOvzxyv31YFsgjExEQigqDM/HJxF91OEgMEX6x6fpym4j7H
+	GVN+pdqHWhosQabzinGcv279xA==
+X-Google-Smtp-Source: APXvYqw7fe4i5TYKMHO6scB9iqCE98Srg62VNtO3kWGddDLC9dCZYqmTt5CzzfMagWmbD03EhT638A==
+X-Received: by 2002:aa7:8647:: with SMTP id a7mr8191321pfo.119.1565709987017;
+        Tue, 13 Aug 2019 08:26:27 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:ac8:294d:: with SMTP id z13ls5732637qtz.11.gmail; Tue, 13
- Aug 2019 08:13:37 -0700 (PDT)
-X-Received: by 2002:ac8:7344:: with SMTP id q4mr12450763qtp.338.1565709217456;
-        Tue, 13 Aug 2019 08:13:37 -0700 (PDT)
-Received: by 2002:a37:a54e:0:0:0:0:0 with SMTP id o75msqke;
-        Tue, 13 Aug 2019 08:02:27 -0700 (PDT)
-X-Received: by 2002:a5d:494d:: with SMTP id r13mr39531695wrs.82.1565708547528;
-        Tue, 13 Aug 2019 08:02:27 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1565708547; cv=none;
+Received: by 2002:a17:902:20c8:: with SMTP id v8ls4035947plg.11.gmail; Tue, 13
+ Aug 2019 08:26:26 -0700 (PDT)
+X-Received: by 2002:a17:90a:be15:: with SMTP id a21mr2813200pjs.74.1565709986612;
+        Tue, 13 Aug 2019 08:26:26 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1565709986; cv=none;
         d=google.com; s=arc-20160816;
-        b=M0+pWiHf0HDyMIcuw7uguaotdjIo+1Stg/6hkt5YV1GixXGTuQkDvHh6fZBjQiuOIp
-         nrSeXtPRW9ppxEXeSZvvSx4m0wk7vr41/F6FpHAl8MGVIzD39tFlGT96e93YTq69KRUc
-         lwIhenq6DhzDLjKHZJZLQMAh/yMYaJa2Xmgyte6tgw3klW3vuZX5UsBBdAtPecRG3bSQ
-         ltB9qCb3hN7PJ1Zdg1DEzq9YZU+inFwHZrYlI7UFcdzuTqoi7Vioe/Mr8GYrstUgKPpn
-         qrARnAYXVFQbGfJ6ezjZEFVrw69qyyKoquIZLp/Vv2mtbUq9iWEo6q37gYdMAkhASMrO
-         /7+A==
+        b=kAd5bZeyK3JPrExmMLjgNxqu6iYbIRa/afKWhyPls0CqdWTSrJB9qVdLmp2h4YWHjg
+         CExJhv5Fs5yov1BLphRhUmrlZM2OxdQAozXTef2yEiK5ODyLRoPdCRGPu4MvgsS4RdfL
+         QCkRGLDE48EcCdN+YiaV1abNvxJQhkHzhWxbxnHN6LIknKCho95cT2+mDV4eqJGdI6Zu
+         wHaxPS1flp9P4hJH1vyr4ARlz5p9EOhw+qn+NXT8aiShsCi6afW0HsOTSzDR19QCs7mn
+         kWwry+hMwJgn+ntC4AAG6MBvDWQp/CwKJ6GIgR9Y5eGDSWNH0s1jk8thcuEkWPJFyFf4
+         v7Qg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=user-agent:in-reply-to:content-disposition:mime-version:references
          :message-id:subject:cc:to:from:date:dkim-signature;
-        bh=Z7Dmwu3NvM4EVDKo63p/xdtZ+TtWJUXj2RkugIVOSr4=;
-        b=JZUnGcDHitVzq3KY5CqtPxE0DPBkTKA1OT/FRDfFxY915poftLLOfgMPJDc0erl4Mc
-         OXQbRU76q61OKkEV3s3Si8QP5D74jdQ5IH1QsoEj5SZPPOcsx2XGzR35xwodl170pcQv
-         1jxebVh0433NjZ0H1giOwCFSqPbvat7RbEYtdQvx59CO+gPFakyxqTcynRlhZf1k9FUO
-         SCsQ7DlIMgvudC7KtOzh7XT/1e4C0rK//LI3qwGzigTLTMRzjXPaWZU6l02FVlKDdeeI
-         UI6PomevZKT9ZTPyT4dXUnHZdySERSilfH2qCWboAhhjx9rSU2VywftZOP8e6XCCbOV+
-         kD0w==
+        bh=jqTM9olYFBH1M/w/rPg9kZ1cIH1tEmA6wb3EF5Kz0IU=;
+        b=Fi5xA/UC162FkfigA0MqVdGm3uRnQkQzvNVO5iql7NRclcYtFx51KUQOobxvaArPkd
+         +XES3/U5JSbSSIACDZy27fLXTd13pVJO4X2jZWPvx8DSc0jT/sQHHJJLkKa4a2MeYiOU
+         iWzyYYEssa6O/yYZW9a9XS4dNTu28AFgmL0rbAgTziNcdaxKqVWTGcWrxNqc8hj6Ls1E
+         IRcRoHyez2WWh7bSwnF0/GOPnMcOiUVL+QBM2u1qu8uvVdmB3j6zzF1rBvq5HwGJjMZ5
+         y5dWZrS0QAdTaIg3KCspfEcooWULPxbX5fgdFA0Ezo3MimIxZTRWrJ78wDfVhf9Z9N8d
+         cPqg==
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@google.com header.s=20161025 header.b=t2CeC6mt;
-       spf=pass (google.com: domain of maennich@google.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=maennich@google.com;
-       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
-Received: from mail-sor-f65.google.com (mail-sor-f65.google.com. [209.85.220.65])
-        by mx.google.com with SMTPS id z12sor85650206wrn.17.2019.08.13.08.02.27
+       dkim=pass header.i=@kernel.org header.s=default header.b="gi/sr8eK";
+       spf=pass (google.com: domain of gregkh@linuxfoundation.org designates 198.145.29.99 as permitted sender) smtp.mailfrom=gregkh@linuxfoundation.org
+Received: from mail.kernel.org (mail.kernel.org. [198.145.29.99])
+        by mx.google.com with ESMTPS id k192si66250431pge.222.2019.08.13.08.26.26
         for <usb-storage@lists.one-eyed-alien.net>
-        (Google Transport Security);
-        Tue, 13 Aug 2019 08:02:27 -0700 (PDT)
-Received-SPF: pass (google.com: domain of maennich@google.com designates 209.85.220.65 as permitted sender) client-ip=209.85.220.65;
-X-Received: by 2002:a5d:670d:: with SMTP id o13mr36840270wru.289.1565708546723;
-        Tue, 13 Aug 2019 08:02:26 -0700 (PDT)
-Received: from google.com ([2a00:79e0:d:210:e8f7:125b:61e9:733d])
-        by smtp.gmail.com with ESMTPSA id p13sm42846847wrw.90.2019.08.13.08.02.25
-        (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
-        Tue, 13 Aug 2019 08:02:26 -0700 (PDT)
-Date: Tue, 13 Aug 2019 16:02:21 +0100
-From: "'Matthias Maennich' via USB Mass Storage on Linux" <usb-storage@lists.one-eyed-alien.net>
-To: Greg KH <gregkh@linuxfoundation.org>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 13 Aug 2019 08:26:26 -0700 (PDT)
+Received-SPF: pass (google.com: domain of gregkh@linuxfoundation.org designates 198.145.29.99 as permitted sender) client-ip=198.145.29.99;
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl [83.86.89.107])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by mail.kernel.org (Postfix) with ESMTPSA id D402420663;
+	Tue, 13 Aug 2019 15:26:25 +0000 (UTC)
+Date: Tue, 13 Aug 2019 17:26:24 +0200
+From: Greg KH <gregkh@linuxfoundation.org>
+To: Matthias Maennich <maennich@google.com>
 Cc: linux-kernel@vger.kernel.org, maco@android.com, kernel-team@android.com,
 	arnd@arndb.de, geert@linux-m68k.org, hpa@zytor.com, jeyu@kernel.org,
 	joel@joelfernandes.org, kstewart@linuxfoundation.org,
@@ -117,30 +110,29 @@ Cc: linux-kernel@vger.kernel.org, maco@android.com, kernel-team@android.com,
 	sam@ravnborg.org, sboyd@codeaurora.org, sspatil@google.com,
 	stern@rowland.harvard.edu, tglx@linutronix.de,
 	usb-storage@lists.one-eyed-alien.net, x86@kernel.org,
-	yamada.masahiro@socionext.com
-Subject: [usb-storage] Re: [PATCH v2 10/10] RFC: usb-storage: export symbols
- in USB_STORAGE namespace
-Message-ID: <20190813150221.GA107461@google.com>
+	yamada.masahiro@socionext.com,
+	Andrew Morton <akpm@linux-foundation.org>,
+	Michael Ellerman <mpe@ellerman.id.au>,
+	Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Subject: [usb-storage] Re: [PATCH v2 03/10] module: add support for symbol namespaces.
+Message-ID: <20190813152624.GB26138@kroah.com>
 References: <20180716122125.175792-1-maco@android.com>
  <20190813121733.52480-1-maennich@google.com>
- <20190813121733.52480-11-maennich@google.com>
- <20190813124708.GC12475@kroah.com>
+ <20190813121733.52480-4-maennich@google.com>
 MIME-Version: 1.0
-Content-Type: text/plain; charset="UTF-8"; format=flowed
+Content-Type: text/plain; charset="UTF-8"
 Content-Disposition: inline
-In-Reply-To: <20190813124708.GC12475@kroah.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-Original-Sender: maennich@google.com
+In-Reply-To: <20190813121733.52480-4-maennich@google.com>
+User-Agent: Mutt/1.12.1 (2019-06-15)
+X-Original-Sender: gregkh@linuxfoundation.org
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@google.com header.s=20161025 header.b=t2CeC6mt;       spf=pass
- (google.com: domain of maennich@google.com designates 209.85.220.65 as
- permitted sender) smtp.mailfrom=maennich@google.com;       dmarc=pass
- (p=REJECT sp=REJECT dis=NONE) header.from=google.com
-X-Original-From: Matthias Maennich <maennich@google.com>
-Reply-To: Matthias Maennich <maennich@google.com>
+ header.i=@kernel.org header.s=default header.b="gi/sr8eK";       spf=pass
+ (google.com: domain of gregkh@linuxfoundation.org designates 198.145.29.99 as
+ permitted sender) smtp.mailfrom=gregkh@linuxfoundation.org
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
+X-Spam-Checked-In-Group: usb-storage@lists.one-eyed-alien.net
 X-Google-Group-Id: 960895140360
 List-Post: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/post>,
  <mailto:usb-storage@lists.one-eyed-alien.net>
@@ -152,34 +144,45 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On Tue, Aug 13, 2019 at 02:47:08PM +0200, Greg KH wrote:
->On Tue, Aug 13, 2019 at 01:17:07PM +0100, Matthias Maennich wrote:
->> Modules using these symbols are required to explicitly import the
->> namespace. This patch was generated with the following steps and serves
->> as a reference to use the symbol namespace feature:
->>
->>  1) Define DDEFAULT_SYMBOL_NAMESPACE in the corresponding Makefile
->>  2) make  (see warnings during modpost about missing imports)
->>  3) make nsdeps
->>
->> Instead of a DEFAULT_SYMBOL_NAMESPACE definition, the EXPORT_SYMBOL_NS
->> variants can be used to explicitly specify the namespace. The advantage
->> of the method used here is that newly added symbols are automatically
->> exported and existing ones are exported without touching their
->> respective EXPORT_SYMBOL macro expansion.
->
->Ok, I can't read text, this answers my previous question.
->
->But, as an example, shouldn't we also have some code here that uses the
->EXPORT_SYMBOL_NS() macro to ensure that it actually works?
->
-I will create another patch for a different subsystem where the use of
-the macros is more appropriate. Then we have both use cases covered.
+On Tue, Aug 13, 2019 at 01:17:00PM +0100, Matthias Maennich wrote:
+> The EXPORT_SYMBOL_NS() and EXPORT_SYMBOL_NS_GPL() macros can be used to
+> export a symbol to a specific namespace.  There are no _GPL_FUTURE and
+> _UNUSED variants because these are currently unused, and I'm not sure
+> they are necessary.
+> 
+> I didn't add EXPORT_SYMBOL_NS() for ASM exports; this patch sets the
+> namespace of ASM exports to NULL by default. In case of relative
+> references, it will be relocatable to NULL. If there's a need, this
+> should be pretty easy to add.
+> 
+> A module that wants to use a symbol exported to a namespace must add a
+> MODULE_IMPORT_NS() statement to their module code; otherwise, modpost
+> will complain when building the module, and the kernel module loader
+> will emit an error and fail when loading the module.
+> 
+> MODULE_IMPORT_NS() adds a modinfo tag 'import_ns' to the module. That
+> tag can be observed by the modinfo command, modpost and kernel/module.c
+> at the time of loading the module.
+> 
+> The ELF symbols are renamed to include the namespace with an asm label;
+> for example, symbol 'usb_stor_suspend' in namespace USB_STORAGE becomes
+> 'usb_stor_suspend.USB_STORAGE'.  This allows modpost to do namespace
+> checking, without having to go through all the effort of parsing ELF and
+> relocation records just to get to the struct kernel_symbols.
+> 
+> On x86_64 I saw no difference in binary size (compression), but at
+> runtime this will require a word of memory per export to hold the
+> namespace. An alternative could be to store namespaced symbols in their
+> own section and use a separate 'struct namespaced_kernel_symbol' for
+> that section, at the cost of making the module loader more complex.
+> 
+> Co-developed-by: Martijn Coenen <maco@android.com>
+> Signed-off-by: Martijn Coenen <maco@android.com>
+> Signed-off-by: Matthias Maennich <maennich@google.com>
 
-Cheers,
-Matthias
+Reviewed-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20190813150221.GA107461%40google.com.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20190813152624.GB26138%40kroah.com.
