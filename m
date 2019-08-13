@@ -1,132 +1,132 @@
-Return-Path: <usb-storage+bncBDZJXP7F6YLRBIG3ZLVAKGQEBPQ2XSY@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBCUJ7YGL3QFBBXG7ZLVAKGQENR2HYRA@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-wm1-x346.google.com (mail-wm1-x346.google.com [IPv6:2a00:1450:4864:20::346])
-	by mail.lfdr.de (Postfix) with ESMTPS id 93A1E8B891
-	for <lists+usb-storage@lfdr.de>; Tue, 13 Aug 2019 14:31:29 +0200 (CEST)
-Received: by mail-wm1-x346.google.com with SMTP id g127sf245006wme.0
-        for <lists+usb-storage@lfdr.de>; Tue, 13 Aug 2019 05:31:29 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1565699489; cv=pass;
+Received: from mail-pg1-x548.google.com (mail-pg1-x548.google.com [IPv6:2607:f8b0:4864:20::548])
+	by mail.lfdr.de (Postfix) with ESMTPS id BC1728B8BD
+	for <lists+usb-storage@lfdr.de>; Tue, 13 Aug 2019 14:41:03 +0200 (CEST)
+Received: by mail-pg1-x548.google.com with SMTP id a21sf59500205pgv.0
+        for <lists+usb-storage@lfdr.de>; Tue, 13 Aug 2019 05:41:03 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1565700062; cv=pass;
         d=google.com; s=arc-20160816;
-        b=01VvZ1SzgGJ9cnVpshcU6NbmcuJbmQ5AZMdzICw9shinm2MyataYNgW+YB8OdsjqOM
-         mPEfzHyxh2C/0EGpjyZmBrN82hFkOoQtIcDJfu80GJE3d2Ry+0fmlOsKSr7AGzp3FSCW
-         NzGvum7vmYqBcRu40LVL1eL+NeJ/bQZDQw/PZHMrdJv29/FvAtOOk4ku/FQ/fSf1+7CA
-         dq8K3Pz7khfdtdQ75eZU0x95+fyj4ubrvorxQEZwkGq33hj+MZlpiPF7Ci14iN/luV2a
-         KD9qI3rncKlKtmEW5pZVp5ki126AqMy5N3cAob8+KfPQFtGY0EHLiP9TOzjXLYkxxy29
-         JcYA==
+        b=rsktEYjsB7ED+UwN12NBr8t3moJtt4lgLLUreOCsSwp8l29mGZiVP/vTPp/4qPbGK9
+         yuDfKeDNNa4S6Hc67ImBKeIYmZs82nBLUG4Fc+nrK8rNVPRKxjTcx90MzRQSvCr4Y5Bf
+         ztOlv6NtDTIkjMrbnEGW9aQk0VTIEfWlqKtK53cvyEKobfXKDR0gFBCpRxa7uUNE6tyn
+         eYZFAb8LYLgwpcHllNi1IH+ieDV1LWFbuSCpYlKl4QpnKoFhHDQbnjdmbat8JuBPDCiO
+         RNkwuX5m8nkVHlCWsBI1nFt9EoNVNogCfKjO0nBQMO6Ek4LOyvHuS03WT7Yd+fWowuvO
+         cSRQ==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:mime-version:user-agent:references
-         :message-id:in-reply-to:subject:cc:to:from:date:sender
-         :dkim-signature;
-        bh=AHvKZWwoJMUOgxo4xOShyokLKet6jrDeAzi9e7SQuzo=;
-        b=IvaRnF+OOMHhehfEvsES7ejto3a5QaFL09wzpn79WzMw/nQdPWuZJCwK7zRjgzmXG4
-         yRZAKdLIhvbxk3rPrVLDMsdAUkSDdUbC0HbnFzTbF2QoDd5owqFrjDrJmTNH1EPGQ/IH
-         AYC5QelPBjtN8rSDxi1eLSvHHRDjk+sKh6AtuGJrGb/rhwix2+feeEFoPkiHwtiRpvHa
-         6JoPkXQ86YgFnaIuPSYXqUSsIrpZq0R0AyrKUh0L7Qs7nbiqc/CykvpAbEAs2VnjfiNh
-         CBv6omn5ViRKA0aHjFRPNyeN7L7M+71PQYv6kl94Hf2Cd0zFLF6F3737qLwZgVK4R9Pj
-         a11g==
+         :list-id:mailing-list:precedence:user-agent:in-reply-to
+         :content-disposition:mime-version:references:message-id:subject:cc
+         :to:from:date:sender:dkim-signature;
+        bh=8WsE1ujNhA3DhLWO3terRnfNxVOmMbjorasb6Bp1f9w=;
+        b=tZF8u6oGCvWjbLPJEkOgRE7ytPfV0IoMl2lmRoA8P42ns4k/ZX6heSU4Sjj5dWlnUu
+         18u7YfIBjlMSLFi8m6CmcuB14MiINZnilBVeWHh1K7yuMK9MPGeVIvMKu/tVa0hnRl15
+         uZyqJX4OcTyId1/QQhKD6UP9e5iFxbyxohclptXNiFJp3fdr3/Kk3M+xRxOHkK7VtviB
+         REzZWbQ0ng8ef46ikPFRHDgCOTKXYDXugJmT1YIqfE+dB5ASfa75yM/QlCA/AFAuwf7z
+         ZpYcpCgjZe3/skCCgcwkl7iR4Q7hn4mcx2V5H7lpjDc07PNKWm4gViveDAcQJi+0Tr1k
+         O4Bg==
 ARC-Authentication-Results: i=2; mx.google.com;
-       spf=neutral (google.com: 192.134.164.104 is neither permitted nor denied by domain of julia.lawall@lip6.fr) smtp.mailfrom=julia.lawall@lip6.fr
+       dkim=pass header.i=@kernel.org header.s=default header.b=o8LZIj8A;
+       spf=pass (google.com: domain of gregkh@linuxfoundation.org designates 198.145.29.99 as permitted sender) smtp.mailfrom=gregkh@linuxfoundation.org
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
-        h=sender:date:from:to:cc:subject:in-reply-to:message-id:references
-         :user-agent:mime-version:x-original-sender
+        h=sender:date:from:to:cc:subject:message-id:references:mime-version
+         :content-disposition:in-reply-to:user-agent:x-original-sender
          :x-original-authentication-results:precedence:mailing-list:list-id
          :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
-        bh=AHvKZWwoJMUOgxo4xOShyokLKet6jrDeAzi9e7SQuzo=;
-        b=A9+YA4ooDS13WMMMjANyukFZe13eKt7usxuJqoz4LOJKafLjpGX5NNcbxwdPX93fhF
-         yPFLrf0M7bJn+3kR1FC4vKydfFmE89c41ozEOgvSjL40NfCPgrjD26D8nUPq02hGcUkU
-         xUl3OnfJFUUwdycCd+zGSIYXZ0Eadtf9UKOKk=
+        bh=8WsE1ujNhA3DhLWO3terRnfNxVOmMbjorasb6Bp1f9w=;
+        b=Z+laSCQ8FDIUbirDrgaZ/wa5Ym4l39H/V8DKFcVgqYpuoatFguwZ0XBfxe+2Lltdac
+         dTHHJzycPhar8NUjtCNpYY8o903bRNJ48IrM0/tRhzGRw1TwvtuPGf9eH/K78Dn3iBLb
+         CBn7lh/+Mo3vfV9xzinqD+VDiY7OUbdOCsvao=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
-        h=sender:x-gm-message-state:date:from:to:cc:subject:in-reply-to
-         :message-id:references:user-agent:mime-version:x-original-sender
-         :x-original-authentication-results:precedence:mailing-list:list-id
-         :x-spam-checked-in-group:list-post:list-help:list-archive
-         :list-subscribe:list-unsubscribe;
-        bh=AHvKZWwoJMUOgxo4xOShyokLKet6jrDeAzi9e7SQuzo=;
-        b=WSPc6jhX42oksXBuEsqM7E0c7qYwFiXhgEMie0akId4fAdJRfS/QeZj9u6z05WvHdC
-         z3zVPHaQn3ad3ROZtZmLKzyGhdbP4VLoA7KbY71JpBrMOv/ODAgUDrH5jYP1avdpu7bo
-         DTwM7K8WPpxhOPpWni8UN3LRfZoGzQwX2UUk13YKPTsvPobraYvc8RTjImUjmy3+g9aD
-         0gpwRCALHS9kNmtiDPEbA6V+zXIXzghpF75xuCstCl29lDkqKbH4WFZnI3aiRLmkg4/T
-         a2F6xWQ43j5JpDcfcdLKVIYbBFo+OevOA/bFLTIMB/sV6WBnMjxtOQ39juJCz02OqLlB
-         H95w==
+        h=sender:x-gm-message-state:date:from:to:cc:subject:message-id
+         :references:mime-version:content-disposition:in-reply-to:user-agent
+         :x-original-sender:x-original-authentication-results:precedence
+         :mailing-list:list-id:x-spam-checked-in-group:list-post:list-help
+         :list-archive:list-subscribe:list-unsubscribe;
+        bh=8WsE1ujNhA3DhLWO3terRnfNxVOmMbjorasb6Bp1f9w=;
+        b=bSq3S42Lnf0FXyHqBvNIFxKHH/NZACh6rywElQBR9UhGCR5od/HszDL9subV2PLKPx
+         yKEGKi/NFkTYNPEAv8ED31aZwLM0HBkc0Shq4S2fHSEDxybktp7aR5QRNK9HD3qvEWUg
+         KBtSIq2j0XgFgE3LE3OI0kqgqziMr2evy2cfhzxXSfcMuP9wcMb/JJrX/clKIzBnCMl2
+         ozPkfYKWRoG0IsvNbGExeo9jwpnQnR5Rw6egcauPoGxvhV3qaH6LGLA4SCaTSdL1m5ax
+         +3dZvrOqDBM2GLRK0XjOg+bTPQQxlZryxDwbq5jsJutp6z8N/6M+k/fY4AEPGT1wSq4q
+         BetA==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: APjAAAUD9D0tbR+sLEbvo/yowwNDgpOaNbas8oDyZpSjIdgGwfKAL1Ef
-	UmHSHWTBIsjp0ihqNcUaCNptdQ==
-X-Google-Smtp-Source: APXvYqwxQXWmIYUjO35JxrU4/ltII+MOro3mJl4XULlF1+lYoVDkKo9SrqynDpzq/hQPeYWRezjTcA==
-X-Received: by 2002:adf:f14f:: with SMTP id y15mr40413206wro.28.1565699489202;
-        Tue, 13 Aug 2019 05:31:29 -0700 (PDT)
+X-Gm-Message-State: APjAAAXXj8QTYxue0cUL1f+1j+AvTp5PR6uGblUkQKN/1iF3DqBDyBch
+	JOaOttC7YGTXZSbm8dCu3S35sA==
+X-Google-Smtp-Source: APXvYqzOGjTfKzlUJrGTfHoqTWZEdn00EZ/7aVVvL2Ian054J4sW3A9aogkV+QCOPuKBpoQaLfr68A==
+X-Received: by 2002:a17:90a:ad86:: with SMTP id s6mr775576pjq.42.1565700060825;
+        Tue, 13 Aug 2019 05:41:00 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a1c:6484:: with SMTP id y126ls540190wmb.1.canary-gmail; Tue,
- 13 Aug 2019 05:31:28 -0700 (PDT)
-X-Received: by 2002:a1c:7ec7:: with SMTP id z190mr2856731wmc.17.1565699488444;
-        Tue, 13 Aug 2019 05:31:28 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1565699488; cv=none;
+Received: by 2002:a62:ce4e:: with SMTP id y75ls25128242pfg.11.gmail; Tue, 13
+ Aug 2019 05:41:00 -0700 (PDT)
+X-Received: by 2002:a62:8281:: with SMTP id w123mr10443002pfd.36.1565700060282;
+        Tue, 13 Aug 2019 05:41:00 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1565700060; cv=none;
         d=google.com; s=arc-20160816;
-        b=o+ocTLmBwVakYAmHLmtShd9ZNUuoPkVS2+l2voac1tM7Xak7vZjZUf2ZFbD3+WxTVe
-         pxqRAogdasQ0jL2AGWNEI12e87qg2UVTlYHUGpL6angwf0P7gA2MTrEJJ5PBHrsS/OVK
-         0It1qlfO5QRLySOxx9N1XwD6ZgAJVlsrX8rIkaCtVxfjqH3TqZ7MAwtgU3jvVvfjaUKV
-         jXjXVw8hU2vlhg56d5IvyO5hA4FlUC2jfCJP0nUhsJcM8R/Q0/9/KoGltjoBWTtw/0NC
-         uTYe2u4l7hKexE8A96kCPd8CxBH0B+IbXyiwHaoXMdofyoxCorNe2yaK5Cr2UKgaLlke
-         cCuQ==
+        b=Tn+/+8H1ZCgXoW/IfOEzCHNhA6fZTEL1AsfzfQUFskg2FHOHdj69m/KV1zL0GQ5PTD
+         oSvd24i9E4zNPO9K4v+XpmhBErw13oRJRhTVHZp66nw57RA9vOIkiiVWEQjX1pbjrKed
+         9MFvNdzZguY87jJwmxWXfHeN3xLLVNbrpl2phaxhoN/ky9eH5TEasyA0JMKvksoS4k8f
+         fr3YtU+0NXm9o/UNIotet2zUvlsXH8VopFKBC8MUnOhQBTYonyCASVnFo+IHUmLYCGKA
+         eNQZcF52gsAWlgISW7m69viYZX9Uzy8XJqrDTErRH3lWU4BCohPaiTvab2Y9G4pzm1+Y
+         /MLA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=mime-version:user-agent:references:message-id:in-reply-to:subject
-         :cc:to:from:date;
-        bh=ftjDWRScXkBkxIYY8kr/Ua7vScN483s6IN1yLALZK88=;
-        b=GGIZRZQfLGAo3KPYUhpQTpSnXmGF+4ruKrVaOqMnW0LoOy/U9Dh5dFyL1jTRFEYxG5
-         0aTf3atfgz6HL+p2qkQZ35mg3SnsxpktKoUFRWuDWUC8NXGWKvCnsGAqvcvPM1MgI8Rp
-         ltmXFcWRPM2RcaW/uq7LQaxIBNNSGbZrTW/Dg8/+VbQHxDvRpOCwTFW89UoU/UU/mPyV
-         Guir+fJKdOqtVk16g24Vn1WklPLNs/WbcNDypxBpsYYZjDeIweieMKHiM80wfhXhLStw
-         BdLhozHbko7tTaFYADTcIqW5OZ7gk+y+5CEC0K4AGL9EJObw0JqYFGZaZOZhOjcNu1S6
-         BPPA==
+        h=user-agent:in-reply-to:content-disposition:mime-version:references
+         :message-id:subject:cc:to:from:date:dkim-signature;
+        bh=MyQtT1qc0Vjjk9YyoKhiWtHddLjcM8NZCAUepe8E5L4=;
+        b=XDDOUqOUrBBABj8gRuS0Jhc6/FdAZHc6WgitxreGvk9TLpXZAGOfwLuNJMWpwh54dN
+         71Ods6RdI5n1m+jCkligBcvQwagVGaxeetDysgOKEGDEwkRtsRx2TkaUnEnYgajovX12
+         Gm0fjmwOXVQFR7UwBhNS5Rhp0uace8Vw+HkO2tiu1FClxHEwLWkv5ZBgCw0sdUSVn733
+         4qRUuYpp7EK9xArwxHvy7rB3YLQzFJSdGy4q3YoTFoy7d+8fJoc/wjihyIlMkvt4vw63
+         vJM8xmNauE1zriCMTFemx2T8RJW9DpCrohx2n02RaEkUqn1ln76EtI7BVilABI8iPWls
+         LMeQ==
 ARC-Authentication-Results: i=1; mx.google.com;
-       spf=neutral (google.com: 192.134.164.104 is neither permitted nor denied by domain of julia.lawall@lip6.fr) smtp.mailfrom=julia.lawall@lip6.fr
-Received: from mail3-relais-sop.national.inria.fr (mail3-relais-sop.national.inria.fr. [192.134.164.104])
-        by mx.google.com with ESMTPS id n6si921007wme.175.2019.08.13.05.31.28
+       dkim=pass header.i=@kernel.org header.s=default header.b=o8LZIj8A;
+       spf=pass (google.com: domain of gregkh@linuxfoundation.org designates 198.145.29.99 as permitted sender) smtp.mailfrom=gregkh@linuxfoundation.org
+Received: from mail.kernel.org (mail.kernel.org. [198.145.29.99])
+        by mx.google.com with ESMTPS id c27si5628813pfp.269.2019.08.13.05.41.00
         for <usb-storage@lists.one-eyed-alien.net>
         (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
-        Tue, 13 Aug 2019 05:31:28 -0700 (PDT)
-Received-SPF: neutral (google.com: 192.134.164.104 is neither permitted nor denied by domain of julia.lawall@lip6.fr) client-ip=192.134.164.104;
-X-IronPort-AV: E=Sophos;i="5.64,381,1559512800"; 
-   d="scan'208";a="316282409"
-Received: from portablejulia.rsr.lip6.fr ([132.227.76.63])
-  by mail3-relais-sop.national.inria.fr with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384; 13 Aug 2019 14:31:18 +0200
-Date: Tue, 13 Aug 2019 14:31:18 +0200 (CEST)
-From: Julia Lawall <julia.lawall@lip6.fr>
-X-X-Sender: julia@hadrien
+        Tue, 13 Aug 2019 05:41:00 -0700 (PDT)
+Received-SPF: pass (google.com: domain of gregkh@linuxfoundation.org designates 198.145.29.99 as permitted sender) client-ip=198.145.29.99;
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl [83.86.89.107])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by mail.kernel.org (Postfix) with ESMTPSA id 7C82A20578;
+	Tue, 13 Aug 2019 12:40:59 +0000 (UTC)
+Date: Tue, 13 Aug 2019 14:40:57 +0200
+From: Greg KH <gregkh@linuxfoundation.org>
 To: Matthias Maennich <maennich@google.com>
-cc: linux-kernel@vger.kernel.org, maco@android.com, kernel-team@android.com, 
-    arnd@arndb.de, geert@linux-m68k.org, gregkh@linuxfoundation.org, 
-    hpa@zytor.com, jeyu@kernel.org, joel@joelfernandes.org, 
-    kstewart@linuxfoundation.org, linux-arch@vger.kernel.org, 
-    linux-kbuild@vger.kernel.org, linux-m68k@vger.kernel.org, 
-    linux-modules@vger.kernel.org, linux-scsi@vger.kernel.org, 
-    linux-usb@vger.kernel.org, lucas.de.marchi@gmail.com, maco@google.com, 
-    michal.lkml@markovi.net, mingo@redhat.com, oneukum@suse.com, 
-    pombredanne@nexb.com, sam@ravnborg.org, sboyd@codeaurora.org, 
-    sspatil@google.com, stern@rowland.harvard.edu, tglx@linutronix.de, 
-    usb-storage@lists.one-eyed-alien.net, x86@kernel.org, 
-    yamada.masahiro@socionext.com, Julia Lawall <Julia.Lawall@lip6.fr>, 
-    Gilles Muller <Gilles.Muller@lip6.fr>, 
-    Nicolas Palix <nicolas.palix@imag.fr>, 
-    Mauro Carvalho Chehab <mchehab+samsung@kernel.org>, 
-    "David S. Miller" <davem@davemloft.net>, 
-    Jonathan Cameron <Jonathan.Cameron@huawei.com>, 
-    Nicolas Ferre <nicolas.ferre@microchip.com>, cocci@systeme.lip6.fr
-Subject: [usb-storage] Re: [PATCH v2 08/10] scripts: Coccinelle script for
- namespace dependencies.
-In-Reply-To: <20190813121733.52480-9-maennich@google.com>
-Message-ID: <alpine.DEB.2.21.1908131430530.4608@hadrien>
-References: <20180716122125.175792-1-maco@android.com> <20190813121733.52480-1-maennich@google.com> <20190813121733.52480-9-maennich@google.com>
-User-Agent: Alpine 2.21 (DEB 202 2017-01-01)
+Cc: linux-kernel@vger.kernel.org, maco@android.com, kernel-team@android.com,
+	arnd@arndb.de, geert@linux-m68k.org, hpa@zytor.com, jeyu@kernel.org,
+	joel@joelfernandes.org, kstewart@linuxfoundation.org,
+	linux-arch@vger.kernel.org, linux-kbuild@vger.kernel.org,
+	linux-m68k@lists.linux-m68k.org, linux-modules@vger.kernel.org,
+	linux-scsi@vger.kernel.org, linux-usb@vger.kernel.org,
+	lucas.de.marchi@gmail.com, maco@google.com, michal.lkml@markovi.net,
+	mingo@redhat.com, oneukum@suse.com, pombredanne@nexb.com,
+	sam@ravnborg.org, sboyd@codeaurora.org, sspatil@google.com,
+	stern@rowland.harvard.edu, tglx@linutronix.de,
+	usb-storage@lists.one-eyed-alien.net, x86@kernel.org,
+	yamada.masahiro@socionext.com
+Subject: [usb-storage] Re: [PATCH v2 01/10] module: support reading multiple
+ values per modinfo tag
+Message-ID: <20190813124057.GA14284@kroah.com>
+References: <20180716122125.175792-1-maco@android.com>
+ <20190813121733.52480-1-maennich@google.com>
+ <20190813121733.52480-2-maennich@google.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="UTF-8"
-X-Original-Sender: julia.lawall@lip6.fr
-X-Original-Authentication-Results: mx.google.com;       spf=neutral
- (google.com: 192.134.164.104 is neither permitted nor denied by domain of
- julia.lawall@lip6.fr) smtp.mailfrom=julia.lawall@lip6.fr
+Content-Disposition: inline
+In-Reply-To: <20190813121733.52480-2-maennich@google.com>
+User-Agent: Mutt/1.12.1 (2019-06-15)
+X-Original-Sender: gregkh@linuxfoundation.org
+X-Original-Authentication-Results: mx.google.com;       dkim=pass
+ header.i=@kernel.org header.s=default header.b=o8LZIj8A;       spf=pass
+ (google.com: domain of gregkh@linuxfoundation.org designates 198.145.29.99 as
+ permitted sender) smtp.mailfrom=gregkh@linuxfoundation.org
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -142,205 +142,21 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-
-
-On Tue, 13 Aug 2019, Matthias Maennich wrote:
-
-> A script that uses the '<module>.ns_deps' file generated by modpost to
-> automatically add the required symbol namespace dependencies to each
-> module.
->
-> Usage:
-> 1) Move some symbols to a namespace with EXPORT_SYMBOL_NS() or define
->    DEFAULT_SYMBOL_NAMESPACE
-> 2) Run 'make' (or 'make modules') and get warnings about modules not
->    importing that namespace.
-> 3) Run 'make nsdeps' to automatically add required import statements
->    to said modules.
->
-> This makes it easer for subsystem maintainers to introduce and maintain
-> symbol namespaces into their codebase.
->
-> Co-developed-by: Martijn Coenen <maco@android.com>
-> Signed-off-by: Martijn Coenen <maco@android.com>
+On Tue, Aug 13, 2019 at 01:16:58PM +0100, Matthias Maennich wrote:
+> Similar to modpost's get_next_modinfo(), introduce get_next_modinfo() in
+> kernel/module.c to acquire any further values associated with the same
+> modinfo tag name. That is useful for any tags that have multiple
+> occurrences (such as 'alias'), but is in particular introduced here as
+> part of the symbol namespaces patch series to read the (potentially)
+> multiple namespaces a module is importing.
+> 
+> Reviewed-by: Joel Fernandes (Google) <joel@joelfernandes.org>
+> Reviewed-by: Martijn Coenen <maco@android.com>
 > Signed-off-by: Matthias Maennich <maennich@google.com>
 
-Acked-by: Julia Lawall <julia.lawall@lip6.fr>
-
-
-> ---
->  MAINTAINERS                                 |  5 ++
->  Makefile                                    | 12 +++++
->  scripts/Makefile.modpost                    |  4 +-
->  scripts/coccinelle/misc/add_namespace.cocci | 23 +++++++++
->  scripts/nsdeps                              | 54 +++++++++++++++++++++
->  5 files changed, 97 insertions(+), 1 deletion(-)
->  create mode 100644 scripts/coccinelle/misc/add_namespace.cocci
->  create mode 100644 scripts/nsdeps
->
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index e81e60bd7c26..aa169070a052 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -11414,6 +11414,11 @@ S:	Maintained
->  T:	git git://git.kernel.org/pub/scm/linux/kernel/git/wtarreau/nolibc.git
->  F:	tools/include/nolibc/
->
-> +NSDEPS
-> +M:	Matthias Maennich <maennich@google.com>
-> +S:	Maintained
-> +F:	scripts/nsdeps
-> +
->  NTB AMD DRIVER
->  M:	Shyam Sundar S K <Shyam-sundar.S-k@amd.com>
->  L:	linux-ntb@googlegroups.com
-> diff --git a/Makefile b/Makefile
-> index 1b23f95db176..c5c3356e133c 100644
-> --- a/Makefile
-> +++ b/Makefile
-> @@ -1500,6 +1500,9 @@ help:
->  	@echo  '  headerdep       - Detect inclusion cycles in headers'
->  	@echo  '  coccicheck      - Check with Coccinelle'
->  	@echo  ''
-> +	@echo  'Tools:'
-> +	@echo  '  nsdeps          - Generate missing symbol namespace dependencies'
-> +	@echo  ''
->  	@echo  'Kernel selftest:'
->  	@echo  '  kselftest       - Build and run kernel selftest (run as root)'
->  	@echo  '                    Build, install, and boot kernel before'
-> @@ -1687,6 +1690,15 @@ quiet_cmd_tags = GEN     $@
->  tags TAGS cscope gtags: FORCE
->  	$(call cmd,tags)
->
-> +# Script to generate missing namespace dependencies
-> +# ---------------------------------------------------------------------------
-> +
-> +PHONY += nsdeps
-> +
-> +nsdeps:
-> +	$(Q)$(MAKE) -f $(srctree)/scripts/Makefile.modpost nsdeps
-> +	$(Q)$(CONFIG_SHELL) $(srctree)/scripts/$@
-> +
->  # Scripts to check various things for consistency
->  # ---------------------------------------------------------------------------
->
-> diff --git a/scripts/Makefile.modpost b/scripts/Makefile.modpost
-> index 26e6574ecd08..743fe3a2e885 100644
-> --- a/scripts/Makefile.modpost
-> +++ b/scripts/Makefile.modpost
-> @@ -56,7 +56,8 @@ MODPOST = scripts/mod/modpost						\
->  	$(if $(KBUILD_EXTMOD),$(addprefix -e ,$(KBUILD_EXTRA_SYMBOLS)))	\
->  	$(if $(KBUILD_EXTMOD),-o $(modulesymfile))			\
->  	$(if $(CONFIG_SECTION_MISMATCH_WARN_ONLY),,-E)			\
-> -	$(if $(KBUILD_MODPOST_WARN),-w)
-> +	$(if $(KBUILD_MODPOST_WARN),-w)					\
-> +	$(if $(filter nsdeps,$(MAKECMDGOALS)),-d)
->
->  ifdef MODPOST_VMLINUX
->
-> @@ -134,6 +135,7 @@ $(modules): %.ko :%.o %.mod.o FORCE
->
->  targets += $(modules)
->
-> +nsdeps: __modpost
->
->  # Add FORCE to the prequisites of a target to force it to be always rebuilt.
->  # ---------------------------------------------------------------------------
-> diff --git a/scripts/coccinelle/misc/add_namespace.cocci b/scripts/coccinelle/misc/add_namespace.cocci
-> new file mode 100644
-> index 000000000000..c832bb6445a8
-> --- /dev/null
-> +++ b/scripts/coccinelle/misc/add_namespace.cocci
-> @@ -0,0 +1,23 @@
-> +// SPDX-License-Identifier: GPL-2.0-only
-> +//
-> +/// Adds missing MODULE_IMPORT_NS statements to source files
-> +///
-> +/// This script is usually called from scripts/nsdeps with -D ns=<namespace> to
-> +/// add a missing namespace tag to a module source file.
-> +///
-> +
-> +@has_ns_import@
-> +declarer name MODULE_IMPORT_NS;
-> +identifier virtual.ns;
-> +@@
-> +MODULE_IMPORT_NS(ns);
-> +
-> +// Add missing imports, but only adjacent to a MODULE_LICENSE statement.
-> +// That ensures we are adding it only to the main module source file.
-> +@do_import depends on !has_ns_import@
-> +declarer name MODULE_LICENSE;
-> +expression license;
-> +identifier virtual.ns;
-> +@@
-> +MODULE_LICENSE(license);
-> ++ MODULE_IMPORT_NS(ns);
-> diff --git a/scripts/nsdeps b/scripts/nsdeps
-> new file mode 100644
-> index 000000000000..148db65a830f
-> --- /dev/null
-> +++ b/scripts/nsdeps
-> @@ -0,0 +1,54 @@
-> +#!/bin/bash
-> +# SPDX-License-Identifier: GPL-2.0
-> +# Linux kernel symbol namespace import generator
-> +#
-> +# This script requires at least spatch
-> +# version 1.0.4.
-> +SPATCH_REQ_VERSION="1.0.4"
-> +
-> +DIR="$(dirname $(readlink -f $0))/.."
-> +SPATCH="`which ${SPATCH:=spatch}`"
-> +if [ ! -x "$SPATCH" ]; then
-> +    echo 'spatch is part of the Coccinelle project and is available at http://coccinelle.lip6.fr/'
-> +    exit 1
-> +fi
-> +
-> +SPATCH_REQ_VERSION_NUM=$(echo $SPATCH_REQ_VERSION | ${DIR}/scripts/ld-version.sh)
-> +SPATCH_VERSION=$($SPATCH --version | head -1 | awk '{print $3}')
-> +SPATCH_VERSION_NUM=$(echo $SPATCH_VERSION | ${DIR}/scripts/ld-version.sh)
-> +
-> +if [ "$SPATCH_VERSION_NUM" -lt "$SPATCH_REQ_VERSION_NUM" ] ; then
-> +    echo 'spatch needs to be version 1.06 or higher'
-> +    exit 1
-> +fi
-> +
-> +generate_deps_for_ns() {
-> +    $SPATCH --very-quiet --in-place --sp-file \
-> +	    $srctree/scripts/coccinelle/misc/add_namespace.cocci -D ns=$1 $2
-> +}
-> +
-> +generate_deps() {
-> +    local mod_file=`echo $@ | sed -e 's/\.ns_deps/\.mod/'`
-> +    local mod_name=`cat $mod_file | sed -n 1p | sed -e 's/\/[^.]*$//'`
-> +    local mod_source_files=`cat $mod_file | sed -n 2p | sed -e 's/\.o/\.c/g'`
-> +    for ns in `cat $@`; do
-> +	echo "Adding namespace $ns to module $mod_name (if needed)."
-> +        generate_deps_for_ns $ns $mod_source_files
-> +	# sort the imports
-> +        for source_file in $mod_source_files; do
-> +            sed '/MODULE_IMPORT_NS/Q' $source_file > ${source_file}.tmp
-> +            offset=$(wc -l ${source_file}.tmp | awk '{print $1;}')
-> +            cat $source_file | grep MODULE_IMPORT_NS | sort -u >> ${source_file}.tmp
-> +            tail -n +$((offset +1)) ${source_file} | grep -v MODULE_IMPORT_NS >> ${source_file}.tmp
-> +            if ! diff -q ${source_file} ${source_file}.tmp; then
-> +                mv ${source_file}.tmp ${source_file}
-> +            else
-> +                rm ${source_file}.tmp
-> +            fi
-> +        done
-> +    done
-> +}
-> +
-> +for f in `find $srctree/.tmp_versions/ -name *.ns_deps`; do
-> +    generate_deps $f
-> +done
-> --
-> 2.23.0.rc1.153.gdeed80330f-goog
->
->
+Reviewed-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/alpine.DEB.2.21.1908131430530.4608%40hadrien.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20190813124057.GA14284%40kroah.com.
