@@ -1,33 +1,33 @@
 Return-Path: <usb-storage+bncBDMYPB44VAFRBINHZPVAKGQE5OFI4CI@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-qt1-x847.google.com (mail-qt1-x847.google.com [IPv6:2607:f8b0:4864:20::847])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA6C88BCC7
+Received: from mail-qk1-x748.google.com (mail-qk1-x748.google.com [IPv6:2607:f8b0:4864:20::748])
+	by mail.lfdr.de (Postfix) with ESMTPS id D38CC8BCCA
 	for <lists+usb-storage@lfdr.de>; Tue, 13 Aug 2019 17:13:38 +0200 (CEST)
-Received: by mail-qt1-x847.google.com with SMTP id i13sf4380199qtq.5
+Received: by mail-qk1-x748.google.com with SMTP id f22sf15499665qkg.0
         for <lists+usb-storage@lfdr.de>; Tue, 13 Aug 2019 08:13:38 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1565709218; cv=pass;
+ARC-Seal: i=2; a=rsa-sha256; t=1565709217; cv=pass;
         d=google.com; s=arc-20160816;
-        b=ReKzexByAf4OnnAAC6F8Uioth/qpjlItGYn3lYvVF0LHTtwpRj7RVW8wIwPdPe/T03
-         G1czjSuGY0QTI0dVnWnqw7PHFhQKgp2cWvTQ3SNp5W/JzCeThxMTFKNWIRbC4TtTMFDl
-         7CfGsoT1SeJUjWedBL/S86/6/ADkQB9Wcbut8N8m3fn4MzO5QXqCujycoXe7tHeFgH20
-         lZFEjQO72Q+aDE65DjfWXIaSmqkGnWrN/SxlfCIL3K6Gt8+bwysaFlsO0mCHKKbSvly8
-         9jCuVsvgkxdDVGIvdmjtl3GevmQMg4ICs6uelfguA4u0lgQxcGKdHYPm1xC19Z7zqg5I
-         kIhA==
+        b=ZDcowBPhCa8oRBlRxfBpX90MI/gXBrs2sCrWhFzJNuWgFs8Es6gNQBYKL8xrHjMdfe
+         ZApCuiTJFLmWpqvKsKBdBCaHjYJ4gJFJ2YkVT12qkXif2W47E24eSl/DQ23tjfmjGsE5
+         3EL3IQ6/R89pXupI5VzGJo9Z/kew1BGEakYA2/KWt8TaWfQfdH95ttIKtH2lk81fyeQt
+         2rTEO7MnDbSO3gCqGIqd6LyB7sHmIyUM11vB7Zy8PLuzuDOp1ZcIQyptbh1bQpT/xzu9
+         T77iR6Fey/eqhsqvDUi/vw+9Ri85uBv4T/YDU0u+qy4fJqe7Jj5YDXGZh320FJmikixa
+         tuAg==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:reply-to:cc:to:from:subject
          :references:mime-version:message-id:in-reply-to:date:dkim-signature;
-        bh=DtYSxA0W22+sRr4VYdF2uEP6I/M4ImtUTQFOUMvgvXE=;
-        b=EVozjU8uKFE21NA4dYNa+TlKdwydW/kIw5kU5tgFCpXgSsROTy0lLWOYFILxp3uZpQ
-         gSfBiE2xotm2Kbuz0yF2snw4zAuRXGzGlsCXpL/AmVJ2ct/vMwZe7s9i5/f+2yfeYBJ2
-         2+WWpmK18K91MY0/r96m7WNU7LTYPPDCPEB1d1I/ZxYPIFekl9HmYuS3zuTLkqM/jTp9
-         g/KErlTvHD/q02QMTXeI6ftPsA4oHvSxmObZzdCwelvIQQpuipbEtvUgU5eqqzIclejS
-         2QPx+smxB6/kYxtMvvRyp/2jCrfi1EfiGgMXYWIdbKo4y+mumO7Nhr8LUabJjFdC49cT
-         1gZA==
+        bh=8BYGJHwmUeJLsKe21zvELZ0JVM5cVn8xBULFqMxg6Sk=;
+        b=VpvWtfFEacBYZijDDLEPA/BVlrp4yvQy/uGBtbVijgOQU23hWo3jcpeQUyLT6mddWV
+         QW5CpNNj1KmIGgYFoWfqiS6PTuObBi2jOU0dPHeAKPoljlYfnDb8Wa9MVBCyknX1lONT
+         fdKBkGubkkIwdljUcrCpX1pwF/fn2DQczkr4XLgJyL379miP9J2xHCYxNVA6m84HHRhu
+         gBU82PQGcwEnrCsFXn1bXg0ISDmxtPJDe2CnpsSVBCKNIJHbzcsrW8BAEgtarszpUkXu
+         kmiqscTu03VqkYJyjDn7i0rtGDx+S039Ccd9VF8OQ/LMMUKxhglbuCzqejvNVE9QVdKx
+         QxuA==
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@google.com header.s=20161025 header.b=Kj2QCgHK;
-       spf=pass (google.com: domain of 3vkpsxqgkae01pt22xrwv33v0t.r31@flex--maennich.bounces.google.com designates 209.85.220.73 as permitted sender) smtp.mailfrom=3vKpSXQgKAE01pt22xrwv33v0t.r31@flex--maennich.bounces.google.com;
+       dkim=pass header.i=@google.com header.s=20161025 header.b="X/pgFG/T";
+       spf=pass (google.com: domain of 3wapsxqgkafi6uy772w108805y.w86@flex--maennich.bounces.google.com designates 209.85.220.73 as permitted sender) smtp.mailfrom=3wapSXQgKAFI6uy772w108805y.w86@flex--maennich.bounces.google.com;
        dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
@@ -35,10 +35,10 @@ DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
          :cc:x-original-sender:x-original-authentication-results:reply-to
          :precedence:mailing-list:list-id:list-post:list-help:list-archive
          :list-subscribe:list-unsubscribe;
-        bh=DtYSxA0W22+sRr4VYdF2uEP6I/M4ImtUTQFOUMvgvXE=;
-        b=DQjNc072oxQn9l2Ri6v/75fj49qqxwMM5a3Gk8X60+PEztpKTtqFy5KCfT0ziglbBs
-         F9BXIKtNi/TxVvSms03KNPOIygW+8vWbc+Pi5qOMyuUXsPaxHJ4f3dNMyWSDLZTQOEVW
-         5L9cedNFkSlDPnvRrecBO/J/rboD3M09KKjvc=
+        bh=8BYGJHwmUeJLsKe21zvELZ0JVM5cVn8xBULFqMxg6Sk=;
+        b=EmhgHOkTYKphDFdGrGiD1FHjRzy5T2mfTjmYPA5/vfeSEmsgK4PhHj87bTEMdnvYCl
+         Ql4Ubh0xVnH4rtz8ZaWo7vqHijNq0Y86z7L1tS5lAmkGrnxl+sxzqdy1txsj5mwxg1w/
+         ihDPD4jEQnoc32tgOTqr9wq78Tai+unwyi51s=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
         h=x-gm-message-state:date:in-reply-to:message-id:mime-version
@@ -46,65 +46,64 @@ X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
          :x-original-authentication-results:reply-to:precedence:mailing-list
          :list-id:list-post:list-help:list-archive:list-subscribe
          :list-unsubscribe;
-        bh=DtYSxA0W22+sRr4VYdF2uEP6I/M4ImtUTQFOUMvgvXE=;
-        b=KRbxT+7FpcmJfeVvrjKol4PCfpwNZvKyRl8DulEcNYemuzkzvkXZbj3fegsHMxiNdh
-         YNoo9HgrOBstPItiN+2nVKNPkMCty6zh3ei8m0JZHXPiAt8wnqhHu7EtdRxYIz26Hutw
-         aS7piMwjC0LJms8waX42WTauH55eqSatAPLm70uTHTyCkrQnZ7Rj/Mwhd5tCEqlP0nyv
-         i+Sli2Ag3jZvgkDu10NeFqoX/bqyYrMTPdD9CbftlxQBigC0/nb0Uu0xGv4eQlRn4YMy
-         trSP+/ra73eCAL2hJ7Ci5pQTZejCg/ocDAt/V9JVAdsMC2GZumWsqNDaZDgWNBDbuq15
-         ZyuQ==
-X-Gm-Message-State: APjAAAUR1T4LWpl/X2WeM124ky8KM2/G0YfbORac4SFY00E3xFUcz8Fk
-	w90oOC500HWbDMayNzbcSRd83g==
-X-Google-Smtp-Source: APXvYqw3rVFHF4FLzbqM9hs7/9VkKaa04+DZhBiiQNyJKeScdZRugVOZ5ojoK2NciBQ6Oi4VLIJgvg==
-X-Received: by 2002:a0c:ad07:: with SMTP id u7mr33463056qvc.2.1565709217678;
+        bh=8BYGJHwmUeJLsKe21zvELZ0JVM5cVn8xBULFqMxg6Sk=;
+        b=AM34ByjzPvyG1bYty9QZxvoWuxDepsTTr8mXuNu2WH6a5UOBTofEt4Au9F6kJBtMnl
+         EJRnWk+ktOb5VrO88rbOD2V9Xcjzr6kfvNb0t+KigVkLpJLL+OOclwM91USCgpZ5jDDg
+         8lavrabJtIH8LSbsGK10/UHBX+d/+oC+/H9Lkas8BwgMlfqZxqOdlTCkHxNLC7nvwVbE
+         RMWuRTqcosl/ZwwDBvc0fp4kEXQ7R9wU2ho8TI0cOpLePS7x0Mh9hka7yoH0AyXTPDGA
+         dFa/N86GsoJQrCYLlsU9HHIxTZHEiGtgw72KQbYzyJyXgs0mLmhb3DWuiXCoSwlPNgAM
+         uoOw==
+X-Gm-Message-State: APjAAAWfSsWwLGK/HRyBJtYcivZx9XBsx6Si8hs9V1qtb6c3wDRggjYn
+	MizF5gvsIbAQjTgYWmkzQLpapQ==
+X-Google-Smtp-Source: APXvYqxL3IbKWT5UMjKQKbCFNI476eFqOfATUnLL5eVmaZo/vmj9F2Xxv0vLCEodZqDHqM5C4n4dxg==
+X-Received: by 2002:ac8:60d3:: with SMTP id i19mr10732453qtm.191.1565709217697;
         Tue, 13 Aug 2019 08:13:37 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a37:3d2:: with SMTP id 201ls7184207qkd.7.gmail; Tue, 13 Aug
- 2019 08:13:37 -0700 (PDT)
-X-Received: by 2002:a37:4753:: with SMTP id u80mr330969qka.376.1565709217456;
+Received: by 2002:aed:32a4:: with SMTP id z33ls3678113qtd.13.gmail; Tue, 13
+ Aug 2019 08:13:37 -0700 (PDT)
+X-Received: by 2002:ac8:35f6:: with SMTP id l51mr34434358qtb.109.1565709217452;
         Tue, 13 Aug 2019 08:13:37 -0700 (PDT)
-Received: by 2002:a37:a54e:0:0:0:0:0 with SMTP id o75msqke;
-        Tue, 13 Aug 2019 05:19:08 -0700 (PDT)
-X-Received: by 2002:ad4:4533:: with SMTP id l19mr17737168qvu.23.1565698748619;
-        Tue, 13 Aug 2019 05:19:08 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1565698748; cv=none;
+Received: by 2002:a37:8307:0:0:0:0:0 with SMTP id f7msqkd;
+        Tue, 13 Aug 2019 05:19:14 -0700 (PDT)
+X-Received: by 2002:ac8:6b4b:: with SMTP id x11mr1239958qts.186.1565698754370;
+        Tue, 13 Aug 2019 05:19:14 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1565698754; cv=none;
         d=google.com; s=arc-20160816;
-        b=bSyOe7LABRd7V6g5SQ4x3vZx4nHOOtAPihUoNR1NgOxHMtRaj5k2luT996cuL4L+sU
-         fLeIaZ1/lsnYNWprqMM60KU9cPmPsIRbshNolCRVrPB9Nm5E+xUuQyVuYWO6Syk4hHf+
-         hFVV212EjaSbe+lypFKOa33WEmLvRK3w9jm2f0TBgrM3fRFx9mroRazJh2/eMIMvNHiI
-         h+tn0DRxsH8dWOgb335Xhy7fFmWkZFa7tV/y1gFXC8+5eEhRnGSiPbtKXnmut97WNzIl
-         tlyEen1NqdfvFhIfGcDlLYBWgrzSVfSwj6TSk09z+W5J+kgk7f7FXGE4M4hEbN211pj+
-         OGlQ==
+        b=TRiEwQBlPABTb7550mBxg7tN+2Y3V0XoSDZTlvkmIoN1u//NH5BukK+HyXLa5GSmM8
+         omT41pJNFFeX+AR0NzS5KgXAXORB8pnq6O0dN2RQWbz03h+NmIo+TpzuyNFvSzg70rr9
+         XxA7cd+7WZxDYTxYqdTjwlMQt95eH45cGm51blXgULHBoYj0st7kYw4BGC0byaYDro4Q
+         QATCUpR09hdpSRfRQarYNHIEDKcwIaQtWN7xemtyGwooQV3Lvzcls2inkxXzwSYAB8rt
+         0sb46uP11jip0KxcNdwVetwdL7lcKreVeiouO74g8Fxkw6FB7YBLpWsEqcrZLNFl2cA7
+         4ilA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=cc:to:from:subject:references:mime-version:message-id:in-reply-to
          :date:dkim-signature;
-        bh=Ey51rOQs6pREeIh9cdmyj66W3XNY9zI3cHQpc2k+3HQ=;
-        b=llfNPkNBqoX3B72bG6QT6wY5RMwD76jktA+0zP4PDdMxfFyr7M5vG8LHLp83JOIwZH
-         0Af04HSJVFkVOT5T0FLzSzy4ZVlkeczqOUjc5N6/rLODL3O8f8W8/AmOYNCaJA+2Nt9f
-         ibZJl5v8JF9oSLzhvFgAGMaVS4btfBjG88loLl6Yhz3/AOM6zPM5y21QEeOeYV5xrJ4S
-         hnphSzYFV4je4Qgjcy99TBQQYAz0WjLSUGogMyR1pAZ2RvVUwx6POZnAq5PYVT/KG2hD
-         l7tHukgg0u/aOyFs0TqcTpADdyzObFWR9SQW4fITSuCzYibssfMnmfgcxHAsQA6J62r7
-         FS6Q==
+        bh=52i5W7bwo5L4NKPi/t621ZC4mfXuxf76PQ3XmRwW6HM=;
+        b=dSDNElswcm/79kkLUpWkwnfcNt+sRCs+goox1YoCH1Qi0JbT8cEcmpavPyj2iThYYm
+         TfXdlTywecuH55qzEr7oeH9YU76Hh4AmbaOGPd0zCzzZQF+U4crtWZBbROPfdfVvNZbN
+         TK4vVHeXt3F3wNe2Q8eDZ4PTzKkSdDztQbJKFPuM05xxogRiegUUu56vt3gjxAapnSKM
+         4gO5gGEyQx9UYmbJ57Wg5iOxC5FhFi4tT5C5RIo/ceHoujZxqMmNahfXtH4oo+jq4Bmz
+         gQ0HdhfEpfBB8U1uPM7yORcN9ZBHcOh564jwevjPUO77Axk0SPsnb9Njo9klINM5zke1
+         unag==
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@google.com header.s=20161025 header.b=Kj2QCgHK;
-       spf=pass (google.com: domain of 3vkpsxqgkae01pt22xrwv33v0t.r31@flex--maennich.bounces.google.com designates 209.85.220.73 as permitted sender) smtp.mailfrom=3vKpSXQgKAE01pt22xrwv33v0t.r31@flex--maennich.bounces.google.com;
+       dkim=pass header.i=@google.com header.s=20161025 header.b="X/pgFG/T";
+       spf=pass (google.com: domain of 3wapsxqgkafi6uy772w108805y.w86@flex--maennich.bounces.google.com designates 209.85.220.73 as permitted sender) smtp.mailfrom=3wapSXQgKAFI6uy772w108805y.w86@flex--maennich.bounces.google.com;
        dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
 Received: from mail-sor-f73.google.com (mail-sor-f73.google.com. [209.85.220.73])
-        by mx.google.com with SMTPS id k15sor370912qki.1.2019.08.13.05.19.08
+        by mx.google.com with SMTPS id q6sor11077731qkm.57.2019.08.13.05.19.14
         for <usb-storage@lists.one-eyed-alien.net>
         (Google Transport Security);
-        Tue, 13 Aug 2019 05:19:08 -0700 (PDT)
-Received-SPF: pass (google.com: domain of 3vkpsxqgkae01pt22xrwv33v0t.r31@flex--maennich.bounces.google.com designates 209.85.220.73 as permitted sender) client-ip=209.85.220.73;
-X-Received: by 2002:a37:6844:: with SMTP id d65mr33008934qkc.398.1565698748030;
- Tue, 13 Aug 2019 05:19:08 -0700 (PDT)
-Date: Tue, 13 Aug 2019 13:16:58 +0100
+        Tue, 13 Aug 2019 05:19:14 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 3wapsxqgkafi6uy772w108805y.w86@flex--maennich.bounces.google.com designates 209.85.220.73 as permitted sender) client-ip=209.85.220.73;
+X-Received: by 2002:a37:e306:: with SMTP id y6mr9040041qki.174.1565698753802;
+ Tue, 13 Aug 2019 05:19:13 -0700 (PDT)
+Date: Tue, 13 Aug 2019 13:16:59 +0100
 In-Reply-To: <20190813121733.52480-1-maennich@google.com>
-Message-Id: <20190813121733.52480-2-maennich@google.com>
+Message-Id: <20190813121733.52480-3-maennich@google.com>
 Mime-Version: 1.0
 References: <20180716122125.175792-1-maco@android.com> <20190813121733.52480-1-maennich@google.com>
 X-Mailer: git-send-email 2.23.0.rc1.153.gdeed80330f-goog
-Subject: [usb-storage] [PATCH v2 01/10] module: support reading multiple
- values per modinfo tag
+Subject: [usb-storage] [PATCH v2 02/10] export: explicitly align struct kernel_symbol
 From: "'Matthias Maennich' via USB Mass Storage on Linux" <usb-storage@lists.one-eyed-alien.net>
 To: linux-kernel@vger.kernel.org, maco@android.com
 Cc: kernel-team@android.com, maennich@google.com, arnd@arndb.de, 
@@ -117,13 +116,15 @@ Cc: kernel-team@android.com, maennich@google.com, arnd@arndb.de,
 	mingo@redhat.com, oneukum@suse.com, pombredanne@nexb.com, sam@ravnborg.org, 
 	sboyd@codeaurora.org, sspatil@google.com, stern@rowland.harvard.edu, 
 	tglx@linutronix.de, usb-storage@lists.one-eyed-alien.net, x86@kernel.org, 
-	yamada.masahiro@socionext.com
+	yamada.masahiro@socionext.com, Andrew Morton <akpm@linux-foundation.org>, 
+	Nicolas Pitre <nico@fluxnic.net>, Michael Ellerman <mpe@ellerman.id.au>, 
+	Ard Biesheuvel <ard.biesheuvel@linaro.org>
 Content-Type: text/plain; charset="UTF-8"
 X-Original-Sender: maennich@google.com
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@google.com header.s=20161025 header.b=Kj2QCgHK;       spf=pass
- (google.com: domain of 3vkpsxqgkae01pt22xrwv33v0t.r31@flex--maennich.bounces.google.com
- designates 209.85.220.73 as permitted sender) smtp.mailfrom=3vKpSXQgKAE01pt22xrwv33v0t.r31@flex--maennich.bounces.google.com;
+ header.i=@google.com header.s=20161025 header.b="X/pgFG/T";       spf=pass
+ (google.com: domain of 3wapsxqgkafi6uy772w108805y.w86@flex--maennich.bounces.google.com
+ designates 209.85.220.73 as permitted sender) smtp.mailfrom=3wapSXQgKAFI6uy772w108805y.w86@flex--maennich.bounces.google.com;
        dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
 X-Original-From: Matthias Maennich <maennich@google.com>
 Reply-To: Matthias Maennich <maennich@google.com>
@@ -141,65 +142,98 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-Similar to modpost's get_next_modinfo(), introduce get_next_modinfo() in
-kernel/module.c to acquire any further values associated with the same
-modinfo tag name. That is useful for any tags that have multiple
-occurrences (such as 'alias'), but is in particular introduced here as
-part of the symbol namespaces patch series to read the (potentially)
-multiple namespaces a module is importing.
+This change allows growing struct kernel_symbol without wasting bytes to
+alignment. It also concretized the alignment of ksymtab entries if
+relative references are used for ksymtab entries.
 
-Reviewed-by: Joel Fernandes (Google) <joel@joelfernandes.org>
-Reviewed-by: Martijn Coenen <maco@android.com>
+struct kernel_symbol was already implicitly being aligned to the word
+size, except on x86_64 and m68k, where it is aligned to 16 and 2 bytes,
+respectively.
+
+As far as I can tell there is no requirement for aligning struct
+kernel_symbol to 16 bytes on x86_64, but gcc aligns structs to their
+size, and the linker aligns the custom __ksymtab sections to the largest
+data type contained within, so setting KSYM_ALIGN to 16 was necessary to
+stay consistent with the code generated for non-ASM EXPORT_SYMBOL(). Now
+that non-ASM EXPORT_SYMBOL() explicitly aligns to word size (8),
+KSYM_ALIGN is no longer necessary.
+
+In case of relative references, the alignment has been changed
+accordingly to not waste space when adding new struct members.
+
+As for m68k, struct kernel_symbol is aligned to 2 bytes even though the
+structure itself is 8 bytes; using a 4-byte alignment shouldn't hurt.
+
+I manually verified the output of the __ksymtab sections didn't change
+on x86, x86_64, arm, arm64 and m68k. As expected, the section contents
+didn't change, and the ELF section alignment only changed on x86_64 and
+m68k. Feedback from other archs more than welcome.
+
+Co-developed-by: Martijn Coenen <maco@android.com>
+Signed-off-by: Martijn Coenen <maco@android.com>
 Signed-off-by: Matthias Maennich <maennich@google.com>
 ---
- kernel/module.c | 17 +++++++++++++++--
- 1 file changed, 15 insertions(+), 2 deletions(-)
+ arch/m68k/include/asm/export.h | 1 -
+ include/asm-generic/export.h   | 8 +++-----
+ include/linux/export.h         | 3 ++-
+ 3 files changed, 5 insertions(+), 7 deletions(-)
 
-diff --git a/kernel/module.c b/kernel/module.c
-index 5933395af9a0..a23067907169 100644
---- a/kernel/module.c
-+++ b/kernel/module.c
-@@ -2481,7 +2481,8 @@ static char *next_string(char *string, unsigned long *secsize)
- 	return string;
- }
+diff --git a/arch/m68k/include/asm/export.h b/arch/m68k/include/asm/export.h
+index 0af20f48bd07..b53008b67ce1 100644
+--- a/arch/m68k/include/asm/export.h
++++ b/arch/m68k/include/asm/export.h
+@@ -1,3 +1,2 @@
+-#define KSYM_ALIGN 2
+ #define KCRC_ALIGN 2
+ #include <asm-generic/export.h>
+diff --git a/include/asm-generic/export.h b/include/asm-generic/export.h
+index 294d6ae785d4..63f54907317b 100644
+--- a/include/asm-generic/export.h
++++ b/include/asm-generic/export.h
+@@ -4,15 +4,13 @@
+ #ifndef KSYM_FUNC
+ #define KSYM_FUNC(x) x
+ #endif
+-#ifdef CONFIG_64BIT
+-#ifndef KSYM_ALIGN
++#ifdef CONFIG_HAVE_ARCH_PREL32_RELOCATIONS
++#define KSYM_ALIGN 4
++#elif defined(CONFIG_64BIT)
+ #define KSYM_ALIGN 8
+-#endif
+ #else
+-#ifndef KSYM_ALIGN
+ #define KSYM_ALIGN 4
+ #endif
+-#endif
+ #ifndef KCRC_ALIGN
+ #define KCRC_ALIGN 4
+ #endif
+diff --git a/include/linux/export.h b/include/linux/export.h
+index fd8711ed9ac4..28a4d2150689 100644
+--- a/include/linux/export.h
++++ b/include/linux/export.h
+@@ -52,7 +52,7 @@ extern struct module __this_module;
+ #define __KSYMTAB_ENTRY(sym, sec)					\
+ 	__ADDRESSABLE(sym)						\
+ 	asm("	.section \"___ksymtab" sec "+" #sym "\", \"a\"	\n"	\
+-	    "	.balign	8					\n"	\
++	    "	.balign 4					\n"	\
+ 	    "__ksymtab_" #sym ":				\n"	\
+ 	    "	.long	" #sym "- .				\n"	\
+ 	    "	.long	__kstrtab_" #sym "- .			\n"	\
+@@ -66,6 +66,7 @@ struct kernel_symbol {
+ #define __KSYMTAB_ENTRY(sym, sec)					\
+ 	static const struct kernel_symbol __ksymtab_##sym		\
+ 	__attribute__((section("___ksymtab" sec "+" #sym), used))	\
++	__aligned(sizeof(void *))					\
+ 	= { (unsigned long)&sym, __kstrtab_##sym }
  
--static char *get_modinfo(struct load_info *info, const char *tag)
-+static char *get_next_modinfo(const struct load_info *info, const char *tag,
-+			      char *prev)
- {
- 	char *p;
- 	unsigned int taglen = strlen(tag);
-@@ -2492,13 +2493,25 @@ static char *get_modinfo(struct load_info *info, const char *tag)
- 	 * get_modinfo() calls made before rewrite_section_headers()
- 	 * must use sh_offset, as sh_addr isn't set!
- 	 */
--	for (p = (char *)info->hdr + infosec->sh_offset; p; p = next_string(p, &size)) {
-+	char *modinfo = (char *)info->hdr + infosec->sh_offset;
-+
-+	if (prev) {
-+		size -= prev - modinfo;
-+		modinfo = next_string(prev, &size);
-+	}
-+
-+	for (p = modinfo; p; p = next_string(p, &size)) {
- 		if (strncmp(p, tag, taglen) == 0 && p[taglen] == '=')
- 			return p + taglen + 1;
- 	}
- 	return NULL;
- }
- 
-+static char *get_modinfo(const struct load_info *info, const char *tag)
-+{
-+	return get_next_modinfo(info, tag, NULL);
-+}
-+
- static void setup_modinfo(struct module *mod, struct load_info *info)
- {
- 	struct module_attribute *attr;
+ struct kernel_symbol {
 -- 
 2.23.0.rc1.153.gdeed80330f-goog
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20190813121733.52480-2-maennich%40google.com.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20190813121733.52480-3-maennich%40google.com.
