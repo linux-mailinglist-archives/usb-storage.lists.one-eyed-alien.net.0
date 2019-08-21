@@ -1,173 +1,137 @@
-Return-Path: <usb-storage+bncBDMYPB44VAFRBQ466XVAKGQEOJXVZBY@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBD45FSE2XIORBENO6XVAKGQEJTRODGQ@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-wm1-x347.google.com (mail-wm1-x347.google.com [IPv6:2a00:1450:4864:20::347])
-	by mail.lfdr.de (Postfix) with ESMTPS id 82A1797BF6
-	for <lists+usb-storage@lfdr.de>; Wed, 21 Aug 2019 16:03:47 +0200 (CEST)
-Received: by mail-wm1-x347.google.com with SMTP id m26sf885227wmc.3
-        for <lists+usb-storage@lfdr.de>; Wed, 21 Aug 2019 07:03:47 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1566396227; cv=pass;
+Received: from mail-pl1-x648.google.com (mail-pl1-x648.google.com [IPv6:2607:f8b0:4864:20::648])
+	by mail.lfdr.de (Postfix) with ESMTPS id 1EB1497D28
+	for <lists+usb-storage@lfdr.de>; Wed, 21 Aug 2019 16:37:07 +0200 (CEST)
+Received: by mail-pl1-x648.google.com with SMTP id g9sf1579092plo.21
+        for <lists+usb-storage@lfdr.de>; Wed, 21 Aug 2019 07:37:07 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1566398225; cv=pass;
         d=google.com; s=arc-20160816;
-        b=vlFZztxvi4NYylXRKoAq+HI3C+GQjU1gDRtsMIcYTigN2Ejf403GMk374P8iungU5F
-         ye871AirevQiPjkfs5SvhajLPZjcMWiQmx4tKimSQp/rVZxwjwq068ZpBrTWAEPB7CZG
-         abp7GXZah0pKGqRHmXwzL6OhUAYNfyLJGSQVhEw0/03PKuuNrbqbIkZEEmXCDiqIAgFR
-         pcS8SIihhMzEfQA9sbOnQCS4EtMlJRX2aAhuttaWxPgN2vkq2XXwNUOaNN6gNZkByC8v
-         c86tzMjgbKjjm3M5OfAUafrQS230GVo1T1PdRrUQdDBIjkDB8SQ6paDJ+JCtEtN5iFZM
-         uJDg==
+        b=WpwsynBs8FlAFcCMamQ4cw/5/d7sySRMl3unlfpoIui/KfLX010ZuR9VTg12XvWnWE
+         aYdypc+ekoDLEVxpVKid8C4TlW0AI2HpgFBmhIMJDJbwoWRTYnQz0p+lBaev/pfTTyUG
+         dwbajFvan2NisJ6xtIkws0gt6oVRHGdaDnsBBfR/E/W3+MkhN006NQ3/02F+HVfw5Y0L
+         SPskFwhG3/hi2Wjl5PliMZMKmqL5mRW53PeLF64S2cXZH3ZjLmTC+ct3sBgGdld8GaSW
+         bifK617XVnaXkKuMvDTTyhEW/aC6seGkiY4L8L9EgJS9FL+CGp37e1bmur/SVzgNOkNe
+         wXnA==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:reply-to:user-agent:in-reply-to
+         :list-id:mailing-list:precedence:user-agent:in-reply-to
          :content-disposition:mime-version:references:message-id:subject:cc
-         :to:from:date:dkim-signature;
-        bh=qQrzxkp9quVZ8HxBTXHywNX7XFcOZXYbGnXsnqXrubA=;
-        b=IA3y6Dv6rhLTq+Ca+aRhrPYCGhhrjBSny5laXy8o1cvsV/0VJBVIVRMavvYAokkeld
-         oJ10ofSBN4VXWn2/4tPhqB82EQsmEG1G4T2AYOwrJB/FJQP75WKeMVWSu7XkNZgqbaMY
-         LX4ujTEUPKrGgbSh4uKIGwXFLjStDlASzpeOReVEiMb74n164folQ0p4NOARvrdT7iSq
-         WgY2lFnSrsFCvo5uJEnby20kKIrel4V2ejcMG2/N6iyrrg8PEFtYykIJHS4f4Qxfb/nS
-         u5UpckUgdO2/IEfRtx/45OIXCB+KUQDnnM/eLBhdxZv2SfLXNfFmnIf0Xy+KjOc775U5
-         tNng==
+         :to:from:date:sender:dkim-signature;
+        bh=rL9NCp5umcvTJsPO7KmSOy9lfFodoBzrMRYFvNMVC9A=;
+        b=w6UnwiOJCr9qoCq3dwIZWl0AYLCSZ6NN8e97SLvDcLurLSJiN8+UIt6sV5n7MMziAb
+         TH3/bVWoq4x2IOndb8uNdeeiaM2S5XI5Q3lwwepuEWq+uPFDp+7fao+W+ihtZx1leqd1
+         iWEgCKad+b3TNhjO7/tjKZkL/jThVQFnV8FBuRzqqw6Bl+LW3qusJELOnumKVHaWkhcn
+         z+ITKjLJSDqHoTsHRQbGvgYjP48Ua1R1mZ95vr513sq8Cnrr7K/Tgm3kn85UqEf1CzSy
+         z5bX+p3Z4nUWGbfovQOqjwoHc1ZFtXaBbXpYaS4h3aa+U3L2OXwq8aw3gqk5U5jhyN2q
+         A7JA==
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@google.com header.s=20161025 header.b=MidKkLyv;
-       spf=pass (google.com: domain of maennich@google.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=maennich@google.com;
-       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
+       dkim=pass header.i=@kernel.org header.s=default header.b=tX0ldqZE;
+       spf=pass (google.com: domain of jeyu@kernel.org designates 198.145.29.99 as permitted sender) smtp.mailfrom=jeyu@kernel.org;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=kernel.org
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
-        h=date:from:to:cc:subject:message-id:references:mime-version
+        h=sender:date:from:to:cc:subject:message-id:references:mime-version
          :content-disposition:in-reply-to:user-agent:x-original-sender
-         :x-original-authentication-results:reply-to:precedence:mailing-list
-         :list-id:list-post:list-help:list-archive:list-subscribe
-         :list-unsubscribe;
-        bh=qQrzxkp9quVZ8HxBTXHywNX7XFcOZXYbGnXsnqXrubA=;
-        b=B4uUsJ+BWIjkDLGEjcx25HGVePm5hq8k1UMXv+4LyeYW131BzhFsDFkdTon3fU5X9e
-         jsNFvRMnP57be8v6h+UHyF4XaBFznWxqgPd/OqveS/Cixtq3Gm/q4K7HwCFl98DBGrav
-         HYLssgN60YMAHzO6JBqZyiuS6l2XE5WLWvzAQ=
+         :x-original-authentication-results:precedence:mailing-list:list-id
+         :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
+        bh=rL9NCp5umcvTJsPO7KmSOy9lfFodoBzrMRYFvNMVC9A=;
+        b=DZNaz6Xv8UqeRO33SSxC8C8kSRnuA4u0CCkmPtU0WYxkn/odJVn4yEcYtJwTOIrSM9
+         BLWB6/UmegRfAkavHPuPK4WbwmaHvfJNFRewhYRAeZa0uR0YvyxXXxKMAtmC6+QifQo/
+         Acj9xvv5CnQ4v78CrqH7jP2f3Z1qbQpA3xluk=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
-        h=x-gm-message-state:date:from:to:cc:subject:message-id:references
-         :mime-version:content-disposition:in-reply-to:user-agent
-         :x-original-sender:x-original-authentication-results:reply-to
-         :precedence:mailing-list:list-id:x-spam-checked-in-group:list-post
-         :list-help:list-archive:list-subscribe:list-unsubscribe;
-        bh=qQrzxkp9quVZ8HxBTXHywNX7XFcOZXYbGnXsnqXrubA=;
-        b=GChBZ6HUHEibYkYlCmCwfCxkyxcZUt6tnRDDPamH3ZzP2FxOdbW7RHh+FGMON6G6r3
-         ZIo3oYGFcG7Ua+zouy+2F1w/IsOEH/GwtMjvmuUM9tvIB3q1wUq2Rd0od7TsV4JU2pKx
-         TRsUA/pPRe86Igm34TiI7PURuctzGZ13xJOOCrxTO85bKZ6/nSOJjnUt7og78KF+Cyla
-         RbIN5M+Ym3OPt4jhzybrUBccQ+o+GLUWpaW/pOSMYOB/PWERJLIfpLgrvGYPgDHLDJVb
-         2eM+R+O/+c35xaA0ghanFZpAiL28u0ZG79tp3VDDXuL2TrP0egw5nQ4YieR/aiKBF3n2
-         9kkg==
-X-Gm-Message-State: APjAAAXZ59hRrbZQY7xZVdH6LUqYru9twlwNNz/2D+NYn6sbfK3Xipkd
-	wsdZK2zcT8/tn/c5BSlPYUwMCg==
-X-Google-Smtp-Source: APXvYqyafmkztLIJr/sQ00GHjfl9Tsl1UFLbkvL2fQ8SIPPoeSENmXYbUkpsRb7o5xP+lkh1PeWvyg==
-X-Received: by 2002:a5d:698f:: with SMTP id g15mr42949215wru.310.1566396227179;
-        Wed, 21 Aug 2019 07:03:47 -0700 (PDT)
+        h=sender:x-gm-message-state:date:from:to:cc:subject:message-id
+         :references:mime-version:content-disposition:in-reply-to:user-agent
+         :x-original-sender:x-original-authentication-results:precedence
+         :mailing-list:list-id:x-spam-checked-in-group:list-post:list-help
+         :list-archive:list-subscribe:list-unsubscribe;
+        bh=rL9NCp5umcvTJsPO7KmSOy9lfFodoBzrMRYFvNMVC9A=;
+        b=txVsh5flbXMWfQqhWykFEbkf/UdJz+KbgEa/qVVWrL89+rJo1ZFOylLCT9xeNd9d2h
+         myiqxzLY9PuRW+Dyd38ZdndS3kkXxUJx9LBOqP3Z2DDO58QVF1QOyMl8IsMLufcC0cD+
+         sNkp0Bbsm846/9am/Ukfnib2M1CA431jsx7Yov1wC89hnrsRz/9Q95Bg4AYjerv11s/4
+         gbUK1DE5tk/eMdUujTA1IQlqYdM7z/+avCIH5FTtPsY9oNkCbRxhJslgHT4SVEcj3G8+
+         438TIp60KvYswhVXLdbl+LyRixCjSlQUbm1VUCkUILplsklM07fyvI1igUXcpGPGz08C
+         nIsg==
+Sender: usb-storage@lists.one-eyed-alien.net
+X-Gm-Message-State: APjAAAUBYMGBrLiUygHI95NKqNbxm7x3mSTZIMjnqdD9+Uo4L6X7hjRt
+	Q2yms/FnFlR+1eGAygLvOyBK7Q==
+X-Google-Smtp-Source: APXvYqxcfXtTeHYin+i4N+5lKsuZ9jeNvNieOZVkliwprFALWIuCbiDYGTtjtOsOiAOrll2DIC7/eA==
+X-Received: by 2002:a17:90a:246f:: with SMTP id h102mr279849pje.125.1566398225807;
+        Wed, 21 Aug 2019 07:37:05 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:adf:9321:: with SMTP id 30ls685153wro.1.gmail; Wed, 21 Aug
- 2019 07:03:46 -0700 (PDT)
-X-Received: by 2002:a5d:6742:: with SMTP id l2mr40282639wrw.70.1566396226637;
-        Wed, 21 Aug 2019 07:03:46 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1566396226; cv=none;
+Received: by 2002:aa7:8d45:: with SMTP id s5ls667722pfe.8.gmail; Wed, 21 Aug
+ 2019 07:37:05 -0700 (PDT)
+X-Received: by 2002:a63:2c8:: with SMTP id 191mr28892575pgc.139.1566398225244;
+        Wed, 21 Aug 2019 07:37:05 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1566398225; cv=none;
         d=google.com; s=arc-20160816;
-        b=WvdBUXVEsP02VQauFKVF+IsHGEYfkK60XIPIq7veMnvLw1eOfgu0uXKb+KnPmK735G
-         SQTJteLvJZ8zaawjvGu6d3i3DCfxJeS+Ps28ZbDawlb9J2frv1MxnpV1EA/RylPxOKp7
-         zAuU3rMREi0XLUNqBqXCm7U6SbxRSOyrtHC0U59Nw1R8QM3kqEYRHxuwVBCDFUs/UqSx
-         vWCPVt/jp+W1GgQVJUbUV9yZp1zgiPyWhAiqFmbU/kRNEi/KcN/4Qk4D2v30JDGbOl7o
-         Q/Xhm/7yqVHEUexoASy0Auphn8IsPYw7LL6iYHQynBIf7btB39b+4XZojXwDyKA/Bw8t
-         YPvQ==
+        b=mCcPos0XO5pkUBq0Yz3S5sabtDvIgBtRlNvwh+Hw/dJs/+rfckAu4wfogYSDypvqIg
+         jetkhXVk4a6fDx9OX3g2p+532HYAmS++e9dlUF4x6yk48hrsTPZ2pLJQFE+6lkDYqEKK
+         ky/FUs1wD1lD/ciEj8QWYuTmPdM0BulDIWkHkME6Nh1Q5vkUfXIg+OKot7i8M8eWFh6Z
+         zNDaQBTBvosW+yP/cvS9/IYu83+1CXFJpOE30cIdfx++t08j5xjXlhkzTloPwnUxwlbV
+         jUVxzRl0pHNYhHHamQxXba6lyv19Mvw/2Q/N6p5y4TOQIQDBaTDol22GqmxdGlEtq7Dt
+         wvnw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=user-agent:in-reply-to:content-disposition:mime-version:references
          :message-id:subject:cc:to:from:date:dkim-signature;
-        bh=rNyl/GAwTmLTUNQynVbw/8SOsQqQ1R7n+k4XVH7pAfA=;
-        b=wZas4lRfuX7rnwi+hZUoF16hOdkF7KpgGVdGsE2zFbcgbRWOSoydKWtJ2ENv6gKknj
-         Y+c2fO6O3HOFkYUdgjZiibug6hanm2ngwxD4Xc94sziCPSzJe1Y4nrk1Pl078WoTUfUK
-         wtEwRpdeWtJd0ASWqMThCZDH4eMkhmItYOtLZye/XMxMabb0N8WxMTV8ARpdWgamm7Lf
-         YpuT2wrFaERXJKvojup/1AH6enhtTvx/3uJxBlzsXZtnwf0aOTF90LGnWESXRrBlk+X7
-         hKH1MHG8saD5wVToSfvJ9jZj+piyaPu7LWi3NX3ModCiLYfMLHoUAf+aBpPrlGzYwUjs
-         hk6A==
+        bh=fN4ftdNQc5Ah31bTVNDlxGC8tW1L1bd9tToaHWkQYMw=;
+        b=JEKvaoKzaOvI6yu2MSkSiR5nJubB08kzz97fvOTKazcvPrCAFPzoKIchuCdxP/Ze01
+         FQSClx2/PXI74hqXpeX1TsBp814/Razq52qnEyw9ycmn0SkbkpjQbaYxDLbFnpgNjLJf
+         j6Egx/loamFsAQbn1qEfJ0qgLnQClIWfNpHsu1Rnd62m8l5twKoo9X9V7YhVK+Fdvmx4
+         zgs3cBqyBIwJF1aisDXz8vIpbYovt5MVRIh1hX+HvG4wqaAGa2DKExYD/e4Y+MNVYlkD
+         mvb37R9IpLnE2c3DYUn8LALCzg6BhfAgVljIAaU954bVp/tqC6KGhUMA5qy6fC0RfOXO
+         PK6Q==
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@google.com header.s=20161025 header.b=MidKkLyv;
-       spf=pass (google.com: domain of maennich@google.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=maennich@google.com;
-       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
-Received: from mail-sor-f65.google.com (mail-sor-f65.google.com. [209.85.220.65])
-        by mx.google.com with SMTPS id o75sor64317wme.25.2019.08.21.07.03.46
+       dkim=pass header.i=@kernel.org header.s=default header.b=tX0ldqZE;
+       spf=pass (google.com: domain of jeyu@kernel.org designates 198.145.29.99 as permitted sender) smtp.mailfrom=jeyu@kernel.org;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=kernel.org
+Received: from mail.kernel.org (mail.kernel.org. [198.145.29.99])
+        by mx.google.com with ESMTPS id s17si12419767pfc.69.2019.08.21.07.37.05
         for <usb-storage@lists.one-eyed-alien.net>
-        (Google Transport Security);
-        Wed, 21 Aug 2019 07:03:46 -0700 (PDT)
-Received-SPF: pass (google.com: domain of maennich@google.com designates 209.85.220.65 as permitted sender) client-ip=209.85.220.65;
-X-Received: by 2002:a7b:c4d2:: with SMTP id g18mr173265wmk.79.1566396225923;
-        Wed, 21 Aug 2019 07:03:45 -0700 (PDT)
-Received: from google.com ([2a00:79e0:d:210:e8f7:125b:61e9:733d])
-        by smtp.gmail.com with ESMTPSA id g7sm170768wme.17.2019.08.21.07.03.44
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 21 Aug 2019 07:03:45 -0700 (PDT)
-Date: Wed, 21 Aug 2019 15:03:41 +0100
-From: "'Matthias Maennich' via USB Mass Storage on Linux" <usb-storage@lists.one-eyed-alien.net>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 21 Aug 2019 07:37:05 -0700 (PDT)
+Received-SPF: pass (google.com: domain of jeyu@kernel.org designates 198.145.29.99 as permitted sender) client-ip=198.145.29.99;
+Received: from linux-8ccs (ip5f5ade6e.dynamic.kabel-deutschland.de [95.90.222.110])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by mail.kernel.org (Postfix) with ESMTPSA id B6C2C206BA;
+	Wed, 21 Aug 2019 14:36:59 +0000 (UTC)
+Date: Wed, 21 Aug 2019 16:36:55 +0200
+From: Jessica Yu <jeyu@kernel.org>
 To: Greg KH <gregkh@linuxfoundation.org>
-Cc: Peter Zijlstra <peterz@infradead.org>, linux-kernel@vger.kernel.org,
+Cc: Matthias Maennich <maennich@google.com>, linux-kernel@vger.kernel.org,
 	kernel-team@android.com, arnd@arndb.de, geert@linux-m68k.org,
-	hpa@zytor.com, jeyu@kernel.org, joel@joelfernandes.org,
-	kstewart@linuxfoundation.org, linux-arch@vger.kernel.org,
-	linux-kbuild@vger.kernel.org, linux-m68k@lists.linux-m68k.org,
-	linux-modules@vger.kernel.org, linux-scsi@vger.kernel.org,
-	linux-usb@vger.kernel.org, lucas.de.marchi@gmail.com,
-	maco@android.com, maco@google.com, michal.lkml@markovi.net,
-	mingo@redhat.com, oneukum@suse.com, pombredanne@nexb.com,
-	sam@ravnborg.org, sspatil@google.com, stern@rowland.harvard.edu,
-	tglx@linutronix.de, usb-storage@lists.one-eyed-alien.net,
-	x86@kernel.org, yamada.masahiro@socionext.com,
-	Adrian Reber <adrian@lisas.de>,
-	Alexey Gladkov <gladkov.alexey@gmail.com>,
-	Andrew Jeffery <andrew@aj.id.au>,
-	Andrew Morton <akpm@linux-foundation.org>,
-	Ard Biesheuvel <ard.biesheuvel@linaro.org>,
-	bcm-kernel-feedback-list@broadcom.com,
-	Benjamin Fair <benjaminfair@google.com>, cocci@systeme.lip6.fr,
-	Dan Williams <dan.j.williams@intel.com>,
-	David Howells <dhowells@redhat.com>,
-	"David S. Miller" <davem@davemloft.net>,
-	Fabio Estevam <festevam@gmail.com>,
-	Gleb Fotengauer-Malinovskiy <glebfm@altlinux.org>,
-	Ingo Molnar <mingo@kernel.org>, Jani Nikula <jani.nikula@intel.com>,
-	Johannes Weiner <hannes@cmpxchg.org>,
-	Julia Lawall <julia.lawall@lip6.fr>,
-	linux-amlogic@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
-	linux-aspeed@lists.ozlabs.org, linux-hwmon@vger.kernel.org,
-	linux-mediatek@lists.infradead.org,
-	linux-rpi-kernel@lists.infradead.org, linux-rtc@vger.kernel.org,
-	linux-samsung-soc@vger.kernel.org,
-	linux-stm32@st-md-mailman.stormreply.com,
-	linux-tegra@vger.kernel.org, linux-watchdog@vger.kernel.org,
-	Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
-	Michael Ellerman <mpe@ellerman.id.au>,
-	Nancy Yuen <yuenn@google.com>,
-	Nicolas Ferre <nicolas.ferre@microchip.com>,
-	Nicolas Pitre <nico@fluxnic.net>,
-	NXP Linux Team <linux-imx@nxp.com>, openbmc@lists.ozlabs.org,
-	patches@opensource.cirrus.com,
-	Patrick Bellasi <patrick.bellasi@arm.com>,
-	Patrick Venture <venture@google.com>,
-	Pengutronix Kernel Team <kernel@pengutronix.de>,
-	Richard Guy Briggs <rgb@redhat.com>, Tejun Heo <tj@kernel.org>,
-	Toru Komatsu <k0ma@utam0k.jp>, Will Deacon <will@kernel.org>
-Subject: [usb-storage] Re: [PATCH v3 00/11] Symbol Namespaces
-Message-ID: <20190821140341.GA126314@google.com>
+	hpa@zytor.com, joel@joelfernandes.org, kstewart@linuxfoundation.org,
+	linux-arch@vger.kernel.org, linux-kbuild@vger.kernel.org,
+	linux-m68k@lists.linux-m68k.org, linux-modules@vger.kernel.org,
+	linux-scsi@vger.kernel.org, linux-usb@vger.kernel.org,
+	lucas.de.marchi@gmail.com, maco@android.com, maco@google.com,
+	michal.lkml@markovi.net, mingo@redhat.com, oneukum@suse.com,
+	pombredanne@nexb.com, sam@ravnborg.org, sspatil@google.com,
+	stern@rowland.harvard.edu, tglx@linutronix.de,
+	usb-storage@lists.one-eyed-alien.net, x86@kernel.org,
+	yamada.masahiro@socionext.com
+Subject: [usb-storage] Re: [PATCH v3 10/11] RFC: usb-storage: export symbols
+ in USB_STORAGE namespace
+Message-ID: <20190821143655.GA13637@linux-8ccs>
 References: <20190813121733.52480-1-maennich@google.com>
  <20190821114955.12788-1-maennich@google.com>
- <20190821131140.GC2349@hirez.programming.kicks-ass.net>
- <20190821133846.GC4890@kroah.com>
+ <20190821114955.12788-11-maennich@google.com>
+ <20190821123827.GB4059@kroah.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="UTF-8"; format=flowed
 Content-Disposition: inline
-In-Reply-To: <20190821133846.GC4890@kroah.com>
+In-Reply-To: <20190821123827.GB4059@kroah.com>
+X-OS: Linux linux-8ccs 4.12.14-lp150.12.28-default x86_64
 User-Agent: Mutt/1.10.1 (2018-07-13)
-X-Original-Sender: maennich@google.com
+X-Original-Sender: jeyu@kernel.org
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@google.com header.s=20161025 header.b=MidKkLyv;       spf=pass
- (google.com: domain of maennich@google.com designates 209.85.220.65 as
- permitted sender) smtp.mailfrom=maennich@google.com;       dmarc=pass
- (p=REJECT sp=REJECT dis=NONE) header.from=google.com
-X-Original-From: Matthias Maennich <maennich@google.com>
-Reply-To: Matthias Maennich <maennich@google.com>
+ header.i=@kernel.org header.s=default header.b=tX0ldqZE;       spf=pass
+ (google.com: domain of jeyu@kernel.org designates 198.145.29.99 as permitted
+ sender) smtp.mailfrom=jeyu@kernel.org;       dmarc=pass (p=NONE sp=NONE
+ dis=NONE) header.from=kernel.org
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -183,76 +147,40 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On Wed, 21 Aug, 06:38, Greg Kroah-Hartman wrote:
->On Wed, Aug 21, 2019 at 03:11:40PM +0200, Peter Zijlstra wrote:
->> On Wed, Aug 21, 2019 at 12:49:15PM +0100, Matthias Maennich wrote:
->> > As of Linux 5.3-rc5, there are 31205 [1] exported symbols in the kernel.
->> > That is a growth of roughly 1000 symbols since 4.17 (30206 [2]).  There
->> > seems to be some consensus amongst kernel devs that the export surface
->> > is too large, and hard to reason about.
->> >
->> > Generally, these symbols fall in one of these categories:
->> > 1) Symbols actually meant for drivers
->> > 2) Symbols that are only exported because functionality is split over
->> >    multiple modules, yet they really shouldn't be used by modules outside
->> >    of their own subsystem
->> > 3) Symbols really only meant for in-tree use
->> >
->> > When module developers try to upstream their code, it regularly turns
->> > out that they are using exported symbols that they really shouldn't be
->> > using. This problem is even bigger for drivers that are currently
->> > out-of-tree, which may be using many symbols that they shouldn't be
->> > using, and that break when those symbols are removed or modified.
->> >
->> > This patch allows subsystem maintainers to partition their exported
->> > symbols into separate namespaces, and module authors to import such
->> > namespaces only when needed.
->> >
->> > This allows subsystem maintainers to more easily limit availability of
->> > these namespaced symbols to other parts of the kernel. It can also be
->> > used to partition the set of exported symbols for documentation
->> > purposes; for example, a set of symbols that is really only used for
->> > debugging could be in a "SUBSYSTEM_DEBUG" namespace.
++++ Greg KH [21/08/19 05:38 -0700]:
+>On Wed, Aug 21, 2019 at 12:49:25PM +0100, Matthias Maennich wrote:
+>> Modules using these symbols are required to explicitly import the
+>> namespace. This patch was generated with the following steps and serves
+>> as a reference to use the symbol namespace feature:
 >>
->> I'm missing how one can prohibit these random out of tree modules from
->> doing MODULE_IMPORT_NS().
->
->Nothing, but then they are explicitly being "bad" :)
->
-
-As a side effect of this implementation (namespace imports via modinfo
-tags), imports are very visible for (out-of-tree) modules, e.g.
-
-$ modinfo drivers/usb/storage/ums-usbat.ko
-  filename:       drivers/usb/storage/ums-usbat.ko
-  import_ns:      USB_STORAGE
-  license:        GPL
-  author:         ...
-  ...
-
->> That is; suppose I stick all the preempt_notifier symbols in a KVM
->> namespace, how do I enforce no out-of-tree modules ever do
->> MODULE_IMPORT_NS(KVM) and gain access?
+>>  1) Define DEFAULT_SYMBOL_NAMESPACE in the corresponding Makefile
+>>  2) make  (see warnings during modpost about missing imports)
+>>  3) make nsdeps
 >>
-
-That is actually a feature worth following up: Restricting the
-namespaces that can be imported by modules. I am afraid it is not part
-of this series, but should not be too hard once agreed how such a list
-will be defined.
-
->> (the above would basically break virtualbox, which I knows uses preempt
->> notifiers too, but I don't give a rats arse about that)
+>> Instead of a DEFAULT_SYMBOL_NAMESPACE definition, the EXPORT_SYMBOL_NS
+>> variants can be used to explicitly specify the namespace. The advantage
+>> of the method used here is that newly added symbols are automatically
+>> exported and existing ones are exported without touching their
+>> respective EXPORT_SYMBOL macro expansion.
+>>
+>> Signed-off-by: Matthias Maennich <maennich@google.com>
 >
->It's a huge red flag for anyone reviewing the code that this module is
->doing something it probably really should not be doing at all.  It will
->make reviewing code easier, this isn't there to try to "prevent bad
->actors" at all, sorry.
+>This looks good to me.  This can be included with the rest of this
+>series when/if it goes through the kbuild or module tree:
 >
+>Reviewed-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+>
+>Actually, which tree will this be going through?
 
-Cheers,
-Matthias
+I would be happy to take the patchset through the modules tree once it
+collects the appropriate ack/reviewed-by's and once I get a chance to
+sit down and review/test it next week :)
+
+Thanks!
+
+Jessica
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20190821140341.GA126314%40google.com.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20190821143655.GA13637%40linux-8ccs.
