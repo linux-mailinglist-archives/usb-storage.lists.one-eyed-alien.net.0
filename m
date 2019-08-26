@@ -1,120 +1,120 @@
-Return-Path: <usb-storage+bncBCUMB4EN24LRBL6IRXVQKGQEEW57SJA@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBCUJ7YGL3QFBBPWLRXVQKGQEC6VUN4Q@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-wr1-x447.google.com (mail-wr1-x447.google.com [IPv6:2a00:1450:4864:20::447])
-	by mail.lfdr.de (Postfix) with ESMTPS id 26F1D9C882
-	for <lists+usb-storage@lfdr.de>; Mon, 26 Aug 2019 06:46:40 +0200 (CEST)
-Received: by mail-wr1-x447.google.com with SMTP id a17sf9115262wrw.3
-        for <lists+usb-storage@lfdr.de>; Sun, 25 Aug 2019 21:46:40 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1566794799; cv=pass;
+Received: from mail-pg1-x547.google.com (mail-pg1-x547.google.com [IPv6:2607:f8b0:4864:20::547])
+	by mail.lfdr.de (Postfix) with ESMTPS id B7CE39C88B
+	for <lists+usb-storage@lfdr.de>; Mon, 26 Aug 2019 06:53:20 +0200 (CEST)
+Received: by mail-pg1-x547.google.com with SMTP id c9sf9004061pgm.18
+        for <lists+usb-storage@lfdr.de>; Sun, 25 Aug 2019 21:53:20 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1566795199; cv=pass;
         d=google.com; s=arc-20160816;
-        b=X45xI/s2P7qQ4lF0Ngy4CYFVU4QptghJRbYuX51vpgmlCgf9ryb+7dwlWKOhsK6ay/
-         daFo1DXzY91vRT4rdOvTkm72PxuUgnxgtH5VoU5M/uaVfI/S5Y+KbkQL1utfDDpb/k/s
-         hUY4JwTywBGM9c6UTMlutaGhNTvutDcCTBIyO19zzKQ4TAEdxhnuv6P3UfLjZG/GY0/Z
-         uXBND7SEU5YEUpkXqUBVvyyeuP4GNxI8xmE2W9Ho0yDcCzg5gkvSZb4fdADrCBnBzayb
-         c4J70gwzkzcDCzZElqhDfZ/aBsICg0ZvTlh51PFfoIHbJh9226oG3Zxe47eoKzPbMR+M
-         ZhCw==
+        b=SLiZ2DGb49l4HmCZ/kqs2YSPShmsou4c1KYkeE/4Q+P9HFarIsFvITNMuhCqroofzq
+         RZYGi+UL8lmrGigiER+10p0UvVXgVFoAc4t36hNJAYZJGiBwGfv+JgiP4V0w/yoOouMl
+         4sBMDd0IgvJWroUVZLdNnP2haffVe2rJRmem4sBh1RvYP2Szyxz5k4sG97ir1FXI8qHw
+         H7hzbv2tLWzBOie/WT+xH7WRDueK/BlOIQr6T21++vaDksqILTDiteBwfvh15OwQdDXL
+         p0+DruwwNDHRcJlf2M0JcNaVKuJ1vAbfBd/jIIFd3UttuPsyyj1gNm9lN5VtClW4vNek
+         Kv4w==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:references:in-reply-to:message-id
-         :date:subject:cc:to:from:mime-version:sender:dkim-signature;
-        bh=fQdBhBAYUMauAEukgMgHlcLaJLZfuufDOnTUqpTsVNE=;
-        b=dlLa2yXGnOwTIyKkqwhtrHy7rV8Ff8vv0TVWFe0khgxiiPSg0Htf2M9I6LjYzzD9Ma
-         rl1E5fhGXwsna8n2BRfTyHG5hOkLssXFWVdqCoXcsuwaN6z6CrCQTxZTSWXKvoauGrut
-         qT1xB2jiubg/tsL8blaY3EENwQ+QCHgu3p1NC705jF0car81o97IcJ5OEhSSBLmVABnT
-         MAwCdjMn61ehekrBdHbit2/HwMqOw8RnWanolAZ47Tp3LpaY+hsgoJycQk73CJU+eTSd
-         ECY0XBTsbxYHGYCnN8Oa3C9ZdSn8L4TrRkWGMMlGs/no2wU0T+25LTRY+V1Mem5KO1j8
-         orZA==
+         :list-id:mailing-list:precedence:user-agent:in-reply-to
+         :content-disposition:mime-version:references:message-id:subject:cc
+         :to:from:date:sender:dkim-signature;
+        bh=qvkiKFcX5GKN95QqTPSpPIneAQyQhT3cXaVE4JT8s8I=;
+        b=CoVy32XVpSwwCJVTKZH+uCb/p8lht4/7anIevN68mCvc+ZoTeMzYjDOxR2PJCxL73k
+         g3ZgaXyGJTpNt27FRyL9iAwC+fk6/bdN8x3pGGcWNXpIu53+GBe20uKmyGuq9BXa8Opm
+         ZQ4b/G36IIHqlwe955S/qWmHdOp7P5kRFmPKK2VoQXSIn5h1opk+PVQYYyIdmv4R1BoF
+         aGe8lYW0bI3BEDqeTfEKyWh+QZ9t3rElf0wTj2W42fCIU6d7ZPgH5noGerGydDgyc9qf
+         hd0zZYJwV9PW3DgAZGnvTEDQ0ajTDzlHZnsydAAaiuwUKy96ceIZMD6EOpNUEKIQubdd
+         vPSA==
 ARC-Authentication-Results: i=2; mx.google.com;
-       spf=pass (google.com: best guess record for domain of kai.heng.feng@canonical.com designates 91.189.89.112 as permitted sender) smtp.mailfrom=kai.heng.feng@canonical.com;
-       dmarc=fail (p=NONE sp=NONE dis=NONE) header.from=canonical.com
+       dkim=pass header.i=@kernel.org header.s=default header.b=cyAooLrK;
+       spf=pass (google.com: domain of gregkh@linuxfoundation.org designates 198.145.29.99 as permitted sender) smtp.mailfrom=gregkh@linuxfoundation.org
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
-        h=sender:mime-version:from:to:cc:subject:date:message-id:in-reply-to
-         :references:x-original-sender:x-original-authentication-results
-         :precedence:mailing-list:list-id:list-post:list-help:list-archive
-         :list-subscribe:list-unsubscribe;
-        bh=fQdBhBAYUMauAEukgMgHlcLaJLZfuufDOnTUqpTsVNE=;
-        b=hk4PW1ie140/TxWSxfKllg4u8O49jsroNAK4doObM2EyJ0hZpUZ5zir0RQBxxSLEAM
-         zLb6rNTm1t07nxjoFOhbhBUzWiO3U/UqcUjU3nKuqaoqdcpXfLBzbSSSEftltKZXnwqv
-         JvD0SZnqPBu9CWplBVH8mS1+5o835SJz1rgUY=
+        h=sender:date:from:to:cc:subject:message-id:references:mime-version
+         :content-disposition:in-reply-to:user-agent:x-original-sender
+         :x-original-authentication-results:precedence:mailing-list:list-id
+         :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
+        bh=qvkiKFcX5GKN95QqTPSpPIneAQyQhT3cXaVE4JT8s8I=;
+        b=KjDM1wU7TzCjtNVYAPsjR7MhEphhV7G2t0NVH91/WV1YeYvHNzxK26u9O1fGG3WGuY
+         OOmBm//8ObdJGJAh7NRVqXdhhTsdokRkn1UDkAiZ80Gmb4wk7DD0PsPBOWrO0Q82Ivdn
+         YZxOGdoP1qCVgBhH/YJxXc09/wCIpamGRYEec=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
-        h=sender:x-gm-message-state:mime-version:from:to:cc:subject:date
-         :message-id:in-reply-to:references:x-original-sender
-         :x-original-authentication-results:precedence:mailing-list:list-id
-         :x-spam-checked-in-group:list-post:list-help:list-archive
-         :list-subscribe:list-unsubscribe;
-        bh=fQdBhBAYUMauAEukgMgHlcLaJLZfuufDOnTUqpTsVNE=;
-        b=q0SiiyD5N2G4nqhYBeE5/xD34pMNxW5c813i02LHrgD5Fb4X/BPRF0B0g51SU/AoeT
-         YxMJ8nSOYfn6gFnBF6/vnTPgeWPC/hHvcfg86zP/wEEsjVGgQmAHwHAMV4qM9KzRwT+6
-         uAT3z5xI67+xdfYJ0r6qQ4lBR4ofCQtw/KY/LHxyqv+19Kv8eGYbO6NOzCiwq9+RkS6X
-         KXsn/gGZze44Bb7HYsCQkwzjxqXBgOejC6N2sdIvpn0SzPfKPFff8r8f9MLWtzKRtq0P
-         ODsnFQC4l+ipHeTRbnNJSXMkx7vE7eAhCnr3ecFCS1xXSa8W7gm3AfTJwbVk4Mbak331
-         7i6g==
+        h=sender:x-gm-message-state:date:from:to:cc:subject:message-id
+         :references:mime-version:content-disposition:in-reply-to:user-agent
+         :x-original-sender:x-original-authentication-results:precedence
+         :mailing-list:list-id:x-spam-checked-in-group:list-post:list-help
+         :list-archive:list-subscribe:list-unsubscribe;
+        bh=qvkiKFcX5GKN95QqTPSpPIneAQyQhT3cXaVE4JT8s8I=;
+        b=a1NcMYWyjWG5ba25IWU3aSma9KMIeycK8GB2uvr//hK9+EPNiRsTVG4DyLFfcR6z55
+         RBhHwHd4rSL58rET25qXDNLu9xmX9l4L0GhRTat0gQmHKKA2+pzlO2NUUQHQ/c0qNRjI
+         EUOrq0nCKkyR/J3TYemJHTh1y9nlxRpwqu9movCP3XEGPvu/3NTHV7PYc8iMT0t0Xtuu
+         55NRa0GS5LT41QoSi1kAaAtkge9+eojahX693oA7sIBVJ0l5PNYOm33LohHyIgG6/r3B
+         //mEqWascjT6jB4EXCUen6xz3o8K43L5iCM+Qb79tOwx9STb3aLLcEU8oE06t1iNo70l
+         Q60A==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: APjAAAV8EO3jd8bUUU+iztSU6HFE/ZfzshBz8/DRYAKb1sEOeq1AcMrS
-	cKAAE3Jo0XNZMa85TsJtubXJiw==
-X-Google-Smtp-Source: APXvYqy522fPZE87Kt+6OIxDBoJBFI6adwXRPAEA8odqzhOjEFxVaylznflLNAJPxsc14SMvP0pZvA==
-X-Received: by 2002:a1c:6c0d:: with SMTP id h13mr17704293wmc.74.1566794799730;
-        Sun, 25 Aug 2019 21:46:39 -0700 (PDT)
-MIME-Version: 1.0
+X-Gm-Message-State: APjAAAWKiHdDADNyBbwXVvuIR87t6d/0SDX3Mk3xzGK32+Gn2Vw18Rmf
+	jYKi4GUtvHxKF/sc8uUqBPDmLg==
+X-Google-Smtp-Source: APXvYqyYsPNNeexGu32zHUeUXx/RbUA4mGdOl8Sc903MUQ1SD/OT1g7Jg04IWzdNM4AkXt3ElTl6nA==
+X-Received: by 2002:aa7:9092:: with SMTP id i18mr17941142pfa.101.1566795199018;
+        Sun, 25 Aug 2019 21:53:19 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a5d:5709:: with SMTP id a9ls4082601wrv.12.gmail; Sun, 25 Aug
- 2019 21:46:39 -0700 (PDT)
-X-Received: by 2002:a5d:470c:: with SMTP id y12mr19541891wrq.136.1566794798992;
-        Sun, 25 Aug 2019 21:46:38 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1566794798; cv=none;
+Received: by 2002:a62:3742:: with SMTP id e63ls4342626pfa.7.gmail; Sun, 25 Aug
+ 2019 21:53:18 -0700 (PDT)
+X-Received: by 2002:a62:e516:: with SMTP id n22mr18301510pff.105.1566795198485;
+        Sun, 25 Aug 2019 21:53:18 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1566795198; cv=none;
         d=google.com; s=arc-20160816;
-        b=HJDFl0xCobkZeDYhKR1VG1iyu+LpHlikeBXKzvA4Gm1gq1R99O9DlCwWiuy1vzvrE3
-         kMnP03xV5HjIgh29cWRLglmIXCgvxVdYwfl4OHin6/zt8dhloyDPc4kG0eGJg9DOgaqi
-         miKAFm+Y2jYZRnUDxC8lMPf1JiaUf1jR5DIvOnC7K2DFWhWHSnBt4vbVG1psm14vjb5o
-         idUJSZxUo8wwpNHn+DTmiVyhmz43YRqHOpPx7kj7d4Si8275H5HuUVXD75fWyHF1XQrL
-         p1eEeoC1wB7ycW2dLrEST7hdRiX8FJq+9wThij3T7anEJTtYrWUaNLxVKjkZkDiBkPH4
-         WvPA==
+        b=J7l1N/3nvKKpr28LaU8bHoqtvl2DuYs1HNEfn/JJ4cQ8iZmtIEALZ6yb0oBHmtBVvA
+         bFH87GJtzrcCCRA4ZB4sCS9J/TmoE1T4Ilax2xzIsrnmWZC2YPslHZNq0Q5pWk1wTipI
+         O/v2CAaFsCnN1pSvayFvCv7tx/CAcMFB63GZ7fIQr/v8MY/RZgXZDbppsNbdZWefVZnu
+         fUVtFGQCbo/fgQjaX7WSYLUAs+m4ACeeonaoethThazBXCAqUT0DXAYMDamFlsywhqRx
+         Qtf5Z3Is4rB1Uh6mzTy5AZ9sGcLKm352FwtHCHEVXwDibl3A0Z64ccNxJlfuc05nAY0Z
+         sidg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=references:in-reply-to:message-id:date:subject:cc:to:from;
-        bh=1/ceESkfrlfhf34xBQCG7xOdRywTmqU6AoOeU9cQrHo=;
-        b=l98d0KCGvKzWsixWY2eAjqqglfjB5Wc1bfS+Rm/R2HPj/phViSXsBk1HJCmyC3oO0D
-         b/FqZv0boMV/g98cBEKEdtRYMdep4LWdODY+00wZodYgOViE+y+yCAiL8TcNVl1v2jKt
-         MIdRYwQLRh7DYT/bZLWcGR0dgkECVg/WhKq4svgQ04pzq1QOr2JhX1ZbnHFnkgFbmIUs
-         ZM6eL9IDyVOV0qqXo0e8LyqdXzvIDK3A+flVD8zRcfNFZgXDkgNtnsjh743GiZlwx1q1
-         aI+ojypdnkM8Arjl/EylBiSiCS08uRdZDFKfohGxnFHJ8YML91Z4cFmqmEZtJPXdP2At
-         JLfA==
+        h=user-agent:in-reply-to:content-disposition:mime-version:references
+         :message-id:subject:cc:to:from:date:dkim-signature;
+        bh=rCEy6FCyBG2KG9/dWnxBzMlgYMgijml/+3XO3x0xwNE=;
+        b=q/HGDBPkkHAsNdfF2CexZixCfDGrc9mbA0KeCgfWfgsAlFd3ms2V87CKIyHbXbtBPP
+         MDdhU/LbZLkUpb4f81aUp6sVJDZwSGwl8WzoEvFQMqCsUP23MsijbqpAc4gAKwB0GftF
+         NokSEsMa7lcVoKZPIP9DKTd0RBkUUoLrbOTCcuDUyu2xwtEtLmTGA4y+Z4y9K55kva0a
+         OefKLdmL8QITqpKDoCSL47q6Pjd3bTHmjS9WYycR5P38Z2U6593mAvrPfetqMVDztd7K
+         6+EC523TotN5c6HuTb8igpQtmsiCXj6R5SsTo5VsTYoC5f6ssxr3e4yi/VKPbrorpdjV
+         Cdow==
 ARC-Authentication-Results: i=1; mx.google.com;
-       spf=pass (google.com: best guess record for domain of kai.heng.feng@canonical.com designates 91.189.89.112 as permitted sender) smtp.mailfrom=kai.heng.feng@canonical.com;
-       dmarc=fail (p=NONE sp=NONE dis=NONE) header.from=canonical.com
-Received: from youngberry.canonical.com (youngberry.canonical.com. [91.189.89.112])
-        by mx.google.com with ESMTPS id e4si8163062wrj.146.2019.08.25.21.46.38
+       dkim=pass header.i=@kernel.org header.s=default header.b=cyAooLrK;
+       spf=pass (google.com: domain of gregkh@linuxfoundation.org designates 198.145.29.99 as permitted sender) smtp.mailfrom=gregkh@linuxfoundation.org
+Received: from mail.kernel.org (mail.kernel.org. [198.145.29.99])
+        by mx.google.com with ESMTPS id i3si8619180pld.357.2019.08.25.21.53.18
         for <usb-storage@lists.one-eyed-alien.net>
-        (version=TLS1 cipher=AES128-SHA bits=128/128);
-        Sun, 25 Aug 2019 21:46:38 -0700 (PDT)
-Received-SPF: pass (google.com: best guess record for domain of kai.heng.feng@canonical.com designates 91.189.89.112 as permitted sender) client-ip=91.189.89.112;
-Received: from 61-220-137-37.hinet-ip.hinet.net ([61.220.137.37] helo=localhost)
-	by youngberry.canonical.com with esmtpsa (TLS1.0:RSA_AES_256_CBC_SHA1:32)
-	(Exim 4.76)
-	(envelope-from <kai.heng.feng@canonical.com>)
-	id 1i26tp-00014D-8f; Mon, 26 Aug 2019 04:46:37 +0000
-From: Kai-Heng Feng <kai.heng.feng@canonical.com>
-To: stern@rowland.harvard.edu
-Cc: gregkh@linuxfoundation.org,
-	linux-usb@vger.kernel.org,
-	usb-storage@lists.one-eyed-alien.net,
-	linux-kernel@vger.kernel.org,
-	Kai-Heng Feng <kai.heng.feng@canonical.com>
-Subject: [usb-storage] [PATCH 2/2] USB: storage: ums-realtek: Enable
- auto-delink optionally
-Date: Mon, 26 Aug 2019 12:46:30 +0800
-Message-Id: <20190826044630.21949-2-kai.heng.feng@canonical.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190826044630.21949-1-kai.heng.feng@canonical.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Sun, 25 Aug 2019 21:53:18 -0700 (PDT)
+Received-SPF: pass (google.com: domain of gregkh@linuxfoundation.org designates 198.145.29.99 as permitted sender) client-ip=198.145.29.99;
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl [83.86.89.107])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by mail.kernel.org (Postfix) with ESMTPSA id AB4C92070B;
+	Mon, 26 Aug 2019 04:53:17 +0000 (UTC)
+Date: Mon, 26 Aug 2019 06:53:15 +0200
+From: Greg KH <gregkh@linuxfoundation.org>
+To: Kai-Heng Feng <kai.heng.feng@canonical.com>
+Cc: stern@rowland.harvard.edu, linux-usb@vger.kernel.org,
+	usb-storage@lists.one-eyed-alien.net, linux-kernel@vger.kernel.org
+Subject: [usb-storage] Re: [PATCH 1/2] USB: storage: ums-realtek: Rename
+ module parameter auto_delink_en to auto_delink_mode
+Message-ID: <20190826045315.GC1678@kroah.com>
 References: <20190826044630.21949-1-kai.heng.feng@canonical.com>
-X-Original-Sender: kai.heng.feng@canonical.com
-X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
- best guess record for domain of kai.heng.feng@canonical.com designates
- 91.189.89.112 as permitted sender) smtp.mailfrom=kai.heng.feng@canonical.com;
-       dmarc=fail (p=NONE sp=NONE dis=NONE) header.from=canonical.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="UTF-8"
+Content-Disposition: inline
+In-Reply-To: <20190826044630.21949-1-kai.heng.feng@canonical.com>
+User-Agent: Mutt/1.12.1 (2019-06-15)
+X-Original-Sender: gregkh@linuxfoundation.org
+X-Original-Authentication-Results: mx.google.com;       dkim=pass
+ header.i=@kernel.org header.s=default header.b=cyAooLrK;       spf=pass
+ (google.com: domain of gregkh@linuxfoundation.org designates 198.145.29.99 as
+ permitted sender) smtp.mailfrom=gregkh@linuxfoundation.org
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -130,68 +130,41 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-Auto-delink requires writing special registers to ums-realtek device.
-Unconditionally enable auto-delink may break newer devices.
+On Mon, Aug 26, 2019 at 12:46:29PM +0800, Kai-Heng Feng wrote:
+> The option named "auto_delink_en" is a bit misleading, as setting it to
+> false doesn't really disable auto-delink but let auto-delink be firmware
+> controlled.
+> 
+> Rename it to reflect the real usage of this parameter.
+> 
+> Signed-off-by: Kai-Heng Feng <kai.heng.feng@canonical.com>
+> ---
+>  drivers/usb/storage/realtek_cr.c | 10 +++++-----
+>  1 file changed, 5 insertions(+), 5 deletions(-)
+> 
+> diff --git a/drivers/usb/storage/realtek_cr.c b/drivers/usb/storage/realtek_cr.c
+> index cc794e25a0b6..4d86cfcc0b40 100644
+> --- a/drivers/usb/storage/realtek_cr.c
+> +++ b/drivers/usb/storage/realtek_cr.c
+> @@ -36,9 +36,9 @@ MODULE_DESCRIPTION("Driver for Realtek USB Card Reader");
+>  MODULE_AUTHOR("wwang <wei_wang@realsil.com.cn>");
+>  MODULE_LICENSE("GPL");
+>  
+> -static int auto_delink_en = 1;
+> -module_param(auto_delink_en, int, S_IRUGO | S_IWUSR);
+> -MODULE_PARM_DESC(auto_delink_en, "enable auto delink");
+> +static int auto_delink_mode = 1;
+> +module_param(auto_delink_mode, int, S_IRUGO | S_IWUSR);
+> +MODULE_PARM_DESC(auto_delink_mode, "auto delink mode (0=firmware, 1=software [default])");
 
-So only enable auto-delink by default for the original three IDs,
-0x0138, 0x0158 and 0x0159.
+We can not just rename module parameters, as that will break working
+systems that have their startup scripts using those names :(
 
-Realtek is working on a patch to properly support auto-delink for other
-IDs.
+sorry,
 
-BugLink: https://bugs.launchpad.net/bugs/1838886
-Signed-off-by: Kai-Heng Feng <kai.heng.feng@canonical.com>
----
- drivers/usb/storage/realtek_cr.c | 24 +++++++++++++++++++-----
- 1 file changed, 19 insertions(+), 5 deletions(-)
-
-diff --git a/drivers/usb/storage/realtek_cr.c b/drivers/usb/storage/realtek_cr.c
-index 4d86cfcc0b40..376f41d0cbc3 100644
---- a/drivers/usb/storage/realtek_cr.c
-+++ b/drivers/usb/storage/realtek_cr.c
-@@ -36,6 +36,10 @@ MODULE_DESCRIPTION("Driver for Realtek USB Card Reader");
- MODULE_AUTHOR("wwang <wei_wang@realsil.com.cn>");
- MODULE_LICENSE("GPL");
- 
-+static int auto_delink_enable = -1;
-+module_param(auto_delink_enable, int, S_IRUGO | S_IWUSR);
-+MODULE_PARM_DESC(auto_delink_enable, "enable auto delink (-1=auto [default], 0=disable, 1=enable)");
-+
- static int auto_delink_mode = 1;
- module_param(auto_delink_mode, int, S_IRUGO | S_IWUSR);
- MODULE_PARM_DESC(auto_delink_mode, "auto delink mode (0=firmware, 1=software [default])");
-@@ -996,12 +1000,22 @@ static int init_realtek_cr(struct us_data *us)
- 			goto INIT_FAIL;
- 	}
- 
--	if (CHECK_FW_VER(chip, 0x5888) || CHECK_FW_VER(chip, 0x5889) ||
--	    CHECK_FW_VER(chip, 0x5901))
--		SET_AUTO_DELINK(chip);
--	if (STATUS_LEN(chip) == 16) {
--		if (SUPPORT_AUTO_DELINK(chip))
-+	if (auto_delink_enable == -1) {
-+		if (CHECK_PID(chip, 0x0138) || CHECK_PID(chip, 0x0158) ||
-+		    CHECK_PID(chip, 0x0159))
-+			auto_delink_enable = 1;
-+		else
-+			auto_delink_enable = 0;
-+	}
-+
-+	if (auto_delink_enable) {
-+		if (CHECK_FW_VER(chip, 0x5888) || CHECK_FW_VER(chip, 0x5889) ||
-+				CHECK_FW_VER(chip, 0x5901))
- 			SET_AUTO_DELINK(chip);
-+		if (STATUS_LEN(chip) == 16) {
-+			if (SUPPORT_AUTO_DELINK(chip))
-+				SET_AUTO_DELINK(chip);
-+		}
- 	}
- #ifdef CONFIG_REALTEK_AUTOPM
- 	if (ss_en)
--- 
-2.17.1
+greg k-h
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20190826044630.21949-2-kai.heng.feng%40canonical.com.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20190826045315.GC1678%40kroah.com.
