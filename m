@@ -1,107 +1,106 @@
-Return-Path: <usb-storage+bncBDMYPB44VAFRBEUCSXVQKGQEVTLJMXA@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBD45FSE2XIORBOM4SXVQKGQELZHRVOI@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-wr1-x445.google.com (mail-wr1-x445.google.com [IPv6:2a00:1450:4864:20::445])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5237F9EB4A
-	for <lists+usb-storage@lfdr.de>; Tue, 27 Aug 2019 16:41:23 +0200 (CEST)
-Received: by mail-wr1-x445.google.com with SMTP id m7sf11507436wrw.22
-        for <lists+usb-storage@lfdr.de>; Tue, 27 Aug 2019 07:41:23 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1566916883; cv=pass;
+Received: from mail-pg1-x546.google.com (mail-pg1-x546.google.com [IPv6:2607:f8b0:4864:20::546])
+	by mail.lfdr.de (Postfix) with ESMTPS id D9BF59EF0D
+	for <lists+usb-storage@lfdr.de>; Tue, 27 Aug 2019 17:37:30 +0200 (CEST)
+Received: by mail-pg1-x546.google.com with SMTP id t19sf12027849pgh.6
+        for <lists+usb-storage@lfdr.de>; Tue, 27 Aug 2019 08:37:30 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1566920249; cv=pass;
         d=google.com; s=arc-20160816;
-        b=Oq4baH9iYa9mxOvLErbiCdTKwq13xibF700DrkcjXboszEETYGw3mSZy46fbAii1Jc
-         4C4LuwaQjJ92iDnoF/2g2+yr/zlp66jJnYW584PzDcYZ3q3UzL2CHoBAYy7qrAvXyfL1
-         E4yRV87P+cqesBbXhJHvFr8rLGS95fj+rG4LwspTc+BoXV6K2Wsfifb4HNzlwSi9FEYT
-         FvDfllxdAeNog9UgXXKwcsC5ADvlBPOsEYaquGDKry7Qciva+aYYbMxEyxwCHoqkLzOl
-         A2kVF+a2O6gCtg+JpJ2OgObtESI/IudOD9wvlH8yT1wQyxntWkxhJmDiwXW8GlSKVcMg
-         mj0g==
+        b=H4bGcTzZXl9pG10MBbwVuQdaOqrtjrJA9ALaWmuV4mTkBGmX8mIHBAMmBb+eTR0UZH
+         EA1GBNS9ty1NWw81SOXw6/zOIPyozBBJAiTGYmXTl3pYt1GYhmjFCgD8hZFXdtrL4Ybp
+         gzjN9zzwqbJkcwET+hi5HGxaAUWKroX2GwsCt10lRMJ4bNg3TbYRoWCIMMZYetroo06h
+         KgQHngY8mRP796Xd51+/X43ejC2UOQF9t5rr002nK/yDMILUyWQ0zAvYXIsG/JBMz7SF
+         60m5TTexgLa3/PJGdC27cKMheDvPAUilKMObSG+86Toily861iafMrILwFK4oPz9lYFP
+         rqsg==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:reply-to:user-agent:in-reply-to
+         :list-id:mailing-list:precedence:user-agent:in-reply-to
          :content-disposition:mime-version:references:message-id:subject:cc
-         :to:from:date:dkim-signature;
-        bh=meKFuuzNnKij4dbiTRuQC+TR6VknQpwM7AYUlpmMz5o=;
-        b=IUYlmwazLsVYLkkhnhMlOV+y2EAJyrkFDZKTFFruW+GUwpS8SBUF7pcZ7BV4NEOoM/
-         onWKudAnPxTlCZyAIb7jD5T6AgQwYY0rIskwQPZrxHqbnkoYyobSmdZUQBXkQd/kSWTc
-         6+xSFfFySHMTwqVcPIhfBTjuNinOL+qPmJswHeolBYtL+kJO9aK23fODgOl/UI7HIS27
-         zfuSzVSI3GCE1+pRpe6S30seMQAFReZopKpQMlhJtQVz0GDeUm5TrlsuDebCw9uBiPjZ
-         YvrJlQqLkmK1OACQBcJ/eAID/1Mfc/2mVplIlFtWWU96eSm6z4pqQzWcCVWxflbsrVsT
-         QtAg==
+         :to:from:date:sender:dkim-signature;
+        bh=rGj1R2qeYdi86WV177XpA0ht2Ik3QsRlZnqGh/UE6V8=;
+        b=atXwTYiEr0HampVqLuEMQYox5tuoqAEsushk+iq8ElnIYv4vJQgc6Ygy0ToUGBdg12
+         38Q5tk5MsNtvPateCQUSTvTbhmxxCc2YKHuUSxtlWcKLm9GvuCWZ2MHTbTiyYHuXts94
+         uMhDR4toUVgaZ5UNokuwFLN70rk1k2EBwAcqbgNAbCrjZcTLXewjzXHbjjeSEPugngv7
+         3USGuFaRH6IHkAuwCD4fEvpVMn/Gmp8SrmNVPPBkubtKzMuhd9IvoZjM7bN43e4hNYX8
+         /qfH99vrx6sfYoaqKflldrGWIcBJ/LpcTEErkfCT7K4xaIz7Dptw6mGI6dqbF5gMA3Lm
+         af4Q==
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@google.com header.s=20161025 header.b=p0YzT8Vu;
-       spf=pass (google.com: domain of maennich@google.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=maennich@google.com;
-       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
+       dkim=pass header.i=@kernel.org header.s=default header.b=ffw9Nlrv;
+       spf=pass (google.com: domain of jeyu@kernel.org designates 198.145.29.99 as permitted sender) smtp.mailfrom=jeyu@kernel.org;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=kernel.org
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
-        h=date:from:to:cc:subject:message-id:references:mime-version
+        h=sender:date:from:to:cc:subject:message-id:references:mime-version
          :content-disposition:in-reply-to:user-agent:x-original-sender
-         :x-original-authentication-results:reply-to:precedence:mailing-list
-         :list-id:list-post:list-help:list-archive:list-subscribe
-         :list-unsubscribe;
-        bh=meKFuuzNnKij4dbiTRuQC+TR6VknQpwM7AYUlpmMz5o=;
-        b=JKCygWDv4B64MMPJQyP1BgbrFkVZEGjv1xudPFm1ozwSVsIWdpRiDdV5SwK42SMwst
-         /sCBMKiBI3lw6LVb94jrrYcJp5FMxyP2O6qjR/wiw8Kc/bVIxYDp463YGwRi2lid4aY4
-         nk0ijtYeYNQDnxncrqp1CyiqiWUg680ueDtWo=
+         :x-original-authentication-results:precedence:mailing-list:list-id
+         :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
+        bh=rGj1R2qeYdi86WV177XpA0ht2Ik3QsRlZnqGh/UE6V8=;
+        b=YTiiNPGJZw8jmflTi4yijv5YVJkv1R9QEvNHsBef1vRof42FxyBTfCKqqEpzpDpjPk
+         LRy7QfevFbn7XYA8aPlgwSSga5DVfD1KLAJoYHn/ciELbY14SNsUwmWGcfXZq3OIMUxe
+         Z8nWbIrCAGpkDKovTyKcKJMPlnym6xII3Jg3g=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
-        h=x-gm-message-state:date:from:to:cc:subject:message-id:references
-         :mime-version:content-disposition:in-reply-to:user-agent
-         :x-original-sender:x-original-authentication-results:reply-to
-         :precedence:mailing-list:list-id:x-spam-checked-in-group:list-post
-         :list-help:list-archive:list-subscribe:list-unsubscribe;
-        bh=meKFuuzNnKij4dbiTRuQC+TR6VknQpwM7AYUlpmMz5o=;
-        b=rcoHaFVDLUqOUUDFmGY2R4z/5bwtCtQzFoxvSGBNFc0TjXCSQliwEkC0EJl1+DnMKi
-         SJuL/xjdPeuAAZnd9xg42CF/HzvMtPPXtqqAA0QqeNbV1ZKzXzJvVW0/UA/hdHgltL8c
-         u2+cEqP2ThGCFhMSgddVItk39baWznRnZ9Iedou4o3lnrxMPMvfkmTIyRMQLcnBR5NA1
-         GvSHUVSvsGJfx2z6NVtIXDFRF20ZQMPpJyWuSabF1j0cQaKCd4tr99H0QwQIGgfcmQkN
-         eM6fJgfP4RK6hlcc3FIqGmlmUYgmF0Hb2rLb1X0M5ShkCLUktOwt5RnTzhEibESdrAPB
-         Objw==
-X-Gm-Message-State: APjAAAWCFjHM3spTNGUouNOXyD9BArUXP689xHi9w29A9/MBSESKVsvW
-	d08ST/YQe8v7+WzDZ12Gyeav2Q==
-X-Google-Smtp-Source: APXvYqxhgIg31wYUOjdIXYUF/eTzVEWCBimca9KcRdM2F3BCkYmK+t3xkE6TAqUvSFxJGvuODIfMEg==
-X-Received: by 2002:adf:f5c5:: with SMTP id k5mr8611827wrp.42.1566916882876;
-        Tue, 27 Aug 2019 07:41:22 -0700 (PDT)
+        h=sender:x-gm-message-state:date:from:to:cc:subject:message-id
+         :references:mime-version:content-disposition:in-reply-to:user-agent
+         :x-original-sender:x-original-authentication-results:precedence
+         :mailing-list:list-id:x-spam-checked-in-group:list-post:list-help
+         :list-archive:list-subscribe:list-unsubscribe;
+        bh=rGj1R2qeYdi86WV177XpA0ht2Ik3QsRlZnqGh/UE6V8=;
+        b=PAkdqw6ALOYgYpaNGIEIrsDA8JtcM24ogXHkWRylRj5LKAWrKVc/9f/M2D6t7sSpop
+         R/+4bHBm7RnIN8odDPdQYrfMsvdFKhqb8VOVxv0KzA+C1B3UesdCdM+95pJmh4bbDQ6L
+         zLu/AXPWfQbqb+KivWkOPup0nFaOsVEBzOQ1FBjJytX6d3BXuexV7nQiriiMb0ip8gQI
+         rp5NAZL+yk+krEICtNBi+KLYvMrQF/SiRLvbonMTK1VfzeoEN2Pg38r7BTX35KVa+Wua
+         7Q2dhOwh3fjbsPIIn8ABeqB3zFAB+uxqRx407hgrSUIHgtLTBxDrt/QxVcbBPT551wsK
+         0ndw==
+Sender: usb-storage@lists.one-eyed-alien.net
+X-Gm-Message-State: APjAAAXTQDl+uBnAfdbylZC46QOUYBVKdBvp8/4/ddHQbaWgLQoB+ehn
+	a5QQXa02HpqPPbSz3npkCgAfqQ==
+X-Google-Smtp-Source: APXvYqy7fKI7frh3RdzjTaW2xn0jbMRF0uvXQjVALmdZAbUyTLBxqZHp7vhcIYtcmd2QXPcQbsv8+w==
+X-Received: by 2002:a17:902:1024:: with SMTP id b33mr24552701pla.325.1566920249502;
+        Tue, 27 Aug 2019 08:37:29 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a5d:5001:: with SMTP id e1ls5469219wrt.16.gmail; Tue, 27 Aug
- 2019 07:41:22 -0700 (PDT)
-X-Received: by 2002:a5d:658b:: with SMTP id q11mr4292107wru.211.1566916882114;
-        Tue, 27 Aug 2019 07:41:22 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1566916882; cv=none;
+Received: by 2002:a17:902:b48c:: with SMTP id y12ls5990457plr.4.gmail; Tue, 27
+ Aug 2019 08:37:28 -0700 (PDT)
+X-Received: by 2002:a17:902:8a87:: with SMTP id p7mr1608493plo.240.1566920248811;
+        Tue, 27 Aug 2019 08:37:28 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1566920248; cv=none;
         d=google.com; s=arc-20160816;
-        b=JGivZ66W7BuO00stEhDfQc+T3k8OLhWkez/r4nNn8SlwDvFE4asFQz2yLP0daO7uBe
-         vap92+WHO1mW9KYhEfOSzcKGeso8cU1ocaztBQHj3mRHIFtatdE0jSGWW+tqwhOkgI5x
-         FcDsc1/WxJqufyjjKYHO6B0hSWCJyl8PimmHwxhPPJoGnlbanLhXNAnJU1ZWdNbGUt+T
-         1+UKtiq3uJDdMdERxeJLuF9q+rdobEwGL5K/plYOpkeyKouGUo9YeVGw8LHkp4c/KCWa
-         w6nXKgiLxBdIlUpEPutDid99wUKDE6BizHTMaX675a4Qgd82y9Z4+SfBt4vMiK0oyzrm
-         q06Q==
+        b=LxaumvwQQFbqM+GNIcoU0iZmU00ElAJIcoA8vmfs3kLt8cAfsmeyQCYRto8TRweKPQ
+         OVxlJPURwMGDxksGdyirrYSgHdkvO4uzEXMtyl9iyC7RSlOJ1eh6MKyMFQVOo9IOZlBl
+         sInPpzuLs3tfuWcK6bew6OTwi7asdzPXK2vGRem1xICHoS5PM5u2Qh0qcxLm9/LZXnkg
+         EtL6gWsgJF+JWLm71OO4H4o4JOvuqIQ15CF7mIyUMrA3ozP5NTJmDDuOFWdX/TaUbSsl
+         MJnOJEDMCJXdwd4SBF1G5Oyz69JC8NNKNDYbaj92+RdOvv+KXU8vHAuBY6V4fXstUzQU
+         8ltg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=user-agent:in-reply-to:content-disposition:mime-version:references
          :message-id:subject:cc:to:from:date:dkim-signature;
-        bh=7diyQC6Ra4+NFHhs8549xmFWYt9LcIpwPAa6izWd3FM=;
-        b=dFuRNAXnaYZtBXYRt4L8cRMDTuWQMxOVubF7qFdb6T6vWXWz2riITBtFFKDRI5sDiL
-         uZbQakL3JvwT7EWbXEtoFKrRm0XojQWle7iNT5zXbsIRgJEKm3IL6KzuvlpCP/Ly+H2+
-         5hFaQqSQi9jNDIKSmj/37gLW2tjNrfrMx9iV0SRbI/oT8uQX3gvDf106PuRZlWFa8nLa
-         J5qx9jLIkQqB98oN9RIqCnuM+suhidNrxHDLiSRejKUH6hUkwUutSRNjVr28q/3oq6C3
-         s+cy+pMZizazl4/Ev+9NxQqEb3lRHDUzV2AhEMymjoayfwr4ZFHdVKopwSu7lbbB3RB/
-         NLSw==
+        bh=bWVnHzLjbhUqvdH9PmCNQmeA7p4whkQLDedTEq4CbMY=;
+        b=f33plGCTFrCqiZLDDjmFZEoYPJR5zO+7s0tsmapXvo9f8Ry730g/ESA9QYtGInUHTx
+         bYoanMWi78XjL/pzhlY4D57ekXX/9WwPghpDxVuEk9rlkebiRc5K4olcahmWddNgYTUm
+         NZ4Fc0WDl7nbn3tDoLmM05uH5RUaWOyJZ6/GWZKytBFmZ9jYuttp87tFXsTINvSJtRdV
+         pRwt6O3CXsV9giPQUTIorToOaDSV41/0AWlKIGiRclTdgY0cs0f1CxR8pKaw2dYn8PKN
+         2qXJCvY8aifz9GQdVluXJI4qcSXHs0HdfKFH3c7UxlNIwQFOBMfAKX75ygiMcSvFQ+3T
+         jf5w==
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@google.com header.s=20161025 header.b=p0YzT8Vu;
-       spf=pass (google.com: domain of maennich@google.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=maennich@google.com;
-       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
-Received: from mail-sor-f65.google.com (mail-sor-f65.google.com. [209.85.220.65])
-        by mx.google.com with SMTPS id z22sor1947275wmk.9.2019.08.27.07.41.22
+       dkim=pass header.i=@kernel.org header.s=default header.b=ffw9Nlrv;
+       spf=pass (google.com: domain of jeyu@kernel.org designates 198.145.29.99 as permitted sender) smtp.mailfrom=jeyu@kernel.org;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=kernel.org
+Received: from mail.kernel.org (mail.kernel.org. [198.145.29.99])
+        by mx.google.com with ESMTPS id t1si3011227pjy.39.2019.08.27.08.37.28
         for <usb-storage@lists.one-eyed-alien.net>
-        (Google Transport Security);
-        Tue, 27 Aug 2019 07:41:22 -0700 (PDT)
-Received-SPF: pass (google.com: domain of maennich@google.com designates 209.85.220.65 as permitted sender) client-ip=209.85.220.65;
-X-Received: by 2002:a1c:c706:: with SMTP id x6mr29541988wmf.104.1566916881354;
-        Tue, 27 Aug 2019 07:41:21 -0700 (PDT)
-Received: from google.com ([2a00:79e0:d:210:e8f7:125b:61e9:733d])
-        by smtp.gmail.com with ESMTPSA id o14sm26888491wrg.64.2019.08.27.07.41.20
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 27 Aug 2019 07:41:20 -0700 (PDT)
-Date: Tue, 27 Aug 2019 15:41:17 +0100
-From: "'Matthias Maennich' via USB Mass Storage on Linux" <usb-storage@lists.one-eyed-alien.net>
-To: Jessica Yu <jeyu@kernel.org>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 27 Aug 2019 08:37:28 -0700 (PDT)
+Received-SPF: pass (google.com: domain of jeyu@kernel.org designates 198.145.29.99 as permitted sender) client-ip=198.145.29.99;
+Received: from linux-8ccs.fritz.box (unknown [92.117.134.103])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by mail.kernel.org (Postfix) with ESMTPSA id 04C4C20828;
+	Tue, 27 Aug 2019 15:37:21 +0000 (UTC)
+Date: Tue, 27 Aug 2019 17:37:18 +0200
+From: Jessica Yu <jeyu@kernel.org>
+To: Matthias Maennich <maennich@google.com>
 Cc: linux-kernel@vger.kernel.org, kernel-team@android.com, arnd@arndb.de,
 	geert@linux-m68k.org, gregkh@linuxfoundation.org, hpa@zytor.com,
 	joel@joelfernandes.org, kstewart@linuxfoundation.org,
@@ -113,26 +112,27 @@ Cc: linux-kernel@vger.kernel.org, kernel-team@android.com, arnd@arndb.de,
 	pombredanne@nexb.com, sam@ravnborg.org, sspatil@google.com,
 	stern@rowland.harvard.edu, tglx@linutronix.de,
 	usb-storage@lists.one-eyed-alien.net, x86@kernel.org,
-	yamada.masahiro@socionext.com
-Subject: [usb-storage] Re: [PATCH v3 04/11] modpost: add support for symbol namespaces
-Message-ID: <20190827144117.GB102829@google.com>
+	yamada.masahiro@socionext.com,
+	Michael Ellerman <mpe@ellerman.id.au>,
+	Andrew Morton <akpm@linux-foundation.org>,
+	Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Subject: [usb-storage] Re: [PATCH v3 03/11] module: add support for symbol namespaces.
+Message-ID: <20190827153717.GA20822@linux-8ccs.fritz.box>
 References: <20190813121733.52480-1-maennich@google.com>
  <20190821114955.12788-1-maennich@google.com>
- <20190821114955.12788-5-maennich@google.com>
- <20190826162138.GA31739@linux-8ccs>
+ <20190821114955.12788-4-maennich@google.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="UTF-8"; format=flowed
 Content-Disposition: inline
-In-Reply-To: <20190826162138.GA31739@linux-8ccs>
+In-Reply-To: <20190821114955.12788-4-maennich@google.com>
+X-OS: Linux linux-8ccs 4.12.14-lp150.12.61-default x86_64
 User-Agent: Mutt/1.10.1 (2018-07-13)
-X-Original-Sender: maennich@google.com
+X-Original-Sender: jeyu@kernel.org
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@google.com header.s=20161025 header.b=p0YzT8Vu;       spf=pass
- (google.com: domain of maennich@google.com designates 209.85.220.65 as
- permitted sender) smtp.mailfrom=maennich@google.com;       dmarc=pass
- (p=REJECT sp=REJECT dis=NONE) header.from=google.com
-X-Original-From: Matthias Maennich <maennich@google.com>
-Reply-To: Matthias Maennich <maennich@google.com>
+ header.i=@kernel.org header.s=default header.b=ffw9Nlrv;       spf=pass
+ (google.com: domain of jeyu@kernel.org designates 198.145.29.99 as permitted
+ sender) smtp.mailfrom=jeyu@kernel.org;       dmarc=pass (p=NONE sp=NONE
+ dis=NONE) header.from=kernel.org
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -148,248 +148,330 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On Mon, Aug 26, 2019 at 06:21:38PM +0200, Jessica Yu wrote:
->+++ Matthias Maennich [21/08/19 12:49 +0100]:
->>Add support for symbols that are exported into namespaces. For that,
->>extract any namespace suffix from the symbol name. In addition, emit a
->>warning whenever a module refers to an exported symbol without
->>explicitly importing the namespace that it is defined in. This patch
->>consistently adds the namespace suffix to symbol names exported into
->>Module.symvers.
->>
->>Example warning emitted by modpost in case of the above violation:
->>
->>WARNING: module ums-usbat uses symbol usb_stor_resume from namespace
->>USB_STORAGE, but does not import it.
->>
->>Co-developed-by: Martijn Coenen <maco@android.com>
->>Signed-off-by: Martijn Coenen <maco@android.com>
->>Reviewed-by: Joel Fernandes (Google) <joel@joelfernandes.org>
->>Reviewed-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
->>Signed-off-by: Matthias Maennich <maennich@google.com>
->>---
->>scripts/mod/modpost.c | 91 +++++++++++++++++++++++++++++++++++++------
->>scripts/mod/modpost.h |  7 ++++
->>2 files changed, 87 insertions(+), 11 deletions(-)
->>
->>diff --git a/scripts/mod/modpost.c b/scripts/mod/modpost.c
->>index f277e116e0eb..538bb24ffee3 100644
->>--- a/scripts/mod/modpost.c
->>+++ b/scripts/mod/modpost.c
->>@@ -164,6 +164,7 @@ struct symbol {
->>	struct module *module;
->>	unsigned int crc;
->>	int crc_valid;
->>+	const char *namespace;
->>	unsigned int weak:1;
->>	unsigned int vmlinux:1;    /* 1 if symbol is defined in vmlinux */
->>	unsigned int kernel:1;     /* 1 if symbol is from kernel
->>@@ -233,6 +234,37 @@ static struct symbol *find_symbol(const char *name)
->>	return NULL;
->>}
->>
->>+static bool contains_namespace(struct namespace_list *list,
->>+			       const char *namespace)
->>+{
->>+	struct namespace_list *ns_entry;
->>+
->>+	for (ns_entry = list; ns_entry != NULL; ns_entry = ns_entry->next)
->>+		if (strcmp(ns_entry->namespace, namespace) == 0)
->>+			return true;
->>+
->>+	return false;
->>+}
->>+
->>+static void add_namespace(struct namespace_list **list, const char *namespace)
->>+{
->>+	struct namespace_list *ns_entry;
->>+
->>+	if (!contains_namespace(*list, namespace)) {
->>+		ns_entry = NOFAIL(malloc(sizeof(struct namespace_list) +
->>+					 strlen(namespace) + 1));
->>+		strcpy(ns_entry->namespace, namespace);
->>+		ns_entry->next = *list;
->>+		*list = ns_entry;
->>+	}
->>+}
->>+
->>+static bool module_imports_namespace(struct module *module,
->>+				     const char *namespace)
->>+{
->>+	return contains_namespace(module->imported_namespaces, namespace);
->>+}
->>+
->>static const struct {
->>	const char *str;
->>	enum export export;
->>@@ -312,6 +344,22 @@ static enum export export_from_sec(struct elf_info *elf, unsigned int sec)
->>		return export_unknown;
->>}
->>
->>+static const char *sym_extract_namespace(const char **symname)
->>+{
->>+	size_t n;
->>+	char *dupsymname;
->>+
->>+	n = strcspn(*symname, ".");
->>+	if (n < strlen(*symname) - 1) {
->>+		dupsymname = NOFAIL(strdup(*symname));
->>+		dupsymname[n] = '\0';
->>+		*symname = dupsymname;
->>+		return dupsymname + n + 1;
->>+	}
->>+
->>+	return NULL;
->>+}
->>+
->>/**
->> * Add an exported symbol - it may have already been added without a
->> * CRC, in this case just update the CRC
->>@@ -319,16 +367,18 @@ static enum export export_from_sec(struct elf_info *elf, unsigned int sec)
->>static struct symbol *sym_add_exported(const char *name, struct module *mod,
->>				       enum export export)
->>{
->>-	struct symbol *s = find_symbol(name);
->>+	const char *symbol_name = name;
->>+	const char *namespace = sym_extract_namespace(&symbol_name);
->>+	struct symbol *s = find_symbol(symbol_name);
->>
->>	if (!s) {
->>-		s = new_symbol(name, mod, export);
->>+		s = new_symbol(symbol_name, mod, export);
->>+		s->namespace = namespace;
->>	} else {
->>		if (!s->preloaded) {
->>-			warn("%s: '%s' exported twice. Previous export "
->>-			     "was in %s%s\n", mod->name, name,
->>-			     s->module->name,
->>-			     is_vmlinux(s->module->name) ?"":".ko");
->>+			warn("%s: '%s' exported twice. Previous export was in %s%s\n",
->>+			     mod->name, symbol_name, s->module->name,
->>+			     is_vmlinux(s->module->name) ? "" : ".ko");
->>		} else {
->>			/* In case Module.symvers was out of date */
->>			s->module = mod;
->>@@ -1943,6 +1993,7 @@ static void read_symbols(const char *modname)
->>	const char *symname;
->>	char *version;
->>	char *license;
->>+	char *namespace;
->>	struct module *mod;
->>	struct elf_info info = { };
->>	Elf_Sym *sym;
->>@@ -1974,6 +2025,12 @@ static void read_symbols(const char *modname)
->>		license = get_next_modinfo(&info, "license", license);
->>	}
->>
->>+	namespace = get_modinfo(&info, "import_ns");
->>+	while (namespace) {
->>+		add_namespace(&mod->imported_namespaces, namespace);
->>+		namespace = get_next_modinfo(&info, "import_ns", namespace);
->>+	}
->>+
->>	for (sym = info.symtab_start; sym < info.symtab_stop; sym++) {
->>		symname = remove_dot(info.strtab + sym->st_name);
->>
->>@@ -2118,6 +2175,13 @@ static int check_exports(struct module *mod)
->>			basename++;
->>		else
->>			basename = mod->name;
->>+
->>+		if (exp->namespace &&
->>+		    !module_imports_namespace(mod, exp->namespace)) {
->>+			warn("module %s uses symbol %s from namespace %s, but does not import it.\n",
->>+			     basename, exp->name, exp->namespace);
->>+		}
->>+
->>		if (!mod->gpl_compatible)
->>			check_for_gpl_usage(exp->export, basename, exp->name);
->>		check_for_unused(exp->export, basename, exp->name);
->>@@ -2395,16 +2459,21 @@ static void write_dump(const char *fname)
->>{
->>	struct buffer buf = { };
->>	struct symbol *symbol;
->>+	const char *namespace;
->>	int n;
->>
->>	for (n = 0; n < SYMBOL_HASH_SIZE ; n++) {
->>		symbol = symbolhash[n];
->>		while (symbol) {
->>-			if (dump_sym(symbol))
->>-				buf_printf(&buf, "0x%08x\t%s\t%s\t%s\n",
->>-					symbol->crc, symbol->name,
->>-					symbol->module->name,
->>-					export_str(symbol->export));
->>+			if (dump_sym(symbol)) {
->>+				namespace = symbol->namespace;
->>+				buf_printf(&buf, "0x%08x\t%s%s%s\t%s\t%s\n",
->>+					   symbol->crc, symbol->name,
->>+					   namespace ? "." : "",
->>+					   namespace ? namespace : "",
++++ Matthias Maennich [21/08/19 12:49 +0100]:
+>The EXPORT_SYMBOL_NS() and EXPORT_SYMBOL_NS_GPL() macros can be used to
+>export a symbol to a specific namespace.  There are no _GPL_FUTURE and
+>_UNUSED variants because these are currently unused, and I'm not sure
+>they are necessary.
 >
->I think it might be cleaner to just have namespace be a separate
->field in Module.symvers, rather than appending a dot and the
->namespace at the end of a symbol name. Maybe something like
+>I didn't add EXPORT_SYMBOL_NS() for ASM exports; this patch sets the
+>namespace of ASM exports to NULL by default. In case of relative
+>references, it will be relocatable to NULL. If there's a need, this
+>should be pretty easy to add.
 >
->   <crc> <symbol_name> <namespace> <module>
+>A module that wants to use a symbol exported to a namespace must add a
+>MODULE_IMPORT_NS() statement to their module code; otherwise, modpost
+>will complain when building the module, and the kernel module loader
+>will emit an error and fail when loading the module.
 >
->For symbols without a namespace, we could just have "", with all
->fields delimited by tabs. This is just a stylistic suggestion, what do
->you think?
+>MODULE_IMPORT_NS() adds a modinfo tag 'import_ns' to the module. That
+>tag can be observed by the modinfo command, modpost and kernel/module.c
+>at the time of loading the module.
+>
+>The ELF symbols are renamed to include the namespace with an asm label;
+>for example, symbol 'usb_stor_suspend' in namespace USB_STORAGE becomes
+>'usb_stor_suspend.USB_STORAGE'.  This allows modpost to do namespace
+>checking, without having to go through all the effort of parsing ELF and
+>relocation records just to get to the struct kernel_symbols.
+>
+>On x86_64 I saw no difference in binary size (compression), but at
+>runtime this will require a word of memory per export to hold the
+>namespace. An alternative could be to store namespaced symbols in their
+>own section and use a separate 'struct namespaced_kernel_symbol' for
+>that section, at the cost of making the module loader more complex.
+>
+>Co-developed-by: Martijn Coenen <maco@android.com>
+>Signed-off-by: Martijn Coenen <maco@android.com>
+>Reviewed-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+>Signed-off-by: Matthias Maennich <maennich@google.com>
+>---
+> include/asm-generic/export.h |  6 +--
+> include/linux/export.h       | 85 ++++++++++++++++++++++++++++++------
+> include/linux/module.h       |  2 +
+> kernel/module.c              | 43 ++++++++++++++++++
+> 4 files changed, 120 insertions(+), 16 deletions(-)
+>
+>diff --git a/include/asm-generic/export.h b/include/asm-generic/export.h
+>index 63f54907317b..e2b5d0f569d3 100644
+>--- a/include/asm-generic/export.h
+>+++ b/include/asm-generic/export.h
+>@@ -17,11 +17,11 @@
+>
+> .macro __put, val, name
+> #ifdef CONFIG_HAVE_ARCH_PREL32_RELOCATIONS
+>-	.long	\val - ., \name - .
+>+	.long	\val - ., \name - ., 0 - .
+> #elif defined(CONFIG_64BIT)
+>-	.quad	\val, \name
+>+	.quad	\val, \name, 0
+> #else
+>-	.long	\val, \name
+>+	.long	\val, \name, 0
+> #endif
+> .endm
+>
+>diff --git a/include/linux/export.h b/include/linux/export.h
+>index 28a4d2150689..8e12e05444d1 100644
+>--- a/include/linux/export.h
+>+++ b/include/linux/export.h
+>@@ -20,6 +20,8 @@ extern struct module __this_module;
+>
+> #ifdef CONFIG_MODULES
+>
+>+#define NS_SEPARATOR "."
+>+
+> #if defined(__KERNEL__) && !defined(__GENKSYMS__)
+> #ifdef CONFIG_MODVERSIONS
+> /* Mark the CRC weak since genksyms apparently decides not to
+>@@ -49,6 +51,16 @@ extern struct module __this_module;
+>  * absolute relocations that require runtime processing on relocatable
+>  * kernels.
+>  */
+>+#define __KSYMTAB_ENTRY_NS(sym, sec, ns)				\
+>+	__ADDRESSABLE(sym)						\
+>+	asm("	.section \"___ksymtab" sec "+" #sym "\", \"a\"	\n"	\
+>+	    "	.balign	4					\n"	\
+>+	    "__ksymtab_" #sym NS_SEPARATOR #ns ":		\n"	\
+>+	    "	.long	" #sym "- .				\n"	\
+>+	    "	.long	__kstrtab_" #sym "- .			\n"	\
+>+	    "	.long	__kstrtab_ns_" #sym "- .		\n"	\
+>+	    "	.previous					\n")
+>+
+> #define __KSYMTAB_ENTRY(sym, sec)					\
+> 	__ADDRESSABLE(sym)						\
+> 	asm("	.section \"___ksymtab" sec "+" #sym "\", \"a\"	\n"	\
+>@@ -56,32 +68,53 @@ extern struct module __this_module;
+> 	    "__ksymtab_" #sym ":				\n"	\
+> 	    "	.long	" #sym "- .				\n"	\
+> 	    "	.long	__kstrtab_" #sym "- .			\n"	\
+>+	    "	.long	0 - .					\n"	\
+> 	    "	.previous					\n")
+>
+> struct kernel_symbol {
+> 	int value_offset;
+> 	int name_offset;
+>+	int namespace_offset;
+> };
+> #else
+>+#define __KSYMTAB_ENTRY_NS(sym, sec, ns)				\
+>+	static const struct kernel_symbol __ksymtab_##sym##__##ns	\
+>+	asm("__ksymtab_" #sym NS_SEPARATOR #ns)				\
+>+	__attribute__((section("___ksymtab" sec "+" #sym), used))	\
+>+	__aligned(sizeof(void *))					\
+>+	= { (unsigned long)&sym, __kstrtab_##sym, __kstrtab_ns_##sym}
 
-I thought of something like that initially, but did not do it to not
-break users of this file. But as I am anyway breaking users by changing
-the symbol name into symbol.NS, I might as well do it as you suggested.
-Since read_dump() also knew already how to extract the namespaces from
-symbol.NS, it had already worked without a change to the reading code
-of modpost. Are there any other consumers of Module.symvers that we
-should be aware of?
+Style nit: missing space after __kstrtab_ns_##sym.
 
->Regardless of the chosen format, I think we need to document how
->namespaces are represented in Documentation/kbuild/modules.rst, where
->it describes the Module.symvers format.
+>+
+> #define __KSYMTAB_ENTRY(sym, sec)					\
+> 	static const struct kernel_symbol __ksymtab_##sym		\
+>+	asm("__ksymtab_" #sym)						\
+> 	__attribute__((section("___ksymtab" sec "+" #sym), used))	\
+> 	__aligned(sizeof(void *))					\
+>-	= { (unsigned long)&sym, __kstrtab_##sym }
+>+	= { (unsigned long)&sym, __kstrtab_##sym, NULL }
+>
+> struct kernel_symbol {
+> 	unsigned long value;
+> 	const char *name;
+>+	const char *namespace;
+> };
+> #endif
+>
+>-/* For every exported symbol, place a struct in the __ksymtab section */
+>-#define ___EXPORT_SYMBOL(sym, sec)					\
+>+#define ___export_symbol_common(sym, sec)				\
+> 	extern typeof(sym) sym;						\
+> 	__CRC_SYMBOL(sym, sec)						\
+> 	static const char __kstrtab_##sym[]				\
+> 	__attribute__((section("__ksymtab_strings"), used, aligned(1)))	\
+>-	= #sym;								\
+>+	= #sym								\
 
-Agreed. I will update the documentation. It anyway needs an update.
+Any particular reason for this change? Not that it's important, just
+noticing the inconsistent inclusion of the semicolon in some of the
+macros (e.g. __CRC_SYMBOL includes it but __export_symbol_common doesn't).
 
-Cheers,
-Matthias
+>+
+>+/* For every exported symbol, place a struct in the __ksymtab section */
+>+#define ___EXPORT_SYMBOL_NS(sym, sec, ns)				\
+>+	___export_symbol_common(sym, sec);			\
+>+	static const char __kstrtab_ns_##sym[]				\
+>+	__attribute__((section("__ksymtab_strings"), used, aligned(1)))	\
+>+	= #ns;								\
+>+	__KSYMTAB_ENTRY_NS(sym, sec, ns)
+>+
+>+#define ___EXPORT_SYMBOL(sym, sec)					\
+>+	___export_symbol_common(sym, sec);				\
+> 	__KSYMTAB_ENTRY(sym, sec)
+>
+> #if defined(__DISABLE_EXPORTS)
+>@@ -91,6 +124,7 @@ struct kernel_symbol {
+>  * be reused in other execution contexts such as the UEFI stub or the
+>  * decompressor.
+>  */
+>+#define __EXPORT_SYMBOL_NS(sym, sec, ns)
+> #define __EXPORT_SYMBOL(sym, sec)
+>
+> #elif defined(CONFIG_TRIM_UNUSED_KSYMS)
+>@@ -117,18 +151,26 @@ struct kernel_symbol {
+> #define __cond_export_sym_1(sym, sec) ___EXPORT_SYMBOL(sym, sec)
+> #define __cond_export_sym_0(sym, sec) /* nothing */
+>
+>+#define __EXPORT_SYMBOL_NS(sym, sec, ns)				\
+>+	__ksym_marker(sym);						\
+>+	__cond_export_ns_sym(sym, sec, ns, __is_defined(__KSYM_##sym))
+>+#define __cond_export_ns_sym(sym, sec, ns, conf)			\
+>+	___cond_export_ns_sym(sym, sec, ns, conf)
+>+#define ___cond_export_ns_sym(sym, sec, ns, enabled)			\
+>+	__cond_export_ns_sym_##enabled(sym, sec, ns)
+>+#define __cond_export_ns_sym_1(sym, sec, ns) ___EXPORT_SYMBOL_NS(sym, sec, ns)
+>+#define __cond_export_ns_sym_0(sym, sec, ns) /* nothing */
+>+
+> #else
+>+#define __EXPORT_SYMBOL_NS ___EXPORT_SYMBOL_NS
+> #define __EXPORT_SYMBOL ___EXPORT_SYMBOL
+> #endif
+>
+>-#define EXPORT_SYMBOL(sym)					\
+>-	__EXPORT_SYMBOL(sym, "")
+>-
+>-#define EXPORT_SYMBOL_GPL(sym)					\
+>-	__EXPORT_SYMBOL(sym, "_gpl")
+>-
+>-#define EXPORT_SYMBOL_GPL_FUTURE(sym)				\
+>-	__EXPORT_SYMBOL(sym, "_gpl_future")
+>+#define EXPORT_SYMBOL(sym) __EXPORT_SYMBOL(sym, "")
+>+#define EXPORT_SYMBOL_GPL(sym) __EXPORT_SYMBOL(sym, "_gpl")
+>+#define EXPORT_SYMBOL_GPL_FUTURE(sym) __EXPORT_SYMBOL(sym, "_gpl_future")
+>+#define EXPORT_SYMBOL_NS(sym, ns) __EXPORT_SYMBOL_NS(sym, "", ns)
+>+#define EXPORT_SYMBOL_NS_GPL(sym, ns) __EXPORT_SYMBOL_NS(sym, "_gpl", ns)
+>
+> #ifdef CONFIG_UNUSED_SYMBOLS
+> #define EXPORT_UNUSED_SYMBOL(sym) __EXPORT_SYMBOL(sym, "_unused")
+>@@ -138,11 +180,28 @@ struct kernel_symbol {
+> #define EXPORT_UNUSED_SYMBOL_GPL(sym)
+> #endif
+>
+>-#endif	/* __GENKSYMS__ */
+>+#endif	/* __KERNEL__ && !__GENKSYMS__ */
+>+
+>+#if defined(__GENKSYMS__)
+>+/*
+>+ * When we're running genksyms, ignore the namespace and make the _NS
+>+ * variants look like the normal ones. There are two reasons for this:
+>+ * 1) In the normal definition of EXPORT_SYMBOL_NS, the 'ns' macro
+>+ *    argument is itself not expanded because it's always tokenized or
+>+ *    concatenated; but when running genksyms, a blank definition of the
+>+ *    macro does allow the argument to be expanded; if a namespace
+>+ *    happens to collide with a #define, this can cause issues.
+>+ * 2) There's no need to modify genksyms to deal with the _NS variants
+>+ */
+>+#define EXPORT_SYMBOL_NS(sym, ns) EXPORT_SYMBOL(sym)
+>+#define EXPORT_SYMBOL_NS_GPL(sym, ns) EXPORT_SYMBOL_GPL(sym)
+>+#endif
+>
+> #else /* !CONFIG_MODULES... */
+>
+> #define EXPORT_SYMBOL(sym)
+>+#define EXPORT_SYMBOL_NS(sym, ns)
+>+#define EXPORT_SYMBOL_NS_GPL(sym, ns)
+> #define EXPORT_SYMBOL_GPL(sym)
+> #define EXPORT_SYMBOL_GPL_FUTURE(sym)
+> #define EXPORT_UNUSED_SYMBOL(sym)
+>diff --git a/include/linux/module.h b/include/linux/module.h
+>index 1455812dd325..b3611e749f72 100644
+>--- a/include/linux/module.h
+>+++ b/include/linux/module.h
+>@@ -280,6 +280,8 @@ struct notifier_block;
+>
+> #ifdef CONFIG_MODULES
+>
+>+#define MODULE_IMPORT_NS(ns) MODULE_INFO(import_ns, #ns)
+>+
+> extern int modules_disabled; /* for sysctl */
+> /* Get/put a kernel symbol (calls must be symmetric) */
+> void *__symbol_get(const char *symbol);
+>diff --git a/kernel/module.c b/kernel/module.c
+>index a23067907169..57e8253f2251 100644
+>--- a/kernel/module.c
+>+++ b/kernel/module.c
+>@@ -544,6 +544,15 @@ static const char *kernel_symbol_name(const struct kernel_symbol *sym)
+> #endif
+> }
+>
+>+static const char *kernel_symbol_namespace(const struct kernel_symbol *sym)
+>+{
+>+#ifdef CONFIG_HAVE_ARCH_PREL32_RELOCATIONS
+>+	return offset_to_ptr(&sym->namespace_offset);
+>+#else
+>+	return sym->namespace;
+>+#endif
+>+}
+>+
+> static int cmp_name(const void *va, const void *vb)
+> {
+> 	const char *a;
+>@@ -1379,6 +1388,34 @@ static inline int same_magic(const char *amagic, const char *bmagic,
+> }
+> #endif /* CONFIG_MODVERSIONS */
+>
+>+static char *get_modinfo(const struct load_info *info, const char *tag);
+>+static char *get_next_modinfo(const struct load_info *info, const char *tag,
+>+			      char *prev);
+>+
+>+static int verify_namespace_is_imported(const struct load_info *info,
+>+					const struct kernel_symbol *sym,
+>+					struct module *mod)
+>+{
+>+	const char *namespace;
+>+	char *imported_namespace;
+>+
+>+	namespace = kernel_symbol_namespace(sym);
+>+	if (namespace) {
+>+		imported_namespace = get_modinfo(info, "import_ns");
+>+		while (imported_namespace) {
+>+			if (strcmp(namespace, imported_namespace) == 0)
+>+				return 0;
+>+			imported_namespace = get_next_modinfo(
+>+				info, "import_ns", imported_namespace);
+>+		}
+>+		pr_err("%s: module uses symbol (%s) from namespace %s, but does not import it.\n",
+>+		       mod->name, kernel_symbol_name(sym), namespace);
+>+		return -EINVAL;
+>+	}
+>+	return 0;
+>+}
+>+
+>+
+> /* Resolve a symbol for this module.  I.e. if we find one, record usage. */
+> static const struct kernel_symbol *resolve_symbol(struct module *mod,
+> 						  const struct load_info *info,
+>@@ -1413,6 +1450,12 @@ static const struct kernel_symbol *resolve_symbol(struct module *mod,
+> 		goto getname;
+> 	}
+>
+>+	err = verify_namespace_is_imported(info, sym, mod);
+>+	if (err) {
+>+		sym = ERR_PTR(err);
+>+		goto getname;
+>+	}
 
->>+					   symbol->module->name,
->>+					   export_str(symbol->export));
->>+			}
->>			symbol = symbol->next;
->>		}
->>	}
->>diff --git a/scripts/mod/modpost.h b/scripts/mod/modpost.h
->>index 8453d6ac2f77..9626bf3e7424 100644
->>--- a/scripts/mod/modpost.h
->>+++ b/scripts/mod/modpost.h
->>@@ -109,6 +109,11 @@ buf_printf(struct buffer *buf, const char *fmt, ...);
->>void
->>buf_write(struct buffer *buf, const char *s, int len);
->>
->>+struct namespace_list {
->>+	struct namespace_list *next;
->>+	char namespace[0];
->>+};
->>+
->>struct module {
->>	struct module *next;
->>	const char *name;
->>@@ -121,6 +126,8 @@ struct module {
->>	struct buffer dev_table_buf;
->>	char	     srcversion[25];
->>	int is_dot_o;
->>+	// Actual imported namespaces
->>+	struct namespace_list *imported_namespaces;
->>};
->>
->>struct elf_info {
->>-- 
->>2.23.0.rc1.153.gdeed80330f-goog
->>
+I think we should verify the namespace before taking a reference to
+the owner module (just swap the verify_namespace_is_imported() and
+ref_module() calls here).
+
+Other than that, this patch looks good. Thanks!
+
+>+
+> getname:
+> 	/* We must make copy under the lock if we failed to get ref. */
+> 	strncpy(ownername, module_name(owner), MODULE_NAME_LEN);
+>-- 
+>2.23.0.rc1.153.gdeed80330f-goog
+>
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20190827144117.GB102829%40google.com.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20190827153717.GA20822%40linux-8ccs.fritz.box.
