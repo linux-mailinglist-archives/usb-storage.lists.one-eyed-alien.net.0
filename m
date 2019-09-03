@@ -1,33 +1,33 @@
-Return-Path: <usb-storage+bncBDMYPB44VAFRBMUDXLVQKGQE4JUUALY@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBDMYPB44VAFRBNMDXLVQKGQEPEG724I@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-vk1-xa48.google.com (mail-vk1-xa48.google.com [IPv6:2607:f8b0:4864:20::a48])
-	by mail.lfdr.de (Postfix) with ESMTPS id 75337A6C3E
-	for <lists+usb-storage@lfdr.de>; Tue,  3 Sep 2019 17:07:31 +0200 (CEST)
-Received: by mail-vk1-xa48.google.com with SMTP id l3sf7934773vkb.15
-        for <lists+usb-storage@lfdr.de>; Tue, 03 Sep 2019 08:07:31 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1567523250; cv=pass;
+Received: from mail-qk1-x745.google.com (mail-qk1-x745.google.com [IPv6:2607:f8b0:4864:20::745])
+	by mail.lfdr.de (Postfix) with ESMTPS id 2DA35A6C42
+	for <lists+usb-storage@lfdr.de>; Tue,  3 Sep 2019 17:07:34 +0200 (CEST)
+Received: by mail-qk1-x745.google.com with SMTP id h14sf487264qkl.17
+        for <lists+usb-storage@lfdr.de>; Tue, 03 Sep 2019 08:07:34 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1567523253; cv=pass;
         d=google.com; s=arc-20160816;
-        b=NwKXskRRY64YFWEXMYLf9HMvLmQB6LzXNRJ9Q7Kv1yGaFh7lu52WfKrHkdSgGHCqti
-         4rWVjWNf6FDw0CAdqppXho41zBDYA5T8gUx1lY3G+e3q1QpECjUOqBqHHCJH1pgaBHrZ
-         0OJYpEtYHad3cCixGiMgEpG86IrSrJjxmhyVMlSRxAunky08kP2ufbSlbCgcdZm1XiDg
-         Dy+JeT7HUsCmvTDoI27sN5zKN09nGERkvrimP1KQEXhL3Ps2e4JG9bPXd4tLioAytJKS
-         rHbgIFFUC2OAkQK8HXeTf+a2Ti/Q+5Ca14vyeUmus+od9fyuheke/+M/PC9fpCxTFf0w
-         Lklg==
+        b=SBYaxWPH2dmjNrv+L1UNquBW0cdPE0u8AXm2sL73k+9yBlU6uma+aZtKZ6VsAEc1gq
+         6JeiT8jPVykNIpAemhGNEYCBXc7ZUGu+UTnby390NRVlY96UYGmK3N6wN/bSKllP1T50
+         H+S1P2Fz2rFKif1mrNvk+1k3z4lzY/ObZDEb/JxnN22cEMQtmxIFIS5lJ3he35IWoc/z
+         +o5KNnWDsBUFYQ6DEVeCEFeiFPpakDR9fYwGug7Z+oz9VWfEkuswJKqM12Os1ZAdxg3t
+         bKHjzAAAszm/n7c8Jb/sDaww55WYSVj1FxQIViM8Veg5vbQoLnW4FMOYzjWHnOZEACqR
+         gVMQ==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:reply-to:cc:to:from:subject
          :references:mime-version:message-id:in-reply-to:date:dkim-signature;
-        bh=yYQqI/mM5Jl/Q0+RW+k79g5KSx/MgUIVTIwSnwptMQQ=;
-        b=zqMreTAlNetfZJ9ZIMcBjyMyvyCwd0hXQWiXVsf2ag/u/kRgVMwNo6ztSVkk7JyDsT
-         YyfaK39kGQrfr19F9inmd5kUH4cMZNnm/P/byE1LA1h8zkvglAVoczEGIdraXeRdL4QF
-         7+6hZf25/UaHGUPZ2b/6DyTjRVgG6T3NQtjliQSMGzAOPptxpP/ghXw87ZQDHbY1BrL7
-         cscnK5I3Y42qAUWPLlK8MXeBLd650CH0zn4bGFPyplT34bblNkvokS2na8VnhGDJVp9p
-         eWsxvrU1PFWC7vet41IQ75QXyC5Q5k1p6HW9teunkQCNuGEVr6uHysXfUC6K7OnWgGp7
-         VDMA==
+        bh=vhrzjKFsr5XOO4HvO1qqSUUqYpnPW98iWhO2LfalpCM=;
+        b=rebsAJIt/Eps/rdjuV7uaQNFS90wnzHQ8lGcBeRbBi4t+VB5hqKa89JCeFCvLMQMYp
+         5/1xQOFk1rFTmUVY4+vcsRASbDM6DWp0DIFSVTx0zTsYIBXOdU2feYw1MDO1GYqfljyd
+         foLhKCVunnBeAPNler1Q/bvdgh5vM+vEBdPHV/x71eRAcqjW0hHl0YOjR1bQoVo0QMsk
+         f2QOh0czGMceSsLICjr5ftkL17fyktCSXNZIwOUKeznDoa27N7u9FC0zi3JM3NP9GqmZ
+         j2IkzdBB8itpx84eMZ6IycET1zgWV8GvTZIa6QxXQM/8RgNTthqUKJzV01vkHtwm4zjh
+         Zq3Q==
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@google.com header.s=20161025 header.b=BfHZbHR9;
-       spf=pass (google.com: domain of 3syfuxqgkagak8cllgafemmejc.amk@flex--maennich.bounces.google.com designates 209.85.220.73 as permitted sender) smtp.mailfrom=3sYFuXQgKAGAK8CLLGAFEMMEJC.AMK@flex--maennich.bounces.google.com;
+       dkim=pass header.i=@google.com header.s=20161025 header.b=Sq3vmIE3;
+       spf=pass (google.com: domain of 3tifuxqgkagmnbfoojdihpphmf.dpn@flex--maennich.bounces.google.com designates 209.85.220.73 as permitted sender) smtp.mailfrom=3tIFuXQgKAGMNBFOOJDIHPPHMF.DPN@flex--maennich.bounces.google.com;
        dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
@@ -35,10 +35,10 @@ DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
          :cc:x-original-sender:x-original-authentication-results:reply-to
          :precedence:mailing-list:list-id:list-post:list-help:list-archive
          :list-subscribe:list-unsubscribe;
-        bh=yYQqI/mM5Jl/Q0+RW+k79g5KSx/MgUIVTIwSnwptMQQ=;
-        b=DdAdUz3DYL09HmQWbdaVYQO1vyvTlBOy25rcop/R50t2gsRZAQPm3jmPWkC00u4HFS
-         q0esekR2jPEhl0Y4Km4qgiWzx+YYEGvAAc/qiDqjGthOqmlchxF1TlWlQF5OkPNzUIJ8
-         9MDEmuqL7ClAaSeilUIY6e/ip5PiSWS9DybWQ=
+        bh=vhrzjKFsr5XOO4HvO1qqSUUqYpnPW98iWhO2LfalpCM=;
+        b=V0Qn2LCbahsOLjq4imNBYCzpJVAG1YNdfiDi349gCRQRAeAaKczEIS+JYepg9MXrrm
+         Dw69jmik9CtMaNsllknXNlb68V0AsMbfpRajcXD0erNvCVEbQ/yIsVosWPjxa1Czhvr/
+         2IktloHSObUEE14ZvxZh8P8gngH5BM8gVOtVU=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
         h=x-gm-message-state:date:in-reply-to:message-id:mime-version
@@ -46,60 +46,60 @@ X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
          :x-original-authentication-results:reply-to:precedence:mailing-list
          :list-id:x-spam-checked-in-group:list-post:list-help:list-archive
          :list-subscribe:list-unsubscribe;
-        bh=yYQqI/mM5Jl/Q0+RW+k79g5KSx/MgUIVTIwSnwptMQQ=;
-        b=Cr9p8xvg+Rp+yfXnPWTFbLOwq+Nsr4WsYpyPSDfNHKJNxnrgH+PYqxnaqYumyK/RjU
-         wVVjLCwxIhYy6q7xhi16r+GUJIiZRDpoqx2BPoTeSM//pOsHxobnO11r4kKmmvfSFKV/
-         yN+c74+IjSTuJIK/1QjFL4DgcqIO65pBmRFKNSEc5cnFQRDEGg35zck+lL+AfCo8YSg9
-         oqJ4reCsqq+GxC31rtNDZDC4S6wF9opizAsPobIPsru6s4a/2IyOjxlz1LSWiG8uQhJO
-         vr9Zj8Wb2j/yyQVl9wni1jgUPNwNnbTbAGEu0sBlb9dqTBs261mSvLjU+HGv/yS460rk
-         W3fw==
-X-Gm-Message-State: APjAAAXF5BZrvOpzBn+7UlHbrIT5m5U56Xn348SuUbXFkx6T2lXzE4BT
-	g5LTYrmV0Y1KMljmlqmslLaszA==
-X-Google-Smtp-Source: APXvYqztWbsYrW81EEHI6VvgUT8rN2+1pR3/pfV1As3HroxQD3k9hFLC/AL37kDxw1VHfoOglqeJeg==
-X-Received: by 2002:a1f:eb86:: with SMTP id j128mr16669363vkh.61.1567523250297;
-        Tue, 03 Sep 2019 08:07:30 -0700 (PDT)
+        bh=vhrzjKFsr5XOO4HvO1qqSUUqYpnPW98iWhO2LfalpCM=;
+        b=PJkK61ehtnAaOYt9567hU1n4LhCXDKF6JCcigciIpf2KwA7b88gJZC2Wk4Og+Bgqh9
+         JPEav9iXvtLj73fQuomTRbZ+V4roLslaS5opbDfVrZSgMyXAsdjgfdwUBBVyIiHqCpwJ
+         OVyygT4DeZl27hcIDepd6lkfmLUBSkSsXGPKYTOj038GVN7VPlQYBh7XnP1yhwVb4Lf1
+         og6VMNHH12MdBT0LNa/jR7aBzdqiCSgI/iCdRQBgJoYumZjsiuCEIXoKRWhZsFuU5035
+         FrqI6ntIO0KWaA6yieauwbf4JZmYzQv+1rGBzATIuTQbrkQScQpwpjrPPpYC51t6q+f6
+         ty+Q==
+X-Gm-Message-State: APjAAAWjywaRGiaOLGSUCYIqQjvkszXAj8vwzz/c6n8y5d1+OOmvlxWu
+	aACrW6kaLDHvZuAelDhT2jYEfw==
+X-Google-Smtp-Source: APXvYqwNgp2s78/0RxITUwuFy6Fg3g6MDoG+W3Yr24BEgRb71TIe8kLoyVUg95Ka/D5P4Dmmwbxp6A==
+X-Received: by 2002:a37:95c6:: with SMTP id x189mr33424866qkd.323.1567523253178;
+        Tue, 03 Sep 2019 08:07:33 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:ab0:250c:: with SMTP id j12ls613487uan.7.gmail; Tue, 03 Sep
- 2019 08:07:30 -0700 (PDT)
-X-Received: by 2002:ab0:2e99:: with SMTP id f25mr8877908uaa.133.1567523249937;
-        Tue, 03 Sep 2019 08:07:29 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1567523249; cv=none;
+Received: by 2002:a37:b846:: with SMTP id i67ls5471465qkf.2.gmail; Tue, 03 Sep
+ 2019 08:07:32 -0700 (PDT)
+X-Received: by 2002:a37:7686:: with SMTP id r128mr3683632qkc.444.1567523252864;
+        Tue, 03 Sep 2019 08:07:32 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1567523252; cv=none;
         d=google.com; s=arc-20160816;
-        b=O6D79eL/Bf/ZVCqGCLr/+vC9qpI88xC9sHO+ULJl5ptrSPfbKaA/cMvqX4hE1TltCR
-         ghiTLVqzamiWdPudFlqciMBCiEq+g/rv4/yuuhtttuzSLqcKjsW27f01veSNwlfMjfEO
-         NAfigEsd7tNr9Jo42y3QbGIaZVv4/yG12IzULrS2tMYUBSQW9At90ADlARI7Zj9jxkjS
-         uCOHn7p88K34Nk2MEQTzI/8h/gUXAKIME692zLKWIAVZkJl0Fb939y8xrRWD8FjZoKAH
-         NGuRcGUxtEEfcS1Z+eiPRMF39a63El0+MIhuQLEKZ9Zwz7UezohjXVluuDMxLjenHGp7
-         V1Tw==
+        b=eLSqYn2nFAzzgbIlSCpFVSquknfPqiqjaLzuMqM0XtnngZ2Jizt3ceMCww+ABQ9nmJ
+         6zs72rgmsFrdOk8UcBG5lnsX0P6janMOvS88q9HV3e/DImRk1JFkp/ZP4N/I1Icz0tkJ
+         HjKsTz9TzwjePpTXYncrQzXPxr6M1A+WmVogCwOCC6nh1X34C4KjJ1nEpnNdZkvY6zC0
+         4PEaFWF2bza0DsJK9AXzdihigjcqe52rJCoLvSHzIOUtH6Caa3IjYk8vfqDj/72GmrYN
+         +cqL7h8BuF03mCZkdZe/EycvtKfl3jPAqBZp8KGQGe6zHeVoKjFhLGQPHAv1uGQ+zh3B
+         jNVA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=cc:to:from:subject:references:mime-version:message-id:in-reply-to
          :date:dkim-signature;
-        bh=WpyyM8zjm4wtK5J690VZrM2s4HSiRGUxtkfpxo7zqKI=;
-        b=IHr9AQjMbd2umLykcrH0y2agQMX+R1i5ygIOKcuF+uRZJUqbgkXkif3J5bP9Ho5Qhe
-         WYebdBWUVtOOROk1fWlMhsRewlVz5G7LCHzCkN5b73Kx6M+xZxulsvXe5/dqYnqM2M4R
-         PnJTrhqRD7QEEA0tPjXJVG/Y61Y20gfL2f4NZTnr4wiyeRsoUml923915Vl3JqkmLkGL
-         R/aV1vo5RehtyD6X1K4ClbXqgFDG+vsCkaKjWfANmL3Dr7Lw2ZJSkn7PCoN0lg3HEYez
-         7OAmo4u5vJU5uUR68oSY55DxMs4vYrWUbCxbHpfPoDRGHi5ubN+Fu7sgj5xl+/E6h2VR
-         e16A==
+        bh=6KFIwWWApjCQfX4bs8S0gCxREVnzqCf121iaZRShrCw=;
+        b=r29e5uN8VHwTC2GrDEEiH0Z/WkLaKdvaZ3AJADNO6rxQAiTMeP2VcOcHYQW0tqqVZo
+         sJjrwUbbPEEp3XmciGDIAcNSRZdxbV5UPV2cpkICkbuVep/xe8sODI9LT6+JeugMY7KD
+         huZCR52TWQtiTGR2O8Z17IpQUl0pCe7LefWF3uo2xdItGP+0/giUHMOLa3bMFq+axJm6
+         pbbV60OQ/IZMVmP5VvaQw5XgcJ8zfz66yQhEqHfO2hA4O6CK+Xe7SFSxOdqcT0p3GyAX
+         bxDZq+uWpkY9h2NcOVii7RuxGyJZ0/M/yZy692kVABhrFfU4RYVyffzucXq2Xl1XfVKF
+         OwNw==
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@google.com header.s=20161025 header.b=BfHZbHR9;
-       spf=pass (google.com: domain of 3syfuxqgkagak8cllgafemmejc.amk@flex--maennich.bounces.google.com designates 209.85.220.73 as permitted sender) smtp.mailfrom=3sYFuXQgKAGAK8CLLGAFEMMEJC.AMK@flex--maennich.bounces.google.com;
+       dkim=pass header.i=@google.com header.s=20161025 header.b=Sq3vmIE3;
+       spf=pass (google.com: domain of 3tifuxqgkagmnbfoojdihpphmf.dpn@flex--maennich.bounces.google.com designates 209.85.220.73 as permitted sender) smtp.mailfrom=3tIFuXQgKAGMNBFOOJDIHPPHMF.DPN@flex--maennich.bounces.google.com;
        dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
 Received: from mail-sor-f73.google.com (mail-sor-f73.google.com. [209.85.220.73])
-        by mx.google.com with SMTPS id y4sor4632132vka.42.2019.09.03.08.07.29
+        by mx.google.com with SMTPS id r29sor15468520qvc.29.2019.09.03.08.07.32
         for <usb-storage@lists.one-eyed-alien.net>
         (Google Transport Security);
-        Tue, 03 Sep 2019 08:07:29 -0700 (PDT)
-Received-SPF: pass (google.com: domain of 3syfuxqgkagak8cllgafemmejc.amk@flex--maennich.bounces.google.com designates 209.85.220.73 as permitted sender) client-ip=209.85.220.73;
-X-Received: by 2002:a1f:5c0d:: with SMTP id q13mr3631221vkb.38.1567523249382;
- Tue, 03 Sep 2019 08:07:29 -0700 (PDT)
-Date: Tue,  3 Sep 2019 16:06:28 +0100
+        Tue, 03 Sep 2019 08:07:32 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 3tifuxqgkagmnbfoojdihpphmf.dpn@flex--maennich.bounces.google.com designates 209.85.220.73 as permitted sender) client-ip=209.85.220.73;
+X-Received: by 2002:a05:6214:12ca:: with SMTP id s10mr15075192qvv.91.1567523252369;
+ Tue, 03 Sep 2019 08:07:32 -0700 (PDT)
+Date: Tue,  3 Sep 2019 16:06:29 +0100
 In-Reply-To: <20190903150638.242049-1-maennich@google.com>
-Message-Id: <20190903150638.242049-3-maennich@google.com>
+Message-Id: <20190903150638.242049-4-maennich@google.com>
 Mime-Version: 1.0
 References: <20180716122125.175792-1-maco@android.com> <20190903150638.242049-1-maennich@google.com>
 X-Mailer: git-send-email 2.23.0.187.g17f5b7556c-goog
-Subject: [usb-storage] [PATCH v4 02/12] export: explicitly align struct kernel_symbol
+Subject: [usb-storage] [PATCH v4 03/12] module: add support for symbol namespaces.
 From: "'Matthias Maennich' via USB Mass Storage on Linux" <usb-storage@lists.one-eyed-alien.net>
 To: linux-kernel@vger.kernel.org
 Cc: kernel-team@android.com, maennich@google.com, arnd@arndb.de, 
@@ -111,9 +111,9 @@ Cc: kernel-team@android.com, maennich@google.com, arnd@arndb.de,
 Content-Type: text/plain; charset="UTF-8"
 X-Original-Sender: maennich@google.com
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@google.com header.s=20161025 header.b=BfHZbHR9;       spf=pass
- (google.com: domain of 3syfuxqgkagak8cllgafemmejc.amk@flex--maennich.bounces.google.com
- designates 209.85.220.73 as permitted sender) smtp.mailfrom=3sYFuXQgKAGAK8CLLGAFEMMEJC.AMK@flex--maennich.bounces.google.com;
+ header.i=@google.com header.s=20161025 header.b=Sq3vmIE3;       spf=pass
+ (google.com: domain of 3tifuxqgkagmnbfoojdihpphmf.dpn@flex--maennich.bounces.google.com
+ designates 209.85.220.73 as permitted sender) smtp.mailfrom=3tIFuXQgKAGMNBFOOJDIHPPHMF.DPN@flex--maennich.bounces.google.com;
        dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
 X-Original-From: Matthias Maennich <maennich@google.com>
 Reply-To: Matthias Maennich <maennich@google.com>
@@ -132,99 +132,330 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-This change allows growing struct kernel_symbol without wasting bytes to
-alignment. It also concretized the alignment of ksymtab entries if
-relative references are used for ksymtab entries.
+The EXPORT_SYMBOL_NS() and EXPORT_SYMBOL_NS_GPL() macros can be used to
+export a symbol to a specific namespace.  There are no _GPL_FUTURE and
+_UNUSED variants because these are currently unused, and I'm not sure
+they are necessary.
 
-struct kernel_symbol was already implicitly being aligned to the word
-size, except on x86_64 and m68k, where it is aligned to 16 and 2 bytes,
-respectively.
+I didn't add EXPORT_SYMBOL_NS() for ASM exports; this patch sets the
+namespace of ASM exports to NULL by default. In case of relative
+references, it will be relocatable to NULL. If there's a need, this
+should be pretty easy to add.
 
-As far as I can tell there is no requirement for aligning struct
-kernel_symbol to 16 bytes on x86_64, but gcc aligns structs to their
-size, and the linker aligns the custom __ksymtab sections to the largest
-data type contained within, so setting KSYM_ALIGN to 16 was necessary to
-stay consistent with the code generated for non-ASM EXPORT_SYMBOL(). Now
-that non-ASM EXPORT_SYMBOL() explicitly aligns to word size (8),
-KSYM_ALIGN is no longer necessary.
+A module that wants to use a symbol exported to a namespace must add a
+MODULE_IMPORT_NS() statement to their module code; otherwise, modpost
+will complain when building the module, and the kernel module loader
+will emit an error and fail when loading the module.
 
-In case of relative references, the alignment has been changed
-accordingly to not waste space when adding new struct members.
+MODULE_IMPORT_NS() adds a modinfo tag 'import_ns' to the module. That
+tag can be observed by the modinfo command, modpost and kernel/module.c
+at the time of loading the module.
 
-As for m68k, struct kernel_symbol is aligned to 2 bytes even though the
-structure itself is 8 bytes; using a 4-byte alignment shouldn't hurt.
+The ELF symbols are renamed to include the namespace with an asm label;
+for example, symbol 'usb_stor_suspend' in namespace USB_STORAGE becomes
+'usb_stor_suspend.USB_STORAGE'.  This allows modpost to do namespace
+checking, without having to go through all the effort of parsing ELF and
+relocation records just to get to the struct kernel_symbols.
 
-I manually verified the output of the __ksymtab sections didn't change
-on x86, x86_64, arm, arm64 and m68k. As expected, the section contents
-didn't change, and the ELF section alignment only changed on x86_64 and
-m68k. Feedback from other archs more than welcome.
+On x86_64 I saw no difference in binary size (compression), but at
+runtime this will require a word of memory per export to hold the
+namespace. An alternative could be to store namespaced symbols in their
+own section and use a separate 'struct namespaced_kernel_symbol' for
+that section, at the cost of making the module loader more complex.
 
 Co-developed-by: Martijn Coenen <maco@android.com>
 Signed-off-by: Martijn Coenen <maco@android.com>
 Reviewed-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 Signed-off-by: Matthias Maennich <maennich@google.com>
 ---
- arch/m68k/include/asm/export.h | 1 -
- include/asm-generic/export.h   | 8 +++-----
- include/linux/export.h         | 3 ++-
- 3 files changed, 5 insertions(+), 7 deletions(-)
+ include/asm-generic/export.h |  6 +--
+ include/linux/export.h       | 91 +++++++++++++++++++++++++++++-------
+ include/linux/module.h       |  2 +
+ kernel/module.c              | 43 +++++++++++++++++
+ 4 files changed, 123 insertions(+), 19 deletions(-)
 
-diff --git a/arch/m68k/include/asm/export.h b/arch/m68k/include/asm/export.h
-index 0af20f48bd07..b53008b67ce1 100644
---- a/arch/m68k/include/asm/export.h
-+++ b/arch/m68k/include/asm/export.h
-@@ -1,3 +1,2 @@
--#define KSYM_ALIGN 2
- #define KCRC_ALIGN 2
- #include <asm-generic/export.h>
 diff --git a/include/asm-generic/export.h b/include/asm-generic/export.h
-index 294d6ae785d4..63f54907317b 100644
+index 63f54907317b..e2b5d0f569d3 100644
 --- a/include/asm-generic/export.h
 +++ b/include/asm-generic/export.h
-@@ -4,15 +4,13 @@
- #ifndef KSYM_FUNC
- #define KSYM_FUNC(x) x
- #endif
--#ifdef CONFIG_64BIT
--#ifndef KSYM_ALIGN
-+#ifdef CONFIG_HAVE_ARCH_PREL32_RELOCATIONS
-+#define KSYM_ALIGN 4
-+#elif defined(CONFIG_64BIT)
- #define KSYM_ALIGN 8
--#endif
+@@ -17,11 +17,11 @@
+ 
+ .macro __put, val, name
+ #ifdef CONFIG_HAVE_ARCH_PREL32_RELOCATIONS
+-	.long	\val - ., \name - .
++	.long	\val - ., \name - ., 0 - .
+ #elif defined(CONFIG_64BIT)
+-	.quad	\val, \name
++	.quad	\val, \name, 0
  #else
--#ifndef KSYM_ALIGN
- #define KSYM_ALIGN 4
+-	.long	\val, \name
++	.long	\val, \name, 0
  #endif
--#endif
- #ifndef KCRC_ALIGN
- #define KCRC_ALIGN 4
- #endif
+ .endm
+ 
 diff --git a/include/linux/export.h b/include/linux/export.h
-index fd8711ed9ac4..28a4d2150689 100644
+index 28a4d2150689..d59461e71478 100644
 --- a/include/linux/export.h
 +++ b/include/linux/export.h
-@@ -52,7 +52,7 @@ extern struct module __this_module;
+@@ -20,6 +20,8 @@ extern struct module __this_module;
+ 
+ #ifdef CONFIG_MODULES
+ 
++#define NS_SEPARATOR "."
++
+ #if defined(__KERNEL__) && !defined(__GENKSYMS__)
+ #ifdef CONFIG_MODVERSIONS
+ /* Mark the CRC weak since genksyms apparently decides not to
+@@ -29,13 +31,13 @@ extern struct module __this_module;
+ 	asm("	.section \"___kcrctab" sec "+" #sym "\", \"a\"	\n"	\
+ 	    "	.weak	__crc_" #sym "				\n"	\
+ 	    "	.long	__crc_" #sym " - .			\n"	\
+-	    "	.previous					\n");
++	    "	.previous					\n")
+ #else
+ #define __CRC_SYMBOL(sym, sec)						\
+ 	asm("	.section \"___kcrctab" sec "+" #sym "\", \"a\"	\n"	\
+ 	    "	.weak	__crc_" #sym "				\n"	\
+ 	    "	.long	__crc_" #sym "				\n"	\
+-	    "	.previous					\n");
++	    "	.previous					\n")
+ #endif
+ #else
+ #define __CRC_SYMBOL(sym, sec)
+@@ -49,6 +51,16 @@ extern struct module __this_module;
+  * absolute relocations that require runtime processing on relocatable
+  * kernels.
+  */
++#define __KSYMTAB_ENTRY_NS(sym, sec, ns)				\
++	__ADDRESSABLE(sym)						\
++	asm("	.section \"___ksymtab" sec "+" #sym "\", \"a\"	\n"	\
++	    "	.balign	4					\n"	\
++	    "__ksymtab_" #sym NS_SEPARATOR #ns ":		\n"	\
++	    "	.long	" #sym "- .				\n"	\
++	    "	.long	__kstrtab_" #sym "- .			\n"	\
++	    "	.long	__kstrtab_ns_" #sym "- .		\n"	\
++	    "	.previous					\n")
++
  #define __KSYMTAB_ENTRY(sym, sec)					\
  	__ADDRESSABLE(sym)						\
  	asm("	.section \"___ksymtab" sec "+" #sym "\", \"a\"	\n"	\
--	    "	.balign	8					\n"	\
-+	    "	.balign 4					\n"	\
+@@ -56,32 +68,53 @@ extern struct module __this_module;
  	    "__ksymtab_" #sym ":				\n"	\
  	    "	.long	" #sym "- .				\n"	\
  	    "	.long	__kstrtab_" #sym "- .			\n"	\
-@@ -66,6 +66,7 @@ struct kernel_symbol {
- #define __KSYMTAB_ENTRY(sym, sec)					\
- 	static const struct kernel_symbol __ksymtab_##sym		\
- 	__attribute__((section("___ksymtab" sec "+" #sym), used))	\
-+	__aligned(sizeof(void *))					\
- 	= { (unsigned long)&sym, __kstrtab_##sym }
++	    "	.long	0 - .					\n"	\
+ 	    "	.previous					\n")
  
  struct kernel_symbol {
+ 	int value_offset;
+ 	int name_offset;
++	int namespace_offset;
+ };
+ #else
++#define __KSYMTAB_ENTRY_NS(sym, sec, ns)				\
++	static const struct kernel_symbol __ksymtab_##sym##__##ns	\
++	asm("__ksymtab_" #sym NS_SEPARATOR #ns)				\
++	__attribute__((section("___ksymtab" sec "+" #sym), used))	\
++	__aligned(sizeof(void *))					\
++	= { (unsigned long)&sym, __kstrtab_##sym, __kstrtab_ns_##sym }
++
+ #define __KSYMTAB_ENTRY(sym, sec)					\
+ 	static const struct kernel_symbol __ksymtab_##sym		\
++	asm("__ksymtab_" #sym)						\
+ 	__attribute__((section("___ksymtab" sec "+" #sym), used))	\
+ 	__aligned(sizeof(void *))					\
+-	= { (unsigned long)&sym, __kstrtab_##sym }
++	= { (unsigned long)&sym, __kstrtab_##sym, NULL }
+ 
+ struct kernel_symbol {
+ 	unsigned long value;
+ 	const char *name;
++	const char *namespace;
+ };
+ #endif
+ 
+-/* For every exported symbol, place a struct in the __ksymtab section */
+-#define ___EXPORT_SYMBOL(sym, sec)					\
++#define ___export_symbol_common(sym, sec)				\
+ 	extern typeof(sym) sym;						\
+-	__CRC_SYMBOL(sym, sec)						\
++	__CRC_SYMBOL(sym, sec);						\
+ 	static const char __kstrtab_##sym[]				\
+ 	__attribute__((section("__ksymtab_strings"), used, aligned(1)))	\
+-	= #sym;								\
++	= #sym								\
++
++/* For every exported symbol, place a struct in the __ksymtab section */
++#define ___EXPORT_SYMBOL_NS(sym, sec, ns)				\
++	___export_symbol_common(sym, sec);				\
++	static const char __kstrtab_ns_##sym[]				\
++	__attribute__((section("__ksymtab_strings"), used, aligned(1)))	\
++	= #ns;								\
++	__KSYMTAB_ENTRY_NS(sym, sec, ns)
++
++#define ___EXPORT_SYMBOL(sym, sec)					\
++	___export_symbol_common(sym, sec);				\
+ 	__KSYMTAB_ENTRY(sym, sec)
+ 
+ #if defined(__DISABLE_EXPORTS)
+@@ -91,6 +124,7 @@ struct kernel_symbol {
+  * be reused in other execution contexts such as the UEFI stub or the
+  * decompressor.
+  */
++#define __EXPORT_SYMBOL_NS(sym, sec, ns)
+ #define __EXPORT_SYMBOL(sym, sec)
+ 
+ #elif defined(CONFIG_TRIM_UNUSED_KSYMS)
+@@ -117,18 +151,26 @@ struct kernel_symbol {
+ #define __cond_export_sym_1(sym, sec) ___EXPORT_SYMBOL(sym, sec)
+ #define __cond_export_sym_0(sym, sec) /* nothing */
+ 
++#define __EXPORT_SYMBOL_NS(sym, sec, ns)				\
++	__ksym_marker(sym);						\
++	__cond_export_ns_sym(sym, sec, ns, __is_defined(__KSYM_##sym))
++#define __cond_export_ns_sym(sym, sec, ns, conf)			\
++	___cond_export_ns_sym(sym, sec, ns, conf)
++#define ___cond_export_ns_sym(sym, sec, ns, enabled)			\
++	__cond_export_ns_sym_##enabled(sym, sec, ns)
++#define __cond_export_ns_sym_1(sym, sec, ns) ___EXPORT_SYMBOL_NS(sym, sec, ns)
++#define __cond_export_ns_sym_0(sym, sec, ns) /* nothing */
++
+ #else
++#define __EXPORT_SYMBOL_NS ___EXPORT_SYMBOL_NS
+ #define __EXPORT_SYMBOL ___EXPORT_SYMBOL
+ #endif
+ 
+-#define EXPORT_SYMBOL(sym)					\
+-	__EXPORT_SYMBOL(sym, "")
+-
+-#define EXPORT_SYMBOL_GPL(sym)					\
+-	__EXPORT_SYMBOL(sym, "_gpl")
+-
+-#define EXPORT_SYMBOL_GPL_FUTURE(sym)				\
+-	__EXPORT_SYMBOL(sym, "_gpl_future")
++#define EXPORT_SYMBOL(sym) __EXPORT_SYMBOL(sym, "")
++#define EXPORT_SYMBOL_GPL(sym) __EXPORT_SYMBOL(sym, "_gpl")
++#define EXPORT_SYMBOL_GPL_FUTURE(sym) __EXPORT_SYMBOL(sym, "_gpl_future")
++#define EXPORT_SYMBOL_NS(sym, ns) __EXPORT_SYMBOL_NS(sym, "", ns)
++#define EXPORT_SYMBOL_NS_GPL(sym, ns) __EXPORT_SYMBOL_NS(sym, "_gpl", ns)
+ 
+ #ifdef CONFIG_UNUSED_SYMBOLS
+ #define EXPORT_UNUSED_SYMBOL(sym) __EXPORT_SYMBOL(sym, "_unused")
+@@ -138,11 +180,28 @@ struct kernel_symbol {
+ #define EXPORT_UNUSED_SYMBOL_GPL(sym)
+ #endif
+ 
+-#endif	/* __GENKSYMS__ */
++#endif	/* __KERNEL__ && !__GENKSYMS__ */
++
++#if defined(__GENKSYMS__)
++/*
++ * When we're running genksyms, ignore the namespace and make the _NS
++ * variants look like the normal ones. There are two reasons for this:
++ * 1) In the normal definition of EXPORT_SYMBOL_NS, the 'ns' macro
++ *    argument is itself not expanded because it's always tokenized or
++ *    concatenated; but when running genksyms, a blank definition of the
++ *    macro does allow the argument to be expanded; if a namespace
++ *    happens to collide with a #define, this can cause issues.
++ * 2) There's no need to modify genksyms to deal with the _NS variants
++ */
++#define EXPORT_SYMBOL_NS(sym, ns) EXPORT_SYMBOL(sym)
++#define EXPORT_SYMBOL_NS_GPL(sym, ns) EXPORT_SYMBOL_GPL(sym)
++#endif
+ 
+ #else /* !CONFIG_MODULES... */
+ 
+ #define EXPORT_SYMBOL(sym)
++#define EXPORT_SYMBOL_NS(sym, ns)
++#define EXPORT_SYMBOL_NS_GPL(sym, ns)
+ #define EXPORT_SYMBOL_GPL(sym)
+ #define EXPORT_SYMBOL_GPL_FUTURE(sym)
+ #define EXPORT_UNUSED_SYMBOL(sym)
+diff --git a/include/linux/module.h b/include/linux/module.h
+index 1455812dd325..b3611e749f72 100644
+--- a/include/linux/module.h
++++ b/include/linux/module.h
+@@ -280,6 +280,8 @@ struct notifier_block;
+ 
+ #ifdef CONFIG_MODULES
+ 
++#define MODULE_IMPORT_NS(ns) MODULE_INFO(import_ns, #ns)
++
+ extern int modules_disabled; /* for sysctl */
+ /* Get/put a kernel symbol (calls must be symmetric) */
+ void *__symbol_get(const char *symbol);
+diff --git a/kernel/module.c b/kernel/module.c
+index 3ee507c0a92f..6bb9b938f9c7 100644
+--- a/kernel/module.c
++++ b/kernel/module.c
+@@ -544,6 +544,15 @@ static const char *kernel_symbol_name(const struct kernel_symbol *sym)
+ #endif
+ }
+ 
++static const char *kernel_symbol_namespace(const struct kernel_symbol *sym)
++{
++#ifdef CONFIG_HAVE_ARCH_PREL32_RELOCATIONS
++	return offset_to_ptr(&sym->namespace_offset);
++#else
++	return sym->namespace;
++#endif
++}
++
+ static int cmp_name(const void *va, const void *vb)
+ {
+ 	const char *a;
+@@ -1379,6 +1388,34 @@ static inline int same_magic(const char *amagic, const char *bmagic,
+ }
+ #endif /* CONFIG_MODVERSIONS */
+ 
++static char *get_modinfo(const struct load_info *info, const char *tag);
++static char *get_next_modinfo(const struct load_info *info, const char *tag,
++			      char *prev);
++
++static int verify_namespace_is_imported(const struct load_info *info,
++					const struct kernel_symbol *sym,
++					struct module *mod)
++{
++	const char *namespace;
++	char *imported_namespace;
++
++	namespace = kernel_symbol_namespace(sym);
++	if (namespace) {
++		imported_namespace = get_modinfo(info, "import_ns");
++		while (imported_namespace) {
++			if (strcmp(namespace, imported_namespace) == 0)
++				return 0;
++			imported_namespace = get_next_modinfo(
++				info, "import_ns", imported_namespace);
++		}
++		pr_err("%s: module uses symbol (%s) from namespace %s, but does not import it.\n",
++		       mod->name, kernel_symbol_name(sym), namespace);
++		return -EINVAL;
++	}
++	return 0;
++}
++
++
+ /* Resolve a symbol for this module.  I.e. if we find one, record usage. */
+ static const struct kernel_symbol *resolve_symbol(struct module *mod,
+ 						  const struct load_info *info,
+@@ -1407,6 +1444,12 @@ static const struct kernel_symbol *resolve_symbol(struct module *mod,
+ 		goto getname;
+ 	}
+ 
++	err = verify_namespace_is_imported(info, sym, mod);
++	if (err) {
++		sym = ERR_PTR(err);
++		goto getname;
++	}
++
+ 	err = ref_module(mod, owner);
+ 	if (err) {
+ 		sym = ERR_PTR(err);
 -- 
 2.23.0.187.g17f5b7556c-goog
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20190903150638.242049-3-maennich%40google.com.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20190903150638.242049-4-maennich%40google.com.
