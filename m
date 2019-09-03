@@ -1,110 +1,146 @@
-Return-Path: <usb-storage+bncBC7M5BFO7YCRBSFHXHVQKGQE6RO4GJI@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBDK73744WQBRB2WAXHVQKGQEULSV7DQ@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-pg1-f199.google.com (mail-pg1-f199.google.com [209.85.215.199])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8277BA67D2
-	for <lists+usb-storage@lfdr.de>; Tue,  3 Sep 2019 13:51:37 +0200 (CEST)
-Received: by mail-pg1-f199.google.com with SMTP id x19sf10797327pgx.1
-        for <lists+usb-storage@lfdr.de>; Tue, 03 Sep 2019 04:51:37 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1567511496; cv=pass;
+Received: from mail-qk1-x747.google.com (mail-qk1-x747.google.com [IPv6:2607:f8b0:4864:20::747])
+	by mail.lfdr.de (Postfix) with ESMTPS id 82274A68D4
+	for <lists+usb-storage@lfdr.de>; Tue,  3 Sep 2019 14:45:31 +0200 (CEST)
+Received: by mail-qk1-x747.google.com with SMTP id 11sf7087507qkh.15
+        for <lists+usb-storage@lfdr.de>; Tue, 03 Sep 2019 05:45:31 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1567514730; cv=pass;
         d=google.com; s=arc-20160816;
-        b=nUiJWtJOOaT6h5yJW4tkK9A6MNLYDD3YlGlbPtWO9m3XOLBLRnLMeZuJoGTsDbi6vn
-         MW1Sn9R/4jQFKV64LWeBhJr5GhXJ1Tp+U+wNUDB+5U2RCOlWih8LkqZ6inIjgW30lPIJ
-         Jbq+6390UldmCUXygQBZuHAb/wR4AH2ZDytwRl5iGSvQ7T/uIQTZDoMPnHOMB2R38PH1
-         o0pK208NozI44reVWGE+5/Y6Qbjbtp7PJPLHKvIfR7HqsAp7QFeYtpHBYSnuMcxyHrob
-         ku+t6zVIhx8+SFGDDlxrItvun3rWbZc73WogHOgTthpu91ZhEQ5IiR/h37U35raaQgLa
-         QlHw==
+        b=wYMqHJh+3JkNJ8Ogas0OfVn54BAoib8KhuH0Y9F6Iz7wmMG1siSki1Zo+iD4IhlCTj
+         X0Abcp0REvU4A7OuMc8XkQ0ksiSHP4J4OCOSJhVJ5FlM6vlwbCi0fwkUE244Cr24cYlv
+         mslkgrbFaPqsVfOLbyZUSLbEAuFTL98aL5EpLPqChcXskn+buwYAqsRa4quyNDiIMVAN
+         9cthCdthSGHEN+b7CtnVKUszU8APcndW2i5nz6eclGjsKnMLvdjlBl3WfHAGYJnKstfN
+         X5Nv8jTUZMrpL2smx3qhyK39UTQgef0GRkjbm4SpTz2A9Ao9Dy1XBFox1eW6SfVwZXIp
+         dO+g==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:user-agent:content-disposition
-         :mime-version:message-id:subject:cc:to:from:date:sender;
-        bh=KI0Ju2ZzPnBfVyvMR/EkraYxg40yJAEMDbzF7SfxNWY=;
-        b=k0nHM15fwgpRpZ6lzrbZxb6vW3BAZ3Exh4hBeoN6FeYvW2XJKHCi4qdE8xhJZjEBO2
-         RVN+H2r/0TXHzVzUV3559pVxVevagrMl7rr09R2EUZJMn6fHMxXU7D6nEARqRYkYhxcW
-         4aXfjfXAP4f78AtI3XJO7mceYWue6RtQQHzHWuOF+jvSuRS8Muo1XyxS09H7tCRvqAQO
-         B/wFFAgFHfoMM2aQARFo9kkog0WCEqvUFaoRfa4jHQkHFhyY6oVscGK8hRUPf62R64jg
-         nkGKP2VfGB7q9LmrEEvkOqkhfzLPSRoMtP3bTAAKBQfgROUCpAAQOarJVoaemqz9KkAH
-         +glw==
+         :list-id:mailing-list:precedence:user-agent:in-reply-to
+         :content-disposition:mime-version:references:message-id:subject:cc
+         :to:from:date:sender:dkim-signature;
+        bh=ztyp6SJpYwA93kbpSiXrM12OhNX4m8uuH7oDmBKeNp0=;
+        b=JcvO9lUEDoR+FsNFA0s6zAryhIhhG5NwFq7d2lS4vNH9zmCj9299PkuZAT74hd6dcG
+         Vfog6DIiQBGsAiYJrHwEiHpPSUaSt2IB3yKNIOOU7aKL48GWYzgBr8jwRp4LUgR5YhHj
+         QiTGt8OQgYDS6a/+cZf1woS4LD+HY/goKw3j280aUgC5vHqqb3IDCigcJ/OTT7wF/Qxm
+         7LvAWukxY72p9V4N5VXqVcVKYf9VuxN0X8FOjV+U+KKZ9tUOltVyYge44XJr178ArD2A
+         vXR+LgAZyQY5KT2xTGiTEhBG6bxpArwN3lA9GJmjSWgTQ5iklW61BJDkn20bNkTEh5z1
+         CipQ==
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@gmail.com header.s=20161025 header.b=BzOKPbc4;
-       spf=pass (google.com: domain of groeck7@gmail.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=groeck7@gmail.com
+       dkim=pass header.i=@kroah.com header.s=fm1 header.b=YpxITNYJ;
+       dkim=pass header.i=@messagingengine.com header.s=fm3 header.b=PwfKBbhs;
+       spf=pass (google.com: domain of greg@kroah.com designates 66.111.4.28 as permitted sender) smtp.mailfrom=greg@kroah.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=lists.one-eyed-alien.net; s=google;
+        h=sender:date:from:to:cc:subject:message-id:references:mime-version
+         :content-disposition:in-reply-to:user-agent:x-original-sender
+         :x-original-authentication-results:precedence:mailing-list:list-id
+         :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
+        bh=ztyp6SJpYwA93kbpSiXrM12OhNX4m8uuH7oDmBKeNp0=;
+        b=Vwt8T1hacE7jBkyvIIPKFB9fFjrkfNvw1UxKM39AeG+cBz1o+Sxtg0oihG5zMX/wvc
+         qIoskhAn5ZpjG8JrKtY9dYl8BwPxJRTXPUNCpr/l95vpF76q6rHt/fscHWDEIKJqG3AI
+         wWTtl9OuGv9k4gcRhpoia8nDU/BsqI3oQyTw0=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
-        h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
-         :mime-version:content-disposition:user-agent:x-original-sender
-         :x-original-authentication-results:precedence:mailing-list:list-id
-         :x-spam-checked-in-group:list-post:list-help:list-archive
-         :list-subscribe:list-unsubscribe;
-        bh=KI0Ju2ZzPnBfVyvMR/EkraYxg40yJAEMDbzF7SfxNWY=;
-        b=j+QqdrJlKvleGWXNqA7+3bBDB9BexmwZ5CL79OU0umXkfyftKtBMRGPHXvoNnW1B5K
-         iYE8jPcmfha903Esc1gjcPLYor+dHkJTiXntJcaEgaMGoWzjCW2CW1cRcRtJf/DZkeH3
-         P+YPMYaLWah1QxFxpx6UL1rXn9yNdaFZtiwBb5AEwPCmh4Ga4H5EVMoDfx0NHfpgeG5S
-         X4nTdgaaBwOZqH0taRF96OTqOOHFyXgicqOxiFIYZ8sgcSSQ02AlDCS9+/FpbSXUKm38
-         fCzP2nQ9XYoYlyLaIcfgt2bTE3LSpFf7yDzy++aYcX66Z+Gk5Owi141T7Xb+6kXfFxdi
-         lThQ==
-X-Gm-Message-State: APjAAAUEiqjSBsXDU9GZe8cuPacZ6ZGGQ7I84EuBgx5721y5L0DD22FI
-	Mp6s5DnbRo6WCvVVXdbmTf4LXw==
-X-Google-Smtp-Source: APXvYqwlimjq4xrTBuiOPVXWvPp8Bfb6sk6RJc/x6sb1PBpEOO8O1SmTpShgQL068Sm0jvOWCjIO7A==
-X-Received: by 2002:a63:9e56:: with SMTP id r22mr29900622pgo.221.1567511496102;
-        Tue, 03 Sep 2019 04:51:36 -0700 (PDT)
+        h=sender:x-gm-message-state:date:from:to:cc:subject:message-id
+         :references:mime-version:content-disposition:in-reply-to:user-agent
+         :x-original-sender:x-original-authentication-results:precedence
+         :mailing-list:list-id:x-spam-checked-in-group:list-post:list-help
+         :list-archive:list-subscribe:list-unsubscribe;
+        bh=ztyp6SJpYwA93kbpSiXrM12OhNX4m8uuH7oDmBKeNp0=;
+        b=bEpjddvW+QXrnawYrPg0U0l5i3e8AhVNGEE1dqQTTnP5DAr94NVc9KG42XPAFGX51D
+         Bkl+aXb8i0n/mrTZjQMfsy3coHc5IBve2DeCX7s/QQJIpU4HDZbvNOJGvuF2HiU5Hxni
+         o/zwfoosOBjlKDmvvQeNtsDokzZHe+8FThZmQLkh3rKiqF2PZdeTZBGbyrLHTjlWFGTP
+         yAoHrudVZFY4AnGtpDC+tp+bN/WrdbcO24il4gCwPwzbsOekAiPVeAeOYJP185+1+eib
+         6OVKNEq3xz2JIoPgWd4d/FHU7z8cNycrVYM10Ee/2byxQ0dwZvkWfdUHqfBSpLWw/oSE
+         5xHg==
+Sender: usb-storage@lists.one-eyed-alien.net
+X-Gm-Message-State: APjAAAUqw9iA+p5zZwsyUD18Y/UxbyzdJujhLoxcncNaH/ovYHAJfRcf
+	k2Gq9dXmOg5YfK8YqB9EwPnevw==
+X-Google-Smtp-Source: APXvYqyu2FI9jtTDjP6LNcBPGMztEwCoMy1xp+QdXkHE6ZDdxO1PC6Uru/dZK74ZyiuW0qqx1u/jxw==
+X-Received: by 2002:ac8:1e08:: with SMTP id n8mr33448446qtl.144.1567514730544;
+        Tue, 03 Sep 2019 05:45:30 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a17:902:6b81:: with SMTP id p1ls5545285plk.6.gmail; Tue, 03
- Sep 2019 04:51:35 -0700 (PDT)
-X-Received: by 2002:a17:902:4545:: with SMTP id m63mr33892956pld.45.1567511495700;
-        Tue, 03 Sep 2019 04:51:35 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1567511495; cv=none;
+Received: by 2002:ac8:41cd:: with SMTP id o13ls4087116qtm.16.gmail; Tue, 03
+ Sep 2019 05:45:30 -0700 (PDT)
+X-Received: by 2002:ac8:454b:: with SMTP id z11mr34122242qtn.275.1567514730162;
+        Tue, 03 Sep 2019 05:45:30 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1567514730; cv=none;
         d=google.com; s=arc-20160816;
-        b=kd5V+tH2NKn5m1Qqpws9cp+X5AsLPLA6hdofPmI9g0PQB+J7GHHlIHZqllnBfNDukX
-         hu79YkpdL6Q57MvNmGSHx8Dxg4OH4V9Bvl/Ymczgr3Yxtb7pBkkLN6a+PZbN9DT1AAmo
-         2h+zdtNdK9ZOe4Cq1bQQWiDnc/rAbei8/p95l+KrrOnAUBs5DR1u0Imd/b0NZkLbW+tv
-         rVO6u+kcNfkj6PJPJHDbLpOoVKtZYLr09FKvllLZt+eXlUP5gnUI07QdbK6xYRx4dB/N
-         MR57gZS0AhyLsV3T9yvWWFnY6pHFfNIzQ1ZrXUyaMfugkL/+hinhyoVqHpl6ZfxyyFqf
-         87bA==
+        b=t1T612VNDWvr3ihIx+12CFpswj5lp42Y1ZYRX0uSiOIteOEbbA+iQJz10XXXV/lCv8
+         KaIi4VVx6e/iX/8ZWhtpgdPxE6A0UqfKLU5XbZt8WNWmjmxVwWHBbQgdKJS6Y1cApZwd
+         O6YGb8D97x+tWHSu/B9fCbs3dzDiKgjvhtXMu7oTY8DJ+qTI422yvG3QBZZeItKCKYZj
+         YWlqeVfwqIX/9zTXkA8/IwJDa857BAKd52CATdbcLATj9GtEq628aLizEJFUkmQlh8Rf
+         URpsigfZCuHWZ/0ZLO1ypTgtiu9ItYXjG1wgCiC2nlRk6YWMxo3wb6v7X5ZukWarqNgX
+         ybrA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=user-agent:content-disposition:mime-version:message-id:subject:cc
-         :to:from:date:sender:dkim-signature;
-        bh=t2PxMG5OIm2u7yWMEpUqisBZ79ACocY8nzC9BY2ai8g=;
-        b=Y/ZnckJTOeteaGn/677PK1nqmNwSEulzzUXjRr7amdP0FxLKlXb5pyc9vKnnLWUxh/
-         skMD4rfG8GyKm+aYcLv87d8oBiSWy9dVbf7DuZiEggwj9YYMKPkmkEK+HC3sEEXQjBgp
-         oWOrZn44wAohJDNWCT77bhhH4k/AE4abdqrWfEVFo6xX3GFRytvBz94XX2c7i3OJcpsy
-         QUbs0p5e+rIZuMZGX28dqu/vi5H0v+i4FAIlDWIk0qf3C/L9yZpZuteGdZzMlWAKs5y8
-         iPeQRACzuNKksnqYVNZtTzxWL3LoZUAk98Z5p9FjB/82XcOuZweYfN4yiELgywpmr3jy
-         WhmA==
+        h=user-agent:in-reply-to:content-disposition:mime-version:references
+         :message-id:subject:cc:to:from:date:dkim-signature:dkim-signature;
+        bh=MIZWO/r5WYB1ZmJJ7B8lddyJnVFyg+qUjv42zSxUqt0=;
+        b=xrq+Likoic4QVZe5P62CaU0RMD7RmBgFPEigcwR/oTJ4MjpmV/Fjc2hp4wKpYbLbEX
+         +dU56f0/OqRzSsIZnX6ruAfyqU9RNwE9YSfMSHfe/umXfGaW/L04A7Qm7SfJrhTsqWFk
+         KBKB8rn7duODQzZgkwySyU4fFcOjTcbNyxdlO9t6HPuCDuqzl/X1lNFSOAQ6pafMgp69
+         +f9KhxVX3DH5SaIWPvQkeMfnaxFjOf8ZSfPDe6b/ueyExXtByYqVJ4Fz/BFA0ONFsJlW
+         H+mwCmC8u/P+Gf8wf0umrA9+V3J1KlWQz2Dmr+cXjSIs9O9kcSinbAtFC337qfp1neZ8
+         N/ng==
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@gmail.com header.s=20161025 header.b=BzOKPbc4;
-       spf=pass (google.com: domain of groeck7@gmail.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=groeck7@gmail.com
-Received: from mail-sor-f65.google.com (mail-sor-f65.google.com. [209.85.220.65])
-        by mx.google.com with SMTPS id x27sor16053239pfr.11.2019.09.03.04.51.35
+       dkim=pass header.i=@kroah.com header.s=fm1 header.b=YpxITNYJ;
+       dkim=pass header.i=@messagingengine.com header.s=fm3 header.b=PwfKBbhs;
+       spf=pass (google.com: domain of greg@kroah.com designates 66.111.4.28 as permitted sender) smtp.mailfrom=greg@kroah.com
+Received: from out4-smtp.messagingengine.com (out4-smtp.messagingengine.com. [66.111.4.28])
+        by mx.google.com with ESMTPS id y63si6652126qkb.261.2019.09.03.05.45.30
         for <usb-storage@lists.one-eyed-alien.net>
-        (Google Transport Security);
-        Tue, 03 Sep 2019 04:51:35 -0700 (PDT)
-Received-SPF: pass (google.com: domain of groeck7@gmail.com designates 209.85.220.65 as permitted sender) client-ip=209.85.220.65;
-X-Received: by 2002:aa7:9303:: with SMTP id 3mr19787525pfj.29.1567511495522;
-        Tue, 03 Sep 2019 04:51:35 -0700 (PDT)
-Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
-        by smtp.gmail.com with ESMTPSA id r23sm7173244pjo.22.2019.09.03.04.51.34
         (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
-        Tue, 03 Sep 2019 04:51:34 -0700 (PDT)
-Sender: Guenter Roeck <groeck7@gmail.com>
-Date: Tue, 3 Sep 2019 04:51:33 -0700
-From: Guenter Roeck <linux@roeck-us.net>
-To: Christoph Hellwig <hch@lst.de>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Lee Jones <lee.jones@linaro.org>,
-	Alan Stern <stern@rowland.harvard.edu>, linux-usb@vger.kernel.org,
-	usb-storage@lists.one-eyed-alien.net, linux-kernel@vger.kernel.org
-Subject: [usb-storage] Re: [PATCH 6/6] mfd: don't select DMA_DECLARE_COHERENT
- for the sm501 and tc6393xb drivers
-Message-ID: <20190903115133.GA3543@roeck-us.net>
+        Tue, 03 Sep 2019 05:45:30 -0700 (PDT)
+Received-SPF: pass (google.com: domain of greg@kroah.com designates 66.111.4.28 as permitted sender) client-ip=66.111.4.28;
+Received: from compute6.internal (compute6.nyi.internal [10.202.2.46])
+	by mailout.nyi.internal (Postfix) with ESMTP id BE72421F2E;
+	Tue,  3 Sep 2019 08:45:29 -0400 (EDT)
+Received: from mailfrontend2 ([10.202.2.163])
+  by compute6.internal (MEProxy); Tue, 03 Sep 2019 08:45:29 -0400
+X-ME-Sender: <xms:aWBuXaHJEL_wvL6RIxE8cXqRUzkXedDrT0uGhaRozG3QvRuZTL4FnA>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrudejfedgvdejucetufdoteggodetrfdotf
+    fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+    uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+    cujfgurhepfffhvffukfhfgggtuggjfgesthdtredttdervdenucfhrhhomhepifhrvghg
+    ucfmjfcuoehgrhgvgheskhhrohgrhhdrtghomheqnecukfhppeekfedrkeeirdekledrud
+    dtjeenucfrrghrrghmpehmrghilhhfrhhomhepghhrvghgsehkrhhorghhrdgtohhmnecu
+    vehluhhsthgvrhfuihiivgeptd
+X-ME-Proxy: <xmx:aWBuXSZMSm--u0-7G9yA86f6dcfE7NJfGCPNQ4yE5XJffU2AjjtV4A>
+    <xmx:aWBuXcLYSZk_gHQe9K5RghidwiXL3sGmgDa-3MfDUksGYkerumEvZQ>
+    <xmx:aWBuXVyjZyzeTamMj24KaKLxWdMGDhEGMm_MC8kalXnuhv-Lhvv-VQ>
+    <xmx:aWBuXW62BIDK1Rwyvv7DuNM25f7N7yHc2oPD15nHM1sv37HTVSLr1Q>
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl [83.86.89.107])
+	by mail.messagingengine.com (Postfix) with ESMTPA id F2908D60068;
+	Tue,  3 Sep 2019 08:45:28 -0400 (EDT)
+Date: Tue, 3 Sep 2019 14:45:27 +0200
+From: Greg KH <greg@kroah.com>
+To: Oliver Neukum <oneukum@suse.com>
+Cc: Julius Werner <jwerner@chromium.org>,
+	USB Storage list <usb-storage@lists.one-eyed-alien.net>,
+	Dan Williams <dcbw@redhat.com>,
+	Alan Stern <stern@rowland.harvard.edu>,
+	Kernel development list <linux-kernel@vger.kernel.org>,
+	USB list <linux-usb@vger.kernel.org>
+Subject: [usb-storage] Re: [PATCH] usb: storage: Add ums-cros-aoa driver
+Message-ID: <20190903124527.GB493@kroah.com>
+References: <CAODwPW8gTZ_2WEc9n=WJ2PEmQk2anTQYfwQ-898+kOq6wsjnZw@mail.gmail.com>
+ <Pine.LNX.4.44L0.1908301337150.1459-100000@iolanthe.rowland.org>
+ <20190902164724.GA22619@kroah.com>
+ <1567500374.2878.2.camel@suse.com>
+ <20190903091953.GA12325@kroah.com>
+ <1567505043.2878.4.camel@suse.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="UTF-8"
 Content-Disposition: inline
-User-Agent: Mutt/1.5.24 (2015-08-30)
-X-Original-Sender: linux@roeck-us.net
+In-Reply-To: <1567505043.2878.4.camel@suse.com>
+User-Agent: Mutt/1.12.1 (2019-06-15)
+X-Original-Sender: greg@kroah.com
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@gmail.com header.s=20161025 header.b=BzOKPbc4;       spf=pass
- (google.com: domain of groeck7@gmail.com designates 209.85.220.65 as
- permitted sender) smtp.mailfrom=groeck7@gmail.com
+ header.i=@kroah.com header.s=fm1 header.b=YpxITNYJ;       dkim=pass
+ header.i=@messagingengine.com header.s=fm3 header.b=PwfKBbhs;       spf=pass
+ (google.com: domain of greg@kroah.com designates 66.111.4.28 as permitted
+ sender) smtp.mailfrom=greg@kroah.com
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -120,45 +156,30 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On Tue, Sep 03, 2019 at 10:46:15AM +0200, Christoph Hellwig wrote:
-> Now that these drivers use the usb localmem pool there is no need to
-> select DMA_DECLARE_COHERENT.
+On Tue, Sep 03, 2019 at 12:04:03PM +0200, Oliver Neukum wrote:
+> Am Dienstag, den 03.09.2019, 11:19 +0200 schrieb Greg KH:
+> > On Tue, Sep 03, 2019 at 10:46:14AM +0200, Oliver Neukum wrote:
+> > > Am Montag, den 02.09.2019, 18:47 +0200 schrieb Greg KH:
+> > > > 
+> > > > This should work just fine today.  Add a new device id to the "new_id"
+> > > > file and then tell the driver to bind.  That's pretty much the same as a
+> > > > "force_bind", right?
+> > > 
+> > > That looks like a race condition by design to me.
+> > 
+> > How?
 > 
-> Signed-off-by: Christoph Hellwig <hch@lst.de>
+> You have one of these files and potentially multiple devices
+> to be bound. You need a locking scheme. As soon as the acts
+> of specifying and binding are distinct.
 
-Tested-by: Guenter Roeck <linux@roeck-us.net>
+What needs to be locked here?
 
-for SM501.
+totally confused,
 
-> ---
->  drivers/mfd/Kconfig | 2 --
->  1 file changed, 2 deletions(-)
-> 
-> diff --git a/drivers/mfd/Kconfig b/drivers/mfd/Kconfig
-> index f129f9678940..c8cbde59bbf6 100644
-> --- a/drivers/mfd/Kconfig
-> +++ b/drivers/mfd/Kconfig
-> @@ -1105,7 +1105,6 @@ config MFD_SI476X_CORE
->  config MFD_SM501
->  	tristate "Silicon Motion SM501"
->  	depends on HAS_DMA
-> -	select DMA_DECLARE_COHERENT
->  	 ---help---
->  	  This is the core driver for the Silicon Motion SM501 multimedia
->  	  companion chip. This device is a multifunction device which may
-> @@ -1714,7 +1713,6 @@ config MFD_TC6393XB
->  	select GPIOLIB
->  	select MFD_CORE
->  	select MFD_TMIO
-> -	select DMA_DECLARE_COHERENT
->  	help
->  	  Support for Toshiba Mobile IO Controller TC6393XB
->  
-> -- 
-> 2.20.1
-> 
+greg k-h
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20190903115133.GA3543%40roeck-us.net.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20190903124527.GB493%40kroah.com.
