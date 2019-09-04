@@ -1,130 +1,140 @@
-Return-Path: <usb-storage+bncBC7M5BFO7YCRBP6UX3VQKGQE73EH7BI@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBAABBHOEX7VQKGQEPG4YBGY@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-pg1-f199.google.com (mail-pg1-f199.google.com [209.85.215.199])
-	by mail.lfdr.de (Postfix) with ESMTPS id 17FEEA81EC
-	for <lists+usb-storage@lfdr.de>; Wed,  4 Sep 2019 14:12:49 +0200 (CEST)
-Received: by mail-pg1-f199.google.com with SMTP id u1sf13078662pgr.13
-        for <lists+usb-storage@lfdr.de>; Wed, 04 Sep 2019 05:12:49 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1567599167; cv=pass;
+Received: from mail-ot1-x348.google.com (mail-ot1-x348.google.com [IPv6:2607:f8b0:4864:20::348])
+	by mail.lfdr.de (Postfix) with ESMTPS id D4119A8660
+	for <lists+usb-storage@lfdr.de>; Wed,  4 Sep 2019 18:11:10 +0200 (CEST)
+Received: by mail-ot1-x348.google.com with SMTP id x31sf12687155ota.4
+        for <lists+usb-storage@lfdr.de>; Wed, 04 Sep 2019 09:11:10 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1567613469; cv=pass;
         d=google.com; s=arc-20160816;
-        b=iVeZecLIly2e/XW7OTsRWvu1fFYMI2HuA7g90JZsT6hIKhx1oR+HCbuyGUx3NqkwIh
-         H89e5GL+B9563Exe6rC/kTOVMK0wACSu2wzYDWIums1eFyD2K2wA9gJII7xlbPVVhNbD
-         tXTdM+DWs8l/Stx3jycaL52X/Ll7c7h69HiMAwGiJH0BnxVUxp85E4OqQ9dUNQMqmDBK
-         5l2NKFpd67L95rO4VY0U/PBrMTwOWy5M9ZBBmmkWp4PBV4/2nm8I52SR0ubOWRGp9j9c
-         XcKOpePi+new+WxfsvGUkoSXOest2lbjSmnF34wy4vWJkNMF+a0o9mr5QnFd1heGJYer
-         sZIg==
+        b=k8B0FIwc7DSm7BERvyQGKH2szY+9nPChxvdd/PNHdFjbwAqrWaJbxIYo75zUVNo85m
+         hyThSBTFMl5I/jy2fCq5sNgWDUgjQjmoRoPMp+9A2hObzFIrUxDRFrEi9tNpbz5REQGe
+         z/KCKh2AwqRm1VaCCJy4ngZAOlCRhMRUUcMJgZEu+QatPrOxx/bhv5LQZR79nX5vbYyN
+         MIzYI0bDcuseeNjhX43K/J8133u2OZdqZsNzELcOl9qGnslAp4b6XoxSQAUwpSzXbEDT
+         KgODJeQ7UIrsUBTtV83KZ8b2XTj8pqXqBnjM5oGyOfxgNzw/oHFlWuCNsdEWM3Brk1S9
+         2qrA==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:content-language:in-reply-to
-         :mime-version:user-agent:date:message-id:from:references:cc:to
-         :subject:sender;
-        bh=rcoKugBrusvGctwYig2sXUDb2slc/ncq/b0a/mfMeYc=;
-        b=wcBw6FRpwgIbjx5pBG6thpd2l+N48RThyzNwsz4iPLj3NSC0Rq9ulTjbLhlhPY+OD0
-         +UhS1/cWqjo2wi7USIqnRPl1c3a7fDsQXDjZeTndl60HT5bECml8wgncEG+Dd8n0YDe8
-         pROxLislE6lRHGcYoTUV3W0vjVvhhDDKW9G5QCn/Ru51vhe3gvBinqmSsTNGKhR2bH9z
-         9x+aDZ19zn2eDT+YEuDdIIWgp+SwKLseGmMGlG/9ldG6R2tCYaV9/lHPZVgfGGPXSz74
-         v/F/OluVdY9ZnrI9I9dqcHHCSTYkn7CtdhC2iBxDBH3LLkhDkf4Nd9w60cY5f3Hh0Ljv
-         YTqA==
+         :list-id:mailing-list:precedence:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:dkim-filter:sender
+         :dkim-signature;
+        bh=CCSjtViNgTm3x88TYwgbylBBoSfk74VXJcaHRqp9uVQ=;
+        b=RCruHaNJSf+I4yR3jEFGRCdGhwf0xJjK4rTkysCnpheFDmI2mCBrgX4ZTCHazvuftC
+         C8qLQPe6XEmgLNIFSnnf77SJ7pID61YRTU0+0b7sThrkdP8Z/TkjtMmB7GZDTtBQqvV1
+         Th8MdXFOwNAia2T5o/LiaPCNTXaU+dc7YacrBEeGe4TJ7Q5anL+OAk4XoFNeH4bvRNVp
+         XV7k5RHwcX3FRvbyBTy5CGCDPyzJx2Sy7DrERkN1f2B0G3X+q+DbUjP2Lt0++HXbI6L0
+         cmSaIIol/og98Q04IIs5qP87KcQyQYv9Lh/7SZ1b+5pxEVADVaKw9ZKnaIErALtpBaEx
+         Yy4Q==
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@gmail.com header.s=20161025 header.b=odUTXruY;
-       spf=pass (google.com: domain of groeck7@gmail.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=groeck7@gmail.com
+       dkim=pass header.i=@nifty.com header.s=dec2015msa header.b=qaQbLSu3;
+       spf=softfail (google.com: domain of transitioning yamada.masahiro@socionext.com does not designate 210.131.2.82 as permitted sender) smtp.mailfrom=yamada.masahiro@socionext.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=lists.one-eyed-alien.net; s=google;
+        h=sender:dkim-filter:mime-version:references:in-reply-to:from:date
+         :message-id:subject:to:cc:x-original-sender
+         :x-original-authentication-results:precedence:mailing-list:list-id
+         :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
+        bh=CCSjtViNgTm3x88TYwgbylBBoSfk74VXJcaHRqp9uVQ=;
+        b=LXsXFTGpmSLK8bXlI+1/jdhEIlm1SjObka/FjcQziSBC9jv7Va34V+jZrjLXIY7NI5
+         9688r/r34kBGt1pqr+01VH0OpnaAhiXu9I7RA6iNRmXR3WVBqdP9bmF72p7pEuME7gqf
+         tVUX2NiTdhZhIfPZBc0NmN5CdJ5dw/t0aZHlo=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
-        h=x-gm-message-state:sender:subject:to:cc:references:from:message-id
-         :date:user-agent:mime-version:in-reply-to:content-language
-         :x-original-sender:x-original-authentication-results:precedence
-         :mailing-list:list-id:x-spam-checked-in-group:list-post:list-help
-         :list-archive:list-subscribe:list-unsubscribe;
-        bh=rcoKugBrusvGctwYig2sXUDb2slc/ncq/b0a/mfMeYc=;
-        b=Lj/vpFEmnxruvksrWE3HE1uKYSc2dcQ2LCw9TmsJqvJ8A9cD2rQXncOnaK6ML1UV0P
-         tZJjpLWSu/aBG4S2v1Y2jtQ2fJ3TbmfyeDLKjwaOVZdBLxb6DPsK8jxgLLlXuIEQPfY8
-         Mzf7sxqCFdLasDPerUIcl7Qup1dplUZjBVmLi79VLWVjryPWAFocFZLdRdZ+V/ixH7Ii
-         xldc0I4mrdlLA7i43kOF7F4+g1BD2gEws/UFMeBk6FMp2kA8GzLwPuF1ndlBfw3r8R6S
-         LAChfwxPH2WBIrBcyf1CBZ5+Wrew9tpYajfcM4q13M8MeczSixMM6WsVx4KZuf4BenmD
-         FSgw==
-X-Gm-Message-State: APjAAAW8RY5u3IMbiHdcNsPwvaqnuzAwUWWmHAznIeVl/pbI15gWWAYZ
-	qYwIQqbL2L7plS82Ihn697tzHw==
-X-Google-Smtp-Source: APXvYqwPgP8+90/iKXSU6y4NKxoRb7f8jB9EsjKZBcDeA+FK6lDyUoYivcSIDsMwJz0IrgEFJoatqA==
-X-Received: by 2002:a17:902:d898:: with SMTP id b24mr41650889plz.7.1567599167696;
-        Wed, 04 Sep 2019 05:12:47 -0700 (PDT)
+        h=sender:x-gm-message-state:dkim-filter:mime-version:references
+         :in-reply-to:from:date:message-id:subject:to:cc:x-original-sender
+         :x-original-authentication-results:precedence:mailing-list:list-id
+         :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
+        bh=CCSjtViNgTm3x88TYwgbylBBoSfk74VXJcaHRqp9uVQ=;
+        b=FGt8abWJ+8to3GrPBCs8msNCVRphnn/0DwIAnbk15EMMPKz7D8WFx48XWt9Fsndi+y
+         PMQwFw6TVI3+bYjCSbk7L8oWUGc0HHKW2CjY0W32EgxeDvH/MCCALvq7OvrMImbckkqr
+         usFcOMRZd4HGEGwBo4a6AStVIgyQyCbT70XxpSuj4reORSQQmr2dEraatvebo8Up1TfL
+         4h8tdigseISdLQ4sb82UFJ5re1DoPk1PlO9CloBgvVivoyXReeqqNsJz3lRRFkum/fpu
+         L1Ei3OuqlNzeBdLcVQ//x25vF3Yq6XbQd+NTh9ilQ30E2H9oMLYa+IipCflPXwXbdxqM
+         0kRQ==
+Sender: usb-storage@lists.one-eyed-alien.net
+X-Gm-Message-State: APjAAAWFT6Sk6TbL0gKUcTgSrzVxMMQm7HeAU71k+JMXuh+H9Mooijgb
+	ZMoLjgiXFQG6bMxVpQSCfJ2rTg==
+X-Google-Smtp-Source: APXvYqwQcutoFYpJdFaP1F6XRdtM7L14qHr4FfaQBIyP6jX6Ma+XfbjhmFF16Gu7iPayxEvA6xO0GQ==
+X-Received: by 2002:aca:aad4:: with SMTP id t203mr4034019oie.75.1567613469495;
+        Wed, 04 Sep 2019 09:11:09 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:aa7:9611:: with SMTP id q17ls3427399pfg.16.gmail; Wed, 04
- Sep 2019 05:12:47 -0700 (PDT)
-X-Received: by 2002:a62:4e52:: with SMTP id c79mr20798001pfb.28.1567599167118;
-        Wed, 04 Sep 2019 05:12:47 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1567599167; cv=none;
+Received: by 2002:aca:c615:: with SMTP id w21ls2508065oif.15.gmail; Wed, 04
+ Sep 2019 09:11:09 -0700 (PDT)
+X-Received: by 2002:aca:f481:: with SMTP id s123mr3975413oih.109.1567613469057;
+        Wed, 04 Sep 2019 09:11:09 -0700 (PDT)
+Received: by 2002:aca:1116:0:0:0:0:0 with SMTP id 22msoir;
+        Wed, 4 Sep 2019 01:46:52 -0700 (PDT)
+X-Received: by 2002:a17:902:aa91:: with SMTP id d17mr38164231plr.74.1567586812204;
+        Wed, 04 Sep 2019 01:46:52 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1567586812; cv=none;
         d=google.com; s=arc-20160816;
-        b=lYVo3TO6n+BMtrgJXaeb4WXz5NBvKyAUFI17jIzXnISjM9klnmD/hz7aOKat8vcBkh
-         W7f3mEtwMRxuc37K5LBjpRn101osKjoAVYMdBBj1YwmjyIBhVDBoTdAzz82Zgr+aWvVP
-         0v7Tx3AlJE9EZmaoJaLBSDiuxcOibL1BP3FzUpgMdIqhB7/5aeUObmS8Q08kFHp61nJj
-         vqPnaLVbZuys1wr5buhl5ZQbdoIIfqwTxIdGJVg5TzlcBnEoF6i2Hyg1XSFuv6mMkfti
-         jH6w17CPggdsO9DuYUzRSwmWg5/27cx4/mWHCqgL7Q21vrwjVNtcEUiwwdcBM/GHE3+d
-         Kq9g==
+        b=QmTgWwMsu0mZtST58zrbgR0hrDiTULtU1LLsnzdypsqLT0zv2i2GCsyR/fL5mxqa+U
+         eHLsbhcil5mu50y1MRBs+Q0L7iEHHJwxR1mvjhAM2ufVpOOijGFrXvdUYBWOAwPvs176
+         cAmopVM6EXDGMyBDBkRBcWwSIjd0l0vFCfpk/wbKcd04GAEFG9QpWlq9lBrjtWZEmqOd
+         qEk7keshGmjKlrlL0WiCH0OzNoxwH65YVWidDbGk0Czk5dWtGwD16yKHzMc1IV4RFrfq
+         07RbUwylhw7SCbWZMMo/DOvj4WtZt1xbj6fhLAXNiarX6bsDC+I16ShmpVQ1aKIRviM7
+         S9Qg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=content-transfer-encoding:content-language:in-reply-to:mime-version
-         :user-agent:date:message-id:from:references:cc:to:subject:sender
-         :dkim-signature;
-        bh=PAQW62HDl0bciuqP6fN46/O4uLjRbfz/e823ZKZ4uxo=;
-        b=y+CD7K5oz08a+Vnu+rfUkKTtgnWz728neotuQY8kpY/I9zFASPhjKw6GrFcK0XKSbg
-         mxG/rmaqAufM+TDUEzrRgsAu7wwGTH3gWXxU+112ywrms/y5/j6AdTUxQp9aL8o/kt/6
-         SokeuNkuRMUwFxbMr8/kWvizbiDMqJNwk74w0e8ZK862vrZjkLVoxJUIGU8gAxMWa/y9
-         pavorf/6/pMyJMOvgMheanyIIR01Rg0lyRLxdBm09ApznZI5Ym6iG6SmTfLrCQDZkSWl
-         gz+75z6cGJrcIjiGFEEK7OmbuyPkBVCQZUQz5UlVxkoCi50YF+6L0iyC0S07Mb8Rx+wu
-         Hvig==
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:dkim-signature:dkim-filter;
+        bh=rl11GH89ZlbuZX4guUp4Pw5JS7QAnPdbjduMTKste4M=;
+        b=Jou8TITXmIAwM2zOC2iYxE1Rc26Sb/3udZy3c8SZ6w4TPi/IvyGyVrQzn43m8I+3Ef
+         DBb6axrS6BjXECWdTZtghbV/+h30/9uX9nRgGZY4ne01ggnXNFGErTKhc/fKeINOrRPJ
+         T81cw8RcTI8dR3Y3/JV7wTe4JCQPKYXqqjBiatMTv+J76tw27ELHGD/Tp1KTz7A8g7yS
+         5N+1gZ5ZvGKMhxb2FxZI6/mMugiMYSSryhyqQuqO27e3DpOI+KI9AxdXy1GIF84u2OhC
+         d6jeJf9v5b9CxW1WW7EYxoQbuAC0wc3REtrHZknJ0gAN23/97FMyQbvmox0V2WsB2sJA
+         LKug==
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@gmail.com header.s=20161025 header.b=odUTXruY;
-       spf=pass (google.com: domain of groeck7@gmail.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=groeck7@gmail.com
-Received: from mail-sor-f65.google.com (mail-sor-f65.google.com. [209.85.220.65])
-        by mx.google.com with SMTPS id m29sor11589023pff.72.2019.09.04.05.12.46
+       dkim=pass header.i=@nifty.com header.s=dec2015msa header.b=qaQbLSu3;
+       spf=softfail (google.com: domain of transitioning yamada.masahiro@socionext.com does not designate 210.131.2.82 as permitted sender) smtp.mailfrom=yamada.masahiro@socionext.com
+Received: from conssluserg-03.nifty.com (conssluserg-03.nifty.com. [210.131.2.82])
+        by mx.google.com with ESMTPS id x139si16903114pgx.251.2019.09.04.01.46.51
         for <usb-storage@lists.one-eyed-alien.net>
-        (Google Transport Security);
-        Wed, 04 Sep 2019 05:12:47 -0700 (PDT)
-Received-SPF: pass (google.com: domain of groeck7@gmail.com designates 209.85.220.65 as permitted sender) client-ip=209.85.220.65;
-X-Received: by 2002:a62:7a12:: with SMTP id v18mr2313087pfc.205.1567599166796;
-        Wed, 04 Sep 2019 05:12:46 -0700 (PDT)
-Received: from server.roeck-us.net ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
-        by smtp.gmail.com with ESMTPSA id x5sm12419072pfi.165.2019.09.04.05.12.43
         (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
-        Wed, 04 Sep 2019 05:12:45 -0700 (PDT)
-Sender: Guenter Roeck <groeck7@gmail.com>
+        Wed, 04 Sep 2019 01:46:52 -0700 (PDT)
+Received-SPF: softfail (google.com: domain of transitioning yamada.masahiro@socionext.com does not designate 210.131.2.82 as permitted sender) client-ip=210.131.2.82;
+Received: from mail-vs1-f47.google.com (mail-vs1-f47.google.com [209.85.217.47]) (authenticated)
+	by conssluserg-03.nifty.com with ESMTP id x848kMl6025542
+	for <usb-storage@lists.one-eyed-alien.net>; Wed, 4 Sep 2019 17:46:23 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-03.nifty.com x848kMl6025542
+X-Nifty-SrcIP: [209.85.217.47]
+Received: by mail-vs1-f47.google.com with SMTP id y62so13233017vsb.6
+        for <usb-storage@lists.one-eyed-alien.net>; Wed, 04 Sep 2019 01:46:23 -0700 (PDT)
+X-Received: by 2002:a67:e9cc:: with SMTP id q12mr11685253vso.181.1567586782082;
+ Wed, 04 Sep 2019 01:46:22 -0700 (PDT)
+MIME-Version: 1.0
+References: <20180716122125.175792-1-maco@android.com> <20190903150638.242049-1-maennich@google.com>
+ <20190903150638.242049-13-maennich@google.com> <20190903161045.GA22754@roeck-us.net>
+In-Reply-To: <20190903161045.GA22754@roeck-us.net>
+From: Masahiro Yamada <yamada.masahiro@socionext.com>
+Date: Wed, 4 Sep 2019 17:45:45 +0900
+X-Gmail-Original-Message-ID: <CAK7LNARYqqCSCc0G4FL7_bj80iMoLLJrUJ7B3+huD25EUkrttA@mail.gmail.com>
+Message-ID: <CAK7LNARYqqCSCc0G4FL7_bj80iMoLLJrUJ7B3+huD25EUkrttA@mail.gmail.com>
 Subject: [usb-storage] Re: [PATCH v4 12/12] RFC: watchdog: export core symbols
  in WATCHDOG_CORE namespace
-To: Masahiro Yamada <yamada.masahiro@socionext.com>
+To: Guenter Roeck <linux@roeck-us.net>
 Cc: Matthias Maennich <maennich@google.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- "Cc: Android Kernel" <kernel-team@android.com>, Arnd Bergmann
- <arnd@arndb.de>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Jessica Yu <jeyu@kernel.org>,
- "Joel Fernandes (Google)" <joel@joelfernandes.org>,
- Lucas De Marchi <lucas.de.marchi@gmail.com>, maco@android.com,
- sspatil@google.com, Will Deacon <will@kernel.org>,
- Linux Kbuild mailing list <linux-kbuild@vger.kernel.org>,
- linux-modules@vger.kernel.org, linux-usb <linux-usb@vger.kernel.org>,
- usb-storage@lists.one-eyed-alien.net, linux-watchdog@vger.kernel.org
-References: <20180716122125.175792-1-maco@android.com>
- <20190903150638.242049-1-maennich@google.com>
- <20190903150638.242049-13-maennich@google.com>
- <20190903161045.GA22754@roeck-us.net>
- <CAK7LNARYqqCSCc0G4FL7_bj80iMoLLJrUJ7B3+huD25EUkrttA@mail.gmail.com>
-From: Guenter Roeck <linux@roeck-us.net>
-Message-ID: <c6ac941c-06a4-e5dc-5cb9-fca7b40d7e9a@roeck-us.net>
-Date: Wed, 4 Sep 2019 05:12:43 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
-MIME-Version: 1.0
-In-Reply-To: <CAK7LNARYqqCSCc0G4FL7_bj80iMoLLJrUJ7B3+huD25EUkrttA@mail.gmail.com>
-Content-Type: text/plain; charset="UTF-8"; format=flowed
-Content-Language: en-US
-X-Original-Sender: linux@roeck-us.net
+        Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+        "Cc: Android Kernel" <kernel-team@android.com>,
+        Arnd Bergmann <arnd@arndb.de>,
+        Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+        Jessica Yu <jeyu@kernel.org>,
+        "Joel Fernandes (Google)" <joel@joelfernandes.org>,
+        Lucas De Marchi <lucas.de.marchi@gmail.com>, maco@android.com,
+        sspatil@google.com, Will Deacon <will@kernel.org>,
+        Linux Kbuild mailing list <linux-kbuild@vger.kernel.org>,
+        linux-modules@vger.kernel.org, linux-usb <linux-usb@vger.kernel.org>,
+        usb-storage@lists.one-eyed-alien.net, linux-watchdog@vger.kernel.org
+Content-Type: text/plain; charset="UTF-8"
+X-Original-Sender: yamada.masahiro@socionext.com
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@gmail.com header.s=20161025 header.b=odUTXruY;       spf=pass
- (google.com: domain of groeck7@gmail.com designates 209.85.220.65 as
- permitted sender) smtp.mailfrom=groeck7@gmail.com
+ header.i=@nifty.com header.s=dec2015msa header.b=qaQbLSu3;       spf=softfail
+ (google.com: domain of transitioning yamada.masahiro@socionext.com does not
+ designate 210.131.2.82 as permitted sender) smtp.mailfrom=yamada.masahiro@socionext.com
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
-X-Spam-Checked-In-Group: usb-storage@lists.one-eyed-alien.net
 X-Google-Group-Id: 960895140360
 List-Post: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/post>,
  <mailto:usb-storage@lists.one-eyed-alien.net>
@@ -136,62 +146,56 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On 9/4/19 1:45 AM, Masahiro Yamada wrote:
-> On Wed, Sep 4, 2019 at 1:10 AM Guenter Roeck <linux@roeck-us.net> wrote:
->>
->> On Tue, Sep 03, 2019 at 04:06:38PM +0100, Matthias Maennich wrote:
->>> Modules using symbols from the WATCHDOG_CORE namespace are required to
->>> explicitly import the namespace. This patch was generated with the
->>> following steps and serves as a reference to use the symbol namespace
->>> feature:
->>>
->>>   1) Use EXPORT_SYMBOL_NS* macros instead of EXPORT_SYMBOL* for symbols
->>>      in watchdog_core.c
->>>   2) make  (see warnings during modpost about missing imports)
->>>   3) make nsdeps
->>>
->>> I used 'allmodconfig' for the above steps to ensure all occurrences are
->>> patched.
->>>
->>> Defining DEFAULT_SYMBOL_NAMESPACE in the Makefile is not trivial in this
->>> case as not only watchdog_core is defined in drivers/watchdog/Makefile.
->>> Hence this patch uses the variant of using the EXPORT_SYMBOL_NS* macros
->>> to export into a different namespace.
->>>
->>> An alternative to this patch would be a single definition line before
->>> any use of EXPORT_SYMBOL*:
->>>   #define DEFAULT_SYMBOL_NAMESPACE WATCHDOG_CORE
->>>
->>> This patch serves as a reference on how to use the symbol namespaces.
->>>
->>> Reviewed-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
->>> Signed-off-by: Matthias Maennich <maennich@google.com>
->>
->> As mentioned before, I am opposed to this set of changes. I don't see
->> the point of restricting the use of exported symbols in WATCHDOG_CORE.
->>
->> Guenter
-> 
-> 
-> I agree.
-> 
-> I do not like this patch set either.
-> 
+On Wed, Sep 4, 2019 at 1:10 AM Guenter Roeck <linux@roeck-us.net> wrote:
+>
+> On Tue, Sep 03, 2019 at 04:06:38PM +0100, Matthias Maennich wrote:
+> > Modules using symbols from the WATCHDOG_CORE namespace are required to
+> > explicitly import the namespace. This patch was generated with the
+> > following steps and serves as a reference to use the symbol namespace
+> > feature:
+> >
+> >  1) Use EXPORT_SYMBOL_NS* macros instead of EXPORT_SYMBOL* for symbols
+> >     in watchdog_core.c
+> >  2) make  (see warnings during modpost about missing imports)
+> >  3) make nsdeps
+> >
+> > I used 'allmodconfig' for the above steps to ensure all occurrences are
+> > patched.
+> >
+> > Defining DEFAULT_SYMBOL_NAMESPACE in the Makefile is not trivial in this
+> > case as not only watchdog_core is defined in drivers/watchdog/Makefile.
+> > Hence this patch uses the variant of using the EXPORT_SYMBOL_NS* macros
+> > to export into a different namespace.
+> >
+> > An alternative to this patch would be a single definition line before
+> > any use of EXPORT_SYMBOL*:
+> >  #define DEFAULT_SYMBOL_NAMESPACE WATCHDOG_CORE
+> >
+> > This patch serves as a reference on how to use the symbol namespaces.
+> >
+> > Reviewed-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+> > Signed-off-by: Matthias Maennich <maennich@google.com>
+>
+> As mentioned before, I am opposed to this set of changes. I don't see
+> the point of restricting the use of exported symbols in WATCHDOG_CORE.
+>
+> Guenter
 
-Note that I don't object to the patch set in general. There may be symbols
-which only need be exported in the context of a single subsystem or even
-driver (if a driver consists of more than one module). For example, a mfd
-driver may export symbols which should only be called by its client drivers.
-In such a situation, it may well be beneficial to limit the use of exported
-symbols.
 
-I am not sure what good that does in practice (if I understand correctly,
-a driver only has to declare that it wants to use a restricted use symbol
-if it wants to use it), but that is a different question.
+I agree.
 
-Guenter
+I do not like this patch set either.
+
+Anyway, the last two patches (usb-stroage, watchdog)
+are useful to demonstrate
+that this has a bad taste.
+
+
+--
+Best Regards
+Masahiro Yamada
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/c6ac941c-06a4-e5dc-5cb9-fca7b40d7e9a%40roeck-us.net.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/CAK7LNARYqqCSCc0G4FL7_bj80iMoLLJrUJ7B3%2BhuD25EUkrttA%40mail.gmail.com.
