@@ -1,188 +1,150 @@
-Return-Path: <usb-storage+bncBDF7X5HH4UNBB37KZLWAKGQE4SHI2HY@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBDVIJONZ3YDRBN4TZPWAKGQE5C4Z23Q@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-pg1-x545.google.com (mail-pg1-x545.google.com [IPv6:2607:f8b0:4864:20::545])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA04AC2BCA
-	for <lists+usb-storage@lfdr.de>; Tue,  1 Oct 2019 04:09:53 +0200 (CEST)
-Received: by mail-pg1-x545.google.com with SMTP id h189sf10229748pgc.4
-        for <lists+usb-storage@lfdr.de>; Mon, 30 Sep 2019 19:09:53 -0700 (PDT)
-ARC-Seal: i=3; a=rsa-sha256; t=1569895792; cv=pass;
+Received: from mail-io1-xd46.google.com (mail-io1-xd46.google.com [IPv6:2607:f8b0:4864:20::d46])
+	by mail.lfdr.de (Postfix) with ESMTPS id E620DC2C57
+	for <lists+usb-storage@lfdr.de>; Tue,  1 Oct 2019 05:36:24 +0200 (CEST)
+Received: by mail-io1-xd46.google.com with SMTP id q18sf35559727ios.8
+        for <lists+usb-storage@lfdr.de>; Mon, 30 Sep 2019 20:36:24 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1569900984; cv=pass;
         d=google.com; s=arc-20160816;
-        b=flAragf2++UF7/lR/3Bg55JBJIFUO3BT5HR8+NJvf/10EGiH3cYJTzSwD60EFwqk0Z
-         VO9TWtQdhKX5zgfRegv7teoj4WcG6gz5AWU0u2GZY+Jk6IpLRCMDCOFJTz6ZXFBwP91U
-         2s5PfVIzHw5ok4V8u/98PZx6NHkgCHUNJfQqTfyM8JTVyAgFX7bCyeum3qnVxs19cJaS
-         YvvJhgYJITsG0lgflK5QDqSX/kXpzyMH8fDl3oIRJ7Tn/gxyXTjy0RrkjVFTGs5SCtZx
-         cTpmt2F5JevMQ0WNYxcIQxfLhoEnGPZgiI/z7+wXySOCvI1Ce16QIAmpRaimQ4tyonNI
-         DlMA==
-ARC-Message-Signature: i=3; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        b=leQ1EVgdnH6lJ2TCEI7ZItySkmEdUmMzDVOw+EEMdcc4VubWLBS0GtTppagd94aN5h
+         RchpXtufrvUu49rvCRemK4wkjzjdTQ335nalxNnDxCUsKKWz72xKIQN6Z6gNY1SXqE0d
+         9enngKp+xMNrNki8UDo16xsp9fOcuYG1jrBK5x3OPY639uVeRn0+AIsZG+BoHi8iUrTw
+         5d8SIBiuZw4TXNix7NzzAhKAXIEzQ7a3mqdAvlRl3S+YLVCy+E3KYoQb1gqHTnuj9UC8
+         po4Cb9eEFOgSXh9fKLYeLorQmTfXJ9E46ImDYQL0Rx4ZHGKEbWJBqdafLfoNWnZtjkih
+         aV6Q==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:mime-version:wdcipoutbound
-         :content-language:accept-language:references:message-id:date
-         :thread-index:thread-topic:subject:cc:to:from:ironport-sdr:sender
+         :list-id:mailing-list:precedence:mime-version:user-agent:message-id
+         :in-reply-to:date:references:organization:from:subject:cc:to:sender
          :dkim-signature;
-        bh=bkremCRHR5dAcQLxdUdkz0LtiNVo5KFlTOOZgfYa0ck=;
-        b=HpHD6YLhTFfYiFH/4cGEXA6lkCtr7GLAQ4v6/w11kM6PVJZMbticGqBM1d6IZWUlY9
-         C43Z588zGQ+fZD+yRlFr6fNm8AY8eDWzWs1DkTTrvMUuBR8zWMW+96/neW/I6u6lxotb
-         lnGMlyiNhTFZqpRdbd9JbVaXI6wnHgoFh9ymytvj0KZkTw3APZhSV26aZJzJpBJYjelZ
-         dLwXGRvA8rBBO8Fp0Wb67iX2VldqEVxQkXV3ocujGIpJ6kFt2uCmuKZ32l5DqRTlBsee
-         N7onztp5QtKnjrs1StIGDin04VUX03oHwE2ThSxj4Iyw0t9niKEgpjmLZwEXUzHSm600
-         NIaw==
-ARC-Authentication-Results: i=3; mx.google.com;
-       dkim=pass header.i=@wdc.com header.s=dkim.wdc.com header.b=FO9fCVj+;
-       dkim=pass header.i=@sharedspace.onmicrosoft.com header.s=selector2-sharedspace-onmicrosoft-com header.b=CSN3U2oF;
-       arc=pass (i=1 spf=pass spfdomain=wdc.com dkim=pass dkdomain=wdc.com dmarc=pass fromdomain=wdc.com);
-       spf=pass (google.com: domain of prvs=1703f4a22=damien.lemoal@wdc.com designates 216.71.154.42 as permitted sender) smtp.mailfrom="prvs=1703f4a22=Damien.LeMoal@wdc.com";
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=wdc.com
+        bh=o//bBmwrsal0M/Q1uwai8ncNVtWLe6I6SF6Mwsi9w5E=;
+        b=lH8XnqadvJm6vtQtCfaBg01E4qQrQ3bx7wAzxzH8DpEtONdbpvVvsOBEDwkAAZcC04
+         0wNr6vjcpdrOmZgkwpG+Q9c11UA6762wqXbg2p2erlW8DEX+7syTeF18w54uN9pxUQxX
+         /pyIZLSZNOQZQB/yK8snc69VQCC+dVVQ71COTpe4FxmBDm7givKxpsZLgvbbkBxxtKMK
+         eL/W3qQNJeGZK2HIhaL8HomjJYzhW4USDMTaitO5oJwoSAKjMYyUDfsxKuN/9wbYeBEn
+         pFGCVZZC6BzuQrcMACwc44r5+BsDI/t1uVEULNWEIZ6fuNx7wvxu7iJvcwL/SBpI4EyQ
+         WL2Q==
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@oracle.com header.s=corp-2019-08-05 header.b=ahcjE+zs;
+       spf=pass (google.com: domain of martin.petersen@oracle.com designates 156.151.31.86 as permitted sender) smtp.mailfrom=martin.petersen@oracle.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=oracle.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
-        h=sender:ironport-sdr:from:to:cc:subject:thread-topic:thread-index
-         :date:message-id:references:accept-language:content-language
-         :wdcipoutbound:mime-version:x-original-sender
+        h=sender:to:cc:subject:from:organization:references:date:in-reply-to
+         :message-id:user-agent:mime-version:x-original-sender
          :x-original-authentication-results:precedence:mailing-list:list-id
          :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
-        bh=bkremCRHR5dAcQLxdUdkz0LtiNVo5KFlTOOZgfYa0ck=;
-        b=WQZd7zHy01NFkgM0LMh3k00oOnJXt+WtgoNIBWyxfr7FNp+9bSm30328htONP/TEbV
-         pWYwahGNec9JHlDG6e+B12aHSeRFGZKULG+kSJmApT1iNoiMMi1IUMGJi8xvVYeMYHCO
-         v2D9Fhh5cOjVfJRZrF3k18VSNJXb0c4rvUw0M=
+        bh=o//bBmwrsal0M/Q1uwai8ncNVtWLe6I6SF6Mwsi9w5E=;
+        b=SWx9GpLRN+iZlUZxNgRU7dC/Xj1jZla77KYlDAQxWkyOwMuUIMsrp/Ll8dfcctavf6
+         AHBcOHL1RKgWe4bDqsxXobPQH5RrsEcIcojSPN8bnVak5R6VI512jY6WnlICWMbR1nvr
+         KhZLeLE3XFr8UClOK5zSDhsK8UbFzg4qC3vEA=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
-        h=sender:x-gm-message-state:ironport-sdr:from:to:cc:subject
-         :thread-topic:thread-index:date:message-id:references
-         :accept-language:content-language:wdcipoutbound:mime-version
+        h=sender:x-gm-message-state:to:cc:subject:from:organization
+         :references:date:in-reply-to:message-id:user-agent:mime-version
          :x-original-sender:x-original-authentication-results:precedence
          :mailing-list:list-id:x-spam-checked-in-group:list-post:list-help
          :list-archive:list-subscribe:list-unsubscribe;
-        bh=bkremCRHR5dAcQLxdUdkz0LtiNVo5KFlTOOZgfYa0ck=;
-        b=Kznq+71x00yP0RVPAhmr5FuHALhY1/JP6PidGQV/gTAHDj0r4/AA1kp9r7c7nlIqTL
-         j1wiU9Rk3skKwMLXNUVPwrB41ZGXyGW50afA1Q3VhIYfzWhDj6XoGyutVg/Cj3gcij4I
-         jGtesuDKhrmun8ZaHGxDnGM7qf0WECuUjaXYybySuWfPRyE6chgHaz/852wjzSiT62T5
-         L11oMMAUKWqsbwy+UN2W7ry1LvswHDfn6lu+fbosVUSD5ZJQmuK+n54NQJKA0IWFELq2
-         J3L2uFF9ZhrK6VLSPzL8RE6sjgThHC7+vtytUkx+dcrsSBk4fpOSCOWO/MVSrZP62TJV
-         MQqg==
+        bh=o//bBmwrsal0M/Q1uwai8ncNVtWLe6I6SF6Mwsi9w5E=;
+        b=uaIBbbvYLn+p9SL8HeAilwoTDdZ5IKIvR+S31H8GX8bBybNmC+sqxtcVGZ+ah/CM0s
+         O3NNCsqioDwtrRJa5htyzS6HOoy7ac24pQqJHx8M/mgViNnhwH22oWoczd1KUK/VXgOW
+         Mwfay4Q5M+VDWoBoa49/Zc4BRaxn4dF4vb+K4GXbl+IeMMJH4G2kwoIuH+rFDsbxUJek
+         ROwMVeKIV3FYyqAEdprFDi1/zWr3vDJCg5nqRVy+535Z4X4UiTiKONiBTw2bNEEZMwYE
+         Ur1n6y9/8STgDc54szgfBMvhMoCSySm90Jsp/iaVaDb7IFvB9yc0b3TQgplH09wPNe1a
+         AyFQ==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: APjAAAWGqoJyICos/kMBTQ0BnPG1vVXpUdM4FRsgqk/lsijyBNeXJhT2
-	oijpR7uRGFoT+L9xKpUH5ctfew==
-X-Google-Smtp-Source: APXvYqwjri9FfJiz0c8hUC50G+eUhhiKOU6KchmNtHWCBZCEBXrLaTvpuYgLyvgNvdPqaY73X0bqVA==
-X-Received: by 2002:a17:902:9a84:: with SMTP id w4mr22976752plp.186.1569895791938;
-        Mon, 30 Sep 2019 19:09:51 -0700 (PDT)
+X-Gm-Message-State: APjAAAW1MwN2AbqGyF2edbLNN0x0OzXzR730atajmNuSb0qW3eDmAJgw
+	kC7TNuQpH68NrimLzKfW+EKvwA==
+X-Google-Smtp-Source: APXvYqwt4pdHnVxFLSb2IUTLKIJKnAfYMBsN2t5tMJ7Cd8CJatyOi2h20mEbaVmZ0+aZsK1HG7Entw==
+X-Received: by 2002:a92:d30c:: with SMTP id x12mr25271085ila.133.1569900983686;
+        Mon, 30 Sep 2019 20:36:23 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a17:902:d68f:: with SMTP id v15ls3083762ply.15.gmail; Mon,
- 30 Sep 2019 19:09:51 -0700 (PDT)
-X-Received: by 2002:a17:902:8c8d:: with SMTP id t13mr23741034plo.258.1569895791225;
-        Mon, 30 Sep 2019 19:09:51 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1569895791; cv=pass;
+Received: by 2002:a02:13c6:: with SMTP id 189ls1652938jaz.0.gmail; Mon, 30 Sep
+ 2019 20:36:23 -0700 (PDT)
+X-Received: by 2002:a02:b09c:: with SMTP id v28mr22461261jah.137.1569900983198;
+        Mon, 30 Sep 2019 20:36:23 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1569900983; cv=none;
         d=google.com; s=arc-20160816;
-        b=FjE/apl6ip+dlj7YvPhFeXk7GynHt6KSWelgSWKiwyxkOi119rInj/ZwZTzNW36SJU
-         zOAiCKkvssKJ1wE+xBl0HtZr764s3Ff1H/kOffjzcxNvV173AIG2cUVl+k5smSeZiawl
-         4TeyFdgGBWFuXySoTQ3q2o2q5StVqiXsYQI9Y+N+w6JHvI7C3CyJEpp6izCRyJRwaRTM
-         qtlU5Aa8kwLr1fBUwjJ7IRaDqmL+cdm6jWcT81SjyNchjUMjJoEhPJOf+sTsXJrHL1TC
-         WoFDgfqc0b2P2xUhWyoILYB+dLZr76YqsTePJBbRPizG9oGjxeFgzOrmZzzg+DNtyHXt
-         yt7w==
-ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=mime-version:content-transfer-encoding:wdcipoutbound
-         :content-language:accept-language:references:message-id:date
-         :thread-index:thread-topic:subject:cc:to:from:dkim-signature
-         :ironport-sdr:dkim-signature;
-        bh=BRhuZcN1E/O4xAIEIK5Lr6AVcdJOpZNP3j+CspGWVo0=;
-        b=xd0F/wmAnxaT03pAnrK48y9mH9sMqrIixCcjNsqz92hQCtnlbm7ZpGvU2e3j+Kdh6h
-         Dw+5DbZAFZoe7UzXqUhv+kEDqIzLdFATEwGHG6htFczl5zKJG0EwEE7uiydDsZ+FGCj5
-         zbIsQcXvnjSmFS3Ik4afa8AFJDbNyRKVlxkdfXZPXjQSAiP0DsRpbxKV73hZQcvA9Dzo
-         o/5Xp1iXKHwZ0YYMF8VjCRxs4mZm21N2/HwSsS3osq1xrcJWDSe9Hj9CiA2X2Wsub5EM
-         aYNe7qAUj4zCM0fdZ6J7PlhYq/fRmN5pBZ60xNj0KTuW/HBg5+ul+OdPyKEPpothDYHd
-         XhJA==
-ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@wdc.com header.s=dkim.wdc.com header.b=FO9fCVj+;
-       dkim=pass header.i=@sharedspace.onmicrosoft.com header.s=selector2-sharedspace-onmicrosoft-com header.b=CSN3U2oF;
-       arc=pass (i=1 spf=pass spfdomain=wdc.com dkim=pass dkdomain=wdc.com dmarc=pass fromdomain=wdc.com);
-       spf=pass (google.com: domain of prvs=1703f4a22=damien.lemoal@wdc.com designates 216.71.154.42 as permitted sender) smtp.mailfrom="prvs=1703f4a22=Damien.LeMoal@wdc.com";
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=wdc.com
-Received: from esa4.hgst.iphmx.com (esa4.hgst.iphmx.com. [216.71.154.42])
-        by mx.google.com with ESMTPS id m21si12359118pls.85.2019.09.30.19.09.51
+        b=q8KSkoKe1ilY+BhgVQQoPbEBzo2c3ClBZO0CVVWdsLpwJC59EWpJ3vnKC02dmslX44
+         hsCwRk9t5fPbZb/mHzYuT+JLgHgG+oPUwsQ0neBSNDcZBfc6ewsS5aoexHnGBrF7SZdO
+         MhHx/PZXkQsj5bC5R9eToA8mJmIZVRvc1RnBMA8CfH8851wZljkWr9T3zYnX9U5PM6RU
+         1bb5VzXp2bl+GkDpH6QMZEhAmxqfSmrBQLdVX26I0Cn8zwYsnbFMbozW7QxUzvA41/a7
+         KTBzSmbyf8MC010rZx6cgVb+Fou6Wa6202qwhm+KGWSpx3oOdQ33WFyzr3mbbtjGTNEi
+         00Ig==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:user-agent:message-id:in-reply-to:date:references
+         :organization:from:subject:cc:to:dkim-signature;
+        bh=7kIF+U2fEr8Xor0GAijaSJqUd6owDJUXOVGRYo8n0Mc=;
+        b=Mz/KLjdk2CMcQEG1WZK2UDCAj4qxGIOPQ0uB1McN+z5RC5/ZExlXmq+Jp63xrTM5Bp
+         Dc22oJECU4EKpsMC4sVPA/L0ysj+nmN2HxqWrbgzxOP+/24zQOvLKz7WVDz83yckPP5z
+         QSLqQ+9nf5+U8SS78F2qE3cKrGkmwTieH2r2NQCDhGB4xvNcyuzqhrNQh/KRvdbwBsSw
+         1Iby+Vau+YHgoMW9Cl1DJIAd/3XDAgeuGkujsGM+sWEFNrglmGiwnhtMUTYtXofVwr6l
+         p9/YOiLwDQ6/Jy8bWtMCr5KPNIgSpHGmS6CB3HbtJ+WNfpAUg8w2UcXQed8A5mnct0qb
+         xCSA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@oracle.com header.s=corp-2019-08-05 header.b=ahcjE+zs;
+       spf=pass (google.com: domain of martin.petersen@oracle.com designates 156.151.31.86 as permitted sender) smtp.mailfrom=martin.petersen@oracle.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=oracle.com
+Received: from userp2130.oracle.com (userp2130.oracle.com. [156.151.31.86])
+        by mx.google.com with ESMTPS id p12si20734961ios.161.2019.09.30.20.36.23
         for <usb-storage@lists.one-eyed-alien.net>
         (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
-        Mon, 30 Sep 2019 19:09:51 -0700 (PDT)
-Received-SPF: pass (google.com: domain of prvs=1703f4a22=damien.lemoal@wdc.com designates 216.71.154.42 as permitted sender) client-ip=216.71.154.42;
-IronPort-SDR: aHMxlB1lBiVmaLKxCxphi8HjV5obV4QAHYMtJR0pXbdpR7zZVW0n9jLa1ITS4Kf2hNEfYt7lNO
- 2eVGtETat5uLCAA0yiZclX1VwM+Hf81w+6R4b2wJZWI3Fwvz/NUa8djHXok3MLiaQZMuEK0Vtq
- 3Cn/247A6cfEzM/nyogj8mXJszvAafBlNctvVV7PCszOm6TlUwGGRzVY7d6YMJQtpl6F8SlvdB
- fk3WkMnXGr2w1A5jWuyC3Gcs8L3rtuIOslgCXR0tKy3KVLtVxsScUTt94sfzycUkihlqakICVZ
- /eQ=
-X-IronPort-AV: E=Sophos;i="5.64,569,1559491200"; 
-   d="scan'208";a="119490020"
-Received: from mail-sn1nam04lp2056.outbound.protection.outlook.com (HELO NAM04-SN1-obe.outbound.protection.outlook.com) ([104.47.44.56])
-  by ob1.hgst.iphmx.com with ESMTP; 01 Oct 2019 10:09:49 +0800
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=GIabU/iG/3VLv44gXth+6ABGnpRaJX2iC2qHHJ0j6XzRuSNBTF2KuX/Tp4W2WtXWL89h4IeHU/TLmh9LfdQgI7pBCgt3oTEXfI2JOiRF7N/upgDODSNKFdTi51daVki2UGZaaRdEjLKd1ZAjvcsqA77b4yBdqJJkCyjogfp/r+3ir+4ZstsC65i1Gh2+nD7GAXa4/2RaHHCOo1AVYAqihDHZzleGVhAK3p8RtuXSlBFMiSGwahIPUQ2pcW7TgN+8V0NRPHJP+he4C0ml7Vf/S07u7YGW/ZqwWcOwK2bXmpJrtUOhgx44j4iiMrqU+gSL63OSnYeZE3xcvn93ndYmnQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=BRhuZcN1E/O4xAIEIK5Lr6AVcdJOpZNP3j+CspGWVo0=;
- b=e/9BPpDUsw4lRIGHMRDLOwT6iZ8n3OFCfZog+IE+otAIiWow4iMsn5um5kvZzH4Ba5dutfE1j1iboEhhybBvM2fkIqvKHnaZBVfDcfiBBHqbd3Y2EYwbf1WfVRXAJksnU91qR5x6kgH47RCMxETu4ZKT6vLO8aR86FaDpaC4puy7xEYRgxuAuuQmR58orY8W+vvMAmUwG7Er6qsz8MkPi354CqgqXIjaOHqXJLVUyeAt+pmy7fTwS++Hqvvff/rJfNvYeyUga0aJW+14reOedk7p65cW/YbABIKaW2SqNYHSbpXhYv4Btgadi0EjP6JzoDW7y1+pdaIqIP1kRblLeA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=wdc.com; dmarc=pass action=none header.from=wdc.com; dkim=pass
- header.d=wdc.com; arc=none
-Received: from BYAPR04MB5816.namprd04.prod.outlook.com (20.179.59.16) by
- BYAPR04MB5480.namprd04.prod.outlook.com (20.178.197.205) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2305.17; Tue, 1 Oct 2019 02:09:43 +0000
-Received: from BYAPR04MB5816.namprd04.prod.outlook.com
- ([fe80::84c4:833e:ec0b:5053]) by BYAPR04MB5816.namprd04.prod.outlook.com
- ([fe80::84c4:833e:ec0b:5053%2]) with mapi id 15.20.2305.017; Tue, 1 Oct 2019
- 02:09:43 +0000
-From: Damien Le Moal <Damien.LeMoal@wdc.com>
-To: Finn Thain <fthain@telegraphics.com.au>
-CC: "linux-scsi@vger.kernel.org" <linux-scsi@vger.kernel.org>, "Martin K .
- Petersen" <martin.petersen@oracle.com>, "linux-usb@vger.kernel.org"
-	<linux-usb@vger.kernel.org>, "usb-storage@lists.one-eyed-alien.net"
-	<usb-storage@lists.one-eyed-alien.net>, Alan Stern
-	<stern@rowland.harvard.edu>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Justin Piszcz <jpiszcz@lucidpixels.com>
-Subject: [usb-storage] Re: [PATCH V2] scsi: save/restore command resid for
- error handling
-Thread-Topic: [PATCH V2] scsi: save/restore command resid for error handling
-Thread-Index: AQHVdYErv4G7y50U7UCkETxGlX0DaQ==
-Date: Tue, 1 Oct 2019 02:09:43 +0000
-Message-ID: <BYAPR04MB5816FBEE392BE5E4BCF14B96E79D0@BYAPR04MB5816.namprd04.prod.outlook.com>
-References: <20190927221602.27080-1-damien.lemoal@wdc.com>
- <alpine.LNX.2.21.1910011011410.13@nippy.intranet>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [83.175.114.56]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 89ec00cc-df26-4eca-1140-08d746146cff
-x-ms-office365-filtering-ht: Tenant
-x-ms-traffictypediagnostic: BYAPR04MB5480:
-x-microsoft-antispam-prvs: <BYAPR04MB548055E69FBD4356C93C752BE79D0@BYAPR04MB5480.namprd04.prod.outlook.com>
-wdcipoutbound: EOP-TRUE
-x-ms-oob-tlc-oobclassifiers: OLM:10000;
-x-forefront-prvs: 0177904E6B
-x-forefront-antispam-report: SFV:NSPM;SFS:(10019020)(4636009)(376002)(136003)(396003)(39860400002)(346002)(366004)(189003)(199004)(54906003)(7696005)(102836004)(6436002)(9686003)(229853002)(86362001)(25786009)(66066001)(6116002)(2906002)(3846002)(186003)(6916009)(55016002)(6246003)(76176011)(53546011)(6506007)(478600001)(26005)(4326008)(5660300002)(8936002)(8676002)(14454004)(81156014)(81166006)(52536014)(99286004)(7736002)(316002)(91956017)(446003)(14444005)(305945005)(71200400001)(74316002)(76116006)(71190400001)(66946007)(64756008)(66476007)(66446008)(256004)(66556008)(33656002)(486006)(476003);DIR:OUT;SFP:1102;SCL:1;SRVR:BYAPR04MB5480;H:BYAPR04MB5816.namprd04.prod.outlook.com;FPR:;SPF:None;LANG:en;PTR:InfoNoRecords;MX:1;A:1;
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: CcvJ1ZHkptQtlPtwAeyoR+LvefESzrBxnRXfs3cRrw/K+jQrqgSkQq0wO7UHwrGxUsT2Z5ZhbJ4bXwM6PJQP/EFXAHjYEqQQ03y53sp4nX+b0Vmu7EgHFPY1dB5CGl9HUsxrs7+LmpGVH5sVB9CCVVvLUz2KjrtnClebKTaPwrwWOGrcIiAZx/XwpSsOCJrhGUKXX4YN2G5JzEHlsna+spcPVS3kFziyzJPmO4Z3lPHaHI2A7QMk59/wH9jL1AHR9c6OuZ4lE1UtKpRMGR7V6ib+YUSGeWeL6dDTUrOTzgopvB121bC1uxmWIjsTK66N8+PxZ4TQVpwgVhwXDt/Ndv1oXWvxp1nfqHNCiAIsagMVFPlON5LZqLJaPZM73DCuvmI7kn1wmXWA/LOqL5ct4wxTw6jCs8kOf2Nz9q1ZlXw=
-x-ms-exchange-transport-forked: True
-Content-Type: text/plain; charset="UTF-8"
+        Mon, 30 Sep 2019 20:36:23 -0700 (PDT)
+Received-SPF: pass (google.com: domain of martin.petersen@oracle.com designates 156.151.31.86 as permitted sender) client-ip=156.151.31.86;
+Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
+	by userp2130.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x913YisA149006;
+	Tue, 1 Oct 2019 03:36:20 GMT
+Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
+	by userp2130.oracle.com with ESMTP id 2v9xxuk042-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+	Tue, 01 Oct 2019 03:36:20 +0000
+Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
+	by aserp3030.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x913XsNb099032;
+	Tue, 1 Oct 2019 03:36:19 GMT
+Received: from aserv0122.oracle.com (aserv0122.oracle.com [141.146.126.236])
+	by aserp3030.oracle.com with ESMTP id 2vbsm14x1j-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+	Tue, 01 Oct 2019 03:36:19 +0000
+Received: from abhmp0019.oracle.com (abhmp0019.oracle.com [141.146.116.25])
+	by aserv0122.oracle.com (8.14.4/8.14.4) with ESMTP id x913aGoW024809;
+	Tue, 1 Oct 2019 03:36:16 GMT
+Received: from ca-mkp.ca.oracle.com (/10.159.214.123)
+	by default (Oracle Beehive Gateway v4.0)
+	with ESMTP ; Mon, 30 Sep 2019 20:36:16 -0700
+To: Oliver Neukum <oneukum@suse.com>
+Cc: martin.petersen@oracle.com, jejb@linux.ibm.com, linux-scsi@vger.kernel.org,
+        usb-storage@lists.one-eyed-alien.net, stern@rowland.harvard.edu
+Subject: [usb-storage] Re: [PATCH] scsi: ignore a failure to synchronize cache
+ due to lack of authorization
+From: "Martin K. Petersen" <martin.petersen@oracle.com>
+Organization: Oracle Corporation
+References: <20190903101840.16483-1-oneukum@suse.com>
+Date: Mon, 30 Sep 2019 23:36:14 -0400
+In-Reply-To: <20190903101840.16483-1-oneukum@suse.com> (Oliver Neukum's
+	message of "Tue, 3 Sep 2019 12:18:39 +0200")
+Message-ID: <yq1lfu5w30x.fsf@oracle.com>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1.92 (gnu/linux)
 MIME-Version: 1.0
-X-OriginatorOrg: wdc.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 89ec00cc-df26-4eca-1140-08d746146cff
-X-MS-Exchange-CrossTenant-originalarrivaltime: 01 Oct 2019 02:09:43.5951
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: b61c8803-16f3-4c35-9b17-6f65f441df86
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: x2tVsj6sz4xpx+7dzOJWENzp/qpG+s4r3OuK356QH0BqgqeBRxHiTifHXV3DNd8OYwUFA6iVZuLSUwWrSouwSQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR04MB5480
-X-Original-Sender: Damien.LeMoal@wdc.com
+Content-Type: text/plain; charset="UTF-8"
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9396 signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0 malwarescore=0
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=740
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1908290000 definitions=main-1910010034
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9396 signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 priorityscore=1501 malwarescore=0
+ suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1011
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=827 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1908290000
+ definitions=main-1910010034
+X-Original-Sender: martin.petersen@oracle.com
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@wdc.com header.s=dkim.wdc.com header.b=FO9fCVj+;       dkim=pass
- header.i=@sharedspace.onmicrosoft.com header.s=selector2-sharedspace-onmicrosoft-com
- header.b=CSN3U2oF;       arc=pass (i=1 spf=pass spfdomain=wdc.com dkim=pass
- dkdomain=wdc.com dmarc=pass fromdomain=wdc.com);       spf=pass (google.com:
- domain of prvs=1703f4a22=damien.lemoal@wdc.com designates 216.71.154.42 as
- permitted sender) smtp.mailfrom="prvs=1703f4a22=Damien.LeMoal@wdc.com";
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=wdc.com
+ header.i=@oracle.com header.s=corp-2019-08-05 header.b=ahcjE+zs;
+       spf=pass (google.com: domain of martin.petersen@oracle.com designates
+ 156.151.31.86 as permitted sender) smtp.mailfrom=martin.petersen@oracle.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=oracle.com
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -198,96 +160,24 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On 2019/09/30 17:42, Finn Thain wrote:
-> On Sat, 28 Sep 2019, Damien Le Moal wrote:
-> 
->> When a non-passthrough command is terminated with CHECK CONDITION,
->> request sense is executed by hijacking the command descriptor. Since
->> scsi_eh_prep_cmnd() and scsi_eh_restore_cmnd() do not save/restore the
->> original command resid, the value returned on failure of the original
->> command is lost and replaced with the value set by the execution of the
->> request sense command. This value may in many instances be unaligned to
->> the device sector size, causing sd_done() to print a warning message
->> about the incorrect unaligned resid before the command is retried or
->> aborted.
->>
->> Fix this problem by saving the original command resid in struct
->> scsi_eh_save using scsi_eh_prep_cmnd() and restoring it in
->> scsi_eh_restore_cmnd(). In addition, to make sure that the request sense
->> command is executed with a correctly initialized command structure, also
->> reset resid to 0 in scsi_eh_prep_cmnd() after saving the original
->> command resid value in struct scsi_eh_save.
->>
->> Cc: stable@vger.kernel.org
->> Signed-off-by: Damien Le Moal <damien.lemoal@wdc.com>
->> ---
->>
->> Changes from V1:
->> * Dropped patch 2
->> * Add resid reset in scsi_eh_prep_cmnd()
->>
->>  drivers/scsi/scsi_error.c | 3 +++
->>  include/scsi/scsi_eh.h    | 1 +
->>  2 files changed, 4 insertions(+)
->>
->> diff --git a/drivers/scsi/scsi_error.c b/drivers/scsi/scsi_error.c
->> index 1c470e31ae81..f53828bf7ad7 100644
->> --- a/drivers/scsi/scsi_error.c
->> +++ b/drivers/scsi/scsi_error.c
->> @@ -967,6 +967,7 @@ void scsi_eh_prep_cmnd(struct scsi_cmnd *scmd, struct scsi_eh_save *ses,
->>  	ses->data_direction = scmd->sc_data_direction;
->>  	ses->sdb = scmd->sdb;
->>  	ses->result = scmd->result;
->> +	ses->resid = scsi_get_resid(scmd);
->>  	ses->underflow = scmd->underflow;
->>  	ses->prot_op = scmd->prot_op;
->>  	ses->eh_eflags = scmd->eh_eflags;
->> @@ -977,6 +978,7 @@ void scsi_eh_prep_cmnd(struct scsi_cmnd *scmd, struct scsi_eh_save *ses,
->>  	memset(scmd->cmnd, 0, BLK_MAX_CDB);
->>  	memset(&scmd->sdb, 0, sizeof(scmd->sdb));
->>  	scmd->result = 0;
->> +	scsi_set_resid(scmd, 0);
->>  
->>  	if (sense_bytes) {
->>  		scmd->sdb.length = min_t(unsigned, SCSI_SENSE_BUFFERSIZE,
->> @@ -1029,6 +1031,7 @@ void scsi_eh_restore_cmnd(struct scsi_cmnd* scmd, struct scsi_eh_save *ses)
->>  	scmd->sc_data_direction = ses->data_direction;
->>  	scmd->sdb = ses->sdb;
->>  	scmd->result = ses->result;
->> +	scsi_set_resid(scmd, ses->resid);
-> 
-> When saving and restoring state, perhaps it makes more sense to bypass the 
-> higher level getter/setter API? Open-coded assignment statements are 
-> already prevalent here, rather than calls to e.g. scsi_set_prot_op(), 
-> set_msg_byte() etc. (There may be no code elsewhere that could tell the 
-> difference, but we can't use "private" members to prove it, unlike C++.)
-> 
->>  	scmd->underflow = ses->underflow;
->>  	scmd->prot_op = ses->prot_op;
->>  	scmd->eh_eflags = ses->eh_eflags;
->> diff --git a/include/scsi/scsi_eh.h b/include/scsi/scsi_eh.h
->> index 3810b340551c..9caa9b262a32 100644
->> --- a/include/scsi/scsi_eh.h
->> +++ b/include/scsi/scsi_eh.h
->> @@ -32,6 +32,7 @@ extern int scsi_ioctl_reset(struct scsi_device *, int __user *);
->>  struct scsi_eh_save {
->>  	/* saved state */
->>  	int result;
->> +	unsigned int resid;
-> 
-> There seems to be an inconsistency here. A signed int would be consistent 
-> with the getter and setter helpers. Whereas, if you open-coded the 
-> assignments instead, your unsigned int would make sense because 
-> scsi_request.resid_len really is an unsigned int.
 
-All fair points. Sending a V3. Thanks !
+Oliver,
 
+> I've got a report about a UAS drive enclosure reporting back Sense:
+> Logical unit access not authorized if the drive it holds is password
+> protected. While the drive is obviously unusable in that state as a
+> mass storage device, it still exists as a sd device and when the
+> system is asked to perform a suspend of the drive, it will be sent a
+> SYNCHRONIZE CACHE. If that fails due to password protection, the error
+> must be ignored.  --- drivers/scsi/sd.c | 3 ++- 1 file changed, 2
+> insertions(+), 1 deletion(-)
+
+Applied to 5.4/scsi-fixes, thanks!
 
 -- 
-Damien Le Moal
-Western Digital Research
+Martin K. Petersen	Oracle Linux Engineering
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/BYAPR04MB5816FBEE392BE5E4BCF14B96E79D0%40BYAPR04MB5816.namprd04.prod.outlook.com.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/yq1lfu5w30x.fsf%40oracle.com.
