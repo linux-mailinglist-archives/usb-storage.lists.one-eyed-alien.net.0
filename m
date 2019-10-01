@@ -1,30 +1,30 @@
-Return-Path: <usb-storage+bncBAABBU5ZXLWAKGQEGCQGMKA@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBCILJWNIZYHBBDOCZLWAKGQEF6EYLHA@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-ot1-x345.google.com (mail-ot1-x345.google.com [IPv6:2607:f8b0:4864:20::345])
-	by mail.lfdr.de (Postfix) with ESMTPS id 583E9C0E57
-	for <lists+usb-storage@lfdr.de>; Sat, 28 Sep 2019 01:35:49 +0200 (CEST)
-Received: by mail-ot1-x345.google.com with SMTP id a8sf2236995otd.7
-        for <lists+usb-storage@lfdr.de>; Fri, 27 Sep 2019 16:35:49 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1569627348; cv=pass;
+Received: from mail-io1-xd45.google.com (mail-io1-xd45.google.com [IPv6:2607:f8b0:4864:20::d45])
+	by mail.lfdr.de (Postfix) with ESMTPS id 79536C2B64
+	for <lists+usb-storage@lfdr.de>; Tue,  1 Oct 2019 02:42:54 +0200 (CEST)
+Received: by mail-io1-xd45.google.com with SMTP id u18sf34757801ioc.4
+        for <lists+usb-storage@lfdr.de>; Mon, 30 Sep 2019 17:42:54 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1569890573; cv=pass;
         d=google.com; s=arc-20160816;
-        b=AMAEkJFpISMyXmjuc8o0rXKWcSfPgE5k8qo6emxcC7bsH8nY7YhmUstWQru7tuyk8v
-         ZP9ZXoq+63hIk1LUYgZoCeysZoFM4NSgoxbTmHnJ8yCZ4v3E6zFAMQaFwnZ32nWwOBS8
-         QS3ah08NWqdtsf9638BxQs9YFuk9RUncVH+3QQx/yuhmhbNaNEAGhG7ueA3LjEFoblA3
-         uvSMa5OzhOXWoZ44h2b8+zieW7ZthG6Z7NMtTAWIPOQ/2J5BqQ7wcrA+Ba89OacMuytq
-         ACLJi9bkHkpwJ494vvlsfidOBusD5QFAOCEkgza5AR2AeCg2akkdCzCSu4CtCbSxQGXq
-         9bsg==
+        b=iXFOYSUhC8aI2b95A+pasy6SD8P8ENiG208zq6bVfzVf7wWlvhF36jRDX7E/GP/WF2
+         SOi73p3H2njsQW+25Utz8Hp6mqWI/2VsGFFbogDImg5YwPZ4CnhRRU+zgOlxTayLdDP3
+         dGKtY+JRQCwTapeofpZuv+njTqd/iGVCZkttZLaZqhbKKOj4CG+5/QluYju2j6cdrD8m
+         Ge0zUsnmDfQF0QwFyaHGgZQPBi3OKWIYkYVz4BkpT0Z2ksaypAfY0Vkl7YmNJz+wvtRY
+         IfMxkMJCz9fQxcmsyK5xBUdNQqZ3HE8KhMUUw4MlM3nw3RExEaEtEAtLpJTNhPoEqawj
+         IBYw==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:mime-version:references:message-id
          :in-reply-to:subject:cc:to:from:date:sender:dkim-signature;
-        bh=Xkv9joO+nEGPMZYS8gINK3jwSNzQ9byxlrGWubSk96c=;
-        b=tYuxzAX7Cp8nxZuulSNVb4K7UZJbOhrW1BX/tJ+LdFKVWYS9Dl/iyeeg4aWk3Wi34O
-         lel7gkryDB9hO5cdBHzhnjMA9s6l37hXSWYw9sAvaOyQhMypUpctTaKpiO2xTHHP4vxe
-         yGOVDCAAOtFUMC+eGshKJBrADfDNtBhPFvS0oDHUyKdFsEOmQ7pmlg75fZQOXpZIjdoT
-         ep8YLVX4cmOlQzp3ZHx4jywnKBcjX0Kxz2MRvnik8Wml9lSfvDyK88eSU5s2kK0Tk0tk
-         VU0Pt0dvKwywzHTuORHFmF0wdH5ZEmnzUYVNHMfJ7xIaYLTQv/SG1SqFcBVJrc7fjKHK
-         SQLA==
+        bh=UBEYtP16w0nC8UEbGD59HA96KSF//YXLJJSN2gsjKfQ=;
+        b=BfuQ6F+IOUjxEc6yJRw9XZKkM8+Dr9ovfuUaHc3lwsKfoOJ45tS3a6WK4Z5Imst35p
+         t3xRNiAd7Gl0TIfFVJKrXoCXF4WOMlFCUmfqCyXMo9EWiBYpxoi7FlySfoHG6o6gYQlY
+         MRWzthOaExi5iTCCVtHuLmCCJXdHfbWRwOGZsY640saFJg1/f6Y0Xy9dQ0STDQzfFaxu
+         TInvKaTpkf8ARqC9yk637eLNOpR71GurdIxpTBPgAUCWCGAnz7dvvyOluf+9A0VpI2xG
+         nKoVA2IzZPWJo6tAx3keRw+5/vZyp9dMOceaQLVv9g/5+JNUNmPaoUKc4Swn3fAVd+g3
+         3Wag==
 ARC-Authentication-Results: i=2; mx.google.com;
        spf=pass (google.com: best guess record for domain of fthain@telegraphics.com.au designates 98.124.60.144 as permitted sender) smtp.mailfrom=fthain@telegraphics.com.au
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
@@ -33,79 +33,77 @@ DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
          :mime-version:x-original-sender:x-original-authentication-results
          :precedence:mailing-list:list-id:list-post:list-help:list-archive
          :list-subscribe:list-unsubscribe;
-        bh=Xkv9joO+nEGPMZYS8gINK3jwSNzQ9byxlrGWubSk96c=;
-        b=Q7wr5ehwXcwdr2x3nqNrqzsydmBLZ9o3Ijq24O0W8v4QhYtfGrbB5ZqBeQEn/LFTgs
-         JkRqavyCjR8MDHL4ZCP/Y6PK06wD4V+S3SByqT9mlPF8+kOWuXiWS5C5CHcQYPXhbp4H
-         FC/E10P5eDCagOHgAs1Acm1HIX0Ek4RCD0DpY=
+        bh=UBEYtP16w0nC8UEbGD59HA96KSF//YXLJJSN2gsjKfQ=;
+        b=DtvpcNs4mDZbHZ62xjtKTJbx9OdB8UchwgWguPCqdmDPBgPEwuME/wduAfAObAekOi
+         /PWZjVkLoDH1fk5lPZquhtPfieibeGHLKtKV33PhyJH3wM4rQbjI14IraLNKBAPdIy1W
+         jLTeQtXQBcVg+nNaNeSLYIyRPxaoE1/JXVNsk=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
         h=sender:x-gm-message-state:date:from:to:cc:subject:in-reply-to
          :message-id:references:mime-version:x-original-sender
          :x-original-authentication-results:precedence:mailing-list:list-id
-         :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
-        bh=Xkv9joO+nEGPMZYS8gINK3jwSNzQ9byxlrGWubSk96c=;
-        b=ahNchMxbxrocs0yUWYiVkKGnmkIL5vw2u/AJYMkS/dpTTAcTgTpkpEqhmCUyhpKulu
-         bEZy87ebf2Cy/iahDEwDIYPhSfWZsFGRM3GL3GMUN8dqH1pw2qbJKtBf/2rmet7FWbrH
-         MnhWrRZuKes4j+FqyQsDIfPMhRgMQ7MCr6e+Kxxbn8wKzGK2Fz1psxPsj3d1hQ0ctLby
-         +h+OjmjkHGR3pGY3agmuAxgQcuVIpL6XR8qg3UDoTNZLDTuoJ0zLkMjSegNB9NbpISvo
-         sYtg5BwVzGKTORQs7Dp1ko13Pu6Cj2uT8AcHuFwc/BYdpDIsNOEspjQLXzi1j6ADXBJu
-         T9FQ==
+         :x-spam-checked-in-group:list-post:list-help:list-archive
+         :list-subscribe:list-unsubscribe;
+        bh=UBEYtP16w0nC8UEbGD59HA96KSF//YXLJJSN2gsjKfQ=;
+        b=ds+NxWVcSrTPnz2dzWgOR49a8YhDnJ5QP5HsFkL652BO9hdoDSmy8ArpA9pA/IFghD
+         O8V1g5qeEf+TRLBqNZF6EPAI/WigdC8URobllIwqNcvadvl275Sqc/dV7fJck1D3DkMn
+         JumAXarrQRvf4mzu/4uBP/YBqZ2l553Nk0KWaZ1yjUYIYp+Wi5lvM/NW6/VK4PEPG8oN
+         bJ+rjT5OxaKBoe3iyEHbAzsbzOQRDsp7X8C+j22kfnOdqNFJqaCQekKF2ivlypP7G/Pw
+         pJ/FdXq/t2TzQLNcHORMX1n3lN0sh4TRWTJEEDrAfBxR6a3goiCmC+T52nqxNve0NHST
+         Chpg==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: APjAAAVNrmVIkYGWXdpy1EGGheuGhZ341IdCrMBgDQmYY5oPRBo0N/NX
-	c/2JlVVbspxdCUGHsl0H+1DC3A==
-X-Google-Smtp-Source: APXvYqyUIYqQXcpsK1jjDuJf/tKwukw5hyDdzitpUFkNZyPuZJjOY5YawdkMeGasfUv5uHvHDfeXqQ==
-X-Received: by 2002:a05:6830:1592:: with SMTP id i18mr5502039otr.92.1569627347985;
-        Fri, 27 Sep 2019 16:35:47 -0700 (PDT)
+X-Gm-Message-State: APjAAAX6KYDp1GRtMKCRgCHS25tLKMKutZHjJiLtgrh2UJQk+I+1WTPr
+	01Ascm5J/4P/JGmkdq5RXarCzQ==
+X-Google-Smtp-Source: APXvYqxmQsNPWr0zLnMlQZR+WoskeNcOEdj0lrR1ks4uU8FQIOtSK4BzfWDcePI2YcyuEavH9rpVUA==
+X-Received: by 2002:a5e:d502:: with SMTP id e2mr23101992iom.279.1569890573349;
+        Mon, 30 Sep 2019 17:42:53 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a9d:4783:: with SMTP id b3ls747668otf.5.gmail; Fri, 27 Sep
- 2019 16:35:47 -0700 (PDT)
-X-Received: by 2002:a9d:4717:: with SMTP id a23mr5471618otf.128.1569627347782;
-        Fri, 27 Sep 2019 16:35:47 -0700 (PDT)
-Received: by 2002:aca:90d:0:0:0:0:0 with SMTP id 13msoij;
-        Fri, 27 Sep 2019 16:33:55 -0700 (PDT)
-X-Received: by 2002:a92:1598:: with SMTP id 24mr7461140ilv.60.1569627235312;
-        Fri, 27 Sep 2019 16:33:55 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1569627235; cv=none;
+Received: by 2002:a02:6a0c:: with SMTP id l12ls1599301jac.16.gmail; Mon, 30
+ Sep 2019 17:42:52 -0700 (PDT)
+X-Received: by 2002:a02:55c4:: with SMTP id e187mr22396021jab.32.1569890572503;
+        Mon, 30 Sep 2019 17:42:52 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1569890572; cv=none;
         d=google.com; s=arc-20160816;
-        b=J7bw7QoUL4cwLZGUXKG01/ZmgFQjxmPYeQUbinKfejDUbIQ/198bSZ7IZeM7OzAmf0
-         5bKzSL9NSZ8AkOv+LD6sR+1o4otRTO/cNo0wIjgvU5zRei7laHsFYfqMZcTBQRh5/DtP
-         aikeWpwsXdH94lnck9dAj6nmMk3qjK+oVmjDa8RFEGoGOeib15IUCingtF+hh29cjg3T
-         mDoIib6xWvgOT/TepQi81g8urnBPjVblUXktHlD/6GASYnZmrZlwAPbRaOIDeuUYx9NU
-         lcJVR2ubV7toFKsTU34xNOSyq+IU6BOfjraraip0T/+P2S/xjde+ysQMHCFerc0f2Bjg
-         dDCQ==
+        b=dylfJNGp5catJyV3b9LBmqMLkUBkuhboP0Vj7nCWQNM+jggWiLVuWgy4qL8+6vLD3X
+         BrNDnGobfW54ggb/fdMZmA/qyGrO/0WRF2+B811PBwHKJcbzO91AFghdUYiqQ9x320kz
+         d6BVcZsD3hd4FW7hFPmtU04oq9FUBlPmHRjlpSHFKtY+k87XvXLJ2s+YSkL8Xy0G1ih9
+         edZnPuWDVXvCUq6zVoXnySXtUJcpnL7NkPDMol9eV7ulfMH837GcqD7hSofo4mLk68Kn
+         FXfr3m4LlSlfpTmiJsZr5MaassZCIps7JJI5jhc04brJk5ucyzyFhc01Ie8wMPkq/E5w
+         zj0g==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=mime-version:references:message-id:in-reply-to:subject:cc:to:from
          :date;
-        bh=fXr2lpqfCEFUBt6WUGyEp2ax/jKwrahEDG8qlbbM/zg=;
-        b=be50OG5CVAfsQ4f4SK2/5Q427Ak0n9Chjswo2cB5szQvSlByrYUw0UwTwVQ9wOl412
-         YHJcDPjSMt1K+es/IHPkntYMXFUSZVGD3jl1LaeEPg77WVILtDAX3fTLktQtpKQIwLvB
-         68uqJNT/bpZwBcVAODUe2oM/FUgMbql5Rd3uRjdEyGlviXKF8swzLr8WjPzsJ1MqL2JW
-         3e50prz17BLSfmvzQOAjD6UPKBS/dgn8E21DI6eXawiirTgY/nAg9o5d5K5PIR23jfDt
-         yahF8cnDHmB8cLbrQBKQS7GZca6vxRs2ima8gx8g71PmQe5o41ZXsQ8q0oRd0QiEIUWr
-         rPIg==
+        bh=5IZNPvGoeOtcxOSc3Q1U1vCu7CkKxZ9f6lm9kTrQb78=;
+        b=GbniFgBoEILMXJPFCcvSUN8ve2EHlfhSpUoIJA0M79V5NZAsfV6RmXdQPabpJ0keIZ
+         mGyc80NKBDTP/S1ckkYg7edlWEc9nTKZf2l92cUUkiE5YcGYovtmOJFSqTgjKDbFFui5
+         0OtK+I9ohEVdUxmJNHiedptGXgP5gPHZibBNbJuHcxoQWTcHbZF9LkhOceGj75HOATm7
+         ow3tjUrfLx8DwJtSxLTcowGcS5qZR3/eW+HF5M+WE1ZRl2ydYYzjp/oY/9+Ixo1FL9QD
+         Lfum3Da6IUfgBEikUCgA0Z5ThMG5B8AxdNJAL3C72+o0STOeWg3dIcvW5nQVsDAY5XdU
+         W2fg==
 ARC-Authentication-Results: i=1; mx.google.com;
        spf=pass (google.com: best guess record for domain of fthain@telegraphics.com.au designates 98.124.60.144 as permitted sender) smtp.mailfrom=fthain@telegraphics.com.au
 Received: from kvm5.telegraphics.com.au (kvm5.telegraphics.com.au. [98.124.60.144])
-        by mx.google.com with ESMTP id b2si5041956ilf.117.2019.09.27.16.33.55
+        by mx.google.com with ESMTP id b3si18797531ion.94.2019.09.30.17.42.52
         for <usb-storage@lists.one-eyed-alien.net>;
-        Fri, 27 Sep 2019 16:33:55 -0700 (PDT)
+        Mon, 30 Sep 2019 17:42:52 -0700 (PDT)
 Received-SPF: pass (google.com: best guess record for domain of fthain@telegraphics.com.au designates 98.124.60.144 as permitted sender) client-ip=98.124.60.144;
 Received: from localhost (localhost.localdomain [127.0.0.1])
-	by kvm5.telegraphics.com.au (Postfix) with ESMTP id 6F79829F44;
-	Fri, 27 Sep 2019 19:33:51 -0400 (EDT)
-Date: Sat, 28 Sep 2019 09:33:59 +1000 (AEST)
+	by kvm5.telegraphics.com.au (Postfix) with ESMTP id 8D90B27E62;
+	Mon, 30 Sep 2019 20:42:48 -0400 (EDT)
+Date: Tue, 1 Oct 2019 10:42:48 +1000 (AEST)
 From: Finn Thain <fthain@telegraphics.com.au>
-To: Alan Stern <stern@rowland.harvard.edu>
-cc: Douglas Gilbert <dgilbert@interlog.com>, 
-    Damien Le Moal <damien.lemoal@wdc.com>, linux-scsi@vger.kernel.org, 
+To: Damien Le Moal <damien.lemoal@wdc.com>
+cc: linux-scsi@vger.kernel.org, 
     "Martin K . Petersen" <martin.petersen@oracle.com>, 
     linux-usb@vger.kernel.org, usb-storage@lists.one-eyed-alien.net, 
+    Alan Stern <stern@rowland.harvard.edu>, 
     Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
     Justin Piszcz <jpiszcz@lucidpixels.com>
-Subject: [usb-storage] Re: [PATCH 0/2] Fix SCSI & USB Storage CHECK CONDITION handling
-In-Reply-To: <Pine.LNX.4.44L0.1909271004470.1698-100000@iolanthe.rowland.org>
-Message-ID: <alpine.LNX.2.21.1909280906530.76@nippy.intranet>
-References: <Pine.LNX.4.44L0.1909271004470.1698-100000@iolanthe.rowland.org>
+Subject: [usb-storage] Re: [PATCH V2] scsi: save/restore command resid for
+ error handling
+In-Reply-To: <20190927221602.27080-1-damien.lemoal@wdc.com>
+Message-ID: <alpine.LNX.2.21.1910011011410.13@nippy.intranet>
+References: <20190927221602.27080-1-damien.lemoal@wdc.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="UTF-8"
 X-Original-Sender: fthain@telegraphics.com.au
@@ -115,6 +113,7 @@ X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
+X-Spam-Checked-In-Group: usb-storage@lists.one-eyed-alien.net
 X-Google-Group-Id: 960895140360
 List-Post: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/post>,
  <mailto:usb-storage@lists.one-eyed-alien.net>
@@ -126,39 +125,95 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-[snipped selective measurements of word usage]
+On Sat, 28 Sep 2019, Damien Le Moal wrote:
 
-On Fri, 27 Sep 2019, Alan Stern wrote:
-
+> When a non-passthrough command is terminated with CHECK CONDITION,
+> request sense is executed by hijacking the command descriptor. Since
+> scsi_eh_prep_cmnd() and scsi_eh_restore_cmnd() do not save/restore the
+> original command resid, the value returned on failure of the original
+> command is lost and replaced with the value set by the execution of the
+> request sense command. This value may in many instances be unaligned to
+> the device sector size, causing sd_done() to print a warning message
+> about the incorrect unaligned resid before the command is retried or
+> aborted.
 > 
-> So I guess this was never defined precisely.
+> Fix this problem by saving the original command resid in struct
+> scsi_eh_save using scsi_eh_prep_cmnd() and restoring it in
+> scsi_eh_restore_cmnd(). In addition, to make sure that the request sense
+> command is executed with a correctly initialized command structure, also
+> reset resid to 0 in scsi_eh_prep_cmnd() after saving the original
+> command resid value in struct scsi_eh_save.
 > 
+> Cc: stable@vger.kernel.org
+> Signed-off-by: Damien Le Moal <damien.lemoal@wdc.com>
+> ---
+> 
+> Changes from V1:
+> * Dropped patch 2
+> * Add resid reset in scsi_eh_prep_cmnd()
+> 
+>  drivers/scsi/scsi_error.c | 3 +++
+>  include/scsi/scsi_eh.h    | 1 +
+>  2 files changed, 4 insertions(+)
+> 
+> diff --git a/drivers/scsi/scsi_error.c b/drivers/scsi/scsi_error.c
+> index 1c470e31ae81..f53828bf7ad7 100644
+> --- a/drivers/scsi/scsi_error.c
+> +++ b/drivers/scsi/scsi_error.c
+> @@ -967,6 +967,7 @@ void scsi_eh_prep_cmnd(struct scsi_cmnd *scmd, struct scsi_eh_save *ses,
+>  	ses->data_direction = scmd->sc_data_direction;
+>  	ses->sdb = scmd->sdb;
+>  	ses->result = scmd->result;
+> +	ses->resid = scsi_get_resid(scmd);
+>  	ses->underflow = scmd->underflow;
+>  	ses->prot_op = scmd->prot_op;
+>  	ses->eh_eflags = scmd->eh_eflags;
+> @@ -977,6 +978,7 @@ void scsi_eh_prep_cmnd(struct scsi_cmnd *scmd, struct scsi_eh_save *ses,
+>  	memset(scmd->cmnd, 0, BLK_MAX_CDB);
+>  	memset(&scmd->sdb, 0, sizeof(scmd->sdb));
+>  	scmd->result = 0;
+> +	scsi_set_resid(scmd, 0);
+>  
+>  	if (sense_bytes) {
+>  		scmd->sdb.length = min_t(unsigned, SCSI_SENSE_BUFFERSIZE,
+> @@ -1029,6 +1031,7 @@ void scsi_eh_restore_cmnd(struct scsi_cmnd* scmd, struct scsi_eh_save *ses)
+>  	scmd->sc_data_direction = ses->data_direction;
+>  	scmd->sdb = ses->sdb;
+>  	scmd->result = ses->result;
+> +	scsi_set_resid(scmd, ses->resid);
 
-The O.E.D. defines these terms:
+When saving and restoring state, perhaps it makes more sense to bypass the 
+higher level getter/setter API? Open-coded assignment statements are 
+already prevalent here, rather than calls to e.g. scsi_set_prot_op(), 
+set_msg_byte() etc. (There may be no code elsewhere that could tell the 
+difference, but we can't use "private" members to prove it, unlike C++.)
 
-	residual
-	a. [...]
-	n. 1. a quantity remaining after other things have been subtracted 
-	      or allowed for. [...]
-	   2. [...]
-	   3. [...]
+>  	scmd->underflow = ses->underflow;
+>  	scmd->prot_op = ses->prot_op;
+>  	scmd->eh_eflags = ses->eh_eflags;
+> diff --git a/include/scsi/scsi_eh.h b/include/scsi/scsi_eh.h
+> index 3810b340551c..9caa9b262a32 100644
+> --- a/include/scsi/scsi_eh.h
+> +++ b/include/scsi/scsi_eh.h
+> @@ -32,6 +32,7 @@ extern int scsi_ioctl_reset(struct scsi_device *, int __user *);
+>  struct scsi_eh_save {
+>  	/* saved state */
+>  	int result;
+> +	unsigned int resid;
 
-and
-
-	residue
-	n. a small amount of something that remains after the main part 
-	   has gone or been taken or used.
-
-
-So, writing "residue" could be misleading as the connotation is that the 
-remaining part is the lesser part.
-
-I think that's probably why the term "residual" gets used in finance (and 
-in SCSI transfers).
+There seems to be an inconsistency here. A signed int would be consistent 
+with the getter and setter helpers. Whereas, if you open-coded the 
+assignments instead, your unsigned int would make sense because 
+scsi_request.resid_len really is an unsigned int.
 
 -- 
+
+>  	int eh_eflags;
+>  	enum dma_data_direction data_direction;
+>  	unsigned underflow;
+> 
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/alpine.LNX.2.21.1909280906530.76%40nippy.intranet.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/alpine.LNX.2.21.1910011011410.13%40nippy.intranet.
