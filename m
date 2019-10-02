@@ -1,120 +1,122 @@
-Return-Path: <usb-storage+bncBDMYPB44VAFRBCEI2LWAKGQE4CFZXUY@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBD3JNNMDTMEBBTNY2PWAKGQETCXMCSQ@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-vk1-xa46.google.com (mail-vk1-xa46.google.com [IPv6:2607:f8b0:4864:20::a46])
-	by mail.lfdr.de (Postfix) with ESMTPS id BB433C86E7
-	for <lists+usb-storage@lfdr.de>; Wed,  2 Oct 2019 13:03:37 +0200 (CEST)
-Received: by mail-vk1-xa46.google.com with SMTP id a7sf9442575vkg.2
-        for <lists+usb-storage@lfdr.de>; Wed, 02 Oct 2019 04:03:37 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1570014216; cv=pass;
+Received: from mail-pg1-x546.google.com (mail-pg1-x546.google.com [IPv6:2607:f8b0:4864:20::546])
+	by mail.lfdr.de (Postfix) with ESMTPS id 1A58AC8FAF
+	for <lists+usb-storage@lfdr.de>; Wed,  2 Oct 2019 19:20:17 +0200 (CEST)
+Received: by mail-pg1-x546.google.com with SMTP id r24sf13618pgj.17
+        for <lists+usb-storage@lfdr.de>; Wed, 02 Oct 2019 10:20:17 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1570036815; cv=pass;
         d=google.com; s=arc-20160816;
-        b=kk5Q7nrkIqXGTUoU6sEjMgjnpSP7xSb4yEWmd4yZ0BmDaJOzPMiN9Be4mXMkuyEipI
-         gTgcQM4t3sRlBcelwrpRTwAHLnazovpicM5Sn3HEHM4R97IyksD2s+eXjeqYGe5ySxkT
-         ohqwdN/3YpVDAALsFxx6u9Xif7F+vjnt3knG1MRX7xQ5xmZFa/gWKK4qnjX1wXGQm90N
-         po2nDPoNra4+aiZYj8spBdZNImHaxE1PXeqLy0xGVZWnvt6iozxJsyCkIWv4FRnwSTO7
-         sZCtA82tywspqMT4ogZ8SgtFyne6u6goLLsmhxHRWKT84REQ5/AmcMT5b2YQpWOPjOWu
-         XiLw==
+        b=U9itQLqAop6ebbeynQfsawFN1R8BMd0A5fR6ODFyVSFMKVRDe3qzPcTii1Shd2wrZt
+         sw5KdbQdQ5Xr9AIkNjQRXlYaLSaLe0YWOuL9HLJRnWlkMkrZx5Scueld/DwPcfjdWPJn
+         DVHobjf5qofCiEEQlLa1IjTGVW1pHnMaZznEaMATZijEw/XlrD6yghPqMRHj01Sy+Z15
+         dsqkaUzQm4Cld2So56CfHeDlnjXv3n/Wcic7LrC6dNdAeWy4TFcVlqTYVL7yRb0Pczsi
+         zamaDxOMvUhLHpzge954IzFAM/aBfMb/DsgS1K38CSQUxw5sKyOr1VW2adL+faGWeeal
+         GLqQ==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:reply-to:cc:to:from:subject
-         :references:mime-version:message-id:in-reply-to:date:dkim-signature;
-        bh=B8TPUw8F81TfRsoFyUB9xLHkfShnP7LuffOS61sRlz4=;
-        b=Fj2TIq8rvjooX0hL4AjwyCmb1WumtXOfpiAmZsyGYLAg9RdWTXtQXjCP+HO4XSIlik
-         xcNPrRvgvD2+rbaKBcEmCmBD0juR8LZ5e+mMHkoJFkwNlakvvBUodGVpk+r3q22WEIRe
-         AOUaTdGJrBln6YGJNfmFMTdu0NLIDFbkDhoFDIazkl/+G44M3QkUHEFVp4hSuyOOXF14
-         PfJtHAesM2IZBwu9wStMr4K61w90+fZcDxCe1SAgLwyAY10UViwavrrfx3gJ9Ipr4+kS
-         wDzmohacmiiLXbDN5hJcehoVJAys4Gbfci6z5GabH1zLXJr1oSVCDbtV6ErmuzFoNLBD
-         vWJw==
+         :list-id:mailing-list:precedence:content-language:in-reply-to
+         :mime-version:user-agent:date:message-id:from:references:cc:to
+         :subject:sender:dkim-signature;
+        bh=MgrCRrJSKzk+g0KxCiFjpVWORCwPDNjB3aEYP4S1cgs=;
+        b=QUKIDoTA06VftB5y4fMNX9HUuAxgEqz42G0Tw97i0/VJ4DboiFTr1g0YlQWaPleNEm
+         0bJyJsc8rqWcfq78ODp4CNhoGQ9ka3j3xSKqaFXhbpQjjAYJF/XnoNuIrrVRgbRSBAZB
+         cPBWBbJG9JB0zfzcI409JUpOtxU/afPLQ7U6HlXl3zEIzUIzhw2JNz1kkvk+RrUhOmlr
+         vqD//mvAExKTjPXkdia4bWufhB/8Og5T6RNIPGqb6Apju5pwvfbHhnjJGdL8eMlUfGom
+         4Eefp7K5y0x35GSEceujKLy+SLxcKXGi5mKa0A1GDIGYn4E/o78Mq/xIrOipHxXhTExZ
+         IxOQ==
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@google.com header.s=20161025 header.b=UuCC7ZgC;
-       spf=pass (google.com: domain of 3b4suxqgkafq8w0994y32aa270.ya8@flex--maennich.bounces.google.com designates 209.85.220.73 as permitted sender) smtp.mailfrom=3B4SUXQgKAFQ8w0994y32AA270.yA8@flex--maennich.bounces.google.com;
-       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
+       spf=pass (google.com: domain of bart.vanassche@gmail.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=bart.vanassche@gmail.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
-        h=date:in-reply-to:message-id:mime-version:references:subject:from:to
-         :cc:x-original-sender:x-original-authentication-results:reply-to
-         :precedence:mailing-list:list-id:list-post:list-help:list-archive
-         :list-subscribe:list-unsubscribe;
-        bh=B8TPUw8F81TfRsoFyUB9xLHkfShnP7LuffOS61sRlz4=;
-        b=LRHY/hI+fC3pNShoT3KJycC0b5l0ibuvwo5BWyahAl8fmNmoqSOlOmBEm9dOyVVsWV
-         BinAPD/37+z2xcRIVgLC50Cy9NA+ENyhNoejn7PGYA3X0v+Y6MQoTyfOqWpFUmZ1499n
-         58YwBsu1ZIggafuAELI624TQOm6wc4C/HhXoY=
+        h=sender:subject:to:cc:references:from:message-id:date:user-agent
+         :mime-version:in-reply-to:content-language:x-original-sender
+         :x-original-authentication-results:precedence:mailing-list:list-id
+         :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
+        bh=MgrCRrJSKzk+g0KxCiFjpVWORCwPDNjB3aEYP4S1cgs=;
+        b=l2Ak78HMmaK/BPrYM57gAj22Dp624H18qCmJLh3ODX3kRNH68rnN3VByM69CsOvW9R
+         +HuEwFEbQwSKwKPKYsPPbUbeBqyK8j754J9tOVTtY7F7EMuFUayWEIU2xO2fj3x+9t92
+         CbsrQeQomtdsVjgVQG4bs91y+eyUizawTkzKw=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
-        h=x-gm-message-state:date:in-reply-to:message-id:mime-version
-         :references:subject:from:to:cc:x-original-sender
-         :x-original-authentication-results:reply-to:precedence:mailing-list
-         :list-id:x-spam-checked-in-group:list-post:list-help:list-archive
-         :list-subscribe:list-unsubscribe;
-        bh=B8TPUw8F81TfRsoFyUB9xLHkfShnP7LuffOS61sRlz4=;
-        b=O7gJCXDzlZgThKTS+naE0bO3DBXISKd31EZTOTiavvQHxalMHqcTD+BBuQ25FZkC0m
-         kmIuqJLjS4CgDuWr6labD5hyfVcgAx2Tcu5OPh+VLHITJeOycuJrDPAsDX1T7czz/MKW
-         EwXgrlvlr9rpjJMCUNsAfhJh0eG8z+9y3pdN5iuejG/KTAK+r5GkM2U2D1xZUg3zFYmg
-         MvygXPSHGcgcSDWBjqp+Zh+fgmFYDgUAxdJ2LZN2cIwAp26wOlrEVMjW5Zvq2dX5vQPv
-         qEmwnhmDP22SRHqmm+VwuKXK5D6kilSDDTXUmGNp+T+6/yDbzPqrX/yg7V5zlvPWN5nF
-         SRfw==
-X-Gm-Message-State: APjAAAVrpwgZPC9V6bcznYsTS5sOHfBfqCEF/JWX9yTHT2i9I66hH9mz
-	/S2/Ua93mwXHjzwL1b5YlkDQlg==
-X-Google-Smtp-Source: APXvYqxdlilihlZWzTAgawT7tUIXb59AmazydrsEqYTlVrD4/4Fx/o7QlQUdIEt7rMfJW5Qaeetoiw==
-X-Received: by 2002:a67:f058:: with SMTP id q24mr1490805vsm.27.1570014216705;
-        Wed, 02 Oct 2019 04:03:36 -0700 (PDT)
+        h=sender:x-gm-message-state:subject:to:cc:references:from:message-id
+         :date:user-agent:mime-version:in-reply-to:content-language
+         :x-original-sender:x-original-authentication-results:precedence
+         :mailing-list:list-id:x-spam-checked-in-group:list-post:list-help
+         :list-archive:list-subscribe:list-unsubscribe;
+        bh=MgrCRrJSKzk+g0KxCiFjpVWORCwPDNjB3aEYP4S1cgs=;
+        b=G9VLczPR003gPWLbplY8k4iw48lpXKOI14h6pcKy3p6KqvfoWVKLZt/VAHqYQnhYkZ
+         cleBozJytfSgemNa1ABCuibWqQ2gFLTW0j0ru2loNc/WtdUvu0l+4jecx9cYUW3tgmAw
+         1dvtOSIFxLCWe/HVDR76tDrmQNTIQeOzB0wkr4jwQHsNF4H5ok8KvSvoEDjAHyUgdpNr
+         +AOjhKfvDn7j/qZt6t8tm4e6Nht7Gm7MzcyS+f7mIdXoOinhG9CruTxxjxEY5TuFKbHb
+         T1dNDlDjYettJxbKNX0/dneYq4joBe6I8a7oZ150GWpY4sAVS27zAsw1rvDNdcFGPP7D
+         WAaQ==
+Sender: usb-storage@lists.one-eyed-alien.net
+X-Gm-Message-State: APjAAAURRDtbBdGPH9vvwi/ePv82lSrKZkV95SchqaD/hxOpIb93q//3
+	DAAA0RDh17hH+GK2BzgKs7dbTQ==
+X-Google-Smtp-Source: APXvYqzre1uSHG9eB4BvulP9fGm751mvVXybNncYqr6kaEMgY3F2wL9Ng+b71AJSDxkTdSpNyKtRTw==
+X-Received: by 2002:a63:7556:: with SMTP id f22mr4919148pgn.222.1570036814296;
+        Wed, 02 Oct 2019 10:20:14 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a67:2e95:: with SMTP id u143ls206583vsu.0.gmail; Wed, 02 Oct
- 2019 04:03:36 -0700 (PDT)
-X-Received: by 2002:a67:2f93:: with SMTP id v141mr1285237vsv.96.1570014216163;
-        Wed, 02 Oct 2019 04:03:36 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1570014216; cv=none;
+Received: by 2002:a62:6307:: with SMTP id x7ls763643pfb.0.gmail; Wed, 02 Oct
+ 2019 10:20:13 -0700 (PDT)
+X-Received: by 2002:a62:7f11:: with SMTP id a17mr6039527pfd.193.1570036813388;
+        Wed, 02 Oct 2019 10:20:13 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1570036813; cv=none;
         d=google.com; s=arc-20160816;
-        b=zTod97eA+I4NzJhEMl59twtFa2vmx2+LW6tWxUNCMfnIv18aMTGqauOlnvJzlYKA0Y
-         RxDkw7VJRSFQ0KeJhCTu4qwwtzPyGVbuJ+oMtWALPfPegTVGvwXBV7rH9F79YinINV8T
-         MCkU1np4W9o3WOUkifbM9Wc1I4CacPXJN3/Jn4CSeIDzBjZoZENG0ssk2536wNM7ODp9
-         a6V0adf0+1dPoTARIMXepNHfJGjLaH74YohYluxccJTWnFWCkhczXgLCRoVf7r/+SOuL
-         9YUkNhwIx+yMwFToa7EKCW//Aa4Nqyapf0a1pjbqeIKUazHIst5e7+PfyVZPzyOAshBG
-         OXPg==
+        b=KxCc7gIGLIyEOKDVTxfrMMUdEDbWzEqFPdtijzccdUdiMGY+jDzifcZ5r5RnjDrfrA
+         dXGmqAjR6LV52CNiBgBqnjlikdBvvAPP5QLZqYEV/HT8vfr3JNeFh1lskqwkCMQgVQ43
+         rJ9o4dwdyUj7fqlMSXLde/ulv87BiGj3I8w04K1eTFA89yfc6y6YElo+L3+SCnZOK+OC
+         QZ1tbK/235ixBLceeJaERGXVEpZnFzUyPWL7wLM7jRzD9+15kSk8Sw/VUBf9ewJR/Vlf
+         jghjOCbT5j+/DtATuWUDrTKCQ+Gt7Tq9UhvaZlC7irV0x90A20q2Il71wtpPfYGJTtNY
+         2qnw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=cc:to:from:subject:references:mime-version:message-id:in-reply-to
-         :date:dkim-signature;
-        bh=F+NGpTeaeb0MugbRhc2tQ0Tvk6r4JBYeMAAiqO9gTaM=;
-        b=AAwaLkMdbr3MNDe83Vt80AABEouvP1MXq/Jc4N424w9NWNn0r3L8OCnzsoo+bXnGvk
-         a05zMfa4XEAVl2ZpZVmTwYeFKgRHFiAGxYCaAj5DAM4Lq3MR8J4xbZ8KbjYHq0xfrKVn
-         ZbbyUh/ngbOsYVziXQnw0RzAJHoJ+nuWOPY8B2XSTdorBGtuLDk3tNrWVillYSAklF6W
-         WwwpnuKtZo9b/w4xuwxLJudxYWDhOzNP6rG0oUIUh/acLszFeQdn9y9moO4Vuf1AyijS
-         N3VM3P4EMcsAEz8GpTmSuG2WmbBqYeJ5KIdd6whoT1XcY6Aj8ORfirRT7qILTzfr5ICk
-         ITDQ==
+        h=content-transfer-encoding:content-language:in-reply-to:mime-version
+         :user-agent:date:message-id:from:references:cc:to:subject;
+        bh=+b87VPN3ehCNTTZtrXC4S7AEpOpBZmJhjs1RLuGgjKM=;
+        b=Cm4rILhWDPbSmvaEhZEtoHsUXZ2MaorWQAoSbXFeP6KzSwUcyOvnkm56poD9dMKaN7
+         ZVCBkATpnCjizTLEo0FoLkejErHHQVLyzdNL3g6hjD9W1gqLQVXyJz3VAIoz363tRaO8
+         iK9j80CufOEOSoyO5rEumV5Zg1mv4Ujzipyd8wXO3t0kzuyhl11aWAFyh6snuUoxBwFt
+         FS6XHOEEn7s82CjBEkK/kgIGUyJxLckkhszfGfie5CpCnjjLX71fzv08rp+rdl82CeVm
+         VQKOflAdE8klc23AzTMa7gJtYfjdiElR+5WuD+g19Ium6+uHyogNkfigj0RwUMYOMNon
+         XXWg==
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@google.com header.s=20161025 header.b=UuCC7ZgC;
-       spf=pass (google.com: domain of 3b4suxqgkafq8w0994y32aa270.ya8@flex--maennich.bounces.google.com designates 209.85.220.73 as permitted sender) smtp.mailfrom=3B4SUXQgKAFQ8w0994y32AA270.yA8@flex--maennich.bounces.google.com;
-       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
-Received: from mail-sor-f73.google.com (mail-sor-f73.google.com. [209.85.220.73])
-        by mx.google.com with SMTPS id w47sor8528009uad.42.2019.10.02.04.03.36
+       spf=pass (google.com: domain of bart.vanassche@gmail.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=bart.vanassche@gmail.com
+Received: from mail-sor-f65.google.com (mail-sor-f65.google.com. [209.85.220.65])
+        by mx.google.com with SMTPS id 71sor6891112plf.22.2019.10.02.10.20.13
         for <usb-storage@lists.one-eyed-alien.net>
         (Google Transport Security);
-        Wed, 02 Oct 2019 04:03:36 -0700 (PDT)
-Received-SPF: pass (google.com: domain of 3b4suxqgkafq8w0994y32aa270.ya8@flex--maennich.bounces.google.com designates 209.85.220.73 as permitted sender) client-ip=209.85.220.73;
-X-Received: by 2002:ab0:6607:: with SMTP id r7mr1307035uam.27.1570014215724;
- Wed, 02 Oct 2019 04:03:35 -0700 (PDT)
-Date: Wed,  2 Oct 2019 12:03:12 +0100
-In-Reply-To: <20190917231031.81341-1-maennich@google.com>
-Message-Id: <20191002110312.75749-1-maennich@google.com>
-Mime-Version: 1.0
-References: <20190917231031.81341-1-maennich@google.com>
-X-Mailer: git-send-email 2.23.0.581.g78d2f28ef7-goog
-Subject: [usb-storage] [PATCH v3] usb-storage: SCSI glue: use dev_err instead
- of printk
-From: "'Matthias Maennich' via USB Mass Storage on Linux" <usb-storage@lists.one-eyed-alien.net>
-To: linux-kernel@vger.kernel.org
-Cc: kernel-team@android.com, maennich@google.com, 
-	Alan Stern <stern@rowland.harvard.edu>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
-	usb-storage@lists.one-eyed-alien.net
-Content-Type: text/plain; charset="UTF-8"
-X-Original-Sender: maennich@google.com
-X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@google.com header.s=20161025 header.b=UuCC7ZgC;       spf=pass
- (google.com: domain of 3b4suxqgkafq8w0994y32aa270.ya8@flex--maennich.bounces.google.com
- designates 209.85.220.73 as permitted sender) smtp.mailfrom=3B4SUXQgKAFQ8w0994y32AA270.yA8@flex--maennich.bounces.google.com;
-       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
-X-Original-From: Matthias Maennich <maennich@google.com>
-Reply-To: Matthias Maennich <maennich@google.com>
+        Wed, 02 Oct 2019 10:20:13 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bart.vanassche@gmail.com designates 209.85.220.65 as permitted sender) client-ip=209.85.220.65;
+X-Received: by 2002:a17:902:169:: with SMTP id 96mr5046016plb.166.1570036812965;
+        Wed, 02 Oct 2019 10:20:12 -0700 (PDT)
+Received: from desktop-bart.svl.corp.google.com ([2620:15c:2cd:202:4308:52a3:24b6:2c60])
+        by smtp.gmail.com with ESMTPSA id q71sm6742509pjb.26.2019.10.02.10.20.11
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 02 Oct 2019 10:20:11 -0700 (PDT)
+Subject: [usb-storage] Re: [PATCH V3] scsi: save/restore command resid for
+ error handling
+To: Damien Le Moal <damien.lemoal@wdc.com>, linux-scsi@vger.kernel.org,
+ "Martin K . Petersen" <martin.petersen@oracle.com>,
+ linux-usb@vger.kernel.org, usb-storage@lists.one-eyed-alien.net,
+ Alan Stern <stern@rowland.harvard.edu>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Cc: Justin Piszcz <jpiszcz@lucidpixels.com>
+References: <20191001074839.1994-1-damien.lemoal@wdc.com>
+From: Bart Van Assche <bvanassche@acm.org>
+Message-ID: <b2f4bf11-4d35-ba46-99d9-f6241be6c982@acm.org>
+Date: Wed, 2 Oct 2019 10:20:10 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
+MIME-Version: 1.0
+In-Reply-To: <20191001074839.1994-1-damien.lemoal@wdc.com>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
+Content-Language: en-US
+X-Original-Sender: bvanassche@acm.org
+X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
+ domain of bart.vanassche@gmail.com designates 209.85.220.65 as permitted
+ sender) smtp.mailfrom=bart.vanassche@gmail.com
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -130,36 +132,26 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-Follow common practice and retire printk(KERN_ERR ...) in favor of
-dev_err().
+On 10/1/19 12:48 AM, Damien Le Moal wrote:
+> When a non-passthrough command is terminated with CHECK CONDITION,
+> request sense is executed by hijacking the command descriptor. Since
+> scsi_eh_prep_cmnd() and scsi_eh_restore_cmnd() do not save/restore the
+> original command resid, the value returned on failure of the original
+> command is lost and replaced with the value set by the execution of the
+> request sense command. This value may in many instances be unaligned to
+> the device sector size, causing sd_done() to print a warning message
+> about the incorrect unaligned resid before the command is retried.
+> 
+> Fix this problem by saving the original command residual in struct
+> scsi_eh_save using scsi_eh_prep_cmnd() and restoring it in
+> scsi_eh_restore_cmnd(). In addition, to make sure that the request sense
+> command is executed with a correctly initialized command structure, also
+> reset the residual to 0 in scsi_eh_prep_cmnd() after saving the original
+> command value in struct scsi_eh_save.
 
-Cc: Alan Stern <stern@rowland.harvard.edu>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Cc: usb-storage@lists.one-eyed-alien.net
-Signed-off-by: Matthias Maennich <maennich@google.com>
----
- drivers/usb/storage/scsiglue.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/usb/storage/scsiglue.c b/drivers/usb/storage/scsiglue.c
-index 6737fab94959..4c0c247e4101 100644
---- a/drivers/usb/storage/scsiglue.c
-+++ b/drivers/usb/storage/scsiglue.c
-@@ -379,8 +379,8 @@ static int queuecommand_lck(struct scsi_cmnd *srb,
- 
- 	/* check for state-transition errors */
- 	if (us->srb != NULL) {
--		printk(KERN_ERR "usb-storage: Error in %s: us->srb = %p\n",
--			__func__, us->srb);
-+		dev_err(&us->pusb_intf->dev,
-+			"Error in %s: us->srb = %p\n", __func__, us->srb);
- 		return SCSI_MLQUEUE_HOST_BUSY;
- 	}
- 
--- 
-2.23.0.581.g78d2f28ef7-goog
+Reviewed-by: Bart Van Assche <bvanassche@acm.org>
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20191002110312.75749-1-maennich%40google.com.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/b2f4bf11-4d35-ba46-99d9-f6241be6c982%40acm.org.
