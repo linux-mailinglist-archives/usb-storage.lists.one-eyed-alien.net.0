@@ -1,112 +1,120 @@
-Return-Path: <usb-storage+bncBD6LRVPZ6YGRBXEZQLWQKGQECA2JQVA@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBDX4HWEMTEBRBTU6QLWQKGQEMQ4XOPY@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-qk1-x747.google.com (mail-qk1-x747.google.com [IPv6:2607:f8b0:4864:20::747])
-	by mail.lfdr.de (Postfix) with ESMTPS id A6B60D4254
-	for <lists+usb-storage@lfdr.de>; Fri, 11 Oct 2019 16:08:29 +0200 (CEST)
-Received: by mail-qk1-x747.google.com with SMTP id o133sf9054758qke.4
-        for <lists+usb-storage@lfdr.de>; Fri, 11 Oct 2019 07:08:29 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1570802908; cv=pass;
+Received: from mail-pg1-x545.google.com (mail-pg1-x545.google.com [IPv6:2607:f8b0:4864:20::545])
+	by mail.lfdr.de (Postfix) with ESMTPS id 8773FD4293
+	for <lists+usb-storage@lfdr.de>; Fri, 11 Oct 2019 16:18:56 +0200 (CEST)
+Received: by mail-pg1-x545.google.com with SMTP id x35sf6171955pgk.1
+        for <lists+usb-storage@lfdr.de>; Fri, 11 Oct 2019 07:18:56 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1570803535; cv=pass;
         d=google.com; s=arc-20160816;
-        b=Gs67srZ8CjaUEUed6++Zy8b0us/PAP278iMkwF7aTdK/7dVzZcfNzCyB8v8EkRgIp4
-         6PJRy290/NEP6goj4K0PS+HV97AfehoC0Tx0w2b5RAmyFr+ub8INIKGUTkZD0dohN5F7
-         1ajAzlGRFw8aipAhvA6GuFNN3T6KaksRm0iombODU9a1XO5O2WhMve8nUXTV1ZPFihMK
-         bzWOtc24Vbngvf2CT58l+Y0Mpk3ze+UtfLZv14/Nf9pyjWHQq3kaqzb+X8Qi9UVWfBxI
-         Ot9/R02MbMoFZ6hSrZNzCsXwRUUSiPXoYKsAChP/ZMOuCiVvROBsgL/v5Zb/bej9seRp
-         fQVA==
+        b=xvQ3WpU3LOTPJCGDsJPXcTUlt2vMj3KeoHnH79V8eiGTiB1It4XZKbU3G6acfmIN5r
+         q9/rVDu6bLi0B1c3qA0H99aB4D4tEube/tSvJrT84WmNgIKL4KpUWnIM2G8mY70X9pIP
+         PNv9cMk0cOY8D2ghNBXOP8gCTn0+0xAur1agSuejfCzCIOFaTyMriluaq7mrccCk31m0
+         I6Q+G41Wwu+HXj1ouRlqSER3xa6PGS8cLlEp1b+LkcFSr0ie8VaxI2kbq/ORhKaXPzyr
+         yNej0+opaLyQkGKLaue/oX6akzXnAdfmtHETKaYLjb9qo3+UlUve1Va12O1j9Qpu+GVI
+         lC5w==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:mime-version:message-id:in-reply-to
-         :subject:cc:to:from:date:sender:dkim-signature;
-        bh=q+C3tB8WIewEMAtVNRPI0KhLEVslFhiW8Yz5JB6pxfQ=;
-        b=BVYTH4M9tQdyGVHYW/fATmohlQB6ew+urYhS/1fXxvduXcZ9Ob/T3OQDblnL+6EqHK
-         DdeWa7xmFOjynypa6JCWJcXY8HzMBrIhkukerjNpXy93L9icD6snNQH9zBSIVty6wLFJ
-         PMLWyYgB16xYBRcaqvhxnxgLSC7ozaz9j2Iz3Z4z8im3N1bQxEumQ9ApBdZU0GUp/H9H
-         1b8rVPbj5pl+1CJSwCra4maNOKNW+WLoqizdZB14pLCEbyQ46tR6Dt0zM+ixSMjr+FUF
-         n31d44Lxk1nSf7oqbTDYJ8IcHdK/ZQzkna9sQ+MHDQqtUViIa2R/pjgafnarCcVzAelh
-         e0AA==
+         :list-id:mailing-list:precedence:reply-to:cc:to:subject:message-id
+         :date:from:in-reply-to:references:mime-version:dkim-signature;
+        bh=3NpkwMyz0JFoVQg8tXYxFyWiNbzYoqG4vU3vU7lst+Y=;
+        b=nmowTdv7jN0S782+VlEQpPzbxgVsKFWAM8yLev4iKf8Y5SlluWqUX7oUVn1yCaCD4N
+         wEJ2P0B22y22cp4CYx1302LytdNmRrYarQcW0VO84v7rcW/MNv9BlTskBQ/xOsTBbOp2
+         P1Ofjo8Cd5rj7cU0FS6M8TZmRWvRJW0CcZyd0pBNunM78rTbX3sR7OrescGxL8OFUeAe
+         r9TzNaaWMOKu3M6EJ2Vpjin/sGVe0Hi8cgRk5awaMANxe1l/XmuZjcAk/5kIzpMNhu0b
+         HI9AjfMmmEWsATtB/WvUgSZX1Yk5DoHfpVI3xo10xLTISvDiJpCNwkd/ut7H6wlYfvGQ
+         WU7w==
 ARC-Authentication-Results: i=2; mx.google.com;
-       spf=pass (google.com: domain of stern+5db972c6@rowland.harvard.edu designates 192.131.102.54 as permitted sender) smtp.mailfrom=stern+5db972c6@rowland.harvard.edu
+       dkim=pass header.i=@google.com header.s=20161025 header.b=s2PJBxVJ;
+       spf=pass (google.com: domain of andreyknvl@google.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=andreyknvl@google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
-        h=sender:date:from:to:cc:subject:in-reply-to:message-id:mime-version
-         :x-original-sender:x-original-authentication-results:precedence
-         :mailing-list:list-id:list-post:list-help:list-archive
+        h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+         :cc:x-original-sender:x-original-authentication-results:reply-to
+         :precedence:mailing-list:list-id:list-post:list-help:list-archive
          :list-subscribe:list-unsubscribe;
-        bh=q+C3tB8WIewEMAtVNRPI0KhLEVslFhiW8Yz5JB6pxfQ=;
-        b=jIhXblnXOy0AozXdQNBOtZGpfJ34AGonNVIZna4/5yGsBGj2MctxLp8l2UsBkDFdmG
-         +x8LXgN5p2RfrCFlEo6BQ/jyCp34sIjZ58lhqvZRawHtTuQIb8PT0gAruf6quKi5iYQb
-         i0dUd1+ds1rSIQ/DmY0QqB4cs21M3aW7Vnfj0=
+        bh=3NpkwMyz0JFoVQg8tXYxFyWiNbzYoqG4vU3vU7lst+Y=;
+        b=QT+h6t/fjEbQ6W76YP/7tg7PKpJo8EU1nsLQw66IK50FAI/wAjbWDjhfdFKpx5WRuq
+         KU/bV5V47poM6oeKRSZbTrkfcflEW9fIujZczf3tauoaK2RSSxo5Xq4q3EDLBHFjd34e
+         INRrpM3dX3A+a4h2B3b9ogUuySQO800XOmkWg=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
-        h=sender:x-gm-message-state:date:from:to:cc:subject:in-reply-to
-         :message-id:mime-version:x-original-sender
-         :x-original-authentication-results:precedence:mailing-list:list-id
-         :x-spam-checked-in-group:list-post:list-help:list-archive
+        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+         :message-id:subject:to:cc:x-original-sender
+         :x-original-authentication-results:reply-to:precedence:mailing-list
+         :list-id:x-spam-checked-in-group:list-post:list-help:list-archive
          :list-subscribe:list-unsubscribe;
-        bh=q+C3tB8WIewEMAtVNRPI0KhLEVslFhiW8Yz5JB6pxfQ=;
-        b=YUUBg6kTBsM31x4NsUMggColaq0Ym7t8hyCwIMm5gPzLtmfS5OGswcleoo+E/oKZWD
-         mPl/Lt8BXRztSmzs8vh5u9PG35yZyni/LELDhoI6KuiI0KIv96TQwoi3+MO1PEK9emDi
-         pY8MJYjCnulEQlJF+FoD4NXMlzPIqjHVwbNpq3xFqTrpq2mpcFx4yLWjXfJ6X7LgKqZF
-         PEi1TusRK4mBWWDdRYVpw0ZTY6Sl6HYkTcVesghZz/7NR3u6ypBjuDN6vnj2b7i3k8sQ
-         GJR8gMFSvm5t+1493yaBpEoLnW/nXwuvQ30ZsX55cNmQIwrgYpGkgdy+M/tdu8UwhZMq
-         rTog==
-Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: APjAAAXHumXwLVooo+c2Sn9hIXVhmHvgE2KYrZeyehdHCQ2a0uPfSYep
-	pWZ832MNX2QtML/zpB5xfGvzWA==
-X-Google-Smtp-Source: APXvYqwdoZDLOmrj//zoRdBRzb1h/qTjPmV41dCZdDESPzqFKeJA1Pi0tlexDxeL2l9eVDstnSwVqQ==
-X-Received: by 2002:a37:9a0d:: with SMTP id c13mr14275558qke.427.1570802908477;
-        Fri, 11 Oct 2019 07:08:28 -0700 (PDT)
+        bh=3NpkwMyz0JFoVQg8tXYxFyWiNbzYoqG4vU3vU7lst+Y=;
+        b=hOLGc61/Bq7jl/in8+tzDj5yMzDpcNOznjCUPTB7SXaD6Ma5I0T93RbgFau7PfDv+2
+         9ICTVuI9ETXID7UqQSMv5YHIbaR08puYwWrQKN43PDy7qTzEfd1Omcxivk8e8bbLnZiQ
+         2pI9rYKHzw/HxAx0/o2iD8U4JqnYH1iA0fyr2mcE866LcLiuc5NFoqKKT0Gys7Z21m9S
+         i8TbCf9Pv4fUhmS6euxzoHo3ubVT7PRIyD91jjxZnfAi/w3t7EyXp1Dk5QHHJUKrbOq2
+         kMORN/xaUosno35oqF7T8dUYEGKB32iQciJaHCgqj0vs5rzuI/Aw1tO4szFe2hqSODWi
+         bOhg==
+X-Gm-Message-State: APjAAAUTAlAkQBoTOdnD21bVOoZGlCAP4qzu6bthR2tOlqfjwDInHsc4
+	umxXcrKX7SrocQUKmkPzdmQ/Ew==
+X-Google-Smtp-Source: APXvYqwFrbg0ovQV+62TTYdZxbluYfu5iRFJO4i3HiK7/0dPoc5uQvN4gi4y5u+YaF54aRP2Ks5GEg==
+X-Received: by 2002:a17:902:bcc6:: with SMTP id o6mr15273210pls.257.1570803534884;
+        Fri, 11 Oct 2019 07:18:54 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:ac8:1a73:: with SMTP id q48ls1545099qtk.14.gmail; Fri, 11
- Oct 2019 07:08:28 -0700 (PDT)
-X-Received: by 2002:ac8:814:: with SMTP id u20mr17093599qth.180.1570802907948;
-        Fri, 11 Oct 2019 07:08:27 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1570802907; cv=none;
+Received: by 2002:a63:1e0b:: with SMTP id e11ls2137032pge.9.gmail; Fri, 11 Oct
+ 2019 07:18:54 -0700 (PDT)
+X-Received: by 2002:a63:d450:: with SMTP id i16mr16913867pgj.126.1570803534328;
+        Fri, 11 Oct 2019 07:18:54 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1570803534; cv=none;
         d=google.com; s=arc-20160816;
-        b=XmjV1r9AE3OXw2zkcEG2zdrFFOn8Q8PcmHidpkvIsk+qWonFvcB3CdS1v9hbIfiyBE
-         te4dBHHqpA6ZdP27HJOHpVOnBomPEceQtViR2wWbjDzmuv1SwjwxMDt+6wlx+15/MO1H
-         7WJeDdJQ1s87CAzV8QkGboHepdoprTr9LASmaiAec2B1nBoYmVuNvoqq8HMUQaoO3slJ
-         8gDTr9Jdsc28Ko/1es6gzj3j9xVBaqO1VzVFUuzuPVLPITfhlmzrww/YDByIg40Pgjho
-         kCs5qglhOihHO4A251TB+oBGgDwJ8neQf7e6OALOwUr1s91Nqu1RInrPUMD7KJnuMaWU
-         sI2g==
+        b=CFEKeLKXqyd/I7LWJjnK4Ao97BaHs+rpOo1yLAFX5tKsu9agb1JqXq04j6LSS1pUCI
+         9eAiSLQs/GYdKeqRUR1vsODz2kQl470gRvMt41mkCY2Jd7oPhJ/xcZ3EoNCHkX1QfPJQ
+         yKROcsignzynftNHwrYll6Y9l1v+A+Lebb1P953FO5Hv9lhlZewmljKglf2FmWvtOU7Z
+         DEq4UsslBujyb+J+AhA9wMTb3/YAFUN4g2hRtRTPXSay9JfsqLj4YaiIBWlXIzb34t0e
+         BrnywUSfNcVOLc59xXUwpsuAhYb1bF08hBS9IbETpaxLyZc3vHYkKMOEvhocMGlpwNuV
+         VMNQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=mime-version:message-id:in-reply-to:subject:cc:to:from:date;
-        bh=q+C3tB8WIewEMAtVNRPI0KhLEVslFhiW8Yz5JB6pxfQ=;
-        b=aXftJBwUpBkQTbb5uG5LhmDPvW013TmSMFrs4inCOa41vpal7IGcQweNmr0sdIXGBV
-         P51spCCypCnnR/lLPj38uNMmTpi+FOogeUWG04jk5cUghZeTTyAy6X0M/Q+jmm63jMIN
-         PbzxOeSLZvRMLXgRhnJa+qqJjjgDQW/eDE6QCgnt/NV1j6bTbbD6TonbW427uPdOJtsI
-         elZxUn4l8Wg7P5lzCmJmP01Mm1ycSAHzwyLozGlHTu8NF25QS+P0jenTaHIcexOxTnE9
-         IH0uEAOPwxdRUiwuzlVQE2fE1KvlvXRoO/Zu1MxF6joLRepWEHdlgkq2HoSDCx8oYTyy
-         pwAQ==
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:dkim-signature;
+        bh=yoMVKHDANohlAdb5zxdvxg69/UYoMm/KT4X5akubYBQ=;
+        b=tspntc/U3rjWzAefQEs7HQcmI0znqaoH+ebBGlsYkayXIL4GAuba35wkZSWk5vSflo
+         bwLZ4JwVLgK4q8sHpiEXLiaY0WP3jUJ4+34tLKJ/GPH/z2n7nDpkCInN0+PhAs1yIsDc
+         n4rjkDArNNJfbTVZdqyAoF3/DeFTAX6bB6yc3CujnI26YyZlSbEsuTul1UWYtEUT+UIy
+         7FJPLS3ozT4oQv8JFw5SXWi/b1X0FoLOpY5W4WfJPOrWxKQr6JepCDvKynlxXPVHCtwn
+         53GaEPjYN1412v9x3/51YuCtaZfcFJZYYCbfVX5TeJF21cS8BE7lOf4W+9sgKY6oWLc/
+         4fLw==
 ARC-Authentication-Results: i=1; mx.google.com;
-       spf=pass (google.com: domain of stern+5db972c6@rowland.harvard.edu designates 192.131.102.54 as permitted sender) smtp.mailfrom=stern+5db972c6@rowland.harvard.edu
-Received: from iolanthe.rowland.org (iolanthe.rowland.org. [192.131.102.54])
-        by mx.google.com with SMTP id v41si9282531qvc.211.2019.10.11.07.08.27
-        for <usb-storage@lists.one-eyed-alien.net>;
-        Fri, 11 Oct 2019 07:08:27 -0700 (PDT)
-Received-SPF: pass (google.com: domain of stern+5db972c6@rowland.harvard.edu designates 192.131.102.54 as permitted sender) client-ip=192.131.102.54;
-Received: (qmail 1736 invoked by uid 2102); 11 Oct 2019 10:08:27 -0400
-Received: from localhost (sendmail-bs@127.0.0.1)
-  by localhost with SMTP; 11 Oct 2019 10:08:27 -0400
-Date: Fri, 11 Oct 2019 10:08:27 -0400 (EDT)
-From: Alan Stern <stern@rowland.harvard.edu>
-X-X-Sender: stern@iolanthe.rowland.org
-To: Jaskaran Singh <jaskaransingh7654321@gmail.com>
-cc: syzbot <syzbot+e7d46eb426883fb97efd@syzkaller.appspotmail.com>, 
-     <glider@google.com>,  <gregkh@linuxfoundation.org>, 
-     <linux-kernel@vger.kernel.org>,  <linux-usb@vger.kernel.org>, 
-     <syzkaller-bugs@googlegroups.com>, 
-     <usb-storage@lists.one-eyed-alien.net>
-Subject: [usb-storage] Re: KMSAN: uninit-value in alauda_check_media
-In-Reply-To: <b8b1e4fef9f3ece63909c38b3302621d76770caa.camel@gmail.com>
-Message-ID: <Pine.LNX.4.44L0.1910111003100.1529-100000@iolanthe.rowland.org>
+       dkim=pass header.i=@google.com header.s=20161025 header.b=s2PJBxVJ;
+       spf=pass (google.com: domain of andreyknvl@google.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=andreyknvl@google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
+Received: from mail-sor-f65.google.com (mail-sor-f65.google.com. [209.85.220.65])
+        by mx.google.com with SMTPS id e36sor9495950pge.10.2019.10.11.07.18.54
+        for <usb-storage@lists.one-eyed-alien.net>
+        (Google Transport Security);
+        Fri, 11 Oct 2019 07:18:54 -0700 (PDT)
+Received-SPF: pass (google.com: domain of andreyknvl@google.com designates 209.85.220.65 as permitted sender) client-ip=209.85.220.65;
+X-Received: by 2002:a65:4c03:: with SMTP id u3mr17200592pgq.440.1570803533488;
+ Fri, 11 Oct 2019 07:18:53 -0700 (PDT)
 MIME-Version: 1.0
-Content-Type: TEXT/PLAIN; charset=US-ASCII
-X-Original-Sender: stern@rowland.harvard.edu
-X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
- domain of stern+5db972c6@rowland.harvard.edu designates 192.131.102.54 as
- permitted sender) smtp.mailfrom=stern+5db972c6@rowland.harvard.edu
+References: <b8b1e4fef9f3ece63909c38b3302621d76770caa.camel@gmail.com> <Pine.LNX.4.44L0.1910111003100.1529-100000@iolanthe.rowland.org>
+In-Reply-To: <Pine.LNX.4.44L0.1910111003100.1529-100000@iolanthe.rowland.org>
+From: "'Andrey Konovalov' via USB Mass Storage on Linux" <usb-storage@lists.one-eyed-alien.net>
+Date: Fri, 11 Oct 2019 16:18:42 +0200
+Message-ID: <CAAeHK+zR=S1cyaYfehyUDrpMGMXvxgLEeS8V2ze2HkwYUp6bjg@mail.gmail.com>
+Subject: [usb-storage] Re: KMSAN: uninit-value in alauda_check_media
+To: Alan Stern <stern@rowland.harvard.edu>
+Cc: Jaskaran Singh <jaskaransingh7654321@gmail.com>, 
+	syzbot <syzbot+e7d46eb426883fb97efd@syzkaller.appspotmail.com>, 
+	Alexander Potapenko <glider@google.com>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+	LKML <linux-kernel@vger.kernel.org>, USB list <linux-usb@vger.kernel.org>, 
+	syzkaller-bugs <syzkaller-bugs@googlegroups.com>, usb-storage@lists.one-eyed-alien.net
+Content-Type: text/plain; charset="UTF-8"
+X-Original-Sender: andreyknvl@google.com
+X-Original-Authentication-Results: mx.google.com;       dkim=pass
+ header.i=@google.com header.s=20161025 header.b=s2PJBxVJ;       spf=pass
+ (google.com: domain of andreyknvl@google.com designates 209.85.220.65 as
+ permitted sender) smtp.mailfrom=andreyknvl@google.com;       dmarc=pass
+ (p=REJECT sp=REJECT dis=NONE) header.from=google.com
+X-Original-From: Andrey Konovalov <andreyknvl@google.com>
+Reply-To: Andrey Konovalov <andreyknvl@google.com>
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -122,83 +130,89 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On Fri, 11 Oct 2019, Jaskaran Singh wrote:
+On Fri, Oct 11, 2019 at 4:08 PM Alan Stern <stern@rowland.harvard.edu> wrote:
+>
+> On Fri, 11 Oct 2019, Jaskaran Singh wrote:
+>
+> > On Mon, 2019-10-07 at 12:39 -0700, syzbot wrote:
+> > > Hello,
+> > >
+> > > syzbot found the following crash on:
+> > >
+> > > HEAD commit:    1e76a3e5 kmsan: replace __GFP_NO_KMSAN_SHADOW with
+> > > kmsan_i..
+> > > git tree:       https://github.com/google/kmsan.git master
+> > > console output:
+> > > https://syzkaller.appspot.com/x/log.txt?x=1204cc63600000
+> > > kernel config:
+> > > https://syzkaller.appspot.com/x/.config?x=f03c659d0830ab8d
+> > > dashboard link:
+> > > https://syzkaller.appspot.com/bug?extid=e7d46eb426883fb97efd
+> > > compiler:       clang version 9.0.0 (/home/glider/llvm/clang
+> > > 80fee25776c2fb61e74c1ecb1a523375c2500b69)
+> > > syz repro:
+> > > https://syzkaller.appspot.com/x/repro.syz?x=123c860d600000
+> > > C reproducer:
+> > > https://syzkaller.appspot.com/x/repro.c?x=110631b7600000
+> > >
+> > > IMPORTANT: if you fix the bug, please add the following tag to the
+> > > commit:
+> > > Reported-by: syzbot+e7d46eb426883fb97efd@syzkaller.appspotmail.com
+> > >
+> > > =====================================================
+> > > BUG: KMSAN: uninit-value in alauda_transport+0x462/0x57f0
+> > > drivers/usb/storage/alauda.c:1137
+> > > CPU: 0 PID: 12279 Comm: usb-storage Not tainted 5.3.0-rc7+ #0
+> > > Hardware name: Google Google Compute Engine/Google Compute Engine,
+> > > BIOS
+> > > Google 01/01/2011
+> > > Call Trace:
+> > >   __dump_stack lib/dump_stack.c:77 [inline]
+> > >   dump_stack+0x191/0x1f0 lib/dump_stack.c:113
+> > >   kmsan_report+0x13a/0x2b0 mm/kmsan/kmsan_report.c:108
+> > >   __msan_warning+0x73/0xe0 mm/kmsan/kmsan_instr.c:250
+> > >   alauda_check_media+0x344/0x3310 drivers/usb/storage/alauda.c:460
+> > >   alauda_transport+0x462/0x57f0 drivers/usb/storage/alauda.c:1137
+> > >   usb_stor_invoke_transport+0xf5/0x27e0
+> > > drivers/usb/storage/transport.c:606
+> > >   usb_stor_transparent_scsi_command+0x5d/0x70
+> > > drivers/usb/storage/protocol.c:108
+> > >   usb_stor_control_thread+0xca6/0x11a0 drivers/usb/storage/usb.c:380
+> > >   kthread+0x4b5/0x4f0 kernel/kthread.c:256
+> > >   ret_from_fork+0x35/0x40 arch/x86/entry/entry_64.S:355
+>
+>
+> > #syz test: https://github.com/google/kmsan.git 1e76a3e5
+> >
+> > diff --git a/drivers/usb/storage/alauda.c
+> > b/drivers/usb/storage/alauda.c
+> > index ddab2cd3d2e7..bb309b9ad65b 100644
+> > --- a/drivers/usb/storage/alauda.c
+> > +++ b/drivers/usb/storage/alauda.c
+> > @@ -452,7 +452,7 @@ static int alauda_init_media(struct us_data *us)
+> >  static int alauda_check_media(struct us_data *us)
+> >  {
+> >       struct alauda_info *info = (struct alauda_info *) us->extra;
+> > -     unsigned char status[2];
+> > +     unsigned char *status = us->iobuf;
+> >       int rc;
+> >
+> >       rc = alauda_get_media_status(us, status);
 
-> On Mon, 2019-10-07 at 12:39 -0700, syzbot wrote:
-> > Hello,
-> > 
-> > syzbot found the following crash on:
-> > 
-> > HEAD commit:    1e76a3e5 kmsan: replace __GFP_NO_KMSAN_SHADOW with
-> > kmsan_i..
-> > git tree:       https://github.com/google/kmsan.git master
-> > console output: 
-> > https://syzkaller.appspot.com/x/log.txt?x=1204cc63600000
-> > kernel config:  
-> > https://syzkaller.appspot.com/x/.config?x=f03c659d0830ab8d
-> > dashboard link: 
-> > https://syzkaller.appspot.com/bug?extid=e7d46eb426883fb97efd
-> > compiler:       clang version 9.0.0 (/home/glider/llvm/clang  
-> > 80fee25776c2fb61e74c1ecb1a523375c2500b69)
-> > syz repro:      
-> > https://syzkaller.appspot.com/x/repro.syz?x=123c860d600000
-> > C reproducer:   
-> > https://syzkaller.appspot.com/x/repro.c?x=110631b7600000
-> > 
-> > IMPORTANT: if you fix the bug, please add the following tag to the
-> > commit:
-> > Reported-by: syzbot+e7d46eb426883fb97efd@syzkaller.appspotmail.com
-> > 
-> > =====================================================
-> > BUG: KMSAN: uninit-value in alauda_transport+0x462/0x57f0  
-> > drivers/usb/storage/alauda.c:1137
-> > CPU: 0 PID: 12279 Comm: usb-storage Not tainted 5.3.0-rc7+ #0
-> > Hardware name: Google Google Compute Engine/Google Compute Engine,
-> > BIOS  
-> > Google 01/01/2011
-> > Call Trace:
-> >   __dump_stack lib/dump_stack.c:77 [inline]
-> >   dump_stack+0x191/0x1f0 lib/dump_stack.c:113
-> >   kmsan_report+0x13a/0x2b0 mm/kmsan/kmsan_report.c:108
-> >   __msan_warning+0x73/0xe0 mm/kmsan/kmsan_instr.c:250
-> >   alauda_check_media+0x344/0x3310 drivers/usb/storage/alauda.c:460
-> >   alauda_transport+0x462/0x57f0 drivers/usb/storage/alauda.c:1137
-> >   usb_stor_invoke_transport+0xf5/0x27e0
-> > drivers/usb/storage/transport.c:606
-> >   usb_stor_transparent_scsi_command+0x5d/0x70  
-> > drivers/usb/storage/protocol.c:108
-> >   usb_stor_control_thread+0xca6/0x11a0 drivers/usb/storage/usb.c:380
-> >   kthread+0x4b5/0x4f0 kernel/kthread.c:256
-> >   ret_from_fork+0x35/0x40 arch/x86/entry/entry_64.S:355
+[...]
 
+> Now yes, it's true that defining status as an array on the stack is
+> also a bug, since USB transfer buffers are not allowed to be stack
+> variables.
 
-> #syz test: https://github.com/google/kmsan.git 1e76a3e5
-> 
-> diff --git a/drivers/usb/storage/alauda.c
-> b/drivers/usb/storage/alauda.c
-> index ddab2cd3d2e7..bb309b9ad65b 100644
-> --- a/drivers/usb/storage/alauda.c
-> +++ b/drivers/usb/storage/alauda.c
-> @@ -452,7 +452,7 @@ static int alauda_init_media(struct us_data *us)
->  static int alauda_check_media(struct us_data *us)
->  {
->  	struct alauda_info *info = (struct alauda_info *) us->extra;
-> -	unsigned char status[2];
-> +	unsigned char *status = us->iobuf;
->  	int rc;
->  
->  	rc = alauda_get_media_status(us, status);
+Hi Alan,
 
-That is absolutely not the correct fix.
+I'm curious, what is the reason for disallowing that? Should we try to
+somehow detect such cases automatically?
 
-The problem is that after this call, the code does not check rc to see 
-if an error occurred.  If there was an error, the value of status is 
-meaningless so there's no point examining it at all.
+Thanks!
 
-Now yes, it's true that defining status as an array on the stack is 
-also a bug, since USB transfer buffers are not allowed to be stack 
-variables.  And the change you made _is_ the right way to fix that bug.  
-But that is a separate bug, not the one that syzbot found.
-
-Alan Stern
-
+-- 
+You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
+To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/CAAeHK%2BzR%3DS1cyaYfehyUDrpMGMXvxgLEeS8V2ze2HkwYUp6bjg%40mail.gmail.com.
