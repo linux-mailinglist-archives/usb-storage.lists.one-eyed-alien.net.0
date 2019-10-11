@@ -1,122 +1,123 @@
 Return-Path: <usb-storage+bncBCNKHI6TW4FRBFW2QLWQKGQEPS34UPA@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-ot1-x346.google.com (mail-ot1-x346.google.com [IPv6:2607:f8b0:4864:20::346])
-	by mail.lfdr.de (Postfix) with ESMTPS id 64B78D455B
+Received: from mail-oi1-x245.google.com (mail-oi1-x245.google.com [IPv6:2607:f8b0:4864:20::245])
+	by mail.lfdr.de (Postfix) with ESMTPS id 44CD0D455A
 	for <lists+usb-storage@lfdr.de>; Fri, 11 Oct 2019 18:26:00 +0200 (CEST)
-Received: by mail-ot1-x346.google.com with SMTP id d12sf5147684ote.0
+Received: by mail-oi1-x245.google.com with SMTP id 74sf5060095oie.3
         for <lists+usb-storage@lfdr.de>; Fri, 11 Oct 2019 09:26:00 -0700 (PDT)
 ARC-Seal: i=2; a=rsa-sha256; t=1570811159; cv=pass;
         d=google.com; s=arc-20160816;
-        b=CJzjxjr9oSc+HWKFeLS6nIa2psyT2v4TycWAnnb9I5KIxXwcBmYXvGBAb/RDkXrGkf
-         yz+yrgCZ9GG4EpP06St8PmUHC3mkzbSTZ1ShueLE5OoJQ1JASvVMqATRPSBqG/f8zAHI
-         xT/4iwkdfyHB8kmOnWqWiSEr/nRd13bHsD3vKq5Jx+bDkkBJn17RGD+2gllAOBh0BW8E
-         5BGpNSB7b6/Jlcv1hTbZSVYxNM6MkJ8PZZfPEW35owTzSQb3ws6d6I6dS55RUJ+PM7nJ
-         WOQoxQux5auSDi1sZnV7VuuXD+DSDfFsFtN4ZPHug32JADfgvLlNL8qAziheLwDGSBUy
-         y3DQ==
+        b=U47rk9kD856pnaF1WqLol1JI74Y4qxVEEn3iL94Kq6bnDw5N2FMaweq8Ra2V5gUxs7
+         ONlymv86iMkcF/7XYoo6Ez1E16wdGTwx/kVv39nheYmUKdexW/c8HgkaTr2pV9Jxvuxx
+         hi8dusGi9sr9OaHoQb1PekUO7p2VYMMKLdX0jYliKmqDlSNgYr2YevhlMg9YE+IfEykw
+         On6ByUcPW4R2CXBrdAzqdnwtRV8sIVke5fP/aSkIO4h80moQxlPLwsaOpT1d8US3sePK
+         4mgOl3d0NfdppROyZwgewDTVX4qYLmqMcmAnLZhZMdbWAdCjOMUWh0iYoouMooh/sb/f
+         c4KQ==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:user-agent:content-disposition
-         :mime-version:message-id:subject:cc:to:from:date:sender
-         :dkim-signature;
-        bh=XSi1KOBSiTSLGSud0m9uwgeTG47Ad3BRgFASKvaKmEw=;
-        b=XplP9GR3WDKnFrxQCNkpUF68LFrjiBQkxI0tupcjOuTuS5jGzLmAQUUBcyox4P20E4
-         ulR8Mvg1mjEb4jSYoBWK+n3fF4BXXAasgMsYicoY0DO/8vrbETrzDNBE7p+U3/E8gd7x
-         olWfSkeZxeeLnJ3j5O3o5YPdyGeGuf03ED0l5jkW8UD2km/F4hD6FrjJxxCVtpLBirLV
-         EdcDkPKCzQ1oYUamyf58QsFghT2fhHGr9bwji2u0CJhlgJ/nMklb+Ea2JqHpMUu08ikx
-         uDk85Ao2rmrXf9Fd3xQQ6XRlog7hTqZDLmZCyrnihl1+mSXTDsS7rhOn3hOug/mgb4dz
-         8Aag==
+         :list-id:mailing-list:precedence:mime-version:user-agent:references
+         :in-reply-to:date:to:from:subject:message-id:sender:dkim-signature;
+        bh=iLIEGl8eyAS7q9eIpYUW3GFDRvSiaaWiN2zFP5ZIR4M=;
+        b=L8Zgx3cNsBDDlewvxSsm1PB/n5v5l5ujIfSWIJ1QGxDp9/jGUJKhNSGDnwHU48LQTr
+         RT+x6NPrDa8jvxI0PRkNA7iKI1kf5PFNf5KcDFB1WwRKxTDqNJipe1NXO8Et+/VW1Uka
+         fUQSyfNAEEd3P9TG51d9H/T1Al05hSW78q/GqWoCLnnBUJq4QYh/sf0ReIhw043JnBVn
+         tHTJoQlRxaK/7P572LLd6h0WOabYAsRLGqZiqPjFdUZ4r05/F4DsCxbMqfEEM+MI98Cu
+         qM7jlkrTSFFBZun72BL4axIZfh8foNpzWpRyS/kIeVxGT8BZsh7IRp7T43InuhTjueAQ
+         z0OQ==
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@gmail.com header.s=20161025 header.b=hmEs5ubV;
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b=lFlQ0vsT;
        spf=pass (google.com: domain of jaskaransingh7654321@gmail.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=jaskaransingh7654321@gmail.com;
        dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
-        h=sender:date:from:to:cc:subject:message-id:mime-version
-         :content-disposition:user-agent:x-original-sender
+        h=sender:message-id:subject:from:to:date:in-reply-to:references
+         :user-agent:mime-version:x-original-sender
          :x-original-authentication-results:precedence:mailing-list:list-id
          :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
-        bh=XSi1KOBSiTSLGSud0m9uwgeTG47Ad3BRgFASKvaKmEw=;
-        b=gX66QX4q6APSrAwFm+eXAdk2/mlNElZstP+86SI4kdDyZk0sCjVcNgYnds67/1Eoio
-         CfWlBRm/p4740up8Rn2CpoSZoOn0Q2OFgmWv3Bsv8WFb7KR2cMaXEPh0JeVCeN5jEZTB
-         qt3gx6HSYmA0ALxeg+TPGjn8GHSlUMwut+xcY=
+        bh=iLIEGl8eyAS7q9eIpYUW3GFDRvSiaaWiN2zFP5ZIR4M=;
+        b=XCpbx4t2PAElPpcWdLxBQJOIiQyQhDQPr+611k9hB/LxVWS2bSQCxZCnf5BXU9WtW7
+         ALE9LiN8YXnbcKrvUdbbi4GYHrrRQhhcy0pl6w/wAQAk2/70EJAjQ7bMhMMQtVpI5icx
+         0tIJt5OH4NTzMd3jaKvyLaNCwNfwbmEOorx6w=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
-        h=sender:x-gm-message-state:date:from:to:cc:subject:message-id
-         :mime-version:content-disposition:user-agent:x-original-sender
+        h=sender:x-gm-message-state:message-id:subject:from:to:date
+         :in-reply-to:references:user-agent:mime-version:x-original-sender
          :x-original-authentication-results:precedence:mailing-list:list-id
          :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
-        bh=XSi1KOBSiTSLGSud0m9uwgeTG47Ad3BRgFASKvaKmEw=;
-        b=DmCUbhvdZN7+h3JAPHYhb6psnW6vsN6erGavr3U10nx8sH3Urqy/yFIAsCndSzfXhL
-         HwxHzpRryoth/5Xmyz/RO51s2Ym8rvqa26IbaUEWJooS74bzF1wwUdPw7O94GVk4rXJG
-         2f1W3NN/IYYnQ+398EE1zh1MYsu/BbxzCEenjRyaOM84eEfUb1CNABmhjy7eO9W0vlMs
-         oK2/HItGHVYwmPtyP05hVZpOHqbA9VTqytd11P5qCIELYKCCroFzVw3bpazVC7hqy2ue
-         KkAwMaa0pOYrsB95iYVtEugiVeW6Opqdeiasma17yxSPntDHMKcrpQa3P550vK6Sexq+
-         AWow==
+        bh=iLIEGl8eyAS7q9eIpYUW3GFDRvSiaaWiN2zFP5ZIR4M=;
+        b=En290FYjC4TTtwum0DSkVbxvoiYy+EkXSKN9StBRas8Gc4OU48aJHSlaNYJnV06lLt
+         5tK1uxooVHyBn8MCyDVtCj5KZ9tyS9ZX4k4Ys3xSXScQIANS5uIX9x/7EXWic1+mGWKz
+         MmLHM/Y4gGNJa53wo/CuWrJ6AsizCh+o0RuyjPIbV3d6XqfS6CsxD/adKWLEBJTs9/39
+         3VUi14Ors3fTgfii31kzq9d+nP0pNmb9z6f2Iz74c/luc45Ydvz3+R3Pi176Ybx9dy7d
+         UBm82R2IBWwu3Uack/aSSztAMjZzqJUDPSCWa4MMj4a99pt3G9KJLGCsyuJCiJJONSur
+         LmRg==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: APjAAAWC1quvpoLpQR+fqhEC7ImXxYmi2tIGKVggotpuiAW0JZuvL8dz
-	FUlQ8w0rPGCUf3VPYLxAEmResQ==
-X-Google-Smtp-Source: APXvYqxmvajw1+l44niuLfVWTkDBAQ76I+nRaaLpWpjobA+k2akX5w8H/niKFDyqGKKK8SXXLtq/yA==
-X-Received: by 2002:a9d:550a:: with SMTP id l10mr183764oth.93.1570811159003;
-        Fri, 11 Oct 2019 09:25:59 -0700 (PDT)
-X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a54:4f98:: with SMTP id g24ls1535116oiy.12.gmail; Fri, 11
- Oct 2019 09:25:58 -0700 (PDT)
-X-Received: by 2002:aca:dcd6:: with SMTP id t205mr13151167oig.128.1570811158594;
+X-Gm-Message-State: APjAAAWyM9ugPVjwGmuPacTK5+J/KzBY+xkqxlo+BLCgSXXkNc1itFQ/
+	Fow47buKfPNBCwUXtxjcwk9rQQ==
+X-Google-Smtp-Source: APXvYqxQtq/3iBleoS67J8sRL1HK/ltUDIK1hdmtv5DPqS6h8btJI/TNWPb+9ggJgiFLk8m1loGxeQ==
+X-Received: by 2002:a54:4098:: with SMTP id i24mr2148445oii.127.1570811158953;
         Fri, 11 Oct 2019 09:25:58 -0700 (PDT)
-Received: by 2002:aca:702:0:0:0:0:0 with SMTP id 2msoih;
-        Fri, 11 Oct 2019 04:17:37 -0700 (PDT)
-X-Received: by 2002:a63:ba05:: with SMTP id k5mr15838888pgf.195.1570792656937;
-        Fri, 11 Oct 2019 04:17:36 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1570792656; cv=none;
+X-BeenThere: usb-storage@lists.one-eyed-alien.net
+Received: by 2002:a9d:5f09:: with SMTP id f9ls1555158oti.13.gmail; Fri, 11 Oct
+ 2019 09:25:58 -0700 (PDT)
+X-Received: by 2002:a05:6830:1b75:: with SMTP id d21mr13297802ote.145.1570811158587;
+        Fri, 11 Oct 2019 09:25:58 -0700 (PDT)
+Received: by 2002:a05:6808:28e:0:0:0:0 with SMTP id z14msoic;
+        Fri, 11 Oct 2019 04:23:23 -0700 (PDT)
+X-Received: by 2002:a17:902:a514:: with SMTP id s20mr14192189plq.157.1570793003461;
+        Fri, 11 Oct 2019 04:23:23 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1570793003; cv=none;
         d=google.com; s=arc-20160816;
-        b=e4ix8uwadfna5BIPDumtoS2DIsZQ3DQgPtZEz8b3RmrrUUW7HWYBB16z+gArB5lTWr
-         U2CyE/chLotp/OTF71y5j6puon7EMSKeAL7FQg9szNUemL2gcQzkJQYOqYTWVhOZdHPu
-         mMlQ3o2EaGOFV8xnSjSA0j/BNyfR9Ql6Z3r18wub3YLp5Jbj7q8uhXTxisEBVTInjzmq
-         6k7R1wkJ48G1MPkMPulfUUiO4MddFrPKuLZBbI3GXegV14MrhSWUEJ7VTjm9+izkEFZm
-         94N2nFo8ZC2sWYCZnLtREJ9g6kId6KqdiUMMsX70fVexCk5b5iVUUbzcNPOyZXlsb7HA
-         F27w==
+        b=m7HI0DhAZxD0+JOy5ybm0A9mqJPHsDPz0pyG5Jb7+kctzWbf4akb1wTOxY2+t5c1ng
+         VkLbvLvgZUGUdHM/AwH3UQhA+9Zgcv76zBB4fukGUs9n55hAsSWCdnlkKaNhJLtSEaLa
+         xwbhKMmAUDbvXkwwR4voZg6g0k8612EVKxc76PHrCQxv1+PlIR3PLCSUEtL3JsSRYVVc
+         UL24W4Mq8rX9vi8fyxtw8Lc2pET3PnhWkkYc4gfHQVqmAcd54UFqAfqWF7QdJ+NQIcic
+         Mv+r+GB+CeEnukQzhE4v6TJIoDEwyjm1XwK7R/8GlJQUM9A64dTHDgnCsRlg//hRqbv4
+         nAaw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=user-agent:content-disposition:mime-version:message-id:subject:cc
-         :to:from:date:dkim-signature;
-        bh=VlmC3FzMBaeFdi8vKdtcQ+jsZk6Q6WwIVRbhfWm5BOY=;
-        b=l2vP3kE8smDk0lgoeWDQZTM7U53fFUakNvDnOp0TOe/i1qjGm83QioZ8BQ4h+t7qg+
-         kjnj1FyMpDMbpfQktjDNkQ7IEn0d9+U7Iu8kfw/88g8VY/G/zwNlpAglFbsrYVdwlpoq
-         0WpDrSm0NITvW4nNtJFuqKtKeS7B8uo825B8IF6x/D3CqsHkEiir4JSgRzQwG+kO35u2
-         +0TOPW+IrHWDGMka8xDfNPnIVzKZtccCtGlvYmyDneLLc6u3ormVSmu2Krvrx4FKTCat
-         drpJoOFVB4SYbDXust/RTyXtA2gzMPyjVah1UfG9qLeVgnW+QtCeVCccXiFtCQvOL/bG
-         paLw==
+        h=content-transfer-encoding:mime-version:user-agent:references
+         :in-reply-to:date:to:from:subject:message-id:dkim-signature;
+        bh=FI82U63M+SgbahHSF1eO73vV08QgE3AQDZfaeuoWBb8=;
+        b=Bb0/f8MYTxSGeLA2Q/xL+ZC3Jwv9wz5GDPE88wTA6Hk0dH74eT5OzD2oxCWsWdqsct
+         MxP7PUTCf9rXaZIiwtrJanYZZaCsE7ML6Z3tgZG9Qpfo+8zAC1+mJARJfE9h1Ac/98LL
+         lKLUL0jUDoPwbIIhdMbh819MAvRPuAGF/FNo5UZOAKiXRkAapTyPZLJGxMjCESMGPnlf
+         Ojy0aI0bbYU6Wy8ft6vLop9xRP2tGzXC1zVQykaH9eLiof3FRtxhv6XrRjkwGyFr92ur
+         fDeglTrdkOr4hYnUp5XjXKAERnPi6n7jXxsGE/36iiaexJrtn/vs+f0F4GhQ/Kf/UNSW
+         VjBQ==
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@gmail.com header.s=20161025 header.b=hmEs5ubV;
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b=lFlQ0vsT;
        spf=pass (google.com: domain of jaskaransingh7654321@gmail.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=jaskaransingh7654321@gmail.com;
        dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
 Received: from mail-sor-f65.google.com (mail-sor-f65.google.com. [209.85.220.65])
-        by mx.google.com with SMTPS id a14sor10546910pjs.17.2019.10.11.04.17.36
+        by mx.google.com with SMTPS id r14sor8445475pgb.65.2019.10.11.04.23.23
         for <usb-storage@lists.one-eyed-alien.net>
         (Google Transport Security);
-        Fri, 11 Oct 2019 04:17:36 -0700 (PDT)
+        Fri, 11 Oct 2019 04:23:23 -0700 (PDT)
 Received-SPF: pass (google.com: domain of jaskaransingh7654321@gmail.com designates 209.85.220.65 as permitted sender) client-ip=209.85.220.65;
-X-Received: by 2002:a17:90a:730a:: with SMTP id m10mr17082622pjk.78.1570792656558;
-        Fri, 11 Oct 2019 04:17:36 -0700 (PDT)
-Received: from localhost ([2402:3a80:139e:d60:aa0c:2692:c558:75f5])
-        by smtp.gmail.com with ESMTPSA id w14sm22001108pge.56.2019.10.11.04.17.35
+X-Received: by 2002:a63:4622:: with SMTP id t34mr16734453pga.0.1570793002922;
+        Fri, 11 Oct 2019 04:23:22 -0700 (PDT)
+Received: from localhost.localdomain ([2402:3a80:139e:d60:aa0c:2692:c558:75f5])
+        by smtp.gmail.com with ESMTPSA id u4sm8749841pfu.177.2019.10.11.04.23.19
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 11 Oct 2019 04:17:36 -0700 (PDT)
-Date: Fri, 11 Oct 2019 16:47:32 +0530
-From: Jas K <jaskaransingh7654321@gmail.com>
-To: syzbot+e7d46eb426883fb97efd@syzkaller.appspotmail.com
-Cc: stern@rowland.harvard.edu, gregkh@linuxfoundation.org,
-	linux-usb@vger.kernel.org, usb-storage@lists.one-eyed-alien.net,
-	linux-kernel@vger.kernel.org
+        Fri, 11 Oct 2019 04:23:22 -0700 (PDT)
+Message-ID: <b8b1e4fef9f3ece63909c38b3302621d76770caa.camel@gmail.com>
 Subject: [usb-storage] Re: KMSAN: uninit-value in alauda_check_media
-Message-ID: <20191011111732.GA25982@localhost.localdomain>
-MIME-Version: 1.0
+From: Jaskaran Singh <jaskaransingh7654321@gmail.com>
+To: syzbot <syzbot+e7d46eb426883fb97efd@syzkaller.appspotmail.com>, 
+ glider@google.com, gregkh@linuxfoundation.org,
+ linux-kernel@vger.kernel.org,  linux-usb@vger.kernel.org,
+ stern@rowland.harvard.edu,  syzkaller-bugs@googlegroups.com,
+ usb-storage@lists.one-eyed-alien.net
+Date: Fri, 11 Oct 2019 16:53:15 +0530
+In-Reply-To: <0000000000007d25ff059457342d@google.com>
+References: <0000000000007d25ff059457342d@google.com>
 Content-Type: text/plain; charset="UTF-8"
-Content-Disposition: inline
-User-Agent: Mutt/1.12.1 (2019-06-15)
+User-Agent: Evolution 3.32.4 (3.32.4-1.fc30)
+MIME-Version: 1.0
 X-Original-Sender: jaskaransingh7654321@gmail.com
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@gmail.com header.s=20161025 header.b=hmEs5ubV;       spf=pass
+ header.i=@gmail.com header.s=20161025 header.b=lFlQ0vsT;       spf=pass
  (google.com: domain of jaskaransingh7654321@gmail.com designates
  209.85.220.65 as permitted sender) smtp.mailfrom=jaskaransingh7654321@gmail.com;
        dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
@@ -134,11 +135,98 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-Hi, just taking a crack at this. Hope you guys don't mind.
+On Mon, 2019-10-07 at 12:39 -0700, syzbot wrote:
+> Hello,
+> 
+> syzbot found the following crash on:
+> 
+> HEAD commit:    1e76a3e5 kmsan: replace __GFP_NO_KMSAN_SHADOW with
+> kmsan_i..
+> git tree:       https://github.com/google/kmsan.git master
+> console output: 
+> https://syzkaller.appspot.com/x/log.txt?x=1204cc63600000
+> kernel config:  
+> https://syzkaller.appspot.com/x/.config?x=f03c659d0830ab8d
+> dashboard link: 
+> https://syzkaller.appspot.com/bug?extid=e7d46eb426883fb97efd
+> compiler:       clang version 9.0.0 (/home/glider/llvm/clang  
+> 80fee25776c2fb61e74c1ecb1a523375c2500b69)
+> syz repro:      
+> https://syzkaller.appspot.com/x/repro.syz?x=123c860d600000
+> C reproducer:   
+> https://syzkaller.appspot.com/x/repro.c?x=110631b7600000
+> 
+> IMPORTANT: if you fix the bug, please add the following tag to the
+> commit:
+> Reported-by: syzbot+e7d46eb426883fb97efd@syzkaller.appspotmail.com
+> 
+> =====================================================
+> BUG: KMSAN: uninit-value in alauda_transport+0x462/0x57f0  
+> drivers/usb/storage/alauda.c:1137
+> CPU: 0 PID: 12279 Comm: usb-storage Not tainted 5.3.0-rc7+ #0
+> Hardware name: Google Google Compute Engine/Google Compute Engine,
+> BIOS  
+> Google 01/01/2011
+> Call Trace:
+>   __dump_stack lib/dump_stack.c:77 [inline]
+>   dump_stack+0x191/0x1f0 lib/dump_stack.c:113
+>   kmsan_report+0x13a/0x2b0 mm/kmsan/kmsan_report.c:108
+>   __msan_warning+0x73/0xe0 mm/kmsan/kmsan_instr.c:250
+>   alauda_check_media+0x344/0x3310 drivers/usb/storage/alauda.c:460
+>   alauda_transport+0x462/0x57f0 drivers/usb/storage/alauda.c:1137
+>   usb_stor_invoke_transport+0xf5/0x27e0
+> drivers/usb/storage/transport.c:606
+>   usb_stor_transparent_scsi_command+0x5d/0x70  
+> drivers/usb/storage/protocol.c:108
+>   usb_stor_control_thread+0xca6/0x11a0 drivers/usb/storage/usb.c:380
+>   kthread+0x4b5/0x4f0 kernel/kthread.c:256
+>   ret_from_fork+0x35/0x40 arch/x86/entry/entry_64.S:355
+> 
+> Local variable description: ----status@alauda_check_media
+> Variable was created at:
+>   alauda_check_media+0x8e/0x3310 drivers/usb/storage/alauda.c:454
+>   alauda_transport+0x462/0x57f0 drivers/usb/storage/alauda.c:1137
+> =====================================================
+> Kernel panic - not syncing: panic_on_warn set ...
+> CPU: 0 PID: 12279 Comm: usb-storage Tainted:
+> G    B             5.3.0-rc7+  
+> #0
+> Hardware name: Google Google Compute Engine/Google Compute Engine,
+> BIOS  
+> Google 01/01/2011
+> Call Trace:
+>   __dump_stack lib/dump_stack.c:77 [inline]
+>   dump_stack+0x191/0x1f0 lib/dump_stack.c:113
+>   panic+0x3c9/0xc1e kernel/panic.c:219
+>   kmsan_report+0x2a2/0x2b0 mm/kmsan/kmsan_report.c:131
+>   __msan_warning+0x73/0xe0 mm/kmsan/kmsan_instr.c:250
+>   alauda_check_media+0x344/0x3310 drivers/usb/storage/alauda.c:460
+>   alauda_transport+0x462/0x57f0 drivers/usb/storage/alauda.c:1137
+>   usb_stor_invoke_transport+0xf5/0x27e0
+> drivers/usb/storage/transport.c:606
+>   usb_stor_transparent_scsi_command+0x5d/0x70  
+> drivers/usb/storage/protocol.c:108
+>   usb_stor_control_thread+0xca6/0x11a0 drivers/usb/storage/usb.c:380
+>   kthread+0x4b5/0x4f0 kernel/kthread.c:256
+>   ret_from_fork+0x35/0x40 arch/x86/entry/entry_64.S:355
+> Kernel Offset: disabled
+> Rebooting in 86400 seconds..
+> 
+> 
+> ---
+> This bug is generated by a bot. It may contain errors.
+> See https://goo.gl/tpsmEJ for more information about syzbot.
+> syzbot engineers can be reached at syzkaller@googlegroups.com.
+> 
+> syzbot will keep track of this bug report. See:
+> https://goo.gl/tpsmEJ#status for how to communicate with syzbot.
+> syzbot can test patches for this bug, for details see:
+> https://goo.gl/tpsmEJ#testing-patches
 
-#syz test: https://github.com/google/kasan.git 1e76a3e5
+#syz test: https://github.com/google/kmsan.git 1e76a3e5
 
-diff --git a/drivers/usb/storage/alauda.c b/drivers/usb/storage/alauda.c
+diff --git a/drivers/usb/storage/alauda.c
+b/drivers/usb/storage/alauda.c
 index ddab2cd3d2e7..bb309b9ad65b 100644
 --- a/drivers/usb/storage/alauda.c
 +++ b/drivers/usb/storage/alauda.c
@@ -155,4 +243,4 @@ index ddab2cd3d2e7..bb309b9ad65b 100644
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20191011111732.GA25982%40localhost.localdomain.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/b8b1e4fef9f3ece63909c38b3302621d76770caa.camel%40gmail.com.
