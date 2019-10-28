@@ -1,121 +1,143 @@
-Return-Path: <usb-storage+bncBCMIZB7QWENRB7N5WXWQKGQEH5YWYQI@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBDF7X5HH4UNBBIET3PWQKGQE5FZ5SAI@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-qt1-x845.google.com (mail-qt1-x845.google.com [IPv6:2607:f8b0:4864:20::845])
-	by mail.lfdr.de (Postfix) with ESMTPS id 31F42DE555
-	for <lists+usb-storage@lfdr.de>; Mon, 21 Oct 2019 09:32:16 +0200 (CEST)
-Received: by mail-qt1-x845.google.com with SMTP id v92sf368544qtd.18
-        for <lists+usb-storage@lfdr.de>; Mon, 21 Oct 2019 00:32:16 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1571643134; cv=pass;
+Received: from mail-yb1-xb45.google.com (mail-yb1-xb45.google.com [IPv6:2607:f8b0:4864:20::b45])
+	by mail.lfdr.de (Postfix) with ESMTPS id D3F90E700F
+	for <lists+usb-storage@lfdr.de>; Mon, 28 Oct 2019 11:57:37 +0100 (CET)
+Received: by mail-yb1-xb45.google.com with SMTP id g135sf7838346ybf.1
+        for <lists+usb-storage@lfdr.de>; Mon, 28 Oct 2019 03:57:37 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1572260256; cv=pass;
         d=google.com; s=arc-20160816;
-        b=CdlhCOn+c0tZp39VvVQWfx2UfGwSPzHcOLDvKnIeqO0joZ0RJbUojiT3BoPjDy0WoN
-         pon7g+ISJbWR9mfLKFhGb/iIIGV+cWo0nPkJ+GCgxSh5K7T1dGKIpYLtlzpasaBp0d7I
-         pGRQSFxVb7aBbVmkfLmvTlXkYRapaYDhnfDZDhN5RkftCR+Ij9MOJPZoetXGougo39ml
-         3lHhkeAC26YT3tQgo4XkR3RVT8Pj+P0wJilMxPTbym4zepDzPwhcJMow3rOwDIvGOGJc
-         VtX3rhK3J03Om32qdkVS2pjuCZEe718/eNe/QNgfAS6a34w/jMceWOr/bup9F/Z0eZXj
-         ifXw==
+        b=Hzru5WrqIPODUGGUiT+cFcXWYm/Vgxy3MmBgeZA/LgT9TBwEDFZOBeYOkP/zIfLQb4
+         pjlEb3JZwSgxretA56540EcjKhr1nyES3ecNXVLRtrAfgK0xVLP6JH9iR7DjTbp3purD
+         6scSCFDWmCSPGWoqB6LDddsdvU6PtVn3LqkOnwAbazKaZi0+7p0CcGvnIzd2xHs4s7GR
+         53yDe0ez7aL9GptC2yi3F5H6S2gOd0EUecjUfbyual3XMTrNPpjRcaCDRFBVtf0Tzzb4
+         BxWUnL7BjzxG4oRSua+OVESG+XC0BVDvoItufobqawyAmUSm+kacKawduIHG5T+Lop4E
+         c2cw==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:reply-to:cc:to:subject:message-id
-         :date:from:in-reply-to:references:mime-version:dkim-signature;
-        bh=jC4BON+zi1fbzvZC4FKeFe/uPUb6S6Jg85nY0hebxWY=;
-        b=OibMxvNjQ7TzKoCb6RFpMaEuD3ERuDBt8ZsE3S8oYhauPizQD/h1MP2f/3363ujGL4
-         Xn42HsVGUpiuWSEk+SLyuHAjtPVzRFqCzgcXUdZR8jYJSbW44MBQ7jzvq0HMOaV6SdD3
-         BqA3GHUCn/I8innVUHQbw3lsGsQ57lNJelywTVU5gJPGV/yzwFcHa6Zw8rumShhDsT+e
-         cwBN609G012i++AO98NkVjtNxqQiZ7cAvM3SSExqjsAAPWof0ve5sM0gJ682rkMhoMqx
-         jk5SI26PqUJzsbOVRMSpCJjQME5Mf33rx4cpjJLR/cssdcrWQiyghh07CYENHloitR8t
-         hMJg==
+         :list-id:mailing-list:precedence:mime-version:message-id:date
+         :subject:cc:to:from:wdcironportexception:ironport-sdr:ironport-sdr
+         :ironport-sdr:sender:dkim-signature;
+        bh=28FM4Iaf5F4Y8eDmDEvnsOAVoqUyKz4SdwMnvzL8UeM=;
+        b=T9iE7oPqJoFHQGwh027dFOa6jbK3W2EdgV25yOQ/7u6UJDpHoHz/8VWM9RXQXyQTZ6
+         J7XAzxg0wnyWg+ydp8y2O7atLH3EqkYKCNWxFpavb2RAvlpCnIDRllJNTdi3EBENjMrh
+         Vg1nOKNRchafrROZA+v816ymsNTMPHKBjRafoeXp53LzWEJfGTMKmEB5YCOXtJ9U0Y6x
+         +OAunMfJoXb7w9uKfvqxQnKFLVx5we6nEU1rmA1PBoCTghw9pNzJtH6BnSN9NcMHVRQq
+         wn8zMXXzL9//bG8smaM1viajkX2Pii3Z5egczYkVUEoG3jeoi9oULl3n/LUiL9z881Vc
+         VP8Q==
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@google.com header.s=20161025 header.b=NAnf6DN1;
-       spf=pass (google.com: domain of dvyukov@google.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=dvyukov@google.com;
-       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
+       dkim=pass header.i=@wdc.com header.s=dkim.wdc.com header.b=Q70I8I6I;
+       spf=pass (google.com: domain of prvs=19766d7de=damien.lemoal@wdc.com designates 216.71.153.141 as permitted sender) smtp.mailfrom="prvs=19766d7de=damien.lemoal@wdc.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=wdc.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
-        h=mime-version:references:in-reply-to:from:date:message-id:subject:to
-         :cc:x-original-sender:x-original-authentication-results:reply-to
-         :precedence:mailing-list:list-id:list-post:list-help:list-archive
-         :list-subscribe:list-unsubscribe;
-        bh=jC4BON+zi1fbzvZC4FKeFe/uPUb6S6Jg85nY0hebxWY=;
-        b=WZOpxWTwjaBKxT7iG2lbhAIe2XDE5S0F24S3+UlPm9RVCA0UTZLlqQ98Q6EJsO8PDX
-         u7sQnzrsZ+b3H3VgOzDSZOThyig8GIXDqWk1OgQ28PKeHGe459fbeYB8AduUF2Z3b/Ug
-         a5k0DUdOoOEVGjP54QVvs+6rzmL6tnNRBBHzg=
+        h=sender:ironport-sdr:ironport-sdr:ironport-sdr:wdcironportexception
+         :from:to:cc:subject:date:message-id:mime-version:x-original-sender
+         :x-original-authentication-results:precedence:mailing-list:list-id
+         :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
+        bh=28FM4Iaf5F4Y8eDmDEvnsOAVoqUyKz4SdwMnvzL8UeM=;
+        b=U93qQVB7ddRH2q8AY+nSIdRF49GPFcUhUejzANve+jiDiWbvNf04zbL8z2r4oW0P+V
+         Xvt3ntyC2jle1MTq+ygJwqcBQZpyyHNv1Coiv3jt4eylwTCvhoz1Q39mrr9lo7Ff1mVC
+         gE+XJboltqaP4rmMbPUjygJURT4EcaY4QLn/A=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
-        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
-         :message-id:subject:to:cc:x-original-sender
-         :x-original-authentication-results:reply-to:precedence:mailing-list
-         :list-id:x-spam-checked-in-group:list-post:list-help:list-archive
-         :list-subscribe:list-unsubscribe;
-        bh=jC4BON+zi1fbzvZC4FKeFe/uPUb6S6Jg85nY0hebxWY=;
-        b=MY0zab+nLAapLtOJ9vfiPUbEqdi9bWYsQ/2eCOvyIevoqm5ZvtsBd0lKZ3kcaB6PO5
-         MAoQeBXYojPmL3UMHFwSUGsdyLiq2Dkqr+osndXxTQPTwGrKLNw8EihV9EizAvMNYuwk
-         EKjgpPcjf7xT4taUSk1jg3nIB3of08uaZJPZoxxtJVWvHtrFicn3ltbCdrUFywHX/bfK
-         EARnE6sQgI9JId25WfUDnbOESwnRTj+L+9naq+2I8xQU573E66Q3q7bM9zIM+Z8Smw8L
-         Fo7m/iJP0IcxhLmDKjNEBfXAaTSnVoUeAx7kekfPuFyQVqTl29iulCwWYw+3868Tez98
-         5epQ==
-X-Gm-Message-State: APjAAAU/V08xC9jjAM0fAB73aRuOmSVA9TE+iK57KEhp+cjuSx6TUuj4
-	voX3jenB+G9FaBR3n4J2npNSNg==
-X-Google-Smtp-Source: APXvYqyLO5Jmh0av+HtSTTVP8Qhj+vlU2uRvn40R3a6HM5VoVRSqnQf+2WjEvYN3ohngraTbEwOSzw==
-X-Received: by 2002:ac8:2dc9:: with SMTP id q9mr528846qta.219.1571643133827;
-        Mon, 21 Oct 2019 00:32:13 -0700 (PDT)
+        h=sender:x-gm-message-state:ironport-sdr:ironport-sdr:ironport-sdr
+         :wdcironportexception:from:to:cc:subject:date:message-id
+         :mime-version:x-original-sender:x-original-authentication-results
+         :precedence:mailing-list:list-id:x-spam-checked-in-group:list-post
+         :list-help:list-archive:list-subscribe:list-unsubscribe;
+        bh=28FM4Iaf5F4Y8eDmDEvnsOAVoqUyKz4SdwMnvzL8UeM=;
+        b=Q41bZdBiavSubUVMUqh8Oq3BLIZ+/10/tlThIM2++pxl1TtR8hdnpNmKvPZlvVx6Dx
+         J5fa1PrDuRZ8WPXmdDQCb2EN2dOS+k34xkX9Oi+ikxLmra0nnGLf1uQbI0jBMeRY2ArQ
+         KI/pD6UbxCWHnANYSHED30d76oOzNiyHLh2J93i1JFvh1rZzF7VP2mVZ4srttXGHVyus
+         g2V1sESAahQMWQYVVUtUgC77qjMygT9WPz7AkSwTCBqNDr/x8luKFcTXO/XqphaM/Fiy
+         tMr2uKhhkubQHnpvMK9Hap9vwU/Jyc4VXmHo7xvt0gNeU1ht5V57MBYer+9ZETSlbQpp
+         tThg==
+Sender: usb-storage@lists.one-eyed-alien.net
+X-Gm-Message-State: APjAAAUqA9FcaUXL/ljaEYGcps1EIaB5aqgv0c55WYBCgd2LbweVq7C3
+	7UXdIhhDi6FFtQhSRxwyo+sUjQ==
+X-Google-Smtp-Source: APXvYqwHRFMZFx8XXzcXIAlpxlvpnv7V/bWxR/N3/+SOv346yC+s8lxMn8H0lLpy+jtGRlAiCQLPpg==
+X-Received: by 2002:a25:bc4f:: with SMTP id d15mr12772985ybk.326.1572260256465;
+        Mon, 28 Oct 2019 03:57:36 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a37:2e06:: with SMTP id u6ls1079303qkh.5.gmail; Mon, 21 Oct
- 2019 00:32:13 -0700 (PDT)
-X-Received: by 2002:a05:620a:208a:: with SMTP id e10mr21608810qka.189.1571643133249;
-        Mon, 21 Oct 2019 00:32:13 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1571643133; cv=none;
+Received: by 2002:a25:c04f:: with SMTP id c76ls2600721ybf.10.gmail; Mon, 28
+ Oct 2019 03:57:35 -0700 (PDT)
+X-Received: by 2002:a25:14d6:: with SMTP id 205mr12866356ybu.230.1572260255672;
+        Mon, 28 Oct 2019 03:57:35 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1572260255; cv=none;
         d=google.com; s=arc-20160816;
-        b=U9qkgZ/VYzOdSverDWbpsJZdbcZ7lvl+Mjzx5KHClfn2r96mOZ2UfkT6aj6VDM/mMr
-         emE4KJjF/886Y3WiVt5uvrgDyl1avsr/8SDqj05HqgJmsia/l3Ug8oJlneXY9AkkGLbM
-         WwQDdBJCMSO7amk1EY277G+jmSq+QLm56el3JYGSODpLRHaAfqVlChC8lLolmjXXnAuG
-         q4O6+sIjAbUUQVDHxDyoWECtAjxgw/Z/0NbWpJYi4j0VEYvoFOCzlcTn9Uk3YCuYh6R/
-         pQUWdspAeF8fFHJAC4JcWJ13bLd3INFeWynkAgIQRrV5V8JYgoiWqTTZlh91/YltprnB
-         LMoA==
+        b=FM+I4Zipf+aRYVExrxUYM2zowFfRSaXw02erQVJpCb2VUBw2i410s+sb/Q4SWukeev
+         AsGsi/G1PsFxabG+Iwj3Xrtusczy00mA5CNj30mL6WpRgniM2JVxLXPy4071q0bl34Y+
+         6Q1yzefWIP+rIEWKV+fCGjY0h8vypIa/hdyLNKWPssk7n6ZTnLIbhH7TRVBBpJx7z++W
+         aeriPgpyyYW4HIBvRW5WLx2I2APdQ7tANIy5rrro3UZgKIa8d42SzSB1XG6xt4EhcFOx
+         JEbnnYzmncMg5PLY4qiQxzzJTaSdTRLZ75wpDLjHjoQkI8wYWNnX5CahjhTnLfJB4fnl
+         tPZg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:dkim-signature;
-        bh=SYy1/LrxYgUepstMy8ztXvJpwYGOSfKv6Ncg1+uVmSg=;
-        b=xnnDoN1tgr9YpcUznxslm1SU462rE0qC415RzgSkNFljeXs9+6M6bEndMzCnGYpphp
-         X8Mn9X3e/aaqq912pQmN5aAW6/3oIcgIN2wtcP9SsGVTaImR2fdjezeG4p55aaS78UUN
-         AZDUYAshpdGZcd2FknQcKDxBm/B4eMzJXW2XiaNN/blqHNk+4FyPl6iefIkeIf7tQ9nS
-         APdvYdFxGSDcsbGPqtoxf3PNvadKWc1nUsglEJrGqlm+EfDEXSzS7VL1bA2dFPPXmGmg
-         RPCHDgDlAcGE43F2ve1Uqcn6GwjsFj2Z8cNpwnhrnQOgdSfmb1PKNF25IbYyPHQtWuWV
-         lNCw==
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:wdcironportexception:ironport-sdr:ironport-sdr:ironport-sdr
+         :dkim-signature;
+        bh=Ax93Zyi13lUBJj12L/ulLmqzrz8dH3/YRjYFxOe0ayM=;
+        b=P5okZfZubSYfCAb13piiusN6xE7TiTvRY38njDQVYVd2F2wYTmEXUYcssRNsJew7MN
+         5X6slJz5itspwV7Xrdh/YPzWmhX8kUZ3Pz657TVxnG9OOiKUSIPpyQ/Th4gvw7nDqej9
+         6n3NvMommcsIDycoBJeFUOAz/0KH83d+5V1iO+ymkrQejSdqp56SWsgvZEUcj9BDfTY8
+         QoPUfxfEYFuPp4c9Unq5owRSeVgJg3yx0WGUUSufYKxBBkL7JKU84HNkKy65pFcME1YB
+         f/MS/rMsUuMm5uJG3RIDBhc0jOglPqKXjie/HHQ43qSSeCYqMmpW7Y59JVl/u+30xWXu
+         hzEg==
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@google.com header.s=20161025 header.b=NAnf6DN1;
-       spf=pass (google.com: domain of dvyukov@google.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=dvyukov@google.com;
-       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
-Received: from mail-sor-f65.google.com (mail-sor-f65.google.com. [209.85.220.65])
-        by mx.google.com with SMTPS id b8sor6761310qkk.80.2019.10.21.00.32.13
+       dkim=pass header.i=@wdc.com header.s=dkim.wdc.com header.b=Q70I8I6I;
+       spf=pass (google.com: domain of prvs=19766d7de=damien.lemoal@wdc.com designates 216.71.153.141 as permitted sender) smtp.mailfrom="prvs=19766d7de=damien.lemoal@wdc.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=wdc.com
+Received: from esa3.hgst.iphmx.com (esa3.hgst.iphmx.com. [216.71.153.141])
+        by mx.google.com with ESMTPS id r189si6358896ywg.32.2019.10.28.03.57.35
         for <usb-storage@lists.one-eyed-alien.net>
-        (Google Transport Security);
-        Mon, 21 Oct 2019 00:32:13 -0700 (PDT)
-Received-SPF: pass (google.com: domain of dvyukov@google.com designates 209.85.220.65 as permitted sender) client-ip=209.85.220.65;
-X-Received: by 2002:a37:4a87:: with SMTP id x129mr20642441qka.43.1571643132113;
- Mon, 21 Oct 2019 00:32:12 -0700 (PDT)
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 28 Oct 2019 03:57:35 -0700 (PDT)
+Received-SPF: pass (google.com: domain of prvs=19766d7de=damien.lemoal@wdc.com designates 216.71.153.141 as permitted sender) client-ip=216.71.153.141;
+IronPort-SDR: yfXQcSXz+lEYaV+mw8V8MTxA1dlP4SFZYo4KB3oaaXDOjxfUCMtkxUFrkIe9dS11QA/VcVws//
+ vjxwx+f18D76gw/Ze55O5mJ1H8zWzthQmJjKj6t9c6a0tGUTMwdoByf/9MU6DmxCiGSmWMQUgk
+ dXmkbgEyYKHwytL7nxks6CNRTD4nnxeK50fqJjwexyN3b7xV+CD0MLJ4RXRgaWTPrDJl95hFiB
+ LfIvi4psx88CxqxbfChwRWqKphpba1avOJ+/PvKurAO1UxYceNeHtB9th7xMuetqC57EcHf3ck
+ T58=
+X-IronPort-AV: E=Sophos;i="5.68,239,1569254400"; 
+   d="scan'208";a="125891401"
+Received: from h199-255-45-14.hgst.com (HELO uls-op-cesaep01.wdc.com) ([199.255.45.14])
+  by ob1.hgst.iphmx.com with ESMTP; 28 Oct 2019 18:57:35 +0800
+IronPort-SDR: eTWs15BKX1SZtnvF6rr2+98SuiVt25v/D2e+9hcHDjV3dAKmJzVV77Zrl2+I40/Qr60DCMgLT8
+ EMy4pBNxDV5Zooqq4Nw4OnLM+asfwC0GJS4cnRFyheoPnL+5fC161r3QS8NzDuJ4BqPZLA6mxH
+ 0VctR0CkpvGZZ8D92oYDlZS4cVGXO9A6Lv88GbyWRGXZGNdG1uwEqXl1Qaciveq0THJ9M26ozA
+ JBWUKjwm1TEH9MNDhQvJ9mLzS4ag/4qW2TWJfPD7TS43kl1pdntchRbxqeNnQYSS6+ezqiVcbU
+ peOKD2Q5ypWynAEMX8HcYvOF
+Received: from uls-op-cesaip02.wdc.com ([10.248.3.37])
+  by uls-op-cesaep01.wdc.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 28 Oct 2019 03:52:56 -0700
+IronPort-SDR: HF+d3JKARyFvJYiVVFrIfJUDiGbVDvC+DpJK0P98J87M+BaVK7PE3AJ29odtlXd+wxKO1TZpSZ
+ 4t3cL6MEj8FlE5KZ65xk0U0lfUbtFhfwSbgpVTX1wOVPwTe6VhJY0qzq7LkBJ0qWK2iWjf+AVo
+ uKYz2KzdhccfuG/9ucm/6Bj8vW49UQjmcdAK4qKuSu8pjgYNzhht9Qc8L/Y1UqQZnhQCtOxsCy
+ XYUleEXeLE+gF6g1UxI7kaxkuOVq+EJNaFa3pdvbADzYk0g8yY1uSDdBRojBypHkKl0Ht9+KMj
+ sLc=
+WDCIronportException: Internal
+Received: from washi.fujisawa.hgst.com ([10.149.53.254])
+  by uls-op-cesaip02.wdc.com with ESMTP; 28 Oct 2019 03:57:33 -0700
+From: Damien Le Moal <damien.lemoal@wdc.com>
+To: linux-scsi@vger.kernel.org,
+	"Martin K . Petersen" <martin.petersen@oracle.com>,
+	linux-usb@vger.kernel.org,
+	usb-storage@lists.one-eyed-alien.net,
+	Alan Stern <stern@rowland.harvard.edu>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Cc: Justin Piszcz <jpiszcz@lucidpixels.com>
+Subject: [usb-storage] [PATCH] scsi: Fix scsi_get/set_resid() interface
+Date: Mon, 28 Oct 2019 19:57:32 +0900
+Message-Id: <20191028105732.29913-1-damien.lemoal@wdc.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-References: <CALRZ7UuS10CvHvDxMyFyN_wZF_xvzrABT-E_NRt1jKKtXk6Rng@mail.gmail.com>
- <CACT4Y+YxieAS3QrFk9ON6FiYnFzMO_CyzZBo9iTX25fLGzDj+g@mail.gmail.com> <CALRZ7Uvy_QQPPc6wgvDadxD6gemOmjpxCDpYPt=zsi9_1Xjvng@mail.gmail.com>
-In-Reply-To: <CALRZ7Uvy_QQPPc6wgvDadxD6gemOmjpxCDpYPt=zsi9_1Xjvng@mail.gmail.com>
-From: "'Dmitry Vyukov' via USB Mass Storage on Linux" <usb-storage@lists.one-eyed-alien.net>
-Date: Mon, 21 Oct 2019 09:32:00 +0200
-Message-ID: <CACT4Y+Z3PgnruKivBQPbD0-HEn_Hz7huQ0EHr2_7=RURjZwJ+A@mail.gmail.com>
-Subject: [usb-storage] Re: WARNING: ODEBUG bug in del_timer
-To: zzoru <zzoru007@gmail.com>
-Cc: Alan Stern <stern@rowland.harvard.edu>, 
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, USB list <linux-usb@vger.kernel.org>, 
-	usb-storage@lists.one-eyed-alien.net, LKML <linux-kernel@vger.kernel.org>, 
-	dokyungs@uci.edu, syzkaller <syzkaller@googlegroups.com>, 
-	Andrey Konovalov <andreyknvl@google.com>
-Content-Type: text/plain; charset="UTF-8"
-X-Original-Sender: dvyukov@google.com
+X-Original-Sender: Damien.LeMoal@wdc.com
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@google.com header.s=20161025 header.b=NAnf6DN1;       spf=pass
- (google.com: domain of dvyukov@google.com designates 209.85.220.65 as
- permitted sender) smtp.mailfrom=dvyukov@google.com;       dmarc=pass
- (p=REJECT sp=REJECT dis=NONE) header.from=google.com
-X-Original-From: Dmitry Vyukov <dvyukov@google.com>
-Reply-To: Dmitry Vyukov <dvyukov@google.com>
+ header.i=@wdc.com header.s=dkim.wdc.com header.b=Q70I8I6I;       spf=pass
+ (google.com: domain of prvs=19766d7de=damien.lemoal@wdc.com designates
+ 216.71.153.141 as permitted sender) smtp.mailfrom="prvs=19766d7de=damien.lemoal@wdc.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=wdc.com
+Content-Type: text/plain; charset="UTF-8"
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -131,124 +153,80 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On Sat, Oct 19, 2019 at 1:36 AM zzoru <zzoru007@gmail.com> wrote:
->
-> Hi
->
-> The customizations are related to driver fuzzing.
-> We added some more descriptions of USB driver & narrowed the
-> constraints (targeted fuzzing).
+struct scsi_cmnd cmd->req.resid_len which is returned and set
+respectively by the helper functions scsi_get_resid() and
+scsi_set_resid() is an unsigned int. Reflect this fact in the interface
+of these helper functions.
 
-Please consider upstreaming these improvements to syzkaller.
+Also fix compilation errors due to min() and max() type mismatch
+introduced by this change in scsi debug code and usb transport code.
 
-> And sorry about I have not much time to make patches of these bugs.
->
-> On Fri, Oct 18, 2019 at 2:33 AM Dmitry Vyukov <dvyukov@google.com> wrote:
-> >
-> > On Wed, Oct 16, 2019 at 11:59 AM zzoru <zzoru007@gmail.com> wrote:
-> > >
-> > > We found the following crash on Linux 5.4-rc1 (Not patched in currnet
-> > > HEAD commit 3b1f00aceb7a67bf079a5a64aa5c6baf78a8f442)
-> > > with our customized syzkaller.
-> >
-> > Hi zzoru,
-> >
-> > Do you mind sharing what customizations you did to syzkaller? Are
-> > these related to USB? I've noticed several reports were related to USB
-> > subsystem.
-> >
-> > > ODEBUG: assert_init not available (active state 0) object type:
-> > > timer_list hint: 0x0
-> > > WARNING: CPU: 0 PID: 141 at linux/lib/debugobjects.c:484
-> > > debug_print_object+0x15e/0x220 linux/lib/debugobjects.c:481
-> > > Kernel panic - not syncing: panic_on_warn set ...
-> > > CPU: 0 PID: 141 Comm: kworker/0:3 Not tainted 5.4.0-rc1 #5
-> > > Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS
-> > > rel-1.12.1-0-ga5cab58e9a3f-prebuilt.qemu.org 04/01/2014
-> > > Workqueue: usb_hub_wq hub_event
-> > > Call Trace:
-> > >  __dump_stack linux/lib/dump_stack.c:77 [inline]
-> > >  dump_stack+0x7c/0xbb linux/lib/dump_stack.c:113
-> > >  panic+0x205/0x48e linux/kernel/panic.c:220
-> > >  __warn+0x19c/0x1c0 linux/kernel/panic.c:581
-> > >  report_bug+0x1a9/0x2b0 linux/lib/bug.c:195
-> > >  fixup_bug.part.11+0x32/0x80 linux/arch/x86/kernel/traps.c:179
-> > >  fixup_bug linux/arch/x86/include/asm/irqflags.h:54 [inline]
-> > >  do_error_trap+0xf5/0x160 linux/arch/x86/kernel/traps.c:272
-> > >  do_invalid_op+0x31/0x40 linux/arch/x86/kernel/traps.c:291
-> > >  invalid_op+0x23/0x30 linux/arch/x86/entry/entry_64.S:1028
-> > > RIP: 0010:debug_print_object+0x15e/0x220 linux/lib/debugobjects.c:481
-> > > Code: 3c dd 80 05 9a 85 48 89 fa 48 c1 ea 03 80 3c 02 00 75 7f 48 8b
-> > > 14 dd 80 05 9a 85 4c 89 ee 48 c7 c7 00 fb 99 85 e8 d2 a7 43 ff <0f> 0b
-> > > 83 05 cd bd 70 05 01 48 83 c4 18 5b 5d 41 5c 41 5d 41 5e c3
-> > > RSP: 0018:ffff888017017668 EFLAGS: 00010282
-> > > RAX: 0000000000000000 RBX: 0000000000000005 RCX: ffffffff814153b0
-> > > RDX: 0000000000000000 RSI: 0000000000000008 RDI: ffff88801a41f730
-> > > RBP: 0000000000000001 R08: ffffed1003483ee7 R09: ffffed1003483ee7
-> > > R10: 0000000000000001 R11: ffffed1003483ee6 R12: ffffffff86908460
-> > > R13: ffffffff859a01a0 R14: ffffffff812b6bc0 R15: ffff888017fb0420
-> > >  debug_object_assert_init+0x290/0x430 linux/lib/debugobjects.c:866
-> > >  debug_timer_assert_init linux/kernel/time/timer.c:729 [inline]
-> > >  debug_assert_init linux/kernel/time/timer.c:774 [inline]
-> > >  del_timer+0x67/0xf0 linux/kernel/time/timer.c:1196
-> > >  realtek_cr_destructor+0x5a/0x90 linux/drivers/usb/storage/realtek_cr.c:937
-> > >  usb_stor_release_resources linux/drivers/usb/storage/usb.c:817 [inline]
-> > >  release_everything+0xc0/0x2c0 linux/drivers/usb/storage/usb.c:879
-> > >  usb_unbind_interface+0x19f/0x810 linux/drivers/usb/core/driver.c:423
-> > >  __device_release_driver linux/drivers/base/dd.c:1134 [inline]
-> > >  device_release_driver_internal+0x429/0x4f0 linux/drivers/base/dd.c:1165
-> > >  bus_remove_device+0x2d1/0x490 linux/drivers/base/bus.c:532
-> > >  device_del+0x403/0xaa0 linux/drivers/base/core.c:2375
-> > >  usb_disable_device+0x1d7/0x5f0 linux/drivers/usb/core/message.c:1237
-> > >  usb_disconnect+0x25a/0x840 linux/drivers/usb/core/hub.c:2199
-> > >  hub_port_connect linux/drivers/usb/core/hub.c:4949 [inline]
-> > >  hub_port_connect_change linux/drivers/usb/core/hub.c:5213 [inline]
-> > >  port_event linux/drivers/usb/core/hub.c:5359 [inline]
-> > >  hub_event+0x11f5/0x3610 linux/drivers/usb/core/hub.c:5441
-> > >  process_one_work+0x8b5/0x17c0 linux/kernel/workqueue.c:2269
-> > >  worker_thread+0x82/0xb80 linux/kernel/workqueue.c:2415
-> > >  kthread+0x325/0x3e0 linux/kernel/kthread.c:255
-> > >  ret_from_fork+0x24/0x30 linux/arch/x86/entry/entry_64.S:352
-> > > Dumping ftrace buffer:
-> > >    (ftrace buffer empty)
-> > > Kernel Offset: disabled
-> > >
-> > > Following is my analysis of this bug (Just add some comments in source code):
-> > > https://github.com/torvalds/linux/blob/e0703556644a531e50b5dc61b9f6ea83af5f6604/drivers/usb/storage/realtek_cr.c#L887-L891
-> > > static int realtek_cr_autosuspend_setup(struct us_data *us)
-> > > {
-> > >     ...
-> > >     if (retval != STATUS_SUCCESS) {
-> > >         usb_stor_dbg(us, "Read status fail\n");
-> > >         return -EIO; // Error!
-> > >     }
-> > >     ...
-> > >     timer_setup(&chip->rts51x_suspend_timer, rts51x_suspend_timer_fn,
-> > > 0); // rts51x_suspend_timer wasn't be initialized. When
-> > > realtek_cr_autosuspend_setup just returns an error.
-> > > }
-> > >
-> > >
-> > > https://github.com/torvalds/linux/blob/e0703556644a531e50b5dc61b9f6ea83af5f6604/drivers/usb/storage/realtek_cr.c#L1010-L1012
-> > >
-> > > #ifdef CONFIG_REALTEK_AUTOPM
-> > > if (ss_en)
-> > >     realtek_cr_autosuspend_setup(us); // There isn't any check about
-> > > return code.
-> > > #endif
-> > >
-> > > https://github.com/torvalds/linux/blob/e0703556644a531e50b5dc61b9f6ea83af5f6604/drivers/usb/storage/realtek_cr.c#L936-L939
-> > > static void realtek_cr_destructor(void *extra)
-> > > {
-> > >     ...
-> > >     if (ss_en) {
-> > >         del_timer(&chip->rts51x_suspend_timer); // Ouch! :(
-> > >         chip->timer_expires = 0;
-> > >     }
-> > >     ...
-> > > }
+Signed-off-by: Damien Le Moal <damien.lemoal@wdc.com>
+---
+ drivers/scsi/scsi_debug.c       | 4 ++--
+ drivers/usb/storage/transport.c | 3 +--
+ include/scsi/scsi_cmnd.h        | 4 ++--
+ 3 files changed, 5 insertions(+), 6 deletions(-)
+
+diff --git a/drivers/scsi/scsi_debug.c b/drivers/scsi/scsi_debug.c
+index d323523f5f9d..4daf2637c011 100644
+--- a/drivers/scsi/scsi_debug.c
++++ b/drivers/scsi/scsi_debug.c
+@@ -1025,7 +1025,7 @@ static int fill_from_dev_buffer(struct scsi_cmnd *scp, unsigned char *arr,
+ static int p_fill_from_dev_buffer(struct scsi_cmnd *scp, const void *arr,
+ 				  int arr_len, unsigned int off_dst)
+ {
+-	int act_len, n;
++	unsigned int act_len, n;
+ 	struct scsi_data_buffer *sdb = &scp->sdb;
+ 	off_t skip = off_dst;
+ 
+@@ -1039,7 +1039,7 @@ static int p_fill_from_dev_buffer(struct scsi_cmnd *scp, const void *arr,
+ 	pr_debug("%s: off_dst=%u, scsi_bufflen=%u, act_len=%u, resid=%d\n",
+ 		 __func__, off_dst, scsi_bufflen(scp), act_len,
+ 		 scsi_get_resid(scp));
+-	n = (int)scsi_bufflen(scp) - ((int)off_dst + act_len);
++	n = scsi_bufflen(scp) - (off_dst + act_len);
+ 	scsi_set_resid(scp, min(scsi_get_resid(scp), n));
+ 	return 0;
+ }
+diff --git a/drivers/usb/storage/transport.c b/drivers/usb/storage/transport.c
+index 96cb0409dd89..238a8088e17f 100644
+--- a/drivers/usb/storage/transport.c
++++ b/drivers/usb/storage/transport.c
+@@ -1284,8 +1284,7 @@ int usb_stor_Bulk_transport(struct scsi_cmnd *srb, struct us_data *us)
+ 
+ 		} else {
+ 			residue = min(residue, transfer_length);
+-			scsi_set_resid(srb, max(scsi_get_resid(srb),
+-			                                       (int) residue));
++			scsi_set_resid(srb, max(scsi_get_resid(srb), residue));
+ 		}
+ 	}
+ 
+diff --git a/include/scsi/scsi_cmnd.h b/include/scsi/scsi_cmnd.h
+index 91bd749a02f7..3772ae5d40cd 100644
+--- a/include/scsi/scsi_cmnd.h
++++ b/include/scsi/scsi_cmnd.h
+@@ -190,12 +190,12 @@ static inline unsigned scsi_bufflen(struct scsi_cmnd *cmd)
+ 	return cmd->sdb.length;
+ }
+ 
+-static inline void scsi_set_resid(struct scsi_cmnd *cmd, int resid)
++static inline void scsi_set_resid(struct scsi_cmnd *cmd, unsigned int resid)
+ {
+ 	cmd->req.resid_len = resid;
+ }
+ 
+-static inline int scsi_get_resid(struct scsi_cmnd *cmd)
++static inline unsigned int scsi_get_resid(struct scsi_cmnd *cmd)
+ {
+ 	return cmd->req.resid_len;
+ }
+-- 
+2.21.0
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/CACT4Y%2BZ3PgnruKivBQPbD0-HEn_Hz7huQ0EHr2_7%3DRURjZwJ%2BA%40mail.gmail.com.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20191028105732.29913-1-damien.lemoal%40wdc.com.
