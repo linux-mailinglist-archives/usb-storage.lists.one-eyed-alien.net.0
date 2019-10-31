@@ -1,131 +1,127 @@
-Return-Path: <usb-storage+bncBC4LXIPCY4NRBINK5DWQKGQEM5MKD2I@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBCHZVHVFVMARB4NE5LWQKGQE6K3OKVY@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-pl1-x646.google.com (mail-pl1-x646.google.com [IPv6:2607:f8b0:4864:20::646])
-	by mail.lfdr.de (Postfix) with ESMTPS id 159B2EA766
-	for <lists+usb-storage@lfdr.de>; Wed, 30 Oct 2019 23:56:35 +0100 (CET)
-Received: by mail-pl1-x646.google.com with SMTP id g2sf763568plq.3
-        for <lists+usb-storage@lfdr.de>; Wed, 30 Oct 2019 15:56:35 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1572476194; cv=pass;
+Received: from mail-ed1-x548.google.com (mail-ed1-x548.google.com [IPv6:2a00:1450:4864:20::548])
+	by mail.lfdr.de (Postfix) with ESMTPS id 4DB71EAB1B
+	for <lists+usb-storage@lfdr.de>; Thu, 31 Oct 2019 08:51:14 +0100 (CET)
+Received: by mail-ed1-x548.google.com with SMTP id j21sf3415936edv.20
+        for <lists+usb-storage@lfdr.de>; Thu, 31 Oct 2019 00:51:14 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1572508274; cv=pass;
         d=google.com; s=arc-20160816;
-        b=yZf21qmfLCRZ/BCPgHARiLbF8t0gYBaqbjeta1198js/51do5GKH5CIVDr/VhIWhPx
-         Hh6/lolTD2kyl+JyWM6lK0GuoTnwG6XhSBFbP3Ewq6B2IrNmAC376/1GpfO5iMhn4VMR
-         D2e1+GgB/vi/sCCzezgNN8acX1R1dyfyb/cgZHC9xJiD44Y5ESYf4hCbkuSFdZEUaTyF
-         iNnhb18R3ci/Krwxb55vlCmUByfLqu10U2ZDQc4nCWTs2Lr28KlN/77/+GcHYHK7m/kk
-         GMNMNVQCVzTHui8lVJx2nMLGQfG82M1rXZhoAC8BgAdWStUqRKZ7jbx7uLUjeAECRT3N
-         Vkag==
+        b=CogusHsNz7gJtm+TnDoi67OxZ4eR+f82Ue82ek/0v9E0aiHwNjYA1FqAe7UZTsZ5Qt
+         hnPP+p5JCi+NphR6X4MNZHjBZEctKmnRbCpxKCS+XChqkAJwgKMpbH6Ryhwn+yt7SEG7
+         hVb9BEiKrug7CZ4sdrMMK7wBeLvLDjYgClV7CAO27UKE8sYJRcQB3LdwRCwzo4jngmd/
+         r3p2f4miCSwIjkF3yFmOCAP1QmokmVhkpz5i6gWMVkEc+khQFu6s2DmQIyKbzsAUrnus
+         N825YpA4d3tZ7EzGjVb4H/5jB+gpA5JmXuW1Nuv/nxp6BWbMMiqedp3ZTOcbDFwn9Yhh
+         5xPA==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:user-agent:in-reply-to
-         :content-disposition:mime-version:references:message-id:subject:cc
-         :to:from:date:sender:dkim-signature;
-        bh=Lu0b15bf02NjoTBerGxUsSytv646P7BtZpwEK3pJG9s=;
-        b=Q4zWqJ6vFmItTL0z1PyAm50T693/CSfk0o2C8lxsf5S2nUx0u1xfHFTK3lXv80dfrc
-         15VsomNXwUcA0T+yPRdL1hQJjmvYBBdU3nzervC6gOTG84MMqnshV56AasFMwlzYwfn2
-         JnwKfxdN+xw72PiOD/3f7bd5Q2x61e/ut/UbMCXTp1ozyr3KijWxTNzGZFhUrDFnkNuw
-         JxTy4JvQufcQdveS32YRfDYFjHWfs5AqfTTmttGOjWwJ4juG2UDldC6conYBmhk9LoTh
-         fkvk2d9G7oj4DA+uwQatvox2yLGdsQv/SMbUdou2jVK9mIw1AZ1On+wEFDkxPoZElr5k
-         wW1A==
+         :list-id:mailing-list:precedence:content-transfer-encoding
+         :content-language:in-reply-to:mime-version:user-agent:date
+         :message-id:from:references:cc:to:subject:sender:dkim-signature;
+        bh=F0HN3rAfB9+Ob02PIj4YeZy8toRCXlpC7Z64XXhOH+o=;
+        b=Ywc5dOx96FyKCT5y17JkYE0bvR+QemOZeuiL1hL/zAka7mioOyVEBduUIcnyjJAI1o
+         WBGtAC09DNB+eHZopHH+OWugUw6t/8MwlKS7WCCM/5MHhUOlZLsWXDwwJMY0WzPzKYxR
+         6QBd2wvo21orvxuzdRP9NY73FCvxGJBJMYxTPvD4lch/lBs2XSb0gXmn1ZK2WH4IZrwq
+         7AnRGT8q60l87Q3lACugTVazzpzI2qnQbJZT1S3aj9KCNay95MKBdrIj0hEQwLiNHeNd
+         BTkb4XTb2IjePNB7SdylK/dE/+fMb7xCJTgPgfiY2ysf7OKekVwCRE5ETGBQkVbPdI1F
+         7z5g==
 ARC-Authentication-Results: i=2; mx.google.com;
-       spf=pass (google.com: domain of lkp@intel.com designates 192.55.52.88 as permitted sender) smtp.mailfrom=lkp@intel.com;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=intel.com
+       spf=pass (google.com: domain of hare@suse.de designates 195.135.220.15 as permitted sender) smtp.mailfrom=hare@suse.de
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
-        h=sender:date:from:to:cc:subject:message-id:references:mime-version
-         :content-disposition:in-reply-to:user-agent:x-original-sender
-         :x-original-authentication-results:precedence:mailing-list:list-id
-         :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
-        bh=Lu0b15bf02NjoTBerGxUsSytv646P7BtZpwEK3pJG9s=;
-        b=lgW5Erp+XVfktZeru+OivtZRLO7oGPpKfWdTNAIQ3HOroJ31qyR9jNYlrBxQauoZEC
-         pZsVrqPwkE6lAv4X25+qIxBALOghBR18Ss4jI5yERLBuqnTofD/tMDqZ6uNIvF2Ba7iF
-         c/qzOAohOyu2KyJHNjwx6WbSpL9RTFnTZ+Y9s=
+        h=sender:subject:to:cc:references:from:message-id:date:user-agent
+         :mime-version:in-reply-to:content-language:content-transfer-encoding
+         :x-original-sender:x-original-authentication-results:precedence
+         :mailing-list:list-id:list-post:list-help:list-archive
+         :list-subscribe:list-unsubscribe;
+        bh=F0HN3rAfB9+Ob02PIj4YeZy8toRCXlpC7Z64XXhOH+o=;
+        b=GVByvFMvD+nqTjMtpb/y4kMsZhIqLSr6ucfkBcZSHV0nOO2BFFi16sTuvcMBVDRwdY
+         1urVMePHpCky+iYq/mg1eXVtzi6YLyPBDV5VwU2NbdZEpOZGX3m++qE1AAXVgxBwXQQA
+         gNdrWZIfhSzfiFf1qC9p3Gl/cMJJHX2OOiJRA=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
-        h=sender:x-gm-message-state:date:from:to:cc:subject:message-id
-         :references:mime-version:content-disposition:in-reply-to:user-agent
-         :x-original-sender:x-original-authentication-results:precedence
-         :mailing-list:list-id:x-spam-checked-in-group:list-post:list-help
-         :list-archive:list-subscribe:list-unsubscribe;
-        bh=Lu0b15bf02NjoTBerGxUsSytv646P7BtZpwEK3pJG9s=;
-        b=PcIO2DNS5Dy5JghwpOUyzAlXBvGHt17JEOePN/IabzuE3Z1LDJWuauRJ6W7MywTlQV
-         4aoP4E0NtZYmZQEK0Gihi+yOIDRCNcdCP4CxsJQsjd0uNZft/omZrT+32A01hcg55rL1
-         CMmSwdOjQY7TRIATNbKwTS2mAnD6erZRHReRM1H01/UgN5FSYFWVSRl8bQeMubnmvJCw
-         30SNGgNOSKedHA4AoGRD1s79ENO6hg6N07UZfnwzg52HEMkVVvWygTEU716trHiBgHAC
-         dRbUEyLLUHno0lTQvK+Ag2x231UEndvjM5iKEHsIY2rcVX1RHHvMl7Nju5RhbTCbST68
-         ejzw==
+        h=sender:x-gm-message-state:subject:to:cc:references:from:message-id
+         :date:user-agent:mime-version:in-reply-to:content-language
+         :content-transfer-encoding:x-original-sender
+         :x-original-authentication-results:precedence:mailing-list:list-id
+         :x-spam-checked-in-group:list-post:list-help:list-archive
+         :list-subscribe:list-unsubscribe;
+        bh=F0HN3rAfB9+Ob02PIj4YeZy8toRCXlpC7Z64XXhOH+o=;
+        b=c61nek0EK/cHYnKY06EXn5wccrXi4Pgnk6+O6kWsgWFpQGHv+L5ItFxWIPKarhG1zd
+         9mvxaqwbfMVkz8rYFJ/lMvmADNGk9LiALSyYldmNppkljFYxNwhubwv5Dzpm3z3ZBCHr
+         uPraswSLgVsp2kjR6ZPGZIGFgJN982NA+EuhCrLwO/5Lx0fCtJpTJ4JF8gz5GJqD2QKr
+         Xu8uWCV3M1uSo81cSCUqfsp8R0g1z62nob/hQv/sIGVSrTIZwy3/p/dhXqnRJWe2g2Ds
+         YFHRlTyUm98FUBPksLDlWwpS+QJjWIib2Ea9tn8Xh3bJljA6/eASQMWt1ZSNR7nJc/G6
+         r8kw==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: APjAAAVTbb53cXxz9AsllXg1cpm32x/IpHlHFPDPNaXkZ34psLzjx4PE
-	XnbrEBEX8vUBIzTadGh6fbq2ag==
-X-Google-Smtp-Source: APXvYqxaq27o8WFnlqC6FtnSzSVtK7Og1sU0VmdoUiWTPN7RnMNeCAxCvMSvE3ez3bd+BhR9Cl4wcw==
-X-Received: by 2002:a17:902:ac89:: with SMTP id h9mr2617621plr.44.1572476193595;
-        Wed, 30 Oct 2019 15:56:33 -0700 (PDT)
+X-Gm-Message-State: APjAAAUQSaDMlsbqm9tQ1R6xUQ66iYI3p64J9gUJWm4UisEnVEWRxZDv
+	lRbKGwDwZYoHJQvc/8nJSDQiXA==
+X-Google-Smtp-Source: APXvYqxWZujDa0cNzEqGoMIrPGplRohoqhxf86SlFvK3pMn9TPH7jWbWasBN19WB/JtBxhqYzR0K2w==
+X-Received: by 2002:a50:d713:: with SMTP id t19mr4335377edi.185.1572508273919;
+        Thu, 31 Oct 2019 00:51:13 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a17:902:7783:: with SMTP id o3ls198146pll.4.gmail; Wed, 30
- Oct 2019 15:56:32 -0700 (PDT)
-X-Received: by 2002:a17:90a:d989:: with SMTP id d9mr2189564pjv.90.1572476192927;
-        Wed, 30 Oct 2019 15:56:32 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1572476192; cv=none;
+Received: by 2002:aa7:d80b:: with SMTP id v11ls508983edq.0.gmail; Thu, 31 Oct
+ 2019 00:51:13 -0700 (PDT)
+X-Received: by 2002:a05:6402:75a:: with SMTP id p26mr4342331edy.221.1572508273041;
+        Thu, 31 Oct 2019 00:51:13 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1572508273; cv=none;
         d=google.com; s=arc-20160816;
-        b=oNChm4362dK4ViQUnEaQ/mb6+mr8poMTIhryxnONu2/GEkdexGTB4EcVOF3PEPuxUS
-         KHjGZXL9A7n15tJmCVkV1XUGFwSP+7+f7m0/NU8g44tzcueOBiQTw/fSLid2uGMXsXzp
-         ZqDjgOj8f472DV/8C+YPNVKsve1OfZZqTbwFEHyu3Nj421jbAU1AA0ZZNZ2pyg72WYRO
-         A6lnajQbPx4ThIEIR84Wj6Zqy09cJMFTIAa5WVY0dPgaSwR9rZnCV9AWu0sZOsqCCwiz
-         KmqTtUp15oVhTC+lMhfqqmyx9kwvj0Krm2DX0ImmW/QsLn7pUqIJhG9NfJ2IS7vDnjNg
-         bq3w==
+        b=bKmbH9grmNXxrY6H6acwFmkj/AcLcCLYiYaOvFGxdJLCW4Np3xW6UEmg4RZAKqEBTb
+         upL3MkpnU691qjo5+yLIx7oovQjWrq4twhg90rkwWEqT5dOVvrWtrsaJdNe0qjcLy//V
+         NsA5WNh/8cwlndBJdB5V2eizv5vWo2JwZcMYAmwKb7XZHXHSVZ8lfP5jYBu8ZS2A4Bh1
+         hqHfu1S2uabi04sWjer15zk9IqYzArptPNG2Kp0QzjjVYqmWnmm5IYUotlAdYKeZDavs
+         ihcBIPJVtSsKxWNm2UQjOAUwhLFtrMAUyszU7EXvHGCi2o717e9f0uyXZnD56fUBC3jS
+         3EKw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=user-agent:in-reply-to:content-disposition:mime-version:references
-         :message-id:subject:cc:to:from:date;
-        bh=CYhRvitllfNlySaaZOrySSNvsKoHs4qm4v6+tuZ/V34=;
-        b=m7MzOlFv5oxvz4XsMuD1DAQIuGKdMSi3PLO2zmNLYCyjwgQCFXUU9aeh2N5vsFznxn
-         hp5CS41+E7Rrx/2wmJgfCS5hNOBRoH1K2yeKkeKTh05s/ad7jE7KJOkxAyTBu7IhgSX0
-         FUF5lGimOXmOE0Gn/RAVrXqyEHIZYaEXFaTItm5IMzckM39Wm7x2XS8W7bNkpgDooWnu
-         fhH2xXuKug4J945zePjXIN6cNMJPHVHVqvQQnPzmZEUnrRzVKdxcs84Swl9BDr+68B6+
-         OxEk2IBoE5g9ie5mubde0lUG9pDm7k7U27euLHBXr3N73domt29hqxQ8XgiNEWU3ss6j
-         fdRw==
+        h=content-transfer-encoding:content-language:in-reply-to:mime-version
+         :user-agent:date:message-id:from:references:cc:to:subject;
+        bh=nRtd7Ms2v4/+HD2siChuXeooAJfYWwerGt099OeQ3rQ=;
+        b=ir7B3MARu8Fdc2rkk7FcDV0GVkKk6rZLDg3W5MjfUmFIw4Yo8s1z/vrJRGXCZ0myHb
+         Kh1QeveL0tdvh4JLHyv0abJyvC5VSMrlmfl2oDMjHBdQVn+COZY7fu/NKoAvrEqAwHFY
+         QgDw8qT9i3wkRJi7IuZy+K1ow3+3RgIkPEc5/KRYlbn+S2olS84PPhjreIwfV7ABLOUJ
+         B6SOJk34cdQwngi/gMhC1jwleERdVusR4xrdWXbBvXKxM9yq6L+mAsXCJIJkWAmbGJqd
+         ZzyXjmXQfpufOtls/NSJ8b0jHXSXC8N9Wjtt/wXUfDWdjV9b4OSbKcpVqb0Zq0J+1LJS
+         GVIA==
 ARC-Authentication-Results: i=1; mx.google.com;
-       spf=pass (google.com: domain of lkp@intel.com designates 192.55.52.88 as permitted sender) smtp.mailfrom=lkp@intel.com;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=intel.com
-Received: from mga01.intel.com (mga01.intel.com. [192.55.52.88])
-        by mx.google.com with ESMTPS id k4si4041288plt.299.2019.10.30.15.56.32
+       spf=pass (google.com: domain of hare@suse.de designates 195.135.220.15 as permitted sender) smtp.mailfrom=hare@suse.de
+Received: from mx1.suse.de (mx2.suse.de. [195.135.220.15])
+        by mx.google.com with ESMTPS id 92si4069305edh.321.2019.10.31.00.51.12
         for <usb-storage@lists.one-eyed-alien.net>
         (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
-        Wed, 30 Oct 2019 15:56:32 -0700 (PDT)
-Received-SPF: pass (google.com: domain of lkp@intel.com designates 192.55.52.88 as permitted sender) client-ip=192.55.52.88;
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from orsmga001.jf.intel.com ([10.7.209.18])
-  by fmsmga101.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384; 30 Oct 2019 15:56:32 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.68,248,1569308400"; 
-   d="scan'208";a="283698161"
-Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
-  by orsmga001.jf.intel.com with ESMTP; 30 Oct 2019 15:56:29 -0700
-Received: from kbuild by lkp-server01 with local (Exim 4.89)
-	(envelope-from <lkp@intel.com>)
-	id 1iPwtB-0001FD-BE; Thu, 31 Oct 2019 06:56:29 +0800
-Date: Thu, 31 Oct 2019 06:56:13 +0800
-From: kbuild test robot <lkp@intel.com>
-To: Damien Le Moal <damien.lemoal@wdc.com>
-Cc: kbuild-all@lists.01.org, linux-scsi@vger.kernel.org,
-	"Martin K . Petersen" <martin.petersen@oracle.com>,
-	linux-usb@vger.kernel.org, usb-storage@lists.one-eyed-alien.net,
-	Alan Stern <stern@rowland.harvard.edu>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Justin Piszcz <jpiszcz@lucidpixels.com>
+        Thu, 31 Oct 2019 00:51:13 -0700 (PDT)
+Received-SPF: pass (google.com: domain of hare@suse.de designates 195.135.220.15 as permitted sender) client-ip=195.135.220.15;
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+	by mx1.suse.de (Postfix) with ESMTP id A10FBABCE;
+	Thu, 31 Oct 2019 07:51:11 +0000 (UTC)
 Subject: [usb-storage] Re: [PATCH] scsi: Fix scsi_get/set_resid() interface
-Message-ID: <201910310616.NvJqgsxM%lkp@intel.com>
+To: dgilbert@interlog.com, Bart Van Assche <bvanassche@acm.org>,
+ Damien Le Moal <damien.lemoal@wdc.com>, linux-scsi@vger.kernel.org,
+ "Martin K . Petersen" <martin.petersen@oracle.com>,
+ linux-usb@vger.kernel.org, usb-storage@lists.one-eyed-alien.net,
+ Alan Stern <stern@rowland.harvard.edu>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Cc: Justin Piszcz <jpiszcz@lucidpixels.com>
 References: <20191028105732.29913-1-damien.lemoal@wdc.com>
+ <eb8f6e3e-0350-9688-58c8-9d777ba93298@acm.org>
+ <4ee551d0-27a6-b516-ade0-d477fd93bad8@suse.de>
+ <d0899d02-ecb2-7f0b-3d0a-c818a0ec6ceb@acm.org>
+ <571b5f9a-f151-30fb-5720-d7d47a4ef1d7@suse.de>
+ <8b2fbab6-b787-470a-f9ed-46622733881c@interlog.com>
+From: Hannes Reinecke <hare@suse.de>
+Message-ID: <7ba0414d-7989-31ee-4044-90f541db379f@suse.de>
+Date: Thu, 31 Oct 2019 08:51:08 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.1.1
 MIME-Version: 1.0
-Content-Type: text/plain; charset="UTF-8"
-Content-Disposition: inline
-In-Reply-To: <20191028105732.29913-1-damien.lemoal@wdc.com>
-X-Patchwork-Hint: ignore
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-Original-Sender: lkp@intel.com
+In-Reply-To: <8b2fbab6-b787-470a-f9ed-46622733881c@interlog.com>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
+Content-Language: en-US
+Content-Transfer-Encoding: quoted-printable
+X-Original-Sender: hare@suse.de
 X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
- domain of lkp@intel.com designates 192.55.52.88 as permitted sender)
- smtp.mailfrom=lkp@intel.com;       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=intel.com
+ domain of hare@suse.de designates 195.135.220.15 as permitted sender) smtp.mailfrom=hare@suse.de
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -141,230 +137,132 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-Hi Damien,
+On 10/30/19 5:18 PM, Douglas Gilbert wrote:
+> On 2019-10-30 11:18 a.m., Hannes Reinecke wrote:
+>> On 10/30/19 4:12 PM, Bart Van Assche wrote:
+>>> On 10/30/19 1:30 AM, Hannes Reinecke wrote:
+>>>> On 10/28/19 9:38 PM, Bart Van Assche wrote:
+>>>>> If the residual is changed from signed into unsigned, how is a SCSI=
+=20
+>>>>> LLD expected to report the difference between residual overflow and=
+=20
+>>>>> residual underflow to the SCSI core?
+>>>>
+>>>> You don't have to. To quote RFC 3720 page 122:
+>>>>
+>>>> =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 bit 5 - (O) set for Residual Overflow.=
+=C2=A0 In this case, the=20
+>>>> Residual
+>>>> =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 Count indicates the number =
+of bytes that were not transferred
+>>>> =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 because the initiator's Exp=
+ected Data Transfer Length was not
+>>>> =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 sufficient.=C2=A0 For a bid=
+irectional operation, the Residual Count
+>>>> =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 contains the residual for t=
+he write operation.
+>>>>
+>>>> IE the 'overflow' setting in the iSCSI command response is an=20
+>>>> indicator that there _would_ be more data if the command request=20
+>>>> _would_ have specified a larger buffer.
+>>>> But as it didn't, the entire buffer was filled, and the overflow=20
+>>>> counter is set.
+>>>> Which, of course, is then ignored by the linux SCSI stack as the=20
+>>>> request got all data, and the residual is set to zero.
+>>>> Then it's left to the caller to re-send with a larger buffer if=20
+>>>> required. But it's nothing the SCSI stack can nor should be=20
+>>>> attempting on its own.
+>>>
+>>> Hi Hannes,
+>>>
+>>> I do not agree that reporting a residual overflow by calling=20
+>>> scsi_set_resid(..., 0) is acceptable. For reads a residual overflow=20
+>>> means that the length specified in the CDB (scsi_bufflen()) exceeds=20
+>>> the data buffer size (length of scsi_sglist()). I think it's=20
+>>> dangerous to report to the block layer that such requests completed=20
+>>> successfully and with residual zero.
+>>>
+>> But that is an error on submission, and should be aborted before it=20
+>> even got send to the drive.
+>>
+>> However, this does not relate to the residual, which is handled after=20
+>> the command completes (and which sparked this entire thread ...).
+>=20
+> Seen from a pass-through perspective, the resid is just about the near-en=
+d
+> data transfer between the HBA and pass-through, or as cam3r03 says:
+>=20
+> =E2=88=92 cam_resid;
+>  =C2=A0=C2=A0=C2=A0 The data residual length member contains the differen=
+ce in twos=20
+> complement
+>  =C2=A0=C2=A0=C2=A0 form of the number of data bytes transferred by the H=
+A for the SCSI
+>  =C2=A0=C2=A0=C2=A0 command compared with the number of bytes requested b=
+y the CCB
+>  =C2=A0=C2=A0=C2=A0 cam_dxfer_len member. This is calculated by the total=
+ number of bytes
+>  =C2=A0=C2=A0=C2=A0 requested to be transferred by the CCB minus the actu=
+al number of=20
+> bytes
+>  =C2=A0=C2=A0=C2=A0 transferred by the HA.
+>=20
+> [where "HA" is HBA (or the initiator)]
+>=20
+> That makes overflow (negative resid) a bit interesting as it is only
+> reasonable that the pass-though user allocated a buffer big enough to
+> receive dxfer_len bytes. One would hope that in the READ case of overflow=
+,
+> the HBA would have sent the residual bytes to the bit bucket (i.e.
+> /dev/null) rather than overfill the data buffer provided by the=20
+> pass-through.
+>=20
+Yes. But my point here is that any residual values are handled (and=20
+defined) at the protocol level. Any SCSI midlayer protocol like SPC or,=20
+indeed, SAM have no concept of residuals.
 
-I love your patch! Perhaps something to improve:
+THe SCSI midlayer chose to add a residual value to document the number=20
+of bytes _not_ being handled from hardware.
 
-[auto build test WARNING on scsi/for-next]
-[cannot apply to v5.4-rc5 next-20191030]
-[if your patch is applied to the wrong git tree, please drop us a note to help
-improve the system. BTW, we also suggest to use '--base' option to specify the
-base tree in git format-patch, please see https://stackoverflow.com/a/37406982]
+> Handling discrepancies between page length (e.g. of VPD, LOG and MODE=20
+> pages) and the ALLOCATION LENGTH field are defined in the SCSI standards.
+>=20
+> That leaves the difficult cases: when there is a discrepancy between=20
+> what the
+> SCSI command (and the storage device) implied as a data length and the
+> dxfer_len allocated at the near-end. In some, but not all, cases that is
+> detectable before the command is issued.
+>=20
+As mentioned, this needs to be handled in the submission path, and the=20
+command should be aborted before being sent to the drive.
 
-url:    https://github.com/0day-ci/linux/commits/Damien-Le-Moal/scsi-Fix-scsi_get-set_resid-interface/20191030-074824
-base:   https://git.kernel.org/pub/scm/linux/kernel/git/jejb/scsi.git for-next
-reproduce:
-        # apt-get install sparse
-        # sparse version: v0.6.1-dirty
-        make ARCH=x86_64 allmodconfig
-        make C=1 CF='-fdiagnostic-prefix -D__CHECK_ENDIAN__'
+> Overflow can happen, for example if the RDPROTECT field in a READ(10) is
+> accidentally set (e.g. because it uses bits previously used for a SPI
+> LUN) and the storage device has protection information. That will result
+> in an extra 8 bytes per logical block being returned.
+>=20
 
-If you fix the issue, kindly add following tag
-Reported-by: kbuild test robot <lkp@intel.com>
+See above. We should intercept such a command, and simply abort it with=20
+an appropriate error.
+That goes for internal commands, of course; I know it doesn't work for=20
+things like sg_raw, but one could argue that this was precisely the=20
+point of that command ...
 
+Cheers,
 
-sparse warnings: (new ones prefixed by >>)
+Hannes
+--=20
+Dr. Hannes Reinecke            Teamlead Storage & Networking
+hare@suse.de                              +49 911 74053 688
+SUSE LINUX GmbH, Maxfeldstr. 5, 90409 N=C3=BCrnberg
+GF: Felix Imend=C3=B6rffer, Mary Higgins, Sri Rasiah
+HRB 21284 (AG N=C3=BCrnberg)
 
-   drivers/usb/storage/ene_ub6250.c:2161:33: sparse: sparse: incorrect type in assignment (different base types) @@    expected restricted __le32 [usertype] DataTransferLength @@    got e] DataTransferLength @@
-   drivers/usb/storage/ene_ub6250.c:2161:33: sparse:    expected restricted __le32 [usertype] DataTransferLength
-   drivers/usb/storage/ene_ub6250.c:2161:33: sparse:    got int
-   drivers/usb/storage/ene_ub6250.c:2091:33: sparse: sparse: incorrect type in assignment (different base types) @@    expected restricted __le32 [usertype] DataTransferLength @@    got e] DataTransferLength @@
-   drivers/usb/storage/ene_ub6250.c:2091:33: sparse:    expected restricted __le32 [usertype] DataTransferLength
-   drivers/usb/storage/ene_ub6250.c:2091:33: sparse:    got int
-   drivers/usb/storage/ene_ub6250.c:1935:33: sparse: sparse: incorrect type in assignment (different base types) @@    expected restricted __le32 [usertype] DataTransferLength @@    got unrestricted __le32 [usertype] DataTransferLength @@
-   drivers/usb/storage/ene_ub6250.c:1935:33: sparse:    expected restricted __le32 [usertype] DataTransferLength
-   drivers/usb/storage/ene_ub6250.c:1935:33: sparse:    got unsigned long const [usertype] size
-   drivers/usb/storage/ene_ub6250.c:501:43: sparse: sparse: incorrect type in initializer (different base types) @@    expected unsigned int transfer_length @@    got restricted __le3unsigned int transfer_length @@
-   drivers/usb/storage/ene_ub6250.c:501:43: sparse:    expected unsigned int transfer_length
-   drivers/usb/storage/ene_ub6250.c:501:43: sparse:    got restricted __le32 [usertype] DataTransferLength
->> drivers/usb/storage/ene_ub6250.c:563:49: sparse: sparse: incompatible types in comparison expression (different signedness):
->> drivers/usb/storage/ene_ub6250.c:563:49: sparse:    unsigned int *
->> drivers/usb/storage/ene_ub6250.c:563:49: sparse:    int *
-   drivers/usb/storage/ene_ub6250.c:702:33: sparse: sparse: incorrect type in assignment (different base types) @@    expected restricted __le32 [usertype] DataTransferLength @@    got icted __le32 [usertype] DataTransferLength @@
-   drivers/usb/storage/ene_ub6250.c:702:33: sparse:    expected restricted __le32 [usertype] DataTransferLength
-   drivers/usb/storage/ene_ub6250.c:702:33: sparse:    got unsigned int [usertype] blenByte
-   drivers/usb/storage/ene_ub6250.c:742:33: sparse: sparse: incorrect type in assignment (different base types) @@    expected restricted __le32 [usertype] DataTransferLength @@    got icted __le32 [usertype] DataTransferLength @@
-   drivers/usb/storage/ene_ub6250.c:742:33: sparse:    expected restricted __le32 [usertype] DataTransferLength
-   drivers/usb/storage/ene_ub6250.c:742:33: sparse:    got unsigned int [usertype] blenByte
-   drivers/usb/storage/ene_ub6250.c:888:33: sparse: sparse: incorrect type in assignment (different base types) @@    expected restricted __le32 [usertype] DataTransferLength @@    got e] DataTransferLength @@
-   drivers/usb/storage/ene_ub6250.c:888:33: sparse:    expected restricted __le32 [usertype] DataTransferLength
-   drivers/usb/storage/ene_ub6250.c:888:33: sparse:    got int
-   drivers/usb/storage/ene_ub6250.c:907:33: sparse: sparse: incorrect type in assignment (different base types) @@    expected restricted __le32 [usertype] DataTransferLength @@    got e] DataTransferLength @@
-   drivers/usb/storage/ene_ub6250.c:907:33: sparse:    expected restricted __le32 [usertype] DataTransferLength
-   drivers/usb/storage/ene_ub6250.c:907:33: sparse:    got int
-   drivers/usb/storage/ene_ub6250.c:953:18: sparse: sparse: cast to restricted __be16
-   drivers/usb/storage/ene_ub6250.c:953:18: sparse: sparse: cast to restricted __be16
-   drivers/usb/storage/ene_ub6250.c:953:18: sparse: sparse: cast to restricted __be16
-   drivers/usb/storage/ene_ub6250.c:953:18: sparse: sparse: cast to restricted __be16
-   drivers/usb/storage/ene_ub6250.c:973:34: sparse: sparse: cast to restricted __be16
-   drivers/usb/storage/ene_ub6250.c:973:34: sparse: sparse: cast to restricted __be16
-   drivers/usb/storage/ene_ub6250.c:973:34: sparse: sparse: cast to restricted __be16
-   drivers/usb/storage/ene_ub6250.c:973:34: sparse: sparse: cast to restricted __be16
-   drivers/usb/storage/ene_ub6250.c:974:41: sparse: sparse: cast to restricted __be16
-   drivers/usb/storage/ene_ub6250.c:974:41: sparse: sparse: cast to restricted __be16
-   drivers/usb/storage/ene_ub6250.c:974:41: sparse: sparse: cast to restricted __be16
-   drivers/usb/storage/ene_ub6250.c:974:41: sparse: sparse: cast to restricted __be16
-   drivers/usb/storage/ene_ub6250.c:975:41: sparse: sparse: cast to restricted __be16
-   drivers/usb/storage/ene_ub6250.c:975:41: sparse: sparse: cast to restricted __be16
-   drivers/usb/storage/ene_ub6250.c:975:41: sparse: sparse: cast to restricted __be16
-   drivers/usb/storage/ene_ub6250.c:975:41: sparse: sparse: cast to restricted __be16
-   drivers/usb/storage/ene_ub6250.c:978:26: sparse: sparse: cast to restricted __be16
-   drivers/usb/storage/ene_ub6250.c:978:26: sparse: sparse: cast to restricted __be16
-   drivers/usb/storage/ene_ub6250.c:978:26: sparse: sparse: cast to restricted __be16
-   drivers/usb/storage/ene_ub6250.c:978:26: sparse: sparse: cast to restricted __be16
-   drivers/usb/storage/ene_ub6250.c:992:31: sparse: sparse: cast to restricted __be32
-   drivers/usb/storage/ene_ub6250.c:992:31: sparse: sparse: cast to restricted __be32
-   drivers/usb/storage/ene_ub6250.c:992:31: sparse: sparse: cast to restricted __be32
-   drivers/usb/storage/ene_ub6250.c:992:31: sparse: sparse: cast to restricted __be32
-   drivers/usb/storage/ene_ub6250.c:992:31: sparse: sparse: cast to restricted __be32
-   drivers/usb/storage/ene_ub6250.c:992:31: sparse: sparse: cast to restricted __be32
-   drivers/usb/storage/ene_ub6250.c:996:29: sparse: sparse: cast to restricted __be32
-   drivers/usb/storage/ene_ub6250.c:996:29: sparse: sparse: cast to restricted __be32
-   drivers/usb/storage/ene_ub6250.c:996:29: sparse: sparse: cast to restricted __be32
-   drivers/usb/storage/ene_ub6250.c:996:29: sparse: sparse: cast to restricted __be32
-   drivers/usb/storage/ene_ub6250.c:996:29: sparse: sparse: cast to restricted __be32
-   drivers/usb/storage/ene_ub6250.c:996:29: sparse: sparse: cast to restricted __be32
-   drivers/usb/storage/ene_ub6250.c:1028:42: sparse: sparse: cast to restricted __be16
-   drivers/usb/storage/ene_ub6250.c:1028:42: sparse: sparse: cast to restricted __be16
-   drivers/usb/storage/ene_ub6250.c:1028:42: sparse: sparse: cast to restricted __be16
-   drivers/usb/storage/ene_ub6250.c:1028:42: sparse: sparse: cast to restricted __be16
-   drivers/usb/storage/ene_ub6250.c:1052:29: sparse: sparse: cast to restricted __le16
-   drivers/usb/storage/ene_ub6250.c:1055:55: sparse: sparse: cast to restricted __le16
-   drivers/usb/storage/ene_ub6250.c:1167:33: sparse: sparse: incorrect type in assignment (different base types) @@    expected restricted __le32 [usertype] DataTransferLength @@    got e] DataTransferLength @@
-   drivers/usb/storage/ene_ub6250.c:1167:33: sparse:    expected restricted __le32 [usertype] DataTransferLength
-   drivers/usb/storage/ene_ub6250.c:1167:33: sparse:    got int
-   drivers/usb/storage/ene_ub6250.c:1200:33: sparse: sparse: incorrect type in assignment (different base types) @@    expected restricted __le32 [usertype] DataTransferLength @@    got e] DataTransferLength @@
-   drivers/usb/storage/ene_ub6250.c:1200:33: sparse:    expected restricted __le32 [usertype] DataTransferLength
-   drivers/usb/storage/ene_ub6250.c:1200:33: sparse:    got int
-   drivers/usb/storage/ene_ub6250.c:1231:23: sparse: sparse: cast to restricted __be16
-   drivers/usb/storage/ene_ub6250.c:1231:23: sparse: sparse: cast to restricted __be16
-   drivers/usb/storage/ene_ub6250.c:1231:23: sparse: sparse: cast to restricted __be16
-   drivers/usb/storage/ene_ub6250.c:1231:23: sparse: sparse: cast to restricted __be16
-   drivers/usb/storage/ene_ub6250.c:1277:33: sparse: sparse: incorrect type in assignment (different base types) @@    expected restricted __le32 [usertype] DataTransferLength @@    got e] DataTransferLength @@
-   drivers/usb/storage/ene_ub6250.c:1277:33: sparse:    expected restricted __le32 [usertype] DataTransferLength
-   drivers/usb/storage/ene_ub6250.c:1277:33: sparse:    got int
-   drivers/usb/storage/ene_ub6250.c:1359:33: sparse: sparse: incorrect type in assignment (different base types) @@    expected restricted __le32 [usertype] DataTransferLength @@    got e] DataTransferLength @@
-   drivers/usb/storage/ene_ub6250.c:1359:33: sparse:    expected restricted __le32 [usertype] DataTransferLength
-   drivers/usb/storage/ene_ub6250.c:1359:33: sparse:    got int
-   drivers/usb/storage/ene_ub6250.c:1543:33: sparse: sparse: incorrect type in assignment (different base types) @@    expected restricted __le32 [usertype] DataTransferLength @@    got e] DataTransferLength @@
-   drivers/usb/storage/ene_ub6250.c:1543:33: sparse:    expected restricted __le32 [usertype] DataTransferLength
-   drivers/usb/storage/ene_ub6250.c:1543:33: sparse:    got int
-   drivers/usb/storage/ene_ub6250.c:1662:41: sparse: sparse: incorrect type in assignment (different base types) @@    expected restricted __le32 [usertype] DataTransferLength @@    got icted __le32 [usertype] DataTransferLength @@
-   drivers/usb/storage/ene_ub6250.c:1662:41: sparse:    expected restricted __le32 [usertype] DataTransferLength
-   drivers/usb/storage/ene_ub6250.c:1662:41: sparse:    got unsigned int [usertype] blenByte
-   drivers/usb/storage/ene_ub6250.c:1706:49: sparse: sparse: incorrect type in assignment (different base types) @@    expected restricted __le32 [usertype] DataTransferLength @@    got e] DataTransferLength @@
-   drivers/usb/storage/ene_ub6250.c:1706:49: sparse:    expected restricted __le32 [usertype] DataTransferLength
-   drivers/usb/storage/ene_ub6250.c:1706:49: sparse:    got int
-   drivers/usb/storage/ene_ub6250.c:1763:41: sparse: sparse: incorrect type in assignment (different base types) @@    expected restricted __le32 [usertype] DataTransferLength @@    got icted __le32 [usertype] DataTransferLength @@
-   drivers/usb/storage/ene_ub6250.c:1763:41: sparse:    expected restricted __le32 [usertype] DataTransferLength
-   drivers/usb/storage/ene_ub6250.c:1763:41: sparse:    got unsigned int [usertype] blenByte
-   drivers/usb/storage/ene_ub6250.c:1839:33: sparse: sparse: incorrect type in assignment (different base types) @@    expected restricted __le32 [usertype] DataTransferLength @@    got e] DataTransferLength @@
-   drivers/usb/storage/ene_ub6250.c:1839:33: sparse:    expected restricted __le32 [usertype] DataTransferLength
-   drivers/usb/storage/ene_ub6250.c:1839:33: sparse:    got int
-   drivers/usb/storage/ene_ub6250.c:1991:26: sparse: sparse: cast to restricted __be16
-   drivers/usb/storage/ene_ub6250.c:1991:26: sparse: sparse: cast to restricted __be16
-   drivers/usb/storage/ene_ub6250.c:1991:26: sparse: sparse: cast to restricted __be16
-   drivers/usb/storage/ene_ub6250.c:1991:26: sparse: sparse: cast to restricted __be16
-   drivers/usb/storage/ene_ub6250.c:1992:26: sparse: sparse: cast to restricted __be16
-   drivers/usb/storage/ene_ub6250.c:1992:26: sparse: sparse: cast to restricted __be16
-   drivers/usb/storage/ene_ub6250.c:1992:26: sparse: sparse: cast to restricted __be16
-   drivers/usb/storage/ene_ub6250.c:1992:26: sparse: sparse: cast to restricted __be16
-
-vim +563 drivers/usb/storage/ene_ub6250.c
-
-41e568d14ec0ac huajun li    2011-03-04  492  
-41e568d14ec0ac huajun li    2011-03-04  493  static int ene_send_scsi_cmd(struct us_data *us, u8 fDir, void *buf, int use_sg)
-41e568d14ec0ac huajun li    2011-03-04  494  {
-41e568d14ec0ac huajun li    2011-03-04  495  	struct bulk_cb_wrap *bcb = (struct bulk_cb_wrap *) us->iobuf;
-41e568d14ec0ac huajun li    2011-03-04  496  	struct bulk_cs_wrap *bcs = (struct bulk_cs_wrap *) us->iobuf;
-41e568d14ec0ac huajun li    2011-03-04  497  
-41e568d14ec0ac huajun li    2011-03-04  498  	int result;
-41e568d14ec0ac huajun li    2011-03-04  499  	unsigned int residue;
-41e568d14ec0ac huajun li    2011-03-04  500  	unsigned int cswlen = 0, partial = 0;
-41e568d14ec0ac huajun li    2011-03-04  501  	unsigned int transfer_length = bcb->DataTransferLength;
-41e568d14ec0ac huajun li    2011-03-04  502  
-191648d03d2022 Joe Perches  2013-04-19  503  	/* usb_stor_dbg(us, "transport --- ene_send_scsi_cmd\n"); */
-41e568d14ec0ac huajun li    2011-03-04  504  	/* send cmd to out endpoint */
-41e568d14ec0ac huajun li    2011-03-04  505  	result = usb_stor_bulk_transfer_buf(us, us->send_bulk_pipe,
-41e568d14ec0ac huajun li    2011-03-04  506  					    bcb, US_BULK_CB_WRAP_LEN, NULL);
-41e568d14ec0ac huajun li    2011-03-04  507  	if (result != USB_STOR_XFER_GOOD) {
-191648d03d2022 Joe Perches  2013-04-19  508  		usb_stor_dbg(us, "send cmd to out endpoint fail ---\n");
-41e568d14ec0ac huajun li    2011-03-04  509  		return USB_STOR_TRANSPORT_ERROR;
-41e568d14ec0ac huajun li    2011-03-04  510  	}
-41e568d14ec0ac huajun li    2011-03-04  511  
-41e568d14ec0ac huajun li    2011-03-04  512  	if (buf) {
-41e568d14ec0ac huajun li    2011-03-04  513  		unsigned int pipe = fDir;
-41e568d14ec0ac huajun li    2011-03-04  514  
-41e568d14ec0ac huajun li    2011-03-04  515  		if (fDir  == FDIR_READ)
-41e568d14ec0ac huajun li    2011-03-04  516  			pipe = us->recv_bulk_pipe;
-41e568d14ec0ac huajun li    2011-03-04  517  		else
-41e568d14ec0ac huajun li    2011-03-04  518  			pipe = us->send_bulk_pipe;
-41e568d14ec0ac huajun li    2011-03-04  519  
-41e568d14ec0ac huajun li    2011-03-04  520  		/* Bulk */
-41e568d14ec0ac huajun li    2011-03-04  521  		if (use_sg) {
-41e568d14ec0ac huajun li    2011-03-04  522  			result = usb_stor_bulk_srb(us, pipe, us->srb);
-41e568d14ec0ac huajun li    2011-03-04  523  		} else {
-41e568d14ec0ac huajun li    2011-03-04  524  			result = usb_stor_bulk_transfer_sg(us, pipe, buf,
-41e568d14ec0ac huajun li    2011-03-04  525  						transfer_length, 0, &partial);
-41e568d14ec0ac huajun li    2011-03-04  526  		}
-41e568d14ec0ac huajun li    2011-03-04  527  		if (result != USB_STOR_XFER_GOOD) {
-191648d03d2022 Joe Perches  2013-04-19  528  			usb_stor_dbg(us, "data transfer fail ---\n");
-41e568d14ec0ac huajun li    2011-03-04  529  			return USB_STOR_TRANSPORT_ERROR;
-41e568d14ec0ac huajun li    2011-03-04  530  		}
-41e568d14ec0ac huajun li    2011-03-04  531  	}
-41e568d14ec0ac huajun li    2011-03-04  532  
-41e568d14ec0ac huajun li    2011-03-04  533  	/* Get CSW for device status */
-41e568d14ec0ac huajun li    2011-03-04  534  	result = usb_stor_bulk_transfer_buf(us, us->recv_bulk_pipe, bcs,
-41e568d14ec0ac huajun li    2011-03-04  535  					    US_BULK_CS_WRAP_LEN, &cswlen);
-41e568d14ec0ac huajun li    2011-03-04  536  
-41e568d14ec0ac huajun li    2011-03-04  537  	if (result == USB_STOR_XFER_SHORT && cswlen == 0) {
-191648d03d2022 Joe Perches  2013-04-19  538  		usb_stor_dbg(us, "Received 0-length CSW; retrying...\n");
-41e568d14ec0ac huajun li    2011-03-04  539  		result = usb_stor_bulk_transfer_buf(us, us->recv_bulk_pipe,
-41e568d14ec0ac huajun li    2011-03-04  540  					    bcs, US_BULK_CS_WRAP_LEN, &cswlen);
-41e568d14ec0ac huajun li    2011-03-04  541  	}
-41e568d14ec0ac huajun li    2011-03-04  542  
-41e568d14ec0ac huajun li    2011-03-04  543  	if (result == USB_STOR_XFER_STALLED) {
-41e568d14ec0ac huajun li    2011-03-04  544  		/* get the status again */
-191648d03d2022 Joe Perches  2013-04-19  545  		usb_stor_dbg(us, "Attempting to get CSW (2nd try)...\n");
-41e568d14ec0ac huajun li    2011-03-04  546  		result = usb_stor_bulk_transfer_buf(us, us->recv_bulk_pipe,
-41e568d14ec0ac huajun li    2011-03-04  547  						bcs, US_BULK_CS_WRAP_LEN, NULL);
-41e568d14ec0ac huajun li    2011-03-04  548  	}
-41e568d14ec0ac huajun li    2011-03-04  549  
-41e568d14ec0ac huajun li    2011-03-04  550  	if (result != USB_STOR_XFER_GOOD)
-41e568d14ec0ac huajun li    2011-03-04  551  		return USB_STOR_TRANSPORT_ERROR;
-41e568d14ec0ac huajun li    2011-03-04  552  
-41e568d14ec0ac huajun li    2011-03-04  553  	/* check bulk status */
-41e568d14ec0ac huajun li    2011-03-04  554  	residue = le32_to_cpu(bcs->Residue);
-41e568d14ec0ac huajun li    2011-03-04  555  
-f0183a338e4f90 Felipe Balbi 2016-04-18  556  	/*
-f0183a338e4f90 Felipe Balbi 2016-04-18  557  	 * try to compute the actual residue, based on how much data
-f0183a338e4f90 Felipe Balbi 2016-04-18  558  	 * was really transferred and what the device tells us
-f0183a338e4f90 Felipe Balbi 2016-04-18  559  	 */
-41e568d14ec0ac huajun li    2011-03-04  560  	if (residue && !(us->fflags & US_FL_IGNORE_RESIDUE)) {
-41e568d14ec0ac huajun li    2011-03-04  561  		residue = min(residue, transfer_length);
-41e568d14ec0ac huajun li    2011-03-04  562  		if (us->srb != NULL)
-41e568d14ec0ac huajun li    2011-03-04 @563  			scsi_set_resid(us->srb, max(scsi_get_resid(us->srb),
-41e568d14ec0ac huajun li    2011-03-04  564  								(int)residue));
-41e568d14ec0ac huajun li    2011-03-04  565  	}
-41e568d14ec0ac huajun li    2011-03-04  566  
-41e568d14ec0ac huajun li    2011-03-04  567  	if (bcs->Status != US_BULK_STAT_OK)
-41e568d14ec0ac huajun li    2011-03-04  568  		return USB_STOR_TRANSPORT_ERROR;
-41e568d14ec0ac huajun li    2011-03-04  569  
-41e568d14ec0ac huajun li    2011-03-04  570  	return USB_STOR_TRANSPORT_GOOD;
-41e568d14ec0ac huajun li    2011-03-04  571  }
-41e568d14ec0ac huajun li    2011-03-04  572  
-
-:::::: The code at line 563 was first introduced by commit
-:::::: 41e568d14ec0aca1b2bb19563517aad3b06d6805 Staging: Merge ENE UB6250 SD card codes from keucr to drivers/usb/storage
-
-:::::: TO: huajun li <huajun.li.lee@gmail.com>
-:::::: CC: Greg Kroah-Hartman <gregkh@suse.de>
-
----
-0-DAY kernel test infrastructure                Open Source Technology Center
-https://lists.01.org/pipermail/kbuild-all                   Intel Corporation
-
--- 
-You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
-To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/201910310616.NvJqgsxM%25lkp%40intel.com.
+--=20
+You received this message because you are subscribed to the Google Groups "=
+USB Mass Storage on Linux" group.
+To unsubscribe from this group and stop receiving emails from it, send an e=
+mail to usb-storage+unsubscribe@lists.one-eyed-alien.net.
+To view this discussion on the web visit https://groups.google.com/a/lists.=
+one-eyed-alien.net/d/msgid/usb-storage/7ba0414d-7989-31ee-4044-90f541db379f=
+%40suse.de.
