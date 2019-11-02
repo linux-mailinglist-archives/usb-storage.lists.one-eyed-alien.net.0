@@ -1,128 +1,119 @@
-Return-Path: <usb-storage+bncBCHZVHVFVMARBQN35LWQKGQEATYNXCQ@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBCILJWNIZYHBB4FP6PWQKGQE6VDKWOQ@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-ed1-x545.google.com (mail-ed1-x545.google.com [IPv6:2a00:1450:4864:20::545])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D351EABA6
-	for <lists+usb-storage@lfdr.de>; Thu, 31 Oct 2019 09:39:30 +0100 (CET)
-Received: by mail-ed1-x545.google.com with SMTP id bo12sf3519799edb.22
-        for <lists+usb-storage@lfdr.de>; Thu, 31 Oct 2019 01:39:30 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1572511170; cv=pass;
+Received: from mail-io1-xd47.google.com (mail-io1-xd47.google.com [IPv6:2607:f8b0:4864:20::d47])
+	by mail.lfdr.de (Postfix) with ESMTPS id E0A20ECC99
+	for <lists+usb-storage@lfdr.de>; Sat,  2 Nov 2019 02:12:17 +0100 (CET)
+Received: by mail-io1-xd47.google.com with SMTP id q84sf8651550iod.15
+        for <lists+usb-storage@lfdr.de>; Fri, 01 Nov 2019 18:12:17 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1572657136; cv=pass;
         d=google.com; s=arc-20160816;
-        b=G0lrHx6JNMxMhqODy4tKDRhOpwfQIUYU0GrMp7fqeMpB2xSTggQO/zp1r2m/zSQ+Mg
-         TqEKohGRGgLVcQJJuMp+DW3+jrCEP34G+9ui5eNLVd1++8dYZO+WdCAYySwbnNAVvgWo
-         5IthQlN2jEm58gRl+uz02JC47L8zdrTVBQouQ6Mtjv9/aQPssdWm54JT+eymNmOSC3Zc
-         QvcAC7bOOifwW8u7iJSYKQWaco3SvH24xj2Fa3pd+UglwDEGUo0v/Rc2+VOhFAqUK1XR
-         o4Rl7ZTQhiR3NjVJwlILmxLqloKDQqFQ8X0JB8rCjN411DFdwA+w/nuvwF2EHIxOcq9z
-         R9Fw==
+        b=z1yoGSgd8DqJcYlLKF98lAx7a40EVK7fpwaG8TL4uewN4w5vKTULvNHay3rubBAmPv
+         9mJ/Rq9Itth1zDU7TJlAYMKj9byTqqtwLTuy/eEx43u8OzKMF/kVX7yW0Q5+fzwkI9Hg
+         9TbEpfPRjvmY1fgSAOAq2e93fsfDDI7nPsy7W4lXrmYM7Ii2mIBub++RvA/6ti84YDRG
+         HtTR81cAikYAgejKw9R5qJrjQH8u0GMgmJQhHTE+KiZqrHM/m1LwL7bKHp5KesplE3F1
+         VdYpE7ZYE6xEuL2/lS6PhpDxaYbbFEZIh+2bnlrjeS9F5CRurd5cs2qS/LY4JH2Hb5Md
+         L14A==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:content-transfer-encoding
-         :content-language:in-reply-to:mime-version:user-agent:date
-         :message-id:from:references:cc:to:subject:sender:dkim-signature;
-        bh=QPU5Uu6iarIjB/6VxKmBzX2r8OxGnTUl0WdkaHKoC+4=;
-        b=yqqa/+zh1vxlvbOR2WZI5dE3gXbHOJNPC20Sec9JGP02/DP/os6sqvcgAQVby6lgTX
-         jAaa1qrUAMPlGX6CBrLEENo0ZzyJ+58268238fvJkgRMyN0ctzSo3ZHOGQ28ZGZdbkch
-         Mq+8n/agtdLrKFt5X2da1JBkhH/frTKKcumFOdbcfXfqvYmRX2bcod5/CzkRU13j8T3w
-         OWado5tZEBJp+NtNBJaeQ7792mVsGebYQLA5o1yKz5a+EjiW/6G2ZwAh5r9uMPUk+UO4
-         BAuDpCdit5hc1uok4LXms/LNeGN2QniRdTz3wM9BqXVcCqvByYmKGijcFTweA8u+xE4w
-         BjZg==
+         :list-id:mailing-list:precedence:cc:to:date:subject:from:message-id
+         :mime-version:sender:dkim-signature;
+        bh=42vFnuMDrg3bEO05mnSywOQLZBo0DNY09M1ONL2B9Uc=;
+        b=EmK8HU8bNX2KxfhXDZjbuMGUApFX5t1BYyNEtDM5FIWIvKqeDG1VAYQ/Hy4JTATg0G
+         tldqnxFKyVke5TluXAvzQUaNP/Qq8iO/ZvCr/Dx+jdqN4iJW8NIfT5jQ2zOv0opWJcYF
+         bm1n+4YNl5SfxGcm9JUMRpmVZJ5/5Eb1e/an8Ia39wa540sQyr7oSVlziXBVbMafoPdi
+         CJmgNrWLp/zK9rwFainck7VPnQ2VPNc0peXdJuXiinpLkyGXUov4qZtqGy34nCUwLq1a
+         zrVltPPd+kiNaEhLboMudPkp6fNrnvGOq1x2LX167N6yGhIfG57DXTbZE944IQDXtepV
+         h0OQ==
 ARC-Authentication-Results: i=2; mx.google.com;
-       spf=pass (google.com: domain of hare@suse.de designates 195.135.220.15 as permitted sender) smtp.mailfrom=hare@suse.de
+       spf=pass (google.com: best guess record for domain of fthain@telegraphics.com.au designates 98.124.60.144 as permitted sender) smtp.mailfrom=fthain@telegraphics.com.au
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
-        h=sender:subject:to:cc:references:from:message-id:date:user-agent
-         :mime-version:in-reply-to:content-language:content-transfer-encoding
+        h=sender:mime-version:message-id:from:subject:date:to:cc
          :x-original-sender:x-original-authentication-results:precedence
          :mailing-list:list-id:list-post:list-help:list-archive
          :list-subscribe:list-unsubscribe;
-        bh=QPU5Uu6iarIjB/6VxKmBzX2r8OxGnTUl0WdkaHKoC+4=;
-        b=Pzr2K0xYIn01D2xKnenk4RBKvCbN7x0LL+sbNjRPU6uVsKOirxu9a9b/ggTeFAqzGm
-         GICXPXVnP71L4p2gLkByJdujY3ooP1SABmye7dRxb/V7SbWe+DP7TU7d8PSUTf9VZlwA
-         RK7tmTDbwznKFFBvmxx+ULdBHCNLE3vyAQZAM=
+        bh=42vFnuMDrg3bEO05mnSywOQLZBo0DNY09M1ONL2B9Uc=;
+        b=ksdSKAKqF4q0xF7X9jQvZRvTWa26e0q7oCjiHWjN31ikqhSeGp6F1Kd7+EZnbjx463
+         koFeQDSaBRbYKClAvMkxBdcESnDyE3LyiKMzalF16TqdN+wxekKQvJyCiPjdUVtx5T0J
+         XHEch1A2O1NlYYmnKGSmlbMDV4z9M/wo7aC20=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
-        h=sender:x-gm-message-state:subject:to:cc:references:from:message-id
-         :date:user-agent:mime-version:in-reply-to:content-language
-         :content-transfer-encoding:x-original-sender
-         :x-original-authentication-results:precedence:mailing-list:list-id
-         :x-spam-checked-in-group:list-post:list-help:list-archive
-         :list-subscribe:list-unsubscribe;
-        bh=QPU5Uu6iarIjB/6VxKmBzX2r8OxGnTUl0WdkaHKoC+4=;
-        b=XUqZ8j99pO1PfR/pjH2lc7QSlXcz0KM6ogAfASQhX/3Z/uT6L+E2JvcrBfo5tChkap
-         jg2qcg2baVatG+IJq/GrsUTpAcZ10QupIa4sYNmWhFOLjA/i4VEZH0Y1ZQKm+/AUOuFy
-         IJGZVpJAmLryYb5+EYA8UQLCagM3grcsh5O9VQVYFcDSuk026Vn0mCQ8eqoj0sQXRBAR
-         qD/6LXZIVtG8xdwZsYVOAE2m+cG4kPq86TK0n/kZP6wvuA9RkV9UmGMYmo8zsReiIxjG
-         H2c4j7zfS+E6X7POmVlb2/xHZ6FCwCr2N6Fotl5EvSSLzjzUHnQegu+AkcJ5IHHew5IM
-         h0SA==
+        h=sender:x-gm-message-state:mime-version:message-id:from:subject:date
+         :to:cc:x-original-sender:x-original-authentication-results
+         :precedence:mailing-list:list-id:x-spam-checked-in-group:list-post
+         :list-help:list-archive:list-subscribe:list-unsubscribe;
+        bh=42vFnuMDrg3bEO05mnSywOQLZBo0DNY09M1ONL2B9Uc=;
+        b=JyhdzuOqFBzh1Y+x/Wo82B5dxK+SfYJnsO7+OS1eUck3YYqCIj71rRDoeTR6b0xoeO
+         mt4rtm5e4qvgj/1aiTdvGMVLF3F1OVGRwrJB4lHXiaGaI8rMhRG9e3BLaly5SmutIHnD
+         PHDAMlEZwa6H5FoMIf+9EY86ttEEimhApe2ATZs1C9q9RARcIigu/FudGUn7h2VUeo3X
+         ZBF+lJ6pJLwdqeoEgp+ADwQ3mF220yvNC+DZLqRRgNPiXU/eKtkoLOczVSs3yCrqJKhh
+         B9106QeMC7S1HXcZSnthDgGH5eo82Ym0l1eEsmc19fZ0B5AmAA5G3+yoYme3TdywuxrK
+         RLuQ==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: APjAAAVuVb734ysMxRmjr9fHr//rch0e+bh1+/cehq7mr9glU1Jfj42x
-	vuPurdZpFwKzE9ZqHIuxK0pwlA==
-X-Google-Smtp-Source: APXvYqxPb5hwl8anUIlcqdTbTEDcKybq8Fz6HxraAH0fJ/Q0wUIqoZg5zIqenqslzcpJ6WVwAVtB4Q==
-X-Received: by 2002:a17:906:4bd7:: with SMTP id x23mr2533991ejv.320.1572511170148;
-        Thu, 31 Oct 2019 01:39:30 -0700 (PDT)
-X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a50:f092:: with SMTP id v18ls529446edl.9.gmail; Thu, 31 Oct
- 2019 01:39:29 -0700 (PDT)
-X-Received: by 2002:a50:fa85:: with SMTP id w5mr4587894edr.113.1572511169338;
-        Thu, 31 Oct 2019 01:39:29 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1572511169; cv=none;
-        d=google.com; s=arc-20160816;
-        b=lLKIcmlBcUv3TfBZJZQWIvbij/cblo/ibg8ndvTStaZDtRw4VG54rh/hoZfA044h33
-         MTwpuvxHhIsz/mz1c58ibhNCIoyPxbsjNSodYQ6RF7ccDkvLCwdVaeOlrtrtTCR0H1+Z
-         t8h2Ks3/RtpUZa0q9wR3M3Q+lTkvHR1TkEKrcmbBsfFwLvhlz/o4S+QBMmAadG9+FcOF
-         S7krdbA1++75Fq0DsEXJkdBL0JDZFfdK8FCWLBlTP4EXMFq1dHM7I8uVaRyg6f1jsUQR
-         TtnSfRV6GEsx/9OlV7qwdR8wYVXOfqR+dERMMbiYNVdenVG5J8y0mJXrxJX3FfMvSPeE
-         4qEQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=content-transfer-encoding:content-language:in-reply-to:mime-version
-         :user-agent:date:message-id:from:references:cc:to:subject;
-        bh=xlQh1AbIhT7jBqiTxkE7KHqv7YP5IpTD0s2mSIthkn4=;
-        b=I2KJ9z7hDg0Ol7WvPeqJjB3ghEFCKBPY/9eH75LtOdR5GoPVFZV36nMTLSYiOmsP1j
-         CfvPuZv/8hGknVHGGr9xfLsXibIziTx951ErIUh1UxR2XiUDs0fDcK7NDtq9hjPbtuD0
-         wfZ7OlIxAmMfZpx6r3+qtaPKChd6PLbwRC4/ZKkIsqcU5FIUV6VE6TClvQ9mvcJr1Pjd
-         h0BxU5Qq+E9jif1smZXiHBbGg2jAQVl+9dq5iF9je2n0Pjr4arMdi0JUYVklKWw0fnY1
-         2d1PcSdNUOLSQyXBPtJfGaNj86BPx+hq8x4vRAk9r3K9R3r48TlW8XBDORBWirVRtycQ
-         B68Q==
-ARC-Authentication-Results: i=1; mx.google.com;
-       spf=pass (google.com: domain of hare@suse.de designates 195.135.220.15 as permitted sender) smtp.mailfrom=hare@suse.de
-Received: from mx1.suse.de (mx2.suse.de. [195.135.220.15])
-        by mx.google.com with ESMTPS id k51si3508894edb.411.2019.10.31.01.39.29
-        for <usb-storage@lists.one-eyed-alien.net>
-        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
-        Thu, 31 Oct 2019 01:39:29 -0700 (PDT)
-Received-SPF: pass (google.com: domain of hare@suse.de designates 195.135.220.15 as permitted sender) client-ip=195.135.220.15;
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
-	by mx1.suse.de (Postfix) with ESMTP id 4BD67ACA4;
-	Thu, 31 Oct 2019 08:39:28 +0000 (UTC)
-Subject: [usb-storage] Re: [PATCH v2] scsi: Fix scsi_get/set_resid() interface
-To: Bart Van Assche <bvanassche@acm.org>,
- Damien Le Moal <Damien.LeMoal@wdc.com>,
- "linux-scsi@vger.kernel.org" <linux-scsi@vger.kernel.org>,
- "Martin K . Petersen" <martin.petersen@oracle.com>,
- "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
- "usb-storage@lists.one-eyed-alien.net"
- <usb-storage@lists.one-eyed-alien.net>,
- Alan Stern <stern@rowland.harvard.edu>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Cc: Justin Piszcz <jpiszcz@lucidpixels.com>
-References: <20191030090847.25650-1-damien.lemoal@wdc.com>
- <af516590-58dc-0377-5c54-ac63cffbafc8@acm.org>
- <BYAPR04MB5816D4B866F2E7CC421E8488E7600@BYAPR04MB5816.namprd04.prod.outlook.com>
- <a33afd2e-a7d6-5584-dc26-79fb8f3d6a97@acm.org>
-From: Hannes Reinecke <hare@suse.de>
-Message-ID: <a640ee15-515b-6811-9883-48b49ead9276@suse.de>
-Date: Thu, 31 Oct 2019 09:39:26 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.1
+X-Gm-Message-State: APjAAAWNRM/9xTdmjTrcuqaDRiQSVQ4+4G7c5va8TV8u8jwDd7UqY3wi
+	R7xPMvExjE3RVqV7C7nUkAcT/Q==
+X-Google-Smtp-Source: APXvYqwqJWbqoC5B6dZ+B4pc5Nk7jNVdrKHvR1NiMLckZbW6DSy+d8lAwvvi07ncmxjQza3Ww8MQEQ==
+X-Received: by 2002:a5d:9ecb:: with SMTP id a11mr13721783ioe.19.1572657136654;
+        Fri, 01 Nov 2019 18:12:16 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <a33afd2e-a7d6-5584-dc26-79fb8f3d6a97@acm.org>
-Content-Type: text/plain; charset="UTF-8"; format=flowed
-Content-Language: en-US
-Content-Transfer-Encoding: quoted-printable
-X-Original-Sender: hare@suse.de
+X-BeenThere: usb-storage@lists.one-eyed-alien.net
+Received: by 2002:a02:918e:: with SMTP id p14ls649687jag.11.gmail; Fri, 01 Nov
+ 2019 18:12:16 -0700 (PDT)
+X-Received: by 2002:a02:77d5:: with SMTP id g204mr8384678jac.125.1572657136118;
+        Fri, 01 Nov 2019 18:12:16 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1572657136; cv=none;
+        d=google.com; s=arc-20160816;
+        b=LhEFwO/Dys0oWdpNxEBp6yLHoMq2BBHkbweq9os01XKg3QBzb2VElOgkvmQRYEdLP/
+         sIcFaDwBeGUqMgrJDvu0VNoBo4CRqqJohs0HixdJwD6xSeJLRut6J+V+SSKamI7Oo/vN
+         M9RrBU5eIz///gjAdB6a7VEOOSgh6MRt5lvxLUdEWVoXnNwdnmAZV7TIHa5TUN+Qf04t
+         YMRCvroi+7lAZ3agbzgyfIlHRG5KFx8NaNV0AewmmyDkt1PDjjAI6+47I1eHyxUoC11q
+         Ov3sjpGRJhwsyj5IQl9NcvCPMF2dymKLms1ek7PyX9hzEw8OHKqEcjzIUg2ch2xKe3G3
+         csXQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=cc:to:date:subject:from:message-id;
+        bh=nKW38Z5i2ioXIYv48064XtfB0T6ttK+h1n1J9e6XHmg=;
+        b=o5DgdoMFBMv2ZswCwVdPjw7pEwx81kBrRkkxeuimUHw5bfN6B3etGQasCvk0Pqo8c9
+         o/cBwR37jBswqsuDSZRy15MuMoT/KEB1nuHfmGHKgmIV/Hk+OjmYOYoWohPbiq7gUxzi
+         ulMrUizn40ACTXioILFWz6AuzWVWa6D9WfwPCSHj/Ut6E5Xn4IOjoeQa1BMDKdduSEpb
+         41I4L8RDz2a7uhUZI3KVe9bYnfcfZQzpl0svqgIr2Vam0P8fdnEwVW9lQQgy4+t831YQ
+         cJz5FukLWVshRcoAQXavmBvYPU7ndhaDvLkDeCnxhWVTWYv35JbgmE9v23yGQskrda4N
+         xCLg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=pass (google.com: best guess record for domain of fthain@telegraphics.com.au designates 98.124.60.144 as permitted sender) smtp.mailfrom=fthain@telegraphics.com.au
+Received: from kvm5.telegraphics.com.au (kvm5.telegraphics.com.au. [98.124.60.144])
+        by mx.google.com with ESMTP id r10si13701312ilo.17.2019.11.01.18.12.16
+        for <usb-storage@lists.one-eyed-alien.net>;
+        Fri, 01 Nov 2019 18:12:16 -0700 (PDT)
+Received-SPF: pass (google.com: best guess record for domain of fthain@telegraphics.com.au designates 98.124.60.144 as permitted sender) client-ip=98.124.60.144;
+Received: by kvm5.telegraphics.com.au (Postfix, from userid 502)
+	id A60982A258; Fri,  1 Nov 2019 21:12:15 -0400 (EDT)
+Message-Id: <cover.1572656814.git.fthain@telegraphics.com.au>
+From: Finn Thain <fthain@telegraphics.com.au>
+Subject: [usb-storage] [PATCH 0/2] SG_NONE fix and cleanup
+Date: Sat, 02 Nov 2019 12:06:54 +1100
+To: "James E.J. Bottomley" <jejb@linux.ibm.com>,
+    "Martin K. Petersen" <martin.petersen@oracle.com>
+Cc: "Michael Schmitz" <schmitzmic@gmail.com>,
+    linux-scsi@vger.kernel.org,
+    linux-kernel@vger.kernel.org,
+    stable@vger.kernel.org,
+    "Jonathan Corbet" <corbet@lwn.net>,
+    "Bartlomiej Zolnierkiewicz" <b.zolnierkie@samsung.com>,
+    "Jens Axboe" <axboe@kernel.dk>,
+    "Viresh Kumar" <vireshk@kernel.org>,
+    "Oliver Neukum" <oneukum@suse.com>,
+    "Alan Stern" <stern@rowland.harvard.edu>,
+    "Greg Kroah-Hartman" <gregkh@linuxfoundation.org>,
+    usb-storage@lists.one-eyed-alien.net,
+    linux-doc@vger.kernel.org,
+    linux-ide@vger.kernel.org,
+    linux-usb@vger.kernel.org
+X-Original-Sender: fthain@telegraphics.com.au
 X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
- domain of hare@suse.de designates 195.135.220.15 as permitted sender) smtp.mailfrom=hare@suse.de
+ best guess record for domain of fthain@telegraphics.com.au designates
+ 98.124.60.144 as permitted sender) smtp.mailfrom=fthain@telegraphics.com.au
+Content-Type: text/plain; charset="UTF-8"
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -138,37 +129,27 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On 10/30/19 6:01 PM, Bart Van Assche wrote:
-> On 10/30/19 9:21 AM, Damien Le Moal wrote:
->> If you feel strongly about it, I have absolutely no problem with
->> dropping the patch. I just would like that it be dropped for the right
->> reasons...
->=20
-> Hi Damien,
->=20
-> What I'm wondering about is how the SCSI core should support residual
-> overflow. Should a new member be introduced in struct scsi_request?
-> Should resid_len be changed from unsigned int to int or should we
-> perhaps follow yet another approach?
->=20
-Please introduce a new member to hold any overflow value.
-And document where it is needed.
+These two patches address some issues stemming from scsi-mq conversion.
 
-Cheers,
 
-Hannes
---=20
-Dr. Hannes Reinecke            Teamlead Storage & Networking
-hare@suse.de                              +49 911 74053 688
-SUSE LINUX GmbH, Maxfeldstr. 5, 90409 N=C3=BCrnberg
-GF: Felix Imend=C3=B6rffer, Mary Higgins, Sri Rasiah
-HRB 21284 (AG N=C3=BCrnberg)
+Finn Thain (2):
+  atari_scsi, sun3_scsi: Set sg_tablesize to 1 instead of SG_NONE
+  scsi: Clean up SG_NONE
 
---=20
-You received this message because you are subscribed to the Google Groups "=
-USB Mass Storage on Linux" group.
-To unsubscribe from this group and stop receiving emails from it, send an e=
-mail to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.=
-one-eyed-alien.net/d/msgid/usb-storage/a640ee15-515b-6811-9883-48b49ead9276=
-%40suse.de.
+ Documentation/scsi/scsi_mid_low_api.txt |  3 ++-
+ drivers/ata/pata_arasan_cf.c            |  1 -
+ drivers/scsi/atari_scsi.c               |  6 +++---
+ drivers/scsi/atp870u.c                  |  2 +-
+ drivers/scsi/mac_scsi.c                 |  2 +-
+ drivers/scsi/sun3_scsi.c                |  4 ++--
+ drivers/usb/storage/uas.c               |  1 -
+ include/scsi/scsi_host.h                | 13 -------------
+ 8 files changed, 9 insertions(+), 23 deletions(-)
+
+-- 
+2.23.0
+
+-- 
+You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
+To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/cover.1572656814.git.fthain%40telegraphics.com.au.
