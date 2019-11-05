@@ -1,121 +1,190 @@
-Return-Path: <usb-storage+bncBCILJWNIZYHBB4FP6PWQKGQE6VDKWOQ@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBDF7X5HH4UNBBGX4QLXAKGQEIO6OB3I@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-il1-x147.google.com (mail-il1-x147.google.com [IPv6:2607:f8b0:4864:20::147])
-	by mail.lfdr.de (Postfix) with ESMTPS id DA05EECC98
-	for <lists+usb-storage@lfdr.de>; Sat,  2 Nov 2019 02:12:17 +0100 (CET)
-Received: by mail-il1-x147.google.com with SMTP id 13sf10023509iln.11
-        for <lists+usb-storage@lfdr.de>; Fri, 01 Nov 2019 18:12:17 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1572657136; cv=pass;
+Received: from mail-ed1-x548.google.com (mail-ed1-x548.google.com [IPv6:2a00:1450:4864:20::548])
+	by mail.lfdr.de (Postfix) with ESMTPS id 6C3E5EF1AE
+	for <lists+usb-storage@lfdr.de>; Tue,  5 Nov 2019 01:11:07 +0100 (CET)
+Received: by mail-ed1-x548.google.com with SMTP id f17sf5399310edv.6
+        for <lists+usb-storage@lfdr.de>; Mon, 04 Nov 2019 16:11:07 -0800 (PST)
+ARC-Seal: i=3; a=rsa-sha256; t=1572912667; cv=pass;
         d=google.com; s=arc-20160816;
-        b=PGmq6Er0Q2z0ZfXsCYpcb1A1Ti9AsmQakL+sxfCK1rUSQ6DHDKCGFJiZhCQozA74WH
-         xWObZVI7T3HRS35uDY9VaEKadrPBPAah+NQI+swEIVzx13a1NbfMi6j07s9GPwp/YV2T
-         0Rx69lq70egzJhdQqVORzNGcjrQA1lXr5Se0EsUScGFbK78W8nni0TRNclF2V8R6NaKw
-         qy8uEYflbKF4JAo4PLBGEyU6rN9stXKrl87Dq02drbu6hoj2yAq3gTW7Hysge8dhAnsh
-         bjE2Hl78d1+uzENWsuUq0SGJdQodywYsjoDDbvTOY3UZYxwz+O+TyUwvBv7LluHZ3r73
-         xjvA==
-ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        b=rB1aki3kdzOGrruLkTw71lMX2eP1zcexCe90YGcICEZpYpeKlgNbdLANn5uVFOEPHk
+         InOnIjwTuTTHCXNDywTugDjRPvRQIBdYkYraj78JUfwMFxY9XE9eX7euRBC1jlLCe274
+         u4EolyrvFuyRpf2R4fhWmI7BZHV2/R0psPf9mtirh/CVqtqWUi5gMKRMpb3SE3tjuqxB
+         7B8jUXKa0397aheiN/6twIu+HD7XLl8qUJwu5imFxqkiTvxw3GGyFNWpd3DohV2hTioB
+         unt3csA5iSH0bV1G6Q2obacalXh/75XJsM267CvIGQ4Pkgo38Pvu2Lgh98X06nRzLoN3
+         3UgA==
+ARC-Message-Signature: i=3; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:date:subject:from:references
-         :in-reply-to:message-id:cc:to:mime-version:sender:dkim-signature;
-        bh=S6NNuCbWNmadEzZt960i6KhmvVT5E/9aABgg/uRM5nQ=;
-        b=ZDF4XKuW9yQ5e1nsT2RyEuumiMUfKZFoRFqqOPGaW7BicLwhgfsjZtDsu37bujyoLR
-         jvvsZpyl2DtiY6h/qbSDSc/M9DK9LlHqCqqZzC80N8ha9qN0LjexYPQYRsJ85kPmKdhE
-         xqPb+sG2k7VRkkbYItF31sipoOCrPct46QxvnqW4BzjkqkJjdakQvpGHahYK+8TbFooG
-         SuWyxBfdk6pqUuORx/nl+8mxpd/NFIQrZRss7RPEnW9I6igVWTHtCIRy+L6t7bqM9K2W
-         M8AaF2jH52ooSIsVfJxYX9SxZunFYI0/KFrAhlBTfxasNmg/8MuCB9idfKbVhj0WYict
-         zaIg==
-ARC-Authentication-Results: i=2; mx.google.com;
-       spf=pass (google.com: best guess record for domain of fthain@telegraphics.com.au designates 98.124.60.144 as permitted sender) smtp.mailfrom=fthain@telegraphics.com.au
+         :list-id:mailing-list:precedence:mime-version:wdcipoutbound
+         :content-language:accept-language:references:message-id:date
+         :thread-index:thread-topic:subject:cc:to:from:ironport-sdr:sender
+         :dkim-signature;
+        bh=+QL+038JmORnOELVneaHr8n2rw6jXnQIxrbh/5wZxgY=;
+        b=J7zR1l+Eh9POXyHsuASDOq8N4/oRIGgaViQFtKKrhUTrHYS5X6n0Dd5qkz5YXYRQX1
+         WZzD1H8rsej6yGZt2l4AZoyzYs0BXv5EOdlHEdDczOfQioHVHkag73gKFRhzqzJkFSUx
+         MVrsQSvjOGHZm9UuerFPv/GJQofh7qSjPIeBnz8ABc9m6dWJn04Vn6/0GxwtpMAhj0L2
+         Cl12eEwpj4kdE/5fbZbgibckS/inWb7MO586OAR8CJCJm0nSnmUtcx5L6qXe0FSAJyLP
+         Q6Xw2mAOyh3Edxm9Uw86jfdZUdOGBwVyH5S4MRhdmdsJm1qCoUnNE2YO8kCTook387pc
+         LZEQ==
+ARC-Authentication-Results: i=3; mx.google.com;
+       dkim=pass header.i=@wdc.com header.s=dkim.wdc.com header.b=GM+kZKXT;
+       dkim=pass header.i=@sharedspace.onmicrosoft.com header.s=selector2-sharedspace-onmicrosoft-com header.b=fLhcxaGw;
+       arc=pass (i=1 spf=pass spfdomain=wdc.com dkim=pass dkdomain=wdc.com dmarc=pass fromdomain=wdc.com);
+       spf=pass (google.com: domain of prvs=20536ca63=damien.lemoal@wdc.com designates 68.232.143.124 as permitted sender) smtp.mailfrom="prvs=20536ca63=Damien.LeMoal@wdc.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=wdc.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
-        h=sender:mime-version:to:cc:message-id:in-reply-to:references:from
-         :subject:date:x-original-sender:x-original-authentication-results
-         :precedence:mailing-list:list-id:list-post:list-help:list-archive
-         :list-subscribe:list-unsubscribe;
-        bh=S6NNuCbWNmadEzZt960i6KhmvVT5E/9aABgg/uRM5nQ=;
-        b=R8H6ueFPMMoKEEbC2nS3eyE20Zg6q27bL9y998eu/MbrsoUrb59CKK52vQlAip6f42
-         vb+9+yYR531aqURfL0qWmo2GqpLbnOOKBWAB6ESfkGVpFZYJF5B3sOv5g6SF9YaPH/sw
-         Q5pFbk2RMEaLwMOCneWe3mMVfRELJk0iB45Sc=
+        h=sender:ironport-sdr:from:to:cc:subject:thread-topic:thread-index
+         :date:message-id:references:accept-language:content-language
+         :wdcipoutbound:mime-version:x-original-sender
+         :x-original-authentication-results:precedence:mailing-list:list-id
+         :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
+        bh=+QL+038JmORnOELVneaHr8n2rw6jXnQIxrbh/5wZxgY=;
+        b=gUiZEyiv5aoQ3Hc3GMVccnI6UFhSZ67xfY5f+v3yzM+1xhLAZtNH/lTKusKagZvJTv
+         OauxLuKDKP3hBzS4T2USwJgDrOa5QIvApajGz7tKShLAQcpy1wDcRz2LrnBSkSNAmyJI
+         LVUa2Bm043pg4Rr3EgKtvEMafkAbyEbHNeqBA=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
-        h=sender:x-gm-message-state:mime-version:to:cc:message-id:in-reply-to
-         :references:from:subject:date:x-original-sender
-         :x-original-authentication-results:precedence:mailing-list:list-id
-         :x-spam-checked-in-group:list-post:list-help:list-archive
-         :list-subscribe:list-unsubscribe;
-        bh=S6NNuCbWNmadEzZt960i6KhmvVT5E/9aABgg/uRM5nQ=;
-        b=Y8FKkBMnBe+Sd+ZMqOtKeuu3fUU/C6cWM6PQomBkMfdGtjtsVjEe+ZcFktbBQ43t84
-         0aZ364n86MTH2zee2MN9PQGahkQV8riiW+ntPuoNWev8M6Y+KWR/tqtDzNynbrasGuGR
-         oAHVUtKFIDdUUEI1DF2Kdi6jyUPmCtQDp+ieqgk2S5aTIGANckpuMceMNVckqAp72D7z
-         0Zb8sb1niMfuvkYbBKMqEobccooV5PyWBMTerwQaKcDKloAv2mcrUocH18Rws8BD3oR3
-         CXGIIk2JDWnj+A+5z0fYpTBI3SE2TXseOpGbLPZYCwv40sMS4Orjox0YRElq3lLQvRF6
-         8bqQ==
+        h=sender:x-gm-message-state:ironport-sdr:from:to:cc:subject
+         :thread-topic:thread-index:date:message-id:references
+         :accept-language:content-language:wdcipoutbound:mime-version
+         :x-original-sender:x-original-authentication-results:precedence
+         :mailing-list:list-id:x-spam-checked-in-group:list-post:list-help
+         :list-archive:list-subscribe:list-unsubscribe;
+        bh=+QL+038JmORnOELVneaHr8n2rw6jXnQIxrbh/5wZxgY=;
+        b=srgeuN2+y2rvv6w6U9T9sfZaj8jSlyPGfEbRR0ivuroObILRtrBdN0E13EHr3HwRmp
+         ZHqq1+nT6D0hg6l9OnKN/fyr/Wwip82TuFcjm1fYGHKI3UysCEEH7kKDuSEeZ1x1BnXb
+         SfUaIIKPs5xZR250X/QU6trNSUQ3cf1h/7b8uJY3u0a3SGZ/k+D5jyO3n5FKJU+DV14N
+         ffD+Ze1gqRkT7Dfs5qj32/Y3VA4pO4rDxamPFY9POBwABXp30NRLqT4GeUR97qnU6y0C
+         ktajQ+L8NyYBf1bL7jzcJ7kXqc/yx6rEZ8AliKJd7982bUN2oXm+JAlgPQZN/t7hxVrl
+         KFXA==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: APjAAAUPwRqsOb5WxsRpGmvqwKDnopdmQFpLovy+i+u/3SLSfJZVpppO
-	U+7n1ZZPLEk818r5GDZ0PhJelw==
-X-Google-Smtp-Source: APXvYqxr+jDcJUzLh7ReEnURyRPnHBfXCTWmsTWasPJ1sRjAxj4X7BU8VdA1aF5h0Qy+vae18uH83Q==
-X-Received: by 2002:a92:9e4c:: with SMTP id q73mr15697968ili.53.1572657136655;
-        Fri, 01 Nov 2019 18:12:16 -0700 (PDT)
-MIME-Version: 1.0
+X-Gm-Message-State: APjAAAUvhrw6invERM0WM0DDoJ7uVV1SPlwIuwVraPEQ8ryeMVmlNuuQ
+	U09PDyHPGIz8NBQYT3clYpDd2Q==
+X-Google-Smtp-Source: APXvYqw+dH9FeIT6203hDi7ECcRtF/OMZFRcr2VmrBZzKVqXssSR5zvmB6P0Amo7XVNWq2Q6uI3tsQ==
+X-Received: by 2002:a05:6402:1816:: with SMTP id g22mr32842839edy.76.1572912667106;
+        Mon, 04 Nov 2019 16:11:07 -0800 (PST)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a02:37cd:: with SMTP id r196ls649484jar.8.gmail; Fri, 01 Nov
- 2019 18:12:16 -0700 (PDT)
-X-Received: by 2002:a02:c4cf:: with SMTP id h15mr5091678jaj.112.1572657136181;
-        Fri, 01 Nov 2019 18:12:16 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1572657136; cv=none;
+Received: by 2002:aa7:ccd7:: with SMTP id y23ls4064461edt.12.gmail; Mon, 04
+ Nov 2019 16:11:06 -0800 (PST)
+X-Received: by 2002:a50:d717:: with SMTP id t23mr32114605edi.231.1572912666171;
+        Mon, 04 Nov 2019 16:11:06 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1572912666; cv=pass;
         d=google.com; s=arc-20160816;
-        b=rjdKs9vQ4NpX3hrG52Bautu/Gn1wMfXYnAhlukDi4TS0BiezSp/rv4NcxhQ4FH/q+5
-         bcTvYSpdwpwwqTh066l1XmgC5G5edytgLbsEDhksmRfAsdObpE+vtwFj5QF77JWLtKR5
-         wTLT12di/xvNSU377nXcS4MRTwSmqNB0579vSXkOz9eMsLoxKHvHSy2G3tsOUGQyu8jQ
-         2cR+irV27gri5QUJ+xKyRrSBTWUakfwMSBm9hdjrS3xFTzTohIvV4FhxomoPzsNpWAG5
-         aFLMra4Q8MHbPggiSi3nrpQVNsmB+oVaeTLrcuh6CYZD+au+4/sxn9dHs3W/mIBIRwFB
-         essw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=date:subject:from:references:in-reply-to:message-id:cc:to;
-        bh=T7GV8lwiVVcbBvjSy0Te6qGqxYv9mI/MSp7vI7M3PTk=;
-        b=YIv5lCDWUpmktwS+B0ZfiG64A/EjXm51HiO6N5gBNSk8Nfage8TIx3wzXo7ryPRQ5/
-         RtE5lG64vyymcuCM2xsI4BKgmdiW+S2oqFdkAfi4hVDuVBfmRUvfx9rby/i4x57+srzc
-         thY4c+owB4SMWUxTwmLo5OMW42GeC5VKBYSTuaQ7tCLIL9XFQw7JIK8rWTdnyyPdLJhD
-         7+f2a3eEICR0Y+ASpFrxvLrJ1uMqxP3HAtdf7siYX5j8n8bLKLCI1RGrLMTbsCexnKbA
-         6GuZwqTffUVy5aM6rC2AbX2PX1TWmMx2MuJgXgK3+xfMjqEp3RmI4Kj4gdeBmSYigOQm
-         ROWA==
-ARC-Authentication-Results: i=1; mx.google.com;
-       spf=pass (google.com: best guess record for domain of fthain@telegraphics.com.au designates 98.124.60.144 as permitted sender) smtp.mailfrom=fthain@telegraphics.com.au
-Received: from kvm5.telegraphics.com.au (kvm5.telegraphics.com.au. [98.124.60.144])
-        by mx.google.com with ESMTP id h199si13776182iof.140.2019.11.01.18.12.16
-        for <usb-storage@lists.one-eyed-alien.net>;
-        Fri, 01 Nov 2019 18:12:16 -0700 (PDT)
-Received-SPF: pass (google.com: best guess record for domain of fthain@telegraphics.com.au designates 98.124.60.144 as permitted sender) client-ip=98.124.60.144;
-Received: by kvm5.telegraphics.com.au (Postfix, from userid 502)
-	id B6FE429915; Fri,  1 Nov 2019 21:12:15 -0400 (EDT)
-To: "James E.J. Bottomley" <jejb@linux.ibm.com>,
-    "Martin K. Petersen" <martin.petersen@oracle.com>
-Cc: "Michael Schmitz" <schmitzmic@gmail.com>,
-    linux-scsi@vger.kernel.org,
-    linux-kernel@vger.kernel.org,
-    "Jonathan Corbet" <corbet@lwn.net>,
-    "Bartlomiej Zolnierkiewicz" <b.zolnierkie@samsung.com>,
-    "Jens Axboe" <axboe@kernel.dk>,
-    "Viresh Kumar" <vireshk@kernel.org>,
-    "Oliver Neukum" <oneukum@suse.com>,
-    "Alan Stern" <stern@rowland.harvard.edu>,
-    "Greg Kroah-Hartman" <gregkh@linuxfoundation.org>,
-    usb-storage@lists.one-eyed-alien.net,
-    linux-doc@vger.kernel.org,
-    linux-ide@vger.kernel.org,
-    linux-usb@vger.kernel.org
-Message-Id: <b4779b7a6563f6bd8d259ee457871c1c463c420e.1572656814.git.fthain@telegraphics.com.au>
-In-Reply-To: <cover.1572656814.git.fthain@telegraphics.com.au>
-References: <cover.1572656814.git.fthain@telegraphics.com.au>
-From: Finn Thain <fthain@telegraphics.com.au>
-Subject: [usb-storage] [PATCH 2/2] scsi: Clean up SG_NONE
-Date: Sat, 02 Nov 2019 12:06:54 +1100
-X-Original-Sender: fthain@telegraphics.com.au
-X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
- best guess record for domain of fthain@telegraphics.com.au designates
- 98.124.60.144 as permitted sender) smtp.mailfrom=fthain@telegraphics.com.au
+        b=cJAN3UEa4+++Q/Rln9MqcSWAooAFQPZj88bZdN3l0AK5py5XhAB+Nu57nzi7tPR40g
+         TPferb414v0BRoNFXCnK8f5R/+amDo4d5taJ6fuOGbaZdg1uyhCf4MjY81RJnYlkeNag
+         MwB3PLS/cSbowmDoYDDsUYbK4dpyrLkWHKenzJBgDB1+t7togTce1PDFxTT3NSCff1UX
+         PJ7WuBXFoLtpkrDZq6r/IOcF7o42hFbiqPagUxGtb7JteCmIiSWZnNx7lag7ulMBfRZG
+         JocHyDANaLUAhVUg3HxuO33ZMFDXh7gqD0EyGK3FzvbUz7EisDofMJnZ8qjyk2K2P0WI
+         Tg2w==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:content-transfer-encoding:wdcipoutbound
+         :content-language:accept-language:references:message-id:date
+         :thread-index:thread-topic:subject:cc:to:from:dkim-signature
+         :ironport-sdr:dkim-signature;
+        bh=IpGkrazEPo+7ww0J9GyOg8jzBIXRj4bsgBJ8Ld6s/60=;
+        b=tfKpvu6hIO/T75F8WvhjyOX3Ff/Buz2dN1qRs6bchoZ+ChV6o5XWyNdWmLaEQosl0f
+         Xx3N9sVwvJx6LrENGpZOeJxeODYPLC9yuqO9OYIaqE6SWoRTik5iCpQUUeAcxMRhk3Ay
+         plg4C7UPNA+ahPJ39lXAVxs5YTo8/suB7aQCO4lz1M1tmJ3EJ4kQJDPqY2BRyaJKiT0c
+         7IuRmUP8DUMgp3pXwMbjLMR7KJ/H+Y+Kpxz5wkWxX/8U5DfyH/dk5ikbVsWr9wgjWWlv
+         BwmyJ/BLtCxyo7eqPUZJb08N4ImfWUNykjMD9zzQJMZE86clEwSCed4xcblX+2RlND8q
+         78jA==
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@wdc.com header.s=dkim.wdc.com header.b=GM+kZKXT;
+       dkim=pass header.i=@sharedspace.onmicrosoft.com header.s=selector2-sharedspace-onmicrosoft-com header.b=fLhcxaGw;
+       arc=pass (i=1 spf=pass spfdomain=wdc.com dkim=pass dkdomain=wdc.com dmarc=pass fromdomain=wdc.com);
+       spf=pass (google.com: domain of prvs=20536ca63=damien.lemoal@wdc.com designates 68.232.143.124 as permitted sender) smtp.mailfrom="prvs=20536ca63=Damien.LeMoal@wdc.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=wdc.com
+Received: from esa2.hgst.iphmx.com (esa2.hgst.iphmx.com. [68.232.143.124])
+        by mx.google.com with ESMTPS id n4si679719ejy.426.2019.11.04.16.11.05
+        for <usb-storage@lists.one-eyed-alien.net>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 04 Nov 2019 16:11:06 -0800 (PST)
+Received-SPF: pass (google.com: domain of prvs=20536ca63=damien.lemoal@wdc.com designates 68.232.143.124 as permitted sender) client-ip=68.232.143.124;
+IronPort-SDR: mmYGmcdYizFoFbLIdnlII95gHpO+DdJjq2p/MZ6TKhX4xEElokrrttk0oHBN8GzBHVOmQDOpIl
+ hC4vw0jDClHcJx/CAmBzrhCU/67IIwdl1x6MWfgzMSjX955TZGibycciBxI5nmtj2PJ2VO4c0+
+ BIClN8zGNdv5nvTYNdFyEri3T96Mx1oDGcuP4STnXxU5JoLZA2U+aOFwNtjnWbvLNYBgiUWkHX
+ VOLV4xafnXCCVciUZ+SYri/ga4LSLGvQ//H4eJbN3px6pzYTXg/C1B0xtwfOsoHhyhPEa/e3v3
+ FKw=
+X-IronPort-AV: E=Sophos;i="5.68,268,1569254400"; 
+   d="scan'208";a="223294773"
+Received: from mail-dm3nam03lp2056.outbound.protection.outlook.com (HELO NAM03-DM3-obe.outbound.protection.outlook.com) ([104.47.41.56])
+  by ob1.hgst.iphmx.com with ESMTP; 05 Nov 2019 08:11:58 +0800
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=McfkCcHe+krpHs2HQHJFm2mMejLuNhCIj1X+wyfdXb1rfjLJhGPpp2qH8S8xgUqCQ4zdPd9+bjjHWkXQH/aYSr5Gi7TS/3Ho+1iaR22zSqZKsU6VAmrrur7jfnMHqQO1Y50Nd7kzXgjE9CUqKXVb2rCClKNrXD1ucxlRyfFGCMDutFnkI2TpvTnDYBxGHLBp0tLliWB22Ow076ODnuU51V6W6gHxPBp00L53n5xE0/1rJRUCazsOF8Iiz+8ftnEdNvJS0oEKuqlGq8aPhKpP3LuhOi9+UUBqbI4fsFA5tDx/1qDCRuzHW+TtEWdxdc8jcWA5N7csgfDHgeczHtecrA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=IpGkrazEPo+7ww0J9GyOg8jzBIXRj4bsgBJ8Ld6s/60=;
+ b=l544MpHTrOI7JFn/yD8zsF4jtAD6N2vT/ANyTQfRmgLj6fWIuaQKNBBgoL7IJkp8mNR2mQRKGBDmI396o2fFKi2wpXDoybuL+8/tzG+rL0Su9HXMo1AkpEMW23p6DvzDfWUGbu0pQQe3oiilwK0xF+2EdGHE2hVOqwiQa0NKqIlXq82rCvb48O/MVMuHBnwzGeRkmUq1Y2VKPJ8UGIvu2aA5FKmOj1pOVP9G/z35u7ubmsFarBNcPU1wHgUAiYrZjL48vlcM0v3SZ6iB7VuGfwe4GkPYsjY+wSIXk6czsmzoHOZ4YwrpxTeg5LFLFJFDtS5kFSnG17eQrl1QYANHRw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=wdc.com; dmarc=pass action=none header.from=wdc.com; dkim=pass
+ header.d=wdc.com; arc=none
+Received: from BYAPR04MB5816.namprd04.prod.outlook.com (20.179.59.16) by
+ BYAPR04MB5544.namprd04.prod.outlook.com (20.178.232.17) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2408.24; Tue, 5 Nov 2019 00:11:01 +0000
+Received: from BYAPR04MB5816.namprd04.prod.outlook.com
+ ([fe80::4176:5eda:76a2:3c40]) by BYAPR04MB5816.namprd04.prod.outlook.com
+ ([fe80::4176:5eda:76a2:3c40%7]) with mapi id 15.20.2408.024; Tue, 5 Nov 2019
+ 00:11:01 +0000
+From: Damien Le Moal <Damien.LeMoal@wdc.com>
+To: Hannes Reinecke <hare@suse.de>, Bart Van Assche <bvanassche@acm.org>,
+	"linux-scsi@vger.kernel.org" <linux-scsi@vger.kernel.org>, "Martin K .
+ Petersen" <martin.petersen@oracle.com>, "linux-usb@vger.kernel.org"
+	<linux-usb@vger.kernel.org>, "usb-storage@lists.one-eyed-alien.net"
+	<usb-storage@lists.one-eyed-alien.net>, Alan Stern
+	<stern@rowland.harvard.edu>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+CC: Justin Piszcz <jpiszcz@lucidpixels.com>
+Subject: [usb-storage] Re: [PATCH v2] scsi: Fix scsi_get/set_resid() interface
+Thread-Topic: [PATCH v2] scsi: Fix scsi_get/set_resid() interface
+Thread-Index: AQHVjwGpa2dwZOHBZEqGAzLsDczxpQ==
+Date: Tue, 5 Nov 2019 00:11:01 +0000
+Message-ID: <BYAPR04MB581685E630A8EA91902B2F9BE77E0@BYAPR04MB5816.namprd04.prod.outlook.com>
+References: <20191030090847.25650-1-damien.lemoal@wdc.com>
+ <af516590-58dc-0377-5c54-ac63cffbafc8@acm.org>
+ <BYAPR04MB5816D4B866F2E7CC421E8488E7600@BYAPR04MB5816.namprd04.prod.outlook.com>
+ <a33afd2e-a7d6-5584-dc26-79fb8f3d6a97@acm.org>
+ <a640ee15-515b-6811-9883-48b49ead9276@suse.de>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [199.255.47.8]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: e6662920-8224-45cc-d4e3-08d76184a415
+x-ms-traffictypediagnostic: BYAPR04MB5544:
+x-microsoft-antispam-prvs: <BYAPR04MB55443B85DF64BDF520CB50DCE77E0@BYAPR04MB5544.namprd04.prod.outlook.com>
+wdcipoutbound: EOP-TRUE
+x-ms-oob-tlc-oobclassifiers: OLM:8273;
+x-forefront-prvs: 0212BDE3BE
+x-forefront-antispam-report: SFV:NSPM;SFS:(10019020)(979002)(4636009)(396003)(376002)(136003)(39860400002)(346002)(366004)(189003)(199004)(66066001)(81166006)(26005)(2906002)(76176011)(2501003)(6436002)(6246003)(7696005)(102836004)(55016002)(478600001)(53546011)(316002)(229853002)(110136005)(14454004)(71190400001)(71200400001)(2201001)(8676002)(256004)(81156014)(305945005)(486006)(9686003)(5660300002)(7736002)(6506007)(3846002)(186003)(25786009)(86362001)(91956017)(74316002)(2171002)(446003)(52536014)(66476007)(76116006)(66946007)(64756008)(33656002)(66556008)(66446008)(8936002)(476003)(6116002)(99286004)(14444005)(4326008)(969003)(989001)(999001)(1009001)(1019001);DIR:OUT;SFP:1102;SCL:1;SRVR:BYAPR04MB5544;H:BYAPR04MB5816.namprd04.prod.outlook.com;FPR:;SPF:None;LANG:en;PTR:InfoNoRecords;MX:1;A:1;
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: I8EjWxDohBi3M0WpwJZoR59Yhk/EyZMAPlfkuzu0PTd+nT1DDckJrspJs70NkdCSjyAtuqcZInOfTbTwnYUOm9DNHhD/bAYipGUIlXB+ovE/XOEneNFD20tnquXlhPLAxMAprikJHC0hTTMpEAQBD18cRgtO6oO15XNQ4YJzDuYjoZQwO98TYHKxSkziQ5GlrJXhWX2fIApOMblN7nFOzr9KZm+yt6NMYUoYzriBZ2kWYcNx8HDznOu0g8olFtNtVMRwcd/kg0fA4W5Rg57i3qpOLX31LFw7g/SKgBUg7cAp99h8KS/vdDhGMwuG+QPefpZ8vB8Dgr4zm5NcKKr5/lYLGLl730QYf3GLoKnn37M/2t1Wot+l1ZTp2UZwaA7Hqr+u1Ew69gbFhwqPhltKvZkvibtHuojSC9hKlNrhm+iBwvdsZGO4LHa4TQVDrnaJ
+x-ms-exchange-transport-forked: True
 Content-Type: text/plain; charset="UTF-8"
+MIME-Version: 1.0
+X-OriginatorOrg: wdc.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: e6662920-8224-45cc-d4e3-08d76184a415
+X-MS-Exchange-CrossTenant-originalarrivaltime: 05 Nov 2019 00:11:01.0317
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: b61c8803-16f3-4c35-9b17-6f65f441df86
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: kYw6fJvFqAqm1V8XiwHYPPZQ0HRZ7PeK1sGMai0u4S+Nn98yNPBDM1kihevU1/4Qh5lzuJcQISzkS1mPkFv+9A==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR04MB5544
+X-Original-Sender: Damien.LeMoal@wdc.com
+X-Original-Authentication-Results: mx.google.com;       dkim=pass
+ header.i=@wdc.com header.s=dkim.wdc.com header.b=GM+kZKXT;       dkim=pass
+ header.i=@sharedspace.onmicrosoft.com header.s=selector2-sharedspace-onmicrosoft-com
+ header.b=fLhcxaGw;       arc=pass (i=1 spf=pass spfdomain=wdc.com dkim=pass
+ dkdomain=wdc.com dmarc=pass fromdomain=wdc.com);       spf=pass (google.com:
+ domain of prvs=20536ca63=damien.lemoal@wdc.com designates 68.232.143.124 as
+ permitted sender) smtp.mailfrom="prvs=20536ca63=Damien.LeMoal@wdc.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=wdc.com
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -131,106 +200,41 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-Remove SG_NONE and a related misleading comment. Update documentation.
+Bart,
 
-This patch does not affect behaviour as zero initialization is redundant.
+On 2019/10/31 17:39, Hannes Reinecke wrote:
+> On 10/30/19 6:01 PM, Bart Van Assche wrote:
+>> On 10/30/19 9:21 AM, Damien Le Moal wrote:
+>>> If you feel strongly about it, I have absolutely no problem with
+>>> dropping the patch. I just would like that it be dropped for the right
+>>> reasons...
+>>
+>> Hi Damien,
+>>
+>> What I'm wondering about is how the SCSI core should support residual
+>> overflow. Should a new member be introduced in struct scsi_request?
+>> Should resid_len be changed from unsigned int to int or should we
+>> perhaps follow yet another approach?
+>>
+> Please introduce a new member to hold any overflow value.
+> And document where it is needed.
 
-Cc: Jonathan Corbet <corbet@lwn.net>
-Cc: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
-Cc: Jens Axboe <axboe@kernel.dk>
-Cc: Viresh Kumar <vireshk@kernel.org>
-Cc: Oliver Neukum <oneukum@suse.com>
-Cc: Alan Stern <stern@rowland.harvard.edu>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Cc: usb-storage@lists.one-eyed-alien.net
-Signed-off-by: Finn Thain <fthain@telegraphics.com.au>
----
- Documentation/scsi/scsi_mid_low_api.txt |  3 ++-
- drivers/ata/pata_arasan_cf.c            |  1 -
- drivers/scsi/atp870u.c                  |  2 +-
- drivers/usb/storage/uas.c               |  1 -
- include/scsi/scsi_host.h                | 13 -------------
- 5 files changed, 3 insertions(+), 17 deletions(-)
+Yes, I also think this is the best approach. The current resid_len
+member of struct scsi_request can be kept as is, encoding actual
+underflow of a command (less bytes transferred than asked for). The new
+field would only be used in the case of "overflow", which are not actual
+buffer overflows as Hannes pointed out (otherwise, we would get memory
+corruptions, iommu screaming etc). The SG driver can make use of this
+field to keep the io header resid as an int, with negative values
+indicating overflows and positive values underflows.
 
-diff --git a/Documentation/scsi/scsi_mid_low_api.txt b/Documentation/scsi/scsi_mid_low_api.txt
-index c1dd4939f4ae..2a4be1c3e6db 100644
---- a/Documentation/scsi/scsi_mid_low_api.txt
-+++ b/Documentation/scsi/scsi_mid_low_api.txt
-@@ -1084,7 +1084,8 @@ of interest:
-                    commands to the adapter.
-     this_id      - scsi id of host (scsi initiator) or -1 if not known
-     sg_tablesize - maximum scatter gather elements allowed by host.
--                   0 implies scatter gather not supported by host
-+                   Set this to SG_ALL or less to avoid chained SG lists.
-+                   Must be at least 1.
-     max_sectors  - maximum number of sectors (usually 512 bytes) allowed
-                    in a single SCSI command. The default value of 0 leads
-                    to a setting of SCSI_DEFAULT_MAX_SECTORS (defined in
-diff --git a/drivers/ata/pata_arasan_cf.c b/drivers/ata/pata_arasan_cf.c
-index ebecab8c3f36..135173c8d138 100644
---- a/drivers/ata/pata_arasan_cf.c
-+++ b/drivers/ata/pata_arasan_cf.c
-@@ -219,7 +219,6 @@ struct arasan_cf_dev {
- 
- static struct scsi_host_template arasan_cf_sht = {
- 	ATA_BASE_SHT(DRIVER_NAME),
--	.sg_tablesize = SG_NONE,
- 	.dma_boundary = 0xFFFFFFFFUL,
- };
- 
-diff --git a/drivers/scsi/atp870u.c b/drivers/scsi/atp870u.c
-index e41f0bbdc9fd..c6a752309dda 100644
---- a/drivers/scsi/atp870u.c
-+++ b/drivers/scsi/atp870u.c
-@@ -1680,7 +1680,7 @@ static struct scsi_host_template atp870u_template = {
-      .bios_param        	= atp870u_biosparam	/* biosparm */,
-      .can_queue         	= qcnt			/* can_queue */,
-      .this_id           	= 7			/* SCSI ID */,
--     .sg_tablesize      	= ATP870U_SCATTER	/*SG_ALL*/ /*SG_NONE*/,
-+     .sg_tablesize      	= ATP870U_SCATTER	/*SG_ALL*/,
-      .max_sectors		= ATP870U_MAX_SECTORS,
- };
- 
-diff --git a/drivers/usb/storage/uas.c b/drivers/usb/storage/uas.c
-index bf80d6f81f58..fd9c0d2c111f 100644
---- a/drivers/usb/storage/uas.c
-+++ b/drivers/usb/storage/uas.c
-@@ -879,7 +879,6 @@ static struct scsi_host_template uas_host_template = {
- 	.eh_abort_handler = uas_eh_abort_handler,
- 	.eh_device_reset_handler = uas_eh_device_reset_handler,
- 	.this_id = -1,
--	.sg_tablesize = SG_NONE,
- 	.skip_settle_delay = 1,
- 	.dma_boundary = PAGE_SIZE - 1,
- };
-diff --git a/include/scsi/scsi_host.h b/include/scsi/scsi_host.h
-index 31e0d6ca1eba..d7cf9c7fecac 100644
---- a/include/scsi/scsi_host.h
-+++ b/include/scsi/scsi_host.h
-@@ -23,19 +23,6 @@ struct scsi_host_cmd_pool;
- struct scsi_transport_template;
- 
- 
--/*
-- * The various choices mean:
-- * NONE: Self evident.	Host adapter is not capable of scatter-gather.
-- * ALL:	 Means that the host adapter module can do scatter-gather,
-- *	 and that there is no limit to the size of the table to which
-- *	 we scatter/gather data.  The value we set here is the maximum
-- *	 single element sglist.  To use chained sglists, the adapter
-- *	 has to set a value beyond ALL (and correctly use the chain
-- *	 handling API.
-- * Anything else:  Indicates the maximum number of chains that can be
-- *	 used in one scatter-gather request.
-- */
--#define SG_NONE 0
- #define SG_ALL	SG_CHUNK_SIZE
- 
- #define MODE_UNKNOWN 0x00
+Best regards.
+
 -- 
-2.23.0
+Damien Le Moal
+Western Digital Research
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/b4779b7a6563f6bd8d259ee457871c1c463c420e.1572656814.git.fthain%40telegraphics.com.au.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/BYAPR04MB581685E630A8EA91902B2F9BE77E0%40BYAPR04MB5816.namprd04.prod.outlook.com.
