@@ -1,162 +1,121 @@
-Return-Path: <usb-storage+bncBDVIJONZ3YDRB7ORRHXAKGQEPH5JKNQ@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBD3JNNMDTMEBBXVNS3XAKGQE5VAJB7A@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-io1-xd48.google.com (mail-io1-xd48.google.com [IPv6:2607:f8b0:4864:20::d48])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3B0B9F0EED
-	for <lists+usb-storage@lfdr.de>; Wed,  6 Nov 2019 07:32:31 +0100 (CET)
-Received: by mail-io1-xd48.google.com with SMTP id r84sf17413240ior.14
-        for <lists+usb-storage@lfdr.de>; Tue, 05 Nov 2019 22:32:31 -0800 (PST)
-ARC-Seal: i=2; a=rsa-sha256; t=1573021950; cv=pass;
+Received: from mail-pg1-x546.google.com (mail-pg1-x546.google.com [IPv6:2607:f8b0:4864:20::546])
+	by mail.lfdr.de (Postfix) with ESMTPS id 8A183F5101
+	for <lists+usb-storage@lfdr.de>; Fri,  8 Nov 2019 17:25:04 +0100 (CET)
+Received: by mail-pg1-x546.google.com with SMTP id k12sf5141135pgj.9
+        for <lists+usb-storage@lfdr.de>; Fri, 08 Nov 2019 08:25:04 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1573230303; cv=pass;
         d=google.com; s=arc-20160816;
-        b=PQnb2nWFW03+kCdPUt9SRHrOPXOCQpdrFOgeTjyajtYyv8CqtPxzZXu7+8QUV2FS85
-         eDynBRrZjbt/qsPitzkIDfY7SjWLFUqrg6K3lr4N2j5Tp1LJY4VF5nsglYLOoriUCmTr
-         HtwcbC9qJ1eZI6fbV18F2pXAMKO7EM+bJEeVwwCUpDhwffeIX2tiWguX8Zltg1etSpu8
-         85yUWVmEfP6klREVfwtuZS+tcokEV28SC0AnDv80SIDPjD6ZaHkeSkYLVc5kMR3aOH8m
-         8QXFWS3ZzUqmvpIJR5+ySmukMiqR1TzR+GdHXVLN3I6h9JZZKn77aTUxDfCBriEBuj7z
-         aaAQ==
+        b=MMa8jT5pyiCK/AsE2SykBeLqwrF0UsmatbAyz7p6xWF9wOOlD2XCkxq5M/XdBa6hBt
+         kxeM7Emh7WJsy9NeI4F6KuPAjxqmsep+qPaI6T6LNVAg0AZX4LHqaVuOYX/Uj/VihdQK
+         TzmDX9tVcxnnBvyDbQmORWErTabhOqaO/rmNLLrHenQTETXjqUNw3GwBzh/Ov1BTvtIS
+         dqlHS0CmtsFrYEgO6hQ9ofBVJDt47Ov8GUWknDCJ3Ij/YVgIaU34DwSpfkm6iPkn1xOK
+         U0qwGVIhjdkhO6jKc1XoDon7l7N+iUaDw0M/URn0sSUnRoGnRzDja1otjKLea25/eruM
+         jN6g==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:mime-version:user-agent:message-id
-         :in-reply-to:date:references:organization:from:subject:cc:to:sender
-         :dkim-signature;
-        bh=F6lsFVulD4nx3gqgfFJlTrtnPYisITtMxULNa4VSDzk=;
-        b=XUGbACuJ9TRLEgYras0iJqVGA5B9JBaJOlOIfQGvFVFtSaM9UplrDraxlpGMgXzbZY
-         OKejxaq2pTecWl+rBSBXWQ8M1MPLD/ezULnw0KVt1GMi0dywer+wdSYdDx/eS3V7V7PY
-         m14i+Rtuv0CbKBgik/sdMHMs4NyZsHWMGeaFQljEYeWO86hM3AqygfXHv2WsaFgUK/y8
-         Na7Y9IVuHXhcBUAFD+qwNxEY/YO4nWGrGUh3kb0Nw+uknsRAWAYQ552bV9de/mQYORnH
-         5gfiZaH+B0N5CAcdi5uU2JlqvFVuDrZKzcRUjnWIuG596WUS+VXXv/4mTciIkUiAT/8/
-         Y4eQ==
+         :list-id:mailing-list:precedence:content-language:in-reply-to
+         :mime-version:user-agent:date:message-id:from:references:cc:to
+         :subject:sender:dkim-signature;
+        bh=1GWeVNAfrsuGAqlSFLGfSHqqc+kEcRo9vSSb9LB59xI=;
+        b=mCWwKaoIstCv54di0zyZ5GYYH/7EnLlZTARR/iwCTr1u+8pqc/YCcHR2CSNW3n9JQG
+         OKMlifRPO6v/z2YWYxZAUf66KxDmyG+htVqJ8cG0l3qOXjB9NqSCdcN6Tldc8t8GuaMp
+         +dleHax0Yi7logfrU7+xHbcKtoNb+LPAKwrkHA+SnFte7JICSxsXEii9ItyzqYkYESL+
+         YpTbQ6L76KdpFg8OKxTaZ6ZcId2vz/uubEI8NLgVZZ+puWl9O9ah7lmdWX9h2buV8Gwz
+         3Mv+T09G6isyUDYDMAbBcpXcjQmfikWWTC5aP2YTo9CTTduMjUwhMYf7+lIXDmc2nuGI
+         W7hg==
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@oracle.com header.s=corp-2019-08-05 header.b=KOzxI+wH;
-       spf=pass (google.com: domain of martin.petersen@oracle.com designates 141.146.126.78 as permitted sender) smtp.mailfrom=martin.petersen@oracle.com;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=oracle.com
+       spf=pass (google.com: domain of bart.vanassche@gmail.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=bart.vanassche@gmail.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
-        h=sender:to:cc:subject:from:organization:references:date:in-reply-to
-         :message-id:user-agent:mime-version:x-original-sender
+        h=sender:subject:to:cc:references:from:message-id:date:user-agent
+         :mime-version:in-reply-to:content-language:x-original-sender
          :x-original-authentication-results:precedence:mailing-list:list-id
          :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
-        bh=F6lsFVulD4nx3gqgfFJlTrtnPYisITtMxULNa4VSDzk=;
-        b=jK5DyqqRKEdvMjFPnT3TlrKDcugTMY4+WulPsD06xTO4NIyYkTaPSOhN8J6ZTlz46j
-         WvqHlPb4VD0iSRG62laBLVR5vRIM9yqJRYHllHCSi6tmsBtrc1OQjURwSnnucZ/6nP7c
-         x/0ujGCLV080intTcCoRxmWWPLY+zSKDb6I2o=
+        bh=1GWeVNAfrsuGAqlSFLGfSHqqc+kEcRo9vSSb9LB59xI=;
+        b=EdzdJ4PBGLoFhVaSiAIlQ9UOcnBn2jcEJioNY6N3DDLXhQQRJGbTz8IMWdMpc+0Ddm
+         LCS2P7ahGVing+J9z8lTsGR0cYYswr/uYdWULitjH1p+cpd56Svgj9j6w4Tf9Ymr39Gk
+         LhSFuxjfZL1ubryvKP0/LZ+KBtC+XwJ62hX3s=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
-        h=sender:x-gm-message-state:to:cc:subject:from:organization
-         :references:date:in-reply-to:message-id:user-agent:mime-version
+        h=sender:x-gm-message-state:subject:to:cc:references:from:message-id
+         :date:user-agent:mime-version:in-reply-to:content-language
          :x-original-sender:x-original-authentication-results:precedence
          :mailing-list:list-id:x-spam-checked-in-group:list-post:list-help
          :list-archive:list-subscribe:list-unsubscribe;
-        bh=F6lsFVulD4nx3gqgfFJlTrtnPYisITtMxULNa4VSDzk=;
-        b=rH2/ykwd9GzrWwhF8fSr6gq/QHyUEdpEi9t9E4PK7oK+nsfSaelBv6DCLG988A7ro2
-         bGrP2hGgYCsDxWI/4BsXKBja1cu7TRTbOneDoZ9+kUTLpbBl4c6NBJTs/8Be8wW2kq5o
-         +NRVMvlwfb0IraJ5A94rrQjFx0SVpKSOL54XNEu/4nLjIyhlMWm9S7bIQb+DxEg9UrT2
-         FjmGUpC8zKMPc5gIiI1PqbIoYTTKjoGluCwEyZgV3p85DzRU05D2PpHlt/VbE6VZ4Pel
-         /WSOsZtMQuJWlIsRtTePz+jTnbQNbiXtI/12zIhn65jjeczL01SZBUQcQYNzP55gxHg5
-         wBoQ==
+        bh=1GWeVNAfrsuGAqlSFLGfSHqqc+kEcRo9vSSb9LB59xI=;
+        b=HKgVyQUNVI/kpgxEqcnSMIj2by82IGnhDK9bQjliP7LYdqmSW7qOAizjlXiX7Jg6Qf
+         cIiNrjnwo/X8SvpbdhucFntTDbjSMp6EMQdm9eznPyWktxbPDTYZw5F0i7tazd7NyC2s
+         OVKjL1BPGkMz1vX2fxrGsvgZwjDMiUA4jQPBAUKevANbCKJNUhYf6Fgj39pcM1aft4mE
+         RSioQQVApBXyaz9USHp7q/R8UeWLV5t/x3GrgI2RZ+tAabPHnZoEGE+0jEFuADv4wtpb
+         0zejGBhzDmhxf/Y7R84TCW46RGzOAQICfNcPNi8EoRG+y6UGPoBTVdyYD/xHTCh+0rKw
+         yCYw==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: APjAAAU00L6Bn59jHQMQdiFLMpfdRV0MA3BDtfeImA4GzGpaBOk1fThh
-	2fRlSZngvoZn8/v5JSyoe2wHXw==
-X-Google-Smtp-Source: APXvYqxq5KfG+w0DjXXcpMySS4RANmRKMb/iwODpFy1GjKk/MNhkkGC6vCsdoY/Uk28qGWtXZ2B9wg==
-X-Received: by 2002:a92:b103:: with SMTP id t3mr1043969ilh.23.1573021949915;
-        Tue, 05 Nov 2019 22:32:29 -0800 (PST)
+X-Gm-Message-State: APjAAAXjDFQ0qnecyjSJ6SBU2Acmqq7uq61o+M1UgqW4Fsfql0lOCCS5
+	iNXAo6VUWWNDz4n9IBtASVOJgw==
+X-Google-Smtp-Source: APXvYqzkU3Nam4NuRntAXNdXaVM4of732dio7Itl/08iSAT/euG+ehKSrBHRS1BQsrYac1GQl3pfJA==
+X-Received: by 2002:a17:90b:3116:: with SMTP id gc22mr14901067pjb.32.1573230302941;
+        Fri, 08 Nov 2019 08:25:02 -0800 (PST)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a05:6602:22d9:: with SMTP id e25ls163660ioe.14.gmail; Tue,
- 05 Nov 2019 22:32:29 -0800 (PST)
-X-Received: by 2002:a6b:ed05:: with SMTP id n5mr28476410iog.273.1573021949424;
-        Tue, 05 Nov 2019 22:32:29 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1573021949; cv=none;
+Received: by 2002:a62:5302:: with SMTP id h2ls2496864pfb.12.gmail; Fri, 08 Nov
+ 2019 08:25:02 -0800 (PST)
+X-Received: by 2002:a62:8748:: with SMTP id i69mr13126997pfe.224.1573230302136;
+        Fri, 08 Nov 2019 08:25:02 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1573230302; cv=none;
         d=google.com; s=arc-20160816;
-        b=ery3RyA8Uw++zN6jtwVXSAduO0IhA0vuDHWGmpxV5q6I0daUpRHA0RA5G/ruYMH2qx
-         DuzQ74YHtryB0lfxF7K3K4MvPv1UUEbFTsulImM5Lp8h3n77bIWNyJpN3hdYKudgJIlF
-         rXeSO7A1bwrFSOc7uHmEoK61NJSJ3UT0Kb8HCLRMRgr11GzicMeVZ+p5WU/fR2xCi3iJ
-         g8cc17L7Y/bZSzayxQ6obeXkyZDYEDcV6hdqYydW8DcTz5j4yLzB5kNz65KNfnEFXmAa
-         HCwZ5qR9iCXgr+My9CA1oYyWtgXZiVxfT02zlEqgaektjLvG8/Eg7hgBcKuuSamd+sjW
-         +BJw==
+        b=jjc++vRAVZv3bl29hHwC2MfptqiSuT/sPYCQFprthryLW9LZgebor15djoELLmbJBk
+         JVlneliTFB/8QbFAQs24dPYcUYtyhIV+rzC6wAfmMFpiXVreZSyg8KSlUdML26U352BG
+         BlWY/cueHa2pNGvPvIH0o2ejrEM3nLaW1fnfFehYi1xe9foS/dYHwMS1LHwdLCKnaJlI
+         zbLUA9DI0DlD/33gbiTwHRQU6XfgBP+2rU7rrNrWQUTqUkdvrfb1wMXq+yUb36/4bTFT
+         3jSyfr5cA+jUhTCqXg8NAkzScfNDYCjKsv8kJRC32AqDxMVMYDoD6MoDMDbv8TZn94nO
+         xYvQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=mime-version:user-agent:message-id:in-reply-to:date:references
-         :organization:from:subject:cc:to:dkim-signature;
-        bh=/ZtPK4ZzB/bJ4YHeBLzDhoB9Htw2t7HAj0EdVtIAxYs=;
-        b=dDftitR3yvXijeG+48AT4AjixMUD7GqQjMf8G1Y+Tq+mRVxdp5gbZ+5pt6ZcqcbncE
-         Y9eJrlxDoG5oc3VAPD1RHAd7zkr5Ijx73j5W7tZ5LJiQvS17P7tR/Ig5CNGM/0BiFe2v
-         4Y4+LwO9nyKrjPCnQPAtg9PdWBAl9cJruEg+FBvcKsuould2aEMKoMq/8RZboXjLL8r/
-         parrUkqzInOZmRo6fv3wMYj1tf4UxDN/z++sc0zjW3bt34BM2Sp+hl88XaAPEgzsoll1
-         ysRSvkzRnlJc7ettMoATMXf4vvnM6wNOOgB/io1D1B0B3byINvOuO0CujQW/pmj084ls
-         JCgA==
+        h=content-transfer-encoding:content-language:in-reply-to:mime-version
+         :user-agent:date:message-id:from:references:cc:to:subject;
+        bh=9+uoj8lNodCH/yF6mbg/IXWpHQI/7No+l7A/rtoNzfQ=;
+        b=j910bacHYQxmRPOMcddAfgLYRMD7QaLp0tzPg4SCwdwtAGDFAk7CrdHsUNlyr2/ooe
+         UpWUf+0MpYEdS66vHuYY94iYKH3Xw1oyTFkZqjCcTqeVoR4ZqkuEhXJcDBL8uBsCQakB
+         1X4hvYAZFVq5LryKn5QULyQSr+pYGiH0Xjbs/Y/uqHaw71K3QLUIeXqz/ST1fBy0A0pp
+         8amliiLmAsLf7/VKYhrTAeBLdFKDmdT+TPiKbfh0vZhRu+BmKAXTKhVV7g9YTKqssvte
+         MRUoGSgam+5MgzgwWmfoSH+Rs2iOiUCod6Fw+TLohr7bXzJXZo7H90Lp/vu4EVnCytku
+         gdEQ==
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@oracle.com header.s=corp-2019-08-05 header.b=KOzxI+wH;
-       spf=pass (google.com: domain of martin.petersen@oracle.com designates 141.146.126.78 as permitted sender) smtp.mailfrom=martin.petersen@oracle.com;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=oracle.com
-Received: from aserp2120.oracle.com (aserp2120.oracle.com. [141.146.126.78])
-        by mx.google.com with ESMTPS id g2si33456587ilj.41.2019.11.05.22.32.29
+       spf=pass (google.com: domain of bart.vanassche@gmail.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=bart.vanassche@gmail.com
+Received: from mail-sor-f65.google.com (mail-sor-f65.google.com. [209.85.220.65])
+        by mx.google.com with SMTPS id n17sor3952017pjo.16.2019.11.08.08.25.02
         for <usb-storage@lists.one-eyed-alien.net>
-        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
-        Tue, 05 Nov 2019 22:32:29 -0800 (PST)
-Received-SPF: pass (google.com: domain of martin.petersen@oracle.com designates 141.146.126.78 as permitted sender) client-ip=141.146.126.78;
-Received: from pps.filterd (aserp2120.oracle.com [127.0.0.1])
-	by aserp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id xA64Sqli082794;
-	Wed, 6 Nov 2019 04:31:22 GMT
-Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
-	by aserp2120.oracle.com with ESMTP id 2w11rq32m8-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
-	Wed, 06 Nov 2019 04:31:22 +0000
-Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
-	by aserp3030.oracle.com (8.16.0.27/8.16.0.27) with SMTP id xA64Spdu006375;
-	Wed, 6 Nov 2019 04:31:22 GMT
-Received: from userv0121.oracle.com (userv0121.oracle.com [156.151.31.72])
-	by aserp3030.oracle.com with ESMTP id 2w35pq6xsq-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
-	Wed, 06 Nov 2019 04:31:21 +0000
-Received: from abhmp0004.oracle.com (abhmp0004.oracle.com [141.146.116.10])
-	by userv0121.oracle.com (8.14.4/8.13.8) with ESMTP id xA64VFSn001743;
-	Wed, 6 Nov 2019 04:31:15 GMT
-Received: from ca-mkp.ca.oracle.com (/10.159.214.123)
-	by default (Oracle Beehive Gateway v4.0)
-	with ESMTP ; Tue, 05 Nov 2019 20:31:15 -0800
-To: Damien Le Moal <Damien.LeMoal@wdc.com>
-Cc: "Martin K. Petersen" <martin.petersen@oracle.com>,
-        Hannes Reinecke <hare@suse.de>, Bart Van Assche <bvanassche@acm.org>,
-        "linux-scsi\@vger.kernel.org" <linux-scsi@vger.kernel.org>,
-        "linux-usb\@vger.kernel.org" <linux-usb@vger.kernel.org>,
-        "usb-storage\@lists.one-eyed-alien.net" <usb-storage@lists.one-eyed-alien.net>,
-        Alan Stern <stern@rowland.harvard.edu>,
-        Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-        Justin Piszcz <jpiszcz@lucidpixels.com>
+        (Google Transport Security);
+        Fri, 08 Nov 2019 08:25:02 -0800 (PST)
+Received-SPF: pass (google.com: domain of bart.vanassche@gmail.com designates 209.85.220.65 as permitted sender) client-ip=209.85.220.65;
+X-Received: by 2002:a17:90a:6283:: with SMTP id d3mr15111619pjj.27.1573230301739;
+        Fri, 08 Nov 2019 08:25:01 -0800 (PST)
+Received: from desktop-bart.svl.corp.google.com ([2620:15c:2cd:202:4308:52a3:24b6:2c60])
+        by smtp.gmail.com with ESMTPSA id s66sm8704017pfb.38.2019.11.08.08.25.00
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 08 Nov 2019 08:25:00 -0800 (PST)
 Subject: [usb-storage] Re: [PATCH v2] scsi: Fix scsi_get/set_resid() interface
-From: "Martin K. Petersen" <martin.petersen@oracle.com>
-Organization: Oracle Corporation
+To: Damien Le Moal <damien.lemoal@wdc.com>, linux-scsi@vger.kernel.org,
+ "Martin K . Petersen" <martin.petersen@oracle.com>,
+ linux-usb@vger.kernel.org, usb-storage@lists.one-eyed-alien.net,
+ Alan Stern <stern@rowland.harvard.edu>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Cc: Justin Piszcz <jpiszcz@lucidpixels.com>
 References: <20191030090847.25650-1-damien.lemoal@wdc.com>
-	<af516590-58dc-0377-5c54-ac63cffbafc8@acm.org>
-	<BYAPR04MB5816D4B866F2E7CC421E8488E7600@BYAPR04MB5816.namprd04.prod.outlook.com>
-	<a33afd2e-a7d6-5584-dc26-79fb8f3d6a97@acm.org>
-	<a640ee15-515b-6811-9883-48b49ead9276@suse.de>
-	<BYAPR04MB581685E630A8EA91902B2F9BE77E0@BYAPR04MB5816.namprd04.prod.outlook.com>
-	<yq1eeym52a5.fsf@oracle.com>
-	<BYAPR04MB58164FF9171FDA66879E7400E77E0@BYAPR04MB5816.namprd04.prod.outlook.com>
-Date: Tue, 05 Nov 2019 23:31:12 -0500
-In-Reply-To: <BYAPR04MB58164FF9171FDA66879E7400E77E0@BYAPR04MB5816.namprd04.prod.outlook.com>
-	(Damien Le Moal's message of "Tue, 5 Nov 2019 05:24:04 +0000")
-Message-ID: <yq1bltp39tb.fsf@oracle.com>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1.92 (gnu/linux)
+From: Bart Van Assche <bvanassche@acm.org>
+Message-ID: <11fa0f63-9a0f-faae-1d11-35f21cc64717@acm.org>
+Date: Fri, 8 Nov 2019 08:24:59 -0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Content-Type: text/plain; charset="UTF-8"
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9432 signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0 malwarescore=0
- phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=513
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.0.1-1908290000 definitions=main-1911060046
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9432 signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 priorityscore=1501 malwarescore=0
- suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
- lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=593 adultscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1908290000
- definitions=main-1911060046
-X-Original-Sender: martin.petersen@oracle.com
-X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@oracle.com header.s=corp-2019-08-05 header.b=KOzxI+wH;
-       spf=pass (google.com: domain of martin.petersen@oracle.com designates
- 141.146.126.78 as permitted sender) smtp.mailfrom=martin.petersen@oracle.com;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=oracle.com
+In-Reply-To: <20191030090847.25650-1-damien.lemoal@wdc.com>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
+Content-Language: en-US
+X-Original-Sender: bvanassche@acm.org
+X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
+ domain of bart.vanassche@gmail.com designates 209.85.220.65 as permitted
+ sender) smtp.mailfrom=bart.vanassche@gmail.com
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -172,19 +131,22 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
+On 10/30/19 2:08 AM, Damien Le Moal wrote:
+> struct scsi_cmnd cmd->req.resid_len which is returned and set
+> respectively by the helper functions scsi_get_resid() and
+> scsi_set_resid() is an unsigned int. Reflect this fact in the interface
+> of these helper functions.
+> 
+> Also fix compilation errors due to min() and max() type mismatch
+> introduced by this change in scsi debug code, usb transport code and in
+> the USB ENE card reader driver.
 
-Damien,
+Since there is agreement that residual overflow should use another field 
+than scsi_request.resid_len:
 
-> Or keeping resid_len as an unsigned int and adding a flag specifying
-> if the value means underflow or overflow ?
-
-It's been broken for so long I'd rather make the overflow case an
-opt-in. So a separate flag, please.
-
--- 
-Martin K. Petersen	Oracle Linux Engineering
+Reviewed-by: Bart Van Assche <bvanassche@acm.org>
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/yq1bltp39tb.fsf%40oracle.com.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/11fa0f63-9a0f-faae-1d11-35f21cc64717%40acm.org.
