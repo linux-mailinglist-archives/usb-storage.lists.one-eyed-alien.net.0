@@ -1,121 +1,153 @@
-Return-Path: <usb-storage+bncBD3JNNMDTMEBBXVNS3XAKGQE5VAJB7A@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBDVIJONZ3YDRBQGITLXAKGQE3IFOGMQ@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-pg1-x546.google.com (mail-pg1-x546.google.com [IPv6:2607:f8b0:4864:20::546])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8A183F5101
-	for <lists+usb-storage@lfdr.de>; Fri,  8 Nov 2019 17:25:04 +0100 (CET)
-Received: by mail-pg1-x546.google.com with SMTP id k12sf5141135pgj.9
-        for <lists+usb-storage@lfdr.de>; Fri, 08 Nov 2019 08:25:04 -0800 (PST)
-ARC-Seal: i=2; a=rsa-sha256; t=1573230303; cv=pass;
+Received: from mail-il1-x146.google.com (mail-il1-x146.google.com [IPv6:2607:f8b0:4864:20::146])
+	by mail.lfdr.de (Postfix) with ESMTPS id AC7A1F5EC0
+	for <lists+usb-storage@lfdr.de>; Sat,  9 Nov 2019 12:34:25 +0100 (CET)
+Received: by mail-il1-x146.google.com with SMTP id x2sf10297972ilk.18
+        for <lists+usb-storage@lfdr.de>; Sat, 09 Nov 2019 03:34:25 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1573299264; cv=pass;
         d=google.com; s=arc-20160816;
-        b=MMa8jT5pyiCK/AsE2SykBeLqwrF0UsmatbAyz7p6xWF9wOOlD2XCkxq5M/XdBa6hBt
-         kxeM7Emh7WJsy9NeI4F6KuPAjxqmsep+qPaI6T6LNVAg0AZX4LHqaVuOYX/Uj/VihdQK
-         TzmDX9tVcxnnBvyDbQmORWErTabhOqaO/rmNLLrHenQTETXjqUNw3GwBzh/Ov1BTvtIS
-         dqlHS0CmtsFrYEgO6hQ9ofBVJDt47Ov8GUWknDCJ3Ij/YVgIaU34DwSpfkm6iPkn1xOK
-         U0qwGVIhjdkhO6jKc1XoDon7l7N+iUaDw0M/URn0sSUnRoGnRzDja1otjKLea25/eruM
-         jN6g==
+        b=AUs1/Ot2uH2/IQCumO+SpX31/6K6LLCQnT70S4mOzE7mrkg1EdIe5No5MB0xeDl95r
+         MbUnhxasfotmubGZyzoDNZr7uZgCzCtXWqXwH6YJ9ZczUaVDFZ/mkCGYlhshp3JlC2na
+         9fK/e6238A20UIrmXQ6nqgZCOCGb01AhnlJgWK9f0pg1a0/IhUGXTklZNqc343sYanIV
+         JhNBcxWKdoaKsSKKrhclX+8t1TVnDERZTXuwqZXUcWnXQkXQSmgPChc6Z6vIY5Eng6fW
+         o8E0EAR+GDn3lmLw9TUOWuZ5EMkfwsSicc6i5bj0xhF86oQ77ePvGe4jwp/pU7a9ZYLS
+         RziQ==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:content-language:in-reply-to
-         :mime-version:user-agent:date:message-id:from:references:cc:to
-         :subject:sender:dkim-signature;
-        bh=1GWeVNAfrsuGAqlSFLGfSHqqc+kEcRo9vSSb9LB59xI=;
-        b=mCWwKaoIstCv54di0zyZ5GYYH/7EnLlZTARR/iwCTr1u+8pqc/YCcHR2CSNW3n9JQG
-         OKMlifRPO6v/z2YWYxZAUf66KxDmyG+htVqJ8cG0l3qOXjB9NqSCdcN6Tldc8t8GuaMp
-         +dleHax0Yi7logfrU7+xHbcKtoNb+LPAKwrkHA+SnFte7JICSxsXEii9ItyzqYkYESL+
-         YpTbQ6L76KdpFg8OKxTaZ6ZcId2vz/uubEI8NLgVZZ+puWl9O9ah7lmdWX9h2buV8Gwz
-         3Mv+T09G6isyUDYDMAbBcpXcjQmfikWWTC5aP2YTo9CTTduMjUwhMYf7+lIXDmc2nuGI
-         W7hg==
+         :list-id:mailing-list:precedence:mime-version:user-agent:message-id
+         :in-reply-to:date:references:organization:from:subject:cc:to:sender
+         :dkim-signature;
+        bh=Th9hqZVzbobNaEn4kaQ3J+HE2VJ4uhtJi6uzwMoqgHc=;
+        b=AWzf2YObD/1kuzc/gmpSHvv9n3f89iIgKsZXpd34sY6k/KoX47AqvzsvZ6WDFCTK0y
+         Y9y8LPeWF8cAhe9PkNd8uVg2SceCIOhIzKEeDnB292sP+/inKd/84psSlUeW2zO2QAFa
+         SkeM20AYbDOUsBenRaNGAJy2ooy3dlhm0SxEHs8OfwPcXyeZz0UBGR+gACD+QLh0xSCV
+         KmJyETXp+p/wSF27LS8G8KeCMtjyGgWxtDGNluvqbRtT8ZFHIIx4qzOyKJMwJeteDgxj
+         3+PfrY+w3wRbnS1btwcBpSPFRq/WP3iww7dbV1xOHZOAtaYA2CnCxshr+8pBnSA6XOb/
+         aIAA==
 ARC-Authentication-Results: i=2; mx.google.com;
-       spf=pass (google.com: domain of bart.vanassche@gmail.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=bart.vanassche@gmail.com
+       dkim=pass header.i=@oracle.com header.s=corp-2019-08-05 header.b=OzRXxjAe;
+       spf=pass (google.com: domain of martin.petersen@oracle.com designates 156.151.31.85 as permitted sender) smtp.mailfrom=martin.petersen@oracle.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=oracle.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
-        h=sender:subject:to:cc:references:from:message-id:date:user-agent
-         :mime-version:in-reply-to:content-language:x-original-sender
+        h=sender:to:cc:subject:from:organization:references:date:in-reply-to
+         :message-id:user-agent:mime-version:x-original-sender
          :x-original-authentication-results:precedence:mailing-list:list-id
          :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
-        bh=1GWeVNAfrsuGAqlSFLGfSHqqc+kEcRo9vSSb9LB59xI=;
-        b=EdzdJ4PBGLoFhVaSiAIlQ9UOcnBn2jcEJioNY6N3DDLXhQQRJGbTz8IMWdMpc+0Ddm
-         LCS2P7ahGVing+J9z8lTsGR0cYYswr/uYdWULitjH1p+cpd56Svgj9j6w4Tf9Ymr39Gk
-         LhSFuxjfZL1ubryvKP0/LZ+KBtC+XwJ62hX3s=
+        bh=Th9hqZVzbobNaEn4kaQ3J+HE2VJ4uhtJi6uzwMoqgHc=;
+        b=RWQZxkwLqAvUEcuxE4R5GHMtMlbTGgCpuAPco3bOWunCPeKV9fF6JDSw9AzT0hF4oI
+         JTVoQKWaWIsS/tl/oTNCwhz4ianCHzJd4xrMka+xui1Dal1D4Msp6RxB2Sp5jmBqnI6Q
+         msAXHvEYh9qDyKbPO7SvS9oV4axrGpICHVw5w=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
-        h=sender:x-gm-message-state:subject:to:cc:references:from:message-id
-         :date:user-agent:mime-version:in-reply-to:content-language
+        h=sender:x-gm-message-state:to:cc:subject:from:organization
+         :references:date:in-reply-to:message-id:user-agent:mime-version
          :x-original-sender:x-original-authentication-results:precedence
          :mailing-list:list-id:x-spam-checked-in-group:list-post:list-help
          :list-archive:list-subscribe:list-unsubscribe;
-        bh=1GWeVNAfrsuGAqlSFLGfSHqqc+kEcRo9vSSb9LB59xI=;
-        b=HKgVyQUNVI/kpgxEqcnSMIj2by82IGnhDK9bQjliP7LYdqmSW7qOAizjlXiX7Jg6Qf
-         cIiNrjnwo/X8SvpbdhucFntTDbjSMp6EMQdm9eznPyWktxbPDTYZw5F0i7tazd7NyC2s
-         OVKjL1BPGkMz1vX2fxrGsvgZwjDMiUA4jQPBAUKevANbCKJNUhYf6Fgj39pcM1aft4mE
-         RSioQQVApBXyaz9USHp7q/R8UeWLV5t/x3GrgI2RZ+tAabPHnZoEGE+0jEFuADv4wtpb
-         0zejGBhzDmhxf/Y7R84TCW46RGzOAQICfNcPNi8EoRG+y6UGPoBTVdyYD/xHTCh+0rKw
-         yCYw==
+        bh=Th9hqZVzbobNaEn4kaQ3J+HE2VJ4uhtJi6uzwMoqgHc=;
+        b=M3N6o1l8oKacurlFskzvpqwQ+LWwWpSvRR3wugZnGt/Yu9148nNDmRDP2g88G0Rb6R
+         8yCDHqySBLvXNmQbaJ7BN9DEb16/fsPZ9d6ILGXbDWgFGtEZhzym6T5Ofvlq34gycdBo
+         tOwObQVTud37LTvA5om9ntmOtMfgVHPXhoMt5XPGBbvU5PLqwpgvLeLarkWIxpjW+R9N
+         cqo3+H7DTSXwXG83b0aL+xYbxlRqBX1tGUmMS7V5TKxxAZrAyLMdaiq/dtjquHso1cZy
+         8aT829+J2UzVA4xXffz5rIKxsd5avyWWgbx0pYu17kHeVO0/m6XyXzHI7gbsNxOv3hp8
+         9MNg==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: APjAAAXjDFQ0qnecyjSJ6SBU2Acmqq7uq61o+M1UgqW4Fsfql0lOCCS5
-	iNXAo6VUWWNDz4n9IBtASVOJgw==
-X-Google-Smtp-Source: APXvYqzkU3Nam4NuRntAXNdXaVM4of732dio7Itl/08iSAT/euG+ehKSrBHRS1BQsrYac1GQl3pfJA==
-X-Received: by 2002:a17:90b:3116:: with SMTP id gc22mr14901067pjb.32.1573230302941;
-        Fri, 08 Nov 2019 08:25:02 -0800 (PST)
+X-Gm-Message-State: APjAAAVA6RZmNYwz3W1QCSGguKaT5JF/RSG3HSpySbLwUfMBTJikGE78
+	wObsPBvXIMbXiQyBaym/LqknOg==
+X-Google-Smtp-Source: APXvYqx7G0Ttn5bZNY8MFHMnxhIh/xq3Of6/HUp4bmoHeHP7/tinx7zu6sI9gOm59b0ax1kdnwvuXw==
+X-Received: by 2002:a92:5c5d:: with SMTP id q90mr19805234ilb.22.1573299264371;
+        Sat, 09 Nov 2019 03:34:24 -0800 (PST)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a62:5302:: with SMTP id h2ls2496864pfb.12.gmail; Fri, 08 Nov
- 2019 08:25:02 -0800 (PST)
-X-Received: by 2002:a62:8748:: with SMTP id i69mr13126997pfe.224.1573230302136;
-        Fri, 08 Nov 2019 08:25:02 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1573230302; cv=none;
+Received: by 2002:a92:9cd4:: with SMTP id x81ls428835ill.15.gmail; Sat, 09 Nov
+ 2019 03:34:23 -0800 (PST)
+X-Received: by 2002:a92:17ce:: with SMTP id 75mr18575314ilx.88.1573299263790;
+        Sat, 09 Nov 2019 03:34:23 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1573299263; cv=none;
         d=google.com; s=arc-20160816;
-        b=jjc++vRAVZv3bl29hHwC2MfptqiSuT/sPYCQFprthryLW9LZgebor15djoELLmbJBk
-         JVlneliTFB/8QbFAQs24dPYcUYtyhIV+rzC6wAfmMFpiXVreZSyg8KSlUdML26U352BG
-         BlWY/cueHa2pNGvPvIH0o2ejrEM3nLaW1fnfFehYi1xe9foS/dYHwMS1LHwdLCKnaJlI
-         zbLUA9DI0DlD/33gbiTwHRQU6XfgBP+2rU7rrNrWQUTqUkdvrfb1wMXq+yUb36/4bTFT
-         3jSyfr5cA+jUhTCqXg8NAkzScfNDYCjKsv8kJRC32AqDxMVMYDoD6MoDMDbv8TZn94nO
-         xYvQ==
+        b=datgWnoGXr5Oxlh7aoOPP2hRJAlbPziOSIJkn01nT4gIm/kSjNU4Mrf57LOclwuBLP
+         JWsS7K5ehsZPhhH00f++9VWlnmPAFErRilLo5It3gXcclow1llRgCuAAfqA2S46NAyoy
+         0EiUbtWsJ6UiM4CInWu6E6kPNvE+rTAjne0i8ljegFi5xaA6sEMZw1Jc+ldjeEWcQuBx
+         RhKdOfmJKIo06qD97/6Qwuksf6PMmaCDXoHlpVv2rv9rAgQqvEOiDMBTwpct8rzyCFs3
+         TujrcDfYbBaIFuAKtjpCiGXv+LA9dAzY9vxXeEoqMqFTabtCJxOBHxKissIZxcntB26l
+         qK7Q==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=content-transfer-encoding:content-language:in-reply-to:mime-version
-         :user-agent:date:message-id:from:references:cc:to:subject;
-        bh=9+uoj8lNodCH/yF6mbg/IXWpHQI/7No+l7A/rtoNzfQ=;
-        b=j910bacHYQxmRPOMcddAfgLYRMD7QaLp0tzPg4SCwdwtAGDFAk7CrdHsUNlyr2/ooe
-         UpWUf+0MpYEdS66vHuYY94iYKH3Xw1oyTFkZqjCcTqeVoR4ZqkuEhXJcDBL8uBsCQakB
-         1X4hvYAZFVq5LryKn5QULyQSr+pYGiH0Xjbs/Y/uqHaw71K3QLUIeXqz/ST1fBy0A0pp
-         8amliiLmAsLf7/VKYhrTAeBLdFKDmdT+TPiKbfh0vZhRu+BmKAXTKhVV7g9YTKqssvte
-         MRUoGSgam+5MgzgwWmfoSH+Rs2iOiUCod6Fw+TLohr7bXzJXZo7H90Lp/vu4EVnCytku
-         gdEQ==
+        h=mime-version:user-agent:message-id:in-reply-to:date:references
+         :organization:from:subject:cc:to:dkim-signature;
+        bh=Q0kudnsn3um9Rdf4ICa07b/1x2v2i55v58omAGfOCg4=;
+        b=lLAEKLWUeWHuSF3iFsJLb4QSNNJdM83TYUT+ST6OLBzkjZPf3dQ+KDgT2/Jfl+bF4B
+         AuJjz9wMEAJx+lsJSBe4Vb47nzA6RV3114hhNUD+sN2XcCtkMbn4MqBB1NyE3CXjPsZH
+         O6tQ46wSL6Xha7ECSbHHkunKZcYVfCAljSanZDC6gTjrUK6zN55f5SbyCLaJUwMhJ2Kl
+         5UHh8+ccYi/2TV4cSmEu030lgIIi30KA3CQ3qWuBIX2t8tui2OXda2Pckev+Yxn2PTyT
+         SpLO5sZjZ8LsocjM66rRnbXBMkD/yVbzZh7hcF3YU0tNyquoQuazJ/R1wQjlVk60idqe
+         +iOg==
 ARC-Authentication-Results: i=1; mx.google.com;
-       spf=pass (google.com: domain of bart.vanassche@gmail.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=bart.vanassche@gmail.com
-Received: from mail-sor-f65.google.com (mail-sor-f65.google.com. [209.85.220.65])
-        by mx.google.com with SMTPS id n17sor3952017pjo.16.2019.11.08.08.25.02
+       dkim=pass header.i=@oracle.com header.s=corp-2019-08-05 header.b=OzRXxjAe;
+       spf=pass (google.com: domain of martin.petersen@oracle.com designates 156.151.31.85 as permitted sender) smtp.mailfrom=martin.petersen@oracle.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=oracle.com
+Received: from userp2120.oracle.com (userp2120.oracle.com. [156.151.31.85])
+        by mx.google.com with ESMTPS id o5si11287093jao.43.2019.11.09.03.34.23
         for <usb-storage@lists.one-eyed-alien.net>
-        (Google Transport Security);
-        Fri, 08 Nov 2019 08:25:02 -0800 (PST)
-Received-SPF: pass (google.com: domain of bart.vanassche@gmail.com designates 209.85.220.65 as permitted sender) client-ip=209.85.220.65;
-X-Received: by 2002:a17:90a:6283:: with SMTP id d3mr15111619pjj.27.1573230301739;
-        Fri, 08 Nov 2019 08:25:01 -0800 (PST)
-Received: from desktop-bart.svl.corp.google.com ([2620:15c:2cd:202:4308:52a3:24b6:2c60])
-        by smtp.gmail.com with ESMTPSA id s66sm8704017pfb.38.2019.11.08.08.25.00
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 08 Nov 2019 08:25:00 -0800 (PST)
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 09 Nov 2019 03:34:23 -0800 (PST)
+Received-SPF: pass (google.com: domain of martin.petersen@oracle.com designates 156.151.31.85 as permitted sender) client-ip=156.151.31.85;
+Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
+	by userp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id xA92cvQI178667;
+	Sat, 9 Nov 2019 02:38:57 GMT
+Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
+	by userp2120.oracle.com with ESMTP id 2w5hgv8cke-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+	Sat, 09 Nov 2019 02:38:57 +0000
+Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
+	by aserp3030.oracle.com (8.16.0.27/8.16.0.27) with SMTP id xA92XF5Q064106;
+	Sat, 9 Nov 2019 02:36:56 GMT
+Received: from userv0121.oracle.com (userv0121.oracle.com [156.151.31.72])
+	by aserp3030.oracle.com with ESMTP id 2w5kh3vwxc-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+	Sat, 09 Nov 2019 02:36:56 +0000
+Received: from abhmp0006.oracle.com (abhmp0006.oracle.com [141.146.116.12])
+	by userv0121.oracle.com (8.14.4/8.13.8) with ESMTP id xA92aq9o006538;
+	Sat, 9 Nov 2019 02:36:53 GMT
+Received: from ca-mkp.ca.oracle.com (/10.159.214.123)
+	by default (Oracle Beehive Gateway v4.0)
+	with ESMTP ; Fri, 08 Nov 2019 18:36:52 -0800
+To: Damien Le Moal <damien.lemoal@wdc.com>
+Cc: linux-scsi@vger.kernel.org,
+        "Martin K . Petersen" <martin.petersen@oracle.com>,
+        linux-usb@vger.kernel.org, usb-storage@lists.one-eyed-alien.net,
+        Alan Stern <stern@rowland.harvard.edu>,
+        Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+        Justin Piszcz <jpiszcz@lucidpixels.com>
 Subject: [usb-storage] Re: [PATCH v2] scsi: Fix scsi_get/set_resid() interface
-To: Damien Le Moal <damien.lemoal@wdc.com>, linux-scsi@vger.kernel.org,
- "Martin K . Petersen" <martin.petersen@oracle.com>,
- linux-usb@vger.kernel.org, usb-storage@lists.one-eyed-alien.net,
- Alan Stern <stern@rowland.harvard.edu>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Cc: Justin Piszcz <jpiszcz@lucidpixels.com>
+From: "Martin K. Petersen" <martin.petersen@oracle.com>
+Organization: Oracle Corporation
 References: <20191030090847.25650-1-damien.lemoal@wdc.com>
-From: Bart Van Assche <bvanassche@acm.org>
-Message-ID: <11fa0f63-9a0f-faae-1d11-35f21cc64717@acm.org>
-Date: Fri, 8 Nov 2019 08:24:59 -0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+Date: Fri, 08 Nov 2019 21:36:49 -0500
+In-Reply-To: <20191030090847.25650-1-damien.lemoal@wdc.com> (Damien Le Moal's
+	message of "Wed, 30 Oct 2019 18:08:47 +0900")
+Message-ID: <yq136exvkqm.fsf@oracle.com>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1.92 (gnu/linux)
 MIME-Version: 1.0
-In-Reply-To: <20191030090847.25650-1-damien.lemoal@wdc.com>
-Content-Type: text/plain; charset="UTF-8"; format=flowed
-Content-Language: en-US
-X-Original-Sender: bvanassche@acm.org
-X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
- domain of bart.vanassche@gmail.com designates 209.85.220.65 as permitted
- sender) smtp.mailfrom=bart.vanassche@gmail.com
+Content-Type: text/plain; charset="UTF-8"
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9435 signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0 malwarescore=0
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=533
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1910280000 definitions=main-1911090024
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9435 signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 priorityscore=1501 malwarescore=0
+ suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=634 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1910280000
+ definitions=main-1911090025
+X-Original-Sender: martin.petersen@oracle.com
+X-Original-Authentication-Results: mx.google.com;       dkim=pass
+ header.i=@oracle.com header.s=corp-2019-08-05 header.b=OzRXxjAe;
+       spf=pass (google.com: domain of martin.petersen@oracle.com designates
+ 156.151.31.85 as permitted sender) smtp.mailfrom=martin.petersen@oracle.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=oracle.com
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -131,22 +163,20 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On 10/30/19 2:08 AM, Damien Le Moal wrote:
+
+Damien,
+
 > struct scsi_cmnd cmd->req.resid_len which is returned and set
 > respectively by the helper functions scsi_get_resid() and
-> scsi_set_resid() is an unsigned int. Reflect this fact in the interface
-> of these helper functions.
-> 
-> Also fix compilation errors due to min() and max() type mismatch
-> introduced by this change in scsi debug code, usb transport code and in
-> the USB ENE card reader driver.
+> scsi_set_resid() is an unsigned int. Reflect this fact in the
+> interface of these helper functions.
 
-Since there is agreement that residual overflow should use another field 
-than scsi_request.resid_len:
+Applied to 5.5/scsi-queue, thanks!
 
-Reviewed-by: Bart Van Assche <bvanassche@acm.org>
+-- 
+Martin K. Petersen	Oracle Linux Engineering
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/11fa0f63-9a0f-faae-1d11-35f21cc64717%40acm.org.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/yq136exvkqm.fsf%40oracle.com.
