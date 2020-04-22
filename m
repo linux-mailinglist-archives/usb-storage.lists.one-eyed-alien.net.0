@@ -1,132 +1,111 @@
-Return-Path: <usb-storage+bncBDL2JPGIZYFRBX4M6L2AKGQEABOE77Y@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBD6LRVPZ6YGRBQWLQL2QKGQEDEE4ILY@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-ot1-x346.google.com (mail-ot1-x346.google.com [IPv6:2607:f8b0:4864:20::346])
-	by mail.lfdr.de (Postfix) with ESMTPS id 90FE21AFC81
-	for <lists+usb-storage@lfdr.de>; Sun, 19 Apr 2020 19:12:01 +0200 (CEST)
-Received: by mail-ot1-x346.google.com with SMTP id v8sf3436800otj.5
-        for <lists+usb-storage@lfdr.de>; Sun, 19 Apr 2020 10:12:01 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1587316320; cv=pass;
+Received: from mail-qv1-xf47.google.com (mail-qv1-xf47.google.com [IPv6:2607:f8b0:4864:20::f47])
+	by mail.lfdr.de (Postfix) with ESMTPS id B54F41B4E29
+	for <lists+usb-storage@lfdr.de>; Wed, 22 Apr 2020 22:14:59 +0200 (CEST)
+Received: by mail-qv1-xf47.google.com with SMTP id m11sf3713800qvf.20
+        for <lists+usb-storage@lfdr.de>; Wed, 22 Apr 2020 13:14:59 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1587586498; cv=pass;
         d=google.com; s=arc-20160816;
-        b=tm5NLcsxcufo1QRgvKbPFzzDvI2rqMVwhscktNHo1PQnsIK+4A1U4dXd6sv/ow0C/l
-         9neQfqo/ql6c8+4i7h+4IGEzncFYiIKw4oWD3I+xoQSKwJGZPd8vUlVmsql22mHnKbJo
-         Wv2gd7GECLCyk+C+fs/rcG2/6I/5iu8Q/RXgTEvR/+pXzJWvW+eiVx0Exc6srFVU3sgp
-         RERSrY7sDqaXpKTZdYp/BxAZBw8SxRxU3DOS6LUuJwXITaWB/tmr4BmSpc9t+5sLpv/K
-         lzZ8mX1STfKbqRRtcMwSd4udDkl/sZavhxG854YRQ0STejcsrMrtY2YbD02TnUaTOiN0
-         LBPA==
+        b=R1zi+3QDY1MhJBFNxaz7dn4HKibn1g4kdcSJ5kMfTrRVqrdaupLxUIQqbQMNmbt9R/
+         9SjByyR8nZbrkMKCDfSRpq9Jw56AkJ0dfizd8Kw6cnDgRec1v7B1hKJ5XVxKlbcvVFZc
+         PM+1TmAgVbq14dtHP42YfKg/fH2KUixLxBXvRntCEuuFpIE4TRPa02IK4K5rAAnUG/Iu
+         oS+9GC8iVAVZGnJRgxQ2Di9PPSmoRha1D3bL4Bk4KYQxtvA9GEFSbbveOntwlmU4ZUvp
+         dszNC7m6hsvvbmKn0dqYloB5NiHlCO5minL0yqvpnmRek5EdU4bZ0mJzmH+q6Ey/fyrq
+         I2AA==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:user-agent:content-disposition
-         :mime-version:message-id:subject:cc:to:from:date:sender
-         :dkim-signature;
-        bh=bXHUabcIQA6ypdEgvy0fh7qEBSLZJrEIg0pU4afFHjE=;
-        b=KxJPK9REfcp4l7Zp/HE8CvIg3ipHT6wK8Ceexgg0MqPBb+1LgMV3PM3DEARmFDxmVh
-         cqmOc5BoeTMPtH3DDsfl18YzzjtPPw63aRD//OPSatDxRgXh66pKxRB2Lejo90nrjZIL
-         KVXMt4z7t8ijW+6RX+sP0CrZ6AlOtr4VRd54ad1h1YGBfE8Axr7mNVrVFnbne6b6eEtz
-         L6Qz7lMANt/I+/6HThhh9kKrA60iehMaNWSp1mxWKZh/IC0ILVtcVjxSyjd43r9ccjpD
-         Ubi48T5i7N18BElIjovNI+grlt4qSs9TQtyVWxfK/TgrZBlUaqAXkEjDKUPCkFxPO2kS
-         8afw==
+         :list-id:mailing-list:precedence:mime-version:message-id:subject:cc
+         :to:from:date:sender:dkim-signature;
+        bh=z3yQdo0tGqPtpkzUYJtLD4edDCq0w9yzd65/Kx1xsOM=;
+        b=NMklfUOERzXxJykyJ8lM39DPg7W9QnxQF8fOp58fDIXEJfRnrcfqFFP76OAMa7k5hT
+         b/T4Xo4r5jF5Y3KPYf3W31rB8CRdUl8COMuOy9XFI202EXCtiPayVsmKHSHWKhiYj2Ei
+         uix574T0f+8meWpKY23HkEg/qsfZ1gTnhAQ4kBJati+23yiT2BgPFlcET+PqNIGPEiJ7
+         XscWMUol9ILEIZmw7LsU6iBGbLu6xGdRi+oO+UgsK4Gfhs5JXuOIKjUrG/MRQphHGEi7
+         uCzXGht2LqHXg8Dlloi9DDTvn5mmi9uXl03bqZLkNCz6F4YvTBBx+bYlfkXRKmEzDxGH
+         1Q1Q==
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@gmail.com header.s=20161025 header.b=uGpvQuce;
-       spf=pass (google.com: domain of nishadkamdar@gmail.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=nishadkamdar@gmail.com;
-       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+       spf=pass (google.com: domain of stern+5ea2e99e@rowland.harvard.edu designates 192.131.102.54 as permitted sender) smtp.mailfrom=stern+5ea2e99e@rowland.harvard.edu
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
         h=sender:date:from:to:cc:subject:message-id:mime-version
-         :content-disposition:user-agent:x-original-sender
-         :x-original-authentication-results:precedence:mailing-list:list-id
-         :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
-        bh=bXHUabcIQA6ypdEgvy0fh7qEBSLZJrEIg0pU4afFHjE=;
-        b=WS/WAf+YY/PskhGTEDzBHeGPHF0S2a9p3yNgyDLctZaet578uOEAxDNRGsLixFM3ik
-         HjslvQ103w3/zTI3KvK3BdDl2m9wvIhd1sbnI7PCtiEeyfyl0TEFBp5iBd1dbStBITnd
-         AV6riMX5DBvgahKBJYmdaXyG/uh3UMwDFDXB4=
+         :x-original-sender:x-original-authentication-results:precedence
+         :mailing-list:list-id:list-post:list-help:list-archive
+         :list-subscribe:list-unsubscribe;
+        bh=z3yQdo0tGqPtpkzUYJtLD4edDCq0w9yzd65/Kx1xsOM=;
+        b=WcEioVrhtWw6gUQeQgJRik+tvfxuxBPNH3N9aQEgYZwkbPuPgoDG4yLgPLgzFZTRLg
+         2mif/Ez82iUmCgbIyMMf7VBwlJiROqoNT8vP3v+bluRyj2DGWR0e+z6HPSRJ/x/TcrfK
+         t8MMGN7JCxWKOcod9v8rbdTP4PneTg3Vu/zwA=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
         h=sender:x-gm-message-state:date:from:to:cc:subject:message-id
-         :mime-version:content-disposition:user-agent:x-original-sender
-         :x-original-authentication-results:precedence:mailing-list:list-id
-         :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
-        bh=bXHUabcIQA6ypdEgvy0fh7qEBSLZJrEIg0pU4afFHjE=;
-        b=QFjFSfIeu4tc2cM2rAed2lgUE1lW/PTvMZ39EEhBwBScjHVN24+Dkq26wa3CkQsnpT
-         At8b9QYhiJdRylO5PCtLkcUiLuG5a5GGn9djB2NbyLD3yZK/mSMQPROJTCjiiE3kXX7a
-         jHCzgaK60qAu3SAYE4u84dbm6n2QLy0aj+EACDXZdc+ngOkJbJWBpbtolJizgWoAaKal
-         zboWp9jztVEHivE0SDAtrmXrmMVhhRpmCLTfZEly4rPTiMs+4CwdUYfZvdyclxNfGsiA
-         Tl5vYNc3n+ZktOyb0WwaG0As4dp/gevyrt+qAB5AGezVMQT1YpfpdK6uoE5AVTt6Zg8y
-         frqQ==
+         :mime-version:x-original-sender:x-original-authentication-results
+         :precedence:mailing-list:list-id:x-spam-checked-in-group:list-post
+         :list-help:list-archive:list-subscribe:list-unsubscribe;
+        bh=z3yQdo0tGqPtpkzUYJtLD4edDCq0w9yzd65/Kx1xsOM=;
+        b=S9OnLMevURdVdN/+tUvuudyIPEuthq4NnkQ06ACt4v+aY5MovRr0n7sOypDT7G0XZf
+         tTRNdY27jZBj8LgIZpAdsYTnWTHiAgvfBZZNAU7CAJQsX+OGZij5vHlZISzOcq3xAMql
+         E86y2cPNIpMC5aGN0hAejFHr2ZVdBvH/nwbkF0uD+eX0z4h+iQJ4XcBopxpOlz/sL5j4
+         V8hfSYxThlTvQxjvnL40FkXsI6LVlP36lJpHWX4Cfmpz7GUrocccSpuEyst3Dif9Iomq
+         ZGvCGv3t2aZMPKBrsJYvAyNMLLJGTh2Bmak+hUKjD8yzxD7ktIXydgQluCFV47g0XjsX
+         Fh3A==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: AGi0PuZYkPtTU0AUNoIaFt86z+B2oHc2WrNI5gEWsxjB8dSifk/POxEc
-	7ed1cnUavC75hdKtz+oSoqo0cQ==
-X-Google-Smtp-Source: APiQypJxYU7r864gaBiJ+je9Ack+RL/2tt79tZDPQGO2wbKHC+GG/oYSQVxTCY/byo5KOQ6gRLMHpQ==
-X-Received: by 2002:a9d:5545:: with SMTP id h5mr6826904oti.323.1587316320194;
-        Sun, 19 Apr 2020 10:12:00 -0700 (PDT)
+X-Gm-Message-State: AGi0PuZCOmO9zqZXMuYwZpZCwk6MbOcySB6kmaG33TLLzeQGXCO2fPBD
+	t+9HdOEapNjF76eU1JZEgiPTfg==
+X-Google-Smtp-Source: APiQypJrmJ88SSZVUkTVmYGh0zi3tbxGP3wMwGvqXQiqdq9Oa/cUCog089BzKtqGCUl2BaAVezFSwA==
+X-Received: by 2002:a37:e112:: with SMTP id c18mr5819qkm.467.1587586498780;
+        Wed, 22 Apr 2020 13:14:58 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:aca:b98a:: with SMTP id j132ls1806583oif.3.gmail; Sun, 19
- Apr 2020 10:11:59 -0700 (PDT)
-X-Received: by 2002:aca:fdd3:: with SMTP id b202mr8545897oii.63.1587316319856;
-        Sun, 19 Apr 2020 10:11:59 -0700 (PDT)
-Received: by 2002:a05:6808:1c1:0:0:0:0 with SMTP id x1msoic;
-        Sun, 19 Apr 2020 06:17:04 -0700 (PDT)
-X-Received: by 2002:a63:f615:: with SMTP id m21mr11782141pgh.107.1587302224409;
-        Sun, 19 Apr 2020 06:17:04 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1587302224; cv=none;
+Received: by 2002:ac8:7542:: with SMTP id b2ls1859764qtr.1.gmail; Wed, 22 Apr
+ 2020 13:14:58 -0700 (PDT)
+X-Received: by 2002:ac8:1904:: with SMTP id t4mr383589qtj.367.1587586498167;
+        Wed, 22 Apr 2020 13:14:58 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1587586498; cv=none;
         d=google.com; s=arc-20160816;
-        b=BLp16vBWSKQXRLgoTy2dgkqNVuRovUXFGX5bG8XXe2R9vyJmDVwuYU+5cuuOsX6HUE
-         nJ2NXetWr381prG9N0dhhx3/gvfIuS2CX+bNIwz6+8I/Bwl0y7Ogpyv5mDBzuzqq9WJG
-         VscPcJdGntdMnVcViPmgW59kM3xnL8TlqdAPxguK1eBkcCB4muGgac+WAvlzRwzEu0fj
-         3KCVcRE2R+kR6k3MBYupQu5dEs8+kuRCIQG79zjBXruOmCtKNtuz72gUQ+r3x0g+ioko
-         R+xTdpCOQYoOwL9rCH9C9gFHQrSEQbPilC99lBDk9jnjyXksGQLOXOn53VgC3M03X/hJ
-         Hu2g==
+        b=Erys5Dtg5sPqLu8/h6BRmh3xHrSuPivP0IGo9aq3vo6spK5p4Q/E4m0LzpnPGa0pfh
+         tPw66CLLFk4YOOlinU3BZlc3oqwArset9YvLmnB0oBZVVCbmntcs8z9gWnW8NWOQONML
+         NvkoP0O5WEgmRQ7Q2NYA6SPfe3fIyFyrGOSrZelcxjncE0m0pHGS9oP0FHRYOh9/2qma
+         aGvcqkby/91vrjjEmvIQ8Vrde1isbxA06XvXAnRyEGrOcfdFsydG476t0Vw5acmnPnYo
+         u/MBNYWDfGvAyMHMHtkc7a/gvojscKvWSiWVkoEPfGquUi0WB2YLXrV3Hwwh084a6HY1
+         2P1g==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=user-agent:content-disposition:mime-version:message-id:subject:cc
-         :to:from:date:dkim-signature;
-        bh=pojq7IS2ZkV3Xkekvu/Qb2XJwPNKxLd59gsvyr7juZY=;
-        b=Rn35C1ruGLGwukZt48PVys7UNsCwgoLVls+rZxrtv6EUMhRsTC99K83gYrVc/BK5m0
-         zbu6QsLT0sEv+dJtm/bPvoB1qmhYkB+A6v53xsP8e38cR9qNqIk+Z5ibJxANKecRxnnv
-         Dj5T4YAYSIdrK1g/XhF8xhCP2MOUlAVuwGiBxlXICNNzxfEap90j0jJyQAkJuSUkHrnt
-         LTkj60MZWJvs71/60kqe44M+M5ndOW4lYgOPTHcL3vPlgRSmaXcXzQIDZJCsPr2ynxEU
-         O7sYBBugWK1fvy/mMk5mWcjkU01XeWREKzew+PLlSsK8cy1pJErK7mxFkgGoJ0q75FYG
-         WOjw==
+        h=mime-version:message-id:subject:cc:to:from:date;
+        bh=z3yQdo0tGqPtpkzUYJtLD4edDCq0w9yzd65/Kx1xsOM=;
+        b=m67Dey8nHgQMV24AkV1WLeFqaiAfMZG0QzehSoneLN7B34fQ0BFFNWzcF1I90X8TkT
+         I9wuAd6KvYa5EqMdnTMFUeE5ELaQhwmVv9eU3BRK8eiSsWLR6ivq073X5dO7glB4+pUY
+         YX/pTnZ4ANbvv9Ka8BRmdRyPQRsZKZQZXre+EqEwXp/1Dy5b2kJpPD1Se6trMbpoT9hE
+         f9ddmeVVxD4LYKN4yIOfGPf1KBoaCHpXDoS9xGc8vh0vn7Su7j4l6V/D/hiCLaH7fbCb
+         SbPWaxL3B/Wxv5R4yg3vahIib4NpISj17doFsWgpbfvJ6Gwh6/WJudRSi1bWtDefuc0X
+         rItw==
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@gmail.com header.s=20161025 header.b=uGpvQuce;
-       spf=pass (google.com: domain of nishadkamdar@gmail.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=nishadkamdar@gmail.com;
-       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
-Received: from mail-sor-f65.google.com (mail-sor-f65.google.com. [209.85.220.65])
-        by mx.google.com with SMTPS id 98sor38997935plc.53.2020.04.19.06.17.04
-        for <usb-storage@lists.one-eyed-alien.net>
-        (Google Transport Security);
-        Sun, 19 Apr 2020 06:17:04 -0700 (PDT)
-Received-SPF: pass (google.com: domain of nishadkamdar@gmail.com designates 209.85.220.65 as permitted sender) client-ip=209.85.220.65;
-X-Received: by 2002:a17:902:b111:: with SMTP id q17mr11895329plr.160.1587302224002;
-        Sun, 19 Apr 2020 06:17:04 -0700 (PDT)
-Received: from nishad ([106.51.232.103])
-        by smtp.gmail.com with ESMTPSA id mq6sm11535048pjb.38.2020.04.19.06.17.00
-        (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
-        Sun, 19 Apr 2020 06:17:03 -0700 (PDT)
-Date: Sun, 19 Apr 2020 18:46:57 +0530
-From: Nishad Kamdar <nishadkamdar@gmail.com>
-To: Alan Stern <stern@rowland.harvard.edu>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
-	Pengutronix Kernel Team <kernel@pengutronix.de>,
-	Joe Perches <joe@perches.com>
-Cc: linux-usb@vger.kernel.org, usb-storage@lists.one-eyed-alien.net,
-	linux-kernel@vger.kernel.org
-Subject: [usb-storage] [PATCH] USB: Storage: Use the correct style for SPDX
- License Identifier
-Message-ID: <20200419131653.GA6611@nishad>
+       spf=pass (google.com: domain of stern+5ea2e99e@rowland.harvard.edu designates 192.131.102.54 as permitted sender) smtp.mailfrom=stern+5ea2e99e@rowland.harvard.edu
+Received: from iolanthe.rowland.org (iolanthe.rowland.org. [192.131.102.54])
+        by mx.google.com with SMTP id o4si47048qtt.59.2020.04.22.13.14.58
+        for <usb-storage@lists.one-eyed-alien.net>;
+        Wed, 22 Apr 2020 13:14:58 -0700 (PDT)
+Received-SPF: pass (google.com: domain of stern+5ea2e99e@rowland.harvard.edu designates 192.131.102.54 as permitted sender) client-ip=192.131.102.54;
+Received: (qmail 11303 invoked by uid 2102); 22 Apr 2020 16:14:57 -0400
+Received: from localhost (sendmail-bs@127.0.0.1)
+  by localhost with SMTP; 22 Apr 2020 16:14:57 -0400
+Date: Wed, 22 Apr 2020 16:14:57 -0400 (EDT)
+From: Alan Stern <stern@rowland.harvard.edu>
+X-X-Sender: stern@iolanthe.rowland.org
+To: Greg KH <greg@kroah.com>
+cc: Cyril Roelandt <tipecaml@gmail.com>, USB list <linux-usb@vger.kernel.org>, 
+    USB Storage list <usb-storage@lists.one-eyed-alien.net>
+Subject: [usb-storage] [PATCH] usb-storage: Add unusual_devs entry for JMicron JMS566
+Message-ID: <Pine.LNX.4.44L0.2004221613110.11262-100000@iolanthe.rowland.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset="UTF-8"
-Content-Disposition: inline
-User-Agent: Mutt/1.9.4 (2018-02-28)
-X-Original-Sender: nishadkamdar@gmail.com
-X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@gmail.com header.s=20161025 header.b=uGpvQuce;       spf=pass
- (google.com: domain of nishadkamdar@gmail.com designates 209.85.220.65 as
- permitted sender) smtp.mailfrom=nishadkamdar@gmail.com;       dmarc=pass
- (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+X-Original-Sender: stern@rowland.harvard.edu
+X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
+ domain of stern+5ea2e99e@rowland.harvard.edu designates 192.131.102.54 as
+ permitted sender) smtp.mailfrom=stern+5ea2e99e@rowland.harvard.edu
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
+X-Spam-Checked-In-Group: usb-storage@lists.one-eyed-alien.net
 X-Google-Group-Id: 960895140360
 List-Post: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/post>,
  <mailto:usb-storage@lists.one-eyed-alien.net>
@@ -138,255 +117,47 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-This patch corrects the SPDX License Identifier style in
-header files related to USB Storage driver configuration.
-For C header files Documentation/process/license-rules.rst
-mandates C-like comments (opposed to C source files where
-C++ style should be used).
+Cyril Roelandt reports that his JMicron JMS566 USB-SATA bridge fails
+to handle WRITE commands with the FUA bit set, even though it claims
+to support FUA.  (Oddly enough, a later version of the same bridge,
+version 2.03 as opposed to 1.14, doesn't claim to support FUA.  Also
+oddly, the bridge _does_ support FUA when using the UAS transport
+instead of the Bulk-Only transport -- but this device was blacklisted
+for uas in commit bc3bdb12bbb3 ("usb-storage: Disable UAS on JMicron
+SATA enclosure") for apparently unrelated reasons.)
 
-Changes made by using a script provided by Joe Perches here:
-https://lkml.org/lkml/2019/2/7/46.
+This patch adds a usb-storage unusual_devs entry with the BROKEN_FUA
+flag.  This allows the bridge to work properly with usb-storage.
 
-Suggested-by: Joe Perches <joe@perches.com>
-Signed-off-by: Nishad Kamdar <nishadkamdar@gmail.com>
+Reported-and-tested-by: Cyril Roelandt <tipecaml@gmail.com>
+Signed-off-by: Alan Stern <stern@rowland.harvard.edu>
+CC: <stable@vger.kernel.org>
+
 ---
- drivers/usb/storage/debug.h              | 2 +-
- drivers/usb/storage/initializers.h       | 2 +-
- drivers/usb/storage/protocol.h           | 2 +-
- drivers/usb/storage/scsiglue.h           | 2 +-
- drivers/usb/storage/transport.h          | 2 +-
- drivers/usb/storage/unusual_alauda.h     | 2 +-
- drivers/usb/storage/unusual_cypress.h    | 2 +-
- drivers/usb/storage/unusual_datafab.h    | 2 +-
- drivers/usb/storage/unusual_devs.h       | 2 +-
- drivers/usb/storage/unusual_ene_ub6250.h | 2 +-
- drivers/usb/storage/unusual_freecom.h    | 2 +-
- drivers/usb/storage/unusual_isd200.h     | 2 +-
- drivers/usb/storage/unusual_jumpshot.h   | 2 +-
- drivers/usb/storage/unusual_karma.h      | 2 +-
- drivers/usb/storage/unusual_onetouch.h   | 2 +-
- drivers/usb/storage/unusual_realtek.h    | 2 +-
- drivers/usb/storage/unusual_sddr09.h     | 2 +-
- drivers/usb/storage/unusual_sddr55.h     | 2 +-
- drivers/usb/storage/unusual_uas.h        | 2 +-
- drivers/usb/storage/unusual_usbat.h      | 2 +-
- drivers/usb/storage/usb.h                | 2 +-
- 21 files changed, 21 insertions(+), 21 deletions(-)
 
-diff --git a/drivers/usb/storage/debug.h b/drivers/usb/storage/debug.h
-index 16ce06039a4d..a6505ceb6693 100644
---- a/drivers/usb/storage/debug.h
-+++ b/drivers/usb/storage/debug.h
-@@ -1,4 +1,4 @@
--// SPDX-License-Identifier: GPL-2.0+
-+/* SPDX-License-Identifier: GPL-2.0+ */
- /*
-  * Driver for USB Mass Storage compliant devices
-  * Debugging Functions Header File
-diff --git a/drivers/usb/storage/initializers.h b/drivers/usb/storage/initializers.h
-index 2dbf9c7d9749..dcd7b7e5eda8 100644
---- a/drivers/usb/storage/initializers.h
-+++ b/drivers/usb/storage/initializers.h
-@@ -1,4 +1,4 @@
--// SPDX-License-Identifier: GPL-2.0+
-+/* SPDX-License-Identifier: GPL-2.0+ */
- /*
-  * Header file for Special Initializers for certain USB Mass Storage devices
-  *
-diff --git a/drivers/usb/storage/protocol.h b/drivers/usb/storage/protocol.h
-index 072f1ffda2af..1d102463a66c 100644
---- a/drivers/usb/storage/protocol.h
-+++ b/drivers/usb/storage/protocol.h
-@@ -1,4 +1,4 @@
--// SPDX-License-Identifier: GPL-2.0+
-+/* SPDX-License-Identifier: GPL-2.0+ */
- /*
-  * Driver for USB Mass Storage compliant devices
-  * Protocol Functions Header File
-diff --git a/drivers/usb/storage/scsiglue.h b/drivers/usb/storage/scsiglue.h
-index 2bc5ea045bf7..2a79c3ed4d86 100644
---- a/drivers/usb/storage/scsiglue.h
-+++ b/drivers/usb/storage/scsiglue.h
-@@ -1,4 +1,4 @@
--// SPDX-License-Identifier: GPL-2.0+
-+/* SPDX-License-Identifier: GPL-2.0+ */
- /*
-  * Driver for USB Mass Storage compliant devices
-  * SCSI Connecting Glue Header File
-diff --git a/drivers/usb/storage/transport.h b/drivers/usb/storage/transport.h
-index fb3bb4ee4ccf..74ffd0d7e7b6 100644
---- a/drivers/usb/storage/transport.h
-+++ b/drivers/usb/storage/transport.h
-@@ -1,4 +1,4 @@
--// SPDX-License-Identifier: GPL-2.0+
-+/* SPDX-License-Identifier: GPL-2.0+ */
- /*
-  * Driver for USB Mass Storage compliant devices
-  * Transport Functions Header File
-diff --git a/drivers/usb/storage/unusual_alauda.h b/drivers/usb/storage/unusual_alauda.h
-index 0ec8c99a4976..13f61ec88cde 100644
---- a/drivers/usb/storage/unusual_alauda.h
-+++ b/drivers/usb/storage/unusual_alauda.h
-@@ -1,4 +1,4 @@
--// SPDX-License-Identifier: GPL-2.0+
-+/* SPDX-License-Identifier: GPL-2.0+ */
- /*
-  * Unusual Devices File for the Alauda-based card readers
-  */
-diff --git a/drivers/usb/storage/unusual_cypress.h b/drivers/usb/storage/unusual_cypress.h
-index fb99e526cd48..0547daf116a2 100644
---- a/drivers/usb/storage/unusual_cypress.h
-+++ b/drivers/usb/storage/unusual_cypress.h
-@@ -1,4 +1,4 @@
--// SPDX-License-Identifier: GPL-2.0+
-+/* SPDX-License-Identifier: GPL-2.0+ */
- /*
-  * Unusual Devices File for devices based on the Cypress USB/ATA bridge
-  *	with support for ATACB
-diff --git a/drivers/usb/storage/unusual_datafab.h b/drivers/usb/storage/unusual_datafab.h
-index fdab5e7d68ca..5335b5d2bd79 100644
---- a/drivers/usb/storage/unusual_datafab.h
-+++ b/drivers/usb/storage/unusual_datafab.h
-@@ -1,4 +1,4 @@
--// SPDX-License-Identifier: GPL-2.0+
-+/* SPDX-License-Identifier: GPL-2.0+ */
- /*
-  * Unusual Devices File for the Datafab USB Compact Flash reader
-  */
-diff --git a/drivers/usb/storage/unusual_devs.h b/drivers/usb/storage/unusual_devs.h
-index 1880f3e13f57..325da547827a 100644
---- a/drivers/usb/storage/unusual_devs.h
-+++ b/drivers/usb/storage/unusual_devs.h
-@@ -1,4 +1,4 @@
--// SPDX-License-Identifier: GPL-2.0+
-+/* SPDX-License-Identifier: GPL-2.0+ */
- /*
-  * Driver for USB Mass Storage compliant devices
-  * Unusual Devices File
-diff --git a/drivers/usb/storage/unusual_ene_ub6250.h b/drivers/usb/storage/unusual_ene_ub6250.h
-index 9134b91fbd73..a3b32abc2b2f 100644
---- a/drivers/usb/storage/unusual_ene_ub6250.h
-+++ b/drivers/usb/storage/unusual_ene_ub6250.h
-@@ -1,4 +1,4 @@
--// SPDX-License-Identifier: GPL-2.0+
-+/* SPDX-License-Identifier: GPL-2.0+ */
- #if defined(CONFIG_USB_STORAGE_ENE_UB6250) || \
- 		defined(CONFIG_USB_STORAGE_ENE_UB6250_MODULE)
+
+[as1934]
+
+
+ drivers/usb/storage/unusual_devs.h |    7 +++++++
+ 1 file changed, 7 insertions(+)
+
+Index: usb-devel/drivers/usb/storage/unusual_devs.h
+===================================================================
+--- usb-devel.orig/drivers/usb/storage/unusual_devs.h
++++ usb-devel/drivers/usb/storage/unusual_devs.h
+@@ -2317,6 +2317,13 @@ UNUSUAL_DEV(  0x3340, 0xffff, 0x0000, 0x
+ 		USB_SC_DEVICE,USB_PR_DEVICE,NULL,
+ 		US_FL_MAX_SECTORS_64 ),
  
-diff --git a/drivers/usb/storage/unusual_freecom.h b/drivers/usb/storage/unusual_freecom.h
-index 949231c7a36b..9ca686364a93 100644
---- a/drivers/usb/storage/unusual_freecom.h
-+++ b/drivers/usb/storage/unusual_freecom.h
-@@ -1,4 +1,4 @@
--// SPDX-License-Identifier: GPL-2.0+
-+/* SPDX-License-Identifier: GPL-2.0+ */
- /*
-  * Unusual Devices File for the Freecom USB/IDE adaptor
-  */
-diff --git a/drivers/usb/storage/unusual_isd200.h b/drivers/usb/storage/unusual_isd200.h
-index d03a02cc904e..f248190bd666 100644
---- a/drivers/usb/storage/unusual_isd200.h
-+++ b/drivers/usb/storage/unusual_isd200.h
-@@ -1,4 +1,4 @@
--// SPDX-License-Identifier: GPL-2.0+
-+/* SPDX-License-Identifier: GPL-2.0+ */
- /*
-  * Unusual Devices File for In-System Design, Inc. ISD200 ASIC
-  */
-diff --git a/drivers/usb/storage/unusual_jumpshot.h b/drivers/usb/storage/unusual_jumpshot.h
-index c323338881ef..44878f849c1c 100644
---- a/drivers/usb/storage/unusual_jumpshot.h
-+++ b/drivers/usb/storage/unusual_jumpshot.h
-@@ -1,4 +1,4 @@
--// SPDX-License-Identifier: GPL-2.0+
-+/* SPDX-License-Identifier: GPL-2.0+ */
- /*
-  * Unusual Devices File for the Lexar "Jumpshot" Compact Flash reader
-  */
-diff --git a/drivers/usb/storage/unusual_karma.h b/drivers/usb/storage/unusual_karma.h
-index 8f1eebd71d2c..9fbed4cbc895 100644
---- a/drivers/usb/storage/unusual_karma.h
-+++ b/drivers/usb/storage/unusual_karma.h
-@@ -1,4 +1,4 @@
--// SPDX-License-Identifier: GPL-2.0+
-+/* SPDX-License-Identifier: GPL-2.0+ */
- /*
-  * Unusual Devices File for the Rio Karma
-  */
-diff --git a/drivers/usb/storage/unusual_onetouch.h b/drivers/usb/storage/unusual_onetouch.h
-index c76d4e990f7b..cdfee8f6cf37 100644
---- a/drivers/usb/storage/unusual_onetouch.h
-+++ b/drivers/usb/storage/unusual_onetouch.h
-@@ -1,4 +1,4 @@
--// SPDX-License-Identifier: GPL-2.0+
-+/* SPDX-License-Identifier: GPL-2.0+ */
- /*
-  * Unusual Devices File for the Maxtor OneTouch USB hard drive's button
-  */
-diff --git a/drivers/usb/storage/unusual_realtek.h b/drivers/usb/storage/unusual_realtek.h
-index 7e14c2d7cf73..945dcb19d31d 100644
---- a/drivers/usb/storage/unusual_realtek.h
-+++ b/drivers/usb/storage/unusual_realtek.h
-@@ -1,4 +1,4 @@
--// SPDX-License-Identifier: GPL-2.0+
-+/* SPDX-License-Identifier: GPL-2.0+ */
- /*
-  * Driver for Realtek RTS51xx USB card reader
-  *
-diff --git a/drivers/usb/storage/unusual_sddr09.h b/drivers/usb/storage/unusual_sddr09.h
-index 650cf2862754..bfb650974129 100644
---- a/drivers/usb/storage/unusual_sddr09.h
-+++ b/drivers/usb/storage/unusual_sddr09.h
-@@ -1,4 +1,4 @@
--// SPDX-License-Identifier: GPL-2.0+
-+/* SPDX-License-Identifier: GPL-2.0+ */
- /*
-  * Unusual Devices File for SanDisk SDDR-09 SmartMedia reader
-  */
-diff --git a/drivers/usb/storage/unusual_sddr55.h b/drivers/usb/storage/unusual_sddr55.h
-index e89df2cea7bd..6d6f76eb0630 100644
---- a/drivers/usb/storage/unusual_sddr55.h
-+++ b/drivers/usb/storage/unusual_sddr55.h
-@@ -1,4 +1,4 @@
--// SPDX-License-Identifier: GPL-2.0+
-+/* SPDX-License-Identifier: GPL-2.0+ */
- /*
-  * Unusual Devices File for SanDisk SDDR-55 SmartMedia reader
-  */
-diff --git a/drivers/usb/storage/unusual_uas.h b/drivers/usb/storage/unusual_uas.h
-index 1b23741036ee..cfdec74e0f4a 100644
---- a/drivers/usb/storage/unusual_uas.h
-+++ b/drivers/usb/storage/unusual_uas.h
-@@ -1,4 +1,4 @@
--// SPDX-License-Identifier: GPL-2.0+
-+/* SPDX-License-Identifier: GPL-2.0+ */
- /*
-  * Driver for USB Attached SCSI devices - Unusual Devices File
-  *
-diff --git a/drivers/usb/storage/unusual_usbat.h b/drivers/usb/storage/unusual_usbat.h
-index 05abf6870b8f..f9d3e5efc39d 100644
---- a/drivers/usb/storage/unusual_usbat.h
-+++ b/drivers/usb/storage/unusual_usbat.h
-@@ -1,4 +1,4 @@
--// SPDX-License-Identifier: GPL-2.0+
-+/* SPDX-License-Identifier: GPL-2.0+ */
- /*
-  * Unusual Devices File for SCM Microsystems (a.k.a. Shuttle) USB-ATAPI cable
-  */
-diff --git a/drivers/usb/storage/usb.h b/drivers/usb/storage/usb.h
-index 5850d624cac7..0451fac1adce 100644
---- a/drivers/usb/storage/usb.h
-+++ b/drivers/usb/storage/usb.h
-@@ -1,4 +1,4 @@
--// SPDX-License-Identifier: GPL-2.0+
-+/* SPDX-License-Identifier: GPL-2.0+ */
- /*
-  * Driver for USB Mass Storage compliant devices
-  * Main Header File
--- 
-2.17.1
++/* Reported by Cyril Roelandt <tipecaml@gmail.com> */
++UNUSUAL_DEV(  0x357d, 0x7788, 0x0114, 0x0114,
++		"JMicron",
++		"USB to ATA/ATAPI Bridge",
++		USB_SC_DEVICE, USB_PR_DEVICE, NULL,
++		US_FL_BROKEN_FUA ),
++
+ /* Reported by Andrey Rahmatullin <wrar@altlinux.org> */
+ UNUSUAL_DEV(  0x4102, 0x1020, 0x0100,  0x0100,
+ 		"iRiver",
 
--- 
-You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
-To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20200419131653.GA6611%40nishad.
