@@ -1,111 +1,132 @@
-Return-Path: <usb-storage+bncBD6LRVPZ6YGRBQWLQL2QKGQEDEE4ILY@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBDY57XWPTYHRBKWWW32QKGQEMLAD3JQ@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-qv1-xf47.google.com (mail-qv1-xf47.google.com [IPv6:2607:f8b0:4864:20::f47])
-	by mail.lfdr.de (Postfix) with ESMTPS id B54F41B4E29
-	for <lists+usb-storage@lfdr.de>; Wed, 22 Apr 2020 22:14:59 +0200 (CEST)
-Received: by mail-qv1-xf47.google.com with SMTP id m11sf3713800qvf.20
-        for <lists+usb-storage@lfdr.de>; Wed, 22 Apr 2020 13:14:59 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1587586498; cv=pass;
+Received: from mail-qv1-xf46.google.com (mail-qv1-xf46.google.com [IPv6:2607:f8b0:4864:20::f46])
+	by mail.lfdr.de (Postfix) with ESMTPS id 6A6AF1C2733
+	for <lists+usb-storage@lfdr.de>; Sat,  2 May 2020 19:17:33 +0200 (CEST)
+Received: by mail-qv1-xf46.google.com with SMTP id r10sf13421931qvw.23
+        for <lists+usb-storage@lfdr.de>; Sat, 02 May 2020 10:17:33 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1588439851; cv=pass;
         d=google.com; s=arc-20160816;
-        b=R1zi+3QDY1MhJBFNxaz7dn4HKibn1g4kdcSJ5kMfTrRVqrdaupLxUIQqbQMNmbt9R/
-         9SjByyR8nZbrkMKCDfSRpq9Jw56AkJ0dfizd8Kw6cnDgRec1v7B1hKJ5XVxKlbcvVFZc
-         PM+1TmAgVbq14dtHP42YfKg/fH2KUixLxBXvRntCEuuFpIE4TRPa02IK4K5rAAnUG/Iu
-         oS+9GC8iVAVZGnJRgxQ2Di9PPSmoRha1D3bL4Bk4KYQxtvA9GEFSbbveOntwlmU4ZUvp
-         dszNC7m6hsvvbmKn0dqYloB5NiHlCO5minL0yqvpnmRek5EdU4bZ0mJzmH+q6Ey/fyrq
-         I2AA==
+        b=gsWyIvCkk+XqBjYqWCb22PT9iUwIsB/rOebc9dGbIjqfX2liOAUislnWplLxmF2F0R
+         kNY4vwWLxGssDuOGII/qTyCRx+ciuRwPK3VrlGgosmft8uDqiVfagsdX0Jgit9JDnU4s
+         VknXsGsErwddaK7//BAj/QZmRJLBDGSHr+Mvmt8K0CsN1dx7+a8GRvw8trSwSoo9MAOP
+         Ffih6J+/DWN4FRvraDTnGxKBah/O3yFGc7snVAz4EALvclBvI3JkmC+oW3+88jOVf20G
+         4DWNNZJ+/MyVnPHfyBBZYRVG6MdlJjMiBUySxcUXOwsAqy2zCU6wG+gDkSjq3LX0q8mk
+         MyGQ==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:mime-version:message-id:subject:cc
-         :to:from:date:sender:dkim-signature;
-        bh=z3yQdo0tGqPtpkzUYJtLD4edDCq0w9yzd65/Kx1xsOM=;
-        b=NMklfUOERzXxJykyJ8lM39DPg7W9QnxQF8fOp58fDIXEJfRnrcfqFFP76OAMa7k5hT
-         b/T4Xo4r5jF5Y3KPYf3W31rB8CRdUl8COMuOy9XFI202EXCtiPayVsmKHSHWKhiYj2Ei
-         uix574T0f+8meWpKY23HkEg/qsfZ1gTnhAQ4kBJati+23yiT2BgPFlcET+PqNIGPEiJ7
-         XscWMUol9ILEIZmw7LsU6iBGbLu6xGdRi+oO+UgsK4Gfhs5JXuOIKjUrG/MRQphHGEi7
-         uCzXGht2LqHXg8Dlloi9DDTvn5mmi9uXl03bqZLkNCz6F4YvTBBx+bYlfkXRKmEzDxGH
-         1Q1Q==
+         :list-id:mailing-list:precedence:content-language:in-reply-to
+         :mime-version:user-agent:date:message-id:from:references:cc:to
+         :subject:sender:dkim-signature;
+        bh=S9nrYOjdURrj2rS21gZ991IA/ZbM72AtuAZBsZp2Exg=;
+        b=CSM1bphujTr406wGALcWTOXFVjlASG4aBGZQM5aBAjL3tx70sVHrjkt4oe7+Q2aqh0
+         LuYsFEwc76C34AS5EYt3mlzaewK7n+rHsoTuHbhZrGBfzH837LwkxzDMNjnLuUaGOmTy
+         BVudHgjkTyPsn5g5azFEpbHouAeXdbA/ZlScWLk1r33ktDjBrFlL9PWGYgmZsAY7Tstt
+         pJ9ZUv1UgU66ROtit4OAnhA/pheSJpBkdmZ61fP7zV3g0jiibxRZhKBlfuSaQNRhP7+J
+         ah+FXsWB/YFyP/sjaHcqpiWPkbcXKrfCLl/g3O2XsUR2Y3d4cjotRXArysl2bpK0l9ds
+         efpQ==
 ARC-Authentication-Results: i=2; mx.google.com;
-       spf=pass (google.com: domain of stern+5ea2e99e@rowland.harvard.edu designates 192.131.102.54 as permitted sender) smtp.mailfrom=stern+5ea2e99e@rowland.harvard.edu
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b=vM0JKQXX;
+       spf=pass (google.com: domain of atanasd@gmail.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=atanasd@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
-        h=sender:date:from:to:cc:subject:message-id:mime-version
+        h=sender:subject:to:cc:references:from:message-id:date:user-agent
+         :mime-version:in-reply-to:content-language:x-original-sender
+         :x-original-authentication-results:precedence:mailing-list:list-id
+         :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
+        bh=S9nrYOjdURrj2rS21gZ991IA/ZbM72AtuAZBsZp2Exg=;
+        b=ZcU5Fu6z1C3Iiv346VPgMBClscUW5x1Bat9ht+9a0KcoT/a/6CnHFa5Lnuv6/054ld
+         7j2GEC5AHX3DV4DalOjmQLCYbHORnJPNafqLUf1mN0PNMVJZLqjB6Nw3GLQwBLuW+fTy
+         3+9pnCVwW+bObcqtZp+uysE8SVcgsAWDwW5Pg=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=sender:x-gm-message-state:subject:to:cc:references:from:message-id
+         :date:user-agent:mime-version:in-reply-to:content-language
          :x-original-sender:x-original-authentication-results:precedence
          :mailing-list:list-id:list-post:list-help:list-archive
          :list-subscribe:list-unsubscribe;
-        bh=z3yQdo0tGqPtpkzUYJtLD4edDCq0w9yzd65/Kx1xsOM=;
-        b=WcEioVrhtWw6gUQeQgJRik+tvfxuxBPNH3N9aQEgYZwkbPuPgoDG4yLgPLgzFZTRLg
-         2mif/Ez82iUmCgbIyMMf7VBwlJiROqoNT8vP3v+bluRyj2DGWR0e+z6HPSRJ/x/TcrfK
-         t8MMGN7JCxWKOcod9v8rbdTP4PneTg3Vu/zwA=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20161025;
-        h=sender:x-gm-message-state:date:from:to:cc:subject:message-id
-         :mime-version:x-original-sender:x-original-authentication-results
-         :precedence:mailing-list:list-id:x-spam-checked-in-group:list-post
-         :list-help:list-archive:list-subscribe:list-unsubscribe;
-        bh=z3yQdo0tGqPtpkzUYJtLD4edDCq0w9yzd65/Kx1xsOM=;
-        b=S9OnLMevURdVdN/+tUvuudyIPEuthq4NnkQ06ACt4v+aY5MovRr0n7sOypDT7G0XZf
-         tTRNdY27jZBj8LgIZpAdsYTnWTHiAgvfBZZNAU7CAJQsX+OGZij5vHlZISzOcq3xAMql
-         E86y2cPNIpMC5aGN0hAejFHr2ZVdBvH/nwbkF0uD+eX0z4h+iQJ4XcBopxpOlz/sL5j4
-         V8hfSYxThlTvQxjvnL40FkXsI6LVlP36lJpHWX4Cfmpz7GUrocccSpuEyst3Dif9Iomq
-         ZGvCGv3t2aZMPKBrsJYvAyNMLLJGTh2Bmak+hUKjD8yzxD7ktIXydgQluCFV47g0XjsX
-         Fh3A==
+        bh=S9nrYOjdURrj2rS21gZ991IA/ZbM72AtuAZBsZp2Exg=;
+        b=l35isKgeDekI/UBTmbojIdpkf+0WmBrb08xcdomHXcDjWr/R9FCAPiN0gh9W2I64Ii
+         jxlmxW/TlPgkVzNoQCl3nqZQOzw3q2OKAcUkRuRzDbdKk1zZnfR0GeODL82hctgGjABP
+         6H69g3JHFdgMcpyTHUtEFjcM1qeIcKA8k2q8/xbOSesbF69oE1TxJkkhJeULCPsVQ4dQ
+         54xk0A2Y5FzpOZOtdjvH0Q4Atrk4p+Dou3oacmKH1jt4Xd2ol1FZMrcpux9Yi8a0iwNK
+         piOldHoNpLOIl6vmpI8yWA+rsfvVT2zkSkxmRsuzZsZci8JVib9KBQBqV6b8Cyh8OoEP
+         fa2g==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: AGi0PuZCOmO9zqZXMuYwZpZCwk6MbOcySB6kmaG33TLLzeQGXCO2fPBD
-	t+9HdOEapNjF76eU1JZEgiPTfg==
-X-Google-Smtp-Source: APiQypJrmJ88SSZVUkTVmYGh0zi3tbxGP3wMwGvqXQiqdq9Oa/cUCog089BzKtqGCUl2BaAVezFSwA==
-X-Received: by 2002:a37:e112:: with SMTP id c18mr5819qkm.467.1587586498780;
-        Wed, 22 Apr 2020 13:14:58 -0700 (PDT)
+X-Gm-Message-State: AGi0PuYZbZvfZE2o83dhjEPl38vThx38lz5uTBoHCItI9UpL66LtlSOi
+	RajXH30OcIeEmlU5J+QggBVOUw==
+X-Google-Smtp-Source: APiQypLL+vM46q2LS2PQ7cXLa8j1r2iNzpDb4FLJIeTwsxWvO/VMDr7wWiepcup5HLxw1AEADS/Vug==
+X-Received: by 2002:ae9:e814:: with SMTP id a20mr8813612qkg.297.1588439851027;
+        Sat, 02 May 2020 10:17:31 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:ac8:7542:: with SMTP id b2ls1859764qtr.1.gmail; Wed, 22 Apr
- 2020 13:14:58 -0700 (PDT)
-X-Received: by 2002:ac8:1904:: with SMTP id t4mr383589qtj.367.1587586498167;
-        Wed, 22 Apr 2020 13:14:58 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1587586498; cv=none;
+Received: by 2002:a37:b8b:: with SMTP id 133ls6970386qkl.2.gmail; Sat, 02 May
+ 2020 10:17:30 -0700 (PDT)
+X-Received: by 2002:a37:8fc4:: with SMTP id r187mr6493918qkd.315.1588439850727;
+        Sat, 02 May 2020 10:17:30 -0700 (PDT)
+Received: by 2002:a37:aac5:0:0:0:0:0 with SMTP id t188msqke;
+        Sat, 2 May 2020 06:56:48 -0700 (PDT)
+X-Received: by 2002:adf:bb84:: with SMTP id q4mr8997610wrg.141.1588427808344;
+        Sat, 02 May 2020 06:56:48 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1588427808; cv=none;
         d=google.com; s=arc-20160816;
-        b=Erys5Dtg5sPqLu8/h6BRmh3xHrSuPivP0IGo9aq3vo6spK5p4Q/E4m0LzpnPGa0pfh
-         tPw66CLLFk4YOOlinU3BZlc3oqwArset9YvLmnB0oBZVVCbmntcs8z9gWnW8NWOQONML
-         NvkoP0O5WEgmRQ7Q2NYA6SPfe3fIyFyrGOSrZelcxjncE0m0pHGS9oP0FHRYOh9/2qma
-         aGvcqkby/91vrjjEmvIQ8Vrde1isbxA06XvXAnRyEGrOcfdFsydG476t0Vw5acmnPnYo
-         u/MBNYWDfGvAyMHMHtkc7a/gvojscKvWSiWVkoEPfGquUi0WB2YLXrV3Hwwh084a6HY1
-         2P1g==
+        b=CVPQj9MP+aLCLKRD74faX5yE0hVy7cJZhKYl+/ARcYZHcPf8dd6jyUaMqr0scrlt0w
+         z0rTY69JO+taBGVScKfA6M6mQHSaMUYw+v4gp22ig76XpiZ1bsm7KXeIIU45Eyf8nsJw
+         fn7ysYAjOAht8no+uyU2IA7MvzORUdQl7+a3ViIRp4TFIMaS6tencr26bsgFl9+uG5Gu
+         bb1XKBD8zeM1iCxnYVGHjafwOitXTCO8IPdciqUNshbduDQXMyxd5xRYun5so+Rjqgdc
+         n4tni6rbeOwOg/SIeAVOQMLS21rEgRxhOMLhF9aE1477Ht2zXqKvkqTgNg9712LriPHi
+         9S3w==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=mime-version:message-id:subject:cc:to:from:date;
-        bh=z3yQdo0tGqPtpkzUYJtLD4edDCq0w9yzd65/Kx1xsOM=;
-        b=m67Dey8nHgQMV24AkV1WLeFqaiAfMZG0QzehSoneLN7B34fQ0BFFNWzcF1I90X8TkT
-         I9wuAd6KvYa5EqMdnTMFUeE5ELaQhwmVv9eU3BRK8eiSsWLR6ivq073X5dO7glB4+pUY
-         YX/pTnZ4ANbvv9Ka8BRmdRyPQRsZKZQZXre+EqEwXp/1Dy5b2kJpPD1Se6trMbpoT9hE
-         f9ddmeVVxD4LYKN4yIOfGPf1KBoaCHpXDoS9xGc8vh0vn7Su7j4l6V/D/hiCLaH7fbCb
-         SbPWaxL3B/Wxv5R4yg3vahIib4NpISj17doFsWgpbfvJ6Gwh6/WJudRSi1bWtDefuc0X
-         rItw==
+        h=content-transfer-encoding:content-language:in-reply-to:mime-version
+         :user-agent:date:message-id:from:references:cc:to:subject
+         :dkim-signature;
+        bh=Io1LXUZNEcboXh8F44BlxRuNoh4z/FowLUBDrMbY0zQ=;
+        b=m83Wy1S+Q5Enw9h2TBzfbAaAk+LzMgj6LTw3Zl7nUwYIi3ru2uyWbUsyBMipDOC8AB
+         D+eabt2w70dG2JtJ7maKabuYJjRqqkA38nhDLbdnu79UqaW7oRk3JiGbilBe+4wuRJKF
+         dvLUuA9qs6EaPWuRE/DmVseHvifzKQ6CQculeOoIofuqXU0HVRVwnWHv5VDUf5hdbXoI
+         vqLMkNfVI2PupDJaS9uUEH9dj5qJjC3plkHRup5qEOxLXpDIMKNl13nydxapLAvjtdXM
+         v9t3akIQz0Feu+8NFMF2gaCplpVBqDFBbxKxLuXBCoNfP8gByGhZL32wRj1qrDqsoLvN
+         A27g==
 ARC-Authentication-Results: i=1; mx.google.com;
-       spf=pass (google.com: domain of stern+5ea2e99e@rowland.harvard.edu designates 192.131.102.54 as permitted sender) smtp.mailfrom=stern+5ea2e99e@rowland.harvard.edu
-Received: from iolanthe.rowland.org (iolanthe.rowland.org. [192.131.102.54])
-        by mx.google.com with SMTP id o4si47048qtt.59.2020.04.22.13.14.58
-        for <usb-storage@lists.one-eyed-alien.net>;
-        Wed, 22 Apr 2020 13:14:58 -0700 (PDT)
-Received-SPF: pass (google.com: domain of stern+5ea2e99e@rowland.harvard.edu designates 192.131.102.54 as permitted sender) client-ip=192.131.102.54;
-Received: (qmail 11303 invoked by uid 2102); 22 Apr 2020 16:14:57 -0400
-Received: from localhost (sendmail-bs@127.0.0.1)
-  by localhost with SMTP; 22 Apr 2020 16:14:57 -0400
-Date: Wed, 22 Apr 2020 16:14:57 -0400 (EDT)
-From: Alan Stern <stern@rowland.harvard.edu>
-X-X-Sender: stern@iolanthe.rowland.org
-To: Greg KH <greg@kroah.com>
-cc: Cyril Roelandt <tipecaml@gmail.com>, USB list <linux-usb@vger.kernel.org>, 
-    USB Storage list <usb-storage@lists.one-eyed-alien.net>
-Subject: [usb-storage] [PATCH] usb-storage: Add unusual_devs entry for JMicron JMS566
-Message-ID: <Pine.LNX.4.44L0.2004221613110.11262-100000@iolanthe.rowland.org>
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b=vM0JKQXX;
+       spf=pass (google.com: domain of atanasd@gmail.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=atanasd@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Received: from mail-sor-f65.google.com (mail-sor-f65.google.com. [209.85.220.65])
+        by mx.google.com with SMTPS id n14sor545133wrw.45.2020.05.02.06.56.48
+        for <usb-storage@lists.one-eyed-alien.net>
+        (Google Transport Security);
+        Sat, 02 May 2020 06:56:48 -0700 (PDT)
+Received-SPF: pass (google.com: domain of atanasd@gmail.com designates 209.85.220.65 as permitted sender) client-ip=209.85.220.65;
+X-Received: by 2002:adf:fcc8:: with SMTP id f8mr9338144wrs.230.1588427807582;
+        Sat, 02 May 2020 06:56:47 -0700 (PDT)
+Received: from [192.168.2.75] (ip4d14af3f.dynamic.kabel-deutschland.de. [77.20.175.63])
+        by smtp.gmail.com with ESMTPSA id u2sm7465733wrd.40.2020.05.02.06.56.46
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 02 May 2020 06:56:46 -0700 (PDT)
+Subject: [usb-storage] Re: [PATCH 1/1] usb: storage: Add quirk for Samsung Fit flash
+To: Jim Lin <jilin@nvidia.com>, stern@rowland.harvard.edu,
+ linux-usb@vger.kernel.org
+Cc: usb-storage@lists.one-eyed-alien.net
+References: <1583158895-31342-1-git-send-email-jilin@nvidia.com>
+From: Atanas Dinev <atanasd@gmail.com>
+Message-ID: <bb4db5cf-60bc-9c0f-e1dc-3047542d2b42@gmail.com>
+Date: Sat, 2 May 2020 15:56:45 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-Content-Type: TEXT/PLAIN; charset=US-ASCII
-X-Original-Sender: stern@rowland.harvard.edu
-X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
- domain of stern+5ea2e99e@rowland.harvard.edu designates 192.131.102.54 as
- permitted sender) smtp.mailfrom=stern+5ea2e99e@rowland.harvard.edu
+In-Reply-To: <1583158895-31342-1-git-send-email-jilin@nvidia.com>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
+Content-Language: en-US
+X-Original-Sender: atanasd@gmail.com
+X-Original-Authentication-Results: mx.google.com;       dkim=pass
+ header.i=@gmail.com header.s=20161025 header.b=vM0JKQXX;       spf=pass
+ (google.com: domain of atanasd@gmail.com designates 209.85.220.65 as
+ permitted sender) smtp.mailfrom=atanasd@gmail.com;       dmarc=pass (p=NONE
+ sp=QUARANTINE dis=NONE) header.from=gmail.com
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
-X-Spam-Checked-In-Group: usb-storage@lists.one-eyed-alien.net
 X-Google-Group-Id: 960895140360
 List-Post: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/post>,
  <mailto:usb-storage@lists.one-eyed-alien.net>
@@ -117,47 +138,128 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-Cyril Roelandt reports that his JMicron JMS566 USB-SATA bridge fails
-to handle WRITE commands with the FUA bit set, even though it claims
-to support FUA.  (Oddly enough, a later version of the same bridge,
-version 2.03 as opposed to 1.14, doesn't claim to support FUA.  Also
-oddly, the bridge _does_ support FUA when using the UAS transport
-instead of the Bulk-Only transport -- but this device was blacklisted
-for uas in commit bc3bdb12bbb3 ("usb-storage: Disable UAS on JMicron
-SATA enclosure") for apparently unrelated reasons.)
+Hello,
 
-This patch adds a usb-storage unusual_devs entry with the BROKEN_FUA
-flag.  This allows the bridge to work properly with usb-storage.
+Jim Lin wrote on 02.03.20 15:21:
+> Current driver has 240 (USB2.0) and 2048 (USB3.0) as max_sectors,
+> e.g., /sys/bus/scsi/devices/0:0:0:0/max_sectors
+> 
+> If data access times out, driver error handling will issue a port
+> reset.
+> Sometimes Samsung Fit (090C:1000) flash disk will not respond to
+> later Set Address or Get Descriptor command.
+> 
+> Adding this quirk to limit max_sectors to 64 sectors to avoid issue
+> occurring.
+> 
+This may need revisiting as it appears to be a performance killer (3-4 times slower seq reads) for otherwise perfectly working sticks.
+Going down from 2048 to 64 seems to cause a pretty significant speed degradation.
+Here are a few examples:
 
-Reported-and-tested-by: Cyril Roelandt <tipecaml@gmail.com>
-Signed-off-by: Alan Stern <stern@rowland.harvard.edu>
-CC: <stable@vger.kernel.org>
+# lsusb
+Bus 002 Device 012: ID 090c:1000 Silicon Motion, Inc. - Taiwan (formerly Feiya Technology Corp.) Flash Drive
+# lsusb -t
+/:  Bus 02.Port 1: Dev 1, Class=root_hub, Driver=xhci_hcd/6p, 5000M
+     |__ Port 3: Dev 12, If 0, Class=Mass Storage, Driver=usb-storage, 5000M
 
----
+# dmesg
+[23153.493726] usb 2-3: Product: Flash Drive FIT
+[23153.493729] usb 2-3: Manufacturer: Samsung
+[23153.493731] usb 2-3: SerialNumber: 0375119090033353
+[23153.575386] usb-storage 2-3:1.0: USB Mass Storage device detected
+[23153.575514] usb-storage 2-3:1.0: Quirks match for vid 090c pid 1000: 400
+[23153.575559] scsi host2: usb-storage 2-3:1.0
+[23153.576529] usbcore: registered new interface driver usb-storage
+[23153.578645] usbcore: registered new interface driver uas
+
+# cat /proc/scsi/usb-storage/*
+    Host scsi2: usb-storage
+        Vendor: Samsung
+       Product: Flash Drive FIT
+Serial Number: 0375119090033353
+      Protocol: Transparent SCSI
+     Transport: Bulk
+        Quirks: MAX_SECTORS_64 SANE_SENSE
+
+# hdparm -t /dev/sdb
+  Timing buffered disk reads: 132 MB in  3.03 seconds = 43.62 MB/sec
+# dd if=/dev/sdb of=/dev/null bs=1M count=1000
+1048576000 bytes (1,0 GB, 1000 MiB) copied, 22,3564 s, 46,9 MB/s
+
+# rmmod uas usb_storage
+# modprobe usb_storage quirks=090c:1000:
+
+# hdparm -t /dev/sdb
+  Timing buffered disk reads: 452 MB in  3.01 seconds = 150.33 MB/sec
+# dd if=/dev/sdb of=/dev/null bs=1M count=1000
+1048576000 bytes (1,0 GB, 1000 MiB) copied, 6,51492 s, 161 MB/s
 
 
-[as1934]
+[23612.690798] usb 2-3: Product: Intenso High Speed Line
+[23612.690799] usb 2-3: Manufacturer: SMI
+[23612.690801] usb 2-3: SerialNumber: 19112500000332
+[23612.780771] usb-storage 2-3:1.0: USB Mass Storage device detected
+[23612.780895] usb-storage 2-3:1.0: Quirks match for vid 090c pid 1000: 400
+[23612.780940] scsi host2: usb-storage 2-3:1.0
+[23612.781093] usbcore: registered new interface driver usb-storage
+[23612.783226] usbcore: registered new interface driver uas
+
+# cat /proc/scsi/usb-storage/*
+    Host scsi2: usb-storage
+        Vendor: SMI
+       Product: Intenso High Speed Line
+Serial Number: 19112500000332
+      Protocol: Transparent SCSI
+     Transport: Bulk
+        Quirks: MAX_SECTORS_64 SANE_SENSE
+
+# hdparm -t /dev/sdb
+  Timing buffered disk reads: 220 MB in  3.00 seconds = 73.22 MB/sec
+# dd if=/dev/sdb of=/dev/null bs=1M count=1000
+1048576000 bytes (1,0 GB, 1000 MiB) copied, 11,5469 s, 90,8 MB/s
+
+# rmmod uas usb_storage
+# modprobe usb_storage quirks=090c:1000:
+# hdparm -t /dev/sdb
+Timing buffered disk reads: 1016 MB in  3.00 seconds = 338.51 MB/sec
+# dd if=/dev/sdb of=/dev/null bs=1M count=1000
+1048576000 bytes (1,0 GB, 1000 MiB) copied, 3,31022 s, 317 MB/s
 
 
- drivers/usb/storage/unusual_devs.h |    7 +++++++
- 1 file changed, 7 insertions(+)
+I'm using both sticks as a bootable/emergency media (Debian stable, kernel 4.19/no-quirks with X, XFCE, web browser, etc) and haven't had any issues with timeouts, unresponsiveness or whatsoever.
 
-Index: usb-devel/drivers/usb/storage/unusual_devs.h
-===================================================================
---- usb-devel.orig/drivers/usb/storage/unusual_devs.h
-+++ usb-devel/drivers/usb/storage/unusual_devs.h
-@@ -2317,6 +2317,13 @@ UNUSUAL_DEV(  0x3340, 0xffff, 0x0000, 0x
- 		USB_SC_DEVICE,USB_PR_DEVICE,NULL,
- 		US_FL_MAX_SECTORS_64 ),
- 
-+/* Reported by Cyril Roelandt <tipecaml@gmail.com> */
-+UNUSUAL_DEV(  0x357d, 0x7788, 0x0114, 0x0114,
-+		"JMicron",
-+		"USB to ATA/ATAPI Bridge",
-+		USB_SC_DEVICE, USB_PR_DEVICE, NULL,
-+		US_FL_BROKEN_FUA ),
-+
- /* Reported by Andrey Rahmatullin <wrar@altlinux.org> */
- UNUSUAL_DEV(  0x4102, 0x1020, 0x0100,  0x0100,
- 		"iRiver",
+When tested with recent kernels (e.g. Debian testing/5.5, Ubuntu 20.04 LTS/5.4) it's slow.
 
+Setting "options usb_storage quirks=090c:1000:" in /etc/modprobe.d as a workaround for now.
+
+> Signed-off-by: Jim Lin <jilin@nvidia.com>
+> ---
+>   drivers/usb/storage/unusual_devs.h | 6 ++++++
+>   1 file changed, 6 insertions(+)
+> 
+> diff --git a/drivers/usb/storage/unusual_devs.h b/drivers/usb/storage/unusual_devs.h
+> index 1cd9b6305b06..1880f3e13f57 100644
+> --- a/drivers/usb/storage/unusual_devs.h
+> +++ b/drivers/usb/storage/unusual_devs.h
+> @@ -1258,6 +1258,12 @@ UNUSUAL_DEV( 0x090a, 0x1200, 0x0000, 0x9999,
+>   		USB_SC_RBC, USB_PR_BULK, NULL,
+>   		0 ),
+>   
+> +UNUSUAL_DEV(0x090c, 0x1000, 0x1100, 0x1100,
+> +		"Samsung",
+> +		"Flash Drive FIT",
+> +		USB_SC_DEVICE, USB_PR_DEVICE, NULL,
+> +		US_FL_MAX_SECTORS_64),
+> +
+>   /* aeb */
+>   UNUSUAL_DEV( 0x090c, 0x1132, 0x0000, 0xffff,
+>   		"Feiya",
+> 
+
+Thanks,
+Atanas
+
+-- 
+You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
+To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/bb4db5cf-60bc-9c0f-e1dc-3047542d2b42%40gmail.com.
