@@ -1,138 +1,148 @@
-Return-Path: <usb-storage+bncBD4ONGFER4PBBZX4372QKGQESBKRYZA@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBAABBPUAXX3AKGQE3YFKGFI@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-pl1-x648.google.com (mail-pl1-x648.google.com [IPv6:2607:f8b0:4864:20::648])
-	by mail.lfdr.de (Postfix) with ESMTPS id D4FE61CCB4E
-	for <lists+usb-storage@lfdr.de>; Sun, 10 May 2020 15:15:20 +0200 (CEST)
-Received: by mail-pl1-x648.google.com with SMTP id q4sf5246377pls.0
-        for <lists+usb-storage@lfdr.de>; Sun, 10 May 2020 06:15:20 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1589116519; cv=pass;
+Received: from mail-ot1-x345.google.com (mail-ot1-x345.google.com [IPv6:2607:f8b0:4864:20::345])
+	by mail.lfdr.de (Postfix) with ESMTPS id DFE181E551F
+	for <lists+usb-storage@lfdr.de>; Thu, 28 May 2020 06:38:23 +0200 (CEST)
+Received: by mail-ot1-x345.google.com with SMTP id t19sf783812ott.9
+        for <lists+usb-storage@lfdr.de>; Wed, 27 May 2020 21:38:23 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1590640703; cv=pass;
         d=google.com; s=arc-20160816;
-        b=mbtpUX4wPY32cjdAHGGzVbN9XDbUAqW9IzMSr8xzvwq9eHxPNR90mDhpj4kLVawm4Q
-         j0/xP/rsW1D4F9cioHyehaj2k1p0hS64owY+aA6a36RRjXbm0ypQErj5TvV0ZEPBa0Un
-         zuArKjvVJneCRiC5Span+pWFtsNH2fOh7VEiUoR45LqzZJDJ7fKpS9rWR+PBz7A4MAjT
-         MJcHyPjwPzcpkuX1vp1ozd0SPYJstqMg5jJYsfK8Vy0UP0kcT/OF60AEbmDGqenD6aPc
-         FDjTHBJTjdr48KOm2z5AA9LBqQLOR9w5wvaVhKwYHomTL8fH8X01yNBpCW3y+5EXrUPz
-         CWXg==
+        b=UVsnPxQge2NWZ278gShW9bQiV2kwqZJCnNDQpJVBKYLd0NpgUSuJcFsdEq85OXDpwt
+         UR3Gbitt/hK50DsJpm+j/qT22yC2XwKVMv1O69xWnnxUvct8WiM4YLkDwOVoFQAK1cPL
+         uz+jNWs9QsrNfXD56ZIRN3Qvv9orkAi3ssT62FfL95LQroKDfpqgV6Q+Pnq4ehuYffNW
+         jCE0PW9XYwLjApNNqhLSPqTjYyaQ71VQkFyHc2ksxWbajggOz0AxcSiZ6gTL+7HrWcYe
+         iKOxjohWqaarWpsAmYsYFjbqQlC03ICzOON5cOem+ef4Q5Y/bJaDh1ToAfHpMj5krOhF
+         RT9w==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:content-language:in-reply-to
-         :mime-version:user-agent:date:message-id:references:cc:to:from
-         :subject:sender:dkim-signature;
-        bh=zmO1kxBVHKeMnAsRAXIqy8CInEKnK/xToMAZEd77hQs=;
-        b=StSVh6zL/nFFBfdf8frg7gtEnUKMZuo/1alVI0a0DzSRm4YELp6QqTWU2GoL+IsHf1
-         KmD8YyhrUiJZAg3F2Wv8Q44SOLw3rMLVFbAcG4aKO9lB89dU4qvxOBLgSXykMB1Rmf1I
-         15hJueG4WZUnCTjUG2xBzx+bPNpTeGwZYM7idqyCzFZeCpgd44uKOIaiEtBH4+X/DzQT
-         roMFSUixFP9WBBctir1hOEXXubvs30gyK6oMfv86Gj+IEqw5srhAulmeegr61FK/it+f
-         JiDolJ980QNb6cx8y7GWnE9ep1xJqbaG9xmTTRopSSXC3nFXD++QjTA+AWTxgJKUzYw5
-         2q1w==
+         :list-id:mailing-list:precedence:content-transfer-encoding
+         :content-language:mime-version:user-agent:date:message-id:subject
+         :from:to:sender:dkim-signature;
+        bh=sM8hmtR3JjZUnk0HYAtTak2QDqR3fUIYNdhrUFd476M=;
+        b=os1IWk0CwOrBjTf3O+OcdBG6ag/tFUm74BimIF1rdMJYrrx9mCjWpmbRIt2uXaiAqj
+         t8g0NgWwHB8eaBAb8NuR2BFpURoRnFvvrfYz9nAUqn5Ds1WLIYf6B20eyOFoacwWxUlo
+         FCPRuJTVJbtLzmgsSDPRohWxoOkSCC9XsUBW0qvMPvtpH/mKf+eKyPDplMUt9F05foDs
+         D7SmIVdYMzkAP/CW2Jhf726WfIv/tDElCWfRYaGDRTs3vh2leP06lFj0UaWdjCHg0ExZ
+         ZzQywjSnoMhlo9/hUoMQnh4cfPMFTB12PgfrI00NcoEHqi/fT6O5h+GrUn+NicCO4wbg
+         764w==
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@gmail.com header.s=20161025 header.b=uOOGBNmH;
-       spf=pass (google.com: domain of dioput12@gmail.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=dioput12@gmail.com;
-       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+       dkim=pass (test mode) header.i=@codeweavers.com header.s=6377696661 header.b=XVxd9wZ6;
+       spf=pass (google.com: domain of zfigura@codeweavers.com designates 50.203.203.244 as permitted sender) smtp.mailfrom=zfigura@codeweavers.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=codeweavers.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
-        h=sender:subject:from:to:cc:references:message-id:date:user-agent
-         :mime-version:in-reply-to:content-language:x-original-sender
+        h=sender:to:from:subject:message-id:date:user-agent:mime-version
+         :content-language:content-transfer-encoding:x-original-sender
          :x-original-authentication-results:precedence:mailing-list:list-id
          :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
-        bh=zmO1kxBVHKeMnAsRAXIqy8CInEKnK/xToMAZEd77hQs=;
-        b=ZG7JvaYWeKHj+J5Su67TUmxGvPC7peERmI6XkkXqMgqObD8odGFX947haU0H7FdA8X
-         GYRcixc75ecpvKcKbmwHv0DZKGZSQ3VGC2JgfrpCnO/GVxrT/0Ku9R5lW1gHWOF2pqq2
-         FbjojXLUsXhlNTryZbpaWdpUolsP7nPXBuumg=
+        bh=sM8hmtR3JjZUnk0HYAtTak2QDqR3fUIYNdhrUFd476M=;
+        b=HykEBf0PB4cKsWTtefojJHGIQ02Bjlk3pGNpBqAZWVzxk3gGZXusZsovw3tMshp2Ul
+         VTQvNwtJ+X2g5kSgNXIKsqjg/ntYljWwDljpkPg/fCC3R+HcaQvqc6Du4Q/3wLp8GLuH
+         kMBtGLEl8ZmpiqYBCXeev+3pZpeX8giXaBTpA=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
-        h=sender:x-gm-message-state:subject:from:to:cc:references:message-id
-         :date:user-agent:mime-version:in-reply-to:content-language
+        h=sender:x-gm-message-state:to:from:subject:message-id:date
+         :user-agent:mime-version:content-language:content-transfer-encoding
          :x-original-sender:x-original-authentication-results:precedence
-         :mailing-list:list-id:x-spam-checked-in-group:list-post:list-help
-         :list-archive:list-subscribe:list-unsubscribe;
-        bh=zmO1kxBVHKeMnAsRAXIqy8CInEKnK/xToMAZEd77hQs=;
-        b=n1Qi+cCuFhFJ1b/Yqky+vKlCzfeMqWKS9B+26MO4n0kSWgAmxMIA3RNbWn6Kp12L/o
-         R38s3Ppf5FSjyhC2cuqLgb/zoaXgNx0GOjyC7aTZYhoPUABbGNzae2Fsf9RTBjtvHpKK
-         gJ0Kd5M8aE7278VkjoJhBOIQLd8/+EaurmiehvUSJIkJIFSoKpvVe2HLw67MNT0ICSzr
-         E0FWWXAWmzsY2maOxBA5M02iwkngxuOo4Tv75rY+WXPbSwJRYvyNZG83DViN5kDsvvVN
-         YJcmUgipBTLVyPWVgipLR/JG/UsPPxcv11bt7PJAUVCZy7G64c4yp8aaZ0xZ2HXxIoWY
-         hZNA==
+         :mailing-list:list-id:list-post:list-help:list-archive
+         :list-subscribe:list-unsubscribe;
+        bh=sM8hmtR3JjZUnk0HYAtTak2QDqR3fUIYNdhrUFd476M=;
+        b=m+Cexhv5oUJ/mlyI6MNCn+GAl5R+y2BaUDsQpuXkduj7iMTm+CtcJcBM7HoCq2HXx0
+         A5v0AnP/aRrLCq8vhgxEFTb3vnxjxDHGqnfndnM4PYvzTVzCohOstWwf+kBe9dkPFnKt
+         DGSjZwNAjzQ2nSHuCHN/euJTN60J9ik/JoCKpHuR/AUgcTNyO1j951HnDdbthxFAxm35
+         S11QrLBoi/yRptUXnR5XbbQ6KnjvlR6HjVDq4AstgqwKBba/CevuYoLeIDctP6jsFub5
+         euFXbXUbkVJTz1VmQ7eHIR99I/gDDDXl//Bux5aKu2OZKThaGtVW2qm5JTE6PHXg4Boi
+         7Atg==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: AGi0PuaAM5LgvebvtNIiuprX60zNqqAFMAv4JX34lqy6tuSR52iHbfU0
-	YcJjfXfpkOsNkoxbiGT/Ms7K0w==
-X-Google-Smtp-Source: APiQypL1rVcf23087obei5a0oG84aGHYiM05V/WrxUwFq8cN2ms3nKxHbKwOjOPneZj2ISQ+MmDhhQ==
-X-Received: by 2002:a17:90a:d192:: with SMTP id fu18mr16015647pjb.98.1589116519088;
-        Sun, 10 May 2020 06:15:19 -0700 (PDT)
+X-Gm-Message-State: AOAM531RZqxrmL+dKKql50XbqYAiGW5t/aBRVvRhxzlBySogzAG+7wAK
+	UAvJhVSbj+t3sduur0oyCg9kEQ==
+X-Google-Smtp-Source: ABdhPJzqctOuI0xTRRcEuAXd3t/FPyykQBfWtf7wF98RSDC8NSEmu8b4m49eKd52yoqYa/tTHkZebQ==
+X-Received: by 2002:a4a:2f89:: with SMTP id p131mr1175263oop.56.1590640702698;
+        Wed, 27 May 2020 21:38:22 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a17:90a:370c:: with SMTP id u12ls15006793pjb.2.gmail; Sun,
- 10 May 2020 06:15:18 -0700 (PDT)
-X-Received: by 2002:a17:90a:9b82:: with SMTP id g2mr17417479pjp.72.1589116518352;
-        Sun, 10 May 2020 06:15:18 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1589116518; cv=none;
+Received: by 2002:a9d:3987:: with SMTP id y7ls227968otb.11.gmail; Wed, 27 May
+ 2020 21:38:22 -0700 (PDT)
+X-Received: by 2002:a9d:6f89:: with SMTP id h9mr1035179otq.75.1590640702221;
+        Wed, 27 May 2020 21:38:22 -0700 (PDT)
+Received: by 2002:aca:1b0c:0:b029:a1:4e15:23e1 with SMTP id b12-20020aca1b0c0000b02900a14e1523e1msoib;
+        Wed, 27 May 2020 21:33:32 -0700 (PDT)
+X-Received: by 2002:a92:898e:: with SMTP id w14mr1279823ilk.212.1590640412736;
+        Wed, 27 May 2020 21:33:32 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1590640412; cv=none;
         d=google.com; s=arc-20160816;
-        b=l8PtDvs4V4aMBo7BpfwJnRWiqCp4ZyRfyqZSpzjVyM8o5OgMHHJyxacX1uEzy4rTn/
-         ubOQUWRy2QD7gUHiIiycO8OcuFq72V7eFQGvVJHeeTcpRes/VaEXJMGWZmtb+rh9dkgu
-         BNymNWsLYVPlHfY9oC0B/e30ax5+El68HJg945cBnE4pX5S4v1+7PhjCKVlO68hqsU8U
-         DqBzdUto8hfOHG3IcNs2L9lvNlcGV0tAGiO1iUaolXjKshc7QORu+S2f/2EG2FTA0lAc
-         LFKAtVFIoYjR7KrRkQjQTTrcykz+4/WAtzDwOko3ULSvjZJPxIzGQEkPBam7b8nRGMm/
-         Ultw==
+        b=qB2kkzX+0iQh8Fyr2sZtrrhd8rKFGXA44xRK6cwtYsvxYTIIPFDQi9vx3gf4j6rwzW
+         jE6xdhVP2cyJS9LuxlR6C4yWMQVuIOYYyBtj0aW4nu8rMizNrumNT7Wk+jBNZpd/6UPg
+         uUH4rmFDpz79+VCnQsNzzLrN+7nMYI7D+dxFa7hps3OgRt6nIe9dpbOJu0psxGgO4ugU
+         G2e9j6CB64atUz1seb+zmoul1Xf2DVRNi64MHE0CSglulENgvn29rEX+6aTfxaFCHgdp
+         1KNgGIdLlDtpoinrIjXzKiykd+9x3mfEGNs6/SmXC9XhAH4XIEnsvGUb7jtRyaG63HDK
+         ILYQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=content-transfer-encoding:content-language:in-reply-to:mime-version
-         :user-agent:date:message-id:references:cc:to:from:subject
-         :dkim-signature;
-        bh=Ixpwz+CZUCzdVL4WIaof0tEN90fPL/+PWTbROOL+Yio=;
-        b=hOdFV05bCLTPb1kHLWbFj/SdQHaPvB3UheqUGS4+dNpF3sSbqRXBfvFypmHc7WeNIF
-         puYaL1UwNIl0XKBYnlfUDSiQ05qAmNSwszEFpzMM/mkYDokGWAlIxks9PCG4yxctpOqL
-         fHqg33Vz47uwFDUnhleKjxhQlRLsbowZIirRE2z8u5JoiJ6EAVjgNVfS/ZFMUsOWWxDV
-         eIksQF9tG5g/cNJkSSr3W4kwHzI29DGPMx5dIdLBuML1zPCdlsSN9DnqAXYCdthik80m
-         fOJNnzjA9H0ggWaXyu02W3KChdr07MhkWKyeIFSAjrps7KiEh0Ri++hMONOm5LH1NmTs
-         CDdQ==
+        h=content-transfer-encoding:content-language:mime-version:user-agent
+         :date:message-id:subject:from:to:dkim-signature;
+        bh=vemHJ1ofMEjf4BkGKBqYn/ibfSlLxPKA4jDOogwFvAk=;
+        b=i3c3uhA/y6hYTdb+AORB3DizHRyVMMPnZgbB+jktzJmgIQtlOBr9CVV0gA4mZK8u/E
+         9c9RhKa+eAgQFIT3BndJ7jrt8IT1k7KRAvaY4zxCRgYz+c2U9w64ZwifHs7KW+ePrx4J
+         wp8lnynxfOG2lTXtrUAfxKeoxZkJ33q5dNFRaa0ozggDgOieJX3MDexPSeqWTuC0BZ0x
+         e52IRJmN1LV3KpEhvj/uRfdaIC4pqm+Vm/UXlKy/PxLkYqSbvsp+wswWrMGPAOjGi3jK
+         Tlh50vuwzPg7p2J9J+1o6aesATYSfmKKiUQyBhE3O8Cy6eykEZ7WHUYQIeQYTyIwMtMS
+         0faQ==
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@gmail.com header.s=20161025 header.b=uOOGBNmH;
-       spf=pass (google.com: domain of dioput12@gmail.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=dioput12@gmail.com;
-       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
-Received: from mail-sor-f65.google.com (mail-sor-f65.google.com. [209.85.220.65])
-        by mx.google.com with SMTPS id s17sor9836646plq.2.2020.05.10.06.15.18
+       dkim=pass (test mode) header.i=@codeweavers.com header.s=6377696661 header.b=XVxd9wZ6;
+       spf=pass (google.com: domain of zfigura@codeweavers.com designates 50.203.203.244 as permitted sender) smtp.mailfrom=zfigura@codeweavers.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=codeweavers.com
+Received: from mail.codeweavers.com (mail.codeweavers.com. [50.203.203.244])
+        by mx.google.com with ESMTPS id t78si2570992ilk.42.2020.05.27.21.33.32
         for <usb-storage@lists.one-eyed-alien.net>
-        (Google Transport Security);
-        Sun, 10 May 2020 06:15:18 -0700 (PDT)
-Received-SPF: pass (google.com: domain of dioput12@gmail.com designates 209.85.220.65 as permitted sender) client-ip=209.85.220.65;
-X-Received: by 2002:a17:902:7082:: with SMTP id z2mr10566383plk.317.1589116517963;
-        Sun, 10 May 2020 06:15:17 -0700 (PDT)
-Received: from ASMDT.1 ([202.67.42.2])
-        by smtp.gmail.com with ESMTPSA id j14sm7498649pjm.27.2020.05.10.06.15.12
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sun, 10 May 2020 06:15:17 -0700 (PDT)
-Subject: [usb-storage] Re: USB Attached SCSI breakage due no udev involvement
-From: Dio Putra <dioput12@gmail.com>
-To: Greg KH <gregkh@linuxfoundation.org>
-Cc: oneukum@suse.com, linux-usb@vger.kernel.org, linux-scsi@vger.kernel.org,
- usb-storage@lists.one-eyed-alien.net, stern@rowland.harvard.edu,
- linux-kernel@vger.kernel.org
-References: <CAOyCV0zW_20Jq6Rrb9=fhZQAHeqMMs_oHBJdTVt8Nqje0Zoeig@mail.gmail.com>
- <20200510054717.GA3365021@kroah.com>
- <1f9c0b30-f440-de43-366f-28ccba6a22e2@gmail.com>
- <20200510065416.GA3434442@kroah.com>
- <e409bbfe-c446-2ba3-423d-c6e198abef33@gmail.com>
- <20200510073258.GA3474912@kroah.com>
- <6dcbc78c-8c2f-e620-822b-7e777144d4ae@gmail.com>
- <20200510084820.GA3598083@kroah.com>
- <80d4f4d9-91be-b7e8-1f64-13c2fe74f496@gmail.com>
-Message-ID: <3b107771-550f-8ca1-d05a-4f6c2ef1920a@gmail.com>
-Date: Sun, 10 May 2020 20:15:08 +0700
+        (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
+        Wed, 27 May 2020 21:33:32 -0700 (PDT)
+Received-SPF: pass (google.com: domain of zfigura@codeweavers.com designates 50.203.203.244 as permitted sender) client-ip=50.203.203.244;
+Received: from [64.191.7.9] (helo=[192.168.1.115])
+	by mail.codeweavers.com with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
+	(Exim 4.89)
+	(envelope-from <zfigura@codeweavers.com>)
+	id 1jeAEU-0007cg-Ie; Wed, 27 May 2020 23:33:31 -0500
+To: usb-storage@lists.one-eyed-alien.net, linux-usb@vger.kernel.org
+From: Zebediah Figura <zfigura@codeweavers.com>
+Subject: [usb-storage] Bug 207877: ASMedia drive (174c:55aa) hangs in ioctl
+ CDROM_DRIVE_STATUS when mounting a DVD
+Message-ID: <7d0b20b9-4735-bbed-bb50-72764aefd6d8@codeweavers.com>
+Date: Wed, 27 May 2020 23:23:13 -0500
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.8.0
+ Thunderbird/68.8.1
 MIME-Version: 1.0
-In-Reply-To: <80d4f4d9-91be-b7e8-1f64-13c2fe74f496@gmail.com>
 Content-Type: text/plain; charset="UTF-8"; format=flowed
 Content-Language: en-US
-X-Original-Sender: dioput12@gmail.com
-X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@gmail.com header.s=20161025 header.b=uOOGBNmH;       spf=pass
- (google.com: domain of dioput12@gmail.com designates 209.85.220.65 as
- permitted sender) smtp.mailfrom=dioput12@gmail.com;       dmarc=pass (p=NONE
- sp=QUARANTINE dis=NONE) header.from=gmail.com
+Content-Transfer-Encoding: quoted-printable
+X-Spam-Score: -26.0
+X-Spam-Report: Spam detection software, running on the system "mail.codeweavers.com",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ the administrator of that system for details.
+ 
+ Content preview:  Hello all, I was asked to report this bug here. There's more
+    details in the bug report, but it's been proposed that there's a deadlock
+    between device_reset() in scsiglue.c and usb_stor_control_thread(). 
+ 
+ Content analysis details:   (-26.0 points, 5.0 required)
+ 
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+  -20 USER_IN_WHITELIST      From: address is in the user's white-list
+ -6.0 ALL_TRUSTED            Passed through trusted hosts only via SMTP
+ -0.5 BAYES_00               BODY: Bayes spam probability is 0 to 1%
+                             [score: 0.0000]
+  0.5 AWL                    AWL: Adjusted score from AWL reputation of From: address
+X-Original-Sender: zfigura@codeweavers.com
+X-Original-Authentication-Results: mx.google.com;       dkim=pass (test mode)
+ header.i=@codeweavers.com header.s=6377696661 header.b=XVxd9wZ6;
+       spf=pass (google.com: domain of zfigura@codeweavers.com designates
+ 50.203.203.244 as permitted sender) smtp.mailfrom=zfigura@codeweavers.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=codeweavers.com
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
-X-Spam-Checked-In-Group: usb-storage@lists.one-eyed-alien.net
 X-Google-Group-Id: 960895140360
 List-Post: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/post>,
  <mailto:usb-storage@lists.one-eyed-alien.net>
@@ -144,107 +154,23 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On 5/10/20 4:48 PM, Dio Putra wrote:
-> On 5/10/20 3:48 PM, Greg KH wrote:
->> On Sun, May 10, 2020 at 03:35:34PM +0700, Dio Putra wrote:
->>> On 5/10/20 2:32 PM, Greg KH wrote:
->>>> On Sun, May 10, 2020 at 02:10:04PM +0700, Dio Putra wrote:
->>>>> On 5/10/20 1:54 PM, Greg KH wrote:
->>>>>> On Sun, May 10, 2020 at 01:48:24PM +0700, Dio Putra wrote:
->>>>>>> On 5/10/20 12:47 PM, Greg KH wrote:
->>>>>>>> On Sun, May 10, 2020 at 09:55:57AM +0700, Dio Putra wrote:
->>>>>>>>> Hi, it's first time for me to report user-space breakage in here, so
->>>>>>>>> i'm begging your pardon.
->>>>>>>>>
->>>>>>>>> I want to report that Linux 5.4 breaking my USB mount workflow due
->>>>>>>>> udevadm monitor report here (I'm using vanilla kernel 5.4.39 on
->>>>>>>>> Slackware64 Current and vanilla kernel 4.4.221 on Slackware64 14.2):
->>>>>>>>
->>>>>>>> <snip>
->>>>>>>>
->>>>>>>> Sorry, but what actually changed that you can see in the logs?
->>>>>>> Sorry, what do you mean? The dmesg log or the kernel changelogs?
->>>>>>
->>>>>> Either, your message made them pretty impossible to compare with all of
->>>>>> the line-wrapping :(
->>>>>>
->>>>> I'm so sorry for first message mess, because that message has been sent by
->>>>> Gmail Website. Can I send my logs as attachment? I try to convenient everyone
->>>>> here. ( FYI, I just switched to Thunderbird with these settings:
->>>>> https://www.kernel.org/doc/html/v4.12/process/email-clients.html#thunderbird-gui )
->>>>
->>>> Sure, attachments work, but better yet, if you can show the difference
->>>> in a few lines that is much nicer than having to dig through large
->>>> numbers of log files.
->>>>
->>> Okay, I'll attach long messages and trim it as far as I can.
->>
->> Again, I really do not understand what exactly is "not working".
->>
->> Please explain that when you send the new log messages.
->>
-> Okay, here's compilation of "dmesg | grep -i udev && udevadm
-> monitor && lsblk" on linux-4.4.221 vs linux-5.4.39. You can check
-> my attachment here because I can't explain it by words (I'm not
-> english native speaker anyway, which makes it so difficult to
-> explain it for me).
-> 
->>>>>>>> What functionality broke?  What used to work that no longer does work?
->>>>>>>>
->>>>>>> Yes, it supposed that just work and kernel could talk with udev, not just handled by the kernel.
->>>>>>
->>>>>> I don't understand, what functionality changed?  What exactly used to
->>>>>> work that no longer does?
->>>>> linux-5.4 has been never called the udev dependencies whereas
->>>>> linux-4.4 will call any udev dependencies if necessary, that's the problem.
->>>>
->>>> I do not understand what exactly you mean by "call udev dependencies".
->>>>
->>>> udev is used to create symlinks and set user/group permissions on device
->>>> nodes in /dev/ which is created by devtmpfs.  What exactly is not
->>>> happening in your /dev/ with the move to a newer kernel?
->>>>
->>> Would I send my dmesg log with "udev.log-priority=debug" as attachment then?
->>>
->>>>>> Did you change anything else other than the kernel on your system?  Did
->>>>>> you change to a newer version of udev/systemd or anything else?
->>>>>>
->>>>> I'm using eudev-master from their official mirror github:
->>>>> https://github.com/gentoo/eudev
->>>>
->>>> Have you contacted the eudev developers to see if something different
->>>> needs to be set in your kernel when moving 4 years in kernel development
->>>> forward?  Are you sure you have all the correct config options enabled?
->>>>
->>> It's my bad not to contact the eudev developers first. However I'm not quite
->>> sure to contact the eudev developers would solve the problem, but CMIIW.
->>>
->>>> Why such a huge leap forward all at once, how about going from 4.4.y to
->>>> 4.9.y and then 4.14.y and then 5.4.y?  That might help narrow things
->>>> down a bit easier.
->>>>
->>> Unfortunately I need to think twice due almost ran out of electricity
->>> here every time I power on my laptop for long time. So maybe I can't.
->>>
->>> But if these steps are necessary, I'll think solution later.
->>
->> Why would it take a long time to do this type of change?
->>
-> It's a weak machine, it took appropriately 2 hours to just compiling
-> linux kernel. I need to think twice too because electricity is expensive here.
->
-After deep digging into /dev/ folder, indeed some important file has 
-been deleted after restart on Slackware.
+Hello all,
 
-On behalf from myself for linux-kernel community, I'm really sorry for 
-causing these noise. Thank you Greg and all for the hints.
->> thanks,
->>
->> greg k-h
->>
-> 
+I was asked to report this bug here. There's more details in the bug=20
+report, but it's been proposed that there's a deadlock between=20
+device_reset() in scsiglue.c and usb_stor_control_thread().
 
--- 
-You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
-To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/3b107771-550f-8ca1-d05a-4f6c2ef1920a%40gmail.com.
+I haven't examined the code in detail, but is this plausible?=20
+Alternatively, is there something else clearer that the backtrace shows?
+
+=E1=BC=94=CF=81=CF=81=CF=89=CF=83=CE=B8=CE=B5,
+Zebediah
+
+--=20
+You received this message because you are subscribed to the Google Groups "=
+USB Mass Storage on Linux" group.
+To unsubscribe from this group and stop receiving emails from it, send an e=
+mail to usb-storage+unsubscribe@lists.one-eyed-alien.net.
+To view this discussion on the web visit https://groups.google.com/a/lists.=
+one-eyed-alien.net/d/msgid/usb-storage/7d0b20b9-4735-bbed-bb50-72764aefd6d8=
+%40codeweavers.com.
