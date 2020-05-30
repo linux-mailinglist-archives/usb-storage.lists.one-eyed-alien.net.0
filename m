@@ -1,31 +1,31 @@
-Return-Path: <usb-storage+bncBD6LRVPZ6YGRBVHBY33AKGQEWJXUVSY@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBD6LRVPZ6YGRBYEFZL3AKGQEWJUSSLI@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-io1-xd46.google.com (mail-io1-xd46.google.com [IPv6:2607:f8b0:4864:20::d46])
-	by mail.lfdr.de (Postfix) with ESMTPS id 978CD1E8CAE
-	for <lists+usb-storage@lfdr.de>; Sat, 30 May 2020 03:03:17 +0200 (CEST)
-Received: by mail-io1-xd46.google.com with SMTP id v16sf944747ios.9
-        for <lists+usb-storage@lfdr.de>; Fri, 29 May 2020 18:03:17 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1590800596; cv=pass;
+Received: from mail-il1-x148.google.com (mail-il1-x148.google.com [IPv6:2607:f8b0:4864:20::148])
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C11F1E926D
+	for <lists+usb-storage@lfdr.de>; Sat, 30 May 2020 17:59:30 +0200 (CEST)
+Received: by mail-il1-x148.google.com with SMTP id p20sf4976441ili.16
+        for <lists+usb-storage@lfdr.de>; Sat, 30 May 2020 08:59:30 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1590854369; cv=pass;
         d=google.com; s=arc-20160816;
-        b=K8ocRchEQt4/gf80H86XaMYbd7jv0JMXzfsqEblEjtZxnGt6/cE/08v3iKoJCubR4h
-         g03ceOSkauM5ZlOqqBaIlFZ6Nx9kbY18UwHOnArKrLrW16hnz2Q58g2H4nnwAoGFy7ws
-         ae6G8bwgazao0Xmir3DegjjumEM9PrFdD/Vjlz2WsGe9kw27w52dXWHN9mkMjCtzFUv7
-         OpAGoCxwzIHcCT1IPFerjmXskNlB5dcO6xxvf50+c7u+iCRzCnxKlF2lqFl1ikKs9Ry7
-         sza/17uZuWPFYwBRCpSikoMrk4rhyWme4O6aw1o1hW9aMSmESlxSVtsoZGwWi0f5geMC
-         Nlgw==
+        b=Yg2K3+Qu9Mw5qc12EWVlnPQlEzMZ4DwRKkWwwTEW398Fk9wec08pie2m20H4xnlByq
+         GSwZXPnopoRbspECrok3aknw7mN6S3E7Hb8bUXlISZDMH5qAHhlz5RRpumWk5y0d65Qp
+         /xvSIVNUfDWl3Y50EtB2hW93x/4gryPMEFND8y1Pe638zBPhYZBWh/U+sqJWyDo6o615
+         PQDbhqSMj/maY66oOV8je2F+uuH/x1TbTVR5cMQhn/OndcLgCYEZzuQQX1Md+YDxgtkr
+         G1byUHzPt/mKE1fiqdRtQT/jmwikAsMjKY7WwFxYxjDS0eoMI9OjewTsk6f2y0dOHv6f
+         9b+w==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:user-agent:in-reply-to
          :content-disposition:mime-version:references:message-id:subject:cc
          :to:from:date:sender:dkim-signature;
-        bh=9yIWle7NvkH8QmkDHQhkEwcRcHOFlBcgYkyJUvOVQh8=;
-        b=quDOHyoWN36qOaFdvL7S9ZVPqZV5lX0Wuc++kXx4EClAApVaiZl5ovOOxsQftqPsHg
-         NvOk624fWnWoL5HwxuDM4idKWAKD29MppH+g5vcI3yqDI2pBpcQqEh7mrv1t3GWRY5l/
-         vWskHjCN6vSjRVD4fVWZdcAwovwg9iLkM6SNFEqiAlXgRVnqGoXsT9qYAKmmKE95Vttf
-         S9h7EBl2uoT0516vP4MpIhCMZJ/rvJhzMNey7jsT+h0MI/XVC9RfpTSaWDBxWG1PSnrL
-         mgao/JmtWDllnhrmZ3KOylZWj/ufedeUfS4Wy7IwT9LKVjf595QXke3DkTEYTb4DWflU
-         gW2g==
+        bh=zFyxXl9ZrNCPoVJBFBh9HHaxmslbT/QVF1uRF+lp2b4=;
+        b=Y4YDJYNE6JIF+3iP7oMNDyaSjaL/eyX2JravpvLl0Me+O8vnXJSYVW2tzUXFw/5RrI
+         dT2uI3CWFvunpHzpcV+nbVwPnyPqO05TV7nSPfTDfOtL/EDQRM/EnhHHcRmQAnFRNpF/
+         K0SXPTGvd2nt+eb1BWuPBmMH1ZyRnfDviDz4vmlnTbOFPXE8zFoLpcfPTY2xbcB59FYT
+         tXMoNZvR0h2yWoXzDYP62gafbBgc5ZijsMlNGitz1THJGNr1PB7rKEOOOs9RlxxT2W7W
+         aJxR/MgJkyynfhN9wHWiMMGYQdzOmnLa2P8Z1QK/0DJEcEbby+o6sl5eJ4UNG16SOETb
+         K3fg==
 ARC-Authentication-Results: i=2; mx.google.com;
        spf=pass (google.com: domain of stern+5edd826a@netrider.rowland.org designates 192.131.102.5 as permitted sender) smtp.mailfrom=stern+5edd826a@netrider.rowland.org
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
@@ -34,10 +34,10 @@ DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
          :content-disposition:in-reply-to:user-agent:x-original-sender
          :x-original-authentication-results:precedence:mailing-list:list-id
          :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
-        bh=9yIWle7NvkH8QmkDHQhkEwcRcHOFlBcgYkyJUvOVQh8=;
-        b=fp1m6nNKND9hx23qAkuVYu2s8mMWJ7ATK8T+azx7dKZeYOsS4uQBAlbXhdgyE2WbKq
-         VvRQTP7d4I7xPQ0w796TRNbzh0V38wtK8UOxWTDuH81u9XAoxsqxXEBKZnEImub+Ylk5
-         0Rb21F0c3mxPPF52aMk3PdhYm9nFN0Vup9J+Q=
+        bh=zFyxXl9ZrNCPoVJBFBh9HHaxmslbT/QVF1uRF+lp2b4=;
+        b=E2rU0dipUofVAX7Jxqe9YFbDJEP67KASp72TnwGi3fPWQXxfQJaWjRPNPLMfw+3Wfj
+         AuyVdmZD5Z1LBGEAQZjGE2DWyW2u46BzyeF4J/Jj5L5n1CtTF5UwtCNZyVR87pxufc16
+         PmwexYxEe8RotpXNkLPZX88DsctopL4CqCtEg=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
         h=sender:x-gm-message-state:date:from:to:cc:subject:message-id
@@ -45,70 +45,64 @@ X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
          :x-original-sender:x-original-authentication-results:precedence
          :mailing-list:list-id:x-spam-checked-in-group:list-post:list-help
          :list-archive:list-subscribe:list-unsubscribe;
-        bh=9yIWle7NvkH8QmkDHQhkEwcRcHOFlBcgYkyJUvOVQh8=;
-        b=Sk+IsoHdBSgazMxmvg4vlHCrLknH5VveQsQmi0adzUd4x3/bx+AhU5gn+d271KSdX/
-         NOJnGkVusFBVJcak5uNMRwFbM3Hyw0lKfi4yxL34OupAMa9+3TAJ5B9tQHP3sqwf8hOv
-         KTv4aJ9NjM/BrvaedrIXLA8sImSP7UufsSG4v/OVAjBZjobAmDOVH1WBmIr10fHJvG7g
-         2/4l2+EfVX6YPOi8ccZ+U3/6qC7TUutRwsxG9a9sDcvjWoTP/SKknXbIWAfErr3Qqtt0
-         p8gjdac2NFhwki5fKdOeCW4A91c1/D7Ydveo+yMgBnUKDvbtAgrS6CIAXP8HX2cMcFFI
-         G/9A==
+        bh=zFyxXl9ZrNCPoVJBFBh9HHaxmslbT/QVF1uRF+lp2b4=;
+        b=tXjcXHLKSK5w0Km1PyY6P4fHl0GbAXN1uW15HoKZet4uFmwMRTZxjqe+HQHKq8VDZ2
+         4HAHNdcaHR7Bri0AW0MBkB/xqPtzYYWGkAvSLGn6iRy2Z9X1WWesC4swPukkeeMB4QOW
+         RyF2fNiuuRsErXE8i5HCPDQfjzwIkDAtYW6gteA/Gy/4WHg2P5CqyVDpyZbseTFSe93K
+         WSj1ET8JwQPJMjTQZKHg7R0RnlVnP5Ki5CkTqzRZgd1KWEV7gxeooWjSvQJ8w5ooed5R
+         Exwg897D3vOrXrU1TOBNwKYLb9SKJQuDgAIFvaTyE3o+o5BEp2yF20clPQA6aU8pNs1F
+         1l2w==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: AOAM532Beq6iJ7JZOb3agqRNT9xvJAF4QGm1vmjR76YOAEhsFMzZloH7
-	5GEoUwgwntYF4Oj1zRWJA7R2qQ==
-X-Google-Smtp-Source: ABdhPJyqaYa0i6poms/FcLNtQgriIH9NO0h6oe5owc7G+PvVbY8WZcfb5aQP1WALmTSvqtrwoJm6HA==
-X-Received: by 2002:a02:b782:: with SMTP id f2mr9808235jam.91.1590800596374;
-        Fri, 29 May 2020 18:03:16 -0700 (PDT)
+X-Gm-Message-State: AOAM531qcrbbBhMTwlw4kI5Ra1LuMqQPezLTklRwt2ga8Bdrr+nWzrxg
+	qEH8+gsvu+L0bXVFQnSXgQnUbQ==
+X-Google-Smtp-Source: ABdhPJw9bQqEe85N16L8YEWBWxPw9KjSlIZ2LOXL45bbQByeno+OSImF4iOt+HeyW4aFM8jqt0YHbQ==
+X-Received: by 2002:a92:2a06:: with SMTP id r6mr12075338ile.121.1590854368875;
+        Sat, 30 May 2020 08:59:28 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a05:6602:13d2:: with SMTP id o18ls1208368iov.7.gmail; Fri,
- 29 May 2020 18:03:15 -0700 (PDT)
-X-Received: by 2002:a6b:8b51:: with SMTP id n78mr8941923iod.120.1590800595703;
-        Fri, 29 May 2020 18:03:15 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1590800595; cv=none;
+Received: by 2002:a02:9716:: with SMTP id x22ls1220780jai.3.gmail; Sat, 30 May
+ 2020 08:59:28 -0700 (PDT)
+X-Received: by 2002:a05:6638:35d:: with SMTP id x29mr1728042jap.71.1590854368325;
+        Sat, 30 May 2020 08:59:28 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1590854368; cv=none;
         d=google.com; s=arc-20160816;
-        b=GYe9JH9NANzNm2Grw7VcGb90iejwJ/DYUtDjAUdlwRKyWhhuy+oXM70Ya82hqpawzT
-         n195+DZiK5MJL7Xw6aKpt2enMGi6/tx94QFE4w+AYQoYY9Dz7kNJunrdSve+Xjd78Mi/
-         k6kCiezkgAJNTf3d6dmaH9ePSOgXnuTOiNSRhAJd6u6ovNwVYG4zHCRCvSl/xQk8uUn4
-         HJG9xUXdraCleo4Nq+Jxn4ZQk1r436Y+R4huZadfgABzuh/jCr2t8V1Wa4Vxg2ikVady
-         HyyyX+sBcVAdhry795zksxSeE7pEqjL6WBKjMp5WiLHoNWaJIutUCpjaWJlYWeYdtVnh
-         J/nw==
+        b=IVYnMQlKjOe1+wJC87dlCbLsHI8ciZUuL5NnfthMKLQBikmzIFmIs8NVXx+U2Ef0Pa
+         6gaKkTZSe+a9I3M2cSWLVuXbFKDksMpEgrjinT82p7obMJyjse61YNTdKTprWwOzzk6q
+         bbtUoSSyD1MGi4EcKJlozJPKQXvr6eWYedLgYJPw4vp4bXni7jDSHrWw1AtoTng8zAxH
+         L3IMOBR5JGFa6za32JLKkHwhzMYVAX5ffBLl8qu92NJbkB0Mbi0SCr8dVn+NAPXFfTOj
+         paQowuuMPchZFYZaL2yEUiQjg2+lFbDEJ+y6WKn2qpq5g/7vqynctWydWFELSxzGLfJK
+         K+HQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=user-agent:in-reply-to:content-disposition:mime-version:references
          :message-id:subject:cc:to:from:date;
-        bh=TIxrCNg8wG3P6uMSaz/TRSQDNQZuMOL0OzUlKJPtPBo=;
-        b=QrAxzSzBKpqtsdhO9n7sA7s56JgJb3t1+CuPXEBPCmu1XgaDMUQGYwYBnG/FdseiWh
-         0jFDH1Zq+LgO/xawwVvccG6j1YegMM8CDHi+ofX1U0tb7E+vOWOCXu9dI1paHU4CMf6W
-         yUNtaiO2c5cttZuSdQRaa6YxzZt0RFWk4z9HdNnpJMdD8OAjdkZkmMxNP7EsGkroNi3t
-         4u+nWEAYZf4Xkbh6NXgeFGPPBaLZv+mocK9WqoRNa4hQHEV0179QyG33Iw2PXyxnl2P9
-         MRGYNnb/HqZq5AjxPnGxO/eyDNuIw/luuE+XHBme3ZV9Ow7DsrYQq8gO5dVGQtEec9u7
-         9QHA==
+        bh=TS3FPLdwegYomEtqTxo9uKImHgR38EcfF7l0v6lqQyE=;
+        b=oQmlzty1rf2fL9d6hc5r+mvm9gJRLxKpG5+muGSva86CNc5gttTX10xJLlFbtP9yWA
+         M8XKLWJyNxd5TgwM1BlgCD7uOtggBcX3m6M4prU5WZznK11L5STqnd6XaGpBAKsOWIb7
+         7zAVPddS8hbGZz8Yn2e7THdo51aaY2YF5JnLJ/+P3t78xvOiEH1aVVNP7ZqSKbsuAseI
+         lV9alJBsMybO5yWz6UIRWK0PPHE4KA3VRY54axz26O9IhotewPReLnNAisXTcfWo+xox
+         8SE1qXf0qOIQ8ASel+KQ414nGzMqaspexdfdO8596MPyURHsClBOdODBfGPdULyjAbyT
+         CEeg==
 ARC-Authentication-Results: i=1; mx.google.com;
        spf=pass (google.com: domain of stern+5edd826a@netrider.rowland.org designates 192.131.102.5 as permitted sender) smtp.mailfrom=stern+5edd826a@netrider.rowland.org
 Received: from netrider.rowland.org (netrider.rowland.org. [192.131.102.5])
-        by mx.google.com with SMTP id j78si4003358ilg.92.2020.05.29.18.03.15
+        by mx.google.com with SMTP id k21si9909074jad.67.2020.05.30.08.59.28
         for <usb-storage@lists.one-eyed-alien.net>;
-        Fri, 29 May 2020 18:03:15 -0700 (PDT)
+        Sat, 30 May 2020 08:59:28 -0700 (PDT)
 Received-SPF: pass (google.com: domain of stern+5edd826a@netrider.rowland.org designates 192.131.102.5 as permitted sender) client-ip=192.131.102.5;
-Received: (qmail 14534 invoked by uid 1000); 29 May 2020 21:03:14 -0400
-Date: Fri, 29 May 2020 21:03:14 -0400
+Received: (qmail 30265 invoked by uid 1000); 30 May 2020 11:59:27 -0400
+Date: Sat, 30 May 2020 11:59:27 -0400
 From: Alan Stern <stern@rowland.harvard.edu>
-To: Zebediah Figura <zfigura@codeweavers.com>
-Cc: Greg KH <gregkh@linuxfoundation.org>,
-  usb-storage@lists.one-eyed-alien.net, linux-usb@vger.kernel.org,
-  SCSI development list <linux-scsi@vger.kernel.org>
-Subject: [usb-storage] Re: Bug 207877: ASMedia drive (174c:55aa) hangs in
- ioctl CDROM_DRIVE_STATUS when mounting a DVD
-Message-ID: <20200530010314.GA12419@rowland.harvard.edu>
-References: <7d0b20b9-4735-bbed-bb50-72764aefd6d8@codeweavers.com>
- <20200528075440.GA2881385@kroah.com>
- <465eaae3-fa60-f37e-1d62-c52236720798@codeweavers.com>
- <20200528160420.GA14188@rowland.harvard.edu>
- <232b68f8-9a5c-89fd-2e12-bf63f49dbe38@codeweavers.com>
- <20200528170509.GC14188@rowland.harvard.edu>
- <cb5371de-984f-bdf3-4cfe-a7343998515d@codeweavers.com>
+To: Jia-Ju Bai <baijiaju@tsinghua.edu.cn>
+Cc: gregkh@linuxfoundation.org, linux-usb@vger.kernel.org,
+  usb-storage@lists.one-eyed-alien.net, linux-kernel@vger.kernel.org,
+  Jia-Ju Bai <baijiaju1990@gmail.com>
+Subject: [usb-storage] Re: [PATCH] usb: storage: alauda: fix possible buffer
+ overflow casued by bad DMA value in alauda_read_map()
+Message-ID: <20200530155927.GC29298@rowland.harvard.edu>
+References: <20200530144230.3550-1-baijiaju@tsinghua.edu.cn>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="UTF-8"
 Content-Disposition: inline
-In-Reply-To: <cb5371de-984f-bdf3-4cfe-a7343998515d@codeweavers.com>
+In-Reply-To: <20200530144230.3550-1-baijiaju@tsinghua.edu.cn>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-Original-Sender: stern@rowland.harvard.edu
 X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
@@ -129,220 +123,32 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On Thu, May 28, 2020 at 02:27:52PM -0500, Zebediah Figura wrote:
-> On 5/28/20 12:05 PM, Alan Stern wrote:
-> > I get the impression that the SCSI error handler may have tried to reset
-> > the device without first aborting the current transfer.  But it's not
-> > easy to tell if that's what really happened.  You might be able to get
-> > more information by enabling CONFIG_USB_STORAGE_DEBUG and rebuilding the
-> > usb-storage driver, or by turning on SCSI debugging.
+On Sat, May 30, 2020 at 10:42:30PM +0800, Jia-Ju Bai wrote:
+> From: Jia-Ju Bai <baijiaju1990@gmail.com>
 > 
-> I've attached a kernel log with CONFIG_USB_STORAGE_DEBUG to the bug report.
-> I'm not able to properly interpret the results, but I do see "device_reset
-> called" as the last USB/SCSI-related message without any nearby mention of
-> cancellation...?
+> The value us->iobuf is stored in DMA memory, and it is assigned to data,
+> so data[6] and data[7] can be modified at anytime by malicious hardware.
+> In this case, data[6] ^ data[7] can be a quite large number, which may 
+> cause buffer overflow when the code "parity[data[6] ^ data[7]]" is
+> executed.
 > 
-> The backtrace looks different, though.
+> To fix this possible bug, data[6] ^ data[7] is assigned to a local
+> variable, and then this variable is checked before being used.
 
-I don't think that matters.
+There are much worse problems than this in the alauda driver.  For 
+example, alauda_get_redu_data() does I/O from a data buffer on the 
+stack; this is not allowed.  That's just the example I noticed; there 
+may very well be others.
 
-> With respect to SCSI debugging, the best instructions I was able to find
-> directed me to try:
-> 
-> hazel@watership:~$ cat /proc/scsi/sg/debug
-> max_active_device=2  def_reserved_size=32768
-> 
-> while the hang was taking place. If there's more useful debugging I can do,
-> I'll need pointers. I did enable CONFIG_SCSI_LOGGING in the above build.
+If you want to fix something, fix that.
 
-Maybe someone from the linux-scsi mailing list will help.
-
-Here is the problem we are facing, as shown in the following debugging 
-log.  The log includes a sequence of six commands sent to a DVD drive.  
-The first READ succeeds:
-
-May 28 14:03:05 watership kernel: *** thread awakened
-May 28 14:03:05 watership kernel: Command READ_10 (10 bytes)
-May 28 14:03:05 watership kernel: bytes: 28 00 00 00 00 fa 00 00 06 00
-May 28 14:03:05 watership kernel: Bulk Command S 0x43425355 T 0x222 L 12288 F 128 Trg 0 LUN 0 CL 10
-May 28 14:03:05 watership kernel: xfer 31 bytes
-May 28 14:03:05 watership kernel: Status code 0; transferred 31/31
-May 28 14:03:05 watership kernel: -- transfer complete
-May 28 14:03:05 watership kernel: Bulk command transfer result=0
-May 28 14:03:05 watership kernel: xfer 12288 bytes, 1 entries
-May 28 14:03:05 watership kernel: Status code 0; transferred 12288/12288
-May 28 14:03:05 watership kernel: -- transfer complete
-May 28 14:03:05 watership kernel: Bulk data transfer result 0x0
-May 28 14:03:05 watership kernel: Attempting to get CSW...
-May 28 14:03:05 watership kernel: xfer 13 bytes
-May 28 14:03:05 watership kernel: Status code 0; transferred 13/13
-May 28 14:03:05 watership kernel: -- transfer complete
-May 28 14:03:05 watership kernel: Bulk status result = 0
-May 28 14:03:05 watership kernel: Bulk Status S 0x53425355 T 0x222 R 0 Stat 0x0
-May 28 14:03:05 watership kernel: scsi cmd done, result=0x0
-May 28 14:03:05 watership kernel: *** thread sleeping
-
-The second READ hangs for 30 seconds (reason unknown) and then gets 
-aborted.  Following the abort, usb-storage automatically performs a 
-reset:
-
-May 28 14:03:05 watership kernel: *** thread awakened
-May 28 14:03:05 watership kernel: Command READ_10 (10 bytes)
-May 28 14:03:05 watership kernel: bytes: 28 00 00 3e 38 00 00 00 3c 00
-May 28 14:03:05 watership kernel: Bulk Command S 0x43425355 T 0x223 L 122880 F 128 Trg 0 LUN 0 CL 10
-May 28 14:03:05 watership kernel: xfer 31 bytes
-May 28 14:03:05 watership kernel: Status code 0; transferred 31/31
-May 28 14:03:05 watership kernel: -- transfer complete
-May 28 14:03:05 watership kernel: Bulk command transfer result=0
-May 28 14:03:05 watership kernel: xfer 122880 bytes, 15 entries
-May 28 14:03:37 watership kernel: command_abort called
-May 28 14:03:37 watership kernel: -- cancelling sg request
-May 28 14:03:37 watership kernel: Status code -104; transferred 2048/122880
-May 28 14:03:37 watership kernel: -- transfer cancelled
-May 28 14:03:37 watership kernel: Bulk data transfer result 0x4
-May 28 14:03:37 watership kernel: -- command was aborted
-May 28 14:03:37 watership kernel: usb 1-5: reset high-speed USB device number 3 using xhci_hcd
-May 28 14:03:37 watership kernel: usb_reset_device returns 0
-May 28 14:03:37 watership kernel: scsi command aborted
-May 28 14:03:37 watership kernel: *** thread sleeping
-May 28 14:03:37 watership kernel: sr 1:0:0:0: [sr0] tag#0 FAILED Result: hostbyte=DID_TIME_OUT driverbyte=DRIVER_OK cmd_age=31s
-May 28 14:03:37 watership kernel: sr 1:0:0:0: [sr0] tag#0 CDB: Read(10) 28 00 00 3e 38 00 00 00 3c 00
-May 28 14:03:37 watership kernel: blk_update_request: I/O error, dev sr0, sector 16310272 op 0x0:(READ) flags 0x80700 phys_seg 15 prio class 0
-
-Next is a GET EVENT/STATUS NOTIFICATION...
-
-May 28 14:03:37 watership kernel: *** thread awakened
-May 28 14:03:37 watership kernel: Command GET EVENT/STATUS NOTIFICATION (10 bytes)
-May 28 14:03:37 watership kernel: bytes: 4a 01 00 00 10 00 00 00 08 00
-May 28 14:03:37 watership kernel: Bulk Command S 0x43425355 T 0x224 L 8 F 128 Trg 0 LUN 0 CL 10
-May 28 14:03:37 watership kernel: xfer 31 bytes
-May 28 14:03:37 watership kernel: Status code 0; transferred 31/31
-May 28 14:03:37 watership kernel: -- transfer complete
-May 28 14:03:37 watership kernel: Bulk command transfer result=0
-May 28 14:03:37 watership kernel: xfer 8 bytes, 1 entries
-May 28 14:03:37 watership kernel: Status code 0; transferred 8/8
-May 28 14:03:37 watership kernel: -- transfer complete
-May 28 14:03:37 watership kernel: Bulk data transfer result 0x0
-May 28 14:03:37 watership kernel: Attempting to get CSW...
-May 28 14:03:37 watership kernel: xfer 13 bytes
-May 28 14:03:37 watership kernel: Status code 0; transferred 13/13
-May 28 14:03:37 watership kernel: -- transfer complete
-May 28 14:03:37 watership kernel: Bulk status result = 0
-May 28 14:03:37 watership kernel: Bulk Status S 0x53425355 T 0x224 R 0 Stat 0x0
-May 28 14:03:37 watership kernel: scsi cmd done, result=0x0
-May 28 14:03:37 watership kernel: *** thread sleeping
-
-... followed by a retry attempt of the previous READ, which hangs and is 
-aborted again:
-
-May 28 14:03:37 watership kernel: *** thread awakened
-May 28 14:03:37 watership kernel: Command READ_10 (10 bytes)
-May 28 14:03:37 watership kernel: bytes: 28 00 00 3e 38 00 00 00 02 00
-May 28 14:03:37 watership kernel: Bulk Command S 0x43425355 T 0x225 L 4096 F 128 Trg 0 LUN 0 CL 10
-May 28 14:03:37 watership kernel: xfer 31 bytes
-May 28 14:03:37 watership kernel: Status code 0; transferred 31/31
-May 28 14:03:37 watership kernel: -- transfer complete
-May 28 14:03:37 watership kernel: Bulk command transfer result=0
-May 28 14:03:37 watership kernel: xfer 4096 bytes, 1 entries
-May 28 14:04:08 watership kernel: command_abort called
-May 28 14:04:08 watership kernel: -- cancelling sg request
-May 28 14:04:08 watership kernel: Status code -104; transferred 2048/4096
-May 28 14:04:08 watership kernel: -- transfer cancelled
-May 28 14:04:08 watership kernel: Bulk data transfer result 0x4
-May 28 14:04:08 watership kernel: -- command was aborted
-May 28 14:04:08 watership kernel: usb 1-5: reset high-speed USB device number 3 using xhci_hcd
-May 28 14:04:08 watership kernel: usb_reset_device returns 0
-May 28 14:04:08 watership kernel: scsi command aborted
-May 28 14:04:08 watership kernel: *** thread sleeping
-
-Then there's another successful GET EVENT/STATUS NOTIFICATION:
-
-May 28 14:04:08 watership kernel: *** thread awakened
-May 28 14:04:08 watership kernel: Command GET EVENT/STATUS NOTIFICATION (10 bytes)
-May 28 14:04:08 watership kernel: bytes: 4a 01 00 00 10 00 00 00 08 00
-May 28 14:04:08 watership kernel: Bulk Command S 0x43425355 T 0x226 L 8 F 128 Trg 0 LUN 0 CL 10
-May 28 14:04:08 watership kernel: xfer 31 bytes
-May 28 14:04:08 watership kernel: Status code 0; transferred 31/31
-May 28 14:04:08 watership kernel: -- transfer complete
-May 28 14:04:08 watership kernel: Bulk command transfer result=0
-May 28 14:04:08 watership kernel: xfer 8 bytes, 1 entries
-May 28 14:04:08 watership kernel: Status code 0; transferred 8/8
-May 28 14:04:08 watership kernel: -- transfer complete
-May 28 14:04:08 watership kernel: Bulk data transfer result 0x0
-May 28 14:04:08 watership kernel: Attempting to get CSW...
-May 28 14:04:08 watership kernel: xfer 13 bytes
-May 28 14:04:08 watership kernel: Status code 0; transferred 13/13
-May 28 14:04:08 watership kernel: -- transfer complete
-May 28 14:04:08 watership kernel: Bulk status result = 0
-May 28 14:04:08 watership kernel: Bulk Status S 0x53425355 T 0x226 R 0 Stat 0x0
-May 28 14:04:08 watership kernel: scsi cmd done, result=0x0
-May 28 14:04:08 watership kernel: *** thread sleeping
-
-And a third attempt at the READ, which hangs as before:
-
-May 28 14:04:08 watership kernel: *** thread awakened
-May 28 14:04:08 watership kernel: Command READ_10 (10 bytes)
-May 28 14:04:08 watership kernel: bytes: 28 00 00 3e 38 00 00 00 02 00
-May 28 14:04:08 watership kernel: Bulk Command S 0x43425355 T 0x227 L 4096 F 128 Trg 0 LUN 0 CL 10
-May 28 14:04:08 watership kernel: xfer 31 bytes
-May 28 14:04:08 watership kernel: Status code 0; transferred 31/31
-May 28 14:04:08 watership kernel: -- transfer complete
-May 28 14:04:08 watership kernel: Bulk command transfer result=0
-May 28 14:04:08 watership kernel: xfer 4096 bytes, 1 entries
-
-But this time, instead of aborting the command, the SCSI core calls the 
-device_reset routine.  This causes usb-storage to lock up; the reset 
-can't proceed while the READ command is still executing:
-
-May 28 14:04:38 watership kernel: device_reset called
-May 28 14:06:48 watership kernel: INFO: task scsi_eh_1:240 blocked for more than 122 seconds.
-May 28 14:06:48 watership kernel:       Not tainted 5.7.0-rc7local #4
-May 28 14:06:48 watership kernel: "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
-May 28 14:06:48 watership kernel: scsi_eh_1       D    0   240      2 0x80004000
-May 28 14:06:48 watership kernel: Call Trace:
-May 28 14:06:48 watership kernel:  __schedule+0x2a5/0x8c0
-May 28 14:06:48 watership kernel:  schedule+0x46/0xf0
-May 28 14:06:48 watership kernel:  schedule_preempt_disabled+0x14/0x20
-May 28 14:06:48 watership kernel:  __mutex_lock.constprop.0+0x180/0x510
-May 28 14:06:48 watership kernel:  device_reset+0x33/0x60 [usb_storage]
-May 28 14:06:48 watership kernel:  scsi_eh_ready_devs+0x5f4/0xa40 [scsi_mod]
-May 28 14:06:48 watership kernel:  ? _raw_spin_unlock_irqrestore+0x20/0x40
-May 28 14:06:48 watership kernel:  ? __pm_runtime_resume+0x49/0x60
-May 28 14:06:48 watership kernel:  scsi_error_handler+0x448/0x510 [scsi_mod]
-May 28 14:06:48 watership kernel:  ? scsi_eh_get_sense+0x1f0/0x1f0 [scsi_mod]
-May 28 14:06:48 watership kernel:  kthread+0x13e/0x160
-May 28 14:06:48 watership kernel:  ? __kthread_bind_mask+0x60/0x60
-May 28 14:06:48 watership kernel:  ret_from_fork+0x22/0x40
-May 28 14:06:48 watership kernel: INFO: task usb-storage:242 blocked for more than 122 seconds.
-May 28 14:06:48 watership kernel:       Not tainted 5.7.0-rc7local #4
-May 28 14:06:48 watership kernel: "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
-May 28 14:06:48 watership kernel: usb-storage     D    0   242      2 0x80004000
-May 28 14:06:48 watership kernel: Call Trace:
-May 28 14:06:48 watership kernel:  __schedule+0x2a5/0x8c0
-May 28 14:06:48 watership kernel:  schedule+0x46/0xf0
-May 28 14:06:48 watership kernel:  schedule_timeout+0x12d/0x170
-May 28 14:06:48 watership kernel:  wait_for_completion+0x9e/0x100
-May 28 14:06:48 watership kernel:  usb_sg_wait+0xc9/0x190
-May 28 14:06:48 watership kernel:  usb_stor_bulk_transfer_sglist.part.0.constprop.0+0x7f/0x100 [usb_storage]
-May 28 14:06:48 watership kernel:  ? fill_inquiry_response+0x10/0x10 [usb_storage]
-May 28 14:06:48 watership kernel:  usb_stor_Bulk_transport+0x1f9/0x5b0 [usb_storage]
-May 28 14:06:48 watership kernel:  ? fill_inquiry_response+0x10/0x10 [usb_storage]
-May 28 14:06:48 watership kernel:  usb_stor_invoke_transport+0x59/0x6c0 [usb_storage]
-May 28 14:06:48 watership kernel:  ? fill_inquiry_response+0x10/0x10 [usb_storage]
-May 28 14:06:48 watership kernel:  usb_stor_control_thread+0x17d/0x390 [usb_storage]
-May 28 14:06:48 watership kernel:  kthread+0x13e/0x160
-May 28 14:06:48 watership kernel:  ? __kthread_bind_mask+0x60/0x60
-May 28 14:06:48 watership kernel:  ret_from_fork+0x22/0x40
-
-So here's the question: Why doesn't the SCSI error handler abort the 
-ongoing command (like it did the first two times) before resetting the 
-device?
-
-Note: The kernel version is 5.7-rc7.
+If you're still worried about malicious hardware, the way to fix the 
+problem is not to change this one location.  Instead, you should modify 
+the driver so that us->iobuf is not stored in DMA memory.
 
 Alan Stern
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20200530010314.GA12419%40rowland.harvard.edu.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20200530155927.GC29298%40rowland.harvard.edu.
