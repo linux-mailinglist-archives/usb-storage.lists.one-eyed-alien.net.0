@@ -1,133 +1,121 @@
-Return-Path: <usb-storage+bncBDA7X7F2WUEBBFO47X3QKGQELCBEPRY@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBAABBC5UTD4AKGQESADY3SA@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-wr1-x448.google.com (mail-wr1-x448.google.com [IPv6:2a00:1450:4864:20::448])
-	by mail.lfdr.de (Postfix) with ESMTPS id 606CC213EB0
-	for <lists+usb-storage@lfdr.de>; Fri,  3 Jul 2020 19:42:46 +0200 (CEST)
-Received: by mail-wr1-x448.google.com with SMTP id j5sf32400768wro.6
-        for <lists+usb-storage@lfdr.de>; Fri, 03 Jul 2020 10:42:46 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1593798166; cv=pass;
+Received: from mail-qk1-x748.google.com (mail-qk1-x748.google.com [IPv6:2607:f8b0:4864:20::748])
+	by mail.lfdr.de (Postfix) with ESMTPS id E35D8219035
+	for <lists+usb-storage@lfdr.de>; Wed,  8 Jul 2020 21:10:04 +0200 (CEST)
+Received: by mail-qk1-x748.google.com with SMTP id 204sf31665049qki.20
+        for <lists+usb-storage@lfdr.de>; Wed, 08 Jul 2020 12:10:04 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1594235404; cv=pass;
         d=google.com; s=arc-20160816;
-        b=B9MNd8ubTADGwGuDgGl3Uww9Io3CR7Tg0M2ntej/ancESzmHfXJW7iJgI54NRdqQYB
-         DmL/SoXI4QukWomRufcg8UBXen8+CQVLGqLoJk4FZGtD5hKXUfWZzGLeGjNBp5jowdlP
-         qi2KIMmuxXEP9nKJql7Q0w+AZLTCdsIVdaJHVF36RlYG8XsfTTQ4jWvKugignGsBytkw
-         6dL86OA7iRsaJ4+E7U0/FgeH1x5MbDsSsUZdAyb7pJRGpUe/HJ5GGyS9JWQXwXNKsNVx
-         4+ffMeGP2N1HIFemNXqhkmrJkDatIa+OdhR6i59jfYEKoDVwl+ptNIS2fV+/zZju6HZ1
-         jkkg==
+        b=QDbLW54Kj0IjCnYUflNu5MoikxYuzh7ZGetOQqWaYrfOZDrPc19eouZyLPIGH5gp6Q
+         hiXscG31BXCU1qdrlH1WuhS/iL1ag4GaZYSpn5cz+c/IjnXWHlHnq8KrNx/Pb5kFIMLN
+         S9EdBeCwXHFYkrhVW4dqmdaFL244n8VkNyIiZzO9uFAoPHnVrmq8aEafAgFi47LMq/vl
+         LGZ4B6PdCCzlqWELNCMNFw0HII5w86SR/hQo85c3FjM0iUADlj5Si2cx0PRriMWAS+MT
+         urLqWYDizeJlNRqnQpVPViPCr6wlycHRd2Xc7gM2XhD9pWAk9GA4j1bDai8bHrCq/BVE
+         dnFw==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:content-transfer-encoding
-         :mime-version:references:in-reply-to:message-id:date:subject:cc:to
-         :from:sender:dkim-signature;
-        bh=C4VSvQTAY6jQwUtpeCyTnKzz7GRTof7Yphe8wuNe6o8=;
-        b=YRJo9pScvM3JNe9cNmJT5Vz0UpBRqf036GmZCDLMVqoHCUPZ6Je/9xbpk63yAruUfD
-         Y3s/L+KHexqlKU1Rr/MquPvD+1fDJinyR/IAEkA3CMlITEhcb1qo+XiYbdAsL3AAYV6U
-         m9pxiaiNu+OUMGXljC26eaUwGL+QxYPFav8RFcvH1PY2eNQThvd+3WmheGjvST5EAL0y
-         Mf+BhCVW4YCZj2gNBR9UyQyYXloNheoGjZRqlx7LSZEb+Zopg2ArtOOxmDWMeMnpOCEQ
-         1DJqshQyuwoAZPvUAGciqfITNUMh9y/t3XBK6bWbiwJQ3FZ9dk+PCuF5W+62H3+gmCNZ
-         LA3w==
+         :list-id:mailing-list:precedence:mime-version:message-id:date
+         :subject:cc:to:from:sender:dkim-signature;
+        bh=iXq3dKALmu+H9SzsZ5KR5SKt7PnZ5DuNhanBgL96yHg=;
+        b=rPN1h7i/ODsKamhrsIoG76lcu2y90RZUOkjPd9W81VD5P1RBWSMZjc/D3vpOLaDALJ
+         kYCRd9IeX0DuCsO6lRPzA57S6RG6fNnxfKbA9jxBu5I3G9WAelVpg2O+m0/3HksNaCP7
+         wn+WehXMRdNuaM6kKocmQCMgilLJ917i7tF/i44yioYGp4seXSR+oRjmL+yTXhRvqVPU
+         23hgp09IH//ov2h/yb+cjq7QxLSrkUfwGDpeht98L+UfLZgZ1nUon/rOxabYryH+g/K4
+         Mx10Cz+8+nYl6E2nT7bfq0tlwCHcRbPXyHNUogp2oz3p2vDWawy+PozL6dtZ731c4IvV
+         PaRw==
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@linaro.org header.s=google header.b=mWYGekfi;
-       spf=pass (google.com: domain of lee.jones@linaro.org designates 209.85.220.65 as permitted sender) smtp.mailfrom=lee.jones@linaro.org;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=linaro.org
+       spf=pass (google.com: best guess record for domain of grandmaster@al2klimov.de designates 2a01:4f8:c0c:1465::1 as permitted sender) smtp.mailfrom=grandmaster@al2klimov.de
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
-        h=sender:from:to:cc:subject:date:message-id:in-reply-to:references
-         :mime-version:content-transfer-encoding:x-original-sender
-         :x-original-authentication-results:precedence:mailing-list:list-id
-         :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
-        bh=C4VSvQTAY6jQwUtpeCyTnKzz7GRTof7Yphe8wuNe6o8=;
-        b=FpmmTCLhZ89geoRHnN7Y7p4jar0dZSkS8opKXroNyuBSW+zxALMlGO/SjCoSo69Vrf
-         WuRmOhwhSBG3WInNKZ6Sbgv0/SPP6sQFL48xNeiDssuSD+06UxzySfjRBRWsF/YzS/vV
-         wa69WS7hpagdu0DhmV6tcvLdizH/TAvXNBvNI=
+        h=sender:from:to:cc:subject:date:message-id:mime-version
+         :x-original-sender:x-original-authentication-results:precedence
+         :mailing-list:list-id:list-post:list-help:list-archive
+         :list-subscribe:list-unsubscribe;
+        bh=iXq3dKALmu+H9SzsZ5KR5SKt7PnZ5DuNhanBgL96yHg=;
+        b=eHniuqGhF/2T45HpZpVhs55ZUU/Yglf2w2eC5VGtEkJOK9/iEPV/3DfPd6O4bxG79s
+         tVn0sLhi2fEuZxQ+Ct8qx68tJNI3iJlsDoo4gP/0DrmTdbtX88mlSxkkemzI39HVjlQN
+         Gz74tiXFEsN92flaWsZxX8yN1fOV+H6N/RhXk=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
         h=sender:x-gm-message-state:from:to:cc:subject:date:message-id
-         :in-reply-to:references:mime-version:content-transfer-encoding
-         :x-original-sender:x-original-authentication-results:precedence
-         :mailing-list:list-id:x-spam-checked-in-group:list-post:list-help
-         :list-archive:list-subscribe:list-unsubscribe;
-        bh=C4VSvQTAY6jQwUtpeCyTnKzz7GRTof7Yphe8wuNe6o8=;
-        b=fkJ8w8c56VBjHv0vKPmtYRIAjH0G3MDTBwQNQXnpxeaWlcZu/CIK2wb0B2JEeYjD5x
-         CMBJ2BmyfduBDYHpzXsH4ZdHdm8VD7ia96pXDj/5DISD8sZS0Cq3bBakyE0JYf1iHsYx
-         Jyf70c87io2V4/MBvcEMwUVciqyfAnJXP9GbzKTreupmOPI0YPttEQceKRD1aqbL2dNw
-         wZZFKIcvV+mhUoWPPhVndX3p4Cj0z6u/kKIcRjmNbh8r3/83BaTZqHszLrUAIvNrTp/Y
-         b44+BK78FEnv+FRxdA7oLVf3x+W1VZRk+33Ev3n3028kfpLVGoKwoVYeEIJ6k8TxlNuq
-         /cHw==
+         :mime-version:x-original-sender:x-original-authentication-results
+         :precedence:mailing-list:list-id:list-post:list-help:list-archive
+         :list-subscribe:list-unsubscribe;
+        bh=iXq3dKALmu+H9SzsZ5KR5SKt7PnZ5DuNhanBgL96yHg=;
+        b=AxQ2yG/3yI5ZqNAix01JjP1ZwTUEJ8OTXAhqCNRZ+ztBuCWlIaYW5gULHHwSIJXI/T
+         DofGJFrEk2GM3PoHfIJC4Zl1YaBYyz8xEqX2NBv8lZ2Th8FtBeJ1YjscvCpXCK1//fPn
+         Tc9qlDGMzIbmbEk2v9c9Y9GNg3RTmHvz3+RlidapgNagLGMR5TsLT4LwpUGWvKm+c3Vg
+         B9Xfemsrt91hOjTFrvHFIIhHCiE9h35tMOuV0x5UYaLU8Fk/+A3xz6fgDppYMG6iv9lr
+         Qkw7rPUC6zv8mVwWi0+FcTnbFPDw9Nox2+9ZwFHqOaHCUFgIrLVukR33N3tYufx9MtUI
+         N2rQ==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: AOAM532K6nwWQsI9vjLygfq0hIYsaAU4dLFmOxcmy/p1pg7EjoommunI
-	WG9fSIY5bg8dQIu9AMB2yfiMmA==
-X-Google-Smtp-Source: ABdhPJxoDsG2pKDg1XZnMSDtFCGQ9gU50AzIsrPYpIZeT5AugkOAHBKZKGL5mH19K4hrVgSevL6WaQ==
-X-Received: by 2002:a1c:24c6:: with SMTP id k189mr39672268wmk.9.1593798166144;
-        Fri, 03 Jul 2020 10:42:46 -0700 (PDT)
+X-Gm-Message-State: AOAM531A1tNLo1bKCMv80xdMT991thFZGviIAh/GmVRnv+NRm7ha5kix
+	CMacPilJ48jG7jL14H+z5knCwQ==
+X-Google-Smtp-Source: ABdhPJxJmtjNcHSA10rQ0Sye/grRHPdilC/zV0qK7ImV+dgPqpeQwmaMPGHlTIoVb7LihlsntZNZKQ==
+X-Received: by 2002:a05:620a:4ca:: with SMTP id 10mr60249127qks.250.1594235403905;
+        Wed, 08 Jul 2020 12:10:03 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:adf:b1cf:: with SMTP id r15ls2096250wra.3.gmail; Fri, 03 Jul
- 2020 10:42:45 -0700 (PDT)
-X-Received: by 2002:adf:81c7:: with SMTP id 65mr36055396wra.47.1593798165314;
-        Fri, 03 Jul 2020 10:42:45 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1593798165; cv=none;
+Received: by 2002:a0c:df8a:: with SMTP id w10ls739950qvl.4.gmail; Wed, 08 Jul
+ 2020 12:10:03 -0700 (PDT)
+X-Received: by 2002:ad4:54e9:: with SMTP id k9mr55170242qvx.193.1594235403641;
+        Wed, 08 Jul 2020 12:10:03 -0700 (PDT)
+Received: by 2002:a37:4d4d:0:b029:e6:9584:d5fd with SMTP id a74-20020a374d4d0000b02900e69584d5fdmsqkb;
+        Wed, 8 Jul 2020 02:55:09 -0700 (PDT)
+X-Received: by 2002:a5d:4a4f:: with SMTP id v15mr55038009wrs.87.1594202108549;
+        Wed, 08 Jul 2020 02:55:08 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1594202108; cv=none;
         d=google.com; s=arc-20160816;
-        b=vZvQHZuJ+ScwJn1AWoXrFa/RtRYF304SLFlFx8FWq3DiZQfC53SPT/G+c7E8tqSZnU
-         pA/3r/RgoV0YnVJBkbAE7OROZeyW1loSeB4fTkQvy0vLBoXoQetrSIWzYqjsw/BbA5cu
-         UM3XqqAKohSKGAeWRzSxot8cbQOIUfiyJx2mIBqGMIDMEW8UH2xJz3/JLI3NyBlHC/qe
-         K+BTQRFMswOGLwurzfeKI6G7pjBG2f92KVXssWmu75ALMdLUbO8Vlz5dKq5gLxXTPnCz
-         wMrB8mD1UDJ8A0SacD7RW7JdGGnPdE7X86Kq+m1VvGDCygTA8h19XOY+L80Q2uZlHyM1
-         IPdQ==
+        b=VyAvQtIDThHTNg00tItOEQ3MyQy6ayGxCGntWqBu/3RZcn6oPUy2veTcuqFFT+Z76d
+         mGnjidc0P0IodwUt2wvL/80IBipNYhTqA5BNoM4KKEy7u9hYO6Kbi202k5f6LWbgVzWC
+         8HKvd1oCkMbGljH7HeW7WE4Sf5582ZnxIamaabBrDp5NOD+a+aFL08pw/WL5rmXZdkFw
+         /KOYBPgaO+DVLvlCqjsGoNf7qF03W4AyhJyH794OYxkYpd8c2nqsruOf5LI29vJgf7Y5
+         Gax3QNBXIPY8D0C1Dhxa+fvIP6lc4uHeJxSti/h+mEdYpr2NikIVPcU3/Pox8Zekr94e
+         UZ3Q==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:dkim-signature;
-        bh=BRma9lRqEYDVOCUnxuxL1ar6KYSuaKRVNlo6MvalKh8=;
-        b=VlKOlywkwArWy2vErKCTqXeA7Lr6lXdfkAODxYPJFbJJEdf8WzclsmlcDerBZ4wMgy
-         CEtBm4aS/81CtBlykXHsCMmMZgi74mIOc2DduWr+xNsHtDgnrvClmTQR2ShkiH+PH2nF
-         m7yizllNZtg86psHESFxTuuYK10Pd2G4UIn3hoKOJ+2TCni9TTi0he2mjnzGzg3cxNkn
-         dCTlHT86Hg+C31MaGbGg0QvmmU+soxVJ25v5Shh/3Hbx48oAZF7sQotkN85HgHCwS1TW
-         xwqghHkRgeHtHHayyw61AVQVjhnjU0iBEsxl8ynn+x4F8QfYAXaXrvF57+LgC3dQEzuB
-         xWXw==
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from;
+        bh=Wt9ov6DCwK1J5D2W2qxJHCRyroGMiUYG9/Elz4dVcHA=;
+        b=IZbZ5duB49hIkZnY6jYYj3U3BUX74kKhqbgF7tbjF4bkb9GbXIJwT0q4rz2MdIlEZa
+         OKDFrGnIgDWwSA8zsw0Gt/lcrs0h9zvPEYu6DsfWrWIrO3dN4OzmeX0GIMxpJRhhzedA
+         jT7m0MT7tDDl9XN/4Xb+rm56xoKvISENqSMP+GW9IkvMe/BUa1OqXtDLY/SG3CPqgSsZ
+         HkCzl048pDaKOdeA9xQRMLY4LRYUKE6MZ2PfSxbei8OSL9TYjGaSM4y+AAq/rfbw9e99
+         KFxLaRcsY/WwL9Fmaw9hoEHYNjA4J6SWhO4pLHkWqvi9+ThTGCtaozNMl51ikRiTRj2m
+         UGsA==
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@linaro.org header.s=google header.b=mWYGekfi;
-       spf=pass (google.com: domain of lee.jones@linaro.org designates 209.85.220.65 as permitted sender) smtp.mailfrom=lee.jones@linaro.org;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=linaro.org
-Received: from mail-sor-f65.google.com (mail-sor-f65.google.com. [209.85.220.65])
-        by mx.google.com with SMTPS id r18sor8337403wro.13.2020.07.03.10.42.45
+       spf=pass (google.com: best guess record for domain of grandmaster@al2klimov.de designates 2a01:4f8:c0c:1465::1 as permitted sender) smtp.mailfrom=grandmaster@al2klimov.de
+Received: from smtp.al2klimov.de (smtp.al2klimov.de. [2a01:4f8:c0c:1465::1])
+        by mx.google.com with ESMTPS id a201si4776176wmd.145.2020.07.08.02.55.08
         for <usb-storage@lists.one-eyed-alien.net>
-        (Google Transport Security);
-        Fri, 03 Jul 2020 10:42:45 -0700 (PDT)
-Received-SPF: pass (google.com: domain of lee.jones@linaro.org designates 209.85.220.65 as permitted sender) client-ip=209.85.220.65;
-X-Received: by 2002:a05:6000:d0:: with SMTP id q16mr4673145wrx.166.1593798165048;
-        Fri, 03 Jul 2020 10:42:45 -0700 (PDT)
-Received: from localhost.localdomain ([2.27.35.144])
-        by smtp.gmail.com with ESMTPSA id x11sm13625799wmc.26.2020.07.03.10.42.44
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 03 Jul 2020 10:42:44 -0700 (PDT)
-From: Lee Jones <lee.jones@linaro.org>
-To: gregkh@linuxfoundation.org,
-	linux-usb@vger.kernel.org
-Cc: linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Lee Jones <lee.jones@linaro.org>,
-	Alan Stern <stern@rowland.harvard.edu>,
-	Daniel Drake <dsd@gentoo.org>,
-	usb-storage@lists.one-eyed-alien.net
-Subject: [usb-storage] [PATCH 19/30] usb: storage: alauda: Remove set but
- unchecked variable
-Date: Fri,  3 Jul 2020 18:41:37 +0100
-Message-Id: <20200703174148.2749969-20-lee.jones@linaro.org>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20200703174148.2749969-1-lee.jones@linaro.org>
-References: <20200703174148.2749969-1-lee.jones@linaro.org>
+        Wed, 08 Jul 2020 02:55:08 -0700 (PDT)
+Received-SPF: pass (google.com: best guess record for domain of grandmaster@al2klimov.de designates 2a01:4f8:c0c:1465::1 as permitted sender) client-ip=2a01:4f8:c0c:1465::1;
+Received: from authenticated-user (PRIMARY_HOSTNAME [PUBLIC_IP])
+	by smtp.al2klimov.de (Postfix) with ESMTPA id B7D6DBC0C2;
+	Wed,  8 Jul 2020 09:55:06 +0000 (UTC)
+From: "Alexander A. Klimov" <grandmaster@al2klimov.de>
+To: stern@rowland.harvard.edu,
+	gregkh@linuxfoundation.org,
+	linux-usb@vger.kernel.org,
+	usb-storage@lists.one-eyed-alien.net,
+	linux-kernel@vger.kernel.org
+Cc: "Alexander A. Klimov" <grandmaster@al2klimov.de>
+Subject: [usb-storage] [PATCH] Replace HTTP links with HTTPS ones: USB MASS
+ STORAGE DRIVER
+Date: Wed,  8 Jul 2020 11:55:00 +0200
+Message-Id: <20200708095500.13694-1-grandmaster@al2klimov.de>
 MIME-Version: 1.0
+X-Spamd-Bar: +++++
+X-Spam-Level: *****
+X-Original-Sender: grandmaster@al2klimov.de
+X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
+ best guess record for domain of grandmaster@al2klimov.de designates
+ 2a01:4f8:c0c:1465::1 as permitted sender) smtp.mailfrom=grandmaster@al2klimov.de
 Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-X-Original-Sender: lee.jones@linaro.org
-X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@linaro.org header.s=google header.b=mWYGekfi;       spf=pass
- (google.com: domain of lee.jones@linaro.org designates 209.85.220.65 as
- permitted sender) smtp.mailfrom=lee.jones@linaro.org;       dmarc=pass
- (p=NONE sp=NONE dis=NONE) header.from=linaro.org
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
-X-Spam-Checked-In-Group: usb-storage@lists.one-eyed-alien.net
 X-Google-Group-Id: 960895140360
 List-Post: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/post>,
  <mailto:usb-storage@lists.one-eyed-alien.net>
@@ -139,51 +127,85 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-The return value of alauda_get_media_status() hasn't been checked
-since the driver's inception back in 2005.  If nothing have gone
-wrong/been detected until this point, it's probably safe to just
-remove the variable.
+Rationale:
+Reduces attack surface on kernel devs opening the links for MITM
+as HTTPS traffic is much harder to manipulate.
 
-Fixes the following W=3D1 kernel build warning(s):
+Deterministic algorithm:
+For each file:
+  If not .svg:
+    For each line:
+      If doesn't contain `\bxmlns\b`:
+        For each link, `\bhttp://[^# \t\r\n]*(?:\w|/)`:
+	  If neither `\bgnu\.org/license`, nor `\bmozilla\.org/MPL\b`:
+            If both the HTTP and HTTPS versions
+            return 200 OK and serve the same content:
+              Replace HTTP with HTTPS.
 
- drivers/usb/storage/alauda.c: In function =E2=80=98alauda_check_media=E2=
-=80=99:
- drivers/usb/storage/alauda.c:456:6: warning: variable =E2=80=98rc=E2=80=99=
- set but not used [-Wunused-but-set-variable]
- 456 | int rc;
- | ^~
-
-Cc: Alan Stern <stern@rowland.harvard.edu>
-Cc: Daniel Drake <dsd@gentoo.org>
-Cc: usb-storage@lists.one-eyed-alien.net
-Signed-off-by: Lee Jones <lee.jones@linaro.org>
+Signed-off-by: Alexander A. Klimov <grandmaster@al2klimov.de>
 ---
- drivers/usb/storage/alauda.c | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
+ Continuing my work started at 93431e0607e5.
+ See also: git log --oneline '--author=Alexander A. Klimov <grandmaster@al2klimov.de>' v5.7..master
+ (Actually letting a shell for loop submit all this stuff for me.)
 
-diff --git a/drivers/usb/storage/alauda.c b/drivers/usb/storage/alauda.c
-index ddab2cd3d2e75..20b857e97e60c 100644
---- a/drivers/usb/storage/alauda.c
-+++ b/drivers/usb/storage/alauda.c
-@@ -453,9 +453,8 @@ static int alauda_check_media(struct us_data *us)
- {
- 	struct alauda_info *info =3D (struct alauda_info *) us->extra;
- 	unsigned char status[2];
--	int rc;
-=20
--	rc =3D alauda_get_media_status(us, status);
-+	alauda_get_media_status(us, status);
-=20
- 	/* Check for no media or door open */
- 	if ((status[0] & 0x80) || ((status[0] & 0x1F) =3D=3D 0x10)
---=20
-2.25.1
+ If there are any URLs to be removed completely or at least not HTTPSified:
+ Just clearly say so and I'll *undo my change*.
+ See also: https://lkml.org/lkml/2020/6/27/64
 
---=20
-You received this message because you are subscribed to the Google Groups "=
-USB Mass Storage on Linux" group.
-To unsubscribe from this group and stop receiving emails from it, send an e=
-mail to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.=
-one-eyed-alien.net/d/msgid/usb-storage/20200703174148.2749969-20-lee.jones%=
-40linaro.org.
+ If there are any valid, but yet not changed URLs:
+ See: https://lkml.org/lkml/2020/6/26/837
+
+ If you apply the patch, please let me know.
+
+
+ drivers/usb/storage/Kconfig        | 2 +-
+ drivers/usb/storage/freecom.c      | 2 +-
+ drivers/usb/storage/unusual_devs.h | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/drivers/usb/storage/Kconfig b/drivers/usb/storage/Kconfig
+index 5335a7ff5d14..d17b60a644ef 100644
+--- a/drivers/usb/storage/Kconfig
++++ b/drivers/usb/storage/Kconfig
+@@ -57,7 +57,7 @@ config USB_STORAGE_FREECOM
+ 	tristate "Freecom USB/ATAPI Bridge support"
+ 	help
+ 	  Support for the Freecom USB to IDE/ATAPI adaptor.
+-	  Freecom has a web page at <http://www.freecom.de/>.
++	  Freecom has a web page at <https://www.freecom.de/>.
+ 
+ 	  If this driver is compiled as a module, it will be named ums-freecom.
+ 
+diff --git a/drivers/usb/storage/freecom.c b/drivers/usb/storage/freecom.c
+index 34e7eaff1174..3d5f7d0ff0f1 100644
+--- a/drivers/usb/storage/freecom.c
++++ b/drivers/usb/storage/freecom.c
+@@ -11,7 +11,7 @@
+  *
+  * This driver was developed with information provided in FREECOM's USB
+  * Programmers Reference Guide.  For further information contact Freecom
+- * (http://www.freecom.de/)
++ * (https://www.freecom.de/)
+  */
+ 
+ #include <linux/module.h>
+diff --git a/drivers/usb/storage/unusual_devs.h b/drivers/usb/storage/unusual_devs.h
+index b6a9a7451620..220ae2c356ee 100644
+--- a/drivers/usb/storage/unusual_devs.h
++++ b/drivers/usb/storage/unusual_devs.h
+@@ -44,7 +44,7 @@
+  * mode.  Existing userspace solutions are superior.
+  *
+  * New mode switching devices should instead be added to the database
+- * maintained at http://www.draisberghof.de/usb_modeswitch/
++ * maintained at https://www.draisberghof.de/usb_modeswitch/
+  */
+ 
+ #if !defined(CONFIG_USB_STORAGE_SDDR09) && \
+-- 
+2.27.0
+
+-- 
+You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
+To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20200708095500.13694-1-grandmaster%40al2klimov.de.
