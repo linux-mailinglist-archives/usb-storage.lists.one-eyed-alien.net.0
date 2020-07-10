@@ -1,140 +1,128 @@
-Return-Path: <usb-storage+bncBCCL7Q422UBBB2X3UH4AKGQEQ5COEBA@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBDD5ZFHSSQARBKEGUP4AKGQEREF3AJI@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-oo1-xc45.google.com (mail-oo1-xc45.google.com [IPv6:2607:f8b0:4864:20::c45])
-	by mail.lfdr.de (Postfix) with ESMTPS id 954C921B8DF
-	for <lists+usb-storage@lfdr.de>; Fri, 10 Jul 2020 16:40:43 +0200 (CEST)
-Received: by mail-oo1-xc45.google.com with SMTP id w2sf3886363ook.14
-        for <lists+usb-storage@lfdr.de>; Fri, 10 Jul 2020 07:40:43 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1594392042; cv=pass;
+Received: from mail-wr1-x445.google.com (mail-wr1-x445.google.com [IPv6:2a00:1450:4864:20::445])
+	by mail.lfdr.de (Postfix) with ESMTPS id 05FEA21BDB8
+	for <lists+usb-storage@lfdr.de>; Fri, 10 Jul 2020 21:36:09 +0200 (CEST)
+Received: by mail-wr1-x445.google.com with SMTP id b14sf7064096wrp.0
+        for <lists+usb-storage@lfdr.de>; Fri, 10 Jul 2020 12:36:08 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1594409768; cv=pass;
         d=google.com; s=arc-20160816;
-        b=vM9l+XPytqL+B75A/N7eugbmDLwZx9Q1Fcrq3xVMXCc/U8fxSYza3jXk8F68ZR7OFT
-         3HL6aWItGT09FuAPuIm5smuwB1jeCTiATmHU1qjT+OrCl3RyB/X51QfhItt+CqO7kcqS
-         rq01MpW9yJdVtF3vpjaI73WeQk7hg+DUpVZkT+NlL67Mvq5LaWtvdLayIpWx8/iYVtVa
-         KuJY21+F1bcGRSobqJ9fCsqGIMNzLlPeVD8jIZJZYuKLdH4GlbpfqBnPMKSR5cPPep+M
-         qeYnKebwdkICemCgaZQr8Qg9cmsLAoF28VoKnKldVjyBl+ByzCBJzWvpC+WGB+gt4m6E
-         zBUg==
+        b=ENPigPj5P6sv318JjkKinLsnLFpVc38TcUGlV8Qz1CfbFYupTNw48KBFHiadz30/G3
+         DpvD/wH8fNjpklvpOikT/eRE3MHZ+RVehf0hp25rnIs+J9boRBj/6BLQ2L1W8WyNpGUS
+         REGWovVtneTwZtydoNsSJi/SP8OErtx+fqKoNxUsdR9LzjkpIlj2iaa/1/kphe9DtLt5
+         A3WbE1xYrWkabmSw12LBQz7l3CZs8/yMpjUmnGtm1agEQ+h/6m1o8qKNTcePXOTl5TuB
+         gdqXLihZFZB6UkZ+XY6/XqrU+vB/nCuSLmkur0B0wirBuZVLvmXwK85KaBHmee5DTGHS
+         zvdQ==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:in-reply-to
-         :content-transfer-encoding:content-disposition:mime-version
-         :references:message-id:subject:cc:to:from:date:sender:dkim-signature;
-        bh=wo/Pr0ea+W+cO+bxE6hl4VLyj0zu2Ie9YJqKlxtFYjQ=;
-        b=tX1UwWLG9zkhfQ0pUYbOW/bmwh6PzMix8DXxCHQT3PId4EtVlxVDkF9njd5LuJewn/
-         203SnzZq/MYBJ4mUlOTTVZAxuFxFncfOPw3YMJg8blD9RPVJ+2dko61ku5RqBB2u3/Wk
-         9o/r/GL3jZUmlsmjfKlbFeHfOM+ztb0ns56Lv5BLHhiRbuAVA81IGg+UOFre3U2Qx5e1
-         pigkkrmMhxfO+TDvKp1u5/69CiWk8ZqWhh3NnJye7AzjhvmTkTTK3ehTs1HQvPJ0oPCL
-         Cl53th+LSvwaJitWcoKaKtM8ynOwu0Z5UrtIMcRuPg3SMlf7zyG/wWG89JkXTXOvATn5
-         wZXw==
+         :list-id:mailing-list:precedence:content-transfer-encoding
+         :content-language:in-reply-to:mime-version:date:message-id:from
+         :references:cc:to:subject:sender:dkim-signature;
+        bh=tMayklTvJo026AYTDJ3rBlHPRl9+5y0knUMIMwPx2Cs=;
+        b=q6xzd77i3TN8ypTuqDNv5J/yC9cS5jm3SeK+/wzl/3Ketn6WpTthOMigAThbb9eGfw
+         7IveQS+YgTGOAzk5q0QIL5TjsAsJDVGs9XOiTzvMtYUy19OBPpEr8dnLUkUXE7w+sMXm
+         4znz9mOyJ46DT82zU31IDBWrEasC89qZzibp73RjaP5woZ0Q+i717c6e2VVEE0fAzJ5R
+         nRIYuVbypDvupebwlUxNU4AjtMQPzdNx6rVXX3qNuAdabXPENIGfKgNxiwjMKXAjxHhy
+         dMB2jCzzOrbDUpNTEmCZgLt2/qzcl51g66kSUNhsgmSK20xKtgjKf0qhBfoxEk2zGKmP
+         8iXw==
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@gmail.com header.s=20161025 header.b=ejIuwuJ5;
-       spf=pass (google.com: domain of shorne@gmail.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=shorne@gmail.com;
-       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+       spf=pass (google.com: best guess record for domain of grandmaster@al2klimov.de designates 2a01:4f8:c0c:1465::1 as permitted sender) smtp.mailfrom=grandmaster@al2klimov.de
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
-        h=sender:date:from:to:cc:subject:message-id:references:mime-version
-         :content-disposition:content-transfer-encoding:in-reply-to
+        h=sender:subject:to:cc:references:from:message-id:date:mime-version
+         :in-reply-to:content-language:content-transfer-encoding
          :x-original-sender:x-original-authentication-results:precedence
          :mailing-list:list-id:list-post:list-help:list-archive
          :list-subscribe:list-unsubscribe;
-        bh=wo/Pr0ea+W+cO+bxE6hl4VLyj0zu2Ie9YJqKlxtFYjQ=;
-        b=At/drEw31qVOW0W5I+ghSAed7rVjnPGI3tge7oWibv/eEsaRvLTBx74+mZVXnjvclN
-         ffPhcaa3drAsjrFvfX3ng7vTNsrwQ1dH8ScKMKHTUDvU3CTIl7mw9TPIPpOB74Ya600o
-         npCKWN3F227e38fKdSnKdg/zw7oVckeFzatdo=
+        bh=tMayklTvJo026AYTDJ3rBlHPRl9+5y0knUMIMwPx2Cs=;
+        b=UDLoAvAl8m/duMU8yPAaxHrAEhFfJjk3vpdUW+QAI2uqUycYHIfhSsI1XTaw6BBC0W
+         eImzMOxI3VqMgrAZDQutlom7TKe0yAqT+UKxnkw5akR7dortZn3HlPmx4rmq8iBBJfG1
+         Gv7zLYnWr8JOjZtf9OvlfbQtosiC1aNPMf4ZQ=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
-        h=sender:x-gm-message-state:date:from:to:cc:subject:message-id
-         :references:mime-version:content-disposition
-         :content-transfer-encoding:in-reply-to:x-original-sender
+        h=sender:x-gm-message-state:subject:to:cc:references:from:message-id
+         :date:mime-version:in-reply-to:content-language
+         :content-transfer-encoding:x-original-sender
          :x-original-authentication-results:precedence:mailing-list:list-id
-         :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
-        bh=wo/Pr0ea+W+cO+bxE6hl4VLyj0zu2Ie9YJqKlxtFYjQ=;
-        b=IsyXV+GMKuyMxc/NvYHWLf2l8O303qU72Ui1IXdcE2rf6G/mEHswMIhLmQMspXq6W2
-         wTBotgU1VKDKzT2Oz2ltB0mZ2rvfJ8615Hqcmk07ZECkYzfBsanTH7sDVpKQcmjn0iDp
-         jwLVrTYDvfjx31vzX0FI9AEltfUETsCvolQHwL8MxSSltHIuNfp3JNf+3nJNQrMC/zjj
-         J2ORizEME7INfHX63Yv11pSgApjCmbBJ7QYqSzNIyBrj9soAK7EqYu7eentdQSsNMs0o
-         7mRGt1wV084scEVOE0nw79r9Un+09nEnHtsWX+sknTXbaCFLkVoU+rnr6kgRstMySsuu
-         7PtQ==
+         :x-spam-checked-in-group:list-post:list-help:list-archive
+         :list-subscribe:list-unsubscribe;
+        bh=tMayklTvJo026AYTDJ3rBlHPRl9+5y0knUMIMwPx2Cs=;
+        b=nr6GfeAFVnKtdLAK7SLoxIIkq10l94GUkYmN17YLhNRQadT288MEm8gpJFnsjoyPbx
+         5xZa5FXa4iRaU13Q71zauVDfIKWIXhw2V7BubOzHxPitUgb4tt8qx94Zh6gDDyLwyC6c
+         fG76/wyYftKpot3T9xTjP6wO92suzZzIa2WaQUi5SCl/7ASPwbm8dnfrluTMD5IObeXm
+         EyTCkBDkFuFF8shT6p7767m6a97bvJkwtpX12eoNf0foLU6l2ocyI7lWTRvC2o+mC22p
+         ay13/qx2sGsUIkrhQG73xqAcxbFCXF7v1AC7fkGJkmdPYIpwr0WCBqPF8Roy3XB2BgY1
+         Ngsg==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: AOAM533F+EwEbNcAH2XjztKLp6vE985qK/uVAQHGkZDXd2yZCBDytSu1
-	vjJNoMtvXmnMvikljuEnsTVohQ==
-X-Google-Smtp-Source: ABdhPJz1VMUzA7VPVtcHKhcztdeitKdxftxnOkBggnBmDr+C13SjJDp6NYqSmRRkzNauNKbz5JD+Mw==
-X-Received: by 2002:a05:6830:3094:: with SMTP id f20mr50306304ots.283.1594392042528;
-        Fri, 10 Jul 2020 07:40:42 -0700 (PDT)
+X-Gm-Message-State: AOAM531TgYi8RoIKOtWIMF0IAa6OQ3o5d+3mvVTKn1sWNzjRCvvQyDtt
+	xunsjX82JtCim4uIgigGX72XXA==
+X-Google-Smtp-Source: ABdhPJxnRZfBfxmOezH/yAVstFh+X5ogbrdD1k7QmYPcgef+hNv4l9Q2iI+XrdjYUiLGIQcYljClpQ==
+X-Received: by 2002:a5d:5341:: with SMTP id t1mr73447663wrv.207.1594409768713;
+        Fri, 10 Jul 2020 12:36:08 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a05:6830:3116:: with SMTP id b22ls2014292ots.6.gmail; Fri,
- 10 Jul 2020 07:40:42 -0700 (PDT)
-X-Received: by 2002:a9d:da7:: with SMTP id 36mr41235312ots.133.1594392042156;
-        Fri, 10 Jul 2020 07:40:42 -0700 (PDT)
-Received: by 2002:a05:6808:298:b029:c2:3b50:3c57 with SMTP id z24-20020a0568080298b02900c23b503c57msoic;
-        Fri, 10 Jul 2020 03:36:25 -0700 (PDT)
-X-Received: by 2002:a17:90a:de0c:: with SMTP id m12mr5074529pjv.228.1594377385303;
-        Fri, 10 Jul 2020 03:36:25 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1594377385; cv=none;
+Received: by 2002:adf:b1cf:: with SMTP id r15ls2066787wra.3.gmail; Fri, 10 Jul
+ 2020 12:36:08 -0700 (PDT)
+X-Received: by 2002:a5d:5084:: with SMTP id a4mr71495663wrt.191.1594409768083;
+        Fri, 10 Jul 2020 12:36:08 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1594409768; cv=none;
         d=google.com; s=arc-20160816;
-        b=EylfyCKhGMjix/GrSO4Z/mBtEAu/2izeqBEs2J5ZDfbsG6HbRmA86ceDiU7pm7zbTv
-         Mg0BueaUy6h3b12SDe5glS0r43FOcIgEZiPb8WpSrl1vy3Uj5niDsRakjg/uTzUSQwDC
-         svDzOyMLMRIJu4Ruj1PfAUJJJGOrR4w6dWrK8cwFRNEVrl7lxPrdB5LMFYsxxBTTCOrU
-         1ddHH4xJhFlBJJ0sa4ZZZKS1e4xyODKsmvj4WFqQk3WpgDTG+WnVOBQInnHJW0j7lxoO
-         OcVI3nNyBSWZYu72tJQgL5Luxu6roYKKEPjcb8ImA1u2FX5jQHvWFwd9rd/RR0lIQO92
-         wZTw==
+        b=WTJiBRLNxH99ksOblhHM7zAOBqpwoWe3DcJiM4PCbaEPJ2Z0q4OywozxKK8WywV93O
+         b/WkkTpn4JgnvBT3LBIO72cagZI9bzevZq4A51MQ0wUGCnVWfyTiWINn3QYLL08Qaugu
+         ub2rCzdOWSy5h1Od3EMItYhp1BFxHI4BfvHv2rCLRdz4sljq7E0pNC/u1lPoTSq9TTZB
+         0ySv3sVyz/14QKYJD0NyEBBTOOyio5M0tjxNpsbuyuOb2mZf4whEistn+tNpwJqsnWBh
+         s16Mmp7oZifvw1EJ/Zspjq3qFrrgPXJvaNlvqtwOEvKFD5/2x3hp5ul73CfBdfWdPOSu
+         vJgQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=in-reply-to:content-transfer-encoding:content-disposition
-         :mime-version:references:message-id:subject:cc:to:from:date
-         :dkim-signature;
-        bh=k6E7LH2Rsa+GnrRcP6ifXPuNeY+Ay8cfhxue4cHFp+Y=;
-        b=EJpip/VepofBHdp5ExCEkESyH89t15Zf1sNQ1iZcPw2qgl4lduKo6IVcY3lskXkT5X
-         3A/mkgMzVtKZmBqXCMGREVqLnnwlpFg0zX9dNRIEa7Z4qrRLjGVfWTuQvkXYGvgCtO1r
-         kA9denNNEqACjfrxHha5p3Xwgr8kE0ytLXHg/sH4Ref14hr/saLavgRlXth76mJl2cPA
-         qJ4QHe/cgHNLzdwZNlp1AeyKjN16EB63gG1ltHhfwKncLuKrrrxhqQhaOsuH3iB9wmGw
-         4Dz2j4BSHt11wWtactO/8h7inHLbOgOJpEB++rwKzK7bHKfXOhZmPWL+DMuvZuTrqlri
-         /d/A==
+        h=content-transfer-encoding:content-language:in-reply-to:mime-version
+         :date:message-id:from:references:cc:to:subject;
+        bh=vPDKMR4EWkz64TrSQrV5hPlf8hpxsgEAw5nlw/KZgkE=;
+        b=xcPfRImAsEW2gxkc6w9TpJjSSRdRfXXV+/iw4P6+sFkrcF7EYS/q2GWuCpdkwdNA1e
+         0/LOqFLzHz1+z74gbqcjrhMi71SMw/jcMAJcy2Ucs9eMAFz2U7AiH2Ikbo+GGxTmgAva
+         yWwYB4ZmDSkcufKBRPyCbg+b0KvqNjeFJjASnT9Gbh/73hzq+T300tU7bO5zkE0H2QTb
+         ocHGNck9jhpmg/3QHXqGjFveQXKP1sXVDQ9AYxGSA7VKMAcu9OrhY94jcZoiN46t1ncf
+         6nIwrLTrkKL+aGmdb+pWclIq48a6/hieJnYxY64H+yozaxiKlXnLQIX0y8fYVgpdfBge
+         kljg==
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@gmail.com header.s=20161025 header.b=ejIuwuJ5;
-       spf=pass (google.com: domain of shorne@gmail.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=shorne@gmail.com;
-       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
-Received: from mail-sor-f65.google.com (mail-sor-f65.google.com. [209.85.220.65])
-        by mx.google.com with SMTPS id o5sor6940445pgc.56.2020.07.10.03.36.25
+       spf=pass (google.com: best guess record for domain of grandmaster@al2klimov.de designates 2a01:4f8:c0c:1465::1 as permitted sender) smtp.mailfrom=grandmaster@al2klimov.de
+Received: from smtp.al2klimov.de (smtp.al2klimov.de. [2a01:4f8:c0c:1465::1])
+        by mx.google.com with ESMTPS id j12si5460447wmi.165.2020.07.10.12.36.08
         for <usb-storage@lists.one-eyed-alien.net>
-        (Google Transport Security);
-        Fri, 10 Jul 2020 03:36:25 -0700 (PDT)
-Received-SPF: pass (google.com: domain of shorne@gmail.com designates 209.85.220.65 as permitted sender) client-ip=209.85.220.65;
-X-Received: by 2002:a63:6ec2:: with SMTP id j185mr26610040pgc.176.1594377384965;
-        Fri, 10 Jul 2020 03:36:24 -0700 (PDT)
-Received: from localhost (g175.219-103-161.ppp.wakwak.ne.jp. [219.103.161.175])
-        by smtp.gmail.com with ESMTPSA id 66sm5486863pfg.63.2020.07.10.03.36.23
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 10 Jul 2020 03:36:24 -0700 (PDT)
-Date: Fri, 10 Jul 2020 19:36:21 +0900
-From: Stafford Horne <shorne@gmail.com>
-To: Greg KH <gregkh@linuxfoundation.org>
-Cc: "Alexander A. Klimov" <grandmaster@al2klimov.de>,
-	stern@rowland.harvard.edu, linux-usb@vger.kernel.org,
-	usb-storage@lists.one-eyed-alien.net, linux-kernel@vger.kernel.org,
-	Jonathan Corbet <corbet@lwn.net>,
-	David Miller <davem@davemloft.net>,
-	Linus Torvalds <torvalds@linux-foundation.org>
+        Fri, 10 Jul 2020 12:36:08 -0700 (PDT)
+Received-SPF: pass (google.com: best guess record for domain of grandmaster@al2klimov.de designates 2a01:4f8:c0c:1465::1 as permitted sender) client-ip=2a01:4f8:c0c:1465::1;
+Received: from authenticated-user (PRIMARY_HOSTNAME [PUBLIC_IP])
+	by smtp.al2klimov.de (Postfix) with ESMTPA id DE2C0BC116;
+	Fri, 10 Jul 2020 19:36:04 +0000 (UTC)
 Subject: [usb-storage] Re: [PATCH] Replace HTTP links with HTTPS ones: USB
  MASS STORAGE DRIVER
-Message-ID: <20200710103621.GA437393@lianli.shorne-pla.net>
+To: Stafford Horne <shorne@gmail.com>, Greg KH <gregkh@linuxfoundation.org>
+Cc: stern@rowland.harvard.edu, linux-usb@vger.kernel.org,
+ usb-storage@lists.one-eyed-alien.net, linux-kernel@vger.kernel.org,
+ Jonathan Corbet <corbet@lwn.net>, David Miller <davem@davemloft.net>,
+ Linus Torvalds <torvalds@linux-foundation.org>
 References: <20200708095500.13694-1-grandmaster@al2klimov.de>
  <20200708103928.GC585606@kroah.com>
  <6b78a3fd-04b9-fc8e-b5c6-f03372a4cd31@al2klimov.de>
  <20200709061409.GA130260@kroah.com>
+ <20200710103621.GA437393@lianli.shorne-pla.net>
+From: "Alexander A. Klimov" <grandmaster@al2klimov.de>
+Message-ID: <53342e1a-8430-2557-94c7-1da979a79e68@al2klimov.de>
+Date: Fri, 10 Jul 2020 21:36:03 +0200
 MIME-Version: 1.0
-Content-Type: text/plain; charset="UTF-8"
-Content-Disposition: inline
+In-Reply-To: <20200710103621.GA437393@lianli.shorne-pla.net>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
+Content-Language: en-US
 Content-Transfer-Encoding: quoted-printable
-In-Reply-To: <20200709061409.GA130260@kroah.com>
-X-Original-Sender: shorne@gmail.com
-X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@gmail.com header.s=20161025 header.b=ejIuwuJ5;       spf=pass
- (google.com: domain of shorne@gmail.com designates 209.85.220.65 as permitted
- sender) smtp.mailfrom=shorne@gmail.com;       dmarc=pass (p=NONE
- sp=QUARANTINE dis=NONE) header.from=gmail.com
+X-Spamd-Bar: /
+X-Original-Sender: grandmaster@al2klimov.de
+X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
+ best guess record for domain of grandmaster@al2klimov.de designates
+ 2a01:4f8:c0c:1465::1 as permitted sender) smtp.mailfrom=grandmaster@al2klimov.de
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
+X-Spam-Checked-In-Group: usb-storage@lists.one-eyed-alien.net
 X-Google-Group-Id: 960895140360
 List-Post: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/post>,
  <mailto:usb-storage@lists.one-eyed-alien.net>
@@ -146,73 +134,84 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On Thu, Jul 09, 2020 at 08:14:09AM +0200, Greg KH wrote:
-> On Wed, Jul 08, 2020 at 08:41:54PM +0200, Alexander A. Klimov wrote:
-> >=20
-> >=20
-> > Am 08.07.20 um 12:39 schrieb Greg KH:
-> > > On Wed, Jul 08, 2020 at 11:55:00AM +0200, Alexander A. Klimov wrote:
-> > > > Rationale:
-> > > > Reduces attack surface on kernel devs opening the links for MITM
-> > > > as HTTPS traffic is much harder to manipulate.
-> > > >=20
-> > > > Deterministic algorithm:
-> > > > For each file:
-> > > >    If not .svg:
-> > > >      For each line:
-> > > >        If doesn't contain `\bxmlns\b`:
-> > > >          For each link, `\bhttp://[^# \t\r\n]*(?:\w|/)`:
-> > > > 	  If neither `\bgnu\.org/license`, nor `\bmozilla\.org/MPL\b`:
-> > > >              If both the HTTP and HTTPS versions
-> > > >              return 200 OK and serve the same content:
-> > > >                Replace HTTP with HTTPS.
-> > > >
-> > > > Signed-off-by: Alexander A. Klimov <grandmaster@al2klimov.de>
-> > >=20
-> > > Your subject lines are very odd compared to all patches for this
-> > > subsystem, as well as all other kernel subsystems.  Any reason you ar=
-e
-> > > doing it this way and not the normal and standard method of:
-> > > 	USB: storage: replace http links with https
-> > >=20
-> > > That would look more uniform as well as not shout at anyone.
 
-I would agree.  The OpenRISC patch for this series says:
-  "OPENRISC ARCHITECTURE:..."
 
-Here it would just be "openrisc:..." I think fixing the whole series is nee=
-ded.
-Greg is not the only on complaining.
-
-Ideally, I think, it would be good to have this sent out as a series i.e [P=
-ATCH 3/55]
-rather than individual patches so this could be discussed as a whole.
-
--Stafford
-
-> > > thanks,
-> > >=20
-> > > greg k-h
-> > >=20
-> > Hi,
-> >=20
-> > I'm very sorry.
-> >=20
-> > As Torvalds has merged 93431e0607e5 and many of you devs (including big
-> > maintainers like David Miller) just applied this stuff, I assumed that'=
-s OK.
-> >=20
-> > And now I've rolled out tens of patches via shell loop... *sigh*
-> >=20
-> > As this is the third (I think) change request like this, I assume this =
-rule
-> > applies to all subsystems =E2=80=93 right?
+Am 10.07.20 um 12:36 schrieb Stafford Horne:
+> On Thu, Jul 09, 2020 at 08:14:09AM +0200, Greg KH wrote:
+>> On Wed, Jul 08, 2020 at 08:41:54PM +0200, Alexander A. Klimov wrote:
+>>>
+>>>
+>>> Am 08.07.20 um 12:39 schrieb Greg KH:
+>>>> On Wed, Jul 08, 2020 at 11:55:00AM +0200, Alexander A. Klimov wrote:
+>>>>> Rationale:
+>>>>> Reduces attack surface on kernel devs opening the links for MITM
+>>>>> as HTTPS traffic is much harder to manipulate.
+>>>>>
+>>>>> Deterministic algorithm:
+>>>>> For each file:
+>>>>>     If not .svg:
+>>>>>       For each line:
+>>>>>         If doesn't contain `\bxmlns\b`:
+>>>>>           For each link, `\bhttp://[^# \t\r\n]*(?:\w|/)`:
+>>>>> 	  If neither `\bgnu\.org/license`, nor `\bmozilla\.org/MPL\b`:
+>>>>>               If both the HTTP and HTTPS versions
+>>>>>               return 200 OK and serve the same content:
+>>>>>                 Replace HTTP with HTTPS.
+>>>>>
+>>>>> Signed-off-by: Alexander A. Klimov <grandmaster@al2klimov.de>
+>>>>
+>>>> Your subject lines are very odd compared to all patches for this
+>>>> subsystem, as well as all other kernel subsystems.  Any reason you are
+>>>> doing it this way and not the normal and standard method of:
+>>>> 	USB: storage: replace http links with https
+>>>>
+>>>> That would look more uniform as well as not shout at anyone.
 >=20
-> Yes, you should try to emulate what the subsystem does, look at other
-> patches for the same files, but the format I suggested is almost always
-> the correct one.  If not, I'm sure maintainers will be glad to tell you
-> otherwise :)
+> I would agree.  The OpenRISC patch for this series says:
+>    "OPENRISC ARCHITECTURE:..."
+>=20
+> Here it would just be "openrisc:..." I think fixing the whole series is n=
+eeded.
+> Greg is not the only on complaining.
+>=20
+> Ideally, I think, it would be good to have this sent out as a series i.e =
+[PATCH 3/55]
+> rather than individual patches so this could be discussed as a whole.
+1) To who? As right now? As right now plus Torvalds, KH, Miller, etc.?
+    As right now, but all-to-all?
+2) Apropos "series" and "as whole"... I stumbled over
+    `git log --oneline |grep -Fwe treewide`
+    and am wondering:
+    *Shouldn't all of these patches even begin with "treewide: "?*
+    E.g.: "treewide: Replace HTTP links with HTTPS ones: GCC PLUGINS"
 
+>=20
+> -Stafford
+>=20
+>>>> thanks,
+>>>>
+>>>> greg k-h
+>>>>
+>>> Hi,
+>>>
+>>> I'm very sorry.
+>>>
+>>> As Torvalds has merged 93431e0607e5 and many of you devs (including big
+>>> maintainers like David Miller) just applied this stuff, I assumed that'=
+s OK.
+>>>
+>>> And now I've rolled out tens of patches via shell loop... *sigh*
+>>>
+>>> As this is the third (I think) change request like this, I assume this =
+rule
+>>> applies to all subsystems =E2=80=93 right?
+>>
+>> Yes, you should try to emulate what the subsystem does, look at other
+>> patches for the same files, but the format I suggested is almost always
+>> the correct one.  If not, I'm sure maintainers will be glad to tell you
+>> otherwise :)
+>=20
+>=20
 
 --=20
 You received this message because you are subscribed to the Google Groups "=
@@ -220,5 +219,5 @@ USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an e=
 mail to usb-storage+unsubscribe@lists.one-eyed-alien.net.
 To view this discussion on the web visit https://groups.google.com/a/lists.=
-one-eyed-alien.net/d/msgid/usb-storage/20200710103621.GA437393%40lianli.sho=
-rne-pla.net.
+one-eyed-alien.net/d/msgid/usb-storage/53342e1a-8430-2557-94c7-1da979a79e68=
+%40al2klimov.de.
