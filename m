@@ -1,137 +1,114 @@
-Return-Path: <usb-storage+bncBC27X66SWQMBB75KZP4QKGQEJX7BZBQ@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBD6LRVPZ6YGRBJFWZP4QKGQELXQZJWQ@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-yb1-xb45.google.com (mail-yb1-xb45.google.com [IPv6:2607:f8b0:4864:20::b45])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5580C241F38
-	for <lists+usb-storage@lfdr.de>; Tue, 11 Aug 2020 19:29:37 +0200 (CEST)
-Received: by mail-yb1-xb45.google.com with SMTP id b127sf17495559ybh.21
-        for <lists+usb-storage@lfdr.de>; Tue, 11 Aug 2020 10:29:37 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1597166976; cv=pass;
+Received: from mail-io1-xd47.google.com (mail-io1-xd47.google.com [IPv6:2607:f8b0:4864:20::d47])
+	by mail.lfdr.de (Postfix) with ESMTPS id 37C8D241F6C
+	for <lists+usb-storage@lfdr.de>; Tue, 11 Aug 2020 19:53:42 +0200 (CEST)
+Received: by mail-io1-xd47.google.com with SMTP id q20sf10228642iod.23
+        for <lists+usb-storage@lfdr.de>; Tue, 11 Aug 2020 10:53:42 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1597168421; cv=pass;
         d=google.com; s=arc-20160816;
-        b=sbsKIevhk4QsjIA40C1jFckpdH5ANMVLecR0gpOwrsB+1HABx5VQaBhClll94PqPRU
-         unh/W6yVubx0qcwiBh5fMa3HTRTSRZ3/gos0M1D8deOx7dDZhO5wdu6j7RI0sKxnLo+F
-         NTy4T9AIeQwoLAAYSJpM//Zgdozsv8ntAyZ4K2W3mYJh196IsBj2NsAckYa6mqq9pP2T
-         hKMZz7Alc5yGbHA/rJRMxnuYQiff5gjD9UU2AghqKW05Uk5JhDuUdkRRh85thrXxcwTf
-         O29G576wrbJw7bMUQk6jeaRGvKU1FOElmv0bQaweshfS7fZ+cJfbR0jh1rIpffsrPxFw
-         wF2g==
+        b=nAtmYbPzU//rokWNlqpDnyVkCLlI4+1v3aQtaom0YZQqaFSsQ6Aq+jD02kOFBVduY+
+         28vASpQfE2iwbr44YetjKUTsCk2J5SHmNZ+WimO33qR1mgW1ce/29528C5bRUoMnRUVh
+         F+ulQh4GFeHxFwyJmQ1uJiDllw8ihaZH7khtQGzVUczyonDSGf39orm1wTDImO0te+G3
+         jwwHFZ3PFJU6AVFRUwSCtQqC4au4MttOtkUHPT5/+JbEnxloa4MD+RJKexbgHsssXxdg
+         CZYZ3xpbBtVsbRJFjsCGK4c3YBD22AZJrFss9FrAX1kNVHEFV7ApnO4oxxnsZstzuDWe
+         l31g==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:content-language:in-reply-to
-         :mime-version:user-agent:date:message-id:from:references:cc:to
-         :subject:sender:dkim-signature;
-        bh=63dtwVbbz3/ecawENmUx22UWCA62rSe75thq6mFggRA=;
-        b=aFDxzKss6yGv8NEui5HEO3+bU1ouAUGs+TE6jBqhv5Utj6AcGc7rAQ+TGn3FpagW6r
-         3QZ4FLEWwlqsu/gaD5DoR+e3pDiK6KWXpHFMTGw09mKFZbUTuV7JGwLV2g0D+QlmuwlV
-         E9vwJHCIoVB28N5OiHdiIcAbOEUkCOOeBSyXo5xO+E4AhObwm3cHMAVFKjvOrwVKbNnL
-         IppKKLLncGQE6C8LRy4nbi9BEv2o7XXeuxR5F3qzk+y1SZFwNiXyj5Fwa6iOb7m2IwpC
-         2lngMW0cbGtmB/tISR1JC0bqfx8D0n79vjlTswEgQvSKKoBWNovSizXFro3726sJVxnk
-         Fk+Q==
+         :list-id:mailing-list:precedence:user-agent:in-reply-to
+         :content-disposition:mime-version:references:message-id:subject:cc
+         :to:from:date:sender:dkim-signature;
+        bh=Z4Sx9EhDF0KQr/F/T8Cnmz4q/01Z5JEg+a0AzGRFM3c=;
+        b=C8JaiT7tojQdiPO+VwD4/8eDYZGXB563jnRfUK+QwfdU/5b21QBucyIRXwqSnO/7Ct
+         YUKkgv5kQAnkO3LquLjKLLawREgpy1u9RzMa832Yzk4ACG8AnA2BKwnDEq0NSWS3gV5j
+         hhhJYaofXp+6OnED0pZJzU+bKMz0FHyjcFYU2LzhFVav1y7uj+2h+6k+eMQaMPQheWEO
+         bobF2bPiRjSNVc3ezl4uJC1zv0MPvZLnIUf2FEtDlU6W6r0CuBqEUazRymo5Y02l4mbS
+         JDg7ef7eUQ9ylCrBh2nG2q3sMsBl7kTpIXBWujkCjVUw6LGz74spQIumCPczJRn9QeFD
+         sA+Q==
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@redhat.com header.s=mimecast20190719 header.b=EexQotk6;
-       spf=pass (google.com: domain of trix@redhat.com designates 63.128.21.124 as permitted sender) smtp.mailfrom=trix@redhat.com;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=redhat.com
+       spf=pass (google.com: domain of stern+5f3484ba@netrider.rowland.org designates 192.131.102.5 as permitted sender) smtp.mailfrom=stern+5f3484ba@netrider.rowland.org
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
-        h=sender:subject:to:cc:references:from:message-id:date:user-agent
-         :mime-version:in-reply-to:content-language:x-original-sender
+        h=sender:date:from:to:cc:subject:message-id:references:mime-version
+         :content-disposition:in-reply-to:user-agent:x-original-sender
          :x-original-authentication-results:precedence:mailing-list:list-id
          :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
-        bh=63dtwVbbz3/ecawENmUx22UWCA62rSe75thq6mFggRA=;
-        b=gUlrqxtsx+t9EQBrc9Jhlt79WN1JO1IR7aH8OoOiPqNJmOpPhhD5AhZAfYL3D4BHuG
-         xFRCvd1Ik4AfJaYX4Yzw1AdDuBMaaiP17FRRFkyFvUTAgLorMyU7fxR2YfdtlRFtJZm/
-         zQbb+I15bn0isZVHXPkQdJn9dRyFi7awFI6x0=
+        bh=Z4Sx9EhDF0KQr/F/T8Cnmz4q/01Z5JEg+a0AzGRFM3c=;
+        b=DiZlbu1rmF0jadJTno/2wEzWMbOEdg7milyEFNXGMukcm1820eGvlP92G8tp10z+ZS
+         7Dtrmt45jaqJg/bl705sf6DbElaUQlE4opLjPdeSc9bDPT3Q/nPVc3yBwQRW2nyR3vxH
+         vzaT3YYDTRVKApc1tVpIPMnOMGWSgg/FNYNkI=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
-        h=sender:x-gm-message-state:subject:to:cc:references:from:message-id
-         :date:user-agent:mime-version:in-reply-to:content-language
+        h=sender:x-gm-message-state:date:from:to:cc:subject:message-id
+         :references:mime-version:content-disposition:in-reply-to:user-agent
          :x-original-sender:x-original-authentication-results:precedence
          :mailing-list:list-id:x-spam-checked-in-group:list-post:list-help
          :list-archive:list-subscribe:list-unsubscribe;
-        bh=63dtwVbbz3/ecawENmUx22UWCA62rSe75thq6mFggRA=;
-        b=M8KPXt0Z+yBpjErgje4dbPJDLKKDofBaa1r5FhFYqNn2Dq28kRaZnNoifCQDYkBpr/
-         HCSfidV7Z8wX8pOeAh1Cs+ct3QM0aVc/YuWzmOO835wQO+0YaSvCkJjX6pL2qxlUFH1v
-         z71Kh6DF93X3ayz10eej32me5Cwo0x4X2bJicnF/kS1oOo3CEjNKv3dcl8WdlyEo7YI+
-         Y/pcrOpxqnqq9mBiHPMeMY96PkmyGEvCok6trt/5A0qmSpMtVjeDwLuDVe+SMBip+XhS
-         dmJFoZ4ks3StffkxMRcNOaY+VYwyxiO37MQkbdeVYeU87bJovFUAvBGdZHIOa7sC8+Jy
-         /DmQ==
+        bh=Z4Sx9EhDF0KQr/F/T8Cnmz4q/01Z5JEg+a0AzGRFM3c=;
+        b=l9yVagfy9lDRdarg4EXGGCeooVsKnkRBQSCSXiGnZH7u8GWSPPEmKYymXHMPrsj1dT
+         B7lWzvQbtlxtydM3Q8kbGlyyiXsJDG2euu8ttG4rfl9ggg71/Y8Y0juMSpLfMTM5S938
+         ubbFqDdLFlRxiHiEE22RYWkFdsjQRXxGhcB4Qu0OHF6BdAmNY6hzvyVS1Kfaw7yyhRBt
+         SRyngDUhUTD1FpY+cewVJAq5D2mcMm+RtbtiWoduuSQwb+GZg9up/wtKr6L4BxmON5Zr
+         LHlF87223mVmW9OaslZ5DmjOXWTBWQKxKSj/GF7hfEYVFtXzKZLKyuxK5jj79yhXe6sd
+         Zquw==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: AOAM531JOTh8lAqMPNCdDsx3i3PCpZogilLbsZlEgExRZoOiqWI+nHay
-	Ta8nAgaOQLfn2frIkf4F/DUH/Q==
-X-Google-Smtp-Source: ABdhPJxNWsSj72WFgyuAnB808znByz/MGpWstEJwLGBDgidXBpfHKPLv7ZCTZJIeg8xHT/osXpM7Tw==
-X-Received: by 2002:a25:5f0c:: with SMTP id t12mr49721277ybb.54.1597166976080;
-        Tue, 11 Aug 2020 10:29:36 -0700 (PDT)
+X-Gm-Message-State: AOAM532jVHCmcRAcXohfbo0jRj9ZpPLyBZD0BL2kPfLOiNNzrDe2W2yf
+	xIKvzOSgCq7zkzJyWGqhWPYCBw==
+X-Google-Smtp-Source: ABdhPJzC0bv8ucPxvaJb6owgG1zfb0KYVZ21NelOdZoVyKyzHiHKH9g8TUP/rgBuI0I8qSyA1EyX3A==
+X-Received: by 2002:a92:cf52:: with SMTP id c18mr24256433ilr.44.1597168421024;
+        Tue, 11 Aug 2020 10:53:41 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a25:d451:: with SMTP id m78ls8274713ybf.1.gmail; Tue, 11 Aug
- 2020 10:29:35 -0700 (PDT)
-X-Received: by 2002:a25:8890:: with SMTP id d16mr50593296ybl.349.1597166975547;
-        Tue, 11 Aug 2020 10:29:35 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1597166975; cv=none;
+Received: by 2002:a05:6e02:108:: with SMTP id t8ls5265084ilm.7.gmail; Tue, 11
+ Aug 2020 10:53:40 -0700 (PDT)
+X-Received: by 2002:a92:d250:: with SMTP id v16mr22903225ilg.32.1597168420411;
+        Tue, 11 Aug 2020 10:53:40 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1597168420; cv=none;
         d=google.com; s=arc-20160816;
-        b=CcB18q/lPiSSembyhbtDAU+Y3SeO0bb64Jjd2uMzMivyur2vJ9IY4XnQfgPbBmCub0
-         Q1pULsdZ/Ll6kub6r/qhghOLrpVb0oBe2iUJLIFGEG2IIeaacS02CXFvj/WW0PLyo930
-         91ZjIhjFoFpnzOi//71oXgU2QzGtY9Gu475haYQfIJcLRMNM+6CoJmSkoB2vy3aA1mur
-         1/FgH7lVioxyCairpBz6yKV7rcIu6YeKCHElGFAstv5teZJTEOdU+aYaksWXMCw7AVp5
-         41DSh3X9nK5FYAg4byxjRsoQmeA3RJ1BvuSQAVn6ECuM3NZvYn6h+UNktfYTw6t3LbeF
-         J7ng==
+        b=SSuBj3IPfI3Xja1b08PxXNK7kMNQUZBa3yd7Q5qIFYoOiQbKiYxp1M/kYVrsRXsVim
+         yurMySn9aU3g2VaswzyJAt0pMidOXICJkP6JVwaZR8DZXiKQDAvQHziWYoht5NXObFYX
+         oBMiG6Cy751QtNLVmDdBtX0vK/0gbNGkaHNz0uEnjPSGk1UGcoFtM8RMgTykORyQP2ID
+         2qHVO6LF0ChApcFZujbmsw2TaTOdfgacURg+USmNp78Aq0YxG0hyEaQAmbYxag05BJzN
+         Kac9y3ONkeq9SJGnOJDFFOojNgUmc2Dl08m+S50BC99yr9xSlF1e3f1ID4gNRtS35NR4
+         4uDA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=content-transfer-encoding:content-language:in-reply-to:mime-version
-         :user-agent:date:message-id:from:references:cc:to:subject
-         :dkim-signature;
-        bh=/kCCiP1A994GEPhfTMliHq1uK+Sv/vNDYIXMua8VMzw=;
-        b=UaYp90SAieIsa8jCD4Kw2CsCpkq+/pUMEN0tB6tdQl3c4VzYR+2KeOuik7TmZ3o7aQ
-         j8Gyzsu8TuCm/5xwD3Mm2q7327SfKHfUqp93wmcN4U5GRg27sRXVTr20mydFkcUcJSin
-         H/uSyj57bxoLfSzG2yaveJBmmV2qsu6nvspeJdmWz0RMf6nLcNsjzQVtQmcDek8rIidP
-         2hSPZer1LryAEqR51sIs5u1xgJynUg2kl0S5UjfRuWjRZh1Zs2jBG7zAssyPCGCTg//1
-         DTeVwPiWTZ9PmxSIq+iIy4NqqDt7xxE6OXymAwzBThOwZXoqTa+X+QtNm3kyxoizINmP
-         EPOw==
+        h=user-agent:in-reply-to:content-disposition:mime-version:references
+         :message-id:subject:cc:to:from:date;
+        bh=Zz6eKF0yNa/Fp8WzGJGCvqcSQy8LDn3DtaKmFniJjag=;
+        b=LurjK79gqR8rfEMGj4hFv0Oc+/MKs6UCXyvU7a6H73eGW0tHnw/Cb95CDuveLPmPkf
+         W3upRGsScgXm6HnMr2v7B0XSdiL5zmQHWhXVinPjruzYYNAsdYdE4z9CPFEESGpSwHcP
+         uW43oHZGi5tGG1oBsTNCTBMVmuHYVtAE14nYLVCTr6Mg+2utPozsOVgmQfog/8PZ/l4D
+         mjhVboeI3s5B44KY7jOQPDD3/NRJD5KaEu4u7rJul4Tn6ifYEDdejJu3bw7dLjGmZkJ8
+         xFE7Oc3yXDPkmMDXE71OlReRxgwXhXKnfxopWdcaZcu331pRxaLSE3MgHyRZdKudTQvx
+         q8Pw==
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@redhat.com header.s=mimecast20190719 header.b=EexQotk6;
-       spf=pass (google.com: domain of trix@redhat.com designates 63.128.21.124 as permitted sender) smtp.mailfrom=trix@redhat.com;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=redhat.com
-Received: from us-smtp-delivery-124.mimecast.com (us-smtp-delivery-124.mimecast.com. [63.128.21.124])
-        by mx.google.com with ESMTPS id t3si20246618ybt.290.2020.08.11.10.29.35
-        for <usb-storage@lists.one-eyed-alien.net>
-        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Tue, 11 Aug 2020 10:29:35 -0700 (PDT)
-Received-SPF: pass (google.com: domain of trix@redhat.com designates 63.128.21.124 as permitted sender) client-ip=63.128.21.124;
-Received: from mail-qt1-f198.google.com (mail-qt1-f198.google.com
- [209.85.160.198]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-402-SQioAJJjMgiwIcW5Zr3jIA-1; Tue, 11 Aug 2020 13:29:33 -0400
-X-MC-Unique: SQioAJJjMgiwIcW5Zr3jIA-1
-Received: by mail-qt1-f198.google.com with SMTP id g10so10309091qtr.19
-        for <usb-storage@lists.one-eyed-alien.net>; Tue, 11 Aug 2020 10:29:33 -0700 (PDT)
-X-Received: by 2002:ac8:6e87:: with SMTP id c7mr2347411qtv.62.1597166972853;
-        Tue, 11 Aug 2020 10:29:32 -0700 (PDT)
-X-Received: by 2002:ac8:6e87:: with SMTP id c7mr2347311qtv.62.1597166971642;
-        Tue, 11 Aug 2020 10:29:31 -0700 (PDT)
-Received: from trix.remote.csb (075-142-250-213.res.spectrum.com. [75.142.250.213])
-        by smtp.gmail.com with ESMTPSA id g55sm20376876qta.94.2020.08.11.10.29.30
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 11 Aug 2020 10:29:31 -0700 (PDT)
-Subject: [usb-storage] Re: [PATCH] USB: realtek_cr: fix return check for dma functions
-To: Alan Stern <stern@rowland.harvard.edu>
+       spf=pass (google.com: domain of stern+5f3484ba@netrider.rowland.org designates 192.131.102.5 as permitted sender) smtp.mailfrom=stern+5f3484ba@netrider.rowland.org
+Received: from netrider.rowland.org (netrider.rowland.org. [192.131.102.5])
+        by mx.google.com with SMTP id i10si18751702jaq.65.2020.08.11.10.53.40
+        for <usb-storage@lists.one-eyed-alien.net>;
+        Tue, 11 Aug 2020 10:53:40 -0700 (PDT)
+Received-SPF: pass (google.com: domain of stern+5f3484ba@netrider.rowland.org designates 192.131.102.5 as permitted sender) client-ip=192.131.102.5;
+Received: (qmail 341684 invoked by uid 1000); 11 Aug 2020 13:53:38 -0400
+Date: Tue, 11 Aug 2020 13:53:38 -0400
+From: Alan Stern <stern@rowland.harvard.edu>
+To: Tom Rix <trix@redhat.com>
 Cc: gregkh@linuxfoundation.org, acozzette@cs.hmc.edu,
- linux-usb@vger.kernel.org, usb-storage@lists.one-eyed-alien.net,
- linux-kernel@vger.kernel.org
+  linux-usb@vger.kernel.org, usb-storage@lists.one-eyed-alien.net,
+  linux-kernel@vger.kernel.org
+Subject: [usb-storage] Re: [PATCH] USB: realtek_cr: fix return check for dma functions
+Message-ID: <20200811175338.GB339805@rowland.harvard.edu>
 References: <20200811151505.12222-1-trix@redhat.com>
  <20200811160348.GD335280@rowland.harvard.edu>
-From: Tom Rix <trix@redhat.com>
-Message-ID: <1f7d5a64-f264-4fed-bf90-b64e2693652d@redhat.com>
-Date: Tue, 11 Aug 2020 10:29:29 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+ <1f7d5a64-f264-4fed-bf90-b64e2693652d@redhat.com>
 MIME-Version: 1.0
-In-Reply-To: <20200811160348.GD335280@rowland.harvard.edu>
-Content-Language: en-US
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
 Content-Type: text/plain; charset="UTF-8"
-X-Original-Sender: trix@redhat.com
-X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@redhat.com header.s=mimecast20190719 header.b=EexQotk6;
-       spf=pass (google.com: domain of trix@redhat.com designates
- 63.128.21.124 as permitted sender) smtp.mailfrom=trix@redhat.com;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=redhat.com
+Content-Disposition: inline
+In-Reply-To: <1f7d5a64-f264-4fed-bf90-b64e2693652d@redhat.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Original-Sender: stern@rowland.harvard.edu
+X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
+ domain of stern+5f3484ba@netrider.rowland.org designates 192.131.102.5 as
+ permitted sender) smtp.mailfrom=stern+5f3484ba@netrider.rowland.org
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -147,59 +124,66 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
+On Tue, Aug 11, 2020 at 10:29:29AM -0700, Tom Rix wrote:
+> 
+> On 8/11/20 9:03 AM, Alan Stern wrote:
+> > On Tue, Aug 11, 2020 at 08:15:05AM -0700, trix@redhat.com wrote:
+> >> From: Tom Rix <trix@redhat.com>
+> >>
+> >> clang static analysis reports this representative problem
+> >>
+> >> realtek_cr.c:639:3: warning: The left expression of the compound
+> >>   assignment is an uninitialized value. The computed value will
+> >>   also be garbage
+> >>     SET_BIT(value, 2);
+> >>     ^~~~~~~~~~~~~~~~~
+> >>
+> >> value is set by a successful call to rts51x_read_mem()
+> >>
+> >> 	retval = rts51x_read_mem(us, 0xFE77, &value, 1);
+> >> 	if (retval < 0)
+> >> 		return -EIO;
+> >>
+> >> A successful call to rts51x_read_mem returns 0, failure can
+> >> return positive and negative values.  This check is wrong
+> >> for a number of functions.  Fix the retval check.
+> >>
+> >> Fixes: 065e60964e29 ("ums_realtek: do not use stack memory for DMA")
+> >> Signed-off-by: Tom Rix <trix@redhat.com>
+> >> ---
+> >>  drivers/usb/storage/realtek_cr.c | 36 ++++++++++++++++----------------
+> >>  1 file changed, 18 insertions(+), 18 deletions(-)
+> >>
+> >> diff --git a/drivers/usb/storage/realtek_cr.c b/drivers/usb/storage/realtek_cr.c
+> >> index 3789698d9d3c..b983753e2368 100644
+> >> --- a/drivers/usb/storage/realtek_cr.c
+> >> +++ b/drivers/usb/storage/realtek_cr.c
+> >> @@ -481,16 +481,16 @@ static int enable_oscillator(struct us_data *us)
+> >>  	u8 value;
+> >>  
+> >>  	retval = rts51x_read_mem(us, 0xFE77, &value, 1);
+> >> -	if (retval < 0)
+> >> +	if (retval != STATUS_SUCCESS)
+> >>  		return -EIO;
+> > Instead of changing all these call sites, wouldn't it be a lot easier 
+> > just to change rts51x_read_mem() to make it always return a negative 
+> > value (such as -EIO) when there's an error?
+> >
+> > Alan Stern
+> 
+> I thought about that but there was already existing (retval != 
+> STATUS_SUCCESS) checks for these calls.
 
-On 8/11/20 9:03 AM, Alan Stern wrote:
-> On Tue, Aug 11, 2020 at 08:15:05AM -0700, trix@redhat.com wrote:
->> From: Tom Rix <trix@redhat.com>
->>
->> clang static analysis reports this representative problem
->>
->> realtek_cr.c:639:3: warning: The left expression of the compound
->>   assignment is an uninitialized value. The computed value will
->>   also be garbage
->>     SET_BIT(value, 2);
->>     ^~~~~~~~~~~~~~~~~
->>
->> value is set by a successful call to rts51x_read_mem()
->>
->> 	retval = rts51x_read_mem(us, 0xFE77, &value, 1);
->> 	if (retval < 0)
->> 		return -EIO;
->>
->> A successful call to rts51x_read_mem returns 0, failure can
->> return positive and negative values.  This check is wrong
->> for a number of functions.  Fix the retval check.
->>
->> Fixes: 065e60964e29 ("ums_realtek: do not use stack memory for DMA")
->> Signed-off-by: Tom Rix <trix@redhat.com>
->> ---
->>  drivers/usb/storage/realtek_cr.c | 36 ++++++++++++++++----------------
->>  1 file changed, 18 insertions(+), 18 deletions(-)
->>
->> diff --git a/drivers/usb/storage/realtek_cr.c b/drivers/usb/storage/realtek_cr.c
->> index 3789698d9d3c..b983753e2368 100644
->> --- a/drivers/usb/storage/realtek_cr.c
->> +++ b/drivers/usb/storage/realtek_cr.c
->> @@ -481,16 +481,16 @@ static int enable_oscillator(struct us_data *us)
->>  	u8 value;
->>  
->>  	retval = rts51x_read_mem(us, 0xFE77, &value, 1);
->> -	if (retval < 0)
->> +	if (retval != STATUS_SUCCESS)
->>  		return -EIO;
-> Instead of changing all these call sites, wouldn't it be a lot easier 
-> just to change rts51x_read_mem() to make it always return a negative 
-> value (such as -EIO) when there's an error?
->
-> Alan Stern
+The only values that routine currently returns are 
+USB_STOR_TRANSPORT_ERROR, -EIO, and 0.  None of the callers distinguish 
+between the first two values, so you can just change the first to the 
+second.
 
-I thought about that but there was already existing (retval != STATUS_SUCCESS) checks for these calls.
+Note that STATUS_SUCCESS is simply 0.
 
-Tom
-
->
+Alan Stern
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/1f7d5a64-f264-4fed-bf90-b64e2693652d%40redhat.com.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20200811175338.GB339805%40rowland.harvard.edu.
