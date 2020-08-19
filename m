@@ -1,124 +1,128 @@
-Return-Path: <usb-storage+bncBD6LRVPZ6YGRBWPJZP4QKGQE2W73HWI@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBAABB5OA6L4QKGQEATEXMVA@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-il1-x146.google.com (mail-il1-x146.google.com [IPv6:2607:f8b0:4864:20::146])
-	by mail.lfdr.de (Postfix) with ESMTPS id 29C5F24207F
-	for <lists+usb-storage@lfdr.de>; Tue, 11 Aug 2020 21:43:22 +0200 (CEST)
-Received: by mail-il1-x146.google.com with SMTP id g6sf62933iln.2
-        for <lists+usb-storage@lfdr.de>; Tue, 11 Aug 2020 12:43:22 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1597175001; cv=pass;
+Received: from mail-qv1-xf48.google.com (mail-qv1-xf48.google.com [IPv6:2607:f8b0:4864:20::f48])
+	by mail.lfdr.de (Postfix) with ESMTPS id 0F87024939D
+	for <lists+usb-storage@lfdr.de>; Wed, 19 Aug 2020 05:45:59 +0200 (CEST)
+Received: by mail-qv1-xf48.google.com with SMTP id c4sf14795415qvq.15
+        for <lists+usb-storage@lfdr.de>; Tue, 18 Aug 2020 20:45:59 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1597808758; cv=pass;
         d=google.com; s=arc-20160816;
-        b=FX50Js7uAI4UdSnLuXy4cptnQZIoYZekiN9BpBoO9iJ229f7AGH3uHTNGjcuTbvkG8
-         iVDrEp436efTelyGhqexUsGsPBUXXUnLknVlzrI3rHOcHgjChVsmneoCQ0ISnso8C//g
-         5o4rgMT1CWDRQ/MjKlu36fxrUuZIvbWezWDqgrcVeNXdhOGXN3igECKUR+EF2lQaNFxj
-         iJR6EjtUSgl2hdEgCsgKcr1iLJD3fGLcTG7khOMm6rCP3aZp4FrKKuPbnOU5DHPVSeBw
-         BWT5FNmfsGCCtdyHo9yVapUuazk/9BH+ULte0XtEedTov9DxdgotnI6z/KpnJuwRJm2z
-         di+g==
+        b=aMPS6Z1aYNByxxsBfhQKuRvPSre299ysP4azHweRkFR3QyMg2R5eB7sXB8MSjNCAtq
+         FtNlkC8lQkamzKKKdUfTD96gxdb2gHGHp6uWG4G6ZgEtr3F02n89pRy9hVXa0QJsG6kY
+         WIxOjf9M+Y+Ls2Ih58HJ9RbFgjOiYQQuA+FwHSaZ8xR75wmShDh0K4EGYDtERCEe8c7C
+         5HZJ30ZLBC3yPZV9miKY7ZZpaFoDvv6nw66iFB0QYDz8JJmgPOoi12NCD2Jvlq9srWPT
+         Rfq1yNZXx13b5h8lso7BJIW/BhV3h7S9er4iJDsQ98La7z8mSLoRfnh28s2RcXOuLyqG
+         ThNQ==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:user-agent:in-reply-to
-         :content-transfer-encoding:content-disposition:mime-version
-         :references:message-id:subject:cc:to:from:date:sender:dkim-signature;
-        bh=FuM2VCqPnsJtlSDcCxQtIEVMRBItscHjNZ/nPAr/ZVw=;
-        b=c7m4qGN7e3pW+wP2JB2+cy6qAnKHzNAFuzEjxYjgYEcVAm8Fkiwnh+aMlW2ilG6URB
-         chOzy0s+rvl6NZusTMH/menpl8q8AfVPurdx6NOy6Tbkrb61W8CUJknQhNohhd59liiw
-         BsEtPKBIGwbF2a/N7u5xMrCVNpcWpiXKOR92hK5W+ooT9jdzZge4f8Eg739rY6CXQg2y
-         muOpDDg1qNFuf5BZxKSO6BOGSsbmLWZbel4/F77OsQa7DuPAkMutKeWgmm6ScGosBxr3
-         4+ML6INk/1D6039c5hMgKNKh+CcbBvwJwmk1+H44X2u9Sg/wsEVcI7CiB66x8jICB8WE
-         5zdw==
+         :list-id:mailing-list:precedence:cc:to:subject:from:message-id:date
+         :mime-version:sender:dkim-signature;
+        bh=kNVelSIRGfI9lwCOOcj/iMR/HNOMu+FrCbacYZLOm1M=;
+        b=nOlRYaxohReDPz+i6b7M+KRnMf8T10Gw2B9P4hVgoHtA0TScc5hqo6iQk6hRo8cxIp
+         h0ZgiOEyKSYf9GY9zdwRM2JnlsJhYpVtw+suEnuPL+21IhGq4lywns/t1wih2ea9qeuR
+         xd81w12wfagJT+9zC7wNKXRyVaHWRQWA1xaBOmDS4/LQ+iDgSkf5fOhglajupQrmV+Dd
+         gSXM6DwVxCYoPfQJcP55eYkmYrbJrXAhxyuh8uVD/4LZiGsHfZjxi3ZumdzHmJgmakmp
+         VnIte9l++o1sjn4eAAcK7WxORNn1r6zSL8yOZKvoaBDn2BD044t+GcLNcfo4SGdt+uSE
+         WKFQ==
 ARC-Authentication-Results: i=2; mx.google.com;
-       spf=pass (google.com: domain of stern+5f3484ba@netrider.rowland.org designates 192.131.102.5 as permitted sender) smtp.mailfrom=stern+5f3484ba@netrider.rowland.org
+       dkim=pass header.i=@synopsys.com header.s=mail header.b=cW5l80mW;
+       spf=pass (google.com: domain of thinh.nguyen@synopsys.com designates 149.117.73.133 as permitted sender) smtp.mailfrom=Thinh.Nguyen@synopsys.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=synopsys.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
-        h=sender:date:from:to:cc:subject:message-id:references:mime-version
-         :content-disposition:content-transfer-encoding:in-reply-to
-         :user-agent:x-original-sender:x-original-authentication-results
-         :precedence:mailing-list:list-id:list-post:list-help:list-archive
+        h=sender:mime-version:date:message-id:from:subject:to:cc
+         :x-original-sender:x-original-authentication-results:precedence
+         :mailing-list:list-id:list-post:list-help:list-archive
          :list-subscribe:list-unsubscribe;
-        bh=FuM2VCqPnsJtlSDcCxQtIEVMRBItscHjNZ/nPAr/ZVw=;
-        b=RGYpeIsio1MF2BM0k+l0oG9URze4Wu1/MxvvM1hML+6U/hkB0HXgx6nXb/2V9yqLV/
-         Tljiax5wZGMUiJDb/mqPCFUCXhZ+DDxxiJRBPPceuiTh3zsYJsobFa5iK1j0vsxDi1QY
-         aXLwfxgQCLO/FKKa3H3ERaZZFx/QaBMCkmfKE=
+        bh=kNVelSIRGfI9lwCOOcj/iMR/HNOMu+FrCbacYZLOm1M=;
+        b=h+EL7wd0LC7U5ss5RYwArkmFby3wg1LI9SAZdyCx51v9Aoq2RAIx8VHtsjjYzdQNG8
+         C0O/Obrnqln+eaNvCFvKaUmLcPirHxonJzZrZZKYBcRRGJ9Si36z3FiHOt4f7F31OBg1
+         W+3n5dJ5jZjFvo02veQU5RUl7SaeAfGA6UcUg=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
-        h=sender:x-gm-message-state:date:from:to:cc:subject:message-id
-         :references:mime-version:content-disposition
-         :content-transfer-encoding:in-reply-to:user-agent:x-original-sender
-         :x-original-authentication-results:precedence:mailing-list:list-id
-         :x-spam-checked-in-group:list-post:list-help:list-archive
+        h=sender:x-gm-message-state:mime-version:date:message-id:from:subject
+         :to:cc:x-original-sender:x-original-authentication-results
+         :precedence:mailing-list:list-id:list-post:list-help:list-archive
          :list-subscribe:list-unsubscribe;
-        bh=FuM2VCqPnsJtlSDcCxQtIEVMRBItscHjNZ/nPAr/ZVw=;
-        b=NeBvyGxNQyg7oNboijwSfCqbzHCOVFj1nCO+wQwLfGigtPiJCG0DV5P+ekptgT+036
-         nTcK+136tmmnkA/S1uwTjK+H8rbkoGXshWoMcbeTd1m1YJv+R6rIv6SHm2xPnyQuj1+s
-         jw2hCV6m3+ORjET8lJ4nwAYUh69gVTSOi3RLu9gc+lsRZu3wPcZbDoTsKFyovLzcpAzI
-         1c4qz8+0McsB7wsHBZ5oGb1+Z7jg7labT5lyGxK6FdbRrfG2O9DUfgL+rIolIlraAm3K
-         TE9b/bVD+8sT0D5Tc1B5uilUiXP/4XB11zsaPShZPNvUgnOOglNhR1vJ6r3rPzxaDLNf
-         XKZA==
+        bh=kNVelSIRGfI9lwCOOcj/iMR/HNOMu+FrCbacYZLOm1M=;
+        b=KB1hHQyiRJZTx7hX7gHJoCnEgfPm5AHqzZ4FwWqXeL0mIj1U1Lvn1WIW0mOey0JpNu
+         mIkrmZW2QkxoxBhnaG63cAjkLBKzdGjcbUya/LYQwGZY+IacfZcu7LwIDtCQ5WBFz0TO
+         1u/waSWSaMjMqhrBqkZ66l3HHlhvcApggIdanY0g8EFCNQjXe4dwSoZtHbFzPYaH08j3
+         Zfc20kkpJbScKaovtIYA5RRuGTFqg2FkRgtAnz7fLECudRK+3RGHUCR6/VDX2Fxnu+3w
+         IXF7GOvyl5JB1ryOYKttagkxycdYlkRobroaeydOnkV6UUWpVDX3cMotsLugb6OS68Ea
+         qYDw==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: AOAM533I58/eaLpwHkby1DklC+ciSr+x5E2mJQS9GXPmL+Zh69Sg+f4s
-	VexCfAnDC/ZtomBtF82tzeNHsw==
-X-Google-Smtp-Source: ABdhPJzQuFblefuIyIInUr7oFC+M/IZkJLG9/j1v0Y7iSqRpKc/qjou062+5blgs1p7WTHJGEIkstw==
-X-Received: by 2002:a92:ad01:: with SMTP id w1mr25813856ilh.301.1597175001098;
-        Tue, 11 Aug 2020 12:43:21 -0700 (PDT)
-X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a5e:9b0b:: with SMTP id j11ls3675559iok.2.gmail; Tue, 11 Aug
- 2020 12:43:20 -0700 (PDT)
-X-Received: by 2002:a5d:9d11:: with SMTP id j17mr24747742ioj.140.1597175000700;
-        Tue, 11 Aug 2020 12:43:20 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1597175000; cv=none;
-        d=google.com; s=arc-20160816;
-        b=Dcu607LeoG5WFF/ZKHBZqcc8C1un4aAsPkLlsSXxHDVbX7xIG1O1hiZr/UaTY5zarw
-         bvsogwfXuZchMoRyImiHwm0v93dH+ZXHSxQZPVLz0RAFBfvmvloCb5N3yfIqPHWJQIoY
-         V+d/3S42aj6muVnRcOqvqDQnMRoRadJA35Tx3MobZ81FdwE/Dq/j7CLKea81tQ1Rl4h5
-         sJ1SE+8misVwY+vlbX+9QNnLhPUASJG4WivjMTMZtkLbTNTTch86qLsW90VHJL+PruJe
-         IJKJTCDlxWUkSPmLxnX128rrFD71f4NYhSk6UGUfsE9qEil0K6gNVckIOEhXHR0pTkYW
-         CgBg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=user-agent:in-reply-to:content-transfer-encoding
-         :content-disposition:mime-version:references:message-id:subject:cc
-         :to:from:date;
-        bh=QcT4droLiVrBm+iCY51P7DHwHTBeWX2sFLbbRd9QfEw=;
-        b=bCS+COoK36fl0GJMWTkFucdF4YSyV8Sq+ZHWISSv/M38LgJ1uF+eKsFtfcWtUwrK8A
-         lPe9QGBm8Le3RhmuxRwYerbakou2eWE2907MoXk4ITD9FzWK7vS2FM/gj7oTu3RsyWFg
-         Y7xrG8ID+MyRk0ijjFNs8axu6Pi8ppL7lkbnawsOKQc5i5A6toGmUmebsK6+ZPaJ8Wrd
-         ycdpPv1aHKYB8s7s07ZrEXFMLDCsaY3BB27suDeLnGvrG4CDP5jrzXpu+yDLflf9nK7t
-         uoT+lHUuk4JfbmgKtrqXIUeyslr6lzUvh3HrWnQ1b7I2nvNoB7J+phdw5wcglen7egPL
-         SW8w==
-ARC-Authentication-Results: i=1; mx.google.com;
-       spf=pass (google.com: domain of stern+5f3484ba@netrider.rowland.org designates 192.131.102.5 as permitted sender) smtp.mailfrom=stern+5f3484ba@netrider.rowland.org
-Received: from netrider.rowland.org (netrider.rowland.org. [192.131.102.5])
-        by mx.google.com with SMTP id g4si20426211ilh.77.2020.08.11.12.43.20
-        for <usb-storage@lists.one-eyed-alien.net>;
-        Tue, 11 Aug 2020 12:43:20 -0700 (PDT)
-Received-SPF: pass (google.com: domain of stern+5f3484ba@netrider.rowland.org designates 192.131.102.5 as permitted sender) client-ip=192.131.102.5;
-Received: (qmail 345373 invoked by uid 1000); 11 Aug 2020 15:43:19 -0400
-Date: Tue, 11 Aug 2020 15:43:19 -0400
-From: Alan Stern <stern@rowland.harvard.edu>
-To: Tom Rix <trix@redhat.com>
-Cc: gregkh@linuxfoundation.org, acozzette@cs.hmc.edu,
-  linux-usb@vger.kernel.org, usb-storage@lists.one-eyed-alien.net,
-  linux-kernel@vger.kernel.org
-Subject: [usb-storage] Re: [PATCH] USB: realtek_cr: fix return check for dma functions
-Message-ID: <20200811194319.GB344152@rowland.harvard.edu>
-References: <20200811151505.12222-1-trix@redhat.com>
- <20200811160348.GD335280@rowland.harvard.edu>
- <1f7d5a64-f264-4fed-bf90-b64e2693652d@redhat.com>
- <20200811175338.GB339805@rowland.harvard.edu>
- <c48fec19-fe2c-65c6-917b-8b8ba40e4c7e@redhat.com>
+X-Gm-Message-State: AOAM533ABTqksPtBBxWkQv3zlQCiWjbejImtmDcbTCNij9uyyBl/8Adm
+	dpmRFO1/KKdji4pkjZ6l8F/V1w==
+X-Google-Smtp-Source: ABdhPJzhz3VMhnEft8TxtX2pclWTKJMPub9hOcCbPeIs97yEWw5PI4mCLCqoOXPh3/9yxyHAZc6OLw==
+X-Received: by 2002:a0c:f507:: with SMTP id j7mr22364367qvm.82.1597808757981;
+        Tue, 18 Aug 2020 20:45:57 -0700 (PDT)
 MIME-Version: 1.0
+X-BeenThere: usb-storage@lists.one-eyed-alien.net
+Received: by 2002:a05:6214:334:: with SMTP id j20ls5611435qvu.5.gmail; Tue, 18
+ Aug 2020 20:45:57 -0700 (PDT)
+X-Received: by 2002:a0c:fbd1:: with SMTP id n17mr22353125qvp.4.1597808757592;
+        Tue, 18 Aug 2020 20:45:57 -0700 (PDT)
+Received: by 2002:a05:620a:4f6:b029:105:636a:708b with SMTP id b22-20020a05620a04f6b0290105636a708bmsqkh;
+        Tue, 18 Aug 2020 19:27:52 -0700 (PDT)
+X-Received: by 2002:a17:907:2712:: with SMTP id w18mr2096730ejk.473.1597804072418;
+        Tue, 18 Aug 2020 19:27:52 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1597804072; cv=none;
+        d=google.com; s=arc-20160816;
+        b=x/2i/md1OtxluK2Fe9RE4v9rdT9lUnfdesWe+w97hOQDDxmzEne8Nyj+VXXwdyf9fx
+         ylZU1Z+L1IGC+vQwxd1u2POG3VNzECKxNWu7eyNwUjECxP4J12WP3KKecFfhbQ5w1LR2
+         oTnthsjVxf+jU/Te7ANgRJEk4NG/gVmMi6d0B/gUJzJyYUZ93QqNQWlWW14ATvU1AEfK
+         B/Snrb6MXlzwttIxHjEAA0pBHAZPE9gXVG/aWH2KPnmXPPumfUP2fEK4v0n5RlZoF4F/
+         RhnUcaU6IlUZHQVtjdtrGbfulY2hfjDwCh4Z/GCQ5/NRoajbtSY26Cfb+lNFwlq8P6cp
+         a2vw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=cc:to:subject:from:message-id:date:dkim-signature;
+        bh=eV2fX4xvWLeyCLvq86gSHGM3r87tsf8yByQuzodx2NA=;
+        b=nEHOToTjfIaNnWxgKOv/+FOVCWNZybX7vseLXeyAN08nlR5wxuIWQVT4LxSLtX/IRJ
+         qE6q0kdJMSYa/n54IPW0wT9flIdeEW9YxmJo6XG57+vd6JkLrbtKVqtU/N/dGpTuCyTJ
+         hEHJYxG/1v/7d6wR9W+r0TrTnsQwpm4N29oluOZt3N80WMYR6jYsLFLPH0d2gkT8EQEK
+         9Zfaexs2iPcw3zxjQB+Omy7evfs2AQp4pogHlUAT7Z5/OWTisS7DWX6R+EAbvNzXGkQE
+         FnrizygtM4FBD/dLb+CfdbjrLSE/N2O6uszEvZL7DnAJ8cAW6FnQYlzD+snSEUmLzV9t
+         htcQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@synopsys.com header.s=mail header.b=cW5l80mW;
+       spf=pass (google.com: domain of thinh.nguyen@synopsys.com designates 149.117.73.133 as permitted sender) smtp.mailfrom=Thinh.Nguyen@synopsys.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=synopsys.com
+Received: from smtprelay-out1.synopsys.com (smtprelay-out1.synopsys.com. [149.117.73.133])
+        by mx.google.com with ESMTPS id b6si15694856eja.208.2020.08.18.19.27.52
+        for <usb-storage@lists.one-eyed-alien.net>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 18 Aug 2020 19:27:52 -0700 (PDT)
+Received-SPF: pass (google.com: domain of thinh.nguyen@synopsys.com designates 149.117.73.133 as permitted sender) client-ip=149.117.73.133;
+Received: from mailhost.synopsys.com (sv1-mailhost2.synopsys.com [10.205.2.132])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+	(No client certificate requested)
+	by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 0A7CC401AA;
+	Wed, 19 Aug 2020 02:27:49 +0000 (UTC)
+Received: from te-lab16 (nanobot.internal.synopsys.com [10.10.186.99])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+	(No client certificate requested)
+	by mailhost.synopsys.com (Postfix) with ESMTPSA id A9D26A006B;
+	Wed, 19 Aug 2020 02:27:47 +0000 (UTC)
+Received: by te-lab16 (sSMTP sendmail emulation); Tue, 18 Aug 2020 19:27:47 -0700
+Date: Tue, 18 Aug 2020 19:27:47 -0700
+Message-Id: <2b0585228b003eedcc82db84697b31477df152e0.1597803605.git.thinhn@synopsys.com>
+X-SNPS-Relay: synopsys.com
+From: Thinh Nguyen <Thinh.Nguyen@synopsys.com>
+Subject: [usb-storage] [PATCH] usb: uas: Add quirk for PNY Pro Elite
+To: Hans de Goede <hdegoede@redhat.com>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org, Alan Stern <stern@rowland.harvard.edu>, usb-storage@lists.one-eyed-alien.net
+Cc: Thinh Nguyen <Thinh.Nguyen@synopsys.com>, stable@vger.kernel.org
+X-Original-Sender: thinh.nguyen@synopsys.com
+X-Original-Authentication-Results: mx.google.com;       dkim=pass
+ header.i=@synopsys.com header.s=mail header.b=cW5l80mW;       spf=pass
+ (google.com: domain of thinh.nguyen@synopsys.com designates 149.117.73.133 as
+ permitted sender) smtp.mailfrom=Thinh.Nguyen@synopsys.com;       dmarc=pass
+ (p=NONE sp=NONE dis=NONE) header.from=synopsys.com
 Content-Type: text/plain; charset="UTF-8"
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-In-Reply-To: <c48fec19-fe2c-65c6-917b-8b8ba40e4c7e@redhat.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-Original-Sender: stern@rowland.harvard.edu
-X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
- domain of stern+5f3484ba@netrider.rowland.org designates 192.131.102.5 as
- permitted sender) smtp.mailfrom=stern+5f3484ba@netrider.rowland.org
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
-X-Spam-Checked-In-Group: usb-storage@lists.one-eyed-alien.net
 X-Google-Group-Id: 960895140360
 List-Post: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/post>,
  <mailto:usb-storage@lists.one-eyed-alien.net>
@@ -130,57 +134,41 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On Tue, Aug 11, 2020 at 11:54:28AM -0700, Tom Rix wrote:
->=20
-> On 8/11/20 10:53 AM, Alan Stern wrote:
+PNY Pro Elite USB 3.1 Gen 2 device (SSD) doesn't respond to ATA_12
+pass-through command (i.e. it just hangs). If it doesn't support this
+command, it should respond properly to the host. Let's just add a quirk
+to be able to move forward with other operations.
 
-> >>> Instead of changing all these call sites, wouldn't it be a lot easier=
-=20
-> >>> just to change rts51x_read_mem() to make it always return a negative=
-=20
-> >>> value (such as -EIO) when there's an error?
-> >>>
-> >>> Alan Stern
-> >> I thought about that but there was already existing (retval !=3D=20
-> >> STATUS_SUCCESS) checks for these calls.
-> > The only values that routine currently returns are=20
-> > USB_STOR_TRANSPORT_ERROR, -EIO, and 0.  None of the callers distinguish=
-=20
-> > between the first two values, so you can just change the first to the=
-=20
-> > second.
-> >
-> > Note that STATUS_SUCCESS is simply 0.
->=20
-> Yes, i noted all of these already. My change is consistent with the=20
-> existing correct checks.=C2=A0 consistency is important.=C2=A0 returning =
-a neg=20
-> value to reuse the exiting check should mean the STATUS_SUCCESS !=3D 0=20
-> checks are changed to neg check.
+Cc: stable@vger.kernel.org
+Signed-off-by: Thinh Nguyen <thinhn@synopsys.com>
+---
+ drivers/usb/storage/unusual_uas.h | 7 +++++++
+ 1 file changed, 7 insertions(+)
 
-Do you mean the "retval =3D=3D STATUS_SUCCESS" checks?  Those checks would=
-=20
-end up doing exactly the same thing as they do now, since=20
-USB_STOR_TRANSPORT_ERROR and -EIO are both different from 0.
+diff --git a/drivers/usb/storage/unusual_uas.h b/drivers/usb/storage/unusual_uas.h
+index 162b09d69f62..971f8a4354c8 100644
+--- a/drivers/usb/storage/unusual_uas.h
++++ b/drivers/usb/storage/unusual_uas.h
+@@ -80,6 +80,13 @@ UNUSUAL_DEV(0x152d, 0x0578, 0x0000, 0x9999,
+ 		USB_SC_DEVICE, USB_PR_DEVICE, NULL,
+ 		US_FL_BROKEN_FUA),
+ 
++/* Reported-by: Thinh Nguyen <thinhn@synopsys.com> */
++UNUSUAL_DEV(0x154b, 0xf00d, 0x0000, 0x9999,
++		"PNY",
++		"Pro Elite SSD",
++		USB_SC_DEVICE, USB_PR_DEVICE, NULL,
++		US_FL_NO_ATA_1X),
++
+ /* Reported-by: Hans de Goede <hdegoede@redhat.com> */
+ UNUSUAL_DEV(0x2109, 0x0711, 0x0000, 0x9999,
+ 		"VIA",
 
-Yes, it is true that consistency is important.  But correctness is more=20
-important than consistency.
+base-commit: d5643d2249b279077427b2c2b2ffae9b70c95b0b
+-- 
+2.28.0
 
->=C2=A0 i can do this larger change if=20
-> required.
-
-Let me put it this way: Suppose you changed the USB_STOR_TRANSPORT_ERROR=20
-in rts51x_read_mem() to -EIO, without changing anything else.  Wouldn't=20
-that fix the problem reported by the clang static analysis?  If not, why=20
-not?
-
-Alan Stern
-
---=20
-You received this message because you are subscribed to the Google Groups "=
-USB Mass Storage on Linux" group.
-To unsubscribe from this group and stop receiving emails from it, send an e=
-mail to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.=
-one-eyed-alien.net/d/msgid/usb-storage/20200811194319.GB344152%40rowland.ha=
-rvard.edu.
+-- 
+You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
+To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/2b0585228b003eedcc82db84697b31477df152e0.1597803605.git.thinhn%40synopsys.com.
