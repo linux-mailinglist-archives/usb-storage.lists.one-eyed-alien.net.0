@@ -1,135 +1,129 @@
-Return-Path: <usb-storage+bncBDRZXY4CYYORBBWRQT5AKGQE3H5GBGQ@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBC27X66SWQMBBOMXQ35AKGQEDP2VSOI@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-vs1-xe48.google.com (mail-vs1-xe48.google.com [IPv6:2607:f8b0:4864:20::e48])
-	by mail.lfdr.de (Postfix) with ESMTPS id B481324E7C9
-	for <lists+usb-storage@lfdr.de>; Sat, 22 Aug 2020 16:15:35 +0200 (CEST)
-Received: by mail-vs1-xe48.google.com with SMTP id m2sf1018838vsc.16
-        for <lists+usb-storage@lfdr.de>; Sat, 22 Aug 2020 07:15:35 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1598105734; cv=pass;
+Received: from mail-yb1-xb45.google.com (mail-yb1-xb45.google.com [IPv6:2607:f8b0:4864:20::b45])
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C23024E9F8
+	for <lists+usb-storage@lfdr.de>; Sat, 22 Aug 2020 23:18:51 +0200 (CEST)
+Received: by mail-yb1-xb45.google.com with SMTP id y9sf6262639ybp.8
+        for <lists+usb-storage@lfdr.de>; Sat, 22 Aug 2020 14:18:51 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1598131130; cv=pass;
         d=google.com; s=arc-20160816;
-        b=qKB05WNq6sRM+CPWAr/Hs1Nsxjx5U70rVWtlnU8PtDpLf9IYJ5fZwBE9zBkcSngDVH
-         DkLUKsnD89Lx+hsL9wUR8hTb8JrvI6PzGsoIaaTWYQcyNmLlhcs+kHNXyvHKlHbkw6h2
-         GgWPcJJeK3MR2o/z2w/SPNiXPrPZmd8IjbnJjYOchYuqlgXyyluyTuRHyxRTUCdzgWWy
-         lUr25VPBPZHEmLyNScd5SF5OH6lokkvuDVeNluwRClOuiYwczz7KvB29pZv0AH1t3n7f
-         e/btydtO9Ez/lWb1rtcGDI1/6tZxVQSC7nvYEN7b2DR9o4CEczcH80dhm6w6Mxs9gZEA
-         XIPw==
+        b=JPtxueAF7ViP1c74ul9StQgkbwL5w3uFNZHmaeOrfW4Fypg2jB+NiOTTLtbu+F6+o1
+         OQE0PNAypN2uYp9lOem8cDOagGkyVZrXpsYEtJhyyHsPv6Xs+TgkbPeAAA+rTq1/jDQE
+         rb3g1nphdjbBF57L7gcXcifKwMbzo0g9JnUZFJan9L3L33RsxGbHWjsv+RDepILG2Ul1
+         Hl5D9UQeaZA32MOZsaBuEn6asp8Csp0goVJ2vNfM0i3MVKUpvh7jWn1B15E5rpcVfHH4
+         FWYAULImmTfc0CP8EKm/KzS5JQRpingpNImRKiYyVQmd7KCljBCv2e4cGQ7r2a2AQEsU
+         Z9mA==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:content-language:in-reply-to
-         :mime-version:user-agent:date:message-id:from:references:cc:to
-         :subject:sender:dkim-signature;
-        bh=ombI70ZRbvOq3YE52uYQrebJcjGNbaJItLKnfyiwn+0=;
-        b=A7Cnj1MkDPRGXvFwxgZbZl8yFsR2IksVrAw7e/qHQrq3KzmUYIonWegjKcxE6HTefk
-         ftpYqrIIcyOAY8VsqcdHvPYpYpo5Zc+8uSDBWcjq8TCTH1LvGfA32TM+ZC80H75K6L24
-         dB3d+c216WNFf049+30RqCneuo2IOvKJKlWeDJN8Wq/arU0KnKRVWiHlUYJ9SF5T6G7K
-         EE7ia97thClofNakMN5Wmb5oys2OudlrfZm+UCwpeZdsftidreI0r6uT6zef1nS4elVv
-         GphTy6WLG//yqtFeHuGVsRXkoYvhpvfA8RmCI7p40phNIe3sQgP1w3xsFRVrCIzIFx9z
-         greg==
+         :list-id:mailing-list:precedence:message-id:date:subject:cc:to:from
+         :mime-version:sender:dkim-signature;
+        bh=MC1lJtOk39jxX4j94YXQajIInrplc8H2MnHWXr0AApk=;
+        b=Y3X0tPqt8jtjCsM6+O68rGDR1QD0FG6yFdEMSqwDnZsgNXhaTrLgskDTaELX+N4IAP
+         o+VyesZxih9MjdwfKdOLLB60t6yPlVJIn4cbIt2A1dWuOhq5svVMozRBwCuZmwDbHGTQ
+         xKJuICNyyzh5U6lyENgcxIIySk2cJixQmINgydFWu+IAyeayY29EbJJVNcRmRW/sRR7j
+         2BQJ5QMuW2BPn9NOe8FpCH01Ws+ldCT9NkhzkE3Ih1p5sTNAi85hVuDMI+n3woLgbL3n
+         GCN4EGDqH0NoRUXNwREAfQaVr0VvnzIpSMf/uNNAdeG6/C1NrlH8GwfEwCAZSJOi+7IP
+         hxlA==
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@redhat.com header.s=mimecast20190719 header.b=dDaz0+rE;
-       spf=pass (google.com: domain of hdegoede@redhat.com designates 63.128.21.124 as permitted sender) smtp.mailfrom=hdegoede@redhat.com;
+       dkim=pass header.i=@redhat.com header.s=mimecast20190719 header.b=cwmjgwcm;
+       spf=pass (google.com: domain of trix@redhat.com designates 63.128.21.124 as permitted sender) smtp.mailfrom=trix@redhat.com;
        dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=redhat.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
-        h=sender:subject:to:cc:references:from:message-id:date:user-agent
-         :mime-version:in-reply-to:content-language:x-original-sender
-         :x-original-authentication-results:precedence:mailing-list:list-id
-         :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
-        bh=ombI70ZRbvOq3YE52uYQrebJcjGNbaJItLKnfyiwn+0=;
-        b=idqXy+9XzvH/b0jkXenhyKzC6K07cwFdl/nKpBknAAmnrwz5lruxH+wWMV4wiJzUEI
-         +fLypQkEnyBtilgH1/ebINAJ8N3SetMHIHROLy8nrO3IjrdIjJxRbKaz76xgwsLdgM8C
-         Eq84KXjjKJNGnyFRJTyhn4Ii4jN4NyICVRbpE=
+        h=sender:mime-version:from:to:cc:subject:date:message-id
+         :x-original-sender:x-original-authentication-results:precedence
+         :mailing-list:list-id:list-post:list-help:list-archive
+         :list-subscribe:list-unsubscribe;
+        bh=MC1lJtOk39jxX4j94YXQajIInrplc8H2MnHWXr0AApk=;
+        b=fRcSZWjtqDubrfm9m5EF4ouTMMxZLWKo02JVoGGZRFTZlKDfjeQSNPlFr0ySbuGDeX
+         1UR4Tj4ng245bu8f7U9oZssPQmINyLEiAnOxYNFVjs5TCCtePgF3xppZezwmyc+ZiQxW
+         mbQqDG3qWo5ZHwkJza7H8Gt7gCkZpyLXq9g/c=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
-        h=sender:x-gm-message-state:subject:to:cc:references:from:message-id
-         :date:user-agent:mime-version:in-reply-to:content-language
-         :x-original-sender:x-original-authentication-results:precedence
-         :mailing-list:list-id:x-spam-checked-in-group:list-post:list-help
-         :list-archive:list-subscribe:list-unsubscribe;
-        bh=ombI70ZRbvOq3YE52uYQrebJcjGNbaJItLKnfyiwn+0=;
-        b=JRLj9TJKtFCIbmPSe9iQk85Z8tGBZQ05KHvA9Vo/R8x9+8zSR4inwo2lNAz0Xo361n
-         B2Y1fOJWqgMlQdOn4cLJQbygP/jycSTpSNCuglqN1NTxriwqTlzJO9UbW7J4RTYZQwMu
-         LHrttX2LRjNT/WVaq9CI3gH82iLxRgih0cuFRIHNm5x3EH2A67hHW0cqgJEDZZHcFFBT
-         fisBX+kw6g/4GHKhEhgjSsEaHaCIB9sTdlrjshRzTOwY+UFjav8xtFR3OrOW+46arjQa
-         KB2ZDzKswwJ92EHcfZywxzLNgqsS/DUl0K4QnbeBmC6PLbIQAB0mTX5m4F8AwrzbERNf
-         fuow==
+        h=sender:x-gm-message-state:mime-version:from:to:cc:subject:date
+         :message-id:x-original-sender:x-original-authentication-results
+         :precedence:mailing-list:list-id:x-spam-checked-in-group:list-post
+         :list-help:list-archive:list-subscribe:list-unsubscribe;
+        bh=MC1lJtOk39jxX4j94YXQajIInrplc8H2MnHWXr0AApk=;
+        b=YKSPuJEMkztV123a+bL2P0OJ+Lzr6XiYk+6Bxoctshp12NYNRsOrqqLbXZnjf30YE2
+         7ofuzpmr4/tei8Stecn3b3eV0ArnPR0XF2RBcgS/XBNqcBQNZDlTUlSzajm7WjLvNgB1
+         qHM3Whbc+2RZmpWPTywXC9Fhz9GmEwDTn90hYBW27wkz6h8uXaHRlrmhymaa16uO7t+X
+         NfaGMPa4qU0DeFArPRV+hA6TmwvFHks/Jqp4rM0PP6OTbT4+zAM+WB1D2BhGmJ9gi+3n
+         bzsplNS1YyMjBxQ1yabTbmrVStctzsCU79LLh7aY9u+TGgeZyPrrzNHu1IGWPvYavvlK
+         vhsg==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: AOAM531AOmXIksWmitSwkRnZIcpdf7Atgig8SiAAVPgLAMl07jgPZAFP
-	GotilRhj58xrm2wVQMPTbuXBOw==
-X-Google-Smtp-Source: ABdhPJx9bcWrMRjbjTnGAJod7nINdhFlYSWudf7THshENjL+U0z63RDhaqECwVHBd1fjsLqSlBiU1A==
-X-Received: by 2002:ac5:c7a2:: with SMTP id d2mr4484564vkn.93.1598105734587;
-        Sat, 22 Aug 2020 07:15:34 -0700 (PDT)
+X-Gm-Message-State: AOAM533wcB41tJj83x7V1G6n+JKee5HbfyJzaHT7P/i1pAtHl2RYXPwT
+	JeYgMQ99Ju1X0fS56mdknYRh9w==
+X-Google-Smtp-Source: ABdhPJxtyzRAaH7DdxuzDiE9RtRdpvBiUR5orh58bWIqWicgA4KRgF5pM17Bibt5y5+lrpCLCmtNsA==
+X-Received: by 2002:a25:e83:: with SMTP id 125mr12809075ybo.376.1598131130084;
+        Sat, 22 Aug 2020 14:18:50 -0700 (PDT)
+MIME-Version: 1.0
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:ab0:4ea6:: with SMTP id l38ls43612uah.1.gmail; Sat, 22 Aug
- 2020 07:15:34 -0700 (PDT)
-X-Received: by 2002:a9f:35d0:: with SMTP id u16mr4033497uad.113.1598105733904;
-        Sat, 22 Aug 2020 07:15:33 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1598105733; cv=none;
+Received: by 2002:a25:d0c9:: with SMTP id h192ls2226174ybg.3.gmail; Sat, 22
+ Aug 2020 14:18:49 -0700 (PDT)
+X-Received: by 2002:a25:af05:: with SMTP id a5mr11165242ybh.411.1598131129434;
+        Sat, 22 Aug 2020 14:18:49 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1598131129; cv=none;
         d=google.com; s=arc-20160816;
-        b=jLemDDtEBZ246Fj71GMxifLvuwGmhDOUU4FkQldkgp/QI28IuOU9zJlA0Ot5uyPuXy
-         epf7OTy7EbwCxTia+sKDs3UaMwYNdVOpJCn2pS1/n9ELwZzVMCkI133PJPsPx/lVNGYC
-         uO56SNdbdelsiurTeYo1GEuLxnk8ZhzdPekwa/NUbrm1omjSHiZINR4PohGzPywOuFr/
-         VqqGmD4sKMq9EhtO4lSXyfPzYwS4V40LOV/FnoqVgFk4eSptaCMRodJmqXiYEtG1Ij2Z
-         zs1dRQfYJ0DdexbIkx5vb6tN0xm7Bpl71aEgEixVP2X598L6L5EbqbSHxNe+IIhZdVio
-         zQFw==
+        b=gu+/RRqnS8JwL2D4ED23/hDllMbkNfEu6lWaNtcUNO7RbK9rZ58sMQDO19ihkCQGFo
+         Foo4LOBY0UZoDdYTSfaFnS0ixA2zg+aDTM/nhVT5WRLSaLeXCWyiynssxYG20ADTk+nd
+         xI2zRYJYZ6Y+5mgEaIqZtZa+t/VkHj88vQRkkybpuWIGfFQk2+of8VyqKaSa9fEPCwzB
+         IYTz5l9CAE1O6V6Goqdvy1q1MlozEIDCr9hNoY8i/4N1IfG2t4HFUgHV/CggljTe0ALd
+         tPv0oLpzOKmWa8b/Ay0DfOPKjGAM7bkZt71U2Hk/E7TqFrm/yRsifMGntkp0K/4mK8Fa
+         vyLw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=content-transfer-encoding:content-language:in-reply-to:mime-version
-         :user-agent:date:message-id:from:references:cc:to:subject
-         :dkim-signature;
-        bh=JV/kqhMMNVm2hgOeYtw9b34lpsa9RQ6l73NIRdxZMHk=;
-        b=DlBxPtcwc4A75yDLttc9x+F+kjKk07dYD+UdLzVINCEPEP0l/GIf0fVpmU3I3CuIhS
-         LVGkZR+eC7zSxXE+N0hLN1UZFDJ8LEgGHcAVKLY+Q9dS/a0Yuf8w74cQsG7ERQveex7E
-         6MIDP+Ds08BulnZPGWLSzuDJ1ykgkCgFX1E3r0CIkc7mEj8TmLuDkF0CCcPGlc2VvZKI
-         Usi5Md1vKDLljtgHfwva82ex3c8RAFd0TKo2uCcLhFzNmG8UgYsLA8ZY5rVqX28aiWIL
-         k+4WOfrbej9ZlHqv/zqLrwtSv7ZGu1ROQtNEWwui3o7owULwEY5FEBpxjxIyOG68kY5b
-         terg==
+        h=message-id:date:subject:cc:to:from:dkim-signature;
+        bh=xZbAofBMByOnbSpYAqNdbUjqwUWCsauk/KwtU8NifwA=;
+        b=RgcwWVO3NKFzz20xMtTGihKo6Vk+3HqPKinGQLeeMBdWGrLg96xvOL20E+cDDAMWhN
+         /ggCfC6yDx5l+B9b83BfAEhULjDDXY43BDlqPEskpeLBrfclakdtmgEny02q4xEmBqzS
+         o1bj0gyQfn70JSsHzbCxKfye+Xbfof/2y0XvtoZdlWh2Oeu1hYLs8MG8wLs5OjF1gBXu
+         285rsUvMM9JPRoKSwuMPlItwWuZ81RDb5XOgD9eSi7kZFtc5OwG5fTRhThgBwUFCvbMh
+         9g5PKhFyeZFPfY0RzNmlhTMhtFkXk1EQ5gTtL6zzr/j2wNwQa41F/DVLmLfoRGawyWa1
+         QZPQ==
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@redhat.com header.s=mimecast20190719 header.b=dDaz0+rE;
-       spf=pass (google.com: domain of hdegoede@redhat.com designates 63.128.21.124 as permitted sender) smtp.mailfrom=hdegoede@redhat.com;
+       dkim=pass header.i=@redhat.com header.s=mimecast20190719 header.b=cwmjgwcm;
+       spf=pass (google.com: domain of trix@redhat.com designates 63.128.21.124 as permitted sender) smtp.mailfrom=trix@redhat.com;
        dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=redhat.com
 Received: from us-smtp-delivery-124.mimecast.com (us-smtp-delivery-124.mimecast.com. [63.128.21.124])
-        by mx.google.com with ESMTPS id b28si121185uaj.24.2020.08.22.07.15.33
+        by mx.google.com with ESMTPS id c126si6304136yba.27.2020.08.22.14.18.49
         for <usb-storage@lists.one-eyed-alien.net>
         (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Sat, 22 Aug 2020 07:15:33 -0700 (PDT)
-Received-SPF: pass (google.com: domain of hdegoede@redhat.com designates 63.128.21.124 as permitted sender) client-ip=63.128.21.124;
-Received: from mail-ed1-f72.google.com (mail-ed1-f72.google.com
- [209.85.208.72]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-50-GFMHSDW_Pnq0TRy47zQ4Rw-1; Sat, 22 Aug 2020 10:15:31 -0400
-X-MC-Unique: GFMHSDW_Pnq0TRy47zQ4Rw-1
-Received: by mail-ed1-f72.google.com with SMTP id p7so1689595edm.5
-        for <usb-storage@lists.one-eyed-alien.net>; Sat, 22 Aug 2020 07:15:31 -0700 (PDT)
-X-Received: by 2002:aa7:ca44:: with SMTP id j4mr450932edt.222.1598105727297;
-        Sat, 22 Aug 2020 07:15:27 -0700 (PDT)
-X-Received: by 2002:aa7:ca44:: with SMTP id j4mr450916edt.222.1598105727092;
-        Sat, 22 Aug 2020 07:15:27 -0700 (PDT)
-Received: from x1.localdomain (2001-1c00-0c0c-fe00-d2ea-f29d-118b-24dc.cable.dynamic.v6.ziggo.nl. [2001:1c00:c0c:fe00:d2ea:f29d:118b:24dc])
-        by smtp.gmail.com with ESMTPSA id a11sm3312202ejt.107.2020.08.22.07.15.26
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sat, 22 Aug 2020 07:15:26 -0700 (PDT)
-Subject: [usb-storage] Re: [PATCH] usb: uas: Add quirk for PNY Pro Elite
-To: Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org,
- Alan Stern <stern@rowland.harvard.edu>, usb-storage@lists.one-eyed-alien.net
-Cc: stable@vger.kernel.org, Oliver Neukum <oneukum@suse.com>
-References: <2b0585228b003eedcc82db84697b31477df152e0.1597803605.git.thinhn@synopsys.com>
-From: Hans de Goede <hdegoede@redhat.com>
-Message-ID: <4a8bdf55-2111-af21-4b44-ed718d965ebc@redhat.com>
-Date: Sat, 22 Aug 2020 16:15:25 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.10.0
-MIME-Version: 1.0
-In-Reply-To: <2b0585228b003eedcc82db84697b31477df152e0.1597803605.git.thinhn@synopsys.com>
-Content-Language: en-US
-X-Mimecast-Spam-Score: 0.002
+        Sat, 22 Aug 2020 14:18:49 -0700 (PDT)
+Received-SPF: pass (google.com: domain of trix@redhat.com designates 63.128.21.124 as permitted sender) client-ip=63.128.21.124;
+Received: from mail-qv1-f71.google.com (mail-qv1-f71.google.com
+ [209.85.219.71]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-394-sDEuJHWvPYeQNxHrSjPT4w-1; Sat, 22 Aug 2020 17:18:47 -0400
+X-MC-Unique: sDEuJHWvPYeQNxHrSjPT4w-1
+Received: by mail-qv1-f71.google.com with SMTP id d9so3625269qvl.10
+        for <usb-storage@lists.one-eyed-alien.net>; Sat, 22 Aug 2020 14:18:47 -0700 (PDT)
+X-Received: by 2002:ae9:ef8d:: with SMTP id d135mr7890574qkg.477.1598131126775;
+        Sat, 22 Aug 2020 14:18:46 -0700 (PDT)
+X-Received: by 2002:ae9:ef8d:: with SMTP id d135mr7890563qkg.477.1598131126468;
+        Sat, 22 Aug 2020 14:18:46 -0700 (PDT)
+Received: from trix.remote.csb (075-142-250-213.res.spectrum.com. [75.142.250.213])
+        by smtp.gmail.com with ESMTPSA id x23sm5173752qkj.4.2020.08.22.14.18.45
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 22 Aug 2020 14:18:45 -0700 (PDT)
+From: trix@redhat.com
+To: stern@rowland.harvard.edu,
+	gregkh@linuxfoundation.org
+Cc: linux-usb@vger.kernel.org,
+	usb-storage@lists.one-eyed-alien.net,
+	linux-kernel@vger.kernel.org,
+	Tom Rix <trix@redhat.com>
+Subject: [usb-storage] [PATCH] usb: storage: initialize variable
+Date: Sat, 22 Aug 2020 14:18:39 -0700
+Message-Id: <20200822211839.5117-1-trix@redhat.com>
+X-Mailer: git-send-email 2.18.1
+X-Mimecast-Spam-Score: 0.001
 X-Mimecast-Originator: redhat.com
-Content-Type: text/plain; charset="UTF-8"; format=flowed
-X-Original-Sender: hdegoede@redhat.com
+Content-Type: text/plain; charset="UTF-8"
+X-Original-Sender: trix@redhat.com
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@redhat.com header.s=mimecast20190719 header.b=dDaz0+rE;
-       spf=pass (google.com: domain of hdegoede@redhat.com designates
- 63.128.21.124 as permitted sender) smtp.mailfrom=hdegoede@redhat.com;
+ header.i=@redhat.com header.s=mimecast20190719 header.b=cwmjgwcm;
+       spf=pass (google.com: domain of trix@redhat.com designates
+ 63.128.21.124 as permitted sender) smtp.mailfrom=trix@redhat.com;
        dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=redhat.com
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
@@ -146,53 +140,51 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-Hi,
+From: Tom Rix <trix@redhat.com>
 
-On 8/19/20 4:27 AM, Thinh Nguyen wrote:
-> PNY Pro Elite USB 3.1 Gen 2 device (SSD) doesn't respond to ATA_12
-> pass-through command (i.e. it just hangs). If it doesn't support this
-> command, it should respond properly to the host. Let's just add a quirk
-> to be able to move forward with other operations.
-> 
-> Cc: stable@vger.kernel.org
-> Signed-off-by: Thinh Nguyen <thinhn@synopsys.com>
+clang static analysis reports this representative problem
 
-Patch looks good to me:
+transport.c:495:15: warning: Assigned value is garbage or
+  undefined
+        length_left -= partial;
+                   ^  ~~~~~~~
+partial is set only when usb_stor_bulk_transfer_sglist()
+is successful.
 
-Reviewed-by: Hans de Goede <hdegoede@redhat.com>
+So initialize to partial to 0.
 
-Regards,
+Fixes: 1da177e4c3f4 ("Linux-2.6.12-rc2")
+Signed-off-by: Tom Rix <trix@redhat.com>
+---
+ drivers/usb/storage/transport.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-Hans
-
-
-> ---
->   drivers/usb/storage/unusual_uas.h | 7 +++++++
->   1 file changed, 7 insertions(+)
-> 
-> diff --git a/drivers/usb/storage/unusual_uas.h b/drivers/usb/storage/unusual_uas.h
-> index 162b09d69f62..971f8a4354c8 100644
-> --- a/drivers/usb/storage/unusual_uas.h
-> +++ b/drivers/usb/storage/unusual_uas.h
-> @@ -80,6 +80,13 @@ UNUSUAL_DEV(0x152d, 0x0578, 0x0000, 0x9999,
->   		USB_SC_DEVICE, USB_PR_DEVICE, NULL,
->   		US_FL_BROKEN_FUA),
->   
-> +/* Reported-by: Thinh Nguyen <thinhn@synopsys.com> */
-> +UNUSUAL_DEV(0x154b, 0xf00d, 0x0000, 0x9999,
-> +		"PNY",
-> +		"Pro Elite SSD",
-> +		USB_SC_DEVICE, USB_PR_DEVICE, NULL,
-> +		US_FL_NO_ATA_1X),
-> +
->   /* Reported-by: Hans de Goede <hdegoede@redhat.com> */
->   UNUSUAL_DEV(0x2109, 0x0711, 0x0000, 0x9999,
->   		"VIA",
-> 
-> base-commit: d5643d2249b279077427b2c2b2ffae9b70c95b0b
-> 
+diff --git a/drivers/usb/storage/transport.c b/drivers/usb/storage/transport.c
+index 238a8088e17f..ce920851b1f2 100644
+--- a/drivers/usb/storage/transport.c
++++ b/drivers/usb/storage/transport.c
+@@ -461,7 +461,7 @@ static int usb_stor_bulk_transfer_sglist(struct us_data *us, unsigned int pipe,
+ int usb_stor_bulk_srb(struct us_data* us, unsigned int pipe,
+ 		      struct scsi_cmnd* srb)
+ {
+-	unsigned int partial;
++	unsigned int partial = 0;
+ 	int result = usb_stor_bulk_transfer_sglist(us, pipe, scsi_sglist(srb),
+ 				      scsi_sg_count(srb), scsi_bufflen(srb),
+ 				      &partial);
+@@ -484,7 +484,7 @@ int usb_stor_bulk_transfer_sg(struct us_data* us, unsigned int pipe,
+ 		void *buf, unsigned int length_left, int use_sg, int *residual)
+ {
+ 	int result;
+-	unsigned int partial;
++	unsigned int partial = 0;
+ 
+ 	/* are we scatter-gathering? */
+ 	if (use_sg) {
+-- 
+2.18.1
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/4a8bdf55-2111-af21-4b44-ed718d965ebc%40redhat.com.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20200822211839.5117-1-trix%40redhat.com.
