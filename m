@@ -1,134 +1,119 @@
-Return-Path: <usb-storage+bncBC27X66SWQMBBTGZSD5AKGQE3WUE22I@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBAABBCHGSD5AKGQESS4IEHY@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-yb1-xb47.google.com (mail-yb1-xb47.google.com [IPv6:2607:f8b0:4864:20::b47])
-	by mail.lfdr.de (Postfix) with ESMTPS id A6EF6250A8A
-	for <lists+usb-storage@lfdr.de>; Mon, 24 Aug 2020 23:10:37 +0200 (CEST)
-Received: by mail-yb1-xb47.google.com with SMTP id w17sf12007494ybl.9
-        for <lists+usb-storage@lfdr.de>; Mon, 24 Aug 2020 14:10:37 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1598303436; cv=pass;
+Received: from mail-oo1-xc46.google.com (mail-oo1-xc46.google.com [IPv6:2607:f8b0:4864:20::c46])
+	by mail.lfdr.de (Postfix) with ESMTPS id DA68F250AF4
+	for <lists+usb-storage@lfdr.de>; Mon, 24 Aug 2020 23:37:13 +0200 (CEST)
+Received: by mail-oo1-xc46.google.com with SMTP id d20sf6064811ooh.2
+        for <lists+usb-storage@lfdr.de>; Mon, 24 Aug 2020 14:37:13 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1598305033; cv=pass;
         d=google.com; s=arc-20160816;
-        b=tzJTRJplkxMx2u4mqitImLXHPNNu0zhKPwVwtdaAo3fiSGO4WlxtgyedoI8ZpEcUXd
-         EXPMm+iGh8HU44EUGg5HVWVqfgCTsd/U+fwvSmS55qMsoBKIgjrJZtiwVb7lg2CMqztZ
-         FkqQU/f9fd1IfCK4L9kWzuRex0RRmHEctzSm5etw4Gp7W+8VDscurMVTai8anE3sed8K
-         kACvomTC4H35f/TSeSWg/sz1jzPRJFyunaBkGY6b6cImGGUlVE5NhSpXypYv1Xir2Zn9
-         AVCEgZJWD+TdLFGsq/8ZsL3hg+5PveYNWjB8dC+BJv4e82uIE0q+ayxej+QSs27aR9Ep
-         1PTg==
+        b=UQYvYPSwiYH8WnCWoJuK0Ee/2dlIw7uNnqFaSby7IpuC4oC+8QA3HHVTyiPoA3VJP8
+         XbeA500WXqO9tGbVyNM7Ao4YBHgpE11x49M1wp4+6nArgUk4LRh3jeN5w2M4im6VSpGG
+         qBPTlhWu15r0r2Fduj0WqINC+1I+Sy3OeGNo0rwcHIMyEt83Sfwo7MdEQg4TWPC2lYA5
+         fZIFxN9J6CXt9F2eaiiVvIljT3IVx1/NynS1p4qaixABoFyQEFA1SnrrQAabSptTTApT
+         DBNDNRpen6qRsPJunI8Gv+bu7Vcoo6DJ9R3Q1mli7Zx+kRroFs+Pqt52eOgWzIFHCbxk
+         HQ7g==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:message-id:date:subject:cc:to:from
-         :mime-version:sender:dkim-signature;
-        bh=3pwa5qQY/7+VoLymksjqYbWz+WUPAAUwMUoylrMH6G4=;
-        b=FEDZ2iOM+MwDOaxaz1ToNqZbArNLd0NYOlnOMG+QpPHIEAm2GN+4waHMtGeUbJLupp
-         Vb47QTGA+scNoZw6ULyMmiMfY68Q5caGTgh1sc3+NJDwjcgnjUL49hh0qc6AuQnzwsmV
-         wQmImjJ6dmAk2gKv0hXUk4mfJRoYINxFFMKx/Bfrs8K5W9odYH5XMSJvH1Ipw9xPuz6s
-         ANFzvVQSZI8uK3hWbfAnHtRxhYtFri2JHpAOmKV4uX2wYPXk45gutfJZYEPyI39F5XJl
-         v8dknUqpB71r6D+0aI89Y3UCcwQ/lKSO0AXoBc51jbBhCWxPFvd1EKhYVKgRABJaTcgV
-         zxVA==
+         :list-id:mailing-list:precedence:in-reply-to:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date:sender
+         :dkim-signature;
+        bh=S7YmBwUy/dJSeqL3Wyx4lzIXYLbFVPaDgp6iGLksD3A=;
+        b=Ku47iQNZS1fJYl9LC8P6pQgC2HyzMCfJnr9bBQdEgnnlHZeH6rChXQFLJEAUCDWNCu
+         DTSnYMJ26sSOuyTuFte3uzOwZtl6aTB5GVqCHMCcsQjtcyvZi9jTgdyy9zhyE66/hIIB
+         dtkTldxeyweraCHhY4YVs/5U5jakjDJBtroDI16hES8986HPwyGG/0fBiteA/ekrSCTQ
+         72cz6nGAc8DCjS1Aqpim52Wz3wVGic5hHTV59bm+vRn/v5T78N0HdQJUvhOfNvyjuqPr
+         YF/kWlKVEoQtutFAP4NZbM8eOXNWyiqHnB35sRIinm2poeq74lZOEw6HeGfWPWrT1bra
+         q3Mg==
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@redhat.com header.s=mimecast20190719 header.b="JcsilZK/";
-       spf=pass (google.com: domain of trix@redhat.com designates 205.139.110.120 as permitted sender) smtp.mailfrom=trix@redhat.com;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=redhat.com
+       spf=pass (google.com: domain of swivel@shells.gnugeneration.com designates 66.240.222.126 as permitted sender) smtp.mailfrom=swivel@shells.gnugeneration.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
-        h=sender:mime-version:from:to:cc:subject:date:message-id
+        h=sender:date:from:to:cc:subject:message-id:references:mime-version
+         :content-disposition:in-reply-to:x-original-sender
+         :x-original-authentication-results:precedence:mailing-list:list-id
+         :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
+        bh=S7YmBwUy/dJSeqL3Wyx4lzIXYLbFVPaDgp6iGLksD3A=;
+        b=VG+NnS5V5sTNa9DVgOZ9riqyPgy1AkfQ2pNriiJsJzmuvsXO0zLQBrpTnlRGZWyerS
+         Lmw7DRRlK2yCkqoAxvlkwWE4RQUr8ZEYNZ37NtfqXlpGW6YyLNtYwSkRmhLjgD8DRgvl
+         axB+TAQSZobwexfTP0OJAW8R9BNDqyt4x0gZo=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=sender:x-gm-message-state:date:from:to:cc:subject:message-id
+         :references:mime-version:content-disposition:in-reply-to
          :x-original-sender:x-original-authentication-results:precedence
          :mailing-list:list-id:list-post:list-help:list-archive
          :list-subscribe:list-unsubscribe;
-        bh=3pwa5qQY/7+VoLymksjqYbWz+WUPAAUwMUoylrMH6G4=;
-        b=KU1oR0C3VkPq4RCW8WlhpHk2c2guaxWDGyO4boCScy1NFrqIazRlXRvJjlhIQvqTxw
-         xIn35Y7UmUWJULX3tkRmgu1iHs9MoLrMnX95ICRAM0ICgDK/rPJ5KBhgB6TFYLoxjklt
-         dt/p76SdN+vH6cbss+SBCmy0xudHdhIy0IX6s=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20161025;
-        h=sender:x-gm-message-state:mime-version:from:to:cc:subject:date
-         :message-id:x-original-sender:x-original-authentication-results
-         :precedence:mailing-list:list-id:x-spam-checked-in-group:list-post
-         :list-help:list-archive:list-subscribe:list-unsubscribe;
-        bh=3pwa5qQY/7+VoLymksjqYbWz+WUPAAUwMUoylrMH6G4=;
-        b=OnuHpXFB2ZX0/u6/N5NOMov+aGgXyPPIS3UsglHJzQTiJJ8Hdmajh8I4C6DYr7uic0
-         dXYquSJ6/dNbEoperi/x4MhUnvG9dd0GM31fVIbrlEA+jdZmyNyI4CRuMx8g1NO/TamI
-         othNzdGO1P7iHVlBcz2B6BOZzxNazYVdbsBv8ZJeKwz3YfDbFDDm/vBpmdrG6RlEkNqL
-         8yqRqe/QF5+pwGV/iSJvmluzuEjbmcXtWoCE8NNEsaBg/vwaPaP8gZunXdDkMIA0ew6z
-         CnAs/fbq7JqMTMfMKyDEUbq2WYIp0oeI9ahzyXBXEcFxBuzhdPHyVTYslyIn32XO3HHU
-         8g8Q==
+        bh=S7YmBwUy/dJSeqL3Wyx4lzIXYLbFVPaDgp6iGLksD3A=;
+        b=iVl08NwddItz6Jtz5IDprkPYIbiiiqUUv1NwY82pAld64WDoY8IEiWBf/s4KW3Ik7K
+         DUYdSSqTBvqhXt0pfz2Wsv3kAYJDsNeMBrEsbOmm61ZLfPBA1GXZNIBhRgGnxj9gQb2L
+         7GEVFNaXY67DrKqm0liaN2FT5SBjo3e7DgHv69vaBRlLqi4Q52OHq1jZqAvOkSrJwjZK
+         bYPeDncEdZWtvopiZZqancbcMH+nXkOQ4K1m1bgTJc2WsN96RWMH8RxPZ8VzMdtnjsiQ
+         rsl9GLkZ5mRdTDBecyib0HVdIe19z2ONcWKeOunBzuSdwur1c3hIkUTMpKYbTVUVD0D1
+         tMpg==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: AOAM532AgBud3lPimDlvMoyhcv5P9KMf9LbOe9xwCkL7rnwmR8UGMNQ5
-	lO/6obXxKiewLcCYTmq05Af5cQ==
-X-Google-Smtp-Source: ABdhPJwHB1thZa/SiZq9NaB4/0GBpTRlQSmRBATyWDCPmUT2sGrjfksjr9ZC4cNHmHUG63aa+EKyJw==
-X-Received: by 2002:a25:42d6:: with SMTP id p205mr10231437yba.284.1598303436598;
-        Mon, 24 Aug 2020 14:10:36 -0700 (PDT)
-MIME-Version: 1.0
+X-Gm-Message-State: AOAM531T2le4HJ1ZzMHmabtLYSoZKMdHNJ4ux3ki6g2y12eZg8vyhj96
+	BEDNyaw619yw+Z8dntSy13tyqg==
+X-Google-Smtp-Source: ABdhPJwEFQbCxb270SmnvFr4bSBQISB8dytJSZqH36/EFCpvDCK0wbHKy6hrAmcm+mzbBccxwJFKyw==
+X-Received: by 2002:aca:130e:: with SMTP id e14mr902159oii.99.1598305032694;
+        Mon, 24 Aug 2020 14:37:12 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a5b:b0d:: with SMTP id z13ls4365471ybp.8.gmail; Mon, 24 Aug
- 2020 14:10:36 -0700 (PDT)
-X-Received: by 2002:a25:d98f:: with SMTP id q137mr9235427ybg.480.1598303435994;
-        Mon, 24 Aug 2020 14:10:35 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1598303435; cv=none;
+Received: by 2002:aca:b541:: with SMTP id e62ls1007314oif.2.gmail; Mon, 24 Aug
+ 2020 14:37:12 -0700 (PDT)
+X-Received: by 2002:aca:a9d0:: with SMTP id s199mr840782oie.154.1598305032378;
+        Mon, 24 Aug 2020 14:37:12 -0700 (PDT)
+Received: by 2002:aca:240d:0:b029:c2:846:c263 with SMTP id n13-20020aca240d0000b02900c20846c263msoic;
+        Mon, 24 Aug 2020 14:18:40 -0700 (PDT)
+X-Received: by 2002:a17:90b:17ca:: with SMTP id me10mr860294pjb.116.1598303920618;
+        Mon, 24 Aug 2020 14:18:40 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1598303920; cv=none;
         d=google.com; s=arc-20160816;
-        b=grRWG69ymrvuNSc+W+s1k2Hp5gY7Dx77+rF364OIgg1L8otqpWeYoQazqfsuZeUtVv
-         Iv5FZNUs++gMygYujgWXPHeHFcwdGd+ueTpv886n/FhJhY1VjDMcPt5KY8hfg7taJJVx
-         OvO6SKCmR7vnP4An7MqHD+RernbDwf4HzUhjXZ6Qls3HfHO2o5c7Gcl4bJavEPAJw/5O
-         Rm0mQprA3QP5fqzvMmeHA91bV/MnaFTvrgH0v6y8t2h+YsxXCNidSGUiroOP60RfuJE6
-         2EgMa3MEQMp4+JanpqqYyAdPxBN25vbIl2Rfnhf8xarxVJeNLY6ZWDwf4OozPQynceQi
-         YLBw==
+        b=Ntjr88oftEYY9lM3ot4aZZBrqLsx9wEKtdm5bhmfPitvy/07b9vf/M/DGmC8Z4hxrs
+         P9n/fawS0TC6kJb+h0xa0ujKbxEF321js/vkGwSYxmyPhNUOUplVY3XvAvNmYAOvxG01
+         otrfjKcg2L/vX+zz9f/FEx9jocURuouCi5+GE/gwCGXQyLAycgJKRPOdOn47FW0PVJIn
+         N420HHtWbujY1xxkW1CaZpT0YeWlImwtzUeOvWEnzMkeLwkComFT8hJxLcYhGt19GfMV
+         XY6qbySF6U5EMBaKHCF3gr0A03Vvozt7GrxXA1ShI4IPTzTo+QXukMwkPoT0ricvVEFu
+         kbOA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=message-id:date:subject:cc:to:from:dkim-signature;
-        bh=98P4pw0MSJfjYTwg7Jr3bMvh36DJTSmp1NgoIinTZVY=;
-        b=eEyyAnvJEJeoM1fqmcKs7ocEGevRsUoOzd3fyIEqoZvpOaj5WW2Ukn1v4jcqUAi2SG
-         bjCkUNo6H9FbD9NjMjUSjuozlltkHg3jaSEb4tvb1cQ3Yau0Hq3boyrB5qH0JEWenwKX
-         HCt03jcPtZRHSxRsy9KKXVMgCQmti69xjaqsfMj79guHxYlESs+UsYFLVt9BgQSt3R6D
-         K/C/HSZ88Ef5Dfn9iMaOjmLT8o3eZonKo/FAyVQ0YQvKjakqGdOy94LErcjGgRwUbokO
-         5ZQ4qiM7hsWffrtZ60UWwiWX0hfJTsVRn7kr5pjmkAGpI7NE+Cy5TC47qCOoWKqn6Wz7
-         ew+g==
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date;
+        bh=38Y2Inb/IbZnfvYrhBDhlLyAHS2+wjW04o1UW2EqWrI=;
+        b=uB2W1H9nLypLA4mzodtLT6DsqDfbgMYzsS8WLghcrlRBLcSlWj+Uat1l13rvaeXSAg
+         7uvGQ87J3pGeIv9Fd5QcUusZoWmgpf4qtFq2f79H+WgVzYWjRybUZNPK9QGUqIxCp1+y
+         dFNmTFG9xrfpTlbtZl0GwbmuJyyPeU80EiF/FOeEJx3CjQYSA2fb0qc9zt7cs7LHo2Qm
+         7d27/TePOxASyI0QADjScYsebC6AGeloSQa1ZZcO5sAcTdWEt56woa+k/JnWn1mFdPeF
+         Y2tEXNSft+/JLA5V4P3ahNKgiquGDt6EVmM1B+fQmCBsffA+kY90DQ2+ROw4xL9ntT56
+         9Xzw==
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@redhat.com header.s=mimecast20190719 header.b="JcsilZK/";
-       spf=pass (google.com: domain of trix@redhat.com designates 205.139.110.120 as permitted sender) smtp.mailfrom=trix@redhat.com;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=redhat.com
-Received: from us-smtp-1.mimecast.com (us-smtp-delivery-1.mimecast.com. [205.139.110.120])
-        by mx.google.com with ESMTPS id a16si11514421ybk.145.2020.08.24.14.10.35
-        for <usb-storage@lists.one-eyed-alien.net>
-        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Mon, 24 Aug 2020 14:10:35 -0700 (PDT)
-Received-SPF: pass (google.com: domain of trix@redhat.com designates 205.139.110.120 as permitted sender) client-ip=205.139.110.120;
-Received: from mail-qv1-f72.google.com (mail-qv1-f72.google.com
- [209.85.219.72]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-290-j4wjj4KqObipz4_39aKn0g-1; Mon, 24 Aug 2020 17:10:34 -0400
-X-MC-Unique: j4wjj4KqObipz4_39aKn0g-1
-Received: by mail-qv1-f72.google.com with SMTP id d9so7288431qvl.10
-        for <usb-storage@lists.one-eyed-alien.net>; Mon, 24 Aug 2020 14:10:34 -0700 (PDT)
-X-Received: by 2002:ac8:3894:: with SMTP id f20mr6679735qtc.243.1598303433826;
-        Mon, 24 Aug 2020 14:10:33 -0700 (PDT)
-X-Received: by 2002:ac8:3894:: with SMTP id f20mr6679720qtc.243.1598303433555;
-        Mon, 24 Aug 2020 14:10:33 -0700 (PDT)
-Received: from trix.remote.csb (075-142-250-213.res.spectrum.com. [75.142.250.213])
-        by smtp.gmail.com with ESMTPSA id 198sm4681833qkh.19.2020.08.24.14.10.32
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 24 Aug 2020 14:10:32 -0700 (PDT)
-From: trix@redhat.com
-To: stern@rowland.harvard.edu,
-	gregkh@linuxfoundation.org
-Cc: linux-usb@vger.kernel.org,
-	usb-storage@lists.one-eyed-alien.net,
-	linux-kernel@vger.kernel.org,
-	Tom Rix <trix@redhat.com>
-Subject: [usb-storage] [PATCH v2] usb: storage: initialize variable
-Date: Mon, 24 Aug 2020 14:10:27 -0700
-Message-Id: <20200824211027.11543-1-trix@redhat.com>
-X-Mailer: git-send-email 2.18.1
-X-Mimecast-Spam-Score: 0.001
-X-Mimecast-Originator: redhat.com
+       spf=pass (google.com: domain of swivel@shells.gnugeneration.com designates 66.240.222.126 as permitted sender) smtp.mailfrom=swivel@shells.gnugeneration.com
+Received: from shells.gnugeneration.com (shells.gnugeneration.com. [66.240.222.126])
+        by mx.google.com with ESMTP id h13si436964pjm.154.2020.08.24.14.18.40
+        for <usb-storage@lists.one-eyed-alien.net>;
+        Mon, 24 Aug 2020 14:18:40 -0700 (PDT)
+Received-SPF: pass (google.com: domain of swivel@shells.gnugeneration.com designates 66.240.222.126 as permitted sender) client-ip=66.240.222.126;
+Received: by shells.gnugeneration.com (Postfix, from userid 1000)
+	id D265F1A4018B; Mon, 24 Aug 2020 14:18:39 -0700 (PDT)
+Date: Mon, 24 Aug 2020 14:18:39 -0700
+From: Vito Caputo <vcaputo@pengaru.com>
+To: trix@redhat.com
+Cc: stern@rowland.harvard.edu, gregkh@linuxfoundation.org,
+	linux-usb@vger.kernel.org, usb-storage@lists.one-eyed-alien.net,
+	linux-kernel@vger.kernel.org
+Subject: [usb-storage] Re: [PATCH v2] usb: storage: initialize variable
+Message-ID: <20200824211839.6c7m7yhgd7ffq3g3@shells.gnugeneration.com>
+References: <20200824211027.11543-1-trix@redhat.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="UTF-8"
-X-Original-Sender: trix@redhat.com
-X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@redhat.com header.s=mimecast20190719 header.b="JcsilZK/";
-       spf=pass (google.com: domain of trix@redhat.com designates
- 205.139.110.120 as permitted sender) smtp.mailfrom=trix@redhat.com;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=redhat.com
+Content-Disposition: inline
+In-Reply-To: <20200824211027.11543-1-trix@redhat.com>
+X-Original-Sender: vcaputo@pengaru.com
+X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
+ domain of swivel@shells.gnugeneration.com designates 66.240.222.126 as
+ permitted sender) smtp.mailfrom=swivel@shells.gnugeneration.com
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
-X-Spam-Checked-In-Group: usb-storage@lists.one-eyed-alien.net
 X-Google-Group-Id: 960895140360
 List-Post: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/post>,
  <mailto:usb-storage@lists.one-eyed-alien.net>
@@ -140,43 +125,51 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-From: Tom Rix <trix@redhat.com>
+On Mon, Aug 24, 2020 at 02:10:27PM -0700, trix@redhat.com wrote:
+> From: Tom Rix <trix@redhat.com>
+> 
+> clang static analysis reports this representative problem
+> 
+> transport.c:495:15: warning: Assigned value is garbage or
+>   undefined
+>         length_left -= partial;
+>                    ^  ~~~~~~~
+> partial is set only when usb_stor_bulk_transfer_sglist()
+> is successful.
+> 
+> So set partial on entry to 0.
+> 
+> Fixes: 1da177e4c3f4 ("Linux-2.6.12-rc2")
+> Signed-off-by: Tom Rix <trix@redhat.com>
+> ---
+>  drivers/usb/storage/transport.c | 3 +++
+>  1 file changed, 3 insertions(+)
+> 
+> diff --git a/drivers/usb/storage/transport.c b/drivers/usb/storage/transport.c
+> index 238a8088e17f..044429717dcc 100644
+> --- a/drivers/usb/storage/transport.c
+> +++ b/drivers/usb/storage/transport.c
+> @@ -414,6 +414,9 @@ static int usb_stor_bulk_transfer_sglist(struct us_data *us, unsigned int pipe,
+>  {
+>  	int result;
+>  
+> +	if (act_len)
+> +		*act_len = 0;
+> +
+>  	/* don't submit s-g requests during abort processing */
+>  	if (test_bit(US_FLIDX_ABORTING, &us->dflags))
+>  		return USB_STOR_XFER_ERROR;
 
-clang static analysis reports this representative problem
+At a glance this seems odd to me.  If the caller insists on ignoring
+the return value, shouldn't it just initialize partial to zero?
 
-transport.c:495:15: warning: Assigned value is garbage or
-  undefined
-        length_left -= partial;
-                   ^  ~~~~~~~
-partial is set only when usb_stor_bulk_transfer_sglist()
-is successful.
+In my experience it's generally frowned upon for functions to store
+results in error paths.
 
-So set partial on entry to 0.
-
-Fixes: 1da177e4c3f4 ("Linux-2.6.12-rc2")
-Signed-off-by: Tom Rix <trix@redhat.com>
----
- drivers/usb/storage/transport.c | 3 +++
- 1 file changed, 3 insertions(+)
-
-diff --git a/drivers/usb/storage/transport.c b/drivers/usb/storage/transport.c
-index 238a8088e17f..044429717dcc 100644
---- a/drivers/usb/storage/transport.c
-+++ b/drivers/usb/storage/transport.c
-@@ -414,6 +414,9 @@ static int usb_stor_bulk_transfer_sglist(struct us_data *us, unsigned int pipe,
- {
- 	int result;
- 
-+	if (act_len)
-+		*act_len = 0;
-+
- 	/* don't submit s-g requests during abort processing */
- 	if (test_bit(US_FLIDX_ABORTING, &us->dflags))
- 		return USB_STOR_XFER_ERROR;
--- 
-2.18.1
+Regards,
+Vito Caputo
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20200824211027.11543-1-trix%40redhat.com.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20200824211839.6c7m7yhgd7ffq3g3%40shells.gnugeneration.com.
