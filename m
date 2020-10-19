@@ -1,159 +1,136 @@
-Return-Path: <usb-storage+bncBDXO746SYYBRB25JWL6AKGQEPS4NK5Y@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBC27X66SWQMBB5WUW36AKGQEOTA23JI@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-io1-xd46.google.com (mail-io1-xd46.google.com [IPv6:2607:f8b0:4864:20::d46])
-	by mail.lfdr.de (Postfix) with ESMTPS id BE8E7291964
-	for <lists+usb-storage@lfdr.de>; Sun, 18 Oct 2020 21:18:04 +0200 (CEST)
-Received: by mail-io1-xd46.google.com with SMTP id v7sf5088873ioe.7
-        for <lists+usb-storage@lfdr.de>; Sun, 18 Oct 2020 12:18:04 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1603048683; cv=pass;
+Received: from mail-yb1-xb47.google.com (mail-yb1-xb47.google.com [IPv6:2607:f8b0:4864:20::b47])
+	by mail.lfdr.de (Postfix) with ESMTPS id CFDD32929F2
+	for <lists+usb-storage@lfdr.de>; Mon, 19 Oct 2020 17:02:15 +0200 (CEST)
+Received: by mail-yb1-xb47.google.com with SMTP id i129sf3239820ybc.11
+        for <lists+usb-storage@lfdr.de>; Mon, 19 Oct 2020 08:02:15 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1603119735; cv=pass;
         d=google.com; s=arc-20160816;
-        b=asO/xKHtjrK6G3TydHUYJVsXDtuB0RMxHT1+YcRuKN1WGWFxnpTtiyY4PjN6dOyLNh
-         /45bDO8vMLN+J5em96A/nULZ4j0pSCMuDwbKfeyTyFvfimQRxT8MbVF+3irOW4H6Dz2W
-         C/9aAnVlcgZlJJ1QCGXs1efN4rqFc1mr2fkdfp5IahmM2B2yiCtyTofhogsBnQPN+mVC
-         Ntj+2kktyTTyy6Vp/5EI+Niqm9HW9a1eYSFTpNRN+rOnAIBeplpGHsDcjMohXN0BH2q0
-         Ee6kc/cpQRP2k2tmA1BypbySYFHUSrhfGp3hDaXJAZ/7qziDiz/7xm1Wh59N76hZrabo
-         Sz7g==
+        b=AonadYfNjBo+ZUHwP1etYRx0ZJEEQLYbx1+60O2BxZXyrFVCW+B2ARerWn/6y9pX6h
+         fVQvPN5a1EA0LajbMIDcasYjpsRgXrHIKT52OaxC+esGLUx1yvCGbVr+VJGH94TsGY8v
+         s3WOnO/xdCHyCl6KQIVXBTO3w/pzsiwZnWU47CjBklN5eRUCW+LYf5XribGltczsN56L
+         D9+Evtx+EuAzkfDNjATUBrKFtR8mPnYflMyLSpdcoU0BSNZ4Y7ZWGyWDEm9ABf3BRc7e
+         pqerq3Z5KzuzOxEFAEB8mOQaaumhpj/MpMhKCHwLjH1ucTNlxt9zd/UnvD9MMEjrJaCX
+         besA==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:mime-version:user-agent:references
-         :in-reply-to:date:cc:to:from:subject:message-id:sender
-         :dkim-signature;
-        bh=gaHgeafN4O2pq2yZ/tDgU+FOk/ZeMDydRPq00Qnm9Fs=;
-        b=Ar6l93hQgY1E5TWI8XfuYhhcp4hT30HscHZlT0Gmn3FZ+mMgrwvPTpl5RDqB5mlBSR
-         892bEHg8aOfsAVZuudeSCMHt0u0w2PNzV/gBASMuSEzInOhi24GzjHxcEUioJOct/HJm
-         coGrPKZkP6kfT/AwmjCeHqexmZP57RwgUotf0jjHG9Fm8/GqLKQWFeJy16xqhNvRC8yT
-         /IzCKw2UjwPH2CBimN/4NyAhOmbPkeblirTd9ooDbTBU1jzXitQ0fq6r3TeCaLdgp1WO
-         23yJACGR4fs1Y4ZJFwLufG2ZCK1vy2BHcLiLPLRA5r+97O65akN+OJd1uRfFdj01g5BV
-         LYzw==
+         :list-id:mailing-list:precedence:message-id:date:subject:cc:to:from
+         :mime-version:sender:dkim-signature;
+        bh=0IPINOcnvCAosrDQ3ZeZ0a9e6EVJAiuo8nvE3rD+qLA=;
+        b=cUhgoYI3XMIPc2pYLx61MAlbF+k68OLi3RBa2YfWmvK3slCv47g7CgMZAfSqp8uTh5
+         +gLRjdwuAyCnpCrlwRXkNzTtfVh93kYEDh03w1VWdj7FPzEnC6rm7AxGXrzl7PDVBb9r
+         BiBcN7yoX/q3dWlPpe86n370QnBpEiKkqFPfhFaW8DwC5nKc+aqtmhx+ebOwnzp8tPNm
+         XOxyRIiZqsGzdCzJvQiJiUConUNZRXT1Jg3x54pL3CM9MKXj/GECjswK1aHvhjZBvuR1
+         H9L+Wi0UWj3HpYBCIGydOwbC9eM0U0nQw8pjojWsla6wJDfTiJ4yeKaRw4I4yF5n6W0V
+         fdRw==
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@hansenpartnership.com header.s=20151216 header.b=WcP5INjn;
-       dkim=pass header.i=@hansenpartnership.com header.s=20151216 header.b=WcP5INjn;
-       spf=pass (google.com: domain of james.bottomley@hansenpartnership.com designates 2607:fcd0:100:8a00::2 as permitted sender) smtp.mailfrom=James.Bottomley@hansenpartnership.com;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=hansenpartnership.com
+       dkim=pass header.i=@redhat.com header.s=mimecast20190719 header.b=dQYTnEhM;
+       spf=pass (google.com: domain of trix@redhat.com designates 63.128.21.124 as permitted sender) smtp.mailfrom=trix@redhat.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=redhat.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
-        h=sender:message-id:subject:from:to:cc:date:in-reply-to:references
-         :user-agent:mime-version:x-original-sender
-         :x-original-authentication-results:precedence:mailing-list:list-id
-         :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
-        bh=gaHgeafN4O2pq2yZ/tDgU+FOk/ZeMDydRPq00Qnm9Fs=;
-        b=CdnrEZ1ACASXC2UavkiH0Pimc5Ly6adwWSevHxXFUTSciB1WFqgmQeFwPkE4JJutPp
-         Papg4aVM5vckRhaWcKJ15m9eqN3D3SmNvVYurWDtwSjRkNTkKGTQ8Ou6Y2zhzndeqr9Y
-         tHMTUZjfax9L3otKoBIvSkUF1v02XuzpisIZk=
+        h=sender:mime-version:from:to:cc:subject:date:message-id
+         :x-original-sender:x-original-authentication-results:precedence
+         :mailing-list:list-id:list-post:list-help:list-archive
+         :list-subscribe:list-unsubscribe;
+        bh=0IPINOcnvCAosrDQ3ZeZ0a9e6EVJAiuo8nvE3rD+qLA=;
+        b=GSB79GIXeNrryF56U6gJWwJT2V8Aswgx3pGpRD5CgR37KjaVHOVIuyePuY0Udm2Z6O
+         HQh4T1yrL8UpmJ4ydDYuBqzuecwfE7utEkQHLh0mGtv5lh8FZG7ploWqGfXmOOdv6C9H
+         yFwUDUN+tesE5b+474c/vNbyUz6vxatmXFGb4=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
-        h=sender:x-gm-message-state:message-id:subject:from:to:cc:date
-         :in-reply-to:references:user-agent:mime-version:x-original-sender
-         :x-original-authentication-results:precedence:mailing-list:list-id
-         :x-spam-checked-in-group:list-post:list-help:list-archive
-         :list-subscribe:list-unsubscribe;
-        bh=gaHgeafN4O2pq2yZ/tDgU+FOk/ZeMDydRPq00Qnm9Fs=;
-        b=mdaqZ0LFdfGO1Sw6BKkY0l72/frx+P2SwytKNZwHvfKdBW17ciQ9Lt0WQH0j4h643T
-         kSdOABkcWwv0KISm5YYRUtsGUzCrXtSHemF/Wtow9EBvB0a2c+Z4ZtBsVjpJcYOInXZi
-         8XaytwCe0T1unNhYycHj4UjWvbp3eo+UG9KPTmKeq/rmR8iOEVDjxzhjmku4pSNOgRO2
-         Zi9bSVYA15BXnhCYwTMGkPp8h8MacBLMuBsjZe3FQZUjBmKzqgNAKS+qQG7DuqdOs8Jl
-         KhZsy/jKzMsVPe0Pg2Iga4IU6PsPC5px0GnErU+khVZfTgvPkJVghjVGvpGDR0mQt37r
-         b4XQ==
+        h=sender:x-gm-message-state:mime-version:from:to:cc:subject:date
+         :message-id:x-original-sender:x-original-authentication-results
+         :precedence:mailing-list:list-id:x-spam-checked-in-group:list-post
+         :list-help:list-archive:list-subscribe:list-unsubscribe;
+        bh=0IPINOcnvCAosrDQ3ZeZ0a9e6EVJAiuo8nvE3rD+qLA=;
+        b=Zf2E6OH+Z/mJjTQhPyFA7LJ41i3nqwF9angNfB8uWWhhqrkwtMvpqy5FxzFuyBYFVU
+         50UJQloF99E9KHPTlmjDE6KHZzR/OQSDjXYO2qUUqhATRiW0MvkX10fKnYJTl256S7dJ
+         DCUixt5Nd60ZWwMPm+aNCwnT7+EBDHSb2T7stGJ7Ba82IpXPZvtjaYRsyiJTyt0A/6K/
+         0mF7jm/d8S9tHYcaci8s7TyIyf+hJ07LHXEcniNzK1GTKJwGuuiajt76w8ToKyn3UKML
+         uG4qc5Mizs5XoHkgsrv0L9+6C9WmS7sZJ8Hv9hc8TvtzLlmvgfi3FYDiogY5pzrCZcc0
+         F8tA==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: AOAM530Vk0skTQkkUpKybvhGcmtrCAwgBIDU/7lDb6N8mN7tNtudRN9I
-	VEAU+iCsOeFdH0WzrOyjhHr9/Q==
-X-Google-Smtp-Source: ABdhPJyc5fj+lvJDJbLp1qKevEhORONss2cuw3+7cUb4nuy6SaiNjtBfN/PHCPifbaNm4VBabSCGew==
-X-Received: by 2002:a05:6602:1d0:: with SMTP id w16mr8807976iot.102.1603048683713;
-        Sun, 18 Oct 2020 12:18:03 -0700 (PDT)
-X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a5e:8d06:: with SMTP id m6ls1030148ioj.8.gmail; Sun, 18 Oct
- 2020 12:18:03 -0700 (PDT)
-X-Received: by 2002:a6b:8f92:: with SMTP id r140mr3302640iod.81.1603048683251;
-        Sun, 18 Oct 2020 12:18:03 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1603048683; cv=none;
-        d=google.com; s=arc-20160816;
-        b=eCJRr8XVGhe7pBSTBG1CXah+7BtiLCHmCBihGKsnsBWT+LyyQ8CmkoOgIG4dcsCY1l
-         Xbyuf3ho1/ivSPrJB3i61REgT37apmz/9FhNjFy55l2knV7VKloWuok9imynmKbmFgwB
-         ZWKFZMW5ypzWbB6U1TAgPoSfvVZIRm3dRoJlkRsf2BlXiLsPrfCbmLLUdcmCqL861M44
-         57QnvIP2xfem+rabn+8Q7Dg0H5XjYznKcnaCJjUTkwYpZ3z5uLfJjXVfQylOGbWHX6sd
-         nWCvCNbzr0278cgXH3MtJVYvcnf2yktJSEOs3VSBAmQ/IizOHfNOu79kaSedAS4RcxAn
-         nbtA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=content-transfer-encoding:mime-version:user-agent:references
-         :in-reply-to:date:cc:to:from:subject:message-id:dkim-signature
-         :dkim-signature;
-        bh=UjUcVY25R4bafGP+9qdVd0aoGYpiqH6Q+ARLhsHNcW4=;
-        b=JmMOAo+F1mnaO9OIlJclIXR8Z+W3MBpgQootoUbDyylMInVoI/V5DdB8u0mntsNjdK
-         91Cmpkx2d2VLA+DvMFCxK6Zpx4lGWkTGqPnaFPQUl+X2yavMh2lRTyQo7/OLg6frqr/F
-         paT/jL2Z3ptyUTkSynsEbv2cLDvtdqaHHqELGPKUVCax2K0EPlryLIZHJB2qiIAoW8GT
-         dFgym2xEhpjisFU5e94O67cyrJP0sTS8dn8ieKByH8fnIj6yKk1sjHc8yDFiUlorPGuB
-         sKQOsKwXxHQozeTPQ5INHo2f/XLYxveDxyyQA0Yp3Z1b20W5x22BD6Q7zzpC2DlQGEkq
-         YMQg==
-ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@hansenpartnership.com header.s=20151216 header.b=WcP5INjn;
-       dkim=pass header.i=@hansenpartnership.com header.s=20151216 header.b=WcP5INjn;
-       spf=pass (google.com: domain of james.bottomley@hansenpartnership.com designates 2607:fcd0:100:8a00::2 as permitted sender) smtp.mailfrom=James.Bottomley@hansenpartnership.com;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=hansenpartnership.com
-Received: from bedivere.hansenpartnership.com (bedivere.hansenpartnership.com. [2607:fcd0:100:8a00::2])
-        by mx.google.com with ESMTPS id t13si4313166ile.9.2020.10.18.12.18.03
-        for <usb-storage@lists.one-eyed-alien.net>
-        (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
-        Sun, 18 Oct 2020 12:18:03 -0700 (PDT)
-Received-SPF: pass (google.com: domain of james.bottomley@hansenpartnership.com designates 2607:fcd0:100:8a00::2 as permitted sender) client-ip=2607:fcd0:100:8a00::2;
-Received: from localhost (localhost [127.0.0.1])
-	by bedivere.hansenpartnership.com (Postfix) with ESMTP id 7A1D5128046A;
-	Sun, 18 Oct 2020 12:18:02 -0700 (PDT)
-Received: from bedivere.hansenpartnership.com ([127.0.0.1])
-	by localhost (bedivere.hansenpartnership.com [127.0.0.1]) (amavisd-new, port 10024)
-	with ESMTP id ywWMwLsGscQI; Sun, 18 Oct 2020 12:18:02 -0700 (PDT)
-Received: from jarvis.int.hansenpartnership.com (unknown [IPv6:2601:600:8280:66d1::c447])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by bedivere.hansenpartnership.com (Postfix) with ESMTPSA id 340C31280456;
-	Sun, 18 Oct 2020 12:18:00 -0700 (PDT)
-Message-ID: <0a739bcd421a3154c2521b49779b287e6c0d08a2.camel@HansenPartnership.com>
-Subject: [usb-storage] Re: [Ocfs2-devel] [RFC] treewide: cleanup unreachable breaks
-From: James Bottomley <James.Bottomley@HansenPartnership.com>
-To: Matthew Wilcox <willy@infradead.org>
-Cc: trix@redhat.com, linux-kernel@vger.kernel.org,
- alsa-devel@alsa-project.org,  clang-built-linux@googlegroups.com,
- linux-iio@vger.kernel.org,  nouveau@lists.freedesktop.org,
- storagedev@microchip.com,  dri-devel@lists.freedesktop.org,
- virtualization@lists.linux-foundation.org,  keyrings@vger.kernel.org,
- linux-mtd@lists.infradead.org,  ath10k@lists.infradead.org,
- MPT-FusionLinux.pdl@broadcom.com, 
- linux-stm32@st-md-mailman.stormreply.com,
- usb-storage@lists.one-eyed-alien.net,  linux-watchdog@vger.kernel.org,
- devel@driverdev.osuosl.org,  linux-samsung-soc@vger.kernel.org,
- linux-scsi@vger.kernel.org,  linux-nvdimm@lists.01.org,
- amd-gfx@lists.freedesktop.org,  linux-acpi@vger.kernel.org,
- intel-wired-lan@lists.osuosl.org, 
- industrypack-devel@lists.sourceforge.net, linux-pci@vger.kernel.org, 
- spice-devel@lists.freedesktop.org, linux-media@vger.kernel.org, 
- linux-serial@vger.kernel.org, linux-nfc@lists.01.org,
- linux-pm@vger.kernel.org,  linux-can@vger.kernel.org,
- linux-block@vger.kernel.org,  linux-gpio@vger.kernel.org,
- xen-devel@lists.xenproject.org,  linux-amlogic@lists.infradead.org,
- openipmi-developer@lists.sourceforge.net, 
- platform-driver-x86@vger.kernel.org, linux-integrity@vger.kernel.org, 
- linux-arm-kernel@lists.infradead.org, linux-edac@vger.kernel.org, 
- netdev@vger.kernel.org, linux-usb@vger.kernel.org, 
- linux-wireless@vger.kernel.org, linux-security-module@vger.kernel.org, 
- linux-crypto@vger.kernel.org, patches@opensource.cirrus.com,
- bpf@vger.kernel.org,  ocfs2-devel@oss.oracle.com,
- linux-power@fi.rohmeurope.com
-Date: Sun, 18 Oct 2020 12:17:59 -0700
-In-Reply-To: <20201018191618.GO20115@casper.infradead.org>
-References: <20201017160928.12698-1-trix@redhat.com>
-	 <20201018185943.GM20115@casper.infradead.org>
-	 <45efa7780c79972eae9ca9bdeb9f7edbab4f3643.camel@HansenPartnership.com>
-	 <20201018191618.GO20115@casper.infradead.org>
-Content-Type: text/plain; charset="UTF-8"
-User-Agent: Evolution 3.34.4
+X-Gm-Message-State: AOAM533c0Mxgo9ILAlxFgosRp8WuC4f2glVFrnCWPwBB78y9XMS9wz9+
+	4KUK2dw8IyUt1JrKxzJiJ2gU7g==
+X-Google-Smtp-Source: ABdhPJycG94q1ITKnaqEGvpNdooXO7zfJuFE61b5y0M5iwUOmSdmInVKWIlQjyGPDEGbep4+XT3LoQ==
+X-Received: by 2002:a25:c00e:: with SMTP id c14mr125229ybf.418.1603119734706;
+        Mon, 19 Oct 2020 08:02:14 -0700 (PDT)
 MIME-Version: 1.0
-X-Original-Sender: James.Bottomley@hansenpartnership.com
+X-BeenThere: usb-storage@lists.one-eyed-alien.net
+Received: by 2002:a25:cf07:: with SMTP id f7ls24314ybg.4.gmail; Mon, 19 Oct
+ 2020 08:02:14 -0700 (PDT)
+X-Received: by 2002:a25:3c81:: with SMTP id j123mr66510yba.359.1603119734040;
+        Mon, 19 Oct 2020 08:02:14 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1603119734; cv=none;
+        d=google.com; s=arc-20160816;
+        b=O9z8IUCwQQPRUVprLXXx1s/6QytVqmfABntPhcH4REcNKd9bIyrk928CjsQDA2n3rQ
+         9MR35cidP3cUS22N+nOyTIZ0suvyNykG7cLERAj8GamGH9fH8teZaVAsaNtekBo5a7Js
+         TazrxMnXhuFFyKjm4W8D4U906bv0IXmfNKgblHy54nDmesSMyryiDC26A1cfhjsGmfAk
+         bs5FK7TFSrUB+IhyikQ/tTZrIJyO806h2wIEmbM3QewxSB+u+AqWlEQJStDylKVpkQ0H
+         O7q5r76MliAidESdW9vzZASjQgwskff71or6v46Fa+I8ONQuDs1/HyNWeWp7sXg1Xtgr
+         7nAQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=message-id:date:subject:cc:to:from:dkim-signature;
+        bh=/bD/dsuRX3EslrvrmHEv36rr2PbUndykLo6mgMx1F70=;
+        b=p5XvMKKFJabmRCYz7Ghk8PxSvQyP0lEYQ2zObySXdMoEPzn6w8NHoZK9yenf87xUCR
+         08FVsTKng6u1kzfw7a+CrnIQklwM6zWsCdJ05o8jjYwtxSZkOT1wmhXaWRqOPxb4h0b5
+         xEliQTJB5PdhsmFuHSqVHJgdwoeBQ0doRihfLxDMD12udE07yfYVJvlb+/I/vLEmfaWW
+         tmzEk7Z+iwOAWmIyGwaw4gRMmjdO2RTzXQBJ/80SG6MIOXCZdAgjUGULHJTRy9SxxhYv
+         m3Zh2XsScrRRP27BhtK8hKTYJcbUULwKFSsQ9mgHs+dgzzuhhntIvC7FLxKSeuCdAkNG
+         6nyw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@redhat.com header.s=mimecast20190719 header.b=dQYTnEhM;
+       spf=pass (google.com: domain of trix@redhat.com designates 63.128.21.124 as permitted sender) smtp.mailfrom=trix@redhat.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=redhat.com
+Received: from us-smtp-delivery-124.mimecast.com (us-smtp-delivery-124.mimecast.com. [63.128.21.124])
+        by mx.google.com with ESMTPS id n79si200467ybf.74.2020.10.19.08.02.13
+        for <usb-storage@lists.one-eyed-alien.net>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 19 Oct 2020 08:02:14 -0700 (PDT)
+Received-SPF: pass (google.com: domain of trix@redhat.com designates 63.128.21.124 as permitted sender) client-ip=63.128.21.124;
+Received: from mail-qt1-f197.google.com (mail-qt1-f197.google.com
+ [209.85.160.197]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-428-DeUDgH5VMiy2FHmiJZvLvQ-1; Mon, 19 Oct 2020 11:02:09 -0400
+X-MC-Unique: DeUDgH5VMiy2FHmiJZvLvQ-1
+Received: by mail-qt1-f197.google.com with SMTP id d6so159953qtp.2
+        for <usb-storage@lists.one-eyed-alien.net>; Mon, 19 Oct 2020 08:02:09 -0700 (PDT)
+X-Received: by 2002:a37:9d0c:: with SMTP id g12mr2320565qke.264.1603119727887;
+        Mon, 19 Oct 2020 08:02:07 -0700 (PDT)
+X-Received: by 2002:a37:9d0c:: with SMTP id g12mr2320514qke.264.1603119727469;
+        Mon, 19 Oct 2020 08:02:07 -0700 (PDT)
+Received: from trix.remote.csb (075-142-250-213.res.spectrum.com. [75.142.250.213])
+        by smtp.gmail.com with ESMTPSA id p1sm111874qkk.95.2020.10.19.08.02.05
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 19 Oct 2020 08:02:06 -0700 (PDT)
+From: trix@redhat.com
+To: balbi@kernel.org,
+	gregkh@linuxfoundation.org,
+	mathias.nyman@intel.com,
+	johan@kernel.org,
+	stern@rowland.harvard.edu,
+	gustavoars@kernel.org,
+	viro@zeniv.linux.org.uk,
+	lee.jones@linaro.org
+Cc: linux-usb@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	usb-storage@lists.one-eyed-alien.net,
+	Tom Rix <trix@redhat.com>
+Subject: [usb-storage] [PATCH] usb: remove unneeded break
+Date: Mon, 19 Oct 2020 08:02:02 -0700
+Message-Id: <20201019150202.19713-1-trix@redhat.com>
+X-Mailer: git-send-email 2.18.1
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
+Content-Type: text/plain; charset="UTF-8"
+X-Original-Sender: trix@redhat.com
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@hansenpartnership.com header.s=20151216 header.b=WcP5INjn;
-       dkim=pass header.i=@hansenpartnership.com header.s=20151216
- header.b=WcP5INjn;       spf=pass (google.com: domain of james.bottomley@hansenpartnership.com
- designates 2607:fcd0:100:8a00::2 as permitted sender) smtp.mailfrom=James.Bottomley@hansenpartnership.com;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=hansenpartnership.com
+ header.i=@redhat.com header.s=mimecast20190719 header.b=dQYTnEhM;
+       spf=pass (google.com: domain of trix@redhat.com designates
+ 63.128.21.124 as permitted sender) smtp.mailfrom=trix@redhat.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=redhat.com
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -169,38 +146,160 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On Sun, 2020-10-18 at 20:16 +0100, Matthew Wilcox wrote:
-> On Sun, Oct 18, 2020 at 12:13:35PM -0700, James Bottomley wrote:
-> > On Sun, 2020-10-18 at 19:59 +0100, Matthew Wilcox wrote:
-> > > On Sat, Oct 17, 2020 at 09:09:28AM -0700, trix@redhat.com wrote:
-> > > > clang has a number of useful, new warnings see
-> > > > https://urldefense.com/v3/__https://clang.llvm.org/docs/DiagnosticsReference.html__;!!GqivPVa7Brio!Krxz78O3RKcB9JBMVo_F98FupVhj_jxX60ddN6tKGEbv_cnooXc1nnBmchm-e_O9ieGnyQ$ 
-> > > 
-> > > Please get your IT department to remove that stupidity.  If you
-> > > can't, please send email from a non-Red Hat email address.
-> > 
-> > Actually, the problem is at Oracle's end somewhere in the ocfs2
-> > list ... if you could fix it, that would be great.  The usual real
-> > mailing lists didn't get this transformation
-> > 
-> > https://lore.kernel.org/bpf/20201017160928.12698-1-trix@redhat.com/
-> > 
-> > but the ocfs2 list archive did:
-> > 
-> > https://oss.oracle.com/pipermail/ocfs2-devel/2020-October/015330.html
-> > 
-> > I bet Oracle IT has put some spam filter on the list that mangles
-> > URLs this way.
-> 
-> *sigh*.  I'm sure there's a way.  I've raised it with someone who
-> should be able to fix it.
+From: Tom Rix <trix@redhat.com>
 
-As someone who works for IBM I can only say I feel your pain ...
+A break is not needed if it is preceded by a return or goto
 
-James
+Signed-off-by: Tom Rix <trix@redhat.com>
+---
+ drivers/usb/gadget/function/f_hid.c | 9 ---------
+ drivers/usb/host/xhci-mem.c         | 1 -
+ drivers/usb/misc/iowarrior.c        | 3 ---
+ drivers/usb/serial/iuu_phoenix.c    | 2 --
+ drivers/usb/storage/freecom.c       | 1 -
+ 5 files changed, 16 deletions(-)
 
+diff --git a/drivers/usb/gadget/function/f_hid.c b/drivers/usb/gadget/function/f_hid.c
+index 1125f4715830..5204769834d1 100644
+--- a/drivers/usb/gadget/function/f_hid.c
++++ b/drivers/usb/gadget/function/f_hid.c
+@@ -511,9 +511,7 @@ static int hidg_setup(struct usb_function *f,
+ 		/* send an empty report */
+ 		length = min_t(unsigned, length, hidg->report_length);
+ 		memset(req->buf, 0x0, length);
+-
+ 		goto respond;
+-		break;
+ 
+ 	case ((USB_DIR_IN | USB_TYPE_CLASS | USB_RECIP_INTERFACE) << 8
+ 		  | HID_REQ_GET_PROTOCOL):
+@@ -521,13 +519,11 @@ static int hidg_setup(struct usb_function *f,
+ 		length = min_t(unsigned int, length, 1);
+ 		((u8 *) req->buf)[0] = hidg->protocol;
+ 		goto respond;
+-		break;
+ 
+ 	case ((USB_DIR_OUT | USB_TYPE_CLASS | USB_RECIP_INTERFACE) << 8
+ 		  | HID_REQ_SET_REPORT):
+ 		VDBG(cdev, "set_report | wLength=%d\n", ctrl->wLength);
+ 		goto stall;
+-		break;
+ 
+ 	case ((USB_DIR_OUT | USB_TYPE_CLASS | USB_RECIP_INTERFACE) << 8
+ 		  | HID_REQ_SET_PROTOCOL):
+@@ -544,7 +540,6 @@ static int hidg_setup(struct usb_function *f,
+ 			goto respond;
+ 		}
+ 		goto stall;
+-		break;
+ 
+ 	case ((USB_DIR_IN | USB_TYPE_STANDARD | USB_RECIP_INTERFACE) << 8
+ 		  | USB_REQ_GET_DESCRIPTOR):
+@@ -562,7 +557,6 @@ static int hidg_setup(struct usb_function *f,
+ 						   hidg_desc_copy.bLength);
+ 			memcpy(req->buf, &hidg_desc_copy, length);
+ 			goto respond;
+-			break;
+ 		}
+ 		case HID_DT_REPORT:
+ 			VDBG(cdev, "USB_REQ_GET_DESCRIPTOR: REPORT\n");
+@@ -570,13 +564,11 @@ static int hidg_setup(struct usb_function *f,
+ 						   hidg->report_desc_length);
+ 			memcpy(req->buf, hidg->report_desc, length);
+ 			goto respond;
+-			break;
+ 
+ 		default:
+ 			VDBG(cdev, "Unknown descriptor request 0x%x\n",
+ 				 value >> 8);
+ 			goto stall;
+-			break;
+ 		}
+ 		break;
+ 
+@@ -584,7 +576,6 @@ static int hidg_setup(struct usb_function *f,
+ 		VDBG(cdev, "Unknown request 0x%x\n",
+ 			 ctrl->bRequest);
+ 		goto stall;
+-		break;
+ 	}
+ 
+ stall:
+diff --git a/drivers/usb/host/xhci-mem.c b/drivers/usb/host/xhci-mem.c
+index fe405cd38dbc..b46ef45c4d25 100644
+--- a/drivers/usb/host/xhci-mem.c
++++ b/drivers/usb/host/xhci-mem.c
+@@ -1144,7 +1144,6 @@ int xhci_setup_addressable_virt_dev(struct xhci_hcd *xhci, struct usb_device *ud
+ 	case USB_SPEED_WIRELESS:
+ 		xhci_dbg(xhci, "FIXME xHCI doesn't support wireless speeds\n");
+ 		return -EINVAL;
+-		break;
+ 	default:
+ 		/* Speed was set earlier, this shouldn't happen. */
+ 		return -EINVAL;
+diff --git a/drivers/usb/misc/iowarrior.c b/drivers/usb/misc/iowarrior.c
+index 70ec29681526..efbd317f2f25 100644
+--- a/drivers/usb/misc/iowarrior.c
++++ b/drivers/usb/misc/iowarrior.c
+@@ -384,7 +384,6 @@ static ssize_t iowarrior_write(struct file *file,
+ 		retval = usb_set_report(dev->interface, 2, 0, buf, count);
+ 		kfree(buf);
+ 		goto exit;
+-		break;
+ 	case USB_DEVICE_ID_CODEMERCS_IOW56:
+ 	case USB_DEVICE_ID_CODEMERCS_IOW56AM:
+ 	case USB_DEVICE_ID_CODEMERCS_IOW28:
+@@ -454,14 +453,12 @@ static ssize_t iowarrior_write(struct file *file,
+ 		retval = count;
+ 		usb_free_urb(int_out_urb);
+ 		goto exit;
+-		break;
+ 	default:
+ 		/* what do we have here ? An unsupported Product-ID ? */
+ 		dev_err(&dev->interface->dev, "%s - not supported for product=0x%x\n",
+ 			__func__, dev->product_id);
+ 		retval = -EFAULT;
+ 		goto exit;
+-		break;
+ 	}
+ error:
+ 	usb_free_coherent(dev->udev, dev->report_size, buf,
+diff --git a/drivers/usb/serial/iuu_phoenix.c b/drivers/usb/serial/iuu_phoenix.c
+index b4ba79123d9d..f1201d4de297 100644
+--- a/drivers/usb/serial/iuu_phoenix.c
++++ b/drivers/usb/serial/iuu_phoenix.c
+@@ -850,7 +850,6 @@ static int iuu_uart_baud(struct usb_serial_port *port, u32 baud_base,
+ 	default:
+ 		kfree(dataout);
+ 		return IUU_INVALID_PARAMETER;
+-		break;
+ 	}
+ 
+ 	switch (parity & 0xF0) {
+@@ -864,7 +863,6 @@ static int iuu_uart_baud(struct usb_serial_port *port, u32 baud_base,
+ 	default:
+ 		kfree(dataout);
+ 		return IUU_INVALID_PARAMETER;
+-		break;
+ 	}
+ 
+ 	status = bulk_immediate(port, dataout, DataCount);
+diff --git a/drivers/usb/storage/freecom.c b/drivers/usb/storage/freecom.c
+index 3d5f7d0ff0f1..2b098b55c4cb 100644
+--- a/drivers/usb/storage/freecom.c
++++ b/drivers/usb/storage/freecom.c
+@@ -431,7 +431,6 @@ static int freecom_transport(struct scsi_cmnd *srb, struct us_data *us)
+ 			     us->srb->sc_data_direction);
+ 		/* Return fail, SCSI seems to handle this better. */
+ 		return USB_STOR_TRANSPORT_FAILED;
+-		break;
+ 	}
+ 
+ 	return USB_STOR_TRANSPORT_GOOD;
+-- 
+2.18.1
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/0a739bcd421a3154c2521b49779b287e6c0d08a2.camel%40HansenPartnership.com.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20201019150202.19713-1-trix%40redhat.com.
