@@ -1,189 +1,153 @@
-Return-Path: <usb-storage+bncBAABBD4OXT6AKGQEO3I24MY@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBDY3NC743AGBBLG7XT6AKGQENC7WPVI@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-qt1-x845.google.com (mail-qt1-x845.google.com [IPv6:2607:f8b0:4864:20::845])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2FDA6293FE4
-	for <lists+usb-storage@lfdr.de>; Tue, 20 Oct 2020 17:49:36 +0200 (CEST)
-Received: by mail-qt1-x845.google.com with SMTP id d1sf1964379qtq.12
-        for <lists+usb-storage@lfdr.de>; Tue, 20 Oct 2020 08:49:36 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1603208975; cv=pass;
+Received: from mail-io1-xd46.google.com (mail-io1-xd46.google.com [IPv6:2607:f8b0:4864:20::d46])
+	by mail.lfdr.de (Postfix) with ESMTPS id 79955294248
+	for <lists+usb-storage@lfdr.de>; Tue, 20 Oct 2020 20:42:53 +0200 (CEST)
+Received: by mail-io1-xd46.google.com with SMTP id q126sf2786416iof.3
+        for <lists+usb-storage@lfdr.de>; Tue, 20 Oct 2020 11:42:53 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1603219372; cv=pass;
         d=google.com; s=arc-20160816;
-        b=g2Bs1+U1JY/XRnsRmwc2JP2Qs/DM/uvY92WaNEO6gPqxhg4eOGich1vspR5xu73ekl
-         VqV1MjxxEkC+s7R2vza1go6l0f+WrH1QO4yZLH1N6+xskzbH1tVNlxObF+DN91BCMUJd
-         Fa5w89GS3iOhht90TvY4ddcqKmGpHV9cPEulSiRlwoLRP77XrzvwXTm0c0vdXs2VErnz
-         /ax2t9K5Wh6Va1beyjmLsTpE63XQ0i75ACI1gyvPkEyMF2etUZsQlGB0leDsWbJjb3O5
-         OVyHoyG+kp+W5slpHLC8qk3ELrwHq7xiNQzdlVIkc9jVEUnBDhkclTbKml3yM+SyvC4l
-         NwxQ==
+        b=P3Pxy9NSmdS/0/9nAhnICr3fDaD1JcVkOuDhzvN9+nVWWG0WoEhpLDVKwUgLPhfSen
+         mS/tyRQnnS3ure63IS4ii7vyfpIywwXtFWtlUAiILWn7WWsK6+2KVH8AJKQrf9xS7N8G
+         K8Ee93VCqjTKC1YwSaKhXO6vlkLRaE3Dd+ntOr2Fg47vRontBPc2Yto4wZiCxp1/1DnS
+         01B1C8DXxNSW2RoFJJuxEoqKPuO4Khcli0Ub9ioKwRK7CxOqd3iic/S9oY/xhm1/aUz2
+         4aoJ4hUg2nNl2yyxf+469SUrpT4T7Zbzpv41qouywgaFvohIjxvnFkTu3jGBm5SOZYom
+         +xqQ==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:references:to:cc:in-reply-to:date
-         :subject:mime-version:message-id:from:sender:dkim-signature;
-        bh=805ijWSZU9O/llZn/ouQawdaVV8Sbj5mvVhWLuv56fc=;
-        b=ra7X40fdtPhcrq39/S+o2PlNVdtRdOnO1bmXOeD0VJ111YWSBErdVbXSfOtKwGdHXm
-         v4B9TnD8k8HrhkmupngMlPcBnKqElFN+mwWaOFxxc2/d2qW3BjQqKINGGpQieoBV+eWI
-         1DKiXUgubD5y1Y2blunKiQDcCqWfM1LOm1O20ir/DAIyEoO4RAhA9FMG4/Z/b7SXxPJO
-         iC+TqcqdDrzeJQFWKfG4pheZOu/uUkjWbefcaiLXFWilFdGeiYlNj8s7+OwHTely5uLd
-         +HPT/nXQWluu/3MToo+pIs/YhWrMSsrj/nWBR6I5Aydky+QP3pBWreEMmuZSsxgMBvwC
-         AtIA==
+         :list-id:mailing-list:precedence:mime-version:user-agent:references
+         :in-reply-to:date:cc:to:from:subject:message-id:sender
+         :dkim-signature;
+        bh=XFNch6a96mk4+fZK01tzw1VbqbQ52ovN4K4L1r8oZ5s=;
+        b=nZj6k9qN01IwocsMPKb9d4g8no6VgSMtVYCguXuSoLPfXtpu4IW8h03IGryOESHSIU
+         JUyz/sgqgOgXU2pGVjjxqAgUIMCVMHEo1PueqK60zhoRt61DnDA3GnmZ4zNNXlPSiRQK
+         T36eFy8d4se73abQes/9OipxY8kOyT3NECmf7Hwc6daTZ2NfITei8+Mg4+kS6I3ozoxY
+         GPjM2zQP/6V29rv1f7Ii6SuXdU0FiiOdj1UOnYxroTxQse9QNQE9rKo31QqiOGZfPOP/
+         tdvpWU4mT85DvB+usZ5pKGwGYiNBojqyYlDvBre0bQ3UqOVm9FwfdtaBK7RqBDEHhIDp
+         86yQ==
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@oracle.com header.s=corp-2020-01-29 header.b=q8gn83IP;
-       spf=pass (google.com: domain of john.haxby@oracle.com designates 156.151.31.85 as permitted sender) smtp.mailfrom=john.haxby@oracle.com;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=oracle.com
+       spf=neutral (google.com: 216.40.44.224 is neither permitted nor denied by best guess record for domain of joe@perches.com) smtp.mailfrom=joe@perches.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
-        h=sender:from:message-id:mime-version:subject:date:in-reply-to:cc:to
-         :references:x-original-sender:x-original-authentication-results
-         :precedence:mailing-list:list-id:list-post:list-help:list-archive
-         :list-subscribe:list-unsubscribe;
-        bh=805ijWSZU9O/llZn/ouQawdaVV8Sbj5mvVhWLuv56fc=;
-        b=OdiEYSdX8jOIRFPACsOPuCjnu61Mff+fXbVlt7HaFG2F1xqAiaovszlVpEN3TMOaLL
-         rPI7q/6Kdt2ZtYNHFXlw9d7HYlo1AwqEZyopsSViUXUusEjk+1z8eiPqQr4cDZHc5WQI
-         H0qfW3BklYRVk+gQCJr5u4w9DOBtAjQ001+So=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20161025;
-        h=sender:x-gm-message-state:from:message-id:mime-version:subject:date
-         :in-reply-to:cc:to:references:x-original-sender
+        h=sender:message-id:subject:from:to:cc:date:in-reply-to:references
+         :user-agent:mime-version:x-original-sender
          :x-original-authentication-results:precedence:mailing-list:list-id
          :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
-        bh=805ijWSZU9O/llZn/ouQawdaVV8Sbj5mvVhWLuv56fc=;
-        b=WCbaDiyfGZ+SgVCRY3s1HX/BkXZ/pRtOxNfztlzYVT6ATEQTpzfW+pMuF5Nv1qgI1x
-         EweEyFS3ovvqIouUgnxaIFKrLb4TCCjKHTBzvXNHIbtZGpJXXtCM5FHkfjfQG63xB/uZ
-         YNVcJrF/NaW32hH4Z8fRmYHtXWCYaXTNyLogPxiVcPITNkECIxkFpCijWk6qu+K3jrDA
-         +xIldRj7vwlwrvWX2TE5XMOEH5A4+Rh9qIsEgcF9iLAAZm/YnlSwqNiYbB9fz3C/+lIw
-         hNwj+P8//p7/XvK+mQKrqrh9VjcOijEbXhWSuZjMVU1cL/gCnPzYIG0zTIhz6G1zO5YR
-         cFiQ==
+        bh=XFNch6a96mk4+fZK01tzw1VbqbQ52ovN4K4L1r8oZ5s=;
+        b=XCPJbWbdW+04V195Qmtwv9tsYrF5ZALr0Wi3pPxPPjH0sDqhtEtBlc7K/Bzc//H3bu
+         cm153E8+wlSN963ptr0VyAS5PBXNiLgk10VdeXhKJA0HPR73+x9emm0sgd6Blqy3vMw0
+         /ga6ziMPUIjko0guVeWtxxrVg2jOxmr49qw9M=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=sender:x-gm-message-state:message-id:subject:from:to:cc:date
+         :in-reply-to:references:user-agent:mime-version:x-original-sender
+         :x-original-authentication-results:precedence:mailing-list:list-id
+         :x-spam-checked-in-group:list-post:list-help:list-archive
+         :list-subscribe:list-unsubscribe;
+        bh=XFNch6a96mk4+fZK01tzw1VbqbQ52ovN4K4L1r8oZ5s=;
+        b=qbKBqv0NKDwJ1RTrvsHODEve34N8TNJfW+dcHHELTeI9VqAHLjeKQZ42Cvu6dGxXjc
+         J9H9ja+qa1xbM6lAN3TdAz9ooD8B3OQ6i4GmWFvUwz2OfYkzPpDB551h72QVLoEyrPCP
+         rX0jIGRX3E0hL4RuyicokUVlEFqTOpH9Uc75Q7/FYPY2K/BM+c3ZsNNdlUszRNYxe9YO
+         HmpSQIi8QXiSfeFl5zy5VcSD3TsEpKgHcCQSov5oYUAe89QU0JvClGwOPEeeogJqDCcw
+         KKlsili6j1Z5kxPxHjVYqvbyV6yRDx82xQfwMLzuwvmz1IaIlopK0DcKkXTP+S+ZshIp
+         0fJg==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: AOAM532vMY/FRAqWFT7r5SBMF03JaX1h9HYgA+Rx8EDnwqZRO1yjyEhg
-	t52+Z1AfuMQhvm6J7E5tqUSMZQ==
-X-Google-Smtp-Source: ABdhPJyoUIUMgDvPdsd44eddfeLlanhQ7z4in4urU9/SOfxd5ZkrjnmQ2uBHPEBDGnLAa2gAx3Dayw==
-X-Received: by 2002:a05:620a:1287:: with SMTP id w7mr3493871qki.436.1603208975126;
-        Tue, 20 Oct 2020 08:49:35 -0700 (PDT)
+X-Gm-Message-State: AOAM530s352VO+2uUuJKskk4M1JPViQiABBQgqFIezm8BipGd3MM+4BN
+	Ggt/iq2+WMt27AzZge8pQEbPVA==
+X-Google-Smtp-Source: ABdhPJwQ1XI8PKFGPoESlnt37nOitt9ac6BDydGnPzEVjz0GE9LTJY1o5mEBCNmcR/AeLfi2BharKw==
+X-Received: by 2002:a02:a510:: with SMTP id e16mr3169891jam.51.1603219372421;
+        Tue, 20 Oct 2020 11:42:52 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:ac8:2f51:: with SMTP id k17ls859209qta.1.gmail; Tue, 20 Oct
- 2020 08:49:34 -0700 (PDT)
-X-Received: by 2002:ac8:2f91:: with SMTP id l17mr2993838qta.252.1603208974794;
-        Tue, 20 Oct 2020 08:49:34 -0700 (PDT)
-Received: by 2002:a37:b2c1:0:b029:12b:28f0:4e2b with SMTP id b184-20020a37b2c10000b029012b28f04e2bmsqkf;
-        Tue, 20 Oct 2020 01:48:40 -0700 (PDT)
-X-Received: by 2002:a05:620a:b13:: with SMTP id t19mr1589202qkg.3.1603183719832;
-        Tue, 20 Oct 2020 01:48:39 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1603183719; cv=none;
+Received: by 2002:a5d:8d06:: with SMTP id p6ls400846ioj.9.gmail; Tue, 20 Oct
+ 2020 11:42:51 -0700 (PDT)
+X-Received: by 2002:a05:6602:2b90:: with SMTP id r16mr3319866iov.31.1603219371878;
+        Tue, 20 Oct 2020 11:42:51 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1603219371; cv=none;
         d=google.com; s=arc-20160816;
-        b=tX8X5GqSCjrHyefwFVJultmnPUm0EpLD2zj9A6dYNv/lc6dyBTsShqbJT2iWveC6vL
-         cydTSv79dqq1hVSr7hKDjDNVC9OTWcA3jkGgZIDYErSfhDcNV9DD/SEwERRUaL4rSwD/
-         PFWMByHwL4nLcjOQulIM/KeCys9Xaq5rttvXnm9VzwpMrtuYCSpePecOFauXU3yR25q+
-         EpSVdKTnAyPfQo4YM7Zz3U1jdoks2allqBDfOYYx2uxNFpyG1PZGRiybCSR1COrGdo2f
-         vr6zeD6bTyqNwa8+QxatLgO4meyOapkCU8omvu0U0j7JUcybwNqwbiS5fOcuwdFGOjrH
-         hzXA==
+        b=ObjLslcXNep8C6oQTCTs4yc0C3vri0/dkZN4pa2aAbMY9fuhfnn/zx+WHmyCJ+cNgQ
+         72yvmiYsGvbruZqzYlhwYgOWT0hEIZp2VNjxyssUa2nHY9gjl7ruR95MprsppuY7q0Eh
+         EhAUcuU8Utkc+A37Yt34MA992DvIl/DPSo1e/ZjF1LfvGRlr853WZdAkvmmC7IzWdLvt
+         cOMJAsPTRilm1R8/ZtZmp5cyhrsouQCeZ9hGLlnsyNYlrmsmUOa9MYMTgZx5RcOs9bmK
+         62kKDZw83iYcjs3sPXRKSqi8fuiXR3zU9ytt/vHlCbZT4fuz/0Z+54qb036qlTEYee0t
+         MV/g==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=references:to:cc:in-reply-to:date:subject:mime-version:message-id
-         :from:dkim-signature;
-        bh=UBSvDuZX45rcdCwz1yIzvCzCqfd2joSCizhea4x+Xao=;
-        b=E4Lecw359CQfu+gms/JDTihy1GYExh39mfrZB/mWiEqqMW1ZBDBtAoK8dm+je3UrV1
-         7oalTmkI3DfwkPAPjpXu91gk36RtSa/6weeIcXbIS1sdwsCtj53GcA+2/fSEibxUwA/r
-         RV5L31GLV0fXciEf6iboU6QB2CYqc4cFvifKfsUiI/GtxQ+kQit0JowRY8YlXWbELt8c
-         1+kswnZv0hK1I4dF2ptYW7W5YrKnmr5TLGnPLQaMxAja7P6g96u97a2tmTvX3WYNT6dH
-         Xf8xN265GNjnOepAUiSax1gL1LcB0XZAE3L76LAOqan3RWw+XmlX3Tg4RltPuEWBgQDK
-         IjdA==
+        h=content-transfer-encoding:mime-version:user-agent:references
+         :in-reply-to:date:cc:to:from:subject:message-id;
+        bh=L7f8gxzmHz1zuppy2OCatGDIIf9704YunK91Oxegy1A=;
+        b=pald0TSrht3rxcwu1Wy46cab430+oharnsOf/Gh3YnCI/jIV6/LNYVKRSQBtkjJlP/
+         v4O8/6lWGErp9ejuy9isP5T90OTgLgf9/nbtaW+KQlk3umY/fgNQzvL7d4LKxRqdy0uW
+         TzUIjpxcaW/cKl74Yf9lLCzf6RoW/iSzVnutVP2j1VRzG0q1pp0vPaPSAvIVgwCB1iYY
+         a6f9LGCmDlb443NMp7cYUr3Tz//700kNEucy/YVJy/uaXFU51h/BW/6oGpcxvEg0CJKp
+         Kwlzhgvm2nHttHR4VUlVBUQ/A+NvF/ht+N1t3jBEzPaymh7aXsk2mJvchPFBHWmcx3p8
+         U0aA==
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@oracle.com header.s=corp-2020-01-29 header.b=q8gn83IP;
-       spf=pass (google.com: domain of john.haxby@oracle.com designates 156.151.31.85 as permitted sender) smtp.mailfrom=john.haxby@oracle.com;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=oracle.com
-Received: from userp2120.oracle.com (userp2120.oracle.com. [156.151.31.85])
-        by mx.google.com with ESMTPS id m11si637035qvx.15.2020.10.20.01.48.39
+       spf=neutral (google.com: 216.40.44.224 is neither permitted nor denied by best guess record for domain of joe@perches.com) smtp.mailfrom=joe@perches.com
+Received: from smtprelay.hostedemail.com (smtprelay0224.hostedemail.com. [216.40.44.224])
+        by mx.google.com with ESMTPS id b10si1253544ill.126.2020.10.20.11.42.51
         for <usb-storage@lists.one-eyed-alien.net>
-        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
-        Tue, 20 Oct 2020 01:48:39 -0700 (PDT)
-Received-SPF: pass (google.com: domain of john.haxby@oracle.com designates 156.151.31.85 as permitted sender) client-ip=156.151.31.85;
-Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
-	by userp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 09K8i7rI188082;
-	Tue, 20 Oct 2020 08:48:12 GMT
-Received: from userp3030.oracle.com (userp3030.oracle.com [156.151.31.80])
-	by userp2120.oracle.com with ESMTP id 347s8msmp0-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Tue, 20 Oct 2020 08:48:12 +0000
-Received: from pps.filterd (userp3030.oracle.com [127.0.0.1])
-	by userp3030.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 09K8is45150623;
-	Tue, 20 Oct 2020 08:48:12 GMT
-Received: from pps.reinject (localhost [127.0.0.1])
-	by userp3030.oracle.com with ESMTP id 348ahw07cp-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Tue, 20 Oct 2020 08:48:12 +0000
-Received: from userp3030.oracle.com (userp3030.oracle.com [127.0.0.1])
-	by pps.reinject (8.16.0.36/8.16.0.36) with SMTP id 09K8mAEe159753;
-	Tue, 20 Oct 2020 08:48:10 GMT
-Received: from aserv0122.oracle.com (aserv0122.oracle.com [141.146.126.236])
-	by userp3030.oracle.com with ESMTP id 348ahw07bh-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
-	Tue, 20 Oct 2020 08:48:10 +0000
-Received: from abhmp0005.oracle.com (abhmp0005.oracle.com [141.146.116.11])
-	by aserv0122.oracle.com (8.14.4/8.14.4) with ESMTP id 09K8lvTX021447;
-	Tue, 20 Oct 2020 08:47:58 GMT
-Received: from [10.175.164.120] (/10.175.164.120)
-	by default (Oracle Beehive Gateway v4.0)
-	with ESMTP ; Tue, 20 Oct 2020 01:47:57 -0700
-From: John Haxby <john.haxby@oracle.com>
-Message-Id: <27A23102-A7F5-48C5-8972-48CE4C283C6E@oracle.com>
-Content-Type: multipart/signed;
-	boundary="Apple-Mail=_9F9749E9-79EA-41AB-B516-003ECE07BEE3";
-	protocol="application/pgp-signature";
-	micalg=pgp-sha256
-Mime-Version: 1.0 (Mac OS X Mail 13.4 \(3608.120.23.2.4\))
-Subject: [usb-storage] Re: [Ocfs2-devel] [RFC] treewide: cleanup unreachable breaks
-Date: Tue, 20 Oct 2020 09:47:45 +0100
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 20 Oct 2020 11:42:51 -0700 (PDT)
+Received-SPF: neutral (google.com: 216.40.44.224 is neither permitted nor denied by best guess record for domain of joe@perches.com) client-ip=216.40.44.224;
+Received: from filter.hostedemail.com (clb03-v110.bra.tucows.net [216.40.38.60])
+	by smtprelay02.hostedemail.com (Postfix) with ESMTP id 43FA51260;
+	Tue, 20 Oct 2020 18:42:51 +0000 (UTC)
+X-Session-Marker: 6A6F6540706572636865732E636F6D
+X-Spam-Summary: 50,0,0,,d41d8cd98f00b204,joe@perches.com,,RULES_HIT:41:355:379:599:800:960:967:973:982:988:989:1260:1277:1311:1313:1314:1345:1359:1434:1437:1515:1516:1518:1534:1542:1593:1594:1711:1730:1747:1777:1792:2198:2199:2393:2525:2553:2560:2563:2682:2685:2731:2828:2859:2911:2933:2937:2939:2942:2945:2947:2951:2954:3022:3138:3139:3140:3141:3142:3354:3622:3865:3866:3867:3868:3870:3871:3872:3873:3874:3934:3936:3938:3941:3944:3947:3950:3953:3956:3959:4321:4425:5007:6742:6743:7576:7903:8957:9025:10004:10400:10450:10455:10848:11232:11658:11914:12043:12295:12297:12663:12740:12760:12895:13153:13228:13439:14181:14659:14721:19904:19999:21080:21451:21627:21939:21990:30012:30034:30054:30070:30090:30091,0,RBL:none,CacheIP:none,Bayesian:0.5,0.5,0.5,Netcheck:none,DomainCache:0,MSF:not bulk,SPF:,MSBL:0,DNSBL:none,Custom_rules:0:0:0,LFtime:1,LUA_SUMMARY:none
+X-HE-Tag: humor84_3a06a8527241
+X-Filterd-Recvd-Size: 4943
+Received: from XPS-9350.home (unknown [47.151.133.149])
+	(Authenticated sender: joe@perches.com)
+	by omf17.hostedemail.com (Postfix) with ESMTPA;
+	Tue, 20 Oct 2020 18:42:43 +0000 (UTC)
+Message-ID: <3bc5c2e3b3edc22a4d167ec807ecdaaf8dcda76d.camel@perches.com>
+Subject: [usb-storage] Re: [RFC] treewide: cleanup unreachable breaks
+From: Joe Perches <joe@perches.com>
+To: Nick Desaulniers <ndesaulniers@google.com>, Tom Rix <trix@redhat.com>
+Cc: LKML <linux-kernel@vger.kernel.org>, linux-edac@vger.kernel.org, 
+ linux-acpi@vger.kernel.org, linux-pm@vger.kernel.org, 
+ xen-devel@lists.xenproject.org, linux-block@vger.kernel.org, 
+ openipmi-developer@lists.sourceforge.net, "open list:HARDWARE RANDOM NUMBER
+ GENERATOR CORE" <linux-crypto@vger.kernel.org>, Linux ARM
+ <linux-arm-kernel@lists.infradead.org>,  linux-power@fi.rohmeurope.com,
+ linux-gpio@vger.kernel.org, amd-gfx list <amd-gfx@lists.freedesktop.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>, 
+ nouveau@lists.freedesktop.org, virtualization@lists.linux-foundation.org, 
+ spice-devel@lists.freedesktop.org, linux-iio@vger.kernel.org, 
+ linux-amlogic@lists.infradead.org,
+ industrypack-devel@lists.sourceforge.net,  linux-media@vger.kernel.org,
+ MPT-FusionLinux.pdl@broadcom.com,  linux-scsi@vger.kernel.org,
+ linux-mtd@lists.infradead.org,  linux-can@vger.kernel.org, Network
+ Development <netdev@vger.kernel.org>,  intel-wired-lan@lists.osuosl.org,
+ ath10k@lists.infradead.org, linux-wireless
+ <linux-wireless@vger.kernel.org>, linux-stm32@st-md-mailman.stormreply.com,
+  linux-nfc@lists.01.org, linux-nvdimm <linux-nvdimm@lists.01.org>, 
+ linux-pci@vger.kernel.org, linux-samsung-soc@vger.kernel.org, 
+ platform-driver-x86@vger.kernel.org, patches@opensource.cirrus.com, 
+ storagedev@microchip.com, devel@driverdev.osuosl.org, 
+ linux-serial@vger.kernel.org, linux-usb@vger.kernel.org, 
+ usb-storage@lists.one-eyed-alien.net, linux-watchdog@vger.kernel.org, 
+ ocfs2-devel@oss.oracle.com, bpf <bpf@vger.kernel.org>, 
+ linux-integrity@vger.kernel.org, linux-security-module@vger.kernel.org, 
+ keyrings@vger.kernel.org, alsa-devel@alsa-project.org, clang-built-linux
+ <clang-built-linux@googlegroups.com>, Greg KH <gregkh@linuxfoundation.org>,
+  George Burgess <gbiv@google.com>
+Date: Tue, 20 Oct 2020 11:42:42 -0700
 In-Reply-To: <CAKwvOdkR_Ttfo7_JKUiZFVqr=Uh=4b05KCPCSuzwk=zaWtA2_Q@mail.gmail.com>
-Cc: Tom Rix <trix@redhat.com>, alsa-devel@alsa-project.org,
-        clang-built-linux <clang-built-linux@googlegroups.com>,
-        Greg KH <gregkh@linuxfoundation.org>, linux-iio@vger.kernel.org,
-        nouveau@lists.freedesktop.org, storagedev@microchip.com,
-        dri-devel <dri-devel@lists.freedesktop.org>,
-        virtualization@lists.linux-foundation.org, keyrings@vger.kernel.org,
-        linux-mtd@lists.infradead.org, ath10k@lists.infradead.org,
-        MPT-FusionLinux.pdl@broadcom.com,
-        linux-stm32@st-md-mailman.stormreply.com,
-        usb-storage@lists.one-eyed-alien.net, linux-watchdog@vger.kernel.org,
-        devel@driverdev.osuosl.org, linux-samsung-soc@vger.kernel.org,
-        linux-scsi@vger.kernel.org, linux-nvdimm <linux-nvdimm@lists.01.org>,
-        amd-gfx list <amd-gfx@lists.freedesktop.org>,
-        linux-acpi@vger.kernel.org, intel-wired-lan@lists.osuosl.org,
-        industrypack-devel@lists.sourceforge.net, linux-pci@vger.kernel.org,
-        spice-devel@lists.freedesktop.org, linux-media@vger.kernel.org,
-        linux-serial@vger.kernel.org, linux-nfc@lists.01.org,
-        linux-pm@vger.kernel.org, linux-can@vger.kernel.org,
-        linux-block@vger.kernel.org, linux-gpio@vger.kernel.org,
-        xen-devel@lists.xenproject.org, linux-amlogic@lists.infradead.org,
-        openipmi-developer@lists.sourceforge.net,
-        platform-driver-x86@vger.kernel.org, linux-integrity@vger.kernel.org,
-        Linux ARM <linux-arm-kernel@lists.infradead.org>,
-        linux-edac@vger.kernel.org, George Burgess <gbiv@google.com>,
-        Network Development <netdev@vger.kernel.org>,
-        linux-usb@vger.kernel.org,
-        linux-wireless <linux-wireless@vger.kernel.org>,
-        LKML <linux-kernel@vger.kernel.org>,
-        linux-security-module@vger.kernel.org,
-        "open list:HARDWARE RANDOM NUMBER GENERATOR CORE" <linux-crypto@vger.kernel.org>,
-        patches@opensource.cirrus.com, bpf <bpf@vger.kernel.org>,
-        ocfs2-devel@oss.oracle.com, linux-power@fi.rohmeurope.com
-To: Nick Desaulniers <ndesaulniers@google.com>
 References: <20201017160928.12698-1-trix@redhat.com>
- <20201018054332.GB593954@kroah.com>
- <CAKwvOdkR_Ttfo7_JKUiZFVqr=Uh=4b05KCPCSuzwk=zaWtA2_Q@mail.gmail.com>
-X-Mailer: Apple Mail (2.3608.120.23.2.4)
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9779 signatures=668682
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 mlxscore=0 suspectscore=0
- lowpriorityscore=0 mlxlogscore=999 priorityscore=1501 spamscore=0
- phishscore=0 clxscore=1011 bulkscore=0 impostorscore=0 adultscore=0
- malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2009150000 definitions=main-2010200059
-X-Original-Sender: john.haxby@oracle.com
-X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@oracle.com header.s=corp-2020-01-29 header.b=q8gn83IP;
-       spf=pass (google.com: domain of john.haxby@oracle.com designates
- 156.151.31.85 as permitted sender) smtp.mailfrom=john.haxby@oracle.com;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=oracle.com
+	 <20201018054332.GB593954@kroah.com>
+	 <CAKwvOdkR_Ttfo7_JKUiZFVqr=Uh=4b05KCPCSuzwk=zaWtA2_Q@mail.gmail.com>
+Content-Type: text/plain; charset="UTF-8"
+User-Agent: Evolution 3.36.4-0ubuntu1
+MIME-Version: 1.0
+X-Original-Sender: joe@perches.com
+X-Original-Authentication-Results: mx.google.com;       spf=neutral
+ (google.com: 216.40.44.224 is neither permitted nor denied by best guess
+ record for domain of joe@perches.com) smtp.mailfrom=joe@perches.com
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
+X-Spam-Checked-In-Group: usb-storage@lists.one-eyed-alien.net
 X-Google-Group-Id: 960895140360
 List-Post: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/post>,
  <mailto:usb-storage@lists.one-eyed-alien.net>
@@ -195,42 +159,59 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-
---Apple-Mail=_9F9749E9-79EA-41AB-B516-003ECE07BEE3
-Content-Type: text/plain; charset="UTF-8"
-
-
-
-> On 19 Oct 2020, at 20:42, Nick Desaulniers <ndesaulniers@google.com> wrote:
+On Mon, 2020-10-19 at 12:42 -0700, Nick Desaulniers wrote:
+> On Sat, Oct 17, 2020 at 10:43 PM Greg KH <gregkh@linuxfoundation.org> wrote:
+> > On Sat, Oct 17, 2020 at 09:09:28AM -0700, trix@redhat.com wrote:
+> > > From: Tom Rix <trix@redhat.com>
+> > > 
+> > > This is a upcoming change to clean up a new warning treewide.
+> > > I am wondering if the change could be one mega patch (see below) or
+> > > normal patch per file about 100 patches or somewhere half way by collecting
+> > > early acks.
+> > 
+> > Please break it up into one-patch-per-subsystem, like normal, and get it
+> > merged that way.
+> > 
+> > Sending us a patch, without even a diffstat to review, isn't going to
+> > get you very far...
+> 
+> Tom,
+> If you're able to automate this cleanup, I suggest checking in a
+> script that can be run on a directory.  Then for each subsystem you
+> can say in your commit "I ran scripts/fix_whatever.py on this subdir."
+>  Then others can help you drive the tree wide cleanup.  Then we can
+> enable -Wunreachable-code-break either by default, or W=2 right now
+> might be a good idea.
+> 
+> Ah, George (gbiv@, cc'ed), did an analysis recently of
+> `-Wunreachable-code-loop-increment`, `-Wunreachable-code-break`, and
+> `-Wunreachable-code-return` for Android userspace.  From the review:
+> ```
+> Spoilers: of these, it seems useful to turn on
+> -Wunreachable-code-loop-increment and -Wunreachable-code-return by
+> default for Android
+> ...
+> While these conventions about always having break arguably became
+> obsolete when we enabled -Wfallthrough, my sample turned up zero
+> potential bugs caught by this warning, and we'd need to put a lot of
+> effort into getting a clean tree. So this warning doesn't seem to be
+> worth it.
+> ```
+> Looks like there's an order of magnitude of `-Wunreachable-code-break`
+> than the other two.
 > 
 > We probably should add all 3 to W=2 builds (wrapped in cc-option).
 > I've filed https://github.com/ClangBuiltLinux/linux/issues/1180 to
 > follow up on.
 
-It looks as though the URL mangling has been fixed.   If anyone sees that specific URL mangled, please let me know.
+I suggest using W=1 as people that are doing cleanups
+generally use that and not W=123 or any other style.
 
-jch
+Every other use of W= is still quite noisy and these
+code warnings are relatively trivially to fix up.
+
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/27A23102-A7F5-48C5-8972-48CE4C283C6E%40oracle.com.
-
---Apple-Mail=_9F9749E9-79EA-41AB-B516-003ECE07BEE3
-Content-Transfer-Encoding: 7bit
-Content-Disposition: attachment;
-	filename=signature.asc
-Content-Type: application/pgp-signature;
-	name=signature.asc
-Content-Description: Message signed with OpenPGP
-
------BEGIN PGP SIGNATURE-----
-Comment: GPGTools - http://gpgtools.org
-
-iHUEAREIAB0WIQT+pxvb11CFWUkNSOVFC7t+lC+jyAUCX46kMQAKCRBFC7t+lC+j
-yBKiAP90JVXdPzuAwtRGkROpw1eVCo7wCaZ5nOa8Oo0sN6gC9gD/S0eGTqQhmg+n
-sXPJxPYqQsg09qmS6k/HX+AP5Oz2AMo=
-=xx66
------END PGP SIGNATURE-----
-
---Apple-Mail=_9F9749E9-79EA-41AB-B516-003ECE07BEE3--
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/3bc5c2e3b3edc22a4d167ec807ecdaaf8dcda76d.camel%40perches.com.
