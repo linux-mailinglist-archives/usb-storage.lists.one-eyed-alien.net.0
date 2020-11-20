@@ -1,132 +1,159 @@
 Return-Path: <usb-storage+bncBAABBYFF4D6QKGQEUJDD5MI@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-ot1-x346.google.com (mail-ot1-x346.google.com [IPv6:2607:f8b0:4864:20::346])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6AC5D2BB4BB
-	for <lists+usb-storage@lfdr.de>; Fri, 20 Nov 2020 20:02:58 +0100 (CET)
-Received: by mail-ot1-x346.google.com with SMTP id 23sf4509178otv.13
-        for <lists+usb-storage@lfdr.de>; Fri, 20 Nov 2020 11:02:58 -0800 (PST)
-ARC-Seal: i=2; a=rsa-sha256; t=1605898977; cv=pass;
+Received: from mail-ot1-x345.google.com (mail-ot1-x345.google.com [IPv6:2607:f8b0:4864:20::345])
+	by mail.lfdr.de (Postfix) with ESMTPS id 962242BB4B8
+	for <lists+usb-storage@lfdr.de>; Fri, 20 Nov 2020 20:02:57 +0100 (CET)
+Received: by mail-ot1-x345.google.com with SMTP id h25sf991263otm.9
+        for <lists+usb-storage@lfdr.de>; Fri, 20 Nov 2020 11:02:57 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1605898976; cv=pass;
         d=google.com; s=arc-20160816;
-        b=lNynE3ysbncE8uXnsoFfo2SjM6xwkNUaT+FjadK2NA6KNRrapiqAvOwHBvO4kdPkma
-         0hOifTQHfpGKbCk8iTAiV7QbhaAVUucjOFo1tiZF1Z7Pu75erxud/3Te1hK5bt/8tjye
-         J2riPRJRmOl/wPblKa4Nwd6pqeWkPzwnN7ujr5xir3Ww4fnrYYLxbLTK2nYjtAxBg5pA
-         69LNXeQiojjKvQmoa1QjkJ4XwYZ2tyt3/h8Tlbe5mWqWD1k0ZyrmQye2EJLBOIYs5YLw
-         3FOvo+kH350Qx711zVEZ+yxoQ8g9/oZlH5tZvz6a0gDPcFjm+c852SQifEwaUxXXZWdA
-         wU3g==
+        b=Y0ii1l16P5enKQ8BEfepNyCu8TQGIWHU92mZjQYItH+ycxuJ+nHhm8KgPIciWysxYb
+         +MsybNIQ5SojL2Q2AYleiVSlTATwKNfYgauZCsknpzAlFyLyqYqpXqjijfMX4ITGMd+6
+         SvJDu0/3fkjRGn73O1IYYr112HfTLFmiwgWsgu89Ow1tLxRZUChNNFa2GpDxRL02PN+D
+         nKDhJxFn2eWj32Pf+ZwPSMFTn00cSPYQTxoc4J6rcBVQvcfJm6XgR4umhsz2ZPKksejY
+         MqgTrIYnV+FIs7/IGNAmztTn+h6F1nBYdItCF64ySAxLypuDVA2csnQAQYM8lq3RhkQG
+         OeoA==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:user-agent:in-reply-to
-         :content-disposition:mime-version:references:message-id:subject:cc
-         :to:from:date:sender:dkim-signature;
-        bh=asIae6SVkdQXpW52gejWiS4FvxMpOlMczH6KKEhhjPY=;
-        b=rMXzTvsZr1usr908/gO7tGcj6CpgXSxt/bhS094EytzKjE3B3cNTCAQOBo8i98h/+2
-         Btpseid0C62irnjtT+dgxDKekyyvwGQxvaBRbChwByl7BJ3px1g1D/+Vw7Wr9zvvzTt0
-         tx8cjWZZrtxBvP5ckHJOmvRIxPByO3VJR9bHpFqgFSLVt3GFH843ESqHRCct+Vxe3Qsp
-         F3VXOvJ18wkLIfdS/sCCkyJ5lBHmLRO6byASTUKzEo07UP4ruVZngRBKVLEEthwQrcuP
-         aNdBuKFW+2a0TdUrU34rSUjh0TRnNkJewjwjk6EXGSfKdoLePfEhc+CHaoDZ/m34KkTK
-         KUyw==
+         :list-id:mailing-list:precedence:mime-version:references:in-reply-to
+         :message-id:subject:cc:to:from:date:sender:dkim-signature;
+        bh=0oEDl4QS1BzxZsQzKO+CtgV6tPM51nPPQfBEprUJ8hQ=;
+        b=Sb3JcebhduE3ZCgr37G/yFYo8WQEPlZWNkIg6iRMwU+q9QT7yR4zUHMMHjxTAjxv9j
+         SEAdhI+IuToGW3sJIfkjVmGyKr/oDZ10iIsG+k1vGrsB5YKKwoEvnSxiPI/l5Oz7kojQ
+         ZWivYLGP5Lw7XH67ckhraIRL9JVbWJp8tGspMmOkugLsAE5R0cDTJjy5G0VIMSJM0eIh
+         RorQ3zJfqA248HaQARjRz3IUJp3R0HifuwfvJZvWA1cr4NlZ3cxZe76jELIK89khokUV
+         cHEO7Ak+c647KngQqLGDxrZw8gw3UAT8ba32b8amrIRUCZIWLDs9DTnp5DsqkfdMw0w7
+         DFrg==
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@kernel.org header.s=default header.b=Jy2staIP;
-       spf=pass (google.com: domain of gustavoars@kernel.org designates 198.145.29.99 as permitted sender) smtp.mailfrom=gustavoars@kernel.org;
+       dkim=pass header.i=@kernel.org header.s=default header.b=y6BwGzsU;
+       spf=pass (google.com: domain of kuba@kernel.org designates 198.145.29.99 as permitted sender) smtp.mailfrom=kuba@kernel.org;
        dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=kernel.org
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
-        h=sender:date:from:to:cc:subject:message-id:references:mime-version
-         :content-disposition:in-reply-to:user-agent:x-original-sender
-         :x-original-authentication-results:precedence:mailing-list:list-id
-         :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
-        bh=asIae6SVkdQXpW52gejWiS4FvxMpOlMczH6KKEhhjPY=;
-        b=aEfVoCO8zIt8/tdO9JPHZLuccNnK6V88s7oyCxqXxLl66dQzXMlaQLZKCRTPNlDuQ1
-         008YRi55nQyC99F6pNtXGtF+iFGQ0QfbqaHMqTJFcAezftqBcuvYr937NtrJ1+mC1WCI
-         i8toxUkBx7/tFntt/dvQY+Kryz4CVX1Kis+AU=
+        h=sender:date:from:to:cc:subject:message-id:in-reply-to:references
+         :mime-version:x-original-sender:x-original-authentication-results
+         :precedence:mailing-list:list-id:list-post:list-help:list-archive
+         :list-subscribe:list-unsubscribe;
+        bh=0oEDl4QS1BzxZsQzKO+CtgV6tPM51nPPQfBEprUJ8hQ=;
+        b=W6p+QXv0BjUoQLlFKB1Lt8e8vKjBL9lGie3gNgz1exT98+gPAJ3qbFrE1WBXTeW/cz
+         jaYUE2lTYyiHrMCEF9XYz1Dz2AfAQCmHZyAz8G9Vbcbg4g9qWVptxEQqb4DsiPkjVveN
+         FdJ0CxPMV68J2k+TeitZy0IJ/Ap7lTBfdkRZo=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
         h=sender:x-gm-message-state:date:from:to:cc:subject:message-id
-         :references:mime-version:content-disposition:in-reply-to:user-agent
-         :x-original-sender:x-original-authentication-results:precedence
-         :mailing-list:list-id:list-post:list-help:list-archive
-         :list-subscribe:list-unsubscribe;
-        bh=asIae6SVkdQXpW52gejWiS4FvxMpOlMczH6KKEhhjPY=;
-        b=t2pLrhifcKLua3fUaqC4j8Gi+v0bUfo2V1kPz6Nvxeebzj0KpkUey3RRkmBaj6A9Lc
-         nPYSEleNgu6GKz7ZsRX9P9h7hl14JSqRs5GC1ugZe2DzJdYVw4dSZLLXH1qGLj3wbh9w
-         3VBhhuK9jsLf7ov766dluW26J0kdqKsx/5exIjR1caK/Ec5BL6yhQNvafIN/zQc6zNNF
-         zGJrsKWuPzZvBcmylKdeBnnvSG+YXBiqQEWTEDsw+4cbRsEVT/nJh+4Jh7giJrIa9uLm
-         MfkSNTjOM6WP+uxRb0KB8Mug+s5cB+GTjoEg63od7M5OvYfQuzyF9WuIwLrLdyPg11Of
-         GPtg==
+         :in-reply-to:references:mime-version:x-original-sender
+         :x-original-authentication-results:precedence:mailing-list:list-id
+         :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
+        bh=0oEDl4QS1BzxZsQzKO+CtgV6tPM51nPPQfBEprUJ8hQ=;
+        b=ouNA1i8OZsLYmpVmzTH3A+HCF+b75YnANiAwKUfX4RGUnIbFOR9iJxsoXTOvsExyzG
+         ccDAfQtr6hN3i/z8QpTgiXZCuWIVMpxW2bGQUwQI4zAD3oa52ked2VJ7mKSFSu8DJcGl
+         w7ULmDRJ4M5YJS8oaV2fqz8DXa+X9XnystI/tdVLAZkbW65rxdE7+aRKg+dVpIN5TFmm
+         OcpzV++yD0bwiio4Au/8EyNBZjwZQX7416oxfAS0slY1aNN/QtsGAYlxRSfqzG037IB4
+         lJkg/TMIHAPdT/IxLQhUiZKmYMrGCDCVB15bKq2pN+qCUpbV4zkX+hdl0OSLjtSM2l+w
+         wrQQ==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: AOAM533bBkv5a/f2gBLBtHxhKK7NpYYDZA0M30VzuFFXdgXtp857r5Qi
-	iHztbf40Nib/CcR0y2ANvK/MjA==
-X-Google-Smtp-Source: ABdhPJwZgKivrtAmvZFgRb5iFEoqG6lN7pvTxOMF87Bsp/VIPch8sUF45BKQ50V5PkH6JbsFdjgmpA==
-X-Received: by 2002:a05:6830:8f:: with SMTP id a15mr13968686oto.362.1605898976562;
+X-Gm-Message-State: AOAM5339XnQnly91vdJDxyLXj2UIqwW1/K0pQkRi7gL57cJmj1jc9P5O
+	nEBZ3Sp/+qLWfpRw/04sAZfOTQ==
+X-Google-Smtp-Source: ABdhPJyH651D+z/XmkxHp1TylChH9DL1Fue6gl4N2/TGaLAEBUpfFOrmyECk76Jma4/9z/LMuzwMzw==
+X-Received: by 2002:a05:6808:60a:: with SMTP id y10mr7566969oih.159.1605898976558;
         Fri, 20 Nov 2020 11:02:56 -0800 (PST)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a05:6830:17cb:: with SMTP id p11ls684054ota.7.gmail; Fri, 20
+Received: by 2002:aca:b784:: with SMTP id h126ls1819427oif.3.gmail; Fri, 20
  Nov 2020 11:02:56 -0800 (PST)
-X-Received: by 2002:a9d:2c03:: with SMTP id f3mr8623179otb.284.1605898976305;
+X-Received: by 2002:aca:ed82:: with SMTP id l124mr7227942oih.67.1605898976310;
         Fri, 20 Nov 2020 11:02:56 -0800 (PST)
-Received: by 2002:a54:4581:0:b029:e3:eb8:4d3 with SMTP id z1-20020a5445810000b02900e30eb804d3msoib;
-        Fri, 20 Nov 2020 10:40:22 -0800 (PST)
-X-Received: by 2002:a63:230e:: with SMTP id j14mr9767109pgj.412.1605897622323;
-        Fri, 20 Nov 2020 10:40:22 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1605897622; cv=none;
+Received: by 2002:a54:4191:0:b029:dd:8465:4abf with SMTP id 17-20020a5441910000b02900dd84654abfmsoiy;
+        Fri, 20 Nov 2020 10:53:50 -0800 (PST)
+X-Received: by 2002:aa7:854d:0:b029:197:9168:80fb with SMTP id y13-20020aa7854d0000b0290197916880fbmr11956961pfn.38.1605898429970;
+        Fri, 20 Nov 2020 10:53:49 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1605898429; cv=none;
         d=google.com; s=arc-20160816;
-        b=1BhRJBQpRiOl+BufGgzaT3+y00javQZV+38YhGAdN7kYaXEOiZqk/vcEAOv9GhF8Hy
-         iAnam7JtyTJ/7bPCzxoCnyEWH23g9E+V3krrXg6+4/L8P4/2M8+Gs0aT7XENzM8Lk0yX
-         A/MTxJCEPXGOObMoR22Xyc3CNURhet09DO+4xzE73IyyUgIfdtUQ1NQqwmCTOyRoF9Et
-         5S/jWrlZ6TEv3GbVDNkP10c7f5Rdc1oZI9AYT3braBe/+ZL4qU9dvVmIPT3Q6hTXPXNk
-         sZXgod78nKWpAWBgkxPE4AYGLFZ+GVYtIAjlWP6OY4DAapTa1ofOW0PLBsg5vqsCU6Cv
-         x1VQ==
+        b=CtB3lXPI7o07fw/YsZXj0NV6ByBY2KI8w1IhmcEXk2vYfibbcM1VRw/ygIlBU+q1PQ
+         oSjij/huBN0NB3Oxqy0MUBXSwHeQLAJiEMyGeN25VQ9+BfJ/VLYTm4hcvKITY6bfwG6l
+         lKjUmL6iu1h+YkCRHRPBJrc6IHC1NVgGUIwOxi8f3Wy9tqTd0g631acqcXiEzblXC5Qp
+         wBFXDY99QVxVUVUUsyW4WxYecgIjP3TJqvHr6VQu1dX8R/nSp+7YNHDO7r9c4+nxg+js
+         LCNZZ5QRIMnN/SPkFbGFVYOOpOEF+rXX9x9/294KFF1toU7eJeR0W2BA0Mf99ONv0TMs
+         CGtQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=user-agent:in-reply-to:content-disposition:mime-version:references
+        h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:subject:cc:to:from:date:dkim-signature;
-        bh=OsnxW7x3CriXxhN5RsnWYdz3oiCPTGwTy9UeMxS0I6k=;
-        b=GWrSoPddZ/CPcd+Shsi9IZrX6MBxysRoClX3OJXMWIoUBomlnFZROk0pcKeqgV9dXB
-         s5Bc6Z6r7WW+sQlVOYDObZEenwSC/7VkmIX+76JwixE3T3ecnfzR/wCF9Tisy34Tf7fz
-         wGgGAtM3nu480ei+1XRzBDj/UyVW3Tlfq3AGNx5+A0EPjLttBvhpFb01+bQ417Cv/No8
-         ts6YD7Q6Z7ZKgxKUFFIpNBI3I8tGCHRSJAOvY1BcJgGTiAhtkVyzzJSpcL7bzb8mJfMi
-         VLhFbgsYJ/VhBcwENpkK0NfMY/2OTG23TYm8RiM1+TfBtwyccyb5ZgB+qlZKTh6Nb/B3
-         noPQ==
+        bh=FukM/9yMnsGBAIDOCGCijBAXraWr7dNZVwEVLkgzlBI=;
+        b=I7ye6j1UvI8kAdi3c12kzn5ZQOl9aTUB+0nmEZ4ifp0HjjJS7bQ/n3ZDeqnjrAfTHm
+         J3iLH/VzwUoorjn+BJGM+EkF3y6qyuK5DeJ90HkOyBIXzg6cCDRAwDlXbqFJyL2KBfBT
+         V+Kfeo1JkipZajH8p32QIbXbu8Tc3p2XWcVbjVZVkWecfrIG+Llu+WJX5F8CVev3+osO
+         LPb9Y1Rv7oY3AbKKOmmgVH6LazW8TcIeuEVzO6OVFEO9JY670eU9gmmLObv89czO4eLm
+         O3M6DL96xHkweIUdwMMwSizzlPdRbjuUZQqUqhm1J+SQh9Vz4mYuXKkyUV3d0bxr9gOo
+         51FQ==
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@kernel.org header.s=default header.b=Jy2staIP;
-       spf=pass (google.com: domain of gustavoars@kernel.org designates 198.145.29.99 as permitted sender) smtp.mailfrom=gustavoars@kernel.org;
+       dkim=pass header.i=@kernel.org header.s=default header.b=y6BwGzsU;
+       spf=pass (google.com: domain of kuba@kernel.org designates 198.145.29.99 as permitted sender) smtp.mailfrom=kuba@kernel.org;
        dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=kernel.org
 Received: from mail.kernel.org (mail.kernel.org. [198.145.29.99])
-        by mx.google.com with ESMTPS id e21si3355772pld.82.2020.11.20.10.40.22
+        by mx.google.com with ESMTPS id j15si3494586pgg.461.2020.11.20.10.53.49
         for <usb-storage@lists.one-eyed-alien.net>
         (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Fri, 20 Nov 2020 10:40:22 -0800 (PST)
-Received-SPF: pass (google.com: domain of gustavoars@kernel.org designates 198.145.29.99 as permitted sender) client-ip=198.145.29.99;
-Received: from embeddedor (187-162-31-110.static.axtel.net [187.162.31.110])
+        Fri, 20 Nov 2020 10:53:49 -0800 (PST)
+Received-SPF: pass (google.com: domain of kuba@kernel.org designates 198.145.29.99 as permitted sender) client-ip=198.145.29.99;
+Received: from kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com (unknown [163.114.132.6])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPSA id A9CDA241A6;
-	Fri, 20 Nov 2020 18:40:20 +0000 (UTC)
-Date: Fri, 20 Nov 2020 12:40:27 -0600
-From: "Gustavo A. R. Silva" <gustavoars@kernel.org>
-To: Felipe Balbi <balbi@kernel.org>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Olav Kongas <ok@artecdesign.ee>, Bin Liu <b-liu@ti.com>,
-	Alan Stern <stern@rowland.harvard.edu>,
-	Oliver Neukum <oneukum@suse.com>
-Cc: linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
-	usb-storage@lists.one-eyed-alien.net, linux-scsi@vger.kernel.org,
-	linux-hardening@vger.kernel.org,
-	"Gustavo A. R. Silva" <gustavoars@kernel.org>
-Subject: [usb-storage] [PATCH 133/141] usb: Fix fall-through warnings for Clang
-Message-ID: <a76da7ca5b4f41c13d27b298accb8222d0b04e61.1605896060.git.gustavoars@kernel.org>
+	by mail.kernel.org (Postfix) with ESMTPSA id D19712242B;
+	Fri, 20 Nov 2020 18:53:45 +0000 (UTC)
+Date: Fri, 20 Nov 2020 10:53:44 -0800
+From: Jakub Kicinski <kuba@kernel.org>
+To: "Gustavo A. R. Silva" <gustavoars@kernel.org>
+Cc: linux-kernel@vger.kernel.org, alsa-devel@alsa-project.org,
+ amd-gfx@lists.freedesktop.org, bridge@lists.linux-foundation.org,
+ ceph-devel@vger.kernel.org, cluster-devel@redhat.com,
+ coreteam@netfilter.org, devel@driverdev.osuosl.org, dm-devel@redhat.com,
+ drbd-dev@lists.linbit.com, dri-devel@lists.freedesktop.org,
+ GR-everest-linux-l2@marvell.com, GR-Linux-NIC-Dev@marvell.com,
+ intel-gfx@lists.freedesktop.org, intel-wired-lan@lists.osuosl.org,
+ keyrings@vger.kernel.org, linux1394-devel@lists.sourceforge.net,
+ linux-acpi@vger.kernel.org, linux-afs@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
+ linux-atm-general@lists.sourceforge.net, linux-block@vger.kernel.org,
+ linux-can@vger.kernel.org, linux-cifs@vger.kernel.org,
+ linux-crypto@vger.kernel.org, linux-decnet-user@lists.sourceforge.net,
+ linux-ext4@vger.kernel.org, linux-fbdev@vger.kernel.org,
+ linux-geode@lists.infradead.org, linux-gpio@vger.kernel.org,
+ linux-hams@vger.kernel.org, linux-hwmon@vger.kernel.org,
+ linux-i3c@lists.infradead.org, linux-ide@vger.kernel.org,
+ linux-iio@vger.kernel.org, linux-input@vger.kernel.org,
+ linux-integrity@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ linux-media@vger.kernel.org, linux-mmc@vger.kernel.org, linux-mm@kvack.org,
+ linux-mtd@lists.infradead.org, linux-nfs@vger.kernel.org,
+ linux-rdma@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
+ linux-scsi@vger.kernel.org, linux-sctp@vger.kernel.org,
+ linux-security-module@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com, linux-usb@vger.kernel.org,
+ linux-watchdog@vger.kernel.org, linux-wireless@vger.kernel.org,
+ netdev@vger.kernel.org, netfilter-devel@vger.kernel.org,
+ nouveau@lists.freedesktop.org, op-tee@lists.trustedfirmware.org,
+ oss-drivers@netronome.com, patches@opensource.cirrus.com,
+ rds-devel@oss.oracle.com, reiserfs-devel@vger.kernel.org,
+ samba-technical@lists.samba.org, selinux@vger.kernel.org,
+ target-devel@vger.kernel.org, tipc-discussion@lists.sourceforge.net,
+ usb-storage@lists.one-eyed-alien.net,
+ virtualization@lists.linux-foundation.org, wcn36xx@lists.infradead.org,
+ x86@kernel.org, xen-devel@lists.xenproject.org,
+ linux-hardening@vger.kernel.org, Nick Desaulniers
+ <ndesaulniers@google.com>, Nathan Chancellor <natechancellor@gmail.com>,
+ Miguel Ojeda <ojeda@kernel.org>, Joe Perches <joe@perches.com>, Kees Cook
+ <keescook@chromium.org>
+Subject: [usb-storage] Re: [PATCH 000/141] Fix fall-through warnings for Clang
+Message-ID: <20201120105344.4345c14e@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com>
+In-Reply-To: <cover.1605896059.git.gustavoars@kernel.org>
 References: <cover.1605896059.git.gustavoars@kernel.org>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="UTF-8"
-Content-Disposition: inline
-In-Reply-To: <cover.1605896059.git.gustavoars@kernel.org>
-User-Agent: Mutt/1.9.4 (2018-02-28)
-X-Original-Sender: gustavoars@kernel.org
+X-Original-Sender: kuba@kernel.org
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@kernel.org header.s=default header.b=Jy2staIP;       spf=pass
- (google.com: domain of gustavoars@kernel.org designates 198.145.29.99 as
- permitted sender) smtp.mailfrom=gustavoars@kernel.org;       dmarc=pass
- (p=NONE sp=NONE dis=NONE) header.from=kernel.org
+ header.i=@kernel.org header.s=default header.b=y6BwGzsU;       spf=pass
+ (google.com: domain of kuba@kernel.org designates 198.145.29.99 as permitted
+ sender) smtp.mailfrom=kuba@kernel.org;       dmarc=pass (p=NONE sp=NONE
+ dis=NONE) header.from=kernel.org
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -141,187 +168,32 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-In preparation to enable -Wimplicit-fallthrough for Clang, fix multiple
-warnings by explicitly adding multiple break/return/fallthrough
-statements instead of letting the code fall through to the next
-case.
+On Fri, 20 Nov 2020 12:21:39 -0600 Gustavo A. R. Silva wrote:
+> This series aims to fix almost all remaining fall-through warnings in
+> order to enable -Wimplicit-fallthrough for Clang.
+> 
+> In preparation to enable -Wimplicit-fallthrough for Clang, explicitly
+> add multiple break/goto/return/fallthrough statements instead of just
+> letting the code fall through to the next case.
+> 
+> Notice that in order to enable -Wimplicit-fallthrough for Clang, this
+> change[1] is meant to be reverted at some point. So, this patch helps
+> to move in that direction.
+> 
+> Something important to mention is that there is currently a discrepancy
+> between GCC and Clang when dealing with switch fall-through to empty case
+> statements or to cases that only contain a break/continue/return
+> statement[2][3][4].
 
-Link: https://github.com/KSPP/linux/issues/115
-Signed-off-by: Gustavo A. R. Silva <gustavoars@kernel.org>
----
- drivers/usb/gadget/function/f_fs.c         | 2 ++
- drivers/usb/gadget/function/f_loopback.c   | 2 +-
- drivers/usb/gadget/function/f_sourcesink.c | 1 +
- drivers/usb/gadget/udc/dummy_hcd.c         | 2 ++
- drivers/usb/host/fotg210-hcd.c             | 2 +-
- drivers/usb/host/isp116x-hcd.c             | 1 +
- drivers/usb/host/max3421-hcd.c             | 1 +
- drivers/usb/host/oxu210hp-hcd.c            | 1 +
- drivers/usb/misc/yurex.c                   | 1 +
- drivers/usb/musb/tusb6010.c                | 1 +
- drivers/usb/storage/ene_ub6250.c           | 1 +
- drivers/usb/storage/uas.c                  | 1 +
- 12 files changed, 14 insertions(+), 2 deletions(-)
+Are we sure we want to make this change? Was it discussed before?
 
-diff --git a/drivers/usb/gadget/function/f_fs.c b/drivers/usb/gadget/function/f_fs.c
-index 046f770a76da..7f9c4e35d3db 100644
---- a/drivers/usb/gadget/function/f_fs.c
-+++ b/drivers/usb/gadget/function/f_fs.c
-@@ -678,6 +678,8 @@ static __poll_t ffs_ep0_poll(struct file *file, poll_table *wait)
- 			mask |= (EPOLLIN | EPOLLOUT);
- 			break;
- 		}
-+		break;
-+
- 	case FFS_CLOSING:
- 		break;
- 	case FFS_DEACTIVATED:
-diff --git a/drivers/usb/gadget/function/f_loopback.c b/drivers/usb/gadget/function/f_loopback.c
-index 1803646b3678..b56ad7c3838b 100644
---- a/drivers/usb/gadget/function/f_loopback.c
-+++ b/drivers/usb/gadget/function/f_loopback.c
-@@ -274,7 +274,7 @@ static void loopback_complete(struct usb_ep *ep, struct usb_request *req)
- 	default:
- 		ERROR(cdev, "%s loop complete --> %d, %d/%d\n", ep->name,
- 				status, req->actual, req->length);
--		/* FALLTHROUGH */
-+		fallthrough;
- 
- 	/* NOTE:  since this driver doesn't maintain an explicit record
- 	 * of requests it submitted (just maintains qlen count), we
-diff --git a/drivers/usb/gadget/function/f_sourcesink.c b/drivers/usb/gadget/function/f_sourcesink.c
-index ed68a4860b7d..5a201ba7b155 100644
---- a/drivers/usb/gadget/function/f_sourcesink.c
-+++ b/drivers/usb/gadget/function/f_sourcesink.c
-@@ -559,6 +559,7 @@ static void source_sink_complete(struct usb_ep *ep, struct usb_request *req)
- #if 1
- 		DBG(cdev, "%s complete --> %d, %d/%d\n", ep->name,
- 				status, req->actual, req->length);
-+		break;
- #endif
- 	case -EREMOTEIO:		/* short read */
- 		break;
-diff --git a/drivers/usb/gadget/udc/dummy_hcd.c b/drivers/usb/gadget/udc/dummy_hcd.c
-index 53a227217f1c..bb0dc67ecdd3 100644
---- a/drivers/usb/gadget/udc/dummy_hcd.c
-+++ b/drivers/usb/gadget/udc/dummy_hcd.c
-@@ -553,6 +553,7 @@ static int dummy_enable(struct usb_ep *_ep,
- 				/* we'll fake any legal size */
- 				break;
- 			/* save a return statement */
-+			fallthrough;
- 		default:
- 			goto done;
- 		}
-@@ -595,6 +596,7 @@ static int dummy_enable(struct usb_ep *_ep,
- 			if (max <= 1023)
- 				break;
- 			/* save a return statement */
-+			fallthrough;
- 		default:
- 			goto done;
- 		}
-diff --git a/drivers/usb/host/fotg210-hcd.c b/drivers/usb/host/fotg210-hcd.c
-index 1d94fcfac2c2..0451943f0bc4 100644
---- a/drivers/usb/host/fotg210-hcd.c
-+++ b/drivers/usb/host/fotg210-hcd.c
-@@ -5276,7 +5276,7 @@ static int fotg210_urb_enqueue(struct usb_hcd *hcd, struct urb *urb,
- 		 */
- 		if (urb->transfer_buffer_length > (16 * 1024))
- 			return -EMSGSIZE;
--		/* FALLTHROUGH */
-+		fallthrough;
- 	/* case PIPE_BULK: */
- 	default:
- 		if (!qh_urb_transaction(fotg210, urb, &qtd_list, mem_flags))
-diff --git a/drivers/usb/host/isp116x-hcd.c b/drivers/usb/host/isp116x-hcd.c
-index 3055d9abfec3..8544a2a2c1e6 100644
---- a/drivers/usb/host/isp116x-hcd.c
-+++ b/drivers/usb/host/isp116x-hcd.c
-@@ -1447,6 +1447,7 @@ static int isp116x_bus_resume(struct usb_hcd *hcd)
- 		val &= ~HCCONTROL_HCFS;
- 		val |= HCCONTROL_USB_RESUME;
- 		isp116x_write_reg32(isp116x, HCCONTROL, val);
-+		break;
- 	case HCCONTROL_USB_RESUME:
- 		break;
- 	case HCCONTROL_USB_OPER:
-diff --git a/drivers/usb/host/max3421-hcd.c b/drivers/usb/host/max3421-hcd.c
-index 0894f6caccb2..0b5d47e6aab2 100644
---- a/drivers/usb/host/max3421-hcd.c
-+++ b/drivers/usb/host/max3421-hcd.c
-@@ -1537,6 +1537,7 @@ max3421_urb_enqueue(struct usb_hcd *hcd, struct urb *urb, gfp_t mem_flags)
- 				__func__, urb->interval);
- 			return -EINVAL;
- 		}
-+		break;
- 	default:
- 		break;
- 	}
-diff --git a/drivers/usb/host/oxu210hp-hcd.c b/drivers/usb/host/oxu210hp-hcd.c
-index 27dbbe1b28b1..aa42df39e6a1 100644
---- a/drivers/usb/host/oxu210hp-hcd.c
-+++ b/drivers/usb/host/oxu210hp-hcd.c
-@@ -1365,6 +1365,7 @@ __acquires(oxu->lock)
- 	switch (urb->status) {
- 	case -EINPROGRESS:		/* success */
- 		urb->status = 0;
-+		break;
- 	default:			/* fault */
- 		break;
- 	case -EREMOTEIO:		/* fault or normal */
-diff --git a/drivers/usb/misc/yurex.c b/drivers/usb/misc/yurex.c
-index e3165d79b5f6..73ebfa6e9715 100644
---- a/drivers/usb/misc/yurex.c
-+++ b/drivers/usb/misc/yurex.c
-@@ -137,6 +137,7 @@ static void yurex_interrupt(struct urb *urb)
- 		dev_err(&dev->interface->dev,
- 			"%s - overflow with length %d, actual length is %d\n",
- 			__func__, YUREX_BUF_SIZE, dev->urb->actual_length);
-+		return;
- 	case -ECONNRESET:
- 	case -ENOENT:
- 	case -ESHUTDOWN:
-diff --git a/drivers/usb/musb/tusb6010.c b/drivers/usb/musb/tusb6010.c
-index c26683a2702b..c42937692207 100644
---- a/drivers/usb/musb/tusb6010.c
-+++ b/drivers/usb/musb/tusb6010.c
-@@ -467,6 +467,7 @@ static void musb_do_idle(struct timer_list *t)
- 		fallthrough;
- 	case OTG_STATE_A_IDLE:
- 		tusb_musb_set_vbus(musb, 0);
-+		break;
- 	default:
- 		break;
- 	}
-diff --git a/drivers/usb/storage/ene_ub6250.c b/drivers/usb/storage/ene_ub6250.c
-index 98c1aa594e6c..5f7d678502be 100644
---- a/drivers/usb/storage/ene_ub6250.c
-+++ b/drivers/usb/storage/ene_ub6250.c
-@@ -861,6 +861,7 @@ static int ms_count_freeblock(struct us_data *us, u16 PhyBlock)
- 		case MS_LB_NOT_USED:
- 		case MS_LB_NOT_USED_ERASED:
- 			Count++;
-+			break;
- 		default:
- 			break;
- 		}
-diff --git a/drivers/usb/storage/uas.c b/drivers/usb/storage/uas.c
-index c8a577309e8f..6bd33c57fdcb 100644
---- a/drivers/usb/storage/uas.c
-+++ b/drivers/usb/storage/uas.c
-@@ -690,6 +690,7 @@ static int uas_queuecommand_lck(struct scsi_cmnd *cmnd,
- 		fallthrough;
- 	case DMA_TO_DEVICE:
- 		cmdinfo->state |= ALLOC_DATA_OUT_URB | SUBMIT_DATA_OUT_URB;
-+		break;
- 	case DMA_NONE:
- 		break;
- 	}
--- 
-2.27.0
+Are there any bugs Clangs puritanical definition of fallthrough helped
+find?
+
+IMVHO compiler warnings are supposed to warn about issues that could
+be bugs. Falling through to default: break; can hardly be a bug?!
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/a76da7ca5b4f41c13d27b298accb8222d0b04e61.1605896060.git.gustavoars%40kernel.org.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20201120105344.4345c14e%40kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com.
