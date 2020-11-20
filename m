@@ -1,34 +1,34 @@
-Return-Path: <usb-storage+bncBAABBYFF4D6QKGQEUJDD5MI@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBDNYNPOAQ4GBB4NG4D6QKGQEP7ZH2QQ@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
 Received: from mail-oi1-x245.google.com (mail-oi1-x245.google.com [IPv6:2607:f8b0:4864:20::245])
-	by mail.lfdr.de (Postfix) with ESMTPS id F15D92BB4BA
-	for <lists+usb-storage@lfdr.de>; Fri, 20 Nov 2020 20:02:57 +0100 (CET)
-Received: by mail-oi1-x245.google.com with SMTP id f66sf4847240oib.9
-        for <lists+usb-storage@lfdr.de>; Fri, 20 Nov 2020 11:02:57 -0800 (PST)
-ARC-Seal: i=2; a=rsa-sha256; t=1605898977; cv=pass;
+	by mail.lfdr.de (Postfix) with ESMTPS id CA0822BB4C2
+	for <lists+usb-storage@lfdr.de>; Fri, 20 Nov 2020 20:05:22 +0100 (CET)
+Received: by mail-oi1-x245.google.com with SMTP id v5sf4831679oig.21
+        for <lists+usb-storage@lfdr.de>; Fri, 20 Nov 2020 11:05:22 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1605899121; cv=pass;
         d=google.com; s=arc-20160816;
-        b=zj9IZFTn3zqohRytwylZ+Tv/S/iTJBKIVTwdk0N++0t4Y2+rdAKUq4r7jOz+1VqPbM
-         mHZqDqESqfyUsCgnjevSTuJQ/ejLhtSBFO/SgkO2scd4TLrHrmD13gm+OMqn8+PKp7fE
-         RHUf2UW5Jq0n0/qiTB41lCQKtX/yYGbXreR7E2Exfu/PqZVg62pFknd0rJ9tMxGZPreY
-         3EEeg7IyZerGl+lqg3ytZFHXWqo2veMivEo9VZJT/TlhVyPnjAiWhwSdST27UMfRAXw1
-         s4FXiyjluatsi0ISZbE6/R0kZSfhXlEYRDFYuXRXj4ZdEIFXDNFt5TsdDJqtUupU6jjT
-         JarQ==
+        b=ZLV74egdYmwPn+LFlsw26F65Kxb+At+Mw1o5PY/ILuuO6i0uu4SEBvC/Rbucb16gqO
+         742cVoO/3yShe/OUfiOssINarC/pwz/O37NXwo34ecTZZBIvTJfahDnBgzVhaBUrdCQf
+         CXXFdblMF40LIgWxWMPe7p4BAVYUWVJsfrB6p4sX56JRuvqNW0zzFd4+F3bYAbnrEgUO
+         FI45XIgSFkc2BOvJtBpxk/sJXDdpLwlkh+gVc46G0pZjKKorrbj1C97IeClUhapooLnj
+         RTk4bkdf9jcT3UJ1uxtR3rwlRFq+iiZYB1RoP6DZUjaf13RH6ikg/3DHbyCF9nUHx0cv
+         F8ew==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:content-language:in-reply-to
          :mime-version:user-agent:date:message-id:autocrypt:from:references
          :cc:to:subject:sender:dkim-signature;
-        bh=RCxWra/lXL3Z+NQ6g1ke0oAwuOEVMw3lR886ui9f7h0=;
-        b=Z5Yd1co3eng6R7lfFfTfoAJXdfdLf5m/bJbghztYawe8vJudROif9KC8yLCV5JsJup
-         0plpWSe6jvfw82D5udpD+ZHYAbGZy7hR9HXG0Hf0SQ9hEqM8XzOXM+lEPkQ8vvN/sD/6
-         rjLUiCG+wH+ocTFDun67zl5weCxTyNdDj5fgRLXqjtLycYLU8KSQjGMF6nQIL7kTzHmJ
-         3vq9Dx91vU/bJChD0QQErvqVxav6HHcWcSZfmqLJdCSHk06a9f9XJRwZuVSAyHmeMGkc
-         8KqwMw+wX588J6okIaJ6H+L/TQmtEBce6cFqxelGJhzzYVpGcJB/G9glrsx7HuQb888u
-         OdnQ==
+        bh=yDqxTsjTukkDJA69GUv9n8qaLVns7kbeDZGv4oYa+Pg=;
+        b=UC6LKFOqvkynu+2sfakeq4eElZLWaaRG6qc5okvs5eZfPb+kPJ4aV2WjnKgAG6Dx+t
+         STRHGUc8+L5gJI+0t6cLVcH0dUSL1UHxxQjbKseMWUvEcQcvXvHPhzhgcoIk6mP94S10
+         JdyllNiIYWH0p/8AfTS1Qt03U3FvEKF7mpJhnD9HJCvchfLUsjqMVLmYCOUjlFefENj2
+         Lx2MMmRRZs8hz84iPvIXw3aLyZHI8kUMNiGv99lfq6z0tkB9eQh9LT/mrZMTOmCmc4tT
+         EgHQNyKt8jjvY4GxApSUs2IfdFtLWpmgGgFrcjvjuwR9e6M3PCPMtKAHBL0np4iTJER9
+         Z2yw==
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@embeddedor.com header.s=default header.b=n09KqYny;
-       spf=pass (google.com: domain of gustavo@embeddedor.com designates 192.185.67.41 as permitted sender) smtp.mailfrom=gustavo@embeddedor.com
+       dkim=pass header.i=@embeddedor.com header.s=default header.b=RC17bKQE;
+       spf=pass (google.com: domain of gustavo@embeddedor.com designates 192.185.145.9 as permitted sender) smtp.mailfrom=gustavo@embeddedor.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
         h=sender:subject:to:cc:references:from:autocrypt:message-id:date
@@ -36,102 +36,99 @@ DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
          :x-original-sender:x-original-authentication-results:precedence
          :mailing-list:list-id:list-post:list-help:list-archive
          :list-subscribe:list-unsubscribe;
-        bh=RCxWra/lXL3Z+NQ6g1ke0oAwuOEVMw3lR886ui9f7h0=;
-        b=FFK1AfVztQqTjLnFBqAIzcRNgM36zNj95OfzVI+pOxlKHBDosdwUMPtqtQk9Q2fprq
-         UBF65vJ9wtCS8PRBsy6Nuj2KJWpkOBgWlVtg+0ksGHiW808aAzr3HB5e8AKiIOrOzVNe
-         IO6HpmOQzW9Yt73eHMF3jKGe8Uq8TLukh1xYY=
+        bh=yDqxTsjTukkDJA69GUv9n8qaLVns7kbeDZGv4oYa+Pg=;
+        b=Om4gE1RlmaEcYO0JsFRbGQEZ753+6cN6T7bjR634xdrw+odVPrTlbJr4fn+n9diZoY
+         8pvCcNII144WnOv4hPoKSUviD0n7XeLQaMElng92m00Um7jcsGA/NYK9JjdgoPXJhDv3
+         POAztIBSgAzpN28v1KbwRl9x+RLwuN67V/4Po=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
         h=sender:x-gm-message-state:subject:to:cc:references:from:autocrypt
          :message-id:date:user-agent:mime-version:in-reply-to
          :content-language:x-original-sender
          :x-original-authentication-results:precedence:mailing-list:list-id
-         :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
-        bh=RCxWra/lXL3Z+NQ6g1ke0oAwuOEVMw3lR886ui9f7h0=;
-        b=UzNh01FD2mTdtmlgiSsylC2cBMxtiTdn9vEoP34RVK5kT9+Zfu4CfhF/66cmDx+BQB
-         QfRlXuj7+p9EHs8POLSf5fwrbuw8oESdUMpLTp/14dzv5Qs4qYGykaOAtjwPX+jLfPwD
-         wIlgWT02KJOnV9Upte/ahxbu4hL8URt3Hnvt4O8GgKu53ibZBcdmMhHoaHzQ0epqU+v/
-         lqS+VVzsKD+849z4rLdozVvnFWOB7s+MFFfWlYuZiuJ7+4eLL8otj8rLzKm3YKq4FstH
-         L8jP6q7sSVykwV2qtIThgl4KWSt3A+S/iK3/S4O5HOvcjeLxkM6rAr5EbHwN1eNY1WRw
-         Q+wA==
+         :x-spam-checked-in-group:list-post:list-help:list-archive
+         :list-subscribe:list-unsubscribe;
+        bh=yDqxTsjTukkDJA69GUv9n8qaLVns7kbeDZGv4oYa+Pg=;
+        b=YPKg5MslxaK5GDTsR8bsc4GmoROlmX2AAlXthNTDmJR3VXzBMeeSuf2qILWZOqNvry
+         f6zKL7xiTuOh2Vcl+uUqunUnk5/RzX3YJ5PUX4q28ChPcMC46j82NaYlqWQ3E+CXgPh8
+         mbSq9sLkWYvVbR4x0IL1FoBQBzYMLWyopMhRsG6QozGHYztclR1zHHZWpcDDpnI41Lzr
+         k3rwXlJW71X1WxtnFxDh8ZKgpmplZkHMahe/X0eLYaA7xV2AH1nGohvUooxpTv10+lT5
+         jBYKODbXA8rVlHF4JNYPELKHuj7kulhdeAwuiXzZxegGQLxvbeOy5pvxZZgYSCrbAfmK
+         fHdw==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: AOAM530rAobA769vV+eSLICXJqFrvL3KN/tauAy1OGSJi4Msa0LU/lKS
-	cN81g5jBlIB1yHKMYSq3b07qGg==
-X-Google-Smtp-Source: ABdhPJwY6J3zrOWVKlKeY8eZAbafy5avNEcWCEoooBogsUiOzN6fFO8V903ZBwxjumcXkfVNBh7u+g==
-X-Received: by 2002:a05:6830:23a3:: with SMTP id m3mr15546685ots.135.1605898976584;
-        Fri, 20 Nov 2020 11:02:56 -0800 (PST)
+X-Gm-Message-State: AOAM530fuuCWW+h11w6jbuL4pIYhkKKSf9n0JVvgyE9ZBt/uka0QH3+V
+	V7drztZzVflYBRW4BV0fmqY4ZA==
+X-Google-Smtp-Source: ABdhPJx0XJGPmCXLG4ggGlpzlMSqkGPmFHKj7Qfo2hviojvNjdCuMMH1JHQilK9XjVDHeq4ZsT00mg==
+X-Received: by 2002:a9d:2ae3:: with SMTP id e90mr14842985otb.105.1605899121532;
+        Fri, 20 Nov 2020 11:05:21 -0800 (PST)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a05:6830:1f59:: with SMTP id u25ls1856362oth.1.gmail; Fri,
- 20 Nov 2020 11:02:56 -0800 (PST)
-X-Received: by 2002:a9d:550a:: with SMTP id l10mr13462046oth.357.1605898976310;
-        Fri, 20 Nov 2020 11:02:56 -0800 (PST)
-Received: by 2002:aca:1b0c:0:b029:e3:e173:f488 with SMTP id b12-20020aca1b0c0000b02900e3e173f488msoib;
-        Fri, 20 Nov 2020 11:02:32 -0800 (PST)
-X-Received: by 2002:aca:4d06:: with SMTP id a6mr6762245oib.84.1605898951699;
-        Fri, 20 Nov 2020 11:02:31 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1605898951; cv=none;
+Received: by 2002:aca:dd84:: with SMTP id u126ls1798681oig.6.gmail; Fri, 20
+ Nov 2020 11:05:21 -0800 (PST)
+X-Received: by 2002:aca:c70b:: with SMTP id x11mr7447471oif.58.1605899121031;
+        Fri, 20 Nov 2020 11:05:21 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1605899121; cv=none;
         d=google.com; s=arc-20160816;
-        b=Dqx5WxTiuHPsEe0MFWHs2fAtQjiXTp+EkBIcwzSEjB/Z+Ld0uYatDk28cD2f/I/kPC
-         lIv8S6eVcFvCJbfue77i5OtQtBsxeGLScElU5/rWbcN6CHVAJSmyZ9fj4KbYsTlAxZZM
-         InfY4S5bLoPfEadGoc3fS7ji6O73sFSMXlRKMximmYVYNKDQ8odgOwFRU9nGaot6xzmL
-         jDLJsLl5wH5bc/lBCrxflxqpUd3ECLDagArmwDaKGN5P+ksKY9i8hm1Sncg6NL1h3oEl
-         OsrLNLWO2NcCwOA8f6hK30Aq3oLidJSMsiQvuIh+xrCxIY5gvF1Rol7r31jBSmBSekhe
-         oj8g==
+        b=vRMoE2WQsyIjdpEw5WB0FaAbv2/idZ8grR7A2ig1O5JuRF7tgv6CIeuY4H2ltk8zwk
+         XV1QwmXvFP+L5/AV/xEYU28nk2ZzBXZ62PQCXN51H4ioRc2kNeZWINm968AecQm7TrTV
+         +fiNkxZHa9sO2Gn2QY6cXmm9Zd9e66lfW9TJGYaHgYlMD/j0vTjpQWFH6YnY8tXrjE3y
+         94iMLxNTGPKVvErcX2EleOTitWRnYnL9ql58R4SBP+GVnwf2FcIh/OVwgqq0d4Ot2IyX
+         nmeQ1gA0tdooV1RfAu5Tvf893wKwT/PPC3N/w1lUj82BPuBeJF+laR0uZBPW0NHe+Drf
+         bGhA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=content-transfer-encoding:content-language:in-reply-to:mime-version
          :user-agent:date:message-id:autocrypt:from:references:cc:to:subject
          :dkim-signature;
-        bh=+4VxQ3E1SMf3fqpPxA59SXnFTIYnqNYQQfNHAF4XRGw=;
-        b=OxZuvJE/gZdRSDT9iDNqJgTGs4+m9F4gYR1Zzu30eolRSP5FT4y08FugCbjecd7Jr+
-         Mbt3uovSwQ9CQGowXreGC4aQhVGhMIzUSCIOhZW75sUNn4+QDt40255RnAF/Ka+oaY5n
-         GaxUSdE7/wslX823SThM22ot3etpZ7Th24IkZVH9PGcbe2OQTZZupGvMAoTVNwsHax2E
-         8uHwheQEcfs0CFaGE7HTj/pU49+/sVGlGFWRSf8iYLkiocycC3s68Htd+I0qO51vlt+d
-         zUjY4vyKsFljDva3+qxxXfcdHM6XbI8WOt/fsAiVnfg7RTkVEBndBw4McseaA1tTCPCu
-         IwpQ==
+        bh=o6HouBgCeARvPDycxq+DQL9GTuV0FZaznhFf+B5lvvQ=;
+        b=XNozgmtJ+1JxqYPpTdZkSlb2XcRaTmUVZUfxGKRHF/+yy/Wh67Ap8P2t9RFfCklCyp
+         ezWJIxBEVfv5fW/EZzWZsWfXCJRgUFVecWChyrePj2tIwbE8Mr4bXXH3C60OgpggEunn
+         Cqxg7kcMnULURSOBoNCxx/1oYfaz3MLrV37dN9CoZDwyJ+8G7VuMDRdjvDQPuGpMHVIV
+         E7TPab7Q+7IAyQRZ8hFFPw44YI1hF5fE3cuW+5LzhLIr2UncOChRAlXN6wUGLqj8pIoi
+         ZFHMdjLub73ticgBENtVhxgNpOp+DUUwoT+lCqIs5oCdfQWscaFwNoMPt/zuWe/CWkFx
+         glqQ==
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@embeddedor.com header.s=default header.b=n09KqYny;
-       spf=pass (google.com: domain of gustavo@embeddedor.com designates 192.185.67.41 as permitted sender) smtp.mailfrom=gustavo@embeddedor.com
-Received: from gateway20.websitewelcome.com (gateway20.websitewelcome.com. [192.185.67.41])
-        by mx.google.com with ESMTPS id g26si1995723otk.221.2020.11.20.11.02.31
+       dkim=pass header.i=@embeddedor.com header.s=default header.b=RC17bKQE;
+       spf=pass (google.com: domain of gustavo@embeddedor.com designates 192.185.145.9 as permitted sender) smtp.mailfrom=gustavo@embeddedor.com
+Received: from gateway33.websitewelcome.com (gateway33.websitewelcome.com. [192.185.145.9])
+        by mx.google.com with ESMTPS id c1si2299128ots.93.2020.11.20.11.05.20
         for <usb-storage@lists.one-eyed-alien.net>
         (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Fri, 20 Nov 2020 11:02:31 -0800 (PST)
-Received-SPF: pass (google.com: domain of gustavo@embeddedor.com designates 192.185.67.41 as permitted sender) client-ip=192.185.67.41;
-Received: from cm10.websitewelcome.com (cm10.websitewelcome.com [100.42.49.4])
-	by gateway20.websitewelcome.com (Postfix) with ESMTP id 29F59400D34C2
-	for <usb-storage@lists.one-eyed-alien.net>; Fri, 20 Nov 2020 12:59:13 -0600 (CST)
+        Fri, 20 Nov 2020 11:05:20 -0800 (PST)
+Received-SPF: pass (google.com: domain of gustavo@embeddedor.com designates 192.185.145.9 as permitted sender) client-ip=192.185.145.9;
+Received: from cm13.websitewelcome.com (cm13.websitewelcome.com [100.42.49.6])
+	by gateway33.websitewelcome.com (Postfix) with ESMTP id 22DBC58F65B
+	for <usb-storage@lists.one-eyed-alien.net>; Fri, 20 Nov 2020 13:04:52 -0600 (CST)
 Received: from gator4166.hostgator.com ([108.167.133.22])
 	by cmsmtp with SMTP
-	id gBfzkngEGuDoAgBfzkStyK; Fri, 20 Nov 2020 13:02:31 -0600
+	id gBiFkQkdnYLDngBiFkQza6; Fri, 20 Nov 2020 13:04:52 -0600
 X-Authority-Reason: nr=8
-Received: from 187-162-31-110.static.axtel.net ([187.162.31.110]:52198 helo=[192.168.15.4])
+Received: from 187-162-31-110.static.axtel.net ([187.162.31.110]:52360 helo=[192.168.15.4])
 	by gator4166.hostgator.com with esmtpsa  (TLS1.2) tls TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
 	(Exim 4.93)
 	(envelope-from <gustavo@embeddedor.com>)
-	id 1kgBfw-0000VH-WA; Fri, 20 Nov 2020 13:02:29 -0600
+	id 1kgBiD-00024G-7d; Fri, 20 Nov 2020 13:04:49 -0600
 Subject: [usb-storage] Re: [PATCH 000/141] Fix fall-through warnings for Clang
-To: Joe Perches <joe@perches.com>, "Gustavo A. R. Silva"
- <gustavoars@kernel.org>, linux-kernel@vger.kernel.org
-Cc: alsa-devel@alsa-project.org, amd-gfx@lists.freedesktop.org,
- bridge@lists.linux-foundation.org, ceph-devel@vger.kernel.org,
- cluster-devel@redhat.com, coreteam@netfilter.org,
- devel@driverdev.osuosl.org, dm-devel@redhat.com, drbd-dev@lists.linbit.com,
- dri-devel@lists.freedesktop.org, GR-everest-linux-l2@marvell.com,
- GR-Linux-NIC-Dev@marvell.com, intel-gfx@lists.freedesktop.org,
- intel-wired-lan@lists.osuosl.org, keyrings@vger.kernel.org,
- linux1394-devel@lists.sourceforge.net, linux-acpi@vger.kernel.org,
- linux-afs@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-arm-msm@vger.kernel.org, linux-atm-general@lists.sourceforge.net,
- linux-block@vger.kernel.org, linux-can@vger.kernel.org,
- linux-cifs@vger.kernel.org, linux-crypto@vger.kernel.org,
- linux-decnet-user@lists.sourceforge.net, linux-ext4@vger.kernel.org,
- linux-fbdev@vger.kernel.org, linux-geode@lists.infradead.org,
- linux-gpio@vger.kernel.org, linux-hams@vger.kernel.org,
- linux-hwmon@vger.kernel.org, linux-i3c@lists.infradead.org,
- linux-ide@vger.kernel.org, linux-iio@vger.kernel.org,
- linux-input@vger.kernel.org, linux-integrity@vger.kernel.org,
- linux-mediatek@lists.infradead.org, linux-media@vger.kernel.org,
- linux-mmc@vger.kernel.org, linux-mm@kvack.org,
+To: Jakub Kicinski <kuba@kernel.org>,
+ "Gustavo A. R. Silva" <gustavoars@kernel.org>
+Cc: linux-kernel@vger.kernel.org, alsa-devel@alsa-project.org,
+ amd-gfx@lists.freedesktop.org, bridge@lists.linux-foundation.org,
+ ceph-devel@vger.kernel.org, cluster-devel@redhat.com,
+ coreteam@netfilter.org, devel@driverdev.osuosl.org, dm-devel@redhat.com,
+ drbd-dev@lists.linbit.com, dri-devel@lists.freedesktop.org,
+ GR-everest-linux-l2@marvell.com, GR-Linux-NIC-Dev@marvell.com,
+ intel-gfx@lists.freedesktop.org, intel-wired-lan@lists.osuosl.org,
+ keyrings@vger.kernel.org, linux1394-devel@lists.sourceforge.net,
+ linux-acpi@vger.kernel.org, linux-afs@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
+ linux-atm-general@lists.sourceforge.net, linux-block@vger.kernel.org,
+ linux-can@vger.kernel.org, linux-cifs@vger.kernel.org,
+ linux-crypto@vger.kernel.org, linux-decnet-user@lists.sourceforge.net,
+ linux-ext4@vger.kernel.org, linux-fbdev@vger.kernel.org,
+ linux-geode@lists.infradead.org, linux-gpio@vger.kernel.org,
+ linux-hams@vger.kernel.org, linux-hwmon@vger.kernel.org,
+ linux-i3c@lists.infradead.org, linux-ide@vger.kernel.org,
+ linux-iio@vger.kernel.org, linux-input@vger.kernel.org,
+ linux-integrity@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ linux-media@vger.kernel.org, linux-mmc@vger.kernel.org, linux-mm@kvack.org,
  linux-mtd@lists.infradead.org, linux-nfs@vger.kernel.org,
  linux-rdma@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
  linux-scsi@vger.kernel.org, linux-sctp@vger.kernel.org,
@@ -149,9 +146,10 @@ Cc: alsa-devel@alsa-project.org, amd-gfx@lists.freedesktop.org,
  x86@kernel.org, xen-devel@lists.xenproject.org,
  linux-hardening@vger.kernel.org, Nick Desaulniers <ndesaulniers@google.com>,
  Nathan Chancellor <natechancellor@gmail.com>, Miguel Ojeda
- <ojeda@kernel.org>, Kees Cook <keescook@chromium.org>
+ <ojeda@kernel.org>, Joe Perches <joe@perches.com>,
+ Kees Cook <keescook@chromium.org>
 References: <cover.1605896059.git.gustavoars@kernel.org>
- <3e0bbb1644fe53d79322c2feb28ccaf3e20c0e94.camel@perches.com>
+ <20201120105344.4345c14e@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com>
 From: "Gustavo A. R. Silva" <gustavo@embeddedor.com>
 Autocrypt: addr=gustavo@embeddedor.com; keydata=
  xsFNBFssHAwBEADIy3ZoPq3z5UpsUknd2v+IQud4TMJnJLTeXgTf4biSDSrXn73JQgsISBwG
@@ -197,12 +195,12 @@ Autocrypt: addr=gustavo@embeddedor.com; keydata=
  6i6Rd2U/i8jH5WvzR57UeWxE4P8bQc0hNGrUsHQH6bpHV2lbuhDdqo+cM9ehGZEO3+gCDFmK
  rjspZjkJbB5Gadzvts5fcWGOXEvuT8uQSvl+vEL0g6vczsyPBtqoBLa9SNrSVtSixD1uOgyt
  AP7RWS474w==
-Message-ID: <9f986394-125a-81f7-7696-fe1a9f4eb4f5@embeddedor.com>
-Date: Fri, 20 Nov 2020 13:02:34 -0600
+Message-ID: <4609d49b-4dd3-c017-b76e-a8a536871c05@embeddedor.com>
+Date: Fri, 20 Nov 2020 13:04:55 -0600
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.10.0
 MIME-Version: 1.0
-In-Reply-To: <3e0bbb1644fe53d79322c2feb28ccaf3e20c0e94.camel@perches.com>
+In-Reply-To: <20201120105344.4345c14e@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com>
 Content-Type: text/plain; charset="UTF-8"
 Content-Language: en-US
 X-AntiAbuse: This header was added to track abuse, please include it with any abuse report
@@ -213,23 +211,24 @@ X-AntiAbuse: Sender Address Domain - embeddedor.com
 X-BWhitelist: no
 X-Source-IP: 187.162.31.110
 X-Source-L: No
-X-Exim-ID: 1kgBfw-0000VH-WA
+X-Exim-ID: 1kgBiD-00024G-7d
 X-Source: 
 X-Source-Args: 
 X-Source-Dir: 
-X-Source-Sender: 187-162-31-110.static.axtel.net ([192.168.15.4]) [187.162.31.110]:52198
+X-Source-Sender: 187-162-31-110.static.axtel.net ([192.168.15.4]) [187.162.31.110]:52360
 X-Source-Auth: gustavo@embeddedor.com
-X-Email-Count: 68
+X-Email-Count: 145
 X-Source-Cap: Z3V6aWRpbmU7Z3V6aWRpbmU7Z2F0b3I0MTY2Lmhvc3RnYXRvci5jb20=
 X-Local-Domain: yes
 X-Original-Sender: gustavo@embeddedor.com
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@embeddedor.com header.s=default header.b=n09KqYny;       spf=pass
- (google.com: domain of gustavo@embeddedor.com designates 192.185.67.41 as
+ header.i=@embeddedor.com header.s=default header.b=RC17bKQE;       spf=pass
+ (google.com: domain of gustavo@embeddedor.com designates 192.185.145.9 as
  permitted sender) smtp.mailfrom=gustavo@embeddedor.com
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
+X-Spam-Checked-In-Group: usb-storage@lists.one-eyed-alien.net
 X-Google-Group-Id: 960895140360
 List-Post: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/post>,
  <mailto:usb-storage@lists.one-eyed-alien.net>
@@ -242,11 +241,10 @@ List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegro
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
 
+Hi,
 
-On 11/20/20 12:28, Joe Perches wrote:
-> On Fri, 2020-11-20 at 12:21 -0600, Gustavo A. R. Silva wrote:
->> Hi all,
->>
+On 11/20/20 12:53, Jakub Kicinski wrote:
+> On Fri, 20 Nov 2020 12:21:39 -0600 Gustavo A. R. Silva wrote:
 >> This series aims to fix almost all remaining fall-through warnings in
 >> order to enable -Wimplicit-fallthrough for Clang.
 >>
@@ -257,16 +255,47 @@ On 11/20/20 12:28, Joe Perches wrote:
 >> Notice that in order to enable -Wimplicit-fallthrough for Clang, this
 >> change[1] is meant to be reverted at some point. So, this patch helps
 >> to move in that direction.
+>>
+>> Something important to mention is that there is currently a discrepancy
+>> between GCC and Clang when dealing with switch fall-through to empty case
+>> statements or to cases that only contain a break/continue/return
+>> statement[2][3][4].
 > 
-> This was a bit hard to parse for a second or three.
+> Are we sure we want to make this change? Was it discussed before?
 > 
-> Thanks Gustavo.
+> Are there any bugs Clangs puritanical definition of fallthrough helped
+> find?
 > 
-> How was this change done?
+> IMVHO compiler warnings are supposed to warn about issues that could
+> be bugs. Falling through to default: break; can hardly be a bug?!
 
-I audited case by case in order to determine the best fit for each
-situation. Depending on the surrounding logic, sometimes it makes
-more sense a goto or a fallthrough rather than merely a break.
+The justification for this is explained in this same changelog text:
+
+Now that the -Wimplicit-fallthrough option has been globally enabled[5],
+any compiler should really warn on missing either a fallthrough annotation
+or any of the other case-terminating statements (break/continue/return/
+goto) when falling through to the next case statement. Making exceptions
+to this introduces variation in case handling which may continue to lead
+to bugs, misunderstandings, and a general lack of robustness. The point
+of enabling options like -Wimplicit-fallthrough is to prevent human error
+and aid developers in spotting bugs before their code is even built/
+submitted/committed, therefore eliminating classes of bugs. So, in order
+to really accomplish this, we should, and can, move in the direction of
+addressing any error-prone scenarios and get rid of the unintentional
+fallthrough bug-class in the kernel, entirely, even if there is some minor
+redundancy. Better to have explicit case-ending statements than continue to
+have exceptions where one must guess as to the right result. The compiler
+will eliminate any actual redundancy.
+
+Note that there is already a patch in mainline that addresses almost
+40,000 of these issues[6].
+
+[1] commit e2079e93f562c ("kbuild: Do not enable -Wimplicit-fallthrough for clang for now")
+[2] ClangBuiltLinux#636
+[3] https://gcc.gnu.org/bugzilla/show_bug.cgi?id=91432
+[4] https://godbolt.org/z/xgkvIh
+[5] commit a035d552a93b ("Makefile: Globally enable fall-through warning")
+[6] commit 4169e889e588 ("include: jhash/signal: Fix fall-through warnings for Clang")
 
 Thanks
 --
@@ -275,4 +304,4 @@ Gustavo
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/9f986394-125a-81f7-7696-fe1a9f4eb4f5%40embeddedor.com.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/4609d49b-4dd3-c017-b76e-a8a536871c05%40embeddedor.com.
