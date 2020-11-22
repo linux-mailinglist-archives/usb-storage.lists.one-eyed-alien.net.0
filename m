@@ -1,46 +1,43 @@
-Return-Path: <usb-storage+bncBDXO746SYYBRBTWY5L6QKGQE34D47KY@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBDY3NC743AGBBLW25L6QKGQEGOWTU7Q@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-io1-xd45.google.com (mail-io1-xd45.google.com [IPv6:2607:f8b0:4864:20::d45])
-	by mail.lfdr.de (Postfix) with ESMTPS id 973402BC7B5
-	for <lists+usb-storage@lfdr.de>; Sun, 22 Nov 2020 19:22:07 +0100 (CET)
-Received: by mail-io1-xd45.google.com with SMTP id z7sf11097114iom.14
-        for <lists+usb-storage@lfdr.de>; Sun, 22 Nov 2020 10:22:07 -0800 (PST)
-ARC-Seal: i=2; a=rsa-sha256; t=1606069326; cv=pass;
+Received: from mail-il1-x147.google.com (mail-il1-x147.google.com [IPv6:2607:f8b0:4864:20::147])
+	by mail.lfdr.de (Postfix) with ESMTPS id 78DC02BC7E9
+	for <lists+usb-storage@lfdr.de>; Sun, 22 Nov 2020 19:25:51 +0100 (CET)
+Received: by mail-il1-x147.google.com with SMTP id u129sf12074022ilc.21
+        for <lists+usb-storage@lfdr.de>; Sun, 22 Nov 2020 10:25:51 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1606069550; cv=pass;
         d=google.com; s=arc-20160816;
-        b=WAeKINhTKKz2CNyn4zN8dwtRNXbooY67tyqT6K6t7OiTzmr+uhhIIv/X0usK48Kp7q
-         EiMLtmmnBe//6l7noNrJJe5FxQv6KfvSG4/MAlbAQswfh2wDxzhz0F6eNfG5atC17pEd
-         RYMcnYFzjHCVcEx36YWOiQ8JlvwAk6aXLpGvIhsprtpnx6f5AijOVVLBmkoWgFZMThpV
-         k/DiXdQ5vzy+jx5wa3aIKC98lUj9Lc+j49UdPq9XysAL/IJHxE7sbq3HQ0hta5OzpZKH
-         Sa7k14NugcTHb1GcKgThelKwc3ferlVOzEprIWYBabKGw58Z+Bs/P/YB6HlogjKgi09C
-         4wEA==
+        b=f1bQdo06FxMbR/qbeVObA1NkuMeAG3eA3ol3hACrnIRJgVEO7xhi2Vb2qVVkyHqW6c
+         A9aEaHC4R+qhk2xqFErgDqouthY1m7L1FydzcMgwZQ+enwhg8cQysEqlpt0HYO/cfyYi
+         HQuU3ujDmpc6YztwdxquYiGqW6qexfF6SZAZfSm2dVPQt/LxEIamO990Te6INv0Cr4nI
+         jXhJN8KeuLqeI7rKLdsbZLydaHsXEBuSY4NPppzwOCJI/3Q1Mp7sHrdYS2EHGtHrwYDF
+         P26T9IxVaYu25rxL82XVdPaS9guRsGAIv9rIWxNp/4HPLCuGTWmDKNzVysHQg5WfEDk1
+         7EZA==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:mime-version:user-agent:references
          :in-reply-to:date:cc:to:from:subject:message-id:sender
          :dkim-signature;
-        bh=Vs6E/iEao2zs8OpTj3raOaS0ndFaGSqdMYRXlZdxyG4=;
-        b=D5NPjeWkv9XqCDhFJHYgj9NL7smHSV4WpKI5ZTvMa8gtBmiQiAkJHqZs1dQR+rfrdn
-         dnVjjLkO4Ey0zGwtf9C31cIU6nd9iQoyQDkOCgMcY4ep0qL5JlQeVY16Ta32bArPzLZn
-         v8bFoQq4AHLmeqXjgRPZIUMFmC66wAeHvEn9011BGMd/3ZeinToLl4NFNI5RvgrBRWC+
-         uG/UOaO1k7lTl71Mgrn/Ua2CXCDrD8athsX+3Kty4uoFD11cd9EmoZfTAeChRlzU0R27
-         SVSKQl62D8Us4FandsZZXyy/d0RQ/BEM0RqtOTjrNmJflbcOW/g6HrDJl+HxHglls9eJ
-         tkrQ==
+        bh=Prvb4UhbQ4CMgprTRUhw3z8KbCjvEl4QPM+Ra2Kts7s=;
+        b=JiqMr71Mpk1j/OudaWpq8GnrxGz9QTTpPDBYhgmGuPgl0GRxWl3clXBhfVniJ4V+9j
+         1rRYeIQR1cm0imW8Est/uUHDkxaElmGLDwM99E3UdZ01ij3mY6/eVc1qwxjifp+TAKtM
+         uasXeHUYR5dOd9H2/nu9T3jxRFPJaRBqCo7o6VhipO6qMuSPibicFpHyl1Uc2OgzjpFB
+         Ue5d73LJKUpHkRm5Njs7w85GeeQzH1CkLbn6jN93yDQbSS8v+ICohVALi0MyQATBi8I8
+         FW8F58tuE2en1QeELgVNcES/LHzYSqM0DzaUhVwAedJz3krKhxtGX5BRmmUweq4I/Kbu
+         DasQ==
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@hansenpartnership.com header.s=20151216 header.b=rW4pDHaL;
-       dkim=pass header.i=@hansenpartnership.com header.s=20151216 header.b=rW4pDHaL;
-       spf=pass (google.com: domain of james.bottomley@hansenpartnership.com designates 2607:fcd0:100:8a00::2 as permitted sender) smtp.mailfrom=James.Bottomley@hansenpartnership.com;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=hansenpartnership.com
+       spf=neutral (google.com: 216.40.44.202 is neither permitted nor denied by best guess record for domain of joe@perches.com) smtp.mailfrom=joe@perches.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
         h=sender:message-id:subject:from:to:cc:date:in-reply-to:references
          :user-agent:mime-version:x-original-sender
          :x-original-authentication-results:precedence:mailing-list:list-id
          :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
-        bh=Vs6E/iEao2zs8OpTj3raOaS0ndFaGSqdMYRXlZdxyG4=;
-        b=YnrMHnAzUsIfD9LPWfL5f8MMu8x+xTBrQvJzJTENDt1yJxCfzTjYQtsM0Cf1TidOAH
-         wO+K40VTYYoznylrYkb7avuu3hhln6zqIEHe1Qw4ltbqNncIITN/PDISENRFjt6Dp+3B
-         PAofNl92j6jiyVuoPqhzt1IAEoDqa+OqvnH+w=
+        bh=Prvb4UhbQ4CMgprTRUhw3z8KbCjvEl4QPM+Ra2Kts7s=;
+        b=JOtB3+9AFxud+G3CKMjYbhvmbJl3hM7l9paPM5wiNPTPYrOVUdgRo8fZ6gbj5raVN8
+         6t619Pbw9FbRqpLqsaUqKgNTJNyv9rnaTpvFQffvy8iJbcASd4oCe+F2MolF0gyjrrSQ
+         4KWLHlkPY1V0AAmx7gzND3Bm3fneCTOj4v08Q=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
         h=sender:x-gm-message-state:message-id:subject:from:to:cc:date
@@ -48,69 +45,66 @@ X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
          :x-original-authentication-results:precedence:mailing-list:list-id
          :x-spam-checked-in-group:list-post:list-help:list-archive
          :list-subscribe:list-unsubscribe;
-        bh=Vs6E/iEao2zs8OpTj3raOaS0ndFaGSqdMYRXlZdxyG4=;
-        b=U5QRU1r68AP/Xl1TfzZPDPVBFK3n7loi6Dod1m4vAVWyKrcu5AlR0Fjjbwrdt1FZHk
-         H2Bx0MB1BzMabzlGlQ+qTF/lB64moeCkToTxCzDy2MP1Y9xrj0XM2qCfmxfXmUF+UlJ+
-         TjkANiIYuHcVJNAdLWhBHW+5tWIOzBGdAV+ZdO7I7x9kDKXvpDSWeOkNZfEOg7VnG3Ki
-         KoLWEPNqgTbmFxVTyKB56IhsFVWGNcSu+zBu2Bz/A+DTGlZzzvvY03rVQH+W2nJAKKWi
-         tnLO5vcZ65o8e4g6CNfRicQQiF2JNSZ5879NMD9qSbo/6EcxGjqAO/8cZo9o9O1JGGLO
-         Q4iA==
+        bh=Prvb4UhbQ4CMgprTRUhw3z8KbCjvEl4QPM+Ra2Kts7s=;
+        b=JRMnMvHe6+3IzWtkCDZaNHnIAOrlkxVT/Puq8PnoguEbdvpoZW89j9YK7c0372+1wz
+         zJd62TFwd9Y/ACxwevhwptS0ldnqR8lnnXP5/zZJr/DHqZfk9PuWctl0gGLOpPyi4P4S
+         kS/7U/RYPWH4b1mY6jf/SZVuAJj0QxctVYIdBfJRKkYkiqquqfmiUDRtPWUH1/iQ4GpC
+         n1B9DNQr7kXXJrGuRDTQjzl5aek8kgoK385yK9rpZ43bqfLISsTGfR4ow2E+Es/mxoxw
+         GyiMOUjeemEl8BCVjGb59WsAMsaVW/F5VeLLQGpSgOuxjT6gTcRG9WlO0PaO3C1Ml55L
+         IhSg==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: AOAM532b18VxHEDRIi6tUYmzyeXbQFb9IInpvAlKkXqqpggFzdQM9YJf
-	poUuX156Y1uGH154Fe8IcP+7/g==
-X-Google-Smtp-Source: ABdhPJy22QiYX67v8am4r3zfBOSgGQ8V3ivPqli914lF0BLPsAU5u7fQOaY484bnV12NdU3i6aKSNA==
-X-Received: by 2002:a02:944c:: with SMTP id a70mr13185550jai.138.1606069326539;
-        Sun, 22 Nov 2020 10:22:06 -0800 (PST)
+X-Gm-Message-State: AOAM532WqY+WEPDutN9WClO191C2Bs3l1NO8dkI62Kbz+f4Zkda2yz9y
+	7t71PnyLyYWfCTl16flGTY9Riw==
+X-Google-Smtp-Source: ABdhPJyaSsob3qMsMcZLNv3CY96Iic7GbmIkCjRYfbywQnm2xemxYMaknFgFGd647KESSm67GjNO6A==
+X-Received: by 2002:a5d:85c7:: with SMTP id e7mr21496732ios.162.1606069550418;
+        Sun, 22 Nov 2020 10:25:50 -0800 (PST)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a05:6e02:16cf:: with SMTP id 15ls502389ilx.10.gmail; Sun, 22
- Nov 2020 10:22:06 -0800 (PST)
-X-Received: by 2002:a92:9f42:: with SMTP id u63mr34289857ili.146.1606069326086;
-        Sun, 22 Nov 2020 10:22:06 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1606069326; cv=none;
+Received: by 2002:a92:b6cf:: with SMTP id m76ls2443652ill.2.gmail; Sun, 22 Nov
+ 2020 10:25:50 -0800 (PST)
+X-Received: by 2002:a92:d641:: with SMTP id x1mr5333240ilp.19.1606069550075;
+        Sun, 22 Nov 2020 10:25:50 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1606069550; cv=none;
         d=google.com; s=arc-20160816;
-        b=OU7MIYH9RcD/aB6LzyEKyXO1njq760RrTJ5LgSpOI/MPJGEIjxrfC87pHowNGC8Dd6
-         h7yeuzg1UbQmZ7EQqW2W3/SLiAEvepCtbzzIG/YLq4j9rVPurvQYZRgDqt+GmKTqFt9W
-         AbsTg0t/mB1C+v/GLmQTYWeaMPS1I+t/ygbqY+WU7OZz/kslw7GsktUlYEa04B0dPINx
-         lQCEZVSdkcv98CoqAg3xTO53CScL/tE8duFxgd9rrddjRtWANJwg/rUcDKYXWRmrq16q
-         pFdCfMkJ/ANRxREx2ErPHtgQ9l1s4jl+NSnmqbX/0L/42YdFys6kaB5g733dtVgBrCh9
-         QzPQ==
+        b=zZtB7gEjmXBcVz6M+xon2QMlQKWUF/OQf29/V6vmGM6GC9Nijku42qKPu2MgZAx0P/
+         PGnJu0apNNUdyFCNGwuVp8dc/QLuz3H/cfkGe19/AoSrCiIKO5e+8aojL2k0+TMy5h8b
+         x/bzQ9EiMYaacW+4VjwXVBvfRWDJPQGi6nIz5/tNj7Tykf/R0awOhKOH4cvlpoFDXx1p
+         Qt2xxe+0/KpUN8vuwdFnsVPLWg19nwmNLKmGf5pOXJfDcmnOgC91hlMIul81runIX17L
+         GBBRx0Ns60TMaBJ1ZfDVwT9AzYh89i8yf3ycj/ORhS75zDK26JC6d1JeSjE54KhJgLCC
+         3OJQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=content-transfer-encoding:mime-version:user-agent:references
-         :in-reply-to:date:cc:to:from:subject:message-id:dkim-signature
-         :dkim-signature;
-        bh=2HqRcsaNCzZ1X6gj2ie/EBsyVR/YqtvG9bPeZKa24lQ=;
-        b=gcAxWt32aBOhbQU+65Tpq08eW2gs72QhlVSEY65CZTt2G3tjFUpNqD6zvu/wlaCpOM
-         t8VWfqZCAP/uKAT1DSlVgDUb5Eq2znNo23v1DmYSF8m9ciaC45NoPZrGu64n+pBxvc4q
-         MnZCS1ZwMJvyaiYYqVsseIWD6xqTYd4u2H5CWV2eKWkOync/uKJnyH6N9YmPAON3CKMS
-         mtTcR62m2LlYMBJ/uW7O1e3foC4SaVEjGmxUIPuo2Ypo0I9l4T9MgLBSAnzmyvF1Y8s/
-         RsXMcJxiz2V+hT2oCsH6K0pJtuDDFMapSVtc6SV2Z0yZnf9ExEZzUJ18jOYoYJMccIgP
-         VpLQ==
+         :in-reply-to:date:cc:to:from:subject:message-id;
+        bh=aiS+vP2927U+Mr2uOhxpcaaOQ9qw1i6rr6tnhZUOxLM=;
+        b=V+0QDVph2CetNS5Cd5OEx/HcEX1lmEgepKZWSL7jR49gZ4I4k6jiYhXjGIHMn+p+6T
+         XIWe7rJR+BGy7OHrq2AQsZSIQIzfPhmfLq+oBHQXqvtRdCZhJgB+p1uzBV/kem51jT4m
+         UT+CIusOqsYNSFCfrk/q7tkApZUzs1mUW1NFFQzS3Djkcxkn2txxRlz/hUnYpITHhImy
+         E7IB9eVzamocGmLhserewSxTtE2Fbwk2kuqE/u817dTaKhMKVp4Erh5fccKReXkviy6F
+         CX0iKoMG9orc93M1ZMv8BQSsxxMZCnpIrkmeO9S2iWbU+Wjt2M4Lw3aeS9u1ZLsuQcA8
+         gT+A==
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@hansenpartnership.com header.s=20151216 header.b=rW4pDHaL;
-       dkim=pass header.i=@hansenpartnership.com header.s=20151216 header.b=rW4pDHaL;
-       spf=pass (google.com: domain of james.bottomley@hansenpartnership.com designates 2607:fcd0:100:8a00::2 as permitted sender) smtp.mailfrom=James.Bottomley@hansenpartnership.com;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=hansenpartnership.com
-Received: from bedivere.hansenpartnership.com (bedivere.hansenpartnership.com. [2607:fcd0:100:8a00::2])
-        by mx.google.com with ESMTPS id b8si5989468ile.42.2020.11.22.10.22.06
+       spf=neutral (google.com: 216.40.44.202 is neither permitted nor denied by best guess record for domain of joe@perches.com) smtp.mailfrom=joe@perches.com
+Received: from smtprelay.hostedemail.com (smtprelay0202.hostedemail.com. [216.40.44.202])
+        by mx.google.com with ESMTPS id z86si9243775ilk.104.2020.11.22.10.25.49
         for <usb-storage@lists.one-eyed-alien.net>
-        (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
-        Sun, 22 Nov 2020 10:22:06 -0800 (PST)
-Received-SPF: pass (google.com: domain of james.bottomley@hansenpartnership.com designates 2607:fcd0:100:8a00::2 as permitted sender) client-ip=2607:fcd0:100:8a00::2;
-Received: from localhost (localhost [127.0.0.1])
-	by bedivere.hansenpartnership.com (Postfix) with ESMTP id 5BB5B128028F;
-	Sun, 22 Nov 2020 10:22:04 -0800 (PST)
-Received: from bedivere.hansenpartnership.com ([127.0.0.1])
-	by localhost (bedivere.hansenpartnership.com [127.0.0.1]) (amavisd-new, port 10024)
-	with ESMTP id nGXBdIQjsZJa; Sun, 22 Nov 2020 10:22:04 -0800 (PST)
-Received: from jarvis.int.hansenpartnership.com (unknown [IPv6:2601:600:8280:66d1::527])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by bedivere.hansenpartnership.com (Postfix) with ESMTPSA id DB46B1280287;
-	Sun, 22 Nov 2020 10:22:00 -0800 (PST)
-Message-ID: <9b57fd4914b46f38d54087d75e072d6e947cb56d.camel@HansenPartnership.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sun, 22 Nov 2020 10:25:50 -0800 (PST)
+Received-SPF: neutral (google.com: 216.40.44.202 is neither permitted nor denied by best guess record for domain of joe@perches.com) client-ip=216.40.44.202;
+Received: from filter.hostedemail.com (clb03-v110.bra.tucows.net [216.40.38.60])
+	by smtprelay06.hostedemail.com (Postfix) with ESMTP id 883C21800AEAD;
+	Sun, 22 Nov 2020 18:25:49 +0000 (UTC)
+X-Session-Marker: 6A6F6540706572636865732E636F6D
+X-Spam-Summary: 2,0,0,,d41d8cd98f00b204,joe@perches.com,,RULES_HIT:41:355:379:599:988:989:1260:1277:1311:1313:1314:1345:1359:1437:1515:1516:1518:1534:1537:1561:1593:1594:1711:1714:1730:1747:1777:1792:2393:2559:2562:2828:3138:3139:3140:3141:3142:3622:3865:3866:4321:5007:6742:6743:10004:10400:10848:11232:11658:11914:12297:12740:12760:12895:13019:13069:13161:13229:13311:13357:13439:14659:21080:21450:21627:30054:30091,0,RBL:none,CacheIP:none,Bayesian:0.5,0.5,0.5,Netcheck:none,DomainCache:0,MSF:not bulk,SPF:,MSBL:0,DNSBL:none,Custom_rules:0:0:0,LFtime:1,LUA_SUMMARY:none
+X-HE-Tag: stamp54_4305a342735e
+X-Filterd-Recvd-Size: 3841
+Received: from XPS-9350.home (unknown [47.151.128.180])
+	(Authenticated sender: joe@perches.com)
+	by omf09.hostedemail.com (Postfix) with ESMTPA;
+	Sun, 22 Nov 2020 18:25:38 +0000 (UTC)
+Message-ID: <ca071decb87cc7e905411423c05a48f9fd2f58d7.camel@perches.com>
 Subject: [usb-storage] Re: [PATCH 000/141] Fix fall-through warnings for Clang
-From: James Bottomley <James.Bottomley@HansenPartnership.com>
-To: Kees Cook <keescook@chromium.org>, Jakub Kicinski <kuba@kernel.org>
+From: Joe Perches <joe@perches.com>
+To: James Bottomley <James.Bottomley@HansenPartnership.com>, Kees Cook
+	 <keescook@chromium.org>, Jakub Kicinski <kuba@kernel.org>
 Cc: "Gustavo A. R. Silva" <gustavoars@kernel.org>, 
  linux-kernel@vger.kernel.org, alsa-devel@alsa-project.org, 
  amd-gfx@lists.freedesktop.org, bridge@lists.linux-foundation.org, 
@@ -149,24 +143,22 @@ Cc: "Gustavo A. R. Silva" <gustavoars@kernel.org>,
  x86@kernel.org, xen-devel@lists.xenproject.org,
  linux-hardening@vger.kernel.org,  Nick Desaulniers
  <ndesaulniers@google.com>, Nathan Chancellor <natechancellor@gmail.com>,
- Miguel Ojeda <ojeda@kernel.org>, Joe Perches <joe@perches.com>
-Date: Sun, 22 Nov 2020 10:21:59 -0800
-In-Reply-To: <202011220816.8B6591A@keescook>
+ Miguel Ojeda <ojeda@kernel.org>
+Date: Sun, 22 Nov 2020 10:25:37 -0800
+In-Reply-To: <9b57fd4914b46f38d54087d75e072d6e947cb56d.camel@HansenPartnership.com>
 References: <cover.1605896059.git.gustavoars@kernel.org>
 	 <20201120105344.4345c14e@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com>
 	 <202011201129.B13FDB3C@keescook>
 	 <20201120115142.292999b2@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com>
 	 <202011220816.8B6591A@keescook>
+	 <9b57fd4914b46f38d54087d75e072d6e947cb56d.camel@HansenPartnership.com>
 Content-Type: text/plain; charset="UTF-8"
-User-Agent: Evolution 3.34.4
+User-Agent: Evolution 3.38.1-1
 MIME-Version: 1.0
-X-Original-Sender: James.Bottomley@hansenpartnership.com
-X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@hansenpartnership.com header.s=20151216 header.b=rW4pDHaL;
-       dkim=pass header.i=@hansenpartnership.com header.s=20151216
- header.b=rW4pDHaL;       spf=pass (google.com: domain of james.bottomley@hansenpartnership.com
- designates 2607:fcd0:100:8a00::2 as permitted sender) smtp.mailfrom=James.Bottomley@hansenpartnership.com;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=hansenpartnership.com
+X-Original-Sender: joe@perches.com
+X-Original-Authentication-Results: mx.google.com;       spf=neutral
+ (google.com: 216.40.44.202 is neither permitted nor denied by best guess
+ record for domain of joe@perches.com) smtp.mailfrom=joe@perches.com
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -182,66 +174,16 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On Sun, 2020-11-22 at 08:17 -0800, Kees Cook wrote:
-> On Fri, Nov 20, 2020 at 11:51:42AM -0800, Jakub Kicinski wrote:
-> > On Fri, 20 Nov 2020 11:30:40 -0800 Kees Cook wrote:
-> > > On Fri, Nov 20, 2020 at 10:53:44AM -0800, Jakub Kicinski wrote:
-> > > > On Fri, 20 Nov 2020 12:21:39 -0600 Gustavo A. R. Silva wrote:  
-> > > > > This series aims to fix almost all remaining fall-through
-> > > > > warnings in order to enable -Wimplicit-fallthrough for Clang.
-> > > > > 
-> > > > > In preparation to enable -Wimplicit-fallthrough for Clang,
-> > > > > explicitly add multiple break/goto/return/fallthrough
-> > > > > statements instead of just letting the code fall through to
-> > > > > the next case.
-> > > > > 
-> > > > > Notice that in order to enable -Wimplicit-fallthrough for
-> > > > > Clang, this change[1] is meant to be reverted at some point.
-> > > > > So, this patch helps to move in that direction.
-> > > > > 
-> > > > > Something important to mention is that there is currently a
-> > > > > discrepancy between GCC and Clang when dealing with switch
-> > > > > fall-through to empty case statements or to cases that only
-> > > > > contain a break/continue/return statement[2][3][4].  
-> > > > 
-> > > > Are we sure we want to make this change? Was it discussed
-> > > > before?
-> > > > 
-> > > > Are there any bugs Clangs puritanical definition of fallthrough
-> > > > helped find?
-> > > > 
-> > > > IMVHO compiler warnings are supposed to warn about issues that
-> > > > could be bugs. Falling through to default: break; can hardly be
-> > > > a bug?!  
-> > > 
-> > > It's certainly a place where the intent is not always clear. I
-> > > think this makes all the cases unambiguous, and doesn't impact
-> > > the machine code, since the compiler will happily optimize away
-> > > any behavioral redundancy.
-> > 
-> > If none of the 140 patches here fix a real bug, and there is no
-> > change to machine code then it sounds to me like a W=2 kind of a
-> > warning.
-> 
-> FWIW, this series has found at least one bug so far:
-> https://lore.kernel.org/lkml/CAFCwf11izHF=g1mGry1fE5kvFFFrxzhPSM6qKAO8gxSp=Kr_CQ@mail.gmail.com/
+On Sun, 2020-11-22 at 10:21 -0800, James Bottomley wrote:
+> Please tell me
+> our reward for all this effort isn't a single missing error print.
 
+There were quite literally dozens of logical defects found
+by the fallthrough additions.  Very few were logging only.
 
-Well, it's a problem in an error leg, sure, but it's not a really
-compelling reason for a 141 patch series, is it?  All that fixing this
-error will do is get the driver to print "oh dear there's a problem"
-under four more conditions than it previously did.
-
-We've been at this for three years now with nearly a thousand patches,
-firstly marking all the fall throughs with /* fall through */ and later
-changing it to fallthrough.  At some point we do have to ask if the
-effort is commensurate with the protection afforded.  Please tell me
-our reward for all this effort isn't a single missing error print.
-
-James
 
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/9b57fd4914b46f38d54087d75e072d6e947cb56d.camel%40HansenPartnership.com.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/ca071decb87cc7e905411423c05a48f9fd2f58d7.camel%40perches.com.
