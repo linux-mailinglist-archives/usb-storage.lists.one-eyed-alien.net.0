@@ -1,43 +1,46 @@
-Return-Path: <usb-storage+bncBDY3NC743AGBBLW25L6QKGQEGOWTU7Q@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBDXO746SYYBRBJHQ5L6QKGQEH3IHYZY@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-il1-x147.google.com (mail-il1-x147.google.com [IPv6:2607:f8b0:4864:20::147])
-	by mail.lfdr.de (Postfix) with ESMTPS id 78DC02BC7E9
-	for <lists+usb-storage@lfdr.de>; Sun, 22 Nov 2020 19:25:51 +0100 (CET)
-Received: by mail-il1-x147.google.com with SMTP id u129sf12074022ilc.21
-        for <lists+usb-storage@lfdr.de>; Sun, 22 Nov 2020 10:25:51 -0800 (PST)
-ARC-Seal: i=2; a=rsa-sha256; t=1606069550; cv=pass;
+Received: from mail-io1-xd46.google.com (mail-io1-xd46.google.com [IPv6:2607:f8b0:4864:20::d46])
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A6ED2BC861
+	for <lists+usb-storage@lfdr.de>; Sun, 22 Nov 2020 20:12:38 +0100 (CET)
+Received: by mail-io1-xd46.google.com with SMTP id i9sf11106404iom.23
+        for <lists+usb-storage@lfdr.de>; Sun, 22 Nov 2020 11:12:38 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1606072357; cv=pass;
         d=google.com; s=arc-20160816;
-        b=f1bQdo06FxMbR/qbeVObA1NkuMeAG3eA3ol3hACrnIRJgVEO7xhi2Vb2qVVkyHqW6c
-         A9aEaHC4R+qhk2xqFErgDqouthY1m7L1FydzcMgwZQ+enwhg8cQysEqlpt0HYO/cfyYi
-         HQuU3ujDmpc6YztwdxquYiGqW6qexfF6SZAZfSm2dVPQt/LxEIamO990Te6INv0Cr4nI
-         jXhJN8KeuLqeI7rKLdsbZLydaHsXEBuSY4NPppzwOCJI/3Q1Mp7sHrdYS2EHGtHrwYDF
-         P26T9IxVaYu25rxL82XVdPaS9guRsGAIv9rIWxNp/4HPLCuGTWmDKNzVysHQg5WfEDk1
-         7EZA==
+        b=gtmFb3cJDEOiyJ98K7sYWUA3I45ueNHY4YeMcGf5lJdDvk/L/IfED4vMDrleoh/7LF
+         /+BWZx60aZW3ki+Ga/6ytuMKlDbN4PuVgJa+2DnkEwo8uCUEFiPFs+jN8dZUVdfxsOW3
+         /LkxyhODN1K/1tIGS1FRvCZ8JVpI8mFBAgGM34Vs32CmuTNcIPU181b2otXTYYs9iVZB
+         HtxInYCI2AVZ8aLX/TvYzyHVQfy2dgveL8UrfQeQGbDX9hRwklXv7ruvh8oMY1Nxg8At
+         5t0lQkDduUshglOWg9WaHj312FhDMqUnJEL+gQxLAsz2VnKtXZhQ/NBZQZtH/fiEaDCw
+         nQlg==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:mime-version:user-agent:references
          :in-reply-to:date:cc:to:from:subject:message-id:sender
          :dkim-signature;
-        bh=Prvb4UhbQ4CMgprTRUhw3z8KbCjvEl4QPM+Ra2Kts7s=;
-        b=JiqMr71Mpk1j/OudaWpq8GnrxGz9QTTpPDBYhgmGuPgl0GRxWl3clXBhfVniJ4V+9j
-         1rRYeIQR1cm0imW8Est/uUHDkxaElmGLDwM99E3UdZ01ij3mY6/eVc1qwxjifp+TAKtM
-         uasXeHUYR5dOd9H2/nu9T3jxRFPJaRBqCo7o6VhipO6qMuSPibicFpHyl1Uc2OgzjpFB
-         Ue5d73LJKUpHkRm5Njs7w85GeeQzH1CkLbn6jN93yDQbSS8v+ICohVALi0MyQATBi8I8
-         FW8F58tuE2en1QeELgVNcES/LHzYSqM0DzaUhVwAedJz3krKhxtGX5BRmmUweq4I/Kbu
-         DasQ==
+        bh=I1knYXFdrgRlLB8I3MJtvf+2rwuP04otpD/zP4rLTSk=;
+        b=XfAhh6Hul6pmu1ZhTWtw0GTiAuhYRgsCPzGrVuVLUJRU0bHMU3iFf5awF/pvVOoON0
+         eAEKXSTVxLj1FqKVzKAJWWVo4AAMwDNmGdRryBRg2yxvfPu93nlFItBqpTReSXyh9zU+
+         urKSFkQJxzaAs9ByYJqWmZdiLMRXNSfs/TDxOpZZWAvIW4y+XOV/J41Q493wYtCxvT5k
+         DwqRSt+rPryCAcO+dB5puJIusvjoB13YH6wPcimSND06JNRq/NDT/58kQ1ZTZ0jc8+vI
+         DLaPZ03FMzNakempmYhvuC7Hibqlryd5qu2rKHcxVLWqnh8JbSbpm/Hc3bqVRH68JVow
+         DWvg==
 ARC-Authentication-Results: i=2; mx.google.com;
-       spf=neutral (google.com: 216.40.44.202 is neither permitted nor denied by best guess record for domain of joe@perches.com) smtp.mailfrom=joe@perches.com
+       dkim=pass header.i=@hansenpartnership.com header.s=20151216 header.b=cqs+SSmh;
+       dkim=pass header.i=@hansenpartnership.com header.s=20151216 header.b=cqs+SSmh;
+       spf=pass (google.com: domain of james.bottomley@hansenpartnership.com designates 2607:fcd0:100:8a00::2 as permitted sender) smtp.mailfrom=James.Bottomley@hansenpartnership.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=hansenpartnership.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
         h=sender:message-id:subject:from:to:cc:date:in-reply-to:references
          :user-agent:mime-version:x-original-sender
          :x-original-authentication-results:precedence:mailing-list:list-id
          :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
-        bh=Prvb4UhbQ4CMgprTRUhw3z8KbCjvEl4QPM+Ra2Kts7s=;
-        b=JOtB3+9AFxud+G3CKMjYbhvmbJl3hM7l9paPM5wiNPTPYrOVUdgRo8fZ6gbj5raVN8
-         6t619Pbw9FbRqpLqsaUqKgNTJNyv9rnaTpvFQffvy8iJbcASd4oCe+F2MolF0gyjrrSQ
-         4KWLHlkPY1V0AAmx7gzND3Bm3fneCTOj4v08Q=
+        bh=I1knYXFdrgRlLB8I3MJtvf+2rwuP04otpD/zP4rLTSk=;
+        b=hBIKr76clPW7OQhD6y4qL43WnLg4rNEsetDaHsA5ScsUxwPX2C575+oCmQgcZ/lRxU
+         cTMbZdOtH0vBfGIM001/7b9N2D+N6B1UcfhENOlTLk6WP+unfbXOGxOEOYeoH/IHQFP2
+         iJgZ0GmCbQAXBUEfaXfJxohPRCqdvMKM6HQ1E=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
         h=sender:x-gm-message-state:message-id:subject:from:to:cc:date
@@ -45,66 +48,70 @@ X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
          :x-original-authentication-results:precedence:mailing-list:list-id
          :x-spam-checked-in-group:list-post:list-help:list-archive
          :list-subscribe:list-unsubscribe;
-        bh=Prvb4UhbQ4CMgprTRUhw3z8KbCjvEl4QPM+Ra2Kts7s=;
-        b=JRMnMvHe6+3IzWtkCDZaNHnIAOrlkxVT/Puq8PnoguEbdvpoZW89j9YK7c0372+1wz
-         zJd62TFwd9Y/ACxwevhwptS0ldnqR8lnnXP5/zZJr/DHqZfk9PuWctl0gGLOpPyi4P4S
-         kS/7U/RYPWH4b1mY6jf/SZVuAJj0QxctVYIdBfJRKkYkiqquqfmiUDRtPWUH1/iQ4GpC
-         n1B9DNQr7kXXJrGuRDTQjzl5aek8kgoK385yK9rpZ43bqfLISsTGfR4ow2E+Es/mxoxw
-         GyiMOUjeemEl8BCVjGb59WsAMsaVW/F5VeLLQGpSgOuxjT6gTcRG9WlO0PaO3C1Ml55L
-         IhSg==
+        bh=I1knYXFdrgRlLB8I3MJtvf+2rwuP04otpD/zP4rLTSk=;
+        b=HchpIs16SgMbvN0sp6mm52qOq4SOQ7Y6xaEbGxpaA0pAaeCMe7tpMDhI9Bi8yfs8Dv
+         tXYDkICZuhw7SxgBjyDnh2c/2cCGJXeX5EQpD6K8VsXbO76se5BTIGVRGl50BNgM7U3A
+         lyJp/jgBAcYb1aqboWQKFof+JR/Aim8A8pI1kJvPmPqGLzezzJcqkXphIkHuhxQYj+Uw
+         wyp7NWw937Ncdk1ihkNW/prYZtbSq38zNR6CgbhhfO1wVzQRxbMQPfPzIkdUlw4iPvie
+         SHwnzliGE1rdRD+S9WDYstKVGfzc7NJdq9hVoVbZuml4UvG6Nsm8A9zVw5+mJOThiU8Y
+         R7/A==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: AOAM532WqY+WEPDutN9WClO191C2Bs3l1NO8dkI62Kbz+f4Zkda2yz9y
-	7t71PnyLyYWfCTl16flGTY9Riw==
-X-Google-Smtp-Source: ABdhPJyaSsob3qMsMcZLNv3CY96Iic7GbmIkCjRYfbywQnm2xemxYMaknFgFGd647KESSm67GjNO6A==
-X-Received: by 2002:a5d:85c7:: with SMTP id e7mr21496732ios.162.1606069550418;
-        Sun, 22 Nov 2020 10:25:50 -0800 (PST)
+X-Gm-Message-State: AOAM53049pkKxP5vJ13a5ZrUqWSGsTtRjkRVSrMTi4DA7iM0R2EpB0Wr
+	GPmRiguhaoc2+fY1x9MwT91EIw==
+X-Google-Smtp-Source: ABdhPJyeCelC9eSVk1pehglnCGMkSh6hc+cu2RhDEU9m/gDmXmtICC1nuBxH6jvR4QIFaaKR1vFVwQ==
+X-Received: by 2002:a02:824b:: with SMTP id q11mr19890571jag.139.1606072357130;
+        Sun, 22 Nov 2020 11:12:37 -0800 (PST)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a92:b6cf:: with SMTP id m76ls2443652ill.2.gmail; Sun, 22 Nov
- 2020 10:25:50 -0800 (PST)
-X-Received: by 2002:a92:d641:: with SMTP id x1mr5333240ilp.19.1606069550075;
-        Sun, 22 Nov 2020 10:25:50 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1606069550; cv=none;
+Received: by 2002:a92:b6cf:: with SMTP id m76ls2461833ill.2.gmail; Sun, 22 Nov
+ 2020 11:12:36 -0800 (PST)
+X-Received: by 2002:a92:89d3:: with SMTP id w80mr29913009ilk.68.1606072356669;
+        Sun, 22 Nov 2020 11:12:36 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1606072356; cv=none;
         d=google.com; s=arc-20160816;
-        b=zZtB7gEjmXBcVz6M+xon2QMlQKWUF/OQf29/V6vmGM6GC9Nijku42qKPu2MgZAx0P/
-         PGnJu0apNNUdyFCNGwuVp8dc/QLuz3H/cfkGe19/AoSrCiIKO5e+8aojL2k0+TMy5h8b
-         x/bzQ9EiMYaacW+4VjwXVBvfRWDJPQGi6nIz5/tNj7Tykf/R0awOhKOH4cvlpoFDXx1p
-         Qt2xxe+0/KpUN8vuwdFnsVPLWg19nwmNLKmGf5pOXJfDcmnOgC91hlMIul81runIX17L
-         GBBRx0Ns60TMaBJ1ZfDVwT9AzYh89i8yf3ycj/ORhS75zDK26JC6d1JeSjE54KhJgLCC
-         3OJQ==
+        b=YdqMJ2lxOXsfqJfxzxY5UkJzIhUidBj9fk2LAW7s/8QBjDF0+67GLXQn1hwQB4OlL9
+         VciU8CSBZtMNg7JDmn+lXPWcuq3+cECDNQiOAqPtl+pfO7ahYcRyuYIdT0jNnoArphFx
+         YUnXBI6FfdjdsJ/Yjw8glQAxOjfW4kg0jQIV7lB5v3wxCR5KvsHGMHtY/z4WKyW0YmnM
+         y4+vTwO6a+nJKSDTviGhuPfAPpwaDqlOsPaU5M4jcjNTWkwtCHjk3pYQyfGhT7KW8KZG
+         HIc1JHMdm4wdUGSWKe+W4rHPuvdrk12h5AkuGFf2j4rVj+Mya9wRYLcL/mQKteCmVffS
+         1e8w==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=content-transfer-encoding:mime-version:user-agent:references
-         :in-reply-to:date:cc:to:from:subject:message-id;
-        bh=aiS+vP2927U+Mr2uOhxpcaaOQ9qw1i6rr6tnhZUOxLM=;
-        b=V+0QDVph2CetNS5Cd5OEx/HcEX1lmEgepKZWSL7jR49gZ4I4k6jiYhXjGIHMn+p+6T
-         XIWe7rJR+BGy7OHrq2AQsZSIQIzfPhmfLq+oBHQXqvtRdCZhJgB+p1uzBV/kem51jT4m
-         UT+CIusOqsYNSFCfrk/q7tkApZUzs1mUW1NFFQzS3Djkcxkn2txxRlz/hUnYpITHhImy
-         E7IB9eVzamocGmLhserewSxTtE2Fbwk2kuqE/u817dTaKhMKVp4Erh5fccKReXkviy6F
-         CX0iKoMG9orc93M1ZMv8BQSsxxMZCnpIrkmeO9S2iWbU+Wjt2M4Lw3aeS9u1ZLsuQcA8
-         gT+A==
+         :in-reply-to:date:cc:to:from:subject:message-id:dkim-signature
+         :dkim-signature;
+        bh=3hxjM4ExBjozSsk/4rZZboxwxXlJbRWL+DEVHm4wB2s=;
+        b=JvV2zdpBzlRHe1SF6s3c0+R4/RrfE6vmuRPIzWrCyam17ooX8hcMZVRy4IJZXQCxt9
+         3311ujhuGl/n8vbZI4Ytw/mCswKAYnAOc3wAbp50HaOFuSA/+FtRJsju3OF0XXKFZG7q
+         bl6de/jycZrcNRN9r9xmBZywYfC9TJCZoLnptxzXwGCJVWOce1bk9EPohchMylc8JJLS
+         O4jYcf8XX06PpmgZyRAJlm8X+C/eOtwD665uI1VgjlGLSA3lvmpSynRPiPEWOKS0pGxF
+         he1Urq8+w7s7dvnZ8K6QOKhWVe2VtSUYMXpG56uQzkhfh5OdnUBp3U/1pLl+1fHxl6Ao
+         eIQg==
 ARC-Authentication-Results: i=1; mx.google.com;
-       spf=neutral (google.com: 216.40.44.202 is neither permitted nor denied by best guess record for domain of joe@perches.com) smtp.mailfrom=joe@perches.com
-Received: from smtprelay.hostedemail.com (smtprelay0202.hostedemail.com. [216.40.44.202])
-        by mx.google.com with ESMTPS id z86si9243775ilk.104.2020.11.22.10.25.49
+       dkim=pass header.i=@hansenpartnership.com header.s=20151216 header.b=cqs+SSmh;
+       dkim=pass header.i=@hansenpartnership.com header.s=20151216 header.b=cqs+SSmh;
+       spf=pass (google.com: domain of james.bottomley@hansenpartnership.com designates 2607:fcd0:100:8a00::2 as permitted sender) smtp.mailfrom=James.Bottomley@hansenpartnership.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=hansenpartnership.com
+Received: from bedivere.hansenpartnership.com (bedivere.hansenpartnership.com. [2607:fcd0:100:8a00::2])
+        by mx.google.com with ESMTPS id j4si7834467ilo.121.2020.11.22.11.12.36
         for <usb-storage@lists.one-eyed-alien.net>
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 22 Nov 2020 10:25:50 -0800 (PST)
-Received-SPF: neutral (google.com: 216.40.44.202 is neither permitted nor denied by best guess record for domain of joe@perches.com) client-ip=216.40.44.202;
-Received: from filter.hostedemail.com (clb03-v110.bra.tucows.net [216.40.38.60])
-	by smtprelay06.hostedemail.com (Postfix) with ESMTP id 883C21800AEAD;
-	Sun, 22 Nov 2020 18:25:49 +0000 (UTC)
-X-Session-Marker: 6A6F6540706572636865732E636F6D
-X-Spam-Summary: 2,0,0,,d41d8cd98f00b204,joe@perches.com,,RULES_HIT:41:355:379:599:988:989:1260:1277:1311:1313:1314:1345:1359:1437:1515:1516:1518:1534:1537:1561:1593:1594:1711:1714:1730:1747:1777:1792:2393:2559:2562:2828:3138:3139:3140:3141:3142:3622:3865:3866:4321:5007:6742:6743:10004:10400:10848:11232:11658:11914:12297:12740:12760:12895:13019:13069:13161:13229:13311:13357:13439:14659:21080:21450:21627:30054:30091,0,RBL:none,CacheIP:none,Bayesian:0.5,0.5,0.5,Netcheck:none,DomainCache:0,MSF:not bulk,SPF:,MSBL:0,DNSBL:none,Custom_rules:0:0:0,LFtime:1,LUA_SUMMARY:none
-X-HE-Tag: stamp54_4305a342735e
-X-Filterd-Recvd-Size: 3841
-Received: from XPS-9350.home (unknown [47.151.128.180])
-	(Authenticated sender: joe@perches.com)
-	by omf09.hostedemail.com (Postfix) with ESMTPA;
-	Sun, 22 Nov 2020 18:25:38 +0000 (UTC)
-Message-ID: <ca071decb87cc7e905411423c05a48f9fd2f58d7.camel@perches.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
+        Sun, 22 Nov 2020 11:12:36 -0800 (PST)
+Received-SPF: pass (google.com: domain of james.bottomley@hansenpartnership.com designates 2607:fcd0:100:8a00::2 as permitted sender) client-ip=2607:fcd0:100:8a00::2;
+Received: from localhost (localhost [127.0.0.1])
+	by bedivere.hansenpartnership.com (Postfix) with ESMTP id 96EF41280181;
+	Sun, 22 Nov 2020 11:12:34 -0800 (PST)
+Received: from bedivere.hansenpartnership.com ([127.0.0.1])
+	by localhost (bedivere.hansenpartnership.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id T_J7YGNeXPBb; Sun, 22 Nov 2020 11:12:34 -0800 (PST)
+Received: from jarvis.int.hansenpartnership.com (unknown [IPv6:2601:600:8280:66d1::527])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by bedivere.hansenpartnership.com (Postfix) with ESMTPSA id D7CFF128010B;
+	Sun, 22 Nov 2020 11:12:30 -0800 (PST)
+Message-ID: <0147972a72bc13f3629de8a32dee6f1f308994b5.camel@HansenPartnership.com>
 Subject: [usb-storage] Re: [PATCH 000/141] Fix fall-through warnings for Clang
-From: Joe Perches <joe@perches.com>
-To: James Bottomley <James.Bottomley@HansenPartnership.com>, Kees Cook
-	 <keescook@chromium.org>, Jakub Kicinski <kuba@kernel.org>
+From: James Bottomley <James.Bottomley@HansenPartnership.com>
+To: Joe Perches <joe@perches.com>, Kees Cook <keescook@chromium.org>, Jakub
+	Kicinski <kuba@kernel.org>
 Cc: "Gustavo A. R. Silva" <gustavoars@kernel.org>, 
  linux-kernel@vger.kernel.org, alsa-devel@alsa-project.org, 
  amd-gfx@lists.freedesktop.org, bridge@lists.linux-foundation.org, 
@@ -144,21 +151,25 @@ Cc: "Gustavo A. R. Silva" <gustavoars@kernel.org>,
  linux-hardening@vger.kernel.org,  Nick Desaulniers
  <ndesaulniers@google.com>, Nathan Chancellor <natechancellor@gmail.com>,
  Miguel Ojeda <ojeda@kernel.org>
-Date: Sun, 22 Nov 2020 10:25:37 -0800
-In-Reply-To: <9b57fd4914b46f38d54087d75e072d6e947cb56d.camel@HansenPartnership.com>
+Date: Sun, 22 Nov 2020 11:12:30 -0800
+In-Reply-To: <ca071decb87cc7e905411423c05a48f9fd2f58d7.camel@perches.com>
 References: <cover.1605896059.git.gustavoars@kernel.org>
 	 <20201120105344.4345c14e@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com>
 	 <202011201129.B13FDB3C@keescook>
 	 <20201120115142.292999b2@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com>
 	 <202011220816.8B6591A@keescook>
 	 <9b57fd4914b46f38d54087d75e072d6e947cb56d.camel@HansenPartnership.com>
+	 <ca071decb87cc7e905411423c05a48f9fd2f58d7.camel@perches.com>
 Content-Type: text/plain; charset="UTF-8"
-User-Agent: Evolution 3.38.1-1
+User-Agent: Evolution 3.34.4
 MIME-Version: 1.0
-X-Original-Sender: joe@perches.com
-X-Original-Authentication-Results: mx.google.com;       spf=neutral
- (google.com: 216.40.44.202 is neither permitted nor denied by best guess
- record for domain of joe@perches.com) smtp.mailfrom=joe@perches.com
+X-Original-Sender: James.Bottomley@hansenpartnership.com
+X-Original-Authentication-Results: mx.google.com;       dkim=pass
+ header.i=@hansenpartnership.com header.s=20151216 header.b=cqs+SSmh;
+       dkim=pass header.i=@hansenpartnership.com header.s=20151216
+ header.b=cqs+SSmh;       spf=pass (google.com: domain of james.bottomley@hansenpartnership.com
+ designates 2607:fcd0:100:8a00::2 as permitted sender) smtp.mailfrom=James.Bottomley@hansenpartnership.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=hansenpartnership.com
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -174,16 +185,21 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On Sun, 2020-11-22 at 10:21 -0800, James Bottomley wrote:
-> Please tell me
-> our reward for all this effort isn't a single missing error print.
+On Sun, 2020-11-22 at 10:25 -0800, Joe Perches wrote:
+> On Sun, 2020-11-22 at 10:21 -0800, James Bottomley wrote:
+> > Please tell me our reward for all this effort isn't a single
+> > missing error print.
+> 
+> There were quite literally dozens of logical defects found
+> by the fallthrough additions.  Very few were logging only.
 
-There were quite literally dozens of logical defects found
-by the fallthrough additions.  Very few were logging only.
+So can you give us the best examples (or indeed all of them if someone
+is keeping score)?  hopefully this isn't a US election situation ...
 
+James
 
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/ca071decb87cc7e905411423c05a48f9fd2f58d7.camel%40perches.com.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/0147972a72bc13f3629de8a32dee6f1f308994b5.camel%40HansenPartnership.com.
