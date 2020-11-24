@@ -1,33 +1,33 @@
-Return-Path: <usb-storage+bncBCF5XGNWYQBRBWHU6X6QKGQESIKPPRY@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBCF5XGNWYQBRB77X6X6QKGQEJ3L5JBY@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-pf1-x447.google.com (mail-pf1-x447.google.com [IPv6:2607:f8b0:4864:20::447])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0D2942C32AF
-	for <lists+usb-storage@lfdr.de>; Tue, 24 Nov 2020 22:25:46 +0100 (CET)
-Received: by mail-pf1-x447.google.com with SMTP id c24sf8397889pfd.13
-        for <lists+usb-storage@lfdr.de>; Tue, 24 Nov 2020 13:25:45 -0800 (PST)
-ARC-Seal: i=2; a=rsa-sha256; t=1606253144; cv=pass;
+Received: from mail-pg1-x545.google.com (mail-pg1-x545.google.com [IPv6:2607:f8b0:4864:20::545])
+	by mail.lfdr.de (Postfix) with ESMTPS id 6911F2C32ED
+	for <lists+usb-storage@lfdr.de>; Tue, 24 Nov 2020 22:32:49 +0100 (CET)
+Received: by mail-pg1-x545.google.com with SMTP id b19sf119840pgm.2
+        for <lists+usb-storage@lfdr.de>; Tue, 24 Nov 2020 13:32:49 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1606253568; cv=pass;
         d=google.com; s=arc-20160816;
-        b=zE/vKyxAa7x6fVcmjEfgHAwI3e4qv82QXA3SlOEzvtBBfSQ+PcU8HRhWyncbA3gOra
-         hx/dJP5fZZPkvqXAauxvf2WsZRxXwwovPixRLTjPnBPc+A8nMDnLtk4Z3irFWXSubGzv
-         SFQAxGBViiBM+iMjoDJ1RUjbQk7ZVwyGO7XA0A7UGd0602NvfjER+aXVEmoXLxMLcofj
-         hB+WnrrPEq2OsfeepQ1oG6ffcN3VQy0tL8gMFGdzGsLyCKTU5DxXeEXI5QPvZWusvJ4B
-         /8m48CdtA8jlz6Yk6e4MFYpLmgW8CtCTb9uTDUvdAaxPY8oZUd7k+anDptuYXF77wuvP
-         U4YQ==
+        b=E9AMTb+3E2E2vOQ2Yk/Usa213YVo7JJDfoJW7PfXKvAiToFLS7Q9RTNOMhnskNZ3Aq
+         f2+meNWL3670kCp3ZSjV5SLTVQEQ+ozxK0YcEQVOUq8sUEbeU1FBTmwOeJvntwCmfKRj
+         TQKlq1qh2NVtCDx5Ip+qt0DnuHvWydZyqM9dpASDM0L+qqq9y4XWz8OPVxJm/I9DvSZv
+         kS3G0APOFbAqM7Dcu+PB7ch6Vw13sqwkLSWrpHn2YHASE4lP0bGM1zCE1m7H1TBI7hxp
+         1Z6dRI+EYs5IDvl4rDXzagM0TokOvRfc31aaMGDkvXjzBj87T+16S9kw5Veusvkp9dhV
+         b5Hw==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:in-reply-to:content-disposition
          :mime-version:references:message-id:subject:cc:to:from:date:sender
          :dkim-signature;
-        bh=cXcYwlntCkuFs1MYm/Ls8RRJck5pezcLeodEq2SVo1k=;
-        b=lKEWJA1ep7oqwZd4HZA2LbJrpYl7g7vNP1LCv3iPGEq+wzrwyuwvzQGyBZCg9nGKJg
-         p1TDZ9mkoRS0jwrGzx9s+ppd+hOp6VX8oeTXbp67WHRttYhDZA8FE0g/2liPHM6tVa/c
-         O/q1daR0C1mO9jdsfrVLTlcltgMbBfWTlK23vnKrJJOUiUPqI3Vehg1tjFWuBKeSJkfP
-         pmhJqKfQG/yQS5c5iHHwUXpnmMAQNzd3VmW8Or2CFlJaOJafYb6uHFBMa6oCAvMI25FP
-         LynCY4KBeVdbS2hYSDblrx5r9VD3cP5GiJ7HFUBG9A/8qa0hxxDKi6/YiyhPchvL37BV
-         0qcg==
+        bh=nDtpXR13gH1hiySA9JQiYTK9RwX9z45CMZePAGtLc20=;
+        b=05r1TFWcarNIpbuyXuWJ01P3rozrLPTfH7L0MIhFaykKy+XHSMtak+2uVPbUWYGhHS
+         DZAKIsFnAK3NGTVutbMDpqbDDZmfk9ch1qA4QCQlBkLUhOqxXMJqOZzs1urmRgwl/BOM
+         XtQESrEB3Q77798uxDCFKzfsavnKywx0AAZwB2ZWH2Ym+65fmpva0G1h/xv2lIa3OSZQ
+         Xk1DcjRf15RoUNEzotk4p9R8n8tstO8yS423WAKaD6FQBq2sjBYpKHC0XXyWjKf88ChS
+         +g1sVMxYGAHkNMNMDNhNOw9Tg5keQylwb7T/EoRZzMxsKDrkidVQ6lQR2e24m9GcL+01
+         BhEg==
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@chromium.org header.s=google header.b="oKmDT/E0";
+       dkim=pass header.i=@chromium.org header.s=google header.b=lzAwh4po;
        spf=pass (google.com: domain of keescook@chromium.org designates 209.85.220.65 as permitted sender) smtp.mailfrom=keescook@chromium.org;
        dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=chromium.org
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
@@ -36,10 +36,10 @@ DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
          :content-disposition:in-reply-to:x-original-sender
          :x-original-authentication-results:precedence:mailing-list:list-id
          :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
-        bh=cXcYwlntCkuFs1MYm/Ls8RRJck5pezcLeodEq2SVo1k=;
-        b=WXV9R00yuYst+oGGXTlNdboJ/PuGCioCKQtQR75hYdvhOvUCKdWGBgBK0GB6uTfcxj
-         nR5cJJ4JRy/vCAjEoh8l+m8BkS6Kv5kxRcN1r1uV/m54BOXCrO/YcXnUZr062uUdsZ9o
-         gf1Z19JuE+VHryO7xgYvdUex3ZG76dQO0PMXM=
+        bh=nDtpXR13gH1hiySA9JQiYTK9RwX9z45CMZePAGtLc20=;
+        b=ES2zdF1MUWlsxJVBepEfOMbD3qONprOlGl7l7DdJQOSOdW+E2Bi//GrPMKo8IHDPT/
+         1VKxMOKf1vKRo5p+aWyZkPqjbrYZN3rBoZcEwIqVJkB5LVR7MGLnPi56yCK/j2C2mM5i
+         NhIR9Eb/cE9xdv7fAx5oQLoRjkOJVepnF/2h4=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
         h=sender:x-gm-message-state:date:from:to:cc:subject:message-id
@@ -47,126 +47,127 @@ X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
          :x-original-sender:x-original-authentication-results:precedence
          :mailing-list:list-id:x-spam-checked-in-group:list-post:list-help
          :list-archive:list-subscribe:list-unsubscribe;
-        bh=cXcYwlntCkuFs1MYm/Ls8RRJck5pezcLeodEq2SVo1k=;
-        b=SnE3sZDc2VdFV2vMbcNaPlM560MdXBEf6VcMeRIjfh2zFGb+2eY5b4ndQiRJCqszTc
-         GNy7zximf2u0d0JGXOaMc9kC9Koo7Fd74il5w5sk89EHh5c0ajeYMHUd7BtX4YdIRZvh
-         3B2oDiUbmdiYWxJ5FdRBLq5uU5oEzSpqM/nAJUKbrWADeCgaDspgOB/JeM5cmMyWRki9
-         qIOcdyMSo4K/+bfbmGoG53YvOA/vdEDsr70pNbd4lw3GRNFwhFXn0OIyQsYittDDWx9E
-         EZ4AfIKYwAEsd+bNDyAeYkHxeyJmgU4nO2Ys4rbbkalTY3qUHsanU8UkrX7wrUufEFGY
-         pxbQ==
+        bh=nDtpXR13gH1hiySA9JQiYTK9RwX9z45CMZePAGtLc20=;
+        b=qIIamiqa4M4jj2u1T/SPZ2nUGlAGbHLpG88dZegjPuJLMPkZTHpaC27buXDfqvj4FR
+         M9s2imMhrIrIpJxhtjpFBs2w2drApn04ULSawqc29Ycv+6020jENCVWEN3SiYDpNvw9q
+         Ka7EENhwQ26avBatFBUdc3b6rMNiC8HBqzX6teax/PPbZNH7GcuShsSmCOpIKmxZ/g/F
+         GIc0UuZ5UMV6DLSLsFkx19gGFWq4d3XYeULxwNqGW54Q7cFTO/Jz0+pO9tXPBSS1qAg8
+         qvc05+fJhNw0TXkhPEWPDb9BIZPPt9KizBq/xix2h7LqeurPmJWT5OE12YNDpxAbVPJI
+         q22A==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: AOAM530OqGl4GH5o/P4wcD/XWc1LsckrGF3GH4KLEC16KPoSMWZ0otx/
-	d4OJambGFvi2Fgd8oOlH0OSC+Q==
-X-Google-Smtp-Source: ABdhPJzt3ORO9zzj3zmccJd6hsRXoob4QxckAEQaY/4Gk6sfyn/aUdD3tQJ10h9IP6zi6nIST7jflw==
-X-Received: by 2002:a17:90b:784:: with SMTP id l4mr194041pjz.146.1606253144809;
-        Tue, 24 Nov 2020 13:25:44 -0800 (PST)
+X-Gm-Message-State: AOAM531i+x2vMIiBzwWqUilOQhgXNRjaGPAV15YaHH3QgbK/fuUI7Jr7
+	tCfSx+AT16Y177cMZRBFxqXYlA==
+X-Google-Smtp-Source: ABdhPJy995Sl5MbGFCUQOtxGEYz9hAjQbGYuZ6+L/oO3a1jj0aMRjzCKBkEl4C/OuJHin9IGVLS2sw==
+X-Received: by 2002:a17:90a:5518:: with SMTP id b24mr235216pji.138.1606253567755;
+        Tue, 24 Nov 2020 13:32:47 -0800 (PST)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a62:7b42:: with SMTP id w63ls43132pfc.10.gmail; Tue, 24 Nov
- 2020 13:25:44 -0800 (PST)
-X-Received: by 2002:a63:1c53:: with SMTP id c19mr277447pgm.392.1606253144031;
-        Tue, 24 Nov 2020 13:25:44 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1606253144; cv=none;
+Received: by 2002:aa7:989e:: with SMTP id r30ls61962pfl.2.gmail; Tue, 24 Nov
+ 2020 13:32:47 -0800 (PST)
+X-Received: by 2002:a63:784:: with SMTP id 126mr295153pgh.215.1606253567161;
+        Tue, 24 Nov 2020 13:32:47 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1606253567; cv=none;
         d=google.com; s=arc-20160816;
-        b=Nakzp602MLkyjcXJgT9o7Jxc5zW9O/lPCkpqBrPhVj3DWAi3Fpz+4UubwycEyRVxvc
-         Q4k6JXqtkykNG+2BMLOMzVbHq7J4j3Vfn2tk/mlqx6/UtgglcpvrOiFQQ01w5hudfdTL
-         F1JttDBgRw/yBN4ZJ+iPH3WtfkX//kcNzdk6gmkDKcno6dXOzCA/EkL3NJo2AdPKpwFQ
-         A1rN3nsxxIr1TYzxCpexCMaTLugn1SX+EL8XwSj3Gn3kQLRQb5fSlEp5suyAaDATGcyI
-         zSAoCYABGd9Lw8YAU4I/pBrOJB2yw5ipVx7Gs/l6ZrEhGOK1wT/6WmTXjQ2DYX9oFnT+
-         2oqw==
+        b=MiotKpk1FzGm6RLJZBirk41m5F9hWxqUw8HEtklilbSiKhrkKQmzGg6jBRX25hawAS
+         Z9ANVcEg4uH8rVee5GP4u4k37QZn9h/nE+/ESX28HI2mWdcSFkX3jO2GRxWJg+wEuzLj
+         iZ7g3ECTiVbsIU4CXRsrWBZlqQVBpmXaDUn3+MccyHXd3W6sbwA/H2ieTb6WpYYm3suJ
+         n3UPYIBynla4hU5wgzaIQ8yJTo29qIpDnhr+mhMyNbd+xyf0J5xam53ys+jhmWeyHtIU
+         +MJnRw597EjxH5+WPFjNsPtg0fbDiwROE6TiJL674bhF1mkPr9s/aHbC65/Qo3JucvgP
+         pnLw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:dkim-signature;
-        bh=Hc7xHQdcWqcI1RL6yWHK3qM7+D3PcB+9wJ1f+Y4kOZ8=;
-        b=gDKC/kcEjEU8uRNwV3e5UM0NYMOocrntVU5ItiK2iP8zRsK75dGgMlicd/Us0z3VAx
-         sHa0v0erXuwIfXm4iNIYoPNbf3sQkpdikGMlHmW1KWQles6PVpA9SrY6TwU2aIdpCSz2
-         9xOdcBQ2UU1KfZaeWidUFMz6a++SrdXW8RFprPeH6A0iUTmXmcy01YWIbzm7G0EjQVX1
-         L7yX/KWMOJwJqNWe3Es1qtjdc5rYVI9FVPD8xglsNhZhsP2zrTQw6DIwV1mDQRXMEXHE
-         XTd5CKwYQfUryzJTNZo7HXa/NF/W3TwBW20e2GCW2Uxi8jyQQ/P+afq1QJ5WizqDjZx7
-         6MvA==
+        bh=nUebvx46WK355IC8BSYKhA86maU/C5TyOra9y/oS07E=;
+        b=Tgi8el56086ibRoIbu/tClMVjJG7wd/CeTsd3FS5Io9RG7NW/tBMzA+Z7Cx+o1rUjx
+         rDu7h/CerDDNm7Os0zstCVWodP37TWg9REvv/9Si3WCTRnGb4GnUfw+Y260pfYRxsUns
+         HcpXxg+emNzK44R5fOsFerxqC2+NwP4izd52j9CUgp0+13d3FyJAGylzmCRceeq4CiDd
+         OvFtf8HIXXslXfc973xlvmwxWYF5FayT8pwqD55pF4hyjxezqmm408PCHDPpmdS+6yl3
+         U9ZGVmiCgC4+QKluRHpK74wL6RdgoBdGKNh1C3Mr8gETVgW25aT0rPIdi7pdM3IC69LC
+         SKOA==
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@chromium.org header.s=google header.b="oKmDT/E0";
+       dkim=pass header.i=@chromium.org header.s=google header.b=lzAwh4po;
        spf=pass (google.com: domain of keescook@chromium.org designates 209.85.220.65 as permitted sender) smtp.mailfrom=keescook@chromium.org;
        dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=chromium.org
 Received: from mail-sor-f65.google.com (mail-sor-f65.google.com. [209.85.220.65])
-        by mx.google.com with SMTPS id mj24sor150279pjb.40.2020.11.24.13.25.44
+        by mx.google.com with SMTPS id n189sor33503pfd.21.2020.11.24.13.32.47
         for <usb-storage@lists.one-eyed-alien.net>
         (Google Transport Security);
-        Tue, 24 Nov 2020 13:25:44 -0800 (PST)
+        Tue, 24 Nov 2020 13:32:47 -0800 (PST)
 Received-SPF: pass (google.com: domain of keescook@chromium.org designates 209.85.220.65 as permitted sender) client-ip=209.85.220.65;
-X-Received: by 2002:a17:90b:3505:: with SMTP id ls5mr176054pjb.55.1606253143764;
-        Tue, 24 Nov 2020 13:25:43 -0800 (PST)
+X-Received: by 2002:aa7:9af2:0:b029:198:273c:6be8 with SMTP id y18-20020aa79af20000b0290198273c6be8mr329847pfp.4.1606253566848;
+        Tue, 24 Nov 2020 13:32:46 -0800 (PST)
 Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
-        by smtp.gmail.com with ESMTPSA id z68sm129381pgb.37.2020.11.24.13.25.41
+        by smtp.gmail.com with ESMTPSA id j74sm15845pfd.43.2020.11.24.13.32.45
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 24 Nov 2020 13:25:41 -0800 (PST)
-Date: Tue, 24 Nov 2020 13:25:40 -0800
+        Tue, 24 Nov 2020 13:32:45 -0800 (PST)
+Date: Tue, 24 Nov 2020 13:32:44 -0800
 From: Kees Cook <keescook@chromium.org>
-To: Nick Desaulniers <ndesaulniers@google.com>
-Cc: Jakub Kicinski <kuba@kernel.org>,
-	"Gustavo A. R. Silva" <gustavoars@kernel.org>,
-	LKML <linux-kernel@vger.kernel.org>, alsa-devel@alsa-project.org,
-	amd-gfx list <amd-gfx@lists.freedesktop.org>,
-	bridge@lists.linux-foundation.org, ceph-devel@vger.kernel.org,
-	cluster-devel@redhat.com, coreteam@netfilter.org,
-	devel@driverdev.osuosl.org, dm-devel@redhat.com,
-	drbd-dev@lists.linbit.com,
-	dri-devel <dri-devel@lists.freedesktop.org>,
-	GR-everest-linux-l2@marvell.com, GR-Linux-NIC-Dev@marvell.com,
-	intel-gfx@lists.freedesktop.org, intel-wired-lan@lists.osuosl.org,
-	keyrings@vger.kernel.org, linux1394-devel@lists.sourceforge.net,
-	linux-acpi@vger.kernel.org, linux-afs@lists.infradead.org,
-	Linux ARM <linux-arm-kernel@lists.infradead.org>,
-	linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+To: James Bottomley <James.Bottomley@HansenPartnership.com>
+Cc: "Gustavo A. R. Silva" <gustavoars@kernel.org>,
+	Joe Perches <joe@perches.com>, Jakub Kicinski <kuba@kernel.org>,
+	alsa-devel@alsa-project.org,
 	linux-atm-general@lists.sourceforge.net,
-	linux-block@vger.kernel.org, linux-can@vger.kernel.org,
-	linux-cifs@vger.kernel.org,
-	"open list:HARDWARE RANDOM NUMBER GENERATOR CORE" <linux-crypto@vger.kernel.org>,
-	linux-decnet-user@lists.sourceforge.net, linux-ext4@vger.kernel.org,
-	linux-fbdev@vger.kernel.org, linux-geode@lists.infradead.org,
-	linux-gpio@vger.kernel.org, linux-hams@vger.kernel.org,
-	linux-hwmon@vger.kernel.org, linux-i3c@lists.infradead.org,
-	linux-ide@vger.kernel.org, linux-iio@vger.kernel.org,
-	linux-input@vger.kernel.org, linux-integrity@vger.kernel.org,
-	linux-mediatek@lists.infradead.org, linux-media@vger.kernel.org,
-	linux-mmc@vger.kernel.org,
-	Linux Memory Management List <linux-mm@kvack.org>,
-	linux-mtd@lists.infradead.org, linux-nfs@vger.kernel.org,
-	linux-rdma@vger.kernel.org,
-	Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
-	linux-scsi@vger.kernel.org, linux-sctp@vger.kernel.org,
-	linux-security-module@vger.kernel.org,
-	linux-stm32@st-md-mailman.stormreply.com, linux-usb@vger.kernel.org,
-	linux-watchdog@vger.kernel.org,
-	linux-wireless <linux-wireless@vger.kernel.org>,
-	Network Development <netdev@vger.kernel.org>,
-	netfilter-devel@vger.kernel.org, nouveau@lists.freedesktop.org,
-	op-tee@lists.trustedfirmware.org, oss-drivers@netronome.com,
-	patches@opensource.cirrus.com, rds-devel@oss.oracle.com,
-	reiserfs-devel@vger.kernel.org, samba-technical@lists.samba.org,
-	selinux@vger.kernel.org, target-devel@vger.kernel.org,
-	tipc-discussion@lists.sourceforge.net,
-	usb-storage@lists.one-eyed-alien.net,
-	virtualization@lists.linux-foundation.org,
-	wcn36xx@lists.infradead.org,
-	"maintainer:X86 ARCHITECTURE (32-BIT AND 64-BIT)" <x86@kernel.org>,
-	xen-devel@lists.xenproject.org, linux-hardening@vger.kernel.org,
+	reiserfs-devel@vger.kernel.org, linux-iio@vger.kernel.org,
+	linux-wireless@vger.kernel.org, linux-fbdev@vger.kernel.org,
+	dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
 	Nathan Chancellor <natechancellor@gmail.com>,
-	Miguel Ojeda <ojeda@kernel.org>, Joe Perches <joe@perches.com>
-Subject: [usb-storage] Re: [PATCH 000/141] Fix fall-through warnings for Clang
-Message-ID: <202011241324.B3439A2@keescook>
-References: <cover.1605896059.git.gustavoars@kernel.org>
- <20201120105344.4345c14e@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com>
- <202011201129.B13FDB3C@keescook>
+	linux-ide@vger.kernel.org, dm-devel@redhat.com,
+	keyrings@vger.kernel.org, linux-mtd@lists.infradead.org,
+	GR-everest-linux-l2@marvell.com, wcn36xx@lists.infradead.org,
+	samba-technical@lists.samba.org, linux-i3c@lists.infradead.org,
+	linux1394-devel@lists.sourceforge.net,
+	linux-afs@lists.infradead.org, usb-storage@lists.one-eyed-alien.net,
+	drbd-dev@lists.linbit.com, devel@driverdev.osuosl.org,
+	linux-cifs@vger.kernel.org, rds-devel@oss.oracle.com,
+	Nick Desaulniers <ndesaulniers@google.com>,
+	linux-scsi@vger.kernel.org, linux-rdma@vger.kernel.org,
+	oss-drivers@netronome.com, bridge@lists.linux-foundation.org,
+	linux-security-module@vger.kernel.org,
+	amd-gfx@lists.freedesktop.org,
+	linux-stm32@st-md-mailman.stormreply.com, cluster-devel@redhat.com,
+	linux-acpi@vger.kernel.org, coreteam@netfilter.org,
+	intel-wired-lan@lists.osuosl.org, linux-input@vger.kernel.org,
+	Miguel Ojeda <ojeda@kernel.org>,
+	tipc-discussion@lists.sourceforge.net, linux-ext4@vger.kernel.org,
+	linux-media@vger.kernel.org, linux-watchdog@vger.kernel.org,
+	selinux@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+	intel-gfx@lists.freedesktop.org, linux-geode@lists.infradead.org,
+	linux-can@vger.kernel.org, linux-block@vger.kernel.org,
+	linux-gpio@vger.kernel.org, op-tee@lists.trustedfirmware.org,
+	linux-mediatek@lists.infradead.org, xen-devel@lists.xenproject.org,
+	nouveau@lists.freedesktop.org, linux-hams@vger.kernel.org,
+	ceph-devel@vger.kernel.org,
+	virtualization@lists.linux-foundation.org,
+	linux-arm-kernel@lists.infradead.org, linux-hwmon@vger.kernel.org,
+	x86@kernel.org, linux-nfs@vger.kernel.org,
+	GR-Linux-NIC-Dev@marvell.com, linux-mm@kvack.org,
+	netdev@vger.kernel.org, linux-decnet-user@lists.sourceforge.net,
+	linux-mmc@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
+	linux-sctp@vger.kernel.org, linux-usb@vger.kernel.org,
+	netfilter-devel@vger.kernel.org, linux-crypto@vger.kernel.org,
+	patches@opensource.cirrus.com, linux-integrity@vger.kernel.org,
+	target-devel@vger.kernel.org, linux-hardening@vger.kernel.org,
+	Jonathan Cameron <Jonathan.Cameron@huawei.com>,
+	Greg KH <gregkh@linuxfoundation.org>
+Subject: [usb-storage] Re: [Intel-wired-lan] [PATCH 000/141] Fix fall-through
+ warnings for Clang
+Message-ID: <202011241327.BB28F12F6@keescook>
+References: <202011201129.B13FDB3C@keescook>
  <20201120115142.292999b2@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com>
  <202011220816.8B6591A@keescook>
- <CAKwvOdntVfXj2WRR5n6Kw7BfG7FdKpTeHeh5nPu5AzwVMhOHTg@mail.gmail.com>
+ <9b57fd4914b46f38d54087d75e072d6e947cb56d.camel@HansenPartnership.com>
+ <ca071decb87cc7e905411423c05a48f9fd2f58d7.camel@perches.com>
+ <0147972a72bc13f3629de8a32dee6f1f308994b5.camel@HansenPartnership.com>
+ <d8d1e9add08cdd4158405e77762d4946037208f8.camel@perches.com>
+ <dbd2cb703ed9eefa7dde9281ea26ab0f7acc8afe.camel@HansenPartnership.com>
+ <20201123130348.GA3119@embeddedor>
+ <8f5611bb015e044fa1c0a48147293923c2d904e4.camel@HansenPartnership.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="UTF-8"
 Content-Disposition: inline
-In-Reply-To: <CAKwvOdntVfXj2WRR5n6Kw7BfG7FdKpTeHeh5nPu5AzwVMhOHTg@mail.gmail.com>
+In-Reply-To: <8f5611bb015e044fa1c0a48147293923c2d904e4.camel@HansenPartnership.com>
 X-Original-Sender: keescook@chromium.org
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@chromium.org header.s=google header.b="oKmDT/E0";       spf=pass
+ header.i=@chromium.org header.s=google header.b=lzAwh4po;       spf=pass
  (google.com: domain of keescook@chromium.org designates 209.85.220.65 as
  permitted sender) smtp.mailfrom=keescook@chromium.org;       dmarc=pass
  (p=NONE sp=NONE dis=NONE) header.from=chromium.org
@@ -185,30 +186,31 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On Mon, Nov 23, 2020 at 05:32:51PM -0800, Nick Desaulniers wrote:
-> On Sun, Nov 22, 2020 at 8:17 AM Kees Cook <keescook@chromium.org> wrote:
-> >
-> > On Fri, Nov 20, 2020 at 11:51:42AM -0800, Jakub Kicinski wrote:
-> > > If none of the 140 patches here fix a real bug, and there is no change
-> > > to machine code then it sounds to me like a W=2 kind of a warning.
-> >
-> > FWIW, this series has found at least one bug so far:
-> > https://lore.kernel.org/lkml/CAFCwf11izHF=g1mGry1fE5kvFFFrxzhPSM6qKAO8gxSp=Kr_CQ@mail.gmail.com/
-> 
-> So looks like the bulk of these are:
-> switch (x) {
->   case 0:
->     ++x;
->   default:
->     break;
-> }
-> 
-> I have a patch that fixes those up for clang:
-> https://reviews.llvm.org/D91895
+On Mon, Nov 23, 2020 at 08:31:30AM -0800, James Bottomley wrote:
+> Really, no ... something which produces no improvement has no value at
+> all ... we really shouldn't be wasting maintainer time with it because
+> it has a cost to merge.  I'm not sure we understand where the balance
+> lies in value vs cost to merge but I am confident in the zero value
+> case.
 
-I still think this isn't right -- it's a case statement that runs off
-the end without an explicit flow control determination. I think Clang is
-right to warn for these, and GCC should also warn.
+What? We can't measure how many future bugs aren't introduced because the
+kernel requires explicit case flow-control statements for all new code.
+
+We already enable -Wimplicit-fallthrough globally, so that's not the
+discussion. The issue is that Clang is (correctly) even more strict
+than GCC for this, so these are the remaining ones to fix for full Clang
+coverage too.
+
+People have spent more time debating this already than it would have
+taken to apply the patches. :)
+
+This is about robustness and language wrangling. It's a big code-base,
+and this is the price of our managing technical debt for permanent
+robustness improvements. (The numbers I ran from Gustavo's earlier
+patches were that about 10% of the places adjusted were identified as
+legitimate bugs being fixed. This final series may be lower, but there
+are still bugs being found from it -- we need to finish this and shut
+the door on it for good.)
 
 -- 
 Kees Cook
@@ -216,4 +218,4 @@ Kees Cook
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/202011241324.B3439A2%40keescook.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/202011241327.BB28F12F6%40keescook.
