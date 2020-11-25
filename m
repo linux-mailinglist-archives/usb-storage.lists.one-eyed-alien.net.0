@@ -1,178 +1,161 @@
-Return-Path: <usb-storage+bncBCOLPU5Q4MDBBFOF7P6QKGQEOPUFZWI@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBCILJWNIZYHBBF6O7P6QKGQE2AIJUGA@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-wr1-x445.google.com (mail-wr1-x445.google.com [IPv6:2a00:1450:4864:20::445])
-	by mail.lfdr.de (Postfix) with ESMTPS id E75822C4B29
-	for <lists+usb-storage@lfdr.de>; Thu, 26 Nov 2020 00:02:45 +0100 (CET)
-Received: by mail-wr1-x445.google.com with SMTP id n1sf3887wro.22
-        for <lists+usb-storage@lfdr.de>; Wed, 25 Nov 2020 15:02:45 -0800 (PST)
-ARC-Seal: i=2; a=rsa-sha256; t=1606345365; cv=pass;
+Received: from mail-io1-xd47.google.com (mail-io1-xd47.google.com [IPv6:2607:f8b0:4864:20::d47])
+	by mail.lfdr.de (Postfix) with ESMTPS id 74B4B2C4B69
+	for <lists+usb-storage@lfdr.de>; Thu, 26 Nov 2020 00:22:00 +0100 (CET)
+Received: by mail-io1-xd47.google.com with SMTP id b4sf245532ioa.4
+        for <lists+usb-storage@lfdr.de>; Wed, 25 Nov 2020 15:22:00 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1606346519; cv=pass;
         d=google.com; s=arc-20160816;
-        b=OcvqTyildfeMuQY82Thxrm06loM3Xl3upCYGrL+w1xJ7d3MSlvo0HaL095CzaYPeng
-         NX8SgIMxycwViLnpH/FC5vLOuHvbmd3ezUUj1KIGN2urSo701NWHHds9aeNw9pZSaU7Y
-         w0gtDxNdHCv9WIcv/ze8J06qf1qHYARkXaS54ExDOH0l8BipjEFSRf47YXRaNs+NfCl+
-         DHLjd4ur2zwCGZ9JsPFeyqVAhVmN5w+gFGL+F+kYg9sg7k1AP7wy9Ug89UICnU5Z2IS1
-         kykyfX/k2bj6pB2efzNxfUdWe5Gvn8VtwgrdlKTT/nHzrKiUYL8sCBUJrlkVGMTIGryz
-         rbNw==
+        b=QszlwxfWUuzlcvyRk7z0kDatBlW8/9Mf1bMsMAqaA7qyYmoyrjqpDcCARb99Ra2t7N
+         1M7KmhwPhW3ki89Lyt/4z7T9D+f4+GEAodvT1cfrcoyyRVORrlarLBX7TYr6Kdc7HN/D
+         sZuyFpo1UJXED8JSIHQddlvEGKuHg8tHA0/m+UwTXqJbpXe+FJKL118WfPivuwQh2emy
+         uBR+Kfoj9CJ9DO/gAkqxHKMWbeaGqq5ew1JtAVSQ81Aglj1XPtb/p/rYjSG3n8Vybjs6
+         ohjMoXXVSSi5VDt69BPapQw4/B9EesJXVVkIcm23lXwBV1Au8J1ooZvmRMbbYRzyKlXs
+         H94A==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:content-transfer-encoding
-         :content-language:in-reply-to:mime-version:user-agent:date
-         :message-id:from:references:cc:to:subject:sender:dkim-signature;
-        bh=eLIj5ldMfnXDFUxehGJcahQLTy4NAqroAghNqOquna4=;
-        b=HCa9OnSi56TLISbSsvg9iX89GVr+5cBdAFrYnyHYK2/oOvMjuWgQCoV0XyHwFBvboQ
-         of2NfmK2vSqtru8rx87hMJy4q6krVdfotOaxzSeCO53FHhFGDKdU74Jeuqwd5O8cqipg
-         aMo8WyQeXvYlZEqWuAcQfwgONpxlTZx1BzSnqPpOwOdKCDq3s5hLxhlQregQ/4vdSXNg
-         W/PMoWLuXzmdlwYsvu+tTEx1P0otO/BzdlaSPO1p1U4yo3CDa52HN9tvcFgngKil008+
-         0dPuBsMAMNNv3Q5h736wTvrrOj7kUqU0nfFihfrNSHPoYmbOGCe1Q81i90FOcoCO1pJP
-         6RwA==
+         :list-id:mailing-list:precedence:mime-version:references:message-id
+         :in-reply-to:subject:cc:to:from:date:sender:dkim-signature;
+        bh=TvcQ8UH7oIwvWDda27CnhH8lPWjjNwkOnnfiZyG+U/k=;
+        b=v+FJQHUGuJmMseIcjcxkZfahwPV7uIbnK1nWQBgNlVaPBtyJr36CvU+J+TmEYb8Jnn
+         vu87CBZjn94kOUAt2cIRgS9UD4leK4yeZ5wI6G7ohuFt8ugLJUbHfkpsY2TfBmukwihK
+         iOltwFZUosrMK6caYVjOrellFXfhYfYXBVHKzg3nY+88It7FJIgy7ePuPUrkzB01EMi2
+         5OWtv2EDPnlEbUYmyJMZumFkVXh+BPK4Wnev6c4FZn6Ufni9hpaP8XAW7zhtpPAFKZs+
+         98FtvxAEh1PampF6b88Uf0STmlAyO6U+iVKLMgH9/ZOa9BDkxzClwND0skLL2Twup3ss
+         ZovA==
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@gmail.com header.s=20161025 header.b=cK16XuXE;
-       spf=pass (google.com: domain of ecree.xilinx@gmail.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=ecree.xilinx@gmail.com;
-       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+       spf=pass (google.com: best guess record for domain of fthain@telegraphics.com.au designates 98.124.60.144 as permitted sender) smtp.mailfrom=fthain@telegraphics.com.au
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
-        h=sender:subject:to:cc:references:from:message-id:date:user-agent
-         :mime-version:in-reply-to:content-language:content-transfer-encoding
-         :x-original-sender:x-original-authentication-results:precedence
-         :mailing-list:list-id:list-post:list-help:list-archive
+        h=sender:date:from:to:cc:subject:in-reply-to:message-id:references
+         :mime-version:x-original-sender:x-original-authentication-results
+         :precedence:mailing-list:list-id:list-post:list-help:list-archive
          :list-subscribe:list-unsubscribe;
-        bh=eLIj5ldMfnXDFUxehGJcahQLTy4NAqroAghNqOquna4=;
-        b=DUCvNqalrmJ4Zgi3pfnSjDfqlLh6PJkUrE/j+E/ui0Qmy7bv93rn7R262UyWyqQED2
-         04zI5tbPsmRq6DQoc9QjVafbQkV8XgOJRbx52NB/hT8HJh846qkSpV0KPCGuwcYIQaP1
-         swmC4qsxqv3fox5NCrhEl5TK8h7lSXq2Y7D5U=
+        bh=TvcQ8UH7oIwvWDda27CnhH8lPWjjNwkOnnfiZyG+U/k=;
+        b=CEuzpqxTbEmdW2FZbpmi6nCwcMXUGO5nK//fm+17JE++hdNEI6fItQ0zHHSDloQaxv
+         55SrXGopnNV3fteNl3En9W+OhPMR5xeOjFEOXoJaN7kMJp9apVpXoFueSeDHAGHamH+a
+         tF7P8Nn6gUKr6jgxxm31ou+TMflwm/S7dvHiY=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
-        h=sender:x-gm-message-state:subject:to:cc:references:from:message-id
-         :date:user-agent:mime-version:in-reply-to:content-language
-         :content-transfer-encoding:x-original-sender
+        h=sender:x-gm-message-state:date:from:to:cc:subject:in-reply-to
+         :message-id:references:mime-version:x-original-sender
          :x-original-authentication-results:precedence:mailing-list:list-id
          :x-spam-checked-in-group:list-post:list-help:list-archive
          :list-subscribe:list-unsubscribe;
-        bh=eLIj5ldMfnXDFUxehGJcahQLTy4NAqroAghNqOquna4=;
-        b=Zi2Vj+5oBhRUhf/65/fCp5OhXCT1tBMbvzlvMQVt42wQmBt1T8rvHc4Rwqt8WlUmqe
-         A3CSaP4pP5Uvtg3N1RHtZ06C5wxxh2WyGfRSTwb3aQcbtf7SL14REo/j3BygTCsYIQGS
-         d7wxd18fdnCl5ku5PBLNqL5HuSRIdLYMHHFpHdAxavZ977fqHaIExRdJ/MkUIM8/0yxy
-         O8694YD3tSUs0+cMirnRkV+U9U7/oQRRgICly1dXoOO2uoF/Y5vH76SbMeWaYd8rfmVS
-         EUQ6w6j2eeI5UPElGeec3+8J/PDHggHyCgi5sriG5g+qogD+y6UaxJvme+tawzJNV/K4
-         e1cA==
+        bh=TvcQ8UH7oIwvWDda27CnhH8lPWjjNwkOnnfiZyG+U/k=;
+        b=Ld9XQuSPK+OVE/rk4ds+//kWJLjxFx09ArVg/benVuYtANaOhkNkQqXdtQShBINHIq
+         Dyx1aV1nzf4PzpyNobTAVFwf66HUwV5lmTTET6cbaQQXWFjVS65JNXDO1ZW/xYkzEuTo
+         UhMTggGfgV2ljvFozo7LBGs6S+FdPuf0fdVX2YNBjmdD64HPtuIyqJQ0kFeYM7syPP+K
+         hqpJSWOzQoqGnk1GRmNFbkOjMuXP01nf+8XBqvephTQDwWk8Q51OAu/TSyta9uY6loau
+         OZtHYN9m3J9D7FptT6Nh8Gx6JqcUaMMTZcMdSg/EniADS0X+mP6owKbAAdyodWufJyjd
+         WwFw==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: AOAM532knzA5AKazO2yJiRC0Gnia+9rD29u/GSomNan25brNC3AzQ63j
-	J3AWMlICbihr+WVClYh0yVp5mA==
-X-Google-Smtp-Source: ABdhPJwZY2yPaZcbOyDYpUYOBObPRSxy1Hf/2lFlfb5OnJjLaBAz4charz+M6QbwIodKszktbURMXw==
-X-Received: by 2002:a1c:790c:: with SMTP id l12mr6124916wme.47.1606345365626;
-        Wed, 25 Nov 2020 15:02:45 -0800 (PST)
+X-Gm-Message-State: AOAM531KHMYtu2M3lL5AsCf2BlJ8LwMM62Tlt1ctgfwZvDRjLBqSvtQV
+	JykD81sBwcdXSMxT8KDh9K14Vw==
+X-Google-Smtp-Source: ABdhPJzKTiN4OGQ4aQAlKQE90/57+PwzRsq2Xr+8z3CQTgDFvRpW6TSH+jZ6m8vRaJwT7D8LgqtBhg==
+X-Received: by 2002:a05:6e02:1786:: with SMTP id y6mr128496ilu.121.1606346519231;
+        Wed, 25 Nov 2020 15:21:59 -0800 (PST)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a1c:a4c2:: with SMTP id n185ls6569wme.2.canary-gmail; Wed,
- 25 Nov 2020 15:02:44 -0800 (PST)
-X-Received: by 2002:a1c:2c88:: with SMTP id s130mr6331377wms.79.1606345364505;
-        Wed, 25 Nov 2020 15:02:44 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1606345364; cv=none;
+Received: by 2002:a92:bb4b:: with SMTP id w72ls55313ili.9.gmail; Wed, 25 Nov
+ 2020 15:21:58 -0800 (PST)
+X-Received: by 2002:a92:1808:: with SMTP id 8mr124832ily.195.1606346518844;
+        Wed, 25 Nov 2020 15:21:58 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1606346518; cv=none;
         d=google.com; s=arc-20160816;
-        b=O+WAlLBkauZUpRJa+Bao275/cKcU8jQzsr0AWTjIBsd6V7+fwKk9Rwsd3Mykgq4kJL
-         POyduzlroGQ8nE+0GSMbAaAaYfsJPuwpVpkN1o530mUO9sLZY+ujS8RfpeQkUHQMXVqx
-         sMN9fDoTlGXr2okzpC+FL7+dJrUGtqWY+ch9u/bih71CJe4JyrL/ph++FZwAx5urlKER
-         H4CbAwJmNVQUvI0L3W0uXbJRJvURgfPRvxmJyGSN9PXpTB8o0Qsc5Wv+CXy7/BBAab+a
-         bO13pf/HzpodJZFgdkSsv1KUNR175CxPfktU83gjaYv1zvxpRhWu0XkHM/N4FBVGGMVn
-         wc+Q==
+        b=Lu0uCUMY9Gc0OGH5dw9r377YRJuQudzT7aL7TMjSRNWeoraCsen3HR7tHXCx7igJc4
+         D196ZXO6ZFSN7KreEJzwfAySIxcZWdEAwCX00d9gNL9TeB3Yd8o7/bLKaKd9DefkplYr
+         8ftwMTtQbCJl6+GaWGgpYVNe1cryV6Ap6HmUAhN2Lc5zQOVBV9c6sdivi+HqotuCNpjr
+         ssqXSlMkS2wGAJX1dXCl9dKIcnmGWTLMCvTsKsLGCIeQ73MsJRKoGl1I1m3l2Bh67/ta
+         uTq2+OJZjMZvUmtTaetI3LgcNgh2RY+XL525NkfnF+ilbKMe1+ymy6ySgeYHNWsdsysw
+         FTGw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=content-transfer-encoding:content-language:in-reply-to:mime-version
-         :user-agent:date:message-id:from:references:cc:to:subject
-         :dkim-signature;
-        bh=ha42UWMtlXOL8kfvC1XpFKttY73p7G2gxviD5bIo2Ac=;
-        b=fMJtYTfgeHmKDnlZsTMddj8j7xMkoZ/2fSLcLoLXagqK5PG0TMz1I6pSYdOe5Krhby
-         If1FlKDCnrz03QlUKFp8P945R6eJbVpu9WsLX9A1wLY3Q0z078aktpdJZZtyLWCZEL4s
-         DwNvewkxxxel2BfYJa7FTUckXIMuCxRn7YT/BUBEeGBxZYEsU0CSVui8woSfZTuBC2hs
-         QSGR4WtzzIDvdP4RhIPNe9LY9zAiEutGBe2R7j2WUQQNdeHNs94KgexrDFNjxcTuaHDY
-         AOzbXj+BPQoQ+IohfYvo62TUXMuCMTKPKtr/Ml+Ik6ZggCDm9a4QSe7kGx1g86rc/8Cx
-         Xt9g==
+        h=mime-version:references:message-id:in-reply-to:subject:cc:to:from
+         :date;
+        bh=mod24iPlOIRytkgTlGHL105Ak8dcfCT40D8baLqdx/s=;
+        b=vF/fEEpL/s2ro+RyBUL29Ot1jW7JokcdpQarknFYDk2Dq35KWzeFgJvzhTxSTt2TcI
+         okjj4oD759yCvKSgXy3lo8dATRXxdTZSEzvUuAjDi0HwDiUUd9XVbwJelKJuN4Zqt/HW
+         3UrXIJ6CvQBad2NkpdnFIPwUo4gCSXKnNNL2FkuXQE/i47mevXMJbvYm3KdYZIFww4L9
+         MUm0/47I7qFtQW3QRR/vEaLORgpRl4GVPfA01aO92EnETsKVQc3A3Tk6greZcvGT4yNL
+         8wSfp3plb/t9G5VNca+Jo9IQ/5G0ASQW3+Wkw1BLGQEzW8AKadqnTfG6FgmAkoYFuGE5
+         wWPA==
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@gmail.com header.s=20161025 header.b=cK16XuXE;
-       spf=pass (google.com: domain of ecree.xilinx@gmail.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=ecree.xilinx@gmail.com;
-       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
-Received: from mail-sor-f65.google.com (mail-sor-f65.google.com. [209.85.220.65])
-        by mx.google.com with SMTPS id u12sor1943368wrm.54.2020.11.25.15.02.44
-        for <usb-storage@lists.one-eyed-alien.net>
-        (Google Transport Security);
-        Wed, 25 Nov 2020 15:02:44 -0800 (PST)
-Received-SPF: pass (google.com: domain of ecree.xilinx@gmail.com designates 209.85.220.65 as permitted sender) client-ip=209.85.220.65;
-X-Received: by 2002:a5d:474b:: with SMTP id o11mr180470wrs.235.1606345364309;
-        Wed, 25 Nov 2020 15:02:44 -0800 (PST)
-Received: from [192.168.1.122] (cpc92720-cmbg20-2-0-cust364.5-4.cable.virginm.net. [82.21.83.109])
-        by smtp.gmail.com with ESMTPSA id u129sm5552667wme.9.2020.11.25.15.02.41
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 25 Nov 2020 15:02:43 -0800 (PST)
-Subject: [usb-storage] Re: [PATCH 000/141] Fix fall-through warnings for Clang
-To: Kees Cook <keescook@chromium.org>,
- Nick Desaulniers <ndesaulniers@google.com>
-Cc: Jakub Kicinski <kuba@kernel.org>,
- "Gustavo A. R. Silva" <gustavoars@kernel.org>,
- LKML <linux-kernel@vger.kernel.org>, alsa-devel@alsa-project.org,
- amd-gfx list <amd-gfx@lists.freedesktop.org>,
- bridge@lists.linux-foundation.org, ceph-devel@vger.kernel.org,
- cluster-devel@redhat.com, coreteam@netfilter.org,
- devel@driverdev.osuosl.org, dm-devel@redhat.com, drbd-dev@lists.linbit.com,
- dri-devel <dri-devel@lists.freedesktop.org>,
- GR-everest-linux-l2@marvell.com, GR-Linux-NIC-Dev@marvell.com,
- intel-gfx@lists.freedesktop.org, intel-wired-lan@lists.osuosl.org,
- keyrings@vger.kernel.org, linux1394-devel@lists.sourceforge.net,
- linux-acpi@vger.kernel.org, linux-afs@lists.infradead.org,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- linux-atm-general@lists.sourceforge.net, linux-block@vger.kernel.org,
- linux-can@vger.kernel.org, linux-cifs@vger.kernel.org,
- "open list:HARDWARE RANDOM NUMBER GENERATOR CORE"
- <linux-crypto@vger.kernel.org>, linux-decnet-user@lists.sourceforge.net,
- linux-ext4@vger.kernel.org, linux-fbdev@vger.kernel.org,
- linux-geode@lists.infradead.org, linux-gpio@vger.kernel.org,
- linux-hams@vger.kernel.org, linux-hwmon@vger.kernel.org,
- linux-i3c@lists.infradead.org, linux-ide@vger.kernel.org,
- linux-iio@vger.kernel.org, linux-input@vger.kernel.org,
- linux-integrity@vger.kernel.org, linux-mediatek@lists.infradead.org,
- linux-media@vger.kernel.org, linux-mmc@vger.kernel.org,
- Linux Memory Management List <linux-mm@kvack.org>,
- linux-mtd@lists.infradead.org, linux-nfs@vger.kernel.org,
- linux-rdma@vger.kernel.org, Linux-Renesas
- <linux-renesas-soc@vger.kernel.org>, linux-scsi@vger.kernel.org,
- linux-sctp@vger.kernel.org, linux-security-module@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com, linux-usb@vger.kernel.org,
- linux-watchdog@vger.kernel.org,
- linux-wireless <linux-wireless@vger.kernel.org>,
- Network Development <netdev@vger.kernel.org>,
- netfilter-devel@vger.kernel.org, nouveau@lists.freedesktop.org,
- op-tee@lists.trustedfirmware.org, oss-drivers@netronome.com,
- patches@opensource.cirrus.com, rds-devel@oss.oracle.com,
- reiserfs-devel@vger.kernel.org, samba-technical@lists.samba.org,
- selinux@vger.kernel.org, target-devel@vger.kernel.org,
- tipc-discussion@lists.sourceforge.net, usb-storage@lists.one-eyed-alien.net,
- virtualization@lists.linux-foundation.org, wcn36xx@lists.infradead.org,
- "maintainer:X86 ARCHITECTURE (32-BIT AND 64-BIT)" <x86@kernel.org>,
- xen-devel@lists.xenproject.org, linux-hardening@vger.kernel.org,
- Nathan Chancellor <natechancellor@gmail.com>, Miguel Ojeda
- <ojeda@kernel.org>, Joe Perches <joe@perches.com>
-References: <cover.1605896059.git.gustavoars@kernel.org>
- <20201120105344.4345c14e@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com>
- <202011201129.B13FDB3C@keescook>
- <20201120115142.292999b2@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com>
- <202011220816.8B6591A@keescook>
- <CAKwvOdntVfXj2WRR5n6Kw7BfG7FdKpTeHeh5nPu5AzwVMhOHTg@mail.gmail.com>
- <202011241324.B3439A2@keescook>
-From: Edward Cree <ecree.xilinx@gmail.com>
-Message-ID: <99a9ffd7-6356-b81d-6e08-7ed74b6fb82c@gmail.com>
-Date: Wed, 25 Nov 2020 23:02:40 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+       spf=pass (google.com: best guess record for domain of fthain@telegraphics.com.au designates 98.124.60.144 as permitted sender) smtp.mailfrom=fthain@telegraphics.com.au
+Received: from kvm5.telegraphics.com.au (kvm5.telegraphics.com.au. [98.124.60.144])
+        by mx.google.com with ESMTP id v4si2613704jas.5.2020.11.25.15.21.58
+        for <usb-storage@lists.one-eyed-alien.net>;
+        Wed, 25 Nov 2020 15:21:58 -0800 (PST)
+Received-SPF: pass (google.com: best guess record for domain of fthain@telegraphics.com.au designates 98.124.60.144 as permitted sender) client-ip=98.124.60.144;
+Received: from localhost (localhost.localdomain [127.0.0.1])
+	by kvm5.telegraphics.com.au (Postfix) with ESMTP id 414EA2A490;
+	Wed, 25 Nov 2020 18:21:54 -0500 (EST)
+Date: Thu, 26 Nov 2020 10:21:54 +1100 (AEDT)
+From: Finn Thain <fthain@telegraphics.com.au>
+To: Nick Desaulniers <ndesaulniers@google.com>
+cc: James Bottomley <James.Bottomley@hansenpartnership.com>, 
+    Kees Cook <keescook@chromium.org>, 
+    "Gustavo A. R. Silva" <gustavoars@kernel.org>, 
+    Joe Perches <joe@perches.com>, Jakub Kicinski <kuba@kernel.org>, 
+    alsa-devel@alsa-project.org, linux-atm-general@lists.sourceforge.net, 
+    reiserfs-devel@vger.kernel.org, linux-iio@vger.kernel.org, 
+    linux-wireless <linux-wireless@vger.kernel.org>, 
+    linux-fbdev@vger.kernel.org, dri-devel <dri-devel@lists.freedesktop.org>, 
+    LKML <linux-kernel@vger.kernel.org>, 
+    Nathan Chancellor <natechancellor@gmail.com>, linux-ide@vger.kernel.org, 
+    dm-devel@redhat.com, keyrings@vger.kernel.org, 
+    linux-mtd@lists.infradead.org, GR-everest-linux-l2@marvell.com, 
+    wcn36xx@lists.infradead.org, samba-technical@lists.samba.org, 
+    linux-i3c@lists.infradead.org, linux1394-devel@lists.sourceforge.net, 
+    linux-afs@lists.infradead.org, usb-storage@lists.one-eyed-alien.net, 
+    drbd-dev@lists.linbit.com, devel@driverdev.osuosl.org, 
+    linux-cifs@vger.kernel.org, rds-devel@oss.oracle.com, 
+    linux-scsi@vger.kernel.org, linux-rdma@vger.kernel.org, 
+    oss-drivers@netronome.com, bridge@lists.linux-foundation.org, 
+    linux-security-module@vger.kernel.org, 
+    amd-gfx list <amd-gfx@lists.freedesktop.org>, 
+    linux-stm32@st-md-mailman.stormreply.com, cluster-devel@redhat.com, 
+    linux-acpi@vger.kernel.org, coreteam@netfilter.org, 
+    intel-wired-lan@lists.osuosl.org, linux-input@vger.kernel.org, 
+    Miguel Ojeda <ojeda@kernel.org>, tipc-discussion@lists.sourceforge.net, 
+    linux-ext4@vger.kernel.org, linux-media@vger.kernel.org, 
+    linux-watchdog@vger.kernel.org, selinux@vger.kernel.org, 
+    linux-arm-msm <linux-arm-msm@vger.kernel.org>, 
+    intel-gfx@lists.freedesktop.org, linux-geode@lists.infradead.org, 
+    linux-can@vger.kernel.org, linux-block@vger.kernel.org, 
+    linux-gpio@vger.kernel.org, op-tee@lists.trustedfirmware.org, 
+    linux-mediatek@lists.infradead.org, xen-devel@lists.xenproject.org, 
+    nouveau@lists.freedesktop.org, linux-hams@vger.kernel.org, 
+    ceph-devel@vger.kernel.org, virtualization@lists.linux-foundation.org, 
+    Linux ARM <linux-arm-kernel@lists.infradead.org>, 
+    linux-hwmon@vger.kernel.org, 
+    "maintainer:X86 ARCHITECTURE (32-BIT AND 64-BIT)" <x86@kernel.org>, 
+    linux-nfs@vger.kernel.org, GR-Linux-NIC-Dev@marvell.com, 
+    Linux Memory Management List <linux-mm@kvack.org>, 
+    Network Development <netdev@vger.kernel.org>, 
+    linux-decnet-user@lists.sourceforge.net, linux-mmc@vger.kernel.org, 
+    Linux-Renesas <linux-renesas-soc@vger.kernel.org>, 
+    linux-sctp@vger.kernel.org, linux-usb@vger.kernel.org, 
+    netfilter-devel@vger.kernel.org, 
+    "open list:HARDWARE RANDOM NUMBER GENERATOR CORE" <linux-crypto@vger.kernel.org>, 
+    patches@opensource.cirrus.com, linux-integrity@vger.kernel.org, 
+    target-devel@vger.kernel.org, linux-hardening@vger.kernel.org, 
+    Jonathan Cameron <Jonathan.Cameron@huawei.com>, 
+    Greg KH <gregkh@linuxfoundation.org>
+Subject: [usb-storage] Re: [Intel-wired-lan] [PATCH 000/141] Fix fall-through
+ warnings for Clang
+In-Reply-To: <CAKwvOdna5Zj_O=sB7Q0jHZX0BJSaakX=ZyftwQ_3=L3-ZB54XQ@mail.gmail.com>
+Message-ID: <alpine.LNX.2.23.453.2011260918510.6@nippy.intranet>
+References: <202011201129.B13FDB3C@keescook> <20201120115142.292999b2@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com> <202011220816.8B6591A@keescook> <9b57fd4914b46f38d54087d75e072d6e947cb56d.camel@HansenPartnership.com> <ca071decb87cc7e905411423c05a48f9fd2f58d7.camel@perches.com>
+ <0147972a72bc13f3629de8a32dee6f1f308994b5.camel@HansenPartnership.com> <d8d1e9add08cdd4158405e77762d4946037208f8.camel@perches.com> <dbd2cb703ed9eefa7dde9281ea26ab0f7acc8afe.camel@HansenPartnership.com> <20201123130348.GA3119@embeddedor>
+ <8f5611bb015e044fa1c0a48147293923c2d904e4.camel@HansenPartnership.com> <202011241327.BB28F12F6@keescook> <a841536fe65bb33f1c72ce2455a6eb47a0107565.camel@HansenPartnership.com> <CAKwvOdkGBn7nuWTAqrORMeN1G+w3YwBfCqqaRD2nwvoAXKi=Aw@mail.gmail.com>
+ <alpine.LNX.2.23.453.2011260750300.6@nippy.intranet> <CAKwvOdna5Zj_O=sB7Q0jHZX0BJSaakX=ZyftwQ_3=L3-ZB54XQ@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <202011241324.B3439A2@keescook>
 Content-Type: text/plain; charset="UTF-8"
-Content-Language: en-GB
-Content-Transfer-Encoding: quoted-printable
-X-Original-Sender: ecree.xilinx@gmail.com
-X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@gmail.com header.s=20161025 header.b=cK16XuXE;       spf=pass
- (google.com: domain of ecree.xilinx@gmail.com designates 209.85.220.65 as
- permitted sender) smtp.mailfrom=ecree.xilinx@gmail.com;       dmarc=pass
- (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+X-Original-Sender: fthain@telegraphics.com.au
+X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
+ best guess record for domain of fthain@telegraphics.com.au designates
+ 98.124.60.144 as permitted sender) smtp.mailfrom=fthain@telegraphics.com.au
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -188,27 +171,45 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On 24/11/2020 21:25, Kees Cook wrote:
-> I still think this isn't right -- it's a case statement that runs off
-> the end without an explicit flow control determination.
+On Wed, 25 Nov 2020, Nick Desaulniers wrote:
 
-Proves too much =E2=80=94 for instance
-    case foo:
-    case bar:
-        thing;
-        break;
- doesn't require a fallthrough; after case foo:, and afaik
- no-one is suggesting it should.  Yet it, too, is "a case
- statement that runs off the end without an explicit flow
- control determination".
+> On Wed, Nov 25, 2020 at 1:33 PM Finn Thain <fthain@telegraphics.com.au> 
+> wrote:
+> >
+> > Or do you think that a codebase can somehow satisfy multiple checkers 
+> > and their divergent interpretations of the language spec?
+> 
+> Have we found any cases yet that are divergent? I don't think so.
 
--ed
+There are many implementations, so I think you are guaranteed to find more 
+divergence if you look. That's because the spec is full of language like 
+this: "implementations are encouraged not to emit a diagnostic" and 
+"implementations are encouraged to issue a diagnostic".
 
---=20
-You received this message because you are subscribed to the Google Groups "=
-USB Mass Storage on Linux" group.
-To unsubscribe from this group and stop receiving emails from it, send an e=
-mail to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.=
-one-eyed-alien.net/d/msgid/usb-storage/99a9ffd7-6356-b81d-6e08-7ed74b6fb82c=
-%40gmail.com.
+Some implementations will decide to not emit (under the premise that vast 
+amounts of existing code would have to get patched until the compiler goes 
+quiet) whereas other implementations will decide to emit (under the 
+premise that the author is doing the checking and not the janitor or the 
+packager).
+
+> It sounds to me like GCC's cases it warns for is a subset of Clang's. 
+> Having additional coverage with Clang then should ensure coverage for 
+> both.
+> 
+
+If that claim were true, the solution would be simple. (It's not.)
+
+For the benefit of projects that enable -Werror and projects that 
+nominated gcc as their preferred compiler, clang would simply need a flag 
+to enable conformance with gcc by suppressing those additional warnings 
+that clang would normally produce.
+
+This simple solution is, of course, completely unworkable, since it would 
+force clang to copy some portion of gcc's logic (rewritten under LLVM's 
+unique license) and then to track future changes to that portion of gcc 
+indefinitely.
+
+-- 
+You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
+To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/alpine.LNX.2.23.453.2011260918510.6%40nippy.intranet.
