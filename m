@@ -1,32 +1,32 @@
-Return-Path: <usb-storage+bncBDRZHGH43YJRBHOM636QKGQE4KQOU2Y@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBDRZHGH43YJRB6O3636QKGQER7RBO5Q@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-qt1-x845.google.com (mail-qt1-x845.google.com [IPv6:2607:f8b0:4864:20::845])
-	by mail.lfdr.de (Postfix) with ESMTPS id A1BA52C357E
-	for <lists+usb-storage@lfdr.de>; Wed, 25 Nov 2020 01:32:30 +0100 (CET)
-Received: by mail-qt1-x845.google.com with SMTP id f49sf551246qta.11
-        for <lists+usb-storage@lfdr.de>; Tue, 24 Nov 2020 16:32:30 -0800 (PST)
-ARC-Seal: i=2; a=rsa-sha256; t=1606264349; cv=pass;
+Received: from mail-qk1-x745.google.com (mail-qk1-x745.google.com [IPv6:2607:f8b0:4864:20::745])
+	by mail.lfdr.de (Postfix) with ESMTPS id 3C5B22C35DD
+	for <lists+usb-storage@lfdr.de>; Wed, 25 Nov 2020 02:06:02 +0100 (CET)
+Received: by mail-qk1-x745.google.com with SMTP id b11sf549903qkk.10
+        for <lists+usb-storage@lfdr.de>; Tue, 24 Nov 2020 17:06:02 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1606266361; cv=pass;
         d=google.com; s=arc-20160816;
-        b=G1yFGdrEBbpMo9gWUVCO5LquQgpIBO7HdIGemtxRMZqA2h755LFmdbxmJwcgqMtaH2
-         /kBvfsbDgKWJ8sxso6HA2P2McrM0vi67AoHlB46lT63A3jG3tabZEB5A4+vbCX7mlWEk
-         0yZrZ45q825zHVfPD7P+ZVD3Ry5nNjSKsBGrcpsPY5xJerLG2VkRwzTC/gn26kgC4VwE
-         zjxGFfn76Y3EI8SeVmv/RjBLogRH9+Eofz8Pndk2B5nU61B6JUP4gCcogsBSgFYXLp2I
-         db+lrknlPg5Y2hVJcZxKlq8/9H6YF2uysFQEvnSWU5IT5VKDz4FxvT1FeNzQGcnlG7T3
-         X6nQ==
+        b=ynHF0l0R8UUoBtS6V9KmDOE/JvJi8nOGqQRSTLDvvQHSwXNfYEr/oQ1Ys1GsluwPwO
+         ee3NbzDaPBJKgKof+DZ8LrbInBKpCj4Z2eCsN9dBX7BK3sBjNLRXUi+BAPnQlA25dkTn
+         DAsc5gJYW1ldM7xWmP0rr+R/7mE7N9FwweZ9yE/V/w0ZzgUlVGRvTTJW2q9WpCyVkFF2
+         6xo5a3Ygi5swf8akNfiveRpUnXl8Rntlq9IcFRxjiptBroQsxbBtits9couuAT0RSczj
+         6W8U7U+M62gJ5corHQJKltxlOrg/Ei33SBVsO8GmQFDQYWl/aCtqJSzssiyhHwdFsy14
+         wZZg==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:cc:to:subject:message-id:date:from
          :in-reply-to:references:mime-version:sender:dkim-signature;
-        bh=w0lJWcEDQCjrzRnxg5ZLUThI3fUSxK/0uetk1LKcTRU=;
-        b=msyFtL+yxtm6d0ROtxrzOF1FDMviH4SGbI7Wu85rKlX3kfarfod+EpfnBJSLNi7Ipo
-         ++y1GOA/L6SBV+BGk98fcUnCSNi8/nzCyNTGThFC/tRqyxcX+NIanSYlOJudUw8sznmT
-         HXvjOm1zhMaQwmFA9Vjc7S8W9PWSEG/Mhvd091pIiltLd1ZxPyFh8CY8foLTJeH/cgFt
-         pb83wtQtdPlbSaWDkHIZJfwUcxUgaWQFlQekRLXJn23Py6Ct2s/qZ5CLSUp6VYExz4So
-         jp5X3Zmu/OuPJqJapKc3iNJnNXs5XiZ679n61IOHD3JZYB9VyDXVMSwlUvEzXqQ6lYqw
-         Wfgw==
+        bh=Oliz2iFp/yQIWwJiY8HsEH+abkgYLNtQKHANhBSB6ZQ=;
+        b=GXzN9vWuNGYd/SX3ZXGQ/bA1cLJzAqa+rwVqfKu3UdXI//zk01Jr+Lq9Ra0rLuNmP9
+         PWqJnLdmiFops0A977RCX8XBqq5bWkFpVHUBA6jD8j0Vkeos3GjyIrc10r8nYGUkwKLe
+         HMo0ncNy2w5sN5yx+1wfyQyBvRDuEOmiyNsckwxoPPhAynjEL67OtUxNLIoUYBDIu1L2
+         ANYk1mpBR1Z+YozMzZK98j7/kahREbJXP1IuzCjwVjCgc9n1zpFD4jSCu4mkmOoAjjep
+         xnpRKc27tAHOeBriAnksyKBQhOZLbK8lfWMwQUu7F9Arcy9D16VNJ6GKH6UOvA13uvp7
+         lcpg==
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@gmail.com header.s=20161025 header.b=DYdo15DH;
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b=PLHqMkuV;
        spf=pass (google.com: domain of miguel.ojeda.sandonis@gmail.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=miguel.ojeda.sandonis@gmail.com;
        dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
@@ -35,10 +35,10 @@ DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
          :subject:to:cc:x-original-sender:x-original-authentication-results
          :precedence:mailing-list:list-id:list-post:list-help:list-archive
          :list-subscribe:list-unsubscribe;
-        bh=w0lJWcEDQCjrzRnxg5ZLUThI3fUSxK/0uetk1LKcTRU=;
-        b=ayWASnjNrJXvP1SbXVtKNir1WTAZ+I6SmYcLM/ShjY2P1m5sRaboKx3hFRJeOLBf9P
-         iHfI3GoqdT+Qfmjw65VYFHkW4qWNnu/ypwQF+dMtkbOWSkPfu/THIhKMebRRQ7hOTgtL
-         BXWOgAZEMYz7wg8Sy4ycFnDnV+1sq9cK+lrMc=
+        bh=Oliz2iFp/yQIWwJiY8HsEH+abkgYLNtQKHANhBSB6ZQ=;
+        b=OSpU7YtbvvBeBvPafWKXk6F8J17SVYaJOtc45ex2jHOxC3pUCK3Xb6zZHg3Gn/646f
+         3rMhfQWl+WUNBO78ddNhP2yz2kFkHgJw6zsnnhQc0VB9gIENp6R2D6LfTri3R4vzM1R+
+         iNo+IVsOfe7eHcEmsFPmplblogaBuF91ulxcs=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
         h=sender:x-gm-message-state:mime-version:references:in-reply-to:from
@@ -46,114 +46,116 @@ X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
          :x-original-authentication-results:precedence:mailing-list:list-id
          :x-spam-checked-in-group:list-post:list-help:list-archive
          :list-subscribe:list-unsubscribe;
-        bh=w0lJWcEDQCjrzRnxg5ZLUThI3fUSxK/0uetk1LKcTRU=;
-        b=la7nUGHNB8k7S8XhIHvJUWpaLFlcjbsw6jOzpS/FRmAZlMcpYFk0ISXMTsoC24dgfB
-         7Xom1rkp9aaxzmxVInWw9CE7gJCOx+YGBS2zN2lDWvvvbdz5ULzZPdQAC0vRhC73StmR
-         2gAADs885GwrqdaHiisPX0QMKGBKtfyn1fbgk+pgnVl+X5mYhCTTKYocfMRznrHS0L86
-         H0JSyNpmkqDj5AOUG9KvqfKLEMO2eJdFGTIY4a9lVety59BnkjL1CYfv8WbZG1HMWwt9
-         6xZGg5N/h5EWZQpeDM8ab7CycjqLAwLQBNcwVsQp2/XA6ym+1CeDL6dfgQzatyhgECcr
-         DN2g==
+        bh=Oliz2iFp/yQIWwJiY8HsEH+abkgYLNtQKHANhBSB6ZQ=;
+        b=onZbGCchmtJjr84cOE2h/iTzIxFomX5egxLPhg10A0kcxsGN0EmYzyI83PVwBcpqU2
+         B1epaSVwQaeY+1QCY0p6/2TN8pmfFmdoF2BUt+8KVh4J/ggDgI1rfuk3qhh6YKEirwbu
+         g/wKtdab7hG4TtqVo3rOP4qsO8Ji19W4SsyzbSCC2omqvDClnmnqyoOB3S38KgN8Ix1j
+         s9fg9p7GF4fVl7KWsQS9osNKDZ1L1bPvLYdsI5QWhlOCje1jZqAdhKDVMbQomks0kkIO
+         QfMYjZzkYtS9QXDQo1QHULjtwjLES4XHQqmNbojf4lPZ0mQVJBg0p7CxeZvMnsAinEoQ
+         gu3w==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: AOAM531DhpN/STIk4emclfYRCxumFMkZU2suubYug+O+VrBfUv9C4MY0
-	A7vkzsPKykGxtxgWWtkf0rFp/g==
-X-Google-Smtp-Source: ABdhPJyNTYx3+ukZz3vhe91k6FWRRxINsOHigJySRrUpEyTkAnqlN/BUEHxi57wmni67x8beIdGnZw==
-X-Received: by 2002:a5b:40e:: with SMTP id m14mr785046ybp.33.1606264349735;
-        Tue, 24 Nov 2020 16:32:29 -0800 (PST)
+X-Gm-Message-State: AOAM531z9ExsMR4hHci4LdRsb/T5BCWlOs8pKEEtVNe4g3E0bV/vRNUt
+	ApmG/LWC7htjijqe93P+R97fUQ==
+X-Google-Smtp-Source: ABdhPJw2JuRkgngI0r1I/rTk0dd4++zFLh8JuY6e8/wBQw83unTcHC1LHyXo+/PKzL74iXTo+OnhDQ==
+X-Received: by 2002:a25:911:: with SMTP id 17mr1126944ybj.30.1606266361298;
+        Tue, 24 Nov 2020 17:06:01 -0800 (PST)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a25:c553:: with SMTP id v80ls358426ybe.2.gmail; Tue, 24 Nov
- 2020 16:32:29 -0800 (PST)
-X-Received: by 2002:a25:c054:: with SMTP id c81mr1131712ybf.139.1606264349158;
-        Tue, 24 Nov 2020 16:32:29 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1606264349; cv=none;
+Received: by 2002:a25:bcf:: with SMTP id 198ls364597ybl.10.gmail; Tue, 24 Nov
+ 2020 17:06:00 -0800 (PST)
+X-Received: by 2002:a25:1b86:: with SMTP id b128mr1304643ybb.174.1606266360714;
+        Tue, 24 Nov 2020 17:06:00 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1606266360; cv=none;
         d=google.com; s=arc-20160816;
-        b=iAW59qHkvWJWKm6smGfYgSIjIEmHkjfWEczWSdfP9ziFV2y/nEJ1SE0LICBhQ7yfuZ
-         alqmj6USJ0hTmoVoDt8J0+aBIExXyJpXMlq9KxJ5xeYZ9ed9e2MVQMQEkVi1LZctK8XD
-         OMiBYls+RhOdar+hH95ed9sWsS/xB94ZSuJ3dstPlGiZXwfKwkk8Y+Lis4iA/x406R/U
-         fl9xX1ency02REteAQa/NvH3J34IhLvKq7IbWgiStJUOEMJ9yaW20vQp9hxuLdS1b6Eg
-         gpK4IZlO40P7dDtEM80yB/zBiP22B+1BqP8uj2YPJU2hxP6UobFEnD4qgYa8QrX/Unxz
-         9lYQ==
+        b=KqSKpIWg94KBofa+KcnEWy9pSIpWsJZgQTNI4qNY84sMbAiOmnwBtXusVg/S8bMvVa
+         EBNaapAThCy+jRu5vsVT6hoBoHgdy8GntogAVyLD9D3ciN0ME5s9gknQTwxtzuvxe4kP
+         JLZbNgv46uXPGoTozAxkJI/38YRDXKfdEVuVWJajFF81jyLfgTbDxIonWdN1FL0F6mvr
+         h56IVeBel4UxKIGpVG/1M9dOch/UXH5k9Zb90Y2SuPBrdBYDj9wHHuM3d8q5+UU1lEBc
+         W2hJblHEUaEUXhBdnBKD1DFYaT6MeJMc6Xa8JsuLjZv8vBGkTuS/ln0VGbSWZo/bEbIH
+         QN1w==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:dkim-signature;
-        bh=QqqubA90NyDjnD5SH+OxnZbso0TzlLiuZ5gzRUm0zsY=;
-        b=HqouttNTYKPo/3LoveVSGhh5sGGElQFk/KEk7fQ6ZAoGTbmsLTwAIlci2KBAtWgs1U
-         EDPNXv1PvbJPJHUyC68p/J12AUmoWzLw/v+OhNit916rx7bm7oQIB7q7uucZyuPwzG8y
-         t728l2yp9S8o9wM+STSiJvq2qsOFRutdxh35+pN8r/EUxcDFWCYtnGNxhy/LAPNTJlB3
-         zn3e2W3yJN7f9YreyMTLZv/Q2Vk/UMnD6tuBcdRX20fHGHO0uHkwfX/zo4gdpa1It5uO
-         lEw0YItMMm/7qzs7ABEXplLybuPi73macCioSx+uZClBOHZ2jTQ2j8yiFurbo/gawyoi
-         FEuA==
+        bh=44pFzPZOXy9WMyxuVZ4PJwmHwfPvC91GWhNSdpkVBXk=;
+        b=hcXiV83Wt7GgBdyN201KkohIxmd6XkplCG7W+IfIGNiCxNYtGZsL185XKo25UII768
+         REAnrhvu0w/AQcy56jppqwNY1IBSlgovdoXAsUuBeJQSA07wRjcllv5ceJZU4q3GlcEY
+         QL7uQFdoikvBYtHg209GeGWs4251GuS5Rj/qftAHJ/hJIjaN4inzjfZ1bsCRPxdkS/KS
+         wHyv2/CqAMGNmBJmf+JOYLKPI1mJX2Tdn11Tlf7TWKlQXlUb5/CGpQL3uSJxyV8nPV6z
+         9XPtMQs0tFd0OeKz5TxJo5ANAiIoso7AJeQp5Fs6v7d1BXepnbCf2xr6e4FEhpu4gUf7
+         dRUA==
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@gmail.com header.s=20161025 header.b=DYdo15DH;
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b=PLHqMkuV;
        spf=pass (google.com: domain of miguel.ojeda.sandonis@gmail.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=miguel.ojeda.sandonis@gmail.com;
        dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
 Received: from mail-sor-f65.google.com (mail-sor-f65.google.com. [209.85.220.65])
-        by mx.google.com with SMTPS id e195sor126954ybh.144.2020.11.24.16.32.29
+        by mx.google.com with SMTPS id s6sor143027ybf.114.2020.11.24.17.06.00
         for <usb-storage@lists.one-eyed-alien.net>
         (Google Transport Security);
-        Tue, 24 Nov 2020 16:32:29 -0800 (PST)
+        Tue, 24 Nov 2020 17:06:00 -0800 (PST)
 Received-SPF: pass (google.com: domain of miguel.ojeda.sandonis@gmail.com designates 209.85.220.65 as permitted sender) client-ip=209.85.220.65;
-X-Received: by 2002:a25:5f0f:: with SMTP id t15mr779915ybb.26.1606264348932;
- Tue, 24 Nov 2020 16:32:28 -0800 (PST)
+X-Received: by 2002:a25:aac5:: with SMTP id t63mr1046305ybi.22.1606266360499;
+ Tue, 24 Nov 2020 17:06:00 -0800 (PST)
 MIME-Version: 1.0
-References: <cover.1605896059.git.gustavoars@kernel.org> <20201120105344.4345c14e@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com>
- <202011201129.B13FDB3C@keescook> <20201120115142.292999b2@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com>
+References: <202011201129.B13FDB3C@keescook> <20201120115142.292999b2@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com>
  <202011220816.8B6591A@keescook> <9b57fd4914b46f38d54087d75e072d6e947cb56d.camel@HansenPartnership.com>
- <CANiq72nZrHWTA4_Msg6MP9snTyenC6-eGfD27CyfNSu7QoVZbw@mail.gmail.com>
- <1c7d7fde126bc0acf825766de64bf2f9b888f216.camel@HansenPartnership.com>
- <CANiq72m22Jb5_+62NnwX8xds2iUdWDMAqD8PZw9cuxdHd95W0A@mail.gmail.com>
- <fc45750b6d0277c401015b7aa11e16cd15f32ab2.camel@HansenPartnership.com>
- <CANiq72k5tpDoDPmJ0ZWc1DGqm+81Gi-uEENAtvEs9v3SZcx6_Q@mail.gmail.com> <4993259d01a0064f8bb22770503490f9252f3659.camel@HansenPartnership.com>
-In-Reply-To: <4993259d01a0064f8bb22770503490f9252f3659.camel@HansenPartnership.com>
+ <ca071decb87cc7e905411423c05a48f9fd2f58d7.camel@perches.com>
+ <0147972a72bc13f3629de8a32dee6f1f308994b5.camel@HansenPartnership.com>
+ <d8d1e9add08cdd4158405e77762d4946037208f8.camel@perches.com>
+ <dbd2cb703ed9eefa7dde9281ea26ab0f7acc8afe.camel@HansenPartnership.com>
+ <20201123130348.GA3119@embeddedor> <8f5611bb015e044fa1c0a48147293923c2d904e4.camel@HansenPartnership.com>
+ <202011241327.BB28F12F6@keescook> <alpine.LNX.2.23.453.2011250859290.15@nippy.intranet>
+ <CANiq72nUt57u5DG9rH=DB0DzQH7U6-QbG-2Ou+PyCY=p=_Ggag@mail.gmail.com> <alpine.LNX.2.23.453.2011251022550.14@nippy.intranet>
+In-Reply-To: <alpine.LNX.2.23.453.2011251022550.14@nippy.intranet>
 From: Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>
-Date: Wed, 25 Nov 2020 01:32:17 +0100
-Message-ID: <CANiq72kqO=bYMJnFS2uYRpgWATJ=uXxZuNUsTXT+3aLtrpnzvQ@mail.gmail.com>
-Subject: [usb-storage] Re: [PATCH 000/141] Fix fall-through warnings for Clang
-To: James Bottomley <James.Bottomley@hansenpartnership.com>
-Cc: Kees Cook <keescook@chromium.org>, Jakub Kicinski <kuba@kernel.org>, 
-	"Gustavo A. R. Silva" <gustavoars@kernel.org>, linux-kernel <linux-kernel@vger.kernel.org>, 
-	alsa-devel@alsa-project.org, amd-gfx@lists.freedesktop.org, 
-	bridge@lists.linux-foundation.org, ceph-devel@vger.kernel.org, 
-	cluster-devel@redhat.com, coreteam@netfilter.org, devel@driverdev.osuosl.org, 
-	dm-devel@redhat.com, drbd-dev@lists.linbit.com, 
-	dri-devel@lists.freedesktop.org, GR-everest-linux-l2@marvell.com, 
-	GR-Linux-NIC-Dev@marvell.com, intel-gfx@lists.freedesktop.org, 
-	intel-wired-lan@lists.osuosl.org, keyrings@vger.kernel.org, 
-	linux1394-devel@lists.sourceforge.net, linux-acpi@vger.kernel.org, 
-	linux-afs@lists.infradead.org, 
-	Linux ARM <linux-arm-kernel@lists.infradead.org>, linux-arm-msm@vger.kernel.org, 
-	linux-atm-general@lists.sourceforge.net, linux-block@vger.kernel.org, 
-	linux-can@vger.kernel.org, linux-cifs@vger.kernel.org, 
-	Linux Crypto Mailing List <linux-crypto@vger.kernel.org>, linux-decnet-user@lists.sourceforge.net, 
-	Ext4 Developers List <linux-ext4@vger.kernel.org>, linux-fbdev@vger.kernel.org, 
-	linux-geode@lists.infradead.org, linux-gpio@vger.kernel.org, 
-	linux-hams@vger.kernel.org, linux-hwmon@vger.kernel.org, 
-	linux-i3c@lists.infradead.org, linux-ide@vger.kernel.org, 
-	linux-iio@vger.kernel.org, linux-input <linux-input@vger.kernel.org>, 
-	linux-integrity@vger.kernel.org, linux-mediatek@lists.infradead.org, 
-	Linux Media Mailing List <linux-media@vger.kernel.org>, linux-mmc@vger.kernel.org, 
-	Linux-MM <linux-mm@kvack.org>, linux-mtd@lists.infradead.org, 
-	linux-nfs@vger.kernel.org, linux-rdma@vger.kernel.org, 
-	linux-renesas-soc@vger.kernel.org, linux-scsi@vger.kernel.org, 
-	linux-sctp@vger.kernel.org, linux-security-module@vger.kernel.org, 
-	linux-stm32@st-md-mailman.stormreply.com, linux-usb@vger.kernel.org, 
-	linux-watchdog@vger.kernel.org, 
-	linux-wireless <linux-wireless@vger.kernel.org>, 
-	Network Development <netdev@vger.kernel.org>, netfilter-devel@vger.kernel.org, 
-	nouveau@lists.freedesktop.org, op-tee@lists.trustedfirmware.org, 
-	oss-drivers@netronome.com, patches@opensource.cirrus.com, 
-	rds-devel@oss.oracle.com, reiserfs-devel@vger.kernel.org, 
-	samba-technical@lists.samba.org, selinux@vger.kernel.org, 
-	target-devel@vger.kernel.org, tipc-discussion@lists.sourceforge.net, 
-	usb-storage@lists.one-eyed-alien.net, 
-	virtualization@lists.linux-foundation.org, wcn36xx@lists.infradead.org, 
-	"maintainer:X86 ARCHITECTURE (32-BIT AND 64-BIT)" <x86@kernel.org>, xen-devel@lists.xenproject.org, 
-	linux-hardening@vger.kernel.org, Nick Desaulniers <ndesaulniers@google.com>, 
-	Nathan Chancellor <natechancellor@gmail.com>, Miguel Ojeda <ojeda@kernel.org>, 
-	Joe Perches <joe@perches.com>
+Date: Wed, 25 Nov 2020 02:05:49 +0100
+Message-ID: <CANiq72m2kGxSy2E9jgYE4_xRV6h9rFqiJP25KXs_5ObYnH_nmA@mail.gmail.com>
+Subject: [usb-storage] Re: [Intel-wired-lan] [PATCH 000/141] Fix fall-through
+ warnings for Clang
+To: Finn Thain <fthain@telegraphics.com.au>
+Cc: Kees Cook <keescook@chromium.org>, 
+	James Bottomley <James.Bottomley@hansenpartnership.com>, 
+	"Gustavo A. R. Silva" <gustavoars@kernel.org>, Joe Perches <joe@perches.com>, 
+	Jakub Kicinski <kuba@kernel.org>, alsa-devel@alsa-project.org, 
+	linux-atm-general@lists.sourceforge.net, reiserfs-devel@vger.kernel.org, 
+	linux-iio@vger.kernel.org, linux-wireless <linux-wireless@vger.kernel.org>, 
+	linux-fbdev@vger.kernel.org, dri-devel@lists.freedesktop.org, 
+	linux-kernel <linux-kernel@vger.kernel.org>, Nathan Chancellor <natechancellor@gmail.com>, 
+	linux-ide@vger.kernel.org, dm-devel@redhat.com, keyrings@vger.kernel.org, 
+	linux-mtd@lists.infradead.org, GR-everest-linux-l2@marvell.com, 
+	wcn36xx@lists.infradead.org, samba-technical@lists.samba.org, 
+	linux-i3c@lists.infradead.org, linux1394-devel@lists.sourceforge.net, 
+	linux-afs@lists.infradead.org, usb-storage@lists.one-eyed-alien.net, 
+	drbd-dev@lists.linbit.com, devel@driverdev.osuosl.org, 
+	linux-cifs@vger.kernel.org, rds-devel@oss.oracle.com, 
+	Nick Desaulniers <ndesaulniers@google.com>, linux-scsi@vger.kernel.org, 
+	linux-rdma@vger.kernel.org, oss-drivers@netronome.com, 
+	bridge@lists.linux-foundation.org, linux-security-module@vger.kernel.org, 
+	amd-gfx@lists.freedesktop.org, linux-stm32@st-md-mailman.stormreply.com, 
+	cluster-devel@redhat.com, linux-acpi@vger.kernel.org, coreteam@netfilter.org, 
+	intel-wired-lan@lists.osuosl.org, linux-input <linux-input@vger.kernel.org>, 
+	Miguel Ojeda <ojeda@kernel.org>, tipc-discussion@lists.sourceforge.net, 
+	Ext4 Developers List <linux-ext4@vger.kernel.org>, 
+	Linux Media Mailing List <linux-media@vger.kernel.org>, linux-watchdog@vger.kernel.org, 
+	selinux@vger.kernel.org, linux-arm-msm@vger.kernel.org, 
+	intel-gfx@lists.freedesktop.org, linux-geode@lists.infradead.org, 
+	linux-can@vger.kernel.org, linux-block@vger.kernel.org, 
+	linux-gpio@vger.kernel.org, op-tee@lists.trustedfirmware.org, 
+	linux-mediatek@lists.infradead.org, xen-devel@lists.xenproject.org, 
+	nouveau@lists.freedesktop.org, linux-hams@vger.kernel.org, 
+	ceph-devel@vger.kernel.org, virtualization@lists.linux-foundation.org, 
+	Linux ARM <linux-arm-kernel@lists.infradead.org>, linux-hwmon@vger.kernel.org, 
+	"maintainer:X86 ARCHITECTURE (32-BIT AND 64-BIT)" <x86@kernel.org>, linux-nfs@vger.kernel.org, GR-Linux-NIC-Dev@marvell.com, 
+	Linux-MM <linux-mm@kvack.org>, Network Development <netdev@vger.kernel.org>, 
+	linux-decnet-user@lists.sourceforge.net, linux-mmc@vger.kernel.org, 
+	linux-renesas-soc@vger.kernel.org, linux-sctp@vger.kernel.org, 
+	linux-usb@vger.kernel.org, netfilter-devel@vger.kernel.org, 
+	Linux Crypto Mailing List <linux-crypto@vger.kernel.org>, patches@opensource.cirrus.com, 
+	linux-integrity@vger.kernel.org, target-devel@vger.kernel.org, 
+	linux-hardening@vger.kernel.org, 
+	Jonathan Cameron <Jonathan.Cameron@huawei.com>, Greg KH <gregkh@linuxfoundation.org>
 Content-Type: text/plain; charset="UTF-8"
 X-Original-Sender: miguel.ojeda.sandonis@gmail.com
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@gmail.com header.s=20161025 header.b=DYdo15DH;       spf=pass
+ header.i=@gmail.com header.s=20161025 header.b=PLHqMkuV;       spf=pass
  (google.com: domain of miguel.ojeda.sandonis@gmail.com designates
  209.85.220.65 as permitted sender) smtp.mailfrom=miguel.ojeda.sandonis@gmail.com;
        dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
@@ -172,66 +174,39 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On Mon, Nov 23, 2020 at 9:38 PM James Bottomley
-<James.Bottomley@hansenpartnership.com> wrote:
+On Wed, Nov 25, 2020 at 12:53 AM Finn Thain <fthain@telegraphics.com.au> wrote:
 >
-> So you think a one line patch should take one minute to produce ... I
-> really don't think that's grounded in reality.
+> I'm saying that supporting the official language spec makes more sense
+> than attempting to support a multitude of divergent interpretations of the
+> spec (i.e. gcc, clang, coverity etc.)
 
-No, I have not said that. Please don't put words in my mouth (again).
+Making the kernel strictly conforming is a ship that sailed long ago,
+for several reasons. Anyway, supporting several compilers and other
+tools, regardless of extensions, is valuable.
 
-I have said *authoring* lines of *this* kind takes a minute per line.
-Specifically: lines fixing the fallthrough warning mechanically and
-repeatedly where the compiler tells you to, and doing so full-time for
-a month.
+> I'm also saying that the reason why we use -std=gnu89 is that existing
+> code was written in that language, not in ad hoc languages comprised of
+> collections of extensions that change with every release.
 
-For instance, take the following one from Gustavo. Are you really
-saying it takes 12 minutes (your number) to write that `break;`?
+No, we aren't particularly tied to `gnu89` or anything like that. We
+could actually go for `gnu11` already, since the minimum GCC and Clang
+support it. Even if a bit of code needs fixing, that shouldn't be a
+problem if someone puts the work.
 
-diff --git a/drivers/gpu/drm/via/via_irq.c b/drivers/gpu/drm/via/via_irq.c
-index 24cc445169e2..a3e0fb5b8671 100644
---- a/drivers/gpu/drm/via/via_irq.c
-+++ b/drivers/gpu/drm/via/via_irq.c
-@@ -364,6 +364,7 @@ int via_wait_irq(struct drm_device *dev, void
-*data, struct drm_file *file_priv)
-                irqwait->request.sequence +=
-                        atomic_read(&cur_irq->irq_received);
-                irqwait->request.type &= ~_DRM_VBLANK_RELATIVE;
-+               break;
-        case VIA_IRQ_ABSOLUTE:
-                break;
-        default:
+In other words, the kernel code is not frozen, nor are the features it
+uses from compilers. They do, in fact, change from time to time.
 
->  I suppose a one line
-> patch only takes a minute to merge with b4 if no-one reviews or tests
-> it, but that's not really desirable.
+> Thank you for checking. I found a free version that's only 6 weeks old:
 
-I have not said that either. I said reviewing and merging those are
-noise compared to any complex patch. Testing should be done by the
-author comparing codegen.
+You're welcome! There are quite a few new attributes coming, mostly
+following C++ ones.
 
-> Part of what I'm trying to measure is the "and useful" bit because
-> that's not a given.
+> It will be interesting to see whether 6.7.11.5 changes once the various
+> implementations reach agreement.
 
-It is useful since it makes intent clear. It also catches actual bugs,
-which is even more valuable.
-
-> Well, you know, subsystems are very different in terms of the amount of
-> patches a maintainer has to process per release cycle of the kernel.
-> If a maintainer is close to capacity, additional patches, however
-> trivial, become a problem.  If a maintainer has spare cycles, trivial
-> patches may look easy.
-
-First of all, voluntary maintainers choose their own workload.
-Furthermore, we already measure capacity in the `MAINTAINERS` file:
-maintainers can state they can only handle a few patches. Finally, if
-someone does not have time for a trivial patch, they are very unlikely
-to have any time to review big ones.
-
-> You seem to be saying that because you find it easy to merge trivial
-> patches, everyone should.
-
-Again, I have not said anything of the sort.
+Not sure what you mean. The standard does not evolve through
+implementations' agreement (although standardizing existing practice
+is one of the best arguments to back a change).
 
 Cheers,
 Miguel
@@ -239,4 +214,4 @@ Miguel
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/CANiq72kqO%3DbYMJnFS2uYRpgWATJ%3DuXxZuNUsTXT%2B3aLtrpnzvQ%40mail.gmail.com.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/CANiq72m2kGxSy2E9jgYE4_xRV6h9rFqiJP25KXs_5ObYnH_nmA%40mail.gmail.com.
