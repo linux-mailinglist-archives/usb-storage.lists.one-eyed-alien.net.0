@@ -1,99 +1,98 @@
-Return-Path: <usb-storage+bncBDRZHGH43YJRB5OA776QKGQEHEH6EWA@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBDLIRC6U5UNBBEWR776QKGQE2BVRNNI@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-yb1-xb46.google.com (mail-yb1-xb46.google.com [IPv6:2607:f8b0:4864:20::b46])
-	by mail.lfdr.de (Postfix) with ESMTPS id D71442C5A0B
-	for <lists+usb-storage@lfdr.de>; Thu, 26 Nov 2020 18:05:58 +0100 (CET)
-Received: by mail-yb1-xb46.google.com with SMTP id n62sf3533735ybf.19
-        for <lists+usb-storage@lfdr.de>; Thu, 26 Nov 2020 09:05:58 -0800 (PST)
-ARC-Seal: i=2; a=rsa-sha256; t=1606410358; cv=pass;
+Received: from mail-oo1-xc47.google.com (mail-oo1-xc47.google.com [IPv6:2607:f8b0:4864:20::c47])
+	by mail.lfdr.de (Postfix) with ESMTPS id 231412C5AC9
+	for <lists+usb-storage@lfdr.de>; Thu, 26 Nov 2020 18:40:37 +0100 (CET)
+Received: by mail-oo1-xc47.google.com with SMTP id y3sf1310865oom.17
+        for <lists+usb-storage@lfdr.de>; Thu, 26 Nov 2020 09:40:37 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1606412434; cv=pass;
         d=google.com; s=arc-20160816;
-        b=XbLMEI7wQ+yyufEW3HJpsrRTFtSrHVmJbo34kD4IXGgR7ZEdN4Ipi3q/TQ+qm+uPon
-         0h0TbbPZ3lx9FCgI8oLC3iO9It7Qctxi8hIKvkdkQ4DkXk53W/rEFbKiNtUicfxe8U4g
-         aFGlokLMGBDn5m8hwPFhaW/7/dfvyeiM1n2STc13Vpa914rDcSlTiG2WM8PWN85Whico
-         2xO+UrHq6puFXCfqTmSJF2auWmvwMPRBbh3xyotvDf+Fuoq3pPJp481DTHJyYJIzRJto
-         2A5gt5O8gnci2sA8a6QPlKxdIWNgofXgS4vSP8+rKqWOYlgu1UtZXHPUbWE+tH/KRXCx
-         Yu3w==
+        b=JrhYU5dJ76mFx3UFEGjK2WiM+DSMt61BJpx9cUyTsvW9ZT1RL3dOSVT6ezYcTjtlXm
+         PIktsoovYl86AIu56IcUVJkMyc53vQiNAI1/Nz4lrEcCyxLFgsu7JLs1XADVjcQg5xZ8
+         l+kQvX86uZrunVT7hO3Vo0mH8MOztzGYRmvvVo2tQRJ8m23uV4SdUsyfiJstt239oVft
+         pKQsYGVf7YHYVxvPGSJbv07Kn5eQbupKOESit2gBHHqzUca7oQiBxdTWuDSIFlqnjKv5
+         uYbDSPwF7d9hHaJJxATx8I9fh4d7zt8vKNEkXzZMlq6M6eWGJI5SeUeETsWNoukikmZM
+         EeMw==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:cc:to:subject:message-id:date:from
          :in-reply-to:references:mime-version:sender:dkim-signature;
-        bh=PzUHnnAABOzlYXI6CmHRk07y5NijqyYjpirLiqwr6aQ=;
-        b=grANBz6mHLUKz5DnrLy3rj32flgaKzotz6lJv66tcwDnuMhFuljkjfQ+EJuYEhUPXM
-         eK2WRbAvLDvJJN3fw6aRMiSYEJfD2Nhd5pOW4QG3Yk/0eynJacWY4LLXbGSCV10YeiiU
-         lm0v0npsUYvC48ZdtPzmxlEzgsqsgac2lAktFqOsqEtlVJh8F5tB5czzjIAT6j/lgUSk
-         jMOfvfn2KQ5YNsNLsX3xvrz0ZWTQpJIRPBw6BleV32BEt5H8SzBQ03G3dDzqqbugac7J
-         jU1D/8NrNOlxPBGSLuQfEb6pukfkFqtqnmF3CDKap4DbcPe4w6eLpzJSnyayBXcDzfNb
-         +LoA==
+        bh=6bRKMJmrevjAUFhWruG9bvMgsjPV7ejsorgwLH4vcyY=;
+        b=Ed9q1dbqRYd4Bky5vzbOnDwCTVGQphBUyQms1E0PkBZHMzSzdEgcIeUMLj6+MCr6NN
+         o8ordDzoG7iTwYNTv1H/ssvLghYBKmbKHAiYXH/s0IhkvIcOjDiVjq/xaS2toYuxXDnw
+         ADu27NoXS5XRU9I8EktdXbxi7yN7UI7SI3XRq2aA6neV7Mc/Zk/bINXYSlLg/jKshCDn
+         Gij5MlPMssoWmDBMlAmDPoh1xzHndxhHzdCKkmAVL1EUaBbZszoWVu2NO4Gkxa4IVYDN
+         b+BSf9LZk0MxGgsk7mhHV53Vzld5xd2kVNkLvlk1L+/YKMBv2WXoXj0UWmz9Z1g7wA+N
+         cgJw==
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@gmail.com header.s=20161025 header.b=YymqsvqK;
-       spf=pass (google.com: domain of miguel.ojeda.sandonis@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=miguel.ojeda.sandonis@gmail.com;
-       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+       spf=pass (google.com: domain of geert.uytterhoeven@gmail.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=geert.uytterhoeven@gmail.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
         h=sender:mime-version:references:in-reply-to:from:date:message-id
          :subject:to:cc:x-original-sender:x-original-authentication-results
          :precedence:mailing-list:list-id:list-post:list-help:list-archive
          :list-subscribe:list-unsubscribe;
-        bh=PzUHnnAABOzlYXI6CmHRk07y5NijqyYjpirLiqwr6aQ=;
-        b=dZVPoWTl9xfixKmSMfECsBqiaOGuM5LeXmxOydwfloO+n/3w38jHwEOw2xB3Wvj+Dw
-         k7JWTzRLGDZij4Fc4fN490Q2GC9eSY+j1rRuQ1s5SkyPEh12fTRSyP3ozP8qW2nzU05j
-         UQtug7f4EhLuF6Iv9PCsiyElQCGCaPBQ+1aL8=
+        bh=6bRKMJmrevjAUFhWruG9bvMgsjPV7ejsorgwLH4vcyY=;
+        b=h0FWG4Z3Z0ZNMFsZIACp4cUIofcjk5FrOUHPwHBV7Rn7Rznjo3zs8rGB3UD4XOdatE
+         3O00A9pFjNh1FKbu9Dk0IyUfTm4n4VqqjeODRl3o97jRFdMcU3iIKkor5ihCMxXNBr2X
+         mRipdWfJGU3KXbEPd1md8Lorst/YwgLR1sBto=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
         h=sender:x-gm-message-state:mime-version:references:in-reply-to:from
          :date:message-id:subject:to:cc:x-original-sender
          :x-original-authentication-results:precedence:mailing-list:list-id
-         :x-spam-checked-in-group:list-post:list-help:list-archive
-         :list-subscribe:list-unsubscribe;
-        bh=PzUHnnAABOzlYXI6CmHRk07y5NijqyYjpirLiqwr6aQ=;
-        b=J73vZi7rGfu0himRyG35R9axxZnnE3GtP3ea40m3T69pP0sKXvpCFWKurd+NdUhf0C
-         cfRwDmosqgPyufK/VLO/jOIiVRG+PcRIEYfldKqTh075GEc7h+iyYMCGbjP1Y5XOJRaw
-         K3RKENBZczsAUZ+4w8R4Xd2jDvxZkmedIzpnSbavPEfYz4ySXobZpTGxT1t+QuZDfD5b
-         m9Hhh+GKAAYFtHBY93VqXOyAHxGdCwfJ9ooxM1qkcHcLdzUAJ3joOfhQq9K5MCkcK8KB
-         muQW+cdjUWn3TRyYw8pR44urBV0XF5flnnsfwxmHzodYI3J2XiQKtTsYA6bV7gEMvnZv
-         D6jQ==
+         :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
+        bh=6bRKMJmrevjAUFhWruG9bvMgsjPV7ejsorgwLH4vcyY=;
+        b=Tm+OwuXN4VLT1456Xwgjl3G/00hCu13Jqq2aqHqmyxLme6sfIGsQDgugFYlwdnYtPB
+         1vmsZQpS3BvHSd8DJzFGFe/9AkQAC6cVrZrNMUQV0O9DUxz9kX1BJzq6a5lu3F+9WMw7
+         jXeTPwZ/okRuQuIvuAMz5wxBsGNsiBvSjNG0xTWhcrbmLIqHc+cOGrD4ORjZLZPTCsLO
+         ZdRdBmPn4AhWPbTP8y0OXRYfXadd364kH8x+C3KGmgMXmzUTrgm9yyp1ZYGrWNBEeG+e
+         DUWqazfuiOKKcGmmdsect4ZMqsq7bgPxTsyd5gWZZbvAybm1mL7wA0CRUtx8en3pGNA8
+         XDpQ==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: AOAM530ueS9v5t7QWkqPW6jf7CoU8Ne9SJ8QubyR10loill4ZGagrqps
-	EbvmIAOHCAFZ2Nx36kal4mKcPg==
-X-Google-Smtp-Source: ABdhPJxAyosWUYtq51OVajC3Ns+xEpuf/f4FQm1GhU00Om/uO453E64suSljawubFOPXxeXgwXLE8w==
-X-Received: by 2002:a25:3a86:: with SMTP id h128mr4325068yba.401.1606410357876;
-        Thu, 26 Nov 2020 09:05:57 -0800 (PST)
+X-Gm-Message-State: AOAM533i0Ip3m5PDvNWnMIZKpFqRk3gTxyAnR8O83APZmMylynk8BOgq
+	lRB2GSGRc9cOOwHvr8U8YSmolQ==
+X-Google-Smtp-Source: ABdhPJx9aFhyqnTXCUOgcQBu83w1tKeaJIiEtIHdgFsz8Iu/L9JYDEKgg2nSZ6s/KTiwqjD5ZLz6ow==
+X-Received: by 2002:a05:6830:4d6:: with SMTP id s22mr3123573otd.30.1606412434745;
+        Thu, 26 Nov 2020 09:40:34 -0800 (PST)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a5b:7cd:: with SMTP id t13ls1374269ybq.8.gmail; Thu, 26 Nov
- 2020 09:05:57 -0800 (PST)
-X-Received: by 2002:a25:c0cf:: with SMTP id c198mr4547744ybf.468.1606410357343;
-        Thu, 26 Nov 2020 09:05:57 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1606410357; cv=none;
+Received: by 2002:aca:5214:: with SMTP id g20ls616708oib.9.gmail; Thu, 26 Nov
+ 2020 09:40:34 -0800 (PST)
+X-Received: by 2002:aca:34d4:: with SMTP id b203mr2690362oia.69.1606412434346;
+        Thu, 26 Nov 2020 09:40:34 -0800 (PST)
+Received: by 2002:aca:c4ca:0:b029:e9:bdca:7849 with SMTP id u193-20020acac4ca0000b02900e9bdca7849msoif;
+        Thu, 26 Nov 2020 07:28:24 -0800 (PST)
+X-Received: by 2002:a9d:3d8b:: with SMTP id l11mr2583448otc.182.1606404504350;
+        Thu, 26 Nov 2020 07:28:24 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1606404504; cv=none;
         d=google.com; s=arc-20160816;
-        b=WGIbKWdL91u5NoiV4RNlLu1gt1B4/iScXGBubnCV5BA0mGDL/8LHhOGzlYZpozpx4R
-         pT239Ab3iUE6nXNSAK9dNC7SI7GeQ7LKjmZzegG6XDNUtWI5F4HSpcr2FL/fpcvK+XeF
-         NrH9pFDA6qC7ScSYk4AednL0JYdVztQqnlrPXVjd5WEN7yTUIISsxyEMXolO1LI3fzIR
-         mVn1sv8Gp4VfD+RPMJsLNqlbPW+vkgwOqgF7FQNWyczLZy37TrdSaYrr5m7IGIAydutd
-         3phLaVZ6lc/hZIw2K/qD+W0Qv6c0ghvrGAVstoND97rzx4veh63QXr2uJK+M1RCNFA/a
-         wCJw==
+        b=el4bICrHqoZKNbAAvNPC1qMtngxz1tUmT7tDILreWteAZAolqFeXWHWYAk7GyD+zRD
+         hLxt9lJDWH44REXzCtjyCa0zIpDd3CvGc5mH1cm4l1viU/m2JmFsEONl7Ayi9cQcH4rj
+         uMliZb3732mqVJEotDJyTNgtqwO8Uvn1GdM0IuTBAhf/qvUjWij+iZNmI0EDFt+eiaug
+         iUIlYpHYxyLcXDpIExnV+Gz8fEU3E4yd2cZwfJQqR2hs2BsxnS46a7Xe32Lcfkd1MHyM
+         poxap3DtAS3TKtc27wcU1PkInrJ9dQaR5rGjrV6sZviM+XZcm/DatVWiUcYGUiPS9woD
+         Ngqw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:dkim-signature;
-        bh=O/jaIJrbif54isUECHds/J8Ujq0NdoNxUTCCwJWwQ80=;
-        b=JZE1KPm8Rd45e56pkeZI6qgL9Ysn+nXIrVJPFSUNX7xtgG45uCAFLkLH7JCQWtIb8y
-         +PjD0j9W1hvqjoVePEHAiDWl7IdQY3wEiTq84xI3V9V8qb97xOfFSiV36kRficnnlUxc
-         kZrKVx6joPE46Yy4nBi3miCUWyol0xsjbj582n890IS3AT9a2tsmLC4Jtoryn43yTPiq
-         nYY0JGNeMFcFgNQutt/I1UAqom0uQndYeg+5JrL2TLHhmY+hcL78BEY8WPAiwcHHaIhs
-         ad8HHDSamj71RL+dTVD9wGDgs/Zh5riwkXrc4/0AehAbE50tE8ZXnYzBZs9itSXOpRki
-         qsRg==
+         :mime-version;
+        bh=kP9MspVOPl/NnVl8oGn1EIC/+F8CcK5+OXo+jY56Nno=;
+        b=TiQta1awiJLm2Ex2jffW+aR0P2U1ks1b82xIDm6Bn7iuy/j6o2tLRrVVG0tQtfFBy8
+         eAxLqLQ2OZkpJYpVhohyVftXlNNK36Lv+uMB2pZ0gGGr6jzWxEWT0rhlP9QLGuwg+5RI
+         cOXwrXmcujYPbGN3be2z2dsXRGe1E0ocW3tgXq3TPGS7pRFI/eB4x+L63Pqwbg1gpYcX
+         sncEbZFe3mWS6yT+qAmhSOI70peDO6JMyuJ2XG3zGMgi+ZuM6Lt9zociEf1w8s7asZmB
+         RPFSmihOnJjvdO49+gD1L2Ru9VQRK9b1fwFcsr02kIyZXn4sWlNaepOEjUDYzJVM7eiH
+         G4Iw==
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@gmail.com header.s=20161025 header.b=YymqsvqK;
-       spf=pass (google.com: domain of miguel.ojeda.sandonis@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=miguel.ojeda.sandonis@gmail.com;
-       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
-Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
-        by mx.google.com with SMTPS id x17sor1879770ybr.52.2020.11.26.09.05.57
+       spf=pass (google.com: domain of geert.uytterhoeven@gmail.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=geert.uytterhoeven@gmail.com
+Received: from mail-sor-f65.google.com (mail-sor-f65.google.com. [209.85.220.65])
+        by mx.google.com with SMTPS id t1sor1285688otk.70.2020.11.26.07.28.24
         for <usb-storage@lists.one-eyed-alien.net>
         (Google Transport Security);
-        Thu, 26 Nov 2020 09:05:57 -0800 (PST)
-Received-SPF: pass (google.com: domain of miguel.ojeda.sandonis@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
-X-Received: by 2002:a5b:40e:: with SMTP id m14mr4835621ybp.33.1606410357153;
- Thu, 26 Nov 2020 09:05:57 -0800 (PST)
+        Thu, 26 Nov 2020 07:28:24 -0800 (PST)
+Received-SPF: pass (google.com: domain of geert.uytterhoeven@gmail.com designates 209.85.220.65 as permitted sender) client-ip=209.85.220.65;
+X-Received: by 2002:a05:6830:210a:: with SMTP id i10mr2551843otc.145.1606404504116;
+ Thu, 26 Nov 2020 07:28:24 -0800 (PST)
 MIME-Version: 1.0
 References: <cover.1605896059.git.gustavoars@kernel.org> <20201120105344.4345c14e@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com>
  <202011201129.B13FDB3C@keescook> <20201120115142.292999b2@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com>
@@ -106,13 +105,12 @@ References: <cover.1605896059.git.gustavoars@kernel.org> <20201120105344.4345c14
  <4993259d01a0064f8bb22770503490f9252f3659.camel@HansenPartnership.com>
  <CANiq72kqO=bYMJnFS2uYRpgWATJ=uXxZuNUsTXT+3aLtrpnzvQ@mail.gmail.com>
  <44005bde-f6d4-5eaa-39b8-1a5efeedb2d3@gmail.com> <CANiq72nobq=ptWK-qWxU91JHqkKhMcRtJNnw2XJd5-vSJWZd8Q@mail.gmail.com>
- <CAMuHMdV5kOakvZJMWLxbpigFPS+Xuw6DVYsWCWZy7wGsv3idcw@mail.gmail.com>
-In-Reply-To: <CAMuHMdV5kOakvZJMWLxbpigFPS+Xuw6DVYsWCWZy7wGsv3idcw@mail.gmail.com>
-From: Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>
-Date: Thu, 26 Nov 2020 18:05:45 +0100
-Message-ID: <CANiq72=n4rVvmKt0RCb5aOfQydA8bgDxfntRLDieV8Q2efP8Zg@mail.gmail.com>
+In-Reply-To: <CANiq72nobq=ptWK-qWxU91JHqkKhMcRtJNnw2XJd5-vSJWZd8Q@mail.gmail.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Thu, 26 Nov 2020 16:28:12 +0100
+Message-ID: <CAMuHMdV5kOakvZJMWLxbpigFPS+Xuw6DVYsWCWZy7wGsv3idcw@mail.gmail.com>
 Subject: [usb-storage] Re: [PATCH 000/141] Fix fall-through warnings for Clang
-To: Geert Uytterhoeven <geert@linux-m68k.org>
+To: Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>
 Cc: Edward Cree <ecree.xilinx@gmail.com>, 
 	ALSA Development Mailing List <alsa-devel@alsa-project.org>, linux-atm-general@lists.sourceforge.net, 
 	reiserfs-devel@vger.kernel.org, linux-iio@vger.kernel.org, 
@@ -157,16 +155,13 @@ Cc: Edward Cree <ecree.xilinx@gmail.com>,
 	Joe Perches <joe@perches.com>, linux-integrity <linux-integrity@vger.kernel.org>, 
 	target-devel <target-devel@vger.kernel.org>, linux-hardening@vger.kernel.org
 Content-Type: text/plain; charset="UTF-8"
-X-Original-Sender: miguel.ojeda.sandonis@gmail.com
-X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@gmail.com header.s=20161025 header.b=YymqsvqK;       spf=pass
- (google.com: domain of miguel.ojeda.sandonis@gmail.com designates
- 209.85.220.41 as permitted sender) smtp.mailfrom=miguel.ojeda.sandonis@gmail.com;
-       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+X-Original-Sender: geert.uytterhoeven@gmail.com
+X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
+ domain of geert.uytterhoeven@gmail.com designates 209.85.220.65 as permitted
+ sender) smtp.mailfrom=geert.uytterhoeven@gmail.com
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
-X-Spam-Checked-In-Group: usb-storage@lists.one-eyed-alien.net
 X-Google-Group-Id: 960895140360
 List-Post: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/post>,
  <mailto:usb-storage@lists.one-eyed-alien.net>
@@ -178,31 +173,53 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On Thu, Nov 26, 2020 at 4:28 PM Geert Uytterhoeven <geert@linux-m68k.org> wrote:
+Hi Miguel,
+
+On Thu, Nov 26, 2020 at 3:54 PM Miguel Ojeda
+<miguel.ojeda.sandonis@gmail.com> wrote:
+> On Wed, Nov 25, 2020 at 11:44 PM Edward Cree <ecree.xilinx@gmail.com> wrote:
+> > To make the intent clear, you have to first be certain that you
+> >  understand the intent; otherwise by adding either a break or a
+> >  fallthrough to suppress the warning you are just destroying the
+> >  information that "the intent of this code is unknown".
 >
-> The maintainer is not necessarily the owner/author of the code, and
-> thus may not know the intent of the code.
+> If you don't know what the intent of your own code is, then you
+> *already* have a problem in your hands.
 
-Agreed, I was not blaming maintainers -- just trying to point out that
-the problem is there :-)
+The maintainer is not necessarily the owner/author of the code, and
+thus may not know the intent of the code.
 
-In those cases, it is still very useful: we add the `fallthrough` and
-a comment saying `FIXME: fallthrough intended? Figure this out...`.
-Thus a previous unknown unknown is now a known unknown. And no new
-unknown unknowns will be introduced since we enabled the warning
-globally.
+> > or does it flag up code
+> >  that can be mindlessly "fixed" (in which case the warning is
+> >  worthless)?  Proponents in this thread seem to be trying to
+> >  have it both ways.
+>
+> A warning is not worthless just because you can mindlessly fix it.
+> There are many counterexamples, e.g. many
+> checkpatch/lint/lang-format/indentation warnings, functional ones like
+> the `if (a = b)` warning...
 
-> BTW, you cannot mindlessly fix the latter, as you cannot know if
-> "(a == b)" or "((a = b))" was intended, without understanding the code
-> (and the (possibly unavailable) data sheet, and the hardware, ...).
+BTW, you cannot mindlessly fix the latter, as you cannot know if
+"(a == b)" or "((a = b))" was intended, without understanding the code
+(and the (possibly unavailable) data sheet, and the hardware, ...).
 
-That's right, I was referring to the cases where the compiler saves
-someone time from a typo they just made.
+P.S. So far I've stayed out of this thread, as I like it if the compiler
+     flags possible mistakes.  After all I was the one fixing new
+     "may be used uninitialized" warnings thrown up by gcc-4.1, until
+     (a bit later than) support for that compiler was removed...
 
-Cheers,
-Miguel
+Gr{oetje,eeting}s,
+
+                        Geert
+
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/CANiq72%3Dn4rVvmKt0RCb5aOfQydA8bgDxfntRLDieV8Q2efP8Zg%40mail.gmail.com.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/CAMuHMdV5kOakvZJMWLxbpigFPS%2BXuw6DVYsWCWZy7wGsv3idcw%40mail.gmail.com.
