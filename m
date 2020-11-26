@@ -1,30 +1,30 @@
-Return-Path: <usb-storage+bncBCILJWNIZYHBBF6O7P6QKGQE2AIJUGA@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBCILJWNIZYHBBMPO7P6QKGQEYC2SY5Q@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-io1-xd47.google.com (mail-io1-xd47.google.com [IPv6:2607:f8b0:4864:20::d47])
-	by mail.lfdr.de (Postfix) with ESMTPS id 74B4B2C4B69
-	for <lists+usb-storage@lfdr.de>; Thu, 26 Nov 2020 00:22:00 +0100 (CET)
-Received: by mail-io1-xd47.google.com with SMTP id b4sf245532ioa.4
-        for <lists+usb-storage@lfdr.de>; Wed, 25 Nov 2020 15:22:00 -0800 (PST)
-ARC-Seal: i=2; a=rsa-sha256; t=1606346519; cv=pass;
+Received: from mail-ot1-x346.google.com (mail-ot1-x346.google.com [IPv6:2607:f8b0:4864:20::346])
+	by mail.lfdr.de (Postfix) with ESMTPS id C8E142C4C0A
+	for <lists+usb-storage@lfdr.de>; Thu, 26 Nov 2020 01:30:43 +0100 (CET)
+Received: by mail-ot1-x346.google.com with SMTP id e31sf90250ote.0
+        for <lists+usb-storage@lfdr.de>; Wed, 25 Nov 2020 16:30:43 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1606350642; cv=pass;
         d=google.com; s=arc-20160816;
-        b=QszlwxfWUuzlcvyRk7z0kDatBlW8/9Mf1bMsMAqaA7qyYmoyrjqpDcCARb99Ra2t7N
-         1M7KmhwPhW3ki89Lyt/4z7T9D+f4+GEAodvT1cfrcoyyRVORrlarLBX7TYr6Kdc7HN/D
-         sZuyFpo1UJXED8JSIHQddlvEGKuHg8tHA0/m+UwTXqJbpXe+FJKL118WfPivuwQh2emy
-         uBR+Kfoj9CJ9DO/gAkqxHKMWbeaGqq5ew1JtAVSQ81Aglj1XPtb/p/rYjSG3n8Vybjs6
-         ohjMoXXVSSi5VDt69BPapQw4/B9EesJXVVkIcm23lXwBV1Au8J1ooZvmRMbbYRzyKlXs
-         H94A==
+        b=DzFxPy4rkQF+SUL7X2Ol2dQ1Nevuek5DeQNjp0bDwf4K5fYPJ8fmHO1yNS6Edcn7yp
+         9WBe2fVltpLLnQ3WcSN1GVoCRHXeGSsdqbsjbRZqJQLtDMcWIfqWCslhI4GYepop56JO
+         1/EHJ4UxJCLgPYj6oeZjAddCZL2oIFlzUqADpiYMu1igCIW+yqTpYNuy4NQJEW/FHwRc
+         +t2b51KO+K3IchiBAtSJeQaeT0ZhZRh67CPMDwxC0HnsQV+Scp5hy62iscVR0wdInRmD
+         3WNV37WIRiP9edt4MJEybiK3rVwbpyOXzv0rkc1rINGZs6MFeZzgTX7MtwTNOPgdVJDy
+         NZZA==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:mime-version:references:message-id
          :in-reply-to:subject:cc:to:from:date:sender:dkim-signature;
-        bh=TvcQ8UH7oIwvWDda27CnhH8lPWjjNwkOnnfiZyG+U/k=;
-        b=v+FJQHUGuJmMseIcjcxkZfahwPV7uIbnK1nWQBgNlVaPBtyJr36CvU+J+TmEYb8Jnn
-         vu87CBZjn94kOUAt2cIRgS9UD4leK4yeZ5wI6G7ohuFt8ugLJUbHfkpsY2TfBmukwihK
-         iOltwFZUosrMK6caYVjOrellFXfhYfYXBVHKzg3nY+88It7FJIgy7ePuPUrkzB01EMi2
-         5OWtv2EDPnlEbUYmyJMZumFkVXh+BPK4Wnev6c4FZn6Ufni9hpaP8XAW7zhtpPAFKZs+
-         98FtvxAEh1PampF6b88Uf0STmlAyO6U+iVKLMgH9/ZOa9BDkxzClwND0skLL2Twup3ss
-         ZovA==
+        bh=+Xg2mmVnX1qL7bxtTWElFfAh/8FHZi1rzRHG5BDJfrE=;
+        b=D23bSeb8vlWUOkfUzAQmpC140xsEyJlafeGJlmIiyusehZ4baYqrcMANeRL0xYH+2a
+         0czZ73AdBP9Tg3cCCsfduYBzvUU84j7ZtPOZgJ2IQ0tddHQ7JWGGjTaAsMNJHdxPqeyT
+         DnAjaF8nc6sV+d16knHfVR5+t820gmrDp6U7QIB1ClbgiLqeG/sZtAzwI6BTw8NueGZ0
+         Fy71YUVf/PQ6U5KrK4ubL52DlGhyl03/TmhNd+krVFM1noQX1gG8JXRAJe8+dC+MjgyG
+         DFEbRiEuX41qdTsOQgWRdMk8yEsv9f0H4K2zZmv8fomzLQIIA1pE+9a/1ETbo9O8Rd8U
+         3nzQ==
 ARC-Authentication-Results: i=2; mx.google.com;
        spf=pass (google.com: best guess record for domain of fthain@telegraphics.com.au designates 98.124.60.144 as permitted sender) smtp.mailfrom=fthain@telegraphics.com.au
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
@@ -33,10 +33,10 @@ DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
          :mime-version:x-original-sender:x-original-authentication-results
          :precedence:mailing-list:list-id:list-post:list-help:list-archive
          :list-subscribe:list-unsubscribe;
-        bh=TvcQ8UH7oIwvWDda27CnhH8lPWjjNwkOnnfiZyG+U/k=;
-        b=CEuzpqxTbEmdW2FZbpmi6nCwcMXUGO5nK//fm+17JE++hdNEI6fItQ0zHHSDloQaxv
-         55SrXGopnNV3fteNl3En9W+OhPMR5xeOjFEOXoJaN7kMJp9apVpXoFueSeDHAGHamH+a
-         tF7P8Nn6gUKr6jgxxm31ou+TMflwm/S7dvHiY=
+        bh=+Xg2mmVnX1qL7bxtTWElFfAh/8FHZi1rzRHG5BDJfrE=;
+        b=GykSDxBX1L4z0hIQQNsCF86eXvblfhWjdI4o3IPDwz7B5/gEgu8C6etDGls9fpbXh2
+         n9R6JIx+ylQa6RhEYdivkXY2nisQ3oX+0DTwFhXYyOLI8W9Zufk/Mc6SCDd43DZdHxD9
+         SbA+KI1VpPggMa8ScqRL73YKul0e+NRFbgKcg=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
         h=sender:x-gm-message-state:date:from:to:cc:subject:in-reply-to
@@ -44,53 +44,53 @@ X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
          :x-original-authentication-results:precedence:mailing-list:list-id
          :x-spam-checked-in-group:list-post:list-help:list-archive
          :list-subscribe:list-unsubscribe;
-        bh=TvcQ8UH7oIwvWDda27CnhH8lPWjjNwkOnnfiZyG+U/k=;
-        b=Ld9XQuSPK+OVE/rk4ds+//kWJLjxFx09ArVg/benVuYtANaOhkNkQqXdtQShBINHIq
-         Dyx1aV1nzf4PzpyNobTAVFwf66HUwV5lmTTET6cbaQQXWFjVS65JNXDO1ZW/xYkzEuTo
-         UhMTggGfgV2ljvFozo7LBGs6S+FdPuf0fdVX2YNBjmdD64HPtuIyqJQ0kFeYM7syPP+K
-         hqpJSWOzQoqGnk1GRmNFbkOjMuXP01nf+8XBqvephTQDwWk8Q51OAu/TSyta9uY6loau
-         OZtHYN9m3J9D7FptT6Nh8Gx6JqcUaMMTZcMdSg/EniADS0X+mP6owKbAAdyodWufJyjd
-         WwFw==
+        bh=+Xg2mmVnX1qL7bxtTWElFfAh/8FHZi1rzRHG5BDJfrE=;
+        b=S+bqIb4t1FUufmmpt+PFzk1l2wJw7pB2MA5NIpxWx4wlFvoRv1wIaIbCzNWCdC2278
+         trmsxqwfbAXMShfdCg5ji1TFu/zerdmgaQUv9i5NuGGYWlEnqSiy6Cxuy7nj5LmdMxAJ
+         Hu67g397j/qgrac+LTGhVq1mY4MS83l8vDLbM1fjF/jcDLx+AJYShhdjaknLW4idx3D/
+         CQTA2IQnmxpT+68kFcF3YMH/CGvNUDb6J4wX/bGKfzlkVIK3K8JtkqU4fKvsBZtJmpv5
+         C4Um9Ieqi1nSZLrvtZD4PH172j903cZEzJIX6n/VcTHSTX/B7XCth1noWu/M0lGtvX0F
+         pllQ==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: AOAM531KHMYtu2M3lL5AsCf2BlJ8LwMM62Tlt1ctgfwZvDRjLBqSvtQV
-	JykD81sBwcdXSMxT8KDh9K14Vw==
-X-Google-Smtp-Source: ABdhPJzKTiN4OGQ4aQAlKQE90/57+PwzRsq2Xr+8z3CQTgDFvRpW6TSH+jZ6m8vRaJwT7D8LgqtBhg==
-X-Received: by 2002:a05:6e02:1786:: with SMTP id y6mr128496ilu.121.1606346519231;
-        Wed, 25 Nov 2020 15:21:59 -0800 (PST)
+X-Gm-Message-State: AOAM533AoiTbK5G9Q47wreLd7U5ws7FzJhTOGBhPXdoU4fugmMuWFgpE
+	y0rV+CrdBANNhXyO9ufrUDDMvA==
+X-Google-Smtp-Source: ABdhPJzI/OghxPnYQ5B0Y3XttyWpS5NyB79eSQ0zj6fT1NL/nKKPmLC+H9M+kwCuz88YyqTWvZDmBg==
+X-Received: by 2002:aca:c208:: with SMTP id s8mr466224oif.49.1606350642356;
+        Wed, 25 Nov 2020 16:30:42 -0800 (PST)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a92:bb4b:: with SMTP id w72ls55313ili.9.gmail; Wed, 25 Nov
- 2020 15:21:58 -0800 (PST)
-X-Received: by 2002:a92:1808:: with SMTP id 8mr124832ily.195.1606346518844;
-        Wed, 25 Nov 2020 15:21:58 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1606346518; cv=none;
+Received: by 2002:a05:6830:1f59:: with SMTP id u25ls73400oth.1.gmail; Wed, 25
+ Nov 2020 16:30:41 -0800 (PST)
+X-Received: by 2002:a9d:6f0a:: with SMTP id n10mr606850otq.268.1606350641466;
+        Wed, 25 Nov 2020 16:30:41 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1606350641; cv=none;
         d=google.com; s=arc-20160816;
-        b=Lu0uCUMY9Gc0OGH5dw9r377YRJuQudzT7aL7TMjSRNWeoraCsen3HR7tHXCx7igJc4
-         D196ZXO6ZFSN7KreEJzwfAySIxcZWdEAwCX00d9gNL9TeB3Yd8o7/bLKaKd9DefkplYr
-         8ftwMTtQbCJl6+GaWGgpYVNe1cryV6Ap6HmUAhN2Lc5zQOVBV9c6sdivi+HqotuCNpjr
-         ssqXSlMkS2wGAJX1dXCl9dKIcnmGWTLMCvTsKsLGCIeQ73MsJRKoGl1I1m3l2Bh67/ta
-         uTq2+OJZjMZvUmtTaetI3LgcNgh2RY+XL525NkfnF+ilbKMe1+ymy6ySgeYHNWsdsysw
-         FTGw==
+        b=Qen4hkTSba82s21UW0eXJl8nRopWLdCMfFsCNkotThjj+4WbNbKA4Fnsv9GiuCUD/m
+         9R+i9AwqDNMlFv9zK0RSUP/zU3VRtjneWjvEwpPUKqcKbjcyDYs+O792NzRxrDg9Mzup
+         gVJeGIUs4CAxcZDP8wiWaQ3R+WVhsgTbH9mvdMmGPOTmzfEPkjWk2u5ciP3ioTFbeXe6
+         D2F8ZyM3T5A8rGkfpSV949LW19wrjs4hsFzXyORyvXmitpevjIGoilD0sP4ZGkWE7olU
+         RbVy7ocmqArZ/BbPlp2IUYDehLgMbGSOY6xgtQHpi+jE3J20/gJaBjisYQ1a1f/KP9yz
+         CeSQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=mime-version:references:message-id:in-reply-to:subject:cc:to:from
          :date;
-        bh=mod24iPlOIRytkgTlGHL105Ak8dcfCT40D8baLqdx/s=;
-        b=vF/fEEpL/s2ro+RyBUL29Ot1jW7JokcdpQarknFYDk2Dq35KWzeFgJvzhTxSTt2TcI
-         okjj4oD759yCvKSgXy3lo8dATRXxdTZSEzvUuAjDi0HwDiUUd9XVbwJelKJuN4Zqt/HW
-         3UrXIJ6CvQBad2NkpdnFIPwUo4gCSXKnNNL2FkuXQE/i47mevXMJbvYm3KdYZIFww4L9
-         MUm0/47I7qFtQW3QRR/vEaLORgpRl4GVPfA01aO92EnETsKVQc3A3Tk6greZcvGT4yNL
-         8wSfp3plb/t9G5VNca+Jo9IQ/5G0ASQW3+Wkw1BLGQEzW8AKadqnTfG6FgmAkoYFuGE5
-         wWPA==
+        bh=M7UU1XruReqkgV2EZo8qKWtBkhyhIOgt13YiwD+M9q4=;
+        b=QXHIZanMmUooAWljO4csPKoKHJi7kjHp1vk2lXEwF6zqKOQCFCaQalRS+OaHWVmh+c
+         n5oZGbleLmL1zNLCa2MbRawU0756pZ46SyjPx8QahA4Wsx9P62rQ20Hj7SoXiPCG1V7G
+         POlrwQloEFbwHySvn3B8dOLSNONY3Wryvj+/HffXUb3ALDyU4hm0/22WOCwjkvfAf1Jm
+         Y90f7dCUx2PO3eASxuRP2KFtgo3dLVxETd9KKMtrNWd5pxT78VyqpRLp8QgOgauDZUcW
+         rr5kFspDmrGFmtvuQ9FRfxRIZEYgfYbtv4ka7chI5dutIc1Ljr5sKH1goQMc4+1mEl3O
+         XmUQ==
 ARC-Authentication-Results: i=1; mx.google.com;
        spf=pass (google.com: best guess record for domain of fthain@telegraphics.com.au designates 98.124.60.144 as permitted sender) smtp.mailfrom=fthain@telegraphics.com.au
 Received: from kvm5.telegraphics.com.au (kvm5.telegraphics.com.au. [98.124.60.144])
-        by mx.google.com with ESMTP id v4si2613704jas.5.2020.11.25.15.21.58
+        by mx.google.com with ESMTP id x66si2300959ota.71.2020.11.25.16.30.41
         for <usb-storage@lists.one-eyed-alien.net>;
-        Wed, 25 Nov 2020 15:21:58 -0800 (PST)
+        Wed, 25 Nov 2020 16:30:41 -0800 (PST)
 Received-SPF: pass (google.com: best guess record for domain of fthain@telegraphics.com.au designates 98.124.60.144 as permitted sender) client-ip=98.124.60.144;
 Received: from localhost (localhost.localdomain [127.0.0.1])
-	by kvm5.telegraphics.com.au (Postfix) with ESMTP id 414EA2A490;
-	Wed, 25 Nov 2020 18:21:54 -0500 (EST)
-Date: Thu, 26 Nov 2020 10:21:54 +1100 (AEDT)
+	by kvm5.telegraphics.com.au (Postfix) with ESMTP id 742A42A495;
+	Wed, 25 Nov 2020 19:30:37 -0500 (EST)
+Date: Thu, 26 Nov 2020 11:30:36 +1100 (AEDT)
 From: Finn Thain <fthain@telegraphics.com.au>
 To: Nick Desaulniers <ndesaulniers@google.com>
 cc: James Bottomley <James.Bottomley@hansenpartnership.com>, 
@@ -145,7 +145,7 @@ cc: James Bottomley <James.Bottomley@hansenpartnership.com>,
 Subject: [usb-storage] Re: [Intel-wired-lan] [PATCH 000/141] Fix fall-through
  warnings for Clang
 In-Reply-To: <CAKwvOdna5Zj_O=sB7Q0jHZX0BJSaakX=ZyftwQ_3=L3-ZB54XQ@mail.gmail.com>
-Message-ID: <alpine.LNX.2.23.453.2011260918510.6@nippy.intranet>
+Message-ID: <alpine.LNX.2.23.453.2011261031290.6@nippy.intranet>
 References: <202011201129.B13FDB3C@keescook> <20201120115142.292999b2@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com> <202011220816.8B6591A@keescook> <9b57fd4914b46f38d54087d75e072d6e947cb56d.camel@HansenPartnership.com> <ca071decb87cc7e905411423c05a48f9fd2f58d7.camel@perches.com>
  <0147972a72bc13f3629de8a32dee6f1f308994b5.camel@HansenPartnership.com> <d8d1e9add08cdd4158405e77762d4946037208f8.camel@perches.com> <dbd2cb703ed9eefa7dde9281ea26ab0f7acc8afe.camel@HansenPartnership.com> <20201123130348.GA3119@embeddedor>
  <8f5611bb015e044fa1c0a48147293923c2d904e4.camel@HansenPartnership.com> <202011241327.BB28F12F6@keescook> <a841536fe65bb33f1c72ce2455a6eb47a0107565.camel@HansenPartnership.com> <CAKwvOdkGBn7nuWTAqrORMeN1G+w3YwBfCqqaRD2nwvoAXKi=Aw@mail.gmail.com>
@@ -171,45 +171,56 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
+
+
 On Wed, 25 Nov 2020, Nick Desaulniers wrote:
 
-> On Wed, Nov 25, 2020 at 1:33 PM Finn Thain <fthain@telegraphics.com.au> 
-> wrote:
+> On Wed, Nov 25, 2020 at 1:33 PM Finn Thain <fthain@telegraphics.com.au> wrote:
 > >
 > > Or do you think that a codebase can somehow satisfy multiple checkers 
 > > and their divergent interpretations of the language spec?
 > 
-> Have we found any cases yet that are divergent? I don't think so.
+> Have we found any cases yet that are divergent? I don't think so. 
 
-There are many implementations, so I think you are guaranteed to find more 
-divergence if you look. That's because the spec is full of language like 
-this: "implementations are encouraged not to emit a diagnostic" and 
-"implementations are encouraged to issue a diagnostic".
+You mean, aside from -Wimplicit-fallthrough? I'm glad you asked. How about 
+-Wincompatible-pointer-types and -Wframe-larger-than?
 
-Some implementations will decide to not emit (under the premise that vast 
-amounts of existing code would have to get patched until the compiler goes 
-quiet) whereas other implementations will decide to emit (under the 
-premise that the author is doing the checking and not the janitor or the 
-packager).
+All of the following files have been affected by divergent diagnostics 
+produced by clang and gcc.
 
-> It sounds to me like GCC's cases it warns for is a subset of Clang's. 
-> Having additional coverage with Clang then should ensure coverage for 
-> both.
-> 
+arch/arm64/include/asm/neon-intrinsics.h
+arch/powerpc/xmon/Makefile
+drivers/gpu/drm/i915/Makefile
+drivers/gpu/drm/i915/i915_utils.h
+drivers/staging/media/atomisp/pci/atomisp_subdev.c
+fs/ext4/super.c
+include/trace/events/qla.h
+net/mac80211/rate.c
+tools/lib/string.c
+tools/perf/util/setup.py
+tools/scripts/Makefile.include
 
-If that claim were true, the solution would be simple. (It's not.)
+And if I searched for 'smatch' or 'coverity' instead of 'clang' I'd 
+probably find more divergence.
 
-For the benefit of projects that enable -Werror and projects that 
-nominated gcc as their preferred compiler, clang would simply need a flag 
-to enable conformance with gcc by suppressing those additional warnings 
-that clang would normally produce.
+Here are some of the relevant commits.
 
-This simple solution is, of course, completely unworkable, since it would 
-force clang to copy some portion of gcc's logic (rewritten under LLVM's 
-unique license) and then to track future changes to that portion of gcc 
-indefinitely.
+0738c8b5915c7eaf1e6007b441008e8f3b460443
+9c87156cce5a63735d1218f0096a65c50a7a32aa
+babaab2f473817f173a2d08e410c25abf5ed0f6b
+065e5e559555e2f100bc95792a8ef1b609bbe130
+93f56de259376d7e4fff2b2d104082e1fa66e237
+6c4798d3f08b81c2c52936b10e0fa872590c96ae
+b7a313d84e853049062011d78cb04b6decd12f5c
+093b75ef5995ea35d7f6bdb6c7b32a42a1999813
+
+And before you object, "but -Wconstant-logical-operand is a clang-only 
+warning! it can't be divergent with gcc!", consider that the special cases 
+added to deal with clang-only warnings have to be removed when gcc catches 
+up, which is more churn. Now multiply that by the number of checkers you 
+care about.
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/alpine.LNX.2.23.453.2011260918510.6%40nippy.intranet.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/alpine.LNX.2.23.453.2011261031290.6%40nippy.intranet.
