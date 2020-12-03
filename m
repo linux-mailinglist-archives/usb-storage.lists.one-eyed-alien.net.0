@@ -1,124 +1,124 @@
 Return-Path: <usb-storage+bncBAABBK47UT7AKGQEXM5B32A@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-qk1-x747.google.com (mail-qk1-x747.google.com [IPv6:2607:f8b0:4864:20::747])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3DD152CDAFE
-	for <lists+usb-storage@lfdr.de>; Thu,  3 Dec 2020 17:17:49 +0100 (CET)
-Received: by mail-qk1-x747.google.com with SMTP id q206sf2354380qka.14
-        for <lists+usb-storage@lfdr.de>; Thu, 03 Dec 2020 08:17:49 -0800 (PST)
-ARC-Seal: i=2; a=rsa-sha256; t=1607012268; cv=pass;
+Received: from mail-qt1-x845.google.com (mail-qt1-x845.google.com [IPv6:2607:f8b0:4864:20::845])
+	by mail.lfdr.de (Postfix) with ESMTPS id 3FC1B2CDAFF
+	for <lists+usb-storage@lfdr.de>; Thu,  3 Dec 2020 17:17:51 +0100 (CET)
+Received: by mail-qt1-x845.google.com with SMTP id f11sf1906035qth.23
+        for <lists+usb-storage@lfdr.de>; Thu, 03 Dec 2020 08:17:51 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1607012270; cv=pass;
         d=google.com; s=arc-20160816;
-        b=LbcrqiMncyodL0LlqnBGMtN7byK4HK1aiEVKtjH2mi51XawnrwGD4NZ3O8uc+6edG/
-         CeL10b3lauEvwpKIay2jtlgAp2nwdDgdaMIK5lRHY8sFW2OM31yc8ovrB+xBeF9pjNoW
-         i5Hd/IHMGY8RRGfEHUn4+3xYkAvvdaQur1jYQYEvD3xjUIg63kyLXy95M2FHW8YiAcBQ
-         bRvA517lAIASTEuiE2rwW7WeBQrWUFOgOy8rRCrOyECOzM3+FFffgF/5zXaJWVy4rKTR
-         s33dphZS0DdBr869cSmEk9RZ5gUCfQSpnOrcAKKF4kw0EPSpXADn/RgdHg6G+1nSIY4V
-         Vlmg==
+        b=pj5FJhmm8W2uBoJPCrGZBLUFUIr0zJ/bGC01Pu/IAlxmut4jJ5C1OBkaeJL8hBnyI7
+         0SvRMkRFT5sairNRybNYE/HL3aCcykFGZhBTg+P3t3NeCxYAU/bEXD3ur7sovL1W+AD3
+         /d+kKEdRLOJEKctS41FYgmUC501JeMy/zQpSok19stvR5ENlab2vEmGIsFJ+uGGiZRTy
+         sCJRWRD1Ljx05yGwxyq8SuXG8PP2s6h6TUKR8T//orsVxPQkYrIYCg1qcAiU/bEBx7h6
+         5WXcP2tEDtUvyRw5HDdaZ9oblnyn9ibCmRCYpJA8n9sekfH/NNeNDWsxzRP2GWaB4Wle
+         2Wrw==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:message-id:date:subject:cc:to:from
          :mime-version:sender:dkim-signature;
-        bh=wL46pN5Kwf4kWcKic9d3T6j68icquMXB/8SDBFJ/3dY=;
-        b=MYmqOyd6uSgA4cnfNadmBG2aTnb/dQ90i5CNsGe63OXUDze3AkTV227NEbFHdkKmCL
-         hl3p0YnSr4WeyillLH+TWHMOcvOBzi8Iw5Ga03MbLJ2RKu1EsIGbFxQF3TZuq3MkLL0Z
-         TgY4oP9/5O6l1yyOGwys53gyPNe3QrNhZYnzEnz02vWZWAWNERPuv2AlV2NOxJvJV4uw
-         5be7tQHBgFEeAy8aU9LuMWq7viJdkowN7AiGlZn5USnW+NiGc6ABUx1nIGdAzLcIvHOy
-         uU59/7+teu1ag/7R8fpotXLl3OU2JMxGjJqdVn4M7vAmNLptVxGqFrjxLRRXHCZ9DF3I
-         Ql3w==
+        bh=cAT1pBOGEcLBkaycGljcQcVGcIqFOvha9C9otruSAEs=;
+        b=fbgWQr4jZoEL4j+/YeO28zNniBJtcSlUOuz9gPE3q8/7W6R1IM6kv8MAKnFLfhVzNj
+         AeWr4oKy8E2Fr7O8yAV+tnkTn2qqfG2T47G0Oa1zFFDQGdwsCacmRZzMSbLzkHGeOO5z
+         ooTE7vjo2v1aEklVmurHZ+v9/D/b4M7qzK3yVO+vrMcvb5F2zq+by2UAVGz9zzbByVJ6
+         KwvAoPcy0SAk9tC1LsQzRbQopO4KmjPrumiE3lZO622yNU9Znm+sVguMDovLIyhDZvop
+         3yBVs5Y3L7o9OlvN6jaY4c0655FsmXl6qaROi8kwVLyUX/iLQuwLPY/Hk23HgXUyH69N
+         CORA==
 ARC-Authentication-Results: i=2; mx.google.com;
-       spf=neutral (google.com: 212.227.17.24 is neither permitted nor denied by best guess record for domain of info@metux.net) smtp.mailfrom=info@metux.net
+       spf=neutral (google.com: 212.227.126.131 is neither permitted nor denied by best guess record for domain of info@metux.net) smtp.mailfrom=info@metux.net
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
         h=sender:mime-version:from:to:cc:subject:date:message-id
          :x-original-sender:x-original-authentication-results:precedence
          :mailing-list:list-id:list-post:list-help:list-archive
          :list-subscribe:list-unsubscribe;
-        bh=wL46pN5Kwf4kWcKic9d3T6j68icquMXB/8SDBFJ/3dY=;
-        b=KhqNal/a59XsrjqyzmVFis7sGq0Yp09rZ2FFiVBOxWl1zwaSsg75Dn8tcCDCN34CRA
-         r5ViW3urDx2cJlgwdkvr/T6ptezhV+OgNnQBOFyrPcBRt+8Rpujlm0Vs1vslLCWj4DY6
-         8Xh48/nsdgvg9R7ZpPHN77gvtV60WYVF1fsVE=
+        bh=cAT1pBOGEcLBkaycGljcQcVGcIqFOvha9C9otruSAEs=;
+        b=jYFo/AQP2CGiy0jov1KsaF7Mv789gX3vwWS/wuw7C1dnEL06RRiwX+dVVfXaZublyt
+         Q8MWth2EH9Zxcu/A4oV/Xq11MItpjUlErlaUJ5hH3n5fp2E0Zw5XPZ0HT1tKw34VIwuk
+         tJYUqR3vDxj6gDwRx7b13PMXxWKUo2EI3KnQY=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
         h=sender:x-gm-message-state:mime-version:from:to:cc:subject:date
          :message-id:x-original-sender:x-original-authentication-results
          :precedence:mailing-list:list-id:list-post:list-help:list-archive
          :list-subscribe:list-unsubscribe;
-        bh=wL46pN5Kwf4kWcKic9d3T6j68icquMXB/8SDBFJ/3dY=;
-        b=blHQne1HOHgtKkZbkv7htX1fla/UhL/7h5vsL73cD7/pSHCMxdR3aPtK3aVIt95lLu
-         HUxtjG9ifWlwCXoSrGNrdKrLOUuZn5aYONkyJd+W4VPXzpHC74hrUR37qmYTSoV6eT8S
-         8pA1gbRkT4MwI7eeKqKyb2rE4boVZ/G//6FHpObdV/xlqjIs4GW/fDO4dGcXYm89kYAx
-         PqFGi4Kb5DmasF/HC5SlSwOEDc97hP/CRm4234RV59lmVyCRqYWHSwqy5hzezzLkLtcs
-         PdGUWi8V41EXU7hsf3NHVfPdzVkgmCYp0odPX6Z4EiCB7zCjHwYQErZSg95tpgQBm66N
-         mcSQ==
+        bh=cAT1pBOGEcLBkaycGljcQcVGcIqFOvha9C9otruSAEs=;
+        b=HvgDp97zqa3MsEMtpGTDEG7UNIrm9xUdtjcB44fplmCbxcAtqiJq6r+cOQdCeghFXP
+         x2IFN4qjc3ALc/Q/udLVTiY+xj0SQVvrOCrrSvfWk24aAkNqBop0S5Bnny87jdu4+Ik3
+         I9hA5Cbn4GyRdRjn+lFgqE6erKf4laW7w1qkagyX6CyDCVCXDZV7QzgJJWPzG5cbnWrP
+         X2Kj211D7PeMET68DM5JPaWQjNkao8Dg0F6/+s+78h7OmjwRthhcxKHL82ng4Ds9f8hT
+         TSforOKGgBiTqJdj2FoeO6OUJnXrDiWaPK8Tdk7k+C/6C/3aGqFWybxmN7uumt3vUShZ
+         dwdw==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: AOAM5313eP1bivuiq/qb9howDgssDuBW2EXfr1FY/oDC5kYOK6GlK8Zt
-	Pnt/L5zsdtvIfX9lODI5J03IIQ==
-X-Google-Smtp-Source: ABdhPJzv2f7x3mNrZluAgRkbTHUOARCkPxOzX9JOixbVZnUsSnQYBe4UvQQU/o29O+4BNwTo9E5I5A==
-X-Received: by 2002:ac8:c2:: with SMTP id d2mr3953180qtg.207.1607012268044;
+X-Gm-Message-State: AOAM533zIT6zq894VxSgYXaWzAIntTXfqXR3CNUv9yOfVRfF8a0aoVNq
+	ptSCcJVvRik+lXZtDqKRqU5GBQ==
+X-Google-Smtp-Source: ABdhPJz+X4+oYkEOIsn2YOFPuLU6mF0XEiTTZA6Zq2GG9VWuEXdEn1pww6ORkku7km3sCR8fvFeVuQ==
+X-Received: by 2002:a37:77c6:: with SMTP id s189mr3652196qkc.87.1607012268148;
         Thu, 03 Dec 2020 08:17:48 -0800 (PST)
 MIME-Version: 1.0
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:aed:36ea:: with SMTP id f97ls2157088qtb.4.gmail; Thu, 03 Dec
- 2020 08:17:47 -0800 (PST)
-X-Received: by 2002:ac8:58c7:: with SMTP id u7mr4009001qta.54.1607012267679;
+Received: by 2002:a37:a2d1:: with SMTP id l200ls2743024qke.3.gmail; Thu, 03
+ Dec 2020 08:17:47 -0800 (PST)
+X-Received: by 2002:a37:6712:: with SMTP id b18mr3627031qkc.340.1607012267757;
         Thu, 03 Dec 2020 08:17:47 -0800 (PST)
-Received: by 2002:a37:56c3:0:b029:169:4fb4:6593 with SMTP id k186-20020a3756c30000b02901694fb46593msqkb;
-        Thu, 3 Dec 2020 06:11:18 -0800 (PST)
-X-Received: by 2002:adf:eb88:: with SMTP id t8mr4084234wrn.105.1607004677510;
-        Thu, 03 Dec 2020 06:11:17 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1607004677; cv=none;
+Received: by 2002:ae9:e504:0:b029:15e:d70c:89db with SMTP id w4-20020ae9e5040000b029015ed70c89dbmsqkf;
+        Thu, 3 Dec 2020 06:16:36 -0800 (PST)
+X-Received: by 2002:a5d:4ccf:: with SMTP id c15mr4001378wrt.237.1607004996162;
+        Thu, 03 Dec 2020 06:16:36 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1607004996; cv=none;
         d=google.com; s=arc-20160816;
-        b=hSQ41Y1v4BTzGh15N96/jwaWga/cLHWaHvfGJaMsIYB0tcsMak6r5NHWCEzjHhNZ1d
-         40chVXcUN/Dsv4gfxNH/50OePOmcR2pqphHasASBVtbgkNOWt8JU61jVb8zKFEmx3g5Z
-         PVZ0sB6Bvs3XYU2TWcmaqVM8nbbMCf5nro6TFy7pq+S5TxOZ9lz1W6CWWUaHTeqAiBna
-         pC/axiPBHC0Zt+VweIRmCinPjizmcPqit9kwl2LSkgUNC/jXMDy3L+PN/8xY6BpzcVlC
-         AXyqY5WknFw+NV/PZNzuuT95NmCXBgwqsAPOzQRSp4SEnwzs5D7FzU5ZToM6qaQsrlL3
-         VWyw==
+        b=PCsw7ztiH8K+aNHTbWJovvE9VZ95w9lZFp3MbPTNevCOXS1tMFhEpiWMpX/cWJ6iUw
+         rahaNvmZf8RAaVdPHdo0Y2IRcw6KGNFVUwElwP5FcM5csDd3y6qfTTvkTBGO1Z06aiMX
+         99S6A/NzAo3udQB93qhX5ENs4bm/yj+CG4gmVTPvbm8+UVx+VPiYepvM7d6C5IaMUa7y
+         5ytWSg+Gy3Xhsbaq+LjoiPnn5Zl26Dtvi8+oKUnB2wt1bR2ggJWmdhD1vePzoWzlsR3h
+         y9ulXMILmYWinLah7UlumqM5ca80sT4SLCMWcyTUCC0NIkqjFXAx2lsr3idk4wiAUPc8
+         t/SQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=message-id:date:subject:cc:to:from;
-        bh=Jzb6VOKq0K5ZwXVwfsOOiSOYgWYmEvFyYV62hn8v7r4=;
-        b=uZkwm5r5d19SDoz9SWiGzS3x21K92/PvnVfx9AG5yI8xg42F4QJhOVQVmwZhAM5Bjh
-         Ct+Zkj6+ac7xT3pv15ntDzPRpKr1xu2tg5qdGCxL8Ol7A1SnzaZWPNowhEYnWljwA2Ve
-         t+d8DopGzHKeE+VyXgdK7Cb/MLdK3nEdAd0r7cFNPuVS1P+0NpD6EZ5zy3DJ207KTRRH
-         ppnf1FwCu2/O3icAN0C6qx18nAKN9OH+sg6GYxI56IBhdHy2NHlWKij56MEdEZIr6oV3
-         K0HQoWuAa9fDX1quYxUaINnTIPii5W+tbKec23OZcmITWNYvFpT8cAWT/6DZ6aPwwD5M
-         xROw==
+        bh=nLZgtbJDjelLhufd1EIMaYMs/SOxcLEkhq3f6oRezdc=;
+        b=Hyb3wsVqwfihVpk5J/A/RXS/ihE7oQN2kCuQ5s8UV+dsoV/phv198wREjUMnUgF45S
+         f6TRrJ7LmKQ+Ht5agfl8RCBswGMmPLDfLAMc5J0/FF9bfEccZjXClMNFA84KexpaJ+kZ
+         x7fRR8iApuqg4NjPu17wj/8zFmTLpd7itJ5sof+xCfvJJuECnvTwb8yH4uUna24km581
+         cQEZdd78s13P90a7Yu7cN81vUNOTSv7u/L38RLGdfpPCZdE4nAEV0ThOXKI+grqbdvBZ
+         bzPR0FXF9wzlwEBY8FZL+70o8uND5ljmuEsZgeaGjwasypIkUjKuXW1/tQJ/YrEw5eqH
+         8VOA==
 ARC-Authentication-Results: i=1; mx.google.com;
-       spf=neutral (google.com: 212.227.17.24 is neither permitted nor denied by best guess record for domain of info@metux.net) smtp.mailfrom=info@metux.net
-Received: from mout.kundenserver.de (mout.kundenserver.de. [212.227.17.24])
-        by mx.google.com with ESMTPS id d11si1948145wmb.153.2020.12.03.06.11.17
+       spf=neutral (google.com: 212.227.126.131 is neither permitted nor denied by best guess record for domain of info@metux.net) smtp.mailfrom=info@metux.net
+Received: from mout.kundenserver.de (mout.kundenserver.de. [212.227.126.131])
+        by mx.google.com with ESMTPS id v7si2269514wro.230.2020.12.03.06.16.36
         for <usb-storage@lists.one-eyed-alien.net>
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 03 Dec 2020 06:11:17 -0800 (PST)
-Received-SPF: neutral (google.com: 212.227.17.24 is neither permitted nor denied by best guess record for domain of info@metux.net) client-ip=212.227.17.24;
+        Thu, 03 Dec 2020 06:16:36 -0800 (PST)
+Received-SPF: neutral (google.com: 212.227.126.131 is neither permitted nor denied by best guess record for domain of info@metux.net) client-ip=212.227.126.131;
 Received: from orion.localdomain ([95.118.71.13]) by mrelayeu.kundenserver.de
- (mreue109 [212.227.15.183]) with ESMTPSA (Nemesis) id
- 1MBDvU-1kt3L02W7C-00Ckxa; Thu, 03 Dec 2020 15:11:16 +0100
+ (mreue009 [212.227.15.167]) with ESMTPSA (Nemesis) id
+ 1MkpjD-1kJzeW1171-00mMlA; Thu, 03 Dec 2020 15:16:35 +0100
 From: "Enrico Weigelt, metux IT consult" <info@metux.net>
 To: linux-kernel@vger.kernel.org
 Cc: stern@rowland.harvard.edu,
 	linux-usb@vger.kernel.org,
 	usb-storage@lists.one-eyed-alien.net
-Subject: [usb-storage] [PATCH] drivers: usb: storage: prefer pr_*() macros
+Subject: [usb-storage] [PATCH v2] drivers: usb: storage: prefer pr_*() macros
  over bare printk()
-Date: Thu,  3 Dec 2020 15:11:15 +0100
-Message-Id: <20201203141115.27460-1-info@metux.net>
+Date: Thu,  3 Dec 2020 15:16:34 +0100
+Message-Id: <20201203141634.28850-1-info@metux.net>
 X-Mailer: git-send-email 2.11.0
-X-Provags-ID: V03:K1:CshpX7hZEewVcaFB8kcooUP1ZHO0PPNEYfdAveGlqlWiHRjsd8L
- Y7OGyOKqjyXHAFaPdeRJ4qTRI+GFJDqW45gwX50pBYrwZnL7AXD+40fn1rTXSRJjsX3dI61
- ULqs5bDcz1NLcMrkTqG5okvsg8hpZFzTAZO8uqplA6KTv/2RGwBi+khEPPIJmm7z9DwYG69
- ktz+8/cI3k0+pCPniXhYw==
+X-Provags-ID: V03:K1:0IyzrSuvDJ28ReRID7/NC+13Le5/zAHShoe9Gkgsblo6jV8cwAH
+ tBFIdnuRIyRAwNoESHedkxxxLEzn2x3c402jVwpou+Q5ihhCtknYuJYeqyWdKW8ESXju7aa
+ SkNoXh3MNe2LZHduIQfZ7j83IUbmDsfvOrDChbVzgTcgPhStMW3CmjjU009V+fIHW80kwOj
+ GM5R3gAH7fgug0NQSv2zQ==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:vRNhfSVrySI=:bdtI/6JUDpCUBwWju7l8q0
- MkZE0NAbLCLkdoBSPQuJZwC8OYzXBZpeYx3faVBRdpT83DDiyNffq+QYdjpUtd/nNQiJ3FQAu
- 0nNkLoLBmvwFMtvFJ0ntmTV+ugxUBEojDbFZ93Soxdw7lW6ZNf4pk2vkeXWaK7bkFdyn2+RwG
- sNP2g2D1W1vbp90hZxQBo408L96vHdakrv1Sbu21bl2JE8NIpxqpBMTeDmWP5MOL44U4XJZNp
- h3kJQS8RivpxXgkL7Hemh6RYVuJiHuNRXuX+SqgbplVLRcuYXaleWDNKy5Hctn8VExujCUj5c
- MU8y2VPEepOWuxHLs51+M5y0s/l8/zSgRIcoRu9KM1ecIM9iWDVaLnpFADfOnbO6PaTnGjWEl
- j7yCAgsddi3kZCijfvE2I4d+cclMm8K4z+hDN5viySqfY2XMk3OqcDSOdFc7X
+X-UI-Out-Filterresults: notjunk:1;V03:K0:YFCmvjg2gBo=:L1zbnf8nGQC32hQRUI17EH
+ gufYq5NdVWuw3oMnMR2VwLCNcN0iuJr/kX6LnhcgrWFMIFAkVJ9Mna4lzAnbcKPmY3T2ayr51
+ 05NfkZU40MCEube9mm1ejS3VTsGYm7Ohnk4p6cCF9OSk4X9dGbZIdRU8BBOIRclISihIXys1i
+ nCLI+dtF3hBFYg5iDl/iCzdxnLCq+X8WAyo/CgElL4C0joRYbf49RBlURtMyp/3sWNemcjUps
+ O1xqDUwCRqBYsgBlJwMKW4cD2bqIfBjq/e8Ac4Hb9PVyE5ksFWU8MLWIIfOSqfp7uKSWpLDBc
+ PeGjAVWYEJVLyhKT3TYKULgkWxm2T/1Di+LSkSaGqlMhzbPOOSi0Oz0EaRcYeKTkxzHZtAp/O
+ 53LOoeFiDrdQl5mXVJ+ig6zmD32xBEZ14S1tESQZEXybjsx0C8bEyh1scoMVw
 X-Original-Sender: info@metux.net
 X-Original-Authentication-Results: mx.google.com;       spf=neutral
- (google.com: 212.227.17.24 is neither permitted nor denied by best guess
+ (google.com: 212.227.126.131 is neither permitted nor denied by best guess
  record for domain of info@metux.net) smtp.mailfrom=info@metux.net
 Content-Type: text/plain; charset="UTF-8"
 Precedence: list
@@ -137,6 +137,8 @@ List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegro
 
 pr_*() printing helpers are preferred over using bare printk().
 
+changes v2: fixed ugly typo
+
 Signed-off-by: Enrico Weigelt, metux IT consult <info@metux.net>
 ---
  drivers/usb/storage/alauda.c     | 23 ++++++++------------
@@ -147,7 +149,7 @@ Signed-off-by: Enrico Weigelt, metux IT consult <info@metux.net>
  5 files changed, 43 insertions(+), 55 deletions(-)
 
 diff --git a/drivers/usb/storage/alauda.c b/drivers/usb/storage/alauda.c
-index 20b857e97e60..4453238da87e 100644
+index 20b857e97e60..5806f1bee471 100644
 --- a/drivers/usb/storage/alauda.c
 +++ b/drivers/usb/storage/alauda.c
 @@ -622,9 +622,8 @@ static int alauda_read_map(struct us_data *us, unsigned int zone)
@@ -199,7 +201,7 @@ index 20b857e97e60..4453238da87e 100644
  	if (!new_pba) {
 -		printk(KERN_WARNING
 -		       "alauda_write_lba: Out of unused blocks\n");
-+		pr_arn("alauda_write_lba: Out of unused blocks\n");
++		pr_warn("alauda_write_lba: Out of unused blocks\n");
  		return USB_STOR_TRANSPORT_ERROR;
  	}
  
@@ -433,4 +435,4 @@ index 15dc25801cdc..9b5102a1cd9b 100644
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20201203141115.27460-1-info%40metux.net.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20201203141634.28850-1-info%40metux.net.
