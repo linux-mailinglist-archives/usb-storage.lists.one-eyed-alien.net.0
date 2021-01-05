@@ -1,189 +1,121 @@
-Return-Path: <usb-storage+bncBDVIJONZ3YDRBIUNXT7AKGQEG6PEZKY@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBC5KHUNMXUCRB6OLZ77QKGQEPEF6FSA@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-qv1-xf47.google.com (mail-qv1-xf47.google.com [IPv6:2607:f8b0:4864:20::f47])
-	by mail.lfdr.de (Postfix) with ESMTPS id 68A1D2D2249
-	for <lists+usb-storage@lfdr.de>; Tue,  8 Dec 2020 05:52:51 +0100 (CET)
-Received: by mail-qv1-xf47.google.com with SMTP id m3sf13397566qvw.5
-        for <lists+usb-storage@lfdr.de>; Mon, 07 Dec 2020 20:52:51 -0800 (PST)
-ARC-Seal: i=2; a=rsa-sha256; t=1607403170; cv=pass;
+Received: from mail-ed1-x546.google.com (mail-ed1-x546.google.com [IPv6:2a00:1450:4864:20::546])
+	by mail.lfdr.de (Postfix) with ESMTPS id 0DA992EA43F
+	for <lists+usb-storage@lfdr.de>; Tue,  5 Jan 2021 05:07:22 +0100 (CET)
+Received: by mail-ed1-x546.google.com with SMTP id a9sf13480045edy.8
+        for <lists+usb-storage@lfdr.de>; Mon, 04 Jan 2021 20:07:22 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1609819641; cv=pass;
         d=google.com; s=arc-20160816;
-        b=M4PKIlwIN6EITDJOXuEhxlrdAVVpqF4N6p/jYx02idA5+IHofvTBGnNx9rgQY5FrFR
-         WQdimt/GhSrSBVu4MBjnBQwzEoD5jyh6Jaxq6S/eiqB9mhW9OUb/bgNa+/W4Nw7kpDaX
-         zpw8EdZg0XWSV+4md3m3+y74j1/1A+7pylCk9tB/EHPOGZY3T7ISubL7LRjUxdRebHIv
-         WBdfGBB4BShvF/iVY7UudK5xyB9TJSz8dtQcu4P4zCREk9n2dUAFeEWl3cYqmAp324Z/
-         f2KZF6p8NmIDRUzkqfiAWFJ8pwDLLs3lzh454E3MjCR86KCYznl6bKxn/xN1ps9HUdvA
-         DfDQ==
+        b=hgVQTgbXSvNq101Gdq31gtG7r6GzTgl3/AmS3FiNOc6Dql0Z0ye6SITmyg13Z2Do3N
+         YaNaxYOKp4XI40e/9n4IXSlGfswR4eWKfuRTRH+vjOMuDBKTyGU3NQm0lgayE4V7ofHQ
+         +nW7Mg3JIIwL8+neDQf4tY4a9Eua5ZXsTHdgIf6FH0CFbNdQ8qru7PH8F8qyYLqnVoQi
+         zS9GilpUZioGBbOYC8527gkuV1jYGaR9nsiI2UPC1SkM8IGnZStZIrTZs2YILewyhrdQ
+         wCX3/WeSDMzwyRwkruWyZoLuGrhml/o0u7IXH6Y62oYlIiXizedO/JeZNt0zYBn4ZT8O
+         DH2Q==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:sender:dkim-signature;
-        bh=5r0rjPJBdtM7BjtBijR1QPmeX/FQY1/vXRp+nXoMxRw=;
-        b=lAuBp4SYjaxHm6tPnmNA+uRJihFXH/nukN//5UTO6LyVbiRyzQ4MdkNzTYAc7VzvOZ
-         lDs0BfQ3WR5DXgu+rilpUKJUOGWBesn5+Rho4xExHfhZzLuSoTIwKYJutPhGAvgcd5BE
-         s8CHFQ6GaY6AirtooGNOSSn/KjSMh9jNa5q14rwMkkgicDxTWleCtXgeKG7b+Ga0Ggsl
-         ONC7UGqcec3g8O5zCHkTCi93ICH/P0Pevt5MpNMAYUuGIFG7HDInc/ef3B4FhwOLjNTP
-         eQAPELrkccVO6x+d4YmMg5k52d8FIfoi8EeAj3NzuMYdkCAgdN9VHmowsi3B6POpEIgV
-         ByJw==
+         :list-id:mailing-list:precedence:cc:to:subject:from:message-id:date
+         :mime-version:sender:dkim-signature;
+        bh=6kCnOLI+CjF0UGeE4hya+cmnYidOTOeMsHzJNgCznNE=;
+        b=CFcmO1o79FH/DN/ReDalOhybqvn5q8M1J1narD162+ct1aL40bTbHNGVxiWNxpn97G
+         wn3THK7d+2alIEgVifaA3MGcGGJFwHxg5gwj9CPqo8dCcsrj50obp1wBpPRWbKIibeQW
+         0FBev4Zb8v03b5TzD+HetJW1GIP/bb6lWwNLR9q2Vt+ewwXles5veJMiR1z6FIF6Kx/Q
+         bQAxCDHgW6fO64rVkv7NEy0xXj7hiuYR8YtGnPWMEfnj1JnPhbbaFtE6l3LINKFTsq4r
+         xpu6ZY3PhhEhZ93wmv/mLg8NhT6PM9TI3wqRKe+T4HXN8KcUNhKtz4P1OwC5eMN2vioB
+         pBRQ==
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@oracle.com header.s=corp-2020-01-29 header.b=V+G180Fh;
-       spf=pass (google.com: domain of martin.petersen@oracle.com designates 141.146.126.78 as permitted sender) smtp.mailfrom=martin.petersen@oracle.com;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=oracle.com
+       dkim=pass header.i=@synopsys.com header.s=mail header.b=TPkQ94Vf;
+       spf=pass (google.com: domain of thinh.nguyen@synopsys.com designates 149.117.73.133 as permitted sender) smtp.mailfrom=Thinh.Nguyen@synopsys.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=synopsys.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
-        h=sender:from:to:cc:subject:date:message-id:in-reply-to:references
-         :mime-version:x-original-sender:x-original-authentication-results
-         :precedence:mailing-list:list-id:list-post:list-help:list-archive
+        h=sender:mime-version:date:message-id:from:subject:to:cc
+         :x-original-sender:x-original-authentication-results:precedence
+         :mailing-list:list-id:list-post:list-help:list-archive
          :list-subscribe:list-unsubscribe;
-        bh=5r0rjPJBdtM7BjtBijR1QPmeX/FQY1/vXRp+nXoMxRw=;
-        b=QslD3tuX+yPFKbJ49Dgol6xg3akrz9Wilf43F+Q9AtQikRcykgNo7GgYb+f8m4rTrx
-         g5trOkkX3Ndn+EoNIntQvTv3QJcuWazR/opCcAWs+hy+RJ57C+FvnRHWJVmsdid60m2t
-         LWITdldytRjWom3xDbYP/uaS/XThvGHKUBNIs=
+        bh=6kCnOLI+CjF0UGeE4hya+cmnYidOTOeMsHzJNgCznNE=;
+        b=ZUBv2kSeA3qqJepuFa0uT+VwSkvccjUb2X/uUThKLcWeoyPRENm8Fi8AWzIC91+Tyk
+         VHeJ9ImIpIOHGIrW2oOsa/LKFN8+2JbM3EfYUdqwveOGkbm1znn7q3EcxIKIPhPXYq6X
+         0MRkQ0+UkWLlmKK1wM51y3j9Io1D95VN+rFi0=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
-        h=sender:x-gm-message-state:from:to:cc:subject:date:message-id
-         :in-reply-to:references:mime-version:x-original-sender
-         :x-original-authentication-results:precedence:mailing-list:list-id
-         :x-spam-checked-in-group:list-post:list-help:list-archive
-         :list-subscribe:list-unsubscribe;
-        bh=5r0rjPJBdtM7BjtBijR1QPmeX/FQY1/vXRp+nXoMxRw=;
-        b=QEu0vswibaJ+ZSDbSOUi57SDYDjy8Fo3RfChdaHeWOn754g5seZfT8nmYRSsRnAeb3
-         q5XZkpsUkv4hK/w1Ba3xlQzhaTCJlx7ba5FdxZhRhxnVsf3jtYVUedKysQb3w2T2tK9N
-         9tXqYzw2BABcrfopET0e2izMV5SuyJKBhxpABhlvzKF/TNfJXeArcSzi8QcJ+hv7NECS
-         t4NWQxJRqpQgbtqXW0Oa0mDfZ4hkWC5QQFL32pLsUk+LHKsdMB8UfjnrT3DvEyOaCj53
-         9YgMfYiNIX43VlgDU877rtsMoZweNEBwSg8vQfBb0t54uM0j+xGgk/x8xyFO95SXkD/E
-         PIdQ==
+        h=sender:x-gm-message-state:mime-version:date:message-id:from:subject
+         :to:cc:x-original-sender:x-original-authentication-results
+         :precedence:mailing-list:list-id:x-spam-checked-in-group:list-post
+         :list-help:list-archive:list-subscribe:list-unsubscribe;
+        bh=6kCnOLI+CjF0UGeE4hya+cmnYidOTOeMsHzJNgCznNE=;
+        b=EyUQCP57HeDSa0AqLIKZC9x0BhJAfcodEe2ajTCWQyD3MqfDc1ZuuTTc/WGw1II/yC
+         /rQp9vpr9HKz34ILewyVFeAWNELsz7u2hiS4Uf6XaeHMsTZ3tPMhbzCr0fUKp2e1elN/
+         tYGTDYfudSb7LTuyyiaYlV5qbY2zVSFBZzSkgnVXcB+8qabWZ74lpa27fK1FdTzlIdfC
+         TYLysF+iDKiVDRcfpgI5f6B/UbClIpbBxMxiJ165H6iH1ZvuVQxLTNBg9UCLCiGlsueJ
+         ggSVOVqjx54t9EiSXUQ8QTmuK7rze8Uza+6Hd+/YXbe8w6TQCT1G5Q0UmsfxM9ECIO2U
+         5wYA==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: AOAM532FJU3Zl76/UOo+Ecw6HwP+RH4grJ7E3sLi4VCNk6Xl+PmmD3Pz
-	dlFqUJ4joybbQXgYL+227w8ckg==
-X-Google-Smtp-Source: ABdhPJw/Pq5aZ8YUsB8r4otrbb9tE0TCWyGhsdJwyZB20WVvG46B4+etdTjXefun/Iq94kW6VYrIxQ==
-X-Received: by 2002:a0c:da91:: with SMTP id z17mr24859145qvj.13.1607403170334;
-        Mon, 07 Dec 2020 20:52:50 -0800 (PST)
-X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:ac8:b05:: with SMTP id e5ls2356412qti.2.gmail; Mon, 07 Dec
- 2020 20:52:49 -0800 (PST)
-X-Received: by 2002:ac8:67da:: with SMTP id r26mr2483263qtp.116.1607403169869;
-        Mon, 07 Dec 2020 20:52:49 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1607403169; cv=none;
-        d=google.com; s=arc-20160816;
-        b=fMrXT3uhYTGrSCYT+L0Q+V787VGkKYrfMjf5dSe5IYXAuFTAhuO6dCUkdBCNSkhyFU
-         XcHdxPn5bue5iigQ7Qyp3GUSHHs8tn89tNwZXAOKsz02LifU0n90lSt/hLwtULCySoJt
-         kS8UqTcO0bI/11SS81gBtBhrYq7VbQYNhjmM+Ed/uxdmAQtM787lGlz10p26H69nLUbz
-         GpurQ4ZQ0gqHk3RcTUc5H5npZ2j1176x+kKujNug74RDl674WdD2g5Dax+pSV19Xo5fv
-         jVkeXJPEnRZRYA1cNXMuG9J9IHWCxqEo9wk+RsMn15446NN2bs2F4roDy7fWqv2wRETx
-         y/Eg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:dkim-signature;
-        bh=1e3cV7XKyt5cBPHNeWYhYMHu3W87CKppja6U1Jvw5F4=;
-        b=zo5+BZBt4E+VMchWqn3842sLCgzw/xe0bWDmB8LRNDhopsFGpHF1KG3nCLYVXU9HSE
-         BHgqbI8ALbAUpLjtPx6YpTU2ooSajG6qapLVwsVckf0kBmVpmXL5OKf+vSLy6JYAOGwV
-         VPfnj65re3rEvcdCVFBnbixAYXlPcbhLbVhp3UTFV0TWZj2V0HytXL064HPX2rJk24LT
-         xgjizUuYh92nPRzxk9RYYmqBof8nIW+tBmtVaOWI9hDHXPfqsj0NuLpnfPIQYhGu+s0a
-         pi8/7zTFzI0SGb3UOUMBvWou5Tk83fuylGaDryslpSN04M8YZ/vFQYs9p8vL6xfPaOOv
-         xPJA==
-ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@oracle.com header.s=corp-2020-01-29 header.b=V+G180Fh;
-       spf=pass (google.com: domain of martin.petersen@oracle.com designates 141.146.126.78 as permitted sender) smtp.mailfrom=martin.petersen@oracle.com;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=oracle.com
-Received: from aserp2120.oracle.com (aserp2120.oracle.com. [141.146.126.78])
-        by mx.google.com with ESMTPS id s12si7447358qvm.135.2020.12.07.20.52.49
-        for <usb-storage@lists.one-eyed-alien.net>
-        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
-        Mon, 07 Dec 2020 20:52:49 -0800 (PST)
-Received-SPF: pass (google.com: domain of martin.petersen@oracle.com designates 141.146.126.78 as permitted sender) client-ip=141.146.126.78;
-Received: from pps.filterd (aserp2120.oracle.com [127.0.0.1])
-	by aserp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 0B84nPNV064006;
-	Tue, 8 Dec 2020 04:52:35 GMT
-Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
-	by aserp2120.oracle.com with ESMTP id 35825m0srq-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Tue, 08 Dec 2020 04:52:35 +0000
-Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
-	by userp3020.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 0B84ocw5155469;
-	Tue, 8 Dec 2020 04:52:34 GMT
-Received: from pps.reinject (localhost [127.0.0.1])
-	by userp3020.oracle.com with ESMTP id 358kys9m8s-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Tue, 08 Dec 2020 04:52:34 +0000
-Received: from userp3020.oracle.com (userp3020.oracle.com [127.0.0.1])
-	by pps.reinject (8.16.0.36/8.16.0.36) with SMTP id 0B84qX4M159553;
-	Tue, 8 Dec 2020 04:52:33 GMT
-Received: from aserv0122.oracle.com (aserv0122.oracle.com [141.146.126.236])
-	by userp3020.oracle.com with ESMTP id 358kys9m7s-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
-	Tue, 08 Dec 2020 04:52:33 +0000
-Received: from abhmp0013.oracle.com (abhmp0013.oracle.com [141.146.116.19])
-	by aserv0122.oracle.com (8.14.4/8.14.4) with ESMTP id 0B84qDZf015901;
-	Tue, 8 Dec 2020 04:52:15 GMT
-Received: from ca-mkp.ca.oracle.com (/10.156.108.201)
-	by default (Oracle Beehive Gateway v4.0)
-	with ESMTP ; Mon, 07 Dec 2020 20:52:13 -0800
-From: "Martin K. Petersen" <martin.petersen@oracle.com>
-To: linux-kernel@vger.kernel.org,
-        "Gustavo A. R. Silva" <gustavoars@kernel.org>
-Cc: "Martin K . Petersen" <martin.petersen@oracle.com>, coreteam@netfilter.org,
-        selinux@vger.kernel.org, Miguel Ojeda <ojeda@kernel.org>,
-        Joe Perches <joe@perches.com>, linux-hardening@vger.kernel.org,
-        reiserfs-devel@vger.kernel.org, amd-gfx@lists.freedesktop.org,
-        patches@opensource.cirrus.com, linux-fbdev@vger.kernel.org,
-        keyrings@vger.kernel.org, Nick Desaulniers <ndesaulniers@google.com>,
-        linux-geode@lists.infradead.org, linux-gpio@vger.kernel.org,
-        linux-hams@vger.kernel.org, linux-ext4@vger.kernel.org,
-        wcn36xx@lists.infradead.org, GR-everest-linux-l2@marvell.com,
-        x86@kernel.org, linux-watchdog@vger.kernel.org,
-        linux-media@vger.kernel.org, linux-cifs@vger.kernel.org,
-        linux-nfs@vger.kernel.org, linux-iio@vger.kernel.org,
-        linux-usb@vger.kernel.org, devel@driverdev.osuosl.org,
-        linux-atm-general@lists.sourceforge.net,
-        linux-wireless@vger.kernel.org, linux-crypto@vger.kernel.org,
-        linux-decnet-user@lists.sourceforge.net,
-        Nathan Chancellor <natechancellor@gmail.com>,
-        netfilter-devel@vger.kernel.org, target-devel@vger.kernel.org,
-        linux-integrity@vger.kernel.org,
-        virtualization@lists.linux-foundation.org,
-        linux-mediatek@lists.infradead.org, Kees Cook <keescook@chromium.org>,
-        samba-technical@lists.samba.org, ceph-devel@vger.kernel.org,
-        drbd-dev@tron.linbit.com, intel-gfx@lists.freedesktop.org,
-        dm-devel@redhat.com, linux-acpi@vger.kernel.org,
-        linux-ide@vger.kernel.org, xen-devel@lists.xenproject.org,
-        op-tee@lists.trustedfirmware.org, linux-hwmon@vger.kernel.org,
-        linux-sctp@vger.kernel.org, bridge@lists.linux-foundation.org,
-        linux-mtd@lists.infradead.org, linux-input@vger.kernel.org,
-        linux-can@vger.kernel.org, rds-devel@oss.oracle.com,
-        oss-drivers@netronome.com, tipc-discussion@lists.sourceforge.net,
-        cluster-devel@redhat.com, linux-rdma@vger.kernel.org,
-        dri-devel@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org,
-        linux-block@vger.kernel.org, usb-storage@lists.one-eyed-alien.net,
-        linux1394-devel@lists.sourceforge.net, alsa-devel@alsa-project.org,
-        linux-i3c@lists.infradead.org, linux-arm-msm@vger.kernel.org,
-        linux-mmc@vger.kernel.org, linux-scsi@vger.kernel.org,
-        linux-afs@lists.infradead.org, nouveau@lists.freedesktop.org,
-        GR-Linux-NIC-Dev@marvell.com, netdev@vger.kernel.org,
-        linux-security-module@vger.kernel.org,
-        linux-stm32@st-md-mailman.stormreply.com, linux-mm@kvack.org,
-        intel-wired-lan@lists.osuosl.org, linux-renesas-soc@vger.kernel.org
-Subject: [usb-storage] Re: (subset) [PATCH 000/141] Fix fall-through warnings
- for Clang
-Date: Mon,  7 Dec 2020 23:52:01 -0500
-Message-Id: <160740299787.710.4201881220590518200.b4-ty@oracle.com>
-X-Mailer: git-send-email 2.29.2
-In-Reply-To: <cover.1605896059.git.gustavoars@kernel.org>
-References: <cover.1605896059.git.gustavoars@kernel.org>
+X-Gm-Message-State: AOAM530teOZPi+lAmh7IWyJ7hei+0SfmK35hWDwSep+7Dtis1jcYKryl
+	I6dIjHFXGuJYXo92+7Lsry3HlA==
+X-Google-Smtp-Source: ABdhPJxzyfQDxoVkQDgi6cMlBy5KIBWtw9xtcYHTHDBiB2Yx1FpkUogsv6GnIYQGovS7a4juGW8CUQ==
+X-Received: by 2002:a17:906:1cd4:: with SMTP id i20mr70439778ejh.415.1609819641746;
+        Mon, 04 Jan 2021 20:07:21 -0800 (PST)
 MIME-Version: 1.0
-Content-Type: text/plain; charset="UTF-8"
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9828 signatures=668682
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0 adultscore=0 bulkscore=0
- phishscore=0 mlxlogscore=380 clxscore=1015 priorityscore=1501 mlxscore=0
- spamscore=0 lowpriorityscore=0 malwarescore=0 impostorscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2009150000
- definitions=main-2012080029
-X-Original-Sender: martin.petersen@oracle.com
+X-BeenThere: usb-storage@lists.one-eyed-alien.net
+Received: by 2002:a50:8a9b:: with SMTP id j27ls1346779edj.3.gmail; Mon, 04 Jan
+ 2021 20:07:20 -0800 (PST)
+X-Received: by 2002:aa7:c3cf:: with SMTP id l15mr20284060edr.282.1609819640727;
+        Mon, 04 Jan 2021 20:07:20 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1609819640; cv=none;
+        d=google.com; s=arc-20160816;
+        b=jE7RqMvRPBzrW0fdXR+mVfaJSwR445lT8UW7UolHtR0iHNnhYnWarcdFFjkbpH9NYu
+         DxDbFhujFxTcySdfDcsvbSaaGgvyJbKtKuXcnPcR2kDHLvjSRKSZvSGP3jhxN49ALEBc
+         1RZn8zQoPXrxAVnmOY67baGsOBgIA9iJ7HTvtOvAUhch/sKHLwchRSxtf58F6Ki8Rt7U
+         wPIxH0b0JWeNKuhxtzU7TpLn9Xr3qtYfzqX+VvJqpsdqHT5YSKbXdtOT4LQWY7SPzlR7
+         QdwZz3wXvhPZt4wCN4cDyyT8Ddp1fQV0L7n9zdzfFx3Nye7/BpDcqVJhA02tUaT60Is0
+         vz1w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=cc:to:subject:from:message-id:date:dkim-signature;
+        bh=egAfhvUYnpTgpf0jeU2oxQKDIrTypk8dZ2sCl3KPuRg=;
+        b=y3u6NK6hfRDqxsAo7Itp5v+LilY60Kxnp7gSHaahwlesyVHSop6aTa6HZ3swSKKZvv
+         WIUAF4olX8+EMS+ofs1ICUckbxZq0ZyvWAZbaE1+gnw1PeK+iJCH1Yjwl+JAS4Yw6XJg
+         PgsS+IQCinIjKRiUMCC4umMVU3l1HqW7GetJVOj/shzNwvUdupojnvEIhMB8cS0lgOnJ
+         5RYMAoLI3Rmk3YsPBh4olwVXuKsiWFM4bRl2YytDypw9Z/e2S56ASyaWVCy3yAHeZLX2
+         nzVoRVMLXJrnG5wVAS6LkFC3MlHJLHzigZQBHKNl/FgYaHL3a47jyN1xas9MlEsUL90a
+         gGIA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@synopsys.com header.s=mail header.b=TPkQ94Vf;
+       spf=pass (google.com: domain of thinh.nguyen@synopsys.com designates 149.117.73.133 as permitted sender) smtp.mailfrom=Thinh.Nguyen@synopsys.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=synopsys.com
+Received: from smtprelay-out1.synopsys.com (smtprelay-out1.synopsys.com. [149.117.73.133])
+        by mx.google.com with ESMTPS id e6si35236196edv.445.2021.01.04.20.07.20
+        for <usb-storage@lists.one-eyed-alien.net>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 04 Jan 2021 20:07:20 -0800 (PST)
+Received-SPF: pass (google.com: domain of thinh.nguyen@synopsys.com designates 149.117.73.133 as permitted sender) client-ip=149.117.73.133;
+Received: from mailhost.synopsys.com (sv2-mailhost1.synopsys.com [10.205.2.133])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+	(No client certificate requested)
+	by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 2EF474017C;
+	Tue,  5 Jan 2021 04:07:17 +0000 (UTC)
+Received: from te-lab16 (unknown [10.10.52.11])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+	(No client certificate requested)
+	by mailhost.synopsys.com (Postfix) with ESMTPSA id F2484A0250;
+	Tue,  5 Jan 2021 04:07:15 +0000 (UTC)
+Received: by te-lab16 (sSMTP sendmail emulation); Mon, 04 Jan 2021 20:07:15 -0800
+Date: Mon, 04 Jan 2021 20:07:15 -0800
+Message-Id: <2edc7af892d0913bf06f5b35e49ec463f03d5ed8.1609819418.git.Thinh.Nguyen@synopsys.com>
+X-SNPS-Relay: synopsys.com
+From: Thinh Nguyen <Thinh.Nguyen@synopsys.com>
+Subject: [usb-storage] [PATCH] usb: uas: Add PNY USB Portable SSD to unusual_uas
+To: Hans de Goede <hdegoede@redhat.com>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Alan Stern <stern@rowland.harvard.edu>, usb-storage@lists.one-eyed-alien.net
+Cc: stable@vger.kernel.org, linux-usb@vger.kernel.org
+X-Original-Sender: thinh.nguyen@synopsys.com
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@oracle.com header.s=corp-2020-01-29 header.b=V+G180Fh;
-       spf=pass (google.com: domain of martin.petersen@oracle.com designates
- 141.146.126.78 as permitted sender) smtp.mailfrom=martin.petersen@oracle.com;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=oracle.com
+ header.i=@synopsys.com header.s=mail header.b=TPkQ94Vf;       spf=pass
+ (google.com: domain of thinh.nguyen@synopsys.com designates 149.117.73.133 as
+ permitted sender) smtp.mailfrom=Thinh.Nguyen@synopsys.com;       dmarc=pass
+ (p=NONE sp=NONE dis=NONE) header.from=synopsys.com
+Content-Type: text/plain; charset="UTF-8"
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -199,26 +131,42 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On Fri, 20 Nov 2020 12:21:39 -0600, Gustavo A. R. Silva wrote:
+Here's another variant PNY Pro Elite USB 3.1 Gen 2 portable SSD that
+hangs and doesn't respond to ATA_1x pass-through commands. If it doesn't
+support these commands, it should respond properly to the host. Add it
+to the unusual uas list to be able to move forward with other
+operations.
 
-> This series aims to fix almost all remaining fall-through warnings in
-> order to enable -Wimplicit-fallthrough for Clang.
-> 
-> In preparation to enable -Wimplicit-fallthrough for Clang, explicitly
-> add multiple break/goto/return/fallthrough statements instead of just
-> letting the code fall through to the next case.
-> 
-> [...]
+Cc: stable@vger.kernel.org
+Signed-off-by: Thinh Nguyen <Thinh.Nguyen@synopsys.com>
+---
+ drivers/usb/storage/unusual_uas.h | 7 +++++++
+ 1 file changed, 7 insertions(+)
 
-Applied to 5.11/scsi-queue, thanks!
+diff --git a/drivers/usb/storage/unusual_uas.h b/drivers/usb/storage/unusual_uas.h
+index 870e9cf3d5dc..f9677a5ec31b 100644
+--- a/drivers/usb/storage/unusual_uas.h
++++ b/drivers/usb/storage/unusual_uas.h
+@@ -90,6 +90,13 @@ UNUSUAL_DEV(0x152d, 0x0578, 0x0000, 0x9999,
+ 		USB_SC_DEVICE, USB_PR_DEVICE, NULL,
+ 		US_FL_BROKEN_FUA),
+ 
++/* Reported-by: Thinh Nguyen <thinhn@synopsys.com> */
++UNUSUAL_DEV(0x154b, 0xf00b, 0x0000, 0x9999,
++		"PNY",
++		"Pro Elite SSD",
++		USB_SC_DEVICE, USB_PR_DEVICE, NULL,
++		US_FL_NO_ATA_1X),
++
+ /* Reported-by: Thinh Nguyen <thinhn@synopsys.com> */
+ UNUSUAL_DEV(0x154b, 0xf00d, 0x0000, 0x9999,
+ 		"PNY",
 
-[054/141] target: Fix fall-through warnings for Clang
-          https://git.kernel.org/mkp/scsi/c/492096ecfa39
-
+base-commit: 5c8fe583cce542aa0b84adc939ce85293de36e5e
 -- 
-Martin K. Petersen	Oracle Linux Engineering
+2.28.0
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/160740299787.710.4201881220590518200.b4-ty%40oracle.com.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/2edc7af892d0913bf06f5b35e49ec463f03d5ed8.1609819418.git.Thinh.Nguyen%40synopsys.com.
