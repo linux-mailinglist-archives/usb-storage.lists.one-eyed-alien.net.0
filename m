@@ -1,115 +1,113 @@
-Return-Path: <usb-storage+bncBDNM5HFD6YCBB6GWSGBAMGQELOSRLFI@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBD6LRVPZ6YGRBRPNSOBAMGQER5JCIOI@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-pf1-x447.google.com (mail-pf1-x447.google.com [IPv6:2607:f8b0:4864:20::447])
-	by mail.lfdr.de (Postfix) with ESMTPS id A916F32FF34
-	for <lists+usb-storage@lfdr.de>; Sun,  7 Mar 2021 06:58:18 +0100 (CET)
-Received: by mail-pf1-x447.google.com with SMTP id x8sf4509151pfm.9
-        for <lists+usb-storage@lfdr.de>; Sat, 06 Mar 2021 21:58:18 -0800 (PST)
-ARC-Seal: i=2; a=rsa-sha256; t=1615096697; cv=pass;
+Received: from mail-qk1-x747.google.com (mail-qk1-x747.google.com [IPv6:2607:f8b0:4864:20::747])
+	by mail.lfdr.de (Postfix) with ESMTPS id 2D22A3302C3
+	for <lists+usb-storage@lfdr.de>; Sun,  7 Mar 2021 16:52:39 +0100 (CET)
+Received: by mail-qk1-x747.google.com with SMTP id u5sf5271951qkj.10
+        for <lists+usb-storage@lfdr.de>; Sun, 07 Mar 2021 07:52:39 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1615132358; cv=pass;
         d=google.com; s=arc-20160816;
-        b=fxmnVu4u4Pva+lt8KPwbfvC1OKXKsDXJcFx07hbphzlXZnJmadIAanrAMckE4bU9R0
-         +UG0qkayA0KcFhpdoQqO0vv8ADUBnhRd+R85+tczMJ8fW+WO1vTK98AJYa15QqbppJNe
-         U6Lsuk6OnfCbClSrse9QEbaf9aPo4423qnUlb2unVIBwYAWTm8y+meUQ4DgrDzKnMfbS
-         TD/iQy9VDnZ9vmeTfGRD3EXbzzCV99rBfv1W1mhbBP5Nyk+4Br6iVoJLt4fOtavZss/7
-         9uwwYiz43XrRTuGkXOmDL4UDiOR6NQAPkBV537gtMSodQfuzig2pLKXOFpS0YOU5jocm
-         UZWg==
+        b=sOfxXO27NEYbi2moBHqFY+9Uk5Em4hT5OTjBjeCJQuOvLhqrtUmhwyKlcD6isUznXT
+         BYMHYlzqp+vozAH2nzV37Efkp5pbzLxbkc5mrc858Smv3AwnLk3UKP8d4e8NllFjm1Qm
+         7kftKg/l0tUhALq/An6KW5j8kuWLj5vtsY0ih7cVhUaycDR+DkgrYaZxOERXWL4NodYL
+         MQ6aCl7pOnv101wLfeZyPwKZJmMzw2WdyIKzvVBkhgWKoEr2uIev5OqY0sjv8GZyDU6L
+         gs9rUYqXF4/yfda6s8VytVd/wcXTf86+Shwr2bZ5TlZjadONQfScj1Y4Z/P9F6NvekGX
+         MiGQ==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:content-language:in-reply-to
-         :mime-version:user-agent:date:message-id:references:cc:to:subject
-         :from:sender:dkim-signature;
-        bh=79VNMx5q5jUrtf8MgdsdBkdCUjMFSvM8+K/AiANrWHQ=;
-        b=aoaorjwKHZPbVn4TXbS5b1zsbfgwba4TOXGhlS5P+og9Rb+Aj1LikzlPQzFOdTNTHS
-         6QPBe9kTN4ue3tTRNpDRqzlBrgAckx5GNd8gjhrbfvRM8dJNifPEf8KdTqcTTKVm6e6/
-         eE0ZSvM+YIs3dBH3uFZna5WkOXrMJzsYSv5VfFPwmNsf0dzLn7DBEqCgtfAXi+RbmiCj
-         FVlqCxc9Hg8Uj6ahcA3RTXen3j8ffR9wgoyKpbj5zx/fw3Cur3EC2ldItcJKhnlUzfH/
-         8OehM/uSz3gzT3BygErvIAbnBAOOL0F922cebsUH7dx8qiPYxWgF0TwXRR8nHT3R9VB5
-         dlHg==
+         :list-id:mailing-list:precedence:user-agent:in-reply-to
+         :content-disposition:mime-version:references:message-id:subject:cc
+         :to:from:date:sender:dkim-signature;
+        bh=0XJ9Qu9mluUuYSFneXyXyP0VuL+IjtM+yh9Z5Prn61I=;
+        b=nm4cima/qCprs4ch/jJaydaEtGDkp1TxTm6XhrpKMhSWcU5SujZW2yUWmmDCyaVGbh
+         DqdRByCifKoLR++t3bLIPnCJZWwHvR9eAkvZaiNYBu9rzNzvBEspJn7V1HviIpKC78ul
+         c/YYJ9szL0OVBMQuzWrspzJYFx0WTwPOAs7cwr8kHIhl1guuZ11X1UCFS8VIYEMyEM4x
+         C5CqRGsTM9ICTn2J8U6CYuucya+73o5beNNE92ewnhLXU/dsMVFWGCqxD71yC37HDohk
+         3aUAYZnCUJ3NkW5tR3gue9I+X4VTlTyJ5onJ3WSkj3pfmwB46UHcPgocYa1rE3gLVvoM
+         kz2g==
 ARC-Authentication-Results: i=2; mx.google.com;
-       spf=pass (google.com: domain of zzam@gentoo.org designates 140.211.166.183 as permitted sender) smtp.mailfrom=zzam@gentoo.org;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=gentoo.org
+       spf=pass (google.com: domain of stern+605a82f6@netrider.rowland.org designates 192.131.102.5 as permitted sender) smtp.mailfrom=stern+605a82f6@netrider.rowland.org
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
-        h=sender:from:subject:to:cc:references:message-id:date:user-agent
-         :mime-version:in-reply-to:content-language:x-original-sender
+        h=sender:date:from:to:cc:subject:message-id:references:mime-version
+         :content-disposition:in-reply-to:user-agent:x-original-sender
          :x-original-authentication-results:precedence:mailing-list:list-id
          :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
-        bh=79VNMx5q5jUrtf8MgdsdBkdCUjMFSvM8+K/AiANrWHQ=;
-        b=j01q3QztvtGWfBxPbI85uJyKhn6PPIKQbGTF02OIYqKzSb/MeieEtf4crzo1FOPofL
-         gSKaoG17ORiRA1rt6AZVO9MVecPvCsB3GRvxgY9EEuPratTDVfM+cclTMn/sSye4/5ug
-         vlQSGffLLISRanv/IGS//GRVD7xRCHe2OBpUw=
+        bh=0XJ9Qu9mluUuYSFneXyXyP0VuL+IjtM+yh9Z5Prn61I=;
+        b=f3QpacB9945Ax4062Rh/hEk3MstY02JEXoDe4pKA3z9l7V8+tKQ07RMzq9p1biPeWO
+         6V1+c2KwLNsKdyW9ASSV3XZV6aCqcBE22xSO+RlOodhm3ORJNyDuIS9IekdqX/wQ9fQH
+         LJa7X9L+wcoc3RavkHccpjD0eTBMUusIbaXdY=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
-        h=sender:x-gm-message-state:from:subject:to:cc:references:message-id
-         :date:user-agent:mime-version:in-reply-to:content-language
+        h=sender:x-gm-message-state:date:from:to:cc:subject:message-id
+         :references:mime-version:content-disposition:in-reply-to:user-agent
          :x-original-sender:x-original-authentication-results:precedence
          :mailing-list:list-id:x-spam-checked-in-group:list-post:list-help
          :list-archive:list-subscribe:list-unsubscribe;
-        bh=79VNMx5q5jUrtf8MgdsdBkdCUjMFSvM8+K/AiANrWHQ=;
-        b=KlK26m2RsnvS8ONS6+eGaV3Y9kmwvqKRF2bdsqgUd86L+7mu9Kp7jO/q/owIVgTw9U
-         CuznVQ483UVh4U+jW6ifuehK0CdKGEv5FXjnMwviNzsDizT3evSGiZuIaOLwto341naA
-         nFoK0BvwqYTNBpa7mvZgoHfX9pl02pDUxKsbA0xBKvQgb9Tnr4pHeqbO6QX0x2+DqMdH
-         m34bPXzQg4gtCwkXqWTl7PpLwIsozQIdhL0vG/X74xwcmUaIHHztHQ0c9ZJyhyHoVkrj
-         4oYlKJHc6G853JyDVYVXsM3ocqnHoh6PVmK66/Yo562/T8dwsHtItaoJM/2b1FupV7yS
-         4NPA==
+        bh=0XJ9Qu9mluUuYSFneXyXyP0VuL+IjtM+yh9Z5Prn61I=;
+        b=ty8LgYi33tggWTZq/ewASK1CUlg593C+ijqhTSaaTGA35QKVbDasLkW7vVrIr8pqkf
+         t3nOHzGGWaVWDgaSrDxoGmgWk5mJ4DNZ8avDOiY0AwZBz6L1CxKsAdGpVoZNkYOBE28Z
+         Qt3MATwQ/qBt9izLS2Y28vH4GAa/0y0PqPQgpGp7HAtGlp0iUcLyFKeEXC06aXgxIGE/
+         hctUQst2WW+R3DgUYIQMxK4kXWzawl+K2WIvn+hbg+P23Ie9xiyiVNrG7M4B06Gp0US1
+         k0153RZWxeAf/9765Ki0n4f9cSlZftWzy/myjUKxsnUclXGFs8SLKk0Jgu178Gj5HeSg
+         CEWw==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: AOAM531OYK/FGzdrokVz0Z2eXry23Yp+exWbrhm2uNF95PxBFlOooOZq
-	c/NYtFlJvXLSGIwV2V/4jSSHWA==
-X-Google-Smtp-Source: ABdhPJxvhNDkUEm2m7P1Pj+w5Mt8Fqp+iEyqphMXrbKn8K25rtpdSNwSwg/QvETmEnFJvijaQ1IP8w==
-X-Received: by 2002:a63:c10:: with SMTP id b16mr16150573pgl.326.1615096696722;
-        Sat, 06 Mar 2021 21:58:16 -0800 (PST)
+X-Gm-Message-State: AOAM531SqT67lez5ppUcE04Vo9rgHQXdT0J7jFbZTmrDCpQ6qYQIHNqc
+	2YIhHaAI/AfvIG3xSo3uxveejg==
+X-Google-Smtp-Source: ABdhPJzTGMfDCBDfqd8mPtsgDN0k1qI1j7NFBnHJOWwCleEusb8Q/I9YlC6K6OPfALGpNA/08zP8yw==
+X-Received: by 2002:ac8:3a67:: with SMTP id w94mr6340052qte.31.1615132357832;
+        Sun, 07 Mar 2021 07:52:37 -0800 (PST)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a17:90a:1382:: with SMTP id i2ls7835755pja.1.canary-gmail;
- Sat, 06 Mar 2021 21:58:16 -0800 (PST)
-X-Received: by 2002:a17:902:108:b029:e4:9e1b:b976 with SMTP id 8-20020a1709020108b02900e49e1bb976mr15602706plb.67.1615096695874;
-        Sat, 06 Mar 2021 21:58:15 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1615096695; cv=none;
+Received: by 2002:a05:6214:2a48:: with SMTP id jf8ls3747743qvb.6.gmail; Sun,
+ 07 Mar 2021 07:52:37 -0800 (PST)
+X-Received: by 2002:a0c:ea4b:: with SMTP id u11mr17057753qvp.43.1615132357171;
+        Sun, 07 Mar 2021 07:52:37 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1615132357; cv=none;
         d=google.com; s=arc-20160816;
-        b=PU5cmhRDk7a2fIV3F1j078hDNj062d+r5z9oIAXc/ZsfNOXw7FXpi9zVVwYqbJSw01
-         19s1uAgxnbCpOSVhPxAyKwYYeCvOZRwF6g88OzR2d/UISAGKx00vvHN2XKdCsk8qsPKH
-         fcaBYi4en7/AIRAwGpVNyqg8uNLDcCz3TnIjYPuTfTzeo8iFYLST3RhYnPWPZsBcX8b0
-         a0iLQCu+dNb5eq5elSvW5OzRQH5tD0Cd5aZI2ExjiiKK9A8S3jghHldW8bKB7rMeLhMk
-         oVbx0VIYsVL3oSDRRiNdSZlZ4+EVLtm2P1Zql1OdzexU6MfdAas9bRlYnDgdxvvBdzWv
-         UWGg==
+        b=XeRI7yKYHPwrY279sQCPi3ywDRSuqnOUGOwAs95hY+ZCaAQHWqNWCdkQmNCufVQrS0
+         cULlJC1l6pCBTnRDyvYM8hHIdVe0xpH41qaYaW0VorZNGNa2WIdB7TxXU5POTC6OOEES
+         Z33S2Av6tLF12dBU6oX2VpkmlASoLKqFe+Z+g7Wji8z0R6pKAHuesr5EBOfYHOBgF/Oh
+         AtkL2nZJ4cNmz24Y6INKiDtC9O5NuX6nXTNMzKIPiC3fA7h2TUX4hwf8VvwHarry/TCK
+         oFYvc/M9s8tApUo74A2Nc/21nE7S/bJ8T3pH187/IBx1c9DAWTV/Ne29+kUUZg6uB0/y
+         0gOw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=content-transfer-encoding:content-language:in-reply-to:mime-version
-         :user-agent:date:message-id:references:cc:to:subject:from;
-        bh=wmEnRqgUOPASBVMlPTUnpWrmHQ42bzB4SNTfllMIQaI=;
-        b=EzZFkc5AuFVdwiBCXM3DV0+jstXdzW5ljkAW80PTech3fk98MgW4EL6gV0WXeXiU7f
-         AzSji6AXwBPt0NgFrRR956wWTnAGW7jJFSLQh4K8ulo/kc5TaBfVx81Vko9DwhVjBDkV
-         LiSE7k/PfFiniWS4iJucBDsABKWlf/Y48OdVDvcCh8H3pki5Jgm5qU7h2SDSMEGKN0O2
-         BYZzmme3A4zcadn0vxc9ik6KYmcop9FuztNuHXveuaL0pKAlxdi/062S2IjvFI77PjoR
-         Voa5tRIxqeQSX386K86htrhiQjwn2dlS3OmqMYgbozPpHMzhHmCl9E0S+nKfgrddClO9
-         b4Sg==
+        h=user-agent:in-reply-to:content-disposition:mime-version:references
+         :message-id:subject:cc:to:from:date;
+        bh=igMjIDbJjteR8baxNwSqZyKN0Wa3kJi4QNixmKjHxwM=;
+        b=nbj5DKKZBdfloEf+Qu93L968kjWSDsPq7iHVszFDzOq8YhvyyVHkw6mPZCgI/Q6Y8g
+         OJB721xv4oWVSXQpmlhkuZy9XGV3UyzLVxxiVS1TVmJMGmu0ENxWDuLZK1lORsqqxSy9
+         I8YnFvLKj7yVcPuS/O2sPYBLovNAEOGcZJ4/bbngDFDczFKOKLVObIUja5RLaWOlYXOo
+         9kzLXAniAcoY0Wlq6EAPpw380R4vQZWsljLLOn+720V09MTbOcUqb02hCJgAvI4mIsgG
+         cK0MwE0C57Mm9CBPsjH6P0eU0Au2LNXmePJi2+uSrjkV7vBCH/r/dm3ogCgG8Ji2RQEf
+         bvCQ==
 ARC-Authentication-Results: i=1; mx.google.com;
-       spf=pass (google.com: domain of zzam@gentoo.org designates 140.211.166.183 as permitted sender) smtp.mailfrom=zzam@gentoo.org;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=gentoo.org
-Received: from smtp.gentoo.org (smtp.gentoo.org. [140.211.166.183])
-        by mx.google.com with ESMTPS id 30si7965292pld.184.2021.03.06.21.58.15
-        for <usb-storage@lists.one-eyed-alien.net>
-        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
-        Sat, 06 Mar 2021 21:58:15 -0800 (PST)
-Received-SPF: pass (google.com: domain of zzam@gentoo.org designates 140.211.166.183 as permitted sender) client-ip=140.211.166.183;
-From: Matthias Schwarzott <zzam@gentoo.org>
-Subject: [usb-storage] Re: Amazon Kindle disconnect after Synchronize Cache
-To: Alan Stern <stern@rowland.harvard.edu>
+       spf=pass (google.com: domain of stern+605a82f6@netrider.rowland.org designates 192.131.102.5 as permitted sender) smtp.mailfrom=stern+605a82f6@netrider.rowland.org
+Received: from netrider.rowland.org (netrider.rowland.org. [192.131.102.5])
+        by mx.google.com with SMTP id e17si4681299qto.42.2021.03.07.07.52.37
+        for <usb-storage@lists.one-eyed-alien.net>;
+        Sun, 07 Mar 2021 07:52:37 -0800 (PST)
+Received-SPF: pass (google.com: domain of stern+605a82f6@netrider.rowland.org designates 192.131.102.5 as permitted sender) client-ip=192.131.102.5;
+Received: (qmail 104104 invoked by uid 1000); 7 Mar 2021 10:52:36 -0500
+Date: Sun, 7 Mar 2021 10:52:36 -0500
+From: Alan Stern <stern@rowland.harvard.edu>
+To: Matthias Schwarzott <zzam@gentoo.org>
 Cc: linux-usb@vger.kernel.org, usb-storage@lists.one-eyed-alien.net,
- hirofumi@mail.parknet.co.jp
+  hirofumi@mail.parknet.co.jp
+Subject: [usb-storage] Re: Amazon Kindle disconnect after Synchronize Cache
+Message-ID: <20210307155236.GB103559@rowland.harvard.edu>
 References: <9f57532f-1fb7-0fdd-b91c-2dfecef5aff3@gentoo.org>
  <20210305191437.GC48113@rowland.harvard.edu>
-Message-ID: <2a1f6636-6b57-ccc5-76b3-7eae5e80e7d3@gentoo.org>
-Date: Sun, 7 Mar 2021 06:58:10 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
- Thunderbird/78.8.0
+ <2a1f6636-6b57-ccc5-76b3-7eae5e80e7d3@gentoo.org>
 MIME-Version: 1.0
-In-Reply-To: <20210305191437.GC48113@rowland.harvard.edu>
-Content-Type: text/plain; charset="UTF-8"; format=flowed
-Content-Language: en-GB
-X-Original-Sender: zzam@gentoo.org
+Content-Type: text/plain; charset="UTF-8"
+Content-Disposition: inline
+In-Reply-To: <2a1f6636-6b57-ccc5-76b3-7eae5e80e7d3@gentoo.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Original-Sender: stern@rowland.harvard.edu
 X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
- domain of zzam@gentoo.org designates 140.211.166.183 as permitted sender)
- smtp.mailfrom=zzam@gentoo.org;       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=gentoo.org
+ domain of stern+605a82f6@netrider.rowland.org designates 192.131.102.5 as
+ permitted sender) smtp.mailfrom=stern+605a82f6@netrider.rowland.org
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -125,139 +123,68 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-Am 05.03.21 um 20:14 schrieb Alan Stern:
-> On Fri, Mar 05, 2021 at 05:54:43PM +0100, Matthias Schwarzott wrote:
->> One major difference I noticed looking at service answer time statistics:
->> Windows sends a lot more requests of type "Test Unit Ready".
->> * Windows: 6385 calls
->> * linux: 71 calls
+On Sun, Mar 07, 2021 at 06:58:10AM +0100, Matthias Schwarzott wrote:
+> Am 05.03.21 um 20:14 schrieb Alan Stern:
+> > On Fri, Mar 05, 2021 at 05:54:43PM +0100, Matthias Schwarzott wrote:
+> > > One major difference I noticed looking at service answer time statistics:
+> > > Windows sends a lot more requests of type "Test Unit Ready".
+> > > * Windows: 6385 calls
+> > > * linux: 71 calls
+> > 
+> > It's generally well known that Windows issues lots and lots of redundant
+> > commands to USB storage drives.
+> > 
+> > 
+> > Unless the Kindle advertises removable media, there doesn't seem to be
+> > any real point to all those TEST UNIT READY commands.  Unless they are
+> > what prevents the disconnections...
+> > 
+> This is kernel log from connecting:
+> [41709.248006] usb 3-4: new high-speed USB device number 6 using xhci_hcd
+> [41709.380015] usb 3-4: New USB device found, idVendor=1949, idProduct=0004,
+> bcdDevice= 1.00
+> [41709.380019] usb 3-4: New USB device strings: Mfr=1, Product=2,
+> SerialNumber=3
+> [41709.380021] usb 3-4: Product: Amazon Kindle
+> [41709.380022] usb 3-4: Manufacturer: Amazon
+> [41709.380023] usb 3-4: SerialNumber: REMOVED
+> [41709.493988] usb-storage 3-4:1.0: USB Mass Storage device detected
+> [41709.494080] scsi host6: usb-storage 3-4:1.0
+> [41710.510122] scsi 6:0:0:0: Direct-Access     Kindle   Internal Storage
+> 0100 PQ: 0 ANSI: 2
+> [41710.510245] sd 6:0:0:0: Attached scsi generic sg3 type 0
+> [41710.513059] sd 6:0:0:0: Power-on or device reset occurred
+> [41710.526331] sd 6:0:0:0: [sdc] Attached SCSI removable disk
+> [41712.629152] sd 6:0:0:0: [sdc] 6688768 512-byte logical blocks: (3.42
+> GB/3.19 GiB)
+> [41712.846353] sd 6:0:0:0: [sdc] Write cache: enabled, read cache: enabled,
+> doesn't support DPO or FUA
+> [41712.846357] sdc: detected capacity change from 0 to 6688768
+> [41712.849499]  sdc: sdc1
 > 
-> It's generally well known that Windows issues lots and lots of redundant
-> commands to USB storage drives.
-> 
-> 
-> Unless the Kindle advertises removable media, there doesn't seem to be
-> any real point to all those TEST UNIT READY commands.  Unless they are
-> what prevents the disconnections...
-> 
-This is kernel log from connecting:
-[41709.248006] usb 3-4: new high-speed USB device number 6 using xhci_hcd
-[41709.380015] usb 3-4: New USB device found, idVendor=1949, 
-idProduct=0004, bcdDevice= 1.00
-[41709.380019] usb 3-4: New USB device strings: Mfr=1, Product=2, 
-SerialNumber=3
-[41709.380021] usb 3-4: Product: Amazon Kindle
-[41709.380022] usb 3-4: Manufacturer: Amazon
-[41709.380023] usb 3-4: SerialNumber: REMOVED
-[41709.493988] usb-storage 3-4:1.0: USB Mass Storage device detected
-[41709.494080] scsi host6: usb-storage 3-4:1.0
-[41710.510122] scsi 6:0:0:0: Direct-Access     Kindle   Internal Storage 
-0100 PQ: 0 ANSI: 2
-[41710.510245] sd 6:0:0:0: Attached scsi generic sg3 type 0
-[41710.513059] sd 6:0:0:0: Power-on or device reset occurred
-[41710.526331] sd 6:0:0:0: [sdc] Attached SCSI removable disk
-[41712.629152] sd 6:0:0:0: [sdc] 6688768 512-byte logical blocks: (3.42 
-GB/3.19 GiB)
-[41712.846353] sd 6:0:0:0: [sdc] Write cache: enabled, read cache: 
-enabled, doesn't support DPO or FUA
-[41712.846357] sdc: detected capacity change from 0 to 6688768
-[41712.849499]  sdc: sdc1
+> As it prints "Attached SCSI removable disk" the device advertises removable
+> media.
 
-As it prints "Attached SCSI removable disk" the device advertises 
-removable media.
+Yes.
 
->> How can I get further on this topic?
+> > > How can I get further on this topic?
+> > 
+> > Is runtime power management enabled?  Maybe the Kindle disconnects
+> > whenever the computer tries to suspend it.  This typically happens 2
+> > seconds after the last command was issued, which matches your
+> > observations.  If runtime PM is enabled, you can try disabling it.
+> > 
+> I assume this means autosuspend is not used:
 > 
-> Is runtime power management enabled?  Maybe the Kindle disconnects
-> whenever the computer tries to suspend it.  This typically happens 2
-> seconds after the last command was issued, which matches your
-> observations.  If runtime PM is enabled, you can try disabling it.
-> 
-I assume this means autosuspend is not used:
+> # cat /sys/block/sde/device/power/control
+> on
 
-# cat /sys/block/sde/device/power/control
-on
+This means autosuspend isn't used for the sde drive.  But the log 
+extract above shows that the Kindle is sdc, not sde.
 
-# lsusb:
-[...]
-Bus 003 Device 017: ID 1949:0004 Lab126, Inc. Amazon Kindle 3/4/Paperwhite
-Device Descriptor:
-   bLength                18
-   bDescriptorType         1
-   bcdUSB               2.00
-   bDeviceClass            0
-   bDeviceSubClass         0
-   bDeviceProtocol         0
-   bMaxPacketSize0        64
-   idVendor           0x1949 Lab126, Inc.
-   idProduct          0x0004 Amazon Kindle 3/4/Paperwhite
-   bcdDevice            1.00
-   iManufacturer           1 Amazon
-   iProduct                2 Amazon Kindle
-   iSerial                 3 REMOVED....
-   bNumConfigurations      1
-OTG Descriptor:
-   bLength                 3
-   bDescriptorType         9
-   bmAttributes         0x03
-     SRP (Session Request Protocol)
-     HNP (Host Negotiation Protocol)
-   Configuration Descriptor:
-     bLength                 9
-     bDescriptorType         2
-     wTotalLength       0x0023
-     bNumInterfaces          1
-     bConfigurationValue     1
-     iConfiguration          4 Self-powered
-     bmAttributes         0xc0
-       Self Powered
-     MaxPower                2mA
-     Interface Descriptor:
-       bLength                 9
-       bDescriptorType         4
-       bInterfaceNumber        0
-       bAlternateSetting       0
-       bNumEndpoints           2
-       bInterfaceClass         8 Mass Storage
-       bInterfaceSubClass      6 SCSI
-       bInterfaceProtocol     80 Bulk-Only
-       iInterface              5 Mass Storage
-       Endpoint Descriptor:
-         bLength                 7
-         bDescriptorType         5
-         bEndpointAddress     0x81  EP 1 IN
-         bmAttributes            2
-           Transfer Type            Bulk
-           Synch Type               None
-           Usage Type               Data
-         wMaxPacketSize     0x0200  1x 512 bytes
-         bInterval               0
-       Endpoint Descriptor:
-         bLength                 7
-         bDescriptorType         5
-         bEndpointAddress     0x01  EP 1 OUT
-         bmAttributes            2
-           Transfer Type            Bulk
-           Synch Type               None
-           Usage Type               Data
-         wMaxPacketSize     0x0200  1x 512 bytes
-         bInterval               1
-Device Qualifier (for other device speed):
-   bLength                10
-   bDescriptorType         6
-   bcdUSB               2.00
-   bDeviceClass            0
-   bDeviceSubClass         0
-   bDeviceProtocol         0
-   bMaxPacketSize0        64
-   bNumConfigurations      1
-Device Status:     0x0001
-   Self Powered
-
-Regards
-Matthias
+Alan Stern
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/2a1f6636-6b57-ccc5-76b3-7eae5e80e7d3%40gentoo.org.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20210307155236.GB103559%40rowland.harvard.edu.
