@@ -1,101 +1,101 @@
-Return-Path: <usb-storage+bncBDNM5HFD6YCBB2XEUSBAMGQEFO2G7VA@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBD6LRVPZ6YGRBSP4USBAMGQE4WMMMUY@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-pf1-x448.google.com (mail-pf1-x448.google.com [IPv6:2607:f8b0:4864:20::448])
-	by mail.lfdr.de (Postfix) with ESMTPS id 67D94334934
-	for <lists+usb-storage@lfdr.de>; Wed, 10 Mar 2021 21:56:12 +0100 (CET)
-Received: by mail-pf1-x448.google.com with SMTP id k10sf8904536pfp.15
-        for <lists+usb-storage@lfdr.de>; Wed, 10 Mar 2021 12:56:12 -0800 (PST)
-ARC-Seal: i=2; a=rsa-sha256; t=1615409770; cv=pass;
+Received: from mail-qt1-x846.google.com (mail-qt1-x846.google.com [IPv6:2607:f8b0:4864:20::846])
+	by mail.lfdr.de (Postfix) with ESMTPS id B3138334A04
+	for <lists+usb-storage@lfdr.de>; Wed, 10 Mar 2021 22:46:50 +0100 (CET)
+Received: by mail-qt1-x846.google.com with SMTP id v19sf14002558qtw.19
+        for <lists+usb-storage@lfdr.de>; Wed, 10 Mar 2021 13:46:50 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1615412809; cv=pass;
         d=google.com; s=arc-20160816;
-        b=pc0vlJLhtw0J6FLDK3MEXxD8LQjE69JHGXkhIlxWaMER1DJ8ALjsqmVUmOXq3/eVxG
-         UWNOxPeK2XrHcoRTiv38Vvb8vCSso0swQMUH5KpLD3KztNP2MiUbsof95MzV9p1Xphi8
-         XwVrmydDp9Z+upwCcF3aApOY7gjbfcRgXcfGUdyxBf7ybmNY4+FF9ds7ruddnGSa1y9Y
-         d+3H73m1ZyRXBP5RUnWCmqLNgu03MW9kD8SLxxyfEbnMTmVqgo3vryzvTGk3PFMHtgw3
-         j9Pt5n7Y94rBMiLwX1ll5TUC9mjBl0lfDyteTy2xNJlfH3y2IKIgjl03DKp39mdJTI15
-         FvIA==
+        b=TygKFBdj8SOSlVCD0wj2KaOa9Z14XrwG3drhSoCba4MCsNzgd5s+kVsOFrtME3Ndod
+         fwVKuNsyMm1EWcwQ4pgyxHkThb4l73Nc3s98oVcFR0KB6sUayE4iCegtjql1RRWbjO1h
+         px8hIgfOelNcfPXYf6MnoRTAnsQ3Ij6RGBafogNfkPRVGPVE4Z82DMGdjtp+xZgkre4a
+         qICqjHsTkh0yAj6nXATEjdtIwcdAbM4L6y2pJMBSbHGSMdnsAszPwpK4kQFvpE8sWu/s
+         GovbeGKxNuCmFJZ3vmafL3uU1TjMiC4LWO9tdoS6CzU065eGlOidWk+fyE+DZU8wjB3C
+         4Uaw==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:content-language:in-reply-to
-         :mime-version:user-agent:date:message-id:references:cc:to:subject
-         :from:sender:dkim-signature;
-        bh=lrL+AQETiiAnS03s5CEgVAXR5keb4Cn4DWTF9vWCoJI=;
-        b=XtToy5i87w/dXQJtKEu6YjqJjyRAEx52i2J9lB56xG2wakG+YotIGMtsKFhHN8Vn+A
-         94XWSNKMPCLPWnPWJN+1GHl59Ex2uztyrlaSb9U7rcI3L+byShZnewgB3/+GazPDJxOR
-         2EP2bpArBqBKjKSAZxZjBl1WEUPNyJ9fS/pl3sDN3GlX/ysNb3qtDcYE66NdaKwFkLGD
-         0yHWftBRIhvjrCT5DMNGIklaWydr/DMX6qF5keQvFnQ1P5m4JZ8d69yEXB14fo6ocvug
-         JZvaygaOPGvs+kxHML97fnoPuYICpS/BZc5aYNJH+TQstPJWuRjThhxnOpl9JFT6ypOO
-         d/6A==
+         :list-id:mailing-list:precedence:user-agent:in-reply-to
+         :content-disposition:mime-version:references:message-id:subject:cc
+         :to:from:date:sender:dkim-signature;
+        bh=9dlDbFK0b17NbHhpy8GWQTtv0nYX8zGqjHev8Q8ZLE4=;
+        b=Hm36H20EB2PP7QwPZjTPUsrqRxVH64KjUGf4i01/KoOltGZ24v+wvK0vRg29lWQ7N8
+         pd7bUcO4HbZ79KIFvxTXZkm77r5sFeLKMQk1/0ZITUj/yNnKMBqnv9kAtFLSzzAXbbHz
+         gw+fSqIFR2FBikfF8PEPrh4njum1UJ/9tQHuHgIWVTSvW6alqCPF3blMo0gCYIiPzyj0
+         hTdL/zzlnX1VSqz+HvW797cgVp0ToTNxNfLuV2LjEddGJ8NKDnrAbodAc5I9dv9oxPfx
+         tFi+o1AUA6In6ntec18SvpfOquQQvmZdY6YAE+gSpcw1LuUx98YUbourt8TQCUe984bG
+         Wmyw==
 ARC-Authentication-Results: i=2; mx.google.com;
-       spf=pass (google.com: domain of zzam@gentoo.org designates 140.211.166.183 as permitted sender) smtp.mailfrom=zzam@gentoo.org;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=gentoo.org
+       spf=pass (google.com: domain of stern+605a82f6@netrider.rowland.org designates 192.131.102.5 as permitted sender) smtp.mailfrom=stern+605a82f6@netrider.rowland.org
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
-        h=sender:from:subject:to:cc:references:message-id:date:user-agent
-         :mime-version:in-reply-to:content-language:x-original-sender
+        h=sender:date:from:to:cc:subject:message-id:references:mime-version
+         :content-disposition:in-reply-to:user-agent:x-original-sender
          :x-original-authentication-results:precedence:mailing-list:list-id
          :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
-        bh=lrL+AQETiiAnS03s5CEgVAXR5keb4Cn4DWTF9vWCoJI=;
-        b=VJAdSGEXkR78/81fLMK+y7W9Jp4CPQT7/a2tb2o0q4ceNcvdJ4uu1+Rfszlrbj9QTU
-         prYiYE638CH5Ba7HHGli+pcLCd4gwNDGzLx28VWLih45gkC7zwaS1ojyMGZzFud8SL/J
-         lCndD/oolCeZReSKFG2Qk7r5ugXfSCr+0wOsQ=
+        bh=9dlDbFK0b17NbHhpy8GWQTtv0nYX8zGqjHev8Q8ZLE4=;
+        b=DpzhDLLCdHZvozHaXX6LyP0GWmw/cmh7O/v60Z6BGAlu/cUOBPR43sZ4Yh++VjXUMF
+         P9UTM/6zuwn+RirxrcHubiPTTKt309z7s3xy3buu532T/5r1j/ndx4BQDWicMCo+724o
+         6mJlpkd3aCptcY//yCLCc1evvRyYmUM3ZKatg=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
-        h=sender:x-gm-message-state:from:subject:to:cc:references:message-id
-         :date:user-agent:mime-version:in-reply-to:content-language
+        h=sender:x-gm-message-state:date:from:to:cc:subject:message-id
+         :references:mime-version:content-disposition:in-reply-to:user-agent
          :x-original-sender:x-original-authentication-results:precedence
          :mailing-list:list-id:x-spam-checked-in-group:list-post:list-help
          :list-archive:list-subscribe:list-unsubscribe;
-        bh=lrL+AQETiiAnS03s5CEgVAXR5keb4Cn4DWTF9vWCoJI=;
-        b=MAr1FPKehuJ6W0Wvm+n0JxGooHIPhdBI06437fOOjU+0PzwpG04MkCbFGSX4bn+ZEc
-         09OqvB2uhGvkO0sIgtd+YQQRaGQBhXM8ocdye1zrmPcbS/vIITUZ/B1HEl/5QROtlVZv
-         xryFeWiu00hgIHBmzNSTOo0A5HYETcbW9Vgz2ArngroxwR5M7uhxVZX0Oo2Z6QXjWpOq
-         OjSzOmPJPDia7kb1faFJTIZiqnn/UxzE0MS4APiQ/GlN5+yLUH+8eWp8PXY9Z/S0k3Uz
-         Rsgrr2b4b9uMMcMrg6rPKit71ShYirEuiW2gtaC5HKkgdKM8n7L4+HL/28jHnThle01V
-         aM5g==
+        bh=9dlDbFK0b17NbHhpy8GWQTtv0nYX8zGqjHev8Q8ZLE4=;
+        b=NE+oKqlOuk7aLX6C2jvbAM9JwN38Wk8/aljmvmCq08wfDt32NyIuJ5IvjO6qlJRX6B
+         5eQQtdz8O7l0l5vUqAa0aQsmlfA0fu4KCGGaIvm6eGzjEh4k5uSOMhMDYBuQuW0jF7R/
+         Sfhbuu/M2VPlSOOQD6jLYL1RyjT48sSmHEKztfDXmtmARVZ0fScfAHpSXxq54hu9sGeh
+         aVvuSY6TPvO+qAOzi5kEUElNf+uOoVQmzJbX7m3FuR5u6KZjma4hE+evbADY+Wnfsb6p
+         cxbQCY8i/lDXxVBK8oDC2WEnepOS3uXxYkvq1AeAc7t5Iz7lew8IiSKPnelHSyx/iZif
+         gBKA==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: AOAM531Co+8F1R9DYMr8p/jMGc8Q1m4wv9nrqhYFLaGRsTfa5OO9Tr0g
-	pY7f3c81tLbMdDFCUz0NWw1tJA==
-X-Google-Smtp-Source: ABdhPJwgSQFsVTwQWTacbIAe4ks0idky1ZEuH0zG+4lPQFrVH0q7M4rdganoqNkKA3wjuEYv7GW7AQ==
-X-Received: by 2002:a17:90a:2e0d:: with SMTP id q13mr5554899pjd.225.1615409770693;
-        Wed, 10 Mar 2021 12:56:10 -0800 (PST)
+X-Gm-Message-State: AOAM532+CmjaYkCEpC7SPBxAkHGkI3dngRvLYBrHm2vdQz2WROIbo9R0
+	f1Vz3qTlO5OBLaZ4bOaWIr4JDQ==
+X-Google-Smtp-Source: ABdhPJz6P7Wm74KTx91CiF9Yr808HLxjj0vVoYSSFQzr/lfpMO3xVMsePo1wAOWXSPp6sFn9Tu2FfA==
+X-Received: by 2002:a05:620a:53d:: with SMTP id h29mr4719745qkh.29.1615412809756;
+        Wed, 10 Mar 2021 13:46:49 -0800 (PST)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a65:4108:: with SMTP id w8ls1393927pgp.7.gmail; Wed, 10 Mar
- 2021 12:56:09 -0800 (PST)
-X-Received: by 2002:a63:1d1c:: with SMTP id d28mr4157188pgd.216.1615409769500;
-        Wed, 10 Mar 2021 12:56:09 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1615409769; cv=none;
+Received: by 2002:a05:620a:b19:: with SMTP id t25ls1971980qkg.1.gmail; Wed, 10
+ Mar 2021 13:46:49 -0800 (PST)
+X-Received: by 2002:a05:620a:714:: with SMTP id 20mr4887454qkc.192.1615412809194;
+        Wed, 10 Mar 2021 13:46:49 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1615412809; cv=none;
         d=google.com; s=arc-20160816;
-        b=GDeWBPGEmGIKs99aUPmDeeuFL1n5h/c0owZyt69O9WpCfJEMr9kSFRzcP+K2nNr43u
-         0l9vkBKwRcfnbteTdh2QczavrOp3yxvlVE6tT9XUSJMqLRjRjS9VvoICFnxp0/jLY2RX
-         yXrR2mvnG5OsTvAofSv1XweRRjeVBb0BRnoLixCpo7z7HM3XdyRjx/zWSvGZAe1Ng6PU
-         8JcouZv+W4qGFeyDfEfir2Jv/di7IoV8wdMsdKXNJM8IrvXUtTEzqb2HjhL+FX6RiMjd
-         jh2uQlaHCZruuIaz31fg50bKTPtzDugjnlOMKIo0sZBaZU+Kw32ccnazugSIRhBngfxY
-         QzkA==
+        b=qIXvKD/hTmLimc79nT3OXFfGNaxdO42DXSHWdX8sj03dMdgA83JVKxzUN8/YgJzdzy
+         KLFejfyA8M8fHTxlA5d4faY6LoDhDrqbvV0HHm0t3bXbTOg+HRNXWBxScGJMrmslo9Ae
+         8ZWe7tqLTuxDv1wWDlJ2veALYkCjsBwdI5mvVHp0sF0ap15ZgNKjhGauI1GIEPdCGMc3
+         hk9ByYArCjPUcqJh1huHOgj09/LtOmqKJV42xFEUWzKjxhiH+nDcUZoX78HC2NoU7AxL
+         RURwPU0ZqJW8LrtLA2n89hxbuDgOAHqHifuSh75RzAkGC8nXxItok/5qOyKJCE0xopem
+         ru9g==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=content-transfer-encoding:content-language:in-reply-to:mime-version
-         :user-agent:date:message-id:references:cc:to:subject:from;
-        bh=vXpMxdNKL/25Af49MoEOXFaWaOdKlZdOw/YJVtAdqmE=;
-        b=jAPeL5cL3tl/7C/RtDQdayLLek9j+5NQkyR1enn9nljiynsh6ODrMyibKQwHdtRIVy
-         K3nPjk+Q6pTd2yqnnUoRSmyYBy4w9Gk3C3JpmTn99GLEDHgdm6I110lqBain3k3Yz9dV
-         mvfzocTNrRwaf8kn8QVKqX+OlYmi6GTGujqZVliqE6Cghg/+kCxRrO0YgSSFHnKFZQjf
-         Xo61XTx1uZm/tQB+yPB6zB95IusX/+rDSdpocyoGkIVN8C8FqlWA8i5TlTIPxn7yXH8F
-         Xuj9p71R6ktzOOmTPchRQvQcYjFP0OKVOu89t7PS1fTn5TjK5d18xqaDnso8DmPjUZPm
-         7pvg==
+        h=user-agent:in-reply-to:content-disposition:mime-version:references
+         :message-id:subject:cc:to:from:date;
+        bh=CDCqp4DKwVl5kPW0AaeM9YIZiDiapY9I/4Fssu3ibQ4=;
+        b=sXqPJp8qTC5x4VZmKF8zP7qOG9lRx8YdNJhUl9Nzky9ZNS2WcaGsy9fn4HepAebjzQ
+         4D2JCw0RSvKaHq2PNeq8Q5tu/O7+ikvRJzd3Iyth84pdyGe+U5gQ9Et7Up7tOQm6Ihip
+         03j8XLegpNSUvn7+5LO2cV7DL+pSvtlpJA+cisBtEo0qyEO9rSb+CWuExJK50xdu1Gv1
+         2bLam5kjtUDcrLfE2DoEc7bl9vb9gA6KwN6ONTVG1QyV27u92DIfK8VrBGkn3CVlfdeV
+         MwpDgpBvh8G0K4gnmZOx05I/CmBmD3ORffq0MhbY5yybvjklsYEXhroFeX0UVvRTJT6m
+         uVWg==
 ARC-Authentication-Results: i=1; mx.google.com;
-       spf=pass (google.com: domain of zzam@gentoo.org designates 140.211.166.183 as permitted sender) smtp.mailfrom=zzam@gentoo.org;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=gentoo.org
-Received: from smtp.gentoo.org (smtp.gentoo.org. [140.211.166.183])
-        by mx.google.com with ESMTPS id r15si350163pjo.90.2021.03.10.12.56.09
-        for <usb-storage@lists.one-eyed-alien.net>
-        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
-        Wed, 10 Mar 2021 12:56:09 -0800 (PST)
-Received-SPF: pass (google.com: domain of zzam@gentoo.org designates 140.211.166.183 as permitted sender) client-ip=140.211.166.183;
-From: Matthias Schwarzott <zzam@gentoo.org>
-Subject: Re: [usb-storage] Re: Amazon Kindle disconnect after Synchronize Cache
-To: Alan Stern <stern@rowland.harvard.edu>
+       spf=pass (google.com: domain of stern+605a82f6@netrider.rowland.org designates 192.131.102.5 as permitted sender) smtp.mailfrom=stern+605a82f6@netrider.rowland.org
+Received: from netrider.rowland.org (netrider.rowland.org. [192.131.102.5])
+        by mx.google.com with SMTP id g22si424522qtx.332.2021.03.10.13.46.49
+        for <usb-storage@lists.one-eyed-alien.net>;
+        Wed, 10 Mar 2021 13:46:49 -0800 (PST)
+Received-SPF: pass (google.com: domain of stern+605a82f6@netrider.rowland.org designates 192.131.102.5 as permitted sender) client-ip=192.131.102.5;
+Received: (qmail 236684 invoked by uid 1000); 10 Mar 2021 16:46:48 -0500
+Date: Wed, 10 Mar 2021 16:46:48 -0500
+From: Alan Stern <stern@rowland.harvard.edu>
+To: Matthias Schwarzott <zzam@gentoo.org>
 Cc: linux-usb@vger.kernel.org, usb-storage@lists.one-eyed-alien.net,
- hirofumi@mail.parknet.co.jp
+  hirofumi@mail.parknet.co.jp
+Subject: Re: [usb-storage] Re: Amazon Kindle disconnect after Synchronize Cache
+Message-ID: <20210310214648.GA236329@rowland.harvard.edu>
 References: <9f57532f-1fb7-0fdd-b91c-2dfecef5aff3@gentoo.org>
  <20210305191437.GC48113@rowland.harvard.edu>
  <2a1f6636-6b57-ccc5-76b3-7eae5e80e7d3@gentoo.org>
@@ -104,18 +104,16 @@ References: <9f57532f-1fb7-0fdd-b91c-2dfecef5aff3@gentoo.org>
  <20210307165856.GA104554@rowland.harvard.edu>
  <268e646f-d4ea-3190-f1b9-8e69bfc1b019@gentoo.org>
  <20210309155046.GA176674@rowland.harvard.edu>
-Message-ID: <dfd2b281-3beb-9869-37b6-8bd48a6cf40f@gentoo.org>
-Date: Wed, 10 Mar 2021 21:56:04 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
- Thunderbird/78.8.0
+ <dfd2b281-3beb-9869-37b6-8bd48a6cf40f@gentoo.org>
 MIME-Version: 1.0
-In-Reply-To: <20210309155046.GA176674@rowland.harvard.edu>
-Content-Type: text/plain; charset="UTF-8"; format=flowed
-Content-Language: en-GB
-X-Original-Sender: zzam@gentoo.org
+Content-Type: text/plain; charset="UTF-8"
+Content-Disposition: inline
+In-Reply-To: <dfd2b281-3beb-9869-37b6-8bd48a6cf40f@gentoo.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Original-Sender: stern@rowland.harvard.edu
 X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
- domain of zzam@gentoo.org designates 140.211.166.183 as permitted sender)
- smtp.mailfrom=zzam@gentoo.org;       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=gentoo.org
+ domain of stern+605a82f6@netrider.rowland.org designates 192.131.102.5 as
+ permitted sender) smtp.mailfrom=stern+605a82f6@netrider.rowland.org
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -131,133 +129,26 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-Am 09.03.21 um 16:50 schrieb Alan Stern:
-> On Mon, Mar 08, 2021 at 10:59:48PM +0100, Matthias Schwarzott wrote:
->> Am 07.03.21 um 17:58 schrieb Alan Stern:
+On Wed, Mar 10, 2021 at 09:56:04PM +0100, Matthias Schwarzott wrote:
+> > What happens if you set the value to 1000 before running the test?
+> > 
+> I tested different values. At 1000 it still disconnects. At lower values it
+> no longer does this.
+> I tested 200 up to 900. Even 900 ms is good enough to keep it connected.
 > 
->>> Okay.  Can you collect a usbmon trace showing the events leading up to
->>> and including a disconnection?
->>>
->> The easiest reproducer is by calling sync while having a file/the device
->> open (and keeping it open afterwards).
->>
->> 1. I recorded usbmon trace like this:
->> # cat /sys/kernel/debug/usb/usbmon/3u >
->> /tmp/connect-python-sync-disconnect-usbmon.out
->>
->> 2. Connect Kindle device
->>
->> 3. Then trigger sync with python:
->> # python -c "import time; import os; f = open('/dev/sde', 'r+b');
->> time.sleep(1); os.fsync(f); time.sleep(5)"
->>
->> 4. After 2 seconds Kindle disconnects (does no longer show USB-Mode screen).
->>
->> 5. Ctrl+c the recording
->>
->> When the final sleep in the python-command is missing, the Kindle does not
->> disconnect.
->>
->>> Alan Stern
->>>
->>> PS: I suspect the SYNCHRONIZE CACHE commands are correlated with the
->>> disconnections but don't cause them.  That is, I suspect the
->>> disconnections happen when the device has been idle -- and generally the
->>> host computer sends a SYNCHRONIZE CACHE command before idling a
->>> removable drive.
->>>
->>
->> I cannot read the usbmon trace, but wireshark displayed a command "SCSI:
->> Prevent/Allow Medium Removal LUN: 0x00  ALLOW" when closing the file.
->> So I suspect this command also counts as activity (!idle).
+> Btw. it is not a USB disconnect, but it just seems to plays medium ejected.
 > 
-> Here is the revelant part of the usbmon trace.  The second value on each
-> line is a timestamp in microseconds.
+> Out of interest I called "sg_start -v -l /dev/sde" after one of the failing
+> experiments. That made the Kindle go back to connected state.
 > 
->> ffff88814e50d0c0 2440334800 S Bo:3:039:1 -115 31 = 55534243 79000000 00000000 00000600 00000000 00000000 00000000 000000
->> ffff88814e50d0c0 2440334822 C Bo:3:039:1 0 31 >
->> ffff88814e50d0c0 2440334824 S Bi:3:039:1 -115 13 <
->> ffff88814e50d0c0 2440334909 C Bi:3:039:1 0 13 = 55534253 79000000 00000000 00
-> 
-> That is a TEST UNIT READY command, showing normal status.
-> 
->> ffff88814e50d0c0 2440334922 S Bo:3:039:1 -115 31 = 55534243 7a000000 00000000 0000061e 00000001 00000000 00000000 000000
->> ffff88814e50d0c0 2440334949 C Bo:3:039:1 0 31 >
->> ffff88814e50d0c0 2440334951 S Bi:3:039:1 -115 13 <
->> ffff88814e50d0c0 2440335817 C Bi:3:039:1 0 13 = 55534253 7a000000 00000000 00
-> 
-> That is a PREVENT MEDIUM REMOVAL command, sent when the device file was
-> opened by the Python program.
-> 
->> ffff88814e50d0c0 2441336674 S Bo:3:039:1 -115 31 = 55534243 7b000000 00000000 00000a35 00000000 00000000 00000000 000000
->> ffff88814e50d0c0 2441336697 C Bo:3:039:1 0 31 >
->> ffff88814e50d0c0 2441336699 S Bi:3:039:1 -115 13 <
->> ffff88814e50d0c0 2441336911 C Bi:3:039:1 0 13 = 55534253 7b000000 00000000 00
-> 
-> That is the SYNCHRONIZE CACHE command.  Notice that the timestamp shows
-> it occurred one second after the PREVENT MEDIUM REMOVAL.
-> 
->> ffff88814e50d0c0 2442346649 S Bo:3:039:1 -115 31 = 55534243 7c000000 00000000 00000600 00000000 00000000 00000000 000000
->> ffff88814e50d0c0 2442346700 C Bo:3:039:1 0 31 >
->> ffff88814e50d0c0 2442346702 S Bi:3:039:1 -115 13 <
->> ffff88814e50d0c0 2442346799 C Bi:3:039:1 0 13 = 55534253 7c000000 00000000 00
-> 
-> One second later, a normal TEST UNIT READY.
-> 
->> ffff88814e50d0c0 2444394684 S Bo:3:039:1 -115 31 = 55534243 7d000000 00000000 00000600 00000000 00000000 00000000 000000
->> ffff88814e50d0c0 2444394713 C Bo:3:039:1 0 31 >
->> ffff88814e50d0c0 2444394720 S Bi:3:039:1 -115 13 <
->> ffff88814e50d0c0 2444394804 C Bi:3:039:1 0 13 = 55534253 7d000000 00000000 01
->> ffff88814e50d0c0 2444394821 S Bo:3:039:1 -115 31 = 55534243 7e000000 12000000 80000603 00000012 00000000 00000000 000000
->> ffff88814e50d0c0 2444394866 C Bo:3:039:1 0 31 >
->> ffff88822c917540 2444394928 S Bi:3:039:1 -115 18 <
->> ffff88822c917540 2444395673 C Bi:3:039:1 0 18 = 70000200 0000000a 00000000 3a000000 0000
->> ffff88814e50d0c0 2444395696 S Bi:3:039:1 -115 13 <
->> ffff88814e50d0c0 2444395723 C Bi:3:039:1 0 13 = 55534253 7e000000 00000000 00
-> 
-> Two seconds later, another TEST UNIT READY.  This one returned a failure
-> status, with an error code saying that the medium is not present (in
-> spite of the fact that medium removal was supposed to be prevented).
-> 
-> The usbmon trace contains six more TEST UNIT READY commands, sent in
-> quick succession, all getting the same failure result.  Notably, it does
-> not show any sort of disconnection.  The final timestamp in the trace is
-> 2446328158, which is just five seconds after the SYNCHRONIZE CACHE
-> command was sent -- there's no way to tell if anything happened after
-> that.
-> 
-> Maybe there's something else going on under Windows that we're not aware
-> of.  The only significant different I can see between this trace and the
-> short Windows trace in your original email is the time interval between
-> TEST UNIT READY commands; here it is two seconds but with Windows it was
-> one second.  You can change the interval by writing to
-> 
-> 	/sys/block/sde/events_poll_msecs
-> 
-> What happens if you set the value to 1000 before running the test?
-> 
-I tested different values. At 1000 it still disconnects. At lower values 
-it no longer does this.
-I tested 200 up to 900. Even 900 ms is good enough to keep it connected.
+> To me the above experiments show that enough TEST UNIT READY commands are
+> needed in the 2 s after a SYNCHRONIZE CACHE.
 
-Btw. it is not a USB disconnect, but it just seems to plays medium ejected.
+So you have found the solution to your problem.  Congratulations!
 
-Out of interest I called "sg_start -v -l /dev/sde" after one of the 
-failing experiments. That made the Kindle go back to connected state.
-
-To me the above experiments show that enough TEST UNIT READY commands 
-are needed in the 2 s after a SYNCHRONIZE CACHE.
-
-> Also, the usbmon trace shows that my guess about power management and
-> device disconnections was completely wrong.  The bus does not get
-> suspended and the Kindle does not disconnect, even though it seems to
-> become unusable.
-> 
-
-Regards
-Matthias
+Alan Stern
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/dfd2b281-3beb-9869-37b6-8bd48a6cf40f%40gentoo.org.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20210310214648.GA236329%40rowland.harvard.edu.
