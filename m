@@ -1,127 +1,126 @@
-Return-Path: <usb-storage+bncBDBMLTW6VQDRBP5PSWCAMGQEWYKISVI@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBCUJ7YGL3QFBBXVTSWCAMGQEEH6AKGA@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-wr1-x446.google.com (mail-wr1-x446.google.com [IPv6:2a00:1450:4864:20::446])
-	by mail.lfdr.de (Postfix) with ESMTPS id D696536A6ED
-	for <lists+usb-storage@lfdr.de>; Sun, 25 Apr 2021 13:51:27 +0200 (CEST)
-Received: by mail-wr1-x446.google.com with SMTP id j4-20020adfe5040000b0290102bb319b87sf17440514wrm.23
-        for <lists+usb-storage@lfdr.de>; Sun, 25 Apr 2021 04:51:27 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1619351487; cv=pass;
+Received: from mail-pj1-x1045.google.com (mail-pj1-x1045.google.com [IPv6:2607:f8b0:4864:20::1045])
+	by mail.lfdr.de (Postfix) with ESMTPS id D565B36A6FE
+	for <lists+usb-storage@lfdr.de>; Sun, 25 Apr 2021 14:00:31 +0200 (CEST)
+Received: by mail-pj1-x1045.google.com with SMTP id oa1-20020a17090b1bc1b02901507fafb74fsf4986471pjb.7
+        for <lists+usb-storage@lfdr.de>; Sun, 25 Apr 2021 05:00:31 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1619352030; cv=pass;
         d=google.com; s=arc-20160816;
-        b=J/I0l6yyZH67BDTDkX4ejYGn3OcF9ayqkYnxN+FdLz9Nt8boZPfs6/xlg2utJArGr3
-         akJFo67W1J/IKXtVXFuSz6gsor3tx4MQoCydv+79a4pNeEh0jklY0+TwkroQIcxnVyRs
-         Qs0PWbp0K5YIj3RAnWXQ3ZK6h18ZiH/YgQ6CZ/Utlnvu7Bo0cYKvw9N0Vb57m2h0UeSQ
-         5plKZ7P8gb/UCqLujk4PHC62PNrzepufs3tOpMx0zB1Riy/wOi+EBoo9C5QWRYb/sv17
-         4kB3FhmZc0SEH4rUVGRyTaAheUdur/OyE2OIglvcQis9TNiFa+6kjNRHSQzu+Q7UJXJJ
-         mX5Q==
+        b=Is12U9HMF7YHca69xFfC/JWYH56qO5UvsNF27oXIMSzr0YEcXIEe4aBnybZZSntklR
+         qNvl9gqw4SEZYrVX+r1/PKYIllChJ6afYfhw1XhY0S17+CmPclH61kKKNRT0iV8NZnB2
+         M9HQ8d1JUyWvUhzHh7Irz4zT5Cnfh+up9fELKOxVT+PiEqJez+AOcbJbj4zMpXcAhBMs
+         8fvAE+G7De3v5K0Sy2lr03BXh6m5wUKdfSwU0iDfRrOhmHHDQz94NQ/5dC1CIJFCz5JF
+         fCIALNGhWXRXrYDwJu5t16PmwVzCJD5DdOATaCcDqUpoEo0Un5SXx5eGUjK3s/pC7n7A
+         QAnA==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:content-transfer-encoding
-         :mime-version:references:in-reply-to:from:subject:cc:to:message-id
-         :date:sender:dkim-signature;
-        bh=sU3FA3aS+7ZxiA3LVGXzAmJWvNZVIHORz9y/WS8YYks=;
-        b=FCxAYPKIW/ZPKv/CflRCkR0XJcFV0tcXQy6olq4DpDRW3xXtlHxHveY3rLxa10q2Qo
-         G6A5X1H5D5pRzVt8GpFnYkKalEUBlxA03yPqRpu47XPkvN7DP72UWM+1+L8c0eGEH14z
-         QuxHyo51/OrY/6M684gei7aj7WxRghi8RK48frQU0CGlvjSh6TE309fc3ee36dz3wSOz
-         INiqBq1AQeFdzvvFEtW0v2WvabESoYCJ9fr0GqXcoSuhFDOaTH7IdhHP55lHygvtUZ9M
-         qavmcLaVZJH8HmvDJnXc2BJV23e+gBc8VgK3to4P6B5N2KWB2Xh9+oVlaq+I84v36Q9H
-         olgg==
+         :list-id:mailing-list:precedence:in-reply-to
+         :content-transfer-encoding:content-disposition:mime-version
+         :references:message-id:subject:cc:to:from:date:sender:dkim-signature;
+        bh=fwECuUImEv2gh/+id7IC/GNT8SuLkBhngkxdq5cfbSI=;
+        b=R2aKHMt5Hva0muIXQ1JHnqv/N4gJdWVF/yd3Hq4YEVUpoHsEjnaCXXejGWKfHnwlvf
+         IadDMqNRoeKqvlzbLKU2fEnya/dQ62sIuUKLK88r8b4IRKhhx2SAokDw7OC9/URgfLzS
+         nM7ufQAEqpASnP38VTVPOzBlo12RSgEcnT5s8ZuRAJimUhWOAmw/um9V+FTn4dzI6vQl
+         ekNA6FBRLnquFYStnuJ7nyGwGL455l+pXEuUp7TDMy65NeyRQsLKHFaYUEaOpvkvw1ff
+         l17Cj6qErLdoyqRbBt50iQY/ykgs+e89YRcLoZYXR1SrJKqe2qcsL1U8kjEbMIFBQyWK
+         UQKw==
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@exactco.de header.s=x header.b=jomy+EF9;
-       spf=pass (google.com: domain of rene@exactcode.com designates 144.76.154.42 as permitted sender) smtp.mailfrom=rene@exactcode.com
+       dkim=pass header.i=@linuxfoundation.org header.s=korg header.b=vnaoHgZ1;
+       spf=pass (google.com: domain of gregkh@linuxfoundation.org designates 198.145.29.99 as permitted sender) smtp.mailfrom=gregkh@linuxfoundation.org;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=linuxfoundation.org
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
-        h=sender:date:message-id:to:cc:subject:from:in-reply-to:references
-         :mime-version:content-transfer-encoding:x-original-sender
-         :x-original-authentication-results:precedence:mailing-list:list-id
-         :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
-        bh=sU3FA3aS+7ZxiA3LVGXzAmJWvNZVIHORz9y/WS8YYks=;
-        b=eD4dnmaFw0pXBuSBlYNTS+STwFajD/6dvoLkbOybUFRtU2EsxDuysQMaKz5A2BiPDr
-         Gk1zuLGsIdtzcIob8B+w4pBrUYIbaZp4TuVePIPntuPrcc3SczLolsMgjCajb5NGPv03
-         jsfgh5FE9+oKuX8sUUWvCR4Hq8qOkaL9Wwg5I=
+        h=sender:date:from:to:cc:subject:message-id:references:mime-version
+         :content-disposition:content-transfer-encoding:in-reply-to
+         :x-original-sender:x-original-authentication-results:precedence
+         :mailing-list:list-id:list-post:list-help:list-archive
+         :list-subscribe:list-unsubscribe;
+        bh=fwECuUImEv2gh/+id7IC/GNT8SuLkBhngkxdq5cfbSI=;
+        b=lthCeRPxNVO8ZWtXVrJUGNc2YWVbsZ8lDdCPkCvNtRa0xLjaKXUnFflupWpLls2hhs
+         OCSOC6Xy4SX229oRHmb5+eXRUBtOF/G0by/svvYLMTmeN918SP35Ts9t6afdHeCyTJWv
+         BuVsfh0P90ppZx5C3bic5uMlzWpn9gzOxku4s=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
-        h=sender:x-gm-message-state:date:message-id:to:cc:subject:from
-         :in-reply-to:references:mime-version:content-transfer-encoding
-         :x-original-sender:x-original-authentication-results:precedence
-         :mailing-list:list-id:x-spam-checked-in-group:list-post:list-help
-         :list-archive:list-subscribe:list-unsubscribe;
-        bh=sU3FA3aS+7ZxiA3LVGXzAmJWvNZVIHORz9y/WS8YYks=;
-        b=rCmo9gnPdw66YS/yfXH/AsSUVyK3mE0HsanHFwZHNZbYN9Y57pMaSLWSb3NcoCtora
-         GGlMQ1PsFn1gHsdMMPsFaD7vEzDZzGocRoxPRPHy7Q+0znr864AxB7M6TjG31Kv6q5Ph
-         MGewOGYHXGkN5aXfN+y+h5VmvtTEHmhdwiybpujsDsWOhj2ArXZ1hBEjWOaIWdznhVM3
-         NHEtAVwW1QW5R+QAtjki+ySzhYZ2aOzQfGqW/05ZvxWu3fFAPzsSWDojY5gi15SA6q/G
-         nEyHuspQxKvDRmuaki+CsUpsL+fmkHlqHRK+nEcwadWrcn1Ve2aSikcoI8KOMoZ6Kyi7
-         cASQ==
+        h=sender:x-gm-message-state:date:from:to:cc:subject:message-id
+         :references:mime-version:content-disposition
+         :content-transfer-encoding:in-reply-to:x-original-sender
+         :x-original-authentication-results:precedence:mailing-list:list-id
+         :x-spam-checked-in-group:list-post:list-help:list-archive
+         :list-subscribe:list-unsubscribe;
+        bh=fwECuUImEv2gh/+id7IC/GNT8SuLkBhngkxdq5cfbSI=;
+        b=tiN5X20xNz/b9l2UcjbW0BXFZqLMqmRV/rr83bwYjZUYCXOK03O2d4WbZXr1PDAGK6
+         jc3xPoOk3pwKOy7ZW4qu1O/sL+iKuBJf/gpwEzOQR33cF3+PYM7Xo80Nhvj3F8Y6NU3K
+         43CWgiQdtnqhhovrLE46IifUxemLAOcB3BOSoThNBpsHsTFTIi8C4P4MuokeZK1+EIPr
+         0lPw0+6n3M1DoBJKxTROa/5sMS9ct6XsLDr4CZReQ1k05shuDflzpPcdKwJ30zHW7xX5
+         y8lczt6hd9N/HaZ2JwHW11HsxpJq9747jNMzUTzY54e7WC36+z8guTsGn8q5p0uudd4i
+         Eepw==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: AOAM530sm3GL4ZopF2YdtSiMsr3QIKoikc5BZsb7aQprNgop5E0ZnJ+A
-	5KTzaRio9/X4c8UN2TtKPV19GQ==
-X-Google-Smtp-Source: ABdhPJwY8Mgc8cfDiNxzwnlNTcysXgtcsRseE1MLJ03ckiTglpe37OZAxXzdwksm1TO02dsqZsH9eQ==
-X-Received: by 2002:a05:6000:184c:: with SMTP id c12mr16894002wri.125.1619351487568;
-        Sun, 25 Apr 2021 04:51:27 -0700 (PDT)
+X-Gm-Message-State: AOAM531D8ddkeUTUpvsNZ4iSDrQwOcrTub5QL1GAIgBd5G7ea6GoJle2
+	80gpaH53S92Au5p3v3i949XRBg==
+X-Google-Smtp-Source: ABdhPJzvxJLxqKrT87cSYDqIpeHLlI4dSV5NjUNXX2FvIQ/2DaFapzWxlpO7zGsVOVBmTlPjf7jjTg==
+X-Received: by 2002:a17:90b:808:: with SMTP id bk8mr14732082pjb.222.1619352030628;
+        Sun, 25 Apr 2021 05:00:30 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a1c:c205:: with SMTP id s5ls6241648wmf.3.canary-gmail; Sun,
- 25 Apr 2021 04:51:26 -0700 (PDT)
-X-Received: by 2002:a1c:1dca:: with SMTP id d193mr3314438wmd.148.1619351486289;
-        Sun, 25 Apr 2021 04:51:26 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1619351486; cv=none;
+Received: by 2002:a17:902:ff13:: with SMTP id f19ls217089plj.0.gmail; Sun, 25
+ Apr 2021 05:00:30 -0700 (PDT)
+X-Received: by 2002:a17:903:1ca:b029:ea:fc69:b6ed with SMTP id e10-20020a17090301cab02900eafc69b6edmr13203231plh.80.1619352029976;
+        Sun, 25 Apr 2021 05:00:29 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1619352029; cv=none;
         d=google.com; s=arc-20160816;
-        b=PN/ys2XMF7GCVPP08r7w0NC5dF/LD0hxqOAAC8h5ByLCCqb+kMN+xpC7vhciuFUuCi
-         3IX6bk19XUGRqIK18qZ/ubMvGgFhtGM5cPqyY5/Urb2oEnia8TuYSz7eANOLiyhXbEfD
-         6bSivSsb6TsjAPqXCWK5SjANkFuVlfKv+zXi4JFaiuTd2JUfmREL8OTObYAEeykee7Ru
-         aGbEBGHE/Dpbe1eGV3If0ZLOzqyJ6NlMnGrBVwuYCSLsAOgXG4JCgTW8+CakI0l3MXrV
-         5fYbfU4lEDpHoFFWKDLUJFN3+aXWOVhxcH08017GT/5OuF9nKrxc+VtBGrMm6iRqSPKg
-         hkZQ==
+        b=ea/3CbMvkWPOKuWcf8/HNzIJzg3Z4xAPCzhgkWH+ix6BAMIeRHPKtbslNRXW9/CHRP
+         cqU58d8hpLPGeOKGaM+UfViqZKQSkxNHdjM0xRX7ZPMYayhqu7x0SFGZ/+0dNiHGJH62
+         wacK2UAzqjfct/oLx8GT0mBZ4b+ef4FudhV48vsk3g6EgOktNs3WIxCw7jHfGx0PLg6/
+         nqTYU6u/bEWZ3Bh8n75/jS6DTLT9W6zg+YkPpWZiJ3/9XAIdbHoYSzP6ZK0trj60jPrT
+         aq6OkWPM8MtHldCAio7dKp48aiwyrOXV/74OV1USTF0Uy856C0WkhIO3hr99Q0B4ssCM
+         K39A==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=content-transfer-encoding:mime-version:references:in-reply-to:from
-         :subject:cc:to:message-id:date:dkim-signature;
-        bh=sU3FA3aS+7ZxiA3LVGXzAmJWvNZVIHORz9y/WS8YYks=;
-        b=dcy8YyeA2yjKj5fK8a0nVnSKmQjpUrnwOp5AWKw542nZ5W7Bv9v/zD91Okfsa4nLxX
-         GK5YFAIDx3WSz3cv3/dWK0lQylzBdViv7xcWmBr4oT0dL3LLN1XOe2xIvZLafYCVUQ0g
-         w+Qc2hRyLI8MPzXxkW7CpY+F5n37Zk/1ToOgmEucGSkk6uPf/ycpNr3MdKyDtN9iNQDz
-         85u/UyKL4C/OVKfGh+2bh+AuDPeCcwGnDiv8D3YtVyFlvA9k8VhDzg7cLWwHubAgfPqp
-         P1gl6QaGrJ+zhkwtx3r/dP1G0uI1ORkW2WCQZxBVat8G3hk/oKYCtUir/5X5DXY7DE2/
-         TFvQ==
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date
+         :dkim-signature;
+        bh=RpWeGMBj/m2Vsuj8sqg3VeotkDtn9orfZLbykdfCM0Q=;
+        b=u9Gwzuc38GkhpZUpReayEH/+HtQv5k4ditw9yWGVrVuBN9WYAwCgUZKdyz6poAHMXH
+         ajrnn1YLIE86knrhNlShpDg+sonPvBt4Ikc+EN4jrq/Yi2OWDxoYwN80WW0/fMONSjWV
+         I8skpApCs189M1H7cPSJ2lLFDUn0X7iaCj6vl3spxoG9Y2VliilEinuSIc+LBS//LNiL
+         Be6H1DjIjH0YGQRDVD22jER/XBsXpQQiJlSkAmMdcZu3oKqftLNhOKHax2cJz7561wZm
+         hZIKBauOs4b2hO8fCvBqUQs1BlpY/Gm4agkxUEeJp4A4DF1STUn9+AGACTq0JbYZtQWD
+         haNw==
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@exactco.de header.s=x header.b=jomy+EF9;
-       spf=pass (google.com: domain of rene@exactcode.com designates 144.76.154.42 as permitted sender) smtp.mailfrom=rene@exactcode.com
-Received: from mx.exactcode.de (mx.exactcode.de. [144.76.154.42])
-        by mx.google.com with ESMTPS id c2si14776814wmk.165.2021.04.25.04.51.26
+       dkim=pass header.i=@linuxfoundation.org header.s=korg header.b=vnaoHgZ1;
+       spf=pass (google.com: domain of gregkh@linuxfoundation.org designates 198.145.29.99 as permitted sender) smtp.mailfrom=gregkh@linuxfoundation.org;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=linuxfoundation.org
+Received: from mail.kernel.org (mail.kernel.org. [198.145.29.99])
+        by mx.google.com with ESMTPS id d15si14842157pgv.130.2021.04.25.05.00.29
         for <usb-storage@lists.one-eyed-alien.net>
         (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Sun, 25 Apr 2021 04:51:26 -0700 (PDT)
-Received-SPF: pass (google.com: domain of rene@exactcode.com designates 144.76.154.42 as permitted sender) client-ip=144.76.154.42;
-Received: from exactco.de ([90.187.5.221])
-	by mx.exactcode.de with esmtp (Exim 4.82)
-	(envelope-from <rene@exactcode.com>)
-	id 1ladIQ-00033Z-BP; Sun, 25 Apr 2021 11:51:31 +0000
-Received: from [192.168.2.131] (helo=localhost)
-	by exactco.de with esmtpsa (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256)
-	(Exim 4.86_2)
-	(envelope-from <rene@exactcode.com>)
-	id 1ladEk-0002sW-4E; Sun, 25 Apr 2021 11:47:42 +0000
-Date: Sun, 25 Apr 2021 13:50:48 +0200 (CEST)
-Message-Id: <20210425.135048.1651130854722875318.rene@exactcode.com>
-To: hdegoede@redhat.com
-Cc: gregkh@linuxfoundation.org, stern@rowland.harvard.edu,
- linux-usb@vger.kernel.org, usb-storage@lists.one-eyed-alien.net
+        Sun, 25 Apr 2021 05:00:29 -0700 (PDT)
+Received-SPF: pass (google.com: domain of gregkh@linuxfoundation.org designates 198.145.29.99 as permitted sender) client-ip=198.145.29.99;
+Received: by mail.kernel.org (Postfix) with ESMTPSA id E1F7261076;
+	Sun, 25 Apr 2021 12:00:28 +0000 (UTC)
+Date: Sun, 25 Apr 2021 14:00:26 +0200
+From: Greg KH <gregkh@linuxfoundation.org>
+To: Rene Rebe <rene@exactcode.com>
+Cc: hdegoede@redhat.com, stern@rowland.harvard.edu,
+	linux-usb@vger.kernel.org, usb-storage@lists.one-eyed-alien.net
 Subject: [usb-storage] Re: [PATCH] unbreak all modern Seagate ATA pass-through
  for SMART
-From: Rene Rebe <rene@exactcode.com>
-In-Reply-To: <ee48ea5d-c820-ae24-b557-2a7b7372821c@redhat.com>
+Message-ID: <YIVZ2l9qUfkcyPpG@kroah.com>
 References: <20210425.124119.1949311822603950729.rene@exactcode.com>
-	<7187e934-b87a-edce-2ac6-f201ea9c7b7d@redhat.com>
-	<ee48ea5d-c820-ae24-b557-2a7b7372821c@redhat.com>
-X-Mailer: Mew version 6.8 on Emacs 27.1
-Mime-Version: 1.0
-Content-Type: Text/Plain; charset=utf-8
-Content-Transfer-Encoding: base64
-X-Spam-Score: -0.5 (/)
-X-Original-Sender: rene@exactcode.com
+ <7187e934-b87a-edce-2ac6-f201ea9c7b7d@redhat.com>
+ <ee48ea5d-c820-ae24-b557-2a7b7372821c@redhat.com>
+ <20210425.135048.1651130854722875318.rene@exactcode.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="UTF-8"
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+In-Reply-To: <20210425.135048.1651130854722875318.rene@exactcode.com>
+X-Original-Sender: gregkh@linuxfoundation.org
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@exactco.de header.s=x header.b=jomy+EF9;       spf=pass
- (google.com: domain of rene@exactcode.com designates 144.76.154.42 as
- permitted sender) smtp.mailfrom=rene@exactcode.com
+ header.i=@linuxfoundation.org header.s=korg header.b=vnaoHgZ1;       spf=pass
+ (google.com: domain of gregkh@linuxfoundation.org designates 198.145.29.99 as
+ permitted sender) smtp.mailfrom=gregkh@linuxfoundation.org;       dmarc=pass
+ (p=NONE sp=NONE dis=NONE) header.from=linuxfoundation.org
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -137,96 +136,164 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-RnJvbTogSGFucyBkZSBHb2VkZSA8aGRlZ29lZGVAcmVkaGF0LmNvbT4NClN1YmplY3Q6IFJlOiBb
-UEFUQ0hdIHVuYnJlYWsgYWxsIG1vZGVybiBTZWFnYXRlIEFUQSBwYXNzLXRocm91Z2ggZm9yIFNN
-QVJUDQpEYXRlOiBTdW4sIDI1IEFwciAyMDIxIDEyOjU4OjQwICswMjAwDQoNCj4gSGksDQo+IA0K
-PiBPbiA0LzI1LzIxIDEyOjQ3IFBNLCBIYW5zIGRlIEdvZWRlIHdyb3RlOg0KPiA+IEhpLA0KPiA+
-IA0KPiA+IE9uIDQvMjUvMjEgMTI6NDEgUE0sIFJlbmUgUmViZSB3cm90ZToNCj4gPj4gR3JlZyBL
-SCB3cm90ZToNCj4gPj4NCj4gPj4+IE9uIFN1biwgQXByIDI1LCAyMDIxIGF0IDA5OjIwOjU5QU0g
-KzAyMDAsIFJlbsOpIFJlYmUgd3JvdGU6DQo+ID4+Pj4gSGV5LA0KPiA+Pj4+DQo+ID4+Pj4+IE9u
-IDI1LiBBcHIgMjAyMSwgYXQgMDQ6MzEsIEFsYW4gU3Rlcm4gPHN0ZXJuQHJvd2xhbmQuaGFydmFy
-ZC5lZHU+IHdyb3RlOg0KPiA+Pj4+Pj4gU2VhZ2F0ZSBkZXZpY2VzIiBpbiAyMDE3LiBBcHBhcmVu
-dGx5IHNvbWUgZWFybHkgb25lcyB3aGVyZSBidWdneSwgLi4uDQo+ID4+Pj4+Pg0KPiA+Pj4+Pj4g
-SG93ZXZlciwgZmFzdCBmb3J3YXJkIGEgY291cGxlIG9mIHllYXJzIGFuZCB0aGlzIGlzIG5vIGxv
-bmdlciB0cnVlLA0KPiA+Pj4+Pj4gdGhpcyBTZWdhdGUgU2V2ZW4gZXZlbiBpcyBhbHJlYWR5IGZy
-b20gMjAxNiwgYW5kIGFwcGFyZW50bHkgZmlyc3QNCj4gPj4+Pj4+IGF2YWlsYWJsZSBpbiAyMDE1
-LiBJIHN1Z2dlc3QgcmVtb3ZpbmcgdGhpcyByYXRoZXIgZHJhc3RpYyBnbG9iYWwNCj4gPj4+Pj4+
-IG1lYXN1cmUsIGFuZCBpbnN0ZWFkIG9ubHkgYWRkIHZlcnkgb2xkIGJyb2tlbiBvbmVzIHdpdGgg
-aW5kaXZpZHVhbA0KPiA+Pj4+Pj4gcXVpcmtzLCBzaG91bGQgYW55IG9mIHRoZW0gc3RpbGwgYmUg
-YWxpdmUgOy0pDQo+ID4+Pj4+Pg0KPiA+Pj4+Pj4gU2lnbmVkLW9mZi1ieTogUmVuw6kgUmViZSA8
-cmVuZUBleGFjdGNvZGUuY29tPg0KPiA+Pj4+Pj4NCj4gPj4+Pj4+IC0tLSBsaW51eC01LjExL2Ry
-aXZlcnMvdXNiL3N0b3JhZ2UvdWFzLWRldGVjdC5oLmJhY2t1cAkyMDIxLTAzLTA1IDExOjM2OjAw
-LjUxNzQyMzcyNiArMDEwMA0KPiA+Pj4+Pj4gKysrIGxpbnV4LTUuMTEvZHJpdmVycy91c2Ivc3Rv
-cmFnZS91YXMtZGV0ZWN0LmgJMjAyMS0wMy0wNSAxMTozNjoxNi4zNzM0MjQ1NDQgKzAxMDANCj4g
-Pj4+Pj4+IEBAIC0xMTMsOCArMTEzLDQgQEANCj4gPj4+Pj4+IAl9DQo+ID4+Pj4+Pg0KPiA+Pj4+
-Pj4gLQkvKiBBbGwgU2VhZ2F0ZSBkaXNrIGVuY2xvc3VyZXMgaGF2ZSBicm9rZW4gQVRBIHBhc3Mt
-dGhyb3VnaCBzdXBwb3J0ICovDQo+ID4+Pj4+PiAtCWlmIChsZTE2X3RvX2NwdSh1ZGV2LT5kZXNj
-cmlwdG9yLmlkVmVuZG9yKSA9PSAweDBiYzIpDQo+ID4+Pj4+PiAtCQlmbGFncyB8PSBVU19GTF9O
-T19BVEFfMVg7DQo+ID4+Pj4+PiAtDQo+ID4+Pj4+PiAJdXNiX3N0b3JfYWRqdXN0X3F1aXJrcyh1
-ZGV2LCAmZmxhZ3MpOw0KPiA+Pj4+Pg0KPiA+Pj4+PiBJIGRvbid0IHdhbnQgdG8gZG8gdGhpcyB1
-bmxlc3MgeW91IGNhbiBzdWdnZXN0IGFuIGFwcHJvYWNoIHRoYXQgd29uJ3QgDQo+ID4+Pj4+IHN1
-ZGRlbmx5IGJyZWFrIGFsbCB0aG9zZSBvbGQgYnVnZ3kgZHJpdmVzLiAgSnVzdCBiZWNhdXNlIHRo
-ZXkgYXJlIG5vdyANCj4gPj4+Pj4gZml2ZSB5ZWFycyBvbGQgb3IgbW9yZSBkb2Vzbid0IG1lYW4g
-dGhleSBhcmUgbm8gbG9uZ2VyIGluIHVzZS4NCj4gPj4+Pg0KPiA+Pj4+IFdlbGwsIHdoYXQgZG8g
-eW91IHByb3Bvc2UgdGhlbj8gQSBhbGxvdyBxdWlyayBmb3IgYWxsIG5ldyBkZXZpY2VzIGdvaW5n
-IGZvcndhcmQ/DQo+ID4+Pj4gR2l2ZW4gdGhhdCB0aGUgdXNlciB1c3VhbGx5IG5lZWRzIHRvIGFj
-dGl2ZWx5IHJ1biBzb21ldGhpbmcgbGlrZSBzbWFydGN0bA0KPiA+Pj4+IG1hbnVhbGx5IG9uIHRo
-ZSBkcml2ZSBJIGRvbuKAmXQgc2VlIHRoYXQgdGhpcyBzaG91bGQgY2F1c2UgdG9vIG1hbnkgaXNz
-dWVzLg0KPiA+Pj4+IEkgZG9u4oCZdCBoYXZlIGFueSBub24tc3VwcG9ydGluZyBkZXZpY2UgLSBj
-YW4gd2Ugbm90IGp1c3QgYWRkIHRoZW0gdG8gdGhlDQo+ID4+Pj4gcXVpcmsgbGlzdCB3aGVuIHNv
-bWVvbmUgcmVwb3J0cyBvbmU/DQo+ID4+Pg0KPiA+Pj4gSG93IGFib3V0IHNpbmNlIHlvdSBrbm93
-IHlvdXIgZGV2aWNlIHdvcmtzLCB5b3UgbWFrZSB0aGUgY2hlY2sgZGV0ZWN0DQo+ID4+PiB5b3Vy
-IHNwZWNpZmljIGRldmljZSBhbmQgbm90IGFwcGx5IHRoZSBmbGFnIHRvIGl0PyAgWW91IHNob3Vs
-ZCBiZSBhYmxlDQo+ID4+PiB0byBkbyBzbyBiYXNlZCBvbiB0aGUNCj4gPj4NCj4gPj4gU3VyZSwg
-d2hpbGUgdGhhdCBkb2VzIG5vdCByZWFsbHkgc29sdmUgdGhpcyBmb3IgYWxsIHRoZSBvdGhlciBu
-ZXdlcg0KPiA+PiBTZWFnYXRlIGRyaXZlcyBvdGhlciB1c2VycyBtaWdodCBoYXZlIGF0IGhvbWUs
-IGhlcmUgaXMgYSBwYXRjaA0KPiA+PiBjaGVja2luZyBmb3IgdGhpcyBvbmUgVVNCIHByb2R1Y3Qg
-SUQuIEkgaG9wZSB0aGF0IGlzIHdoYXQgeW91IG1lYW50Og0KPiA+Pg0KPiA+PiBTaWduZWQtb2Zm
-LWJ5OiBSZW7DqSBSZWJlIDxyZW5lQGV4YWN0Y29kZS5jb20+DQo+ID4+DQo+ID4+IC0tLSBsaW51
-eC01LjExL2RyaXZlcnMvdXNiL3N0b3JhZ2UvdWFzLWRldGVjdC5oLmJhY2t1cAkyMDIxLTAzLTA1
-IDExOjM2OjAwLjUxNzQyMzcyNiArMDEwMA0KPiA+PiArKysgbGludXgtNS4xMS9kcml2ZXJzL3Vz
-Yi9zdG9yYWdlL3Vhcy1kZXRlY3QuaAkyMDIxLTAzLTA1IDExOjM2OjE2LjM3MzQyNDU0NCArMDEw
-MA0KPiA+PiBAQCAtMTEzLDUgKzExMyw2IEBADQo+ID4+ICANCj4gPj4gIAkvKiBBbGwgU2VhZ2F0
-ZSBkaXNrIGVuY2xvc3VyZXMgaGF2ZSBicm9rZW4gQVRBIHBhc3MtdGhyb3VnaCBzdXBwb3J0ICov
-DQo+ID4+IC0JaWYgKGxlMTZfdG9fY3B1KHVkZXYtPmRlc2NyaXB0b3IuaWRWZW5kb3IpID09IDB4
-MGJjMikNCj4gPj4gKwlpZiAoKGxlMTZfdG9fY3B1KHVkZXYtPmRlc2NyaXB0b3IuaWRWZW5kb3Ip
-ID09IDB4MGJjMikgJiYNCj4gPj4gKwkgICAgKGxlMTZfdG9fY3B1KHVkZXYtPmRlc2NyaXB0b3Iu
-aWRQcm9kdWN0KSAhPSAweGFiMDMpKQ0KPiA+PiAgCQlmbGFncyB8PSBVU19GTF9OT19BVEFfMVg7
-DQo+ID4+ICANCj4gPj4NCj4gPiANCj4gPiBBcyBJIGluZGljYXRlZCBpbiBteSBvdGhlciBlbWFp
-bCB3aGljaCBjcm9zc2VkIHdpdGggdGhpcyBvbmUsIHBsZWFzZSBtYWtlIHRoaXMNCj4gPiBtb3Jl
-IGdlbmVyaWMsIGFkZCBhIG5ldyBVU19GTF9BVEFfMVhfT0sgZmxhZyBhbmQgbWFrZSB0aGUgYWJv
-dmUgY29kZSBjaGVjayB0aGF0ICsNCj4gPiBhZGQgYSBuZXcgdW51c3VhbF91YXMuaCBlbnRyeSBm
-b3IgeW91ciBkZXZpY2Ugc2V0dGluZyB0aGUgbmV3IGZsYWcuDQo+ID4gDQo+ID4gTm90ZSB0aGVy
-ZSBpcyBubyBuZWVkIHRvIGFkZCBzdXBwb3J0IGZvciB0aGUgbmV3IGZsYWcgdG8gdXNiX3N0b3Jf
-YWRqdXN0X3F1aXJrcygpDQo+ID4gaWYgYSB1c2VyIG92ZXJyaWRlcyBxdWlya3MgZm9yIGEgZGV2
-aWNlIG9uIHRoZSBrZXJuZWwgY29tbWFuZGxpbmUgd2l0aG91dCBzcGVjaWZ5aW5nDQo+ID4gdGhl
-ICJ0IiBmbGFnIHRoZW4gdGhlIFVTX0ZMX05PX0FUQV8xWCBmbGFnIHdpbGwgYWxyZWFkeSBnZXQg
-Y2xlYXJlZC4NCj4gPiANCj4gPiBJIGRlbGliZXJhdGVseSBwdXQgdGhlOg0KPiA+IA0KPiA+ICAg
-ICAgICAgaWYgKGxlMTZfdG9fY3B1KHVkZXYtPmRlc2NyaXB0b3IuaWRWZW5kb3IpID09IDB4MGJj
-MikNCj4gPiAgICAgICAgICAgICAgICAgZmxhZ3MgfD0gVVNfRkxfTk9fQVRBXzFYOw0KPiA+IA0K
-PiA+IGNvZGUgYmVmb3JlIHRoZSB1c2Jfc3Rvcl9hZGp1c3RfcXVpcmtzKCkgY2FsbCB0byBhbGxv
-dyB1c2VycyB0byBvdmVycmlkZSB0aGlzDQo+ID4gZnJvbSB0aGUga2VybmVsIGNvbW1hbmRsaW5l
-Lg0KPiANCj4gcC5zLg0KPiANCj4gQSAiZ2l0IGxvZyBkcml2ZXJzL3VzYi9zdG9yYWdlL3VudXN1
-YWxfdWFzLmgiIHF1aWNrbHkgZmluZHMgdGhlIGNvbW1pdCB3aGljaCByZW1vdmVkIHRoZQ0KPiBx
-dWlya3Mgd2hpY2ggdGhlIGdlbmVyaWMgU2VhZ2F0ZSBjaGVjayByZXBsYWNlcy4gQXQgdGhhdCB0
-aW1lIHRoZXJlIHdlcmUgVVNfRkxfTk9fQVRBXzFYDQo+IHF1aXJrcyBmb3IgKjkqIGRpZmZlcmVu
-dCBTZWFnYXRlIG1vZGVscyBwcmVzZW50IGluIHVudXN1YWxfdWFzLmggYW5kIEkgYXNzdW1lIHNv
-bWVvbmUNCj4gcmVwb3J0aW5nIGEgMTB0aCBtb2RlbCBpcyB3aGF0IG1hZGUgbWUgZ28gZm9yIHRo
-ZSBqdXN0IGRpc2FibGUgdGhpcyBmb3IgYWxsIFNlYWdhdGUNCj4gZHJpdmVyIG9wdGlvbi4NCj4g
-DQo+IFNlZSBjb21taXQgOTIzMzVhZDllODk1ICgidWFzOiBSZW1vdmUgVVNfRkxfTk9fQVRBXzFY
-IHVudXN1YWwgZGV2aWNlIGVudHJpZXMgZm9yIFNlYWdhdGUgZGV2aWNlcyIpDQo+IA0KPiBBbHNv
-IEkgZGlkIGEgcXVpY2sgd2Vic2VhcmNoIGZvciB0aGUgIlNlYWdhdGUgU2V2ZW4iIGFuZCByYXRo
-ZXIgdGhlbiB0aGUgdXN1YWwgcmUtdXNhYmxlDQo+IGRyaXZlLWVuY2xvc3VyZSB3aXRoIGEgc3Rh
-bmRhcmQgMi41IiBvciAzLjUiIGRyaXZlIGluIHRoZXJlLCB0aGlzIHNlZW1zIHRvIGJlIGEgY3Vz
-dG9tDQo+IG1vZGVsIHdoZXJlIHRoZSBlbmNsb3N1cmUgaXMgYWN0dWFsbHkgaW50ZWdyYXRlZCBp
-bnRvIHRoZSBkcml2ZSB0byBtYWtlIGl0IHNtYWxsZXIuDQo+IA0KPiBTbyBJIHdvdWxkIG5vdCBi
-ZSBzdXJwcmlzZWQgaWYgdGhpcyBpcyB1c2luZyBhbm90aGVyIGNoaXBzZXQgdGhlbiB0aGVpciB1
-c3VhbCBlbmNsb3N1cmVzLA0KPiB3aGljaCB3b3VsZCBleHBsYWluIHdoeSBpdCBkb2VzIGhhdmUg
-d29ya2luZyBBVEExeCBwYXNzdGhyb3VnaC4NCg0KSSB3b3VsZCBleHBlY3QgdGhhdCBtb3JlIG1v
-ZGVybiBkZXZpY2VzIHRvIHdvcmsuIFZlbmRvcnMgdXN1YWxseQ0KbGluZWFybHkgYWxsb2NhdGUg
-dGhlaXIgcHJvZHVjdCBpZHMgZm9yIG5ldyBkZXZpY2VzLCBhbmQgd2UgY291bGQNCmFsbG93IGxp
-c3QgcHJvZHVjdCBpZHMgaGlnaGVyIHRoYW4gdGhpcyBTZXZlbiB0byB1bmJyZWFrIG1vcmUgbW9k
-ZXJuDQpkZXZpY2VzIGJ5IGRlZmF1bHQgYW5kIGxpbWl0IHRoZSBhbW91bnQgb2YgZGV2aWNlIHF1
-aXJrcyBuZWVkZWQ/DQoNCglSZW7DqQ0KDQotLSANCiAgUmVuw6kgUmViZSwgRXhhY3RDT0RFIEdt
-YkgsIExpZXR6ZW5idXJnZXIgU3RyLiA0MiwgREUtMTA3ODkgQmVybGluDQogIGh0dHBzOi8vZXhh
-Y3Rjb2RlLmNvbSB8IGh0dHBzOi8vdDJzZGUub3JnIHwgaHR0cHM6Ly9yZW5lLnJlYmUuZGUNCg==
+On Sun, Apr 25, 2021 at 01:50:48PM +0200, Rene Rebe wrote:
+> From: Hans de Goede <hdegoede@redhat.com>
+> Subject: Re: [PATCH] unbreak all modern Seagate ATA pass-through for SMAR=
+T
+> Date: Sun, 25 Apr 2021 12:58:40 +0200
+>=20
+> > Hi,
+> >=20
+> > On 4/25/21 12:47 PM, Hans de Goede wrote:
+> > > Hi,
+> > >=20
+> > > On 4/25/21 12:41 PM, Rene Rebe wrote:
+> > >> Greg KH wrote:
+> > >>
+> > >>> On Sun, Apr 25, 2021 at 09:20:59AM +0200, Ren=C3=A9 Rebe wrote:
+> > >>>> Hey,
+> > >>>>
+> > >>>>> On 25. Apr 2021, at 04:31, Alan Stern <stern@rowland.harvard.edu>=
+ wrote:
+> > >>>>>> Seagate devices" in 2017. Apparently some early ones where buggy=
+, ...
+> > >>>>>>
+> > >>>>>> However, fast forward a couple of years and this is no longer tr=
+ue,
+> > >>>>>> this Segate Seven even is already from 2016, and apparently firs=
+t
+> > >>>>>> available in 2015. I suggest removing this rather drastic global
+> > >>>>>> measure, and instead only add very old broken ones with individu=
+al
+> > >>>>>> quirks, should any of them still be alive ;-)
+> > >>>>>>
+> > >>>>>> Signed-off-by: Ren=C3=A9 Rebe <rene@exactcode.com>
+> > >>>>>>
+> > >>>>>> --- linux-5.11/drivers/usb/storage/uas-detect.h.backup	2021-03-0=
+5 11:36:00.517423726 +0100
+> > >>>>>> +++ linux-5.11/drivers/usb/storage/uas-detect.h	2021-03-05 11:36=
+:16.373424544 +0100
+> > >>>>>> @@ -113,8 +113,4 @@
+> > >>>>>> 	}
+> > >>>>>>
+> > >>>>>> -	/* All Seagate disk enclosures have broken ATA pass-through su=
+pport */
+> > >>>>>> -	if (le16_to_cpu(udev->descriptor.idVendor) =3D=3D 0x0bc2)
+> > >>>>>> -		flags |=3D US_FL_NO_ATA_1X;
+> > >>>>>> -
+> > >>>>>> 	usb_stor_adjust_quirks(udev, &flags);
+> > >>>>>
+> > >>>>> I don't want to do this unless you can suggest an approach that w=
+on't=20
+> > >>>>> suddenly break all those old buggy drives.  Just because they are=
+ now=20
+> > >>>>> five years old or more doesn't mean they are no longer in use.
+> > >>>>
+> > >>>> Well, what do you propose then? A allow quirk for all new devices =
+going forward?
+> > >>>> Given that the user usually needs to actively run something like s=
+martctl
+> > >>>> manually on the drive I don=E2=80=99t see that this should cause t=
+oo many issues.
+> > >>>> I don=E2=80=99t have any non-supporting device - can we not just a=
+dd them to the
+> > >>>> quirk list when someone reports one?
+> > >>>
+> > >>> How about since you know your device works, you make the check dete=
+ct
+> > >>> your specific device and not apply the flag to it?  You should be a=
+ble
+> > >>> to do so based on the
+> > >>
+> > >> Sure, while that does not really solve this for all the other newer
+> > >> Seagate drives other users might have at home, here is a patch
+> > >> checking for this one USB product ID. I hope that is what you meant:
+> > >>
+> > >> Signed-off-by: Ren=C3=A9 Rebe <rene@exactcode.com>
+> > >>
+> > >> --- linux-5.11/drivers/usb/storage/uas-detect.h.backup	2021-03-05 11=
+:36:00.517423726 +0100
+> > >> +++ linux-5.11/drivers/usb/storage/uas-detect.h	2021-03-05 11:36:16.=
+373424544 +0100
+> > >> @@ -113,5 +113,6 @@
+> > >> =20
+> > >>  	/* All Seagate disk enclosures have broken ATA pass-through suppor=
+t */
+> > >> -	if (le16_to_cpu(udev->descriptor.idVendor) =3D=3D 0x0bc2)
+> > >> +	if ((le16_to_cpu(udev->descriptor.idVendor) =3D=3D 0x0bc2) &&
+> > >> +	    (le16_to_cpu(udev->descriptor.idProduct) !=3D 0xab03))
+> > >>  		flags |=3D US_FL_NO_ATA_1X;
+> > >> =20
+> > >>
+> > >=20
+> > > As I indicated in my other email which crossed with this one, please =
+make this
+> > > more generic, add a new US_FL_ATA_1X_OK flag and make the above code =
+check that +
+> > > add a new unusual_uas.h entry for your device setting the new flag.
+> > >=20
+> > > Note there is no need to add support for the new flag to usb_stor_adj=
+ust_quirks()
+> > > if a user overrides quirks for a device on the kernel commandline wit=
+hout specifying
+> > > the "t" flag then the US_FL_NO_ATA_1X flag will already get cleared.
+> > >=20
+> > > I deliberately put the:
+> > >=20
+> > >         if (le16_to_cpu(udev->descriptor.idVendor) =3D=3D 0x0bc2)
+> > >                 flags |=3D US_FL_NO_ATA_1X;
+> > >=20
+> > > code before the usb_stor_adjust_quirks() call to allow users to overr=
+ide this
+> > > from the kernel commandline.
+> >=20
+> > p.s.
+> >=20
+> > A "git log drivers/usb/storage/unusual_uas.h" quickly finds the commit =
+which removed the
+> > quirks which the generic Seagate check replaces. At that time there wer=
+e US_FL_NO_ATA_1X
+> > quirks for *9* different Seagate models present in unusual_uas.h and I =
+assume someone
+> > reporting a 10th model is what made me go for the just disable this for=
+ all Seagate
+> > driver option.
+> >=20
+> > See commit 92335ad9e895 ("uas: Remove US_FL_NO_ATA_1X unusual device en=
+tries for Seagate devices")
+> >=20
+> > Also I did a quick websearch for the "Seagate Seven" and rather then th=
+e usual re-usable
+> > drive-enclosure with a standard 2.5" or 3.5" drive in there, this seems=
+ to be a custom
+> > model where the enclosure is actually integrated into the drive to make=
+ it smaller.
+> >=20
+> > So I would not be surprised if this is using another chipset then their=
+ usual enclosures,
+> > which would explain why it does have working ATA1x passthrough.
+>=20
+> I would expect that more modern devices to work. Vendors usually
+> linearly allocate their product ids for new devices, and we could
+> allow list product ids higher than this Seven to unbreak more modern
+> devices by default and limit the amount of device quirks needed?
+
+Vendors do not allocate device ids that way at all, as there is no
+requirement to do so.  I know of many vendors that seemingly use random
+values from their product id space, so there is no guarantee that this
+will work, sorry.
+
+What is wrong with just allowing specific devices that you have tested
+will work, to the list instead?  That's the safest way to handle this.
+
+thanks,
+
+greg k-h
+
+--=20
+You received this message because you are subscribed to the Google Groups "=
+USB Mass Storage on Linux" group.
+To unsubscribe from this group and stop receiving emails from it, send an e=
+mail to usb-storage+unsubscribe@lists.one-eyed-alien.net.
+To view this discussion on the web visit https://groups.google.com/a/lists.=
+one-eyed-alien.net/d/msgid/usb-storage/YIVZ2l9qUfkcyPpG%40kroah.com.
