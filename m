@@ -1,127 +1,142 @@
-Return-Path: <usb-storage+bncBDBMLTW6VQDRBIUVTKCAMGQEUV5OSQA@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBDRZXY4CYYORBTU3TKCAMGQERXRA7AA@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-wr1-x445.google.com (mail-wr1-x445.google.com [IPv6:2a00:1450:4864:20::445])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5ADEB36B0CD
-	for <lists+usb-storage@lfdr.de>; Mon, 26 Apr 2021 11:40:51 +0200 (CEST)
-Received: by mail-wr1-x445.google.com with SMTP id j16-20020adfd2100000b02901022328749esf18680878wrh.4
-        for <lists+usb-storage@lfdr.de>; Mon, 26 Apr 2021 02:40:51 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1619430051; cv=pass;
+Received: from mail-ej1-x645.google.com (mail-ej1-x645.google.com [IPv6:2a00:1450:4864:20::645])
+	by mail.lfdr.de (Postfix) with ESMTPS id 15FFA36B118
+	for <lists+usb-storage@lfdr.de>; Mon, 26 Apr 2021 11:54:23 +0200 (CEST)
+Received: by mail-ej1-x645.google.com with SMTP id jl27-20020a17090775dbb029037ccdce96e6sf9937281ejc.21
+        for <lists+usb-storage@lfdr.de>; Mon, 26 Apr 2021 02:54:23 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1619430862; cv=pass;
         d=google.com; s=arc-20160816;
-        b=whAXJClaBMQZKmAYYC/ajghBTFtGt35U8CLjuZnFSQFX6Hjj05hNDmb377d2qozJPt
-         jb3GZt4GEQOc9ejCjWvg7zvxUc9KieOic/Io3LFnKpoLe8JsjL2z06wP8oVpZPFwcZDd
-         r2jaZlpFcMOuS3N0mn41oyWrO/ekjEU1RYiDRkBzoFcdS4HVLyYvyNI/NO5YiBmJt8kq
-         HvuTQMvuaSFINuASDC8LIEsZV3rKocFw2/xfCS9j1Sw12y3X8Rao0PSSVLOVNqMNxOHW
-         rlGwJ2K6EyS2UnTqMmn0Wi32vLVD0mNoVbhppOG8XXPSsdVsCr2E19ZcFbBKySpm1R0W
-         8gOQ==
+        b=H4SUquO8pPcyGH6acW+g4JKkTjgXr1Blt1yklg31krIH84TN3QCvk2qAFEIex2ou4B
+         Isx4Wo3fOiK3BE49iRGCGdy+ktULe7zINBhsqpcUmD1r2MM6nTNOj5PQSVNeomT6njzt
+         LorSl56nPfxXDj1mYcp2N88CxI9Zz5+M2PFDQL5WjFj2FmwwpvD3GzvJDk/ZtAhlaBbW
+         C2AUcAoNzggAGviVNFc9xfGC1Gx8NSo1miOFXMUYY50YiZWmDGsZwCzt/mi6qkbMhArQ
+         IenGDHSH/vpq6AArgdu//74NYJcejLNs3uhpZ3s4540YI/R6JETFCe4yMPFHwK3ejyGg
+         uS6g==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:content-transfer-encoding
-         :mime-version:references:in-reply-to:from:subject:cc:to:message-id
-         :date:sender:dkim-signature;
-        bh=iswZelAFynf1hhjFqKGPuErugeqg+TkUHoayyjL3/3A=;
-        b=Zg/J7u/m+zv+7jmyg54BE9Ji2xj4RGqg/kKOn+8jGetlEIbu98/QKC8pIFpV0zgoz1
-         sm4tf1qMVmE92XnW0mHsi8N0gtuFLJNztMIcBkrm0XZncwScWhhfqUA9oePE32U/OuWJ
-         H7uD9lpOBy59jBuRMPywo3xCH1134iOaeTHGE3im2NBx2TUAoQgL3/OFHmp5t7trn6Gq
-         DAJzPb5kehHoCWkDuaBcPJqdiudRpfgq7yC4g+AwwTZvcfozdExKLrPeIFUFHzoU4L5G
-         5K9G/ORDHHNO6PwJPFtrZE7wC9//wN6/IskxASWzoZ2nhfv0fe7w1F5avTCqTVIJO/V9
-         2JPQ==
+         :content-language:in-reply-to:mime-version:user-agent:date
+         :message-id:from:references:cc:to:subject:sender:dkim-signature;
+        bh=yk4f/KUSoJ0Ycwt1kz+ciXlnmFamTFXwiF+pI7WfEQ0=;
+        b=qIfubz44LaNgpFSKug+9NiYhcNPQbOyiEfs1rzetUyUMlmjZ+tshBKCmC16LSCrSgf
+         I1WMowZREKl2oM7A1NwCvrSi1TEZvJKl/PvfHaPFtMiRshhNMfqHJJ8fs67LyaIpQmUg
+         GVaMs1Fh2wNeFZSuNuFCFr8ae0Bz85pGSPADMoKm9oulfRIbstr5nWEt1zgUkyYo6Knv
+         TSufoQ7TkimUcLy8P9cXKaZhTaQuOi0E45csZ9/b3SMLWWuBNNoyRFv/PsUkbQ8ZqXfm
+         Ke2SoFvqA4RYERa38JkAXPNcWOlG8bUx+KzH7v4GZoAgXPT8xIZULhPiDkO8e6OQvAKF
+         rNiQ==
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@exactco.de header.s=x header.b=yeQC3Yz1;
-       spf=pass (google.com: domain of rene@exactcode.com designates 144.76.154.42 as permitted sender) smtp.mailfrom=rene@exactcode.com
+       dkim=pass header.i=@redhat.com header.s=mimecast20190719 header.b=dQZtFhQC;
+       spf=pass (google.com: domain of hdegoede@redhat.com designates 216.205.24.124 as permitted sender) smtp.mailfrom=hdegoede@redhat.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=redhat.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
-        h=sender:date:message-id:to:cc:subject:from:in-reply-to:references
-         :mime-version:content-transfer-encoding:x-original-sender
-         :x-original-authentication-results:precedence:mailing-list:list-id
-         :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
-        bh=iswZelAFynf1hhjFqKGPuErugeqg+TkUHoayyjL3/3A=;
-        b=XHBBBrJqlHtpiB57k1ViGPuTB8zMZACyKyIIr7jgXXrvVSxw3gwPk4BER8ubEIYWPw
-         45goJ4sOR/XLfJYXmsPN1brO+3HHvF8nEzvfotksqiNunEPjKLUozG1WgURCMO6v87Xo
-         j5VsUEtxc6ThexlMMkrdO1gZrkzacuCCwPMJg=
+        h=sender:subject:to:cc:references:from:message-id:date:user-agent
+         :mime-version:in-reply-to:content-language:content-transfer-encoding
+         :x-original-sender:x-original-authentication-results:precedence
+         :mailing-list:list-id:list-post:list-help:list-archive
+         :list-subscribe:list-unsubscribe;
+        bh=yk4f/KUSoJ0Ycwt1kz+ciXlnmFamTFXwiF+pI7WfEQ0=;
+        b=XLPQqnAIAkXHJrrKbzEUer3wp/toDCLsMAKqmLPNW1/ISK156aPoPZ7siwWO/nG4nc
+         dK/Im7xLrMzzKlPGwjqH64QVyCwgziiznkmKo3/CqYsxwlLNzqHdEOGF0qs8q5hs5EQS
+         KbRdQN7AGf0VF6xzZJ6p2rAI51Zj9pLEF2Mmk=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
-        h=sender:x-gm-message-state:date:message-id:to:cc:subject:from
-         :in-reply-to:references:mime-version:content-transfer-encoding
-         :x-original-sender:x-original-authentication-results:precedence
-         :mailing-list:list-id:x-spam-checked-in-group:list-post:list-help
-         :list-archive:list-subscribe:list-unsubscribe;
-        bh=iswZelAFynf1hhjFqKGPuErugeqg+TkUHoayyjL3/3A=;
-        b=SxUzpr54adB3+PmZ0JErRuJaAjrAXnzrDwYeuB15B12EzTBGFJQYMLEU6a3JJurH8Z
-         lKy5DESTJQCtphYxRpoRdkgBKi2rSW7FfVIyAWXxAv6NsKFitDnmhGHmEzyl62L4DrTf
-         8KfS/kiITymkaIh21Q7G3EsNTK0VD2OqlypiYnGNLpimwBI6pYrVUN4h36miybdBztF4
-         CKEjuyk+eaEdpjzPUndb+aW9vBQco+raKcj55TmbdHCeZm0zb1eKh0NC/H1vM+NFBwjI
-         B2qTETAzsjiZQLM4EHY1OGTevjQ6IcXOQktV7nH6Tm5cC9+SNERcx9wCfZAL63ZPkLRS
-         G0aQ==
+        h=sender:x-gm-message-state:subject:to:cc:references:from:message-id
+         :date:user-agent:mime-version:in-reply-to:content-language
+         :content-transfer-encoding:x-original-sender
+         :x-original-authentication-results:precedence:mailing-list:list-id
+         :x-spam-checked-in-group:list-post:list-help:list-archive
+         :list-subscribe:list-unsubscribe;
+        bh=yk4f/KUSoJ0Ycwt1kz+ciXlnmFamTFXwiF+pI7WfEQ0=;
+        b=ZrHC1zmPqWQ5fmvB3ManDyoLTlXj8O/TLvSsQN6j8hDmiSRARNeDSdEfvzSVR/nNxu
+         RAeSzTCdd3EPtglb4VyG1k67AzOwxwoxmBqwKGjojTP+azNf1KKRHrfrEwhKCHFlfiqw
+         LbNFdq10Du26XNrgxf0xftxy2HZknE4+D4aSZRly0W25dXIe33MbXyHqSsBaBVXzGpXm
+         dfHc41sgvUUlfJxT0k555zGcQh8yVxLj0jpENMcS05yROBLPZSU31Luk7jG83lEf17ZT
+         fW8AFPQtkQuDEG4fxcU+FLMNPVcw0BHulJhP4DIKbN2KZ6oll4VyJI5Ebk5zoTza3O9s
+         Mp8w==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: AOAM531ENyITGtA5qV5BPdRVjjl6yaxhaJtvt8fm0VHpeJRT0unwgGcN
-	iZ62WF/3jFUPwSlJItbjyyUJnw==
-X-Google-Smtp-Source: ABdhPJyaJoGweCTEjrlcS5xlEtdiRDinnwlp9+FxMCXSrN47WPR9kHsWcNjaa0Ga631QVHrtePquMw==
-X-Received: by 2002:a5d:590b:: with SMTP id v11mr12702541wrd.415.1619430050958;
-        Mon, 26 Apr 2021 02:40:50 -0700 (PDT)
+X-Gm-Message-State: AOAM531jDEXPTeHts3ISrKEKpLgBnVUxAssCULzTqqEe/JlAmLjQFUwR
+	tHrnsPONB8arodNX3/iFKQMgew==
+X-Google-Smtp-Source: ABdhPJyO1s+LFdKYctu/XwU7lKdoMv2Ntstbw1omeY7LJjx6wpa2waWfDrparposPwdpj4Kbl90foA==
+X-Received: by 2002:a17:907:1b06:: with SMTP id mp6mr17998647ejc.292.1619430862742;
+        Mon, 26 Apr 2021 02:54:22 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a1c:24d4:: with SMTP id k203ls7513743wmk.0.canary-gmail;
- Mon, 26 Apr 2021 02:40:49 -0700 (PDT)
-X-Received: by 2002:a05:600c:4f07:: with SMTP id l7mr19657869wmq.53.1619430049790;
-        Mon, 26 Apr 2021 02:40:49 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1619430049; cv=none;
+Received: by 2002:a05:6402:4c2:: with SMTP id n2ls7539739edw.2.gmail; Mon, 26
+ Apr 2021 02:54:21 -0700 (PDT)
+X-Received: by 2002:a05:6402:3486:: with SMTP id v6mr19859274edc.109.1619430861646;
+        Mon, 26 Apr 2021 02:54:21 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1619430861; cv=none;
         d=google.com; s=arc-20160816;
-        b=0O+1cYYKvFJDqks+KT5+thQQ3F48JuLIKkPMtk/BMrT/0ZEmGM57TF4Y0AgIV70LNe
-         vWZhyBkZb00ghqOI93tSGuCbyYNSu2Lne86Oh9PIA+cAa/NJdxUtuzUOGIZc2f/lUKPS
-         3O3pShD3F+JLTgh8xzT70k35ke96Ws8uKPTDkgwYxGNHEPWJCBHra4V2bh/Fl4+r/Naq
-         QvuKcCZtw43sn3kPbD3uJM9Bkz2ogXqoMK+YQGN1Qbr4TjyfDBp5aoSMe5VtBOlMs0dI
-         0vchsn/fjc9SF6msbqSpTUQ2HI9ywnS+e8gNx5mMfxvBR3dThn6vTznUf4fPoMsec/Dv
-         M2Xw==
+        b=zBS+yRCgPc1ZgvCuq3kJA1pTh3Z1ucfASxzNrWNRTF1lg4dgyvIFbJIBHV/tcbnION
+         h55kKnEDpnliEhW35s3Zcu0+Ll+HyguYChscX0p6OcPzrZNy6t94ZmosP8S5mml7iGiO
+         3mzLy26pDXNN4d++ojhHtGzfk8k4C2svZkuxnOTyENhD675CSMyASbMnmGXtxHxNjMXX
+         3ZwxwGPcEGgb6UcjGccJppu01OCFG5AR6fEBrJfy/D7h7LZEX82FdAwn4Zob5vP/Yt8W
+         bN4GmBReBtBHzemMvg4Hay4H7N2EbCK3oEZYfkRRF7WcniRdModIiiixWHPVWeQsdQuU
+         /pIg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=content-transfer-encoding:mime-version:references:in-reply-to:from
-         :subject:cc:to:message-id:date:dkim-signature;
-        bh=iswZelAFynf1hhjFqKGPuErugeqg+TkUHoayyjL3/3A=;
-        b=bj1sudI2wdU6gcFIYRfnAuq9uAFKzR0UjVvB5GLkDDxZLm6rhFMbz2BS/MKTvtR/K+
-         5gzZ/zPLQLtir3GYZQczajEuwqVzdPyICjfHk0R7HeqFr4z8xUGY/uGlUQfDsgla0DOR
-         M19tlkM9ncNPYZNjM9K6Jpx2BKVFjPnWkN/AkD8vKeLqegodiL2jQS19Hd2JBnBt+W5Z
-         2Uq6NLyp9MA3bJiSJFD8azzlrYMf6P4H0f9njLmPwx8E1l9obL+fw1xe/wQ4OKoxqZ83
-         8w03sfQUIASbtCe8/RgtGq6u0zNKOBd3ZUU2j6oHwEmcbyJXuRZBOr0YGqoS3Acka0YD
-         AxaQ==
+        h=content-transfer-encoding:content-language:in-reply-to:mime-version
+         :user-agent:date:message-id:from:references:cc:to:subject
+         :dkim-signature;
+        bh=IGEhv0/hUFj3cHu6S4PGMMt/mAfIUPSSxo6hM2PSOx8=;
+        b=NGT1v6zwxL9ettrsLJKL3kdulc4EgtDxdsvP9en9CfPrF8KX5TjR+fEb87O90KelUD
+         TrHxFm17iViktL4UWw3i0TkqYIkPoVu/c42lMyPSdGSxK1c6movrQ5C15Egn2FzM1n+0
+         0v3uXGhta+DadG2VXSklBIEbaaVdyoaClwaiZfOYNOPsbjwDLXYDfjHfFUBzFcqEPL+m
+         bljGNni0KAO+uaijPXV1WtFWzO7ZlVGbVRX4L6a38+DjTwqisFoJSFTOcpDY2STECfO7
+         tNav8v48HN2UwsrYJwFWz3MZZ5s2Bv0rQB4K2rOB5+NidGDTQuwkJkedqW7lrhYEErkY
+         6xbw==
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@exactco.de header.s=x header.b=yeQC3Yz1;
-       spf=pass (google.com: domain of rene@exactcode.com designates 144.76.154.42 as permitted sender) smtp.mailfrom=rene@exactcode.com
-Received: from mx.exactcode.de (mx.exactcode.de. [144.76.154.42])
-        by mx.google.com with ESMTPS id 76si1807544wrc.120.2021.04.26.02.40.49
+       dkim=pass header.i=@redhat.com header.s=mimecast20190719 header.b=dQZtFhQC;
+       spf=pass (google.com: domain of hdegoede@redhat.com designates 216.205.24.124 as permitted sender) smtp.mailfrom=hdegoede@redhat.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=redhat.com
+Received: from us-smtp-delivery-124.mimecast.com (us-smtp-delivery-124.mimecast.com. [216.205.24.124])
+        by mx.google.com with ESMTPS id n18si14593185eja.643.2021.04.26.02.54.21
         for <usb-storage@lists.one-eyed-alien.net>
         (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Mon, 26 Apr 2021 02:40:49 -0700 (PDT)
-Received-SPF: pass (google.com: domain of rene@exactcode.com designates 144.76.154.42 as permitted sender) client-ip=144.76.154.42;
-Received: from exactco.de ([90.187.5.221])
-	by mx.exactcode.de with esmtp (Exim 4.82)
-	(envelope-from <rene@exactcode.com>)
-	id 1laxjZ-0007TB-4B; Mon, 26 Apr 2021 09:40:53 +0000
-Received: from [192.168.2.131] (helo=localhost)
-	by exactco.de with esmtpsa (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256)
-	(Exim 4.86_2)
-	(envelope-from <rene@exactcode.com>)
-	id 1laxfu-0002LJ-W2; Mon, 26 Apr 2021 09:37:08 +0000
-Date: Mon, 26 Apr 2021 11:40:09 +0200 (CEST)
-Message-Id: <20210426.114009.1308148203829096478.rene@exactcode.com>
-To: hdegoede@redhat.com
-Cc: stern@rowland.harvard.edu, gregkh@linuxfoundation.org,
- linux-usb@vger.kernel.org, usb-storage@lists.one-eyed-alien.net
+        Mon, 26 Apr 2021 02:54:21 -0700 (PDT)
+Received-SPF: pass (google.com: domain of hdegoede@redhat.com designates 216.205.24.124 as permitted sender) client-ip=216.205.24.124;
+Received: from mail-ej1-f71.google.com (mail-ej1-f71.google.com
+ [209.85.218.71]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-309-0DP5rLWiONOiuPd93SWZaw-1; Mon, 26 Apr 2021 05:54:14 -0400
+X-MC-Unique: 0DP5rLWiONOiuPd93SWZaw-1
+Received: by mail-ej1-f71.google.com with SMTP id q21-20020a170906a095b029038718807866so989845ejy.19
+        for <usb-storage@lists.one-eyed-alien.net>; Mon, 26 Apr 2021 02:54:14 -0700 (PDT)
+X-Received: by 2002:a50:e607:: with SMTP id y7mr20445235edm.18.1619430853286;
+        Mon, 26 Apr 2021 02:54:13 -0700 (PDT)
+X-Received: by 2002:a50:e607:: with SMTP id y7mr20445213edm.18.1619430853093;
+        Mon, 26 Apr 2021 02:54:13 -0700 (PDT)
+Received: from x1.localdomain (2001-1c00-0c1e-bf00-1054-9d19-e0f0-8214.cable.dynamic.v6.ziggo.nl. [2001:1c00:c1e:bf00:1054:9d19:e0f0:8214])
+        by smtp.gmail.com with ESMTPSA id u9sm7438345edq.68.2021.04.26.02.54.12
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 26 Apr 2021 02:54:12 -0700 (PDT)
 Subject: [usb-storage] Re: [PATCH] unbreak all modern Seagate ATA pass-through
  for SMART
-From: Rene Rebe <rene@exactcode.com>
-In-Reply-To: <c7f619f8-b5c5-2a27-9a9e-e757c5cf5802@redhat.com>
+To: Rene Rebe <rene@exactcode.com>
+Cc: stern@rowland.harvard.edu, gregkh@linuxfoundation.org,
+ linux-usb@vger.kernel.org, usb-storage@lists.one-eyed-alien.net
 References: <0e698ca2-06e6-6ee7-1c39-a4352207a40e@redhat.com>
-	<83FED4AF-2078-43BA-95A8-1EB44C13329D@exactcode.com>
-	<c7f619f8-b5c5-2a27-9a9e-e757c5cf5802@redhat.com>
-X-Mailer: Mew version 6.8 on Emacs 27.1
-Mime-Version: 1.0
-Content-Type: Text/Plain; charset=iso-8859-1
+ <83FED4AF-2078-43BA-95A8-1EB44C13329D@exactcode.com>
+ <c7f619f8-b5c5-2a27-9a9e-e757c5cf5802@redhat.com>
+ <20210426.114009.1308148203829096478.rene@exactcode.com>
+From: Hans de Goede <hdegoede@redhat.com>
+Message-ID: <15433246-75ee-2618-2e20-0ab93b45a111@redhat.com>
+Date: Mon, 26 Apr 2021 11:54:11 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
+ Thunderbird/78.8.1
+MIME-Version: 1.0
+In-Reply-To: <20210426.114009.1308148203829096478.rene@exactcode.com>
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
+Content-Type: text/plain; charset="UTF-8"
+Content-Language: en-US
 Content-Transfer-Encoding: quoted-printable
-X-Spam-Score: -0.5 (/)
-X-Original-Sender: rene@exactcode.com
+X-Original-Sender: hdegoede@redhat.com
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@exactco.de header.s=x header.b=yeQC3Yz1;       spf=pass
- (google.com: domain of rene@exactcode.com designates 144.76.154.42 as
- permitted sender) smtp.mailfrom=rene@exactcode.com
+ header.i=@redhat.com header.s=mimecast20190719 header.b=dQZtFhQC;
+       spf=pass (google.com: domain of hdegoede@redhat.com designates
+ 216.205.24.124 as permitted sender) smtp.mailfrom=hdegoede@redhat.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=redhat.com
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -137,236 +152,130 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-From: Hans de Goede <hdegoede@redhat.com>
-Date: Mon, 26 Apr 2021 10:16:12 +0200
+Hi,
 
-> Hi,
-> =
-
-> On 4/25/21 10:52 PM, Ren=E9 Rebe wrote:
-> > Hi,
-> > =
-
-> >> On 25. Apr 2021, at 20:25, Hans de Goede <hdegoede@redhat.com> wro=
-te:
-> >>
-> >> Hi Rene,
-> >>
-> >> On 4/25/21 5:02 PM, Rene Rebe wrote:
-> >>> Alan Stern <stern@rowland.harvard.edu> wrote:
-> >>>
-> >>>> On Sun, Apr 25, 2021 at 02:15:36PM +0200, Rene Rebe wrote:
-> >>>>> From: Greg KH <gregkh@linuxfoundation.org>
-> >>>>> Subject: Re: [PATCH] unbreak all modern Seagate ATA pass-throug=
-h for SMART
-> >>>>> Date: Sun, 25 Apr 2021 14:00:26 +0200
-> >>>>>
-> >>>>>>> I would expect that more modern devices to work. Vendors usua=
-lly
-> >>>>>>> linearly allocate their product ids for new devices, and we c=
-ould
-> >>>>>>> allow list product ids higher than this Seven to unbreak more=
- modern
-> >>>>>>> devices by default and limit the amount of device quirks need=
-ed?
-> >>>>>>
-> >>>>>> Vendors do not allocate device ids that way at all, as there i=
-s no
-> >>>>>> requirement to do so.  I know of many vendors that seemingly u=
-se random
-> >>>>>> values from their product id space, so there is no guarantee t=
-hat this
-> >>>>>> will work, sorry.
-> >>>>>
-> >>>>> I did not say it is a requirement, just that they usually do sp=
-eaking
-> >>>>> of just this Seagate case. What is wrong with using that to
-> >>>>> potentially significantly cut down the quirk list?
-> >>>>
-> >>>> You didn't read commit 92335ad9e895, did you?  It lists a large =
-number =
-
-> >>>> of Seagate devices that don't work with ATA pass-through, and th=
-ree of =
-
-> >>>> them have product IDs that are larger than 0xab03.
-> >>>>
-> >>>> Please check the facts before guessing about things that will ca=
-use =
-
-> >>>> problems for other people.
-> >>>
-> >>> I really don't appreciate the unfriendly tone on the linux kernel=
-
-> >>> mailing lists (which is why for 20 years I never felt like contri=
-buting
-> >>> here mo),
-> >>
-> >> I'm sorry to hear that the admittently sometimes unfriendly tone
-> >> on the kernel mailinglists have stopped you from contributing.
-> >>
-> >> Note that I do believe that things have gotten better recently.
-> >>
-> >> As for this email-thread, I don't really see anything wrong with
-> >> Alan's reply here. You have been quite argumentative in this entir=
-e
-> >> thread about how things would be much better if they are done your=
-
-> >> way.
-> >>
-> >> I cannot speak for the others but I certainly have gotten annoyed =
-by
-> >> the tone of your emails so far, I apologize if any of that annoyan=
-ce
-> >> has bleed through in the tone of my emails. I do strive to always
-> >> stay professional (but as all of us I'm only human).
-> >>
-> >> <snip>
-> >>
-> >>>>>> What is wrong with just allowing specific devices that you hav=
-e tested
-> >>>>>> will work, to the list instead?  That's the safest way to hand=
-le this.
-> >>>>>
-> >>>>> The problem is that out of the box it does not work for users, =
-and
-> >>>>> normal users do not dive into the kernel code to find out and s=
-imply
-> >>>>> think their devices sucks. Even I for years thought the drive s=
-ucks,
-> >>>>> before I took a closer look. If you long term want more new dev=
-ices in
-> >>>>> an allow list than the previous quirk list included (9 or 10 do=
-es not
-> >>>>> sound that many to me), ... whatever you prefer ,-) I would rat=
-her
-> >>>>> have 10 quirk disable list than potential many more white liste=
-d the
-> >>>>> next years to come. Maybe we shoudl simply restore the prevoius=
-
-> >>>>> quirks.
-> >>>>
-> >>>> That's a possibility, and in the future we may do it.  But proba=
-bly not =
-
-> >>>> until the enable list grows to a comparable length.
-> >>>
-> >>> Yeah, why future proof it now, ...
-> >>
-> >> Perhaps look in the mirror and start with improving the tone of yo=
-ur
-> >> own emails ?
-> > =
-
-> > Thanks, I re-read them and find them pretty ok.
-> =
-
-> I was directly referring to your "Yeah, why future proof it now, ..."=
-
-> remark here. But more in general I personally find the tone of your
-> emails in this thread somewhat "combative".
-> =
-
-> I believe that in the end we all want the same thing which is to help=
-
-> Linux users to get the best experience possible. It just seems that w=
-e
-> disagree on how to reach that goal.
-> =
-
-> Assuming that I have that correct, then I believe that there is a lot=
-
-> of common ground between us; and I wish that we could approach this
-> in a way where we try to find a solution which we can all agree on.
-> =
-
-> Ideally we could just wave a magic wand and make this all work,
-> but unfortunately reality is not cooperating, so we need to come up
-> with some pragmatic solution here.
-
-I did not mean to be compative, however, as usual in real life we just
-do not agree with all the reasoning ;-)
-
-> > On further internet searching that there are at least 4 more driver=
-s
-> > listed on the smartmontools page that should work:
-> > =
-
-> > 	https://www.smartmontools.org/wiki/Supported_USB-Devices
-> =
-
-> That is a very interesting link thank you. That certainly advocates
-> for a generic approach introducing a new US_FL_ATA_1X_OK and then
-> adding quirks setting that for both your model and the 4 models
-> listed there.
-> =
-
-> I would really appreciate it if you could submit a patch series
-> for this. But if you don't want to do that then I'll put this on
-> my own TODO list.
-
-Maybe another week, however, as this is not the semantic I prefer that
-would only cause more work for me with a bigger reverting patch in our
-tree at the end, ...
+On 4/26/21 11:40 AM, Rene Rebe wrote:
+> From: Hans de Goede <hdegoede@redhat.com>
+> Date: Mon, 26 Apr 2021 10:16:12 +0200
+>=20
+>> Hi,
+>>
+>> On 4/25/21 10:52 PM, Ren=C3=A9 Rebe wrote:
 
 <snip>
 
-> > Given this, I will not continue spending my time on implementing
-> > what you suggested and instead simply reverted this for our Linux
-> > SDE as I believe results in the best out of the box experience
-> > for our users:
-> > =
+>> Ideally we could just wave a magic wand and make this all work,
+>> but unfortunately reality is not cooperating, so we need to come up
+>> with some pragmatic solution here.
+>=20
+> I did not mean to be compative, however, as usual in real life we just
+> do not agree with all the reasoning ;-)
 
-> > 	https://svn.exactcode.de/t2/trunk/package/base/linux/uas-seagate.p=
-atch
-> =
+Yes, thank you for understanding.
 
-> I've taken a quick peek at this and I see that you've also restored
-> the old per model quirks to disable ATA pass-through on known to be
-> broken models, good.
+>>> On further internet searching that there are at least 4 more drivers
+>>> listed on the smartmontools page that should work:
+>>>
+>>> 	https://www.smartmontools.org/wiki/Supported_USB-Devices
+>>
+>> That is a very interesting link thank you. That certainly advocates
+>> for a generic approach introducing a new US_FL_ATA_1X_OK and then
+>> adding quirks setting that for both your model and the 4 models
+>> listed there.
+>>
+>> I would really appreciate it if you could submit a patch series
+>> for this. But if you don't want to do that then I'll put this on
+>> my own TODO list.
+>=20
+> Maybe another week, however, as this is not the semantic I prefer that
+> would only cause more work for me with a bigger reverting patch in our
+> tree at the end, ...
 
-Yes, I reverted that, and added two more I found from the old email
-thread that probably triggered the code change back in the day.
+Thank you for considering working on this. If you decide not to do
+this in the end, please let me know then I'll add this to my
+(way too long) TODO list.
 
-> Note that the list of broken models which you've added it missing the=
+> <snip>
+>=20
+>>> Given this, I will not continue spending my time on implementing
+>>> what you suggested and instead simply reverted this for our Linux
+>>> SDE as I believe results in the best out of the box experience
+>>> for our users:
+>>>
+>>> 	https://svn.exactcode.de/t2/trunk/package/base/linux/uas-seagate.patch
+>>
+>> I've taken a quick peek at this and I see that you've also restored
+>> the old per model quirks to disable ATA pass-through on known to be
+>> broken models, good.
+>=20
+> Yes, I reverted that, and added two more I found from the old email
+> thread that probably triggered the code change back in the day.
 
-> 0xab25 and 0xab38 product-ids which according to:
-> https://www.smartmontools.org/wiki/Supported_USB-Devices
-> have broken ATA passthrough support with UAS.
+Ah I was already why there were more entries then I expected,
+good job.
 
-Thanks, I added those two now as well.
 
-> If I assume that these behave as some of the other Seagate drivers an=
-d
-> the bridge-chip crashes when trying to use ATA pass-through, then onc=
-e
-> these changes hit your users and customers you have just broken usage=
+>> Note that the list of broken models which you've added it missing the
+>> 0xab25 and 0xab38 product-ids which according to:
+>> https://www.smartmontools.org/wiki/Supported_USB-Devices
+>> have broken ATA passthrough support with UAS.
+>=20
+> Thanks, I added those two now as well.
 
-> of those disks together with your product. This nicely illustrates
-> why we don't want to make this change in the mainline kernel.
-> =
+Great, that means your patch will be a good starting point for
+the broken devices list if we do ever decide to flip the
+default for Seagate devices back to allowing ATA pass-through by
+default.
 
-> Note depending on how important disk performance is for you
-> an alternative approach might be to modify the Seagate product-id che=
-ck
-> to simply disable UAS on Seagate devices, that would be a lot safer.
+>> If I assume that these behave as some of the other Seagate drivers and
+>> the bridge-chip crashes when trying to use ATA pass-through, then once
+>> these changes hit your users and customers you have just broken usage
+>> of those disks together with your product. This nicely illustrates
+>> why we don't want to make this change in the mainline kernel.
+>>
+>> Note depending on how important disk performance is for you
+>> an alternative approach might be to modify the Seagate product-id check
+>> to simply disable UAS on Seagate devices, that would be a lot safer.
+>=20
+> We do not run a smartd by default>
 
-We do not run a smartd by default, and I actually prefer a driver that
-deaults to behave by the standard book, and get notified when
-something goes wrong, instead of globally disallow listing a whole
-vendor.
+Ah yes that helps, unfortunately in the mainline kernel we cannot
+assume that that is the case.
 
-Maybe it is still an option to restore the updated unusual quirk list
-entries, that way users with newer devices get their SMART back sooner
-than later and this also encourages Seagate to continue producing
-fully working devices, without hiding any ATA pass-through bugs by
-default ;-) Given the hidden nature of this, it probably would take
-more than a decade to ok-list working devices by interested users,
-which hopefully going forward should hopefully be all new ones.
+> and I actually prefer a driver that
+> deaults to behave by the standard book, and get notified when
+> something goes wrong, instead of globally disallow listing a whole
+> vendor.
+>=20
+> Maybe it is still an option to restore the updated unusual quirk list
+> entries, that way users with newer devices get their SMART back sooner
+> than later and this also encourages Seagate to continue producing
+> fully working devices, without hiding any ATA pass-through bugs by
+> default ;-)
 
-	Ren=E9
+It is always an option :) I just don't think that this is the right
+moment in time to do it. Notice that your email archive digging +
+the https://www.smartmontools.org/wiki/Supported_USB-Devices have
+turned op 4 new broken devices for which we did not have quirks
+before. I'm simply afraid that that is just the tip of the iceberg.
+Causing peoples disks to stop working is not just a bug, it is
+a very very bad bug, so yeah I'm quite conservative here, sorry.
 
--- =
+So for now I believe that the best thing we can do is to agree
+that we disagree on the best way to handle this.
 
-  Ren=E9 Rebe, ExactCODE GmbH, Lietzenburger Str. 42, DE-10789 Berlin
-  https://exactcode.com | https://t2sde.org | https://rene.rebe.de
+(Now if only I had this magic-wand which could give me the complete
+list of all broken models, then things would be different.)
+
+Regards,
+
+Hans
+
+--=20
+You received this message because you are subscribed to the Google Groups "=
+USB Mass Storage on Linux" group.
+To unsubscribe from this group and stop receiving emails from it, send an e=
+mail to usb-storage+unsubscribe@lists.one-eyed-alien.net.
+To view this discussion on the web visit https://groups.google.com/a/lists.=
+one-eyed-alien.net/d/msgid/usb-storage/15433246-75ee-2618-2e20-0ab93b45a111=
+%40redhat.com.
