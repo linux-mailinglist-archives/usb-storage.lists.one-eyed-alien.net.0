@@ -1,129 +1,128 @@
-Return-Path: <usb-storage+bncBDGIV3UHVAGBB56SU2FQMGQEVOWUF3Q@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBD3JNNMDTMEBB2UEVWFQMGQEVSWIN7A@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-wm1-x346.google.com (mail-wm1-x346.google.com [IPv6:2a00:1450:4864:20::346])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3D09042F7EB
-	for <lists+usb-storage@lfdr.de>; Fri, 15 Oct 2021 18:16:56 +0200 (CEST)
-Received: by mail-wm1-x346.google.com with SMTP id k5-20020a7bc3050000b02901e081f69d80sf803761wmj.8
-        for <lists+usb-storage@lfdr.de>; Fri, 15 Oct 2021 09:16:56 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1634314616; cv=pass;
+Received: from mail-pl1-x646.google.com (mail-pl1-x646.google.com [IPv6:2607:f8b0:4864:20::646])
+	by mail.lfdr.de (Postfix) with ESMTPS id 7B01043050F
+	for <lists+usb-storage@lfdr.de>; Sat, 16 Oct 2021 23:21:48 +0200 (CEST)
+Received: by mail-pl1-x646.google.com with SMTP id k1-20020a170902c40100b0013f47bac4d8sf4432932plk.14
+        for <lists+usb-storage@lfdr.de>; Sat, 16 Oct 2021 14:21:48 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1634419306; cv=pass;
         d=google.com; s=arc-20160816;
-        b=gQwiTu/bYnFgAiojS/q/Ig8DBVMT9WFdfzkXcRv/8VI096RHPxT9eTn4Hvztmy4rX1
-         5IrEYG/L/uWwjDBlf6B5miB1tNss6JbVZMUTa3Kfwqj5DUmA61EQFtF/7GOGLd5XIdzF
-         fr2lGfe4u54YmoSFVxg7EDWrbVxtFNUKsp4Vl1ZHkkS6bUdE3QaJp6V/oMqUZlgA0EUg
-         fESJDVAt5ELZsZeJ0zGj/u6jSQRuoTqgINtslAS4ZBh7Q/3FTEL3ra4RFdj2L4Kiu8pL
-         euxbc5B57eIDbGjWbU0vNt8VKTm++1fKybFZlLw8Q3Tnes9E+XBc5tr0104ttfd2HR24
-         /Dtg==
+        b=cxAhplnA9DDlMnc3MWcHJp785tOnl9wewcz/m97V90OtzkaVSm+FenJTfLMYLmQ4Kx
+         zm31q2wX+SW3VDPURM861quTZSFexji9/y+W2+Wejw9V+c6k0HAAn7+/wxHkzWjDtMm4
+         FhmXBQMvZLT/5VDYBcF6KqVu2ZVQNyexFno03TZ+HOXrrdhqnKXc91ySZK8WYTj93za7
+         2UiLcAhx/KwsQgEBECQthAcrXFDFRB60WNVwGSb0wfXzCboYOd+d9CC4No3qyNwLWzzo
+         SWTx6DX0Lyi9+bu0AsvrzMVd4n8UqC9+Z0z4FoSyvieS1zyTuYnTL/WiCkpKlCJgr1qI
+         8xIw==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:in-reply-to:content-disposition
-         :mime-version:references:message-id:subject:cc:to:from:date:sender
-         :dkim-signature;
-        bh=JdxoBEgKQwg+/XqRBqPqQ8rxNZYod25FgLs1W96/Bhw=;
-        b=UBmlbTNhD7fY/lTDYt5t5d/3Ywa2O198BOD3Yv1g6ga6dc9QnZ+SRkmZqwjI6kfO85
-         lj+7P6e17j4ntoEEfmMlEDqTtayFuWkM+/HeBxqnYRhKwr6rBKN5ov9ZiX/elqdjJV29
-         NXxKHuWIf7/BcJnAlu714PS/iUPiBU4ragE/63PkL5hsA/rf3mBm71sPB571b3pQC6l9
-         8AX4aEMAcLJ0A1hcJPtB7DfZ+eqWdgMGB4YTcC+wy09WFoKrSLZXlUyQlnkrEartHFXJ
-         M1kzyyjLLFPgwl+KEq9LaPWj4kYqxuhuPnZWlL0AmVi/4LaL2IU/SP7Kj/VuCbQXbEof
-         h0AA==
+         :list-id:mailing-list:precedence:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :sender:dkim-signature;
+        bh=PtcOs5K11UsKQbQL4QHTPT6pchFNJoC8OndMdR+Uhy4=;
+        b=zGbMJSkPXB4+1pDXh+9bUdZ5vFO1SCUBoQPvLj6ny1PvwGNuuCsrTs9FUWIy5fxAR0
+         dhtqzj2Y8uTTsKPOG6XoQofl9uLHvi4Uige+SpeHw4HiSbIPnFOuSD81L8wILk3LBv9G
+         2APooJ66qEzRsFvOIIecV79DX21e360LEDx/LETFRYaKS/13yZBUo0f9RaVqEFmgxPNT
+         hKoBdUeVtN+UXU53BhSYLP00qzshKq2vAAIFtLbRfvE9LyDETLqKHXbq+sja7+ZZha8A
+         SNQmg0tGGChd2iM8jEgnEUR2WCtfwHNU0qgb3NoU9QKfaJgQjY0QMpdca94kgL9oXXEQ
+         hWxQ==
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@linutronix.de header.s=2020 header.b=kVqjNhvN;
-       dkim=neutral (no key) header.i=@linutronix.de header.s=2020e header.b=TsfTdm4e;
-       spf=pass (google.com: domain of bigeasy@linutronix.de designates 2a0a:51c0:0:12e:550::1 as permitted sender) smtp.mailfrom=bigeasy@linutronix.de;
-       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=linutronix.de
+       spf=pass (google.com: domain of bart.vanassche@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=bart.vanassche@gmail.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
-        h=sender:date:from:to:cc:subject:message-id:references:mime-version
-         :content-disposition:in-reply-to:x-original-sender
-         :x-original-authentication-results:precedence:mailing-list:list-id
-         :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
-        bh=JdxoBEgKQwg+/XqRBqPqQ8rxNZYod25FgLs1W96/Bhw=;
-        b=eseoxQjXr1SDxOmfsSt2FWkVSDgxyq+sekicR5k5JQ64t68wE4wAFEma9RnyZuJgiQ
-         QwSq9EAA1CNHx/nMxmZHqWXe3Slkuc9q1dA8p9ITEGN9wSiChiE3X3Rx6DUy7cPsmj3i
-         NRIrjr9qdUOaSXM0sp9mrQN99DmOGBFoZNOYU=
+        h=sender:message-id:date:mime-version:user-agent:subject
+         :content-language:to:cc:references:from:in-reply-to
+         :x-original-sender:x-original-authentication-results:precedence
+         :mailing-list:list-id:list-post:list-help:list-archive
+         :list-subscribe:list-unsubscribe;
+        bh=PtcOs5K11UsKQbQL4QHTPT6pchFNJoC8OndMdR+Uhy4=;
+        b=ER2WxdeTYtjnUOsq5u/u3MehUG3WqMv/ASbFuizrbzvv7URS6mnOD3pUcaNOxo2KJQ
+         TNRNZGuWLqS3a7yDZYsgoLz1RihQcP1cAJvOgOaS22qv1aCHGEi6fQzp4XPPB05Mq5CT
+         vI8VjF7nQRBpI+AfEHAiIx2Nlu8Uwif9oPa2Y=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=sender:x-gm-message-state:date:from:to:cc:subject:message-id
-         :references:mime-version:content-disposition:in-reply-to
+        h=sender:x-gm-message-state:message-id:date:mime-version:user-agent
+         :subject:content-language:to:cc:references:from:in-reply-to
          :x-original-sender:x-original-authentication-results:precedence
          :mailing-list:list-id:x-spam-checked-in-group:list-post:list-help
          :list-archive:list-subscribe:list-unsubscribe;
-        bh=JdxoBEgKQwg+/XqRBqPqQ8rxNZYod25FgLs1W96/Bhw=;
-        b=KaRrpDdRwXHl/sNqf7EI/66IiItqO5cq0XA/j07GxVrAE9RJzNCUVtMrsUq3wkCyZU
-         bqQEChnxTsRv7UfKDgw0TBj2O7LVG9OVis7ZB2H79qTmsxTZlWqwf4zvkMuiWmCoZYyj
-         6GIQO9wrw+bnBQtm1I4b68jvsydT0Xv0kXn2bgAPbT6XHlrzzluwT4ocPXtQ1Iqd6MkL
-         xJfqx/qbBJ8GnyTouXWoSuB0AQE6tfERktW5MpyICh/cVn3i/8hgDUjwUxJFcR6NIhhm
-         ps4sOCQcmTHaAKbodxHwEzwJ19z6vlEG8VF7JihMheF77s3z8qC7Dgr2Nn8f9IT8LpYD
-         3b8g==
+        bh=PtcOs5K11UsKQbQL4QHTPT6pchFNJoC8OndMdR+Uhy4=;
+        b=MTpat4prV+x6X43ucQhc8Xwba7IcuAGvbB1Oznnig2QZxwBGMkOP6YPaPnWoJ5Yf93
+         n1tsOT/aqqDCq7f9jFEWdAs3CKBGNZei3W9OR4GcYQ6Yk16C7lwtH0qDFsnZG75PxMnr
+         XeyUTvN/VdnBZp8fqxDbHZqAbzPLAMpqALvMKrnTMMOj0P+kYc+GUqk9qGHKjL2saU0U
+         iwy5vkat93PcXx0fdeMMCE+nwL6nMyMYmCBdNVQEj022XSc9+dTbbdma/Z2JhLNyGp3A
+         AqoFWmvxDTrGlegI6jE/D2KjRjxBNTjMd3Q2KPZ/y6z+bdySK+80XFXuQaOr71Xs4Ytp
+         A3Tw==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: AOAM530fI7TRKQhmzvPaanQrhEa2Hgwm4GVDBVcRHkEQxzbpe9w3pwy2
-	rZV3LM7FQJbyv/8XBwSdjtc5Yw==
-X-Google-Smtp-Source: ABdhPJxnSg3dcAlG2PAXyD2OfMjGqiSu+bop5Q1i+QVVqkCRNd7Z8CorBIdo2rWMAEtI0Z0Kraqh8w==
-X-Received: by 2002:adf:aa96:: with SMTP id h22mr15574771wrc.405.1634314615965;
-        Fri, 15 Oct 2021 09:16:55 -0700 (PDT)
+X-Gm-Message-State: AOAM533QOqWNob6eGYFpARI6LDAlN88Ke9eaiW7RJ3crcqEQmEC8QdUd
+	MWqnaMWC0/mbi1ICuxJrvUUpBw==
+X-Google-Smtp-Source: ABdhPJwHHB/gSFRgi5Q6JML/ueK+mVDwCwG/3cCpSskP8q+QFjgRz2a3PaKF/wR6OjueNTsxO+9Zdw==
+X-Received: by 2002:a17:90b:f10:: with SMTP id br16mr37613115pjb.67.1634419306413;
+        Sat, 16 Oct 2021 14:21:46 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:adf:8b92:: with SMTP id o18ls167875wra.0.gmail; Fri, 15 Oct
- 2021 09:16:55 -0700 (PDT)
-X-Received: by 2002:a5d:6d8f:: with SMTP id l15mr15649447wrs.350.1634314615002;
-        Fri, 15 Oct 2021 09:16:55 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1634314614; cv=none;
+Received: by 2002:a17:903:241:: with SMTP id j1ls6468259plh.8.gmail; Sat, 16
+ Oct 2021 14:21:41 -0700 (PDT)
+X-Received: by 2002:a17:902:ba85:b0:13e:c846:c92e with SMTP id k5-20020a170902ba8500b0013ec846c92emr18353817pls.57.1634419301176;
+        Sat, 16 Oct 2021 14:21:41 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1634419301; cv=none;
         d=google.com; s=arc-20160816;
-        b=BFVEo1Bt4KKHRuJ5c1KGNdVw+CLgzE4WIeHlae5F4MTlRw/meFraa0ahxce9pBnN+r
-         NX7F4GsKwtyPKvupOcizAgZ1Yt6uqGVwsXL6A02aSadb1spOOwW6HUn4ffMdrAqje4zf
-         WeRZm3ooTpC4Ts5P4mX/l+FSce3kf7UNPw4mO5pDAYYlBnF8xkzKBmiLL+kV6baMACcZ
-         1y1ceMqfi/wJxiiEUz2AmnKzX+agNT2gaqMaA8FYCnSx/vI7mgHtdqp+TRY/rTFWPQz0
-         kIoH1RIBqfjoqIIbFQ4Wikw/mdIbeLouJyRLjvbDexVj02CpqpM7nrgji038UbVA7oYT
-         rZtw==
+        b=spWoq/3APC9X0kHp6VMQshEIGXKlPhmzEzA2YYPPbaEddOpPqXAuVyTUrrw0x3Znhe
+         RXZu0L7Wv3rLl4ndwmvbyss9PeI2nkxj6gaNaMd0JWymAHn6FHC5xO9YfuO+X+5aOgl2
+         T1Kak8cW2QAqVhp6X22qBLhbWuE/l+l9f59MRPcF1op1v3VywLuUNRjnZQpeYhoZHtIM
+         y3ajfu0zmsfto8uFcUWYzMGk2cDdRScJ6TBeREaxJuJERNfucSNOUiMGo5jU19dnSYX7
+         LMzKZrVxC/R7JSJlAZ/xUVpKMuPYySQWCFEPQyZq1Rr9r4g/VvunKZQVecH4szKuZSMx
+         vCtg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:dkim-signature:dkim-signature:date;
-        bh=oqu1oJeEHUxhy202sz9OoMP/FwVFN/ikHYyAlVt7IQc=;
-        b=oh5MRurfDZlbZ5KcSdnRLI+5TYeEY8mYhBlbbRWfWzgp9r5YDOH0gRcAEc2u6zQK6o
-         hEcoUxMNkFvt7gx0gSne8jShpBmXMA7oWJQi5WYCftQW1iEayHAhoNjDxGZttzXue8Lf
-         tRA5wlhkpsrOnuQKQ8gor5PMFKLn1Xs84OSvwsNUJV5jDIhxB7QEL8uXaOvIeBU+Elkp
-         +UU0Cv/AtJuBkcjt5t7HdRmD7n3aC9Uq6EMMJpBDfgMIDqc0j31lm/7DoyOe7+8qKg4S
-         PpIyykjNEM6ZqUCwj2Hnq8X4oROj/RIGqbqTgzAWuHjgk+d4ERgCu+xdILAPIoQMaZN7
-         /haw==
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id;
+        bh=pP45eXzz1JfHD3xUyRKD/lLddvhCQLEQjybOQXsKJZk=;
+        b=jtG0E8KFSiKAW8kduiWmgd7vbBWI6oVB6cvt/S6P/ZeycNACWxkAH6y5jB318yFtHJ
+         KyVUyk+6suQj8yA1CZWrY3olnKYAMMChZ9/CgI/ln8Hovf8ewKUf2/OilqfPe0polq2x
+         oAn445M7BB0fu/WP2RaVD/oqCMoS40DcKrOIUnHSU5VqtaPrnh3Huo1XU/H89sQ4hCGB
+         sNn2JXSOD7NVM2CBxNYP/8VwnraBkBz9mxmmDzIzJ5xYItLuJ4PQKWknd/q47Zal6wBJ
+         t3NHWKVw4BymaqMuq7oW/3DvEJCWJncuIPxJy5pfmdeemGAQdCCEAsYbjJvsv1x2OriT
+         bnMw==
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@linutronix.de header.s=2020 header.b=kVqjNhvN;
-       dkim=neutral (no key) header.i=@linutronix.de header.s=2020e header.b=TsfTdm4e;
-       spf=pass (google.com: domain of bigeasy@linutronix.de designates 2a0a:51c0:0:12e:550::1 as permitted sender) smtp.mailfrom=bigeasy@linutronix.de;
-       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=linutronix.de
-Received: from galois.linutronix.de (Galois.linutronix.de. [2a0a:51c0:0:12e:550::1])
-        by mx.google.com with ESMTPS id n2si21025200wme.179.2021.10.15.09.16.54
+       spf=pass (google.com: domain of bart.vanassche@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=bart.vanassche@gmail.com
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id r65sor5075705pfc.58.2021.10.16.14.21.41
         for <usb-storage@lists.one-eyed-alien.net>
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 15 Oct 2021 09:16:54 -0700 (PDT)
-Received-SPF: pass (google.com: domain of bigeasy@linutronix.de designates 2a0a:51c0:0:12e:550::1 as permitted sender) client-ip=2a0a:51c0:0:12e:550::1;
-Date: Fri, 15 Oct 2021 18:16:53 +0200
-From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
-To: Christoph Hellwig <hch@infradead.org>
-Cc: linux-block@vger.kernel.org, linux-mmc@vger.kernel.org,
-	linux-scsi@vger.kernel.org, linux-usb@vger.kernel.org,
-	usb-storage@lists.one-eyed-alien.net, Jens Axboe <axboe@kernel.dk>,
-	Ulf Hansson <ulf.hansson@linaro.org>,
-	"James E.J. Bottomley" <jejb@linux.ibm.com>,
-	"Martin K. Petersen" <martin.petersen@oracle.com>,
-	Alan Stern <stern@rowland.harvard.edu>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Thomas Gleixner <tglx@linutronix.de>
+        (Google Transport Security);
+        Sat, 16 Oct 2021 14:21:41 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bart.vanassche@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+X-Received: by 2002:a63:3481:: with SMTP id b123mr15521900pga.230.1634419300624;
+        Sat, 16 Oct 2021 14:21:40 -0700 (PDT)
+Received: from ?IPV6:2601:647:4000:d7:f0a3:eba0:b940:fc7c? ([2601:647:4000:d7:f0a3:eba0:b940:fc7c])
+        by smtp.gmail.com with ESMTPSA id k3sm14836806pjg.43.2021.10.16.14.21.38
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 16 Oct 2021 14:21:39 -0700 (PDT)
+Message-ID: <a6354cfb-753a-8376-b96c-f35fda9b9b8a@acm.org>
+Date: Sat, 16 Oct 2021 14:21:37 -0700
+MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.2.0
 Subject: [usb-storage] Re: [RFC PATCH 3/3] scsi, usb: storage: Complete the
  blk-request directly.
-Message-ID: <20211015161653.muq37x6mkeru6lxc@linutronix.de>
+Content-Language: en-US
+To: Sebastian Andrzej Siewior <bigeasy@linutronix.de>,
+ linux-block@vger.kernel.org, linux-mmc@vger.kernel.org,
+ linux-scsi@vger.kernel.org, linux-usb@vger.kernel.org,
+ usb-storage@lists.one-eyed-alien.net
+Cc: Jens Axboe <axboe@kernel.dk>, Ulf Hansson <ulf.hansson@linaro.org>,
+ "James E.J. Bottomley" <jejb@linux.ibm.com>,
+ "Martin K. Petersen" <martin.petersen@oracle.com>,
+ Alan Stern <stern@rowland.harvard.edu>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Christoph Hellwig <hch@infradead.org>, Thomas Gleixner <tglx@linutronix.de>
 References: <20211015151412.3229037-1-bigeasy@linutronix.de>
  <20211015151412.3229037-4-bigeasy@linutronix.de>
- <YWmmn4MpTSGHRVOU@infradead.org>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="UTF-8"
-Content-Disposition: inline
-In-Reply-To: <YWmmn4MpTSGHRVOU@infradead.org>
-X-Original-Sender: bigeasy@linutronix.de
-X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@linutronix.de header.s=2020 header.b=kVqjNhvN;       dkim=neutral
- (no key) header.i=@linutronix.de header.s=2020e header.b=TsfTdm4e;
-       spf=pass (google.com: domain of bigeasy@linutronix.de designates
- 2a0a:51c0:0:12e:550::1 as permitted sender) smtp.mailfrom=bigeasy@linutronix.de;
-       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=linutronix.de
+From: Bart Van Assche <bvanassche@acm.org>
+In-Reply-To: <20211015151412.3229037-4-bigeasy@linutronix.de>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
+X-Original-Sender: bvanassche@acm.org
+X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
+ domain of bart.vanassche@gmail.com designates 209.85.220.41 as permitted
+ sender) smtp.mailfrom=bart.vanassche@gmail.com
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -139,15 +138,26 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On 2021-10-15 09:04:47 [-0700], Christoph Hellwig wrote:
-> Bart has been working on removing the ->scsi_done indirection, so this
-> will need to find a way to interact with that
+On 10/15/21 08:14, Sebastian Andrzej Siewior wrote:
+> +static inline void scsi_done(struct scsi_cmnd *scmd)
+> +{
+> +	scmd->scsi_done(scmd);
+> +}
 
-Okay. So I just wait until it is there. Is this v5.15/16 material?
+How about leaving out this function definition and open-coding it into 
+its callers?
 
-Sebastian
+Additionally, please rebase this patch series on top of "[PATCH v3 
+00/88] Call scsi_done() directly" 
+(https://lore.kernel.org/linux-scsi/20211007202923.2174984-1-bvanassche@acm.org/ 
+or https://github.com/bvanassche/linux/tree/scsi-remove-done-callback). 
+Otherwise Linus will have to resolve a very complicated merge conflict.
+
+Thank you,
+
+Bart.
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20211015161653.muq37x6mkeru6lxc%40linutronix.de.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/a6354cfb-753a-8376-b96c-f35fda9b9b8a%40acm.org.
