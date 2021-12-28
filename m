@@ -1,31 +1,31 @@
 Return-Path: <usb-storage+bncBCJLBW6OUMMRBXWBWWHAMGQESRNPXWQ@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-qv1-xf45.google.com (mail-qv1-xf45.google.com [IPv6:2607:f8b0:4864:20::f45])
-	by mail.lfdr.de (Postfix) with ESMTPS id F13EB481A6C
-	for <lists+usb-storage@lfdr.de>; Thu, 30 Dec 2021 08:33:51 +0100 (CET)
-Received: by mail-qv1-xf45.google.com with SMTP id 13-20020a0562140d0d00b00411590233e8sf18873546qvh.15
+Received: from mail-qk1-x746.google.com (mail-qk1-x746.google.com [IPv6:2607:f8b0:4864:20::746])
+	by mail.lfdr.de (Postfix) with ESMTPS id 03AD3481A6E
+	for <lists+usb-storage@lfdr.de>; Thu, 30 Dec 2021 08:33:52 +0100 (CET)
+Received: by mail-qk1-x746.google.com with SMTP id y24-20020a37e318000000b0047687b4d282sf6431111qki.3
         for <lists+usb-storage@lfdr.de>; Wed, 29 Dec 2021 23:33:51 -0800 (PST)
 ARC-Seal: i=2; a=rsa-sha256; t=1640849631; cv=pass;
         d=google.com; s=arc-20160816;
-        b=Go3huD4V3dpk7Nw7K1szJ8aFOGRxq5dh9w+elt3mg+DgfMml7q7mTQqgiA99TXCHYi
-         Orx/qaNqXdDGPJbcOrkaaL34BrcpaM492LJVje+2hG58UZ3uUX4syTvIJi28IuQMDDxh
-         wmqcgkdaRwk0596uQvRuuakVyFDl7dcwpUJQ+66+H4SaeYAaLyj5j32lts7PQ+vq+z5x
-         nBVRcgFcY/ie89ji7ubRjuxmNGK87lcw59OXYQ3XfhM8LW/I4iGHICA1CjUgt3Gi2zHH
-         V9EdEGoFL6izSBUyMQv5IWYFKyyzoindyhgpGZdszwb/5JCQ2XU5jl3em9vpuBQ/i4n6
-         VpHw==
+        b=W2yUSzTEubvkbIVirKVZtwzGUTa3oOaqhQ317raA/OIs/yz/QRCBIes33brfrDrmqh
+         iiM3+IidpDt96tN1IrgGoc7s3dUZ95zDRK1Mi2zKmfFtADjXRGKq08tq2+7oUrgNxLbj
+         TEbQKulf/yh+7CRPpWMl1HWRx1nLvHfOHq7GFgPTLuzgKKY/zgZvgNWOj1LwgcZVrpu9
+         Hv+d82kGut3jdtv+L5op4IAKl8mk0Ss0coDBvtzWSz3z2jfMGx0xrzjbrMtqURg12cHE
+         ClZZ7QpFsKC056oZh45cuzda9AV3yMWQjukskE/edGFSz3PtpjcZ2owmo4MHgouYZZix
+         sq6w==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:in-reply-to:from:content-language
          :subject:references:cc:to:user-agent:mime-version:date:message-id
          :sender:dkim-signature;
-        bh=L0MAgftMzVL4q2IjA+3nFXCeqoDqeMokSTfMYy8A4YU=;
-        b=ZJeXEaPmakTwlGtHVagUw5rF4UUSDlMsH+/QWCdZ17yScPbayzeY1+n1qX3CIrK86w
-         GQOv4nR4ZyzANybvlKxDrtd29Uu/546fJTiTOAhZeT5Yu07wthEgZ5Lyr+3Gx4B7qN/H
-         Uf6LOMMsQzBLEZliWpL8YRjTidli2g51pMt7pCQTy1+IdhMUi8HGz7I7ZpF4cKCbwnLu
-         X+8dULARj95Tm+DwQUaBIY8/QiP7qF3QuynF6BzogjlDeRyot7oDpG/tes2Oy/bjp5te
-         96LT/Lof40CpbzrQX23BA0I+ajpjU97NMKyidrR1TwgHk1Np1awvOJ01qb451LecCT08
-         f+XQ==
+        bh=jkS42uAFKrrXwKBxE57yPODljuF+8PWKbGcPxlfknv8=;
+        b=BOmXyvF7R9N8ylWTTIslew5Rw/OBcB77P+HubMGVdSaIlqstfHzX8ibUGVtWITu7nm
+         0Qa4+GuGs8Nxu2WSolh6Ep+1etnZ8/WPzSTIqmxZyhqTmCj9MsvX5nBZtMr9lMkSmxKT
+         d2xeyWNHoLuIMQWI3k8IWuzQioEWEQHgEuLrOGqXSt3dsXcX080CRwmuiFAyaBTA3yNT
+         JXMWwz/4DiE8bfnAICisj4Xf7NZTtEyC65KRL23E+bKjFcEIwYkUmYQmeIHck7xCM169
+         e5WJ7gDAEc5/x/jTfmLMLPYdoAnBY1SjWxD/s/CXVeKiwEl8G4Fa6X+fUbPDxc0CmXpB
+         6qiA==
 ARC-Authentication-Results: i=2; mx.google.com;
        spf=neutral (google.com: 80.12.242.127 is neither permitted nor denied by best guess record for domain of christophe.jaillet@wanadoo.fr) smtp.mailfrom=christophe.jaillet@wanadoo.fr
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
@@ -34,10 +34,10 @@ DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
          :subject:content-language:from:in-reply-to:x-original-sender
          :x-original-authentication-results:precedence:mailing-list:list-id
          :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
-        bh=L0MAgftMzVL4q2IjA+3nFXCeqoDqeMokSTfMYy8A4YU=;
-        b=GUQIAwiqeC4dzOLPFeSLbs+4APcq9rNOhSyPmGCYMGZRA+JdzZC78IcYMlochpptE0
-         R6E+/PBdS0upWyz8wxsRi28f9hSfOggA2RwvmpL19PWCL54mZXam2tgVW41g+qgRz05j
-         EGSpkN6CqvLdmQG8jHjVyBdsWNWRpfmFe1MJ0=
+        bh=jkS42uAFKrrXwKBxE57yPODljuF+8PWKbGcPxlfknv8=;
+        b=dpPswm0pJSTq+OmLAvhlOjLeuApwJ9l4GJ5czayyb4Hyi5+C9Ji+B9cckSXG/6Z45S
+         HTTDSrQnIQ0TRhwfwQITQikr3lkY1Q7LXFsGf/aPXhLP+JjJJXmrkcBpYANZL9hPnjzx
+         aFYBoFz+gF/2XilGRuHkjrVzpdY3Z/p8CdSwU=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=sender:x-gm-message-state:message-id:date:mime-version:user-agent
@@ -45,64 +45,65 @@ X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
          :x-original-sender:x-original-authentication-results:precedence
          :mailing-list:list-id:list-post:list-help:list-archive
          :list-subscribe:list-unsubscribe;
-        bh=L0MAgftMzVL4q2IjA+3nFXCeqoDqeMokSTfMYy8A4YU=;
-        b=CAzReuVBUhj8Zvfow62VGxvd/R7q7trKSny9sjE7PFVCV1map+vfGw9y6L/0Jo4WnO
-         fjHF1CT+SPVtHCl8eu3rZhIjqadtzjO8vbsOMdwU0JpyUBxNwUu0tjqQYcXyOOSavm1L
-         eHpIxkhxxL1Mn2tWnJS/IxPvCGnedzrjCv0X3qocrWrOhafGDMkCAGmeVoAtr48WKHTF
-         i4TL7pHg42rkEdR4oe7ObYaPCYPcVxR0dIweDZVjDdTfN/qmKR9kxa15pk8V066tIW7v
-         b0uj4ojp/ndsxun1oeyO1EyyACcdYjPxl1Feegv/XVsUP+IaEkb7PEkTtAMkgb4DVDyu
-         5dew==
+        bh=jkS42uAFKrrXwKBxE57yPODljuF+8PWKbGcPxlfknv8=;
+        b=ui0OE5mbSrp4JzXbHIFzIrVBfkKaIFUnyBl3KXnZ03WEejm0XgDQdDeMaNYknMTJEG
+         PWFYEd7K3kzDE34+owEkm1Lx8WaYfrPvUWt+15yOwyLE8iP8R+B3GM05Y3Id8B8gnkHw
+         WZraghnZfYk4u+70RJfCxJym6APR5pXla7Rzp7TJ09Grx9yetPPLln+ZzhiVzaaPlwD8
+         skjo/RgDjHEYEBXCse8pl8qCYbmro0xJyBme67v+wtjS+B90S9ooaAPVL2CjOje1Bn9F
+         zWEftbAS7z9y/HN/JVv6vAqhTlmJbxPcjHFMh5qsc/8xfYCSlLdqpqjxypsuFt39of1Y
+         PfmA==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: AOAM533OmImoaMoX8LCJiocX8+2ewgxD40nHNx+Gr7xUk0wDeUjk+bOI
-	jVyHcedd1GsyXhr0J1YCbrI1PA==
-X-Google-Smtp-Source: ABdhPJzM1KwTiU/MbHJW/ZWt25zn23OwULszS5pL8ZrpkfRe0nN2d5ua6ezNZIB32v40+QftOIMjHg==
-X-Received: by 2002:a05:6214:1d0d:: with SMTP id e13mr26944796qvd.69.1640849630775;
+X-Gm-Message-State: AOAM5324axIN6Sx6lcxK30byenxpNPzK/sZgykIuC3L8HNxKh2QyOj1/
+	Jzx20WobYWp6GaGmXQdr2mh4QA==
+X-Google-Smtp-Source: ABdhPJymQHwvD1W0EsxuAwpm+43KWZlrH9Vluadmgv8HcA6RMChnLwRaPFXdEeJXupUeIz1X51UlQQ==
+X-Received: by 2002:ac8:5e07:: with SMTP id h7mr25848505qtx.422.1640849630799;
         Wed, 29 Dec 2021 23:33:50 -0800 (PST)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a05:620a:4048:: with SMTP id i8ls12217818qko.2.gmail; Wed,
+Received: by 2002:a05:6214:1744:: with SMTP id dc4ls2411756qvb.4.gmail; Wed,
  29 Dec 2021 23:33:50 -0800 (PST)
-X-Received: by 2002:a05:620a:147c:: with SMTP id j28mr6710329qkl.416.1640849630358;
+X-Received: by 2002:a05:6214:21ea:: with SMTP id p10mr26403164qvj.89.1640849630356;
         Wed, 29 Dec 2021 23:33:50 -0800 (PST)
-Received: by 2002:a37:9b94:0:b0:476:3d6e:aa63 with SMTP id af79cd13be357-4763d6eb1a1ms85a;
-        Mon, 27 Dec 2021 23:47:17 -0800 (PST)
-X-Received: by 2002:a5d:588c:: with SMTP id n12mr15065604wrf.363.1640677636529;
-        Mon, 27 Dec 2021 23:47:16 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1640677636; cv=none;
+Received: by 2002:a05:620a:4455:b0:467:c89c:4f3 with SMTP id af79cd13be357-4757ebea70cms85a;
+        Mon, 27 Dec 2021 23:52:14 -0800 (PST)
+X-Received: by 2002:a05:600c:4ec7:: with SMTP id g7mr15775617wmq.152.1640677933712;
+        Mon, 27 Dec 2021 23:52:13 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1640677933; cv=none;
         d=google.com; s=arc-20160816;
-        b=XhMhbavEw3djams3xWbQbl62nlBAtToR/XWTXG2yUfy3pzkMhprX5XkC6+Y6kQ3KRF
-         CT5zB6zeZNPfsT+hpdeJVciKcUm/gpR0ogpdjS6xUUNgJcDA259e8inIZF7ZeOhTDqNS
-         bLdPItb+QXB7/SA2jw4Aeyrn+xHgCLIfuycOHLjMKXkZ8pdNJwO9bQtyrFa4FTCqiIWg
-         tC5RDiQp8TbnpHvV6VqExvI66lcXanpa8LoDMm8N5DpEjmKMz0shP3Jwwx8pDVZRRJMQ
-         0H6TysbFYy70hj/JlMvjH1XZD6uzEploKIMwlaX8jgc8/pDWSzGFtePwS4GR3UxUXX5w
-         k2lA==
+        b=Mk4OPOeIrC5ntRaZ54WgeCdtYzwUzPnhm04JZYc+I3n/yTep67veivLu7L27FDM75q
+         9JuXO45bUqT6ufHrxV5v0HaY0GUOG4TmSEmwwGSieFkb3HXy1XhcDwK05RAbg1Zq90Yt
+         7fG2ht0zbLeBpTn0d9Qcznm3dIPem9gftAOSxbGP8lwPQPozCgphqlYIPea4GslKcWiw
+         VAKKc4X5itKMpYegb4xGX6cZDmPURBv3FSx9gWycVkYEmcfIf5ONqSf37wy5cyR2qgC8
+         vbSH2NeTtnvqSh18B7NTNm1/VYpkJ5wA1H6D1FEj71MUO+eSOPQ6weaeM/aQ6EcPE9Ou
+         Sj3g==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=in-reply-to:from:content-language:subject:references:cc:to
          :user-agent:mime-version:date:message-id;
-        bh=DHqdSNTiOoNo3mAmrCEqxtU64N0VPO9e4T4ZGOLOmDE=;
-        b=keFNKIVdwadWPOPAsD5o/Lbr8dHCtZRP/TeBBHpCOqBm6a6IkmSWg5Nag8fflTQLQg
-         71NVRrMX2vuXXpo/DN7fQA5xWYN4Ea/0U2IB2gO89qbLsI7C02IxV8Ei2b73pjreqFpt
-         yn8K7CMKUwYDpy92i1CvAmRCuBjb0l+j1YoSaMAF8y2myGya84LvwzlnOLkzZJBvYAuP
-         ZixSxZKoaeCAYstCZAsoy70OdOphHAcpSaIb5qNpd/YefEICA2LbwVc5RRYK7I53LwIn
-         SmZXXwOL8ksd5Cs8wAYxQAdOWcJbyPtU1okiqOC+o31s70uIKwcHWgpsLssJGzJ63LhY
-         baJw==
+        bh=YO3R0lChYAPuYSTvyZaO/bAsQpkJ/RChUCTaVY6w96o=;
+        b=mP0WobIzRuralGzrY/Hw/61X5mWMKL1Hhr6g+MkCJ0V5hemXWo27YbFM4kozTLCdxd
+         hAn4lNEUU0ZnBgnr1oed1dRpehme9bbSRZn9LXVzsQBBQs65MTicq5P6dl73iacguxtS
+         IbhiC0fzzLf1zVNIRAtc+682p6LasRVvJdYbuHVipbqszUa3xrN1X6KabD6WFZU9WaC6
+         oE9bPQQwD8iI5JYuaOiZ1OfHCA4fT4GYwDCZPK2b0JhmEwrRPQjZ8yS7uUqvnzhzCME7
+         MBLQ8CKJ+cHqFseAvzRfQPBiNLh8Vdm9EJdZywNLFh88F8c+rLfJTtJZ6FwpNHe9UpES
+         CaEg==
 ARC-Authentication-Results: i=1; mx.google.com;
        spf=neutral (google.com: 80.12.242.127 is neither permitted nor denied by best guess record for domain of christophe.jaillet@wanadoo.fr) smtp.mailfrom=christophe.jaillet@wanadoo.fr
 Received: from smtp.smtpout.orange.fr (smtp05.smtpout.orange.fr. [80.12.242.127])
-        by mx.google.com with ESMTPS id f12si7905165wmq.56.2021.12.27.23.47.16
+        by mx.google.com with ESMTPS id c63si12227365wma.228.2021.12.27.23.52.13
         for <usb-storage@lists.one-eyed-alien.net>
         (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Mon, 27 Dec 2021 23:47:16 -0800 (PST)
+        Mon, 27 Dec 2021 23:52:13 -0800 (PST)
 Received-SPF: neutral (google.com: 80.12.242.127 is neither permitted nor denied by best guess record for domain of christophe.jaillet@wanadoo.fr) client-ip=80.12.242.127;
 Received: from [192.168.1.18] ([86.243.171.122])
 	by smtp.orange.fr with ESMTPA
-	id 27CVnS4XgOvR027CVnKjjk; Tue, 28 Dec 2021 08:47:16 +0100
+	id 27HInS6fBOvR027HInKkT4; Tue, 28 Dec 2021 08:52:13 +0100
 X-ME-Helo: [192.168.1.18]
 X-ME-Auth: YWZlNiIxYWMyZDliZWIzOTcwYTEyYzlhMmU3ZiQ1M2U2MzfzZDfyZTMxZTBkMTYyNDBjNDJlZmQ3ZQ==
-X-ME-Date: Tue, 28 Dec 2021 08:47:16 +0100
+X-ME-Date: Tue, 28 Dec 2021 08:52:13 +0100
 X-ME-IP: 86.243.171.122
-Content-Type: multipart/mixed; boundary="------------lI2ea0rdpfitzqaLBQKSpkWW"
-Message-ID: <f78b974a-e36b-6d23-6977-fdf50c05600b@wanadoo.fr>
-Date: Tue, 28 Dec 2021 08:47:15 +0100
+Content-Type: multipart/alternative;
+ boundary="------------fuL9OikC2OFq96qWHwmmKwaL"
+Message-ID: <cca3b7b4-d9cf-a275-ec0a-c99720a94049@wanadoo.fr>
+Date: Tue, 28 Dec 2021 08:52:12 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
  Thunderbird/91.3.1
@@ -136,55 +137,96 @@ List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegro
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
 This is a multi-part message in MIME format.
---------------lI2ea0rdpfitzqaLBQKSpkWW
+--------------fuL9OikC2OFq96qWHwmmKwaL
 Content-Type: text/plain; charset="UTF-8"; format=flowed
 
 Hi,
 
-(2nd try - text only format - sorry for the noise)
+(3rd try - text only format, other git repo to please syzbot - sorry for 
+the noise)
 
 
-first try to use syzbot. I hope I do it right.
+first try (ok, 3rd...) to use syzbot. I hope I do it right.
 Discussion about the syz report can be found at 
-https://lore.kernel.org/linux-kernel/0000000000007d25ff059457342d@google.com/
+https://lore.kernel.org/linux-kernel/0000000000007d25ff059457342d-hpIqsD4AKlfQT0dZR+AlfA@public.gmane.org/ 
+
 
 This patch only test if alauda_get_media_status() (and its embedded 
 usb_stor_ctrl_transfer()) before using the data.
 In case of error, it returns USB_STOR_TRANSPORT_ERROR as done elsewhere.
 
-#syz test: 
-git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git master
+#syz test: |https://github.com/google/kmsan.git| master
 
 CJ
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/f78b974a-e36b-6d23-6977-fdf50c05600b%40wanadoo.fr.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/cca3b7b4-d9cf-a275-ec0a-c99720a94049%40wanadoo.fr.
 
---------------lI2ea0rdpfitzqaLBQKSpkWW
-Content-Type: text/x-csrc; charset=UTF-8; name="patch_alauda.c"
-Content-Disposition: attachment; filename="patch_alauda.c"
-Content-Transfer-Encoding: base64
+--------------fuL9OikC2OFq96qWHwmmKwaL
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 
-ZGlmZiAtLWdpdCBhL2RyaXZlcnMvdXNiL3N0b3JhZ2UvYWxhdWRhLmMgYi9kcml2ZXJzL3Vz
-Yi9zdG9yYWdlL2FsYXVkYS5jCmluZGV4IDIwYjg1N2U5N2U2MC4uNmM0ODZkOTY0OTExIDEw
-MDY0NAotLS0gYS9kcml2ZXJzL3VzYi9zdG9yYWdlL2FsYXVkYS5jCisrKyBiL2RyaXZlcnMv
-dXNiL3N0b3JhZ2UvYWxhdWRhLmMKQEAgLTMxOCw3ICszMTgsOCBAQCBzdGF0aWMgaW50IGFs
-YXVkYV9nZXRfbWVkaWFfc3RhdHVzKHN0cnVjdCB1c19kYXRhICp1cywgdW5zaWduZWQgY2hh
-ciAqZGF0YSkKIAlyYyA9IHVzYl9zdG9yX2N0cmxfdHJhbnNmZXIodXMsIHVzLT5yZWN2X2N0
-cmxfcGlwZSwKIAkJY29tbWFuZCwgMHhjMCwgMCwgMSwgZGF0YSwgMik7CiAKLQl1c2Jfc3Rv
-cl9kYmcodXMsICJNZWRpYSBzdGF0dXMgJTAyWCAlMDJYXG4iLCBkYXRhWzBdLCBkYXRhWzFd
-KTsKKwlpZiAocmMgPT0gVVNCX1NUT1JfWEZFUl9HT09EKQorCQl1c2Jfc3Rvcl9kYmcodXMs
-ICJNZWRpYSBzdGF0dXMgJTAyWCAlMDJYXG4iLCBkYXRhWzBdLCBkYXRhWzFdKTsKIAogCXJl
-dHVybiByYzsKIH0KQEAgLTQ1Myw4ICs0NTQsMTEgQEAgc3RhdGljIGludCBhbGF1ZGFfY2hl
-Y2tfbWVkaWEoc3RydWN0IHVzX2RhdGEgKnVzKQogewogCXN0cnVjdCBhbGF1ZGFfaW5mbyAq
-aW5mbyA9IChzdHJ1Y3QgYWxhdWRhX2luZm8gKikgdXMtPmV4dHJhOwogCXVuc2lnbmVkIGNo
-YXIgc3RhdHVzWzJdOworCWludCByYzsKIAotCWFsYXVkYV9nZXRfbWVkaWFfc3RhdHVzKHVz
-LCBzdGF0dXMpOworCXJjID0gYWxhdWRhX2dldF9tZWRpYV9zdGF0dXModXMsIHN0YXR1cyk7
-CisJaWYgKHJjICE9IFVTQl9TVE9SX1RSQU5TUE9SVF9HT09EKQorCQlyZXR1cm4gVVNCX1NU
-T1JfVFJBTlNQT1JUX0VSUk9SOwogCiAJLyogQ2hlY2sgZm9yIG5vIG1lZGlhIG9yIGRvb3Ig
-b3BlbiAqLwogCWlmICgoc3RhdHVzWzBdICYgMHg4MCkgfHwgKChzdGF0dXNbMF0gJiAweDFG
-KSA9PSAweDEwKQo=
---------------lI2ea0rdpfitzqaLBQKSpkWW--
+<html>
+  <head>
+
+    <meta http-equiv=3D"content-type" content=3D"text/html; charset=3DUTF-8=
+">
+  </head>
+  <body>
+    <p>
+    </p>
+    <div class=3D"moz-text-flowed" style=3D"font-family: -moz-fixed;
+      font-size: 12px;" lang=3D"x-unicode">Hi,
+      <br>
+      <br>
+      (3rd try - text only format, other git repo to please syzbot -
+      sorry for the noise)
+      <br>
+      <br>
+      <br>
+      first try (ok, 3rd...) to use syzbot. I hope I do it right.<br>
+      Discussion about the syz report can be found at <a
+        class=3D"moz-txt-link-freetext"
+href=3D"https://lore.kernel.org/linux-kernel/0000000000007d25ff059457342d-h=
+pIqsD4AKlfQT0dZR+AlfA@public.gmane.org/">https://lore.kernel.org/linux-kern=
+el/0000000000007d25ff059457342d-hpIqsD4AKlfQT0dZR+AlfA@public.gmane.org/</a=
+>
+      <br>
+      <br>
+      This patch only test if alauda_get_media_status() (and its
+      embedded usb_stor_ctrl_transfer()) before using the data.
+      <br>
+      In case of error, it returns USB_STOR_TRANSPORT_ERROR as done
+      elsewhere.
+      <br>
+      <br>
+      #syz test: <code><a class=3D"moz-txt-link-freetext" href=3D"https://g=
+ithub.com/google/kmsan.git">https://github.com/google/kmsan.git</a></code>
+      master
+      <br>
+      <br>
+      CJ
+      <br>
+      <br>
+    </div>
+  </body>
+</html>
+
+<p></p>
+
+-- <br />
+You received this message because you are subscribed to the Google Groups &=
+quot;USB Mass Storage on Linux&quot; group.<br />
+To unsubscribe from this group and stop receiving emails from it, send an e=
+mail to <a href=3D"mailto:usb-storage+unsubscribe@lists.one-eyed-alien.net"=
+>usb-storage+unsubscribe@lists.one-eyed-alien.net</a>.<br />
+To view this discussion on the web visit <a href=3D"https://groups.google.c=
+om/a/lists.one-eyed-alien.net/d/msgid/usb-storage/cca3b7b4-d9cf-a275-ec0a-c=
+99720a94049%40wanadoo.fr?utm_medium=3Demail&utm_source=3Dfooter">https://gr=
+oups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/cca3b7b4-d9c=
+f-a275-ec0a-c99720a94049%40wanadoo.fr</a>.<br />
+
+--------------fuL9OikC2OFq96qWHwmmKwaL--
 
