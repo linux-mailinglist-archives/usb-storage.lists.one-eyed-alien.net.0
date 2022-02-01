@@ -1,30 +1,30 @@
 Return-Path: <usb-storage+bncBAABBU6T42HQMGQE47BZLOQ@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-qk1-x747.google.com (mail-qk1-x747.google.com [IPv6:2607:f8b0:4864:20::747])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6C3284A673A
+Received: from mail-qv1-xf46.google.com (mail-qv1-xf46.google.com [IPv6:2607:f8b0:4864:20::f46])
+	by mail.lfdr.de (Postfix) with ESMTPS id 892A54A673C
 	for <lists+usb-storage@lfdr.de>; Tue,  1 Feb 2022 22:44:52 +0100 (CET)
-Received: by mail-qk1-x747.google.com with SMTP id a127-20020a37b185000000b004789e386256sf13213833qkf.8
+Received: by mail-qv1-xf46.google.com with SMTP id ej14-20020ad45a4e000000b00425d03eabe4sf14962020qvb.9
         for <lists+usb-storage@lfdr.de>; Tue, 01 Feb 2022 13:44:52 -0800 (PST)
 ARC-Seal: i=2; a=rsa-sha256; t=1643751891; cv=pass;
         d=google.com; s=arc-20160816;
-        b=zyg0VMlzS1zzuEv0LamyJXiZEzNetodWee86Vpl2VXAhpVC4A7IpEMx2ZjLtG9TTU5
-         qGVQEN2DhjMvwpY9oBSQYL8XaSCzmjoHWq521liwEitsO1DXy/NGp77rpj/0UL2z3zdl
-         fbDTzXT7sMjmLKQXWFGGS0eV5TGTnRLKwNH8zhOj69SeqkMfhpvYkpt2azkbQijC+To4
-         MF/HLpURHNNUggWXfydFaC6DC4Nl4SEwHN4SPjYcUjeqF0t2Shwe79lo2oOpyrjtC7Mq
-         NWEFUnCJowkDHNM5GSf7cY6nx5HfdUgydHW8e3xccUNczwkM5JCkAzXUNPQ/bvQm1kSM
-         MFvw==
+        b=rbT2VmaVDj2nfpcljq9lLhy6LkW8r1NyJSxa1ShileTezGe8saSKcE1fMGIMqJKhbN
+         Zk/OX4w8P1g8pGL8IUQaAAb4Mb7JR6OhTJb0NJN2JmSGf82DPm15f2EVUB/+R9O7oER6
+         ECRDij40najSy7aNw1OkpJZQ//z9Lo7HKlP6ujA4Iwou8M9qRryw7rQtugLUVkyD0khp
+         xY8yB0N0/85KmbVECZNfTRuGrWLN6GZWSoL3o43/H5Izh3efyFBqK+WoZjaEGnzniHgK
+         YG/gA5MNYMEsZPOvNncTJ5/lZCKjpYWmf8KVYEzHospIOgjxvJLSDihUHcMAhPM47Ma+
+         Ma5Q==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:sender:dkim-signature;
-        bh=c/7IHTIlE5D4dhZL0L84aM2J+7Bgb5TZpsZIWCzjegM=;
-        b=ijVobY997SKDb0P/vTv8Ylvrdf8VAmpKROaa6Brtw+4+hsWtPM7TVggJSiyi+83FWN
-         eR/7jgwUNb7I9rQeavKeScdrC8JIG7ycINDzVmST+9Jss3JsOlef2URhAbsTAI8q6sWz
-         RnB/xrDfGdvHCpnyURMsCMT2+lN2KSYnPMse04HsKDK18DMEcyWtTPNe5Paxn6vWANdt
-         994U21MzRAulGCNr/uvBG73FGSrX/xHY4/hJcyRITx9XEmyO6qAL6hzNj8r18dmXL8UC
-         V0OboAwJ6yz9ax/T0Ar5kT44yJ79imIjBTeCmgvAuAAs6e5NDqZad4W13fAyOrGRNj9S
-         o/Bg==
+        bh=HdfAhxyDJRQAhqhWSaDLnGK7SQoNk40hBGJhs8twHls=;
+        b=G9BsL6sTC02KCxKZ5WJU6UfQ2ukysN9JeiTKuL/OnDCqnptmhMgHoxFptH8z2QPew1
+         AZ2ypcWNfjGfiD8fUP6pBphNDQtIZCaS3dZIrzUEd45ppos8uZhTNnHUefNltgDd+3TG
+         xTd1iar0MSS6aOp1KzbZ+zty3DRSaKnt7teecShnwxHOgWtnjERPMn3rs7/nHDx+0RvD
+         FVT5GTfqOnFw+sZur0yEB/uKwwgN464hLdyZQdok54t1qM2kKZs4cuLTtQbqrakcykrj
+         3dsbk+Ucb11TYd8DJrmY6Fk5yxYiVQB2mB/hpm10RRuEWHkCnc02NIVbAKY9LHKs/elc
+         jq8g==
 ARC-Authentication-Results: i=2; mx.google.com;
        spf=pass (google.com: domain of sebastian@breakpoint.cc designates 2a0a:51c0:0:12e:520::1 as permitted sender) smtp.mailfrom=sebastian@breakpoint.cc
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
@@ -33,68 +33,68 @@ DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
          :mime-version:x-original-sender:x-original-authentication-results
          :precedence:mailing-list:list-id:list-post:list-help:list-archive
          :list-subscribe:list-unsubscribe;
-        bh=c/7IHTIlE5D4dhZL0L84aM2J+7Bgb5TZpsZIWCzjegM=;
-        b=ZjOudZeZG/jOgtu/iEFC0DFXLSwoLcho8Altz96r1rJpdiVuCqZX2mfl1ZX5Lova2D
-         uC9HnSd3KbyqWSN/AEdIcsBBwbtBjqE21j80wU+qVWuLX6Icik0C7v30Y6twjyxuiqk/
-         +GfHR3r3K3/NQCc/wyioyUYehqkRIEERH6vhc=
+        bh=HdfAhxyDJRQAhqhWSaDLnGK7SQoNk40hBGJhs8twHls=;
+        b=LvT78f51BcvphZy4tSCh64R3C8urEXCr8VMWsLirLnXc715gfxEj0qsnCe6myC5Nmb
+         14t/1opT/0pEGLfPxElPaNMWXw3Da2QQEefriA68i5YmwMzCugrzI+czVruqNrDBV2GA
+         I8Nf/cCQpYDK43SZg4KN7ARmrM3d+CqbYKUC8=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=sender:x-gm-message-state:from:to:cc:subject:date:message-id
          :in-reply-to:references:mime-version:x-original-sender
          :x-original-authentication-results:precedence:mailing-list:list-id
          :list-post:list-help:list-archive:list-subscribe:list-unsubscribe;
-        bh=c/7IHTIlE5D4dhZL0L84aM2J+7Bgb5TZpsZIWCzjegM=;
-        b=alXJZLUSkWcfnydc8w35RXO4CdOLWEm4JSXpBk61dsSY4d8V8Bqb8RAEgsul5IRsk7
-         Z/2nXwWz2u+D6iResgQZLnPPAL3lLSNfxEYXXXupf9UTZynnigCujiQuk+3Mg9AWzbXD
-         oshVF6ntjteVOy2bGLCh07KquYlOB2WVCl2n4OJ1CQ3FIk3SvrDGiO/XzSLbI4gN4Oxt
-         zW8WHB1e2brAiu8G1fo7zBly0JbzKCAY9WnTbP2FVK3/POFTVFx6dOmuXNHHZamm4uXy
-         bKNUrJq9LozAttSCmL+vGjrn6dFCqL5KNQia1yK9dVHVs6fbXFhj8R9MrBxFdD1eehXS
-         E6Ow==
+        bh=HdfAhxyDJRQAhqhWSaDLnGK7SQoNk40hBGJhs8twHls=;
+        b=XgLDlGQJ93pXDjn0dxrXNkBAQB7Rw9UpIk6rmkfIedVmcqiXfDWiecqBXiYH+hy8sq
+         DNEh3h1/76jGptzQW9HIZwGhuoT1x7neOyUo6IhMHtHpMuTjw/rPHNAwyPQjYnxnn677
+         7CYXRiDCpAT4PU7oifO1dSoUtP6HUjlFoeCe59dn0AISRSi7LTESpiqosCBKFZ+xy7aF
+         8UhoOiwG6d9pCe8F1iL81pYxwZOqIwxh5uOGa6nOSIiuLxF/Mocgn9CEE8oSVMxq5N2r
+         GDFUyOEqZg3UQ0v3EM0QrAexXkDzypnfocmWB/rwzYJbf0uOkszPA1JigDAU4v/3Rve8
+         TmJA==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: AOAM531Tmw9KeOWjAJQZ3HQdsFd/YVF5OiIFjsCW70FtECh2ze8F1GG2
-	tBJRXvcYLrTJBJr89lYxuWxJMA==
-X-Google-Smtp-Source: ABdhPJx8LfHSFkEtTz5glEivy9NAmNqLsoIDG6uZX7+Dx92HC4HLXHDwdYQMKbo1p/UVJnWom6qvQw==
-X-Received: by 2002:ac8:5ac3:: with SMTP id d3mr20797369qtd.288.1643751891317;
+X-Gm-Message-State: AOAM530lJSYeqGL3xmEvc2iVhL5CFQ+kV2t1wQrY2aOiDoL07HBP1JjR
+	wsuzk0HjjZ2+L9L5bziI8649MA==
+X-Google-Smtp-Source: ABdhPJx9J6jy9amoHVfvJd0e/HcLrYxYGJYv+tT/4u7uFRZQslEa9lETXhNfZAYsitRrQUhiRrhn9g==
+X-Received: by 2002:a05:620a:103c:: with SMTP id a28mr18729121qkk.425.1643751891362;
         Tue, 01 Feb 2022 13:44:51 -0800 (PST)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:ac8:1194:: with SMTP id d20ls10913985qtj.2.gmail; Tue, 01
- Feb 2022 13:44:51 -0800 (PST)
-X-Received: by 2002:a05:622a:2d3:: with SMTP id a19mr17876793qtx.515.1643751890946;
-        Tue, 01 Feb 2022 13:44:50 -0800 (PST)
-Received: by 2002:a05:620a:2708:b0:47c:48e8:1ec2 with SMTP id af79cd13be357-4e0e134c25dms85a;
-        Tue, 1 Feb 2022 13:10:11 -0800 (PST)
-X-Received: by 2002:a05:6000:18a8:: with SMTP id b8mr22792778wri.604.1643749810645;
-        Tue, 01 Feb 2022 13:10:10 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1643749810; cv=none;
+Received: by 2002:a05:620a:461e:: with SMTP id br30ls11071643qkb.0.gmail; Tue,
+ 01 Feb 2022 13:44:51 -0800 (PST)
+X-Received: by 2002:ae9:f306:: with SMTP id p6mr18499582qkg.709.1643751891057;
+        Tue, 01 Feb 2022 13:44:51 -0800 (PST)
+Received: by 2002:ae9:d619:0:b0:47b:8ba:1fde with SMTP id af79cd13be357-4e0e1386ff7ms85a;
+        Tue, 1 Feb 2022 13:10:12 -0800 (PST)
+X-Received: by 2002:a5d:4bd2:: with SMTP id l18mr23070896wrt.495.1643749811865;
+        Tue, 01 Feb 2022 13:10:11 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1643749811; cv=none;
         d=google.com; s=arc-20160816;
-        b=oDpMOEVePfsglELVy+Tv7oFvZNorBuKt1oOYpk5pb0QSzixm0SoHDSCsjfHnFsOBHv
-         H+jT3CCdg9c8u0toIYx4RnO43KDHteyExQj5vhVSIMb3uIDnNDU1FPgumvLiOmiYjZ2x
-         gH52iAsYv9i5tyDsAsrxBdjDAr5t/GB+1/NSBPW8LhAmDdMXS/8rrAa7o8obm6T8VVLw
-         xwGMU65wXe4lvOXZABscLWKowJGCYWwMqtr1JEspeiM5RcY6iMAWefillUgqkzrrk0ah
-         Kbje1SW1zbVUg7FqV0gPAdYwjNiIgstjYgkTNpZt6IErAYAjojCuxLlHvI561AxJAXH2
-         izUA==
+        b=Z59wWDjYJCh+2vaEPaF9Fo+1i4aEAQoh1i3vCxLHutLWtn0BcSDguqkYjKInmK1ky1
+         9PPTk+BEoDe2+45L+1kgvkGj5cZkSgleibR1oWQaxRBU56pw0g6BU6P2ljONFxY/luj/
+         8Y6hpJy8S+ewI/ye5lQC54ZNjip8QuLLb2vF3alFtjeGx+d00lpa6OSw/EBaYaAfG+SJ
+         WHDVpQ6W+PH1sMANdtfsgq3xQ7o8cRzGUOfldnB71RKJrVoYHAtmOpfMGJwt5SvaTU7o
+         26VxTtQ3sq1+CuRMa8ifgiMhP5/w+3IFzl0lR5BtGnZuhLTeeGDsccTIakqFpYeW8dP1
+         ZW7w==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from;
-        bh=OaEPjMTI5kV95TI+DkEhbNWncskbwQYLUDS9pLJe6xM=;
-        b=ZxdtTca/vB1rQQR8hBUGA+HTISSs7WfXLottQil+RUiNQuperydsCtSb1KrZNkJSb9
-         CdeiU+CqsxCurQKCB10mo05FWEdjgZmzy1/JdGfo1K5EGwFOtySDD8DEsnoZd4pcysQj
-         zyDsFyEu4892BLFo602dUp6/4MQl1k7Z+eVsPLW1yD84ArkqMzT4aoHUSwriN31vl9/e
-         mpSSZNoYNRaM4J4ZNsOxvjg9GBEgflf4oPJbjOlstdotoPi1eE3vJgZlZNrheXiK8XTq
-         zaZ6isMwG/3BZ0pFb6/SAQRE8E2fAxJ5964b5fFypmOojdAnQD7d+6R8irnvKjQ172pf
-         zBKA==
+        bh=R/DSLgJ8nRCtY4QmeMF2xw44FhnE+iqx2PmsYX+YUg0=;
+        b=qRaIo6dIHbrtloaBYYBfPEhRIp16RqF+PEknmhSxm7a02qYXcx2MAii3Wg03ymfTip
+         emWT5sfGEUkg6PlS8ZJ9t9omAcXU9j+LgLxCZJz9fNPS8UW6jrNrCVEWjvqBTjINOlHx
+         n2JCsXFSHh5BwJ/nFoEZY8PKza9xSX4Vwh2NaZt7JNh6UspVzfU+AWIzrCqxivEJYvHB
+         +3H3Qq1lan2k+5yjyWiCxz7TMuBXjWz1QrqeRCgQopYysn1fMBdPZceoHOe7TOCgX/Xb
+         ZS2xJfWakzCBVcI50iPIEAsH/4fDkhR1zw6IGoTmZDmv4NgLkQPC9CqV+KhvGku1rv/X
+         +BIA==
 ARC-Authentication-Results: i=1; mx.google.com;
        spf=pass (google.com: domain of sebastian@breakpoint.cc designates 2a0a:51c0:0:12e:520::1 as permitted sender) smtp.mailfrom=sebastian@breakpoint.cc
 Received: from Chamillionaire.breakpoint.cc (Chamillionaire.breakpoint.cc. [2a0a:51c0:0:12e:520::1])
-        by mx.google.com with ESMTPS id w12si2230695wmi.69.2022.02.01.13.10.10
+        by mx.google.com with ESMTPS id s13si6186470wrv.1014.2022.02.01.13.10.11
         for <usb-storage@lists.one-eyed-alien.net>
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 01 Feb 2022 13:10:10 -0800 (PST)
+        Tue, 01 Feb 2022 13:10:11 -0800 (PST)
 Received-SPF: pass (google.com: domain of sebastian@breakpoint.cc designates 2a0a:51c0:0:12e:520::1 as permitted sender) client-ip=2a0a:51c0:0:12e:520::1;
 Received: from localhost ([127.0.0.1] helo=flow.W.breakpoint.cc)
 	by Chamillionaire.breakpoint.cc with esmtp (Exim 4.92)
 	(envelope-from <sebastian@breakpoint.cc>)
-	id 1nF0Pg-0006wn-Uh; Tue, 01 Feb 2022 22:10:09 +0100
+	id 1nF0Pj-0006wn-9E; Tue, 01 Feb 2022 22:10:11 +0100
 From: Sebastian Andrzej Siewior <sebastian@breakpoint.cc>
 To: linux-scsi@vger.kernel.org,
 	linux-usb@vger.kernel.org,
@@ -104,9 +104,9 @@ Cc: "James E.J. Bottomley" <jejb@linux.ibm.com>,
 	Alan Stern <stern@rowland.harvard.edu>,
 	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
 	Sebastian Andrzej Siewior <sebastian@breakpoint.cc>
-Subject: [usb-storage] [PATCH 1/2] scsi: Add scsi_done_direct() for immediate completion.
-Date: Tue,  1 Feb 2022 22:09:53 +0100
-Message-Id: <20220201210954.570896-2-sebastian@breakpoint.cc>
+Subject: [usb-storage] [PATCH 2/2] usb: storage: Complete the scsi request directly.
+Date: Tue,  1 Feb 2022 22:09:54 +0100
+Message-Id: <20220201210954.570896-3-sebastian@breakpoint.cc>
 In-Reply-To: <20220201210954.570896-1-sebastian@breakpoint.cc>
 References: <20220201210954.570896-1-sebastian@breakpoint.cc>
 MIME-Version: 1.0
@@ -132,83 +132,27 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-Add scsi_done_direct() which behaves like scsi_done() except that it
-invokes blk_mq_complete_request_direct() in order to complete the
-request.
-Callers from process context can complete the request directly instead
-waking ksoftirqd.
+The storage driver completes its requests directly from a kernel thread.
+
+Use scsi_done_direct() to avoid waking ksoftirqd.
 
 Signed-off-by: Sebastian Andrzej Siewior <sebastian@breakpoint.cc>
 ---
- drivers/scsi/scsi_lib.c  | 27 +++++++++++++++++++++++----
- include/scsi/scsi_cmnd.h |  1 +
- 2 files changed, 24 insertions(+), 4 deletions(-)
+ drivers/usb/storage/usb.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/scsi/scsi_lib.c b/drivers/scsi/scsi_lib.c
-index 0a70aa763a961..778ef6d09616f 100644
---- a/drivers/scsi/scsi_lib.c
-+++ b/drivers/scsi/scsi_lib.c
-@@ -1625,26 +1625,45 @@ static blk_status_t scsi_prepare_cmd(struct request *req)
- 	return scsi_cmd_to_driver(cmd)->init_command(cmd);
- }
- 
--void scsi_done(struct scsi_cmnd *cmd)
-+static bool scsi_done_need_blk_compl(struct scsi_cmnd *cmd)
- {
- 	switch (cmd->submitter) {
- 	case SUBMITTED_BY_BLOCK_LAYER:
- 		break;
- 	case SUBMITTED_BY_SCSI_ERROR_HANDLER:
--		return scsi_eh_done(cmd);
-+		scsi_eh_done(cmd);
-+		return false;
- 	case SUBMITTED_BY_SCSI_RESET_IOCTL:
--		return;
-+		return false;
- 	}
- 
- 	if (unlikely(blk_should_fake_timeout(scsi_cmd_to_rq(cmd)->q)))
--		return;
-+		return false;
- 	if (unlikely(test_and_set_bit(SCMD_STATE_COMPLETE, &cmd->state)))
-+		return false;
-+	return true;
-+}
-+
-+void scsi_done(struct scsi_cmnd *cmd)
-+{
-+	if (!scsi_done_need_blk_compl(cmd))
- 		return;
-+
- 	trace_scsi_dispatch_cmd_done(cmd);
- 	blk_mq_complete_request(scsi_cmd_to_rq(cmd));
- }
- EXPORT_SYMBOL(scsi_done);
- 
-+void scsi_done_direct(struct scsi_cmnd *cmd)
-+{
-+	if (!scsi_done_need_blk_compl(cmd))
-+		return;
-+
-+	trace_scsi_dispatch_cmd_done(cmd);
-+	blk_mq_complete_request_direct(scsi_cmd_to_rq(cmd), scsi_complete);
-+}
-+EXPORT_SYMBOL(scsi_done_direct);
-+
- static void scsi_mq_put_budget(struct request_queue *q, int budget_token)
- {
- 	struct scsi_device *sdev = q->queuedata;
-diff --git a/include/scsi/scsi_cmnd.h b/include/scsi/scsi_cmnd.h
-index 6794d7322cbde..ff1c4b51f7aef 100644
---- a/include/scsi/scsi_cmnd.h
-+++ b/include/scsi/scsi_cmnd.h
-@@ -168,6 +168,7 @@ static inline struct scsi_driver *scsi_cmd_to_driver(struct scsi_cmnd *cmd)
- }
- 
- void scsi_done(struct scsi_cmnd *cmd);
-+void scsi_done_direct(struct scsi_cmnd *cmd);
- 
- extern void scsi_finish_command(struct scsi_cmnd *cmd);
+diff --git a/drivers/usb/storage/usb.c b/drivers/usb/storage/usb.c
+index 8b543f2c98575..ed7c6ad96a743 100644
+--- a/drivers/usb/storage/usb.c
++++ b/drivers/usb/storage/usb.c
+@@ -417,7 +417,7 @@ static int usb_stor_control_thread(void * __us)
+ 		if (srb) {
+ 			usb_stor_dbg(us, "scsi cmd done, result=0x%x\n",
+ 					srb->result);
+-			scsi_done(srb);
++			scsi_done_direct(srb);
+ 		}
+ 	} /* for (;;) */
  
 -- 
 2.34.1
@@ -216,4 +160,4 @@ index 6794d7322cbde..ff1c4b51f7aef 100644
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20220201210954.570896-2-sebastian%40breakpoint.cc.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20220201210954.570896-3-sebastian%40breakpoint.cc.
