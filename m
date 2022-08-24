@@ -1,203 +1,122 @@
-Return-Path: <usb-storage+bncBAABBYHL7WLQMGQEHJH4BWQ@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBC72LGEK34ERBZFIS6MAMGQEE43ULJA@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-oo1-xc48.google.com (mail-oo1-xc48.google.com [IPv6:2607:f8b0:4864:20::c48])
-	by mail.lfdr.de (Postfix) with ESMTPS id CB403599B03
-	for <lists+usb-storage@lfdr.de>; Fri, 19 Aug 2022 13:37:05 +0200 (CEST)
-Received: by mail-oo1-xc48.google.com with SMTP id k4-20020a4a3104000000b0044607fa7d05sf1945921ooa.21
-        for <lists+usb-storage@lfdr.de>; Fri, 19 Aug 2022 04:37:05 -0700 (PDT)
-ARC-Seal: i=3; a=rsa-sha256; t=1660909024; cv=pass;
+Received: from mail-qv1-xf47.google.com (mail-qv1-xf47.google.com [IPv6:2607:f8b0:4864:20::f47])
+	by mail.lfdr.de (Postfix) with ESMTPS id 51B1C59F46C
+	for <lists+usb-storage@lfdr.de>; Wed, 24 Aug 2022 09:33:57 +0200 (CEST)
+Received: by mail-qv1-xf47.google.com with SMTP id f11-20020a056214164b00b00496a9423091sf9075911qvw.14
+        for <lists+usb-storage@lfdr.de>; Wed, 24 Aug 2022 00:33:57 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1661326436; cv=pass;
         d=google.com; s=arc-20160816;
-        b=eHjkO16rYDUQdRowNCFKBlgYVCFObViFcC9J95aADB3RFBCpkuwh4CV4YiaGrBRiqU
-         ZfaLUWzd3+SKVkCACl4WckSqhsJGg4zfjHjH+TEppXeXxF+Q+PNg/C8Q31ylfdax8EaJ
-         39DBQVWbmnKHWS8pVg+5oU9Uf5ERrwkZtnDx+l4byDFVlWpHeqwE/fMVYaoqKoO9TG+m
-         57Y8QVCf95HNsRwVkVgjpnlaCNzLilhlyAvJdv5n3VE5jhLKVQLnRtWk0zJVgBfE/Oyt
-         7tX3WXGNV8BNjKbhJC+mtGsp8nxNl+LZMZtE0LsX1BtsXxBxRvvtXNNJFg+5BQElnvMW
-         1g0Q==
-ARC-Message-Signature: i=3; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        b=P0GLJT2YD53gnkWcNFYQKRSxMdNsp3mhxSpQhXdxKoH2QuS+YtqcIutoaXPMqOLk0v
+         +nadCNilLASoGH1+FFQzNTbP9P+CBlCOyGJDrMXF32znjtTmd9LTWb9pHeg3fWKBBVfe
+         INeRez/IIOWuSzSWofbCLgp0/Kw24dAJG7UaFzFmV4xWGj+ytDunutW+Lcpr/FWvAZHg
+         h7WtSnZSOqjieN/ghrCY/ebjBzO0gtMk9aPjd62RuxNNfQE9HP1qnpu2yV4yCuf/n4YL
+         8CoE/c2d5yVc1hD4zyeOtNPsWjp/NhX/YGxxWkcTSkiT4VfjADt8YfzlMVmAFKkYPxfy
+         zQsw==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:mime-version:in-reply-to
-         :content-disposition:references:message-id:subject:cc:to:from:date
-         :sender:dkim-signature;
-        bh=z8pepV5jJuBVK2HCaGb6rGmf7LQAW+oPw9AL8xMsfSA=;
-        b=awIIr+JmYiCHPzwD/2JAQqPmFPyYZ/AsOeheY3LW/nz3WAZpQYDbqz1zQuvnAv7RsP
-         d2Xp3ye8id0uG+o1RKts5JxnJmZSSBBxnVh8qgL2HBeDX1O7Tu7cOC0Ni5TfiuSZpWGf
-         60keMXusM3I8cVPRWvMrAzZnuIoCp9A/Z4MR8tnUdWA+hkhQ+734NFYSaCFnAd/yaF6I
-         9U38n88L/Y+YPZUAqYpazuO7NbRDDBak5xnR4U0edVR4qzZS9ct7rW1zkqGMDBfic9Rp
-         xZEeZmpG03LZvH74N8V8xpvnPmedokgf27mJL0K9LuR3s98Uc6k5lirUU/AirPulDZ9y
-         jLkw==
-ARC-Authentication-Results: i=3; mx.google.com;
-       dkim=pass header.i=@skidata.com header.s=selector1 header.b=fF9zw4mX;
-       arc=pass (i=1 spf=pass spfdomain=skidata.com dkim=pass dkdomain=skidata.com dmarc=pass fromdomain=skidata.com);
-       spf=pass (google.com: domain of richard.leitner@skidata.com designates 40.107.24.103 as permitted sender) smtp.mailfrom=Richard.Leitner@skidata.com;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=skidata.com
+         :list-id:mailing-list:precedence:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:sender:dkim-signature;
+        bh=KLnETnMPcCAwt2wOgkBqDG9JZPw1bDOA61n2IlOlyVs=;
+        b=pg5FyKtmE1NA5ZaWmbFbmr62wAtkflqUa7/Sil1STRiVXdESvu6e08DB8npXw9176h
+         0RsYyemuECiEnobql8XbSRav9NYTi3S/XJhmh8CSOtmJIgbGFlZOHo3Bi+Jfz9GH/shv
+         7WDZ9B2BiqE/h4yX2MotAy0v36qoDPaAG5dz/0ivMqYGY0XHRpxzO3OpbrXQ9sWo3VXU
+         b+rVni+7UWnAshdVFNSP21x+kCPlGATIXajgis5a13SKyicqr/yul2UYRiDh52ATAH7n
+         hGZ0RDeee/17npOqJ2OQuPwU7YZ6luRK2JdD6d0NSu7wGxRzOT0bjJqZvCY9qnrFVis5
+         VTVw==
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b=jYimnwYe;
+       spf=pass (google.com: domain of huxiaoying2008@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=huxiaoying2008@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:x-original-authentication-results
-         :x-original-sender:mime-version:in-reply-to:content-disposition
-         :references:message-id:subject:cc:to:from:date:sender:from:to:cc;
-        bh=z8pepV5jJuBVK2HCaGb6rGmf7LQAW+oPw9AL8xMsfSA=;
-        b=DF7sEj8C5DkCovzdsj3Lc114qJcTM2V+QhkuduyFhe6vdW3kfQF26TmQA1QDjLH2Sg
-         dvI2Y8I0EFNM8wNL/Wucv7UWKaRW8N/FFvnJPFqT/hZCD+92eHjIGzf1vD/564rSUxEV
-         3XjdQ1UI7ejgvt+h+zlPucQyi8MN09I/JPWeA=
+         :x-original-sender:cc:to:subject:message-id:date:from:in-reply-to
+         :references:mime-version:sender:from:to:cc;
+        bh=KLnETnMPcCAwt2wOgkBqDG9JZPw1bDOA61n2IlOlyVs=;
+        b=jLQApa2lb35JP2gNBUIbzXS0CKgYZbctSzOx8zK2+bVxtJy5G8vuNsRWdRBbbGyL/P
+         C0woxzO7X6YhbEyIAttZFcRZRGtT8PrNsx3boPg/Rd7ibaKxbrwdoat9XhXq2/aOB2l/
+         yFs/DZ49pFHvzqRnKJI7UnkjBr23jgkmrJJl0=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:x-original-authentication-results
-         :x-original-sender:mime-version:in-reply-to:content-disposition
-         :references:message-id:subject:cc:to:from:date:x-gm-message-state
-         :sender:from:to:cc;
-        bh=z8pepV5jJuBVK2HCaGb6rGmf7LQAW+oPw9AL8xMsfSA=;
-        b=QfuzEnnIAtKarYXLUTa2Dd4bXQgnPaLNVo79FPhnn7cFyT4WCylYsLNaC9KHj3X/dL
-         K6rtqeNGpAHA4scTYTiLpmmXXspQaqBoglI4QkhoQoBLc8qdb1f2iJABcw+spfOgUj+r
-         PNpf4twZ32oxlrBm2mhwMpiKz2e9936HBzZWd50JcMBNGv5fq5kEtCiY+e8WwtkPkoSk
-         dzCEUW5B+sE/wbagzq1VWHHnHJunKXZB7y70nU1xnkaI/4G/C09rQbquiR1a2y24pIpd
-         /xnhpLF3gT4YUENVjBZLBRiznK7PkcR0tFyStkn7h087ZG3vliufEeAtINMylavo7eIc
-         H2GQ==
+         :x-original-sender:cc:to:subject:message-id:date:from:in-reply-to
+         :references:mime-version:x-gm-message-state:sender:from:to:cc;
+        bh=KLnETnMPcCAwt2wOgkBqDG9JZPw1bDOA61n2IlOlyVs=;
+        b=a3ofSEEPZuYuIJgx3br3nkIXwyLRJfVU4tRgCQLkRVUvP8i9Ru8WXTz0n+c87WsppX
+         QHaBsWSmvGO62QE0JjXMEA2B/kryA/7SB3sEWkfHuFhgndBMxAW04YuweyaRNyye8bv9
+         /opdTa8GbwaTgVFZZwlLdZXOdLSHk02YbR24NC/ZAy1na4koE1xCWND6g14bYj730P5O
+         rI/SdBJT5brvGtCkm6b8CzGgvGtmoBNNMWZszcT99NzcsvpHzDTzJbUFaZeXQwacR6fw
+         x77Xl2mTboNLdTbQGM44EWr0Qj/ij3gnp5KqNRyJYpyu3futGWaAXzrLIW7xuRk1RdpD
+         dBSQ==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: ACgBeo0j5AdThCmPq74Qx3VGuX7FTuyZU3N29CscrZR1PVaFsmKJT4rg
-	GN74s3bj2f07W0r3VNSNjzv68g==
-X-Google-Smtp-Source: AA6agR5soTb1wqdCLOVeWfii+MAVPTJtT52Y7gOTDR578DUmuYoH8ro4tDDma1P7fl4sCHKK4hLjDw==
-X-Received: by 2002:a05:6870:4388:b0:10e:803f:9dae with SMTP id r8-20020a056870438800b0010e803f9daemr6147234oah.175.1660909024417;
-        Fri, 19 Aug 2022 04:37:04 -0700 (PDT)
+X-Gm-Message-State: ACgBeo1O/Eh5gIUw0Mpz08gUEUEzEU4ezwe9kUgA9hO8oNuhBWolEt1d
+	ejWWBXctquovsX+8h+TKK3Tk9w==
+X-Google-Smtp-Source: AA6agR6YmJ/kIxZoEe6Fu2SAhQvvVFVT2nhVp8ZZgwndYo7AkhubI3vW1dLD1MGlQuRdFZSdgwVnzw==
+X-Received: by 2002:ad4:5bc3:0:b0:482:5a89:c107 with SMTP id t3-20020ad45bc3000000b004825a89c107mr23237457qvt.84.1661326436188;
+        Wed, 24 Aug 2022 00:33:56 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a05:6870:3a04:b0:10c:41e7:bfd9 with SMTP id
- du4-20020a0568703a0400b0010c41e7bfd9ls1423731oab.2.-pod-prod-gmail; Fri, 19
- Aug 2022 04:37:04 -0700 (PDT)
-X-Received: by 2002:a05:6870:2499:b0:101:7531:c7ec with SMTP id s25-20020a056870249900b001017531c7ecmr6552087oaq.42.1660909024158;
-        Fri, 19 Aug 2022 04:37:04 -0700 (PDT)
-Received: by 2002:aca:b842:0:b0:344:8317:fb1f with SMTP id 5614622812f47-34529cb4ca4msb6e;
-        Thu, 18 Aug 2022 22:31:26 -0700 (PDT)
-X-Received: by 2002:a63:69c7:0:b0:41c:590a:62dc with SMTP id e190-20020a6369c7000000b0041c590a62dcmr4888621pgc.388.1660887086094;
-        Thu, 18 Aug 2022 22:31:26 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1660887086; cv=pass;
+Received: by 2002:a05:620a:1456:b0:6bb:13a4:5c25 with SMTP id
+ i22-20020a05620a145600b006bb13a45c25ls9778323qkl.4.-pod-prod-gmail; Wed, 24
+ Aug 2022 00:33:55 -0700 (PDT)
+X-Received: by 2002:ae9:f705:0:b0:6b9:7151:d263 with SMTP id s5-20020ae9f705000000b006b97151d263mr18115822qkg.206.1661326435741;
+        Wed, 24 Aug 2022 00:33:55 -0700 (PDT)
+Received: by 2002:a05:620a:3185:b0:6af:32d6:6d97 with SMTP id af79cd13be357-6bc3e44c61ams85a;
+        Tue, 23 Aug 2022 23:37:07 -0700 (PDT)
+X-Received: by 2002:a67:fc90:0:b0:390:637e:5511 with SMTP id x16-20020a67fc90000000b00390637e5511mr5011530vsp.47.1661323026586;
+        Tue, 23 Aug 2022 23:37:06 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1661323026; cv=none;
         d=google.com; s=arc-20160816;
-        b=bBkhROF0R3LD+F+HLViAhkFmA5BpB8DTme8COfm6CY/r83PetuCgSGwe0CC11wemrL
-         EghnEZc1uuebIA7n/9DQHWf0fGQ/OxOaPFK1RDzo5pJViuQZdjOh8IFTrlhj1WGyYsBr
-         qbDWu9424ztUvXJP8f3P0a/aUAqoeKJxqsYYu31X7YANPofgr1U7nH9F0P1L4ivj3EHe
-         FwQTY4+LYQ84Eg0nEXole/bX+IZ6DxmgepIA9tbxW8hoCO6h3D6/n55kxsm/OQ3vMTh6
-         GdjVwUfKACK+ulf6kmVKH1/5TcVjXNjrfBB26lzIuuyMNiAnpa9BP8HEYXng1uPqlhQl
-         YUBg==
-ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=mime-version:in-reply-to:content-disposition:references:message-id
-         :subject:cc:to:from:date:dkim-signature;
-        bh=5sqCHmyp5j2qBLAwz3OB2o/E4w0d9ErsYWmGCs61dIU=;
-        b=g4qrZ9gtHO6gSuEwBC31e8SS17Kc4j4Sz8XusZ2DNe8Pe+zxFFYQ819YsvrqbEkWR8
-         8Cxl5HUDChYZiH+JW+RDXeCzVExt6A/2FOCQr2bSCDNcuVc7jwyDaUaMtbW5ZldZgN4I
-         K35fIGHf/yoe9J1NoMBkCQ0rBvp1J7qTHSfQvTGGFussnN7Y1CmU2KdU1ZJXUD4ABNo+
-         Lio3Bq4V1n17K/Dk60guDJN5Zs+ptomJO1PfvCj1vjajnTPGJn33OK/o3eLOcrlyx6iD
-         wEB0PpGXzRgxQhXC7G7MYT5IjaZSi4LPQvcYkSChSOHc/Ihy9QbMolLuUHoDmUq5FhiC
-         /cng==
-ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@skidata.com header.s=selector1 header.b=fF9zw4mX;
-       arc=pass (i=1 spf=pass spfdomain=skidata.com dkim=pass dkdomain=skidata.com dmarc=pass fromdomain=skidata.com);
-       spf=pass (google.com: domain of richard.leitner@skidata.com designates 40.107.24.103 as permitted sender) smtp.mailfrom=Richard.Leitner@skidata.com;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=skidata.com
-Received: from CHE01-ZR0-obe.outbound.protection.outlook.com (mail-zr0che01on2103.outbound.protection.outlook.com. [40.107.24.103])
-        by mx.google.com with ESMTPS id g7-20020a656cc7000000b0041cb0d39714si3376977pgw.360.2022.08.18.22.31.25
+        b=ka3DGCJd6S5Up7urb2SChQUR/rYDm4ydYjTvwvKfIWSEL9Shn9GdHq2DwUDGZydZm2
+         ek4PQZ49ImBRCzUB1Ln7CK8WsxvOFRDJfeYG/E4goxXIlPT4eUivhoe3AtZAFNMzgfGS
+         I2HJ7gkrVwREkX0QXONQ1zuCWqozCU+UmESCIzYD+eggYx2F2v1vLJ1kPnpY/G5Xgqtg
+         URxK7N8aumFd0V3NGiaQe3FeiqyWc+ejTyq5e8jxen+eF1ntVTuIz4YizGMkmRRoD1iG
+         hlZk/mbkGtb/WEqhj0T+wOKrK+hN1n0reERGpcoL6+Wi4DhXu4yj5saqnNaxUXslZ+Tv
+         /FNg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:dkim-signature;
+        bh=oEbgpqKVGIqIxro+ookk/4iAvjswoYS3GHgu0T6AW2I=;
+        b=gQgIAQsqNrBm33Kl2m5j7BorcD+9PR2TgB26LG8phSQ9cF6Lp4FaxiuEtkEloGTsew
+         t8CYD0xcCrTKmF3tTkNxpgCBRkv8/zpzKW7ikCYa3Zwg/wwyCOqR04+K8U1dJEAzOPbw
+         WVMvVPs1PJQSAR/GXkfAQV0rEDld4/wUY2fxct86zmOMnNbr8sV915VfdrBFBLSIUsL+
+         HEszsSuad4KDkFkoov4dgyWEoc/dnAaSMn1U0Q/DEkByLeyLtCP4Zb3yvINDb112hYAV
+         6pYptfSsBKGde5B+mHuB5ZFpu66YxqzilDEJA6KQZR3wj1Gk5+3JA21LpQrYW3I2Axm5
+         qYwQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b=jYimnwYe;
+       spf=pass (google.com: domain of huxiaoying2008@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=huxiaoying2008@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id m12-20020a0561023e8c00b0038ad4743040sor5495170vsv.98.2022.08.23.23.37.06
         for <usb-storage@lists.one-eyed-alien.net>
-        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Thu, 18 Aug 2022 22:31:26 -0700 (PDT)
-Received-SPF: pass (google.com: domain of richard.leitner@skidata.com designates 40.107.24.103 as permitted sender) client-ip=40.107.24.103;
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=i9gbTOfc720XXCAp7q+679VwIqCVmYJkBrF2+uGcWFn3oAmvYzFhAYLu7Ue/fiEgk4tFXwYsbRT+K1xmaraVySeZ4Eczz29hymf/5vChUFaZGFR4rOz9J4BPYy7JZTaJmsmD51BfCA5dF7gCS+8l1UfAJHZULuO4dKgvTknXL4mYAJ7/NYudIJ3mP7Oyvdm6S2SE9EFnrI2y+S9lV4TsblLpjoLIRdFtEf5FI8APq7xAo7p0h+KKws5m130nJuwZZpnC79Rww39qY3+zIVYEYWGSESnfIpqfM90P/zdPl28So6YMLcnl+WTUfLxy5Vi1NXRCgz0bDgBxO1pRTnLv0Q==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=5sqCHmyp5j2qBLAwz3OB2o/E4w0d9ErsYWmGCs61dIU=;
- b=XWd5ogdXguiftilI7U5ynthqYf16kULsvVrl3q7dkCXT72hDAjOvuTQv2IB4qhYRhNOjLbLmZBEWDhosZ0fWtv6LKV6ABJzcXwoWK0zkkEP5UsNRrE0h1wlgBbtwlYPaRNOP/CJIC/xP4oK1Id5W9yTeVhN9OIR7UVd1keC9E3Q7TjBZStxEHN4EpfljBUFqo/9UxiigR0rO+jrrejJgwewNrvXoLSoyJcD5yDXdkiLvxWiTesBj+06+rVLD7Rjd4sNYF5F5w+OPdpWWZGcNKkXi4bfiT9xW00gr6btJqOZjyjV+GMVLf9lVvItqj5Bn/OXjf0VyuA0VeDMJdLs13g==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=skidata.com; dmarc=pass action=none header.from=skidata.com;
- dkim=pass header.d=skidata.com; arc=none
-Received: from ZR0P278MB0798.CHEP278.PROD.OUTLOOK.COM (2603:10a6:910:43::8) by
- ZR0P278MB0474.CHEP278.PROD.OUTLOOK.COM (2603:10a6:910:25::10) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.5546.17; Fri, 19 Aug 2022 05:31:23 +0000
-Received: from ZR0P278MB0798.CHEP278.PROD.OUTLOOK.COM
- ([fe80::91f2:a7f5:699b:388f]) by ZR0P278MB0798.CHEP278.PROD.OUTLOOK.COM
- ([fe80::91f2:a7f5:699b:388f%9]) with mapi id 15.20.5525.019; Fri, 19 Aug 2022
- 05:31:23 +0000
-Date: Fri, 19 Aug 2022 07:31:20 +0200
-From: Richard Leitner <richard.leitner@skidata.com>
-To: Wolfram Sang <wsa+renesas@sang-engineering.com>
-Cc: linux-kernel@vger.kernel.org, Duncan Sands <duncan.sands@free.fr>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Felipe Balbi <balbi@kernel.org>,
-	Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
-	Alan Stern <stern@rowland.harvard.edu>,
-	Guenter Roeck <linux@roeck-us.net>,
-	Heikki Krogerus <heikki.krogerus@linux.intel.com>,
-	Valentina Manea <valentina.manea.m@gmail.com>,
-	Shuah Khan <shuah@kernel.org>, linux-usb@vger.kernel.org,
-	usb-storage@lists.one-eyed-alien.net
-Subject: [usb-storage] Re: [PATCH] usb: move from strlcpy with unused retval
- to strscpy
-Message-ID: <Yv8gKHKM/HjIkmnz@skidata.com>
-References: <20220818210116.7517-1-wsa+renesas@sang-engineering.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Disposition: inline
-In-Reply-To: <20220818210116.7517-1-wsa+renesas@sang-engineering.com>
-X-ClientProxiedBy: VI1P18901CA0007.EURP189.PROD.OUTLOOK.COM
- (2603:10a6:801::17) To ZR0P278MB0798.CHEP278.PROD.OUTLOOK.COM
- (2603:10a6:910:43::8)
+        (Google Transport Security);
+        Tue, 23 Aug 2022 23:37:06 -0700 (PDT)
+Received-SPF: pass (google.com: domain of huxiaoying2008@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+X-Received: by 2002:a67:d60f:0:b0:390:1d18:289 with SMTP id
+ n15-20020a67d60f000000b003901d180289mr10194718vsj.62.1661323026217; Tue, 23
+ Aug 2022 23:37:06 -0700 (PDT)
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 8cbbae6f-d114-4588-a4b7-08da81a40daa
-X-MS-TrafficTypeDiagnostic: ZR0P278MB0474:EE_
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: Qrde3+OELKdlwtxdseUocRw4GrWl0GfUa63BkF1V5M74vvlmjsdvWlqm9nG1NAfThzREUQNcQZLE25K8g/Z15SUFSrGmU2eZI3vKRPvPdfjTuKLnU6CQ5Fya59mQObHBJsg8q+eQSQ0LNvUdHWP//KJAmTmdlMfIGo1ucrPogeyU0DQDlPq6x0ZQrZUTME2kFltGoz/1viJMlH9DQGQzn+cuI3DMGReMnhCP71z5137EnGRFQTC1AkX44sB7RoMD48F2bm4FOVGvVJkfQKCrju3FEJBRa3K+ndoFE+neGdi1lEV0i+tF5cw+saOPERy6ZUanl/1HFARob4ivtHeg/PFWhPPE04Tu8kWCb1XSDA1iNtYSzPDIRBF609KaH/+tdDwcc5NemfgJYO2x06iHuQKLbCJYPAqWBJeJdl4dpAgvobJ30qhy//+WnbbMmr6daiEAPqS6k4u+CXD7vioU3bwXqO02lYppwhqSqxNOW6nw7wialDY246z+bE4yyBD2Ac9yMxGn2fiaYDiMAmWPrcXDcKz3fw4+VE/cssSK7s7OU1+LOxpx69jMhF87oFuch9PutyjGZdHRRXgy5sfZMX+/3Rm/HLXr8DOW48cd1OSjWUmiU/63AHV28C1XPMl6RRdbSCU5x+rD9le/igOeZpA7YSgl/TBgtcBGh+jc3ErraeDTE31TgKLt9QCK7hXoGo5hBmHID+mXR+ScLOBcHhslgBMTxe/AOFIo+TcFpNgFunzBiFcKGmLg/bZLZ/zjEI5PXfOVSwLgJDtoI5BJwvaba4BWlFCG2G+eePUz4q5WkoZR4lRP8EY2ef4Zk4ICu5SjQUTTVNtoFymlyyjmog==
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:ZR0P278MB0798.CHEP278.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230016)(4636009)(346002)(136003)(396003)(366004)(39850400004)(376002)(316002)(54906003)(2616005)(41300700001)(186003)(26005)(6512007)(6506007)(86362001)(83380400001)(966005)(6486002)(478600001)(2906002)(5660300002)(7416002)(8936002)(36756003)(44832011)(8676002)(4326008)(66556008)(66946007)(66476007)(38100700002)(156123004)(41080700001);DIR:OUT;SFP:1102;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?k7xbgsJZ/wcrVQnQ+FunuzRj23iyvshkVG5LhOtnJH8FSPOS/u3XbWmLcpEU?=
- =?us-ascii?Q?oleJliM/WUazn8t/+kHNR/DtkaOQzgy8jCHyYRa8HgwkyrZA6+vCgkZGAMnr?=
- =?us-ascii?Q?UwiBIT5lh1AZUjas8rJ+hYb2c+2DhLMRRjanoKo5oMiQQiJl0fG8tl0ycD1b?=
- =?us-ascii?Q?qiUTPIpSVujEI/uxjMHdFhQOagNgTFhvuhq1Idar9ab42iZDxV9Sil54fN9d?=
- =?us-ascii?Q?bb39nRrsoY9gOHazRBDRSZpeUJW63WIWqgcV6b9g3dA3XJ+Y0guE9lVaTphp?=
- =?us-ascii?Q?W0zc7J82xmv3j+BLmOdma71dWK5Pj0KHbd+oJx2nJqstKk1+EN3l7vB2w3Rp?=
- =?us-ascii?Q?4t56M6aio9sNdDW81OkKg84LABESDGzP/QqNDssmxxwYg8nqDOljrGymxalH?=
- =?us-ascii?Q?+Kbg8yKm8tADJoeghXwAMgRKNc6H1dekAAc1ul0MCncGK45gjNqEGWJIBqC/?=
- =?us-ascii?Q?Jcdvn+4q8YOvBL4vgFp/a0hu9fwX3Soa0p3J7mKlI2nO98kSVRPKFnSMaIvK?=
- =?us-ascii?Q?eF/A4bHxJpGfpWwQA5ExXU8WKXcqAxsFlvvWt0kI3uNbaHr3yNaMmy5mCR3N?=
- =?us-ascii?Q?S8D+TzQ4a5SzoTvL8f+6LFa4UOALJcarrqlVuCm19Vm8JEejlbqIZ8GRukx9?=
- =?us-ascii?Q?R2yUKckFvQ2Us2OPSQRWaC03I7fqwnP6iVaBeUzpdXAbZw2Io5xgkjoI5D7Q?=
- =?us-ascii?Q?3j0Gufhnr0IvUgnIq/SlfGg+TyOOSl2zMwUikWNOGksa3LRKphx7zWlqT8pk?=
- =?us-ascii?Q?7f3wiUlhfbG5PdJd2MGvjF9IrDHRYa4qIso9DhgsNE1zhqmW3pnngyp9C3z9?=
- =?us-ascii?Q?egPhG195gvA/th8qkbH/1Lg+HALv8XoT2u4utnvmmaiklUGeGqvt1glOyCEo?=
- =?us-ascii?Q?9AtDE4GdNYQSZ5WyU53j6ofb6f0ot5s2XluZq0SdHr+CNwNVTqzY1krERhei?=
- =?us-ascii?Q?9bNiVs8MD5Ya/MpMQ33pQJqUyas0ak18Djk/UNh4OoItHe3sp1d5Tn3OLj+a?=
- =?us-ascii?Q?JrHB8o90zUVkxQVkWzPEgxsUKu6Xw5WadQpDI3CyjMkSZMP/KpoZGKXlj1sd?=
- =?us-ascii?Q?ASZlO0iVHSWLOs1hh7M+NOprEgD3kTxZl5a63T8EVv4X7pK70rbNjxbs9JfE?=
- =?us-ascii?Q?3gYJIDMIOrou4RONoIYvMh2zd9IhQP49xPDnhcld/lGqnCj/RYZPWGHPANRE?=
- =?us-ascii?Q?sgnFG2mOuki7ornimGK4JTVMnO7wQ9vAUCDgYjRJIHC3NfaF90dgYi86TyTA?=
- =?us-ascii?Q?OsicTCHNAeyCddUA9sS50miMadZx0wXxGdl5TBsx7vWb857y73XlyVNongCX?=
- =?us-ascii?Q?xsDhK6/XGv4ephrYOw32JM6k9erkxxizzXGdDwf7z0y4tDOogYC+DVWzikb2?=
- =?us-ascii?Q?l0F0m7pVYAe1YfsUtg4OBG6qiIhXfZpkOiS2EwylvtP9cB0ycxQV1KS0j7EI?=
- =?us-ascii?Q?YhHFTP6ivFvX24xY9Xi14e5Gx3XXdoz5HCMON3hOFxzHpBZGgSLO15T6AdJj?=
- =?us-ascii?Q?78osP2PC3ZE2hPOihkUTg26UypmGxyqIbp1jBF+zXBJ/dApIp7WNFq2Otde9?=
- =?us-ascii?Q?hyO+5Yydy7XuPyXR0yvMBkHZZROmVBLQPNsu4VxB6ERIA6WhASujAxsmTB5w?=
- =?us-ascii?Q?lA=3D=3D?=
-X-OriginatorOrg: skidata.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 8cbbae6f-d114-4588-a4b7-08da81a40daa
-X-MS-Exchange-CrossTenant-AuthSource: ZR0P278MB0798.CHEP278.PROD.OUTLOOK.COM
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 19 Aug 2022 05:31:23.1815
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: e5733095-4425-4f08-b6ba-487b9a46a425
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: pNF9a+zshHYnPiei4XDhXm8+cZ9upgECuypk6haxcqM7vSbIzCUgd1xkRHS9i0U/D80YyaFj7pEqCWo7guNggMAgjJO0gZcqbjuqkLaaZXc=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: ZR0P278MB0474
-X-Original-Sender: richard.leitner@skidata.com
+References: <S240916AbiHWHMh/20220823071237Z+20120@vger.kernel.org> <CABd4Uja9SoHpiMr2gDFcEP2Cudp7dcWJ_2i+KTEse9CU=KMtzw@mail.gmail.com>
+In-Reply-To: <CABd4Uja9SoHpiMr2gDFcEP2Cudp7dcWJ_2i+KTEse9CU=KMtzw@mail.gmail.com>
+From: Hu Xiaoying <huxiaoying2008@gmail.com>
+Date: Wed, 24 Aug 2022 14:36:55 +0800
+Message-ID: <CABd4UjYB=nzha=eoogNJU4pFwW9+4PQ65bC5u=R-gCE_ZLSQXw@mail.gmail.com>
+Subject: [usb-storage] Re: Confirmation for subscribe linux-usb
+To: usb-storage@lists.one-eyed-alien.net, linux-usb@vger.kernel.org, 
+	gregkh@linuxfoundation.org, stern@rowland.harvard.edu
+Cc: linux-kernel@vger.kernel.org, devel@driverdev.osuosl.org, 
+	linux-media@vger.kernel.org
+Content-Type: multipart/mixed; boundary="000000000000d61c1605e6f6e89e"
+X-Original-Sender: huxiaoying2008@gmail.com
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@skidata.com header.s=selector1 header.b=fF9zw4mX;       arc=pass
- (i=1 spf=pass spfdomain=skidata.com dkim=pass dkdomain=skidata.com dmarc=pass
- fromdomain=skidata.com);       spf=pass (google.com: domain of
- richard.leitner@skidata.com designates 40.107.24.103 as permitted sender)
- smtp.mailfrom=Richard.Leitner@skidata.com;       dmarc=pass (p=NONE sp=NONE
- dis=NONE) header.from=skidata.com
+ header.i=@gmail.com header.s=20210112 header.b=jYimnwYe;       spf=pass
+ (google.com: domain of huxiaoying2008@gmail.com designates 209.85.220.41 as
+ permitted sender) smtp.mailfrom=huxiaoying2008@gmail.com;       dmarc=pass
+ (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -212,212 +131,158 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-Hi Wolfram,
+--000000000000d61c1605e6f6e89e
+Content-Type: multipart/alternative; boundary="000000000000d61c1405e6f6e89c"
 
-On Thu, Aug 18, 2022 at 11:01:15PM +0200, Wolfram Sang wrote:
-> Follow the advice of the below link and prefer 'strscpy' in this
-> subsystem. Conversion is 1:1 because the return value is not used.
-> Generated by a coccinelle script.
-> 
-> Link: https://lore.kernel.org/r/CAHk-=wgfRnXz0W3D37d01q3JFkr_i_uTL=V6A6G1oUZcprmknw@mail.gmail.com/
-> Signed-off-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
-> ---
->  drivers/usb/atm/usbatm.c               | 2 +-
->  drivers/usb/core/devio.c               | 2 +-
->  drivers/usb/gadget/function/f_fs.c     | 2 +-
->  drivers/usb/gadget/function/f_uvc.c    | 2 +-
->  drivers/usb/gadget/function/u_ether.c  | 8 ++++----
->  drivers/usb/gadget/function/uvc_v4l2.c | 6 +++---
->  drivers/usb/gadget/udc/omap_udc.c      | 2 +-
->  drivers/usb/misc/usb251xb.c            | 6 +++---
+--000000000000d61c1405e6f6e89c
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 
-Thanks for taking usb251xb into account.
+submit patch
 
-Please feel free to add
+Hu Xiaoying <huxiaoying2008@gmail.com> =E4=BA=8E2022=E5=B9=B48=E6=9C=8823=
+=E6=97=A5=E5=91=A8=E4=BA=8C 15:43=E5=86=99=E9=81=93=EF=BC=9A
 
-Reviewed-by: Richard Leitner <richard.leitner@skidata.com>
+>   auth 7333f35e subscribe linux-usb huxiaoying2008@gmail.com
+>
+> <Majordomo@vger.kernel.org> =E4=BA=8E2022=E5=B9=B48=E6=9C=8823=E6=97=A5=
+=E5=91=A8=E4=BA=8C 15:21=E5=86=99=E9=81=93=EF=BC=9A
+>
+>> --
+>>
+>> Someone (possibly you) has requested that your email address be added
+>> to or deleted from the mailing list "linux-usb@vger.kernel.org".
+>>
+>> If you really want this action to be taken, please send the following
+>> commands (exactly as shown) back to "Majordomo@vger.kernel.org":
+>>
+>>         auth 7333f35e subscribe linux-usb huxiaoying2008@gmail.com
+>>
+>> If you do not want this action to be taken, simply ignore this message
+>> and the request will be disregarded.
+>>
+>> If your mailer will not allow you to send the entire command as a single
+>> line, you may split it using backslashes, like so:
+>>
+>>         auth 7333f35e subscribe linux-usb \
+>>         huxiaoying2008@gmail.com
+>>
+>> If you have any questions about the policy of the list owner, please
+>> contact "linux-usb-approval@vger.kernel.org".
+>>
+>> Thanks!
+>>
+>> Majordomo@vger.kernel.org
+>>
+>
 
->  drivers/usb/storage/onetouch.c         | 2 +-
->  drivers/usb/typec/tcpm/fusb302.c       | 2 +-
->  drivers/usb/usbip/stub_main.c          | 2 +-
->  11 files changed, 18 insertions(+), 18 deletions(-)
-> 
-> diff --git a/drivers/usb/atm/usbatm.c b/drivers/usb/atm/usbatm.c
-> index 362217189ef3..1cdb8758ae01 100644
-> --- a/drivers/usb/atm/usbatm.c
-> +++ b/drivers/usb/atm/usbatm.c
-> @@ -1026,7 +1026,7 @@ int usbatm_usb_probe(struct usb_interface *intf, const struct usb_device_id *id,
->  	/* public fields */
->  
->  	instance->driver = driver;
-> -	strlcpy(instance->driver_name, driver->driver_name,
-> +	strscpy(instance->driver_name, driver->driver_name,
->  		sizeof(instance->driver_name));
->  
->  	instance->usb_dev = usb_dev;
-> diff --git a/drivers/usb/core/devio.c b/drivers/usb/core/devio.c
-> index b5b85bf80329..837f3e57f580 100644
-> --- a/drivers/usb/core/devio.c
-> +++ b/drivers/usb/core/devio.c
-> @@ -1434,7 +1434,7 @@ static int proc_getdriver(struct usb_dev_state *ps, void __user *arg)
->  	if (!intf || !intf->dev.driver)
->  		ret = -ENODATA;
->  	else {
-> -		strlcpy(gd.driver, intf->dev.driver->name,
-> +		strscpy(gd.driver, intf->dev.driver->name,
->  				sizeof(gd.driver));
->  		ret = (copy_to_user(arg, &gd, sizeof(gd)) ? -EFAULT : 0);
->  	}
-> diff --git a/drivers/usb/gadget/function/f_fs.c b/drivers/usb/gadget/function/f_fs.c
-> index e0fa4b186ec6..98dc2291e9a1 100644
-> --- a/drivers/usb/gadget/function/f_fs.c
-> +++ b/drivers/usb/gadget/function/f_fs.c
-> @@ -3700,7 +3700,7 @@ int ffs_name_dev(struct ffs_dev *dev, const char *name)
->  
->  	existing = _ffs_do_find_dev(name);
->  	if (!existing)
-> -		strlcpy(dev->name, name, ARRAY_SIZE(dev->name));
-> +		strscpy(dev->name, name, ARRAY_SIZE(dev->name));
->  	else if (existing != dev)
->  		ret = -EBUSY;
->  
-> diff --git a/drivers/usb/gadget/function/f_uvc.c b/drivers/usb/gadget/function/f_uvc.c
-> index 71669e0e4d00..f4f6cf75930b 100644
-> --- a/drivers/usb/gadget/function/f_uvc.c
-> +++ b/drivers/usb/gadget/function/f_uvc.c
-> @@ -430,7 +430,7 @@ uvc_register_video(struct uvc_device *uvc)
->  	uvc->vdev.vfl_dir = VFL_DIR_TX;
->  	uvc->vdev.lock = &uvc->video.mutex;
->  	uvc->vdev.device_caps = V4L2_CAP_VIDEO_OUTPUT | V4L2_CAP_STREAMING;
-> -	strlcpy(uvc->vdev.name, cdev->gadget->name, sizeof(uvc->vdev.name));
-> +	strscpy(uvc->vdev.name, cdev->gadget->name, sizeof(uvc->vdev.name));
->  
->  	video_set_drvdata(&uvc->vdev, uvc);
->  
-> diff --git a/drivers/usb/gadget/function/u_ether.c b/drivers/usb/gadget/function/u_ether.c
-> index 7887def05dc2..e06022873df1 100644
-> --- a/drivers/usb/gadget/function/u_ether.c
-> +++ b/drivers/usb/gadget/function/u_ether.c
-> @@ -144,10 +144,10 @@ static void eth_get_drvinfo(struct net_device *net, struct ethtool_drvinfo *p)
->  {
->  	struct eth_dev *dev = netdev_priv(net);
->  
-> -	strlcpy(p->driver, "g_ether", sizeof(p->driver));
-> -	strlcpy(p->version, UETH__VERSION, sizeof(p->version));
-> -	strlcpy(p->fw_version, dev->gadget->name, sizeof(p->fw_version));
-> -	strlcpy(p->bus_info, dev_name(&dev->gadget->dev), sizeof(p->bus_info));
-> +	strscpy(p->driver, "g_ether", sizeof(p->driver));
-> +	strscpy(p->version, UETH__VERSION, sizeof(p->version));
-> +	strscpy(p->fw_version, dev->gadget->name, sizeof(p->fw_version));
-> +	strscpy(p->bus_info, dev_name(&dev->gadget->dev), sizeof(p->bus_info));
->  }
->  
->  /* REVISIT can also support:
-> diff --git a/drivers/usb/gadget/function/uvc_v4l2.c b/drivers/usb/gadget/function/uvc_v4l2.c
-> index fd8f73bb726d..511f106f9843 100644
-> --- a/drivers/usb/gadget/function/uvc_v4l2.c
-> +++ b/drivers/usb/gadget/function/uvc_v4l2.c
-> @@ -67,9 +67,9 @@ uvc_v4l2_querycap(struct file *file, void *fh, struct v4l2_capability *cap)
->  	struct uvc_device *uvc = video_get_drvdata(vdev);
->  	struct usb_composite_dev *cdev = uvc->func.config->cdev;
->  
-> -	strlcpy(cap->driver, "g_uvc", sizeof(cap->driver));
-> -	strlcpy(cap->card, cdev->gadget->name, sizeof(cap->card));
-> -	strlcpy(cap->bus_info, dev_name(&cdev->gadget->dev),
-> +	strscpy(cap->driver, "g_uvc", sizeof(cap->driver));
-> +	strscpy(cap->card, cdev->gadget->name, sizeof(cap->card));
-> +	strscpy(cap->bus_info, dev_name(&cdev->gadget->dev),
->  		sizeof(cap->bus_info));
->  	return 0;
->  }
-> diff --git a/drivers/usb/gadget/udc/omap_udc.c b/drivers/usb/gadget/udc/omap_udc.c
-> index 61cabb9de6ae..b0567c63d754 100644
-> --- a/drivers/usb/gadget/udc/omap_udc.c
-> +++ b/drivers/usb/gadget/udc/omap_udc.c
-> @@ -2558,7 +2558,7 @@ omap_ep_setup(char *name, u8 addr, u8 type,
->  
->  	/* set up driver data structures */
->  	BUG_ON(strlen(name) >= sizeof ep->name);
-> -	strlcpy(ep->name, name, sizeof ep->name);
-> +	strscpy(ep->name, name, sizeof(ep->name));
->  	INIT_LIST_HEAD(&ep->queue);
->  	INIT_LIST_HEAD(&ep->iso);
->  	ep->bEndpointAddress = addr;
-> diff --git a/drivers/usb/misc/usb251xb.c b/drivers/usb/misc/usb251xb.c
-> index 04c4e3fed094..87035ac09834 100644
-> --- a/drivers/usb/misc/usb251xb.c
-> +++ b/drivers/usb/misc/usb251xb.c
-> @@ -547,7 +547,7 @@ static int usb251xb_get_ofdata(struct usb251xb *hub,
->  		hub->boost_up = USB251XB_DEF_BOOST_UP;
->  
->  	cproperty_char = of_get_property(np, "manufacturer", NULL);
-> -	strlcpy(str, cproperty_char ? : USB251XB_DEF_MANUFACTURER_STRING,
-> +	strscpy(str, cproperty_char ? : USB251XB_DEF_MANUFACTURER_STRING,
->  		sizeof(str));
->  	hub->manufacturer_len = strlen(str) & 0xFF;
->  	memset(hub->manufacturer, 0, USB251XB_STRING_BUFSIZE);
-> @@ -557,7 +557,7 @@ static int usb251xb_get_ofdata(struct usb251xb *hub,
->  			      USB251XB_STRING_BUFSIZE);
->  
->  	cproperty_char = of_get_property(np, "product", NULL);
-> -	strlcpy(str, cproperty_char ? : data->product_str, sizeof(str));
-> +	strscpy(str, cproperty_char ? : data->product_str, sizeof(str));
->  	hub->product_len = strlen(str) & 0xFF;
->  	memset(hub->product, 0, USB251XB_STRING_BUFSIZE);
->  	len = min_t(size_t, USB251XB_STRING_BUFSIZE / 2, strlen(str));
-> @@ -566,7 +566,7 @@ static int usb251xb_get_ofdata(struct usb251xb *hub,
->  			      USB251XB_STRING_BUFSIZE);
->  
->  	cproperty_char = of_get_property(np, "serial", NULL);
-> -	strlcpy(str, cproperty_char ? : USB251XB_DEF_SERIAL_STRING,
-> +	strscpy(str, cproperty_char ? : USB251XB_DEF_SERIAL_STRING,
->  		sizeof(str));
->  	hub->serial_len = strlen(str) & 0xFF;
->  	memset(hub->serial, 0, USB251XB_STRING_BUFSIZE);
-> diff --git a/drivers/usb/storage/onetouch.c b/drivers/usb/storage/onetouch.c
-> index 1db2eefeea22..01f3c2779ccf 100644
-> --- a/drivers/usb/storage/onetouch.c
-> +++ b/drivers/usb/storage/onetouch.c
-> @@ -201,7 +201,7 @@ static int onetouch_connect_input(struct us_data *ss)
->  	onetouch->dev = input_dev;
->  
->  	if (udev->manufacturer)
-> -		strlcpy(onetouch->name, udev->manufacturer,
-> +		strscpy(onetouch->name, udev->manufacturer,
->  			sizeof(onetouch->name));
->  	if (udev->product) {
->  		if (udev->manufacturer)
-> diff --git a/drivers/usb/typec/tcpm/fusb302.c b/drivers/usb/typec/tcpm/fusb302.c
-> index 96c55eaf3f80..ab89c014606e 100644
-> --- a/drivers/usb/typec/tcpm/fusb302.c
-> +++ b/drivers/usb/typec/tcpm/fusb302.c
-> @@ -151,7 +151,7 @@ static void _fusb302_log(struct fusb302_chip *chip, const char *fmt,
->  
->  	if (fusb302_log_full(chip)) {
->  		chip->logbuffer_head = max(chip->logbuffer_head - 1, 0);
-> -		strlcpy(tmpbuffer, "overflow", sizeof(tmpbuffer));
-> +		strscpy(tmpbuffer, "overflow", sizeof(tmpbuffer));
->  	}
->  
->  	if (chip->logbuffer_head < 0 ||
-> diff --git a/drivers/usb/usbip/stub_main.c b/drivers/usb/usbip/stub_main.c
-> index 77a5b3f8736a..e8c3131a8543 100644
-> --- a/drivers/usb/usbip/stub_main.c
-> +++ b/drivers/usb/usbip/stub_main.c
-> @@ -100,7 +100,7 @@ static int add_match_busid(char *busid)
->  	for (i = 0; i < MAX_BUSID; i++) {
->  		spin_lock(&busid_table[i].busid_lock);
->  		if (!busid_table[i].name[0]) {
-> -			strlcpy(busid_table[i].name, busid, BUSID_SIZE);
-> +			strscpy(busid_table[i].name, busid, BUSID_SIZE);
->  			if ((busid_table[i].status != STUB_BUSID_ALLOC) &&
->  			    (busid_table[i].status != STUB_BUSID_REMOV))
->  				busid_table[i].status = STUB_BUSID_ADDED;
-> -- 
-> 2.35.1
-> 
+--=20
+You received this message because you are subscribed to the Google Groups "=
+USB Mass Storage on Linux" group.
+To unsubscribe from this group and stop receiving emails from it, send an e=
+mail to usb-storage+unsubscribe@lists.one-eyed-alien.net.
+To view this discussion on the web visit https://groups.google.com/a/lists.=
+one-eyed-alien.net/d/msgid/usb-storage/CABd4UjYB%3Dnzha%3DeoogNJU4pFwW9%2B4=
+PQ65bC5u%3DR-gCE_ZLSQXw%40mail.gmail.com.
 
--- 
-You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
-To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/Yv8gKHKM/HjIkmnz%40skidata.com.
+--000000000000d61c1405e6f6e89c
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">submit patch</div><br><div class=3D"gmail_quote"><div dir=
+=3D"ltr" class=3D"gmail_attr">Hu Xiaoying &lt;<a href=3D"mailto:huxiaoying2=
+008@gmail.com">huxiaoying2008@gmail.com</a>&gt; =E4=BA=8E2022=E5=B9=B48=E6=
+=9C=8823=E6=97=A5=E5=91=A8=E4=BA=8C 15:43=E5=86=99=E9=81=93=EF=BC=9A<br></d=
+iv><blockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;bord=
+er-left:1px solid rgb(204,204,204);padding-left:1ex"><div dir=3D"ltr">=C2=
+=A0 auth 7333f35e subscribe linux-usb=C2=A0<a href=3D"mailto:huxiaoying2008=
+@gmail.com" target=3D"_blank">huxiaoying2008@gmail.com</a><br></div><br><di=
+v class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">&lt;<a href=
+=3D"mailto:Majordomo@vger.kernel.org" target=3D"_blank">Majordomo@vger.kern=
+el.org</a>&gt; =E4=BA=8E2022=E5=B9=B48=E6=9C=8823=E6=97=A5=E5=91=A8=E4=BA=
+=8C 15:21=E5=86=99=E9=81=93=EF=BC=9A<br></div><blockquote class=3D"gmail_qu=
+ote" style=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,20=
+4);padding-left:1ex">--<br>
+<br>
+Someone (possibly you) has requested that your email address be added<br>
+to or deleted from the mailing list &quot;<a href=3D"mailto:linux-usb@vger.=
+kernel.org" target=3D"_blank">linux-usb@vger.kernel.org</a>&quot;.<br>
+<br>
+If you really want this action to be taken, please send the following<br>
+commands (exactly as shown) back to &quot;<a href=3D"mailto:Majordomo@vger.=
+kernel.org" target=3D"_blank">Majordomo@vger.kernel.org</a>&quot;:<br>
+<br>
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 auth 7333f35e subscribe linux-usb <a href=3D"ma=
+ilto:huxiaoying2008@gmail.com" target=3D"_blank">huxiaoying2008@gmail.com</=
+a><br>
+<br>
+If you do not want this action to be taken, simply ignore this message<br>
+and the request will be disregarded.<br>
+<br>
+If your mailer will not allow you to send the entire command as a single<br=
+>
+line, you may split it using backslashes, like so:<br>
+<br>
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 auth 7333f35e subscribe linux-usb \<br>
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 <a href=3D"mailto:huxiaoying2008@gmail.com" tar=
+get=3D"_blank">huxiaoying2008@gmail.com</a><br>
+<br>
+If you have any questions about the policy of the list owner, please<br>
+contact &quot;<a href=3D"mailto:linux-usb-approval@vger.kernel.org" target=
+=3D"_blank">linux-usb-approval@vger.kernel.org</a>&quot;.<br>
+<br>
+Thanks!<br>
+<br>
+<a href=3D"mailto:Majordomo@vger.kernel.org" target=3D"_blank">Majordomo@vg=
+er.kernel.org</a><br>
+</blockquote></div>
+</blockquote></div>
+
+<p></p>
+
+-- <br />
+You received this message because you are subscribed to the Google Groups &=
+quot;USB Mass Storage on Linux&quot; group.<br />
+To unsubscribe from this group and stop receiving emails from it, send an e=
+mail to <a href=3D"mailto:usb-storage+unsubscribe@lists.one-eyed-alien.net"=
+>usb-storage+unsubscribe@lists.one-eyed-alien.net</a>.<br />
+To view this discussion on the web visit <a href=3D"https://groups.google.c=
+om/a/lists.one-eyed-alien.net/d/msgid/usb-storage/CABd4UjYB%3Dnzha%3DeoogNJ=
+U4pFwW9%2B4PQ65bC5u%3DR-gCE_ZLSQXw%40mail.gmail.com?utm_medium=3Demail&utm_=
+source=3Dfooter">https://groups.google.com/a/lists.one-eyed-alien.net/d/msg=
+id/usb-storage/CABd4UjYB%3Dnzha%3DeoogNJU4pFwW9%2B4PQ65bC5u%3DR-gCE_ZLSQXw%=
+40mail.gmail.com</a>.<br />
+
+--000000000000d61c1405e6f6e89c--
+--000000000000d61c1605e6f6e89e
+Content-Type: text/x-patch; charset="US-ASCII"; 
+	name="0001-KYLIN-usb-Improves-USB2.0-write-performance-for-Exte.patch"
+Content-Disposition: attachment; 
+	filename="0001-KYLIN-usb-Improves-USB2.0-write-performance-for-Exte.patch"
+Content-Transfer-Encoding: base64
+Content-ID: <f_l778soka0>
+X-Attachment-Id: f_l778soka0
+
+RnJvbSAwNDBlN2VkN2U2ZTllZDg1MDU3NWVkMDc1ZTAyZDk2MGE1ZmZlMTkxIE1vbiBTZXAgMTcg
+MDA6MDA6MDAgMjAwMQpGcm9tOiBIdSBYaWFveWluZyA8aHV4aWFveWluZ0BreWxpbm9zLmNuPgpE
+YXRlOiBXZWQsIDIyIEp1biAyMDIyIDE2OjM1OjU5ICswODAwClN1YmplY3Q6IFtQQVRDSCAtbmV4
+dF0gS1lMSU46IHVzYjogSW1wcm92ZXMgVVNCMi4wIHdyaXRlIHBlcmZvcm1hbmNlIGZvcgogRXh0
+ZXJuYWwgSEREIGRldmljZSAoVklEOlBJRCA9IDB4MGIwNToweDE5MzIpCgpDVkU6IE5BCgpVU0Ig
+ZXh0ZXJuYWwgc3RvcmFnZSBkZXZpY2UoMHgwYjA1OjE5MzIpLCB1c2UgZ25vbWUtZGlzay11dGls
+aXR5IHRvb2xzCnRvIHRlc3QgdXNiIHdyaXRlICA8IDMwTUIvcy4KdGhlbiwgaWdvbmVkIHRvIGxv
+YWQgbW9kdWxlIG9mIHVhcyBmb3IgdGhpcyBkZXZpY2UuCj09PT09PT09PT09PT09PT09PT09PT09
+PT09PT09PT09PT09PT09PT09PT09PT09CldyaXRlIHNwZWVkOiBJbXByb3ZlcyBmb3JtIDI3TUIv
+cyB0byA0ME1CL3MrCgpDYzogc3RhYmxlQHZnZXIua2VybmVsLm9yZwpTaWduZWQtb2ZmLWJ5OiBI
+dSBYaWFveWluZyA8aHV4aWFveWluZzIwMDhAZ21haWwuY24+Ci0tLQogZHJpdmVycy91c2Ivc3Rv
+cmFnZS91bnVzdWFsX3Vhcy5oIHwgNyArKysrKysrCiAxIGZpbGUgY2hhbmdlZCwgNyBpbnNlcnRp
+b25zKCspCgpkaWZmIC0tZ2l0IGEvZHJpdmVycy91c2Ivc3RvcmFnZS91bnVzdWFsX3Vhcy5oIGIv
+ZHJpdmVycy91c2Ivc3RvcmFnZS91bnVzdWFsX3Vhcy5oCmluZGV4IDQwNTFjOGNkMGNkOC4uYWJh
+ZjRlYTgxMzhiIDEwMDY0NAotLS0gYS9kcml2ZXJzL3VzYi9zdG9yYWdlL3VudXN1YWxfdWFzLmgK
+KysrIGIvZHJpdmVycy91c2Ivc3RvcmFnZS91bnVzdWFsX3Vhcy5oCkBAIC0xNTcsMyArMTU3LDEw
+IEBAIFVOVVNVQUxfREVWKDB4NDk3MSwgMHg4MDI0LCAweDAwMDAsIDB4OTk5OSwKIAkJIkV4dGVy
+bmFsIEhERCIsCiAJCVVTQl9TQ19ERVZJQ0UsIFVTQl9QUl9ERVZJQ0UsIE5VTEwsCiAJCVVTX0ZM
+X0FMV0FZU19TWU5DKSwKKworLyogUmVwb3J0ZWQtYnk6IFRvbSBIdSA8aHV4aWFveWluZ0BreWxp
+bm9zLmNuPiAqLworVU5VU1VBTF9ERVYoMHgwYjA1LCAweDE5MzIsIDB4MDAwMCwgMHg5OTk5LAor
+CQkiQVNVUyIsCisJCSJFeHRlcm5hbCBIREQiLAorCQlVU0JfU0NfREVWSUNFLCBVU0JfUFJfREVW
+SUNFLCBOVUxMLAorCQlVU19GTF9JR05PUkVfVUFTKSwKLS0gCjIuMjUuMQoK
+--000000000000d61c1605e6f6e89e--
