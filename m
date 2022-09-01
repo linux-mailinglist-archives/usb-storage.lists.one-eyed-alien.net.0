@@ -1,131 +1,133 @@
-Return-Path: <usb-storage+bncBD3ITNHVX4NRB5FMX6MAMGQELMLCEYQ@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBCS25756ZQFBBXUFYCMAMGQEE64VQ7A@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-oa1-x47.google.com (mail-oa1-x47.google.com [IPv6:2001:4860:4864:20::47])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7339D5A884F
-	for <lists+usb-storage@lfdr.de>; Wed, 31 Aug 2022 23:45:26 +0200 (CEST)
-Received: by mail-oa1-x47.google.com with SMTP id 586e51a60fabf-11c68f9ddd4sf5030577fac.22
-        for <lists+usb-storage@lfdr.de>; Wed, 31 Aug 2022 14:45:26 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1661982325; cv=pass;
+Received: from mail-pl1-x648.google.com (mail-pl1-x648.google.com [IPv6:2607:f8b0:4864:20::648])
+	by mail.lfdr.de (Postfix) with ESMTPS id 5168B5A8A0E
+	for <lists+usb-storage@lfdr.de>; Thu,  1 Sep 2022 02:54:56 +0200 (CEST)
+Received: by mail-pl1-x648.google.com with SMTP id i1-20020a170902cf0100b001730caeec78sf10728021plg.7
+        for <lists+usb-storage@lfdr.de>; Wed, 31 Aug 2022 17:54:56 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1661993694; cv=pass;
         d=google.com; s=arc-20160816;
-        b=p6jzI2lTL3r14mTq0UyO90z9JLZtdmv83PNeWq+UB2gmeVSp4+kmxdyACuEWnVKItm
-         vAw5u7nDy68z++ruUBd5nSfKcLiZlgbQW7JOKwK0IbiQgwYPz3tNJ0M9sc00x0pekD49
-         9LUHIxkAYQPPRBFJoWWX111F0xZvcIiG+xS2wxknIE1BrvD8C/AnAbL9r+UkpY9Zzlaa
-         UdktOGgM75UuZo827O1jJS1HlpzIVDVxxYVbucIQnP831KzAtMsVRKQJarV9ampaVNN0
-         C2K3UrbFEVjW7qERqCZdDnYzxcw1dWBNXD2rOK4kGYHKNcy/9LngG7gvgoHFOLbmr1VW
-         uGLQ==
+        b=EWMyDBAoSD1yjHdRovfcRFpsefCMAmXTwqQOR9xrQVW4itHho4wegi2hEBddDp/esn
+         H6f41WmFkf6RDP+X7SilSxHY5OLK8eRBCwu8VkrJv6ybfMK+70r27bY84pxZ3AdwE4iV
+         f9t/JASWnHeJreNFQ/i19hNnAPpGVwI0Ii+25qcpC72D10Vqim9Qav3chT1r1EtodFEd
+         6JReayLamkMHRTYYD5ugE64C+yFyv0e1dws1VMVd8Z7wKHzUEAxkJettDSAxANMtyHJz
+         Q7IiNoNVo+zSh+C8yrrJ1K2tcs6HPd3WqwNjw5aY1nSyf2B7Tsh/QfRUrf0u+lWiOGMI
+         zIEw==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:in-reply-to:content-disposition
-         :mime-version:references:message-id:subject:cc:to:from:date:sender
-         :dkim-signature;
-        bh=FQejxQo47tWYl+yKy1kBEcB7ZUuNMhgcBX5tJE1irDo=;
-        b=pHzIJp9J6qignV4qqFNxSgu9HHIcsSFA8vsZWuxEck7rHvpplDSAFdpIs4X6VVQMaI
-         CXkk8Yv7UR1TKt/DdTKz559zyVlIkCjbJ8QMJzGCAmZD6griMgkdnnz3rjpQy89Mrmf0
-         h7Im53e9QjdHIwQ0ygsgEtv9pITcc1Nji/UA4xHM70tdRzlUwa2bThlrI2eDi+1PVyDL
-         m5hsbrrO6V9lnkgmqyVIfg2DVlmI5GVA5AdbAW9KFB3RDmUhB2vjzI13V4IbxgAVsHWd
-         A9dFVkx3Z9BwTA2N1JVQWSQ5InD7J/dntTBBHd+c8h3JSAnV3htj2N94WMihk/pD/BKS
-         HpwA==
+         :list-id:mailing-list:precedence:mime-version:message-id:date
+         :subject:cc:to:from:sender:dkim-signature;
+        bh=Y/r2sKYp/ILqT1PRQWFOCDOrI+2J5fzkBWHJrp7uLwM=;
+        b=MVHG3juXcV0KFwRXPcSxYEkm/sMsiBSFrH9JiEFQtY0/JOCALqsmTK7tzalJOGhjvZ
+         tawegBMxjz2meHUGjzkcx0ZXgyEnWoLOh+0aM52zIYczC4Nyoejeh3NzRTuPgHpgXFiu
+         QUDkAghPOj13O+R4yJ4NZe+cSudfM8Wr6ZG/iqDof6/Ix8XqJlJCfWa7XYpgAsquaMjz
+         UsLCKKq3NshMvlnVrEIMvQEgvwJsF6lBvKaqSMTDS5asnowg8NHUWgFXObp6IBNeT2wl
+         Z/D2epNZiAdonlcHLAdjGSrSnJx6ZLjeNI2Qh8YqJ6ckml7orK8kjlWDUdxjuwNYE319
+         hVpg==
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@chromium.org header.s=google header.b=c5JgVe1B;
-       spf=pass (google.com: domain of mka@chromium.org designates 209.85.220.41 as permitted sender) smtp.mailfrom=mka@chromium.org;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=chromium.org
+       spf=neutral (google.com: 124.126.103.232 is neither permitted nor denied by domain of huxiaoying@kylinos.cn) smtp.mailfrom=huxiaoying@kylinos.cn
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:x-original-authentication-results
-         :x-original-sender:in-reply-to:content-disposition:mime-version
-         :references:message-id:subject:cc:to:from:date:sender:from:to:cc;
-        bh=FQejxQo47tWYl+yKy1kBEcB7ZUuNMhgcBX5tJE1irDo=;
-        b=N5dWXWhdL42/N/CXWT1UoRo9upTuXXpPSufE1tPDbyk5TQuCogXlEswL9YLDKMRbms
-         csGntJsrRzOOYAZYRjtDgc+2WdQsnlzjo6wl+ZhAq6jtRIaIMN0WiD/6PgxQBWN+ZDJn
-         D0KEyRkFMnWaQm207OZImr+hLrAlqSanFUjho=
+         :x-original-sender:mime-version:message-id:date:subject:cc:to:from
+         :sender:from:to:cc;
+        bh=Y/r2sKYp/ILqT1PRQWFOCDOrI+2J5fzkBWHJrp7uLwM=;
+        b=hkTHAR9cfNf2kxFHi9uSMR8Dd7y2SzH75TuSjaWCC3C/FmRej7NXU2UAPZDpE8Wg59
+         nySiaYqFdv3eDvtxDBYH9wnNmt5GwOHncxCYGYGL8+dwC8ksuAllp9lFHZ2krkIsaRlT
+         T4u5hcyQ38akRpgGo4L9wowie9S5WByPfF4O0=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:x-original-authentication-results
-         :x-original-sender:in-reply-to:content-disposition:mime-version
-         :references:message-id:subject:cc:to:from:date:x-gm-message-state
-         :sender:from:to:cc;
-        bh=FQejxQo47tWYl+yKy1kBEcB7ZUuNMhgcBX5tJE1irDo=;
-        b=sAv4es4pJswS3nN0BOWv9TuDsBn9MZNrnhXw8SueqvlDljhqG42gpcLnqYRFDdJmQc
-         +yCInjuuQOpEBu9lqkwhEnVuqMDx/4xU8nDCB2pNdWQFchT+KJqyYf95iPCvNQeZjOKR
-         ql+FIvDb9H0Q7Ajj9P466BRyTRpu8vE3hC53uDU0M3dAbIvxb1d9DjnNjMnOIfY3Ju7B
-         RCvpUorC2bQ/1UVEXLHw0X0k5TpJOu8EARz18PClnUwda3KUaAbnNkhJr7oq307qTwPO
-         8yOEGdyoD2AKLz6NqPC7uW6vlgAaWpgG4FXKNwR86ua3G3Hoscf+TLjocopuycM1MTS9
-         Zacw==
+         :x-spam-checked-in-group:list-id:mailing-list:precedence
+         :x-original-authentication-results:x-original-sender:mime-version
+         :message-id:date:subject:cc:to:from:x-gm-message-state:sender:from
+         :to:cc;
+        bh=Y/r2sKYp/ILqT1PRQWFOCDOrI+2J5fzkBWHJrp7uLwM=;
+        b=OP30dSEvfJQ7MTrIMWQBYnmG+tNbueuI8BmLkHYnaoQGp2saihHre8G8UThWVSbJbS
+         EtynaaW6e89NSiw41XtiAYActn/0AcCJBqbvBG86JKqUfElAzkl5sy6MEnDAgr/cVpjv
+         Cl0LxYcQs8anNu7FSdnZUz9BljwC+P9I4TIKYLAQ7W6lfI4Ya0Rmbwqa9Ql4ygQts46D
+         78WQv1CMlLTOdyQAQPKJbRSYcHZIqID3o0seEQd0RdziPJWriYw7yzxOxQ7CYktmHnYY
+         WKyBQNolETm5xQVUieuJwoDQVMCTIkCKCH3FSkPFU0/6B3857uyQ95nPi7/H49dlgHsJ
+         OMbw==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: ACgBeo1npdSnLwh75ass2di2JF/iSuEVK76b1GmGjPDNawLpO9VkOa97
-	PFkP7X5V9cfXZdapK7lQyGSlSg==
-X-Google-Smtp-Source: AA6agR4SEHnsK8WkwVnLB3ol+6s0ZoggvkLSx43+r55x65fDpifFT/4X4DXNtu8saEkgSuLWup4mLw==
-X-Received: by 2002:a9d:2de3:0:b0:638:e210:c9da with SMTP id g90-20020a9d2de3000000b00638e210c9damr10928635otb.69.1661982324691;
-        Wed, 31 Aug 2022 14:45:24 -0700 (PDT)
+X-Gm-Message-State: ACgBeo0rqnGLg9wyr9+9RH8dkzqnqvT1mYmcK0TjWDn+eUgcjDNEGi1i
+	qTPcmc0hf0lUeJjS5Xd2W/hrGQ==
+X-Google-Smtp-Source: AA6agR4fJ1tHuQIkn91LS4T8rZ7HFbC41K4tmj/REKMuQ/9k3DVLzlSFi67rsRoTMew6FzYiujzGUg==
+X-Received: by 2002:a17:903:2302:b0:175:376c:ba5a with SMTP id d2-20020a170903230200b00175376cba5amr7834536plh.160.1661993694538;
+        Wed, 31 Aug 2022 17:54:54 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a05:6870:5381:b0:10e:c5cb:acd1 with SMTP id
- h1-20020a056870538100b0010ec5cbacd1ls75989oan.5.-pod-prod-gmail; Wed, 31 Aug
- 2022 14:45:24 -0700 (PDT)
-X-Received: by 2002:a05:6870:888d:b0:10d:6b96:2074 with SMTP id m13-20020a056870888d00b0010d6b962074mr2348526oam.218.1661982324325;
-        Wed, 31 Aug 2022 14:45:24 -0700 (PDT)
-Received: by 2002:aca:d755:0:b0:342:eb60:4210 with SMTP id 5614622812f47-347bf55dd7amsb6e;
-        Wed, 31 Aug 2022 14:35:40 -0700 (PDT)
-X-Received: by 2002:a17:902:e94e:b0:16d:12b6:b9fe with SMTP id b14-20020a170902e94e00b0016d12b6b9femr27216175pll.152.1661981739803;
-        Wed, 31 Aug 2022 14:35:39 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1661981739; cv=none;
+Received: by 2002:a17:90a:bd8d:b0:1fd:c959:dbcc with SMTP id
+ z13-20020a17090abd8d00b001fdc959dbccls417042pjr.1.-pod-control-gmail; Wed, 31
+ Aug 2022 17:54:53 -0700 (PDT)
+X-Received: by 2002:a17:902:b684:b0:172:d9f4:e511 with SMTP id c4-20020a170902b68400b00172d9f4e511mr28514491pls.107.1661993693629;
+        Wed, 31 Aug 2022 17:54:53 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1661993693; cv=none;
         d=google.com; s=arc-20160816;
-        b=nd4GbH9kK3GvzpgTLagGw8xtEFVfZKq3quG3dO2F/xUg8OXHxQ0OD7xJSg6W5lJe/5
-         3pS602kpI5Txhldm03yS1MpT9RfJuw3Iic/FS42J58pYi1MG+88T5PKji0Tq1KppOFXD
-         5KJLMQekZEp2btrTuo8FGYSKjIPiPoQaKcD57izkS9+KFVNgW2XdMQ/XYqQmYH7vaH9C
-         N4HjUDFbDFbUH0d7sdU2Bn9kedzv/TgQ9jk5Qq38gOZuxir4PxP4d7GraOHTu/a5xCLn
-         d0cNxGyYbbWWMrCyZ2aig02dQAIAY5l6ehVbTf11pm5LQdPumMH7IKB+gOxrBAa4MKTK
-         QIbQ==
+        b=hwFmZLwRfXPYsBVWUR1f9IgLGbQABcGM6SO6cGZQFonp+BbHa5oNtUsy5+rqeSrpE7
+         eAuzhkAjd8tFcgRYR7hH46RJ+YgvclhrsKNPr+Idbnsfe8hAnVhfzjpZ+XPHFvXHwUKv
+         0LQzAphGqt4XeISejXVX657jpOoel+awuw+pe/15AjjMl3TDhRNDpQ3jWLLVw3bWmbom
+         sUcll/a4TZKEi8AF/3uVImBE1kE5Kje7fC92YjQa8dAtYd1KVxZ4YAnVp7fQvUMUvyq2
+         VNRru5Wv4sFxmEHlLaYo638cS0zpxr9LeucWm7D+oifHgoqwNUQT5GLMkGDGz3U6xvCW
+         1kVQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:dkim-signature;
-        bh=k+a5ywY0A19s4ewXtlKzkVso1icQ7ila5o+nOXUa5t0=;
-        b=01cdc4SeWw8c0Z42GaXU7eEyAFuylvosUyUtEnpY8ChN3T4j0jvpRcF9JWNB0eXLMN
-         tMZbm9nDfExc/iB2UUwGRrXjQTkrEjY116C4ddMkCt37K/OX7Wcm7JwAm84S4cwpcj9I
-         yEQlaZijyHZjtLDo8ljwVayyXhUPH2/kgjZqO97fgY5+KBpFddZuW9ouNYWPUouM8u5F
-         6K+I4LVtgWE8v/GOSMqeA1sA49iyRvapiztPF9QP9J5kDNwen2a74+NkLmUOOnkgLY0m
-         29KSQIXtwhm/orq1Q+jEE+5rzn695ug8WXPmf5X07Bg7BJ4tonUH6sbZu9KU44aJf0wI
-         Zpsg==
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from;
+        bh=eSqJBQKK+BgVqdYSgUrE+yANEaqnONNUs0txiAoF4k0=;
+        b=d2H9giiDiyivd3be8imhJViX0833DIV3mMV/uLzoGs7oYopPXwO6ifGq/XDk0O+oM7
+         2bukTYcI7+6d+yvMz7twDe86K5inB32Rbea45EZqmkOjAGRyN8SvQVbq9phwMRsiTchs
+         uGJrQnBYevrnpyAZ8O56BXPEDMejkGQgs5sTzS6fwNvFzJk5jh5o6kPZpMW/DSR7QMrr
+         ZCcEh4fHE3MhR6TwHC1DPqK4xSkJm7EaPOM23YD2kUTh/5+T/cmxbiUVfO6MpoC40KbR
+         nDABgqXsqK319QxcXLzel/IjJmOXJDiYtiN0HqEfq3WA+s9kNnTrghytnn7X7hwlqk3a
+         kTYw==
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@chromium.org header.s=google header.b=c5JgVe1B;
-       spf=pass (google.com: domain of mka@chromium.org designates 209.85.220.41 as permitted sender) smtp.mailfrom=mka@chromium.org;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=chromium.org
-Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
-        by mx.google.com with SMTPS id u15-20020a63140f000000b0042c3cb09a09sor3210082pgl.1.2022.08.31.14.35.39
+       spf=neutral (google.com: 124.126.103.232 is neither permitted nor denied by domain of huxiaoying@kylinos.cn) smtp.mailfrom=huxiaoying@kylinos.cn
+Received: from mailgw.kylinos.cn ([124.126.103.232])
+        by mx.google.com with ESMTPS id n22-20020a634d56000000b0042a624cc610si6427350pgl.873.2022.08.31.17.54.52
         for <usb-storage@lists.one-eyed-alien.net>
-        (Google Transport Security);
-        Wed, 31 Aug 2022 14:35:39 -0700 (PDT)
-Received-SPF: pass (google.com: domain of mka@chromium.org designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
-X-Received: by 2002:a63:d16:0:b0:41d:fe52:1d2f with SMTP id c22-20020a630d16000000b0041dfe521d2fmr23976158pgl.416.1661981739540;
-        Wed, 31 Aug 2022 14:35:39 -0700 (PDT)
-Received: from localhost ([2620:15c:11a:202:732f:b56c:f5e0:57d])
-        by smtp.gmail.com with UTF8SMTPSA id t10-20020a170902e84a00b00174f4316c24sm6051640plg.245.2022.08.31.14.35.38
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 31 Aug 2022 14:35:39 -0700 (PDT)
-Date: Wed, 31 Aug 2022 14:35:36 -0700
-From: Matthias Kaehlcke <mka@chromium.org>
-To: Hu Xiaoying <huxiaoying@kylinos.cn>
-Cc: stern@rowland.harvard.edu, gregkh@linuxfoundation.org,
-	linux-usb@vger.kernel.org, usb-storage@lists.one-eyed-alien.net,
-	linux-kernel@vger.kernel.org
-Subject: [usb-storage] Re: [PATCH v4] usb: Improves USB2.0 write performance.
-Message-ID: <Yw/UKNu0++5MtvbK@google.com>
-References: <20220831015624.1119578-1-huxiaoying@kylinos.cn>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 31 Aug 2022 17:54:53 -0700 (PDT)
+Received-SPF: neutral (google.com: 124.126.103.232 is neither permitted nor denied by domain of huxiaoying@kylinos.cn) client-ip=124.126.103.232;
+X-UUID: cf3f1b9fc32d48d79d0c56a4afc52ff4-20220901
+X-CPASD-INFO: 402aa0f1ce7649f3a1eefe6103e0928c@fYBsgY5ilGGPhXmCg3yxbYFilZWWkVa
+	Acm2FYGdiZIOVhH5xTV5uYFV9fWtVYV9dYVR6eGxQYmBgZFJ4i3-XblBgXoZgUZB3g3JsgZFelg==
+X-CLOUD-ID: 402aa0f1ce7649f3a1eefe6103e0928c
+X-CPASD-SUMMARY: SIP:-1,APTIP:-2.0,KEY:0.0,FROMBLOCK:1,OB:0.0,URL:-5,TVAL:173.
+	0,ESV:0.0,ECOM:-5.0,ML:0.0,FD:0.0,CUTS:104.0,IP:-2.0,MAL:-5.0,PHF:-5.0,PHC:-5
+	.0,SPF:4.0,EDMS:-5,IPLABEL:4480.0,FROMTO:0,AD:0,FFOB:0.0,CFOB:0.0,SPC:0,SIG:-
+	5,AUF:6,DUF:3710,ACD:66,DCD:66,SL:0,EISP:0,AG:0,CFC:0.324,CFSR:0.081,UAT:0,RA
+	F:0,IMG:-5.0,DFA:0,DTA:0,IBL:-2.0,ADI:-5,SBL:0,REDM:0,REIP:0,ESB:0,ATTNUM:0,E
+	AF:0,CID:-5.0,VERSION:2.3.17
+X-CPASD-ID: cf3f1b9fc32d48d79d0c56a4afc52ff4-20220901
+X-CPASD-BLOCK: 1000
+X-CPASD-STAGE: 1
+X-UUID: cf3f1b9fc32d48d79d0c56a4afc52ff4-20220901
+X-User: huxiaoying@kylinos.cn
+Received: from localhost.localdomain [(112.64.161.44)] by mailgw
+	(envelope-from <huxiaoying@kylinos.cn>)
+	(Generic MTA)
+	with ESMTP id 2005802184; Thu, 01 Sep 2022 08:55:09 +0800
+From: Hu Xiaoying <huxiaoying@kylinos.cn>
+To: stern@rowland.harvard.edu,
+	gregkh@linuxfoundation.org,
+	linux-usb@vger.kernel.org,
+	usb-storage@lists.one-eyed-alien.net
+Cc: Hu Xiaoying <huxiaoying@kylinos.cn>
+Subject: [usb-storage] [PATCH v5] usb: storage: Add ASUS <0x0b05:0x1932> to IGNORE_UAS
+Date: Thu,  1 Sep 2022 08:54:45 +0800
+Message-Id: <20220901005445.3245567-1-huxiaoying@kylinos.cn>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
+X-Original-Sender: huxiaoying@kylinos.cn
+X-Original-Authentication-Results: mx.google.com;       spf=neutral
+ (google.com: 124.126.103.232 is neither permitted nor denied by domain of
+ huxiaoying@kylinos.cn) smtp.mailfrom=huxiaoying@kylinos.cn
 Content-Type: text/plain; charset="UTF-8"
-Content-Disposition: inline
-In-Reply-To: <20220831015624.1119578-1-huxiaoying@kylinos.cn>
-X-Original-Sender: mka@chromium.org
-X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@chromium.org header.s=google header.b=c5JgVe1B;       spf=pass
- (google.com: domain of mka@chromium.org designates 209.85.220.41 as permitted
- sender) smtp.mailfrom=mka@chromium.org;       dmarc=pass (p=NONE sp=NONE
- dis=NONE) header.from=chromium.org
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
+X-Spam-Checked-In-Group: usb-storage@lists.one-eyed-alien.net
 X-Google-Group-Id: 960895140360
 List-Post: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/post>,
  <mailto:usb-storage@lists.one-eyed-alien.net>
@@ -137,59 +139,38 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On Wed, Aug 31, 2022 at 09:56:24AM +0800, Hu Xiaoying wrote:
+USB external storage device(0x0b05:1932), use gnome-disk-utility tools
+to test usb write  < 30MB/s.
+if does not to load module of uas for this device, can increase the
+write speed from 20MB/s to >40MB/s.
 
-> Subject: [PATCH v4] usb: Improves USB2.0 write performance.
+Signed-off-by: Hu Xiaoying <huxiaoying@kylinos.cn>
+---
+ drivers/usb/storage/unusual_uas.h | 7 +++++++
+ 1 file changed, 7 insertions(+)
 
-Virtually everyone who sees this will think that this patch improves
-USB 2.0 write performance in general, which isn't the case.
-
-Instead the subject could be something like:
-
-USB: storage: Add ASUS <model> to IGNORE_UAS
-
-> USB external storage device(0x0b05:1932), use gnome-disk-utility tools
-> to test usb write  < 30MB/s.
-> if does not to load module of uas for this device, can increase the
-> write speed from 20MB/s to >40MB/s.
-> 
-> Signed-off-by: Hu Xiaoying <huxiaoying@kylinos.cn>
-> ---
-> change for v4
->  - Update two email addresses to be the same.
-> change for v3
->  - Does not send html mail to the mailing lists.
->  - Update patch, which sorted by vendor ID and product ID.
->  - Modify discription, correct some english words.
-> change for v2
->  - Update discription for patch.
-> ---
->  drivers/usb/storage/unusual_uas.h | 7 +++++++
->  1 file changed, 7 insertions(+)
-> 
-> diff --git a/drivers/usb/storage/unusual_uas.h b/drivers/usb/storage/unusual_uas.h
-> index 4051c8cd0cd8..23ab3b048d9b 100644
-> --- a/drivers/usb/storage/unusual_uas.h
-> +++ b/drivers/usb/storage/unusual_uas.h
-> @@ -62,6 +62,13 @@ UNUSUAL_DEV(0x0984, 0x0301, 0x0128, 0x0128,
->  		USB_SC_DEVICE, USB_PR_DEVICE, NULL,
->  		US_FL_IGNORE_UAS),
->  
-> +/* Reported-by: Tom Hu <huxiaoying@kylinos.cn> */
-> +UNUSUAL_DEV(0x0b05, 0x1932, 0x0000, 0x9999,
-> +		"ASUS",
-> +		"External HDD",
-> +		USB_SC_DEVICE, USB_PR_DEVICE, NULL,
-> +		US_FL_IGNORE_UAS),
-> +
->  /* Reported-by: David Webb <djw@noc.ac.uk> */
->  UNUSUAL_DEV(0x0bc2, 0x331a, 0x0000, 0x9999,
->  		"Seagate",
-> -- 
-> 2.25.1
-> 
+diff --git a/drivers/usb/storage/unusual_uas.h b/drivers/usb/storage/unusual_uas.h
+index 4051c8cd0cd8..23ab3b048d9b 100644
+--- a/drivers/usb/storage/unusual_uas.h
++++ b/drivers/usb/storage/unusual_uas.h
+@@ -62,6 +62,13 @@ UNUSUAL_DEV(0x0984, 0x0301, 0x0128, 0x0128,
+ 		USB_SC_DEVICE, USB_PR_DEVICE, NULL,
+ 		US_FL_IGNORE_UAS),
+ 
++/* Reported-by: Tom Hu <huxiaoying@kylinos.cn> */
++UNUSUAL_DEV(0x0b05, 0x1932, 0x0000, 0x9999,
++		"ASUS",
++		"External HDD",
++		USB_SC_DEVICE, USB_PR_DEVICE, NULL,
++		US_FL_IGNORE_UAS),
++
+ /* Reported-by: David Webb <djw@noc.ac.uk> */
+ UNUSUAL_DEV(0x0bc2, 0x331a, 0x0000, 0x9999,
+ 		"Seagate",
+-- 
+2.25.1
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/Yw/UKNu0%2B%2B5MtvbK%40google.com.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20220901005445.3245567-1-huxiaoying%40kylinos.cn.
