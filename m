@@ -1,34 +1,34 @@
-Return-Path: <usb-storage+bncBD26DNHQRAJRBEGGY2MAMGQE5ZKBKMI@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBD26DNHQRAJRB2UNY6MAMGQEN5I5NHI@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-pl1-x647.google.com (mail-pl1-x647.google.com [IPv6:2607:f8b0:4864:20::647])
-	by mail.lfdr.de (Postfix) with ESMTPS id A9F925AA80B
-	for <lists+usb-storage@lfdr.de>; Fri,  2 Sep 2022 08:30:43 +0200 (CEST)
-Received: by mail-pl1-x647.google.com with SMTP id h12-20020a170902f54c00b0016f8858ce9bsf739864plf.9
-        for <lists+usb-storage@lfdr.de>; Thu, 01 Sep 2022 23:30:43 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1662100242; cv=pass;
+Received: from mail-pg1-x548.google.com (mail-pg1-x548.google.com [IPv6:2607:f8b0:4864:20::548])
+	by mail.lfdr.de (Postfix) with ESMTPS id E1DBB5AAAD2
+	for <lists+usb-storage@lfdr.de>; Fri,  2 Sep 2022 11:03:41 +0200 (CEST)
+Received: by mail-pg1-x548.google.com with SMTP id 136-20020a63008e000000b0042d707c94fbsf915371pga.9
+        for <lists+usb-storage@lfdr.de>; Fri, 02 Sep 2022 02:03:41 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1662109419; cv=pass;
         d=google.com; s=arc-20160816;
-        b=tFtVFYAI9J/RJPMhQdLYcy6+OxdP12ehQe3YewN8pYqNXNVU32FYxwxtEE2SgExm2q
-         8Zlf4D5J5p5g3LRJ9OLZA8QaTX3htf9SJ/5IvYWPDBQlSL/S8DSiV7+nm/NEZcQCbaM0
-         Eu3Gm43Cj7XgdMFHNmRT5IOQeEG9symCKRJWOmMwCzDE0QVTdddeq/UnEX7QaYvzsk0u
-         C66QQ9WxHPZr85k7vzryQvlbgeMJXHIB8x500kTpN81rFK+sa0R0O5ju2U1fvXFaJhIK
-         GNw5dGmt66qdO3qDPYqZg/AZLdBdntYpXnvpDQNjrDvfH19+o+x1z4Am0WwCYY4/F/hh
-         udbw==
+        b=bCxgXke7CbNtVit6yUP8rhZPXRceFR0B0ihX65CmvG5WTVjtVCM9ZveVvyX9upF9Wh
+         v62CEcMtpIpqjLhNwwDZndFCGMo+BZ2PkqD3EeaU1TIZ0rzk8ukOYk0GQ0Stb+FHudDd
+         ewiYu8psMi0Utr/6ab4FkVIPfIzSbj6IC8zmTZGDGBVxlOPe0+8xlxtA3Vjuv3tJLh3Y
+         dFA9c+DhNiyIzmWdjnZ9RlHrSEvrEFrVx0aokM6ArKJLLy5Y//lozl/Dx5ZIw0YJWcVe
+         dp6fl7Q/E+3E8016uXKDO91S3xPOo73+8y0ewTO7momCa1UT7LgAw9gBzQQF2WTgxUqH
+         4lMg==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:content-transfer-encoding
          :in-reply-to:references:subject:cc:to:mime-version:user-agent:from
          :date:message-id:sender:dkim-signature;
-        bh=RVNy1Qw3/wp+mj8KfucKi5deQEYGgUURSLm6ra5aTqU=;
-        b=Xp9+JfbRq7Egi7cbviOEF2qFwLWtqwJHlbD5LLsO1Cg3Wz8RMkh9xhqwr++ute0K93
-         EDeqcjR4KgMYkQlKBp3dMqxGf2d7Q2ye0kyocYmr6/gRRw+TA2lYZJcRj5ZFpPWepU3y
-         awT8gpkcStp2fdcpEutHZL9iuxoVcrRS1ulxP5hOz8+enRfeO6uH2jCA37+skXjTxQfW
-         ZCDdo0gEst6/WCqXZxKRHQi6DxPikwSlJsinwJgiPiiP6aCBD5Qi0IeoueRV51xNJ+Dd
-         PDxTgBbyPboBsFaLkfY0cZxWrgYhqW1ZwW7V16AOWz9LJFbPGfyMHzbOp8mikoVdntRP
-         ckPQ==
+        bh=rWE/4DCMyGakRMCGOOpSPaDjboRMHLl2Zsckf7077uM=;
+        b=1Fwan34PwZ+4bKxvnr3Do60AcSkV1GyCkIUthzRJjE5y4iN8nVX7uONofzG2KmAntl
+         ACSa0RapNIXkiXUvgcSqqCZ5IEVhLaeFYUpgu1s9TvLhcVj6hotUt2smTA/HaGeuEfYk
+         dFMPtFE6bcBo5Mh1RNrdkPhs1/hc9cJeFC7Vq5FiKMA0cqg20J8Bw/9h4HMO9plE346N
+         R2Xwh7jNkstbU0hfl3p1f+582kOyZ66hrOuZ/j/qKFYaTDwxwUjPIUJjzzqf48Kg3U+B
+         4omttCKK78ThsioK+wiKsendruWI0fyqhNOmv50lQ5jE+6cRESL5jLniSUqNFzRgBFdO
+         GUkw==
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@126.com header.s=s110527 header.b=lDcEy69L;
-       spf=pass (google.com: domain of zhongling0719@126.com designates 123.126.96.4 as permitted sender) smtp.mailfrom=zhongling0719@126.com;
+       dkim=pass header.i=@126.com header.s=s110527 header.b=hDnACpZ0;
+       spf=pass (google.com: domain of zhongling0719@126.com designates 220.181.15.113 as permitted sender) smtp.mailfrom=zhongling0719@126.com;
        dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=126.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
@@ -37,10 +37,10 @@ DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
          :x-original-sender:content-transfer-encoding:in-reply-to:references
          :subject:cc:to:mime-version:user-agent:from:date:message-id:sender
          :from:to:cc:subject:date;
-        bh=RVNy1Qw3/wp+mj8KfucKi5deQEYGgUURSLm6ra5aTqU=;
-        b=PhWu1P0iVQzySJGsnbwUt8TYR9PoEjgnVykBef484Va3wPmw735nRC9caXPkbvIHba
-         4sUGVayHJdNtTPP4rMuhDIn/UUY4ztgEyg/jR9e+079CJf9gzrZ0djM79mIfyV5td0vk
-         yXVrCqPOjdvklKzIFLgEFTABreTDVfzQJZVp4=
+        bh=rWE/4DCMyGakRMCGOOpSPaDjboRMHLl2Zsckf7077uM=;
+        b=JZgVVkK1LBTg7nkPyrPixG52QRSMiwVZek0HEI9ifeuS7UyBAxh73Zh0cCgGypw1tt
+         mnJ9gov2FNVIRTFPhtZFwIbn48MKc2Tr0KX+U1m41LlTZGEk4G8/nC34uPqxpz68khr6
+         dTcy8p6CJ43UAenE9JAcSdezWCsGgN0kU0ghI=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
@@ -49,57 +49,57 @@ X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
          :content-transfer-encoding:in-reply-to:references:subject:cc:to
          :mime-version:user-agent:from:date:message-id:x-gm-message-state
          :sender:from:to:cc:subject:date;
-        bh=RVNy1Qw3/wp+mj8KfucKi5deQEYGgUURSLm6ra5aTqU=;
-        b=tjtYBc0efXKNzgvgwEbjqLdS4QDrMvULuOFTQQ101cSbMocqscnqeCvzCNqF9lXuV6
-         gFnjULpvkhaX1PXogZgCoR5NX8Uy31f76IZMnEVVOjr8ci+/gRiOCRNrR6aNtA2Q6s8m
-         aZ6vGvqqxw4FOVZS28JKemLGLNCM+lhuYE2rAwjOUudoG1mV4Z1WT6T0egoxusiphiHL
-         PHxhkTDSrc70x4T6+EDBH/tWxdbrDPx7Q141ROwixHtVuiiAv1HuEFG5VkPpKa7Eft6k
-         iomNez+WNDPX3kzsYSOBdJkFzY4Zky0+GTdIPmJcn3ntSOcZZJAYWgBXiBo2fdo+KbMC
-         fKaA==
+        bh=rWE/4DCMyGakRMCGOOpSPaDjboRMHLl2Zsckf7077uM=;
+        b=cX+4mgkvKA0VH0X0yn+UMc/Et6DpH6XwzFhs/d+mRvQ/tgbV/AbNZors++IxscreZd
+         KnVGbLkYidxoGrgHJ13wk7Fkf8c3ncb/AvIQ1zZ1wYdaF9HtVlN6hm7D7RMeTm+sRY3K
+         Cy9vzRdxe7rw5+l61KdcjNmHQLKYh8mj3joo8uZopASKti9RMoQ3+nrLAOrInW8h5Itv
+         kZFKGKeJUwIlrWolwdDaaoXa2UhGKxJF90SymF0ktzhMwTkgon0SQFuTAFYAiYt6MfGS
+         rrOVXSVG3XzBokK7h0Zt43HQUsV7IaNttLNK/urbJMZmzNdpe4x1RdMjMvPtlD7Z1kSq
+         +4LA==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: ACgBeo2K6XhPw7R20tGrg396Nq3lZa3g8O0zYFVQHdkjnUTd61BSxQvf
-	1Ala5kv4j/ZdaTfnqaqMQirLyw==
-X-Google-Smtp-Source: AA6agR6myXTb1xUPLV5xuLKAP0sHiyNIWSzj7VLIk3M1CNkuY4PAORUyK1CXpuj6vWZ2ep2toOIlOw==
-X-Received: by 2002:a17:902:f38d:b0:175:4b7c:f12 with SMTP id f13-20020a170902f38d00b001754b7c0f12mr9981394ple.161.1662100240986;
-        Thu, 01 Sep 2022 23:30:40 -0700 (PDT)
+X-Gm-Message-State: ACgBeo2oBm1dTTuP+ZUIELLgVK/bf/XXHQ06q4twMUi9oUSyuMaw2RjP
+	KHAPR7AFaLPDqjv29SuuPnE8/g==
+X-Google-Smtp-Source: AA6agR7HJ3aHEfes3Z/CexACre2cg1wCqBOU7e0J4BemhwUck6DmNHSSSOjjbeJ6GFjT1taGD/bjRQ==
+X-Received: by 2002:a17:90a:8a15:b0:1fd:bcad:2471 with SMTP id w21-20020a17090a8a1500b001fdbcad2471mr3829424pjn.38.1662109418921;
+        Fri, 02 Sep 2022 02:03:38 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a17:903:26c1:b0:170:d739:8cc9 with SMTP id
- jg1-20020a17090326c100b00170d7398cc9ls2802828plb.10.-pod-prod-gmail; Thu, 01
- Sep 2022 23:30:40 -0700 (PDT)
-X-Received: by 2002:a17:903:26c1:b0:174:ef08:6c75 with SMTP id jg1-20020a17090326c100b00174ef086c75mr19543177plb.94.1662100240097;
-        Thu, 01 Sep 2022 23:30:40 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1662100240; cv=none;
+Received: by 2002:a17:90a:1b64:b0:1fe:2dcc:657a with SMTP id
+ q91-20020a17090a1b6400b001fe2dcc657als5101994pjq.3.-pod-canary-gmail; Fri, 02
+ Sep 2022 02:03:37 -0700 (PDT)
+X-Received: by 2002:a17:90a:868c:b0:1fd:cfe8:5511 with SMTP id p12-20020a17090a868c00b001fdcfe85511mr3671291pjn.174.1662109417821;
+        Fri, 02 Sep 2022 02:03:37 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1662109417; cv=none;
         d=google.com; s=arc-20160816;
-        b=MTAcQMipVaL5CHWcUQTiOkkmt9LNJpvse7Sx1gGGb37K53/MOmybwbVa8Qm9AqZ50W
-         PWYA0PSo2u7JvrWKIQMFHlc1po2Ye8lD6utBDTlXtCybbKKduz4AOJx838BlID4WQHdn
-         I+6Z+PFxy+VOcIzbAb78QC3gfoznCE+i/KLNo6yIOxnzILZhbneZkJsVZVlUFrE9U6+L
-         knWAQabCTaQa3tfjSMgvzXACciTSRwsjfywFIx7IGu1kAbDjEJJv4Syj5tZAKBkpzKKA
-         M3pTBSsBfJ/uISNZiyHZe7y05Buq2T31GdpnbDhkCcFigDWsXCioBsV6UWJQMnA8Hpw0
-         5LVg==
+        b=d/rRzn+yzahbbVG/BayPCEqJupbwhys9lvtwqW4jPRFAL/M1RKCs/6yYya1xOO4/LL
+         vOQuz3IlfIs17+VA6kaNGCslBrdHHr9/OpUph8XVe5bgFvM9X81inRxNKg6wq2EPXrl2
+         7UPknL/PAJxRe/RsCuserIkQqWlqQ+QMx8OW4T+YXfrGO7t3CsJtynnHpINlFvzHmre3
+         CAePxZvi94OUtuzDgQHqd3skYAMKPg/Cu+iiFMst/qNBWDB4qV4tIgmqVwPVpa5ifNYR
+         ObZq0iWbg9/F45wmkFBgSSLp3aD8rQ5XevntnelibPMPPooEVF/FT7PVaGl/R/LGaZL1
+         b/cw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=content-transfer-encoding:in-reply-to:references:subject:cc:to
          :mime-version:user-agent:from:date:message-id:dkim-signature;
-        bh=NxpLCjVaDr0bSOlI0jjJCyEdsZruRdWOhxTjNts6PDw=;
-        b=bbM/+HL8+44l5Z1hUtKBotT2r8VqLX9McSPw9KUWMDutvvyUmmj7XxT6jly3V8y/sa
-         q+Ni697bQZ+VpVveQsofsG9LVFx5ge6dWNrr/emRXUhvaAjgjfVgmor7zG4sR5ojmSmr
-         /x07cf8lelOBOMwUAgyGHya6R2xISqLGzLrw0e0mbSGlEZWFQA2Xi9h94/LspsWNCA2q
-         w9A25JpWjatKnPUHVoA+9GJrPA9v5255zBQCUghcA/Bf4INd4DKuQX2lJYuLHS5WZ+KD
-         pTka/HCVn0T04qxd2SJWED7HkMFOc2TNiXRbu2GikwoBi5BAXeQqqYpJep79zFER9Eit
-         FHHA==
+        bh=NCa3359hAgm4SPuAP/Xtq8NZEttoCoARxHDuc+GO8cE=;
+        b=wsLIl4wR8Oi3BlRoLz8TnH7wpvfLzE9EeNnnFd78cpurVM4vtyVmLdLpXWlkzR/UYY
+         OYCLB95MGxXc/exMYsmPJCalJXWrgxTHjHwnpfkHJgwf0ArDrh4dR7RGGUaVek9Ak15C
+         ZNoyWHf89HCzA6Dp0t5Je3CAOoDTy4izQxKQefbLEGAbAbCu+TSZqCuDgTUFO3Efz8nc
+         756jiyNOqcRkjogJ0WWqP5WLFN/t8CXH1mVZRPsV16GY19ycHnwGvd2nlLdl7SXx9JvU
+         eD6dP0veSlvwfMc/g4KbQf9tak3x1O+czHwoeHw+mEo8SpEc5hl9oOo+mVjchBHNlVml
+         D5Tw==
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@126.com header.s=s110527 header.b=lDcEy69L;
-       spf=pass (google.com: domain of zhongling0719@126.com designates 123.126.96.4 as permitted sender) smtp.mailfrom=zhongling0719@126.com;
+       dkim=pass header.i=@126.com header.s=s110527 header.b=hDnACpZ0;
+       spf=pass (google.com: domain of zhongling0719@126.com designates 220.181.15.113 as permitted sender) smtp.mailfrom=zhongling0719@126.com;
        dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=126.com
-Received: from mail-m964.mail.126.com (mail-m964.mail.126.com. [123.126.96.4])
-        by mx.google.com with ESMTP id h6-20020a632106000000b0041ce0347bc3si1184607pgh.354.2022.09.01.23.30.39
+Received: from m15113.mail.126.com (m15113.mail.126.com. [220.181.15.113])
+        by mx.google.com with ESMTP id h71-20020a63834a000000b0042ab026f1b9si1430806pge.161.2022.09.02.02.03.37
         for <usb-storage@lists.one-eyed-alien.net>;
-        Thu, 01 Sep 2022 23:30:40 -0700 (PDT)
-Received-SPF: pass (google.com: domain of zhongling0719@126.com designates 123.126.96.4 as permitted sender) client-ip=123.126.96.4;
+        Fri, 02 Sep 2022 02:03:37 -0700 (PDT)
+Received-SPF: pass (google.com: domain of zhongling0719@126.com designates 220.181.15.113 as permitted sender) client-ip=220.181.15.113;
 Received: from localhost.localdomain (unknown [112.64.161.44])
-	by smtp9 (Coremail) with SMTP id NeRpCgBHbxYFoxFjh+0iAw--.47228S2;
-	Fri, 02 Sep 2022 14:30:30 +0800 (CST)
-Message-ID: <6311A323.40100@126.com>
-Date: Fri, 02 Sep 2022 14:30:59 +0800
+	by smtp3 (Coremail) with SMTP id DcmowAB3I8jkxhFj1zysAg--.31320S2;
+	Fri, 02 Sep 2022 17:03:33 +0800 (CST)
+Message-ID: <6311C702.708@126.com>
+Date: Fri, 02 Sep 2022 17:04:02 +0800
 From: nana <zhongling0719@126.com>
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:31.0) Gecko/20100101 Thunderbird/31.2.0
 MIME-Version: 1.0
@@ -110,21 +110,21 @@ CC: zenghongling <zenghongling@kylinos.cn>,
  usb-storage <usb-storage@lists.one-eyed-alien.net>
 Subject: [usb-storage] Re: [PATCH v4] uas: add no-uas quirk for Thinkplus and
  Hiksemi usb-storage
-References: <1662015653-12976-1-git-send-email-zenghongling@kylinos.cn> <YxBvNEn0jEEd0lXV@kroah.com> <2022090120371974113815@126.com> <YxCtyOUkRlIqcC4d@kroah.com> <2022090121570194160929@126.com> <YxDCdQ885wdyr8wG@kroah.com>
-In-Reply-To: <YxDCdQ885wdyr8wG@kroah.com>
+References: <1662015653-12976-1-git-send-email-zenghongling@kylinos.cn> <YxBvNEn0jEEd0lXV@kroah.com> <2022090120371974113815@126.com> <YxCtyOUkRlIqcC4d@kroah.com> <2022090121570194160929@126.com> <YxDCdQ885wdyr8wG@kroah.com> <6311A323.40100@126.com>
+In-Reply-To: <6311A323.40100@126.com>
 Content-Type: text/plain; charset="UTF-8"; format=flowed
 Content-Transfer-Encoding: quoted-printable
-X-CM-TRANSID: NeRpCgBHbxYFoxFjh+0iAw--.47228S2
-X-Coremail-Antispam: 1Uf129KBjvJXoW7Cr17uw4xXw18WFWUJry5Arb_yoW8Gr4xpF
-	92q3Z3GF4DtF18JFsrAr1Iva18X395tr929ryrWw42ya1aqF90vrZ2g398u3W5GrykGw4U
-	Krn8Jry8Gw4DXaDanT9S1TB71UUUUUUqnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
-	9KBjDUYxBIdaVFxhVjvjDU0xZFpf9x07UGjgxUUUUU=
+X-CM-TRANSID: DcmowAB3I8jkxhFj1zysAg--.31320S2
+X-Coremail-Antispam: 1Uf129KBjvJXoW7tw15KF1kGryxur4fKF45Jrb_yoW8AF1kpF
+	WIq3Z3GF4DGr18tF42vF1IvF4jq395tFWv9ryrWr47ta13XFyftrs2grZ8uF1DXr1kGw1U
+	Kr15Jry8CrWDAaDanT9S1TB71UUUUUUqnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDUYxBIdaVFxhVjvjDU0xZFpf9x07UJKsUUUUUU=
 X-Originating-IP: [112.64.161.44]
-X-CM-SenderInfo: x2kr0wpolqwiqxrzqiyswou0bp/1tbiYAZw0FpEI2ddwQAAsA
+X-CM-SenderInfo: x2kr0wpolqwiqxrzqiyswou0bp/1tbiLQZw0FpD-Zl+mQABsQ
 X-Original-Sender: zhongling0719@126.com
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@126.com header.s=s110527 header.b=lDcEy69L;       spf=pass
- (google.com: domain of zhongling0719@126.com designates 123.126.96.4 as
+ header.i=@126.com header.s=s110527 header.b=hDnACpZ0;       spf=pass
+ (google.com: domain of zhongling0719@126.com designates 220.181.15.113 as
  permitted sender) smtp.mailfrom=zhongling0719@126.com;       dmarc=pass
  (p=NONE sp=NONE dis=NONE) header.from=126.com
 Precedence: list
@@ -142,48 +142,64 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-Sorry,replay again
+explain for this:
+   this patch is fixed no speed,not slow speed.
+I do not understand, sorry.
 
-a)These disks have a broken uas implementation, the tag field of the=20
-status iu-s is not set properly,
-so we need to fall-back to usb-storage for these.
+---I just checked,I got the disk test data wrong , the high speed is for=20
+usb3.2 , these disks are usb3.0 ,so the slower speed is normal.
+the disks of USB3-FW appears to be incompatible with UAS cause crash to=20
+no speed.
 
-b).I found this patch . The causes of errors are similar.
-https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?h=
-=3Dv4.9.326&id=3D3ba5d3a2cf40c4ebdc1f702af3b5dea405a6a11e
-
-c) not to express clearly, the driver cause hang on by copy big files or=20
-stress read/write.
+Thanks!
 
 
-=E5=9C=A8 2022=E5=B9=B409=E6=9C=8801=E6=97=A5 22:32, gregkh =E5=86=99=E9=81=
+=E5=9C=A8 2022=E5=B9=B409=E6=9C=8802=E6=97=A5 14:30, nana =E5=86=99=E9=81=
 =93:
-> A: http://en.wikipedia.org/wiki/Top_post
-> Q: Were do I find info about this thing called top-posting?
-> A: Because it messes up the order in which people normally read text.
-> Q: Why is top-posting such a bad thing?
-> A: Top-posting.
-> Q: What is the most annoying thing in e-mail?
+> Sorry,replay again
 >
-> A: No.
-> Q: Should I include quotations after my reply?
+> a)These disks have a broken uas implementation, the tag field of the=20
+> status iu-s is not set properly,
+> so we need to fall-back to usb-storage for these.
 >
-> http://daringfireball.net/2007/07/on_top
+> b).I found this patch . The causes of errors are similar.
+> https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?=
+h=3Dv4.9.326&id=3D3ba5d3a2cf40c4ebdc1f702af3b5dea405a6a11e=20
 >
-> On Thu, Sep 01, 2022 at 09:58:03PM +0800, zhongling0719@126.com wrote:
->> Some UASP capable USB-to-SATA bridge controllers are not compatible,this=
- problem has always existed.
-> What problem is this exactly?  Why is this failing on only Linux?
 >
->> you can refer to other auther submit the similar patch.
-> What other author and other patch?
+> c) not to express clearly, the driver cause hang on by copy big files=20
+> or stress read/write.
 >
->>   this patch is fixed no speed,not slow speed.
-> I do not understand, sorry.
 >
-> thanks,
+> =E5=9C=A8 2022=E5=B9=B409=E6=9C=8801=E6=97=A5 22:32, gregkh =E5=86=99=E9=
+=81=93:
+>> A: http://en.wikipedia.org/wiki/Top_post
+>> Q: Were do I find info about this thing called top-posting?
+>> A: Because it messes up the order in which people normally read text.
+>> Q: Why is top-posting such a bad thing?
+>> A: Top-posting.
+>> Q: What is the most annoying thing in e-mail?
+>>
+>> A: No.
+>> Q: Should I include quotations after my reply?
+>>
+>> http://daringfireball.net/2007/07/on_top
+>>
+>> On Thu, Sep 01, 2022 at 09:58:03PM +0800, zhongling0719@126.com wrote:
+>>> Some UASP capable USB-to-SATA bridge controllers are not=20
+>>> compatible,this problem has always existed.
+>> What problem is this exactly?  Why is this failing on only Linux?
+>>
+>>> you can refer to other auther submit the similar patch.
+>> What other author and other patch?
+>>
+>>>   this patch is fixed no speed,not slow speed.
+>> I do not understand, sorry.
+>>
+>> thanks,
+>>
+>> greg k-h
 >
-> greg k-h
 
 --=20
 You received this message because you are subscribed to the Google Groups "=
@@ -191,4 +207,4 @@ USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an e=
 mail to usb-storage+unsubscribe@lists.one-eyed-alien.net.
 To view this discussion on the web visit https://groups.google.com/a/lists.=
-one-eyed-alien.net/d/msgid/usb-storage/6311A323.40100%40126.com.
+one-eyed-alien.net/d/msgid/usb-storage/6311C702.708%40126.com.
