@@ -1,30 +1,30 @@
-Return-Path: <usb-storage+bncBC6MZUGU7YMBBIVSR6MQMGQE6WN2Z4Y@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBC6MZUGU7YMBBKFSR6MQMGQEKAPQCUQ@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-oa1-x48.google.com (mail-oa1-x48.google.com [IPv6:2001:4860:4864:20::48])
-	by mail.lfdr.de (Postfix) with ESMTPS id E75635BA46D
-	for <lists+usb-storage@lfdr.de>; Fri, 16 Sep 2022 04:02:11 +0200 (CEST)
-Received: by mail-oa1-x48.google.com with SMTP id 586e51a60fabf-12785ab6ab3sf10123851fac.5
-        for <lists+usb-storage@lfdr.de>; Thu, 15 Sep 2022 19:02:11 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1663293730; cv=pass;
+Received: from mail-oi1-x246.google.com (mail-oi1-x246.google.com [IPv6:2607:f8b0:4864:20::246])
+	by mail.lfdr.de (Postfix) with ESMTPS id 6AFEC5BA46E
+	for <lists+usb-storage@lfdr.de>; Fri, 16 Sep 2022 04:02:18 +0200 (CEST)
+Received: by mail-oi1-x246.google.com with SMTP id bk6-20020a0568081a0600b0034feb47cb3esf1698667oib.9
+        for <lists+usb-storage@lfdr.de>; Thu, 15 Sep 2022 19:02:18 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1663293736; cv=pass;
         d=google.com; s=arc-20160816;
-        b=opxG5Gy+KgZHPGpb7QMYStVJe7kvvZTDB1wgcfbEMeBEZvEDq1ivMimXXMLud8gm/g
-         a+nhaHPrzSWYRpVRUeygnw436wyZnTxM0/u4GJinDeFGJi/QMUj0q/WIn6BYX/h7g1Sc
-         mwqp4BS48TLepVEp3YBZvHsGJsuAbO2Ko35nOaaNE5djPpXXPdrUbZMovt9yYL6LcJZr
-         adb4pM9iEHBe3hivK6AEubuG/ASrEyTnLg5GxYkxErtD3PTJl5tgcdFZaBaEqvV7oIos
-         kv+54dC0RrTGMpWYOSDXilmNeQyVEppaJDQ0ouUQ7FA2NdHvfhFCToaF4EaKCRTcqoKp
-         6Oiw==
+        b=Yi8e2mW+rPns748BYvFi+mHxkfVa2gaVZztoRDiZ2XvikbnH1v53NLDJKhPKW7Xi2e
+         qMUR9bvnZo+ZPimqtolFB1cswQQXiUqUnFFXCBxexxr9qYTI4tfn7DUL6fWg5wh7JDN/
+         n7mOSbC+pt6x9A03PH2hCTR3D6xDSkH/KYClS7cZ4A7kIQK9L0cYpN3dWum3QO/GXlO7
+         C33RX4u309x7LkwCQBuMGG2EOo53ixYI6Pjs5dQGz864IDiqr9tO+hIqmQTTxMb2Chfn
+         65NFjbcJU26+o0rB6E4EDPPsYY0pVFHhogSn9gvatXNCAR6XuFHRfU87UMi5tRFJHbLS
+         skBA==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:message-id:date:subject:cc:to:from
          :mime-version:sender:dkim-signature;
-        bh=ryR3itXxfd5zgoHkjkEAB1gemYl6kPMP4kShSG5PWrc=;
-        b=f8/3761EJUdMOb5R2g7SOV/rZHmQeIkSK5Z81R/hFAURp6caqwUrCFD7biKd58bF0F
-         xqpUCKb5DhvuWxS/RCIn9UzG3cY3UcPDHqzV4CkQSSyhEl5YjGmdMmraltNJ0WWqEh9j
-         2Hym7s94uchECmTv4VV4ZRXswo/67yX3DQHjCsOv7+lcJZ/57RoO9N59gUGgtetGst60
-         dSwItAwpGQBvviTMRjN2mvDqct4/60WlhlzzEP9EiM/k0DbYODQ4aLlmoMrmuWmX2yjO
-         r9vcs6M1C/c5cGXzGcugfBTb/pZW2Uv0GQ4a0qozFBMH49ueQhIQrFIsNR2nb/59pCYp
-         c5qg==
+        bh=5Da6p//kJcXUthDvV2hhoBTa8I5bc13UpjJ1WSfAW3M=;
+        b=FMHfel6Y6E1qAJFXgnKsNxvKzBvhJSMmeWnU4fq7QAx1PnCqlxQywdcyFe0/mVWBgn
+         LjPkcu8MVwHL8JlIwRoZrtlivbYHPWzg2mg0j43hbzZhCx9evfy/4N3YWSxszMVqBA0q
+         Xvky+lGCBFVrfQog2JDS4MBDhSDLfyaVsZ+CHXqeRqRh9aTct1kZOBFvzv9wEzQu5c28
+         4dZQAP95O6Rs2RGJ08018DI1ZGvYydvBlZ8BNurKHzludBZIYO8A29In0zBFBgyhgjtf
+         L9UzOf2DcbM8YKFMHGKsy5B2DYIwbcTsaFeR3M8Fl7ApmX1k6DvOL4vYBI0fHyn/3DjY
+         HzjA==
 ARC-Authentication-Results: i=2; mx.google.com;
        spf=neutral (google.com: 124.126.103.232 is neither permitted nor denied by domain of zenghongling@kylinos.cn) smtp.mailfrom=zenghongling@kylinos.cn
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
@@ -33,10 +33,10 @@ DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
          :list-id:mailing-list:precedence:x-original-authentication-results
          :x-original-sender:message-id:date:subject:cc:to:from:mime-version
          :sender:from:to:cc:subject:date;
-        bh=ryR3itXxfd5zgoHkjkEAB1gemYl6kPMP4kShSG5PWrc=;
-        b=k4+fCq2EMEm0PWLrzxZKkof3XBuyEHpAfKfEJ6hs4HOSyCMvZPbwe27AhG5q4Bb+cS
-         REqzZDjNMhY3HWJ7GcYCwraYUAsshKENL6oE7xGD16HMr01fNIm2xxGjMAmlM3QaLBcl
-         17BcDf5zbvAZW7pXkgZaQ6IlpO1+7GF/ULu6k=
+        bh=5Da6p//kJcXUthDvV2hhoBTa8I5bc13UpjJ1WSfAW3M=;
+        b=akAmzRGc0f85yWcd1d+DVtRrub95NBpBEaCnzq9hWLuPn5fpLDkSGVWNjt1r+uStPp
+         ruJFA+1wuL8bWWMX0Jvx5t9hXKzflFu+tDOOP2OR5XKy4FyTMMx2HsN8gsr59ihH9SFs
+         iqcBHlssRD7qqQyz7E9L1GZnCOPgHmtqz4iQI=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
@@ -44,71 +44,70 @@ X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
          :x-original-authentication-results:x-original-sender:message-id:date
          :subject:cc:to:from:mime-version:x-gm-message-state:sender:from:to
          :cc:subject:date;
-        bh=ryR3itXxfd5zgoHkjkEAB1gemYl6kPMP4kShSG5PWrc=;
-        b=wLDi2G+BdBVQae7MDDgeftQ+PxJbTrHSbnv/U6QKm6g+hj/zHsTj5idlSPE8fqXmKP
-         9hn936jgbs2rVORQyaBmomo7DaBJsgqL5V6ZSJunCraLX4dZCOSHrXqW8nYfpvdPLKGg
-         XECMrdW/7t8Ggd9M8GAYChRXW6ZjSXxAiEEDgyNk9u4lP4YBchVmlA+mvH7tlPQcoKTo
-         s6lHkA+olTBWMp/4xoHCSakJa68Yf5dcBz1e3cEJlRaL2rNhk6wiKCajC0ll4HpJv2Ms
-         bn+m0iy68bZ8G/ERprX/4LaMDaMkVutKt6tZGHsQ/jz6JUE3oxCBapvFGbjy2Z9imgHg
-         lFrQ==
+        bh=5Da6p//kJcXUthDvV2hhoBTa8I5bc13UpjJ1WSfAW3M=;
+        b=D/x8zy2r0TNzqiW/fIN6JPNHS3HHd5Ks+47IoPb0NVgo3LLGHd8byhBIhBh3xFZC8s
+         2X3PvrqcvRFrF+4ETKQ2WSrXAQ3zGKa/E+Yhbbk2H5MbqbhWuBTNcnvwV4T8CoyyioHW
+         RAfZWWtleua7ZRNIlJmgD3+0hc7VwZS0p/8VK0RX3vjSsQ2WeS+cofuKN/vuhNtslMA1
+         LRV8ne3ue31QnZvVZp+lSqtIJZuGR3AIaHUl3lcYWpNPJ8Ry7jOKde9j7M/g0uCHAVlj
+         32KTrej7uZ99OjYDTRUGnRbavQiF2khF7IHHfcRUtiQ3jfLNzb3o2bGAiJYsGiSjkGQI
+         KIuw==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: ACrzQf2anf9RnHVeAKc5VinzPCYwD3xpAhAhu4mR3wxVwNkryO9ozqFi
-	Oszv37XnjKBBgBB2zD6S83QYgQ==
-X-Google-Smtp-Source: AMsMyM6IiSWJhFaTqSVyhAc7bPPtIs+jzYrO/mjcE2vZTd3tynrg8Vys5+vpRCSBZ8pv/76jDDCjAg==
-X-Received: by 2002:a05:6830:2b0b:b0:659:d9be:8368 with SMTP id l11-20020a0568302b0b00b00659d9be8368mr54727otv.252.1663293730249;
-        Thu, 15 Sep 2022 19:02:10 -0700 (PDT)
+X-Gm-Message-State: ACrzQf27KM2YI+wGF1w0PRBGzDesg9YA9cFgOJ2kErXs+DQ0IF1yWpha
+	kA5dCSt7uSSBi2eDf+QV2B8E2g==
+X-Google-Smtp-Source: AMsMyM7TVY6S8ynlLMef6YesnbSyF7vnnbSRALrLDNSEAT3q2Roj5VpUAPce5amS3NZVewWLWnOatA==
+X-Received: by 2002:a9d:5881:0:b0:656:34b8:9d36 with SMTP id x1-20020a9d5881000000b0065634b89d36mr1243715otg.79.1663293736773;
+        Thu, 15 Sep 2022 19:02:16 -0700 (PDT)
 MIME-Version: 1.0
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a05:6870:5a8f:b0:11e:7a1d:b272 with SMTP id
- dt15-20020a0568705a8f00b0011e7a1db272ls9165826oab.7.-pod-prod-gmail; Thu, 15
- Sep 2022 19:02:09 -0700 (PDT)
-X-Received: by 2002:a05:6870:f5a9:b0:11d:cbad:301d with SMTP id eh41-20020a056870f5a900b0011dcbad301dmr1486778oab.202.1663293729718;
-        Thu, 15 Sep 2022 19:02:09 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1663293729; cv=none;
+Received: by 2002:a05:6870:e142:b0:11e:e2d7:74d7 with SMTP id
+ z2-20020a056870e14200b0011ee2d774d7ls9182145oaa.1.-pod-prod-gmail; Thu, 15
+ Sep 2022 19:02:16 -0700 (PDT)
+X-Received: by 2002:a05:6870:fb87:b0:126:2e4f:cf4d with SMTP id kv7-20020a056870fb8700b001262e4fcf4dmr7593752oab.240.1663293736308;
+        Thu, 15 Sep 2022 19:02:16 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1663293736; cv=none;
         d=google.com; s=arc-20160816;
-        b=0KKcau5jKlm1vAe3/n/UcV+hD8Oji8/oOkDJMOOYVvDFWZQVvcDt4S+tsZ1AECp5fZ
-         n82Gq40WdD/VweLuyWn8NJ2f6DaGUpQYE2n4v4iM+6MYoFvvBrfWb6EUAh7kP3Pw3UjW
-         HEKYJjBPJLumSVGQuJyTPEB4Hhs+8z6Cw3Ms6sMjPq5i1qYeSAoj8en+J84l4ruieV3a
-         L5wMcjhAEuHVVyeoGrUIVocnEe7wgoDY/+FaBGbUyJSsfhznsAT7nxa1KJYB5wJOu/yp
-         rFaj5nP4yqWhHEiBu8fMgrN80GTEM0gNAShjauTeUuA5LMzjzVDlmhdPlmmNdRbfA3tX
-         +POA==
+        b=pLW33U4KM2l5Dr0rLgggT7BP9tp1rGX92NON4fb2Hm2JltyBed8/1mTVijq+Me3xUK
+         TsvKuFbw9HqKSPl+BIvI2RsGG64WsHqbnHsNZf6jdOuDCeF3bUn+eXr2DfAbCMpPsebk
+         DWWYtEWugBHKKN+W+MtikgBOqv/Upmw/bmUFjssvfCGYFMBLUEwBtHQwpXEfihkgalwg
+         e+fXKbr5SMKJBw7wBNGXHOOxTOZLCQHGONpdNEGlfaUlno4AR1vic1prYGjBnF7hokxu
+         yUl+SasGedKzWdzCFcV5aR10CMmaboih9zj4aoLWhA5GaZdtXgEs0wmwjb57eL4J/9RN
+         bZZg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=message-id:date:subject:cc:to:from;
-        bh=r4Qfmiqsbqxr2Uh7Uzx7iAS282DltEuL9NJL8144MXM=;
-        b=IGRMOqedoMM72POY2a9mPu9TiBMBE1xQgAVYWxJlkGyEO6tBuocZ67RRQ8ur20hnZv
-         LzcppmiydRyEaV4P0lOLChMIcye+YzTPriFZLDg1EQXoVMullf/hmBqugjhFvN1pRVHr
-         K3sYPGbUR/PTL0hiudiSy9un3DTz+zgZdqtfY3G4Pj9LszqHDE+MKc8hE3c/O/nPRcA+
-         4iIDNsofJzXZJFf8x7g3y8t8v/0LXR9jyYaMJ/avIyusZiH47Lw2OMx0nHmB5acmEo6U
-         1qXvN62Nx2zajd28CcpkUY6pVPUrbFM1snIb+fpHz57m5BMznZiaqY078/AaMe+sZsDE
-         TcCA==
+        bh=5RvpsK/iIOl0Rcpxc6pGt+xfsxmcfvALiC8N3Mfha8A=;
+        b=JcV9CQ+95uPbaaoCsri/54lqPLvp9fYUkWpc1mlACES7E4g3A3m02f16EP0A4t32ou
+         eCiLb+VvKfTJQJHVTztIpn0jG2C2EjrmEez/5PQh6LeIr4LnYU5t7mwlWsmNmg1O7XOD
+         xmR1X/R1Po8B4sMpKBSjIk9iiQOCMBmZbpKNb1kPyPgTEwUDl1q+MA75xJ0FmvHN2Cb4
+         tTyqS8Iw4PFVDH32vmchrZcGoKO/6mSF71hgk/DHwQr3aQm/XHrYxpVCl9Txmhvg074t
+         FYI63ymxueFcBqU7CMR6t24U8Fxj6YCQgGYQczAh4bmgPmahJZK6qSh7ECuWGU/A1ay9
+         3t3A==
 ARC-Authentication-Results: i=1; mx.google.com;
        spf=neutral (google.com: 124.126.103.232 is neither permitted nor denied by domain of zenghongling@kylinos.cn) smtp.mailfrom=zenghongling@kylinos.cn
 Received: from mailgw.kylinos.cn ([124.126.103.232])
-        by mx.google.com with ESMTPS id i8-20020aca2b08000000b0033ad7a914a9si13846417oik.257.2022.09.15.19.02.08
+        by mx.google.com with ESMTPS id r1-20020acaa801000000b003425e35791dsi7873348oie.53.2022.09.15.19.02.15
         for <usb-storage@lists.one-eyed-alien.net>
         (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Thu, 15 Sep 2022 19:02:09 -0700 (PDT)
+        Thu, 15 Sep 2022 19:02:16 -0700 (PDT)
 Received-SPF: neutral (google.com: 124.126.103.232 is neither permitted nor denied by domain of zenghongling@kylinos.cn) client-ip=124.126.103.232;
-X-UUID: 370feca3514c4802ad7065663d166d1a-20220916
-X-CPASD-INFO: a0f3b37712304be898a08849f62aadb5
-	@qoCgU49lZWddUnV8g6WwcllpkWBoZFSIqHBSkY-
-	UjlWVhH5xTV5uYFV9fWtVYV9dYVR6eGxQYmBgZFJ4i3-XblBgXoZgUZB3sHKgU5JhZw==
-X-CLOUD-ID: a0f3b37712304be898a08849f62aadb5
+X-UUID: 5d7eb89532564a679720e4936c73cbfd-20220916
+X-CPASD-INFO: 27fd9ddf21174ed4804db533d68e21fd@e4eghGaWkpZeUXODg6ivblhhZJSSYVO
+	CpnBYlWBhkoSVhH5xTV5uYFV9fWtVYV9dYVR6eGxQYmBgZFJ4i3-XblBgXoZgUZB3gXmghGmSlA==
+X-CLOUD-ID: 27fd9ddf21174ed4804db533d68e21fd
 X-CPASD-SUMMARY: SIP:-1,APTIP:-2.0,KEY:0.0,FROMBLOCK:1,OB:0.0,URL:-5,TVAL:172.
-	0,ESV:0.0,ECOM:-5.0,ML:0.0,FD:0.0,CUTS:174.0,IP:-2.0,MAL:-5.0,PHF:-5.0,PHC:-5
+	0,ESV:0.0,ECOM:-5.0,ML:0.0,FD:0.0,CUTS:188.0,IP:-2.0,MAL:-5.0,PHF:-5.0,PHC:-5
 	.0,SPF:4.0,EDMS:-5,IPLABEL:4480.0,FROMTO:0,AD:0,FFOB:0.0,CFOB:0.0,SPC:0,SIG:-
-	5,AUF:38,DUF:4913,ACD:81,DCD:81,SL:0,EISP:0,AG:0,CFC:0.287,CFSR:0.095,UAT:0,R
+	5,AUF:39,DUF:4914,ACD:81,DCD:81,SL:0,EISP:0,AG:0,CFC:0.442,CFSR:0.055,UAT:0,R
 	AF:0,IMG:-5.0,DFA:0,DTA:0,IBL:-2.0,ADI:-5,SBL:0,REDM:0,REIP:0,ESB:0,ATTNUM:0,
 	EAF:0,CID:-5.0,VERSION:2.3.17
-X-CPASD-ID: 370feca3514c4802ad7065663d166d1a-20220916
+X-CPASD-ID: 5d7eb89532564a679720e4936c73cbfd-20220916
 X-CPASD-BLOCK: 1000
 X-CPASD-STAGE: 1
-X-UUID: 370feca3514c4802ad7065663d166d1a-20220916
+X-UUID: 5d7eb89532564a679720e4936c73cbfd-20220916
 X-User: zenghongling@kylinos.cn
 Received: from localhost.localdomain [(112.64.161.44)] by mailgw
 	(envelope-from <zenghongling@kylinos.cn>)
 	(Generic MTA)
-	with ESMTP id 394404056; Fri, 16 Sep 2022 10:02:29 +0800
+	with ESMTP id 1957035735; Fri, 16 Sep 2022 10:02:48 +0800
 From: Hongling Zeng <zenghongling@kylinos.cn>
 To: stern@rowland.harvard.edu,
 	gregkh@linuxfoundation.org
@@ -116,9 +115,9 @@ Cc: linux-usb@vger.kernel.org,
 	usb-storage@lists.one-eyed-alien.net,
 	zhongling0719@126.com,
 	Hongling Zeng <zenghongling@kylinos.cn>
-Subject: [usb-storage] [PATCH v7 1/3] uas: add no-uas quirk for Hiksemi usb_disk
-Date: Fri, 16 Sep 2022 10:02:17 +0800
-Message-Id: <1663293737-20014-1-git-send-email-zenghongling@kylinos.cn>
+Subject: [usb-storage] [PATCH v7 3/3] uas: ignore UAS for Thinkplus chips
+Date: Fri, 16 Sep 2022 10:02:37 +0800
+Message-Id: <1663293757-20106-1-git-send-email-zenghongling@kylinos.cn>
 X-Mailer: git-send-email 2.1.0
 X-Original-Sender: zenghongling@kylinos.cn
 X-Original-Authentication-Results: mx.google.com;       spf=neutral
@@ -140,42 +139,52 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-The UAS mode of Hiksemi is reported to fail to work on several platforms
-with the following error message, then after re-connecting the device will
-be offlined and not working at all.
+The UAS mode of Thinkplus(0x17ef, 0x3899) is reported to influence 
+performance and trigger kernel panic on several platforms with the 
+following error message:
 
-[  592.518442][ 2] sd 8:0:0:0: [sda] tag#17 uas_eh_abort_handler 0 uas-tag 18
-                   inflight: CMD
-[  592.527575][ 2] sd 8:0:0:0: [sda] tag#17 CDB: Write(10) 2a 00 03 6f 88 00 00
-                   04 00 00
-[  592.536330][ 2] sd 8:0:0:0: [sda] tag#0 uas_eh_abort_handler 0 uas-tag 1
-                   inflight: CMD
-[  592.545266][ 2] sd 8:0:0:0: [sda] tag#0 CDB: Write(10) 2a 00 07 44 1a 88 00
-                   00 08 00
+[   39.702439] xhci_hcd 0000:0c:00.3: ERROR Transfer event for disabled
+               endpoint or incorrect stream ring
+[   39.702442] xhci_hcd 0000:0c:00.3: @000000026c61f810 00000000 00000000
+               1b000000 05038000
 
-These disks have a broken uas implementation, the tag field of the status
-iu-s is not set properly,so we need to fall-back to usb-storage.
+[  720.545894][13] Workqueue: usb_hub_wq hub_event
+[  720.550971][13]  ffff88026c143c38 0000000000016300 ffff8802755bb900 ffff880
+                    26cb80000
+[  720.559673][13]  ffff88026c144000 ffff88026ca88100 0000000000000000 ffff880
+                    26cb80000
+[  720.568374][13]  ffff88026cb80000 ffff88026c143c50 ffffffff8186ae25 ffff880
+                    26ca880f8
+[  720.577076][13] Call Trace:
+[  720.580201][13]  [<ffffffff8186ae25>] schedule+0x35/0x80
+[  720.586137][13]  [<ffffffff8186b0ce>] schedule_preempt_disabled+0xe/0x10
+[  720.593623][13]  [<ffffffff8186cb94>] __mutex_lock_slowpath+0x164/0x1e0
+[  720.601012][13]  [<ffffffff8186cc3f>] mutex_lock+0x2f/0x40
+[  720.607141][13]  [<ffffffff8162b8e9>] usb_disconnect+0x59/0x290
 
-Acked-by: Alan Stern <stern@rowland.harvard.edu>
+Falling back to USB mass storage can solve this problem, so ignore UAS
+function of this chip.
+
 Signed-off-by: Hongling Zeng <zenghongling@kylinos.cn>
 ---
-change for v1
- -Change the email real name
+Change for v1
+ -Change the email real name and the code worng place.
 
 Change for v2
- -Change spelling error
+ -Change spelling error.
 
 Change for v3
- -Add Acked-by
+ -Add acked-by
 
 Change for v4
  -Fix version error
 
 Change for v5
- -change version
+ -Sorry,Make a mistake for tag information about acked by of the third 
+  patch and fixed.
 
 Change for v6
- -Change the git message for patch 3 
+ -Add description for the third patch. 
 
 Change for v7
  -Upate patch 2
@@ -184,27 +193,27 @@ Change for v7
  1 file changed, 7 insertions(+)
 
 diff --git a/drivers/usb/storage/unusual_uas.h b/drivers/usb/storage/unusual_uas.h
-index cdff7dc..a6bf87a 100644
+index 8a18d58..156e89c 100644
 --- a/drivers/usb/storage/unusual_uas.h
 +++ b/drivers/usb/storage/unusual_uas.h
-@@ -62,6 +62,13 @@ UNUSUAL_DEV(0x059f, 0x1061, 0x0000, 0x9999,
+@@ -198,6 +198,13 @@ UNUSUAL_DEV(0x154b, 0xf00d, 0x0000, 0x9999,
  		USB_SC_DEVICE, USB_PR_DEVICE, NULL,
- 		US_FL_IGNORE_UAS),
+ 		US_FL_NO_ATA_1X),
  
 +/* Reported-by: Hongling Zeng <zenghongling@kylinos.cn> */
-+UNUSUAL_DEV(0x090c, 0x2000, 0x0000, 0x9999,
-+		"Hiksemi",
++UNUSUAL_DEV(0x17ef, 0x3899, 0x0000, 0x9999,
++		"Thinkplus",
 +		"External HDD",
 +		USB_SC_DEVICE, USB_PR_DEVICE, NULL,
 +		US_FL_IGNORE_UAS),
 +
- /*
-  * Apricorn USB3 dongle sometimes returns "USBSUSBSUSBS" in response to SCSI
-  * commands in UAS mode.  Observed with the 1.28 firmware; are there others?
+ /* Reported-by: Hans de Goede <hdegoede@redhat.com> */
+ UNUSUAL_DEV(0x2109, 0x0711, 0x0000, 0x9999,
+ 		"VIA",
 -- 
 2.1.0
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/1663293737-20014-1-git-send-email-zenghongling%40kylinos.cn.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/1663293757-20106-1-git-send-email-zenghongling%40kylinos.cn.
