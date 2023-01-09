@@ -1,32 +1,32 @@
-Return-Path: <usb-storage+bncBDFKTTUNQMNRB4UC6COQMGQE5VCJ7SQ@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBDFKTTUNQMNRB5UD6COQMGQESTS2ICA@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-ed1-x547.google.com (mail-ed1-x547.google.com [IPv6:2a00:1450:4864:20::547])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8DFAF6624E3
-	for <lists+usb-storage@lfdr.de>; Mon,  9 Jan 2023 12:58:43 +0100 (CET)
-Received: by mail-ed1-x547.google.com with SMTP id b15-20020a056402350f00b0048477a5114bsf5052401edd.2
-        for <lists+usb-storage@lfdr.de>; Mon, 09 Jan 2023 03:58:43 -0800 (PST)
-ARC-Seal: i=2; a=rsa-sha256; t=1673265523; cv=pass;
+Received: from mail-ej1-x645.google.com (mail-ej1-x645.google.com [IPv6:2a00:1450:4864:20::645])
+	by mail.lfdr.de (Postfix) with ESMTPS id C13B76624EC
+	for <lists+usb-storage@lfdr.de>; Mon,  9 Jan 2023 13:00:54 +0100 (CET)
+Received: by mail-ej1-x645.google.com with SMTP id qb2-20020a1709077e8200b00842b790008fsf5338725ejc.21
+        for <lists+usb-storage@lfdr.de>; Mon, 09 Jan 2023 04:00:54 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1673265654; cv=pass;
         d=google.com; s=arc-20160816;
-        b=V3707s3R265TM3YXXwuj/DiP/sYP0abvxEukvJjmYw3L6DUEl4sByfjJImJ1NSOfGG
-         GbmUfC1mJLC3I1cUM3iwtzFgtVMIOm20guT12yFagb66nAvzmkF9CrhOYXqtYiQurPvj
-         b/cvUatbYVZ3GZw6OZF+E8Sb2D/k9/CdOZoxPt2yMqeVj6DxSymNPwsoag1kGAZGs6gv
-         p48JcpswUFjjOPBGTiIUqn8r+EwhIHoUXRbULvSXBh5Kv8Dk97gsJ8hc661MV/rfmpAk
-         dmRY/zQ33IQyR0/3wcrFlhN+05GK3GPny7NfTxj0bTeV9NdHLhr2gqG5eRnmsWSSS0PZ
-         CVbw==
+        b=tDsyT59viY4O8mjX7s9HvNKioGKMGIK179tFfmEJFin8BTHuaFZ3BVz0n1NpPIl6Dd
+         O7OM9D94c6HA0v8jKIDuWGBRXCU6Y8UKbCmcPl4/K0G8N/oZFYNc+9E3J9VxqKfiUG2N
+         nVdI+TRkJRmuOFVa4wWHng049PYz9RPbQd163SqnlNNlUJrsz8lLeavI7VLUrziJYlKo
+         SHGkkfNhW4lxJIQCitrxBmtUNcHL3umHtmM1nXMWMLurE5LXAo5K4NV3nRNfb0JoWClO
+         b8gIli+bHKtUU0GYFjjhlpPlMWsRFP+WGDtOhDCJwgL3uIz7vn7wqsZB8SpW0oEwdNwf
+         aOCQ==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:cc:to:subject:message-id:date:from
          :in-reply-to:references:mime-version:sender:dkim-signature;
-        bh=Nlkc79l2SiUCaSvb/SLAiMiElIATu/tRJeishXNMmyM=;
-        b=hr4XemHtAjp++FasWomnELSbdEDjYbsxu7Fiu0l/auFQ4Ez05f7kDg9X6P+L2qn7xx
-         2xjj8KnqNJV0MpSU5Rh9oMjNsacL3reDYCFH6LwfLEp9o8L6iJ3P3mD29yFJ6jPJCOnT
-         lCuqNuuX61hJG8NieATOxMP/eBG0jufro9ii7CXH17egNYgS6Yz9jDhWjLY6Zg8SVTkL
-         3XTk5t+SRpISwml10pf/IIZCeYDRqwcoW0dSK9zxFGnQGBSl5nvFf3GhCVEBF8dik8y/
-         xRiIA8sNnqjGEEmsb2PBn1l/zpWOP4YjICHhJNahywusSRGjUOP5M6Ar3YNs2u980JTA
-         A9Jg==
+        bh=7MvMxRvTBsQcepEsBRBPOZbxpwaaiBc0sGHOwB/XmtM=;
+        b=QbeHzda72m6y1Gp+9Y3sZ46EEKS6e/ovTrzqngwoTFdbaXyRSxMPHLBxJUGC8azBdF
+         t2kFD1bGt+9gdGQoOt1fDxAyOOU5kDqpaixUPg1RuEp6542Rc2Ibc5P7qF3tBXp3WboI
+         Ya4rFTu04cQXt1itNS//+bIr1gVB19O6qbEsixu+EiC8qjoOMBkBvphGOOIUltak/LIB
+         VR8bWY+Y3sI3NzbHHx8Q/bNpoFGasd/y0rlrzJKiAVyL6XuVFtbhOZa6xFltR3kQAl3A
+         ofj2Gm2Sh+Qbsrqjou0bsTKUonSV5N/EhIfRH7VU7yPdXA20jbNnM7CcI20368RHoPD2
+         4m2A==
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@gmail.com header.s=20210112 header.b=B8gGu6H+;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b=kRrlj4fQ;
        spf=pass (google.com: domain of qkrwngud825@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=qkrwngud825@gmail.com;
        dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
@@ -36,10 +36,10 @@ DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
          :x-original-sender:cc:to:subject:message-id:date:from:in-reply-to
          :references:mime-version:sender:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=Nlkc79l2SiUCaSvb/SLAiMiElIATu/tRJeishXNMmyM=;
-        b=Hb9/gBh8Pd/4W9tvThiLsju1A1q/4+5vyDgwl9nQi+6sTcz/W8414RXj8qBtoNmiYM
-         nxfMZowFthrXKEHRIWaIzbPk02i/2m7Jp86oJRSRoi8YFfDMRfw4jSVt6Hc+XwIrDfKM
-         aZqhsA+2l4Adn2y99Qs+Z891D1SA/zmjLQlXw=
+        bh=7MvMxRvTBsQcepEsBRBPOZbxpwaaiBc0sGHOwB/XmtM=;
+        b=Xl5UDSFBc12+a1n8V2wJCOMojLc2FWyUokNYe305VYvJcFI/qfL8XLuxvj6xLFv+it
+         1V0OJOhuytol/cCDNYyJR1zo5buvqXR8wbST4399ZdAJHaIv3kwfRVeef9Vnu3ZEZJlk
+         kK/NZHQ7HGy3zKByM6AuerQCKVZDyXEa6pKpI=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
@@ -48,74 +48,75 @@ X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
          :message-id:date:from:in-reply-to:references:mime-version
          :x-gm-message-state:sender:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=Nlkc79l2SiUCaSvb/SLAiMiElIATu/tRJeishXNMmyM=;
-        b=7to/f5r6mZuxuhusfImgPhp1CIwJEZpi1tSMSrj+gG8TtmeqdmhkfSIm+cdG4gCmfY
-         2myFzN78pMcqqj4k/eDo8yZm/CELMEGi4s2mKcjogmP3kK/gwZ4rbOyDllceLjp1LCiS
-         /2cUQhc8ahtjtUDI2gJGJB4+LHYjbJ91W5/7aogyfdewNv3t00/oqhHULJWsJpHbPVPZ
-         jRWyAwqjJmAwuFvr3Jz5+79QWu//DQi7XKzrd+jVhBpsI4btGiq9a9DQXef4ZjTLuyD3
-         DfYN1CQPDvkKIrbweMIwwFCPAOeA8Q7cunxwD/lS4qnSmbIfA/HqOMXNZ4kN9g0d/dvW
-         lUVA==
+        bh=7MvMxRvTBsQcepEsBRBPOZbxpwaaiBc0sGHOwB/XmtM=;
+        b=Ti+ZRSAnDkUDRtWhQbuFKJvuqaJJqBaxc355i3h55ih9jBuGnQPg+v5Uk1KHntmn63
+         o2D8j050FLJjRFEV1HMAyMRgBiHmQV861fCP3I8X6k8qEAGmi+ulKPaarkhP+IB0FXC4
+         fnuY0UfttKumdRIQZDlBagxajrs3eWLGiamuljEO1OStUvqnQSfNPh2BLbNvvV2nZOT0
+         nBAp0/NZyJ5Vfh7TCWSwsobofb+0uUPjbkOhcpLJ8YEucjp5wNWpb8nfWbWoHT4K9HiM
+         96fmlzB+RjdLhzD5xqWfJ1Xw3quE6WL7bCJRWgaz3AZ3MD79lFIz06zK861ewx9+0+bo
+         fYYQ==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: AFqh2kqMad5q6aM+U16olloGt34ZnwBBu0npOfjjDQpyOozjugfeAvvD
-	lB4YDV9u95tFCbAPbtvyxO8PYQ==
-X-Google-Smtp-Source: AMrXdXsmL27NGWGoy2Hk3zcKkNGJ89wQkKLANSys+gjcSy0Bs9jj01mWRDimcYUzOe+z+QDl/UdoWQ==
-X-Received: by 2002:a05:6402:2b9a:b0:498:989a:60c1 with SMTP id fj26-20020a0564022b9a00b00498989a60c1mr673651edb.284.1673265523192;
-        Mon, 09 Jan 2023 03:58:43 -0800 (PST)
+X-Gm-Message-State: AFqh2kqEPXm8J1xQ0FSg3IzjFNZLKswvXD0LubsIXfiB/LM5VPKIxcUD
+	9/2IgUZduTXkXF2NhP6gY9oWsg==
+X-Google-Smtp-Source: AMrXdXs0FQvOsK8gTMlQGZdH8DFUMYf0FJcacxAt2j2GRQcis+vu620MWla+V8OXkEk2V4XHQNHQgQ==
+X-Received: by 2002:a05:6402:3714:b0:484:af15:bd39 with SMTP id ek20-20020a056402371400b00484af15bd39mr4902796edb.339.1673265654329;
+        Mon, 09 Jan 2023 04:00:54 -0800 (PST)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a17:906:789:b0:84d:4675:1cbe with SMTP id
- l9-20020a170906078900b0084d46751cbels1300169ejc.7.-pod-prod-gmail; Mon, 09
- Jan 2023 03:58:42 -0800 (PST)
-X-Received: by 2002:a17:906:17d2:b0:846:fafa:5c77 with SMTP id u18-20020a17090617d200b00846fafa5c77mr46787993eje.48.1673265521891;
-        Mon, 09 Jan 2023 03:58:41 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1673265521; cv=none;
+Received: by 2002:a17:906:2c47:b0:7ae:83f4:3bed with SMTP id
+ f7-20020a1709062c4700b007ae83f43bedls2746795ejh.2.-pod-prod-gmail; Mon, 09
+ Jan 2023 04:00:53 -0800 (PST)
+X-Received: by 2002:a17:906:9c88:b0:7ac:8e6a:a674 with SMTP id fj8-20020a1709069c8800b007ac8e6aa674mr54543895ejc.2.1673265653137;
+        Mon, 09 Jan 2023 04:00:53 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1673265653; cv=none;
         d=google.com; s=arc-20160816;
-        b=SdtsDBkfeo6c+IGm2C646wBcEzzVUcnrnZKahwPJJS5UrZXsOiyEfi5BzjXKYqFkcZ
-         lBRvXpfx5Vxju7jGAp1hfF8Wf3MJ7XDH594fWqJ4V2kwpJcdArXCMWitjvpuzyrrr5tC
-         v2lOCeSJ/D4U156JJORUT5zBQJuytpOsH9Kf6rPc+AmlHS2Kj/aT5CKTKEChiPC6oKjE
-         4g2ArtxfDsoO8gzYqp8q4S9ZIlORhF9KZVEwScZGUhTpnLrNZ106Optza9PbYpXGffGu
-         1uNxfp7ACt/z3D29wbJJQ/VmfMAogzNA8N8+msrBXm3ojcrx8IuAaV/cFXei/hSHdU9N
-         DYCw==
+        b=hKfEMjFmBlKhGgywYd3dtL56g5/bT3+YvYJ+HrTmTJdpvIDPz/0UXMuoUeLdT8YXVw
+         uitYF6XM2qIgGBnUPqvPT6XdN46U7iw8Kfy5bvl1GMBoeMlPoyOM1nHslikOk5AFKXx4
+         wCIRqDZvY2gNxbnQkc3QI9ziAavCPXeFaolHpDVEzdyCAlKZSsHU0aX+2+f/3+aSvxtS
+         a3KoFlbI0j9LO+N+pnJK0hp5RMJYGNe7x5Vor0SNYdc2jORmiWBmQwjptaAetb7XPrti
+         K9dKenVXlmZ+Rp6Z/NBwRDh/su1BP7C/GYbK9srZc/q6LWl6MdFZOwZtbIruSRrHEGaE
+         s0tQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:dkim-signature;
-        bh=sqDs9qTUrNdkIJNHtVrZFUgegfVtGip7cDZN8M5e52o=;
-        b=NHA9bX6Sh22jhZ47r5DmV72U4Yw99ehkgjrVVfQ0520KODqVPbEJFh+v2iZ+4tf6mm
-         sMTpZRygMfSLYWTItJSu67GuOfk2xev3HnEutRIqS1bzS0SYvCu06yp11ndBLB7Q9qym
-         dxzyjGtsBQd/80SJUlphRheYdKKPD8mg5XYfLE+IIyTlTvEq75sjkU+w/kiJoGPdoz85
-         r9td/1ihg7sQ0iXrzGK1qr6vVQPefw0bwW9VCaIGVVZCYDKgpjiOSoGsKz20SaAb+OQq
-         XiLbxKZD7anedSbrBRsnkaLuaEGR7jE/dUddxkYkBpUoqNMS2kPY0DucJXMFiuuiEdJw
-         jQHg==
+        bh=/QmHdiGULaJGP+rPUpxdlYuhnIUflsBFp1LiLNnS7N0=;
+        b=gPmUU2ExpTfX8EWDiO/YkQYDVlOlmkz31JpO2nyQTmDsj/qIVRcALB9pDCBZFc4lf2
+         bdGOIH1gC0JOVxyb4TBIIjfp1xq0JIl0yO95l+WjMmYb8Hb2ksVlvUTQSKQ1IuNCSLUh
+         3F57cHRGHp46V2WuyxT6K5OSmErriufifXeP96PnObXlUiFvJDfZhXYsnWaUNDu2XEC/
+         G2jXrP+covK5theRr759GzikJ7WRPLFqu1QCJieQqLveFhs69NFEBIBeBG6sGklIZfhM
+         U5D01zDRDzG2M3VxqDTrl18GXdpWnij8fSssW10Hfy7581urjWNDBHi6WIufpo6gQSkh
+         PPBg==
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@gmail.com header.s=20210112 header.b=B8gGu6H+;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b=kRrlj4fQ;
        spf=pass (google.com: domain of qkrwngud825@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=qkrwngud825@gmail.com;
        dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
 Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
-        by mx.google.com with SMTPS id vw16-20020a170907a71000b0073d62c8b286sor3175892ejc.20.2023.01.09.03.58.41
+        by mx.google.com with SMTPS id d13-20020a170906370d00b0078d8f27a069sor3348384ejc.106.2023.01.09.04.00.53
         for <usb-storage@lists.one-eyed-alien.net>
         (Google Transport Security);
-        Mon, 09 Jan 2023 03:58:41 -0800 (PST)
+        Mon, 09 Jan 2023 04:00:53 -0800 (PST)
 Received-SPF: pass (google.com: domain of qkrwngud825@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
-X-Received: by 2002:a17:906:f150:b0:84d:2374:4c37 with SMTP id
- gw16-20020a170906f15000b0084d23744c37mr1142030ejb.330.1673265521413; Mon, 09
- Jan 2023 03:58:41 -0800 (PST)
+X-Received: by 2002:a17:906:4684:b0:7c0:efba:a8c6 with SMTP id
+ a4-20020a170906468400b007c0efbaa8c6mr3871794ejr.632.1673265652860; Mon, 09
+ Jan 2023 04:00:52 -0800 (PST)
 MIME-Version: 1.0
 References: <1663210188-5485-1-git-send-email-zenghongling@kylinos.cn>
- <fa0556e5-e154-a4e6-6b18-4996a01d2f10@gmail.com> <Y2uDnUQKCDGzioJN@kroah.com> <2022111215445443712314@126.com>
-In-Reply-To: <2022111215445443712314@126.com>
+ <fa0556e5-e154-a4e6-6b18-4996a01d2f10@gmail.com> <Y2uDnUQKCDGzioJN@kroah.com>
+ <2022111215445443712314@126.com> <Y29RtXGcey6V9iTY@kroah.com>
+In-Reply-To: <Y29RtXGcey6V9iTY@kroah.com>
 From: Juhyung Park <qkrwngud825@gmail.com>
-Date: Mon, 9 Jan 2023 20:58:29 +0900
-Message-ID: <CAD14+f3ZHZ8X6CmUf+FcBZ0fmP-G7qi1phVqmCn_KdZJJJgu=Q@mail.gmail.com>
+Date: Mon, 9 Jan 2023 21:00:41 +0900
+Message-ID: <CAD14+f1dAwCtOM-yBFSs5S-jRqwX1caUuP04-DRh5=EXC5Th0A@mail.gmail.com>
 Subject: [usb-storage] Re: Re: [PATCH v6 2/3] usb-storage: Add Hiksemi USB3-FW
  to IGNORE_UAS
-To: "zhongling0719@126.com" <zhongling0719@126.com>
-Cc: Greg KH <gregkh@linuxfoundation.org>, 
+To: Greg KH <gregkh@linuxfoundation.org>
+Cc: "zhongling0719@126.com" <zhongling0719@126.com>, 
 	"stern@rowland.harvard.edu" <stern@rowland.harvard.edu>, 
 	"linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>, 
 	"usb-storage@lists.one-eyed-alien.net" <usb-storage@lists.one-eyed-alien.net>
 Content-Type: text/plain; charset="UTF-8"
 X-Original-Sender: qkrwngud825@gmail.com
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@gmail.com header.s=20210112 header.b=B8gGu6H+;       spf=pass
+ header.i=@gmail.com header.s=20210112 header.b=kRrlj4fQ;       spf=pass
  (google.com: domain of qkrwngud825@gmail.com designates 209.85.220.41 as
  permitted sender) smtp.mailfrom=qkrwngud825@gmail.com;       dmarc=pass
  (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
@@ -134,51 +135,22 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On Sat, Nov 12, 2022 at 4:46 PM zhongling0719@126.com
-<zhongling0719@126.com> wrote:
->
-> Hi:
->   This error not happend on all RTL9210,The uas blacklist only for on sale device(0x0bda, 0x9210).
+Hi Greg,
 
-0x0bda is VendorId for Realtek,
-0x9210 is ProductId for the entire RTL9210 enclosures.
+I've posted a revert commit as there were no attempts to fix this to
+apply just to the said product (Hiksemi USB3-FW):
+https://lore.kernel.org/all/20230109115550.71688-1-qkrwngud825@gmail.com/T/#u
 
-This patch blacklists UAS for all RTL9210 enclosures.
+Thanks. Regards
 
+On Sat, Nov 12, 2022 at 4:56 PM Greg KH <gregkh@linuxfoundation.org> wrote:
 >
-> Thanks!
+> On Sat, Nov 12, 2022 at 03:45:36PM +0800, zhongling0719@126.com wrote:
+> > Hi:
+> >   This error not happend on all RTL9210,The uas blacklist only for on sale device(0x0bda, 0x9210).
 >
-> zhongling0719@126.com
->
-> From: Greg KH
-> Date: 2022-11-09 18:40
-> To: Juhyung Park
-> CC: Hongling Zeng; stern; linux-usb; usb-storage; zhongling0719
-> Subject: Re: [PATCH v6 2/3] usb-storage: Add Hiksemi USB3-FW to IGNORE_UAS
-> On Mon, Oct 31, 2022 at 03:17:48PM +0900, Juhyung Park wrote:
-> > Hi,
-> >
-> > I'm speaking from my own experience but RTL9210 is arguably the most
-> > reliable NVMe-to-USB converter available.
-> >
-> > Compared to solutions from JMicron (multiple revisions) and ASMedia, RTL9210
-> > gave the lowest power consumption (from implementing proper power management
-> > commands) and the least headache.
-> >
-> > I personally own multiple enclosures and not one gave a single UAS error
-> > from multiple platforms (Android, Intel, AMD) for years, but with this
-> > commit now, it effectively disables UAS for all RTL9210 enclosures.
-> >
-> > Would it be possible to apply this quirk only to a specific firmware
-> > (range)? RTL9210 have a lot of possible firmware combinations: https://www.station-drivers.com/index.php/en/component/remository/Drivers/Realtek/NVMe-USB-3.1/lang,en-gb/
-> >
-> > RTL9210 was available since 2019 and the fact that this quirk came up this
-> > late leads me to believe that this is not a widespread issue and it'll be a
-> > shame if all of RTL9210s are blacklisted from UAS with Linux from now on :(
-> >
-> > If any additional information is required, please let me know.
->
-> Can you send a revert of this commit so that we can fix this up?
+> What about using the version of the device as the only one to blacklist?
+> Any more specific information you have about that device?
 >
 > thanks,
 >
@@ -187,4 +159,4 @@ This patch blacklists UAS for all RTL9210 enclosures.
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/CAD14%2Bf3ZHZ8X6CmUf%2BFcBZ0fmP-G7qi1phVqmCn_KdZJJJgu%3DQ%40mail.gmail.com.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/CAD14%2Bf1dAwCtOM-yBFSs5S-jRqwX1caUuP04-DRh5%3DEXC5Th0A%40mail.gmail.com.
