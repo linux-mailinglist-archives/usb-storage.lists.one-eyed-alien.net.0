@@ -1,125 +1,212 @@
-Return-Path: <usb-storage+bncBDFKTTUNQMNRBSH2TCPAMGQEC4JN3SQ@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBCTPRFE7TUKRBMFPTGPAMGQEOF7JO4Y@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-ed1-x548.google.com (mail-ed1-x548.google.com [IPv6:2a00:1450:4864:20::548])
-	by mail.lfdr.de (Postfix) with ESMTPS id 861C466D621
-	for <lists+usb-storage@lfdr.de>; Tue, 17 Jan 2023 07:16:41 +0100 (CET)
-Received: by mail-ed1-x548.google.com with SMTP id z8-20020a056402274800b0048a31c1746asf20202654edd.0
-        for <lists+usb-storage@lfdr.de>; Mon, 16 Jan 2023 22:16:41 -0800 (PST)
-ARC-Seal: i=2; a=rsa-sha256; t=1673936201; cv=pass;
+Received: from mail-ej1-x646.google.com (mail-ej1-x646.google.com [IPv6:2a00:1450:4864:20::646])
+	by mail.lfdr.de (Postfix) with ESMTPS id ABCEA66D790
+	for <lists+usb-storage@lfdr.de>; Tue, 17 Jan 2023 09:09:21 +0100 (CET)
+Received: by mail-ej1-x646.google.com with SMTP id sa32-20020a1709076d2000b0084d4593797esf17745874ejc.16
+        for <lists+usb-storage@lfdr.de>; Tue, 17 Jan 2023 00:09:21 -0800 (PST)
+ARC-Seal: i=3; a=rsa-sha256; t=1673942961; cv=pass;
         d=google.com; s=arc-20160816;
-        b=U+EEaP1VB8mrJkTKmTXTlb741HuuGGaH3QYRkILsLeI37yOF1rnkTGy8WaVdWipR7D
-         P3SDkpBTFwQP7ar5eR/ynLluiwsOXIfU1sUmEvukcAGdQrl8sPUt+lUdYWMNhB1j2y15
-         hnrqomOtWM/L8znHxZ6s0ShBRlc15d98WPsF392YLKbQuCo0qq+IyFbJZRhrVJDr8Did
-         HZe+wVbymTFo5f/C4Ck8FzMPqqVec5YHQsSCQlDfjM7vEdvceiUwcZ1IQrm2KWWwkooO
-         6oEtii9uC1eBYDtrF6HKS/77wxeveleBDkAZA80BMheBYxfumrtjMh1yU1i15V1+3Vbc
-         JzOg==
-ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        b=pGgkBVW9l4ibRgvG3G59lDFVp7iyk6CJ7zCVJeiVju0eWMyXa/zAZRiVLWQbMiEDBT
+         mGHtX1ohrXu2rqs01FM+f7vbn9uJQMJ7HmUrOcJRy3ut5/Czj2lbXApyqnJLP8j6vTmm
+         Zl+TZFLFKsoTFymhk3dDLOY8RsCiN3AuTX+uvCw3LIMK6Uz8B6353UPl8SP/j/k95Ivj
+         6vPi+3g/tYhrfXUkMrC8NCxUCNAtMf8RXAXVoBx9TdXEEWTMXKqdiVC6CIO80GJmLocv
+         dRyOSEjSKy5ThRy8EXb670GysL/RNeW4S0vdYPa1yWNJWnXiMmzqSJSqiGhOrPv7jV4y
+         W8Hg==
+ARC-Message-Signature: i=3; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:content-transfer-encoding:cc:to
-         :subject:message-id:date:from:in-reply-to:references:mime-version
-         :sender:dkim-signature;
-        bh=r45ZjkVIT7kQSBzLiMhURRrxo/3mrZG1c/7YNAK57b8=;
-        b=Xi5QsoEFYPxv7jAQcXH8UTfrKN2/Bz0yEjWGm9CjxKZFLEMqoiLGur/J8ON9qXH9Lz
-         0mh6688vmhuqZtN5YOvFb74XHK51FLgVtOpsNe56UYMw8733HXjvFt9LLpT1D82ruZEv
-         rvFk72heKfS4i0tx8dc0xbIyKjItfobHT+TTgdp/goaA3/luSFIhVL43HmYg2CeFqVJy
-         yvEvP8fL46Ie38zrpF6GjiCdMVpnjfEjv9J00AFPuz+vrb3BmO0pwAw+IF8JaaY+vOiH
-         sVA0V91ikm39mcXkYpMNH0FKyxlG+ob/x+1phzT4K4rW+pm6FO3XKytx3Nnbs1c6l5H9
-         7Zaw==
-ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@gmail.com header.s=20210112 header.b=KITCxg0G;
-       spf=pass (google.com: domain of qkrwngud825@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=qkrwngud825@gmail.com;
-       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+         :list-id:mailing-list:precedence:reply-to:mime-version:in-reply-to
+         :from:references:cc:to:content-language:subject:user-agent:date
+         :message-id:dkim-signature;
+        bh=zX5At2cHVZS/NfRlmXmtzt/lBlibcGANKcktUxpQLVY=;
+        b=eeMgvUtQ8k7PHwlyoasdfKr+lAdC5mv6QnNAXMFTHQoVlbH50nFu6mgIfy7enIvMRR
+         a2uDB/GwSxM32+zuvM6vKioj+VDotS1M6Q1qfZJ+hJNbw6dqSjR0wpKS5ry60fmRBtYt
+         N/f3Ej20s2ZukBZe32GfqLV7NpA1cuaAhjOrk71LyoJkkaZ0kmquBOaHr7BzF2Ss6+P6
+         6g6Qn/FBdwctANpbCvNx1h9ilZ3FH3/dC2fFy382wsvLNGfJ7eo5e0Y9CD61uPD6bwhF
+         VqJUCMZjpGkxstucRL+VGUKQluriHs8uioTdXbe+SQBRmMlSc8gd5oHOcL52t1TAmZdx
+         3sJw==
+ARC-Authentication-Results: i=3; mx.google.com;
+       dkim=pass header.i=@suse.com header.s=selector1 header.b="ulr/OBmc";
+       arc=pass (i=1 spf=pass spfdomain=suse.com dkim=pass dkdomain=suse.com dmarc=pass fromdomain=suse.com);
+       spf=pass (google.com: domain of oneukum@suse.com designates 40.107.21.43 as permitted sender) smtp.mailfrom=ONeukum@suse.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=suse.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:x-original-authentication-results
-         :x-original-sender:content-transfer-encoding:cc:to:subject
-         :message-id:date:from:in-reply-to:references:mime-version:sender
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=r45ZjkVIT7kQSBzLiMhURRrxo/3mrZG1c/7YNAK57b8=;
-        b=kz0iySNnYlSPi2hhzzSOkKaz9sCPKhs6YaIob99DxTPcEjO1163UjWhgCKL2MG1z6I
-         2F7Blg7f8WO4aJ1+H97p9BKXT7gO6NRQb/fT5wqK/whEQV2WWtqR7Muqg0aEiIS3Vlvz
-         6fE07IofTluwZLLWCsh+mQGxcGFjbNvZopOsk=
+         :list-id:mailing-list:precedence:reply-to
+         :x-original-authentication-results:x-original-sender:mime-version
+         :in-reply-to:from:references:cc:to:content-language:subject
+         :user-agent:date:message-id:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=zX5At2cHVZS/NfRlmXmtzt/lBlibcGANKcktUxpQLVY=;
+        b=WM5oOjsWoi0bQTo9JISr7AVoD2180housVjzRxxpXqak7004TPQFRBsOoOzFppFX1/
+         PqrnjCRj88DasYNwjW9Lu40H46Xs/k7UagfgtIz/M8ESqqSV7dd7uoHzGRdCfAc3JPHi
+         /3X/5LGHVUlbsjINrc5TLfZgnweX4ajyRAScY=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :x-spam-checked-in-group:list-id:mailing-list:precedence
-         :x-original-authentication-results:x-original-sender
-         :content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:sender:from
-         :to:cc:subject:date:message-id:reply-to;
-        bh=r45ZjkVIT7kQSBzLiMhURRrxo/3mrZG1c/7YNAK57b8=;
-        b=2oSRO+7aqlDDnGyt58238G+Y6QoUK1nIb9EpW2375P2Hgx4OkiE7jQpG+fD4EA0UTU
-         5st1JZ4thKF8qgEZAG5eGJ715Rp21hztWJW25dwwAXO5cCWQaFC+8+OKByqeumMTwbM2
-         q0+KPcsYQYFSXglI23M4ljtru1zNH8R1g+DTZeSQI5DTA+jeFIMGIGe5bC55kUum2JmU
-         n/kdv+Tg71L8QQ40n+0KOVsmB+i3rmiUN0L4jRl6zsAJ/5mVtyWQv5G9HJknvYkoiYGq
-         65sLtngF++sMZWI7T02XgRLU423C3U/8WKDaJf4NEaOVPHAkEaBLVUsapyYTEES8blhj
-         rKdw==
-Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: AFqh2kopAAkA8A5RPJQEGmTkW8wT24ECr87fIVAc0cvZYDHEJ60vXNR8
-	e6yamIgPyyX5qreQxajX4vgf5A==
-X-Google-Smtp-Source: AMrXdXtD2mmVv7gDUIfSfDwmevYFF+QOdjdD4wSzBy18Ke5KYvxuN+S0LbOTtmv6zoIbzxebZncqXg==
-X-Received: by 2002:a17:906:a288:b0:871:6de4:fb7e with SMTP id i8-20020a170906a28800b008716de4fb7emr115838ejz.758.1673936200979;
-        Mon, 16 Jan 2023 22:16:40 -0800 (PST)
+         :x-spam-checked-in-group:list-id:mailing-list:precedence:reply-to
+         :x-original-authentication-results:x-original-sender:mime-version
+         :in-reply-to:from:references:cc:to:content-language:subject
+         :user-agent:date:message-id:x-gm-message-state:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=zX5At2cHVZS/NfRlmXmtzt/lBlibcGANKcktUxpQLVY=;
+        b=1zdXwdVSypmouMuT7hayt6hFbIpKXB4Vqsstz1KBYsEUS4YjG5veovlczMg4Xt2CQX
+         fuvHwAvIP/LVQ2ESAjtJ3Jg2AJ5hW7rorzrn2TWKkZSJhMozPbRqHqqOasV5qOKvL4Bd
+         6y22STodqlppSYwUg1VwHSfHc+ynH/xvs3fAY8RzWexz974mAcZbDA2TtWq/+psAyYRg
+         8ht0ic+Hc1BIwinovF/bHGvq2jOSaJVL4puq5R8savfe7lgVu09m8RNDcomc3cJMJ7N9
+         71MIbJHlcX11CNcu+owC1P//4onHZGU53wLuA1gn60UyENHgBk5Ifo5TQHKSxBNK7lI/
+         w7iA==
+X-Gm-Message-State: AFqh2kok4xpoxXoeaVpVZyVxQXL+efxc+Mf35qe7fk7Bmbvb0pGPS5VS
+	MdnZGLEBSP9pEv7Wahz/psYHFg==
+X-Google-Smtp-Source: AMrXdXtLDkj0jEZin0B4SevYWc/4xbUsr7UOIteqP4Znoe8612RhtZHg+YY6tUdqAvpw8BfDcs5+lA==
+X-Received: by 2002:a05:6402:114a:b0:49c:1203:b7a3 with SMTP id g10-20020a056402114a00b0049c1203b7a3mr246353edw.124.1673942961373;
+        Tue, 17 Jan 2023 00:09:21 -0800 (PST)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a17:906:37cd:b0:7c1:381b:406d with SMTP id
- o13-20020a17090637cd00b007c1381b406dls8379985ejc.11.-pod-prod-gmail; Mon, 16
- Jan 2023 22:16:39 -0800 (PST)
-X-Received: by 2002:a17:906:a09:b0:7af:1139:de77 with SMTP id w9-20020a1709060a0900b007af1139de77mr2260347ejf.4.1673936199363;
-        Mon, 16 Jan 2023 22:16:39 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1673936199; cv=none;
+Received: by 2002:a17:906:7e41:b0:78d:e7b8:d105 with SMTP id
+ z1-20020a1709067e4100b0078de7b8d105ls8563779ejr.8.-pod-prod-gmail; Tue, 17
+ Jan 2023 00:09:19 -0800 (PST)
+X-Received: by 2002:a17:906:6819:b0:872:23b8:d6f1 with SMTP id k25-20020a170906681900b0087223b8d6f1mr2100370ejr.14.1673942959729;
+        Tue, 17 Jan 2023 00:09:19 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1673942959; cv=pass;
         d=google.com; s=arc-20160816;
-        b=0oQ1q/UIsgdEOREh3u0DpJ7I/W4Wu077U6N2ZxFKnf7T++vclunhQe2W3Guvr4xRpn
-         RfW+ygW5zFSLQRt0Uudchwyl8U7l9xO76zdyXnCX4JGtkA8kL/0irFz8HB0u3feJUcyt
-         Iq3/bys14Zf6ZoRhKyoX0wZQ2cFsWh/eOoyHqSdEfNcPdRR5Cq3Z3/04h2u7ua+DvWSi
-         E/lgzYCjMYUuJQ/6rNli33NCWwuj0g/n0IfT6i0iaVYZZI3UnQihPIXhQAxnrEzIRksk
-         LCwyDf0fp3r8bHvzNGQbLMaP4yrxYViSzFeyWNwAUfgdgAxguXcHnqoZybuHRbPK3+lK
-         RafA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:dkim-signature;
-        bh=V290PZKZo0xScmAvbrHz36kqe7A8S78iWYh1amMNxkw=;
-        b=EBaWQWevqDefbs2gfdogW8uRxlF4Xcf8cnun4Elp5m+XxVutwb2M5vkRPFixEEFPT6
-         P5A6nIzvkJnt3mPs5LNDOexpv6WSgfCNZURHqIUwQYJ/XE9uCzSsqJ8LemRAQkDdhUqR
-         GzFXZwv8oK5k4YKBRyfuyHBL67RX//lXdMMNvxhL1v+C/nSeRUJE/w9ynpqnCGwLn/OG
-         pT6Vc/Ha1oz3fCHME1SrlmKniBYwi+BYiCN2QCQhDC99WXumopJX6rxEjlDzXNi0gZe3
-         DxtUOO3hWqvlaNgOGQjyw9H0hKSx/lbTUP81uo92Sfq7LV8MGMaJyBcHH7/ixtsGCLcZ
-         BMBw==
-ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@gmail.com header.s=20210112 header.b=KITCxg0G;
-       spf=pass (google.com: domain of qkrwngud825@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=qkrwngud825@gmail.com;
-       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
-Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
-        by mx.google.com with SMTPS id s13-20020a170906960d00b0086d57b49207sor3433120ejx.95.2023.01.16.22.16.39
+        b=kAJkN/ZV+7bxpwqOciCsS5L5R/cnb1ov2x89gT8K/aCvTBFJuSHp1Gzl16wgizIBWa
+         UaCuLbBACli1x4JuwwNlzpXuLJY0dbSk9fDSafm96FAPZAxiwEAOMfcTVU8yhrRWJt5I
+         t3V5DxKgbeCU9v8CrjOvJzg5U0SW74bgr619EgQ5lbJWNyrT982tSx8V+UVUNBhp0Chd
+         kpQkiUMzQezkuFp6DA8b2NwoT4i+jBYwSeFjS6T2rH7InF+EtVUs89kuTUVvw85UA4gF
+         aIS4uFzBWiXEJ3PMKfAZ1K+f5YTt7yCh0dFf1tvZ8Umt3NMDFLG+e6/4Te+i35zgxv/T
+         F7yg==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:content-transfer-encoding:in-reply-to:from:references
+         :cc:to:content-language:subject:user-agent:date:message-id
+         :dkim-signature;
+        bh=C4DMZx6ddmbq6WmCkfpT1WvlpkEqDhUtAhqktZz1FQ8=;
+        b=JR8aHxqKeTm/wsPOseWWmEPSbQkL6KKFWrBqxNAZCsnEvAgKDDFykBuia6k2Sse8J3
+         Yba/XfYuurBxbJdBI7cnm8cDNgUfH1oY1bIuf2LYg3j+dn6gY6I1RI+wl/7mYUJF9b+1
+         vQPv4NgyIC3rcWDGhMz5Znc4YZoXGdZvcMwQBAP4CYBAPtWsCjkNDnSnUt6DHyf8CFva
+         iWLErLvVcuGCYQ065zQeBTH4iyyrs/KOCAVWTdEMyvl01a3cLj7vwtFk76+Bd6doL0xf
+         JNYFr6b3pis00FeHjSuR5BLQjgUWOEJ0h/3Kf/2MKigOnIoA7zc79K25xHxePR1upRh0
+         NgRg==
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@suse.com header.s=selector1 header.b="ulr/OBmc";
+       arc=pass (i=1 spf=pass spfdomain=suse.com dkim=pass dkdomain=suse.com dmarc=pass fromdomain=suse.com);
+       spf=pass (google.com: domain of oneukum@suse.com designates 40.107.21.43 as permitted sender) smtp.mailfrom=ONeukum@suse.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=suse.com
+Received: from EUR05-VI1-obe.outbound.protection.outlook.com (mail-vi1eur05on2043.outbound.protection.outlook.com. [40.107.21.43])
+        by mx.google.com with ESMTPS id wu1-20020a170906eec100b0078d2a99972fsi25314643ejb.316.2023.01.17.00.09.19
         for <usb-storage@lists.one-eyed-alien.net>
-        (Google Transport Security);
-        Mon, 16 Jan 2023 22:16:39 -0800 (PST)
-Received-SPF: pass (google.com: domain of qkrwngud825@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
-X-Received: by 2002:a17:906:264f:b0:85c:f3cd:66ec with SMTP id
- i15-20020a170906264f00b0085cf3cd66ecmr97854ejc.479.1673936198807; Mon, 16 Jan
- 2023 22:16:38 -0800 (PST)
-MIME-Version: 1.0
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 17 Jan 2023 00:09:19 -0800 (PST)
+Received-SPF: pass (google.com: domain of oneukum@suse.com designates 40.107.21.43 as permitted sender) client-ip=40.107.21.43;
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=GudqQx0j7ubr0MNPkP36+z+pRkqzyxYfij2IXMzcXG18cKJlhW9qXr4CK3z5y1+F28yT8gSBwDDvJQJ5ly6EjslZYYYBi0fVeiItonQcN16qfRDaCw4VfEJ7I+rEkISQ7sxxtHEnBD5q7k/CQGIsl8eDGZQ98cdPhREfAFhbBH5IUABh5b3MboZwkU56vhk8wunruGR6VIRK/KRSO3Co+zmVbjMTny3hFmhEOez0jQX4Qyct9VrYcRptVtL0AXnkARAVWTRoNsCEinAit5d6NODAfkX8e3lXOjqYA2vIg5MH4MvAheE8D4eeJwXt3od3Ltyo5irrYEeo/TQj+c/AyA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=C4DMZx6ddmbq6WmCkfpT1WvlpkEqDhUtAhqktZz1FQ8=;
+ b=On/pc5Ulkebp9UW9cBh0ctdWgcWmQFHfGiDb/N9M470pthCTB1G+GwZhM2rSBOnkt/3o/cQ5hOEF0z71asHV+YaxAnZC7YCVJzhTPH2uF3NbxgXoSTYGnQ0cw3Ixx6bpkdhkL+tGEtQc/0LEJHCZ/UQSjJn3TS8ssxjBgc0TZncHDw9fW7u2ooPoCcFeUWgnQ3+VVm7sEd6YXHv44mXAkgT1Fl8jfpl+TXQK+2IQD0xi7hV3SP6HghdbsaMeRLA3WeKvbLI80JVjvfO1pUY94dJ4V1Sql4IgpXG30soKJlo8ZSToYHIZog9ZxASWO9Fnjt1f0ViKaJb8aNqHz8d7NA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=suse.com; dmarc=pass action=none header.from=suse.com;
+ dkim=pass header.d=suse.com; arc=none
+Received: from VI1PR04MB7104.eurprd04.prod.outlook.com (2603:10a6:800:126::9)
+ by AM9PR04MB8116.eurprd04.prod.outlook.com (2603:10a6:20b:3e7::22) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6002.13; Tue, 17 Jan
+ 2023 08:09:17 +0000
+Received: from VI1PR04MB7104.eurprd04.prod.outlook.com
+ ([fe80::8d51:14ac:adfd:2d9b]) by VI1PR04MB7104.eurprd04.prod.outlook.com
+ ([fe80::8d51:14ac:adfd:2d9b%5]) with mapi id 15.20.5986.023; Tue, 17 Jan 2023
+ 08:09:17 +0000
+Message-ID: <111d7b42-5e85-58f5-0645-66749e754673@suse.com>
+Date: Tue, 17 Jan 2023 09:09:15 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.6.1
+Subject: [usb-storage] Re: [PATCH] Revert "usb-storage: Add Hiksemi USB3-FW to IGNORE_UAS"
+Content-Language: en-US
+To: Juhyung Park <qkrwngud825@gmail.com>, =?UTF-8?B?5pu+57qi546y?=
+ <zenghongling@kylinos.cn>
+Cc: linux-usb@vger.kernel.org, usb-storage@lists.one-eyed-alien.net,
+ oneukum <oneukum@suse.com>, gregkh <gregkh@linuxfoundation.org>,
+ stern <stern@rowland.harvard.edu>
 References: <2mw02fh6hzd-2mw3w8xfngq@nsmail7.0.0--kylin--1>
- <CAD14+f1p3j3WJUYshneH7A38b8JsiXjtScESB2uOQ-ZyBi57tg@mail.gmail.com> <CAD14+f1ebzviMF-pi0ryKU8cRPWp2BqV2dwiXOFjeM30eqrwOg@mail.gmail.com>
-In-Reply-To: <CAD14+f1ebzviMF-pi0ryKU8cRPWp2BqV2dwiXOFjeM30eqrwOg@mail.gmail.com>
-From: Juhyung Park <qkrwngud825@gmail.com>
-Date: Tue, 17 Jan 2023 15:16:27 +0900
-Message-ID: <CAD14+f3De+0oPaq0hOo0D+siTvZDNnBXg7Qg6fKNDh63zVh8Lg@mail.gmail.com>
-Subject: [usb-storage] Re: Re: [PATCH] Revert "usb-storage: Add Hiksemi
- USB3-FW to IGNORE_UAS"
-To: =?UTF-8?B?5pu+57qi546y?= <zenghongling@kylinos.cn>
-Cc: linux-usb@vger.kernel.org, usb-storage@lists.one-eyed-alien.net, 
-	oneukum <oneukum@suse.com>, gregkh <gregkh@linuxfoundation.org>, 
-	stern <stern@rowland.harvard.edu>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-X-Original-Sender: qkrwngud825@gmail.com
+ <CAD14+f1p3j3WJUYshneH7A38b8JsiXjtScESB2uOQ-ZyBi57tg@mail.gmail.com>
+ <CAD14+f1ebzviMF-pi0ryKU8cRPWp2BqV2dwiXOFjeM30eqrwOg@mail.gmail.com>
+ <CAD14+f3De+0oPaq0hOo0D+siTvZDNnBXg7Qg6fKNDh63zVh8Lg@mail.gmail.com>
+From: "'Oliver Neukum' via USB Mass Storage on Linux" <usb-storage@lists.one-eyed-alien.net>
+In-Reply-To: <CAD14+f3De+0oPaq0hOo0D+siTvZDNnBXg7Qg6fKNDh63zVh8Lg@mail.gmail.com>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
+X-ClientProxiedBy: FR0P281CA0039.DEUP281.PROD.OUTLOOK.COM
+ (2603:10a6:d10:48::22) To VI1PR04MB7104.eurprd04.prod.outlook.com
+ (2603:10a6:800:126::9)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: VI1PR04MB7104:EE_|AM9PR04MB8116:EE_
+X-MS-Office365-Filtering-Correlation-Id: d4bf1651-8c56-4e22-7850-08daf8622119
+X-LD-Processed: f7a17af6-1c5c-4a36-aa8b-f5be247aa4ba,ExtFwd
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: mJGD/dW4AVODzIBYXy/GmOfOsjBQLzr1dy3NKs7Ch9QaV8wkXvq4pK5zFNXUbFBtgTqRNdoT81Ca6Ug4ro6Rt+5o4SgHJIBHwtN+4qaBafuqfxs+LV4O927t2T0X9vQ7QiwZHhDAdJQf+q4sMonED/iRv1J3SD/X8CLvCWZFO+wchRwzPL4Pt5h86tmiT0pP3L4CM3NTuQSJ8Jz1ADorQVkGL/YHzl1smrty8KWr8CqEA5DcC9fXz/7qxV5ioaguEnPd7mszRw8uU/rrQAWCNgZSmQo+EEW+G7Cr7fPLSQA08DdvcM0cFWDAZRWuZOHsJWOWF3JHh9WSam8Z5bNY+OjSlPm00q0hr7uIsJv2glQW4fzJQYHfTmw6NUzakvQVnBgg4B1ZDPP2Q0Hm/dNA4bMy/VzICAPcFXwef4mCk2qDLSoY9Ujlm6QfbFZji225794R1Fda1EE601QaPRAlq/kP1fH9Vq2Y3BTcrUkrk8ZxeyH1zFnPUh9DqzxC+A63OarxzBlYx7OUrqIBmYcNEY4U0PO+Tl/yzcRzZr8pEUIfvmxqPpF5lTkZjtwlrgfvdLY+6rnSODIURcKu6AgXj47hubThWMp0SJw92+1Fdsjw8RAS9W47ybPejdg7uUJfBIjw5wyOebEseeM/tyulgAHfYSMmkKG+K82gzfUEumaE67I5vgocIwcwEdrcqdyBHZFqf1liqfOiQ6ZLmrbfVNUahWAl1QUu3cg6DpQye/VfKbLUa8xniX/31kKFbsRq
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:VI1PR04MB7104.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230022)(366004)(136003)(346002)(39860400002)(396003)(376002)(451199015)(36756003)(31696002)(186003)(54906003)(478600001)(6486002)(966005)(110136005)(6512007)(53546011)(6506007)(41300700001)(2906002)(4744005)(8936002)(316002)(5660300002)(4326008)(66556008)(66476007)(66946007)(8676002)(38100700002)(86362001)(2616005)(83380400001)(31686004)(45980500001)(43740500002);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?Qkl1NGVjTlZVeHYvNFRxays2R1FGUFlBL0c5NFdMQUhhK2FSSmhNTGdoK2hy?=
+ =?utf-8?B?RjNJa0M4MVIvSy8yN1lCT3MvSUFSOFlnZ1RpZXRyaWRwZDFpS0lwYnVuaGh6?=
+ =?utf-8?B?VkUyS3VKd2x4UG9iZXUzemp6bmwwUkN0VGdEUHAwY1ZzRTRVVjlaUEx5K2hT?=
+ =?utf-8?B?VWNhMDl4eE1nbkNEeU5McG1GTUx5bHpZOG9OQzB5M0tiZzV0cUVnWWNsY1p4?=
+ =?utf-8?B?RFk1c2NrTXFDOTd4c0FYYmh2OW5SOEs2SUFUblp0RUxXV25CQTFPY3B6YndD?=
+ =?utf-8?B?Z3BQUzEzK1FCekFOaVIyNE1IcWgwWWhOWDRLUlc5VFdEOFJ2TVF0UzQwYmln?=
+ =?utf-8?B?d1YrekdmL2UzdGhyemZGTjN5M0c4QU1CRlVlZGtpNWllbHBveklISTU3T0RH?=
+ =?utf-8?B?NHZHMk9zb05yUHdPMlhsMjlhSHUwREREMkh4UXNiYktvM01MTlFUQjNRZUll?=
+ =?utf-8?B?SVFDVEd6Q2xJTUZWeEpLdFUvNFRFTGoyZEdzRmllSStkTzk4bEV0aVJRVmlz?=
+ =?utf-8?B?UW5PUTQrMDJ2ZDZaQ2tmMTBEeHRVbGJJUlhsZmxqVklHVE5xcHBwWm83VjE4?=
+ =?utf-8?B?Um1hZWdKSFpJa04wYWdLQTVRT2NSVVZXaDhiK3FJR3c3K0ZoQVk0OTMxcjFj?=
+ =?utf-8?B?dTVQVi8wcUJCekRMamM2RjRSSlVia1FnMDVQcjQzNU9HbGFESnNLQ0JmV3ZB?=
+ =?utf-8?B?WXl1TjcwMDBYWjhyYkQ2Qyt6c21lYklmTnIwQ0Q3eE1USzkrbHFGSWlhZmQy?=
+ =?utf-8?B?alB5NG1YVlQwQXU0bTdjdmo2anJTSUc3YWNkdVRaVmxHMDZESW91NUNiRzJ1?=
+ =?utf-8?B?bE5HTkdIc0I2dHVyYi81Um5aQ0YvUllIaE1SaElrL0xlamE5aEdoMXpRSEJK?=
+ =?utf-8?B?ZHVEUDNmRXJFTGJTVHZ1T0RUdWNCQ050WTlha1NLblR5TXphSWtESGkyYnha?=
+ =?utf-8?B?OGt6cXF1cVhQckQ4dGM2cTZBUTA1eWRYdk53cS9QVGI2SGliZ2R3NnMwSXA1?=
+ =?utf-8?B?dHZRS0NiV1N3WXUxWFRZZTBMWlhzdU5vMUxaNDlxWG8ySm9ycGV0KzV1SzY5?=
+ =?utf-8?B?OVd2M0JhcTJ0cjdtU0ZsQm1DazllZkx6MFNSS205TG9uY09jYkZ4RGF0eXc3?=
+ =?utf-8?B?M1V0K2orM1pHaGtKUTZSSUlyNWJ0UzlKc2lIaWc3aUFlcVAxS29ycmpSL1Yv?=
+ =?utf-8?B?c2IxYVZWN1lDcURKclNLNzJQUm1xUnFzd1kwQjZyR0F2Lzg1TWNMYUpZdzhp?=
+ =?utf-8?B?ZnRnc1hQN00wK1hEWmhKakc2L0N2Q0JHZUFXaURrVEdNSUtsZ3Q1d0ZER3o2?=
+ =?utf-8?B?My9LRVIvN3pzaG1NbVpXVUxkUjNXSDZpUmdqaWJFaUt3ckp0ZGl3VWpBT1hL?=
+ =?utf-8?B?YzJrZTJHZW45bHZlWDdXZk5OOVNRaTNZNnRham1YZXZVVDFTNHFYOUZIMmFi?=
+ =?utf-8?B?UzRicjRLN3BqYTZJT0dEOU84Y0VpYWR4MFdiMnRmcU5NcVFSTXMvT01HeDdS?=
+ =?utf-8?B?eFQrNG1UckVOVWgwMHU1bWFSNTd1WFpJbGN5OFNodlRqaFZ4dkxLdmVCUDc3?=
+ =?utf-8?B?Tk8rZW93cWpNbmRhUmMvbzFXRTVIcG9zTW51SHJiYm9WanFsQVBPcTdhU0Rh?=
+ =?utf-8?B?MndoMlp4VGhXS1VsbzhqS2ovWWE3NDl5T0UrQlZnUk1xY1BpNWdDcG5KUTVN?=
+ =?utf-8?B?M24rUXY1MFVyand2RnV5KzhsTUI0MnI3RG03aXNPMXNDcGJDWXUwMmtuYy9k?=
+ =?utf-8?B?TXBRVktSaWFMb0lGN0FEVEpxMXNLRXJIVFFNQjVpSkNlOWNEYmFndFFWSGdD?=
+ =?utf-8?B?UWh2N1Zya0cwOU5sdGtZYWptY3djandiRHNscmRFUFdsYzVUNlo0T1BCSDRJ?=
+ =?utf-8?B?eTNJdWJhNnVkS2lxRWU5NmRnSjNlOEYzaEZtV0NhOVI2NElkOG5FUHoyMnVj?=
+ =?utf-8?B?YmF1a1ZWOXpyeVhpUVJjNy9MbDJWVmpVSHZ2ejVmeXcwcGkra2JCQTRyOCs2?=
+ =?utf-8?B?TGs0SitaZXhjWDd1NlcyVHdpaDMxTmFsVWQ1di9JS2xHYU1Id0xMYXNjY1NG?=
+ =?utf-8?B?SEQxb0F4UEpXNnBub2gxNW5HNSsrT1NxMDlCK2YzcGFxaHphZ1RVQitTWTAx?=
+ =?utf-8?B?aWU0SWVUWHVCa3FyZUs1ZFA4Uk5nMkF1Q1B6QlJXdGQxNlFNQ05xT0twTENE?=
+ =?utf-8?Q?Qft4bqz8xN+WUaeWejiiBPTgCLu6Ty46ffCvmruhsWx/?=
+X-OriginatorOrg: suse.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: d4bf1651-8c56-4e22-7850-08daf8622119
+X-MS-Exchange-CrossTenant-AuthSource: VI1PR04MB7104.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 17 Jan 2023 08:09:17.4803
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: f7a17af6-1c5c-4a36-aa8b-f5be247aa4ba
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: 0Ib1ji+oLICQ03AnZU1cSSpy5ufD4KoMAnb6C4GKC65o+U5aVLEpN5rtjrDnvjG1zP0i9V5qyNNzHUl43dyDUg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM9PR04MB8116
+X-Original-Sender: oneukum@suse.com
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@gmail.com header.s=20210112 header.b=KITCxg0G;       spf=pass
- (google.com: domain of qkrwngud825@gmail.com designates 209.85.220.41 as
- permitted sender) smtp.mailfrom=qkrwngud825@gmail.com;       dmarc=pass
- (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+ header.i=@suse.com header.s=selector1 header.b="ulr/OBmc";       arc=pass
+ (i=1 spf=pass spfdomain=suse.com dkim=pass dkdomain=suse.com dmarc=pass
+ fromdomain=suse.com);       spf=pass (google.com: domain of oneukum@suse.com
+ designates 40.107.21.43 as permitted sender) smtp.mailfrom=ONeukum@suse.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=suse.com
+X-Original-From: Oliver Neukum <oneukum@suse.com>
+Reply-To: Oliver Neukum <oneukum@suse.com>
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -135,472 +222,26 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-Posted a new patch:
-https://lore.kernel.org/all/20230117061046.114145-1-qkrwngud825@gmail.com/T=
-/#u
 
-This issue has been stalled for way too long. If string-based
-comparisons are too ugly, we can improve it later when Hongling is
-more active towards this issue.
 
-ps) More Linux users on RTL9210 here:
-https://github.com/raspberrypi/linux/issues/4130#issuecomment-1320988449
+On 17.01.23 07:16, Juhyung Park wrote:
+> Posted a new patch:
+> https://lore.kernel.org/all/20230117061046.114145-1-qkrwngud825@gmail.com/T/#u
+> 
+> This issue has been stalled for way too long. If string-based
+> comparisons are too ugly, we can improve it later when Hongling is
+> more active towards this issue.
 
-On Tue, Jan 10, 2023 at 2:37 PM Juhyung Park <qkrwngud825@gmail.com> wrote:
->
-> And please leave all the mail addresses, especially the mailing list
-> addresses intact.
->
-> It makes it really hard to track this down later in the public domain.
->
-> On Tue, Jan 10, 2023 at 2:34 PM Juhyung Park <qkrwngud825@gmail.com> wrot=
-e:
-> >
-> > Thanks for the log, we're getting somewhere.
-> >
-> > Thankfully, it seems to report "HIKSEMI" as the manufacturer and "MD202=
-" as the product name.
-> >
-> > Please post `sudo lsusb -v` for the product as well, and please determi=
-ne whether UAS works on Windows by checking TRIM functionality.
-> > I assume you're using an SSD with that enclosure.
-> > Check this for how: https://www.anandtech.com/show/13953/plugable-usbcn=
-vme-toolless-nvme-ssd-enclosure-capsule-review
-> >
-> > > the firmware of rtl9210 is contantly updating and fixing problem
-> >
-> > IMHO, this is just them maintaining the product well. USB to SATA/NVMe =
-enclosures are notorious for having firmware problems unfixed for the entir=
-e lifespan of the device.
-> >
-> > > but continuous high speed read/write can cause kernel panic
-> >
-> > This leads me to believe that the device itself having problems with so=
-me power management (weak regulator, etc).
-> >
-> > I have multiple RTL9210 drives, some connected to a server running 24/7=
- and not one has ever given me a problem, unlike some ASMedia or JMicron pr=
-oducts I've tried.
-> >
-> > On Tue, Jan 10, 2023 at 2:26 PM =E6=9B=BE=E7=BA=A2=E7=8E=B2 <zenghongli=
-ng@kylinos.cn> wrote:
-> >>
-> >> Hi:
-> >>
-> >>    The screenshot information and error log.
-> >>
-> >>    I don't think this version of firmware is stable,normal loading of =
-uas driver is fine,but continuous high speed read/write
-> >>
-> >> can cause kernel panic,I have researched a lot about rtl9210, this is =
-no relevant better support for uas driver, the firmware
-> >>
-> >> of rtl9210 is contantly updating and fixing problem,self-updating firm=
-ware is not an effective management method,I suggest you fixed
-> >>
-> >> with regenerate PID/VID like other product.
-> >>
-> >>
-> >>
-> >>
-> >>
-> >> [   39.510571] usb 2-2: new SuperSpeed USB device number 2 using xhci_=
-hcd
-> >> [   39.546117] usb 2-2: New USB device found, idVendor=3D0bda, idProdu=
-ct=3D9210
-> >> [   39.553989] usb 2-2: New USB device strings: Mfr=3D1, Product=3D2, =
-SerialNumber=3D3
-> >> [   39.562354] usb 2-2: Product: MD202
-> >> [   39.566641] usb 2-2: Manufacturer: HIKSEMI
-> >> [   39.571606] usb 2-2: SerialNumber: 012345680663
-> >> [   39.609717] calling  usb_storage_driver_init+0x0/0x1000 [usb_storag=
-e] @ 2635
-> >> [   39.618026] usbcore: registered new interface driver usb-storage
-> >> [   39.625132] initcall usb_storage_driver_init+0x0/0x1000 [usb_storag=
-e] returned 0 after 6981 usecs
-> >> [   39.636463] calling  uas_driver_init+0x0/0x1000 [uas] @ 2635
-> >> [   39.674761] scsi host8: uas
-> >> [   39.678333] usbcore: registered new interface driver uas
-> >> [   39.681043] scsi 8:0:0:0: Direct-Access     HIKSEMI  MD202         =
-   1.00 PQ: 0 ANSI: 6
-> >> [   39.686646] sd 8:0:0:0: Attached scsi generic sg1 type 0
-> >> [   39.689021] sd 8:0:0:0: [sda] 250069680 512-byte logical blocks: (1=
-28 GB/119 GiB)
-> >> [   39.698524] sd 8:0:0:0: [sda] Write Protect is off
-> >> [   39.698526] sd 8:0:0:0: [sda] Mode Sense: 37 00 00 08
-> >> [   39.701341] sd 8:0:0:0: [sda] Write cache: enabled, read cache: ena=
-bled, doesn't support DPO or FUA
-> >> [   39.702439] xhci_hcd 0000:0c:00.3: ERROR Transfer event for disable=
-d endpoint or incorrect stream ring
-> >> [   39.702442] xhci_hcd 0000:0c:00.3: @000000026c61f810 00000000 00000=
-000 1b000000 05038000
-> >> [   39.720357]  sda: sda1
-> >> [   39.737829] sd 8:0:0:0: [sda] Attached SCSI disk
-> >> [   39.760140] initcall uas_driver_init+0x0/0x1000 [uas] returned 0 af=
-ter 114228 usecs
-> >> [   39.923773] EXT4-fs (sda1): mounted filesystem with ordered data mo=
-de. Opts: (null)
-> >> [  587.113528] sd 8:0:0:0: [sda] tag#27 uas_eh_abort_handler 0 uas-tag=
- 28 inflight: CMD OUT
-> >> [  587.123050] sd 8:0:0:0: [sda] tag#27 CDB: Write(10) 2a 00 03 6f b0 =
-00 00 04 00 00
-> >> [  587.131819] xhci_hcd 0000:0c:00.3: ERROR Transfer event for disable=
-d endpoint or incorrect stream ring
-> >> [  587.142599] xhci_hcd 0000:0c:00.3: @000000026c61f1a0 00000000 00000=
-000 1b000000 05048000
-> >> [  587.152037] sd 8:0:0:0: [sda] tag#26 uas_eh_abort_handler 0 uas-tag=
- 27 inflight: CMD OUT
-> >> [  587.161557] sd 8:0:0:0: [sda] tag#26 CDB: Write(10) 2a 00 03 6f ac =
-00 00 04 00 00
-> >> [  587.170317] xhci_hcd 0000:0c:00.3: ERROR Transfer event for disable=
-d endpoint or incorrect stream ring
-> >> [  587.181095] xhci_hcd 0000:0c:00.3: @000000026c61f1c0 00000000 00000=
-000 1b000000 05048000
-> >> [  587.190530] sd 8:0:0:0: [sda] tag#25 uas_eh_abort_handler 0 uas-tag=
- 26 inflight: CMD OUT
-> >> [  587.200046] sd 8:0:0:0: [sda] tag#25 CDB: Write(10) 2a 00 03 6f a8 =
-00 00 04 00 00
-> >> [  587.208804] xhci_hcd 0000:0c:00.3: ERROR Transfer event for disable=
-d endpoint or incorrect stream ring
-> >> [  587.219574] xhci_hcd 0000:0c:00.3: @000000026c61f1e0 00000000 00000=
-000 1b000000 05048000
-> >> [  587.229006] sd 8:0:0:0: [sda] tag#24 uas_eh_abort_handler 0 uas-tag=
- 25 inflight: CMD OUT
-> >> [  587.238523] sd 8:0:0:0: [sda] tag#24 CDB: Write(10) 2a 00 03 6f a4 =
-00 00 04 00 00
-> >> [  587.247270] xhci_hcd 0000:0c:00.3: ERROR Transfer event for disable=
-d endpoint or incorrect stream ring
-> >> [  587.258047] xhci_hcd 0000:0c:00.3: @000000026c61f200 00000000 00000=
-000 1b000000 05048000
-> >> [  587.267471] sd 8:0:0:0: [sda] tag#23 uas_eh_abort_handler 0 uas-tag=
- 24 inflight: CMD OUT
-> >> [  587.276988] sd 8:0:0:0: [sda] tag#23 CDB: Write(10) 2a 00 03 6f a0 =
-00 00 04 00 00
-> >> [  587.285745] xhci_hcd 0000:0c:00.3: ERROR Transfer event for disable=
-d endpoint or incorrect stream ring
-> >> [  587.296522] xhci_hcd 0000:0c:00.3: @000000026c61f220 00000000 00000=
-000 1b000000 05048000
-> >> [  587.305955] sd 8:0:0:0: [sda] tag#22 uas_eh_abort_handler 0 uas-tag=
- 23 inflight: CMD OUT
-> >> [  587.315473] sd 8:0:0:0: [sda] tag#22 CDB: Write(10) 2a 00 03 6f 9c =
-00 00 04 00 00
-> >> ...........................
-> >>
-> >>   592.553969] sd 8:0:0:0: [sda] tag#1 uas_eh_abort_handler 0 uas-tag 2=
- inflight: CMD
-> >> [  592.553971] sd 8:0:0:0: [sda] tag#1 CDB: Write(10) 2a 00 03 6f 48 0=
-0 00 04 00 00
-> >> [  592.553983] scsi host8: uas_eh_bus_reset_handler start
-> >> [  592.553987] usb 2-2: cmd cmplt err -2
-> >> [  592.852532] xhci_hcd 0000:0c:00.3: HC died; cleaning up
-> >> [  592.858832] usb 1-1: USB disconnect, device number 2
-> >> [  592.864765] usb 1-1.3: USB disconnect, device number 4
-> >> [  592.870979] usb 2-2: USB disconnect, device number 0
-> >> [  592.973600] usb 1-3: USB disconnect, device number 3
-> >> [  593.021342] usb 1-4: USB disconnect, device number 5
-> >> [  593.073210] usb 2-2: device not accepting address 2, error -22
-> >> [  720.510582] INFO: task kworker/1:2:154 blocked for more than 120 se=
-conds.
-> >> [  720.518551]       Tainted: G         C  E   4.4.131-20210120.kylin.=
-x86-generic #kylin-KylinOS
-> >> [  720.528466] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disa=
-bles this message.
-> >> [  720.537601] kworker/1:2     D ffff88026c143c38     0   154      2 0=
-x00000000
-> >> [  720.545894] Workqueue: usb_hub_wq hub_event
-> >> [  720.550971]  ffff88026c143c38 0000000000016300 ffff8802755bb900 fff=
-f88026cb80000
-> >> [  720.559673]  ffff88026c144000 ffff88026ca88100 0000000000000000 fff=
-f88026cb80000
-> >> [  720.568374]  ffff88026cb80000 ffff88026c143c50 ffffffff8186ae25 fff=
-f88026ca880f8
-> >> [  720.577076] Call Trace:
-> >> [  720.580201]  [<ffffffff8186ae25>] schedule+0x35/0x80
-> >> [  720.586137]  [<ffffffff8186b0ce>] schedule_preempt_disabled+0xe/0x1=
-0
-> >> [  720.593623]  [<ffffffff8186cb94>] __mutex_lock_slowpath+0x164/0x1e0
-> >> [  720.601012]  [<ffffffff8186cc3f>] mutex_lock+0x2f/0x40
-> >> [  720.607141]  [<ffffffff8162b8e9>] usb_disconnect+0x59/0x290
-> >> [  720.613757]  [<ffffffff8162bb68>] hub_quiesce+0x48/0xa0
-> >> [  720.619983]  [<ffffffff8162e06e>] hub_event+0x16e/0xb10
-> >> [  720.626209]  [<ffffffff810af0f9>] ? ttwu_do_wakeup+0x19/0xf0
-> >> [  720.632921]  [<ffffffff810af26d>] ? ttwu_do_activate.constprop.91+0=
-x5d/0x70
-> >> [  720.641086]  [<ffffffff810afd19>] ? try_to_wake_up+0x49/0x400
-> >> [  720.647896]  [<ffffffff810f2445>] ? lock_timer_base+0x55/0x70
-> >> [  720.654704]  [<ffffffff8109d70b>] process_one_work+0x16b/0x4b0
-> >> [  720.661609]  [<ffffffff8109da9b>] worker_thread+0x4b/0x4d0
-> >> [  720.668124]  [<ffffffff8109da50>] ? process_one_work+0x4b0/0x4b0
-> >> [  720.675224]  [<ffffffff810a3ee7>] kthread+0xe7/0x100
-> >> [  720.681162]  [<ffffffff810a3e00>] ? kthread_create_on_node+0x1e0/0x=
-1e0
-> >> [  720.688845]  [<ffffffff818700b5>] ret_from_fork+0x55/0x80
-> >> [  720.695263]  [<ffffffff810a3e00>] ? kthread_create_on_node+0x1e0/0x=
-1e0
-> >> [  720.702947] INFO: task kworker/u32:6:254 blocked for more than 120 =
-seconds.
-> >> [  720.711112]       Tainted: G         C  E   4.4.131-20210120.kylin.=
-x86-generic #kylin-KylinOS
-> >> [  720.721021] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disa=
-bles this message.
-> >> [  720.730153] kworker/u32:6   D ffff88026bb475e8     0   254      2 0=
-x00000000
-> >> [  720.738438] Workqueue: writeback wb_workfn (flush-8:0)
-> >> [  720.744593]  ffff88026bb475e8 0000000000000200 ffff88026ab81c80 fff=
-f880275318000
-> >> [  720.753297]  ffff88026bb48000 ffff88027ec56300 7fffffffffffffff fff=
-f8801c0b48060
-> >> [  720.762001]  ffff8801c0b48000 ffff88026bb47600 ffffffff8186ae25 000=
-0000000000000
-> >> [  720.770705] Call Trace:
-> >> [  720.773823]  [<ffffffff8186ae25>] schedule+0x35/0x80
-> >> [  720.779762]  [<ffffffff8186e446>] schedule_timeout+0x1b6/0x270
-> >> [  720.786670]  [<ffffffff810fc2ee>] ? ktime_get+0x3e/0xb0
-> >> [  720.792897]  [<ffffffff8186a594>] io_schedule_timeout+0xa4/0x110
-> >> [  720.799995]  [<ffffffff813c4971>] get_request+0x411/0x7a0
-> >>
-> >>   TKS!
-> >>
-> >>
-> >> ----
-> >>
-> >>
-> >>
-> >>
-> >>
-> >>
-> >> =E4=B8=BB=E3=80=80=E9=A2=98=EF=BC=9ARe: [PATCH] Revert "usb-storage: A=
-dd Hiksemi USB3-FW to IGNORE_UAS"
-> >> =E6=97=A5=E3=80=80=E6=9C=9F=EF=BC=9A2023-01-09 20:16
-> >> =E5=8F=91=E4=BB=B6=E4=BA=BA=EF=BC=9Aqkrwngud825
-> >> =E6=94=B6=E4=BB=B6=E4=BA=BA=EF=BC=9Aoneukum;
-> >>
-> >> Hi Oliver,
-> >>
-> >> On Mon, Jan 9, 2023 at 9:02 PM Oliver Neukum wrote:
-> >> >
-> >> >
-> >> >
-> >> > On 09.01.23 12:55, Juhyung Park wrote:
-> >> > > This reverts commit e00b488e813f0f1ad9f778e771b7cd2fe2877023.
-> >> > >
-> >> > > The commit e00b488e813f ("usb-storage: Add Hiksemi USB3-FW to IGNO=
-RE_UAS")
-> >> > > blacklists UAS for the entire RTL9210 enclosures. Realtek's Vendor=
-Id is 0x0bda
-> >> > > and RTL9210 enclosures reports 0x9210 for its ProductId.
-> >> > >
-> >> > > The RTL9210 controller was advertised with UAS since its release b=
-ack in 2019
-> >> > > and was shipped with a lot of enclosure products with different fi=
-rmware
-> >> > > combinations.
-> >> > >
-> >> > > If UAS blacklisting is really required said product (Hiksemi USB3-=
-FW), it
-> >> > > should be done without blacklisting the entire RTL9210 products.
-> >> >
-> >> > Hi,
-> >> >
-> >> > I see this the issue. Do you have an idea how to limit the scope.
-> >>
-> >> Unfortunately, no.
-> >>
-> >> This might be the ugly case where, if a proper workaround could be
-> >> found (if the original report is valid at all), it may change the code
-> >> logic itself with some if branch rather than just unusual_uas.h.
-> >>
-> >> With my RTL9210 enclosure, using multiple different firmware versions
-> >> still reports the same bcdDevice.
-> >>
-> >> Note that, despite Hongling reporting that Windows doesn't use UAS in
-> >> https://lore.kernel.org/all/fbeffee7-3ac5-4798-14b0-724e0ed01947@126.c=
-om/
-> >> , Windows uses it on mine and respectively trim works.
-> >>
-> >> >
-> >> > Hongling Zeng, do you have an idea, respectively if not, could
-> >> > you provide "lsusb -v" for the defective device?
-> >> >
-> >>
-> >> Hongling didn't respond to Greg when he asked the same question back
-> >> in November: https://lore.kernel.org/all/Y29RtXGcey6V9iTY@kroah.com/
-> >>
-> >> Anyways, here's my lsusb -v output. Hope it helps:
-> >> Bus 004 Device 002: ID 0bda:9210 Realtek Semiconductor Corp. RTL9210
-> >> M.2 NVME Adapter
-> >> Device Descriptor:
-> >> bLength 18
-> >> bDescriptorType 1
-> >> bcdUSB 3.20
-> >> bDeviceClass 0
-> >> bDeviceSubClass 0
-> >> bDeviceProtocol 0
-> >> bMaxPacketSize0 9
-> >> idVendor 0x0bda Realtek Semiconductor Corp.
-> >> idProduct 0x9210 RTL9210 M.2 NVME Adapter
-> >> bcdDevice 20.01
-> >> iManufacturer 1 Realtek
-> >> iProduct 2 RTL9210
-> >> iSerial 3 012345678906
-> >> bNumConfigurations 1
-> >> Configuration Descriptor:
-> >> bLength 9
-> >> bDescriptorType 2
-> >> wTotalLength 0x0079
-> >> bNumInterfaces 1
-> >> bConfigurationValue 1
-> >> iConfiguration 0
-> >> bmAttributes 0x80
-> >> (Bus Powered)
-> >> MaxPower 896mA
-> >> Interface Descriptor:
-> >> bLength 9
-> >> bDescriptorType 4
-> >> bInterfaceNumber 0
-> >> bAlternateSetting 0
-> >> bNumEndpoints 2
-> >> bInterfaceClass 8 Mass Storage
-> >> bInterfaceSubClass 6 SCSI
-> >> bInterfaceProtocol 80 Bulk-Only
-> >> iInterface 0
-> >> Endpoint Descriptor:
-> >> bLength 7
-> >> bDescriptorType 5
-> >> bEndpointAddress 0x81 EP 1 IN
-> >> bmAttributes 2
-> >> Transfer Type Bulk
-> >> Synch Type None
-> >> Usage Type Data
-> >> wMaxPacketSize 0x0400 1x 1024 bytes
-> >> bInterval 0
-> >> bMaxBurst 15
-> >> Endpoint Descriptor:
-> >> bLength 7
-> >> bDescriptorType 5
-> >> bEndpointAddress 0x02 EP 2 OUT
-> >> bmAttributes 2
-> >> Transfer Type Bulk
-> >> Synch Type None
-> >> Usage Type Data
-> >> wMaxPacketSize 0x0400 1x 1024 bytes
-> >> bInterval 0
-> >> bMaxBurst 15
-> >> Interface Descriptor:
-> >> bLength 9
-> >> bDescriptorType 4
-> >> bInterfaceNumber 0
-> >> bAlternateSetting 1
-> >> bNumEndpoints 4
-> >> bInterfaceClass 8 Mass Storage
-> >> bInterfaceSubClass 6 SCSI
-> >> bInterfaceProtocol 98
-> >> iInterface 0
-> >> Endpoint Descriptor:
-> >> bLength 7
-> >> bDescriptorType 5
-> >> bEndpointAddress 0x81 EP 1 IN
-> >> bmAttributes 2
-> >> Transfer Type Bulk
-> >> Synch Type None
-> >> Usage Type Data
-> >> wMaxPacketSize 0x0400 1x 1024 bytes
-> >> bInterval 0
-> >> bMaxBurst 15
-> >> MaxStreams 32
-> >> Data-in pipe (0x03)
-> >> Endpoint Descriptor:
-> >> bLength 7
-> >> bDescriptorType 5
-> >> bEndpointAddress 0x02 EP 2 OUT
-> >> bmAttributes 2
-> >> Transfer Type Bulk
-> >> Synch Type None
-> >> Usage Type Data
-> >> wMaxPacketSize 0x0400 1x 1024 bytes
-> >> bInterval 0
-> >> bMaxBurst 15
-> >> MaxStreams 32
-> >> Data-out pipe (0x04)
-> >> Endpoint Descriptor:
-> >> bLength 7
-> >> bDescriptorType 5
-> >> bEndpointAddress 0x83 EP 3 IN
-> >> bmAttributes 2
-> >> Transfer Type Bulk
-> >> Synch Type None
-> >> Usage Type Data
-> >> wMaxPacketSize 0x0400 1x 1024 bytes
-> >> bInterval 0
-> >> bMaxBurst 15
-> >> MaxStreams 32
-> >> Status pipe (0x02)
-> >> Endpoint Descriptor:
-> >> bLength 7
-> >> bDescriptorType 5
-> >> bEndpointAddress 0x04 EP 4 OUT
-> >> bmAttributes 2
-> >> Transfer Type Bulk
-> >> Synch Type None
-> >> Usage Type Data
-> >> wMaxPacketSize 0x0400 1x 1024 bytes
-> >> bInterval 0
-> >> bMaxBurst 0
-> >> Command pipe (0x01)
-> >> Binary Object Store Descriptor:
-> >> bLength 5
-> >> bDescriptorType 15
-> >> wTotalLength 0x003e
-> >> bNumDeviceCaps 4
-> >> USB 2.0 Extension Device Capability:
-> >> bLength 7
-> >> bDescriptorType 16
-> >> bDevCapabilityType 2
-> >> bmAttributes 0x00000006
-> >> BESL Link Power Management (LPM) Supported
-> >> SuperSpeed USB Device Capability:
-> >> bLength 10
-> >> bDescriptorType 16
-> >> bDevCapabilityType 3
-> >> bmAttributes 0x00
-> >> wSpeedsSupported 0x000e
-> >> Device can operate at Full Speed (12Mbps)
-> >> Device can operate at High Speed (480Mbps)
-> >> Device can operate at SuperSpeed (5Gbps)
-> >> bFunctionalitySupport 1
-> >> Lowest fully-functional device speed is Full Speed (12Mbps)
-> >> bU1DevExitLat 10 micro seconds
-> >> bU2DevExitLat 2047 micro seconds
-> >> SuperSpeedPlus USB Device Capability:
-> >> bLength 20
-> >> bDescriptorType 16
-> >> bDevCapabilityType 10
-> >> bmAttributes 0x00000001
-> >> Sublink Speed Attribute count 1
-> >> Sublink Speed ID count 0
-> >> wFunctionalitySupport 0x1100
-> >> bmSublinkSpeedAttr[0] 0x000a4030
-> >> Speed Attribute ID: 0 10Gb/s Symmetric RX SuperSpeedPlus
-> >> bmSublinkSpeedAttr[1] 0x000a40b0
-> >> Speed Attribute ID: 0 10Gb/s Symmetric TX SuperSpeedPlus
-> >> Container ID Device Capability:
-> >> bLength 20
-> >> bDescriptorType 16
-> >> bDevCapabilityType 4
-> >> bReserved 0
-> >> ContainerID {03020100-0504-0706-0002-020200020202}
-> >> Device Status: 0x0000
-> >> (Bus Powered)
-> >>
-> >>
-> >> > Regards
-> >> > Oliver
+Hi,
 
---=20
-You received this message because you are subscribed to the Google Groups "=
-USB Mass Storage on Linux" group.
-To unsubscribe from this group and stop receiving emails from it, send an e=
-mail to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.=
-one-eyed-alien.net/d/msgid/usb-storage/CAD14%2Bf3De%2B0oPaq0hOo0D%2BsiTvZDN=
-nBXg7Qg6fKNDh63zVh8Lg%40mail.gmail.com.
+very well, you really see no other solution?
+If so, could you please enhance the commit log to literally state
+that there is no other way to tell them apart? And then resubmit?
+
+	Regards
+		Oliver
+
+-- 
+You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
+To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/111d7b42-5e85-58f5-0645-66749e754673%40suse.com.
