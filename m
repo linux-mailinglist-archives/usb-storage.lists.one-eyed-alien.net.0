@@ -1,153 +1,131 @@
-Return-Path: <usb-storage+bncBAABBE7Q6WPAMGQEWMPUEKY@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBCF5XGNWYQBRBBOL7KPAMGQEYZVK36I@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-qk1-x748.google.com (mail-qk1-x748.google.com [IPv6:2607:f8b0:4864:20::748])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8128568A447
-	for <lists+usb-storage@lfdr.de>; Fri,  3 Feb 2023 22:09:40 +0100 (CET)
-Received: by mail-qk1-x748.google.com with SMTP id v7-20020a05620a0f0700b006faffce43b2sf4008423qkl.9
-        for <lists+usb-storage@lfdr.de>; Fri, 03 Feb 2023 13:09:40 -0800 (PST)
-ARC-Seal: i=2; a=rsa-sha256; t=1675458579; cv=pass;
+Received: from mail-pf1-x446.google.com (mail-pf1-x446.google.com [IPv6:2607:f8b0:4864:20::446])
+	by mail.lfdr.de (Postfix) with ESMTPS id 6838468ABDD
+	for <lists+usb-storage@lfdr.de>; Sat,  4 Feb 2023 19:35:51 +0100 (CET)
+Received: by mail-pf1-x446.google.com with SMTP id z7-20020aa79587000000b00593f19705d5sf4309695pfj.10
+        for <lists+usb-storage@lfdr.de>; Sat, 04 Feb 2023 10:35:51 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1675535750; cv=pass;
         d=google.com; s=arc-20160816;
-        b=ykpV2Wxqmb15jyu/ueBNDq3auSi3RIalWcDsblhAUWXlH1KPWFOpa4guqAOk7yFosm
-         mVSPqf8waUfF5ulQmjD0bEtto3RjXgHGFQYn88j58XWX/ng5oM0ez+UScMfLN7EuTYoE
-         OCUfO7IfXy3X17DRkEkYBe2nqZ0rzErTOVN8TzCZ3YXyDXC5Fk/jhHfodDOg6iG/R5f/
-         Y8bDWrqIPCNSf6jZPlXC03htKSJOE/PQ348YYu+RPSCk2yV1V/ad8ljrl4lf1wgqvVQx
-         d6LwHWeoRruR+EUqKGfrGX+W/xQCNDvBCSzuItgTzNOOwFxBbvKNKoWch/XVVAvh33sv
-         SSdA==
+        b=R8YELZomCAbk1gd4VIrXk6oV/CjdhRzBeZH4iInVSxHF1dQqM36ItgyMDPWH1HLLvd
+         UVDSbQR5HZb5A7QmVQaGjYEUk1QKzqFVBYfFqOqbtgh3+SQLK7gzdk/1Zs9kL+5bjX7S
+         ADGxJg2fh7ymsIeW7XjeGTIxEVNBG4vGGcBe5MBuormG2i8c5xs2XRLQTJBM+HXQZSZq
+         FPjU7fqNxN6q75kJO9vFK2/qXYQ1YHkJXjcAxs3jReU9sKIYofrv2lI1B2x3BEp1L0T+
+         Tlc7o23ZAJYK0kmODe8MndqDQftahs2Y2toH8yR+4sTn/OCuELRqRTRGvMtpiWe53RGc
+         u9Rg==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:mime-version:message-id:date
          :subject:cc:to:from:sender:dkim-signature;
-        bh=0Bq5qhMM9fLJI8ygzz10VKU+38eU/NBuFHDgosIU36U=;
-        b=0B5bwvtw01jjoz90A7PVu3b/9leFWEzcskSJcl8my3rgaL5jC1iNn/VOSg5HUgmdHv
-         1AgSu+kAwiEiwGSHgqKxBHgHBG7Xg613WlRonJc3BxDL1Uyq0b7TF/2DifihcQXtg6Nf
-         T0x9RxLWKCVh7LYyjojWFBNkO2FL4mi/kKXC8200tiMerjQoHXzE7On9pJ+Dj+V5RBsJ
-         s7zExMhbaNei7DBD6whZ0GZrTlmkvvFSvXrPfb8enRzHAeEtGu2uX7ZXsTlcbMGXB26a
-         MXIbL5+VDmTwHZXo8yEQz0VXBykAXDN5hVJ49DRdT70KjfG2lWiIwbvJLv9zN/5g6nwS
-         zk9g==
+        bh=2brhFe0Lah0LQ8RBGGgT2xu9JnsZKFW8IEVips6PCGk=;
+        b=NC4VE5qTR5PoeMUDhT6V73gwe4kDIJTXKZi7Pl92mOsFQaeLBUp+y6CrmfN65lDeYH
+         rWQJ6u32Q2EY8+BfpOtENk+EacZXJavaEMEbTvxRbz296WKBI/Ri2n3S2CBczFjaTKC/
+         ros/9RXN2f3rORcSs2BrlWU7KFYNyQN9Tuok9PGzaT49MFsOAvlfYSTOnko482e1P1L0
+         yYcGp9RqU+L7HLXAfhhlJXYH3vYuMaDSsTsaCu0kz+9qqo4BZgRnkcCWt/OqbhJqu2Rg
+         kWf7HFG/Tz8R2+lO/tf1ITKaK1yH5Xnk9/SQU8jCWar1lZDjGMO1UzXyK6+I62eyY/Kl
+         KZvA==
 ARC-Authentication-Results: i=2; mx.google.com;
-       spf=pass (google.com: domain of k.yankevich@omp.ru designates 90.154.21.10 as permitted sender) smtp.mailfrom=k.yankevich@omp.ru
+       dkim=pass header.i=@chromium.org header.s=google header.b=YGU2UvvQ;
+       spf=pass (google.com: domain of keescook@chromium.org designates 209.85.220.41 as permitted sender) smtp.mailfrom=keescook@chromium.org;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=chromium.org
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:x-original-authentication-results
          :x-original-sender:mime-version:message-id:date:subject:cc:to:from
          :sender:from:to:cc:subject:date:message-id:reply-to;
-        bh=0Bq5qhMM9fLJI8ygzz10VKU+38eU/NBuFHDgosIU36U=;
-        b=YQflUiWjt8wSKC0M8fmlxE3MjwuEfzBOtHDNRvKxfruTLl+We/Nc8CHF89NN0cQvMF
-         IKg57nlVgXUYeKUTGH6eWWKRDGyGegVzkCvuLjuAdMN/Us4OZcp+ytord2TXgpnhFWfZ
-         PSZ0Dzmh0B/+KQZQpHxaFJwu1CxOysdOBWh5M=
+        bh=2brhFe0Lah0LQ8RBGGgT2xu9JnsZKFW8IEVips6PCGk=;
+        b=RnL2OdCfUuX/6O7tnI6HbtSCYr1Gt+lSFRqyImEi+JvYdcTRsnQPyOSqoGzF7xYZuZ
+         N8JBnzEIn1cJD8pnoGXWZg8eafCB7sQeobY3c2kEFo3UDHBKKGkTZ2A/KPpO+4CXn7SE
+         WIr6Izif3jtdufmFSq5HtCyLFs/0DSomkDAJU=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:x-original-authentication-results
-         :x-original-sender:mime-version:message-id:date:subject:cc:to:from
-         :x-gm-message-state:sender:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=0Bq5qhMM9fLJI8ygzz10VKU+38eU/NBuFHDgosIU36U=;
-        b=6atTaaSzEctsWqKCi7SWmOKSGr3c1p93LBo9UV6i24dHRlyxXJiLVThmhz0bt9utEJ
-         8/aMIR8eMdNVzu6XvwxHEp+7p4eIHe+glzMTueno3IbCKJf2JqnbQn/Kg/KjdNEXdQK/
-         ZYsLLKt3uG+bCHO8/a3w69q+Adi2jtGztwQ2LgckcpL6Tzj2/LIQgF2lizH7j77/2ohx
-         +9/SFe+ruYsMHGox8MroDhkjmY3uDB6OPTXsZB7nQNztDa/WujKt83Y5+E7HIH1oq8xp
-         TetvF6OAvdUBmcZpslJetuM1b/hYGr0QVK4Rm10XoGzxYsUEFBJBXNzIbgpWJf8K7lLN
-         fxvw==
+         :x-spam-checked-in-group:list-id:mailing-list:precedence
+         :x-original-authentication-results:x-original-sender:mime-version
+         :message-id:date:subject:cc:to:from:x-gm-message-state:sender:from
+         :to:cc:subject:date:message-id:reply-to;
+        bh=2brhFe0Lah0LQ8RBGGgT2xu9JnsZKFW8IEVips6PCGk=;
+        b=JHHpFJMGrZPtngGyQh/30dJgKnKeORoisXehqmXWjWR6+WfTDAr2JWs75kD2NWmHmO
+         s5X4Ct5hdQ6X1kZhEWJtTeXE1lCwyq7ACJSlKw8qJwdGis5xPvAf6TEOpW0eYGuIk4GB
+         zlMHqrt/QRW8nkD8PDp7AHMahgzGoiCw7DBCOc3wNgEOvElgnIjRiSLoClyQ/wXwg6VC
+         kOlbSWk+qq3bNBNvXpNuFra8LjFU+uvRFMXv+tSfrUmbm6wyNsO6vyp2SRvxQR5XH6cG
+         k1ppdV0IS0AtYO+jTg5zl4cClmVMJER47y8x/6wdoo0QQpd5Cwgim1pIy2cNHUy+Cddl
+         16VA==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: AO0yUKXmkVhM3npNOmHGoBxOxtgnn9PT791P80CbRJlNXtxpyiCepIb9
-	BtmN3rPyH1eaZ0echDuAYSLxVw==
-X-Google-Smtp-Source: AK7set8QrlhZkfrjKeQA1G0LublvyttTwAxP26WsF9lof5qgKUp5tlHXqpnB/tyhK7p0fC01IacMDg==
-X-Received: by 2002:a0c:f706:0:b0:537:646c:857e with SMTP id w6-20020a0cf706000000b00537646c857emr682246qvn.76.1675458579418;
-        Fri, 03 Feb 2023 13:09:39 -0800 (PST)
+X-Gm-Message-State: AO0yUKWWxv5nzIPUVEhBa9SCxOprQFzPij68r0aFP4cTjRVkwbEdaDSL
+	rrA2AIzdhDm/LFiGh38sxkBNZg==
+X-Google-Smtp-Source: AK7set8RgYPOxv8NKjfFvaaa0li6aSaye902pr6ExiCw+lqMFkbmdGxNoCsUf4m/a98ioO4/ryTkTw==
+X-Received: by 2002:a62:2983:0:b0:593:9de3:47b7 with SMTP id p125-20020a622983000000b005939de347b7mr3417586pfp.35.1675535749713;
+        Sat, 04 Feb 2023 10:35:49 -0800 (PST)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a05:622a:a17:b0:3b1:7ae:61e4 with SMTP id
- bv23-20020a05622a0a1700b003b107ae61e4ls6506207qtb.0.-pod-prod-gmail; Fri, 03
- Feb 2023 13:09:39 -0800 (PST)
-X-Received: by 2002:a05:622a:1447:b0:3b9:bfac:8327 with SMTP id v7-20020a05622a144700b003b9bfac8327mr920785qtx.315.1675458578872;
-        Fri, 03 Feb 2023 13:09:38 -0800 (PST)
-Received: by 2002:a05:620a:2487:b0:71f:ff:11bb with SMTP id af79cd13be357-72e6fc75902ms85a;
-        Fri, 3 Feb 2023 12:19:42 -0800 (PST)
-X-Received: by 2002:a19:6759:0:b0:4d1:d8b8:84bc with SMTP id e25-20020a196759000000b004d1d8b884bcmr2942604lfj.10.1675455581835;
-        Fri, 03 Feb 2023 12:19:41 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1675455581; cv=none;
+Received: by 2002:a17:902:c3c5:b0:186:9fc5:6c01 with SMTP id
+ j5-20020a170902c3c500b001869fc56c01ls8514996plj.6.-pod-prod-gmail; Sat, 04
+ Feb 2023 10:35:48 -0800 (PST)
+X-Received: by 2002:a05:6a20:ca5c:b0:bc:e98a:8ae with SMTP id hg28-20020a056a20ca5c00b000bce98a08aemr12893340pzb.59.1675535748788;
+        Sat, 04 Feb 2023 10:35:48 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1675535748; cv=none;
         d=google.com; s=arc-20160816;
-        b=v1zTZeobeaYSsk/+aldaqdLNWvLyV4USuIV+bbCFMpC4rXd5/wGWY3960BwNdey1Vh
-         l7rMdmSQV1ZgdhcugdEcfQSOqTOgdHNDmzaCDBWhaG7l+GxoIWjP2Dypu2ePdEX1R2Vn
-         IaKwDyz5EkGyjhfOfEoQXRXJjJ3IXaKBsb1x6aqdu/xJRxccqLPxqXsWquGqCOGJEVIc
-         XM/C62mWoOkF852rjNG54qF1+rJ5goeggEtbyJZ/phW6Ww/CsgTMWZ+9WwyVkDgFp1PK
-         kzoTF9I/wzXsA364RU+Xs/QxceJtWZ5YE3S1e/F3eURBaA13vBhXAgHQEEunmQGSrmMp
-         JmjA==
+        b=NvgjM4x2cWWkXG3Xx6Hct545+Zc4eVXXlyjQkiPHYKlA3PuD8TxsNpuN00Xiw339QN
+         v49tooWYjz2Jag8S2pVQQRJmo3nozeTvVKDoIEHE5LN1Ptp3owC6R3TMEjJj1GlJEVUr
+         jUPWVCcF95s2NpdzIiMihx41wbl93KD8OXWEEYn4AzPdSZ3TQ55hahFrcGU5kMEtENKf
+         oIm2qcIJj9nbr2ySGpl1kAq7XhL/yyhglQ0+NUklHScqMOjvfVXp0olGwGjdzkI/lqe2
+         49rjCQPJle+rvIZ2kL/A+Op0YRCc9GjZcLBDbL9LmWz6JfShjZHkgykWOOIbzAE282SG
+         flqQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from;
-        bh=Mk29tEkqcVGz9+u+Je0PVYhStkNXkrdtT3Ov5XJv/vY=;
-        b=xpr5tERUcnptmj6bnUatl8tGoblgJJ3/GKfJCrJvv30PRBXcLjzdN0/P4hMBJYE/l3
-         easjeJ7X6oBQ5rEonIySxYQkcv+jbmIiHEjTFocyY+bernTgOvLrxklq5D7X1p1zMpMI
-         Y1QMD4J4VeKR+978gr/AkrJui6ntrA0Nmidsn0Gg2EJVw0f0c3srHGEQ8ni8jJBT/hHj
-         zEV51JYOQOk9iXDrn5nUCssc7dt7JNZ0nGRGJbb09fmsBPrmjl7f7dw2C9eyJPPj7IeM
-         8IXMjh/xmBpTZUEbAE64GEBPhUJhhuvv0iR/qbpioJxmnW/+ZRW/vf5abiWP23mHRYbs
-         ZFEA==
+         :to:from:dkim-signature;
+        bh=y4Iggp5kqvksO/U/bhTVuafQ0FnnRUqQxs3NZ2skqWs=;
+        b=siO95S/SbRpC8xmoTO601dm66ThfQhptXxuVEYrvJQgTPXNitO7zF6RG/w8kMiLEWu
+         70hRl3d30pw9c3Fr7u2C9a7wvYWX1lReBu6pl7aAoGH4+B6Af21jyHXGIByOjVblKPOG
+         byQ4c9ZRgqLSEguKDqJZ6zEnICQ3t3JCrS869204LCGUNYzpz1Zv7DBKWSdgMo88vpic
+         P/i2sF/iblMtlqJ7UX0ZbIWevQj4fI86AMmu0IMtbuSdDE0KEccMY7kMNmba/QSotLz0
+         aorno9DiYlUvrji30Y1YV/d/aQNTMZuZ3zMg0pMfJqSwy9tCvyN81gV1DO/g3o1zTM1Z
+         RNQw==
 ARC-Authentication-Results: i=1; mx.google.com;
-       spf=pass (google.com: domain of k.yankevich@omp.ru designates 90.154.21.10 as permitted sender) smtp.mailfrom=k.yankevich@omp.ru
-Received: from mx01.omp.ru (mx01.omp.ru. [90.154.21.10])
-        by mx.google.com with ESMTPS id u28-20020ac248bc000000b004a20e1ebb6asi1707016lfg.558.2023.02.03.12.19.41
+       dkim=pass header.i=@chromium.org header.s=google header.b=YGU2UvvQ;
+       spf=pass (google.com: domain of keescook@chromium.org designates 209.85.220.41 as permitted sender) smtp.mailfrom=keescook@chromium.org;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=chromium.org
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id y22-20020a17090264d600b00198dd382cd1sor2117882pli.46.2023.02.04.10.35.48
         for <usb-storage@lists.one-eyed-alien.net>
-        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Fri, 03 Feb 2023 12:19:41 -0800 (PST)
-Received-SPF: pass (google.com: domain of k.yankevich@omp.ru designates 90.154.21.10 as permitted sender) client-ip=90.154.21.10;
-Received: from uxi.kar (171.25.167.209) by msexch01.omp.ru (10.188.4.12) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.2.986.14; Fri, 3 Feb 2023
- 23:19:35 +0300
-From: Karina Yankevich <k.yankevich@omp.ru>
+        (Google Transport Security);
+        Sat, 04 Feb 2023 10:35:48 -0800 (PST)
+Received-SPF: pass (google.com: domain of keescook@chromium.org designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+X-Received: by 2002:a17:903:30d4:b0:198:eaac:4643 with SMTP id s20-20020a17090330d400b00198eaac4643mr3371011plc.4.1675535748368;
+        Sat, 04 Feb 2023 10:35:48 -0800 (PST)
+Received: from www.outflux.net (198-0-35-241-static.hfc.comcastbusiness.net. [198.0.35.241])
+        by smtp.gmail.com with ESMTPSA id x14-20020a170902a38e00b001947ba0ac8fsm1258800pla.236.2023.02.04.10.35.47
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 04 Feb 2023 10:35:48 -0800 (PST)
+From: Kees Cook <keescook@chromium.org>
 To: Alan Stern <stern@rowland.harvard.edu>
-CC: Karina Yankevich <k.yankevich@omp.ru>, Greg Kroah-Hartman
-	<gregkh@linuxfoundation.org>, <linux-usb@vger.kernel.org>,
-	<usb-storage@lists.one-eyed-alien.net>, <linux-kernel@vger.kernel.org>,
-	<lvc-project@linuxtesting.org>
-Subject: [usb-storage] [PATCH] usb: storage: sddr55: avoid integer overflow
-Date: Fri, 3 Feb 2023 23:18:21 +0300
-Message-ID: <20230203201821.483477-1-k.yankevich@omp.ru>
-X-Mailer: git-send-email 2.39.1
+Cc: Kees Cook <keescook@chromium.org>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	linux-usb@vger.kernel.org,
+	usb-storage@lists.one-eyed-alien.net,
+	linux-kernel@vger.kernel.org,
+	linux-hardening@vger.kernel.org
+Subject: [usb-storage] [PATCH] USB: ene_usb6250: Allocate enough memory for
+ full object
+Date: Sat,  4 Feb 2023 10:35:46 -0800
+Message-Id: <20230204183546.never.849-kees@kernel.org>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
+X-Developer-Signature: v=1; a=openpgp-sha256; l=2821; h=from:subject:message-id; bh=HZQ/N+dDa7Aj5LUGfDBEb4DGw2KcwT9Ja3nU44I+6Qw=; b=owEBbQKS/ZANAwAKAYly9N/cbcAmAcsmYgBj3qWCaI/XfC+dVjIlk4z3PejMwVwypoWj0t55dUNY ngLmhQmJAjMEAAEKAB0WIQSlw/aPIp3WD3I+bhOJcvTf3G3AJgUCY96lggAKCRCJcvTf3G3AJrbCD/ 9/OMKzc0Ea/9XHo64RRzTHtQLOvCN4nDl6tDnY8I1zWmllZ4q7R4+dmSxpbDIlA1KsOMbqJv2uZ3j5 xU9a2RW8+9cuCUgglfThFn9yjAPn1h89UITBR6tUi66w+Grrrdqabel966IsLL4h0anfdvniLx9/Q+ 1gLIInMAeYSny+rZXufLpRHcsPV5/arwLM6+LhebZHEU0XgPYkzu78s6vN2nl7OX7oznGan2XOpyWL kImWBreBw5D9hD5Wz84Nwz0c9oTNLTzZElayos7V/uArYc5g0sjwNhZT43GlePcRiqDz5YRUCLHMUI /K63RXa6N+Ch7kLHz+Omnb0TG+PD5yo0jQ086va23SsFfob6w1eniL3YEyMwf6p2jnJor+w9yLC6Et X80luhybjh3sy7/0+kv3H/eQTqGfpwkmgOg7tbP/7oyOuoRaao84Y+7ZihUBDPjgw7QXidM/84PNsE vl3CSDyif7jEsz37rqaD+SmUhw9r61ZRPHqcC96s1IhKbEx2DHGBtrDX11Ujx4MsTsrwS9uaMClIO2 c3LeUjG/p85F6vlRU5h0rahbAFsFntLTrIVfxIf1vpscY9Z7Hkq0PmxL3BOM/GsX4Iv42pg1jjF4wi ws5dSc4t27nmVzA239IFWffYQbmVO4gbgpLtpR5L6qrz+uYyMftjEgLZdgzw==
+X-Developer-Key: i=keescook@chromium.org; a=openpgp; fpr=A5C3F68F229DD60F723E6E138972F4DFDC6DC026
+X-Original-Sender: keescook@chromium.org
+X-Original-Authentication-Results: mx.google.com;       dkim=pass
+ header.i=@chromium.org header.s=google header.b=YGU2UvvQ;       spf=pass
+ (google.com: domain of keescook@chromium.org designates 209.85.220.41 as
+ permitted sender) smtp.mailfrom=keescook@chromium.org;       dmarc=pass
+ (p=NONE sp=NONE dis=NONE) header.from=chromium.org
 Content-Type: text/plain; charset="UTF-8"
-X-Originating-IP: [171.25.167.209]
-X-ClientProxiedBy: msexch01.omp.ru (10.188.4.12) To msexch01.omp.ru
- (10.188.4.12)
-X-KSE-ServerInfo: msexch01.omp.ru, 9
-X-KSE-AntiSpam-Interceptor-Info: scan successful
-X-KSE-AntiSpam-Version: 5.9.59, Database issued on: 02/03/2023 19:59:06
-X-KSE-AntiSpam-Status: KAS_STATUS_NOT_DETECTED
-X-KSE-AntiSpam-Method: none
-X-KSE-AntiSpam-Rate: 59
-X-KSE-AntiSpam-Info: Lua profiles 175255 [Feb 03 2023]
-X-KSE-AntiSpam-Info: Version: 5.9.59.0
-X-KSE-AntiSpam-Info: Envelope from: k.yankevich@omp.ru
-X-KSE-AntiSpam-Info: LuaCore: 502 502 69dee8ef46717dd3cb3eeb129cb7cc8dab9e30f6
-X-KSE-AntiSpam-Info: {rep_avail}
-X-KSE-AntiSpam-Info: {Tracking_from_domain_doesnt_match_to}
-X-KSE-AntiSpam-Info: {relay has no DNS name}
-X-KSE-AntiSpam-Info: {SMTP from is not routable}
-X-KSE-AntiSpam-Info: 127.0.0.199:7.1.2;omp.ru:7.1.1;d41d8cd98f00b204e9800998ecf8427e.com:7.1.1
-X-KSE-AntiSpam-Info: ApMailHostAddress: 171.25.167.209
-X-KSE-AntiSpam-Info: {DNS response errors}
-X-KSE-AntiSpam-Info: Rate: 59
-X-KSE-AntiSpam-Info: Status: not_detected
-X-KSE-AntiSpam-Info: Method: none
-X-KSE-AntiSpam-Info: Auth:dmarc=temperror header.from=omp.ru;spf=temperror
- smtp.mailfrom=omp.ru;dkim=none
-X-KSE-Antiphishing-Info: Clean
-X-KSE-Antiphishing-ScanningType: Heuristic
-X-KSE-Antiphishing-Method: None
-X-KSE-Antiphishing-Bases: 02/03/2023 20:01:00
-X-KSE-AttachmentFiltering-Interceptor-Info: protection disabled
-X-KSE-Antivirus-Interceptor-Info: scan successful
-X-KSE-Antivirus-Info: Clean, bases: 2/3/2023 3:58:00 PM
-X-KSE-BulkMessagesFiltering-Scan-Result: InTheLimit
-X-Original-Sender: k.yankevich@omp.ru
-X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
- domain of k.yankevich@omp.ru designates 90.154.21.10 as permitted sender) smtp.mailfrom=k.yankevich@omp.ru
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
+X-Spam-Checked-In-Group: usb-storage@lists.one-eyed-alien.net
 X-Google-Group-Id: 960895140360
 List-Post: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/post>,
  <mailto:usb-storage@lists.one-eyed-alien.net>
@@ -159,44 +137,59 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-We're possibly losing information by shifting an int.
-Fix it by adding the necessary cast.
+The allocation of PageBuffer is 512 bytes in size, but the dereferencing
+of struct ms_bootblock_idi (also size 512) happens at a calculated offset
+within the allocation, which means the object could potentially extend
+beyond the end of the allocation. Avoid this case by just allocating
+enough space to catch any accesses beyond the end. Seen with GCC 13:
 
-Found by OMP on behalf of Linux Verification Center
-(linuxtesting.org) with SVACE.
+../drivers/usb/storage/ene_ub6250.c: In function 'ms_lib_process_bootblock':
+../drivers/usb/storage/ene_ub6250.c:1050:44: warning: array subscript 'struct ms_bootblock_idi[0]' is partly outside array bounds of 'unsigned char[512]' [-Warray-bounds=]
+ 1050 |                         if (le16_to_cpu(idi->wIDIgeneralConfiguration) != MS_IDI_GENERAL_CONF)
+      |                                            ^~
+../include/uapi/linux/byteorder/little_endian.h:37:51: note: in definition of macro '__le16_to_cpu'
+   37 | #define __le16_to_cpu(x) ((__force __u16)(__le16)(x))
+      |                                                   ^
+../drivers/usb/storage/ene_ub6250.c:1050:29: note: in expansion of macro 'le16_to_cpu'
+ 1050 |                         if (le16_to_cpu(idi->wIDIgeneralConfiguration) != MS_IDI_GENERAL_CONF)
+      |                             ^~~~~~~~~~~
+In file included from ../drivers/usb/storage/ene_ub6250.c:5:
+In function 'kmalloc',
+    inlined from 'ms_lib_process_bootblock' at ../drivers/usb/storage/ene_ub6250.c:942:15:
+../include/linux/slab.h:580:24: note: at offset [256, 512] into object of size 512 allocated by 'kmalloc_trace'
+  580 |                 return kmalloc_trace(
+      |                        ^~~~~~~~~~~~~~
+  581 |                                 kmalloc_caches[kmalloc_type(flags)][index],
+      |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  582 |                                 flags, size);
+      |                                 ~~~~~~~~~~~~
 
-Fixes: 1da177e4c3f4 ("Linux-2.6.12-rc2")
-Signed-off-by: Karina Yankevich <k.yankevich@omp.ru>
+Cc: Alan Stern <stern@rowland.harvard.edu>
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Cc: linux-usb@vger.kernel.org
+Cc: usb-storage@lists.one-eyed-alien.net
+Signed-off-by: Kees Cook <keescook@chromium.org>
 ---
- drivers/usb/storage/sddr55.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ drivers/usb/storage/ene_ub6250.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/usb/storage/sddr55.c b/drivers/usb/storage/sddr55.c
-index 15dc25801cdc..4aeff73de147 100644
---- a/drivers/usb/storage/sddr55.c
-+++ b/drivers/usb/storage/sddr55.c
-@@ -236,7 +236,7 @@ static int sddr55_read_data(struct us_data *us,
- 			memset (buffer, 0, len);
- 		} else {
+diff --git a/drivers/usb/storage/ene_ub6250.c b/drivers/usb/storage/ene_ub6250.c
+index 6012603f3630..97c66c0d91f4 100644
+--- a/drivers/usb/storage/ene_ub6250.c
++++ b/drivers/usb/storage/ene_ub6250.c
+@@ -939,7 +939,7 @@ static int ms_lib_process_bootblock(struct us_data *us, u16 PhyBlock, u8 *PageDa
+ 	struct ms_lib_type_extdat ExtraData;
+ 	struct ene_ub6250_info *info = (struct ene_ub6250_info *) us->extra;
  
--			address = (pba << info->blockshift) + page;
-+			address = ((unsigned long)pba << info->blockshift) + page;
+-	PageBuffer = kmalloc(MS_BYTES_PER_PAGE, GFP_KERNEL);
++	PageBuffer = kzalloc(MS_BYTES_PER_PAGE * 2, GFP_KERNEL);
+ 	if (PageBuffer == NULL)
+ 		return (u32)-1;
  
- 			command[0] = 0;
- 			command[1] = LSB_of(address>>16);
-@@ -411,7 +411,7 @@ static int sddr55_write_data(struct us_data *us,
- 			command[4] = 0x40;
- 		}
- 
--		address = (pba << info->blockshift) + page;
-+		address = ((unsigned long)pba << info->blockshift) + page;
- 
- 		command[1] = LSB_of(address>>16);
- 		command[2] = LSB_of(address>>8); 
 -- 
-2.39.1
+2.34.1
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20230203201821.483477-1-k.yankevich%40omp.ru.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20230204183546.never.849-kees%40kernel.org.
