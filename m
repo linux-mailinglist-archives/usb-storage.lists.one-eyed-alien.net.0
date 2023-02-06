@@ -1,115 +1,128 @@
-Return-Path: <usb-storage+bncBD6LRVPZ6YGRB5PK7KPAMGQEUFDZZCI@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBCF5XGNWYQBRBCUQQWPQMGQE4EXWUIA@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-ot1-x345.google.com (mail-ot1-x345.google.com [IPv6:2607:f8b0:4864:20::345])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1B2A168AC20
-	for <lists+usb-storage@lfdr.de>; Sat,  4 Feb 2023 20:43:51 +0100 (CET)
-Received: by mail-ot1-x345.google.com with SMTP id j60-20020a9d17c2000000b0068bd57aa53asf4140913otj.17
-        for <lists+usb-storage@lfdr.de>; Sat, 04 Feb 2023 11:43:51 -0800 (PST)
-ARC-Seal: i=2; a=rsa-sha256; t=1675539829; cv=pass;
+Received: from mail-pf1-x446.google.com (mail-pf1-x446.google.com [IPv6:2607:f8b0:4864:20::446])
+	by mail.lfdr.de (Postfix) with ESMTPS id 088BB68C5D8
+	for <lists+usb-storage@lfdr.de>; Mon,  6 Feb 2023 19:33:49 +0100 (CET)
+Received: by mail-pf1-x446.google.com with SMTP id k14-20020aa7972e000000b00593a8232ac3sf6904718pfg.22
+        for <lists+usb-storage@lfdr.de>; Mon, 06 Feb 2023 10:33:48 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1675708427; cv=pass;
         d=google.com; s=arc-20160816;
-        b=HkRyYwqd50DSv3YPIfV93XiUbAU1auaZFrJcSCJf6vASFrB/wdOZB/TARYc5mfz4Y+
-         c5w3r9zUgDM/IZ18v23EZhtTp6+CYP91nbq3Lmz2RdjzORlHgMJdKGb61O/PXSmQwfxE
-         fywv97rZKMF+RPvJO5GKViTDtgvQPdbF7Wtv8nSZUxUXW/i2EeSQX7doX2V8xMS7ecK7
-         ojOEYy/T6YmkP2IqdzENcmllur1VTD7HRXB2C8HSRSczChrMbd+WT1DNAOsoNWmgecR4
-         gRyu799bLzC+3la7JuOnqR5aWj0e7eFEy6QB+/yetaywDihmHJFNq2oUFI5FscQwtY0Z
-         BcAA==
+        b=azMRRSSwQUf0rBhGx8JqXuafSLLR587oc6NqCDy1ILR4x2GAXc8KTlcl1Jp3J+GI5B
+         g1uSwsStWmZ+5fOy1fwVF40IHCQWXSA9qkKFtVRDkwNc+KSOt0suDL0I4R3PeVm2w27U
+         kJoau6CQJazQLX3/7YzFlPw4DpIi6x7OCyw64T4DbYkuuyAiZFwfIqKxqRIDAScCtEwH
+         f1DOB9ztjCGy0eAIU7Xqx5aqg2k+JFdRgF+POcqFbpTaaqjQ5/GH5GVsskiqDi0kbWRw
+         5z6i3/URbF6xrkX0vdj5AadQ+rGrFTZhq5C8tPkNCjzKzTOjDuz2FrwTJPgFceindAWh
+         UR5Q==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:in-reply-to:content-disposition
-         :mime-version:references:message-id:subject:cc:to:from:date:sender
+         :mime-version:references:subject:cc:to:from:date:message-id:sender
          :dkim-signature;
-        bh=HzXopagV8QK5/X5iiQbr1G+iNTy1V8RIq49z3hfR8Sc=;
-        b=JVAHW+UZn0BnIqdjnYkj2CtK3HxMFid8Igz8VH9XrsHA3zkdNfQyET/nE4z/+y6t2j
-         Jygx0pPVp6wVwrtWC3GXMdWgNp+rITVxS32HXeFOuKXbJPiF/NhDVIjWw0Lws8mJDoIv
-         x6d1+cIZPnLEn7HisRifdJgq61koai5n2k3E35WxmAKTInJmeCQ1Ga99tv3znQMpdNq/
-         wwqNWlstu3wRvRM08s+rv0ffIPqM54EeFHlCkjUHi/s+KXP2dRZWxL/U1Z7fzDfBLILR
-         fy0Ufz3z90BmT+vCyo86KZDffMIWClCrbewgyIv5QbEbZtHs/ZXZGBFX2inGNH7fMhmT
-         hkbw==
+        bh=hdiztUreQiIEFh7OYzoOCFmDHdYKonm9Sgs3M2NpSGA=;
+        b=S9d0mZhJHTZjB45xjI7R6RZXqIvHGmiaZxiI7AHQ7KIAws6YWKmDgUO1ci1mHDM8NN
+         Fy9nDY5qXgPDbNMRBa19ZfTpipf8k9cIh7nvwQ8051CpCPbsD6HjXVc2VwlXUYIGuQTw
+         36mCQ1cvVJ0mqhLvKYMAFPYd0v0I/SUlzbpnYONdQxKgbVzZ+jYlv2hrtFaB7n5YLOrP
+         o2pmCIYcsSgzTrUTmXvdSi1+4LlmMSQ/+exiDK0yhHRTYiJdyl3XTvGMXKvbxCJGpKti
+         JcGR4ctU9QARHtlEa41oPeAsVhH/Tq/9UH/GiY6xDe/NQchN9sCP40RBWr7ORAsHexru
+         C7nQ==
 ARC-Authentication-Results: i=2; mx.google.com;
-       spf=pass (google.com: domain of stern+63d53cf2@netrider.rowland.org designates 192.131.102.5 as permitted sender) smtp.mailfrom=stern+63d53cf2@netrider.rowland.org
+       dkim=pass header.i=@chromium.org header.s=google header.b=a8JT7ViE;
+       spf=pass (google.com: domain of keescook@chromium.org designates 209.85.220.41 as permitted sender) smtp.mailfrom=keescook@chromium.org;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=chromium.org
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:x-original-authentication-results
          :x-original-sender:in-reply-to:content-disposition:mime-version
-         :references:message-id:subject:cc:to:from:date:sender:from:to:cc
+         :references:subject:cc:to:from:date:message-id:sender:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=HzXopagV8QK5/X5iiQbr1G+iNTy1V8RIq49z3hfR8Sc=;
-        b=TCOD4bOJsiSyVxK4ARMXdWXsbSHueSXAz7L9rjOLWC0YgwPKjR4raNy0XjCxg6w7fU
-         piAqkbo0mB3l+XFcTyygjMpjEpgraIlJVxNQv1sstGDu85JButWSrxu2AojXQVFisO3E
-         GTIQCrVo0H3MhYZ04AbokrWjZy+HaR87Fhq3Y=
+        bh=hdiztUreQiIEFh7OYzoOCFmDHdYKonm9Sgs3M2NpSGA=;
+        b=NvlbCKPXnFdYdAttv7X6mKu/Uf0f62DmEjQ5ubQrQLHZ8U2OmHBRN8HRI8fsdna0Ia
+         eQrNFBeHHD2diLvVHzadyPU3G7vHQ8DV9pdOfOte9goVCAQoOvRNSzi6ZNyYk/uwKOzK
+         ZvKp0tgPeZPP9omd8P4r0ouQiMxWM7H0m+aIs=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :x-spam-checked-in-group:list-id:mailing-list:precedence
          :x-original-authentication-results:x-original-sender:in-reply-to
-         :content-disposition:mime-version:references:message-id:subject:cc
-         :to:from:date:x-gm-message-state:sender:from:to:cc:subject:date
+         :content-disposition:mime-version:references:subject:cc:to:from:date
+         :message-id:x-gm-message-state:sender:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=HzXopagV8QK5/X5iiQbr1G+iNTy1V8RIq49z3hfR8Sc=;
-        b=nmNmC/oAYKgeEslLgdNjj2fgd14sR+hVJrtn0C77tVhrrhE0frJqI3tkYP61Bdkf/C
-         a8vW5suh1KOlx1f1949kQwRmauaCs+fONs6F/FSZ8f9v/XX/sTFNPv2wcKQlV423TAkI
-         k12RXAFb7IKsRmVFPZCU13dgDyeB8aOHxkpT1oC+bWR8PFJhWj9TL2JWQRULv9bmba2w
-         Ek1Mo7qbaM+8R6OSvuwJetNiaCjbo/qwwwf6b4Va6G1UbsZGkzkCVq64TduDaWjGo/s1
-         wNCqXcHcHYXft4lKs8hLrwCyc2Fph+DP/4F8VuNix85nSUlvXZ+6NTB8RIj2KVwoFANt
-         rlwg==
+        bh=hdiztUreQiIEFh7OYzoOCFmDHdYKonm9Sgs3M2NpSGA=;
+        b=vgs5z/gv3bz+kmz5SMqx/dQFdNAZg/uATDyd/KdJBM/r6EArJTFtmZv/voBL0ZQdyh
+         eLWOXbjwhbmTkNhE+TR6YI5Z0otnywZlnTN+C2N5v0d1BKNV3iiiblbVR4cX0VaFfK4y
+         UOTWPZwULPJCEsvFOw6KzXiby8B9Ki4X+Ow6TTD1m9dTPGqka/tmZ/T7AJbFvo9XroDe
+         zeAbVqtoXChRBQnpioNb2TNbopDo4YpB8ULczpq743URsXrCDxA+bs4Rz+7WXJrkFAQK
+         r5sP+lC+hhDSOUCyfh2iTPKFQpxtO78IIFzDPT1sm63U179UlZlgaB1waWwhDJvK/hmx
+         9hTw==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: AO0yUKWGIHiGNJzR0+2GslkPyIOu0gvH50zU0MlcCFBMiqvcpUOle61v
-	ybd7q6Z1ftjNhZw/wFOrzag0Lw==
-X-Google-Smtp-Source: AK7set8SpIIaJePrN1ZEd7F9GW8Kc6aOMP09tw7DSH1niUwsVqxHgrn7TO9sYj1iaNgyrxDWzYXcFQ==
-X-Received: by 2002:a05:6808:61a:b0:378:5f1f:521f with SMTP id y26-20020a056808061a00b003785f1f521fmr576722oih.87.1675539829374;
-        Sat, 04 Feb 2023 11:43:49 -0800 (PST)
+X-Gm-Message-State: AO0yUKUQueTwLFftZCVsqtqICdpVeKX6/jQtd2/4RgVf04x57sNPKSYw
+	j5UngNye9AehPpx0+6+SH+CwfA==
+X-Google-Smtp-Source: AK7set8l8cabsfc1+uAcgAtB598aOF3gTM3rKsYXl1tJXPzXSmI0fPhcdlUSgo45e0YG3ZuS4Kho3Q==
+X-Received: by 2002:a17:90a:c504:b0:22b:fdac:6e02 with SMTP id k4-20020a17090ac50400b0022bfdac6e02mr3385207pjt.133.1675708427240;
+        Mon, 06 Feb 2023 10:33:47 -0800 (PST)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a05:6870:c44:b0:13d:173c:e583 with SMTP id
- lf4-20020a0568700c4400b0013d173ce583ls4148974oab.0.-pod-prod-gmail; Sat, 04
- Feb 2023 11:43:48 -0800 (PST)
-X-Received: by 2002:a05:6870:d628:b0:163:a685:ffce with SMTP id a40-20020a056870d62800b00163a685ffcemr7297527oaq.53.1675539828763;
-        Sat, 04 Feb 2023 11:43:48 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1675539828; cv=none;
+Received: by 2002:a17:90a:198f:b0:219:84d6:9802 with SMTP id
+ 15-20020a17090a198f00b0021984d69802ls18026430pji.3.-pod-canary-gmail; Mon, 06
+ Feb 2023 10:33:46 -0800 (PST)
+X-Received: by 2002:a17:90b:204:b0:230:79f9:f5e0 with SMTP id fy4-20020a17090b020400b0023079f9f5e0mr596533pjb.22.1675708426155;
+        Mon, 06 Feb 2023 10:33:46 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1675708426; cv=none;
         d=google.com; s=arc-20160816;
-        b=Q780hKoeqzEqgMnA78SyHWVeskOIcrnnndhiWSaDEUwpc9j5Ufi1bdElebopjsLVT/
-         Kjf5FNLS20ITqr92pr0DSQZ6bGk9BwuEumA6/W+zrEsE9VGhrOQO30QW1QklyEAx/med
-         3WlIiSo+AoiT3ZvGStIYHkuAV6Gvzwm6mPjetQr3hrnsdtcj+qwXWSCR5f9487eNpkO3
-         +sJ0QDcVWff6vsjqDT2xGg5S9tYHLKw49Q1OdbwiAdfGV496FQZpU/ntj4Cp5eQ0BNZ6
-         +aMpV+n5tIflGRw6N+ePoaEgcUsIOnF3TCCEQlLfawhn9VNsoUYMEF0bWJv1Yz4a9z8o
-         PN4Q==
+        b=UdcZ8dOAjveZM3GrEp7+dkmqnPTgUtLspKMTysbj08Wdvo6YCkIWXlJBjeuuUDv2PG
+         MVJSeJ+Yl0d5WRaeIUqKe5wTsX0rHKjmPTN9dDN6ppaHQ5xU0PQKigQ3QLIIlkNmcjkg
+         tFqyGacekfP/vZCJCRZtNTc6pR5x/tUO8+6mhLDHGhfy1kprJ2G503CT6w//5PoPpQxT
+         0vCoxPPfUQkoWstceJe9bbxsVKv0y6U+0W+1ZmhL075Fc5SgYGGNWc3wrnQ4ssTZ6qWo
+         iI5afAEliguAdUT3zRxqDkhPH9P62QrJGj2TKLsm9DVqAfaIWdYxxyMY1YLLAcCjONnx
+         vLTA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date;
-        bh=iPyiy5UMsesfNddNJPtyDpA8x8Tp4y6FOiJlb6MoyzI=;
-        b=Y+XEDR1yPeeEngYzC81FCyc11dVf3mlc5zsZ7U8FgrOfvguYINXPrnNTLaqGu3Sxfc
-         NzB9vBbdd61ISuaRnLxMqLp2vJuDadhKYuf/8jxpFPbrut9W3MENhQhhHr5s0DWkXYjB
-         QgfEsT5oMWKyipk+LXQU8D2W6zEUTalh0sqd0HakV89phrCPo4nYB5L2aPlXCnsxFGdJ
-         4HBEP0XSeWFl+yf0zTa8eRzOye12XubTtiH1VnqvnNNxlq62sT/k2iwNMGOdIEXalVZt
-         DcWLWkFGoXjfiXyE3ERSlgGCZq2cud2ZGaNINKDnobU1gSPG2k2rTweii/bpyHDZEUBk
-         RWAw==
+        h=in-reply-to:content-disposition:mime-version:references:subject:cc
+         :to:from:date:message-id:dkim-signature;
+        bh=nsA2UVbKCTYlnuVnGq05GHQ3hw+n0oCMRqJ/EEYmCkY=;
+        b=NZE7GttqGTCCgYhnVRJA2y6MzbMGpBX2vQDdjIFdFzm1OO0owVDaBbTxP2I1LThjEj
+         ibAQoBky0frgUj3doSZZFPLgyflDCnZ+M2P1V59viE2Zk24InCkCaeyK9qrflMMyJlKN
+         lAFsAfWqReFvAKXQM3883Em0JPPZbomdLHrh4uaEZRNBjm+p0x0/qglfbFa6wlRSf9hT
+         oZitXwA6hAbSWY44SOwm9a7eZFbHegaYvWJSah39O+WNZrlfNdl4pHnwmTqcNe7OU0sc
+         lA74pnfkiVG0ESpurE3rD6xo3o8gXTq328yVuVYUifQL3mnj+TbQa7NePwnwCK3y2Ldw
+         tbzA==
 ARC-Authentication-Results: i=1; mx.google.com;
-       spf=pass (google.com: domain of stern+63d53cf2@netrider.rowland.org designates 192.131.102.5 as permitted sender) smtp.mailfrom=stern+63d53cf2@netrider.rowland.org
-Received: from netrider.rowland.org (netrider.rowland.org. [192.131.102.5])
-        by mx.google.com with SMTP id em32-20020a0568705ba000b001633bae242asi5736344oab.145.2023.02.04.11.43.48
-        for <usb-storage@lists.one-eyed-alien.net>;
-        Sat, 04 Feb 2023 11:43:48 -0800 (PST)
-Received-SPF: pass (google.com: domain of stern+63d53cf2@netrider.rowland.org designates 192.131.102.5 as permitted sender) client-ip=192.131.102.5;
-Received: (qmail 603745 invoked by uid 1000); 4 Feb 2023 14:43:47 -0500
-Date: Sat, 4 Feb 2023 14:43:47 -0500
-From: Alan Stern <stern@rowland.harvard.edu>
-To: Kees Cook <keescook@chromium.org>
+       dkim=pass header.i=@chromium.org header.s=google header.b=a8JT7ViE;
+       spf=pass (google.com: domain of keescook@chromium.org designates 209.85.220.41 as permitted sender) smtp.mailfrom=keescook@chromium.org;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=chromium.org
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id p6-20020a17090a748600b00230af530443sor1622975pjk.13.2023.02.06.10.33.46
+        for <usb-storage@lists.one-eyed-alien.net>
+        (Google Transport Security);
+        Mon, 06 Feb 2023 10:33:46 -0800 (PST)
+Received-SPF: pass (google.com: domain of keescook@chromium.org designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+X-Received: by 2002:a17:90a:1d2:b0:22c:1613:1656 with SMTP id 18-20020a17090a01d200b0022c16131656mr592787pjd.26.1675708425833;
+        Mon, 06 Feb 2023 10:33:45 -0800 (PST)
+Received: from www.outflux.net (198-0-35-241-static.hfc.comcastbusiness.net. [198.0.35.241])
+        by smtp.gmail.com with ESMTPSA id y1-20020a17090a154100b0022bfa25dd88sm9995655pja.40.2023.02.06.10.33.45
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 06 Feb 2023 10:33:45 -0800 (PST)
+Message-ID: <63e14809.170a0220.7fcb2.150b@mx.google.com>
+Date: Mon, 6 Feb 2023 10:33:44 -0800
+From: Kees Cook <keescook@chromium.org>
+To: Alan Stern <stern@rowland.harvard.edu>
 Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-  linux-usb@vger.kernel.org, usb-storage@lists.one-eyed-alien.net,
-  linux-kernel@vger.kernel.org, linux-hardening@vger.kernel.org
+	linux-usb@vger.kernel.org, usb-storage@lists.one-eyed-alien.net,
+	linux-kernel@vger.kernel.org, linux-hardening@vger.kernel.org
 Subject: [usb-storage] Re: [PATCH] USB: ene_usb6250: Allocate enough memory
  for full object
-Message-ID: <Y961c1/JIkDUqMbC@rowland.harvard.edu>
 References: <20230204183546.never.849-kees@kernel.org>
+ <Y961c1/JIkDUqMbC@rowland.harvard.edu>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="UTF-8"
 Content-Disposition: inline
-In-Reply-To: <20230204183546.never.849-kees@kernel.org>
-X-Original-Sender: stern@rowland.harvard.edu
-X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
- domain of stern+63d53cf2@netrider.rowland.org designates 192.131.102.5 as
- permitted sender) smtp.mailfrom=stern+63d53cf2@netrider.rowland.org
+In-Reply-To: <Y961c1/JIkDUqMbC@rowland.harvard.edu>
+X-Original-Sender: keescook@chromium.org
+X-Original-Authentication-Results: mx.google.com;       dkim=pass
+ header.i=@chromium.org header.s=google header.b=a8JT7ViE;       spf=pass
+ (google.com: domain of keescook@chromium.org designates 209.85.220.41 as
+ permitted sender) smtp.mailfrom=keescook@chromium.org;       dmarc=pass
+ (p=NONE sp=NONE dis=NONE) header.from=chromium.org
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -125,75 +138,32 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On Sat, Feb 04, 2023 at 10:35:46AM -0800, Kees Cook wrote:
-> The allocation of PageBuffer is 512 bytes in size, but the dereferencing
-> of struct ms_bootblock_idi (also size 512) happens at a calculated offset
-> within the allocation, which means the object could potentially extend
-> beyond the end of the allocation. Avoid this case by just allocating
-> enough space to catch any accesses beyond the end. Seen with GCC 13:
-
-In principle, it would be better to add a runtime check for overflow.  
-Doing it this way means that the code could read an invalid value.
-
-In fact, I get the impression that this code tries to load a data 
-structure which might straddle a page boundary by reading in just the 
-first page.  Either that, or else EntryOffset is always a multiple of 
-512 so the error cannot arise.
-
-In any event, it's doubtful that there are very many devices of this 
-sort still in use, so it probably doesn't matter.
-
-Alan Stern
-
+On Sat, Feb 04, 2023 at 02:43:47PM -0500, Alan Stern wrote:
+> On Sat, Feb 04, 2023 at 10:35:46AM -0800, Kees Cook wrote:
+> > The allocation of PageBuffer is 512 bytes in size, but the dereferencing
+> > of struct ms_bootblock_idi (also size 512) happens at a calculated offset
+> > within the allocation, which means the object could potentially extend
+> > beyond the end of the allocation. Avoid this case by just allocating
+> > enough space to catch any accesses beyond the end. Seen with GCC 13:
 > 
-> ../drivers/usb/storage/ene_ub6250.c: In function 'ms_lib_process_bootblock':
-> ../drivers/usb/storage/ene_ub6250.c:1050:44: warning: array subscript 'struct ms_bootblock_idi[0]' is partly outside array bounds of 'unsigned char[512]' [-Warray-bounds=]
->  1050 |                         if (le16_to_cpu(idi->wIDIgeneralConfiguration) != MS_IDI_GENERAL_CONF)
->       |                                            ^~
-> ../include/uapi/linux/byteorder/little_endian.h:37:51: note: in definition of macro '__le16_to_cpu'
->    37 | #define __le16_to_cpu(x) ((__force __u16)(__le16)(x))
->       |                                                   ^
-> ../drivers/usb/storage/ene_ub6250.c:1050:29: note: in expansion of macro 'le16_to_cpu'
->  1050 |                         if (le16_to_cpu(idi->wIDIgeneralConfiguration) != MS_IDI_GENERAL_CONF)
->       |                             ^~~~~~~~~~~
-> In file included from ../drivers/usb/storage/ene_ub6250.c:5:
-> In function 'kmalloc',
->     inlined from 'ms_lib_process_bootblock' at ../drivers/usb/storage/ene_ub6250.c:942:15:
-> ../include/linux/slab.h:580:24: note: at offset [256, 512] into object of size 512 allocated by 'kmalloc_trace'
->   580 |                 return kmalloc_trace(
->       |                        ^~~~~~~~~~~~~~
->   581 |                                 kmalloc_caches[kmalloc_type(flags)][index],
->       |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
->   582 |                                 flags, size);
->       |                                 ~~~~~~~~~~~~
+> In principle, it would be better to add a runtime check for overflow.  
+> Doing it this way means that the code could read an invalid value.
 > 
-> Cc: Alan Stern <stern@rowland.harvard.edu>
-> Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-> Cc: linux-usb@vger.kernel.org
-> Cc: usb-storage@lists.one-eyed-alien.net
-> Signed-off-by: Kees Cook <keescook@chromium.org>
-> ---
->  drivers/usb/storage/ene_ub6250.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/drivers/usb/storage/ene_ub6250.c b/drivers/usb/storage/ene_ub6250.c
-> index 6012603f3630..97c66c0d91f4 100644
-> --- a/drivers/usb/storage/ene_ub6250.c
-> +++ b/drivers/usb/storage/ene_ub6250.c
-> @@ -939,7 +939,7 @@ static int ms_lib_process_bootblock(struct us_data *us, u16 PhyBlock, u8 *PageDa
->  	struct ms_lib_type_extdat ExtraData;
->  	struct ene_ub6250_info *info = (struct ene_ub6250_info *) us->extra;
->  
-> -	PageBuffer = kmalloc(MS_BYTES_PER_PAGE, GFP_KERNEL);
-> +	PageBuffer = kzalloc(MS_BYTES_PER_PAGE * 2, GFP_KERNEL);
->  	if (PageBuffer == NULL)
->  		return (u32)-1;
->  
-> -- 
-> 2.34.1
-> 
+> In fact, I get the impression that this code tries to load a data 
+> structure which might straddle a page boundary by reading in just the 
+> first page.  Either that, or else EntryOffset is always a multiple of 
+> 512 so the error cannot arise.
+
+Yeah, I couldn't figure it out. It seems like it might move in
+non-512-byte steps too sometimes? Doubling the allocation (and zero-fill
+it) seemed the safest way to cover it.
+
+-Kees
+
+-- 
+Kees Cook
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/Y961c1/JIkDUqMbC%40rowland.harvard.edu.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/63e14809.170a0220.7fcb2.150b%40mx.google.com.
