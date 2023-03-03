@@ -1,33 +1,33 @@
-Return-Path: <usb-storage+bncBDTZTRGMXIFBBOOWRGQAMGQE6OJWOYI@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBDTZTRGMXIFBB26WRGQAMGQEROPWUYY@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-wm1-x348.google.com (mail-wm1-x348.google.com [IPv6:2a00:1450:4864:20::348])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A8F06AA28C
-	for <lists+usb-storage@lfdr.de>; Fri,  3 Mar 2023 22:48:42 +0100 (CET)
-Received: by mail-wm1-x348.google.com with SMTP id e22-20020a05600c219600b003e000facbb1sf3404816wme.9
-        for <lists+usb-storage@lfdr.de>; Fri, 03 Mar 2023 13:48:42 -0800 (PST)
-ARC-Seal: i=2; a=rsa-sha256; t=1677880122; cv=pass;
+Received: from mail-oi1-x248.google.com (mail-oi1-x248.google.com [IPv6:2607:f8b0:4864:20::248])
+	by mail.lfdr.de (Postfix) with ESMTPS id 982046AA2AA
+	for <lists+usb-storage@lfdr.de>; Fri,  3 Mar 2023 22:49:32 +0100 (CET)
+Received: by mail-oi1-x248.google.com with SMTP id 3-20020aca1003000000b003845588afd5sf1713148oiq.10
+        for <lists+usb-storage@lfdr.de>; Fri, 03 Mar 2023 13:49:32 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1677880171; cv=pass;
         d=google.com; s=arc-20160816;
-        b=DBAB2O8sDmeNfzXeRmj2mS9BVJ2r3D45E0AC8lVP/VCWQigQQD4xWxxj/nQyIzsAGp
-         mCv75Sz81f8ooD4UVdVoO8Jv0RPwvLMLN0x+lvX1tbz3rUq12Wi+t/6ZmkgzcVpRLVSC
-         y67zo0ZXmjuusbgp7lXiRGmmyXC7/HBkh35QTFPtwnf1AzoA4aiBwqV36dmdg2X+yf/6
-         g8OQTr7Jq51sd/N+JGtx5Kb2PcOLXJoKSzomR2L6dtTgiRRIGTA8njM6IR6I0x08yuP/
-         w88QmPRHplxcppNX7Okc4xin+1ZYF8Kgl+1NEyppd/VHAw0Ci2XEiP0IuPf9RiETPRNR
-         cFmQ==
+        b=NJoKhT63n9ny4XzJjZCPWek9WlfmXH2oLpUZuJtv7iqhA4fkggHPzYB3C/Qgb/Zbuj
+         9oS0kBzfMoupc7/3JsPG3bG2VyOWp8AoSoXlld/PG5FpznQM0Xyytn7XNW2B1tQomhEh
+         HeDDNX6KjeQD2raQcZI/wB7h7a8X/ApBk/BGVySkiAWaH32nsPJ1qmXMvgx8vWqFa+/r
+         SW+iBqkEr6QhhTLhSohbqB3BIXndMNsYYae80u/4IraOT7ItGHZG7IeoqqY0ocSRl/ne
+         FZ7wJ+czwlwVBdkGoljb3NZ0sjX+lFJNWZ+VLrR/3UR1aWiy24TiYNkjA4Vxk1BO+s6p
+         N/5Q==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:sender:dkim-signature;
-        bh=paWKrF5PAbT4LmiWgwtBS9hIKZVgh9YIAwCLS7MLOM0=;
-        b=00hNM49QWh22J70WgU/K9WR7hYiHUVZYFOXr2ha5Sm0Kr4aqxpQzlO3fVEqeOC1fM5
-         SPaQnkxvhDkjdZg5UDYP4GzAXpsQVOpNcBENMxyUmN+0d3W/fO7zOLqgxw2i5TaBcaSj
-         PnFVDKGL2KvKjAtZHt2uAJ2vdY7bYb+uHSwnqaW/d/3vCmxESgFDougtcuJ9xikSqM/8
-         1BW1YL0j3cS6V8Ykse47u2uj7u98jZ2FjDgpDymG0CxGsFU7UK/xpWlKy3igADk9ysoh
-         CJZmnT0aixCYcEtR2n6HoyheZRGWO1VS1/sFCIwzqpNXqxAAdqh2OGncy1uN+whBzmrZ
-         lNzA==
+        bh=+61whG0erj6n3/lLNnwdT1rwLYlUuaTMc29KVuGmpG8=;
+        b=HcY29tAQCb4ad4/YU/irMoumvMc+IwCxjNL6NN6ULz54I3tdeYEBRw3OCkNkSehfXH
+         KqoD2PaehltLHXv4ZBuwCD6v1CdZISu/v//5OFK73YGNbKyStfqcz2DrsV12Tk0jAfoY
+         nMuaXEyHQOHRFojSg+3VLEdYkXJGxs/QgApmtVM1mC5jS8+PZSVdF46LcdHX7ajnZhi9
+         gloYcirp3bcv2OxuNR96D5WAQvBGvyBuMdNCHrfHA2AwOh0E3G6QxkbWwYgWcqQxaCPv
+         xgMY8OT7f/vjANWNVNleX2WE4i3dgm037l8gSgoPGkkYrE/9hvpHPBQtxgds4hWixYCg
+         cqlg==
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@kernel.org header.s=k20201202 header.b=VO9XExO3;
-       spf=pass (google.com: domain of sashal@kernel.org designates 2604:1380:4601:e00::1 as permitted sender) smtp.mailfrom=sashal@kernel.org;
+       dkim=pass header.i=@kernel.org header.s=k20201202 header.b="lpgAL5o/";
+       spf=pass (google.com: domain of sashal@kernel.org designates 2604:1380:4641:c500::1 as permitted sender) smtp.mailfrom=sashal@kernel.org;
        dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=kernel.org
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google;
@@ -36,10 +36,10 @@ DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
          :x-original-sender:mime-version:references:in-reply-to:message-id
          :date:subject:cc:to:from:sender:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=paWKrF5PAbT4LmiWgwtBS9hIKZVgh9YIAwCLS7MLOM0=;
-        b=Zj5uXqWiqrcU/0dYVMJCuGFuunwLWqCEvDzf39TDns7fDjntgJaH0ZufBjVSYrjByH
-         mKUqAhB9EA8gt9/TNx8wE7tnbJYvLz1j50/Ciyl9S812gB+xcQW715a4EdaBE3mY3UC5
-         dhI0aXKpwIJWRbZhBvwM9N2FXwjvA4zE1hixQ=
+        bh=+61whG0erj6n3/lLNnwdT1rwLYlUuaTMc29KVuGmpG8=;
+        b=VsGR+rHsxFnZIQf0Jc6uzJBS9LGtaAliqSeD0H4Esrr/2g9XYxv0QALOznLRfL9VIc
+         VjTGgW2Sd/vsR8fPHzwP7PUEBLRDbz0nfzR/lKwTRx3K+oOKbbiLd/QgUIoimTuscIC0
+         1bBp/RwFXDuxeuy2wFtGs8UgFZKCIP/aA0ycI=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
@@ -48,60 +48,60 @@ X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
          :references:in-reply-to:message-id:date:subject:cc:to:from
          :x-gm-message-state:sender:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=paWKrF5PAbT4LmiWgwtBS9hIKZVgh9YIAwCLS7MLOM0=;
-        b=zwSWzmQUnVG45hcnjmUKVHNR+cPdsg0fEnik9V/n6zAFcRxDOOIesSYM9fHyoR4OQc
-         DrCctLLxypDZLvFMiElaGkU6OGA/x3wb+k4q0s6Kfrqdc8yypa8hvLlzN84VaMG3R5Oo
-         bRpvaLmvr+qTpl7ZoO8g3aj3pb1reN1eqguheyYGqKM27+ZTrulSmh2sWWWLPQiPCysX
-         ytxI1QsoScDq5+l1mB5IoaamfNcRP9855h+yQA0r/se+PJ8HmBU3zt2QYtGd01OmeK4Q
-         r5DupiFPL5C70C5aVrygggttG3AGNDqjpAkzEDvXC/T+slPv0HxFeH8hSQg9xjz1toYh
-         0wpQ==
+        bh=+61whG0erj6n3/lLNnwdT1rwLYlUuaTMc29KVuGmpG8=;
+        b=LdXxecKFXfYb2XCXTwQixq1aUnI/ypFTI6iGCjj46SKz79unHvxlb5N4vUZXLph3sW
+         drXgEj5NQY0FdLG54mN4nb1M91esJeoRSNoEIY+3//+81svxluE7xqDg4b+2rvZkyIbS
+         /E7pztqJbTwqhLyV4lQm/P4iQ0pMkIMLBqg0KLlQnncwfBysETYmYr1Ft1zRp9dvp+pX
+         19lbzHMW33zHTUX73x9WdcXQMIKSdbR92+QR5SewqHDmzYUiIMilslmdIbX51ELPrkMo
+         zRE5QUD8Rhp4Ujg65DjWJqn0sh90M9VYESW/72ZjYRqxcDWcse6eHLHLooiJjXVzGtvx
+         YLdg==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: AO0yUKVIzCVpsMUZyaYJX9r/hpc+IEIoId8Jo/2IZZnH+yX0JDcMJD3m
-	tXTPScTbDYnm/hYto2YbCdPaVw==
-X-Google-Smtp-Source: AK7set+egdgpL0EKMhH//256s1ZVHL5ZznGU88Iwx/LfgwOQAtdwk26MqqBvr95d/bSvYkB4ar7HvQ==
-X-Received: by 2002:a05:600c:41d1:b0:3e0:87d:959b with SMTP id t17-20020a05600c41d100b003e0087d959bmr715941wmh.7.1677880121733;
-        Fri, 03 Mar 2023 13:48:41 -0800 (PST)
+X-Gm-Message-State: AO0yUKU9Q2fyH4qXD04V6s9v+2VVDSMwNR3Ys+x0jguYNtEberF0YTMO
+	CzV0qKruIxMq0InO74RbUUsMlA==
+X-Google-Smtp-Source: AK7set/o+WLnC2ChXDSEDeAZReWBLa+9355u3muzo42uLHlGMN/BJE/rGEwFw/AP1DYWbc1kLkjEWw==
+X-Received: by 2002:a4a:6c1d:0:b0:525:2b11:9632 with SMTP id q29-20020a4a6c1d000000b005252b119632mr1211906ooc.1.1677880171331;
+        Fri, 03 Mar 2023 13:49:31 -0800 (PST)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a05:600c:511d:b0:3e1:e754:51ac with SMTP id
- o29-20020a05600c511d00b003e1e75451acls2197700wms.1.-pod-control-gmail; Fri,
- 03 Mar 2023 13:48:40 -0800 (PST)
-X-Received: by 2002:a05:600c:4f93:b0:3ea:e4bb:340c with SMTP id n19-20020a05600c4f9300b003eae4bb340cmr2824296wmq.18.1677880120157;
-        Fri, 03 Mar 2023 13:48:40 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1677880120; cv=none;
+Received: by 2002:a05:6808:1482:b0:384:8df4:c738 with SMTP id
+ e2-20020a056808148200b003848df4c738ls1446707oiw.0.-pod-prod-gmail; Fri, 03
+ Mar 2023 13:49:30 -0800 (PST)
+X-Received: by 2002:aca:1719:0:b0:37f:abf1:f143 with SMTP id j25-20020aca1719000000b0037fabf1f143mr1325175oii.24.1677880170651;
+        Fri, 03 Mar 2023 13:49:30 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1677880170; cv=none;
         d=google.com; s=arc-20160816;
-        b=WFJ/YxOjwseeMfDm7tL0xvqIfPd8KZcjo447D4SC1A8kS3vA/6b6RYS0N7dNcRF/Qg
-         6xXfMGPvxRqE0tPsGw7EXEg2Dnf5YC87RmKzT8ZFPMnA6JLKlkWxs7YXj+v9tPVPEDdA
-         dglHWeVUqC0VjS/jiJkWXt4HFcUAZJdKd5g2BeCKoyZi689/n+vCOAnKRa03Fwm/Fmmt
-         94go1b7vj1tfwkcMBXJ0uc9ePuEslZ2MYxptyMpRPOtPC9gB4E3rtu/mJLM/gLE5vsTt
-         AhCxI80nNAyu9qVijwQT5ncETgirGAXBnmSmYVB0W51MANX3VwxYfg+V9t1a9J4cVLAP
-         FBsQ==
+        b=kB/Njz4wcXQLXofPpniRZqqBrFYFIknwNFOB2fayLUw4DOCVFo9Ude41w2dqJ/uL8i
+         gH+DBi//KBeVo/JfVEsKa9mc2ojFm8QhQnAlS/iAHVSiF8gIxnS15UA66a8BN5LPVfb1
+         cYp2V+EfFz4AYhF1q77RFOqE5d73mW/ZcxW+Z+gKYttx19A4B1G0HBiPnoaHoQXsWmxk
+         HGHoFIeRWAGrZMdLuX330XrS7tKobnNyysSU/gj6d4tVhOUCnaZz2XX218+ZVaMR0Inj
+         EuYfmeu5VppUCvQ1v+raFcfMUa4wbtWrFXD9A3M3b5ZoyiQeLAaq4NIcp7MahazCi0d8
+         byxw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:dkim-signature;
-        bh=hhDdp1+kKMsOYkADuVA2c2zTD9OR+COD4ywKdEldd3E=;
-        b=x1vigLEHKRJHJpa/nc+Fgv5K+lIswPgHGHYjMik/saj7BzDHjNmP3sC263JSFKjXl3
-         x7sFmj86FgV00KOqI3SxhYcftYMe2RZhrD/kMXN/lmbww5W2XeVAWcyz6T2w0vNhGEIj
-         dlv2TsjQA8/LDVZOnL6aLgO4CPdEBuLfyxqHqJ58XCMGkOwk/KmJnHBg42tnFx1qT0lV
-         yQpTCuwz+xOaTZjBAF7x8YP2Vr03UhiUwHbfYWqqoJ9v+sfB5S1EtBFpM/it7svTBiG/
-         t7oM07W9SLTJ7zQlrXRh138j/yzAN1tYJQHlWmufRkZNA4Jyjd8Dzb0U0NlzcCMeOsXa
-         L28w==
+        bh=cp1hae22BN+xvRFH7ysSKS6Gn2bhr4vq38+H2/1cpoE=;
+        b=iwtIUiluF76pe7LLM2q6Iv120HfdUdZiUFEalAuFvmoZqzxxZW+c9e+cXPsCk6ZlNf
+         JSW43oHFmjRPkCh9AOefjeYs7dipEi5oWZ5eWD0bLEb1jOdMnW8yYIFd9ZG1yxsr63PR
+         UEp3XyZfsNlk5afRYwmpXA9nkPK/5dn8n2pPQzjx8vM3Z86tfLtbQUXe3ZS+nBEml4FI
+         zwnON6OjVBH3CpDbd+a7sPBy18+kELNL0aF2gQbiYWEcZk1fLkrZ5VQGSbTusTQGaBGr
+         cxT5YrxGllmoZdirP1Dm4nCCgytnVYBXvkBdXZKu5GZ2nSSGtyouhNnQxpZ/xqSDl7M8
+         jj/A==
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@kernel.org header.s=k20201202 header.b=VO9XExO3;
-       spf=pass (google.com: domain of sashal@kernel.org designates 2604:1380:4601:e00::1 as permitted sender) smtp.mailfrom=sashal@kernel.org;
+       dkim=pass header.i=@kernel.org header.s=k20201202 header.b="lpgAL5o/";
+       spf=pass (google.com: domain of sashal@kernel.org designates 2604:1380:4641:c500::1 as permitted sender) smtp.mailfrom=sashal@kernel.org;
        dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=kernel.org
-Received: from ams.source.kernel.org (ams.source.kernel.org. [2604:1380:4601:e00::1])
-        by mx.google.com with ESMTPS id g12-20020adffc8c000000b002c5509bdc4fsi2381247wrr.621.2023.03.03.13.48.40
+Received: from dfw.source.kernel.org (dfw.source.kernel.org. [2604:1380:4641:c500::1])
+        by mx.google.com with ESMTPS id fb21-20020a0568083a9500b0037eaa9f5f30si2911737oib.196.2023.03.03.13.49.30
         for <usb-storage@lists.one-eyed-alien.net>
         (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Fri, 03 Mar 2023 13:48:40 -0800 (PST)
-Received-SPF: pass (google.com: domain of sashal@kernel.org designates 2604:1380:4601:e00::1 as permitted sender) client-ip=2604:1380:4601:e00::1;
+        Fri, 03 Mar 2023 13:49:30 -0800 (PST)
+Received-SPF: pass (google.com: domain of sashal@kernel.org designates 2604:1380:4641:c500::1 as permitted sender) client-ip=2604:1380:4641:c500::1;
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id DAD17B81A50;
-	Fri,  3 Mar 2023 21:48:39 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C4F04C4332A;
-	Fri,  3 Mar 2023 21:48:38 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 5BC686194F;
+	Fri,  3 Mar 2023 21:49:30 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id EF079C433D2;
+	Fri,  3 Mar 2023 21:49:28 +0000 (UTC)
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
@@ -111,20 +111,20 @@ Cc: Kees Cook <keescook@chromium.org>,
 	Sasha Levin <sashal@kernel.org>,
 	linux-usb@vger.kernel.org,
 	usb-storage@lists.one-eyed-alien.net
-Subject: [usb-storage] [PATCH AUTOSEL 5.4 16/20] USB: ene_usb6250: Allocate
+Subject: [usb-storage] [PATCH AUTOSEL 4.19 14/16] USB: ene_usb6250: Allocate
  enough memory for full object
-Date: Fri,  3 Mar 2023 16:48:02 -0500
-Message-Id: <20230303214806.1453287-16-sashal@kernel.org>
+Date: Fri,  3 Mar 2023 16:48:47 -0500
+Message-Id: <20230303214849.1454002-14-sashal@kernel.org>
 X-Mailer: git-send-email 2.39.2
-In-Reply-To: <20230303214806.1453287-1-sashal@kernel.org>
-References: <20230303214806.1453287-1-sashal@kernel.org>
+In-Reply-To: <20230303214849.1454002-1-sashal@kernel.org>
+References: <20230303214849.1454002-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-Original-Sender: sashal@kernel.org
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@kernel.org header.s=k20201202 header.b=VO9XExO3;       spf=pass
- (google.com: domain of sashal@kernel.org designates 2604:1380:4601:e00::1 as
+ header.i=@kernel.org header.s=k20201202 header.b="lpgAL5o/";       spf=pass
+ (google.com: domain of sashal@kernel.org designates 2604:1380:4641:c500::1 as
  permitted sender) smtp.mailfrom=sashal@kernel.org;       dmarc=pass (p=NONE
  sp=NONE dis=NONE) header.from=kernel.org
 Content-Type: text/plain; charset="UTF-8"
@@ -184,10 +184,10 @@ Signed-off-by: Sasha Levin <sashal@kernel.org>
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/drivers/usb/storage/ene_ub6250.c b/drivers/usb/storage/ene_ub6250.c
-index 9c984f3c7248a..b076260a2ca49 100644
+index 54679679c825d..16b63f2cd661e 100644
 --- a/drivers/usb/storage/ene_ub6250.c
 +++ b/drivers/usb/storage/ene_ub6250.c
-@@ -938,7 +938,7 @@ static int ms_lib_process_bootblock(struct us_data *us, u16 PhyBlock, u8 *PageDa
+@@ -937,7 +937,7 @@ static int ms_lib_process_bootblock(struct us_data *us, u16 PhyBlock, u8 *PageDa
  	struct ms_lib_type_extdat ExtraData;
  	struct ene_ub6250_info *info = (struct ene_ub6250_info *) us->extra;
  
@@ -202,4 +202,4 @@ index 9c984f3c7248a..b076260a2ca49 100644
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20230303214806.1453287-16-sashal%40kernel.org.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20230303214849.1454002-14-sashal%40kernel.org.
