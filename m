@@ -1,132 +1,125 @@
-Return-Path: <usb-storage+bncBCUJ7YGL3QFBBSMTQ6QQMGQEKTRZRWQ@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBC43DANU4AIBBMO4UWRAMGQEKEGUJ4Y@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-wm1-x345.google.com (mail-wm1-x345.google.com [IPv6:2a00:1450:4864:20::345])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2774E6CAB13
-	for <lists+usb-storage@lfdr.de>; Mon, 27 Mar 2023 18:52:26 +0200 (CEST)
-Received: by mail-wm1-x345.google.com with SMTP id q21-20020a05600c46d500b003ee570749f7sf5090963wmo.7
-        for <lists+usb-storage@lfdr.de>; Mon, 27 Mar 2023 09:52:26 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1679935945; cv=pass;
+Received: from mail-qt1-x847.google.com (mail-qt1-x847.google.com [IPv6:2607:f8b0:4864:20::847])
+	by mail.lfdr.de (Postfix) with ESMTPS id B17196EFA16
+	for <lists+usb-storage@lfdr.de>; Wed, 26 Apr 2023 20:32:18 +0200 (CEST)
+Received: by mail-qt1-x847.google.com with SMTP id d75a77b69052e-3ef5a9a1289sf90097011cf.3
+        for <lists+usb-storage@lfdr.de>; Wed, 26 Apr 2023 11:32:18 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1682533937; cv=pass;
         d=google.com; s=arc-20160816;
-        b=Www3ndlVULFznuGbB06MjFDBXW3oyEjdcCWy2zlE7nQ3IIDV60E04GxOOCy7mOncR5
-         VIBHBjGAgtkxvAusjW1NCIM7tZyzy1ArmW65Gz/mHX4MA3JqJRkiyKwRuhKWAiFo/KfA
-         +a8ZKiibOCiis2e6+Y6mkCKd0KAqx3Tbhgkgvbowx3tJ5nT/7GrDQaJRSmo9quQ5SfY0
-         fR8oIRnrud9lKzEL4TaIeW/zH/HrwSCbn4mHy4MPLd6sZsrY9TnLomelBulrfVrvps5r
-         bYMawKYH0V1YXiuSNhOUlhkS6NTrm3UtE8gnhGQS0kh/zS8ctJPY2JY4Wsg7mAt8XLEs
-         DyPA==
+        b=ncUOJFlCfqFjeqfYgLPsyrYfSnANZeJhfUn8XzKgdqKA2WrlSh6Ha8iMTvpR2mu3O+
+         ZQVhzNDeL1EVSkgS/W3Dv1+HjkVAUCGQba0BbICpOP1WeoqLB93g68sMGpbui3jI6paE
+         ej14/BBizAmQXC7L6O9EoEIrR359bbqFHax6pTLiom7ArLuwTQc6kNPn2X6oLn46/RSv
+         Hwi4EkTHE1lrhdLkg9CHJy6HibxsTBUnVm0Ckj/gQV9dNxgVvz9Bb9XGAhzUeKtYGriP
+         XevMqA31kHh/Lj/88VWiKCev4A+BirPJzTQ/fx9jksDv3o4dVTsVtQ0UxJGbAosh0RT5
+         ZGZA==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:in-reply-to:content-disposition
-         :mime-version:references:message-id:subject:cc:to:from:date:sender
-         :dkim-signature;
-        bh=tR5KxeqVrFBOS/LtUEn4qVCuNmy4f54bE5xIXumObCs=;
-        b=PRd7TRU1Rz9B07Ldyep06GB2Zo0eQUJlTSVy1DImWCxfJNITCC7Aq+vtSY0rl1apX6
-         LmDxcJ9D8VUpgXhtcPeJ/NXZM/mOsXRsBFUkt3rtctceLyTiMutTT4i4gvMHKenqOe10
-         uZ3uS4M0LtnI5KjUn0RU3kF3Dj2x9bKqNYTo8808WdoK6TqKEU/NYiyWYwZMqmItCDWi
-         d6JAx2Kz+s/G/2FP36+/QyWMc3VZzgU36X0tpzECfqDOHi890vBGt7O64xYE7DmxARGT
-         1xT5w/nXl1tvqR+O0w4KIt6p9jFSp2R6wdQQb72PUMMB7gt7VTt9F49CdJsALAW37vvV
-         QD7Q==
+         :list-id:mailing-list:precedence:content-disposition:mime-version
+         :message-id:subject:cc:to:from:date:sender:dkim-signature;
+        bh=tOlykxTYsY5zCOCpa5qPKJbyRjY6ecNRLa2Juh0hDh0=;
+        b=VktWJagbFsTkFwG/hTdqDxW+aYsGbvcahWjthsz22kQQGpuxFYuNwv3A+awx1qNpzN
+         xHtyb/5T9fWODC41NZTHzBl+RQlmPdXElsl1GG7+EOyAqfMmshO0KOBLQ2Az10DsC5Zx
+         Q3HW/C4pC4j1HncBBlbsiahpDfkGTASqFC0Gw8ktubOLV/2NPDpbpA1drV43+EdVRWim
+         8qsQazILp7swShTQEjwuoitRCP++PDDYOg6UGJag/k+CMcPU3Jz24loKxQJgeq/ykD3e
+         z9ERC1Y7ToMGneV87O6EeWNQQwoMtdtlLiPsTDc25YMiI3efbgeRUXi0uCdBmn44ydkG
+         MSQQ==
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@linuxfoundation.org header.s=korg header.b=IeqmR9de;
-       spf=pass (google.com: domain of gregkh@linuxfoundation.org designates 145.40.68.75 as permitted sender) smtp.mailfrom=gregkh@linuxfoundation.org;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=linuxfoundation.org
+       spf=pass (google.com: domain of srs0=1gfpuf=ar=freebox.fr=mbizon@srs.iliad.fr designates 212.27.33.1 as permitted sender) smtp.mailfrom="SRS0=1gfpUf=AR=freebox.fr=mbizon@srs.iliad.fr"
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1679935945;
+        d=lists.one-eyed-alien.net; s=google; t=1682533937; x=1685125937;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:x-original-authentication-results
-         :x-original-sender:in-reply-to:content-disposition:mime-version
-         :references:message-id:subject:cc:to:from:date:sender:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=tR5KxeqVrFBOS/LtUEn4qVCuNmy4f54bE5xIXumObCs=;
-        b=eDjIBm385bkd4G0GEVkwybIneCAIbdQlWdOlecP1k3BdzwP4ZXhwHDlLZmaNqngKyu
-         iBfQc92G/JA73fgVbhq2KZhsU/E4klhpl46Cj34UR1ZRNjGp5cT3no5drAaJTDzvPVGH
-         M27NOOZVqWKwwFnC+9DSAti0YENc886NrIfec=
+         :x-original-sender:content-disposition:mime-version:message-id
+         :subject:cc:to:from:date:sender:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=tOlykxTYsY5zCOCpa5qPKJbyRjY6ecNRLa2Juh0hDh0=;
+        b=TZv2bBtCrz4B7u0TGPiMMhcpapNKRp2tP5RzSIsbETyQIOMnRfZzkDbJS7wjSH39Ks
+         iVOYL2igRVUf58s4XwuRRFGfTY6xAQkO2DxsgCp7ZYt4Obpe8ZHKIL3O81N4LIQ03ijP
+         6MH/R0JhWew0BVEthBv3ZVsMzMhhUq3gRw+Bg=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112; t=1679935945;
+        d=1e100.net; s=20221208; t=1682533937; x=1685125937;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :x-spam-checked-in-group:list-id:mailing-list:precedence
-         :x-original-authentication-results:x-original-sender:in-reply-to
-         :content-disposition:mime-version:references:message-id:subject:cc
-         :to:from:date:x-gm-message-state:sender:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=tR5KxeqVrFBOS/LtUEn4qVCuNmy4f54bE5xIXumObCs=;
-        b=ZCmz4daNR2Bva/Cd1dt+vFeD/fUuEAFnfSWuZopyOKfARE5qdzRS9bB4yH2d6bAlvW
-         wL4MpeJXh8EtZ8ss5KGJuBb2+PmphTB+4OfCB1GC/aMxcLn7XRFVUxTaFyDUKJBBPkrn
-         biXrG5fwm0AjDHWf3esjbBkJ8xZxePUMytiGx4AC7hD7pxy+5/rXZyfjXT3D0Am+s1WH
-         seSqZHq9x1v1ErQxBIa2XFV1LBkFpWr6NPQhKAd3nSh/qggfXa71Qx2hVDzhgpfp8DQF
-         c0UwnXaw5NYcKcrKXVCD63jcnAGjINBM1JIWhVsIaiMdlMLDqFCwbz+gqvRDk9ogpc+0
-         7hiw==
+         :list-id:mailing-list:precedence:x-original-authentication-results
+         :x-original-sender:content-disposition:mime-version:message-id
+         :subject:cc:to:from:date:x-beenthere:x-gm-message-state:sender:from
+         :to:cc:subject:date:message-id:reply-to;
+        bh=tOlykxTYsY5zCOCpa5qPKJbyRjY6ecNRLa2Juh0hDh0=;
+        b=F/D3vCsV/guDYhCwWBVZWbTagk89d9d1wSUxI9HhMiO7TT6a9FYxz2As2uTzz8E/JD
+         4XEEIm3jSC5o/ymix4XmHP7x+Yoe9Oi0XSUq7/ZKBCJz/SOeCQstaHcOGnoaQShvzjhi
+         AsfFpx+zriSaKBjrb5nsKowJEhsF/85V/PUI+JH1kcYbVmZd+4M6zT5TX70+02XXDdt3
+         k7PPz46+zCZHbFUXMQfgyeApRmbsh82xrx5EQG1bpia2n1bc9CK4MgNlULRL+Eth6Smn
+         b2FpdjhZy2lyuvceFD37Ibhr+HDBb/uvsgDlyl2qY3SU95tGjqoKrffSordYCPn3bYV2
+         ENaQ==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: AAQBX9c2lFO7JkYfseHLDAup6ICbk3C27hrRxnMOkXx0/60SBJDQLsMD
-	yDixq02u6uqgKOkMzQj1n6ctqQ==
-X-Google-Smtp-Source: AKy350bBM3nqF+gFWaT8zGXeANOww4aqNkzR7ItBH9NPFpemYn2TpT3fnaMVbCO/KCu4UhYVnw2JDg==
-X-Received: by 2002:adf:dfcf:0:b0:2c7:1483:9479 with SMTP id q15-20020adfdfcf000000b002c714839479mr2525025wrn.11.1679935945429;
-        Mon, 27 Mar 2023 09:52:25 -0700 (PDT)
+X-Gm-Message-State: AAQBX9et98OLDoTGnKp8XPs5tToE9THpcqOU7jjmNyVXWIu4VseC5DIE
+	QZjg1uG+N9olbdgJPMDBGCeYLw==
+X-Google-Smtp-Source: AKy350bBmM4I5IgjFtnyZIpJ8sv6znq3lwHqBG0DifDcHxSN1Ygefn8mzuDtFO3Kgix4BDmLLbpm6Q==
+X-Received: by 2002:a05:622a:188f:b0:3ef:9f86:735d with SMTP id v15-20020a05622a188f00b003ef9f86735dmr5357057qtc.13.1682533937557;
+        Wed, 26 Apr 2023 11:32:17 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a5d:5e81:0:b0:2cf:ef77:1717 with SMTP id ck1-20020a5d5e81000000b002cfef771717ls13603615wrb.0.-pod-prod-gmail;
- Mon, 27 Mar 2023 09:52:24 -0700 (PDT)
-X-Received: by 2002:a5d:62c8:0:b0:2db:43ed:1baa with SMTP id o8-20020a5d62c8000000b002db43ed1baamr9017435wrv.24.1679935944120;
-        Mon, 27 Mar 2023 09:52:24 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1679935944; cv=none;
+Received: by 2002:a05:622a:4015:b0:3ef:327d:ac61 with SMTP id
+ cf21-20020a05622a401500b003ef327dac61ls18748042qtb.4.-pod-prod-gmail; Wed, 26
+ Apr 2023 11:32:17 -0700 (PDT)
+X-Received: by 2002:a05:622a:1788:b0:3ee:be98:9fcf with SMTP id s8-20020a05622a178800b003eebe989fcfmr8153636qtk.0.1682533936988;
+        Wed, 26 Apr 2023 11:32:16 -0700 (PDT)
+Received: by 2002:a05:620a:3710:b0:74a:bc73:c91e with SMTP id af79cd13be357-74ff8df3141ms85a;
+        Wed, 26 Apr 2023 10:55:45 -0700 (PDT)
+X-Received: by 2002:a5d:49c7:0:b0:2f6:375e:70dc with SMTP id t7-20020a5d49c7000000b002f6375e70dcmr2639525wrs.21.1682531744213;
+        Wed, 26 Apr 2023 10:55:44 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1682531744; cv=none;
         d=google.com; s=arc-20160816;
-        b=PmPl8H+3TQs00ayxDcp+7wKg+pleB6FHsriXPJ2FO/ub8IR8BMXVjhhu1aYWT3eAff
-         tUvXcziFz328NR3hbiTvifERfFvZr6n99Y2/D6Y35S32SJOGadj9vK/YiV/rYkISSGQH
-         m1kLU8fhLgRDZAPkYk1pC5NCkyO5l+JTnC6ARa0X/uvvP8vANcEJTCId9QzmWtEhZG5l
-         z+77pZRfctIabwQeBL4uZGJyjZWeA0cKHWJap7FJS6pr1GsgJ4xrY23JHxK3ljhccgVm
-         ys8n5HHmEN8Obc8M0fPYFbjE/dinAWh398YnhW9r5RRZnLljPCjZuxDhTupwmbcdyZFx
-         8GEA==
+        b=N5s0i4cRBYpPYWxZTMZ70bfSA/Di5NaOVqqARdC84w8kWcm66x/QLtWydHrWgkZivV
+         gaP+y9qRSOtNqYpyL7Cdd5JDe7dv+7KP/VJip09rcBoIXlb38Qh8/CP3IH8yETjVUq5i
+         zFlxpmoEDmGzxoA/beKZDrSnTpqaR2tHxgwiPxBNLY+HpFFPTfztF0Vd+wTZgDupdoT8
+         2ZtVSP3uELXrMVsJkA1Re42l7zMvfwgvs1+Bh+5TouuolNSnt8vdFaAkBsBLM9L2e8eO
+         nShDK3oNkzCG3L3Opnxz2eBQf/1qbLCSfZe4qYZrwIpfbDu12sy/srj8Fkzh7ZHuFsRz
+         p2Ag==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:dkim-signature;
-        bh=KtI82tmvK5x/jEOmK6tYvssJlLNDRk66Zf9aurMBLDs=;
-        b=kxNgjdghuunEuAShJY/YC6KeIcaq1YvoCWOztYhrFJcjLBrZHPD6F3ZyM5AQuKwCyQ
-         ++d83+RTYIxydDgnROf3/uJUiz2FyOfYXWbwEDwoUSqbK0qTGEmYjnwNtAqMebwnhZhe
-         0UzKO9hcFsxtdHVae8bS8L9NZ9sVi48KMfgak1hlXj/qJ/eA7TUuHj0IM9z36oqYa215
-         t7wgy0JS7pfVqU47msyAbaqx73X/wGvjSaEERT+IRuNWaTnk1Qgr3qPmQ1bQDeGcQeJh
-         XBI7tckFB/V6rEy6wm4kG239BeCTUZc1wXOAvE/RLlCf403QW+G02X1+4UwEUwwi57ur
-         J8XQ==
+        h=content-disposition:mime-version:message-id:subject:cc:to:from:date;
+        bh=r/wqx4w+fKrHX6+yzg+9ucRchCKl13p6dqOZRQAJ/FE=;
+        b=T8a72rwF7VP2hlx3blmxP1JVxjI646e3z6yGfTTShC3C4SfL/X9X9VCjtkB0Q8q7B0
+         myePXNCbQ9I6oZan5AgvYtcsaAsY6YS5ayle535gbmVPdHLuuFaFQspafB/h/zgOujAX
+         x+zEUxTRBBfkDNOZht0k1NYhg+BAQxMD7ZKHeMAF5KEGr4SZWL4+Nu3pQ6BYpQmUtNKp
+         mSgl9lk5YwFU8rbTYNPft8+tgKPgwooli//2G0/7rd8xp92ahG3zBffdED42eDX62RdW
+         zgalDzxd1SSk9/fQzsRYafI38Z9BqyhqFdamqFU/OTXAU9E62YAJ1fH+3tDPM6TZGIOx
+         hF7g==
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@linuxfoundation.org header.s=korg header.b=IeqmR9de;
-       spf=pass (google.com: domain of gregkh@linuxfoundation.org designates 145.40.68.75 as permitted sender) smtp.mailfrom=gregkh@linuxfoundation.org;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=linuxfoundation.org
-Received: from ams.source.kernel.org (ams.source.kernel.org. [145.40.68.75])
-        by mx.google.com with ESMTPS id y9-20020adfe6c9000000b002c55843cc67si22811206wrm.164.2023.03.27.09.52.24
+       spf=pass (google.com: domain of srs0=1gfpuf=ar=freebox.fr=mbizon@srs.iliad.fr designates 212.27.33.1 as permitted sender) smtp.mailfrom="SRS0=1gfpUf=AR=freebox.fr=mbizon@srs.iliad.fr"
+Received: from ns.iliad.fr (ns.iliad.fr. [212.27.33.1])
+        by mx.google.com with ESMTPS id u8-20020a5d6ac8000000b002f6e5805352si9753816wrw.1015.2023.04.26.10.55.44
         for <usb-storage@lists.one-eyed-alien.net>
-        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Mon, 27 Mar 2023 09:52:24 -0700 (PDT)
-Received-SPF: pass (google.com: domain of gregkh@linuxfoundation.org designates 145.40.68.75 as permitted sender) client-ip=145.40.68.75;
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 26 Apr 2023 10:55:44 -0700 (PDT)
+Received-SPF: pass (google.com: domain of srs0=1gfpuf=ar=freebox.fr=mbizon@srs.iliad.fr designates 212.27.33.1 as permitted sender) client-ip=212.27.33.1;
+Received: from ns.iliad.fr (localhost [127.0.0.1])
+	by ns.iliad.fr (Postfix) with ESMTP id AC66220AF4;
+	Wed, 26 Apr 2023 19:55:43 +0200 (CEST)
+Received: from sakura (freebox.vlq16.iliad.fr [213.36.7.13])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange ECDHE (P-256) server-signature RSA-PSS (3072 bits) server-digest SHA256)
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id BF10FB817B0;
-	Mon, 27 Mar 2023 16:52:23 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3039CC433D2;
-	Mon, 27 Mar 2023 16:52:22 +0000 (UTC)
-Date: Mon, 27 Mar 2023 18:52:19 +0200
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: Yaroslav Furman <yaro330@gmail.com>
-Cc: Alan Stern <stern@rowland.harvard.edu>, linux-usb@vger.kernel.org,
-	usb-storage@lists.one-eyed-alien.net, linux-kernel@vger.kernel.org
-Subject: [usb-storage] Re: [PATCH v3] uas: Add US_FL_NO_REPORT_OPCODES for
- JMicron JMS583Gen 2
-Message-ID: <ZCHJw9eNPrYduLz4@kroah.com>
-References: <ZA12pMgwA/8CguYd@kroah.com>
- <20230327135423.607033-1-Yaroslav.Furman@verifone.com>
- <20230327135423.607033-2-Yaroslav.Furman@verifone.com>
+	by ns.iliad.fr (Postfix) with ESMTPS id 9D5C0208AC;
+	Wed, 26 Apr 2023 19:55:43 +0200 (CEST)
+Date: Wed, 26 Apr 2023 19:55:42 +0200
+From: Maxime Bizon <mbizon@freebox.fr>
+To: Alan Stern <stern@rowland.harvard.edu>
+Cc: linux-usb@vger.kernel.org, usb-storage@lists.one-eyed-alien.net,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Subject: [usb-storage] Reproducible deadlock when usb-storage scsi command
+ timeouts twice
+Message-ID: <ZEllnjMKT8ulZbJh@sakura>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="UTF-8"
 Content-Disposition: inline
-In-Reply-To: <20230327135423.607033-2-Yaroslav.Furman@verifone.com>
-X-Original-Sender: gregkh@linuxfoundation.org
-X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@linuxfoundation.org header.s=korg header.b=IeqmR9de;       spf=pass
- (google.com: domain of gregkh@linuxfoundation.org designates 145.40.68.75 as
- permitted sender) smtp.mailfrom=gregkh@linuxfoundation.org;       dmarc=pass
- (p=NONE sp=NONE dis=NONE) header.from=linuxfoundation.org
+X-Original-Sender: mbizon@freebox.fr
+X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
+ domain of srs0=1gfpuf=ar=freebox.fr=mbizon@srs.iliad.fr designates
+ 212.27.33.1 as permitted sender) smtp.mailfrom="SRS0=1gfpUf=AR=freebox.fr=mbizon@srs.iliad.fr"
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
-X-Spam-Checked-In-Group: usb-storage@lists.one-eyed-alien.net
 X-Google-Group-Id: 960895140360
 List-Post: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/post>,
  <mailto:usb-storage@lists.one-eyed-alien.net>
@@ -138,29 +131,143 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On Mon, Mar 27, 2023 at 04:54:23PM +0300, Yaroslav Furman wrote:
-> From: Yaroslav Furman <yaro330@gmail.com>
-> 
-> Just like other JMicron JMS5xx enclosures, it chokes on report-opcodes,
-> let's avoid them.
-> 
-> Signed-off-by: Yaroslav Furman <yaro330@gmail.com>
-> 
-> ---
-> 
-> V3: Moved the code in the appropriate place, after the 0x0578 device,
-> as pointed out by Alan Stern
-> ---
->  drivers/usb/storage/unusual_uas.h | 7 +++++++
->  1 file changed, 7 insertions(+)
 
-I'm confused, this is already in 6.3-rc4, right?
+Hello,
 
-thanks,
+I have a faulty 128MB USB stick that happens to randomly timeout when
+reading a specific block.
 
-greg k-h
+After the first timeout, the scsi layer retries the command. If that
+retry work, then everything goes well. But if the retried command
+timeouts as well, then I get a deadlock.
+
+To reproduce fast & reliable, I'm using these settings:
+
+# echo 10 >/proc/sys/kernel/hung_task_timeout_secs
+# echo 0x3f > /proc/sys/dev/scsi/logging_level
+# cd /sys/block/sda/queue/
+# echo none > scheduler
+# echo 1 > nr_requests
+# echo 1 > nomerges
+# echo 4 > max_sectors_kb
+# echo 5000 > io_timeout
+# cat /dev/sda > /dev/null
+
+
+dmesg with timestamps so it's easy to spot the timeouts:
+
+[  211.732418] *** thread awakened
+[  211.732429] Command READ_10 (10 bytes)
+[  211.732438] bytes: 28 00 00 02 01 f8 00 00 08 00
+[  211.732447] Bulk Command S 0x43425355 T 0xb8ca L 4096 F 128 Trg 0 LUN 0 CL 10
+[  211.732459] xfer 31 bytes
+[  211.732539] Status code 0; transferred 31/31
+[  211.732550] -- transfer complete
+[  211.732557] Bulk command transfer result=0
+[  211.732564] xfer 4096 bytes, 1 entries
+[  211.732913] Status code 0; transferred 4096/4096
+[  211.732925] -- transfer complete
+[  211.732931] Bulk data transfer result 0x0
+[  211.732938] Attempting to get CSW...
+[  211.732944] xfer 13 bytes
+[  211.733036] Status code 0; transferred 13/13
+[  211.733047] -- transfer complete
+[  211.733054] Bulk status result = 0
+[  211.733061] Bulk Status S 0x53425355 T 0xb8ca R 0 Stat 0x0
+[  211.733071] scsi cmd done, result=0x0
+[  211.733092] *** thread sleeping
+[  211.733162] *** thread awakened
+[  211.733174] Command READ_10 (10 bytes)
+[  211.733183] bytes: 28 00 00 02 02 00 00 00 08 00
+[  211.733192] Bulk Command S 0x43425355 T 0xb8cb L 4096 F 128 Trg 0 LUN 0 CL 10
+[  211.733204] xfer 31 bytes
+[  211.733288] Status code 0; transferred 31/31
+[  211.733300] -- transfer complete
+[  211.733306] Bulk command transfer result=0
+[  211.733313] xfer 4096 bytes, 1 entries
+[  218.089304] sd 0:0:0:0: [sda] tag#0 abort scheduled
+[  218.109297] sd 0:0:0:0: [sda] tag#0 aborting command
+[  218.109315] command_abort called
+[  218.109324] -- cancelling sg request
+[  218.112380] Status code -104; transferred 3072/4096
+[  218.112393] -- transfer cancelled
+[  218.112400] Bulk data transfer result 0x4
+[  218.112407] -- command was aborted
+[  218.209278] usb 1-1.2: reset high-speed USB device number 3 using orion-ehci
+[  218.359923] usb_reset_device returns 0
+[  218.359936] scsi command aborted
+[  218.359947] *** thread sleeping
+[  218.359964] sd 0:0:0:0: [sda] tag#0 retry aborted command
+[  218.399298] *** thread awakened
+[  218.399311] Command READ_10 (10 bytes)
+[  218.399320] bytes: 28 00 00 02 02 00 00 00 08 00
+[  218.399330] Bulk Command S 0x43425355 T 0xb8cc L 4096 F 128 Trg 0 LUN 0 CL 10
+[  218.399342] xfer 31 bytes
+[  218.399544] Status code 0; transferred 31/31
+[  218.399556] -- transfer complete
+[  218.399562] Bulk command transfer result=0
+[  218.399570] xfer 4096 bytes, 1 entries
+[  225.129297] sd 0:0:0:0: [sda] tag#0 previous abort failed
+[  225.129337] scsi host0: Waking error handler thread
+[  225.129358] scsi host0: scsi_eh_0: waking up 0/1/1
+[  225.129375] scsi host0: scsi_eh_prt_fail_stats: cmds failed: 0, cancel: 1
+[  225.129387] scsi host0: Total of 1 commands on 1 devices require eh work
+[  225.129402] sd 0:0:0:0: scsi_eh_0: Sending BDR
+[  225.129414] device_reset called
+[  235.369290] INFO: task scsi_eh_0:173 blocked for more than 10 seconds.
+[  235.369311]       Not tainted 6.3.0-00615-gffe64935a4a2 #9
+[  235.369320] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[  235.369327] task:scsi_eh_0       state:D stack:0     pid:173   ppid:2      flags:0x00000000
+[  235.369350]  __schedule from schedule+0x70/0xac
+[  235.369374]  schedule from schedule_preempt_disabled+0x24/0x34
+[  235.369393]  schedule_preempt_disabled from __mutex_lock.constprop.0+0x14c/0x280
+[  235.369412]  __mutex_lock.constprop.0 from device_reset+0x28/0x64
+[  235.369433]  device_reset from scsi_try_bus_device_reset+0x24/0x58
+[  235.369452]  scsi_try_bus_device_reset from scsi_eh_ready_devs+0x2f0/0x97c
+[  235.369470]  scsi_eh_ready_devs from scsi_error_handler+0x238/0x49c
+[  235.369488]  scsi_error_handler from kthread+0xc4/0xdc
+[  235.369507]  kthread from ret_from_fork+0x14/0x3c
+[  235.369567] INFO: task usb-storage:176 blocked for more than 10 seconds.
+[  235.369576]       Not tainted 6.3.0-00615-gffe64935a4a2 #9
+[  235.369583] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[  235.369590] task:usb-storage     state:D stack:0     pid:176   ppid:2      flags:0x00000000
+[  235.369606]  __schedule from schedule+0x70/0xac
+[  235.369622]  schedule from schedule_timeout+0x18/0xd0
+[  235.369641]  schedule_timeout from __wait_for_common+0xc0/0x13c
+[  235.369660]  __wait_for_common from usb_sg_wait+0x10c/0x118
+[  235.369677]  usb_sg_wait from usb_stor_bulk_transfer_sglist+0xc4/0x118
+[  235.369695]  usb_stor_bulk_transfer_sglist from usb_stor_bulk_srb+0x24/0x3c
+[  235.369713]  usb_stor_bulk_srb from usb_stor_Bulk_transport+0x164/0x44c
+[  235.369731]  usb_stor_Bulk_transport from usb_stor_invoke_transport+0x20/0x5c4
+[  235.369750]  usb_stor_invoke_transport from usb_stor_control_thread+0x1a4/0x2bc
+[  235.369769]  usb_stor_control_thread from kthread+0xc4/0xdc
+[  235.369786]  kthread from ret_from_fork+0x14/0x3c
+
+
+Turns out eh_device_reset_handler() is called with a pending command
+(srb == us->srb), and I don't know if the usb code was expecting
+eh_abort_handler() to be called first.
+
+This patch fixes the issue, not sure if it's correct:
+
+--- a/drivers/usb/storage/scsiglue.c
++++ b/drivers/usb/storage/scsiglue.c
+@@ -455,6 +455,9 @@ static int device_reset(struct scsi_cmnd *srb)
+ 
+        usb_stor_dbg(us, "%s called\n", __func__);
+ 
++       if (us->srb == srb)
++               command_abort(srb);
++
+        /* lock the device pointers and do the reset */
+        mutex_lock(&(us->dev_mutex));
+        result = us->transport_reset(us);
+
+
+-- 
+Maxime
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/ZCHJw9eNPrYduLz4%40kroah.com.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/ZEllnjMKT8ulZbJh%40sakura.
