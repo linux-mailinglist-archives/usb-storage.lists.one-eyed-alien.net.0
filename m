@@ -1,127 +1,127 @@
-Return-Path: <usb-storage+bncBC43DANU4AIBBEO5U2RAMGQERLDE3CQ@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBD3JNNMDTMEBBY4HXORAMGQE63QK7DQ@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-wm1-x348.google.com (mail-wm1-x348.google.com [IPv6:2a00:1450:4864:20::348])
-	by mail.lfdr.de (Postfix) with ESMTPS id 91C136EFDCD
-	for <lists+usb-storage@lfdr.de>; Thu, 27 Apr 2023 01:06:58 +0200 (CEST)
-Received: by mail-wm1-x348.google.com with SMTP id 5b1f17b1804b1-3f315735edesf2558875e9.1
-        for <lists+usb-storage@lfdr.de>; Wed, 26 Apr 2023 16:06:58 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1682550418; cv=pass;
+Received: from mail-pl1-x646.google.com (mail-pl1-x646.google.com [IPv6:2607:f8b0:4864:20::646])
+	by mail.lfdr.de (Postfix) with ESMTPS id 503146F2A7B
+	for <lists+usb-storage@lfdr.de>; Sun, 30 Apr 2023 21:39:17 +0200 (CEST)
+Received: by mail-pl1-x646.google.com with SMTP id d9443c01a7336-1a685dfa3f2sf18249175ad.1
+        for <lists+usb-storage@lfdr.de>; Sun, 30 Apr 2023 12:39:17 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1682883555; cv=pass;
         d=google.com; s=arc-20160816;
-        b=ynLF3rN5JJiVlKvFEghC765IDfzGp69BpfmdWrFH/NPV9V8ADe7UtdKQ6pdCLrk2dW
-         sD5iINPF8gHloj4MhgVrxTy+W2En0KI/faOa5RY8K+K1+O+6hDWVTl8J8upleFIJZMfl
-         7SkpGxlGuVzFXlMZChSE4DIzdrrr45Jt4eRLwF19l2ooHj4ZuCuLzrV8aU/9GtcbtoqN
-         Hhd2L18y07uMoy9e5GibleEf7Ck5ih70paDa90y4MLThJLBgn1ZdLp70uoYMKDmSebQG
-         cEeyG8do+vtpFPSKEZJxJfjnSClEhjgg3r9EpAbIv4kGkV729k6nT4icHtQEIxx91FuT
-         i6Rw==
+        b=w8XNp11bdsCPOgSHICNFYs7ArlWsfGMmpDYmo5p7m3MUIo+PwHc//t1467hyJ6T+v9
+         BTClryr676xIfFrGOwCort/bgPmsEbsUAYeQULrZNMmo3iuWfMByr5xF66NrJW5LGcl1
+         cgBUeejyOhODpJTG1hhWfkda+ib4Z+aym3EwVyyLQWyKWKdzcC4fCXLXdUgQJuAcEu7K
+         aw69n8GPbXEineEDIvbJ8cXDJD15o01wmayKDua3Xhf5hqOASz7DEFQ1L0OBRTDQvDvi
+         lWNtEs/HmOlhUuQB5AVf3iOKX4ZFXpELd9ndvfGMr3BaFLwakeoXNXRy3xU2hHDvx/BD
+         kNMg==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:in-reply-to
-         :content-transfer-encoding:content-disposition:mime-version
-         :references:message-id:subject:cc:to:from:date:sender:dkim-signature;
-        bh=VHP+uXvRZA0ntJ4nzqzgj1QAIOYjypVJhHc3dmaerb0=;
-        b=fQJXO4GC117yLNkJB6sHa4alu8xqHKHlqJZ3ZWKjMEr0aEHG0jwgrC13h1xP/m1CwV
-         L0xqaBjj4LFl7fqd2TxodQmJhGwrgJ3gJ9jLXq569hp0SWDpwfcqbIeQjOLVrYn0fFYs
-         5+ccgVENasmI5LMl32W96lKPbBYWy18MJQ6xRyjITGG971UAbYjgbJL2qf43BKgDzDA3
-         I0f6/P2a1lmGzk6Mek+ZaaAf84wYqFCjBiUAVYAgEpH8YoyvjE7pik55X7HsbxbOnLa1
-         KuIjPvBwyoHrEMcY9aybWW0rPfQkYbL+8rpCiVB+EHO/CFfxm47KfJPt8nZ/4wZkIaIE
-         ohPQ==
+         :list-id:mailing-list:precedence:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :sender:dkim-signature;
+        bh=pN+Bmq+F4lbZdiugKWzDw/Sk7F+VWqHIlS6lvDRU+xg=;
+        b=aawjKj8S1YEvq1CfQnrSYITOKuVgooWuU+kl9PbIx+XiELNy5fwbR4ECiiPcEmwLSe
+         qCHP6BOjew9T4MtcUwcfT+AyPF2o3IT6dfahSMg0f7Fn5MvU0de4k58W0s0IzUIGJK9j
+         xurIChydW8wEx+m6PgnlU1NiBjLQ6inGlmdiC+5AX1iXzpIO3x1ublYVdBkREfKYelj3
+         GAq+IhtPL8AubSPVftzHv9UX/XvB+XHAfq19ljfwK47Gii+c+1Jm+X3onVezsHpeLZcZ
+         caoeDBPEOnI9/hXPpf8fQ1C6rp1kBDi/8pHEYwL3AO7AXczCl+Ib7mo3ZyMfAsmFwYTt
+         K0QQ==
 ARC-Authentication-Results: i=2; mx.google.com;
-       spf=pass (google.com: domain of srs0=1gfpuf=ar=freebox.fr=mbizon@srs.iliad.fr designates 212.27.33.1 as permitted sender) smtp.mailfrom="SRS0=1gfpUf=AR=freebox.fr=mbizon@srs.iliad.fr"
+       spf=pass (google.com: domain of bart.vanassche@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=bart.vanassche@gmail.com;
+       dmarc=fail (p=NONE sp=NONE dis=NONE) header.from=acm.org
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1682550418; x=1685142418;
+        d=lists.one-eyed-alien.net; s=google; t=1682883555; x=1685475555;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:x-original-authentication-results
-         :x-original-sender:in-reply-to:content-transfer-encoding
-         :content-disposition:mime-version:references:message-id:subject:cc
-         :to:from:date:sender:from:to:cc:subject:date:message-id:reply-to;
-        bh=VHP+uXvRZA0ntJ4nzqzgj1QAIOYjypVJhHc3dmaerb0=;
-        b=dJINPemaBMEraeUPBcpdu2z8i1H8SEQBZcgk35b7DCdnPCxt5awgkCECwxysD9KeqI
-         9+F10ON6jewIGXIXrheQKHdAU3BIKWsefRGYHFtTJz+XKM1FYXoPszB0nuWb8zAzNqfo
-         A2pj1NqMrmQbKHrfES+wNGWLjilABSXEMkj3E=
+         :x-original-sender:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :sender:from:to:cc:subject:date:message-id:reply-to;
+        bh=pN+Bmq+F4lbZdiugKWzDw/Sk7F+VWqHIlS6lvDRU+xg=;
+        b=N6eiMZ8iMyiJyKYMu9MmsyBVeORnfhUEkrU62ubb8sSb6FFWeCJGSny5xJP7tx6VnB
+         p7A7IEms4mOAkr8dvTZJpC2PTatSaOLUbYVc+vkZu48ZM0FvzWgjGJ6ryMVpZnR1fN7U
+         3MYlvnVwJPQUFVMuIrR4+kE78lD8OnfBNP5YE=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1682550418; x=1685142418;
+        d=1e100.net; s=20221208; t=1682883555; x=1685475555;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :x-spam-checked-in-group:list-id:mailing-list:precedence
          :x-original-authentication-results:x-original-sender:in-reply-to
-         :content-transfer-encoding:content-disposition:mime-version
-         :references:message-id:subject:cc:to:from:date:x-beenthere
-         :x-gm-message-state:sender:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=VHP+uXvRZA0ntJ4nzqzgj1QAIOYjypVJhHc3dmaerb0=;
-        b=RrOTkSAGMxC5YQI2bQ5I8e2D4T4nuvuxdp25pSzvNhf29YiBs5TicjNcKOHmhrAK+5
-         oKEtMqfJNNvl40ZhImbSLFNmFX+XKIF643j7CwH7AaXbo1+yiNqm00WZaGfluGaWC2Cd
-         fLYr7V7K6OsRpx6F4Sy4l1GjX/UnCKYw9D9WgEJ5IIep/EetDsFCflfVNvnA3+hXUhZa
-         7cuC4bRd1brVfZQ53/NbvWqHTvNj2XwqVST89p2XMcxRPrkk2ChviUNdKSM8nZ9eMxj8
-         ymZdKr8E01oadv4Mw5Mzngy+2HlLyydOXGXN/vw+SOQdIUW53S5Bo1GQkvBLJwt5QNxy
-         rzVQ==
+         :from:references:cc:to:content-language:subject:user-agent
+         :mime-version:date:message-id:x-beenthere:x-gm-message-state:sender
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=pN+Bmq+F4lbZdiugKWzDw/Sk7F+VWqHIlS6lvDRU+xg=;
+        b=fdnEwBiFwog1My8eK5bAf9izbxVHYen081OfccOu7c+gu8J/Qa7D6naLxiKrUgjPZ1
+         5tlGAI2+ObiDr2r9NFzMXbji8EXCG+4icH0FL5jsG6IQsIE0IPpQyLpkgyC59QUhfQwa
+         uG7/O9iv1PCw9Dxxf2+rmLoretHbVIXaSGT8fLrkonE4lZohsAmw+IQPzptfiz/vT0Wk
+         Voi4H294E7Rzs7G1oWBamJgt6GZuIQDUfdZyNtOxduqLZkucK9uCnaBuwE5vXlspwRUF
+         bNLHLSr6cXlVig5trRbwDpEQKfNY6YpUZdh/VPSlvTaaHx6dhjYXD/lb6+XD4ilrQrjT
+         XScA==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: AC+VfDzBmLywUkZH3yMLzisNaORCD7jdmsrIXqmPSYgK0qUsNYE+wsRD
-	JeUg0eBBPu8nLDE53+otJ3Tcaw==
-X-Google-Smtp-Source: ACHHUZ4uFemzgT+LzSl+QKR4RBfEgRkV1hofBg2UAotsLQuMSlQRdGqTj6DrW+hY6FkGn4NyQFvEaQ==
-X-Received: by 2002:a05:600c:1d2a:b0:3f1:754e:6a0a with SMTP id l42-20020a05600c1d2a00b003f1754e6a0amr1144858wms.2.1682550418031;
-        Wed, 26 Apr 2023 16:06:58 -0700 (PDT)
+X-Gm-Message-State: AC+VfDyK2M8RqWsZ7wf26jtbSNaujpusMV1XvoOewoDko9vhvkZe/ZoV
+	/nEnmIbISEHmX6c5CeHap9KuYg==
+X-Google-Smtp-Source: ACHHUZ5kLSku+P2Xrn5xDL5ERgqQSMq/uA/Akk4CUnFIyAqfae3Vkz9QYmexjIp7Dc1ID0zJ/ntzpA==
+X-Received: by 2002:a17:902:ce8a:b0:1a6:c2a8:3c22 with SMTP id f10-20020a170902ce8a00b001a6c2a83c22mr3708075plg.9.1682883555544;
+        Sun, 30 Apr 2023 12:39:15 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a5d:59a7:0:b0:2f4:1b04:ed8f with SMTP id p7-20020a5d59a7000000b002f41b04ed8fls148434wrr.1.-pod-prod-gmail;
- Wed, 26 Apr 2023 16:06:56 -0700 (PDT)
-X-Received: by 2002:a5d:58e9:0:b0:2f6:1a30:605c with SMTP id f9-20020a5d58e9000000b002f61a30605cmr16045543wrd.3.1682550416653;
-        Wed, 26 Apr 2023 16:06:56 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1682550416; cv=none;
+Received: by 2002:a17:902:f693:b0:19c:b3c9:49d5 with SMTP id
+ l19-20020a170902f69300b0019cb3c949d5ls9329001plg.6.-pod-prod-gmail; Sun, 30
+ Apr 2023 12:39:14 -0700 (PDT)
+X-Received: by 2002:a17:90b:3742:b0:24d:fedf:688a with SMTP id ne2-20020a17090b374200b0024dfedf688amr1269227pjb.24.1682883554438;
+        Sun, 30 Apr 2023 12:39:14 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1682883554; cv=none;
         d=google.com; s=arc-20160816;
-        b=jHNpANDT36eXJh+eAUbzhnwZifJ4VEvRRY4JzGsA8GnxYfDW8y7tNTwywG51Sz9wvQ
-         bCTBsnF5auEeKDJkXbtTp/ddKoqYRUDHqXqe4w53rq+Yg5SaTyPRc7YsQHr+0ru+o0ZD
-         rs5uE1pTjkslv0jC3p9Iw9QC+eeFOGdUF9fqcYxd5mkf2p4SOdRgPcLlH2UtGZShhf5a
-         Zr68tLe0xycOHaMZf3upDv75L9/ZR0y0NEttv/mOLkuplBsH239wamMsIPw9oPKUlrvH
-         1UcO6UeMNpRz3+RRiBqMEPpZ4jtsEmZbEdr37p2SCLs4tsWThuSqXAD2ibwWOs39z1dk
-         p66w==
+        b=Z9LAtBCQLuPF1uFFU4yKnnvnAWfolRNsdDuIjEclVCzz2sram/DXQDvK3MirjmfHEm
+         L0iCqeAfytEhRsNXR3Mc8vrumXTAZxqhqS3oH+eBI8Li6ttV3G+K+BZBZVC4fTqNZOpi
+         sSgPe55duMIsucYwfCiE6ObIEuekQJO0u9jegT30kjL/Xg5+tECbsAUoFjnvpkk5WO9n
+         tiZsNOqGH99JubAhzglizVwEDhFa3hbqKzm4SDr+fIf4oxxAVpmc3wQxanqJhkH3OIbm
+         8rs1OfmqTHgyjwHelyNvXpImv5vBvIdlIXqQZs9W46TwYmCf5hWvX5UhYHYLoN4yGu7o
+         OYPA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=in-reply-to:content-transfer-encoding:content-disposition
-         :mime-version:references:message-id:subject:cc:to:from:date;
-        bh=We76ZQ1ctgqOQ4b1rzcoGRlrooGupcF7VMsbcEyElEI=;
-        b=DYrhgYASIrd2DTTkLYi2YSWXtvFVe6SrSJhCOpdn2myiPFv9s2pFgOjwFysSrz8t5j
-         hDp8fjQUGypSfIEdNvg2UD8rTscUjANtSNR4wh/+CXiIvc5ZUDFgvff8XWebwWsZTJZi
-         pTdGtUsTyy4/lrRBySW3zX0NlYwaI4x5pICRYBQLTcvCyMbYd8q1c+HF7PGyV6vblw2m
-         0geIx9wekm/k//4jbuSWF9Po+vzXlNzT3Qxk458j4nHZoqMe0NX1gglrbhM7BCV1kRFr
-         znsES7SFQx7ARaeeOvmouuN8B9IuEgR0SrTYRfYj4KUXXNc54umM556hnTmx3LhsBrwS
-         TB/Q==
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id;
+        bh=0MUOiR0NK0TNr+Y5AvgEYruL6TTgFuBbHWzDVlAEZz8=;
+        b=iJSN/iE2+BMZ+qxp4zD1OyhLp2IatmnQUg+yRUY7hY0+LyXpcivUv5KLDdupDudcvp
+         tQ4rC6aRF7j33nC8DyK0MyO/qEwrCd9ETMUXhvdiS2beMIrSHzGUbI0h28mxLxis+J43
+         GBxi6l/lLjgakyoVMquk2tcdxKjlMpzOT9JLMO4Vvj70fw7RxCVXAxAvJHpr9T9LjJf8
+         mK6H7fQZGdVTjln6Pci0TVMJPmmvTDChgqYPJBrRyPBUJJUkx4+axPzjLSTh9EZ+uaOx
+         UcO1xETHV755NJ+JSA4B3zJ36WRrOcf3nr8Lyh2Ug3kBrMazkJMzg3402YBVZgkwsrjM
+         8Rqg==
 ARC-Authentication-Results: i=1; mx.google.com;
-       spf=pass (google.com: domain of srs0=1gfpuf=ar=freebox.fr=mbizon@srs.iliad.fr designates 212.27.33.1 as permitted sender) smtp.mailfrom="SRS0=1gfpUf=AR=freebox.fr=mbizon@srs.iliad.fr"
-Received: from ns.iliad.fr (ns.iliad.fr. [212.27.33.1])
-        by mx.google.com with ESMTPS id r12-20020adff10c000000b002f626341c9bsi11910654wro.346.2023.04.26.16.06.56
+       spf=pass (google.com: domain of bart.vanassche@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=bart.vanassche@gmail.com;
+       dmarc=fail (p=NONE sp=NONE dis=NONE) header.from=acm.org
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id n6-20020a17090a2fc600b0024df3fbd1d1sor686864pjm.39.2023.04.30.12.39.14
         for <usb-storage@lists.one-eyed-alien.net>
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 26 Apr 2023 16:06:56 -0700 (PDT)
-Received-SPF: pass (google.com: domain of srs0=1gfpuf=ar=freebox.fr=mbizon@srs.iliad.fr designates 212.27.33.1 as permitted sender) client-ip=212.27.33.1;
-Received: from ns.iliad.fr (localhost [127.0.0.1])
-	by ns.iliad.fr (Postfix) with ESMTP id 3735A203F1;
-	Thu, 27 Apr 2023 01:06:56 +0200 (CEST)
-Received: from sakura (freebox.vlq16.iliad.fr [213.36.7.13])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (P-256) server-signature RSA-PSS (3072 bits) server-digest SHA256)
-	(No client certificate requested)
-	by ns.iliad.fr (Postfix) with ESMTPS id 1D04C2029C;
-	Thu, 27 Apr 2023 01:06:56 +0200 (CEST)
-Date: Thu, 27 Apr 2023 01:06:55 +0200
-From: Maxime Bizon <mbizon@freebox.fr>
-To: Alan Stern <stern@rowland.harvard.edu>
-Cc: linux-usb@vger.kernel.org, usb-storage@lists.one-eyed-alien.net,
-	linux-scsi@vger.kernel.org,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	"Martin K. Petersen" <martin.petersen@oracle.com>
+        (Google Transport Security);
+        Sun, 30 Apr 2023 12:39:14 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bart.vanassche@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+X-Received: by 2002:a05:6a20:8403:b0:f6:d60d:dbc2 with SMTP id c3-20020a056a20840300b000f6d60ddbc2mr14853090pzd.28.1682883553953;
+        Sun, 30 Apr 2023 12:39:13 -0700 (PDT)
+Received: from [192.168.3.219] ([98.51.102.78])
+        by smtp.gmail.com with ESMTPSA id s18-20020a056a00195200b0063b96574b8bsm18593068pfk.220.2023.04.30.12.39.13
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 30 Apr 2023 12:39:13 -0700 (PDT)
+Message-ID: <e9165662-7af2-0540-f823-56a5f051620f@acm.org>
+Date: Sun, 30 Apr 2023 12:39:12 -0700
+MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.10.0
 Subject: [usb-storage] Re: Reproducible deadlock when usb-storage scsi command
  timeouts twice
-Message-ID: <ZEmujxtkwV8wEhYh@sakura>
+Content-Language: en-US
+To: Alan Stern <stern@rowland.harvard.edu>, Maxime Bizon <mbizon@freebox.fr>
+Cc: linux-usb@vger.kernel.org, usb-storage@lists.one-eyed-alien.net,
+ linux-scsi@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ "Martin K. Petersen" <martin.petersen@oracle.com>
 References: <ZEllnjMKT8ulZbJh@sakura>
  <34a2e50b-e899-45ee-ac14-31fa0bb1616b@rowland.harvard.edu>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="UTF-8"
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+From: Bart Van Assche <bvanassche@acm.org>
 In-Reply-To: <34a2e50b-e899-45ee-ac14-31fa0bb1616b@rowland.harvard.edu>
-X-Original-Sender: mbizon@freebox.fr
+Content-Type: text/plain; charset="UTF-8"; format=flowed
+X-Original-Sender: bvanassche@acm.org
 X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
- domain of srs0=1gfpuf=ar=freebox.fr=mbizon@srs.iliad.fr designates
- 212.27.33.1 as permitted sender) smtp.mailfrom="SRS0=1gfpUf=AR=freebox.fr=mbizon@srs.iliad.fr"
+ domain of bart.vanassche@gmail.com designates 209.85.220.41 as permitted
+ sender) smtp.mailfrom=bart.vanassche@gmail.com;       dmarc=fail (p=NONE
+ sp=NONE dis=NONE) header.from=acm.org
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -137,20 +137,42 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
+On 4/26/23 12:20, Alan Stern wrote:
+>> This patch fixes the issue, not sure if it's correct:
+>>
+>> --- a/drivers/usb/storage/scsiglue.c
+>> +++ b/drivers/usb/storage/scsiglue.c
+>> @@ -455,6 +455,9 @@ static int device_reset(struct scsi_cmnd *srb)
+>>   
+>>          usb_stor_dbg(us, "%s called\n", __func__);
+>>   
+>> +       if (us->srb == srb)
+>> +               command_abort(srb);
+>> +
+>>          /* lock the device pointers and do the reset */
+>>          mutex_lock(&(us->dev_mutex));
+>>          result = us->transport_reset(us);
+> 
+> Maybe...  But it would be better to check first whether the SCSI core is
+> supposed to be reusing an active srb in this way.
+> 
+> Martin, can tell us what is supposed to happen here?  Is the
+> eh_device_reset_handler routine supposed to be called with a scsi_cmnd
+> for a currently active command?
 
-On Wednesday 26 Apr 2023 =C3=A0 15:20:07 (-0400), Alan Stern wrote:
+Hi Alan,
 
-> What version of the kernel are you using?
+I'm not aware of any other .eh_device_reset_handler implementation that 
+aborts the command that is passed to this callback before it aborts 
+other SCSI commands. However, I'm not aware of an equivalent of 
+us_data.dev_mutex in other SCSI LLDs either. Maybe this deadlock is 
+specific to the USB storage handler?
 
-6.3
+Martin, feel free to correct me if I got anything wrong.
 
---=20
-Maxime
+Bart.
 
---=20
-You received this message because you are subscribed to the Google Groups "=
-USB Mass Storage on Linux" group.
-To unsubscribe from this group and stop receiving emails from it, send an e=
-mail to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.=
-one-eyed-alien.net/d/msgid/usb-storage/ZEmujxtkwV8wEhYh%40sakura.
+-- 
+You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
+To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/e9165662-7af2-0540-f823-56a5f051620f%40acm.org.
