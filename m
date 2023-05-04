@@ -1,132 +1,109 @@
-Return-Path: <usb-storage+bncBC3LF4U3SUORBUPEZWRAMGQE6VW34FI@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBD6LRVPZ6YGRBM7XZ2RAMGQEWY7I6JQ@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-io1-f72.google.com (mail-io1-f72.google.com [209.85.166.72])
-	by mail.lfdr.de (Postfix) with ESMTPS id 104266F67C9
-	for <lists+usb-storage@lfdr.de>; Thu,  4 May 2023 10:52:35 +0200 (CEST)
-Received: by mail-io1-f72.google.com with SMTP id ca18e2360f4ac-7696bf2c54esf24248039f.3
-        for <lists+usb-storage@lfdr.de>; Thu, 04 May 2023 01:52:35 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1683190353; cv=pass;
+Received: from mail-qv1-xf48.google.com (mail-qv1-xf48.google.com [IPv6:2607:f8b0:4864:20::f48])
+	by mail.lfdr.de (Postfix) with ESMTPS id E6B046F6D7B
+	for <lists+usb-storage@lfdr.de>; Thu,  4 May 2023 16:05:40 +0200 (CEST)
+Received: by mail-qv1-xf48.google.com with SMTP id 6a1803df08f44-61b6b209e29sf3607566d6.3
+        for <lists+usb-storage@lfdr.de>; Thu, 04 May 2023 07:05:40 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1683209140; cv=pass;
         d=google.com; s=arc-20160816;
-        b=w3yXnyzEUycBQw38kfvofD6+GaI5OGNLd9npgU96aNC5gNm9sEH58ju3pddh6kzfnD
-         BtRMM1FnmQpVa4nCa8V/gdg95Ex855Cvx8XR1KkmgH9eXMhHbycWUkxZA0BaILSyR+bm
-         KN4CAKeqDW/gr/hc4Yfz0MM7pkiaanJRJAdFRcLyDurkeIYJVgFfNCAZOSHZwAUH2LGC
-         cCqMJXPcEuOfiBXuDDV4UoopHbY5OZu2L6xNcWYyqtyQpd+9z+uZIY6Ih050jzskxHzc
-         /BuEKhrTxf5h/4diO6xnVneTOQpGQRCNuANmpjkdEFgo4e/I88An3Brko92PYoc2SmyL
-         /lJw==
+        b=aeXvTE61KFZjiiqvgcvJ3Cr4nQXoA2QQx6kOEFjw+fc6RaWYOAWrTLo/Kq4yJ19UDE
+         03aRRUiLJKssms/T/+VLMQlbM19ET5VlFPPEG5GAMhsSVdOQmFcfmVuZgfscihO/ZeaE
+         vwX970h3g5/31ZJ273rC/Xnvp/WRtB21YCH7UKy60sgG7ceYUosb7oypFrTE64tCmCnj
+         SwwGaTwTl+TTM8OaU/XGOS8OH7R0YVXqQLemoj15Cann5DNPfZB+cQLuPYZ5sM62vM3i
+         i3nm0b0Ze0J+qYCzYKTleZg1g+94dUZ+5VaXh1NnEgBZVGBVZhjqdB9UFpc6O//u9Gk+
+         9HWw==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:mime-version
-         :content-transfer-encoding:sender:in-reply-to:content-disposition
-         :references:message-id:subject:cc:to:from:date;
-        bh=77yrBWI0JC0ii0CCuoGNwEjoXd5k/6vlhnLJCGM7UDI=;
-        b=AJpwl5WUOA50Sl04JyQiKpMTlctbI28HLHmWLXx6dM9mI5I3o0L/4pdKDa0l3Won2a
-         dJriIL0AALFyfv/rZEASAJmknZphcu9YFqtohJf9YlqQPmfSjV6TrLuK4qyh1rmhtVE9
-         7slXSz+PM+aLdYCRTSrxdZCaBFWrXMSWcMpdKUEA+b2h/uNzWl5ahLJpWCOE2jUqsN6Q
-         Tb8tgpWSSA4OwmP1pHI1fkTPheRbcYd/3Fc/h8L4giIYdhf23OKqJGsSp/NhojJ8/lqp
-         p6ZeHKofzoeD+/rDm/9BiaGrQTMQwGRpj9Wd1kEI/eKEr84IROe6zLsCrBxy8fGQo3w2
-         tsGQ==
+         :list-id:mailing-list:precedence:in-reply-to
+         :content-transfer-encoding:content-disposition:mime-version
+         :references:message-id:subject:cc:to:from:date:sender:dkim-signature;
+        bh=OnlO79vaHxaaq1zGDAmyOBRYQCjsRlfGCj5pGmFbPoM=;
+        b=KKxHkh836z02vt7flWwGq9l3TfC0n06ZPvP0zSGr084uxGjYlcjBOHSbzed0SeYJ+T
+         k03UWCriD34GDyWJxsQCEJWE7N8t1YPB1rpwuqWHiaucv/rseXq5y3OtWT2HNpbG4oCq
+         nNqhKgIBNhpb5T1tpaSi1ut8XLUL0fbZpXpa1D3iVKuevfSraOoYtHOGClSny6HvlWym
+         YBTGD7cGWlGplhLGIbsuE5nwfJ9TE9mWYEmu9/viHXZeaev1k5DhUGXMoDRJ/MuBrC1S
+         cn82abDYCb6wswEm0+4qdH6Dzq0tXmL3+Myvy1+LJ2G7L5Hn7ndkY6upY250BJaA1/rr
+         n32A==
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@ibm.com header.s=pp1 header.b=IyyVIYuv;
-       spf=pass (google.com: domain of bblock@linux.ibm.com designates 148.163.156.1 as permitted sender) smtp.mailfrom=bblock@linux.ibm.com;
-       dmarc=pass (p=REJECT sp=NONE dis=NONE) header.from=ibm.com
+       spf=pass (google.com: domain of stern+6456d096@netrider.rowland.org designates 192.131.102.5 as permitted sender) smtp.mailfrom=stern+6456d096@netrider.rowland.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=lists.one-eyed-alien.net; s=google; t=1683209140; x=1685801140;
+        h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
+         :list-id:mailing-list:precedence:x-original-authentication-results
+         :x-original-sender:in-reply-to:content-transfer-encoding
+         :content-disposition:mime-version:references:message-id:subject:cc
+         :to:from:date:sender:from:to:cc:subject:date:message-id:reply-to;
+        bh=OnlO79vaHxaaq1zGDAmyOBRYQCjsRlfGCj5pGmFbPoM=;
+        b=G2KobkE2p/xq41r2m3Dzb4l7c4FLGUdy2ql1ua7y+NPn6RWL7c8tMODYmRxNIqgQ8u
+         dBY/zShuzbk5rA+8jh8FA6v10Xsi9P5B//DjbCv9z5XlnOt6CJJoVm3H9rv1C40cRoQw
+         hQmpsdgDhKPPzkOizc3U2uBAHw4yazkVft9/4=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1683190353; x=1685782353;
+        d=1e100.net; s=20221208; t=1683209140; x=1685801140;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :x-spam-checked-in-group:list-id:mailing-list:precedence
-         :x-original-authentication-results:x-original-sender:mime-version
-         :content-transfer-encoding:sender:in-reply-to:content-disposition
+         :x-original-authentication-results:x-original-sender:in-reply-to
+         :content-transfer-encoding:content-disposition:mime-version
          :references:message-id:subject:cc:to:from:date:x-beenthere
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=77yrBWI0JC0ii0CCuoGNwEjoXd5k/6vlhnLJCGM7UDI=;
-        b=co8cez2xWRnhSt8TkuvbD5EOabo0uNfmcLruewSXjOIe4KEy128T1F9E5xrpp/wAL3
-         t6X+pzVpFmmVszcDJ4x/h+mnLLTAj2CBycgxf1jULMq67B4HcuziXFDiccNmoC0tS+HD
-         /GEHNNHalQaZyKOo1nYNTCoDm6ogdRWWspLiJHSaJ3uYlkQzfSR+WjOXgPsTus0C2J5m
-         gZcXUcf6SCpMKpjt1hcRaK9LHt9mkDJLK7Ox0VkkFgckcoHqqdstNvjPO38+eH4wo1NL
-         NoB1Mm09ZhsNwP27IhVwuzpLhTkl7nSjgYkq+vrUENpigiJlqdTsjOVTqRX6teXFbNt8
-         gATw==
-X-Gm-Message-State: AC+VfDxfoadgqxggUVBIkkFgF8t72VkeddgROgCdrF/sXsJsn0WCALi/
-	CTts/UGRMJNfLVhNsgzSgAXG1g==
-X-Google-Smtp-Source: ACHHUZ7k4ZLAr7Q0ZtoGCQYzGAYosJp0Av03kGyWoJ3M2r1fB80Llu/WiNpBcqOTW9HYbEb5dfUKfA==
-X-Received: by 2002:a5d:94d3:0:b0:760:efd4:9583 with SMTP id y19-20020a5d94d3000000b00760efd49583mr11651223ior.1.1683190353735;
-        Thu, 04 May 2023 01:52:33 -0700 (PDT)
+         :x-gm-message-state:sender:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=OnlO79vaHxaaq1zGDAmyOBRYQCjsRlfGCj5pGmFbPoM=;
+        b=NCmnJkFk1ZJsdKlhjpq48B2qcOZju1lvkVc9asSIu1w9TPGqUheoZaOIVS3yOCTq3u
+         gyvRdxqk8hwC1zoyveTEVBJ/zZ6JsStBYsa8zECOHThLA4TBt9/20kA1XtcUoegQe9kL
+         T7VsKLJfX6sHoQMEmvojBixFvXqm8rcN5QoUb1rBa12xr6RzohDUaQVJSRFh/uJlmC2j
+         b7R3P07OKl/DH8DFrBFcQfcwk+YHoWeFjTB3byUkxEjgZQAKBHdX723WCnySA0wUPYkR
+         kRvvUUH75gN/qdOajGqhMkEEsQjOY81m+YgpcUAPvSApoZsIWH/kTthzBOhgoFCJHXLW
+         nQCw==
+Sender: usb-storage@lists.one-eyed-alien.net
+X-Gm-Message-State: AC+VfDweOjVXXLG/nyqX8eq/CF1/j4MLIC/4kmX7hTonxgb/WaDjrlAB
+	QgW+MJ3P1DnvwiCrEP7E0GTuwg==
+X-Google-Smtp-Source: ACHHUZ5Tz+K9x0ylgYNo7uq9QDj0ne4L6ODlp0rhH2VOd6s68wI1nb9FinfxKeEDNjncVTXDbZQHig==
+X-Received: by 2002:a05:6214:8c1:b0:5ef:43ee:61fb with SMTP id da1-20020a05621408c100b005ef43ee61fbmr2072916qvb.6.1683209139754;
+        Thu, 04 May 2023 07:05:39 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a05:6602:1545:b0:760:bc59:ebd0 with SMTP id
- h5-20020a056602154500b00760bc59ebd0ls3609132iow.4.-pod-prod-gmail; Thu, 04
- May 2023 01:52:33 -0700 (PDT)
-X-Received: by 2002:a5d:9c0f:0:b0:760:fa51:c8bc with SMTP id 15-20020a5d9c0f000000b00760fa51c8bcmr14861663ioe.19.1683190352958;
-        Thu, 04 May 2023 01:52:32 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1683190352; cv=none;
+Received: by 2002:a05:6214:449c:b0:56e:9b27:727c with SMTP id
+ on28-20020a056214449c00b0056e9b27727cls4177983qvb.0.-pod-prod-gmail; Thu, 04
+ May 2023 07:05:39 -0700 (PDT)
+X-Received: by 2002:ad4:5be3:0:b0:5e6:3da1:70fd with SMTP id k3-20020ad45be3000000b005e63da170fdmr17140713qvc.25.1683209138866;
+        Thu, 04 May 2023 07:05:38 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1683209138; cv=none;
         d=google.com; s=arc-20160816;
-        b=laL6Yi01UtQCssLpGtvrPQUETTlz6j/c30ApPL5syYSGNIylQ6nRM/v6b1nThvA3Ai
-         OOUnZCaDzDTYJbpvbzM4rGuYhJxz5J+2F9KEv44Vxd4tEFa5tFvFU2UNrZyd+6/L6FFn
-         gWWaEFtiNoDZfgwZBQbDak+WlvRInqpDyqun0yAaXyIljpp1UQlVt8y8qpr4CQC+Aegk
-         RsHeQPoi+wV2AH+Oex5k8fqderFCyqNiD5Nj0szPgLmqbk5ZodsLuLxcUR7ZeSN+SXId
-         fiyCdxJrDtctIMOL5ckTklvz03HZRa5xigh2t1cGEeWTJiEkipfi/b/VPQ+ZK4RvnYF/
-         stzA==
+        b=PiwUUV0L68WHVryooPA0hjB89c6Wi65N18OYhMyZDbUDUbVWTtV/qUD7Bnna2cV+V7
+         Fr2n4LYYtOrqz5TEM2Dd4nBbIwpfYBlioJKdhju+O3ipTJShDJxuxSOepOVuATWDW01h
+         ECyjkKZaAr8oPeVkdwI6zi9/cuJ65RTjklHsQkez7XvMy84hdv1q5osdGVvZqFfi2R6f
+         nI6d6VdMerVn5KCnFFq3veOuHOjLInUhq147W0iCz7yAmWQDb+fG4vhfgIB3J+aJFnT1
+         fvp3pb5k+WlDMyXbr8DOv5MK78pFV+lTARz55BHwzJ9gEHDsgYAdJMWtF1dAk5fLmwaY
+         fMqw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=mime-version:content-transfer-encoding:sender:in-reply-to
-         :content-disposition:references:message-id:subject:cc:to:from:date
-         :dkim-signature;
-        bh=ZTnS9zSi9xMln0tCtfiJ5m54kyrZ+iA3FnOsDmLRquY=;
-        b=OXqo2Fgy6mTEOAkKH43JxvlUcfi7SOfcjVjT+YGESrs81YV40yyHAIHaXA9TKXBVs5
-         sPG6NFwb7C4V4vGZK6m4ObJzOszJMUekCYhxavywBcaOqZU8I2qBRsY+G14ttgQ5hOq4
-         L3K3GHnXivpQxRVRciKKq+EWNhqHRiGpxgiW17UggoqEkAsikyb4w61S04O4Vi3Q8U5X
-         EZUETyBy6Nv16uADjupPgDYDMNyGcO3SeXn8RY7k5Wy/IKpZxB11jlZq0Xi2ivNqYL/+
-         2k7YkkKzjpJpMC/qbMU5iFMlAOVmSGJm+CRwtNmsAyk6grFN4PenalthieJhl+2Kr0M/
-         7XSA==
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date;
+        bh=AsA9AL5yrxhsDB28EDFKsNKckuStA2vdDz7u9nwLPxA=;
+        b=Sh/YwB3CE8y/YwgM8UrLTNRbYGANzBqW6c5H/Ifl5TzImAQK3zOkUSh8igyW+qhAt2
+         oAeaLDBUBliJfeM9euMqXRZrQoZ5vWN8FcHSaTPVfy+G+jqI/h0QcFrk+cOOkdaM1KUS
+         w1+I8UD6PtVaq7byjGDu+iGE8SSxhCeB7HRTb3QYyrO543JORlEcunnKmP0gNY1Zmy7s
+         15M1L5eJu6+rs99efchuKUEoXAmklVKI0roh1Ii/3CFrS7vi54ncf+pgXSDZORABHFR6
+         qoPSPrg43TWSWmPUw2a6tCEarY7Gl4u88eSAEnSjV/aPNn8bVmlFLRZ+IxlDxZS9O00n
+         kWwg==
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@ibm.com header.s=pp1 header.b=IyyVIYuv;
-       spf=pass (google.com: domain of bblock@linux.ibm.com designates 148.163.156.1 as permitted sender) smtp.mailfrom=bblock@linux.ibm.com;
-       dmarc=pass (p=REJECT sp=NONE dis=NONE) header.from=ibm.com
-Received: from mx0a-001b2d01.pphosted.com (mx0a-001b2d01.pphosted.com. [148.163.156.1])
-        by mx.google.com with ESMTPS id p10-20020a056638190a00b0040fa8480ddcsi25757324jal.66.2023.05.04.01.52.32
-        for <usb-storage@lists.one-eyed-alien.net>
-        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
-        Thu, 04 May 2023 01:52:32 -0700 (PDT)
-Received-SPF: pass (google.com: domain of bblock@linux.ibm.com designates 148.163.156.1 as permitted sender) client-ip=148.163.156.1;
-Received: from pps.filterd (m0353726.ppops.net [127.0.0.1])
-	by mx0a-001b2d01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3448gHGb032124;
-	Thu, 4 May 2023 08:52:32 GMT
-Received: from ppma05fra.de.ibm.com (6c.4a.5195.ip4.static.sl-reverse.com [149.81.74.108])
-	by mx0a-001b2d01.pphosted.com (PPS) with ESMTPS id 3qc9e5r9qt-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 04 May 2023 08:52:31 +0000
-Received: from pps.filterd (ppma05fra.de.ibm.com [127.0.0.1])
-	by ppma05fra.de.ibm.com (8.17.1.19/8.17.1.19) with ESMTP id 3442enYS027174;
-	Thu, 4 May 2023 08:52:29 GMT
-Received: from smtprelay04.fra02v.mail.ibm.com ([9.218.2.228])
-	by ppma05fra.de.ibm.com (PPS) with ESMTPS id 3q8tv6j8x4-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 04 May 2023 08:52:29 +0000
-Received: from smtpav03.fra02v.mail.ibm.com (smtpav03.fra02v.mail.ibm.com [10.20.54.102])
-	by smtprelay04.fra02v.mail.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id 3448qQX927918772
-	(version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
-	Thu, 4 May 2023 08:52:26 GMT
-Received: from smtpav03.fra02v.mail.ibm.com (unknown [127.0.0.1])
-	by IMSVA (Postfix) with ESMTP id B539B20040;
-	Thu,  4 May 2023 08:52:26 +0000 (GMT)
-Received: from smtpav03.fra02v.mail.ibm.com (unknown [127.0.0.1])
-	by IMSVA (Postfix) with ESMTP id A15A220043;
-	Thu,  4 May 2023 08:52:26 +0000 (GMT)
-Received: from t480-pf1aa2c2 (unknown [9.152.212.144])
-	by smtpav03.fra02v.mail.ibm.com (Postfix) with ESMTPS;
-	Thu,  4 May 2023 08:52:26 +0000 (GMT)
-Received: from bblock by t480-pf1aa2c2 with local (Exim 4.96)
-	(envelope-from <bblock@linux.ibm.com>)
-	id 1puUhO-006fPR-0m;
-	Thu, 04 May 2023 10:52:26 +0200
-Date: Thu, 4 May 2023 08:52:26 +0000
-From: Benjamin Block <bblock@linux.ibm.com>
-To: Alan Stern <stern@rowland.harvard.edu>
+       spf=pass (google.com: domain of stern+6456d096@netrider.rowland.org designates 192.131.102.5 as permitted sender) smtp.mailfrom=stern+6456d096@netrider.rowland.org
+Received: from netrider.rowland.org (netrider.rowland.org. [192.131.102.5])
+        by mx.google.com with SMTP id r4-20020a0562140c8400b006165793d228si10825148qvr.329.2023.05.04.07.05.38
+        for <usb-storage@lists.one-eyed-alien.net>;
+        Thu, 04 May 2023 07:05:38 -0700 (PDT)
+Received-SPF: pass (google.com: domain of stern+6456d096@netrider.rowland.org designates 192.131.102.5 as permitted sender) client-ip=192.131.102.5;
+Received: (qmail 414210 invoked by uid 1000); 4 May 2023 10:05:38 -0400
+Date: Thu, 4 May 2023 10:05:38 -0400
+From: Alan Stern <stern@rowland.harvard.edu>
+To: Benjamin Block <bblock@linux.ibm.com>
 Cc: Oliver Neukum <oneukum@suse.com>, Hannes Reinecke <hare@suse.de>,
-        Maxime Bizon <mbizon@freebox.fr>, linux-usb@vger.kernel.org,
-        usb-storage@lists.one-eyed-alien.net, linux-scsi@vger.kernel.org,
-        Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-        "Martin K. Petersen" <martin.petersen@oracle.com>
+  Maxime Bizon <mbizon@freebox.fr>, linux-usb@vger.kernel.org,
+  usb-storage@lists.one-eyed-alien.net, linux-scsi@vger.kernel.org,
+  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+  "Martin K. Petersen" <martin.petersen@oracle.com>
 Subject: [usb-storage] Re: Reproducible deadlock when usb-storage scsi command
  timeouts twice
-Message-ID: <20230504085226.GC1032383@t480-pf1aa2c2.fritz.box>
+Message-ID: <83fac55c-4005-416d-aad7-04bcb3fcaea2@rowland.harvard.edu>
 References: <ZEllnjMKT8ulZbJh@sakura>
  <34a2e50b-e899-45ee-ac14-31fa0bb1616b@rowland.harvard.edu>
  <20230503102440.GL18384@t480-pf1aa2c2.fritz.box>
@@ -134,30 +111,16 @@ References: <ZEllnjMKT8ulZbJh@sakura>
  <20230503125137.GA1032383@t480-pf1aa2c2.fritz.box>
  <d25bfa50-b5a0-bd0e-fd14-94967e374033@suse.com>
  <97a67f78-4888-4fe7-9bfc-87d0bb6cc8b2@rowland.harvard.edu>
+ <20230504085226.GC1032383@t480-pf1aa2c2.fritz.box>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="UTF-8"
 Content-Disposition: inline
-In-Reply-To: <97a67f78-4888-4fe7-9bfc-87d0bb6cc8b2@rowland.harvard.edu>
-Sender: Benjamin Block <bblock@linux.ibm.com>
-X-TM-AS-GCONF: 00
-X-Proofpoint-ORIG-GUID: gwKcH8SzySWeuYUR-_XXWwEovfqhImqn
-X-Proofpoint-GUID: gwKcH8SzySWeuYUR-_XXWwEovfqhImqn
 Content-Transfer-Encoding: quoted-printable
-X-Proofpoint-UnRewURL: 0 URL was un-rewritten
-MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.254,Aquarius:18.0.942,Hydra:6.0.573,FMLib:17.11.170.22
- definitions=2023-05-04_05,2023-05-03_01,2023-02-09_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0
- priorityscore=1501 spamscore=0 phishscore=0 mlxscore=0 lowpriorityscore=0
- bulkscore=0 mlxlogscore=870 suspectscore=0 clxscore=1015 adultscore=0
- impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2303200000 definitions=main-2305040069
-X-Original-Sender: bblock@linux.ibm.com
-X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@ibm.com header.s=pp1 header.b=IyyVIYuv;       spf=pass (google.com:
- domain of bblock@linux.ibm.com designates 148.163.156.1 as permitted sender)
- smtp.mailfrom=bblock@linux.ibm.com;       dmarc=pass (p=REJECT sp=NONE
- dis=NONE) header.from=ibm.com
+In-Reply-To: <20230504085226.GC1032383@t480-pf1aa2c2.fritz.box>
+X-Original-Sender: stern@rowland.harvard.edu
+X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
+ domain of stern+6456d096@netrider.rowland.org designates 192.131.102.5 as
+ permitted sender) smtp.mailfrom=stern+6456d096@netrider.rowland.org
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -173,46 +136,41 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On Wed, May 03, 2023 at 10:25:10AM -0400, Alan Stern wrote:
-> On Wed, May 03, 2023 at 03:54:45PM +0200, Oliver Neukum wrote:
-> > For the device a reset presumably does wipe out the command currently
-> > under execution. The problem is within the driver. It thinks that
-> > a command is still active. And we are limited to one command at a time
-> > (on the whole bus - again protocol limitation)
-> >=20
-> > > On random thought I had: in theory you could implement your own EH
-> > > strategy handler if the default one doesn't work for you. ATA and SAS=
- do so.
-> > > [drivers/scsi/scsi_error.c:2285 `shost->transportt->eh_strategy_handl=
-er()`]
-> > > This can re-use parts/all of the existing escalation sequence in
-> > > `scsi_eh_ready_devs()`.
-> > >=20
-> > > But that's no short-term fix.
-> >=20
-> > That looks like using a sledge hammer.
+On Thu, May 04, 2023 at 08:52:26AM +0000, Benjamin Block wrote:
+> On Wed, May 03, 2023 at 10:25:10AM -0400, Alan Stern wrote:
+> > I think the best answer is to accept the patch that started this email=
+=20
+> > thread, perhaps with a minor change.  The driver can easily abort the=
+=20
+> > currently running command (if any) on its own before starting a reset.
 >=20
-> I think the best answer is to accept the patch that started this email=20
-> thread, perhaps with a minor change.  The driver can easily abort the=20
-> currently running command (if any) on its own before starting a reset.
+> I don't think we would add an other layer of aborts in front of
+> device/LUN reset for all SCSI targets. That's just overkill for - it
+> seems - everything but USB storage, and would slow down error recovery
+> considerable in some cases.
 
-I don't think we would add an other layer of aborts in front of
-device/LUN reset for all SCSI targets. That's just overkill for - it
-seems - everything but USB storage, and would slow down error recovery
-considerable in some cases.
+This is consistent with what I wrote.  The patch that started this email=20
+thread made a change to the usb-storage driver; it did not touch any=20
+part of the SCSI core.
 
-If this is supposed to be done in the SCSI ML, it would have to be a
-quirk/option IMO.
+Maxime, would you like to submit a revised version of your patch?  The=20
+key difference is that it should abort the currently executing command=20
+(if there is one), regardless of whether the srb value matches.
 
---=20
-Best Regards, Benjamin Block        /        Linux on IBM Z Kernel Developm=
-ent
-IBM Deutschland Research & Development GmbH    /   https://www.ibm.com/priv=
-acy
-Vors. Aufs.-R.: Gregor Pillen         /         Gesch=C3=A4ftsf=C3=BChrung:=
- David Faller
-Sitz der Ges.: B=C3=B6blingen     /    Registergericht: AmtsG Stuttgart, HR=
-B 243294
+Alan Stern
+
+> If this is supposed to be done in the SCSI ML, it would have to be a
+> quirk/option IMO.
+>=20
+> --=20
+> Best Regards, Benjamin Block        /        Linux on IBM Z Kernel Develo=
+pment
+> IBM Deutschland Research & Development GmbH    /   https://www.ibm.com/pr=
+ivacy
+> Vors. Aufs.-R.: Gregor Pillen         /         Gesch=C3=A4ftsf=C3=BChrun=
+g: David Faller
+> Sitz der Ges.: B=C3=B6blingen     /    Registergericht: AmtsG Stuttgart, =
+HRB 243294
 
 --=20
 You received this message because you are subscribed to the Google Groups "=
@@ -220,5 +178,5 @@ USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an e=
 mail to usb-storage+unsubscribe@lists.one-eyed-alien.net.
 To view this discussion on the web visit https://groups.google.com/a/lists.=
-one-eyed-alien.net/d/msgid/usb-storage/20230504085226.GC1032383%40t480-pf1a=
-a2c2.fritz.box.
+one-eyed-alien.net/d/msgid/usb-storage/83fac55c-4005-416d-aad7-04bcb3fcaea2=
+%40rowland.harvard.edu.
