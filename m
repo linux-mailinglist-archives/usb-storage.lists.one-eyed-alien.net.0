@@ -1,106 +1,107 @@
-Return-Path: <usb-storage+bncBDTNDO5RRYJRBIEHQCUQMGQEFC4JR5I@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBDTNDO5RRYJRBIMHQCUQMGQEWE7HBAI@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
 Received: from mail-ed1-x548.google.com (mail-ed1-x548.google.com [IPv6:2a00:1450:4864:20::548])
-	by mail.lfdr.de (Postfix) with ESMTPS id 671BE7BB82A
-	for <lists+usb-storage@lfdr.de>; Fri,  6 Oct 2023 14:54:57 +0200 (CEST)
-Received: by mail-ed1-x548.google.com with SMTP id 4fb4d7f45d1cf-537efd62f36sf1758748a12.2
-        for <lists+usb-storage@lfdr.de>; Fri, 06 Oct 2023 05:54:57 -0700 (PDT)
+	by mail.lfdr.de (Postfix) with ESMTPS id 02FA27BB82B
+	for <lists+usb-storage@lfdr.de>; Fri,  6 Oct 2023 14:54:58 +0200 (CEST)
+Received: by mail-ed1-x548.google.com with SMTP id 4fb4d7f45d1cf-537a183caa3sf1908301a12.1
+        for <lists+usb-storage@lfdr.de>; Fri, 06 Oct 2023 05:54:58 -0700 (PDT)
 ARC-Seal: i=2; a=rsa-sha256; t=1696596897; cv=pass;
         d=google.com; s=arc-20160816;
-        b=FIUq65Eoi4DMG2wlNHbOEFe27l7BKJwd0eVOsXbZ3EQjwadFI2jI4Q1mQz/UX0bFmw
-         +dCt6P2jbDlGHxGNtbB12CXE4GH5l0g+V5lDvA2F1rhAcBDy55tsdpNe2x7gNAnZqmMa
-         JZ5uK3yZG9R7vPoH0ihaUrAl0Zb8VBtscf0B2OLTov1RIoaJdYYuIx/ReSpo+iiRZiJB
-         lwcxvXQO8eDG3UjGYd+gRFQfVFO3D6559emlYphkM+3F/Z1Vc98fod7uAQM9YpgaMU04
-         ZedW7qkuv6p4WXf6ebllAc3aYziXbn9QSnw0malk2gFL0jsEjWis+LsiUt6hVrGxIWrQ
-         yRpA==
+        b=yb1EPFiekoGa6cxHr/2MJRHJgHd1LzX7/ggUq7IK7yyaKfbHLomtkeV7cbyAfHM64A
+         aX7yZqUGWLX8Cg6jXLquFqK0p/XzuJEkTo/YdMLkRQ34C9WntD14cpylyJY/Uoo21mCB
+         AOZVttfpce932VzjLcbjSi/mJlV0suomR48ZULzsKReymoD0Aldz0IT5YWG0Ym3bWd1+
+         hcD0qo1HEZ5QfqcRMcf8cie3QWeJE+0YMdDMBYWTQBXQmAREAeSknOqODsibGz354OPX
+         6ofJxl9c4U66monKOIY7C7LP2RHo4w9uGh0RjUDWqucv29PojpHYMq+At+CKZiDvZWLQ
+         EXdg==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:mime-version:message-id:date
-         :subject:cc:to:from:sender:dkim-signature;
-        bh=qZvqg2Zo5ixxMDu0p33PDSTJuqk5dyEd9pkeCEVjVuE=;
+         :list-id:mailing-list:precedence:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:sender:dkim-signature;
+        bh=8Ey2D+VxEnk6Esf53ts0NgfQqx1kwNz+wQ1+rWwHLJY=;
         fh=a0TltY5qNwl0Oa9ebjgPj0wI1noiSzhlLA8n7ahwZlA=;
-        b=jZR0E66pVdjg6gPOTzWcaoxyN8rzSmKQRi812BiOnTvM0Ga08N+krLBy+VP6YdIph9
-         M5Qd+a1RP4/+o52gOtqDURBVCPvNIwlKgehp3kNu9qmeqU4L3H0jA26R4MnGXCYPKk3i
-         /Poo1bAEGoZ2rcK/XTxTmr6pCqXQLwsfYlOI+Lt0UmuS2XO2W98X5I7czzS0PRzyiPaD
-         TM+UBQ4Shml/9c0uf0N45WntFQ91A6jldHXNTZC34TY8B1aF4huNKtbkLGCP97RwWJmG
-         dMxNOMjwP1yxWSVqs+540jO4mOhkJ9kQAfKI/bM5C0+zpEJpCmWJcm6n7PTOGFbhzuKg
-         orCQ==
+        b=Ft9jI3HIIprjdZv5XAZ0fTIS2aIKLNxyNHlmOwWpznkrzGerDUkLJa+G7Ke0i50yGQ
+         1cC/Mo6euQ6xiBlWqwCHLraq0Of6Tx5xatvOqmYRyOZQfoMt5NGORsU6Kx3NacVCXEfW
+         nEPxVMkTywR6quW6w8xNzVh2iJ/b6qeZea8iWfaXNpWGTHalI2cmt6XL+Al3DYETmAHC
+         8NH7jBOcwv7iuRJ7sSFarGYjy3j4u1KHTlYVf8cOtj8zeBnkshNgfsGIzgeY5FUt9rTz
+         sptpR5hCfSZOiZvHok0pJf+vdIXUtMpZNciIgbdZfEqdlX8jBLNClPgKWIJ2uyPxMUem
+         B7kw==
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@gmail.com header.s=20230601 header.b=VpfqC+BU;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=S1EoQcwC;
        spf=pass (google.com: domain of gmazyland@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=gmazyland@gmail.com;
        dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google; t=1696596897; x=1697201697; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:x-original-authentication-results
-         :x-original-sender:mime-version:message-id:date:subject:cc:to:from
-         :sender:from:to:cc:subject:date:message-id:reply-to;
-        bh=qZvqg2Zo5ixxMDu0p33PDSTJuqk5dyEd9pkeCEVjVuE=;
-        b=iZjr9eb+HBxsE47WWs3Y/dDuyKxWVPT6dztDnvBc8bWTQCYTBeZdzAo+q2mLdGb+5d
-         6WaaRBK2bmhlxys+JJ6ZrzzlvBF48I9fSaMmibp5aBHglhQE6pcjb13SsW5jATPj7QAT
-         AjTeDKcw8csk3AKZq1ILF92Sh/xVQttNhAim4=
+         :x-original-sender:mime-version:references:in-reply-to:message-id
+         :date:subject:cc:to:from:sender:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=8Ey2D+VxEnk6Esf53ts0NgfQqx1kwNz+wQ1+rWwHLJY=;
+        b=ioI7ztFkCD4r1Q6tlky4rH26KmjvpOcLIDQe7Lb2t3Zgfh+grNroMiDEQ2GVtsqFql
+         jz9jAq4CEI+yHDJpfHNOcQ/y51SRPXeOI625CcFxWLbg+YyZsjkUPl3QQRJwh3IdyeoI
+         1yZQlddj0NgluWRjP1OeqiYV2OQQudNfDdRMw=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20230601; t=1696596897; x=1697201697;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :x-spam-checked-in-group:list-id:mailing-list:precedence
          :x-original-authentication-results:x-original-sender:mime-version
-         :message-id:date:subject:cc:to:from:x-beenthere:x-gm-message-state
-         :sender:from:to:cc:subject:date:message-id:reply-to;
-        bh=qZvqg2Zo5ixxMDu0p33PDSTJuqk5dyEd9pkeCEVjVuE=;
-        b=FmjfCS6xUCEp9cLHRtx1PmBcbX8MwAktQS5RHORAbqWEysEXSqSw5TI746i40FLd7t
-         NCDjqvaJMQYNi7p5q3epdMzFoxc8rjHgML/Jxpd2oRKl3mnBe/jLYgezXjqrzzQulyAE
-         UeXNE7mgtBl+KZTRYl0Gv/3kWHwx9ZkWmwmwOj1ShBoi7lS/gL8eCqArA0FdgNkgg6z3
-         VCI3+c/WTpKeDGDa6zY5BAX4fNNtDcdt3JBEp7Ur0VJP4Lcr1QOcmaK+NjCiNN4b9Trj
-         +nNe6J8FoVzUKxYrcC7uv6j4nft/GB9xH0b1SXvyK0SdcDpvkKqvV4HBoRJnPAqPBb0A
-         GbiA==
+         :references:in-reply-to:message-id:date:subject:cc:to:from
+         :x-beenthere:x-gm-message-state:sender:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=8Ey2D+VxEnk6Esf53ts0NgfQqx1kwNz+wQ1+rWwHLJY=;
+        b=pUexIyQcBI22fAfPZ1z1cuAxP/l6EVjqmcid3z3TgLknlfL8hxH4slkiuX4BDs5X6s
+         vR7GsH41Eu2YHZcxqYGHQ4HKREhmRTx2IPSezo+ftKnAqC+tly2UZDqXTPEhKll5Q1g1
+         TqD7+849yGUBaQDP1NQL5ZfCnsDkOyUkirGdQ1PacdkIo4Gcq4E8E9M/3BLPBLvfPVe1
+         gSW7aIa2tBw8HX008T4svs9FVh+twhBovlKxqsczNQ0uvu8Hp6aNubz3ruoXHTSwO109
+         JG9UhdTLsk4fBeDmpg3bBTNTzbV3OAJQdqrLMZkeGJq0z8s/brJQvjP/35wFvvsLeA31
+         xcTA==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: AOJu0YwE5s1v4pjur2Hv9+Ksd0wQm4bxJAlv8HkbVCjiMRqksUWJDOqz
-	NTMZUh6Xf1NVlk6+fS5DD46FTg==
-X-Google-Smtp-Source: AGHT+IHNckPnHNdyBW9oUXlJSf0A3X0YzEPihxKRGYnRc+aybLk1z3JZy2+zqerWKWfMbZKp0PV/Tg==
-X-Received: by 2002:aa7:d947:0:b0:531:9c1:8271 with SMTP id l7-20020aa7d947000000b0053109c18271mr7483463eds.14.1696596896864;
-        Fri, 06 Oct 2023 05:54:56 -0700 (PDT)
+X-Gm-Message-State: AOJu0YwmPicyvU/HlIAikKNzFZCf5VEDSgd/ZDS28XRpTSgM/6yMV2RT
+	JdKAMETP+OM1Iv5tNF1PTP+03g==
+X-Google-Smtp-Source: AGHT+IFNOAJYLDcEu6IRRY4qAPuMBuQqks2JODeZ1OlJ7vICSv4h+cXEd80Iq34YyZo5jo648NJQdg==
+X-Received: by 2002:a05:6402:1651:b0:538:26b7:a525 with SMTP id s17-20020a056402165100b0053826b7a525mr6822077edx.19.1696596897358;
+        Fri, 06 Oct 2023 05:54:57 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a05:6402:1d84:b0:53a:a59e:de80 with SMTP id
- dk4-20020a0564021d8400b0053aa59ede80ls111011edb.2.-pod-prod-09-eu; Fri, 06
- Oct 2023 05:54:55 -0700 (PDT)
-X-Received: by 2002:a17:907:7890:b0:9ae:711d:7e03 with SMTP id ku16-20020a170907789000b009ae711d7e03mr7531776ejc.15.1696596895128;
-        Fri, 06 Oct 2023 05:54:55 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1696596895; cv=none;
+Received: by 2002:a50:fb0f:0:b0:52f:3b2b:a27c with SMTP id d15-20020a50fb0f000000b0052f3b2ba27cls277020edq.2.-pod-prod-01-eu;
+ Fri, 06 Oct 2023 05:54:56 -0700 (PDT)
+X-Received: by 2002:a17:907:2cf7:b0:9ae:7870:1522 with SMTP id hz23-20020a1709072cf700b009ae78701522mr7179544ejc.53.1696596896062;
+        Fri, 06 Oct 2023 05:54:56 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1696596896; cv=none;
         d=google.com; s=arc-20160816;
-        b=VVUDjX6E1j132b3p93CTDxjQUNTuePesVBexmgNlzf4zKJf2TfJbq6g3FberaEL1sk
-         FkPepigRDoCEhErfVT3ufF3/wAZNDTc7UvCcevJJuoivDoZ1p2UXBXyR79UdwfBTeRru
-         CxsRoLiE2WDr/M/2JT8vKXS6bVG/IQF58uRY0EJe+hO9hu1GxN99nawXNZV15KaNhPbF
-         rgrM5MLosJ/ST+SMtL5nRqa1lCJdIMDl3ApnVrvLOqB6jZizfld7UnxzDqwR74UO+1oD
-         hiJ5JmVhPgiNdqbF8trhobP6Wta1FgoUzKlBZzqsQT/r9Y6/43UJjxSVFOBqPbkkhAY5
-         QiYQ==
+        b=jLvbOBl/Eoeg58fRIJr1wcELyKQIVYfO1Enl4JgBnbDzrdaouFK3Bcqu9ue9x14NxY
+         ZdQyKJ4bM9Ij9jA5OqmmLRzLgnZ0GK1WjGrbODgq4liUClC0vXgryLeSkQyIV3U5lCkb
+         vxxkK+lUEQXGfEXGbTh9GRKzUXh3ScSXZGDCAhg+LQ/0bXoX3GK44+08I71kxYOnXRf/
+         2joJOAyMF2hwPOfBOWMrfFb4oZ2PsI8bxGSolc2VwONhXxATgollq3uZBls4JJO1MnwP
+         k9il5tY6sz6lICqx83nmKxkgxpvK4P2ym1AScL1BOZKpO7+52xJ8ADU+8D0knOZGKXr2
+         4flQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:dkim-signature;
-        bh=gecE+vOGFjARaQC/nlEr7rWoc3kbi1x64ECe3si5O9A=;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:dkim-signature;
+        bh=q9jys0TJCo2/tcWQSVAiB+IlHESLf7hj3/oGQc7ywDY=;
         fh=a0TltY5qNwl0Oa9ebjgPj0wI1noiSzhlLA8n7ahwZlA=;
-        b=N3kpRkmLUl7To72l2dswGXPUs53zBRGS97iK4yPJS2Wnrf7z9ZfjYA9zYTbzr99Fdg
-         7idCxZHe0s/nLAmFQ6p0GtoX1WEq7Pk7INTYmtc/9tundiJTZ3yF+NF6lJtL2vmLKURN
-         cKwsikgLNFQFCFiXlTynk410eXbxqkrA8HKjSLqU7nr0cnYLf+8kAbUkC4gjiwjLDYjX
-         a7d8Kz9ghZ4D5LPJNVnVG3wczLsl7uHAetxD4s5LqtQDYNBKBBIhiZ7AH4IiZVvBO3Z2
-         OZAwJ0KGtIfN8WwpjJtUOscINBi/nNuAIGjO0d61Mc0p5/x2qwH+VARaP4TqYwvvU+uG
-         oTMg==
+        b=KNdlc6/BL9Jhn4QAOt0e5BxcNrvUyYyFM12OgOPEbKMD+dAtEK3q84HHAABinwGKZc
+         RX8qaAnwgrXKeXYorv1GLCNIJSLt1mBzELZOj94Utgt/+WWllu8NcryexcOXbc4GDIV1
+         o4BuTtoEt+XMhEt0e62pQ6HqTivSt4EuUilyxtFP6DgmSQF8qZlim6xQwAUE9mBe36yp
+         kiBlrSH3ZrayStU9xlJnuzfa6mo2M2zJDDe6U5jnO2EsxjBJfpHyrR5hCe3ufAkWThNK
+         9NGhYo1e9H1A/s88IlPot5owz0LbNTMsBWsvCtuZ1uc/VyMki4f3rY/2JWRVok8x9j5q
+         iCdQ==
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@gmail.com header.s=20230601 header.b=VpfqC+BU;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=S1EoQcwC;
        spf=pass (google.com: domain of gmazyland@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=gmazyland@gmail.com;
        dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
 Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
-        by mx.google.com with SMTPS id ht7-20020a170907608700b009adae264441sor1554611ejc.21.2023.10.06.05.54.55
+        by mx.google.com with SMTPS id n14-20020a1709065dae00b009adae2687a9sor1506750ejv.18.2023.10.06.05.54.56
         for <usb-storage@lists.one-eyed-alien.net>
         (Google Transport Security);
-        Fri, 06 Oct 2023 05:54:55 -0700 (PDT)
+        Fri, 06 Oct 2023 05:54:56 -0700 (PDT)
 Received-SPF: pass (google.com: domain of gmazyland@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
-X-Received: by 2002:a17:906:1da1:b0:9ba:65e:752b with SMTP id u1-20020a1709061da100b009ba065e752bmr368474ejh.39.1696596894512;
-        Fri, 06 Oct 2023 05:54:54 -0700 (PDT)
+X-Received: by 2002:a17:906:30db:b0:9b2:f941:6916 with SMTP id b27-20020a17090630db00b009b2f9416916mr7683708ejb.17.1696596895393;
+        Fri, 06 Oct 2023 05:54:55 -0700 (PDT)
 Received: from sauvignon.fi.muni.cz (laomedon.fi.muni.cz. [147.251.42.107])
-        by smtp.gmail.com with ESMTPSA id p26-20020a1709060dda00b0099bc08862b6sm2894660eji.171.2023.10.06.05.54.53
+        by smtp.gmail.com with ESMTPSA id p26-20020a1709060dda00b0099bc08862b6sm2894660eji.171.2023.10.06.05.54.54
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 06 Oct 2023 05:54:53 -0700 (PDT)
+        Fri, 06 Oct 2023 05:54:55 -0700 (PDT)
 From: Milan Broz <gmazyland@gmail.com>
 To: linux-usb@vger.kernel.org
 Cc: usb-storage@lists.one-eyed-alien.net,
@@ -110,15 +111,16 @@ Cc: usb-storage@lists.one-eyed-alien.net,
 	oneukum@suse.com,
 	jonathan.derrick@linux.dev,
 	Milan Broz <gmazyland@gmail.com>
-Subject: [usb-storage] [RFC PATCH 0/6] usb-storage,uas,scsi: Support OPAL
- commands on USB attached devices.
-Date: Fri,  6 Oct 2023 14:54:39 +0200
-Message-ID: <20231006125445.122380-1-gmazyland@gmail.com>
+Subject: [usb-storage] [RFC PATCH 1/6] usb-storage: remove UNUSUAL_VENDOR_INTF macro
+Date: Fri,  6 Oct 2023 14:54:40 +0200
+Message-ID: <20231006125445.122380-2-gmazyland@gmail.com>
 X-Mailer: git-send-email 2.42.0
+In-Reply-To: <20231006125445.122380-1-gmazyland@gmail.com>
+References: <20231006125445.122380-1-gmazyland@gmail.com>
 MIME-Version: 1.0
 X-Original-Sender: gmazyland@gmail.com
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@gmail.com header.s=20230601 header.b=VpfqC+BU;       spf=pass
+ header.i=@gmail.com header.s=20230601 header.b=S1EoQcwC;       spf=pass
  (google.com: domain of gmazyland@gmail.com designates 209.85.220.41 as
  permitted sender) smtp.mailfrom=gmazyland@gmail.com;       dmarc=pass (p=NONE
  sp=QUARANTINE dis=NONE) header.from=gmail.com
@@ -138,120 +140,84 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-This patchset adds support for OPAL commands (self-encrypted drives)
-through USB-attached storage (usb-storage and UAS drivers).
+This patch removes macro that was used only
+by commit that was reverted in
+ commit ab4b71644a26d1ab92b987b2fd30e17c25e89f85
+ USB: storage: fix Huawei mode switching regression
 
-1) Patches 1-4 only add support for 64-bit quirks for USB storage
-(unfortunately, USB device info can be 32-bit on 32-bit platforms,
-and we are out of space for flags now).
+Signed-off-by: Milan Broz <gmazyland@gmail.com>
+---
+ drivers/usb/storage/usb.c          | 12 ------------
+ drivers/usb/storage/usual-tables.c | 15 ---------------
+ 2 files changed, 27 deletions(-)
 
-2) Patches 5-6 enable OPAL commands on USB device and also adds
-an ATA-12 pass-thru wrapper to support OPAL even on devices that
-do not support SCSI SECURITY IN/OUT commands.
-ATA-12 is already used by sedutils directly; this patch makes
-internal kernel OPAL ioctl work with ATA-12 too.
-
-As patch 6 introduced a new USB quirk that overflows 32-bit,
-I posted all patches together - but logically, these solve two
-separate issues.
-
-More info
-
-1) 64bit USB storage quirk flags
-
-The quirks are transferred through the device info value, which
-is unsigned long (and as a part of USB infrastructure, it cannot
-be changed).
-After discussion on USB list, I used high bit as an indicator
-that the values need to be translated/unpacked to 64bit
-(while lower values are used directly).
-
-This is implemented through a host-compiled program that
-generates device tables and translation function.
-As both usb-storage and UAS drivers share a lot of headers and
-definitions, we need to generate separate files for usb-storage,
-UAS and flags translation function.
-
-(I also tried to use a statically generated array for flags,
-but this increased the size of drivers significantly, and
-the code was quite ugly...)
-
-2) Support for OPAL on USB attached storage.
-
-The main support for OPAL on USB-attached storage is
-straightforward. The patch 6
- - enables SCSI security flag for USB mass storage and UAS device
-   by default.
- - adds an optional wrapper to the SCSI layer for the ATA-12
-   pass-thru command as an alternative if SECURITY IN/OUT
-   is unavailable.
-
-During device detection, these steps are then done:
-  1) USB driver (mass-storage, UAS) enables security driver flag
-     by default if not disabled by quirk
-  2) SCSI device enumerates SECURITY IN/OUT support. If detected,
-     SECURITY ON/OUT wrapper is used (as in the current code).
-     If not, the new ATA12 pass-thru wrapper is used instead.
-  3) SED OPAL code tries OPAL discovery command for the device.
-     If it receives correct reply, OPAL is enabled for the device.
-
-Enabling support may uncover many issues, as OPAL-locked devices often
-tend to generate errors on the locked range.
-
-Anyway, cryptsetup will soon support OPAL devices, and I think support
-for USB devices is a nice feature that enables users to unlock drives
-even if they are attached through USB adapters.
-
-But also, there are bugs in firmware, so I added a quirk flag that can
-disable security commands for particular devices.
-
-The last patch uses this quirk for Realtek 9210, which seems to support
-OPAL commands, but after configuring OPAL locking range, it also sets
-the write-protected flag for the whole device.
-This is perhaps a bug in firmware (all versions I tried), and I will
-report that later to Realtek.
-
-Milan Broz (6):
-  usb-storage: remove UNUSUAL_VENDOR_INTF macro
-  usb-storage: make internal quirks flags 64bit
-  usb-storage: use fflags index only in usb-storage driver
-  usb-storage,uas: use host helper to generate driver info
-  usb-storage,uas,scsi: allow to pass through security commands (OPAL)
-  usb-storage,uas: Disable security commands (OPAL) for RT9210 chip
-    family
-
- drivers/scsi/sd.c                   |  33 ++++-
- drivers/usb/storage/Makefile        |  25 ++++
- drivers/usb/storage/alauda.c        |   2 +-
- drivers/usb/storage/cypress_atacb.c |   2 +-
- drivers/usb/storage/datafab.c       |   2 +-
- drivers/usb/storage/ene_ub6250.c    |   2 +-
- drivers/usb/storage/freecom.c       |   2 +-
- drivers/usb/storage/isd200.c        |   2 +-
- drivers/usb/storage/jumpshot.c      |   2 +-
- drivers/usb/storage/karma.c         |   2 +-
- drivers/usb/storage/mkflags.c       | 212 ++++++++++++++++++++++++++++
- drivers/usb/storage/onetouch.c      |   2 +-
- drivers/usb/storage/realtek_cr.c    |   2 +-
- drivers/usb/storage/scsiglue.c      |   4 +
- drivers/usb/storage/sddr09.c        |   2 +-
- drivers/usb/storage/sddr55.c        |   2 +-
- drivers/usb/storage/shuttle_usbat.c |   2 +-
- drivers/usb/storage/uas-detect.h    |   4 +-
- drivers/usb/storage/uas.c           |  26 ++--
- drivers/usb/storage/unusual_devs.h  |  11 ++
- drivers/usb/storage/unusual_uas.h   |  11 ++
- drivers/usb/storage/usb.c           |  42 +++---
- drivers/usb/storage/usb.h           |   7 +-
- drivers/usb/storage/usual-tables.c  |  38 +----
- include/linux/usb_usual.h           |   2 +
- 25 files changed, 346 insertions(+), 95 deletions(-)
- create mode 100644 drivers/usb/storage/mkflags.c
-
+diff --git a/drivers/usb/storage/usb.c b/drivers/usb/storage/usb.c
+index 7b36a3334fb3..bb1fbeddc5aa 100644
+--- a/drivers/usb/storage/usb.c
++++ b/drivers/usb/storage/usb.c
+@@ -110,17 +110,6 @@ MODULE_PARM_DESC(quirks, "supplemental list of device IDs and their quirks");
+ 	.useTransport = use_transport,	\
+ }
+ 
+-#define UNUSUAL_VENDOR_INTF(idVendor, cl, sc, pr, \
+-		vendor_name, product_name, use_protocol, use_transport, \
+-		init_function, Flags) \
+-{ \
+-	.vendorName = vendor_name,	\
+-	.productName = product_name,	\
+-	.useProtocol = use_protocol,	\
+-	.useTransport = use_transport,	\
+-	.initFunction = init_function,	\
+-}
+-
+ static const struct us_unusual_dev us_unusual_dev_list[] = {
+ #	include "unusual_devs.h"
+ 	{ }		/* Terminating entry */
+@@ -132,7 +121,6 @@ static const struct us_unusual_dev for_dynamic_ids =
+ #undef UNUSUAL_DEV
+ #undef COMPLIANT_DEV
+ #undef USUAL_DEV
+-#undef UNUSUAL_VENDOR_INTF
+ 
+ #ifdef CONFIG_LOCKDEP
+ 
+diff --git a/drivers/usb/storage/usual-tables.c b/drivers/usb/storage/usual-tables.c
+index 529512827d8f..b3c3ea04c11c 100644
+--- a/drivers/usb/storage/usual-tables.c
++++ b/drivers/usb/storage/usual-tables.c
+@@ -26,20 +26,6 @@
+ #define USUAL_DEV(useProto, useTrans) \
+ { USB_INTERFACE_INFO(USB_CLASS_MASS_STORAGE, useProto, useTrans) }
+ 
+-/* Define the device is matched with Vendor ID and interface descriptors */
+-#define UNUSUAL_VENDOR_INTF(id_vendor, cl, sc, pr, \
+-			vendorName, productName, useProtocol, useTransport, \
+-			initFunction, flags) \
+-{ \
+-	.match_flags = USB_DEVICE_ID_MATCH_INT_INFO \
+-				| USB_DEVICE_ID_MATCH_VENDOR, \
+-	.idVendor    = (id_vendor), \
+-	.bInterfaceClass = (cl), \
+-	.bInterfaceSubClass = (sc), \
+-	.bInterfaceProtocol = (pr), \
+-	.driver_info = (flags) \
+-}
+-
+ const struct usb_device_id usb_storage_usb_ids[] = {
+ #	include "unusual_devs.h"
+ 	{ }		/* Terminating entry */
+@@ -49,7 +35,6 @@ MODULE_DEVICE_TABLE(usb, usb_storage_usb_ids);
+ #undef UNUSUAL_DEV
+ #undef COMPLIANT_DEV
+ #undef USUAL_DEV
+-#undef UNUSUAL_VENDOR_INTF
+ 
+ /*
+  * The table of devices to ignore
 -- 
 2.42.0
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20231006125445.122380-1-gmazyland%40gmail.com.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20231006125445.122380-2-gmazyland%40gmail.com.
