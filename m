@@ -1,108 +1,108 @@
-Return-Path: <usb-storage+bncBDTNDO5RRYJRBJEHQCUQMGQEDBXA5MQ@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBDTNDO5RRYJRBJMHQCUQMGQEKMD6FNA@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-ej1-x645.google.com (mail-ej1-x645.google.com [IPv6:2a00:1450:4864:20::645])
-	by mail.lfdr.de (Postfix) with ESMTPS id C3FEB7BB82F
-	for <lists+usb-storage@lfdr.de>; Fri,  6 Oct 2023 14:55:00 +0200 (CEST)
-Received: by mail-ej1-x645.google.com with SMTP id a640c23a62f3a-9ae0601d689sf163033166b.0
-        for <lists+usb-storage@lfdr.de>; Fri, 06 Oct 2023 05:55:00 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1696596900; cv=pass;
+Received: from mail-ed1-x547.google.com (mail-ed1-x547.google.com [IPv6:2a00:1450:4864:20::547])
+	by mail.lfdr.de (Postfix) with ESMTPS id BCFF47BB832
+	for <lists+usb-storage@lfdr.de>; Fri,  6 Oct 2023 14:55:01 +0200 (CEST)
+Received: by mail-ed1-x547.google.com with SMTP id 4fb4d7f45d1cf-53635d2442dsf1778587a12.0
+        for <lists+usb-storage@lfdr.de>; Fri, 06 Oct 2023 05:55:01 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1696596901; cv=pass;
         d=google.com; s=arc-20160816;
-        b=gCsS5c+daHvVYuz6IkAAfj5XV1amZ4+AoKoC7vLw6cikI2g+IaRylb18IO8NDYPXMT
-         zYReaNfnsB+b4d4h4C4Twrudp7MgShcS3BGbnDevCDASWFcJ7TRBRyh3FlNKwcv8W6/w
-         Hpq9JTLo/iwycZODKLHFNTdO1nmeSEkbCd94R5MiDN7op8oEB96aGg9d11lXmQJPfvIC
-         UQu3SKVewNrR0YqK46zadOpADRhmIGCRA7BeqSEhrSvcD8gwzRzSAN/APUn+tugIh7r0
-         kVHE21bjG4jQIVkFO2KCGT7+AHVd/k02y89DEOZ3d4/sYb6Gtfalcz6yqfBaSTDnIHXC
-         NLfg==
+        b=J8M32m8d90zWduRKwd3d6La9vp7wAbxa0I7hdR/7dMymmC8uEULQqL+bUVpgzvTzSa
+         2c7Beg0LpsHeCLz3hn0E6mC5e/7yWLyFQhNXvzjXPmYVr5tAVi/1/FyYrEpsXZofWur0
+         +Jx3kMeuWaYET//wJ4VXBLPfk20YW4K3fEDmRylFckpyjGyl+N5rWKSgWTEl1UG2fZww
+         scjwyGR9C0/m/dBLXvIBZ58Z+OReYQNyfE4BcLYpFAhEgxPAiFzw/CKK2kotJrQsoYoi
+         C+OBxs0bjxvMmKGNJ2B43B03ULwRSlsqhoZSw/yY0yIjzordxIb8PWrHnLjkN+fk+Deq
+         LX+Q==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:sender:dkim-signature;
-        bh=j5YTP79jjorUbTxDNGI2KbKvl6UDRiGm6iBFigk16pM=;
+        bh=ENOxI49rPCAAw0KZDkLp57tOdXFKpaIzs3OLJnJrye0=;
         fh=a0TltY5qNwl0Oa9ebjgPj0wI1noiSzhlLA8n7ahwZlA=;
-        b=SdYkvKPyHkdNfGb8K7sx8oAbatF13CCk+TOkJ0wUmSprgvBQ7zbGo042Dmw503I3Cu
-         XMyPj9ghHW2s6rr/Wf0FHajxQKiNW8NUIlQtPImN95gVsQKt0hFXb5b/9DzZrIlOKPuF
-         u0SRr6k1MVgmex+iE6XUWHDrjHVNx3DPz4DIeTntAgDF3GNOKPlQSYP1RBrR1ueSMjIc
-         SxS22+fan2PbPL78ZltDqkR/k40XS+ckXECUDXFo9Nhk/0x678P/NyORMeOVZNVHWQQl
-         JIq98t5cJEANtb5e2bPf5S5SLus62LXDmI6EdI+Hb/oXYl7Uab0yQ/ndD0XLwfcADkks
-         do2Q==
+        b=gb5qDvtaA7v98KOj0bQvFAK+4Tl7RvA8XxHdfxQrDYH6eCL9ywM/IBfINa/5OYaLCp
+         T9J4evkjbRWp76QV4WtqU0ogAJJAbkhBuCmlGoAcNpHk66K/+72i3KJcRYfuAlfjEICP
+         WtFklu0NZ/CmssQ0QmmTPPpqyFlvf4B/2M4vwuLnI/W2ND9+rrIE/0l4Dj09jQ1Zmlwa
+         D7DDKbs7ZL3AIiOBs5/QFKbHGfc13eBeqrnA8eCKPmTM3Orr9BC3axsNTHtEa02Vjqeh
+         3W2DQIuqEy2gQgBmIRnqNVmhJHqeVuz1IPVw9ht78+4NoHFI25DdJVYPi6L0AEWESmhF
+         JXhg==
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@gmail.com header.s=20230601 header.b=e+V5PX1r;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=b8QF7ED9;
        spf=pass (google.com: domain of gmazyland@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=gmazyland@gmail.com;
        dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1696596900; x=1697201700; darn=lfdr.de;
+        d=lists.one-eyed-alien.net; s=google; t=1696596901; x=1697201701; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:x-original-authentication-results
          :x-original-sender:mime-version:references:in-reply-to:message-id
          :date:subject:cc:to:from:sender:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=j5YTP79jjorUbTxDNGI2KbKvl6UDRiGm6iBFigk16pM=;
-        b=AihUqkeQVYCtGrQXZuWQJnBBl1cs2T7hhiiGgQo6ZFbAOQsyFf35FxOPVcPRpnV5T4
-         3a47Qyi4gY8no2VYkGFxLjqn70grVHpSh2jA+qi77027PLppoQnLbfXZq0VAf2VVi1hb
-         osKS8YV1NrpI8Gn70l6eMAdks50vFinNj+1sk=
+        bh=ENOxI49rPCAAw0KZDkLp57tOdXFKpaIzs3OLJnJrye0=;
+        b=empZ+betMqKIuuTRrogRnE/LHNIbQdZIyIHOnWYBEPH3Y0tp674hcIQpu5ObPtkMdS
+         1sfoJyRU1TR62MW//GPBth7i0THhfxI7pjU8Vy28LOLHfPSQvj6J7pIH3rejWk9dwCLu
+         i16Ft7pqtQhOkSUMumlKlHey1TvyXQcqBeGlw=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1696596900; x=1697201700;
+        d=1e100.net; s=20230601; t=1696596901; x=1697201701;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :x-spam-checked-in-group:list-id:mailing-list:precedence
          :x-original-authentication-results:x-original-sender:mime-version
          :references:in-reply-to:message-id:date:subject:cc:to:from
          :x-beenthere:x-gm-message-state:sender:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=j5YTP79jjorUbTxDNGI2KbKvl6UDRiGm6iBFigk16pM=;
-        b=OLdd31oC/KYmwcGhF7K4tihAAobXxn+P77TwKwYHuH3IMxA8Yd/210dUspfc117Or/
-         KQ76TreXMwrsCzw2cuofcJAcyW3nm3BaZ/L7ZPZLvKiZEqfFPDYDRQ6+8PWmeL14U4L9
-         3NLD997JQo8MjKm5y0XaNEFwr6/5sJUWUQ8XvmKqo/YBnw99Rz2iLuh8f1pT16diIMtR
-         HbizIL4tiduahTCfcpezYJB5SbkyGu2XeE3UsXE0j7Xy0WUG0EXqof0yQcgsgMZGxYKa
-         hKXMztruVkkufpYfeoZAy4p2kfAvdZix7gKe3WcfsEU8KZSmHx2C21ZAFREpfX88fkaG
-         CqWg==
+        bh=ENOxI49rPCAAw0KZDkLp57tOdXFKpaIzs3OLJnJrye0=;
+        b=kvM7jOKimvgKr6qPZLhw4v/1C9X3A+GmhbAp523dDNfaTL4YojO+exsLc+Yjs677DF
+         IZdNwFFRsD+zYM4Q+k1mJSNN9ugKxAMJtV0aQLlH8YbpAuQwQX0sg/R6Kq/kEejg9Ny1
+         l4JAXBMKygyUJwd+eByqGcJNbFRDV0pZty9PPUL+Tg+PiScc2MJ9sCM6WJEI+NczCJ6N
+         EZGNI8g2rIFoYyFBmIPRi2324WCR3ACgauYuZHh+sROOLmWNvgR5kE0aQgzLfdonAi5l
+         0RFxWz57lBFkvORgNe+4ReKVDm5l6/ZFysPSPCuCo8dYQhqhdM3i8LXDI4B8lIUQaRVn
+         wWoQ==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: AOJu0Yx2uEPJXEBJl0wnqespE2ndSVhLHIHENjFEwsZ69i3hf1bQ/Qbo
-	pfoJz6G1RacAEeJsq26QihzkFA==
-X-Google-Smtp-Source: AGHT+IGFdp3jgHbdEYP76LLJcO78O2ntsvSzVIAMPia58594FoDnxI+zD04RgW0mi8ooMSyho5Oq5A==
-X-Received: by 2002:a17:906:cd1:b0:9b2:b119:4909 with SMTP id l17-20020a1709060cd100b009b2b1194909mr6683466ejh.75.1696596900488;
-        Fri, 06 Oct 2023 05:55:00 -0700 (PDT)
+X-Gm-Message-State: AOJu0YyeEr9RZ0fFTCSi18YXIfe/lwgCfDdQ9v2ekadj4oCqSo24hLWn
+	T07hjKsXP4JXpV2Jc9MV3aiuJA==
+X-Google-Smtp-Source: AGHT+IEVnZMXfM5uhI1AD79SC6m7XCjGF/gnfi84fpjxBsFXWYTURLdGNl4vJZBHtpjAZpU8+tI3ow==
+X-Received: by 2002:aa7:c253:0:b0:532:c690:92bf with SMTP id y19-20020aa7c253000000b00532c69092bfmr7032196edo.28.1696596901498;
+        Fri, 06 Oct 2023 05:55:01 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a05:6402:1607:b0:536:17f7:9f24 with SMTP id
- f7-20020a056402160700b0053617f79f24ls109745edv.0.-pod-prod-08-eu; Fri, 06 Oct
- 2023 05:54:59 -0700 (PDT)
-X-Received: by 2002:a17:906:5349:b0:9b2:8b14:7a20 with SMTP id j9-20020a170906534900b009b28b147a20mr7520041ejo.45.1696596899236;
-        Fri, 06 Oct 2023 05:54:59 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1696596899; cv=none;
+Received: by 2002:a05:6402:6c9:b0:525:7601:f44e with SMTP id
+ n9-20020a05640206c900b005257601f44els110858edy.0.-pod-prod-09-eu; Fri, 06 Oct
+ 2023 05:55:00 -0700 (PDT)
+X-Received: by 2002:a17:906:530c:b0:9a1:e941:6f49 with SMTP id h12-20020a170906530c00b009a1e9416f49mr8082661ejo.44.1696596900234;
+        Fri, 06 Oct 2023 05:55:00 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1696596900; cv=none;
         d=google.com; s=arc-20160816;
-        b=v3U+FrvUkwID/q0xdki/JJyjaDFYXtric8oC1IqtY95FCFcmgAgHIbsVrfGCtLotkw
-         SkiTUdDMtmWeSVP2hETAxONFTFBlMLDpF4o33BiAuB3YmdMKhSImJMdg9RutG15vwiyc
-         5asnfynm1Kq8ug38sxxEsnsel0jMZ/3vnD5HY6Lm4tkdxPgwMl3Y6rNFEnDfXZvAzGNF
-         Zwv5Tp/TBbp4w1TlI53fyhjuDtKXAOAPuP5jPtSNXtvJkKr6XLCGnWmS1vFpDGdVkL79
-         aUxi5JUPhPO/nl2EUW2mZORV7UKJS25om/Znb7yyVrQaAre7pn1GcS4EhiZIO3yVNdty
-         9SRg==
+        b=uETUAeyadb9oEE3aCZtQ9rewrhmsulsKn6uRpAOI8PsIBTMQNnaWX/Zx476HKL9LeE
+         APdEZv4DVt+vcugIvOv0vPIfFh8sikrlhckwuMoWngCIceuTIeNUSsuHAnthQ9hhaMmu
+         wjXEP+vGS+jCjFhRj6aafb2h/DBSu8A+9MhDi7MUgNT/Mgma5cclargIzy74TketdYho
+         +ljCbk5bKD1N2uA1NzmyTpGgyotb6uwxn4mvdGuvusJP4KS8okZ4PPZT6h19o9lecG81
+         NRYClQKe45S7YXjwC00694M9lXj+eEOO8bPYM2Koa/RIKHu2CTSlhW6nq8j/sdG/yHYe
+         f52Q==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:dkim-signature;
-        bh=JvlLVhV61yey8O8YpbEqG2hEVjESCumTPs4mXO+vIE0=;
+        bh=1hGVnjdGEOumYZe081/NvT5dGB2xwJn4Ju//yjOVJPI=;
         fh=a0TltY5qNwl0Oa9ebjgPj0wI1noiSzhlLA8n7ahwZlA=;
-        b=rAA4ZbrwWF5fUJfql/1NIyzr52pmXV7CQJipoBQfpgpocZsArlvIIjokcZ8Dndp+jq
-         hk9pRILuc2rn42sDF4OMuACPaEftDdp11xkK3ij77ChChqxxs7scQVkDyP07i3eFv7Bk
-         teXkt2m0/JPi7vaSzoZCN6S6Qm+v/PxhJrGj4Mguqr92BDeOxZTA2p/3L8Fg0175EzRi
-         OVDw6TNDbjpVGw6tX74GS7C8BQpLR4Q+BY4OPEgnhztA8S2rd/5TfnOwH3HTcXF++cHT
-         xcO393pB3a+Qv79YI6+/s7HTTOuBx9F4YEgxZbeOmYZPU9CBlYfR/pHZJMUATCcjP2VP
-         CFlQ==
+        b=u3Un/hLnU7ELIsOc/ZtInpQXy3zZ0IHUBZ3EjWvmzXU4+SOr3Pp17xBPlb8s0789OH
+         2Wsb0dxZ5EESwsgzo4L9av/Qtc/ESzYR6XruwQ3wTa4lxZs0IIprC+VF5oEosk50kt/0
+         Sy0uXKDKMqGjTSiFKzNXRZoC4/y8so7clz3UbhBKe75gIkhOFYUAAQfcTtgL+4Z3zYvz
+         /ZMqimSnMBCFrQw41f3mupmb32do1gK0r2QcFDoIkU6SeXTCPN/C1CMW+2eWAuw2wzlB
+         JI3wFumHFUCn0OTAEZvfQr9jLKEF9udF/8tx0HBQEjZdzqM7YFKsjHhBZiekrOfEzPD5
+         ceLw==
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@gmail.com header.s=20230601 header.b=e+V5PX1r;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=b8QF7ED9;
        spf=pass (google.com: domain of gmazyland@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=gmazyland@gmail.com;
        dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
 Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
-        by mx.google.com with SMTPS id hg13-20020a1709072ccd00b009b298be8ae6sor1589301ejc.20.2023.10.06.05.54.59
+        by mx.google.com with SMTPS id og44-20020a1709071dec00b009ade0fb6ed1sor1491415ejc.3.2023.10.06.05.55.00
         for <usb-storage@lists.one-eyed-alien.net>
         (Google Transport Security);
-        Fri, 06 Oct 2023 05:54:59 -0700 (PDT)
+        Fri, 06 Oct 2023 05:55:00 -0700 (PDT)
 Received-SPF: pass (google.com: domain of gmazyland@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
-X-Received: by 2002:a17:906:5349:b0:9b2:8b14:7a20 with SMTP id j9-20020a170906534900b009b28b147a20mr7520029ejo.45.1696596898716;
-        Fri, 06 Oct 2023 05:54:58 -0700 (PDT)
+X-Received: by 2002:a17:907:1dd8:b0:9ad:f143:e554 with SMTP id og24-20020a1709071dd800b009adf143e554mr6590860ejc.30.1696596899617;
+        Fri, 06 Oct 2023 05:54:59 -0700 (PDT)
 Received: from sauvignon.fi.muni.cz (laomedon.fi.muni.cz. [147.251.42.107])
         by smtp.gmail.com with ESMTPSA id p26-20020a1709060dda00b0099bc08862b6sm2894660eji.171.2023.10.06.05.54.58
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 06 Oct 2023 05:54:58 -0700 (PDT)
+        Fri, 06 Oct 2023 05:54:59 -0700 (PDT)
 From: Milan Broz <gmazyland@gmail.com>
 To: linux-usb@vger.kernel.org
 Cc: usb-storage@lists.one-eyed-alien.net,
@@ -112,17 +112,17 @@ Cc: usb-storage@lists.one-eyed-alien.net,
 	oneukum@suse.com,
 	jonathan.derrick@linux.dev,
 	Milan Broz <gmazyland@gmail.com>
-Subject: [usb-storage] [RFC PATCH 5/6] usb-storage,uas,scsi: allow to pass
- through security commands (OPAL)
-Date: Fri,  6 Oct 2023 14:54:44 +0200
-Message-ID: <20231006125445.122380-6-gmazyland@gmail.com>
+Subject: [usb-storage] [RFC PATCH 6/6] usb-storage,uas: Disable security
+ commands (OPAL) for RT9210 chip family
+Date: Fri,  6 Oct 2023 14:54:45 +0200
+Message-ID: <20231006125445.122380-7-gmazyland@gmail.com>
 X-Mailer: git-send-email 2.42.0
 In-Reply-To: <20231006125445.122380-1-gmazyland@gmail.com>
 References: <20231006125445.122380-1-gmazyland@gmail.com>
 MIME-Version: 1.0
 X-Original-Sender: gmazyland@gmail.com
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@gmail.com header.s=20230601 header.b=e+V5PX1r;       spf=pass
+ header.i=@gmail.com header.s=20230601 header.b=b8QF7ED9;       spf=pass
  (google.com: domain of gmazyland@gmail.com designates 209.85.220.41 as
  permitted sender) smtp.mailfrom=gmazyland@gmail.com;       dmarc=pass (p=NONE
  sp=QUARANTINE dis=NONE) header.from=gmail.com
@@ -142,174 +142,67 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-This patch enables pass-through OPAL command for USB-attached storage
-(which does not support UAS or SCSI security commands).
-All common USB/SATA or USB/NVMe adapters I tested need this patch.
+Realtek 9210 family (NVME to USB bridge) adapters always set
+the write-protected bit for the whole drive if an OPAL locking range
+is defined (even if the OPAL locking range just covers part of the disk).
 
-USB mass storage devices that do not support SECURITY IN/OUT SCSI
-commands can support ATA12 pass-thru command.
+The only way to recover is PSID reset and physical reconnection of the device.
 
-Internal kernel implementation for OPAL interface currently supports
-only SCSI SECURITY IN/OUT wrapper.
-USB mass storage also turns off SCSI command enumeration, so SECURITY
-IN/OUT in the SCSI layer will be disabled.
-
-Note: sedutils and some other OPAL tools already use ATA-12 pass-thru.
-
-This patch
- - enables SCSI security flag for USB mass storage and UAS device by default.
-
- - adds an optional wrapper to the SCSI layer for the ATA-12 pass-thru
-   command as an alternative if SECURITY IN/OUT is unavailable.
-
-In short, the patch runs these steps:
-  1) USB drives (mass-storage, UAS) enables security driver flag by default
-     if not disabled by quirk
-  2) SCSI device enumerates SECURITY IN/OUT support. If detected,
-     SECURITY ON/OUT wrapper is used (as in the current code).
-     If not, new ATA12 pass-thru wrapper is used instead.
-  3) SED OPAL code tries OPAL discovery command for device. If it receives
-     correct reply, OPAL is enabled for the device.
-
-With the changes above, the TCG OPAL support works with USB adapters
-that support the ATA-12 command. As kernel OPAL code runs discover
-commands on initialization, on devices that do not support pass-through,
-OPAL remains disabled.
-
-The patch also adds a quirk flag to disable security commands for particular
-devices if firmware is buggy.
+This looks like a wrong implementation of OPAL standard (and I will try
+to report it to Realtek as it happens for all firmware versions I have),
+but for now, these adapters are unusable for OPAL.
 
 Signed-off-by: Milan Broz <gmazyland@gmail.com>
 ---
- drivers/scsi/sd.c              | 33 +++++++++++++++++++++++++++++++--
- drivers/usb/storage/scsiglue.c |  4 ++++
- drivers/usb/storage/uas.c      |  5 +++++
- drivers/usb/storage/usb.c      |  5 ++++-
- include/linux/usb_usual.h      |  2 ++
- 5 files changed, 46 insertions(+), 3 deletions(-)
+ drivers/usb/storage/unusual_devs.h | 11 +++++++++++
+ drivers/usb/storage/unusual_uas.h  | 11 +++++++++++
+ 2 files changed, 22 insertions(+)
 
-diff --git a/drivers/scsi/sd.c b/drivers/scsi/sd.c
-index 83b6a3f3863b..3782556cb461 100644
---- a/drivers/scsi/sd.c
-+++ b/drivers/scsi/sd.c
-@@ -686,6 +686,32 @@ static int sd_sec_submit(void *data, u16 spsp, u8 secp, void *buffer,
- 			       &exec_args);
- 	return ret <= 0 ? ret : -EIO;
- }
-+
-+static int sd_ata12_submit(void *data, u16 spsp, u8 secp, void *buffer,
-+		size_t len, bool send)
-+{
-+	struct scsi_disk *sdkp = data;
-+	struct scsi_device *sdev = sdkp->device;
-+	u8 cdb[12] = { 0, };
-+	const struct scsi_exec_args exec_args = {
-+		.req_flags = BLK_MQ_REQ_PM,
-+	};
-+	int ret;
-+
-+	cdb[0] = ATA_12;
-+	cdb[1] = (send ? 5 /* ATA_PROTOCOL_PIO_DATA_IN */ : 4 /* ATA_PROTOCOL_PIO_DATA_OUT */) << 1;
-+	cdb[2] = 2 /* t_length */ | (1 << 2) /* byt_blok */ | ((send ?  0 : 1) << 3) /* t_dir */;
-+	cdb[3] = secp;
-+	put_unaligned_le16(len / 512, &cdb[4]);
-+	put_unaligned_le16(spsp, &cdb[6]);
-+	cdb[9] = send ? 0x5e /* ATA_CMD_TRUSTED_SND */: 0x5c /* ATA_CMD_TRUSTED_RCV */;
-+
-+	ret = scsi_execute_cmd(sdev, cdb, send ? REQ_OP_DRV_OUT : REQ_OP_DRV_IN,
-+			       buffer, len, SD_TIMEOUT, sdkp->max_retries,
-+			       &exec_args);
-+	return ret <= 0 ? ret : -EIO;
-+}
-+
- #endif /* CONFIG_BLK_SED_OPAL */
+diff --git a/drivers/usb/storage/unusual_devs.h b/drivers/usb/storage/unusual_devs.h
+index 20dcbccb290b..b7c0df180e5d 100644
+--- a/drivers/usb/storage/unusual_devs.h
++++ b/drivers/usb/storage/unusual_devs.h
+@@ -1476,6 +1476,17 @@ UNUSUAL_DEV( 0x0bc2, 0x3332, 0x0000, 0x9999,
+ 		USB_SC_DEVICE, USB_PR_DEVICE, NULL,
+ 		US_FL_NO_WP_DETECT ),
  
- /*
-@@ -3699,8 +3725,11 @@ static int sd_probe(struct device *dev)
- 		goto out;
- 	}
- 
--	if (sdkp->security) {
--		sdkp->opal_dev = init_opal_dev(sdkp, &sd_sec_submit);
-+	if (sdp->security_supported) {
-+		if (sdkp->security)
-+		    sdkp->opal_dev = init_opal_dev(sdkp, &sd_sec_submit);
-+		else
-+		    sdkp->opal_dev = init_opal_dev(sdkp, &sd_ata12_submit);
- 		if (sdkp->opal_dev)
- 			sd_printk(KERN_NOTICE, sdkp, "supports TCG Opal\n");
- 	}
-diff --git a/drivers/usb/storage/scsiglue.c b/drivers/usb/storage/scsiglue.c
-index c54e9805da53..ef93813a2049 100644
---- a/drivers/usb/storage/scsiglue.c
-+++ b/drivers/usb/storage/scsiglue.c
-@@ -209,6 +209,10 @@ static int slave_configure(struct scsi_device *sdev)
- 		/* Do not attempt to use WRITE SAME */
- 		sdev->no_write_same = 1;
- 
-+		/* Allow security commands (OPAL) passthrough */
-+		if (!(us->fflags & US_FL_IGNORE_OPAL))
-+			sdev->security_supported = 1;
++/*
++ * Realtek 9210 family set global write-protection flag
++ * for any OPAL locking range making device unusable
++ * Reported-by: Milan Broz <gmazyland@gmail.com>
++ */
++UNUSUAL_DEV( 0x0bda, 0x9210, 0x0000, 0xffff,
++		"Realtek",
++		"",
++		USB_SC_DEVICE, USB_PR_DEVICE, NULL,
++		US_FL_IGNORE_OPAL),
 +
- 		/*
- 		 * Some disks return the total number of blocks in response
- 		 * to READ CAPACITY rather than the highest block number.
-diff --git a/drivers/usb/storage/uas.c b/drivers/usb/storage/uas.c
-index f6e293daabf4..9dfe8ea20134 100644
---- a/drivers/usb/storage/uas.c
-+++ b/drivers/usb/storage/uas.c
-@@ -865,6 +865,11 @@ static int uas_slave_configure(struct scsi_device *sdev)
- 	/* Some disks cannot handle WRITE_SAME */
- 	if (devinfo->flags & US_FL_NO_SAME)
- 		sdev->no_write_same = 1;
+ UNUSUAL_DEV(  0x0d49, 0x7310, 0x0000, 0x9999,
+ 		"Maxtor",
+ 		"USB to SATA",
+diff --git a/drivers/usb/storage/unusual_uas.h b/drivers/usb/storage/unusual_uas.h
+index 1f8c9b16a0fb..71ab824bfb32 100644
+--- a/drivers/usb/storage/unusual_uas.h
++++ b/drivers/usb/storage/unusual_uas.h
+@@ -185,3 +185,14 @@ UNUSUAL_DEV(0x4971, 0x8024, 0x0000, 0x9999,
+ 		"External HDD",
+ 		USB_SC_DEVICE, USB_PR_DEVICE, NULL,
+ 		US_FL_ALWAYS_SYNC),
 +
-+	/* Allow security commands (OPAL) passthrough */
-+	if (!(devinfo->flags & US_FL_IGNORE_OPAL))
-+		sdev->security_supported = 1;
-+
- 	/*
- 	 * Some disks return the total number of blocks in response
- 	 * to READ CAPACITY rather than the highest block number.
-diff --git a/drivers/usb/storage/usb.c b/drivers/usb/storage/usb.c
-index f3a53c3eeb45..04211ac803e4 100644
---- a/drivers/usb/storage/usb.c
-+++ b/drivers/usb/storage/usb.c
-@@ -478,7 +478,7 @@ void usb_stor_adjust_quirks(struct usb_device *udev, u64 *fflags)
- 			US_FL_INITIAL_READ10 | US_FL_WRITE_CACHE |
- 			US_FL_NO_ATA_1X | US_FL_NO_REPORT_OPCODES |
- 			US_FL_MAX_SECTORS_240 | US_FL_NO_REPORT_LUNS |
--			US_FL_ALWAYS_SYNC);
-+			US_FL_ALWAYS_SYNC | US_FL_IGNORE_OPAL);
- 
- 	p = quirks;
- 	while (*p) {
-@@ -567,6 +567,9 @@ void usb_stor_adjust_quirks(struct usb_device *udev, u64 *fflags)
- 		case 'y':
- 			f |= US_FL_ALWAYS_SYNC;
- 			break;
-+		case 'z':
-+			f |= US_FL_IGNORE_OPAL;
-+			break;
- 		/* Ignore unrecognized flag characters */
- 		}
- 	}
-diff --git a/include/linux/usb_usual.h b/include/linux/usb_usual.h
-index 712363c7a2e8..0181c94d7d91 100644
---- a/include/linux/usb_usual.h
-+++ b/include/linux/usb_usual.h
-@@ -88,6 +88,8 @@
- 		/* Cannot handle WRITE_SAME */			\
- 	US_FLAG(SENSE_AFTER_SYNC, 0x80000000)			\
- 		/* Do REQUEST_SENSE after SYNCHRONIZE_CACHE */	\
-+	US_FLAG(IGNORE_OPAL, 0x100000000)			\
-+		/* Security commands (OPAL) are broken */	\
- 
- #define US_FLAG(name, value)	US_FL_##name = value ,
- enum { US_DO_ALL_FLAGS };
++/*
++ * Realtek 9210 family set global write-protection flag
++ * for any OPAL locking range making device unusable
++ * Reported-by: Milan Broz <gmazyland@gmail.com>
++ */
++UNUSUAL_DEV(0x0bda, 0x9210, 0x0000, 0xffff,
++		"Realtek",
++		"",
++		USB_SC_DEVICE, USB_PR_DEVICE, NULL,
++		US_FL_IGNORE_OPAL),
 -- 
 2.42.0
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20231006125445.122380-6-gmazyland%40gmail.com.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20231006125445.122380-7-gmazyland%40gmail.com.
