@@ -1,110 +1,112 @@
-Return-Path: <usb-storage+bncBD6LRVPZ6YGRBWWK4SUQMGQEDK3OODI@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBD6LRVPZ6YGRBGWM4SUQMGQEYB2OJ5Q@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-qv1-xf45.google.com (mail-qv1-xf45.google.com [IPv6:2607:f8b0:4864:20::f45])
-	by mail.lfdr.de (Postfix) with ESMTPS id 03B6D7D6EA0
-	for <lists+usb-storage@lfdr.de>; Wed, 25 Oct 2023 16:25:32 +0200 (CEST)
-Received: by mail-qv1-xf45.google.com with SMTP id 6a1803df08f44-66d040c58eesf78133286d6.3
-        for <lists+usb-storage@lfdr.de>; Wed, 25 Oct 2023 07:25:31 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1698243930; cv=pass;
+Received: from mail-oi1-x247.google.com (mail-oi1-x247.google.com [IPv6:2607:f8b0:4864:20::247])
+	by mail.lfdr.de (Postfix) with ESMTPS id 15B0D7D6EAF
+	for <lists+usb-storage@lfdr.de>; Wed, 25 Oct 2023 16:28:44 +0200 (CEST)
+Received: by mail-oi1-x247.google.com with SMTP id 5614622812f47-3b3eba1fc32sf9563799b6e.0
+        for <lists+usb-storage@lfdr.de>; Wed, 25 Oct 2023 07:28:44 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1698244122; cv=pass;
         d=google.com; s=arc-20160816;
-        b=DBQy73Si4r+7+wkK4ZoSkkjRub5SZ7qdkFs6dYTsnIypfuzwKT9R1z95oRivNOrA6s
-         G/HvZOUZZ0CPynCDy1ugTjxerESQ+jmnmKZGpzIR0eEVk2a0CLFRbT2k3Kem2jaFeBQR
-         M3oCDSr+Pfd9Gt0HSWIoWP4ipNLBhz5AGONUTnctIkPsrzxvU5k68VDJOV9gdc7GGqXs
-         OngNUGD0qGMayFgDjKAIBjDHIyPzxlbCROfCeA2EoIcBBaxAHIE7QGoFDbM/rE5do74i
-         +Vnz3OuzIGf3JAvlkKOmqubSziWXxO4AEIgJ9iK3T0jeCIZkS7HfBlDV179lM3UW4rOF
-         pf9A==
+        b=Qx0T4WKqXhssS31gBYLS6uYB51BHCUG9ex6FTZ3GM55pHMPbRm6mDPu6KJdbTyfpVk
+         gaAq2ZVEaamGHDY50akWPSGUvhW81q/pMnqoNxYRJWR/T0MBGLjB30i3OjclVcHZM6lO
+         cZkmLa5sUXQ43mVW2EkOJSoLdZHG87m1xCksXGnhU4le4nNESf9/llbO5ZkmHUVBCRyS
+         /YTYBtHJGC4QesFMiqdDzc5b2VBoR6Br7PRWu6jWFosnOi4mz0jXYwkPdV6OAwWgsQZv
+         EAEsvk0OF5dr+LQuOhMzid2X1fhtyGxx/+vsXBwmfzOOFrU3E5Jcc2N3bEyOFTFWd4M5
+         EdYQ==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:in-reply-to:content-disposition
          :mime-version:references:message-id:subject:cc:to:from:date:sender
          :dkim-signature;
-        bh=iDMDVoxvuoH0WVVIp/tDiOzCJLzrnxY234kVkgdVCPM=;
-        fh=HTcH9FwWfokSIxcREMnaC56gnwz2mltpvLaBMofE/C4=;
-        b=iAE4qbFeKX4bcE3FVfyd2fSTc16l46YI3Z1yZyiLmjoiOLnCeGig4eepYB2jkjDu16
-         Vf97Rml+ZTX+tdqHC1dD8X5wVJN/BZP84oZqQREai5ea0URzO+hD3vtiJxvAacHu4nZC
-         O72c0/LRWHT5W6ezJWmlPXna8wG7HNK6e0ovTuUSID2evkTThn6BYyyD0kABTbOobchr
-         DkYueQX9sR37iYqzYT9VVXWHNAv3D/euejJhabnKKcC6/mhGRBUabZXrelG7tQCy0hBL
-         Kk6E4x5mzb7sU/+tMaK7TKGLrd6dXZB/aFrRnhQp6KAY9llS9gSgwvStUunJykZjuwk4
-         1yZg==
+        bh=ZC8I6RkOi3HWpGEXtlYHJXGsM8qpi0aGYJykIp9vMpI=;
+        fh=ikAxb0vA1SsOcj5RtR7msHd4l5tzxKxDpKDBYpixuTM=;
+        b=NsYUj+O77DGPU+kWvpKfONQoHwAWUose6icIJqZ7j6yGhb2B7e4N+WmpWeVH//ENcg
+         uLHd/wySdlRMW6p0LWPnx3IVMZckCw+z+Xn1N8fboCvmibPMr1scW9uCoX1bB0ZLSEMC
+         yRupFApcPek9jKR8gNl7uUY/CC4GN6A6SbBzgqUez8M90fM7+SjTHVcghYI4UCkZUxha
+         f7E9+xhB8E22M6D1o1ltbbDXiiEWErVGckEeyQxcsq1z3J+/o4O34wdapHaJfZYLtsjh
+         NCFkNgJiqPAUCx4s1qtUWW/mmUzVoSpwi+IRlngELSBVm0CguJzsqS/pObxdBrYO69hU
+         M5zg==
 ARC-Authentication-Results: i=2; mx.google.com;
        spf=pass (google.com: domain of stern+652539ca@netrider.rowland.org designates 192.131.102.5 as permitted sender) smtp.mailfrom=stern+652539ca@netrider.rowland.org;
        dmarc=fail (p=NONE sp=NONE dis=NONE) header.from=harvard.edu
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1698243930; x=1698848730; darn=lfdr.de;
+        d=lists.one-eyed-alien.net; s=google; t=1698244122; x=1698848922; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:x-original-authentication-results
          :x-original-sender:in-reply-to:content-disposition:mime-version
          :references:message-id:subject:cc:to:from:date:sender:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=iDMDVoxvuoH0WVVIp/tDiOzCJLzrnxY234kVkgdVCPM=;
-        b=AXh5EqkHDCtd7/WuzxeFA/NTv0CsjLryuuNFmXiqryXHMjo3lbzWwTWXBkGaigLCrO
-         s+On6HwjqXgIDc0WFNzsDuq/TXWEgdygjxDUYpuvYcuszzIgg7U6UeFCl6u2nltaP9bS
-         6spaK+Bz5d3ukErPhGriLHF4jSZRx79THpLNw=
+        bh=ZC8I6RkOi3HWpGEXtlYHJXGsM8qpi0aGYJykIp9vMpI=;
+        b=C3P64A4h8X1mx+U0FPrgQDTDvx5zSXcn7VbvfJbVezxclAgFXpl4UhtjW4N6mG78q1
+         U+kPmMOrIav1ZRsm5qWbsBcb0GyCQFP6N3gHwMiLoEWnkL5CLqzdN1ZR8GyUiStAGYzB
+         CiEVIdFq/PM6sr5GXZPsezUK3v1R16R41MNxU=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1698243930; x=1698848730;
+        d=1e100.net; s=20230601; t=1698244122; x=1698848922;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :x-spam-checked-in-group:list-id:mailing-list:precedence
          :x-original-authentication-results:x-original-sender:in-reply-to
          :content-disposition:mime-version:references:message-id:subject:cc
          :to:from:date:x-beenthere:x-gm-message-state:sender:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=iDMDVoxvuoH0WVVIp/tDiOzCJLzrnxY234kVkgdVCPM=;
-        b=cBuIKDMAYUHwC0y6YNFnxJCCyAUtat/fe9TKc3guYJZlvturaNTqv8pDd9VNj3vTLD
-         tpsedfvi6sN/vKE7ZcUmxHkEAAeRnD5LKd3veoFk5KyZBViBOo7vnpAIENimhgTIUWf2
-         swuCqP1kANwSbMrE1v0IvyBX9wTbWEyv7QG5NUD0cDRonaYUzsq7Xo3lLzv1y7vgdebL
-         DeXasjru5UwQpgBvjHRCR8YlPFegnLbsvz1GZ9eR2vXYiS/lLjiVX+WQ/djZTw+nGLqw
-         dZXlIKRcM5TFmPDtZCo967Q6B40XdIRjDwLBuTEMWHEmW1ptS9t2yYN/msqin7I1F2ix
-         d1Xw==
+        bh=ZC8I6RkOi3HWpGEXtlYHJXGsM8qpi0aGYJykIp9vMpI=;
+        b=nOtO8oHVEGQ65d9Rh8q3GpEsYIi4fnYfrB4/OwcdSpVgB2KCuJuaCIGjLL6fFGpCvk
+         4QvMjYk4IwYKxwp2hMWin/RWUE3Q2M7J+ZzfAxTqO1Ey2Dz0VwigjQpQnDVHOMO5uvo7
+         g8vWD6jvUZq+igKiLYpECwVdru/PwCKpYk0V9QTArYzQSj+nUrVeLsRCgcBSYW6lrDms
+         YsajFZWmcGTc0L6xnUzM1sJ7ddaEsUfucNAksUkBh/wiRtbLcXjm0PkuQl161CbfA9h1
+         Bfi/dVEqR7kcxXqPFYGpxLjVS2gN5Li3WkoJJYa2gNIgnxwutqrPguIPlW7J68l8HjFd
+         shaw==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: AOJu0Yy1+uLZ1SIUgZgh6b9sYeRKaOMZW7Qt9NMkIX50k+DTta4ChJnX
-	4HkHraXAUTCywTtxg1WmXTJz4A==
-X-Google-Smtp-Source: AGHT+IHwucye3X/sKCzu+Jh7npOLfwhKvTOOQAbLHorTaErvdzeL1zZkdP6b1rcPtHevC1iVL/X6Lg==
-X-Received: by 2002:ad4:5c65:0:b0:65a:e466:1678 with SMTP id i5-20020ad45c65000000b0065ae4661678mr17212716qvh.55.1698243930648;
-        Wed, 25 Oct 2023 07:25:30 -0700 (PDT)
+X-Gm-Message-State: AOJu0YxgKCONKoSvXQ2vfuzKuwFmurkwxuSxH68jOzdrPWTvjOf2zzc3
+	PGqP5hLoySEc1zGYaiONtqfkCg==
+X-Google-Smtp-Source: AGHT+IEuYwCWo6sZJJljoQeLLIzvz2LmjhKXo08lawUAJQag8trWwFdn7u8XCaKKtY5eLNZjKUKJGg==
+X-Received: by 2002:a05:6870:698a:b0:1e9:9c34:af67 with SMTP id my10-20020a056870698a00b001e99c34af67mr18183424oab.18.1698244122553;
+        Wed, 25 Oct 2023 07:28:42 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a0c:e60a:0:b0:66d:869b:3a7c with SMTP id z10-20020a0ce60a000000b0066d869b3a7cls2639163qvm.1.-pod-prod-05-us;
- Wed, 25 Oct 2023 07:25:29 -0700 (PDT)
-X-Received: by 2002:a05:6214:5006:b0:66d:1b61:f206 with SMTP id jo6-20020a056214500600b0066d1b61f206mr20066289qvb.59.1698243929427;
-        Wed, 25 Oct 2023 07:25:29 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1698243929; cv=none;
+Received: by 2002:a05:6870:90ce:b0:1c3:e0f6:4173 with SMTP id
+ s14-20020a05687090ce00b001c3e0f64173ls359883oab.2.-pod-prod-08-us; Wed, 25
+ Oct 2023 07:28:42 -0700 (PDT)
+X-Received: by 2002:a05:6358:1809:b0:168:e9d5:bb34 with SMTP id u9-20020a056358180900b00168e9d5bb34mr6699146rwm.14.1698244121791;
+        Wed, 25 Oct 2023 07:28:41 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1698244121; cv=none;
         d=google.com; s=arc-20160816;
-        b=WlKUrIwvN6KzrKBy2gum8x2wza4kCO1Lgbrhs1jdpk0cuTeuTm6hFU7epdprwgxQNu
-         7pXfxHyeJ0SvXDS0OPRfUxknSA3IVFKrOTiYvz6InaVNXdOpMsGptddYN8Kt52svtmjs
-         AVHDxTEHdQjBW9iDUG9zXKkx4dnRLr624sVFS6+A9NnAwD1uFj7ERkNsovHKpcw5TLKf
-         7qMmTj2r5rGOcsZ/RszgdIYRH6quHrn7LukGP/0F1WhrsOtFcgRFZ9MQAYM0hWh/YOaJ
-         q+XKVEDe/WKwboGSar0SFvVWNZEKm59YbL6I+BYSsjurL4zg9KHUXZ5JrZ158Yfy5O1v
-         bmEA==
+        b=Ypfa8l0w8MVDyzO+pIlM/Pj0C6+OGzMH9oigFUCN5II2saH7Jf3b6q2JvZWObvxbXv
+         Pu1Hrp3TumLLemi0tPxbz5E4M0bi0W7zJyQB91g3r52xaphIW3yOEWR+oamgOw0/oHn1
+         DQ3R/LqWkHQgnsiAmy+TsUHa0O8Gj3nzQ7Je/9Hkf59xQyHV3mSe7dSt+9g5QtMr7kvi
+         murj/DwfFhxwSfnFEpgdgW28JxjHVO4AO1c1Zc2jrHSjvg+46moobnKUbORTBNhdE9iL
+         qwiF19D/EjexDwKZCkqkRB9PrS/7qchikmwVGSGMpt12bvWTJZWIxmXz7aBnqYjGN9DD
+         KiKQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date;
-        bh=eMGX5Z6Wb5FCBxvcVbzY1MCs8mEW8TMZB6RxH0+0Clg=;
-        fh=HTcH9FwWfokSIxcREMnaC56gnwz2mltpvLaBMofE/C4=;
-        b=yQe8S55cMdBtvIFhXSkcHbpRDAqn3Fylop657xRUuDB7bjyAWgrdSaG6bwSVCSI80r
-         C0kSO2av7ydr60R1vlT3jKyjwc00LyBBxR1ZUqqFda70I+G7aXnbEG790y8m2+Wf/oqU
-         DaqawFLsRroMallspCF66d/6PMPSZXBodZ5rMXhm3XjNdWYg/hJS+082e9Y4PPDw6Xl6
-         be2OIdJWDWP3QNDrmabHCzmJb6kpoRPvJnUTsTGN+DQl+dGb+bt1wxFeiqFnK/v90Ju1
-         QS0TX9EAPxlDCI9nrGAtAMiS821a1ufP8H5lbNxJMKdZMZ5BOw5IChE/UhCLXswGisTu
-         +ZkA==
+        bh=7fe6kaLoswCIpx0VDWpLmWoca1lXGif1MeSTKraPgdo=;
+        fh=ikAxb0vA1SsOcj5RtR7msHd4l5tzxKxDpKDBYpixuTM=;
+        b=U/deYUBGDLbHVNbjBG4i1AHGb6UWAup+vcELi+Klvje+nwIRAeKwp7qzUzC8Inw8u0
+         7jM/GBZzdOPm66Fx+G5hcU4sSpKqO476IViUSlI7TnCEFAD1IWXw21jAUYLXTCV+MVUV
+         WwwunThEBrtKuB3CuojkrtthtPBvWOopEWtvV3GqDFrBCbILscOAyoXGYe1QWjJpb5iL
+         RWzo38kWUfRHu+YS+Q8ermo3HdOCkq3JRCbP6mKjzjTXlzz7vyIZt6uOcCHh423w4r1t
+         ZSfU7cAXZUoagn/Mp9sx2iTNLFdb2oWCyUnTvlzfZ2OJyGAGIeQ/mogkKZz43CwNYfeL
+         9iqQ==
 ARC-Authentication-Results: i=1; mx.google.com;
        spf=pass (google.com: domain of stern+652539ca@netrider.rowland.org designates 192.131.102.5 as permitted sender) smtp.mailfrom=stern+652539ca@netrider.rowland.org;
        dmarc=fail (p=NONE sp=NONE dis=NONE) header.from=harvard.edu
 Received: from netrider.rowland.org (netrider.rowland.org. [192.131.102.5])
-        by mx.google.com with SMTP id bk40-20020a05620a1a2800b00767cc0f9316si8724967qkb.289.2023.10.25.07.25.29
+        by mx.google.com with SMTP id oq2-20020a056214460200b0066d02306e80si8846699qvb.184.2023.10.25.07.28.41
         for <usb-storage@lists.one-eyed-alien.net>;
-        Wed, 25 Oct 2023 07:25:29 -0700 (PDT)
+        Wed, 25 Oct 2023 07:28:41 -0700 (PDT)
 Received-SPF: pass (google.com: domain of stern+652539ca@netrider.rowland.org designates 192.131.102.5 as permitted sender) client-ip=192.131.102.5;
-Received: (qmail 495360 invoked by uid 1000); 25 Oct 2023 10:25:28 -0400
-Date: Wed, 25 Oct 2023 10:25:28 -0400
+Received: (qmail 495484 invoked by uid 1000); 25 Oct 2023 10:28:41 -0400
+Date: Wed, 25 Oct 2023 10:28:41 -0400
 From: Alan Stern <stern@rowland.harvard.edu>
-To: "Li, Meng" <Meng.Li@windriver.com>
+To: Oliver Neukum <oneukum@suse.com>
 Cc: "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+  "Li, Meng" <Meng.Li@windriver.com>,
   "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
   "usb-storage@lists.one-eyed-alien.net" <usb-storage@lists.one-eyed-alien.net>,
   "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
 Subject: [usb-storage] Re: [PATCH] usb: storage: add shutdown function for usb
  storage driver
-Message-ID: <f6dec17d-471c-4bec-b730-1a4bbfbf21e7@rowland.harvard.edu>
+Message-ID: <8ed3dd57-120a-49d2-817b-504d2f5523fc@rowland.harvard.edu>
 References: <20231023054111.2744872-1-Meng.Li@windriver.com>
  <33bd0779-bfe7-4c87-8fe6-ea8455df3b6b@rowland.harvard.edu>
  <PH0PR11MB51918DD50651DB6BE937BEA3F1DFA@PH0PR11MB5191.namprd11.prod.outlook.com>
@@ -113,11 +115,11 @@ References: <20231023054111.2744872-1-Meng.Li@windriver.com>
  <5107f6ca-e972-4af1-a21d-6c95778969f3@rowland.harvard.edu>
  <2023102459-protector-frequency-1033@gregkh>
  <a6bb88cd-0b89-4eb1-b90d-8ad633b7a8f2@rowland.harvard.edu>
- <CO1PR11MB5188998FE62B30C3CA83A6F8F1DEA@CO1PR11MB5188.namprd11.prod.outlook.com>
+ <bdac114d-2366-407a-bfe1-fca2bb035429@suse.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="UTF-8"
 Content-Disposition: inline
-In-Reply-To: <CO1PR11MB5188998FE62B30C3CA83A6F8F1DEA@CO1PR11MB5188.namprd11.prod.outlook.com>
+In-Reply-To: <bdac114d-2366-407a-bfe1-fca2bb035429@suse.com>
 X-Original-Sender: stern@rowland.harvard.edu
 X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
  domain of stern+652539ca@netrider.rowland.org designates 192.131.102.5 as
@@ -138,16 +140,25 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On Wed, Oct 25, 2023 at 02:25:17AM +0000, Li, Meng wrote:
-> In fact, the reported error is not critical one. In my real work environment, there is not the error because there is not PCIe-TO-USB card installed on board.
-> The issue is reported to me from our tester who used the PCIe-TO-USB card to test the PCIe feature, not test USB feature.
-> I am ok to NAK this patch. The primary intention of sending this patch is to raise up the discussion about whether shutdown function should be added for usb mass storage driver, and I have got what I want.
+On Wed, Oct 25, 2023 at 11:07:07AM +0200, Oliver Neukum wrote:
+> On 24.10.23 21:23, Alan Stern wrote:
+> > Since USB class-device drivers don't have ->shutdown callbacks (there is
+> > no shutdown() method in struct usb_driver), they don't know what's going
+> > on while a shutdown or reboot is in progress.  All they see is a bunch
+> > of errors.
+> 
+> Does this solve the issue? You'd have to flush the cache on the SCSI
+> device further down in the tree, if you want this done properly.
 
-All right, then we will consider the issue closed.  Thanks.
+Depends on what issue you're talking about.  The purpose of the proposed 
+patch was not to make sure that the reboot happens cleanly; it was to 
+prevent certain error messages from showing up in the system log.
+
+Besides, Meng Li has decided to withdraw the patch submission.
 
 Alan Stern
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/f6dec17d-471c-4bec-b730-1a4bbfbf21e7%40rowland.harvard.edu.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/8ed3dd57-120a-49d2-817b-504d2f5523fc%40rowland.harvard.edu.
