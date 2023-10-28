@@ -1,120 +1,122 @@
-Return-Path: <usb-storage+bncBCUJ7YGL3QFBBDGC6OUQMGQEDAOFXVQ@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBCJ455VFUALBBH6W6OUQMGQEY27WTJY@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-pj1-x1047.google.com (mail-pj1-x1047.google.com [IPv6:2607:f8b0:4864:20::1047])
-	by mail.lfdr.de (Postfix) with ESMTPS id 733E37DA661
-	for <lists+usb-storage@lfdr.de>; Sat, 28 Oct 2023 12:23:10 +0200 (CEST)
-Received: by mail-pj1-x1047.google.com with SMTP id 98e67ed59e1d1-27ff9e2ffdfsf2348581a91.3
-        for <lists+usb-storage@lfdr.de>; Sat, 28 Oct 2023 03:23:10 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1698488589; cv=pass;
+Received: from mail-pf1-x448.google.com (mail-pf1-x448.google.com [IPv6:2607:f8b0:4864:20::448])
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A8D47DA69E
+	for <lists+usb-storage@lfdr.de>; Sat, 28 Oct 2023 13:06:09 +0200 (CEST)
+Received: by mail-pf1-x448.google.com with SMTP id d2e1a72fcca58-6b697b7f753sf2760504b3a.1
+        for <lists+usb-storage@lfdr.de>; Sat, 28 Oct 2023 04:06:09 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1698491168; cv=pass;
         d=google.com; s=arc-20160816;
-        b=gEOwjf4wg3+NIsv2rUyn8MxsIvlIAE7zLXKnauMrhmlZmdGhfQ00GrOgLC1lszF8bW
-         jorfM0Df+IVsGgF4X+8oPWGsMkalExJ6eljC9k8TpmiLpUjJteZmqS4Agtgc26mtZAat
-         PDdVkmOLMBQ6CcsgqOT+dlHO76Vu3BTA0sZvdX/MIkMiLlQREDHIOM4QSJZ4Tes4rinO
-         ho587rcPmn4IZ6AtyV+2OWXh3sKH+aSw4xphZZF+Hd9SOf5U9PrQGy3+kQJnYBatWGwC
-         GMIbvTvkUc3H7n8kNfnwdgxAoFvyEe1jC4+jT16jkTEtVfFsGr8VSo6/syunk2GU1UpE
-         9jxA==
+        b=jU79Bvjh+Jy0TqpBGan19a8jMSn6Pe+3QYWLPQziifcSBRC2lrTsdpdsojbRuU6t0T
+         sl7c+3Dw5G1fiM+YEbFki1q7TksU5NY5ak0azycl6BQkoqemKYHJR0AwP8UFCtsCl+nV
+         cZRX2qDZVFBtC7P/KblIxtFE7zF+RRlIN2jo/td0/wTnagdrtTmCoor4hT+BXn4p2SVJ
+         sHvogUAMIcJYI3MVkZqiJdLeD78l8JP1MaOoLJwluwafcnt+MA3/5JSQpceFlbLU7HI2
+         mq8Vq3b5b8WW2zSYjdh1/DHkUl0SHlU8V7tgV1kAMmEeAmfZ3gKeIwKjL8h2dk4n8+J+
+         GyQA==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:in-reply-to:content-disposition
-         :mime-version:references:message-id:subject:cc:to:from:date:sender
-         :dkim-signature;
-        bh=RFUPR2MDxHSpOPoJEB3uuOl9fwbipmRX9i3lTfByJco=;
-        fh=XY/oKcch/eMwojFg3NEzNI3dYvMwhtFDBHi83HM+kqY=;
-        b=NBJ9pA7N3bi9GYJCwBhRs7mCoiOhwvebve17IghVbCCMiMrhjaJSqK+G/S7L7/tFZr
-         ejoM8wSM9wdgZrES9w6bX3Ydep6kD9wODtbdh4CHK+9qvwuOxCDpspeKCkZwMAAnvXxu
-         cvXFzKCBW82P1NHenu8jCAHR8b9fjrzNQtkphapZqhijNOMsM8x2Mj5iEALlK5O1F1c8
-         xoCeVD49nrIm+AIVc5j5s6x3mfeyfKELhpoTt+vMVwvaQu3vUpu85Sn8X7nFCNBadDab
-         jo6EsRVg9F9TXJMXFDWzNqIKqR9NT4uH44CG6YqoFlHvTnjWcnm7LZEXPDz4BTnxx+Q0
-         aNGg==
+         :list-id:mailing-list:precedence:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :sender:dkim-signature;
+        bh=2/2ztVOngq9fXiBeKzIlXL12xukHca2K2P1xTOMwlS4=;
+        fh=8aUDxH71K+APVfQofOn6O6yQgS+M2ycT+lFbOy1DjnU=;
+        b=fpd6ao2QQVYT0eGpeO+HWMo6Wmo6xPJdtYnufL8DuaELfpQQFX9Qj/hhlVlYpYg8nU
+         k7MpM/CAuNuwsz9FsLxsk2i8PZSGXSJaqCrrJCmGoBnvzZeCDIFcl8NxdBV1ngAp5G2z
+         XdaIUzUNnnBAB4u98x6E4y2YHs+NDi+2xJEgepb9+7O/uPU8DjuuvcAXrcD59I0Gdvvw
+         jUxmejxkLO8w46zGESExlYkLcFs9Dv9zMSCayVSTU7/adadze8g2rDJpuTZ00f6mj7nR
+         eHEX8Qf3uE/CE1IOH7PrrmWpHimBdPrkicqRMckGZZKfPCfM5UpoIYVIcaUSfBEBI8GU
+         pGag==
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@linuxfoundation.org header.s=korg header.b="X/iIJVX7";
-       spf=pass (google.com: domain of gregkh@linuxfoundation.org designates 145.40.73.55 as permitted sender) smtp.mailfrom=gregkh@linuxfoundation.org;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=linuxfoundation.org
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b="K56JJpq/";
+       spf=pass (google.com: domain of bagasdotme@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=bagasdotme@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1698488589; x=1699093389; darn=lfdr.de;
+        d=lists.one-eyed-alien.net; s=google; t=1698491168; x=1699095968; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:x-original-authentication-results
-         :x-original-sender:in-reply-to:content-disposition:mime-version
-         :references:message-id:subject:cc:to:from:date:sender:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=RFUPR2MDxHSpOPoJEB3uuOl9fwbipmRX9i3lTfByJco=;
-        b=KdZQZzQSkiLyTAn8oP2ykbvmL/wTJjaEMKZnh/nEeBYduQdKdRtMZNBU8B/ipO8z9/
-         0AwKvWxKNc6Zn9ay5tjwCbpKIYa8EPTG2bBnnuw1Ksdek1tCc2DS1GA5vj4Kg94jQizz
-         xe++sLtMvD1v0qqDDmWPqyotaJkWiuv2/2CWY=
+         :x-original-sender:in-reply-to:from:content-language:references:cc
+         :to:subject:user-agent:mime-version:date:message-id:sender:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=2/2ztVOngq9fXiBeKzIlXL12xukHca2K2P1xTOMwlS4=;
+        b=XZrmAF8aYiGSsqQKMcWJ3mRGfYeunZDW68mMZ9ieXNL3kuPXh1jqHswliEnvfHu7NZ
+         veQs5lUG/dwKYD8HZM7DHKm5mvqAA00YBWtaIV+EPqdd5nFIw4gu3knH+umgeLVmQzZ3
+         AsxyEQMcS2Vl5kwr2ZPZFoxoKMlW/DleTNJLw=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1698488589; x=1699093389;
+        d=1e100.net; s=20230601; t=1698491168; x=1699095968;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :x-spam-checked-in-group:list-id:mailing-list:precedence
          :x-original-authentication-results:x-original-sender:in-reply-to
-         :content-disposition:mime-version:references:message-id:subject:cc
-         :to:from:date:x-beenthere:x-gm-message-state:sender:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=RFUPR2MDxHSpOPoJEB3uuOl9fwbipmRX9i3lTfByJco=;
-        b=Wfupg9F4vbcyvwXwFFMIoe9qbO9GNN8MisDvAl9uGz3PNAK9GeCervKzlRExmAzvIx
-         pkjk41tOp2PCCyNVjsRXTxZFV5u2Byk/Ep0EpPz17eumvglJ3xxV8s5Elpy6Ejs6wAx8
-         SmBrZYyi/47MYRJKi9O0Ud5SNQCenDsJfAuSYEdIlJgpv5ip2557+fU8gzcu2IqB+amM
-         e3pazCY7V3YhohjlTCTzWSKxdGEtM1tO/1e/Pps5HQ+lVsAZH3/GU2IfXF2MoT3wh9zd
-         xnRiGR+sBNCUbo8cafVzs/NOQWr56I7pjhkecpMWJ1QOwtpRIYoGNe3HnJJD2ZTCsrji
-         IAqg==
+         :from:content-language:references:cc:to:subject:user-agent
+         :mime-version:date:message-id:x-beenthere:x-gm-message-state:sender
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=2/2ztVOngq9fXiBeKzIlXL12xukHca2K2P1xTOMwlS4=;
+        b=uqOC5iDjZae/Iao+OTLS7mELXUdlDWS3CyqrEgmyoLgEkcr5P351AQn724rT9VfOXU
+         mcVfnfy0LiQQgbs6EdcVeBrSXq1gL5LDY7b3Tb+DvKHzsbQbLuCztl1soRKY8AIVWjwy
+         c7tlK+NuU0xWkfL7DTi6uDZtQPGNwH5ckr1GPVWez3Ew00+6XSj892mRBwtCd+GAluUq
+         1P5u6qQx0ULKoFEYdB4yVkhCz/ci04txFK+xIp9ZXsL7LXE5Jg0br7p5hqs9bBgsdyhM
+         uwykAS0oyguCumr+zu2CsZqtZdsDxnuV1wbRSyllnziy2MLSh1EFoCkQqIDECT2LA0UP
+         uyuQ==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: AOJu0Yz1lcu6ydbMD8WLMtq6+XG1LMu/IidvlPTftWR6oXoz9E1lZP3P
-	+3H9oV9xQnvn+Mm6TcX7+R3TRg==
-X-Google-Smtp-Source: AGHT+IEIZmtjcTZ+O85xVNa4IVNhsReGQ3DF8rpsMg+/jv/LM+ftJu6i1P+NxQqqxl+iM1qYBz1zQQ==
-X-Received: by 2002:a17:90a:db92:b0:27d:d9c2:6ee5 with SMTP id h18-20020a17090adb9200b0027dd9c26ee5mr4790020pjv.9.1698488588731;
-        Sat, 28 Oct 2023 03:23:08 -0700 (PDT)
+X-Gm-Message-State: AOJu0YwcJNVfRpyHdTufo1tfQr3CC+lj9J3bAiIhHeKQ+h748X1016dO
+	w7x+KSGQ2f7CSV/ypeRCqZOA1g==
+X-Google-Smtp-Source: AGHT+IE+8pkX2q6QaJl5ZXS8kE/ANuPmSuivFKpy+nBrZFMqTyFvDcZGT14/RAdBr3YkOmOez0VSog==
+X-Received: by 2002:a05:6a00:15d4:b0:6be:2803:9c92 with SMTP id o20-20020a056a0015d400b006be28039c92mr5909066pfu.32.1698491167927;
+        Sat, 28 Oct 2023 04:06:07 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a17:90b:1647:b0:277:5642:ec00 with SMTP id
- il7-20020a17090b164700b002775642ec00ls737814pjb.2.-pod-prod-06-us; Sat, 28
- Oct 2023 03:23:07 -0700 (PDT)
-X-Received: by 2002:a17:90a:ca13:b0:27f:fce3:2266 with SMTP id x19-20020a17090aca1300b0027ffce32266mr4543326pjt.24.1698488587406;
-        Sat, 28 Oct 2023 03:23:07 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1698488587; cv=none;
+Received: by 2002:aa7:9392:0:b0:6b2:f6b2:6933 with SMTP id t18-20020aa79392000000b006b2f6b26933ls964851pfe.2.-pod-prod-06-us;
+ Sat, 28 Oct 2023 04:06:07 -0700 (PDT)
+X-Received: by 2002:a05:6a00:b55:b0:6be:314c:16cb with SMTP id p21-20020a056a000b5500b006be314c16cbmr6140501pfo.10.1698491166881;
+        Sat, 28 Oct 2023 04:06:06 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1698491166; cv=none;
         d=google.com; s=arc-20160816;
-        b=Qc9Ry+D54gKVRm/TiTThQwGh1sUXKpGtetsYPpQWKDRIJ3TfNRCIEJalRcaPlPYTNZ
-         Ok68ZPPEfBF4VVQg9MaSIEijoh3BlAjv6yGpCjtpH16lecILY4IxhOGfimS6WPn9AMFT
-         MltCqzioR0TefUZ8h2QCZhtF965ZKvxyEJOMVZYkHu+gY1LPJJocXGJKhqYj2oxbmO7f
-         bAxgDGKn4FdikXCGFfwOyb+ODi/mEnWbBMYGcX5jIGFgHk83Z+z39kfyBfcamHoom4Ke
-         YB0WjlPRjeGBhvkgOfwbdKPPz/4LtFZo03CUWcQ3+UAqAQoPU9qGMAoND4jkVZFWiaCc
-         a3Ag==
+        b=ggo8q129KxmPLiIRqcEFbiq+ihjvCl6Wp542zg+fEvAGpBIHbiJheyhmqH6R042VcI
+         lH8L/c7+Kj1MhJ6pu4OSyGVk8IxHcESG1/xpY9o/PUsZAM5jVZzKxInBZZQz0AxRIB1K
+         1g1EvUdvAfq8E5lZmUVc56uB6ROHkLdYZiKRKO3nDdkkV+/OlE8sRd0U5ObL0V08y8KV
+         PRZEMtZgXraEEAM1+Efkfr1qlfxHmjW3JlDOQDMbdDIIA77obu5lH1UmHsFNIXt20SYO
+         2S3eVlYN0tpKOjSDpr7u4Otv25LjsxFPdT591SQvIWyYIP24zpWcQoTdaApY026o33zu
+         y+Yg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:dkim-signature;
-        bh=F0dZiynX+PiZJQMovTOHnrs+y9nb7KZJzVcjVECigyU=;
-        fh=XY/oKcch/eMwojFg3NEzNI3dYvMwhtFDBHi83HM+kqY=;
-        b=GymgMro2MkTVRIdeku1FSkg2+cvT4VCOIpVbcjOXbuwkbrD/koB1BlPDrSUiZIptXy
-         ozvWakQWW6Hcn91jhQIVla9PiNQFoKGQIwjUxWnTMOvOf0zMCPZRpKZePW1VQpY1PWXC
-         iVN4hVxPOWOPb75y4tUmW449i1v++TxK3994ijRe2qPpB37pjKw4w8OoFBb00DOztjDf
-         kZI+/CEnQ2KuqBCVuULroga2gqYS8bfh3Z4yruchs5CYwlyXHOqZOltUVw3IlRfMz5cX
-         CBUleivLxBEIeej0GvpbcjO5xy+HWSID6wBCgh/iFSjch4a2evzgPiUJFaP33kmBA2PF
-         lv3g==
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :dkim-signature;
+        bh=TtYtgyOM9UtFee+JFxK1SBHozQSbcJd7lO6xgsYMlqs=;
+        fh=8aUDxH71K+APVfQofOn6O6yQgS+M2ycT+lFbOy1DjnU=;
+        b=m9akk6L/gLvoeIZVKHmPOHTQAhjlfIjZJHqPEctTzZf9OPywCFQ9vaXReirwLz+eO5
+         EhlJ5A7kwyFVLhzZkys84Qekvi/8oasUVH1DbsP9ylNk2auXJUur39cSbIt7IvtQujNt
+         ISpHxCI9MehXtR4mARoYYNTZk2EcwV50bADTcB7P+OYGaP3mGtE7HwxPMyTQ/gTzDns7
+         IOn8qqUPBkoCJV6++l1mvHHN0u72uFhXY2g780U9PWv2zhB4Hn1yCZEhvmddftWCT0pl
+         ObAVNgmCKARAFM5T0dg4b+WsH9XKo0/1JKIdI8ETa+wHZ5Weti6Y2mGrc44QHLV4+aU3
+         lXPA==
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@linuxfoundation.org header.s=korg header.b="X/iIJVX7";
-       spf=pass (google.com: domain of gregkh@linuxfoundation.org designates 145.40.73.55 as permitted sender) smtp.mailfrom=gregkh@linuxfoundation.org;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=linuxfoundation.org
-Received: from sin.source.kernel.org (sin.source.kernel.org. [145.40.73.55])
-        by mx.google.com with ESMTPS id d10-20020a17090a628a00b0026b49c1aa50si4181422pjj.111.2023.10.28.03.23.07
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b="K56JJpq/";
+       spf=pass (google.com: domain of bagasdotme@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=bagasdotme@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id fe26-20020a056a002f1a00b00690ba5df0e2sor2109452pfb.1.2023.10.28.04.06.06
         for <usb-storage@lists.one-eyed-alien.net>
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 28 Oct 2023 03:23:07 -0700 (PDT)
-Received-SPF: pass (google.com: domain of gregkh@linuxfoundation.org designates 145.40.73.55 as permitted sender) client-ip=145.40.73.55;
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id C8330CE2154;
-	Sat, 28 Oct 2023 10:23:05 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 36144C433C7;
-	Sat, 28 Oct 2023 10:23:04 +0000 (UTC)
-Date: Sat, 28 Oct 2023 12:23:01 +0200
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: Bagas Sanjaya <bagasdotme@gmail.com>
-Cc: LihaSika <lihasika@gmail.com>, Linux USB <linux-usb@vger.kernel.org>,
-	Linux USB Storage <usb-storage@lists.one-eyed-alien.net>,
-	Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
-	Alan Stern <stern@rowland.harvard.edu>,
-	Milan Svoboda <milan.svoboda@centrum.cz>,
-	Matthieu Castet <castet.matthieu@free.fr>
+        (Google Transport Security);
+        Sat, 28 Oct 2023 04:06:06 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bagasdotme@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+X-Received: by 2002:a05:6a20:4323:b0:17b:9d92:7d0 with SMTP id h35-20020a056a20432300b0017b9d9207d0mr6723863pzk.52.1698491166458;
+        Sat, 28 Oct 2023 04:06:06 -0700 (PDT)
+Received: from [192.168.0.106] ([103.131.18.64])
+        by smtp.gmail.com with ESMTPSA id fa41-20020a056a002d2900b006bf536bcd23sm2781936pfb.161.2023.10.28.04.05.48
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 28 Oct 2023 04:06:05 -0700 (PDT)
+Message-ID: <68ad3c1c-bc5b-4dd5-9183-202d8b04b45f@gmail.com>
+Date: Sat, 28 Oct 2023 18:05:44 +0700
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
 Subject: [usb-storage] Re: [PATCH] usb: storage: set 1.50 as the lower
  bcdDevice for older "Super Top" compatibility
-Message-ID: <2023102848-esteemed-reptile-851f@gregkh>
+To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Cc: LihaSika <lihasika@gmail.com>, Linux USB <linux-usb@vger.kernel.org>,
+ Linux USB Storage <usb-storage@lists.one-eyed-alien.net>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Alan Stern <stern@rowland.harvard.edu>,
+ Milan Svoboda <milan.svoboda@centrum.cz>,
+ Matthieu Castet <castet.matthieu@free.fr>
 References: <ZTsR-RhhjxSpqrsz@debian.me>
  <055de764-c422-4c22-a79b-dd4db56122ce@gmail.com>
  <2023102704-stable-lid-c86a@gregkh>
@@ -123,18 +125,18 @@ References: <ZTsR-RhhjxSpqrsz@debian.me>
  <037e5af2-3afd-4a37-a4d7-6dc87af605c7@gmail.com>
  <21c2b8ee-7753-413e-98f9-d1401edf5c73@gmail.com>
  <2023102720-emotion-overlying-9bb4@gregkh>
- <ccf7d12a-8362-4916-b3e0-f4150f54affd@gmail.com>
- <ZTyyDXYR4f6WKdLM@debian.me>
-MIME-Version: 1.0
+ <ccf7d12a-8362-4916-b3e0-f4150f54affd@gmail.com> <ZTyyDXYR4f6WKdLM@debian.me>
+ <2023102848-esteemed-reptile-851f@gregkh>
+Content-Language: en-US
+From: Bagas Sanjaya <bagasdotme@gmail.com>
+In-Reply-To: <2023102848-esteemed-reptile-851f@gregkh>
 Content-Type: text/plain; charset="UTF-8"
-Content-Disposition: inline
-In-Reply-To: <ZTyyDXYR4f6WKdLM@debian.me>
-X-Original-Sender: gregkh@linuxfoundation.org
+X-Original-Sender: bagasdotme@gmail.com
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@linuxfoundation.org header.s=korg header.b="X/iIJVX7";
-       spf=pass (google.com: domain of gregkh@linuxfoundation.org designates
- 145.40.73.55 as permitted sender) smtp.mailfrom=gregkh@linuxfoundation.org;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=linuxfoundation.org
+ header.i=@gmail.com header.s=20230601 header.b="K56JJpq/";       spf=pass
+ (google.com: domain of bagasdotme@gmail.com designates 209.85.220.41 as
+ permitted sender) smtp.mailfrom=bagasdotme@gmail.com;       dmarc=pass
+ (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -150,40 +152,45 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On Sat, Oct 28, 2023 at 02:02:37PM +0700, Bagas Sanjaya wrote:
-> On Fri, Oct 27, 2023 at 08:28:04PM +0300, LihaSika wrote:
-> > Change lower bcdDevice value for "Super Top USB 2.0  SATA BRIDGE" to match
-> > 1.50. I have such an older device with bcdDevice=1.50 and it will not work
-> > otherwise.
+On 28/10/2023 17:23, Greg Kroah-Hartman wrote:
+> On Sat, Oct 28, 2023 at 02:02:37PM +0700, Bagas Sanjaya wrote:
+>> On Fri, Oct 27, 2023 at 08:28:04PM +0300, LihaSika wrote:
+>>> Change lower bcdDevice value for "Super Top USB 2.0  SATA BRIDGE" to match
+>>> 1.50. I have such an older device with bcdDevice=1.50 and it will not work
+>>> otherwise.
+>>
+>> What about below description?
+>>
+>> ```
+>> Some old USB hard drives using Super Top USB 2.0 SATA bridge have lower
+>> minimum bcdDevice value than currently allowed (1.60). Such devices
+>> cannot be used by ums-cypress driver since their bcdDevice is out of range.
+>>
+>> Lower minimum bcdDevice to fix that. 
+>> ```
+>>
+>>>
+>>> Cc: stable@vger.kernel.org
+>>> Signed-off-by: Liha Sikanen <lihasika@gmail.com>
+>>
+>> Is your intended author name in your From: header or Signed-off-by: trailer?
+>>
+>> Also, don't forget to add Fixes: tag; that is:
+>>
+>> Fixes: a9c143c82608 ("usb-storage: restrict bcdDevice range for Super Top in Cypress ATACB")
+>>
+>> When above reviews are addressed, resend as v2. Make sure that the patch
+>> subject begins with `[PATCH v2]`.
 > 
-> What about below description?
+> There's no need, I can take this as-is, thanks.
 > 
-> ```
-> Some old USB hard drives using Super Top USB 2.0 SATA bridge have lower
-> minimum bcdDevice value than currently allowed (1.60). Such devices
-> cannot be used by ums-cypress driver since their bcdDevice is out of range.
-> 
-> Lower minimum bcdDevice to fix that. 
-> ```
-> 
-> > 
-> > Cc: stable@vger.kernel.org
-> > Signed-off-by: Liha Sikanen <lihasika@gmail.com>
-> 
-> Is your intended author name in your From: header or Signed-off-by: trailer?
-> 
-> Also, don't forget to add Fixes: tag; that is:
-> 
-> Fixes: a9c143c82608 ("usb-storage: restrict bcdDevice range for Super Top in Cypress ATACB")
-> 
-> When above reviews are addressed, resend as v2. Make sure that the patch
-> subject begins with `[PATCH v2]`.
 
-There's no need, I can take this as-is, thanks.
+OK, thanks!
 
-greg k-h
+-- 
+An old man doll... just what I always wanted! - Clara
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/2023102848-esteemed-reptile-851f%40gregkh.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/68ad3c1c-bc5b-4dd5-9183-202d8b04b45f%40gmail.com.
