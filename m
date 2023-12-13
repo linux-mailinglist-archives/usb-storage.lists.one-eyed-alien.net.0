@@ -1,165 +1,149 @@
-Return-Path: <usb-storage+bncBCY2ZJEUWQHBBXG7Y6VQMGQEHW6M22A@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBAABB2PV46VQMGQENTV4VEY@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-lj1-x245.google.com (mail-lj1-x245.google.com [IPv6:2a00:1450:4864:20::245])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D595808CFA
-	for <lists+usb-storage@lfdr.de>; Thu,  7 Dec 2023 17:16:29 +0100 (CET)
-Received: by mail-lj1-x245.google.com with SMTP id 38308e7fff4ca-2c9f1569bbasf8073911fa.0
-        for <lists+usb-storage@lfdr.de>; Thu, 07 Dec 2023 08:16:29 -0800 (PST)
-ARC-Seal: i=2; a=rsa-sha256; t=1701965788; cv=pass;
+Received: from mail-pf1-x448.google.com (mail-pf1-x448.google.com [IPv6:2607:f8b0:4864:20::448])
+	by mail.lfdr.de (Postfix) with ESMTPS id 15422811D02
+	for <lists+usb-storage@lfdr.de>; Wed, 13 Dec 2023 19:41:47 +0100 (CET)
+Received: by mail-pf1-x448.google.com with SMTP id d2e1a72fcca58-6ce77ba2463sf8784495b3a.0
+        for <lists+usb-storage@lfdr.de>; Wed, 13 Dec 2023 10:41:46 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1702492905; cv=pass;
         d=google.com; s=arc-20160816;
-        b=IXeCSamrcGqFGi4YKaHoOvx76p3VyvhQU5LyLawfgQrkvfdFXixEGQ+WAHRdi5RUsE
-         lEa62o2r3j6bGILoaXlpsTQ6MgIkOPdJhCmk8mT3nqBWKp1uJmHNMJH5Ts1BZcvoAYVW
-         rQerk7TzHn/eleHcv7mvyngVSaGefUJhgclSLjSAiPyP/2ioqwG6fz2UgEfwPGITvOuR
-         mOE1DEQbwL293T8SIyxve/lNBYCH8Rx6SroYEo90fyKKGga0OX75hpD+R9LL0Nr2IctK
-         crdOTuq+Y5LdzQaKfHot1tI0u9+RU2B2Cjv9usGVcapOwUR1UgN0uY6Fqi4wlOmVwqhC
-         xTfA==
+        b=SxpTs3aNIHPwgymmYs1Ap+cVGcBjnfg9W2e4YqD+Uv7h8A/hrvM3Eg3bZZFujF/2yx
+         B58PtFZMn+BZag2tSqtVouK+ofyPY4sQC90VsqvhY+Jqdn5NdMfxiO+p5n/QfOXW5HJt
+         Wnv+/8tBAITQ2QMUGnEYP71O0a7GP4ZW620WEC04Hox/YA/6HZyClqBnt+44rMyiFDUP
+         BBczEpNxzaBgMDYJm/8eav5FC3vvrBCsajNZWyxhOG8eQjssMahCAoVaQwa+BxCZKXhj
+         CaeiLBNgvXzss4wtVXHOfu4II0mT6vEgdlm5qZjJlZrbggXG0qL8bXRkHx1BBmY1PIwH
+         FgVQ==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:content-language:in-reply-to
-         :mime-version:user-agent:date:message-id:organization:from
-         :references:cc:to:subject:sender:dkim-signature;
-        bh=bbKS0fmv4pYGEh3oEA0wPhWRxJ0AL1cOPaNhSCVWLA4=;
-        fh=AvFbBghcZWBcqcLmuH37pN99FS0I9kT4f2UtG2NCLGI=;
-        b=D1N8DxZYds6v9Jdre+2NL7u6bTSwHC5ST+UnYZZkuVz09vzkOwle1nCF+DbWON1fMU
-         q7LR/+wqv4dhKC7K1wWvHUccduBUcsh/sVg0HK5bMZVplzhSQ9zxRy68LXwcCJNMeh9l
-         ZGgqKy1zVyCPMjPSUH+a59c05IdC4hb/hmUOfl8OAt3nTzPMy/Mi4vVnolvz4ep1mEFs
-         SptKw8l1p8DcfFP9nXhcqIh+kQ6VQfUYMHjBRPSA4LU755/zb3j1nBUWhsmrV/YFp+aN
-         p/ZsU12wKtVq7Ez5+57REVjBNsBYWqzXybLDh/9GiJ1Rgul5RIYNbCv0/zy87JJip8jY
-         wiEA==
+         :list-id:mailing-list:precedence:mime-version:message-id:date
+         :subject:cc:to:from:sender:dkim-signature;
+        bh=YDIXuFuwLZXYadjk1nJJg6w7GRHzE4O3xhjsLLOoMF0=;
+        fh=YImyuqHfsVtYy3zmPRyWp9z87egmTsVDidlNb68MDOQ=;
+        b=TGIZQKCwCjgDngeML7SXUHyL9jqny1wv3pQclLGsslf3fCd00JeCjJVvGA4//fAqGO
+         xeJIdIno419f4PqlH+1r0cBSZ3rMyT7hItuIdubMZ0Yp6SuW9aRei7Y+yz+nmwNFUdpu
+         wPtdmoyeo+WZeb7Gphb7svdSEHKdI3GKJt8XVr75iLXVzNou6FYHIuVxKgSvy6Ssaf4H
+         Av1vls2X3UVvBsPEjuhN58xoSmEPgjgB40+vdEcKXpComwZFVblKFFL1o+z8o1w70W0f
+         Xiw8ur9KTzwRYNvgu77nfsiPuSxwRoZfEo9YN0k4ggzJOkut+tAJpvkeU4hA1SMp8/20
+         AMgw==
 ARC-Authentication-Results: i=2; mx.google.com;
-       spf=pass (google.com: domain of s.shtylyov@omp.ru designates 90.154.21.10 as permitted sender) smtp.mailfrom=s.shtylyov@omp.ru
+       dkim=pass header.i=@kernel.org header.s=k20201202 header.b=VZjzpZkN;
+       spf=pass (google.com: domain of lee@kernel.org designates 2604:1380:40e1:4800::1 as permitted sender) smtp.mailfrom=lee@kernel.org;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=kernel.org
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1701965788; x=1702570588; darn=lfdr.de;
+        d=lists.one-eyed-alien.net; s=google; t=1702492905; x=1703097705; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:x-original-authentication-results
-         :x-original-sender:content-language:in-reply-to:mime-version
-         :user-agent:date:message-id:organization:from:references:cc:to
-         :subject:sender:from:to:cc:subject:date:message-id:reply-to;
-        bh=bbKS0fmv4pYGEh3oEA0wPhWRxJ0AL1cOPaNhSCVWLA4=;
-        b=ac6NJ3C5BNxZ4HCmqLuRRo0YhLKpW3BuHYdtok76N4ptOVBvUQIOcsvonmNdSsCgbo
-         GVqXu4WhAMzHg2fo5sTHRPx0Hnm+iTlo6BZtewD04BC/Ml3D8nhJlAFFsbTfcKA5D6/U
-         VSFi/WpKizHPG3AyWDF3BpUbGGRHJVQUeEyQM=
+         :x-original-sender:mime-version:message-id:date:subject:cc:to:from
+         :sender:from:to:cc:subject:date:message-id:reply-to;
+        bh=YDIXuFuwLZXYadjk1nJJg6w7GRHzE4O3xhjsLLOoMF0=;
+        b=bK0hFf0X+e2Rr9bG1SfqkIPIR7h2FhgOzA0+Bqbd4ppaKDNWzt8TixEGuObKieBVj1
+         OHdSwpC/b6TTy6q7i2eqf3byMrSjD9F2t9b3jC1SsbVfuJ9w7MPl14AC24cWdI7D01I0
+         7BpaGfBYUfmOLU4468FS64gEOEBlohG/8a1a0=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1701965788; x=1702570588;
+        d=1e100.net; s=20230601; t=1702492905; x=1703097705;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :x-spam-checked-in-group:list-id:mailing-list:precedence
-         :x-original-authentication-results:x-original-sender
-         :content-language:in-reply-to:mime-version:user-agent:date
-         :message-id:organization:from:references:cc:to:subject:x-beenthere
-         :x-gm-message-state:sender:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=bbKS0fmv4pYGEh3oEA0wPhWRxJ0AL1cOPaNhSCVWLA4=;
-        b=sJKQJMq3zJg2i+KqwGqyB+M944JDDuw3kcNakQQa+WW4fUPSjV6zvENtv9TK3p1IWx
-         4/ip4HjyOqXRbzbe+l3lYSWMY3l11ko/JBfbAcgdktsj5lvNfCEZeSinJlpf3Ld+BjbV
-         1mF5bfuAXaaioVXmiqwdTYj5PLZxSatJhL5ILPBUCKRFI897xwM4M+UJlISQ4x2OgE0O
-         H8TmeT/yOG/p02BGdqQHvFYqK08n9UWApkMMa9CS2HoTmRmPvyn4wZzRDr3JDlEsEBTx
-         QEwl3Jt+aICwlMYnpog8r9TYjONt/iczXRFDY6U7iFfHvK7guo5M3dxizofX3s/smjzI
-         WuRQ==
+         :list-id:mailing-list:precedence:x-original-authentication-results
+         :x-original-sender:mime-version:message-id:date:subject:cc:to:from
+         :x-beenthere:x-gm-message-state:sender:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=YDIXuFuwLZXYadjk1nJJg6w7GRHzE4O3xhjsLLOoMF0=;
+        b=guC/xt35wio48BeMqDYUVPop7Ae2kDposq1X67XVEV3SgVwGCWVbIJKqEwZ6AMRwm7
+         xY0eZgPJvyh0YB6l3Y+S1ssTHB0edxgrcvuDcmNu9T7Byq1MXlBTVAqsjje2SMoQMwR7
+         7/NdwAycppfxrk75RRgmslgEBvkk90WsMeav6pNnq/Zo7LCBBLUjq+IjSemWYA980jEH
+         C/RP/O15LBiOHZkvbOJRsW0mszNnNBDcZaFIaStP5b16tDZfYTqmxN8p1BpF+jdJqDpL
+         y4qToaJPxYkNyex0KIusa/3Z4i3vDXwAEGuvON4CYJbWhD5CH7kjtDaLh9co5cjQ/Ujg
+         L/1Q==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: AOJu0Yy2XcmY6SHLgBE/36q+gntVNVzUSgmvyRwyR7EgKR7aXREbsfln
-	ZK1tBs3EZTGBhnUP8gVx9ndbBg==
-X-Google-Smtp-Source: AGHT+IE3K18HEw2MTE36b2R6o2J02GhpTqZqJko2j5k93JefRoJN/aIHcAT0Y/A2eMhOKJvGP/aaUA==
-X-Received: by 2002:a2e:93d5:0:b0:2ca:41b:74de with SMTP id p21-20020a2e93d5000000b002ca041b74demr1650805ljh.72.1701965788328;
-        Thu, 07 Dec 2023 08:16:28 -0800 (PST)
+X-Gm-Message-State: AOJu0Yyk2ZGDmhCfjNPjfUIKAlzDjj1mhWR0bf52hNVf/OrovKLChE/8
+	hJBMSch1k7HeFT1bYwaFNdddsw==
+X-Google-Smtp-Source: AGHT+IHZbXN/Tsy0U8Xoh7bdi5NzD+4ZNBrOBbcxPdzEq9U/jyM88EoTTmyWsp0ki97lz9FTHX73sA==
+X-Received: by 2002:aa7:88c8:0:b0:6d0:d6f7:851b with SMTP id k8-20020aa788c8000000b006d0d6f7851bmr1210993pff.4.1702492905523;
+        Wed, 13 Dec 2023 10:41:45 -0800 (PST)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a2e:a782:0:b0:2ca:1cdf:dc45 with SMTP id c2-20020a2ea782000000b002ca1cdfdc45ls171268ljf.0.-pod-prod-06-eu;
- Thu, 07 Dec 2023 08:16:27 -0800 (PST)
-X-Received: by 2002:a2e:998c:0:b0:2ca:a19:f21e with SMTP id w12-20020a2e998c000000b002ca0a19f21emr1743778lji.80.1701965786545;
-        Thu, 07 Dec 2023 08:16:26 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1701965786; cv=none;
+Received: by 2002:a05:6a00:1da0:b0:6cb:6fc9:485f with SMTP id
+ z32-20020a056a001da000b006cb6fc9485fls4235241pfw.1.-pod-prod-00-us; Wed, 13
+ Dec 2023 10:41:44 -0800 (PST)
+X-Received: by 2002:a63:ff0c:0:b0:578:a62b:56ec with SMTP id k12-20020a63ff0c000000b00578a62b56ecmr345408pgi.5.1702492904634;
+        Wed, 13 Dec 2023 10:41:44 -0800 (PST)
+Received: by 2002:a05:620a:1928:b0:778:a9dc:3cb2 with SMTP id af79cd13be357-77f923c4414ms85a;
+        Wed, 13 Dec 2023 08:43:03 -0800 (PST)
+X-Received: by 2002:a05:651c:241:b0:2cc:1cc4:83c9 with SMTP id x1-20020a05651c024100b002cc1cc483c9mr5266908ljn.29.1702485782197;
+        Wed, 13 Dec 2023 08:43:02 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1702485782; cv=none;
         d=google.com; s=arc-20160816;
-        b=FbXdu8EKhIQgfoUjwJL5bfE0CpYRb6bqHvLfeC8f3GFQ/j3x1LlhBqBSnm5TCYoIoa
-         Sd3BMCdj/YhvKlVfIAbWWPJofljgZRjWaHK3HYGoLgF4fLvP5VLIosoxBVn0PkzCf9zc
-         zIX6Tx1hHGHhao2ZZ9Ykn66xUI61HtiV+M21GnZK4VD4hW7hrCAL+FHID0b5cpqkL80i
-         PucfNO9vVq3akDuUM6wvFIaeqtCAjZUcGDe/+8i8iKIXBOCtVeB63xZoOHLxFXMZ3Btu
-         8jzJAmqqKRwJj07oORRC6y9MlBtxfoijrXY6JAjiXmh2vZsIuiDgvKfRjx4b/SDGY8bN
-         uwtA==
+        b=D+4dNhhF8K7XnAaqZXuzZI6TSPygg68RzG+LCzHb88ho+w8tPh401OUOxZhiQPAuO3
+         Q8ynampnlBhxc4voFyv4qIXNe2pb51f4ofk5bep8pjONZUF9JnaVeA/Y3b7YFJMB7C/P
+         ojs+Od7idYyCFOO2B+kGVzXpf3UeiVDw64iMNqGXgVd2At83rZh/L1agCRsdQl+JO0dw
+         AhPdrtt6iGWTRr5WeI/TEAi647h9ORVV0sphcql5PSLS/2Ia0xa6hiWfpS45BXI/sb7x
+         iWaWV7ftTNy+TXUQ3URUyWpfPGzJhV9nZAkJ8mcExOyvdOgevqwDUyJFJfelxU32yE8T
+         +2oA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=content-transfer-encoding:content-language:in-reply-to:mime-version
-         :user-agent:date:message-id:organization:from:references:cc:to
-         :subject;
-        bh=JO8JQojeOrY8d1dOyzQPQPCtjY1YQZR4cepgUI2g6Gw=;
-        fh=AvFbBghcZWBcqcLmuH37pN99FS0I9kT4f2UtG2NCLGI=;
-        b=k/TAjHuYWumLFNEvmM1XZdugf/670mvLG7fGYhG/iMnVciAeeaDDCck+BWHADJctIb
-         xjU1FKliMz7gQIpnGq9geIIWfY9Oe4C5hDRbEOnh4KTAhmJkkk6bPfOPevCIauOL0YOG
-         9rfGRYL8b7o7ih5PJ3wHqGYMfK1DKhNU0GaJizgyc/NTkSZHUNllCMO35mmqHqzIxapx
-         1SKGgYy9apF/zOMDwBNgPNkk2pTkyRhjv4Dq8/zc+Vj6D+fsLwgMVMOVPwUsPAPV2QGh
-         iYDrcCWW35zNSnX5QCrAQs+/rilu8LmH7tacILgkWJB2vhWRH4o+Kst0iseElrtpCzmg
-         aOrg==
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:dkim-signature;
+        bh=Z2cMsa57a2uYSN/JtxzSekQp1nVxjjLx0mupNrF75ZY=;
+        fh=YImyuqHfsVtYy3zmPRyWp9z87egmTsVDidlNb68MDOQ=;
+        b=nJmyEIT+U1nhdTh3Lq4+yUa56TLmjzIS6mrLHFXngQFH74NYWJlqYW1wPIIh6S4+OZ
+         bOLuJZV3wQpUmgj9VhCKRkbpVSuM5CoS65ji6jv69TbOdUO9EycPfB3IC/qwNrlirYOr
+         xGAtcHcGanGNl3lkp8u0q4cbA0p1TcZVbR4XW8bUqVQZXs/JSAF0hJjl9IDZpGnirtoh
+         NGMkFmPKp7nl5lcvfhCCL3e+wFK0SfkL0UJ2ler928TeFwQwvW8Fm4vB+EdMNBNCgZqN
+         Yoy80z+iDD8ECe0TBC7RNvEMxqA38wzqC89uEoEdJinqpPvijm9c99dyBxGG9TvqAGd+
+         a42A==
 ARC-Authentication-Results: i=1; mx.google.com;
-       spf=pass (google.com: domain of s.shtylyov@omp.ru designates 90.154.21.10 as permitted sender) smtp.mailfrom=s.shtylyov@omp.ru
-Received: from mx01.omp.ru (mx01.omp.ru. [90.154.21.10])
-        by mx.google.com with ESMTPS id u19-20020a2e91d3000000b002ca355c7b24si256598ljg.110.2023.12.07.08.16.26
+       dkim=pass header.i=@kernel.org header.s=k20201202 header.b=VZjzpZkN;
+       spf=pass (google.com: domain of lee@kernel.org designates 2604:1380:40e1:4800::1 as permitted sender) smtp.mailfrom=lee@kernel.org;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=kernel.org
+Received: from sin.source.kernel.org (sin.source.kernel.org. [2604:1380:40e1:4800::1])
+        by mx.google.com with ESMTPS id n9-20020a2e9049000000b002ca04b1ca2bsi3736941ljg.302.2023.12.13.08.43.01
         for <usb-storage@lists.one-eyed-alien.net>
-        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Thu, 07 Dec 2023 08:16:26 -0800 (PST)
-Received-SPF: pass (google.com: domain of s.shtylyov@omp.ru designates 90.154.21.10 as permitted sender) client-ip=90.154.21.10;
-Received: from [192.168.1.104] (31.173.84.200) by msexch01.omp.ru
- (10.188.4.12) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.2.1258.12; Thu, 7 Dec
- 2023 19:16:19 +0300
-Subject: [usb-storage] Re: [PATCH] usb: storage: freecom: drop useless
- assignment in init_freecom()
-To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-CC: Alan Stern <stern@rowland.harvard.edu>, <linux-usb@vger.kernel.org>,
-	<usb-storage@lists.one-eyed-alien.net>
-References: <4d3fb70f-bf2f-96cc-a8fb-1ef658a24920@omp.ru>
- <2023120412-observing-affluent-9432@gregkh>
-From: Sergey Shtylyov <s.shtylyov@omp.ru>
-Organization: Open Mobile Platform
-Message-ID: <b96dc0cc-86da-425b-86b8-39566f594d83@omp.ru>
-Date: Thu, 7 Dec 2023 19:16:18 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
- Thunderbird/78.10.1
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 13 Dec 2023 08:43:02 -0800 (PST)
+Received-SPF: pass (google.com: domain of lee@kernel.org designates 2604:1380:40e1:4800::1 as permitted sender) client-ip=2604:1380:40e1:4800::1;
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sin.source.kernel.org (Postfix) with ESMTP id 2C905CE1F06;
+	Wed, 13 Dec 2023 16:42:58 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1C55BC433C8;
+	Wed, 13 Dec 2023 16:42:52 +0000 (UTC)
+From: Lee Jones <lee@kernel.org>
+To: lee@kernel.org,
+	gregkh@linuxfoundation.org
+Cc: linux-kernel@vger.kernel.org,
+	linux-usb@vger.kernel.org,
+	Alan Stern <stern@rowland.harvard.edu>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Andrzej Pietrasiewicz <andrzejtp2010@gmail.com>,
+	Bryan Wu <cooloney@kernel.org>,
+	Claudiu Beznea <claudiu.beznea@tuxon.dev>,
+	Cristian Birsan <cristian.birsan@microchip.com>,
+	Daniel Scally <dan.scally@ideasonboard.com>,
+	Hema HK <hemahk@ti.com>,
+	James Gruber <jimmyjgruber@gmail.com>,
+	Jaswinder Singh <jaswinder.singh@linaro.org>,
+	Julian Scheel <julian@jusst.de>,
+	Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+	linux-arm-kernel@lists.infradead.org,
+	Nicolas Ferre <nicolas.ferre@microchip.com>,
+	Pawel Laszczak <pawell@cadence.com>,
+	Ruslan Bilovol <ruslan.bilovol@gmail.com>,
+	Tomoki Sekiyama <tomoki.sekiyama@gmail.com>,
+	usb-storage@lists.one-eyed-alien.net,
+	Yadwinder Singh <yadi.brar01@gmail.com>
+Subject: [usb-storage] [PATCH 00/12] usb: Replace {v}snprintf() variants with
+ safer alternatives
+Date: Wed, 13 Dec 2023 16:42:29 +0000
+Message-ID: <20231213164246.1021885-1-lee@kernel.org>
+X-Mailer: git-send-email 2.43.0.472.g3155946c3a-goog
 MIME-Version: 1.0
-In-Reply-To: <2023120412-observing-affluent-9432@gregkh>
+X-Original-Sender: lee@kernel.org
+X-Original-Authentication-Results: mx.google.com;       dkim=pass
+ header.i=@kernel.org header.s=k20201202 header.b=VZjzpZkN;       spf=pass
+ (google.com: domain of lee@kernel.org designates 2604:1380:40e1:4800::1 as
+ permitted sender) smtp.mailfrom=lee@kernel.org;       dmarc=pass (p=NONE
+ sp=NONE dis=NONE) header.from=kernel.org
 Content-Type: text/plain; charset="UTF-8"
-Content-Language: en-US
-X-Originating-IP: [31.173.84.200]
-X-ClientProxiedBy: msexch01.omp.ru (10.188.4.12) To msexch01.omp.ru
- (10.188.4.12)
-X-KSE-ServerInfo: msexch01.omp.ru, 9
-X-KSE-AntiSpam-Interceptor-Info: scan successful
-X-KSE-AntiSpam-Version: 6.0.0, Database issued on: 12/07/2023 16:04:27
-X-KSE-AntiSpam-Status: KAS_STATUS_NOT_DETECTED
-X-KSE-AntiSpam-Method: none
-X-KSE-AntiSpam-Rate: 59
-X-KSE-AntiSpam-Info: Lua profiles 181948 [Dec 07 2023]
-X-KSE-AntiSpam-Info: Version: 6.0.0.2
-X-KSE-AntiSpam-Info: Envelope from: s.shtylyov@omp.ru
-X-KSE-AntiSpam-Info: LuaCore: 6 0.3.6 62f5a4619c57459c9a142aa1486ed27913162963
-X-KSE-AntiSpam-Info: {rep_avail}
-X-KSE-AntiSpam-Info: {Tracking_arrow_text}
-X-KSE-AntiSpam-Info: {Tracking_from_domain_doesnt_match_to}
-X-KSE-AntiSpam-Info: {relay has no DNS name}
-X-KSE-AntiSpam-Info: {SMTP from is not routable}
-X-KSE-AntiSpam-Info: {Found in DNSBL: 31.173.84.200 in (user)
- b.barracudacentral.org}
-X-KSE-AntiSpam-Info: 127.0.0.199:7.1.2;omp.ru:7.1.1;d41d8cd98f00b204e9800998ecf8427e.com:7.1.1
-X-KSE-AntiSpam-Info: ApMailHostAddress: 31.173.84.200
-X-KSE-AntiSpam-Info: {DNS response errors}
-X-KSE-AntiSpam-Info: Rate: 59
-X-KSE-AntiSpam-Info: Status: not_detected
-X-KSE-AntiSpam-Info: Method: none
-X-KSE-AntiSpam-Info: Auth:dmarc=temperror header.from=omp.ru;spf=temperror
- smtp.mailfrom=omp.ru;dkim=none
-X-KSE-Antiphishing-Info: Clean
-X-KSE-Antiphishing-ScanningType: Heuristic
-X-KSE-Antiphishing-Method: None
-X-KSE-Antiphishing-Bases: 12/07/2023 16:09:00
-X-KSE-Antivirus-Interceptor-Info: scan successful
-X-KSE-Antivirus-Info: Clean, bases: 12/7/2023 3:22:00 PM
-X-KSE-Attachment-Filter-Triggered-Rules: Clean
-X-KSE-Attachment-Filter-Triggered-Filters: Clean
-X-KSE-BulkMessagesFiltering-Scan-Result: InTheLimit
-X-Original-Sender: s.shtylyov@omp.ru
-X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
- domain of s.shtylyov@omp.ru designates 90.154.21.10 as permitted sender) smtp.mailfrom=s.shtylyov@omp.ru
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
-X-Spam-Checked-In-Group: usb-storage@lists.one-eyed-alien.net
 X-Google-Group-Id: 960895140360
 List-Post: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/post>,
  <mailto:usb-storage@lists.one-eyed-alien.net>
@@ -171,28 +155,74 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On 12/4/23 10:04 AM, Greg Kroah-Hartman wrote:
-[...]
->> In init_freecom(), the results of usb_stor_control_msg() calls are stored
->> in the local variable and then printed out by usb_stor_dbg() (if enabled),
->> except for the 1st call, the result of which is completely ignored.  Drop
->> the useless assignment.
-> 
-> Instead, you should check the return value and handle it properly, don't
-> just drop the checking entirely, that's not good.
+This series is part of an effort to rid {v}snprintf() where possible.
 
-   Hmm... I wonder if you'd actually read the patch...
-   I'm not dropping any checking because there's none, even at the further
-call sites of usb_stor_control_msg() -- the most init_freecom() currently
-is doing is printing out the result of the calls...
+For a far better description of the problem than I could author, see
+Jon's write-up on LWN [1] and/or Alex's on the Kernel Self Protection
+Project [1].
 
-> thanks,
-> 
-> greg k-h
+[0] https://lwn.net/Articles/69419/
+[1] https://github.com/KSPP/linux/issues/105
 
-MBR, Sergey
+Lee Jones (12):
+  usb: gadget: configfs: Replace snprintf() with the safer scnprintf()
+    variant
+  usb: gadget: f_uac1: Replace snprintf() with the safer scnprintf()
+    variant
+  usb: gadget: f_uac2: Replace snprintf() with the safer scnprintf()
+    variant
+  usb: gadget: uvc: Replace snprintf() with the safer scnprintf()
+    variant
+  usb: gadget: udc: atmel: Replace snprintf() with the safer scnprintf()
+    variant
+  usb: cdns2: Replace snprintf() with the safer scnprintf() variant
+  usb: host: max3421-hcd: Replace snprintf() with the safer scnprintf()
+    variant
+  usb: yurex: Replace snprintf() with the safer scnprintf() variant
+  usb: mon_stat: Replace snprintf() with the safer scnprintf() variant
+  usb: mon_text: Replace snprintf() with the safer scnprintf() variant
+  usb: phy: twl6030: Remove snprintf() from sysfs call-backs and replace
+    with sysfs_emit()
+  usb: storage: Remove snprintf() from sysfs call-backs and replace with
+    sysfs_emit()
+
+ drivers/usb/gadget/configfs.c              |  11 +-
+ drivers/usb/gadget/function/f_uac1.c       |   6 +-
+ drivers/usb/gadget/function/f_uac2.c       |   6 +-
+ drivers/usb/gadget/function/uvc_configfs.c |   2 +-
+ drivers/usb/gadget/udc/atmel_usba_udc.c    |   3 +-
+ drivers/usb/gadget/udc/cdns2/cdns2-debug.h | 138 ++++++++++-----------
+ drivers/usb/host/max3421-hcd.c             |  18 +--
+ drivers/usb/misc/yurex.c                   |  12 +-
+ drivers/usb/mon/mon_stat.c                 |   6 +-
+ drivers/usb/mon/mon_text.c                 |  28 +----
+ drivers/usb/phy/phy-twl6030-usb.c          |   8 +-
+ drivers/usb/storage/sierra_ms.c            |  16 +--
+ 12 files changed, 120 insertions(+), 134 deletions(-)
+
+Cc: Alan Stern <stern@rowland.harvard.edu>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>
+Cc: Andrzej Pietrasiewicz <andrzejtp2010@gmail.com>
+Cc: Bryan Wu <cooloney@kernel.org>
+Cc: Claudiu Beznea <claudiu.beznea@tuxon.dev>
+Cc: Cristian Birsan <cristian.birsan@microchip.com>
+Cc: Daniel Scally <dan.scally@ideasonboard.com>
+Cc: Hema HK <hemahk@ti.com>
+Cc: James Gruber <jimmyjgruber@gmail.com>
+Cc: Jaswinder Singh <jaswinder.singh@linaro.org>
+Cc: Julian Scheel <julian@jusst.de>
+Cc: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: Nicolas Ferre <nicolas.ferre@microchip.com>
+Cc: Pawel Laszczak <pawell@cadence.com>
+Cc: Ruslan Bilovol <ruslan.bilovol@gmail.com>
+Cc: Tomoki Sekiyama <tomoki.sekiyama@gmail.com>
+Cc: usb-storage@lists.one-eyed-alien.net
+Cc: Yadwinder Singh <yadi.brar01@gmail.com>
+-- 
+2.43.0.472.g3155946c3a-goog
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/b96dc0cc-86da-425b-86b8-39566f594d83%40omp.ru.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20231213164246.1021885-1-lee%40kernel.org.
