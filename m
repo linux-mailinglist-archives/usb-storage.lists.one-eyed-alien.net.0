@@ -1,132 +1,127 @@
-Return-Path: <usb-storage+bncBCY2ZJEUWQHBB6M7WOWQMGQEPANE5QI@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBCY2ZJEUWQHBBI5JWWWQMGQE33UMMKI@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-lf1-x146.google.com (mail-lf1-x146.google.com [IPv6:2a00:1450:4864:20::146])
-	by mail.lfdr.de (Postfix) with ESMTPS id 142EC8354DD
-	for <lists+usb-storage@lfdr.de>; Sun, 21 Jan 2024 09:04:11 +0100 (CET)
-Received: by mail-lf1-x146.google.com with SMTP id 2adb3069b0e04-50eec1c173esf1291902e87.2
-        for <lists+usb-storage@lfdr.de>; Sun, 21 Jan 2024 00:04:11 -0800 (PST)
-ARC-Seal: i=2; a=rsa-sha256; t=1705824250; cv=pass;
+Received: from mail-lj1-x245.google.com (mail-lj1-x245.google.com [IPv6:2a00:1450:4864:20::245])
+	by mail.lfdr.de (Postfix) with ESMTPS id 3CA28835716
+	for <lists+usb-storage@lfdr.de>; Sun, 21 Jan 2024 18:30:12 +0100 (CET)
+Received: by mail-lj1-x245.google.com with SMTP id 38308e7fff4ca-2cd853c15adsf22193161fa.0
+        for <lists+usb-storage@lfdr.de>; Sun, 21 Jan 2024 09:30:12 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1705858211; cv=pass;
         d=google.com; s=arc-20160816;
-        b=zRuTmb10uNqdMPPHw9dFHlj9rqM3QMAsbw2V/J0xuBlGi11vTqggsNrVf6Y4tLd2fF
-         U11ZRrLqR3hZYcEX0/nUZg9qjnJQvpK1xuUlqu7gFvRFmKCz5i7q66jy+ZfO0+L7SQgt
-         TbWDn7hFQfhiiTSOsgDPrLcBSGP/8vnubpYRLy/Wz8AgA2mGuPXsXpZ6NHqyGZRoMK+G
-         716VWhWmVBYnGv2UFM1HNAZnyng4h0gPupEvCBP1TkO0L6H9li8a6pZOsyILa4eMesoV
-         XCn4KUoieDusBk9uN7MjJ7H+NjTSBQ2L5czUZHabnh6J8s8u+3TrCzmjUm7sE/G8cjeY
-         HsjA==
+        b=xCk7lRd4QCSgfVrbL9iQMLs8U0GtGtwqMTTKBs+fjjIRdAlX+Lcm6T5a/NhqzQuk/R
+         zsrS+z2wt7U/hHPAwc2xXAATg7prlSAZt3JjS0pemc4j6K94TBlP6NwWKRqA8QYnZwe7
+         QooxukFfmTUoPhG3NdD8FfDOn0QAuI1agpv2ho16h6l9JdECYLKoDGpZ6NqRpeaLfrWy
+         2aEk77HVFSbUGhe/En4DPJAR2fz8HZP8K74LLOI7BV+Od2HM++IJmXqurLYa6kaNwWgv
+         7ynanQl0KxIEAqIWvv0xcbyVmhOrfESX2PCIHBU8xzdaE3Jhm60E9GIfMKEalsyulxFE
+         WWMg==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:content-language:in-reply-to
-         :mime-version:user-agent:date:message-id:organization:from
-         :references:cc:to:subject:sender:dkim-signature;
-        bh=hD33jYmy4vD4E6FWaUmZcVGBNVST1AP36DnHcKJHlHk=;
+         :list-id:mailing-list:precedence:content-language:mime-version
+         :user-agent:date:message-id:organization:cc:to:subject:from:sender
+         :dkim-signature;
+        bh=cCHEjzlJA7sO2krDYDZhHClQ/MtyR3Iw/Lvo4PDnBUY=;
         fh=6SzP4P3OFxDdT/y+n9ZCO5LS/2ed+e0kUGKWApvKjmY=;
-        b=Wc4r8P2oZlsmm5OEcxJJE4v3kBRkEAMVp2EFqxTSuuKcajXDNFJf3y81FI08DVNCSY
-         +9b1GTDzFuxuAkxdR4GPQSwlbCUhPyAhotKf59w985YfbHxIDP+MLVQ0+UhChbJPXoxk
-         knkA9BUbc8ZF7hXIBAqAJPvLvtukuiR1KNd2eyxJwI0mzwzGB3jAfTczn8mSo+i1rHgb
-         O2kEeyxclYAmliO3GvjgkGRRu70lxyqE/ORxa0pd6YkpUK0B8KQKU1nK9VNeqnVIVpbH
-         hA0npyDyJ8PDrMtaLWhDUo7COcIIxOit0ay4hZ15l6ukISfn54SNxBZxE1FM0Q4b7rjo
-         cZ0w==
+        b=c6yGKFcgoj/YwAKjCOwFlGkG8Rq5/okzIXpvzJu22QFl97RJreWSMPlQ1/1rC+aRYR
+         AsG7+SS2iueNWuJH8i0g2q9nBVbWePkBlzzjWO1RRG7Yaa0h7YKTD46WA/ky1NSEqUHm
+         9XjhQ7TZOOotz3Hnvbgsn8t6LYWGAXGvTp86VnJyJIe4nPWp8YGUqflbAgGUOSpmZtgi
+         aHarrOgFaRWfkVhYcDuzvmdGQ3dKnd02Bzre2srB1nmvLBoDkY87H8waT2/rg32FKnCW
+         dB01aj9TjTrZDnf/xB9DeOktgEschjzYeSUKl9/U+5MerdmJP1dZMlPqJI5d/DkgEK43
+         LCvg==
 ARC-Authentication-Results: i=2; mx.google.com;
        spf=pass (google.com: domain of s.shtylyov@omp.ru designates 90.154.21.10 as permitted sender) smtp.mailfrom=s.shtylyov@omp.ru
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1705824250; x=1706429050; darn=lfdr.de;
+        d=lists.one-eyed-alien.net; s=google; t=1705858211; x=1706463011; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:x-original-authentication-results
-         :x-original-sender:content-language:in-reply-to:mime-version
-         :user-agent:date:message-id:organization:from:references:cc:to
-         :subject:sender:from:to:cc:subject:date:message-id:reply-to;
-        bh=hD33jYmy4vD4E6FWaUmZcVGBNVST1AP36DnHcKJHlHk=;
-        b=L3J2kn6DFv3RducJMzD6iK4nkjhr+aZPY8onNVdlyFCvL/YK0Z4V+7g6oK5TCDY3J5
-         JrwVtuIKfH5Kn+ArwXLTDD+CwIHtwYr12wzFmfWVUAd80oyYJBf2wtivPba+2mE2dWYr
-         9XxCP2WnuUvA1tTFgdacC/vCyx2KZAD3IOWXA=
+         :x-original-sender:content-language:mime-version:user-agent:date
+         :message-id:organization:cc:to:subject:from:sender:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=cCHEjzlJA7sO2krDYDZhHClQ/MtyR3Iw/Lvo4PDnBUY=;
+        b=bEgbz5F5gsYPgQz/cl5VLWm3u5jorb+N1QVN61pRMBp/xGXwNxy8MS2yc6uLQW7K45
+         y9PH6fIPRFKoN7VIPcytMqHYr862UOwBdLsyywXOmmq2LXNoMGDO3XJmYFbdbkuEpfFw
+         DsZ3ZpQI+1SCLOi8mDX7S4iPUPw1Wy75kHCsI=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1705824250; x=1706429050;
+        d=1e100.net; s=20230601; t=1705858211; x=1706463011;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :x-spam-checked-in-group:list-id:mailing-list:precedence
          :x-original-authentication-results:x-original-sender
-         :content-language:in-reply-to:mime-version:user-agent:date
-         :message-id:organization:from:references:cc:to:subject:x-beenthere
-         :x-gm-message-state:sender:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=hD33jYmy4vD4E6FWaUmZcVGBNVST1AP36DnHcKJHlHk=;
-        b=IPTrHX9s2WGXcJWd0MveUhB1JaL57Tia14WwNrRC1aSQ7PSW8xldHgizvhNe8+zgJ5
-         iefo+3Ta2RIRtyHAjvYkcCkKADUiuCQ89UchsTxdcSzqRYclSinHtNjQoGB2tHLlbUif
-         ZBzItROWAdQQ9o7vMtJzBgFABpcqk4ImvOtpyfcCQnr2FKoOv95svW94BwDIf0xXyqd9
-         PWR9AnBHosKxqWWaIDYlOHtVsRrVv7cKDhsbqf8/+9gzoaqZukjYj8K9nP49/1vPM/H4
-         8t/T8LijKKWDotR8jUbS+5GKCK4myx9SUHzvXh8O2XlsESnNsjvBQEuPCk/at2VpxNg5
-         3o0Q==
+         :content-language:mime-version:user-agent:date:message-id
+         :organization:cc:to:subject:from:x-beenthere:x-gm-message-state
+         :sender:from:to:cc:subject:date:message-id:reply-to;
+        bh=cCHEjzlJA7sO2krDYDZhHClQ/MtyR3Iw/Lvo4PDnBUY=;
+        b=MHjrx5hrz5GFUJ2/c5zPpQvoY/Ax88kHoXFkSjOwxmuAhjx9Tc6U/1wR74eOK6hs+F
+         8JWUHpM0DNHUeU6uW2zcS8tgZ2eFRQh2Ok0XUpRYCey1V7QogQ3uAa/Imy/S87qhRr24
+         ASoOR14vvc0TDtMScIJvvdnfKQQ/qvwex4+L4GJoYuG8FSJI2oQCu+tMvorYHRPwEtjA
+         PnxXmaUlNOI7YPDeaDRy+H3AHh3Wp3QOl8lvWk+xDSl+QS71/GRi/w6CC5QBkHRjS5W1
+         G2LeohLe77LrI4z8ZdSybfH7VM4EQdeuxnlp5pPx0tg88CzgJfRMKHf86laDZ87Se4Te
+         M0qw==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Gm-Message-State: AOJu0Yy3PiLS4FlVYz0NFTyJA2Sybf43b9mFz/x5ofKwbBL3qK+FwvoE
-	WnYUSZjXia77ZAM2A76qfF6Jq5BOqN8K9mU0ftWoyzbt4xPoxjm8ZqiG96htu0g=
-X-Google-Smtp-Source: AGHT+IE41gCShZlHjjs51HfhHXX2zaxIitSuD8prJ0SI0OEjZqyUTKJCP4uMwt0Q/bcNyoOhnCYfHQ==
-X-Received: by 2002:a19:9106:0:b0:50e:7c08:4351 with SMTP id t6-20020a199106000000b0050e7c084351mr694249lfd.44.1705824250284;
-        Sun, 21 Jan 2024 00:04:10 -0800 (PST)
+X-Gm-Message-State: AOJu0Yw10dRigwPH0SfMb8QUCucHlav+o17oukHM+YeRtTa4gCzGY0QL
+	Ymdi8Z4LS+4xGHNhj7aUezhXex5AORA0fwy2i1Y+lPZmHFw4v/17zxAfwJ7slG8=
+X-Google-Smtp-Source: AGHT+IEXWGgojX+eLW7Vjc+1oVCO9wAWMKj46lQNEQ6CNOBH1QEMmoSnCVcyhMCxObRG/f+Dg5y8JQ==
+X-Received: by 2002:a2e:b0d8:0:b0:2cd:d5a:7977 with SMTP id g24-20020a2eb0d8000000b002cd0d5a7977mr1313446ljl.17.1705858211506;
+        Sun, 21 Jan 2024 09:30:11 -0800 (PST)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a05:6512:20cf:b0:50e:6b52:2452 with SMTP id
- u15-20020a05651220cf00b0050e6b522452ls747915lfr.0.-pod-prod-01-eu; Sun, 21
- Jan 2024 00:04:08 -0800 (PST)
-X-Received: by 2002:a2e:a1cc:0:b0:2cd:fab4:1ace with SMTP id c12-20020a2ea1cc000000b002cdfab41acemr844345ljm.81.1705824248219;
-        Sun, 21 Jan 2024 00:04:08 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1705824248; cv=none;
+Received: by 2002:a05:651c:1a11:b0:2cd:df45:a0e0 with SMTP id
+ by17-20020a05651c1a1100b002cddf45a0e0ls298579ljb.0.-pod-prod-09-eu; Sun, 21
+ Jan 2024 09:30:09 -0800 (PST)
+X-Received: by 2002:a05:6512:3089:b0:50e:73a1:f519 with SMTP id z9-20020a056512308900b0050e73a1f519mr1394783lfd.80.1705858209458;
+        Sun, 21 Jan 2024 09:30:09 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705858209; cv=none;
         d=google.com; s=arc-20160816;
-        b=UrNoERvLIGFmViEocy1DkJnpa7v0wp9XAMRfkiiYqqHeZ5wzoMDn5AiRaox7aQAuLI
-         ycU5fo3izrNr9b+jYhb+r8qbXleQAnAvDXXj34daIx3UXDGBr4XiTu57DNSWULLWN9vv
-         c35dNWV4Gjb5Ysca6DwiiqxDHax6QJo6CdkSiHjTA5/W+hFJDRhe9165KHE/+WGSP1EI
-         8J0YSvdbJrq9K0WmuUQyKKCoyqkmLh8aIQvnHT/R8/fba3oxDgadrYRydgf+Ku908YCk
-         Yi6o9GJh4OcpqYNxU4+FHQ+WJL8coso777YxXWMoEWee08UEEy35d5z5aCd5YoWi3kXj
-         RPUg==
+        b=nBP6mX3w4p/uryVhTu47Ge6sozTKnob92sAncgg4jAvSl+N1HNyWkQjfLteNG06XU/
+         diL808Nn288jVxWr5LoNWUus0+pjcDlfodFBzwoBv2ucgKB2lyJta2H0KgrG5MLd9Qq0
+         MzUzcajkY4vtP3b3Sv+045/EoIj7erZj8LlvyWXrZaQ3D1OZYwTrF5A5cADjgNPywTzk
+         L6DzOHqhB4ljFnNMdLWUJBDF+dOPTWo9IzjPvWKQCJkiimuKFhlAUkEHIJV2H4FpYmKo
+         SqQT0MQWhDOrnBOttdai/K3rdCewJ1Y31g6qyyOGuHI6cMa7oQR3FkB32f9wmXfkCc3o
+         r2Qw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=content-transfer-encoding:content-language:in-reply-to:mime-version
-         :user-agent:date:message-id:organization:from:references:cc:to
-         :subject;
-        bh=22Lo6nJcoHszrrP6OeFfjouPpMrLejfs07W7UNWkhBk=;
+        h=content-transfer-encoding:content-language:mime-version:user-agent
+         :date:message-id:organization:cc:to:subject:from;
+        bh=1WLgwtadQmfDlDGpo9NbUr5IMFYp+cG5G40GPrPWEek=;
         fh=6SzP4P3OFxDdT/y+n9ZCO5LS/2ed+e0kUGKWApvKjmY=;
-        b=mRN0vs+TRBUSvf0wUVcNNKFap8KSR/Y0B/wb0x9WjGtg0aakOh4WQbGhOHTGtwKnnS
-         1hvdFlUsuXgwuFlfe2Lxgio3RRtx89rZ1WFV/K2ZnTaFZItvT0hvNuiz6xgIyAh70MpN
-         3e9AXj9EmdSo6s/5Th3bX/FRiPsNSLGcpqa6hPUc5WTYHaknn36h4DfgbnZVFmYVO29T
-         0xf2HZl06wv2fwLhSEPqOZWSsV/c9wQxq9dq4p21KniBqJEx6EHncrjYWKfJNJcdbE3D
-         zg7Sz+wjGzY+5mp+YCIFinq8F+3fsnXg6G6+fszRw5VTCBZK2yyZk2zPCK2zKz6wt6U0
-         gxpg==
+        b=O7fhW64T4cag7/Jvi64nIFE8geD6QmdJmO/uAmCwJlehsb+rRNWB1es7g59M8yA8eE
+         /WpP8HEdb6DDZOFUKRSXbYDf3z1VTor+IDjjOuWImho6nHFoH6LrOgS8MZ0N0ZFsS2ue
+         IqPLPV9DuCgQTjvK65c/vsMhCuy3lRZ1qrPfbMwcTvB0UaEOfUF97AbToOLjuEVc7WU4
+         11BXCFSBQ5V3pJl8o+AA7Em2KXDs3sXvxhuoN+phFuBsYxT9P0b7KZhU2D9inbJsMrKA
+         k2JFAi+eMvx4VWkAO1iopGDdtR+co/xW9mzdBLyg181OsYOPcn9/yXr6hEZeWAVD0DV9
+         QMQw==
 ARC-Authentication-Results: i=1; mx.google.com;
        spf=pass (google.com: domain of s.shtylyov@omp.ru designates 90.154.21.10 as permitted sender) smtp.mailfrom=s.shtylyov@omp.ru
 Received: from mx01.omp.ru (mx01.omp.ru. [90.154.21.10])
-        by mx.google.com with ESMTPS id f11-20020a2e918b000000b002cd8b91a588si5752642ljg.429.2024.01.21.00.04.08
+        by mx.google.com with ESMTPS id i27-20020a0565123e1b00b0050e94afc4c0si3580307lfv.3.2024.01.21.09.30.09
         for <usb-storage@lists.one-eyed-alien.net>
         (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Sun, 21 Jan 2024 00:04:08 -0800 (PST)
+        Sun, 21 Jan 2024 09:30:09 -0800 (PST)
 Received-SPF: pass (google.com: domain of s.shtylyov@omp.ru designates 90.154.21.10 as permitted sender) client-ip=90.154.21.10;
-Received: from [192.168.1.105] (31.173.85.113) by msexch01.omp.ru
+Received: from [192.168.1.105] (31.173.86.117) by msexch01.omp.ru
  (10.188.4.12) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.2.1258.12; Sun, 21 Jan
- 2024 11:04:02 +0300
-Subject: [usb-storage] Re: [PATCH v3] usb: storage: sddr55: fix sloppy typing
- in sddr55_{read|write}_data()
+ 2024 20:29:59 +0300
+From: Sergey Shtylyov <s.shtylyov@omp.ru>
+Subject: [usb-storage] [PATCH v4] usb: storage: sddr55: fix sloppy typing in sddr55_{read|write}_data()
 To: Alan Stern <stern@rowland.harvard.edu>, Greg Kroah-Hartman
 	<gregkh@linuxfoundation.org>, <linux-usb@vger.kernel.org>,
 	<usb-storage@lists.one-eyed-alien.net>
 CC: Karina Yankevich <k.yankevich@omp.ru>, <lvc-project@linuxtesting.org>
-References: <0c219fd9-6b11-9c20-3dec-7dc5beaff379@omp.ru>
-From: Sergey Shtylyov <s.shtylyov@omp.ru>
 Organization: Open Mobile Platform
-Message-ID: <c3370fe4-d47d-f647-7db1-dd06ce5d2ceb@omp.ru>
-Date: Sun, 21 Jan 2024 11:04:01 +0300
+Message-ID: <4c9485f2-0bfc-591b-bfe7-2059289b554e@omp.ru>
+Date: Sun, 21 Jan 2024 20:29:55 +0300
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
  Thunderbird/78.10.1
 MIME-Version: 1.0
-In-Reply-To: <0c219fd9-6b11-9c20-3dec-7dc5beaff379@omp.ru>
 Content-Type: text/plain; charset="UTF-8"
 Content-Language: en-US
-X-Originating-IP: [31.173.85.113]
+X-Originating-IP: [31.173.86.117]
 X-ClientProxiedBy: msexch01.omp.ru (10.188.4.12) To msexch01.omp.ru
  (10.188.4.12)
 X-KSE-ServerInfo: msexch01.omp.ru, 9
 X-KSE-AntiSpam-Interceptor-Info: scan successful
-X-KSE-AntiSpam-Version: 6.1.0, Database issued on: 01/21/2024 07:45:16
+X-KSE-AntiSpam-Version: 6.1.0, Database issued on: 01/21/2024 17:09:54
 X-KSE-AntiSpam-Status: KAS_STATUS_NOT_DETECTED
 X-KSE-AntiSpam-Method: none
 X-KSE-AntiSpam-Rate: 59
-X-KSE-AntiSpam-Info: Lua profiles 182802 [Jan 20 2024]
+X-KSE-AntiSpam-Info: Lua profiles 182803 [Jan 21 2024]
 X-KSE-AntiSpam-Info: Version: 6.1.0.3
 X-KSE-AntiSpam-Info: Envelope from: s.shtylyov@omp.ru
 X-KSE-AntiSpam-Info: LuaCore: 7 0.3.7 6d6bf5bd8eea7373134f756a2fd73e9456bb7d1a
@@ -134,10 +129,12 @@ X-KSE-AntiSpam-Info: {rep_avail}
 X-KSE-AntiSpam-Info: {Tracking_from_domain_doesnt_match_to}
 X-KSE-AntiSpam-Info: {relay has no DNS name}
 X-KSE-AntiSpam-Info: {SMTP from is not routable}
-X-KSE-AntiSpam-Info: {Found in DNSBL: 31.173.85.113 in (user)
+X-KSE-AntiSpam-Info: {Found in DNSBL: 31.173.86.117 in (user)
  b.barracudacentral.org}
+X-KSE-AntiSpam-Info: {Found in DNSBL: 31.173.86.117 in (user)
+ dbl.spamhaus.org}
 X-KSE-AntiSpam-Info: 127.0.0.199:7.1.2;omp.ru:7.1.1;d41d8cd98f00b204e9800998ecf8427e.com:7.1.1
-X-KSE-AntiSpam-Info: ApMailHostAddress: 31.173.85.113
+X-KSE-AntiSpam-Info: ApMailHostAddress: 31.173.86.117
 X-KSE-AntiSpam-Info: {DNS response errors}
 X-KSE-AntiSpam-Info: Rate: 59
 X-KSE-AntiSpam-Info: Status: not_detected
@@ -147,9 +144,9 @@ X-KSE-AntiSpam-Info: Auth:dmarc=temperror header.from=omp.ru;spf=temperror
 X-KSE-Antiphishing-Info: Clean
 X-KSE-Antiphishing-ScanningType: Heuristic
 X-KSE-Antiphishing-Method: None
-X-KSE-Antiphishing-Bases: 01/21/2024 07:50:00
+X-KSE-Antiphishing-Bases: 01/21/2024 17:13:00
 X-KSE-Antivirus-Interceptor-Info: scan successful
-X-KSE-Antivirus-Info: Clean, bases: 1/21/2024 7:07:00 AM
+X-KSE-Antivirus-Info: Clean, bases: 1/21/2024 9:55:00 AM
 X-KSE-Attachment-Filter-Triggered-Rules: Clean
 X-KSE-Attachment-Filter-Triggered-Filters: Clean
 X-KSE-BulkMessagesFiltering-Scan-Result: InTheLimit
@@ -171,32 +168,65 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On 1/20/24 11:15 PM, Sergey Shtylyov wrote:
-
-   Oops, I forgot:
-
 From: Karina Yankevich <k.yankevich@omp.ru>
 
-   Ignore this version, I'll repost...
+In sddr55_{read|write}_data(), the address variables are needlessly typed
+as *unsigned long* -- which is 32-bit type on the 32-bit arches and 64-bit
+type on the 64-bit arches; those variables' value should fit into just 3
+command bytes and consists of 10-bit block # (or at least the max block #
+seems to be 1023) and 4-/5-bit page # within a block, so 32-bit *unsigned*
+*int* type should be more than enough...
 
-> In sddr55_{read|write}_data(), the address variables are needlessly typed
-> as *unsigned long* -- which is 32-bit type on the 32-bit arches and 64-bit
-> type on the 64-bit arches; those variables' value should fit into just 3
-> command bytes and consists of 10-bit block # (or at least the max block #
-> seems to be 1023) and 4-/5-bit page # within a block, so 32-bit *unsigned*
-> *int* type should be more than enough...
-> 
-> Found by Linux Verification Center (linuxtesting.org) with the Svace static
-> analysis tool.
-> 
-> Signed-off-by: Karina Yankevich <k.yankevich@omp.ru>
-> Signed-off-by: Sergey Shtylyov <s.shtylyov@omp.ru>
+Found by Linux Verification Center (linuxtesting.org) with the Svace static
+analysis tool.
 
-[...]
+[Sergey: rewrote the patch subject/description]
 
-MBR, Sergey
+Signed-off-by: Karina Yankevich <k.yankevich@omp.ru>
+Signed-off-by: Sergey Shtylyov <s.shtylyov@omp.ru>
+Reviewed-by: Alan Stern <stern@rowland.harvard.edu>
+
+---
+This patch is against the 'usb-next' branch of Greg KH's usb.git repo...
+
+Changes in version 4:
+- added the correct From tag;
+- added a note about my role;
+- added Alan Stern's tag.
+
+Changes in version 3:
+- rewrote the patch subject/description.
+
+Changes in version 2:
+- compeltely redid the patch.
+
+ drivers/usb/storage/sddr55.c |    4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+Index: usb/drivers/usb/storage/sddr55.c
+===================================================================
+--- usb.orig/drivers/usb/storage/sddr55.c
++++ usb/drivers/usb/storage/sddr55.c
+@@ -196,7 +196,7 @@ static int sddr55_read_data(struct us_da
+ 	unsigned char *buffer;
+ 
+ 	unsigned int pba;
+-	unsigned long address;
++	unsigned int address;
+ 
+ 	unsigned short pages;
+ 	unsigned int len, offset;
+@@ -316,7 +316,7 @@ static int sddr55_write_data(struct us_d
+ 
+ 	unsigned int pba;
+ 	unsigned int new_pba;
+-	unsigned long address;
++	unsigned int address;
+ 
+ 	unsigned short pages;
+ 	int i;
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/c3370fe4-d47d-f647-7db1-dd06ce5d2ceb%40omp.ru.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/4c9485f2-0bfc-591b-bfe7-2059289b554e%40omp.ru.
