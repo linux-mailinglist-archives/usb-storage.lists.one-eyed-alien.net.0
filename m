@@ -1,165 +1,146 @@
-Return-Path: <usb-storage+bncBCFIH5VMRQNBBEUGQGXQMGQE6Y72XIY@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBCTPRFE7TUKRB35RQGXQMGQEIUB4YJQ@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-ot1-x347.google.com (mail-ot1-x347.google.com [IPv6:2607:f8b0:4864:20::347])
-	by mail.lfdr.de (Postfix) with ESMTPS id DF10086C3D7
-	for <lists+usb-storage@lfdr.de>; Thu, 29 Feb 2024 09:40:52 +0100 (CET)
-Received: by mail-ot1-x347.google.com with SMTP id 46e09a7af769-6e493581bb1sf425072a34.3
-        for <lists+usb-storage@lfdr.de>; Thu, 29 Feb 2024 00:40:52 -0800 (PST)
-ARC-Seal: i=2; a=rsa-sha256; t=1709196051; cv=pass;
+Received: from mail-lf1-x148.google.com (mail-lf1-x148.google.com [IPv6:2a00:1450:4864:20::148])
+	by mail.lfdr.de (Postfix) with ESMTPS id 0703A86C68F
+	for <lists+usb-storage@lfdr.de>; Thu, 29 Feb 2024 11:14:09 +0100 (CET)
+Received: by mail-lf1-x148.google.com with SMTP id 2adb3069b0e04-5113b77ff80sf457106e87.2
+        for <lists+usb-storage@lfdr.de>; Thu, 29 Feb 2024 02:14:09 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1709201648; cv=pass;
         d=google.com; s=arc-20160816;
-        b=kn7yt0JhXZ6dd2AeUqGycfbGeEhOduac4TV+g1mLIXruwd2OEOegoGylBJijxc5oZ1
-         tXbUjBzlTBa9j5VvGNLTB3xDahJUd0YWLnkNa91Hze/Yk0o3pmP1pP9cbqUM2uF3Zc0U
-         NVcHlxzlJJLHW1oiZDPxFyzc/BBDfGFv7Kg0V7J4AvAWtfNNa51ChecGytpefawOWR23
-         3gQG7uNds2WmIrlFUytvm0jjfUvxX3VGmac4Vxj7gSM6E6tauqzvSN2dSOSBMy1uhkgh
-         R6yW9QnMzdrCPvy9yi4+cwKRp57mHYPoZhOav2PGfdYTcNS0yFC0lYUPtG5vAQku2eHV
-         GPuQ==
+        b=x5YUAJsA+nnNPiGNXtEt7LuOjctosuzbV5FKbbcIopiLobJ3eLWSIC4uL7xvKa/4LQ
+         /TnPdcYT1j3XFyGffqqzxtnlxA180e75raE6sbnqY49w4a+zse2mPPZk5ow9XBHX+La3
+         N7dad45uh2GlL5hNQUo38GXcY/+izAUrztI0O+DF0VpXSN1s4AflkuL9tHf2dtCbzlqy
+         fT1a3rQsqCmtVsnNV0C1eTCE1CzIrAT+RtD0nrXyArDZZvBbnG7rRUsbT5zihtN65vkR
+         Nd4X4bLEe5unSmKxsYI4TDfR5O+fXjTN0/tVe1kadActBnnNe0HbKR121f3v9d3Fy/MI
+         +zhw==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:content-transfer-encoding
-         :in-reply-to:from:references:cc:to:content-language:subject
-         :user-agent:mime-version:date:message-id:sender:dkim-signature;
-        bh=G14tiVfSaClhoZFt6Fm2Q9lYCuGH6PNJVq++4iCt4O4=;
-        fh=+bTAxPlFuGDvpN6fSLQq7h29qWjMWvmY/EsYvNDNTos=;
-        b=kKZPLNMVVQw6Z0SbRgn0x1P84bAsN7y1Hn69+94VzTwi3qBM0XD1xfgWcoCE2vwHH8
-         snqi/fkEakAk4w2axn5ax1AR/5n4MAt7dKV4ggKD4Ckm8H5Eelzv1nB7NY2ld6CHHBin
-         mVqUwetIy1y3c8ruIchJgBy7nBknnWQbshPlEuYw8rFYhUKg4onGk2LyeSdgU+nyzHJF
-         Covr3z+um52FdcmirYLsI7n+mxIUQ7EjQZcna6GhA+LVP7OpBTza+D57Xcmnh06vLlZJ
-         NyLkb8P5WPJd1ZHFcY+Pw4616yhJPIlQzIJ8T6smDe6EQ9RxfThq5Cp/UuIYYZnHo5MY
-         LACg==;
+         :list-id:mailing-list:precedence:reply-to:in-reply-to:from
+         :references:cc:to:content-language:subject:user-agent:mime-version
+         :date:message-id:dkim-signature;
+        bh=9xty6aTEBRdA8vOoAxirf3QoRVPCEdoXRUSwbELsT8E=;
+        fh=JhRt+rwGX4nIuiH1XXX5Pjrf8zod049dcmlbG3DIgCc=;
+        b=BR5Ym5yr2iivf44Z0BCml8SgfRxGiLxqg5bltR927TUe/zVa1tPtFZDfi1EuSX2EDf
+         UksO0NEFOegpoM1KWw8sQ580cK5CLyE1vW5VBzoWiwud1iJfm4WBZZJ1OS1cgyWzPE0v
+         +nTguokLlt8n/510MrpNP7oLhvefcQgsPv02N8wVyU26qYm9soAYYEB7emTyW8ODCZU6
+         XajOkvIj/PrAuy7S5ieWfKJ1QxkycmzUWx9XIenazKyXS+zf58qB1lsVsWcrlC6CJaD1
+         ZMTQ7WheE8mfcbzm/XlTfPIe+EWwWKfBugIcoNkZdZP8YewPCHAbOGsYPW59RnWsMgCJ
+         Br+A==;
         darn=lfdr.de
 ARC-Authentication-Results: i=2; mx.google.com;
-       spf=pass (google.com: domain of weitaowang-oc@zhaoxin.com designates 203.110.167.99 as permitted sender) smtp.mailfrom=WeitaoWang-oc@zhaoxin.com
+       dkim=pass header.i=@suse.com header.s=google header.b=Ime0YvLz;
+       spf=pass (google.com: domain of oneukum@suse.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=oneukum@suse.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=suse.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1709196051; x=1709800851; darn=lfdr.de;
+        d=lists.one-eyed-alien.net; s=google; t=1709201648; x=1709806448; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:x-original-authentication-results
-         :x-original-sender:content-transfer-encoding:in-reply-to:from
-         :references:cc:to:content-language:subject:user-agent:mime-version
-         :date:message-id:sender:from:to:cc:subject:date:message-id:reply-to;
-        bh=G14tiVfSaClhoZFt6Fm2Q9lYCuGH6PNJVq++4iCt4O4=;
-        b=d7r9dhsfIgDmI5uSUvqHYC75vWvs3s3fxeH+CL9eWnCodP778eKjj/hEbR6w8QOc8e
-         MNzcG8/ZgLsZVCMaR+8fzobQRmcVXwyDoQXJr5+rfA3XrSqrMar1h1q5DBui9KiQ6DCh
-         sspWv/T7WK2NdFbLhwhpYFhzKXCC839sIBMqA=
+         :list-id:mailing-list:precedence:reply-to
+         :x-original-authentication-results:x-original-sender:in-reply-to
+         :from:references:cc:to:content-language:subject:user-agent
+         :mime-version:date:message-id:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=9xty6aTEBRdA8vOoAxirf3QoRVPCEdoXRUSwbELsT8E=;
+        b=J6f+8opcqfknDk+svdltCXMimzW1mO8MMRLjkzlW7i/2B47zLU4f7qXtIbhhlROiN7
+         hYY0AOuj96oRuJAXigxCSXRA7pH6+Qqx+VHqd2OjQBZQe+y9Wot4uufu/UwHxeaBd9om
+         6xFCO0aJsz2sNHrdeD4I/P9KuQoHkTIXkK9Uw=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1709196051; x=1709800851;
+        d=1e100.net; s=20230601; t=1709201648; x=1709806448;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :x-spam-checked-in-group:list-id:mailing-list:precedence
-         :x-original-authentication-results:x-original-sender
-         :content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-beenthere:x-gm-message-state:sender:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=G14tiVfSaClhoZFt6Fm2Q9lYCuGH6PNJVq++4iCt4O4=;
-        b=TpnMBlOOhYos65Jw9v7KS+SnRLmVQkXOyK1WfjNyuERis7YpkDP8OAn20n+YsAXtAh
-         5+jHi9lertNaGvOFBEgCZy3AhpA7g89OICV6zbxswO3s4RXNYfgPpb35Nuz0rJMhvzlB
-         N84SRt9/p/y0vMmOnzIIJKAcCcr0k2kjS3sYRZxomcurrjq1n6zPb5sh+VgtwFjOJQsk
-         nsJcsnAdUbn0oJf53Htt6KLm/Tcl0E2brbWMdjl48r88VmKQ9jZ434Hm+1ZcNNdze2r+
-         In57d8ZJaLE+1cyglkyB+hSjCT7rjj+XOm0Zk4DWoCHtxoGSrJLO+7LVVUe/LpXYosFp
-         FuZg==
-Sender: usb-storage@lists.one-eyed-alien.net
-X-Forwarded-Encrypted: i=2; AJvYcCVyxa5uI5VNNfNsK/aDsWR4fvtgwZfzPkN8ysG70vlATRKGzNzYwQV16XQAi3uABF8fxnbpvqECq16JgBj3/9qe3+X8IHWRnh6a
-X-Gm-Message-State: AOJu0Ywnnh/ZxVGmH1g1nriNZnm2DFqxVae+Ifz1Pkau+RkA2Pvjuo6C
-	MTaLNfy79F8RylP9C2gYYWHT7P8mEt/cuykWV8nL/rDYL/9nXUXLEZ8vP6IdNqY=
-X-Google-Smtp-Source: AGHT+IHaAyiIryoxPEsXK5sUM8qV24I0zubdU6Nm9kWGguva1IUwQ5ZhMfTAjxx2c1DiFRGFIYiz2A==
-X-Received: by 2002:a05:6830:2685:b0:6e4:b38d:82b6 with SMTP id l5-20020a056830268500b006e4b38d82b6mr1926897otu.15.1709196051313;
-        Thu, 29 Feb 2024 00:40:51 -0800 (PST)
+         :x-spam-checked-in-group:list-id:mailing-list:precedence:reply-to
+         :x-original-authentication-results:x-original-sender:in-reply-to
+         :from:references:cc:to:content-language:subject:user-agent
+         :mime-version:date:message-id:x-beenthere:x-gm-message-state:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=9xty6aTEBRdA8vOoAxirf3QoRVPCEdoXRUSwbELsT8E=;
+        b=eS5VQhhOP21eWRT8Nt4AhqiBERyYHM9oJ9CuGO8bQyDl5vTKDrkBlqBDqligg6gETP
+         dZSd1pwIGKzuxBiq71i8kcFXga04jfindIwICaUG1VazEESEUUMVE95nEK1nIuooXNTs
+         BPI9LCCF3/cMKh6NxeSVRfxZQ3SFVjL7XFlIquZ0otbzpW4P1ip1ABZ7nYDeghIP+xOk
+         NLDiuHfCnTUEPw7BkwZP6yOnIFyH9MWz+NqPnlf+vmxpSPRu9QLtVj23VNIjzg7cN2Pc
+         c8LUD2inacnxPRPZj1X4pVBLcV8D1MyI7i6vi7Wb3SASQn6Rp3UBSYMnd2oviu14UOVB
+         Di2Q==
+X-Forwarded-Encrypted: i=2; AJvYcCW5MA/tJoUW7QA9gtGIyIX8cqmsFINOvvDwdhI7a8ThYeTTY432b+7EOGkYTxsGWXNw3XDqT2eWs6mTHSJHO4Y4USPDJe7kY+Pu
+X-Gm-Message-State: AOJu0Yx3LgEiGJDqK2od7BznWYUKcOeSrAhNJwT1QR2BOMaesXmbp+sp
+	ySBGxH0dxE8kKEFe2CjCSAfKr+6HoAGghyO+5USkkGFJLYM7wWEjmXDr7rqsFmw=
+X-Google-Smtp-Source: AGHT+IHcqrLz13oZKshxVh2emTTIPyJurZanbvWHYM0RBTGLeQOIBNqUrLyteJaDR7glrFpgakKv0w==
+X-Received: by 2002:a05:6512:406:b0:512:a987:13ee with SMTP id u6-20020a056512040600b00512a98713eemr1096150lfk.50.1709201648227;
+        Thu, 29 Feb 2024 02:14:08 -0800 (PST)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a4a:1ac6:0:b0:5a0:2a71:8d8d with SMTP id 189-20020a4a1ac6000000b005a02a718d8dls691935oof.1.-pod-prod-02-us;
- Thu, 29 Feb 2024 00:40:50 -0800 (PST)
-X-Forwarded-Encrypted: i=2; AJvYcCXZ3n/F2rMJhDk52Tl6IWzpJrNgL6IyAFKNI/GNT7Z9DUsePvAR4LySZYk7yUcpDs0gZLXwNJbg42uJkWpBN/6PRA2GkYWGX1enRd2a4KCJ07NSM2Y=
-X-Received: by 2002:a05:6830:6508:b0:6e2:d8f9:26b1 with SMTP id cm8-20020a056830650800b006e2d8f926b1mr1949550otb.26.1709196050260;
-        Thu, 29 Feb 2024 00:40:50 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1709196050; cv=none;
+Received: by 2002:a05:600c:1d8b:b0:412:c1d5:1e9f with SMTP id
+ p11-20020a05600c1d8b00b00412c1d51e9fls29983wms.0.-pod-prod-03-eu; Thu, 29 Feb
+ 2024 02:14:06 -0800 (PST)
+X-Forwarded-Encrypted: i=2; AJvYcCXbIDlJx6LH34ttZT1Dz9P6RvSpF0EGi1RuwwKujE9QGZTDPbRl2nT8eBB+ftZjIJ3Uh7IEHLdM2f4EiBrwKjF1mUyoor8kqnMvWgRc2YfKlTDQKJk=
+X-Received: by 2002:a05:600c:4fc6:b0:412:c1e0:e95c with SMTP id o6-20020a05600c4fc600b00412c1e0e95cmr215655wmq.12.1709201646389;
+        Thu, 29 Feb 2024 02:14:06 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1709201646; cv=none;
         d=google.com; s=arc-20160816;
-        b=Dg1gUdcx8LxASANXso5axvY1mb0GFAk/Wg6z3TPX+BqunmH5c81eJ9SFDHJZOCQTTm
-         V7fTzCmwf4grH8kzou9Dvoaxm65HYPepkYvlbHLKWBoJr86QmtOHhcGuvEmOCOHRT3eN
-         bjssaVSOk/MPN7drfE3yOc7WqTfqvZC/ZSeijHQw+NX04jXUasmU0GYQklvEu+5ulfI4
-         AYDqFoVZN5X8T6IltiyzFL1cZmBuP8+iSYgY5TNpUxsaVsxJxHKJ9Qy5Q+bTP3RIUGJW
-         b8MAE2lkM72jR2LZfMr05UZp3ei4Y3L3xhLwClaTx3ZJGWZ2Q8zG/NSYC39xmR9AZIoW
-         WiMQ==
+        b=cmJzEdB/s5h1IhvCugnwMGYFD3NTgL1H3oAyZb1MaJvQuLJwrL3F/1a7UZSo54uLkD
+         maeCm2Ik/YifMsnFoR+zR/ylSCDER1RpHAD7jiiQQm118VR9oxCHNO2gMO8GHCPuElBR
+         h11+OKLYixR0z3RdXGuzyKp8aDlZ38+cW7B5pWQpvy9rYXGpgfK0KG9kqSsGPiQpE32g
+         bh8dI+QJqldJU0XP/vxOTVYqVwJEGVSPkc+qdkJ3qcI1JKgXL0I6ijfmPw4kt4FeLQ0q
+         lnpik8h4PxcOKXMusDfR1vNnhbYZcRJGuZYuumxwuYbxd3z0A1XS0EBrngHHP82IJCd5
+         6Fjg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id;
-        bh=6Dw33TZ4dU2dTZQqL4tRQtXMuzIhyavP7y1gs87EtVI=;
-        fh=hwX5t5PcD+jXX93Xi9/7Tzv6Ie72BywNC5lT+QukDD4=;
-        b=068nePYmC1ptiiZ/WEOO8Yj0FaEVHqaUDPgn8XM5Alu7Qw21p5PEEOXN/R+2OlPPTN
-         oLtXP/9OcHOEYomVXoNaWfCsVUD1IqndPrpKHRTU7D3auQ5ky+sITGT0iYtkMAzEJov5
-         4vnEpeAWOLzj+h+t5ROxA37tQDswpzweDodf14qAX9t29NzrY8HeazXhZnZY7YF+dgw0
-         RuY3thAP525dEnHhN1UvlePS4LopCr5k4ZAyLKAQBKuq0AL1evDLPLnGYGogtbfB4n2G
-         5EOCpxA79BIQGbIcbB/hxqxjbtjXvifLPsOfymDe820CkZnTEJA4/fhhUJQ5eplEpcz8
-         icpg==;
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :dkim-signature;
+        bh=jnnbn314m5C/930ao7THUc7euOiuIRor/2uYI5CotuI=;
+        fh=FsW6kpxrKBm3nCaGYMji7y1cLjgYlCcWSqWVzCuNiEI=;
+        b=inoNEm3o3IuSHooHhKHo7m9NXV//nq7zD0909Ve/v0NXFBRG7iHvpVlU8EsE6qWKAK
+         /6S7lA1o5yNzvyY7aUP2abUWjDRjwszR9gwAzraKvtg669kAaRCGiUG/NGo9vkKMAp3r
+         8yoXaiSkwh/A8zLo90ntp85lNxrSYSVwauJxR9IGdHZo2cbfTXIEk3kT9VPDF9Srs/wM
+         rYiOVczmAu8HznrjVXN8TDmPyJHTCC3hRkU9bInX9WAqg5sELpnaNL+shLFmmBZ4sQOn
+         tjIczrx3Xt6X8n7RBBXi0TI4ZejFDgj5ZGLg2GU+OFE7ThaA3oQaXPQfn7GMFmzZgufW
+         6CyQ==;
         dara=google.com
 ARC-Authentication-Results: i=1; mx.google.com;
-       spf=pass (google.com: domain of weitaowang-oc@zhaoxin.com designates 203.110.167.99 as permitted sender) smtp.mailfrom=WeitaoWang-oc@zhaoxin.com
-Received: from mx2.zhaoxin.com (mx2.zhaoxin.com. [203.110.167.99])
-        by mx.google.com with ESMTPS id v28-20020a63481c000000b005dca5caed4bsi929881pga.516.2024.02.29.00.40.49
+       dkim=pass header.i=@suse.com header.s=google header.b=Ime0YvLz;
+       spf=pass (google.com: domain of oneukum@suse.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=oneukum@suse.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=suse.com
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id v3-20020a05600c428300b0041295ce64a5sor261758wmc.4.2024.02.29.02.14.06
         for <usb-storage@lists.one-eyed-alien.net>
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 29 Feb 2024 00:40:49 -0800 (PST)
-Received-SPF: pass (google.com: domain of weitaowang-oc@zhaoxin.com designates 203.110.167.99 as permitted sender) client-ip=203.110.167.99;
-X-ASG-Debug-ID: 1709196046-1eb14e0c7c4cd80001-FTGftY
-Received: from ZXSHMBX1.zhaoxin.com (ZXSHMBX1.zhaoxin.com [10.28.252.163]) by mx2.zhaoxin.com with ESMTP id IFq8M5OlV5QskFli (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NO); Thu, 29 Feb 2024 16:40:46 +0800 (CST)
-X-Barracuda-Envelope-From: WeitaoWang-oc@zhaoxin.com
-X-Barracuda-RBL-Trusted-Forwarder: 10.28.252.163
-Received: from zxbjmbx1.zhaoxin.com (10.29.252.163) by ZXSHMBX1.zhaoxin.com
- (10.28.252.163) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.27; Thu, 29 Feb
- 2024 16:40:46 +0800
-Received: from [10.29.8.21] (10.29.8.21) by zxbjmbx1.zhaoxin.com
- (10.29.252.163) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.27; Thu, 29 Feb
- 2024 16:40:44 +0800
-X-Barracuda-RBL-Trusted-Forwarder: 10.28.252.163
-Message-ID: <bb269ab0-128b-1988-acf1-8df05f08cf86@zhaoxin.com>
-X-Barracuda-RBL-Trusted-Forwarder: 10.29.8.21
-Date: Fri, 1 Mar 2024 00:40:43 +0800
+        (Google Transport Security);
+        Thu, 29 Feb 2024 02:14:06 -0800 (PST)
+Received-SPF: pass (google.com: domain of oneukum@suse.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+X-Forwarded-Encrypted: i=1; AJvYcCUHVO3VQ8i8MU2O06iy4zVn1Vy2DWX9n1QypBOaqqZN3S8/+CyWHbac44XnIvaBfCzqz24PJoeb/4YoXchyvT5z3ymx3GpB0uwMvvRWOAPAAmyyTb8=
+X-Received: by 2002:a05:600c:a001:b0:412:bd5b:efbd with SMTP id jg1-20020a05600ca00100b00412bd5befbdmr1040220wmb.1.1709201645978;
+        Thu, 29 Feb 2024 02:14:05 -0800 (PST)
+Received: from ?IPV6:2001:a61:1366:6801:d8:8490:cf1a:3274? ([2001:a61:1366:6801:d8:8490:cf1a:3274])
+        by smtp.gmail.com with ESMTPSA id n33-20020a05600c3ba100b00412bca4cdf9sm1504987wms.36.2024.02.29.02.14.05
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 29 Feb 2024 02:14:05 -0800 (PST)
+Message-ID: <62891b42-7662-463a-885b-fba1d29bafdd@suse.com>
+Date: Thu, 29 Feb 2024 11:14:04 +0100
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.11.0
+User-Agent: Mozilla Thunderbird
 Subject: [usb-storage] Re: [PATCH v2] USB:UAS:return ENODEV when submit urbs
  fail with device not attached.
 Content-Language: en-US
-X-ASG-Orig-Subj: Re: [PATCH v2] USB:UAS:return ENODEV when submit urbs fail with
- device not attached.
-To: Oliver Neukum <oneukum@suse.com>, <stern@rowland.harvard.edu>,
-	<gregkh@linuxfoundation.org>, <linux-usb@vger.kernel.org>,
-	<linux-kernel@vger.kernel.org>, <linux-scsi@vger.kernel.org>,
-	<usb-storage@lists.one-eyed-alien.net>
-CC: <WeitaoWang@zhaoxin.com>, <stable@vger.kernel.org>
+To: "WeitaoWang-oc@zhaoxin.com" <WeitaoWang-oc@zhaoxin.com>,
+ Oliver Neukum <oneukum@suse.com>, stern@rowland.harvard.edu,
+ gregkh@linuxfoundation.org, linux-usb@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-scsi@vger.kernel.org,
+ usb-storage@lists.one-eyed-alien.net
+Cc: WeitaoWang@zhaoxin.com, stable@vger.kernel.org
 References: <20240228111521.3864-1-WeitaoWang-oc@zhaoxin.com>
  <e8c4e8a3-bfc3-463f-afce-b9f600b588b2@suse.com>
  <07e80d55-d766-1781-ffc9-fab9ddcd33e3@zhaoxin.com>
  <49a365a7-199a-42cd-b8d3-86d72fe5bca6@suse.com>
  <0b0eefa5-71b6-dc08-d103-72b9aebd9237@zhaoxin.com>
  <9263b77e-9ebe-4987-bf7f-8f9fafcf06b3@suse.com>
-From: "WeitaoWang-oc@zhaoxin.com" <WeitaoWang-oc@zhaoxin.com>
-In-Reply-To: <9263b77e-9ebe-4987-bf7f-8f9fafcf06b3@suse.com>
+ <bb269ab0-128b-1988-acf1-8df05f08cf86@zhaoxin.com>
+From: "'Oliver Neukum' via USB Mass Storage on Linux" <usb-storage@lists.one-eyed-alien.net>
+In-Reply-To: <bb269ab0-128b-1988-acf1-8df05f08cf86@zhaoxin.com>
 Content-Type: text/plain; charset="UTF-8"; format=flowed
-Content-Transfer-Encoding: quoted-printable
-X-Originating-IP: [10.29.8.21]
-X-ClientProxiedBy: ZXSHCAS2.zhaoxin.com (10.28.252.162) To
- zxbjmbx1.zhaoxin.com (10.29.252.163)
-X-Barracuda-Connect: ZXSHMBX1.zhaoxin.com[10.28.252.163]
-X-Barracuda-Start-Time: 1709196046
-X-Barracuda-Encrypted: ECDHE-RSA-AES128-GCM-SHA256
-X-Barracuda-URL: https://10.28.252.36:4443/cgi-mod/mark.cgi
-X-Virus-Scanned: by bsmtpd at zhaoxin.com
-X-Barracuda-Scan-Msg-Size: 4700
-X-Barracuda-BRTS-Status: 0
-X-Barracuda-Bayes: INNOCENT GLOBAL 0.0000 1.0000 -2.0210
-X-Barracuda-Spam-Score: 1.09
-X-Barracuda-Spam-Status: No, SCORE=1.09 using global scores of TAG_LEVEL=1000.0 QUARANTINE_LEVEL=1000.0 KILL_LEVEL=9.0 tests=DATE_IN_FUTURE_06_12, DATE_IN_FUTURE_06_12_2
-X-Barracuda-Spam-Report: Code version 3.2, rules version 3.2.3.121476
-	Rule breakdown below
-	 pts rule name              description
-	---- ---------------------- --------------------------------------------------
-	0.01 DATE_IN_FUTURE_06_12   Date: is 6 to 12 hours after Received: date
-	3.10 DATE_IN_FUTURE_06_12_2 DATE_IN_FUTURE_06_12_2
-X-Original-Sender: weitaowang-oc@zhaoxin.com
-X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
- domain of weitaowang-oc@zhaoxin.com designates 203.110.167.99 as permitted
- sender) smtp.mailfrom=WeitaoWang-oc@zhaoxin.com
+X-Original-Sender: oneukum@suse.com
+X-Original-Authentication-Results: mx.google.com;       dkim=pass
+ header.i=@suse.com header.s=google header.b=Ime0YvLz;       spf=pass
+ (google.com: domain of oneukum@suse.com designates 209.85.220.41 as permitted
+ sender) smtp.mailfrom=oneukum@suse.com;       dmarc=pass (p=QUARANTINE
+ sp=QUARANTINE dis=NONE) header.from=suse.com
+X-Original-From: Oliver Neukum <oneukum@suse.com>
+Reply-To: Oliver Neukum <oneukum@suse.com>
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -175,161 +156,20 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On 2024/2/29 16:08, Oliver Neukum wrote:
->=20
-
-> On 29.02.24 12:19, WeitaoWang-oc@zhaoxin.com wrote:
->=20
->> When alloc urb fail in the same function uas_submit_urbs,
->> whether we should replace SCSI_MLQUEUE_DEVICE_BUSY with generic
->> error code -ENOMEM? Such like this:
->>
->> @@ -572,7 +571,7 @@ static int uas_submit_urbs(struct scsi_cmnd *cmnd,
->> =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 cmdinfo->data_in_=
-urb =3D uas_alloc_data_urb(devinfo, GFP_ATOMIC,
->> =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=
-=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=
-=A0=C2=A0=C2=A0=C2=A0=C2=A0 cmnd, DMA_FROM_DEVICE);
->> =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 if (!cmdinfo->dat=
-a_in_urb)
->> -=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 retu=
-rn SCSI_MLQUEUE_DEVICE_BUSY;
->> +=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 retu=
-rn -ENOMEM;
->> =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 cmdinfo->state &=
-=3D ~ALLOC_DATA_IN_URB;
->> =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 }
->=20
-> Hi,
->=20
-> yes, and then you translate in one central place for the SCSI layer
-> into DID_ERROR or DID_NO_CONNECT.
->=20
-
-OK, I'll submit a new version after you help to review the following patch.
 
 
-diff --git a/drivers/usb/storage/uas.c b/drivers/usb/storage/uas.c
-index 9707f53cfda9..689396777b6f 100644
---- a/drivers/usb/storage/uas.c
-+++ b/drivers/usb/storage/uas.c
-@@ -533,7 +533,7 @@ static struct urb *uas_alloc_cmd_urb(struct uas_dev_inf=
-o *devinfo,=20
-gfp_t gfp,
-   * daft to me.
-   */
+On 29.02.24 17:40, WeitaoWang-oc@zhaoxin.com wrote:
 
--static struct urb *uas_submit_sense_urb(struct scsi_cmnd *cmnd, gfp_t gfp)
-+static int uas_submit_sense_urb(struct scsi_cmnd *cmnd, gfp_t gfp)
-  {
-  	struct uas_dev_info *devinfo =3D cmnd->device->hostdata;
-  	struct urb *urb;
-@@ -541,16 +541,15 @@ static struct urb *uas_submit_sense_urb(struct scsi_c=
-mnd *cmnd,=20
-gfp_t gfp)
+> OK, I'll submit a new version after you help to review the following patch.
 
-  	urb =3D uas_alloc_sense_urb(devinfo, gfp, cmnd);
-  	if (!urb)
--		return NULL;
-+		return -ENOMEM;
-  	usb_anchor_urb(urb, &devinfo->sense_urbs);
-  	err =3D usb_submit_urb(urb, gfp);
-  	if (err) {
-  		usb_unanchor_urb(urb);
-  		uas_log_cmd_state(cmnd, "sense submit err", err);
-  		usb_free_urb(urb);
--		return NULL;
-  	}
--	return urb;
-+	return err;
-  }
+Hi,
 
-  static int uas_submit_urbs(struct scsi_cmnd *cmnd,
-@@ -562,9 +561,9 @@ static int uas_submit_urbs(struct scsi_cmnd *cmnd,
+perfect.
 
-  	lockdep_assert_held(&devinfo->lock);
-  	if (cmdinfo->state & SUBMIT_STATUS_URB) {
--		urb =3D uas_submit_sense_urb(cmnd, GFP_ATOMIC);
--		if (!urb)
--			return SCSI_MLQUEUE_DEVICE_BUSY;
-+		err =3D uas_submit_sense_urb(cmnd, GFP_ATOMIC);
-+		if (err)
-+			return err;
-  		cmdinfo->state &=3D ~SUBMIT_STATUS_URB;
-  	}
+	Regards
+		Oliver
 
-@@ -572,7 +571,7 @@ static int uas_submit_urbs(struct scsi_cmnd *cmnd,
-  		cmdinfo->data_in_urb =3D uas_alloc_data_urb(devinfo, GFP_ATOMIC,
-  							cmnd, DMA_FROM_DEVICE);
-  		if (!cmdinfo->data_in_urb)
--			return SCSI_MLQUEUE_DEVICE_BUSY;
-+			return -ENOMEM;
-  		cmdinfo->state &=3D ~ALLOC_DATA_IN_URB;
-  	}
-
-@@ -582,7 +581,7 @@ static int uas_submit_urbs(struct scsi_cmnd *cmnd,
-  		if (err) {
-  			usb_unanchor_urb(cmdinfo->data_in_urb);
-  			uas_log_cmd_state(cmnd, "data in submit err", err);
--			return SCSI_MLQUEUE_DEVICE_BUSY;
-+			return err;
-  		}
-  		cmdinfo->state &=3D ~SUBMIT_DATA_IN_URB;
-  		cmdinfo->state |=3D DATA_IN_URB_INFLIGHT;
-@@ -592,7 +591,7 @@ static int uas_submit_urbs(struct scsi_cmnd *cmnd,
-  		cmdinfo->data_out_urb =3D uas_alloc_data_urb(devinfo, GFP_ATOMIC,
-  							cmnd, DMA_TO_DEVICE);
-  		if (!cmdinfo->data_out_urb)
--			return SCSI_MLQUEUE_DEVICE_BUSY;
-+			return -ENOMEM;
-  		cmdinfo->state &=3D ~ALLOC_DATA_OUT_URB;
-  	}
-
-@@ -602,7 +601,7 @@ static int uas_submit_urbs(struct scsi_cmnd *cmnd,
-  		if (err) {
-  			usb_unanchor_urb(cmdinfo->data_out_urb);
-  			uas_log_cmd_state(cmnd, "data out submit err", err);
--			return SCSI_MLQUEUE_DEVICE_BUSY;
-+			return err;
-  		}
-  		cmdinfo->state &=3D ~SUBMIT_DATA_OUT_URB;
-  		cmdinfo->state |=3D DATA_OUT_URB_INFLIGHT;
-@@ -611,7 +610,7 @@ static int uas_submit_urbs(struct scsi_cmnd *cmnd,
-  	if (cmdinfo->state & ALLOC_CMD_URB) {
-  		cmdinfo->cmd_urb =3D uas_alloc_cmd_urb(devinfo, GFP_ATOMIC, cmnd);
-  		if (!cmdinfo->cmd_urb)
--			return SCSI_MLQUEUE_DEVICE_BUSY;
-+			return -ENOMEM;
-  		cmdinfo->state &=3D ~ALLOC_CMD_URB;
-  	}
-
-@@ -621,7 +620,7 @@ static int uas_submit_urbs(struct scsi_cmnd *cmnd,
-  		if (err) {
-  			usb_unanchor_urb(cmdinfo->cmd_urb);
-  			uas_log_cmd_state(cmnd, "cmd submit err", err);
--			return SCSI_MLQUEUE_DEVICE_BUSY;
-+			return err;
-  		}
-  		cmdinfo->cmd_urb =3D NULL;
-  		cmdinfo->state &=3D ~SUBMIT_CMD_URB;
-@@ -698,7 +697,7 @@ static int uas_queuecommand_lck(struct scsi_cmnd *cmnd)
-  	 * of queueing, no matter how fatal the error
-  	 */
-  	if (err =3D=3D -ENODEV) {
--		set_host_byte(cmnd, DID_ERROR);
-+		set_host_byte(cmnd, DID_NO_CONNECT);
-  		scsi_done(cmnd);
-  		goto zombie;
-  	}
-
-Thanks and best regards,
-weitao
-
---=20
-You received this message because you are subscribed to the Google Groups "=
-USB Mass Storage on Linux" group.
-To unsubscribe from this group and stop receiving emails from it, send an e=
-mail to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.=
-one-eyed-alien.net/d/msgid/usb-storage/bb269ab0-128b-1988-acf1-8df05f08cf86=
-%40zhaoxin.com.
+-- 
+You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
+To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/62891b42-7662-463a-885b-fba1d29bafdd%40suse.com.
