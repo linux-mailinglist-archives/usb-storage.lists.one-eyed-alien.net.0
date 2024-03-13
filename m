@@ -1,155 +1,140 @@
-Return-Path: <usb-storage+bncBCFIH5VMRQNBBFUBUGXQMGQESDLLECY@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBCYPDHPG5MERBTOCY6XQMGQERGTHUEQ@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-oo1-xc46.google.com (mail-oo1-xc46.google.com [IPv6:2607:f8b0:4864:20::c46])
-	by mail.lfdr.de (Postfix) with ESMTPS id 10AE287339E
-	for <lists+usb-storage@lfdr.de>; Wed,  6 Mar 2024 11:08:24 +0100 (CET)
-Received: by mail-oo1-xc46.google.com with SMTP id 006d021491bc7-59fb2af0267sf6435068eaf.1
-        for <lists+usb-storage@lfdr.de>; Wed, 06 Mar 2024 02:08:24 -0800 (PST)
-ARC-Seal: i=2; a=rsa-sha256; t=1709719703; cv=pass;
+Received: from mail-yb1-xb47.google.com (mail-yb1-xb47.google.com [IPv6:2607:f8b0:4864:20::b47])
+	by mail.lfdr.de (Postfix) with ESMTPS id 41E5387AD0B
+	for <lists+usb-storage@lfdr.de>; Wed, 13 Mar 2024 18:24:32 +0100 (CET)
+Received: by mail-yb1-xb47.google.com with SMTP id 3f1490d57ef6-dc743cc50a6sf1675508276.2
+        for <lists+usb-storage@lfdr.de>; Wed, 13 Mar 2024 10:24:32 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1710350671; cv=pass;
         d=google.com; s=arc-20160816;
-        b=LnKO53L35b1QKHbtItJsloDHfO3pXv5VNVMP6m62KJ4vQ/X4ARjCGAbz+TEbhVW5g3
-         Z/CunXZ9VlFuARV73ngzcmzfb4w4Ubc5Ro6ghwPn465SPp9FK1aVtLnjGfrG9DPvdGZC
-         0ATbzye2KpqwFbxLePdgCvekGy1FQA2K5cM8H8/cQNvT7jixm7cKEUvMhGqzT6f85s+u
-         TCxQ0hi9nrfQC1kc5xoON2B/plC6zBXq8HE6UXBpWhEh19JxBdQjU+FCtJRV1n6wITRT
-         JrR8DE98FZLFPmD0eqloAtMUeGo2/tWyGTLtyfELpwvJcsP6aAOlRedNVbQjRwb9k3SS
-         fjIA==
+        b=lt0J9b86BY1CXfuCsKBECThPnxhXoq61w5QTnZZMJ/nHi4MvXbmMe/ZBZTamHM0N/G
+         ryAh8oFnTpKRfGdjf7cH+Q6Mm5c7SdQXK6/3qXpt9SzxF9OST30XHvnX/t0nK3Opbbsm
+         gltWtV2Qh/+OovP1RRIuNpBLeVbIkyWagS+g09tLyADbpUMU3q2uNbhBblwROrUuZraV
+         7jCm25Z7DR0z7vpo5Z/1XZc2dfAhmsAi6aIS5ShbJeqz9Fwb+FBrdX/GqKh8nYTl85m2
+         TwlZi66V1+maDvIDaAhf5yYAWVHFbvW0KY3bkSkHPNvqSRftXZBLIKreMyzFNHsvzPOY
+         EPVA==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:mime-version:message-id:date
          :subject:cc:to:from:sender:dkim-signature;
-        bh=tJHwznJ3MY3PeSYmAzPR5B+dAqnLKifHxijULkh5ADo=;
-        fh=tYktoPz+sgKnaMMJYOlpr4dIqGtaOA49OyCQ//5n6mw=;
-        b=CU9/yEjAYT5g2duQ68VQZFVVA4h237hKyrkomqOZ2W/X7QUmXfbKY+Nxt2GxpcuxK6
-         HY7RirjpoIrWsSLiuOEiFvAYtSUTd0NRGY795QD0wKamtUzDgH7Mc6ezy23TJiKwtZoH
-         jzIqbrmGDW2EGE5w+vGYGGLMiqypPUbyS77XJY4PeNMGaGDh2onhQq31f6/9R7Q+7OwY
-         gIBIhiQPm0rgifDsVL41UVMqMeof7Peq9MEMep9aBXrZmLWy+hAkGbJJWkpqZrhbO8AG
-         pYu4oAd/DRwyPga79F0hwaw2u0gTggVZTyzNEJT2A6sKFKGymgUh6ljSmJmCqSDYDtc+
-         FmGA==;
+        bh=WYE3KjJC4BCu8ell2Uq14u3ncerlYDDnERiFUcfDUHY=;
+        fh=J7/+3BR6wIEk1VNvDw25k6EMr9uk84udieMiUyNLXYg=;
+        b=yw30zDd8/fPytGXtQQwQ0JdUjiunq+q9Bdd4cF2hzYBOS0jjHIsYV2NeUT7H4Fg0gk
+         WhazeTKNRqXlPVFVVnJtLEYBvfKJCamZmrwzyJjJ82ERloygZmQrgGj2mIPOjvfAYZRj
+         kHMztkGqTa+BZL/lJDy8/FEd0flhLPCXwJvSndCjmUBWK5xLtHcnIAD065l+hAFH6coG
+         ZOd5WD9CIm1pqbtoMwhjbwREsE4MR0/YwKm7/JD57NCDmSxiH97ucBYXStRqTNi4QJlK
+         TYDFrQRaukOXy5jsIdAMAWekDelnBsGRQegGKeYXtNbnV8oSbB9okli0V8I1mZPfa4sL
+         Ee2w==;
         darn=lfdr.de
 ARC-Authentication-Results: i=2; mx.google.com;
-       spf=pass (google.com: domain of weitaowang-oc@zhaoxin.com designates 210.0.225.12 as permitted sender) smtp.mailfrom=WeitaoWang-oc@zhaoxin.com
+       dkim=pass header.i=@igalia.com header.s=20170329 header.b=JHTkQMP3;
+       spf=pass (google.com: domain of gpiccoli@igalia.com designates 213.97.179.56 as permitted sender) smtp.mailfrom=gpiccoli@igalia.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1709719703; x=1710324503; darn=lfdr.de;
+        d=lists.one-eyed-alien.net; s=google; t=1710350671; x=1710955471; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:x-original-authentication-results
          :x-original-sender:mime-version:message-id:date:subject:cc:to:from
          :sender:from:to:cc:subject:date:message-id:reply-to;
-        bh=tJHwznJ3MY3PeSYmAzPR5B+dAqnLKifHxijULkh5ADo=;
-        b=YGqqKvlaBjGgx4LNXl+mzUVQC0+9kESQjqtGXvq0XKuFOAmBzAnSbaoK/JabhGWexm
-         v9vLoN9bOg6SC3XP7Ch+s/saZ4JuuDXpf2M979JamziPI3dGBoS4u8Wc0ltB4L9fRGRg
-         KoEEt+tJO2ZCH+ctquqJb4o+qUP4ms7JKu/qk=
+        bh=WYE3KjJC4BCu8ell2Uq14u3ncerlYDDnERiFUcfDUHY=;
+        b=brVkQkdWxu2Kd2DP+NGEUZWTm5r6Hh4GddBGOuhcvjUXYdjbropqQ/QKi4rMtcPriC
+         0omdUJyAVQ2A3IxR7IX/XfbV/K8Ly8FjExdwIPf28Kem6L8b8p6O72aE35qm9qQpL4Ee
+         MeOPfRAAWM45PlOqOWCm6Zde7CmN0s5YRKHY0=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1709719703; x=1710324503;
+        d=1e100.net; s=20230601; t=1710350671; x=1710955471;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :x-spam-checked-in-group:list-id:mailing-list:precedence
-         :x-original-authentication-results:x-original-sender:mime-version
-         :message-id:date:subject:cc:to:from:x-beenthere:x-gm-message-state
-         :sender:from:to:cc:subject:date:message-id:reply-to;
-        bh=tJHwznJ3MY3PeSYmAzPR5B+dAqnLKifHxijULkh5ADo=;
-        b=F7zOYu4meDUGc/+liA4i7aQ/1S84YwG/WoNNEHKGPJSM+W5C3cjQrjhtBaJMaVzpKj
-         rgNVNQWtFPqSkGzsu4TO12rHttWQqPzJYgGKrgXykBeVmmjZL4ToWbZTKkn94kgp0Gbw
-         1pHuBebPWS+pK59G/Yg6Qk70kRp5QtngxLu+SOIsuS6ami68FQGSdxnkFphmfWm4TtZS
-         GT3J9yvj36dkajE4i1O+BVbNa4rWzpRXVjbnfqVSbCL/+qL+Y6IeVsuJTs7cnSe0FZT0
-         id+pWUpJ96AWvUB0sbtbGLHqOebWcQBR4dAKaexnc22xE0xFkAXAk2lQh7pru3Rr8/31
-         kglg==
+         :list-id:mailing-list:precedence:x-original-authentication-results
+         :x-original-sender:mime-version:message-id:date:subject:cc:to:from
+         :x-beenthere:x-gm-message-state:sender:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=WYE3KjJC4BCu8ell2Uq14u3ncerlYDDnERiFUcfDUHY=;
+        b=mNl/ROfvael3JJ/+NoomAoqCQ2fALSP8/hX/Y6SPqgKs5fy30N91DE1/XDjGYRrvyD
+         xZGsEtLmQHo0a46fOzVNStVzJXwFQJF/kv5C0JtHBm5UiyuRApiDNVrfew3ESKO0Zydw
+         4Oyjnn5tn1NqUFDEALtJgOoqP/fKSPdL628FDUZDWLrtv+gToTVJkJWIq3zSPE/SxdvB
+         ls7AWkBNBZWa1qAIXn1OiSDXF6sYXKYbvkDqtcjbCHGvMOcELPpXkmzIR/enJU/Ib1kw
+         0aL42db91DJriJYLgbiRs4zrxAb7q9bwEFJwI+kd1De7TRRWC8Pdxar14ESD6TQpmE3n
+         4Kew==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Forwarded-Encrypted: i=2; AJvYcCWjzg1dSIpKzSNPBM42rju/Oh5fa8Guuu9ZC5crlmj0tKuQtzGWlgEtpsjbY3w5fiX8fQv4UN9ScleyxU3QzJ3WuuwLLFdNsHuF
-X-Gm-Message-State: AOJu0Ywtu7gw3Z/fgrdfrrUZpG9dnZA8Qm5z9DrY8xDJ8e5lNvIKdUZR
-	4NWb7q4QDTmxF6YgYPSQhjeNstJiXIBzue2MIlPitaMv36YH6r7H6JkIw5oEkyY=
-X-Google-Smtp-Source: AGHT+IGjQbekV0Id+zu/xJNIkTRHKyet+4A+QEoJC+Y9+xjO7cemJWIioPilOlcsIKajIpoLY/FAGw==
-X-Received: by 2002:a4a:3142:0:b0:5a1:6f2c:7fc6 with SMTP id v2-20020a4a3142000000b005a16f2c7fc6mr2214678oog.4.1709719702771;
-        Wed, 06 Mar 2024 02:08:22 -0800 (PST)
+X-Forwarded-Encrypted: i=2; AJvYcCXaMWFvylfUzGURv4KbtsmABgLwMbCkOarrDP2niuZa2RkvVzjG9QTTmTeErbYK7yIOATPmMSYVFY1lEQcb9z597oFMuyRt5cEQ
+X-Gm-Message-State: AOJu0YxpKztVEW7x1cH8gsWMP3PHN6wMS8hGmrtueJgNG75CmfNBOJhM
+	xNOCMsS21cUtuySYzmIOYHoi32Esn4BIPe2YNmZswbrkrX3OK1cedG6r5NUaCPI=
+X-Google-Smtp-Source: AGHT+IE8g3cA79JMtZAsX0xOCT3lQJ0PlEz7T/BlejMcSmd8SKL0AK1dDa2dlT13eQtrbP7EwHZMRw==
+X-Received: by 2002:a25:d3c1:0:b0:dcf:ad1e:f16b with SMTP id e184-20020a25d3c1000000b00dcfad1ef16bmr3381975ybf.50.1710350670787;
+        Wed, 13 Mar 2024 10:24:30 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a05:6820:625:b0:5a0:2fcd:32b8 with SMTP id
- e37-20020a056820062500b005a02fcd32b8ls1315732oow.1.-pod-prod-07-us; Wed, 06
- Mar 2024 02:08:22 -0800 (PST)
-X-Forwarded-Encrypted: i=2; AJvYcCU5I93jiiTgc2oiJrdpthgkqyHC3YhB9Fdav3I0l8xahD/nXlutB1IPh1PElpT9sMqCF40NsDdC7bs0hGBgxcqhgL308ACOQc3XrGifadPq07iuQic=
-X-Received: by 2002:a05:6808:1884:b0:3c1:cd07:54af with SMTP id bi4-20020a056808188400b003c1cd0754afmr5373336oib.46.1709719701700;
-        Wed, 06 Mar 2024 02:08:21 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1709719701; cv=none;
+Received: by 2002:a05:622a:188c:b0:430:9754:2609 with SMTP id
+ v12-20020a05622a188c00b0043097542609ls88416qtc.0.-pod-prod-05-us; Wed, 13 Mar
+ 2024 10:24:29 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCWhEzOvoeyNpJBaqJtROrlI4tlLLHh0lBUNMlHIf3qw4UlgBeWlVTtppjHeM9wmL0182vrcrMJK2tRJ7SMXxslWqwJREnDd6OLkCSPb/OkLrqRCC14=
+X-Received: by 2002:ac8:5c07:0:b0:42f:2e1:1276 with SMTP id i7-20020ac85c07000000b0042f02e11276mr981939qti.12.1710350669320;
+        Wed, 13 Mar 2024 10:24:29 -0700 (PDT)
+Received: by 2002:a05:620a:3181:b0:788:4070:2a9e with SMTP id af79cd13be357-789c80faf2cms85a;
+        Wed, 13 Mar 2024 04:30:36 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCU7yxrSQH3LbuwA315iHgAuwi8PxqFtkTBWxz93xAt0qYlJX66LIItlMNrQihKsRCIuHjXyvescYUbg3QqPWrczD6zqIsy9QD5WVSVK9NAjj2cx29U=
+X-Received: by 2002:adf:f783:0:b0:33e:2993:7c81 with SMTP id q3-20020adff783000000b0033e29937c81mr1757510wrp.64.1710329434933;
+        Wed, 13 Mar 2024 04:30:34 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1710329434; cv=none;
         d=google.com; s=arc-20160816;
-        b=jcf3d4fd/FRYaEFy++qjQ/p6z+/7dSzS9/3oG/rYZRH+OZ/snltL0lRaFdqZaBmw6G
-         xwe/kgqLKZOAALMfy2ZRz55LkjDBI6VinYEcWGzVzI97HGum1rlGcxBUMuS6OkGghmm2
-         v9Qim1Z9KBnk343PHJDmdJUXuyOxyNvBpRC0toQ6aLohF5PDtO3cudWxiXfjxIX8ZqE/
-         OTXRwf8Vg9scMmozcL69vuaR+Rs9Mv16u46JCutyOaOCxVr4bqkelVBRyDAs/oFLG23N
-         PW9nEnnJ5S7FTQYhsmsbL4BAqEhCC+fxQO5il5zPjEjaBdxH94ceGwA0t7hGy5anA9M6
-         aaOg==
+        b=irA/tLGgpbjhCuEj8S/vtLWAMdzLe7va7HK9E7sd0MdxUGTutIUmPcsQAsWnqGpWwo
+         zZY06Z30BxLFtgLtFhqcfi0/Ov1+0EXOW3m6R3t+U/25rsAq+QN+qiWGMuE7G5rFn0QX
+         sl4yZwzS6jsbh2sa4Evk/SNk0sDWmDDeXuT4xjRw/bSrfRKbdyciXzi6yqr+8vV9pid3
+         9SVw3LvMA+m0TLYyePvAu9n5i2HPfz8M3vV6sQindbhN2vxjjNheIhigmy3AKS9wW9QT
+         U2J/ghPhfTU8HTEvJvz87EguRWy15ZKnIAHhKx85D7todvVKgLB2LWGDSS2DnLgWPtF+
+         d6+g==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from;
-        bh=4/uTUTdS+Z86kjcvLwPC3qxESK0t4a3QGvrExDvkDro=;
-        fh=FD4mKGy1ME82NXzsAuqqkN3U42pO0UI7+8Bexdoq69o=;
-        b=CXA/vI3/56px/8pzojp/Ckqq6bKkk8BoUOxKiZ0AVBPpHoG+NEBgLZSLUcRa46HnOY
-         8yxmjTyB7Kje9hhBqC951v6D6ftdDJQSHMZomVPRvsLCSLDyrNsMopJf94zpM16Bil1L
-         SEh+BV/I6Ci8KKZxZR9hogq43+d+Ko0HwLxfgODiV56WWbrCe2Ljgc3DWtcRDiwD5E/P
-         LBk9S0OtMuVfKShyi6N2f3klzP5s+roJ4hYqUmsQHmcm3H++3svcguy3tNPt0+Q+exUy
-         NhqDc1z1yS8Kii1ek/z1x8LLajTxyTdA4Kaiiln4GIo0OMlAcjRT9AuEqNAnmlGkmcV8
-         +7ug==;
+         :to:from:dkim-signature;
+        bh=kky/dRJyKBUx3h381cnSb+YhqF1W+SBQhMlIYZOCUjM=;
+        fh=ROW+63RVPehm4yMki7r6ABKd4I81GVavnTxwU3Ypvlo=;
+        b=ePSZYhUqVF73VE46iRJWkCjH/4SzI/RoovelGIa7J6f+8XjvdzNSh2CPxYISjaJJul
+         bC7BI7okh2KjdfCqkQyLrvKSojO4xgcJTo+GIA9jN3pA7H6MjZkDBRxAxdTf4h+IlPw0
+         yXeCvvQ61WpwtNS5K4vVhDXOHEKp6HYhSIfHWZ1hOA+StDd9FlzpikH1UGiV5GurhWkg
+         DHO6SR5VjK/VFvWuUOzD6i2TJNxfLagC31ucTXQxHbHKYZ5bZuWpZxEojcj2H6Ltzq+9
+         3ykddRVPazawztsMaADc2SjDiQjDVVxnkpN5Fyn3Xk2rCOd++IDpEAwSCN7+XzXL85CS
+         uhnQ==;
         dara=google.com
 ARC-Authentication-Results: i=1; mx.google.com;
-       spf=pass (google.com: domain of weitaowang-oc@zhaoxin.com designates 210.0.225.12 as permitted sender) smtp.mailfrom=WeitaoWang-oc@zhaoxin.com
-Received: from mx1.zhaoxin.com (MX1.ZHAOXIN.COM. [210.0.225.12])
-        by mx.google.com with ESMTPS id n124-20020a632782000000b005d96d182c41si11595957pgn.490.2024.03.06.02.08.21
+       dkim=pass header.i=@igalia.com header.s=20170329 header.b=JHTkQMP3;
+       spf=pass (google.com: domain of gpiccoli@igalia.com designates 213.97.179.56 as permitted sender) smtp.mailfrom=gpiccoli@igalia.com
+Received: from fanzine2.igalia.com (fanzine2.igalia.com. [213.97.179.56])
+        by mx.google.com with ESMTPS id f3-20020a5d58e3000000b0033d76a32d0esi5160343wrd.467.2024.03.13.04.30.34
         for <usb-storage@lists.one-eyed-alien.net>
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 06 Mar 2024 02:08:21 -0800 (PST)
-Received-SPF: pass (google.com: domain of weitaowang-oc@zhaoxin.com designates 210.0.225.12 as permitted sender) client-ip=210.0.225.12;
-X-ASG-Debug-ID: 1709719695-086e23661801ec0001-FTGftY
-Received: from ZXSHMBX3.zhaoxin.com (ZXSHMBX3.zhaoxin.com [10.28.252.165]) by mx1.zhaoxin.com with ESMTP id EdfuJbHKFDqKghyV (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NO); Wed, 06 Mar 2024 18:08:15 +0800 (CST)
-X-Barracuda-Envelope-From: WeitaoWang-oc@zhaoxin.com
-X-Barracuda-RBL-Trusted-Forwarder: 10.28.252.165
-Received: from zxbjmbx1.zhaoxin.com (10.29.252.163) by ZXSHMBX3.zhaoxin.com
- (10.28.252.165) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.27; Wed, 6 Mar
- 2024 18:08:15 +0800
-Received: from L440.zhaoxin.com (10.29.8.21) by zxbjmbx1.zhaoxin.com
- (10.29.252.163) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.27; Wed, 6 Mar
- 2024 18:08:14 +0800
-X-Barracuda-RBL-Trusted-Forwarder: 10.28.252.165
-From: Weitao Wang <WeitaoWang-oc@zhaoxin.com>
-X-Barracuda-RBL-Trusted-Forwarder: 10.29.252.163
-To: <oneukum@suse.com>, <stern@rowland.harvard.edu>,
-	<gregkh@linuxfoundation.org>, <linux-usb@vger.kernel.org>,
-	<linux-kernel@vger.kernel.org>, <linux-scsi@vger.kernel.org>,
-	<usb-storage@lists.one-eyed-alien.net>
-CC: <WeitaoWang@zhaoxin.com>, <stable@vger.kernel.org>
-Subject: [usb-storage] [PATCH v4] USB:UAS:return ENODEV when submit urbs fail
- with device not attached
-Date: Thu, 7 Mar 2024 02:08:14 +0800
-X-ASG-Orig-Subj: [PATCH v4] USB:UAS:return ENODEV when submit urbs fail with device not attached
-Message-ID: <20240306180814.4897-1-WeitaoWang-oc@zhaoxin.com>
-X-Mailer: git-send-email 2.32.0
+        Wed, 13 Mar 2024 04:30:34 -0700 (PDT)
+Received-SPF: pass (google.com: domain of gpiccoli@igalia.com designates 213.97.179.56 as permitted sender) client-ip=213.97.179.56;
+Received: from [177.62.247.190] (helo=localhost)
+	by fanzine2.igalia.com with esmtpsa 
+	(Cipher TLS1.3:ECDHE_SECP256R1__RSA_PSS_RSAE_SHA256__AES_256_GCM:256) (Exim)
+	id 1rkMoN-009vIC-01; Wed, 13 Mar 2024 12:30:19 +0100
+From: "Guilherme G. Piccoli" <gpiccoli@igalia.com>
+To: linux-scsi@vger.kernel.org
+Cc: jejb@linux.ibm.com,
+	martin.petersen@oracle.com,
+	stern@rowland.harvard.edu,
+	linux-usb@vger.kernel.org,
+	usb-storage@lists.one-eyed-alien.net,
+	kernel-dev@igalia.com,
+	kernel@gpiccoli.net,
+	"Guilherme G. Piccoli" <gpiccoli@igalia.com>,
+	syzbot+c645abf505ed21f931b5@syzkaller.appspotmail.com,
+	stable@vger.kernel.org,
+	Bart Van Assche <bvanassche@acm.org>,
+	John Garry <john.g.garry@oracle.com>,
+	Shin'ichiro Kawasaki <shinichiro.kawasaki@wdc.com>
+Subject: [usb-storage] [PATCH] scsi: core: Fix unremoved procfs host directory regression
+Date: Wed, 13 Mar 2024 08:21:20 -0300
+Message-ID: <20240313113006.2834799-1-gpiccoli@igalia.com>
+X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
+X-Original-Sender: gpiccoli@igalia.com
+X-Original-Authentication-Results: mx.google.com;       dkim=pass
+ header.i=@igalia.com header.s=20170329 header.b=JHTkQMP3;       spf=pass
+ (google.com: domain of gpiccoli@igalia.com designates 213.97.179.56 as
+ permitted sender) smtp.mailfrom=gpiccoli@igalia.com
 Content-Type: text/plain; charset="UTF-8"
-X-Originating-IP: [10.29.8.21]
-X-ClientProxiedBy: zxbjmbx1.zhaoxin.com (10.29.252.163) To
- zxbjmbx1.zhaoxin.com (10.29.252.163)
-X-Barracuda-Connect: ZXSHMBX3.zhaoxin.com[10.28.252.165]
-X-Barracuda-Start-Time: 1709719695
-X-Barracuda-Encrypted: ECDHE-RSA-AES128-GCM-SHA256
-X-Barracuda-URL: https://10.28.252.35:4443/cgi-mod/mark.cgi
-X-Barracuda-BRTS-Status: 0
-X-Virus-Scanned: by bsmtpd at zhaoxin.com
-X-Barracuda-Scan-Msg-Size: 5185
-X-Barracuda-Bayes: INNOCENT GLOBAL 0.0000 1.0000 -2.0210
-X-Barracuda-Spam-Score: 1.09
-X-Barracuda-Spam-Status: No, SCORE=1.09 using global scores of TAG_LEVEL=1000.0 QUARANTINE_LEVEL=1000.0 KILL_LEVEL=9.0 tests=DATE_IN_FUTURE_06_12, DATE_IN_FUTURE_06_12_2
-X-Barracuda-Spam-Report: Code version 3.2, rules version 3.2.3.121737
-	Rule breakdown below
-	 pts rule name              description
-	---- ---------------------- --------------------------------------------------
-	0.01 DATE_IN_FUTURE_06_12   Date: is 6 to 12 hours after Received: date
-	3.10 DATE_IN_FUTURE_06_12_2 DATE_IN_FUTURE_06_12_2
-X-Original-Sender: weitaowang-oc@zhaoxin.com
-X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
- domain of weitaowang-oc@zhaoxin.com designates 210.0.225.12 as permitted
- sender) smtp.mailfrom=WeitaoWang-oc@zhaoxin.com
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
-X-Spam-Checked-In-Group: usb-storage@lists.one-eyed-alien.net
 X-Google-Group-Id: 960895140360
 List-Post: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/post>,
  <mailto:usb-storage@lists.one-eyed-alien.net>
@@ -161,151 +146,98 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-In the scenario of entering hibernation with udisk in the system, if the
-udisk was gone or resume fail in the thaw phase of hibernation. Its state
-will be set to NOTATTACHED. At this point, usb_hub_wq was already freezed
-and can't not handle disconnect event. Next, in the poweroff phase of
-hibernation, SYNCHRONIZE_CACHE SCSI command will be sent to this udisk
-when poweroff this scsi device, which will cause uas_submit_urbs to be
-called to submit URB for sense/data/cmd pipe. However, these URBs will
-submit fail as device was set to NOTATTACHED state. Then, uas_submit_urbs
-will return a value SCSI_MLQUEUE_DEVICE_BUSY to the caller. That will lead
-the SCSI layer go into an ugly loop and system fail to go into hibernation.
+Commit fc663711b944 ("scsi: core: Remove the /proc/scsi/${proc_name} directory
+earlier") fixed a bug related to modules loading/unloading, by adding a
+call to scsi_proc_hostdir_rm() on scsi_remove_host(). But that led to a
+potential duplicate call to the hostdir_rm() routine, since it's also
+called from scsi_host_dev_release(). That triggered a regression report,
+which was then fixed by commit be03df3d4bfe ("scsi: core: Fix a procfs host
+directory removal regression"). The fix just dropped the hostdir_rm() call
+from dev_release().
 
-On the other hand, when we specially check for -ENODEV in function
-uas_queuecommand_lck, returning DID_ERROR to SCSI layer will cause device
-poweroff fail and system shutdown instead of entering hibernation.
+But happens that this proc directory is created on scsi_host_alloc(),
+and that function "pairs" with scsi_host_dev_release(), while
+scsi_remove_host() pairs with scsi_add_host(). In other words, it seems
+the reason for removing the proc directory on dev_release() was meant to
+cover cases in which a SCSI host structure was allocated, but the call
+to scsi_add_host() didn't happen. And that pattern happens to exist in
+some error paths, for example.
 
-To fix this issue, let uas_submit_urbs to return original generic error
-when submitting URB failed. At the same time, we need to translate -ENODEV
-to DID_NOT_CONNECT for the SCSI layer.
+Syzkaller causes that by using USB raw gadget device, error'ing on usb-storage
+driver, at usb_stor_probe2(). By checking that path, we can see that the
+BadDevice label leads to a scsi_host_put() after a SCSI host allocation, but
+there's no call to scsi_add_host() in such path. That leads to messages like
+this in dmesg (and a leak of the SCSI host proc structure):
 
-Suggested-by: Oliver Neukum <oneukum@suse.com>
+usb-storage 4-1:87.51: USB Mass Storage device detected
+proc_dir_entry 'scsi/usb-storage' already registered
+WARNING: CPU: 1 PID: 3519 at fs/proc/generic.c:377 proc_register+0x347/0x4e0 fs/proc/generic.c:376
+
+The proper fix seems to still call scsi_proc_hostdir_rm() on dev_release(),
+but guard that with the state check for SHOST_CREATED; there is even a
+comment in scsi_host_dev_release() detailing that: such conditional is
+meant for cases where the SCSI host was allocated but there was no calls
+to {add,remove}_host(), like the usb-storage case.
+
+This is what we propose here and with that, the error path of usb-storage
+does not trigger the warning anymore.
+
+Reported-by: syzbot+c645abf505ed21f931b5@syzkaller.appspotmail.com
+Fixes: be03df3d4bfe ("scsi: core: Fix a procfs host directory removal regression")
 Cc: stable@vger.kernel.org
-Signed-off-by: Weitao Wang <WeitaoWang-oc@zhaoxin.com>
+Cc: Bart Van Assche <bvanassche@acm.org>
+Cc: John Garry <john.g.garry@oracle.com>
+Cc: Shin'ichiro Kawasaki <shinichiro.kawasaki@wdc.com>
+Signed-off-by: Guilherme G. Piccoli <gpiccoli@igalia.com>
 ---
-v3->v4
- - remove unused variable declaration in function uas_submit_urbs.
 
- drivers/usb/storage/uas.c | 28 +++++++++++++---------------
- 1 file changed, 13 insertions(+), 15 deletions(-)
 
-diff --git a/drivers/usb/storage/uas.c b/drivers/usb/storage/uas.c
-index 9707f53cfda9..5930cfc03111 100644
---- a/drivers/usb/storage/uas.c
-+++ b/drivers/usb/storage/uas.c
-@@ -533,7 +533,7 @@ static struct urb *uas_alloc_cmd_urb(struct uas_dev_info *devinfo, gfp_t gfp,
-  * daft to me.
-  */
+Hi folks, thanks in advance for reviews.
+
+The issue  with usb-storage happens upstream but despite we have a
+repro in the aforementioned Syzkaller report, it's only easy to reproduce
+the proc_dir_entry warning in a timely manner on stable right now.
+
+The reason for that is commit 036abd614007 ("scsi: core: Introduce a new
+list for SCSI proc directory entries") not being present on stable. This
+commit (indirectly) bumps the ->present field from unsigned char to uint,
+and the bug reproducer shows the warning whenever such field overflows,
+hence it's way easier/faster to see this problem in stable, though it's
+present in latest v6.8.0 too.
+
+Cheers,
+
+Guilherme
+
+
+ drivers/scsi/hosts.c | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+diff --git a/drivers/scsi/hosts.c b/drivers/scsi/hosts.c
+index d7f51b84f3c7..445f4a220df3 100644
+--- a/drivers/scsi/hosts.c
++++ b/drivers/scsi/hosts.c
+@@ -353,12 +353,13 @@ static void scsi_host_dev_release(struct device *dev)
  
--static struct urb *uas_submit_sense_urb(struct scsi_cmnd *cmnd, gfp_t gfp)
-+static int uas_submit_sense_urb(struct scsi_cmnd *cmnd, gfp_t gfp)
- {
- 	struct uas_dev_info *devinfo = cmnd->device->hostdata;
- 	struct urb *urb;
-@@ -541,30 +541,28 @@ static struct urb *uas_submit_sense_urb(struct scsi_cmnd *cmnd, gfp_t gfp)
- 
- 	urb = uas_alloc_sense_urb(devinfo, gfp, cmnd);
- 	if (!urb)
--		return NULL;
-+		return -ENOMEM;
- 	usb_anchor_urb(urb, &devinfo->sense_urbs);
- 	err = usb_submit_urb(urb, gfp);
- 	if (err) {
- 		usb_unanchor_urb(urb);
- 		uas_log_cmd_state(cmnd, "sense submit err", err);
- 		usb_free_urb(urb);
--		return NULL;
- 	}
--	return urb;
-+	return err;
- }
- 
- static int uas_submit_urbs(struct scsi_cmnd *cmnd,
- 			   struct uas_dev_info *devinfo)
- {
- 	struct uas_cmd_info *cmdinfo = scsi_cmd_priv(cmnd);
--	struct urb *urb;
- 	int err;
- 
- 	lockdep_assert_held(&devinfo->lock);
- 	if (cmdinfo->state & SUBMIT_STATUS_URB) {
--		urb = uas_submit_sense_urb(cmnd, GFP_ATOMIC);
--		if (!urb)
--			return SCSI_MLQUEUE_DEVICE_BUSY;
-+		err = uas_submit_sense_urb(cmnd, GFP_ATOMIC);
-+		if (err)
-+			return err;
- 		cmdinfo->state &= ~SUBMIT_STATUS_URB;
+ 	if (shost->shost_state == SHOST_CREATED) {
+ 		/*
+-		 * Free the shost_dev device name here if scsi_host_alloc()
+-		 * and scsi_host_put() have been called but neither
++		 * Free the shost_dev device name and remove the proc host dir
++		 * here if scsi_host_{alloc,put}() have been called but neither
+ 		 * scsi_host_add() nor scsi_remove_host() has been called.
+ 		 * This avoids that the memory allocated for the shost_dev
+-		 * name is leaked.
++		 * name as well as the proc dir structure are leaked.
+ 		 */
++		scsi_proc_hostdir_rm(shost->hostt);
+ 		kfree(dev_name(&shost->shost_dev));
  	}
  
-@@ -572,7 +570,7 @@ static int uas_submit_urbs(struct scsi_cmnd *cmnd,
- 		cmdinfo->data_in_urb = uas_alloc_data_urb(devinfo, GFP_ATOMIC,
- 							cmnd, DMA_FROM_DEVICE);
- 		if (!cmdinfo->data_in_urb)
--			return SCSI_MLQUEUE_DEVICE_BUSY;
-+			return -ENOMEM;
- 		cmdinfo->state &= ~ALLOC_DATA_IN_URB;
- 	}
- 
-@@ -582,7 +580,7 @@ static int uas_submit_urbs(struct scsi_cmnd *cmnd,
- 		if (err) {
- 			usb_unanchor_urb(cmdinfo->data_in_urb);
- 			uas_log_cmd_state(cmnd, "data in submit err", err);
--			return SCSI_MLQUEUE_DEVICE_BUSY;
-+			return err;
- 		}
- 		cmdinfo->state &= ~SUBMIT_DATA_IN_URB;
- 		cmdinfo->state |= DATA_IN_URB_INFLIGHT;
-@@ -592,7 +590,7 @@ static int uas_submit_urbs(struct scsi_cmnd *cmnd,
- 		cmdinfo->data_out_urb = uas_alloc_data_urb(devinfo, GFP_ATOMIC,
- 							cmnd, DMA_TO_DEVICE);
- 		if (!cmdinfo->data_out_urb)
--			return SCSI_MLQUEUE_DEVICE_BUSY;
-+			return -ENOMEM;
- 		cmdinfo->state &= ~ALLOC_DATA_OUT_URB;
- 	}
- 
-@@ -602,7 +600,7 @@ static int uas_submit_urbs(struct scsi_cmnd *cmnd,
- 		if (err) {
- 			usb_unanchor_urb(cmdinfo->data_out_urb);
- 			uas_log_cmd_state(cmnd, "data out submit err", err);
--			return SCSI_MLQUEUE_DEVICE_BUSY;
-+			return err;
- 		}
- 		cmdinfo->state &= ~SUBMIT_DATA_OUT_URB;
- 		cmdinfo->state |= DATA_OUT_URB_INFLIGHT;
-@@ -611,7 +609,7 @@ static int uas_submit_urbs(struct scsi_cmnd *cmnd,
- 	if (cmdinfo->state & ALLOC_CMD_URB) {
- 		cmdinfo->cmd_urb = uas_alloc_cmd_urb(devinfo, GFP_ATOMIC, cmnd);
- 		if (!cmdinfo->cmd_urb)
--			return SCSI_MLQUEUE_DEVICE_BUSY;
-+			return -ENOMEM;
- 		cmdinfo->state &= ~ALLOC_CMD_URB;
- 	}
- 
-@@ -621,7 +619,7 @@ static int uas_submit_urbs(struct scsi_cmnd *cmnd,
- 		if (err) {
- 			usb_unanchor_urb(cmdinfo->cmd_urb);
- 			uas_log_cmd_state(cmnd, "cmd submit err", err);
--			return SCSI_MLQUEUE_DEVICE_BUSY;
-+			return err;
- 		}
- 		cmdinfo->cmd_urb = NULL;
- 		cmdinfo->state &= ~SUBMIT_CMD_URB;
-@@ -698,7 +696,7 @@ static int uas_queuecommand_lck(struct scsi_cmnd *cmnd)
- 	 * of queueing, no matter how fatal the error
- 	 */
- 	if (err == -ENODEV) {
--		set_host_byte(cmnd, DID_ERROR);
-+		set_host_byte(cmnd, DID_NO_CONNECT);
- 		scsi_done(cmnd);
- 		goto zombie;
- 	}
 -- 
-2.32.0
+2.43.0
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20240306180814.4897-1-WeitaoWang-oc%40zhaoxin.com.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20240313113006.2834799-1-gpiccoli%40igalia.com.
