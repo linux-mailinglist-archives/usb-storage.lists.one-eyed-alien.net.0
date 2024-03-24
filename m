@@ -1,108 +1,107 @@
-Return-Path: <usb-storage+bncBDUNBGN3R4KRB772QKYAMGQEMY6CTOI@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBDUNBGN3R4KRBAH3QKYAMGQEBBDBLKI@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-pl1-x647.google.com (mail-pl1-x647.google.com [IPv6:2607:f8b0:4864:20::647])
-	by mail.lfdr.de (Postfix) with ESMTPS id C90AA8882C2
-	for <lists+usb-storage@lfdr.de>; Mon, 25 Mar 2024 00:55:44 +0100 (CET)
-Received: by mail-pl1-x647.google.com with SMTP id d9443c01a7336-1e0a7c58499sf5415795ad.0
-        for <lists+usb-storage@lfdr.de>; Sun, 24 Mar 2024 16:55:44 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1711324543; cv=pass;
+Received: from mail-oo1-xc45.google.com (mail-oo1-xc45.google.com [IPv6:2607:f8b0:4864:20::c45])
+	by mail.lfdr.de (Postfix) with ESMTPS id 079E18882C3
+	for <lists+usb-storage@lfdr.de>; Mon, 25 Mar 2024 00:55:46 +0100 (CET)
+Received: by mail-oo1-xc45.google.com with SMTP id 006d021491bc7-5a4873596e8sf3875430eaf.1
+        for <lists+usb-storage@lfdr.de>; Sun, 24 Mar 2024 16:55:45 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1711324545; cv=pass;
         d=google.com; s=arc-20160816;
-        b=oHYlygT+x7IGw4APp0TWHAgAbpCp/C1k8/Fw+lirDipi0JUjLfktdD45J37qQuHKnj
-         SsF904AN7sxswaNoKIhx+Bj6C0zLOJ9vXWaRExFnDtv9x7CQBXsfIrMX8htcQeWP7NzW
-         1izTVj5QxCFQPnfjKPXJGP2EDCu83mfcAQyppl5jZsgesXrsjgz+FyWP5eSml1pnd9bj
-         /Qwv07gVH7d76QNc5+IXNWuEF5kJMHxEjEUx2am1oeydQbR/CO3dWp5NWtJnIRO27++W
-         egTzfzyMjMVBiMsXHb0Dsu/fiKCzkH4p29eFKoMaql/z1hcOX5EgIEjiEJDVsW8pGZtE
-         UoUg==
+        b=HNbf3gTamYPWP5qBbLO5nQe1+adh37dIA6T6d+2h26RAzUK76W/tjf+6CwY5Fg2QoG
+         jOF8Onex467UxVPq6cAWp0fghXNkars6p4XfmCwqI70c4Wl6XKrvfa2OY6lR0aOUQzUn
+         B7yn29OuO3KD7H3OxtN9Koun0PGw58I+olUCxRU1BsbpWx6wqCwbiM+1SNAQ06EGR2On
+         5MrzD9aHG8/UhMylc+hgWlMVhB1CqOJApM46gV1HBgVGDlPsw3xLcKRdiRcw+MgE/xih
+         0ecR3YH+97/zA+GFusYiIF8OTAwa06kKcqMjf3uuAZPScYu/YGIOHDrZzrPYmPjc6oly
+         XBLQ==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:sender:dkim-signature;
-        bh=ITkOdV5Sv9qHggkq0SY6UHw7AbwDxRDZn6k+7ncMD/U=;
-        fh=+Yt6LZq6kywGc+T9G+O8vyAac7rbTJPb6/NwEWKZ4N0=;
-        b=MCimc071w9l0ycW4CtOpIuAlceujxS33Xw8qVHm/BnjRAYpIDvPrFsNcfmHR6vKVLg
-         iPIlsEeHDOE+/gCXM3Q94c683XvkZoFSRclUu5h4ZEWMBaRJBiNL7qW/bf/X1ZlSGLvy
-         F/06E2HBHjuGNLrnsCAcqc6WT4wmWkPglqAFnJJeYL6zgUKdRfKKJxqsYOkDyYSKbSX5
-         gYzEI7Pl3UyyT8JG+zTY0Ch8K4+hzK97OafXWXR1fM8DP1utx9N3+oeLNqTPywPg3y4A
-         AT93H0C7nG2P+VfA0xR7gBaHgpZlDLfDW/R/H0qY/Jrv9iIfry14EiVmxsRekPfNuZOf
-         LXLw==;
+        bh=4OnvWOdPNEsup/atI5/xVQ5K0ByFewRBUpiCJhuZSAY=;
+        fh=ihDAFF3E6JkWdviFSU9JqucjqjJJ04/GfPNJi0FIAPE=;
+        b=ZJUBiNLUZLwoMRz6oDsDpI4MBLL5i8rC0ezDYhfRpr3eU/Pk4CmYjYl7WAK0tYyuBH
+         G+19sBn8lmuW9GzXLt5HZVdyiSyHNqipfyuRRXEi8/Sbeag3RZHOqRRqoN7xS/hx6Uak
+         VgjsJgaLXgm7np452VyMso7T3Lzx2xUul3w4zNx81yAqrReXw9h3Avv4MeOFRYsL7Cll
+         gHsG0MxfsSpKCzLq9ct9nFWz2aVzVfWfiGiksE5EhLqdKpj73l58+Wkgd7FRXDi2gQ+P
+         AJENdWXwNe29hgNc7ULyeH7tZCWxm8zz6qu9FFT6Gd6nqH1UqzCRTH0IHYgIqTgK8drc
+         WwQQ==;
         darn=lfdr.de
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@infradead.org header.s=bombadil.20210309 header.b=tW7wzOQd;
+       dkim=pass header.i=@infradead.org header.s=bombadil.20210309 header.b=EKuYXNlp;
        spf=none (google.com: bombadil.srs.infradead.org does not designate permitted sender hosts) smtp.mailfrom=BATV+9b69c840030af2843ecd+7518+infradead.org+hch@bombadil.srs.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1711324543; x=1711929343; darn=lfdr.de;
+        d=lists.one-eyed-alien.net; s=google; t=1711324545; x=1711929345; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:x-original-authentication-results
          :x-original-sender:mime-version:references:in-reply-to:message-id
          :date:subject:cc:to:from:sender:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=ITkOdV5Sv9qHggkq0SY6UHw7AbwDxRDZn6k+7ncMD/U=;
-        b=RrEler/2meiLy3aZeC8WbFW0hY6wBRAyy/1FgQe2eeRoL3vLzbvLyvJIlk0tUuVSYz
-         lxeADoGUxBkY1VVb/liZ/oXmS+Ne4S2Xo+JD/3NOLvBrtXBeot1k9DVsxaiAvA2zMi6y
-         VVwCQPxK06rKdUavGAfiI50KWcSXW4+FwjxY8=
+        bh=4OnvWOdPNEsup/atI5/xVQ5K0ByFewRBUpiCJhuZSAY=;
+        b=PWlhuZ15IcB6xqOj+OVhc1d8951RDWfzQm7yUI8L+QGV5WLTdm7iBCS9GE6iXFr3P/
+         QtByH66UFMEs2BTh9RBfKCodCnBtwropztXDsXErFgQrDmuKdVFCwS3BBhknG5RjXgAS
+         FhviHyoUF0QwtmNyWbdaPixW31afVGIqJZMLk=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1711324543; x=1711929343;
+        d=1e100.net; s=20230601; t=1711324545; x=1711929345;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :x-spam-checked-in-group:list-id:mailing-list:precedence
          :x-original-authentication-results:x-original-sender:mime-version
          :references:in-reply-to:message-id:date:subject:cc:to:from
          :x-beenthere:x-gm-message-state:sender:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=ITkOdV5Sv9qHggkq0SY6UHw7AbwDxRDZn6k+7ncMD/U=;
-        b=R0hcYSOsXDYVJ0loTXX9+33tvYVBoce4THBlbM++JUAzn4L01YXHm72/XxKCX9IsKS
-         lr+FSPx6H6+6LwWlHXaxL2KIj6RkHTg5pwUtKjSyUVXt/m5KQkXwsy5BYPHW1I0GZjwi
-         67H7FCrgCYfoqIQKlMvCQKQspvKR0ZpsNgvkiF8XjHKj0VfjijXwgBms1F8Al9zZsOyy
-         PEbVHTb72qheo66YftERCblbnBvu2dYJHxSSgnnGs+0M4bjVc1feDmr2MC7YorlrfMCw
-         ZXX+XbLBLejAZvKMNLk/4XrShlBv6hAPL8xA2Yr+Wm+I9d8mgCFwSZgZRO0jZPNM5crj
-         ulYA==
+        bh=4OnvWOdPNEsup/atI5/xVQ5K0ByFewRBUpiCJhuZSAY=;
+        b=S9Z/Cbf+zY3ARMP7QfKobqG+uYbDNhGRG94540NrVPIbAvJjaIlTYVSjLm0gHTp3op
+         sxkDskFU10vqr4XLu18YxCl5w/KZ7IMqKi4VybAraYWk/iaaLzvOyY+HRI69hL+8B03A
+         XWqfb4lWZkoKtAWUwB6lCOyp0Ce0F4rMwYVxwgitbH0AHLusONBv/ZJQXsShxhX1PW3G
+         fOaPJ90vnchgJ7RK4k63icsQFJUgY2HWU35RHXfy25fd20LLOB3nV65NmYZcM2sLNG/q
+         88kgO4ZecNJCb6vyQghkoBBm6ADmsB8q08cBZhNlKAEFkJT11wMcq1rxkSu/G7A3u3Oh
+         /U4A==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Forwarded-Encrypted: i=2; AJvYcCVHstZZigtwVAtYqmZQGw6I7VBVzShltzC9/ImFU964ZDKsBEiaWNE5AQffhLG+1Tiu5AsvHBtXM+ZdR02K7z9TneJmvj0xy0L1
-X-Gm-Message-State: AOJu0YzwnDJnB3F4XoXII1IAvQP9zQ7YQ9b/Fh3eg96wKjDP7+TvTJQ1
-	TmkXEY0e2qd9Jq7O4rT3GHi+12n+5/a/X+YJL7kFw0Jqak8rotwyxn0MYwDsSM8=
-X-Google-Smtp-Source: AGHT+IEuRGKgloABIIAYe3ae+kH6RMxue5iA5o3I+boW51tt9DPLn8pYk1cjfvG1cMG8a0TcN5KD7A==
-X-Received: by 2002:a17:902:e549:b0:1e0:b257:3261 with SMTP id n9-20020a170902e54900b001e0b2573261mr3352017plf.42.1711324543328;
-        Sun, 24 Mar 2024 16:55:43 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCX8WjE/W6L8WOK6WiOY/ZpC5rPfqZOfzANLTOlX9NLhQYIQR5Us9kWbqV0fmb4huRVWoegN1MqSUv3B+2prM+SeVOLizdWbH0LV
+X-Gm-Message-State: AOJu0YyToiehQwP4W4NLeanQ0wt0hxygmOq14ynsgSn9QzYKSTIUEKFQ
+	/QAjP0Zt2QB/RWrDaLehFx00M5VOGwoXZKvtsElEuFMYl7mT1YMrfxZA5qdRYqw=
+X-Google-Smtp-Source: AGHT+IGeTVRbzQMdd9ItmRMA0iwjB2YrxdcoxsGDvfW0YwuKzvnV23VpDsxVwxrPdowRCjYcrpk6HA==
+X-Received: by 2002:a05:6820:2611:b0:5a2:37c9:d91f with SMTP id cy17-20020a056820261100b005a237c9d91fmr5469616oob.5.1711324544944;
+        Sun, 24 Mar 2024 16:55:44 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a17:902:ced0:b0:1db:2ca9:b5b8 with SMTP id
- d16-20020a170902ced000b001db2ca9b5b8ls2375580plg.1.-pod-prod-07-us; Sun, 24
- Mar 2024 16:55:40 -0700 (PDT)
-X-Forwarded-Encrypted: i=2; AJvYcCVlzypG4oHwqWOcqJZb0G9j4hINVYcwT1e0cftwCA0L7HbfzFC9O9opSSZ3PhlnNpke6eybP8DaEy2FvGU3QIOuAWyuJhCPnZySnDzqLyScXHuRaWc=
-X-Received: by 2002:a17:902:b096:b0:1df:f9fc:c9f7 with SMTP id p22-20020a170902b09600b001dff9fcc9f7mr5367124plr.61.1711324540569;
-        Sun, 24 Mar 2024 16:55:40 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1711324540; cv=none;
+Received: by 2002:a4a:9b4d:0:b0:5a4:bbf6:3d9 with SMTP id e13-20020a4a9b4d000000b005a4bbf603d9ls4280904ook.1.-pod-prod-01-us;
+ Sun, 24 Mar 2024 16:55:44 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCWn9SImQMf6J1dNguRoldMMsaXesI0S3msAcHYdlEE3s+qtL6CGXYtcRnBbSkkvyXFki4eVgaT0ThJ9KNabL7PHUye5HEdMC98z/cKo6oiThB4c0Bg=
+X-Received: by 2002:a05:6820:98b:b0:5a5:23fb:448f with SMTP id cg11-20020a056820098b00b005a523fb448fmr5087878oob.1.1711324544146;
+        Sun, 24 Mar 2024 16:55:44 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1711324544; cv=none;
         d=google.com; s=arc-20160816;
-        b=rXwcTvhgs4FPdonV6ViIr9Bgm9olBk0N2vitJ5TzoiLWcXiPLDDhPCaoUkdMWf0ImN
-         tBCAtQ2akRRUIC7wybw3Jw/z74S/FsYE9gQuSS2idVtZ5C78NitCYvo+S8h/woSh9JDD
-         Be+Y+PwuXrc5xOas+gNan6gPsTZ7F1lcg479BJH7xfxqlA/F86IibbXMJzAP3hRfgdU0
-         PlkzIVAOp4RN1n7jq1OueQktvK3/Fg1secLllsOm3hur4MNGgEymsOo1937A32XxxwQU
-         fHykyvM+PLgpuQpNjFZaSyLaiuHfR7M3/aBApunP29eeLGPY092CN8GE+lkN5J1HIZRI
-         5xEw==
+        b=hxo2gqzVeCmaodKBNpx/2pusoZgdStd51w6+HTMEHjvcrldKxkBRIcaAdexNMfV1tc
+         paW/wqhaUozTIcDWb1u3h+RJd50MLyaZXAnbfQFa6VBxx9g7AGsYyCs0nhCoswCnyxrd
+         hEDwRZnk5GEP++F5mAngQ88KR8BgCn4OGpoIfvllkgcUuc6tkuqK1VWdHKmSok5vu3LH
+         z3cMY5Fkgs2+lejDLTS5vpDrDFygttE6oIjj/C6V6aiKqpQdquruTOFaeAYvYwgXvcFv
+         elXIrElDf1N+hkpOl1TwuqBMQmHbzKre1fl2Sr9jHdbssHAWJullCuCG9VeiyavDAYb8
+         8eTg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:dkim-signature;
-        bh=TV2KULhx0jXvmBL1siFqJvD3Q15LHPygeYRaqDNqSRw=;
+        bh=QpEcu6br0nAm6nvHblhU5Wfkb8gpPkNvyq7w8yaKxUI=;
         fh=t86CCijjmN/1ilkIT+VdM3oaZOxEhtNXSf8+ryhWOUU=;
-        b=BrDtDc3HvNODUuiVpoxA5reNwbqjIWdNshYddJyN2+naD7EJDBA3VC6Pt9ZiAkSvlP
-         avzha012U/c59e5cVT2IerXHDyBq2XJVWFM7WSM5jwsHVj9aFkC/1JWBPkfPOVztTLDb
-         0cvERlHm3hJol87yA2VcOXF1EBtoJZtUL/0eTKySXmjER0uTU3u9PXieZugbTo/65j8o
-         4PXStyzSBwScrxZUCqNA3P19mQvVgGMiFGsqWAtFboDZ9sdifW/i5QvFud6JVHksR+2F
-         PQbVHo+LaJmmVjGJ/tESp9o5BVVHQ3bX0vVSuj4FJnIbDwgJAiMQvVQaRPGFB00tzOpq
-         5xzQ==;
+        b=CqiNANhmrxWh6TpyzL+dQ50ABnwvpaCLVyG17UI8JDqU3NH3mpRiwTf/zwZqPr7QB6
+         feOmvL1bNuk/5c7nyBaURYdsWhlI2M6ba20LtEqhIzs8BWDNerf5aVpa1OS1jMwY1EC0
+         VocC+komz8PAVlsnOhl4qKC3COYt8wmwVOq4nzN6fIkyXta3pR7WBWqi3S7VaGlem1Mc
+         pzq9k8QxfG8uN99pvoFQagABae4qeGyCJN62zDUB8GfgPes09sB4qSHK8tlgOhUm+klm
+         ISz1DIHQQxXIRqD+jy96jhTbFjFLYj4WDfLFQi2xrnMlBwOSgt/f3lBL7hfAiQMQI4bW
+         qf+A==;
         dara=google.com
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@infradead.org header.s=bombadil.20210309 header.b=tW7wzOQd;
+       dkim=pass header.i=@infradead.org header.s=bombadil.20210309 header.b=EKuYXNlp;
        spf=none (google.com: bombadil.srs.infradead.org does not designate permitted sender hosts) smtp.mailfrom=BATV+9b69c840030af2843ecd+7518+infradead.org+hch@bombadil.srs.infradead.org
 Received: from bombadil.infradead.org (bombadil.infradead.org. [2607:7c80:54:3::133])
-        by mx.google.com with ESMTPS id q18-20020a170902e31200b001e0096b286bsi3845017plc.632.2024.03.24.16.55.40
+        by mx.google.com with ESMTPS id g13-20020a63fa4d000000b005eb4df79741si6377681pgk.533.2024.03.24.16.55.44
         for <usb-storage@lists.one-eyed-alien.net>
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 24 Mar 2024 16:55:40 -0700 (PDT)
+        Sun, 24 Mar 2024 16:55:44 -0700 (PDT)
 Received-SPF: none (google.com: bombadil.srs.infradead.org does not designate permitted sender hosts) client-ip=2607:7c80:54:3::133;
 Received: from [210.13.83.2] (helo=localhost)
 	by bombadil.infradead.org with esmtpsa (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1roXgW-0000000DzW8-2KV4;
-	Sun, 24 Mar 2024 23:55:29 +0000
+	id 1roXga-0000000DzXo-2oPb;
+	Sun, 24 Mar 2024 23:55:33 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Jens Axboe <axboe@kernel.dk>,
 	"Martin K. Petersen" <martin.petersen@oracle.com>
@@ -146,10 +145,10 @@ Cc: Damien Le Moal <dlemoal@kernel.org>,
 	linux-samsung-soc@vger.kernel.org,
 	linux-usb@vger.kernel.org,
 	usb-storage@lists.one-eyed-alien.net
-Subject: [usb-storage] [PATCH 07/23] scsi: add a dma_alignment field to the
- host and host template
-Date: Mon, 25 Mar 2024 07:54:32 +0800
-Message-Id: <20240324235448.2039074-8-hch@lst.de>
+Subject: [usb-storage] [PATCH 08/23] ufs-exynos: move setting the the dma
+ alignment to the init method
+Date: Mon, 25 Mar 2024 07:54:33 +0800
+Message-Id: <20240324235448.2039074-9-hch@lst.de>
 X-Mailer: git-send-email 2.39.2
 In-Reply-To: <20240324235448.2039074-1-hch@lst.de>
 References: <20240324235448.2039074-1-hch@lst.de>
@@ -157,7 +156,7 @@ MIME-Version: 1.0
 X-SRS-Rewrite: SMTP reverse-path rewritten from <hch@infradead.org> by bombadil.infradead.org. See http://www.infradead.org/rpr.html
 X-Original-Sender: hch@lst.de
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@infradead.org header.s=bombadil.20210309 header.b=tW7wzOQd;
+ header.i=@infradead.org header.s=bombadil.20210309 header.b=EKuYXNlp;
        spf=none (google.com: bombadil.srs.infradead.org does not designate
  permitted sender hosts) smtp.mailfrom=BATV+9b69c840030af2843ecd+7518+infradead.org+hch@bombadil.srs.infradead.org
 Content-Type: text/plain; charset="UTF-8"
@@ -176,330 +175,79 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-Get drivers out of the business of having to call the block layer
-dma alignment limits helpers themselves.
+Use the SCSI host's dma_alignment field and set it in ->init and remove
+the now unused config_scsi_dev method.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 ---
- drivers/firewire/sbp2.c           |  6 ------
- drivers/message/fusion/mptfc.c    |  1 +
- drivers/message/fusion/mptsas.c   |  1 +
- drivers/message/fusion/mptscsih.c |  2 --
- drivers/message/fusion/mptspi.c   |  1 +
- drivers/scsi/hosts.c              |  6 ++++++
- drivers/scsi/iscsi_tcp.c          |  2 +-
- drivers/scsi/qla2xxx/qla_os.c     |  6 +++---
- drivers/scsi/scsi_lib.c           | 11 ++---------
- drivers/staging/rts5208/rtsx.c    | 24 ++++++++++++------------
- drivers/usb/image/microtek.c      |  8 +-------
- drivers/usb/storage/scsiglue.c    | 11 +++++------
- drivers/usb/storage/uas.c         | 13 ++++++-------
- include/scsi/scsi_host.h          |  3 +++
- 14 files changed, 42 insertions(+), 53 deletions(-)
+ drivers/ufs/core/ufshcd.c     | 3 ---
+ drivers/ufs/host/ufs-exynos.c | 8 ++------
+ include/ufs/ufshcd.h          | 1 -
+ 3 files changed, 2 insertions(+), 10 deletions(-)
 
-diff --git a/drivers/firewire/sbp2.c b/drivers/firewire/sbp2.c
-index e779d866022b9f..8f7810b2a4c10f 100644
---- a/drivers/firewire/sbp2.c
-+++ b/drivers/firewire/sbp2.c
-@@ -1500,12 +1500,6 @@ static int sbp2_scsi_slave_alloc(struct scsi_device *sdev)
- 
- 	sdev->allow_restart = 1;
- 
--	/*
--	 * SBP-2 does not require any alignment, but we set it anyway
--	 * for compatibility with earlier versions of this driver.
--	 */
--	blk_queue_update_dma_alignment(sdev->request_queue, 4 - 1);
--
- 	if (lu->tgt->workarounds & SBP2_WORKAROUND_INQUIRY_36)
- 		sdev->inquiry_len = 36;
- 
-diff --git a/drivers/message/fusion/mptfc.c b/drivers/message/fusion/mptfc.c
-index c459f709107b7c..a3c17c4fe69c54 100644
---- a/drivers/message/fusion/mptfc.c
-+++ b/drivers/message/fusion/mptfc.c
-@@ -129,6 +129,7 @@ static const struct scsi_host_template mptfc_driver_template = {
- 	.sg_tablesize			= MPT_SCSI_SG_DEPTH,
- 	.max_sectors			= 8192,
- 	.cmd_per_lun			= 7,
-+	.dma_alignment			= 511,
- 	.shost_groups			= mptscsih_host_attr_groups,
- };
- 
-diff --git a/drivers/message/fusion/mptsas.c b/drivers/message/fusion/mptsas.c
-index 300f8e955a5319..30cb4f64e77047 100644
---- a/drivers/message/fusion/mptsas.c
-+++ b/drivers/message/fusion/mptsas.c
-@@ -2020,6 +2020,7 @@ static const struct scsi_host_template mptsas_driver_template = {
- 	.sg_tablesize			= MPT_SCSI_SG_DEPTH,
- 	.max_sectors			= 8192,
- 	.cmd_per_lun			= 7,
-+	.dma_alignment			= 511,
- 	.shost_groups			= mptscsih_host_attr_groups,
- 	.no_write_same			= 1,
- };
-diff --git a/drivers/message/fusion/mptscsih.c b/drivers/message/fusion/mptscsih.c
-index 9080a73b4ea64a..6c3f25cc33ff99 100644
---- a/drivers/message/fusion/mptscsih.c
-+++ b/drivers/message/fusion/mptscsih.c
-@@ -2438,8 +2438,6 @@ mptscsih_slave_configure(struct scsi_device *sdev)
- 		"tagged %d, simple %d\n",
- 		ioc->name,sdev->tagged_supported, sdev->simple_tags));
- 
--	blk_queue_dma_alignment (sdev->request_queue, 512 - 1);
--
- 	return 0;
- }
- 
-diff --git a/drivers/message/fusion/mptspi.c b/drivers/message/fusion/mptspi.c
-index 6c5920db1e9dc5..574b882c9a8540 100644
---- a/drivers/message/fusion/mptspi.c
-+++ b/drivers/message/fusion/mptspi.c
-@@ -843,6 +843,7 @@ static const struct scsi_host_template mptspi_driver_template = {
- 	.sg_tablesize			= MPT_SCSI_SG_DEPTH,
- 	.max_sectors			= 8192,
- 	.cmd_per_lun			= 7,
-+	.dma_alignment			= 511,
- 	.shost_groups			= mptscsih_host_attr_groups,
- };
- 
-diff --git a/drivers/scsi/hosts.c b/drivers/scsi/hosts.c
-index 4f495a41ec4aae..a67a98bd7ae2d7 100644
---- a/drivers/scsi/hosts.c
-+++ b/drivers/scsi/hosts.c
-@@ -478,6 +478,12 @@ struct Scsi_Host *scsi_host_alloc(const struct scsi_host_template *sht, int priv
- 	else
- 		shost->max_segment_size = BLK_MAX_SEGMENT_SIZE;
- 
-+	/* 32-byte (dword) is a common minimum for HBAs. */
-+	if (sht->dma_alignment)
-+		shost->dma_alignment = sht->dma_alignment;
-+	else
-+		shost->dma_alignment = 3;
-+
- 	/*
- 	 * assume a 4GB boundary, if not set
+diff --git a/drivers/ufs/core/ufshcd.c b/drivers/ufs/core/ufshcd.c
+index e30fd125988d7a..7d593395aeff25 100644
+--- a/drivers/ufs/core/ufshcd.c
++++ b/drivers/ufs/core/ufshcd.c
+@@ -5262,9 +5262,6 @@ static int ufshcd_slave_configure(struct scsi_device *sdev)
  	 */
-diff --git a/drivers/scsi/iscsi_tcp.c b/drivers/scsi/iscsi_tcp.c
-index 8e14cea15f9808..60688f18fac6f7 100644
---- a/drivers/scsi/iscsi_tcp.c
-+++ b/drivers/scsi/iscsi_tcp.c
-@@ -943,6 +943,7 @@ iscsi_sw_tcp_session_create(struct iscsi_endpoint *ep, uint16_t cmds_max,
- 	shost->max_id = 0;
- 	shost->max_channel = 0;
- 	shost->max_cmd_len = SCSI_MAX_VARLEN_CDB_SIZE;
-+	shost->dma_alignment = 0;
+ 	sdev->silence_suspend = 1;
  
- 	rc = iscsi_host_get_max_scsi_cmds(shost, cmds_max);
- 	if (rc < 0)
-@@ -1065,7 +1066,6 @@ static int iscsi_sw_tcp_slave_configure(struct scsi_device *sdev)
- 	if (conn->datadgst_en)
- 		blk_queue_flag_set(QUEUE_FLAG_STABLE_WRITES,
- 				   sdev->request_queue);
--	blk_queue_dma_alignment(sdev->request_queue, 0);
- 	return 0;
- }
- 
-diff --git a/drivers/scsi/qla2xxx/qla_os.c b/drivers/scsi/qla2xxx/qla_os.c
-index dd674378f2f392..d188749f29e407 100644
---- a/drivers/scsi/qla2xxx/qla_os.c
-+++ b/drivers/scsi/qla2xxx/qla_os.c
-@@ -1957,9 +1957,6 @@ qla2xxx_slave_configure(struct scsi_device *sdev)
- 	scsi_qla_host_t *vha = shost_priv(sdev->host);
- 	struct req_que *req = vha->req;
- 
--	if (IS_T10_PI_CAPABLE(vha->hw))
--		blk_queue_update_dma_alignment(sdev->request_queue, 0x7);
+-	if (hba->vops && hba->vops->config_scsi_dev)
+-		hba->vops->config_scsi_dev(sdev);
 -
- 	scsi_change_queue_depth(sdev, req->max_q_depth);
- 	return 0;
- }
-@@ -3575,6 +3572,9 @@ qla2x00_probe_one(struct pci_dev *pdev, const struct pci_device_id *id)
- 		    QLA_SG_ALL : 128;
- 	}
+ 	ufshcd_crypto_register(hba, q);
  
-+	if (IS_T10_PI_CAPABLE(base_vha->hw))
-+		host->dma_alignment = 0x7;
+ 	return 0;
+diff --git a/drivers/ufs/host/ufs-exynos.c b/drivers/ufs/host/ufs-exynos.c
+index 734d40f99e31e6..7ffc28e2278420 100644
+--- a/drivers/ufs/host/ufs-exynos.c
++++ b/drivers/ufs/host/ufs-exynos.c
+@@ -1187,6 +1187,8 @@ static int exynos_ufs_init(struct ufs_hba *hba)
+ 		goto out;
+ 	exynos_ufs_specify_phy_time_attr(ufs);
+ 	exynos_ufs_config_smu(ufs);
 +
- 	ret = scsi_add_host(host, &pdev->dev);
- 	if (ret)
- 		goto probe_failed;
-diff --git a/drivers/scsi/scsi_lib.c b/drivers/scsi/scsi_lib.c
-index f1936f98abe3e2..26b51406c477e3 100644
---- a/drivers/scsi/scsi_lib.c
-+++ b/drivers/scsi/scsi_lib.c
-@@ -1985,15 +1985,8 @@ void scsi_init_limits(struct Scsi_Host *shost, struct queue_limits *lim)
- 	lim->seg_boundary_mask = shost->dma_boundary;
- 	lim->max_segment_size = shost->max_segment_size;
- 	lim->virt_boundary_mask = shost->virt_boundary_mask;
--
--	/*
--	 * Set a reasonable default alignment:  The larger of 32-byte (dword),
--	 * which is a common minimum for HBAs, and the minimum DMA alignment,
--	 * which is set by the platform.
--	 *
--	 * Devices that require a bigger alignment can increase it later.
--	 */
--	lim->dma_alignment = max(4, dma_get_cache_alignment()) - 1;
-+	lim->dma_alignment = max_t(unsigned int,
-+		shost->dma_alignment, dma_get_cache_alignment() - 1);
++	hba->host->dma_alignment = SZ_4K - 1;
+ 	return 0;
  
- 	if (shost->no_highmem)
- 		lim->bounce = BLK_BOUNCE_HIGH;
-diff --git a/drivers/staging/rts5208/rtsx.c b/drivers/staging/rts5208/rtsx.c
-index 86d32e3b3282a5..c4f54c311d0549 100644
---- a/drivers/staging/rts5208/rtsx.c
-+++ b/drivers/staging/rts5208/rtsx.c
-@@ -70,18 +70,6 @@ static int slave_alloc(struct scsi_device *sdev)
- 
- static int slave_configure(struct scsi_device *sdev)
- {
--	/*
--	 * Scatter-gather buffers (all but the last) must have a length
--	 * divisible by the bulk maxpacket size.  Otherwise a data packet
--	 * would end up being short, causing a premature end to the data
--	 * transfer.  Since high-speed bulk pipes have a maxpacket size
--	 * of 512, we'll use that as the scsi device queue's DMA alignment
--	 * mask.  Guaranteeing proper alignment of the first buffer will
--	 * have the desired effect because, except at the beginning and
--	 * the end, scatter-gather buffers follow page boundaries.
--	 */
--	blk_queue_dma_alignment(sdev->request_queue, (512 - 1));
--
- 	/* Set the SCSI level to at least 2.  We'll leave it at 3 if that's
- 	 * what is originally reported.  We need this to avoid confusing
- 	 * the SCSI layer with devices that report 0 or 1, but need 10-byte
-@@ -219,6 +207,18 @@ static const struct scsi_host_template rtsx_host_template = {
- 	/* limit the total size of a transfer to 120 KB */
- 	.max_sectors =                  240,
- 
-+	/*
-+	 * Scatter-gather buffers (all but the last) must have a length
-+	 * divisible by the bulk maxpacket size.  Otherwise a data packet
-+	 * would end up being short, causing a premature end to the data
-+	 * transfer.  Since high-speed bulk pipes have a maxpacket size
-+	 * of 512, we'll use that as the scsi device queue's DMA alignment
-+	 * mask.  Guaranteeing proper alignment of the first buffer will
-+	 * have the desired effect because, except at the beginning and
-+	 * the end, scatter-gather buffers follow page boundaries.
-+	 */
-+	.dma_alignment =		511,
-+
- 	/* emulated HBA */
- 	.emulated =			1,
- 
-diff --git a/drivers/usb/image/microtek.c b/drivers/usb/image/microtek.c
-index 8c8fa71c69c411..9f758241d9d376 100644
---- a/drivers/usb/image/microtek.c
-+++ b/drivers/usb/image/microtek.c
-@@ -328,12 +328,6 @@ static int mts_slave_alloc (struct scsi_device *s)
+ out:
+@@ -1510,11 +1512,6 @@ static int fsd_ufs_pre_link(struct exynos_ufs *ufs)
  	return 0;
  }
  
--static int mts_slave_configure (struct scsi_device *s)
+-static void exynos_ufs_config_scsi_dev(struct scsi_device *sdev)
 -{
--	blk_queue_dma_alignment(s->request_queue, (512 - 1));
--	return 0;
+-	blk_queue_update_dma_alignment(sdev->request_queue, SZ_4K - 1);
 -}
 -
- static int mts_scsi_abort(struct scsi_cmnd *srb)
+ static int fsd_ufs_post_link(struct exynos_ufs *ufs)
  {
- 	struct mts_desc* desc = (struct mts_desc*)(srb->device->host->hostdata[0]);
-@@ -631,8 +625,8 @@ static const struct scsi_host_template mts_scsi_host_template = {
- 	.can_queue =		1,
- 	.this_id =		-1,
- 	.emulated =		1,
-+	.dma_alignment =	511,
- 	.slave_alloc =		mts_slave_alloc,
--	.slave_configure =	mts_slave_configure,
- 	.max_sectors=		256, /* 128 K */
+ 	int i;
+@@ -1583,7 +1580,6 @@ static const struct ufs_hba_variant_ops ufs_hba_exynos_ops = {
+ 	.hibern8_notify			= exynos_ufs_hibern8_notify,
+ 	.suspend			= exynos_ufs_suspend,
+ 	.resume				= exynos_ufs_resume,
+-	.config_scsi_dev		= exynos_ufs_config_scsi_dev,
  };
  
-diff --git a/drivers/usb/storage/scsiglue.c b/drivers/usb/storage/scsiglue.c
-index 1d14c678f3d3e3..eb4ba03e082d89 100644
---- a/drivers/usb/storage/scsiglue.c
-+++ b/drivers/usb/storage/scsiglue.c
-@@ -75,12 +75,6 @@ static int slave_alloc (struct scsi_device *sdev)
- 	 */
- 	sdev->inquiry_len = 36;
- 
--	/*
--	 * Some host controllers may have alignment requirements.
--	 * We'll play it safe by requiring 512-byte alignment always.
--	 */
--	blk_queue_update_dma_alignment(sdev->request_queue, (512 - 1));
--
- 	/* Tell the SCSI layer if we know there is more than one LUN */
- 	if (us->protocol == USB_PR_BULK && us->max_lun > 0)
- 		sdev->sdev_bflags |= BLIST_FORCELUN;
-@@ -638,6 +632,11 @@ static const struct scsi_host_template usb_stor_host_template = {
- 	/* lots of sg segments can be handled */
- 	.sg_tablesize =			SG_MAX_SEGMENTS,
- 
-+	/*
-+	 * Some host controllers may have alignment requirements.
-+	 * We'll play it safe by requiring 512-byte alignment always.
-+	 */
-+	.dma_alignment =		511,
- 
- 	/*
- 	 * Limit the total size of a transfer to 120 KB.
-diff --git a/drivers/usb/storage/uas.c b/drivers/usb/storage/uas.c
-index 71ace274761f18..0668182e1c469c 100644
---- a/drivers/usb/storage/uas.c
-+++ b/drivers/usb/storage/uas.c
-@@ -824,13 +824,6 @@ static int uas_slave_alloc(struct scsi_device *sdev)
- 
- 	sdev->hostdata = devinfo;
- 
--	/*
--	 * The protocol has no requirements on alignment in the strict sense.
--	 * Controllers may or may not have alignment restrictions.
--	 * As this is not exported, we use an extremely conservative guess.
--	 */
--	blk_queue_update_dma_alignment(sdev->request_queue, (512 - 1));
--
- 	if (devinfo->flags & US_FL_MAX_SECTORS_64)
- 		blk_queue_max_hw_sectors(sdev->request_queue, 64);
- 	else if (devinfo->flags & US_FL_MAX_SECTORS_240)
-@@ -912,6 +905,12 @@ static const struct scsi_host_template uas_host_template = {
- 	.eh_device_reset_handler = uas_eh_device_reset_handler,
- 	.this_id = -1,
- 	.skip_settle_delay = 1,
-+	/*
-+	 * The protocol has no requirements on alignment in the strict sense.
-+	 * Controllers may or may not have alignment restrictions.
-+	 * As this is not exported, we use an extremely conservative guess.
-+	 */
-+	.dma_alignment = 511,
- 	.dma_boundary = PAGE_SIZE - 1,
- 	.cmd_size = sizeof(struct uas_cmd_info),
+ static struct ufs_hba_variant_ops ufs_hba_exynosauto_vh_ops = {
+diff --git a/include/ufs/ufshcd.h b/include/ufs/ufshcd.h
+index cb2afcebbdf514..061919448d3936 100644
+--- a/include/ufs/ufshcd.h
++++ b/include/ufs/ufshcd.h
+@@ -373,7 +373,6 @@ struct ufs_hba_variant_ops {
+ 	int	(*get_outstanding_cqs)(struct ufs_hba *hba,
+ 				       unsigned long *ocqs);
+ 	int	(*config_esi)(struct ufs_hba *hba);
+-	void	(*config_scsi_dev)(struct scsi_device *sdev);
  };
-diff --git a/include/scsi/scsi_host.h b/include/scsi/scsi_host.h
-index 6d77c48e8311fb..b0948ab69e0fa6 100644
---- a/include/scsi/scsi_host.h
-+++ b/include/scsi/scsi_host.h
-@@ -405,6 +405,8 @@ struct scsi_host_template {
- 	 */
- 	unsigned int max_segment_size;
  
-+	unsigned int dma_alignment;
-+
- 	/*
- 	 * DMA scatter gather segment boundary limit. A segment crossing this
- 	 * boundary will be split in two.
-@@ -614,6 +616,7 @@ struct Scsi_Host {
- 	unsigned int max_sectors;
- 	unsigned int opt_sectors;
- 	unsigned int max_segment_size;
-+	unsigned int dma_alignment;
- 	unsigned long dma_boundary;
- 	unsigned long virt_boundary_mask;
- 	/*
+ /* clock gating state  */
 -- 
 2.39.2
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20240324235448.2039074-8-hch%40lst.de.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20240324235448.2039074-9-hch%40lst.de.
