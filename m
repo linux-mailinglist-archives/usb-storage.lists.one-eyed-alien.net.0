@@ -1,108 +1,107 @@
-Return-Path: <usb-storage+bncBDUNBGN3R4KRBCP3QKYAMGQEYT2TA6Y@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBDUNBGN3R4KRBDH3QKYAMGQE6SS3GOA@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-pg1-x547.google.com (mail-pg1-x547.google.com [IPv6:2607:f8b0:4864:20::547])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0AF178882CB
-	for <lists+usb-storage@lfdr.de>; Mon, 25 Mar 2024 00:55:55 +0100 (CET)
-Received: by mail-pg1-x547.google.com with SMTP id 41be03b00d2f7-5cf555b2a53sf2545273a12.1
-        for <lists+usb-storage@lfdr.de>; Sun, 24 Mar 2024 16:55:54 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1711324553; cv=pass;
+Received: from mail-oo1-xc46.google.com (mail-oo1-xc46.google.com [IPv6:2607:f8b0:4864:20::c46])
+	by mail.lfdr.de (Postfix) with ESMTPS id 2F61D8882CD
+	for <lists+usb-storage@lfdr.de>; Mon, 25 Mar 2024 00:55:58 +0100 (CET)
+Received: by mail-oo1-xc46.google.com with SMTP id 006d021491bc7-5a478fe8814sf4090289eaf.3
+        for <lists+usb-storage@lfdr.de>; Sun, 24 Mar 2024 16:55:58 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1711324557; cv=pass;
         d=google.com; s=arc-20160816;
-        b=L3u5cawC6g8ZeHgMF9VFpma//3BGMuugpOCB7gyI79PsjIqbHyJEkyw07+65MYMq/X
-         y3T3tc+0KoNQm4Oik7cCwpzvk/yCthEOUNMwxLB5zxFuBN+UgGsoWPSvsu0zQ25BM6S+
-         m0Uns7w7EKpkWb70JB52LRHsc5zs2/MGMzVCMm/wPjkCFGz3ek2JEKDRCX42NbqEvsqX
-         icrtESjmQk5n5LJx7ONkd+DF1vuDiOgdsmIbLOHnDo8gpXwM+hRP+gy+YwEEdYQmZmNg
-         H34RZWaEUhVQBvQe5wLtCSOiSKlLNxYTxbMobCDVdt7sXaV6YFmFNYFz88PQcaMRF8Vb
-         Qw+g==
+        b=Q8qrzPwFRS+hcluXajrI6DR8C4jW9lQmiZm3T/gzholki3KMvPTbvPzA4blk2VKAod
+         DANXLvdlyMvBtrSAHgXTHmzh8UOolsERi6rE6TGsOIW7xzVAOzyLwzil/stAe1K5KZyw
+         ezgbAcyeevUSZJIHxRYq0GqR7jcjugrVEsgQpf15j0R27+oPHiJOonf0lblz2SewKm0t
+         a3lfAhSmaTEE+RY6+z3hTKuM5vn2Mu7lGVbc0G6NwLQHL+9sfAn5t8JCOPsEb7FO++Y2
+         L1j0JJoL32YFiT43Z44z2D6lcDuXxTsowstN6xB2LkK+Uu6tPuFyacRpB3psEB7LhzJ/
+         yK5Q==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:sender:dkim-signature;
-        bh=elr9MBhTvkxg89XjwWbY1bvdqXBXDrltxb0Bzv9KPLI=;
-        fh=F9TTMwW1yI9fYKMwUPjlhf7wYWBzZV0krtObAxG8YNU=;
-        b=HcRK3mYsEIkdzyuLH/Iye65TJfGCspjVvNJSpBZU/PsQm2lPNPmA7adEiw1v9ICnTm
-         iCdaplvasZ+Mj2sL842mld67rDg5NG5/5QznkOukebFqbzoXLKVRGelUnliRA4LUsNTb
-         in1uy5AO5Se2RLRvqts0Kjk4fkeRMuNV+hTKrVh5a//ZAisgqG71JS4AFb2KsHcfaAeO
-         x91g1o5D5Dk343lR6j9daCbGFTeM0AWKno8ay+SXPEfOCTkqyUwsMA7WEBV3flU38ECA
-         3Q6EO+2QIGtkaZFH9r0+hbCbjfqH+wnkIpfxXkSvY89nGXTI0cSsyVbrHm0E5YO2L+bH
-         Zkkg==;
+        bh=nNY2x9ImTfvBBl99dTXEuUj0vesMF+tMM4uQgoMsD2I=;
+        fh=6mDZ18ogd5w//prNMbsiJisikIQ96Ws5n8ynTjE4nbI=;
+        b=I6YDBhjhS+yQegBGdSxs0V9vXbZWAIECUtTrKHDUhmtr4jOt17XiwvU+L6s+/qXKww
+         BJqAhHxBUBl7dVU6g5FSn5mSsqRyB/OQM2VqdbtDS9qTNMKRqnIy+aCY327/rqCmSkrx
+         HUqHrx62sAt6xSCYq+8hTJIPcN7t5il4TBMYo4K+tNAMF5kXhWBTVMluo7DtUaFbyA2i
+         q07uAdeRPCbYaLsB7RIap1/vHdeiNqddi+i5xTQahcIf70pW1RW/ckBrsd4NGTNwOcY4
+         NrHagUUeG53bucy8LQgK4rCxA/hThFHAzytxJib5bMv4rUV5AnaaCOy4g5EAB1msNfO/
+         9agw==;
         darn=lfdr.de
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@infradead.org header.s=bombadil.20210309 header.b=BfOP82s5;
+       dkim=pass header.i=@infradead.org header.s=bombadil.20210309 header.b=EPwKA8vB;
        spf=none (google.com: bombadil.srs.infradead.org does not designate permitted sender hosts) smtp.mailfrom=BATV+9b69c840030af2843ecd+7518+infradead.org+hch@bombadil.srs.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1711324553; x=1711929353; darn=lfdr.de;
+        d=lists.one-eyed-alien.net; s=google; t=1711324557; x=1711929357; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:x-original-authentication-results
          :x-original-sender:mime-version:references:in-reply-to:message-id
          :date:subject:cc:to:from:sender:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=elr9MBhTvkxg89XjwWbY1bvdqXBXDrltxb0Bzv9KPLI=;
-        b=CO0izkC3yQ2pgNve30fpRyZRLaLtE+lotN/tKVRanotZVJjMvq7wOVybPYKOnp7lpD
-         g5aKF8beDX5xROGtLXVkcrDaFqMDB33m28RmGBVQmBP52OTPyPDFNRHdWVrUrU7LVUGN
-         UTZub7dEc77Eci4US12YYJ/xZ4CYObHjEtp8k=
+        bh=nNY2x9ImTfvBBl99dTXEuUj0vesMF+tMM4uQgoMsD2I=;
+        b=VxKePAMF+QALt6ZtO65pmpDrN5tX8IBq8AE4IJvxo2nfOjYPLDfZhhuykMpERc/xhp
+         DcuasdpJMes8fbm5z1FIyjR6tZ8maJmB5JEnlCUmKrXucUUgsuRKHdBrHpvWAlntY4/8
+         ocUukstWYcHscRhxrDLBjtH9ATZujjfAh79AM=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1711324553; x=1711929353;
+        d=1e100.net; s=20230601; t=1711324557; x=1711929357;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :x-spam-checked-in-group:list-id:mailing-list:precedence
          :x-original-authentication-results:x-original-sender:mime-version
          :references:in-reply-to:message-id:date:subject:cc:to:from
          :x-beenthere:x-gm-message-state:sender:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=elr9MBhTvkxg89XjwWbY1bvdqXBXDrltxb0Bzv9KPLI=;
-        b=g99N00jjx95i04su1eJko+/IB3YjTim+d+iGSQZDyNKEu4N2Lj/k+ssXjHEstOxj5N
-         3AETeT7G5A77t7BR0mos+o3r6MlFmOOisOtM/cQeRHdFEuypZgVl92qSpa6B+AdF2vbl
-         A9601RmFnH/mS2LqC1BUntf25A1NOZ62MXZHy5RCs/mW3nfXGRQ0eb0Z4ZnhfYy2WdRc
-         9fGdxW5LcBvClC+6EFJyQuwzDaTc5sJzhWYVrEPVgRaINzhaRjBOLL9D3tJuOBwjXZLo
-         ej73+/3jXwmF0B/rvDK6+N+kx1I36x9jTGqwQ1BecyFqwahpelQGJ5IS4Iq5CZ7JO9sn
-         wVfw==
+        bh=nNY2x9ImTfvBBl99dTXEuUj0vesMF+tMM4uQgoMsD2I=;
+        b=LyyAK0r4JNBSDJwCF7+JjYmSQsYNQY+9tuGhWXBimDTgJ03d0mJHNVPJoyYYdECkFq
+         1l+/mkphp7Gzws5da9Lhr+mZYTPcF3O9nqmu9qFl0WZQqifZbtkNv+ajquRUL+uMo1nv
+         dWyx5TJZVNkn342l3o6gXA1Nus0wTZ05yzzdjzjBlWtMvhz+jRgTNZyujRbOq1DmO+w2
+         PNVl0VsDUsgVhkQ7z4m3NOAyMJSNv9J8DSFmfeRQO1JmtL6bWeSqNtdlXq4meUTk8+1h
+         uPcScVFQ/4/Fh1nefKYhpWETzo9stI6ufvU7hEGF9FQNyhb8pYrTl14IYmZ2UaCcTroV
+         Seqg==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Forwarded-Encrypted: i=2; AJvYcCVtcdiCTjDgrUuTmJYMxenS1ia49NbzGtN7lte+4iFlBrkYVW5ggi5lldW5JwijQlR4GVd/lwhA3Ri0i5d+bkOPnMO2LAZV+Vh2
-X-Gm-Message-State: AOJu0Yx+u2VkeB56SCIcgMtbkJ5ISzrSRbwCepa0EOvWT765f4UzOlxZ
-	s/7wXxC6QI8hZ8L5d6v2v6VhAebeHxGEKRJjLNNXUPa5u/QwBbIx5u98czk7vDg=
-X-Google-Smtp-Source: AGHT+IF/zYxcML57bODRdSYgtsMkQwxNYBeWzHuHLLoRLj448SmMh39/ZVF3eK0XGRa4l7FDyO8phA==
-X-Received: by 2002:a17:90a:7101:b0:2a0:3876:c019 with SMTP id h1-20020a17090a710100b002a03876c019mr6722845pjk.2.1711324553490;
-        Sun, 24 Mar 2024 16:55:53 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCUPZ3x175DErApKb26s4IuUZOZAea8YMA9glViu2CwQ+1czyjbLVz4rbAqWgDYHhCgF1Sl5ZTavgP/IS/1CWbP8wlldxWzG0g+w
+X-Gm-Message-State: AOJu0YwsAtORX3kXpl/PwQ97CP4bSFeCGMci0gS8/2qb88Vx07a31BR3
+	Hz2moCM+5zmcWhD0COTAwLUrp7VOxr8Z8PVzmzaOXXYSyiYnFXrKC4tQksDaMfw=
+X-Google-Smtp-Source: AGHT+IHghWCuoAp6uxlWkaQR233SIHlbbMSCsIf8zyuwCY5D35+L+sl6gtVpvgIPmad3CEgptXs9VQ==
+X-Received: by 2002:a05:6820:98b:b0:5a5:23fb:448f with SMTP id cg11-20020a056820098b00b005a523fb448fmr5088169oob.1.1711324556973;
+        Sun, 24 Mar 2024 16:55:56 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a17:90a:d34a:b0:2a0:2a05:dd6b with SMTP id
- i10-20020a17090ad34a00b002a02a05dd6bls1597592pjx.0.-pod-prod-00-us-canary;
- Sun, 24 Mar 2024 16:55:52 -0700 (PDT)
-X-Forwarded-Encrypted: i=2; AJvYcCXzIMGWu6zPIyJFHnC6y0+cXiNmuhFKISGVq5jrUNfzM27qeGYSspplnXZ8dMpJy7EZQYwo3Bbq5E3DXILTu+ueoadWja56IZ/8f+yS6ws1+dvwzUo=
-X-Received: by 2002:a05:6a21:2d04:b0:1a3:8d32:c182 with SMTP id tw4-20020a056a212d0400b001a38d32c182mr7738922pzb.11.1711324552255;
-        Sun, 24 Mar 2024 16:55:52 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1711324552; cv=none;
+Received: by 2002:a4a:9b4d:0:b0:5a4:bbf6:3d9 with SMTP id e13-20020a4a9b4d000000b005a4bbf603d9ls4280943ook.1.-pod-prod-01-us;
+ Sun, 24 Mar 2024 16:55:56 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCWB5w7LwHFLqrS1ToIEUL/Bv5K5HDyxhfcAqnBInd88RGMseuEptljsmZjNG6cHFnjcsNk+VhOtVvXD/pkZQtVOZWx4tm/IVjnFmA//3qXCHPZ+Fms=
+X-Received: by 2002:a05:6808:bcf:b0:3c3:d269:5728 with SMTP id o15-20020a0568080bcf00b003c3d2695728mr226455oik.28.1711324556059;
+        Sun, 24 Mar 2024 16:55:56 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1711324556; cv=none;
         d=google.com; s=arc-20160816;
-        b=MLr66ARo/yaQOf06tCrC1AdYLsrJcLYqf6058U+47yltMbsQqGTYOicvE5yxVtNtVb
-         Rs9p0aqNlJi2rP8ev8aGTqybGvMU4hVIjLsQc7f+LMVpdrFnFPxwahZtSR///LU0Baaa
-         poCgGbAIE+E5xe9HRVeAMj/inK6hjTQ5iq/EDG3yZ0wdwCKk84zGm7trRMYc//2Dk3Wr
-         WezwfFrw/L/Ff8qTgCRFBznlZjUCtges9ysvJKVfDRHVrO1PzBK62Tcwe0PbzhFJzWmT
-         pZclJKrpdk8dKTt+TMm0LZU/EI5oY0WBKlZGjvYnDmjLeNKTvf08H9da7ngidwTGT1nf
-         ya5g==
+        b=H4KGMK+VLpWcattba/eEkwHiwufJ06Ly2+R9lAZ2nUzA/m3qCRaY4t4N4sXow3VRCa
+         jz4hNF2yFlgS47n9/bCjKtU9kzHnCAt8KFQdF4iLNCoXPlq1NtCoWSl0NQQ62jsxH0Gt
+         1FPggKjixWim1L8w88MoULeb5EUy3fAdVeKg/Lc/+MHOghgBevulFrHRQQmkq2ZDBso/
+         cAz9C5vz2rS6l2nE3ETys0GWSnbY3TXD3UjweF56Lb3cdg1OJXxyJhBP6qYm3ctpe8FN
+         zd7KT7FyyvLMoeFgVdjlDCswEKk0EvTmFm3bBqtdZGp8kqPjpUgEE0y+Ke39dRiSlQ4p
+         YGgg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:dkim-signature;
-        bh=n/G3RdcsG/UHdocEiANoLj+Yss9HtHvu5C4t+MOMe/A=;
+        bh=qJi5WCtY1yhQ9UxhLc1APOVXudQDNK947ENHC/rdITw=;
         fh=t86CCijjmN/1ilkIT+VdM3oaZOxEhtNXSf8+ryhWOUU=;
-        b=aO3wgrAuvin/Cl2507zEnyiETgjGmonsLG0+mP0Oyi1z+HNZE5hbNUkWhDkv97VFLC
-         pUSTLJ/UHIo/uRgAluNyJQgsJSnztiu2B841FsItyFO2Jx/lzYTEhL6ANvya3JyH8qBS
-         fogMhz4wOqfi4vG7J7Bt/g1uJ6B//yuDqu4FzY4t3noiT1jcZ9gJoq1aKt9EJMUqCpMY
-         tJbcO/D8KKauJSS+yZe5nbSCtGjrF7Ymcqqm//h7sVdBrBUia09Io3jodKwbKJ2TDGZl
-         LS4eCmt9Xvuzzh4YlY4qtxsGRYwJIBGhd5uFlaITJIgB6UU+RivQPuItQiav+YwqmtWn
-         j0rQ==;
+        b=pGChfXft3pK4bYDPmFTmVNspB7C1o9VRpFX0GPXTT43waz/vtWFFOxTzFmCAgxLDi3
+         H5Au1fxIEBmspjx7CLloEAULiDsnBEupGy4q+/uCQPEffQai+KvToUc5yqE3LzBa5Nx+
+         okEB8AIbPmyTYRzA3mcXgnRmb++KUA3mgTVtci3pmK4bbex2/nt25qJvuG9ATtFWOhfD
+         +eAMtc1DOkWTfjjsJKtDqvFPp8EaC3an5a/TYPbI7UGBB0sDT8RPnC9beytwrV9g6BTh
+         QLKNhGokiWiNeOhi1iUetsDxj7Yd3euDY4rTULXAWD7NxqfxTt+iz59WdGk6cb7YkNdY
+         ivTw==;
         dara=google.com
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@infradead.org header.s=bombadil.20210309 header.b=BfOP82s5;
+       dkim=pass header.i=@infradead.org header.s=bombadil.20210309 header.b=EPwKA8vB;
        spf=none (google.com: bombadil.srs.infradead.org does not designate permitted sender hosts) smtp.mailfrom=BATV+9b69c840030af2843ecd+7518+infradead.org+hch@bombadil.srs.infradead.org
 Received: from bombadil.infradead.org (bombadil.infradead.org. [2607:7c80:54:3::133])
-        by mx.google.com with ESMTPS id m26-20020a6562da000000b005ced2a6b890si6251643pgv.668.2024.03.24.16.55.52
+        by mx.google.com with ESMTPS id s3-20020a632143000000b005cf588da70fsi6265004pgm.643.2024.03.24.16.55.55
         for <usb-storage@lists.one-eyed-alien.net>
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 24 Mar 2024 16:55:52 -0700 (PDT)
+        Sun, 24 Mar 2024 16:55:56 -0700 (PDT)
 Received-SPF: none (google.com: bombadil.srs.infradead.org does not designate permitted sender hosts) client-ip=2607:7c80:54:3::133;
 Received: from [210.13.83.2] (helo=localhost)
 	by bombadil.infradead.org with esmtpsa (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1roXgi-0000000Dzai-1gDh;
-	Sun, 24 Mar 2024 23:55:40 +0000
+	id 1roXgl-0000000DzcT-32yh;
+	Sun, 24 Mar 2024 23:55:44 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Jens Axboe <axboe@kernel.dk>,
 	"Martin K. Petersen" <martin.petersen@oracle.com>
@@ -146,10 +145,9 @@ Cc: Damien Le Moal <dlemoal@kernel.org>,
 	linux-samsung-soc@vger.kernel.org,
 	linux-usb@vger.kernel.org,
 	usb-storage@lists.one-eyed-alien.net
-Subject: [usb-storage] [PATCH 10/23] scsi: add a device_configure method to
- the host template
-Date: Mon, 25 Mar 2024 07:54:35 +0800
-Message-Id: <20240324235448.2039074-11-hch@lst.de>
+Subject: [usb-storage] [PATCH 11/23] megaraid_sas: switch to using ->device_configure
+Date: Mon, 25 Mar 2024 07:54:36 +0800
+Message-Id: <20240324235448.2039074-12-hch@lst.de>
 X-Mailer: git-send-email 2.39.2
 In-Reply-To: <20240324235448.2039074-1-hch@lst.de>
 References: <20240324235448.2039074-1-hch@lst.de>
@@ -157,7 +155,7 @@ MIME-Version: 1.0
 X-SRS-Rewrite: SMTP reverse-path rewritten from <hch@infradead.org> by bombadil.infradead.org. See http://www.infradead.org/rpr.html
 X-Original-Sender: hch@lst.de
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@infradead.org header.s=bombadil.20210309 header.b=BfOP82s5;
+ header.i=@infradead.org header.s=bombadil.20210309 header.b=EPwKA8vB;
        spf=none (google.com: bombadil.srs.infradead.org does not designate
  permitted sender hosts) smtp.mailfrom=BATV+9b69c840030af2843ecd+7518+infradead.org+hch@bombadil.srs.infradead.org
 Content-Type: text/plain; charset="UTF-8"
@@ -176,104 +174,146 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-This is a version of ->slave_configure that also takes a queue_limits
-structure that the caller applies, and thus allows drivers to reconfigure
-the queue using the atomic queue limits API.
-
-In the long run it should also replace ->slave_configure entirely as
-there is no need to have two different methods here, and the slave
-name in addition to being politically charged also has no basis in
-the SCSI standards or the kernel code.
+Switch to the ->device_configure method instead of ->slave_configure
+and update the block limits on the passed in queue_limits instead
+of using the per-limit accessors.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 ---
- drivers/scsi/scsi_scan.c | 33 +++++++++++++++++++--------------
- include/scsi/scsi_host.h |  4 ++++
- 2 files changed, 23 insertions(+), 14 deletions(-)
+ drivers/scsi/megaraid/megaraid_sas.h        |  2 +-
+ drivers/scsi/megaraid/megaraid_sas_base.c   | 29 ++++++++++++---------
+ drivers/scsi/megaraid/megaraid_sas_fusion.c |  3 ++-
+ 3 files changed, 20 insertions(+), 14 deletions(-)
 
-diff --git a/drivers/scsi/scsi_scan.c b/drivers/scsi/scsi_scan.c
-index 699356d7d17545..8e05780f802523 100644
---- a/drivers/scsi/scsi_scan.c
-+++ b/drivers/scsi/scsi_scan.c
-@@ -227,7 +227,7 @@ static int scsi_realloc_sdev_budget_map(struct scsi_device *sdev,
- 
- 	/*
- 	 * realloc if new shift is calculated, which is caused by setting
--	 * up one new default queue depth after calling ->slave_configure
-+	 * up one new default queue depth after calling ->device_configure
- 	 */
- 	if (!need_alloc && new_shift != sdev->budget_map.shift)
- 		need_alloc = need_free = true;
-@@ -874,8 +874,9 @@ static int scsi_probe_lun(struct scsi_device *sdev, unsigned char *inq_result,
- static int scsi_add_lun(struct scsi_device *sdev, unsigned char *inq_result,
- 		blist_flags_t *bflags, int async)
+diff --git a/drivers/scsi/megaraid/megaraid_sas.h b/drivers/scsi/megaraid/megaraid_sas.h
+index 56624cbf7fa5e7..5680c6cdb22193 100644
+--- a/drivers/scsi/megaraid/megaraid_sas.h
++++ b/drivers/scsi/megaraid/megaraid_sas.h
+@@ -2701,7 +2701,7 @@ int megasas_get_ctrl_info(struct megasas_instance *instance);
+ int
+ megasas_sync_pd_seq_num(struct megasas_instance *instance, bool pend);
+ void megasas_set_dynamic_target_properties(struct scsi_device *sdev,
+-					   bool is_target_prop);
++		struct queue_limits *lim, bool is_target_prop);
+ int megasas_get_target_prop(struct megasas_instance *instance,
+ 			    struct scsi_device *sdev);
+ void megasas_get_snapdump_properties(struct megasas_instance *instance);
+diff --git a/drivers/scsi/megaraid/megaraid_sas_base.c b/drivers/scsi/megaraid/megaraid_sas_base.c
+index 3d4f13da1ae873..def0d905b6d9e3 100644
+--- a/drivers/scsi/megaraid/megaraid_sas_base.c
++++ b/drivers/scsi/megaraid/megaraid_sas_base.c
+@@ -1888,7 +1888,7 @@ static struct megasas_instance *megasas_lookup_instance(u16 host_no)
+ * Returns void
+ */
+ void megasas_set_dynamic_target_properties(struct scsi_device *sdev,
+-					   bool is_target_prop)
++		struct queue_limits *lim, bool is_target_prop)
  {
-+	const struct scsi_host_template *hostt = sdev->host->hostt;
- 	struct queue_limits lim;
--	int ret;
-+	int ret, ret2;
+ 	u16 pd_index = 0, ld;
+ 	u32 device_id;
+@@ -1915,8 +1915,10 @@ void megasas_set_dynamic_target_properties(struct scsi_device *sdev,
+ 			return;
+ 		raid = MR_LdRaidGet(ld, local_map_ptr);
  
- 	/*
- 	 * XXX do not save the inquiry, since it can change underneath us,
-@@ -1073,22 +1074,26 @@ static int scsi_add_lun(struct scsi_device *sdev, unsigned char *inq_result,
- 		lim.max_hw_sectors = 512;
- 	else if (*bflags & BLIST_MAX_1024)
- 		lim.max_hw_sectors = 1024;
--	ret = queue_limits_commit_update(sdev->request_queue, &lim);
-+
-+	if (hostt->device_configure)
-+		ret = hostt->device_configure(sdev, &lim);
-+	else if (hostt->slave_configure)
-+		ret = hostt->slave_configure(sdev);
-+
-+	ret2 = queue_limits_commit_update(sdev->request_queue, &lim);
-+	if (ret2 && !ret)
-+		ret = ret2;
- 	if (ret)
- 		goto fail;
+-		if (raid->capability.ldPiMode == MR_PROT_INFO_TYPE_CONTROLLER)
+-			blk_queue_update_dma_alignment(sdev->request_queue, 0x7);
++		if (raid->capability.ldPiMode == MR_PROT_INFO_TYPE_CONTROLLER) {
++			if (lim)
++				lim->dma_alignment = 0x7;
++		}
  
--	if (sdev->host->hostt->slave_configure) {
--		ret = sdev->host->hostt->slave_configure(sdev);
--		if (ret)
--			goto fail;
--
--		/*
--		 * The queue_depth is often changed in ->slave_configure.
--		 * Set up budget map again since memory consumption of
--		 * the map depends on actual queue depth.
--		 */
-+	/*
-+	 * The queue_depth is often changed in ->device_configure.
-+	 *
-+	 * Set up budget map again since memory consumption of the map depends
-+	 * on actual queue depth.
-+	 */
-+	if (hostt->device_configure || hostt->slave_configure)
- 		scsi_realloc_sdev_budget_map(sdev, sdev->queue_depth);
--	}
+ 		mr_device_priv_data->is_tm_capable =
+ 			raid->capability.tmCapable;
+@@ -1967,7 +1969,8 @@ void megasas_set_dynamic_target_properties(struct scsi_device *sdev,
+  *
+  */
+ static inline void
+-megasas_set_nvme_device_properties(struct scsi_device *sdev, u32 max_io_size)
++megasas_set_nvme_device_properties(struct scsi_device *sdev,
++		struct queue_limits *lim, u32 max_io_size)
+ {
+ 	struct megasas_instance *instance;
+ 	u32 mr_nvme_pg_size;
+@@ -1976,10 +1979,10 @@ megasas_set_nvme_device_properties(struct scsi_device *sdev, u32 max_io_size)
+ 	mr_nvme_pg_size = max_t(u32, instance->nvme_page_size,
+ 				MR_DEFAULT_NVME_PAGE_SIZE);
  
- 	if (sdev->scsi_level >= SCSI_3)
- 		scsi_attach_vpd(sdev);
-diff --git a/include/scsi/scsi_host.h b/include/scsi/scsi_host.h
-index b0948ab69e0fa6..1959193d47e7f5 100644
---- a/include/scsi/scsi_host.h
-+++ b/include/scsi/scsi_host.h
-@@ -211,7 +211,11 @@ struct scsi_host_template {
- 	 *     up after yourself before returning non-0
- 	 *
- 	 * Status: OPTIONAL
-+	 *
-+	 * Note: slave_configure is the legacy version, use device_configure for
-+	 * all new code.
- 	 */
-+	int (* device_configure)(struct scsi_device *, struct queue_limits *lim);
- 	int (* slave_configure)(struct scsi_device *);
+-	blk_queue_max_hw_sectors(sdev->request_queue, (max_io_size / 512));
++	lim->max_hw_sectors = max_io_size / 512;
++	lim->virt_boundary_mask = mr_nvme_pg_size - 1;
  
- 	/*
+ 	blk_queue_flag_set(QUEUE_FLAG_NOMERGES, sdev->request_queue);
+-	blk_queue_virt_boundary(sdev->request_queue, mr_nvme_pg_size - 1);
+ }
+ 
+ /*
+@@ -2041,7 +2044,7 @@ static void megasas_set_fw_assisted_qd(struct scsi_device *sdev,
+  * @is_target_prop			true, if fw provided target properties.
+  */
+ static void megasas_set_static_target_properties(struct scsi_device *sdev,
+-						 bool is_target_prop)
++		struct queue_limits *lim, bool is_target_prop)
+ {
+ 	u32 max_io_size_kb = MR_DEFAULT_NVME_MDTS_KB;
+ 	struct megasas_instance *instance;
+@@ -2060,13 +2063,15 @@ static void megasas_set_static_target_properties(struct scsi_device *sdev,
+ 		max_io_size_kb = le32_to_cpu(instance->tgt_prop->max_io_size_kb);
+ 
+ 	if (instance->nvme_page_size && max_io_size_kb)
+-		megasas_set_nvme_device_properties(sdev, (max_io_size_kb << 10));
++		megasas_set_nvme_device_properties(sdev, lim,
++				max_io_size_kb << 10);
+ 
+ 	megasas_set_fw_assisted_qd(sdev, is_target_prop);
+ }
+ 
+ 
+-static int megasas_slave_configure(struct scsi_device *sdev)
++static int megasas_device_configure(struct scsi_device *sdev,
++		struct queue_limits *lim)
+ {
+ 	u16 pd_index = 0;
+ 	struct megasas_instance *instance;
+@@ -2096,10 +2101,10 @@ static int megasas_slave_configure(struct scsi_device *sdev)
+ 		ret_target_prop = megasas_get_target_prop(instance, sdev);
+ 
+ 	is_target_prop = (ret_target_prop == DCMD_SUCCESS) ? true : false;
+-	megasas_set_static_target_properties(sdev, is_target_prop);
++	megasas_set_static_target_properties(sdev, lim, is_target_prop);
+ 
+ 	/* This sdev property may change post OCR */
+-	megasas_set_dynamic_target_properties(sdev, is_target_prop);
++	megasas_set_dynamic_target_properties(sdev, lim, is_target_prop);
+ 
+ 	mutex_unlock(&instance->reset_mutex);
+ 
+@@ -3507,7 +3512,7 @@ static const struct scsi_host_template megasas_template = {
+ 	.module = THIS_MODULE,
+ 	.name = "Avago SAS based MegaRAID driver",
+ 	.proc_name = "megaraid_sas",
+-	.slave_configure = megasas_slave_configure,
++	.device_configure = megasas_device_configure,
+ 	.slave_alloc = megasas_slave_alloc,
+ 	.slave_destroy = megasas_slave_destroy,
+ 	.queuecommand = megasas_queue_command,
+diff --git a/drivers/scsi/megaraid/megaraid_sas_fusion.c b/drivers/scsi/megaraid/megaraid_sas_fusion.c
+index c60014e07b449e..6c1fb8149553a8 100644
+--- a/drivers/scsi/megaraid/megaraid_sas_fusion.c
++++ b/drivers/scsi/megaraid/megaraid_sas_fusion.c
+@@ -5119,7 +5119,8 @@ int megasas_reset_fusion(struct Scsi_Host *shost, int reason)
+ 					ret_target_prop = megasas_get_target_prop(instance, sdev);
+ 
+ 				is_target_prop = (ret_target_prop == DCMD_SUCCESS) ? true : false;
+-				megasas_set_dynamic_target_properties(sdev, is_target_prop);
++				megasas_set_dynamic_target_properties(sdev, NULL,
++						is_target_prop);
+ 			}
+ 
+ 			status_reg = instance->instancet->read_fw_status_reg
 -- 
 2.39.2
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20240324235448.2039074-11-hch%40lst.de.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20240324235448.2039074-12-hch%40lst.de.
