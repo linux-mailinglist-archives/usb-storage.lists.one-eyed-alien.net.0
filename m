@@ -1,108 +1,108 @@
-Return-Path: <usb-storage+bncBDUNBGN3R4KRBJP3QKYAMGQEK2PV5OQ@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBDUNBGN3R4KRBLP3QKYAMGQEXITLF5A@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-ot1-x347.google.com (mail-ot1-x347.google.com [IPv6:2607:f8b0:4864:20::347])
-	by mail.lfdr.de (Postfix) with ESMTPS id BD0C98882DD
-	for <lists+usb-storage@lfdr.de>; Mon, 25 Mar 2024 00:56:22 +0100 (CET)
-Received: by mail-ot1-x347.google.com with SMTP id 46e09a7af769-6e6d560996fsf473196a34.2
-        for <lists+usb-storage@lfdr.de>; Sun, 24 Mar 2024 16:56:22 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1711324581; cv=pass;
+Received: from mail-pf1-x448.google.com (mail-pf1-x448.google.com [IPv6:2607:f8b0:4864:20::448])
+	by mail.lfdr.de (Postfix) with ESMTPS id BE29B8882E0
+	for <lists+usb-storage@lfdr.de>; Mon, 25 Mar 2024 00:56:30 +0100 (CET)
+Received: by mail-pf1-x448.google.com with SMTP id d2e1a72fcca58-6ea80a33cf6sf2155948b3a.1
+        for <lists+usb-storage@lfdr.de>; Sun, 24 Mar 2024 16:56:30 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1711324589; cv=pass;
         d=google.com; s=arc-20160816;
-        b=sUaYAEpIddyhg6vo+YTQMjq+ZA+yWYLc+muBLGnAdV8GL9FiY+/6fdkroGtnam9qa9
-         32UuQo+1Uh6SkSzjJRDQxnwPN0z9/u/huu9Z+vqOnUcN1yZMQYs1n8qjsFrYCo41OjVY
-         8wCciqHMlUj6lieh6iYk3P+qdmQCq+dk6prkg9ZSBL4z5o0s4DfKkXUpO4846niUDr2X
-         9t+8PQLwMPZGO/D+jpz19cblO4ITF+q1vp8Y3Ou/o/rgReBGGsweOGzTbb+d2ZeHlaV6
-         ZUmyBvSTPeMSs5b1WsOIZT7casKWK7UGQc6qOShC3f+81XxEPj2pW4ANpqiKBt2xz7Qf
-         67NQ==
+        b=KyyjGlIP8bdS6pTeloU1pFlOWTp0iDKSWOuPbiO3XKP2FgalkrJOoPSlVWmSZLhjmW
+         VhvwdWEfN7GHkEJrMCueRbHsLnbh0pGDHKpP3ffHkNwBFLRdMO6q8U7owY/kVZYXDmTy
+         JF1auATFNVPA27JTPkHfJE6EiRxR3NzPp5y4zBn3V3GHJa3YndSzuhRxsKGT93FmK/q8
+         P+cemA3TCVc7WbP/TaqQ/qt8RrwyCdZFJxbiz2UU+BbnAKb002mpSwR3HV7KBD35eOTr
+         M6AkjokCETxS+LkXuSRf4QZxaF3O+WlTcNHpL6AafoFtkI2CfgQ+lbpEOXXAv8OHlkbs
+         jGRA==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:sender:dkim-signature;
-        bh=dGnuWD1OZDWddoEtqdTWij64IDuef58aUbLl/yX5lcY=;
-        fh=JdpBwN/4DDNM1NTqOKq+L/4Ghasod0JARb5vUH5uZ04=;
-        b=bk18jlA/mVQutb+yYu+QZEJIx4gA0OHCmnyZcyN5INiw+sDzMoe9U7uB/dZHxPFjpf
-         J4RCNtdfWIAJvEImp3TvBgRNNE2GnQHgeQIpQXmlAXAcX+vBd0D2D6qgXk5IjQe0ITOi
-         ylsUNPcPGISwBjJJDZ7FvZdCEYIn1zjqslGLkp+roM47M3h+015PMS9P7Hu88yWPbYQE
-         I0mxl0+cRsHU6LjFhixoE6UW+FgHie2ZrwyKmTzMErJtEu7pTRlCQv/wYiL7KVkj1wgv
-         LcYe3hrTUZAbIynT99nQfyTHYmEuFS80x7v0N57k1gy11v+gwqOEBikifczRUH4i2Z7P
-         vjTA==;
+        bh=UxLe34NbkFy5Y7fVqNh6MnS7rUuhVFLmuiJQPnGwGu4=;
+        fh=mLfgDelQ5ryYlZCLBPl79q5yE3XxfarrmAqZQLz9SOo=;
+        b=04GPFnyUzjGLInaa2tPbIk9zxkuOEg+4Kxy8/Dw3xtUKwOPFiYnp7MbtDglv5jsv3r
+         M7FrrDE4L79e14I+1vY7iMzAiB1IgyYpooUvy2p1qHtdIAkj2W6eDltXMydCCqJafgt8
+         jQ238hrskhRjMZMhXAdBAJqObGmeTqCsN/jCTzv6uOxkUEONkHw5aHPy8anTB8znvwDL
+         vPdC9sxlg8osRQgUVsNTBrqp+PBod96bxAlPa4EUZ4B/QTb4/IFOMt3bMrdzaLTuapan
+         /HbE9ToiOAUWFtuRuMtrpx2iYs0GIm4VafaxKNV1oi5eR8NS5vlFgQJnecVX4b+22hr2
+         xEOA==;
         darn=lfdr.de
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@infradead.org header.s=bombadil.20210309 header.b=FgaYvL4R;
+       dkim=pass header.i=@infradead.org header.s=bombadil.20210309 header.b=KM+fE8+c;
        spf=none (google.com: bombadil.srs.infradead.org does not designate permitted sender hosts) smtp.mailfrom=BATV+9b69c840030af2843ecd+7518+infradead.org+hch@bombadil.srs.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1711324581; x=1711929381; darn=lfdr.de;
+        d=lists.one-eyed-alien.net; s=google; t=1711324589; x=1711929389; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:x-original-authentication-results
          :x-original-sender:mime-version:references:in-reply-to:message-id
          :date:subject:cc:to:from:sender:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=dGnuWD1OZDWddoEtqdTWij64IDuef58aUbLl/yX5lcY=;
-        b=awuyHXO+wYseInTCxugKN0QLuBRppvN8EacsX5avWTPu+BPR74PcMIaid4gmoPc1Ld
-         zR9GfR+2JLIahGncgf9UJCQxHPqTCY5eN2U0Z2tiHAL4DjEkp2Ivqc0O6hyAJtvtn8az
-         UXzua/cH5xXYE5895wi71soNbwaSYTUaZTJFI=
+        bh=UxLe34NbkFy5Y7fVqNh6MnS7rUuhVFLmuiJQPnGwGu4=;
+        b=cE0XIARfmBfLsQCQOCvRizWtsrlCGOvCP5YCoFccvNafiaYXATlWFFEooeCLHL7om7
+         Z7IIaUmNEZJ0lR5pO+auKnJAsT3rqPLNUjpVfTRpwsISuuEcc3BeQeCYi1XwbOxWCXhw
+         4l/5Min4PvewAHFSZihPCJNSdVXVo+lruMY6Q=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1711324581; x=1711929381;
+        d=1e100.net; s=20230601; t=1711324589; x=1711929389;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :x-spam-checked-in-group:list-id:mailing-list:precedence
          :x-original-authentication-results:x-original-sender:mime-version
          :references:in-reply-to:message-id:date:subject:cc:to:from
          :x-beenthere:x-gm-message-state:sender:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=dGnuWD1OZDWddoEtqdTWij64IDuef58aUbLl/yX5lcY=;
-        b=PROCH1/3KE4nNVcvxNwT8X/wDqVcWB1H6TtBIU+gBKxLccAWad/LVJkXA+Y+xo/Sxn
-         ISKOp7XVr55u/IBgTYgcUibFiBceLFAWmy6/I0l0Eo91IOdaqkU5lqeiV9gfjxJ+7WBP
-         NdbcMLtb581PPdG035urpoQ4Sk84IT0dzwEC7HkNEC2KCQfnMQDvIYQyTrlbLEb+RjfO
-         f2xQ1Pz02IMqf0OV2EYG/7bOEkbsjwzgrBsOWJCzQCaHIM2AWOy2KZgNnxmSppsQPexa
-         5XxdlllB9zQwc1CyiNq3CIuPAFqROjTRFAWGT8nP0B5zV6p+ORHgyQSUZQLssQ2bNy1r
-         rkLw==
+        bh=UxLe34NbkFy5Y7fVqNh6MnS7rUuhVFLmuiJQPnGwGu4=;
+        b=ddwK8tvBhmRDULCF7b2P4wlhStQSxiaRGC47SGn3Q2BwOifLckl8DcbYXktLhEc1eq
+         MU2IdpqV1lYxtuQhsTshYWz7Dap8G1uQnpgY8ajAES02nBv0u4NnDLuZN9OrqxXqbiEo
+         4ZnscJgnHil5NINuG8JmRvvXU6T3BvERAnnq33ptvkwrdG4JN6GldXC16A2EjOCcIoTJ
+         4CSuBQP7ikZbxb7t/bIcrTr927Y+4bx5yo0GqFCMlknVdQvdnNe/yPgKZDOXZBORqWLG
+         jlaAeeDLe8e0XQkuf3N/Lf/qJ1q6hF6aF5d8UZBrLDaFQoumye69pVXgGLwuaecI/iGZ
+         vQ1Q==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Forwarded-Encrypted: i=2; AJvYcCXyH7STvfwfPaQ9Twoi3kW6swthMTloWS/fxnWJMZfRK0PxcFFuRNch44QaJ3f9q4j7CA4NI7gR8ZsJfrJ/I/aFtIHMdFy/SnE8
-X-Gm-Message-State: AOJu0YzLFy5qRtfBda22Zsy0pxoNCo7zllWTt0d1mOOs8Kg/T8S5xlkE
-	0TaZkEdJNwf3tkdppv8Oj6hj8aLUFwA7ULf/W5NaPw9e8LNzdpOiC4pVxNBajPw=
-X-Google-Smtp-Source: AGHT+IGOH2LZJQ0hat+BvkA7tZ8Jqs40sLr3PzK7h17kd4WUIhiuniIh8oFfyVMZbHct7pIQmj6nJg==
-X-Received: by 2002:a05:6870:64a8:b0:221:35d6:ec1f with SMTP id cz40-20020a05687064a800b0022135d6ec1fmr7065995oab.8.1711324581637;
-        Sun, 24 Mar 2024 16:56:21 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCXMuMHAsu5LZ0ZPWI0QdNPqlQVxvt108XXdvtj46G4pqfg2igP94uukQgZAITzqlvHARwxBx10wcIDWiiYtSfqghhGrzzjC2riu
+X-Gm-Message-State: AOJu0Yy58Lc6Quuj0GRyN37+Nu3I/wqmAhbrbz/suSsZfnKYq0NfDzwA
+	NyhwXyDgHLZy+LZpBgscOLQgklCdnjRMLoWC/aRvVPMEWbJDeWuYNs0+xgiLTQ0=
+X-Google-Smtp-Source: AGHT+IEBwFZJcfHAnWAae6VYz72pYXDlj39Q/xU1CzdCXREFRJhLj0J+yEBU6oczM3V4N8vQ7zlFxA==
+X-Received: by 2002:a05:6a20:2a1c:b0:1a3:50fb:4f7c with SMTP id e28-20020a056a202a1c00b001a350fb4f7cmr5228954pzh.29.1711324589267;
+        Sun, 24 Mar 2024 16:56:29 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a05:6871:48c:b0:22a:31be:c4e4 with SMTP id
- f12-20020a056871048c00b0022a31bec4e4ls952474oaj.0.-pod-prod-01-us; Sun, 24
- Mar 2024 16:56:21 -0700 (PDT)
-X-Forwarded-Encrypted: i=2; AJvYcCVvBkGmFXofUolRXsvylENskbP9WXog237a6+hK/98bmp2F8GguJgj/TuUjnvfLhT9n4eGLD3O/Q8UQOW0xOA+ySErDWNnISu3PnaIMCJ4n9JkXutg=
-X-Received: by 2002:a05:6808:3c47:b0:3c3:a7e3:5552 with SMTP id gl7-20020a0568083c4700b003c3a7e35552mr7409120oib.59.1711324580926;
-        Sun, 24 Mar 2024 16:56:20 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1711324580; cv=none;
+Received: by 2002:a17:90a:c58a:b0:2a0:34c4:f7c4 with SMTP id
+ l10-20020a17090ac58a00b002a034c4f7c4ls1600787pjt.0.-pod-prod-08-us; Sun, 24
+ Mar 2024 16:56:28 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCUGjcMimmCIIOtO3DZY5lsuvanSWIcn9XOGWXveT1/dVPQBYEKQQLoCMxFI9/p1Ejn1A6kyVapDT1nKQ0K0wjNqUS1zoBAs9L1w50zUvZvFUtwBZNo=
+X-Received: by 2002:a17:90a:a404:b0:2a0:1167:bfea with SMTP id y4-20020a17090aa40400b002a01167bfeamr5014179pjp.5.1711324588105;
+        Sun, 24 Mar 2024 16:56:28 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1711324588; cv=none;
         d=google.com; s=arc-20160816;
-        b=pQlXSojw0ZfyWf6ZlRCkY6k/siaAkQNVAYVl+k5BCwAtjkJ5WmnehyxeXnzp8dSGKE
-         JFtvd9/45e6xAtXDt8LyE8hton2nTMBybcqDtoK5a3NGFXkPd9CWu58NvpeOW2N8q4bF
-         bLuCh2eYuSEF/T0VhlfKs5/aQ7CjDbXdBsTHrS2C8LzJRLAQIwhsaM2dsno+xSLC8ZVO
-         YXO2JZxuK/tij9UQU2QbdKApzw6Fz7IQ3bJcqKI2bNILfVmlPyipZ1oUuuR5TTBwUB63
-         GVK3RSO760NotR0Q3/TdbagG90oZoP4xqoSAnK8htw8+544NIATwV7DbM+Z4yempmM6l
-         E+Ug==
+        b=FqTlSn4SVv45a5Qc0264PJPwv9jmVRlh1R0D8djt6D1TSul8VRW4w7xexq3k31/718
+         Ew29EzAw9pQ+iLbm09AcyrAv32kjXj1VID9NAdfyvE5OMdWAFFY4AlGDGSfUce5pgIsF
+         IjzpUcDq8X1Iwi/J0Ro9JHdZgYZOhz3kmfdnY/lccvbL2F0gBrFcDb4+JkrHxdbb81cC
+         g42tI02lp693E+1W7Ox6S1MAjvoOgh2ex1AECssqJ0X+uNY/DA4gIC9mPufbKGE+juwr
+         u9Kbt38d4mWtGHIbQ8NVdXrW5P0LtQO03b+UrEGKToWKT2jlPyQP15xXLIJrh/VL6UE6
+         bfSg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:dkim-signature;
-        bh=xL4EmOYh991KWZN2JoTWW1e6ishZxgC6oGRU+OrRqSA=;
+        bh=AvUf8Klc+7RB1yDG1wyQOjg5Jk0jlT3PDjCi7SYhfzY=;
         fh=t86CCijjmN/1ilkIT+VdM3oaZOxEhtNXSf8+ryhWOUU=;
-        b=q2eAIh9L+RsKrSDea4cpyBYlW2Rx0rlVFJ6TwK8jo4/xauILTXR4n8CoD6DJlai1Ev
-         Ky7PBcReNaFgxsQMq5oly8vHpngKFU+2jAMms/fa3LKde0qCV42skIfySr3u0qsGYLu3
-         zjth98VgQSIYLyrxes8L1l1L2Eo3c6oLYq8k/xTA6EHqQLvNZWj28f45E7K5Gqn+q/sl
-         jSB+08hvJ31Sh5yUb5Ynx1QcTgN99C9I2Qml0RUXFZL+XAd9hpvQqtUHq2Se/B1NLr5S
-         lkgaLldZxq9n/vw/cNtIuahzJqrc5DA/LIYTruMB6jqem0TOs1imIkPPvZN3AO2ifQj/
-         3G8Q==;
+        b=dpI8+3kmXRyCLfMkbxHPrrnsVE5UMipAEIFO1ldeNThmJiUb/Ksgpst07a8jeYduId
+         b3JRd2IOVekfFj2/jfVcis5cDSMixKkVZZJfZfsNFhpjD3VPIZYfpbbtQ7YWuYF5qJ3l
+         TjqfWFJBNrB5y8h59TLSL0HpAyWpM/ZNPNT04bGNiY+D2fruJSBbkYo4OclbZjGqCMM0
+         GLdRBN0sD4ExFfKl6ba972vlZiw9ykKnxVkyopvWFFa7/JNYjd/7vgwB13JD6mB3OsMo
+         By/Csy+035hdcPHIDmRVJrk/LpFHHlA7yMdUfmAKg4ytWQ9/0xi3Nee6t4EF0FGjE08A
+         sP1w==;
         dara=google.com
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@infradead.org header.s=bombadil.20210309 header.b=FgaYvL4R;
+       dkim=pass header.i=@infradead.org header.s=bombadil.20210309 header.b=KM+fE8+c;
        spf=none (google.com: bombadil.srs.infradead.org does not designate permitted sender hosts) smtp.mailfrom=BATV+9b69c840030af2843ecd+7518+infradead.org+hch@bombadil.srs.infradead.org
 Received: from bombadil.infradead.org (bombadil.infradead.org. [2607:7c80:54:3::133])
-        by mx.google.com with ESMTPS id w30-20020a63475e000000b005cdf8b03384si6383328pgk.805.2024.03.24.16.56.20
+        by mx.google.com with ESMTPS id o1-20020a17090ad24100b0029c614c3f5fsi6447690pjw.149.2024.03.24.16.56.28
         for <usb-storage@lists.one-eyed-alien.net>
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 24 Mar 2024 16:56:20 -0700 (PDT)
+        Sun, 24 Mar 2024 16:56:28 -0700 (PDT)
 Received-SPF: none (google.com: bombadil.srs.infradead.org does not designate permitted sender hosts) client-ip=2607:7c80:54:3::133;
 Received: from [210.13.83.2] (helo=localhost)
 	by bombadil.infradead.org with esmtpsa (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1roXhA-0000000Dzkd-1JEq;
-	Sun, 24 Mar 2024 23:56:08 +0000
+	id 1roXhF-0000000Dzm6-3Hji;
+	Sun, 24 Mar 2024 23:56:14 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Jens Axboe <axboe@kernel.dk>,
 	"Martin K. Petersen" <martin.petersen@oracle.com>
@@ -146,9 +146,9 @@ Cc: Damien Le Moal <dlemoal@kernel.org>,
 	linux-samsung-soc@vger.kernel.org,
 	linux-usb@vger.kernel.org,
 	usb-storage@lists.one-eyed-alien.net
-Subject: [usb-storage] [PATCH 17/23] usb-storage: switch to using ->device_configure
-Date: Mon, 25 Mar 2024 07:54:42 +0800
-Message-Id: <20240324235448.2039074-18-hch@lst.de>
+Subject: [usb-storage] [PATCH 18/23] sata_nv: switch to using ->device_configure
+Date: Mon, 25 Mar 2024 07:54:43 +0800
+Message-Id: <20240324235448.2039074-19-hch@lst.de>
 X-Mailer: git-send-email 2.39.2
 In-Reply-To: <20240324235448.2039074-1-hch@lst.de>
 References: <20240324235448.2039074-1-hch@lst.de>
@@ -156,7 +156,7 @@ MIME-Version: 1.0
 X-SRS-Rewrite: SMTP reverse-path rewritten from <hch@infradead.org> by bombadil.infradead.org. See http://www.infradead.org/rpr.html
 X-Original-Sender: hch@lst.de
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@infradead.org header.s=bombadil.20210309 header.b=FgaYvL4R;
+ header.i=@infradead.org header.s=bombadil.20210309 header.b=KM+fE8+c;
        spf=none (google.com: bombadil.srs.infradead.org does not designate
  permitted sender hosts) smtp.mailfrom=BATV+9b69c840030af2843ecd+7518+infradead.org+hch@bombadil.srs.infradead.org
 Content-Type: text/plain; charset="UTF-8"
@@ -179,105 +179,88 @@ Switch to the ->device_configure method instead of ->slave_configure
 and update the block limits on the passed in queue_limits instead
 of using the per-limit accessors.
 
-Also use the proper atomic queue limit update helpers and freeze the
-queue when updating max_hw_sectors from sysfs.
-
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 ---
- drivers/usb/storage/scsiglue.c | 36 ++++++++++++++++++++--------------
- 1 file changed, 21 insertions(+), 15 deletions(-)
+ drivers/ata/sata_nv.c | 20 ++++++++++++--------
+ 1 file changed, 12 insertions(+), 8 deletions(-)
 
-diff --git a/drivers/usb/storage/scsiglue.c b/drivers/usb/storage/scsiglue.c
-index eb4ba03e082d89..b31464740f6c86 100644
---- a/drivers/usb/storage/scsiglue.c
-+++ b/drivers/usb/storage/scsiglue.c
-@@ -82,7 +82,7 @@ static int slave_alloc (struct scsi_device *sdev)
- 	return 0;
+diff --git a/drivers/ata/sata_nv.c b/drivers/ata/sata_nv.c
+index 0a0cee755bde73..d0a8eb0e8011d0 100644
+--- a/drivers/ata/sata_nv.c
++++ b/drivers/ata/sata_nv.c
+@@ -296,7 +296,8 @@ static void nv_nf2_freeze(struct ata_port *ap);
+ static void nv_nf2_thaw(struct ata_port *ap);
+ static void nv_ck804_freeze(struct ata_port *ap);
+ static void nv_ck804_thaw(struct ata_port *ap);
+-static int nv_adma_slave_config(struct scsi_device *sdev);
++static int nv_adma_device_configure(struct scsi_device *sdev,
++		struct queue_limits *lim);
+ static int nv_adma_check_atapi_dma(struct ata_queued_cmd *qc);
+ static enum ata_completion_errors nv_adma_qc_prep(struct ata_queued_cmd *qc);
+ static unsigned int nv_adma_qc_issue(struct ata_queued_cmd *qc);
+@@ -318,7 +319,8 @@ static void nv_adma_tf_read(struct ata_port *ap, struct ata_taskfile *tf);
+ static void nv_mcp55_thaw(struct ata_port *ap);
+ static void nv_mcp55_freeze(struct ata_port *ap);
+ static void nv_swncq_error_handler(struct ata_port *ap);
+-static int nv_swncq_slave_config(struct scsi_device *sdev);
++static int nv_swncq_device_configure(struct scsi_device *sdev,
++		struct queue_limits *lim);
+ static int nv_swncq_port_start(struct ata_port *ap);
+ static enum ata_completion_errors nv_swncq_qc_prep(struct ata_queued_cmd *qc);
+ static void nv_swncq_fill_sg(struct ata_queued_cmd *qc);
+@@ -380,7 +382,7 @@ static const struct scsi_host_template nv_adma_sht = {
+ 	.can_queue		= NV_ADMA_MAX_CPBS,
+ 	.sg_tablesize		= NV_ADMA_SGTBL_TOTAL_LEN,
+ 	.dma_boundary		= NV_ADMA_DMA_BOUNDARY,
+-	.slave_configure	= nv_adma_slave_config,
++	.device_configure	= nv_adma_device_configure,
+ 	.sdev_groups		= ata_ncq_sdev_groups,
+ 	.change_queue_depth     = ata_scsi_change_queue_depth,
+ 	.tag_alloc_policy	= BLK_TAG_ALLOC_RR,
+@@ -391,7 +393,7 @@ static const struct scsi_host_template nv_swncq_sht = {
+ 	.can_queue		= ATA_MAX_QUEUE - 1,
+ 	.sg_tablesize		= LIBATA_MAX_PRD,
+ 	.dma_boundary		= ATA_DMA_BOUNDARY,
+-	.slave_configure	= nv_swncq_slave_config,
++	.device_configure	= nv_swncq_device_configure,
+ 	.sdev_groups		= ata_ncq_sdev_groups,
+ 	.change_queue_depth     = ata_scsi_change_queue_depth,
+ 	.tag_alloc_policy	= BLK_TAG_ALLOC_RR,
+@@ -661,7 +663,8 @@ static void nv_adma_mode(struct ata_port *ap)
+ 	pp->flags &= ~NV_ADMA_PORT_REGISTER_MODE;
  }
  
--static int slave_configure(struct scsi_device *sdev)
-+static int device_configure(struct scsi_device *sdev, struct queue_limits *lim)
+-static int nv_adma_slave_config(struct scsi_device *sdev)
++static int nv_adma_device_configure(struct scsi_device *sdev,
++		struct queue_limits *lim)
  {
- 	struct us_data *us = host_to_us(sdev->host);
- 	struct device *dev = us->pusb_dev->bus->sysdev;
-@@ -97,31 +97,28 @@ static int slave_configure(struct scsi_device *sdev)
- 
- 		if (us->fflags & US_FL_MAX_SECTORS_MIN)
- 			max_sectors = PAGE_SIZE >> 9;
--		if (queue_max_hw_sectors(sdev->request_queue) > max_sectors)
--			blk_queue_max_hw_sectors(sdev->request_queue,
--					      max_sectors);
-+		lim->max_hw_sectors = min(lim->max_hw_sectors, max_sectors);
- 	} else if (sdev->type == TYPE_TAPE) {
- 		/*
- 		 * Tapes need much higher max_sector limits, so just
- 		 * raise it to the maximum possible (4 GB / 512) and
- 		 * let the queue segment size sort out the real limit.
- 		 */
--		blk_queue_max_hw_sectors(sdev->request_queue, 0x7FFFFF);
-+		lim->max_hw_sectors = 0x7FFFFF;
- 	} else if (us->pusb_dev->speed >= USB_SPEED_SUPER) {
- 		/*
- 		 * USB3 devices will be limited to 2048 sectors. This gives us
- 		 * better throughput on most devices.
- 		 */
--		blk_queue_max_hw_sectors(sdev->request_queue, 2048);
-+		lim->max_hw_sectors = 2048;
+ 	struct ata_port *ap = ata_shost_to_port(sdev->host);
+ 	struct nv_adma_port_priv *pp = ap->private_data;
+@@ -740,8 +743,8 @@ static int nv_adma_slave_config(struct scsi_device *sdev)
+ 		rc = dma_set_mask(&pdev->dev, pp->adma_dma_mask);
  	}
  
- 	/*
- 	 * The max_hw_sectors should be up to maximum size of a mapping for
- 	 * the device. Otherwise, a DMA API might fail on swiotlb environment.
- 	 */
--	blk_queue_max_hw_sectors(sdev->request_queue,
--		min_t(size_t, queue_max_hw_sectors(sdev->request_queue),
--		      dma_max_mapping_size(dev) >> SECTOR_SHIFT));
-+	lim->max_hw_sectors = min_t(size_t,
-+		lim->max_hw_sectors, dma_max_mapping_size(dev) >> SECTOR_SHIFT);
- 
- 	/*
- 	 * We can't put these settings in slave_alloc() because that gets
-@@ -582,13 +579,22 @@ static ssize_t max_sectors_store(struct device *dev, struct device_attribute *at
- 		size_t count)
- {
- 	struct scsi_device *sdev = to_scsi_device(dev);
-+	struct queue_limits lim;
- 	unsigned short ms;
-+	int ret;
- 
--	if (sscanf(buf, "%hu", &ms) > 0) {
--		blk_queue_max_hw_sectors(sdev->request_queue, ms);
--		return count;
--	}
--	return -EINVAL;
-+	if (sscanf(buf, "%hu", &ms) <= 0)
-+		return -EINVAL;
-+
-+	blk_mq_freeze_queue(sdev->request_queue);
-+	lim = queue_limits_start_update(sdev->request_queue);
-+	lim.max_hw_sectors = ms;
-+	ret = queue_limits_commit_update(sdev->request_queue, &lim);
-+	blk_mq_unfreeze_queue(sdev->request_queue);
-+
-+	if (ret)
-+		return ret;
-+	return count;
+-	blk_queue_segment_boundary(sdev->request_queue, segment_boundary);
+-	blk_queue_max_segments(sdev->request_queue, sg_tablesize);
++	lim->seg_boundary_mask = segment_boundary;
++	lim->max_segments = sg_tablesize;
+ 	ata_port_info(ap,
+ 		      "DMA mask 0x%llX, segment boundary 0x%lX, hw segs %hu\n",
+ 		      (unsigned long long)*ap->host->dev->dma_mask,
+@@ -1868,7 +1871,8 @@ static void nv_swncq_host_init(struct ata_host *host)
+ 	writel(~0x0, mmio + NV_INT_STATUS_MCP55);
  }
- static DEVICE_ATTR_RW(max_sectors);
  
-@@ -626,7 +632,7 @@ static const struct scsi_host_template usb_stor_host_template = {
- 	.this_id =			-1,
- 
- 	.slave_alloc =			slave_alloc,
--	.slave_configure =		slave_configure,
-+	.device_configure =		device_configure,
- 	.target_alloc =			target_alloc,
- 
- 	/* lots of sg segments can be handled */
+-static int nv_swncq_slave_config(struct scsi_device *sdev)
++static int nv_swncq_device_configure(struct scsi_device *sdev,
++		struct queue_limits *lim)
+ {
+ 	struct ata_port *ap = ata_shost_to_port(sdev->host);
+ 	struct pci_dev *pdev = to_pci_dev(ap->host->dev);
 -- 
 2.39.2
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20240324235448.2039074-18-hch%40lst.de.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20240324235448.2039074-19-hch%40lst.de.
