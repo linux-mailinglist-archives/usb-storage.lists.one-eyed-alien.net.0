@@ -1,108 +1,108 @@
-Return-Path: <usb-storage+bncBDUNBGN3R4KRBHH3QKYAMGQEFFUDALQ@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBDUNBGN3R4KRBHP3QKYAMGQEWPQD6HY@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
 Received: from mail-pf1-x447.google.com (mail-pf1-x447.google.com [IPv6:2607:f8b0:4864:20::447])
-	by mail.lfdr.de (Postfix) with ESMTPS id EC0E88882D7
-	for <lists+usb-storage@lfdr.de>; Mon, 25 Mar 2024 00:56:13 +0100 (CET)
-Received: by mail-pf1-x447.google.com with SMTP id d2e1a72fcca58-6e6b15967dasf3549311b3a.2
-        for <lists+usb-storage@lfdr.de>; Sun, 24 Mar 2024 16:56:13 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1711324572; cv=pass;
+	by mail.lfdr.de (Postfix) with ESMTPS id C87258882D8
+	for <lists+usb-storage@lfdr.de>; Mon, 25 Mar 2024 00:56:14 +0100 (CET)
+Received: by mail-pf1-x447.google.com with SMTP id d2e1a72fcca58-6e6b15967dasf3549326b3a.2
+        for <lists+usb-storage@lfdr.de>; Sun, 24 Mar 2024 16:56:14 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1711324573; cv=pass;
         d=google.com; s=arc-20160816;
-        b=z+5Apw0Ht9VtSE78JClvgVPeLwaKsKsjc1onAfqCCKhpmiS/tHsWLw6lHKnHTVOsKK
-         v+fxo1+a5VrlX6RNGkDmn53b2Byyp+5KAoMny5tyJ2SYOZvLKF8/0nzfRgy6i4lm1MNd
-         A68e4ULECKobi+6L2A4K9Yj5ETk7JyFy+Diwq1/AXPXwrt2uxsTO7UJMIGmLZVqUevRa
-         YrPpf2feUpwgOQ+tl2vKYmG+kwLZjPZdrlViAv6ugYoSES67CJXBwOGE9UivTkTwQhB9
-         mQfDsE+YV/Ao05O15dCMLQZkIuomDlLnipfOgdmOn4MbLrIFmidjG7/yIGdzT5YU2s6p
-         Umlg==
+        b=uZlI9UoXa1MOWS/DqzlQnVpBeK3IhphjtooKiiEiIYZH+SH+kO/mjzOsRHaEd8E1gA
+         3UUys610He73c89cE8LtwQfqFJLGRS9dGrbgFk5wIDrKGKXHxm7QoNdlNfvXCCUe1ahM
+         vSeUAHfhl+yRSaiArEc9HDMGJZD6UqRqHNaSVrF6Dxj02G280bXXcogKoGHN6YH7TZG/
+         SomhIyL7s/yn/6NyLvR7BNpvBjTX+BDNaQf5RNaILd8SoYXaQOLNq6GI0laqy5eTHN6r
+         Zs1t6MDYMho6dN7KB9bfe6yPdEHXM2QE0Jv+Gumnv2Wf2xxG/LqVkdm2pGDYgLAJ3k+f
+         Inag==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:sender:dkim-signature;
-        bh=3qkAVGLFdgwcM/LQw517dxKYFW1AP6Xl59MD6LnKLYc=;
-        fh=gk/dss1LHry2KGoFPFEE0UHaKDIZ9xF6pluzDWu3KBE=;
-        b=JD7GdKMLx/HAIqE7T4vLKT/W/A+p/cOYo4IdP523KL5G7/0Dg8kb8wpKOrR0MrXz7c
-         +QiWNGfCz+/KUxPZyGXOzAwPAcbJ4WYCMp27n+f5DWynAlUXgm+LaBJD8NiM9do483Un
-         D8Qt3l11vNwglAL8SHA8L8+K7IU/yPhdDypnRsKZBollARyA10P0Hu2GzgAQYcYL3/yW
-         I4yFyuMGRw2mh9u9qJVP/GVWBnGDCOzSnwWrEVRBhHLzyiAT10PQkss/kjKdO2nPtlXG
-         MLkjbOMGPo8Hcz2w8Z5myxUeCTw26SeYNzmiItI37sOvAcgMLSRekpb9MkurlC32TGlq
-         0WRw==;
+        bh=mjmhHLcqig/EBR4Nv9aV1KuLFyARJH/LgT9dk7U+v38=;
+        fh=eRxVUudWPBj8NJcTAprDXRp3feABfumCxhZaMmCTM+s=;
+        b=CEvXuJqBu0HAdKSgr9lGsCCZ/fieP6WQmKxjrShGZ8xDfNbRBwD7p88AjUwDrasnYb
+         sMJyV9h1uzLRb6TnbmWjBoYcfPURJMTaKCzD9Ks3sJG41cZdd3dJ6fq5WPoADgh7jzbZ
+         sHHUe72MK4TXnULGqbTGC6JV4HoC2q+Zj5DPCQGxV4uG8n5NDNJ03Omj5+zNuQ4f0dp+
+         UwsDpOMXvZEOwL/41z8phuCjlk1rQoSCnnu8SqFwgYy9R1tK+6iWmuYh+qgd/xEmHz3d
+         aAPLwTYlAqkpvc0SaURNfm4uI5duTAU1S7HZJPezRhjShjAP8QhFcaQBJTTcCJGo39Oj
+         GPEg==;
         darn=lfdr.de
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@infradead.org header.s=bombadil.20210309 header.b=yaNYGNDq;
+       dkim=pass header.i=@infradead.org header.s=bombadil.20210309 header.b=fZw6oQVE;
        spf=none (google.com: bombadil.srs.infradead.org does not designate permitted sender hosts) smtp.mailfrom=BATV+9b69c840030af2843ecd+7518+infradead.org+hch@bombadil.srs.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1711324572; x=1711929372; darn=lfdr.de;
+        d=lists.one-eyed-alien.net; s=google; t=1711324573; x=1711929373; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:x-original-authentication-results
          :x-original-sender:mime-version:references:in-reply-to:message-id
          :date:subject:cc:to:from:sender:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=3qkAVGLFdgwcM/LQw517dxKYFW1AP6Xl59MD6LnKLYc=;
-        b=h3yeJcYZdsCsI3seGX7AtegKNSNOu7/xDw9YTNgf6cSTQCRJ9U+HzWL9vxgolS/7i4
-         tshwIqKVKWxKDASmnEoHHEzdedGPBKES+paFE0myjP0uXjtijDJr/OmNwtkTznJ9Sjnr
-         ODshL3u2cfAjiw2CxdvGAEBMpaEDkrox5izyk=
+        bh=mjmhHLcqig/EBR4Nv9aV1KuLFyARJH/LgT9dk7U+v38=;
+        b=bRs8MW3Y/zEiziLOJdnwfYlzDSeiG+HknSN7IpNKQ2CwWgf6FpDswHUf6ptuBvRuEs
+         ZJ0kHCQTX+LlORxTjgAyjEzPwu+sWluzxjYNCOCImYvUYtWk/8thJcnQaBh0EM1VpyyN
+         WKaUpHEiA2FiZpWsatwFw0OUnvGD/TzVC3gMk=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1711324572; x=1711929372;
+        d=1e100.net; s=20230601; t=1711324573; x=1711929373;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :x-spam-checked-in-group:list-id:mailing-list:precedence
          :x-original-authentication-results:x-original-sender:mime-version
          :references:in-reply-to:message-id:date:subject:cc:to:from
          :x-beenthere:x-gm-message-state:sender:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=3qkAVGLFdgwcM/LQw517dxKYFW1AP6Xl59MD6LnKLYc=;
-        b=Wk6jH1J5V75VaLUbzzAvA41Xk/5ktf+calQZqCsfAc1IWgdURjKM2qCiJZ+w1GCPLD
-         +oP5mTKeAw2/BADYFFa0jXcngBtPbzdqpGz5NQZPKAji1lvYrncB8pezwsl2roLh/p3Y
-         XZK4QoJ+A3jpg2Vle1pwXcnRNhWNgREOVGpR1aRPB+9SPx7L+3+uIBTTcyEvHT1zcJ1h
-         xG6cDLNrdr/HyyGJq/PQ76DfVgaRkynvG6J3DxmMbSHTmtej4ryGNVj/Q8ROD3v5QfEM
-         ++0PKaNCewjTUMgH8Brk0/XCapQjMi3whfE34i6x/oDot9s1gM1olu/Tv+mbSwrI2IrQ
-         ayXQ==
+        bh=mjmhHLcqig/EBR4Nv9aV1KuLFyARJH/LgT9dk7U+v38=;
+        b=iQ7p8IoE/l+OvZsjQRRPWQqki2QjldeedcZ+K3kTcIjnk0FTOJ00MRzezy+3LvRaI5
+         GcXRvFIC6Dogc6TpfMNMzol1pf0nGVSwxYifjUHZZWSjsJjWWhPPFcDMejleDmGLLnA8
+         mP1frfIR853zdwYs0MoAptQnaRX2RSv59NRjKOlTwqy11ScmATJ0CCeegVZmkzOSAv3L
+         xfVaGASpRihcsvMsVbPbApK+pICYcT2dgrTnHWXLCpVeSks3/oYL6EiDWiUjpJeLxmQN
+         deD9C5XCGuJw9PdictlhEn2hAR/xNOYSfSDctKiSIvXtShDb/lVo+4LCOUgn8SdCQn6i
+         pmfw==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Forwarded-Encrypted: i=2; AJvYcCV/qXmqIqD6fAMWick8LQGXsgLxbNdGE13ANzslLuYC+ST3EOH6llx9PwoJYheCUi/B6OT95u34nffqi3qL/5PFQxS/WDjJh360
-X-Gm-Message-State: AOJu0YzL1svj2bfu3767gYzIwCqOrPF9r0161Lwn18145iUe5qTgKyNp
-	XbPhzidC+kj2qSOLl9+ouIxwGo4Q1W/gZoYfr58SarsrLqpE1bZG5UjFRgCkVQ8=
-X-Google-Smtp-Source: AGHT+IGVZszOYoE96sfoKi2APIenFVycja84Dd5AIedLtYFfcbZRpZEJOQeoNu9bdmUlGGQM1RNh3A==
-X-Received: by 2002:a05:6a00:3a0c:b0:6e6:8c8b:a45b with SMTP id fj12-20020a056a003a0c00b006e68c8ba45bmr7575681pfb.18.1711324572472;
-        Sun, 24 Mar 2024 16:56:12 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCUYrUUZDsQeX3VhQ+jKV5u3RpW2lO0CFQi1UPm0elzile+2H+UKIknM3EUv205CQLzUExXuthiBa9YNeiDIu081uxm4ImtLloPo
+X-Gm-Message-State: AOJu0Yz3Xk5SfG26z5Fr+FxkKkBi/prtMU8Y7Re+wP25c7DVfshACHRx
+	SAydpKqeUteEhOkuZapHgFzgCJuUX0EC8yJipWKp5Y7TL+4ViVwQg0l6wHlsKPk=
+X-Google-Smtp-Source: AGHT+IHL8qmdXnzoqSvZdaJxqe6iuRsMG+JPEOIUYva9KNXJfkurAbueqnFTJG4l7t3si47/RzoELg==
+X-Received: by 2002:a05:6a20:da82:b0:1a3:ac20:e204 with SMTP id iy2-20020a056a20da8200b001a3ac20e204mr7467729pzb.3.1711324573439;
+        Sun, 24 Mar 2024 16:56:13 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a05:6a00:6708:b0:6ea:88c6:1f11 with SMTP id
- hm8-20020a056a00670800b006ea88c61f11ls889941pfb.2.-pod-prod-06-us; Sun, 24
- Mar 2024 16:56:11 -0700 (PDT)
-X-Forwarded-Encrypted: i=2; AJvYcCVCRxpO59nSsK+7sqOfENBLr8ZEYUqn5Q8zuFb/0aFg4D7TyDHfey/y22u/66R2tjjBQveKmFluRCkXnbnVzhAJ49F+W16E2jnkKeewkV74efFN0Bo=
-X-Received: by 2002:a05:6a20:b98:b0:1a3:a039:d11b with SMTP id i24-20020a056a200b9800b001a3a039d11bmr5180489pzh.24.1711324571269;
-        Sun, 24 Mar 2024 16:56:11 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1711324571; cv=none;
+Received: by 2002:a17:90a:d911:b0:2a0:41eb:6cd with SMTP id
+ c17-20020a17090ad91100b002a041eb06cdls1212338pjv.2.-pod-prod-06-us; Sun, 24
+ Mar 2024 16:56:12 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCU/IB6N2CCUc2HmEJtCQFc9rZfuCKlNZej9JhkeTSAvbrFNrBPHzR4yAquuedEbgosdn+H7qJHzIKtKkmgp4RCZS+6lDm/bt+WyPdv7MrQiwqXA2EA=
+X-Received: by 2002:a05:6a21:3394:b0:1a3:a7f0:1487 with SMTP id yy20-20020a056a21339400b001a3a7f01487mr8072713pzb.2.1711324572270;
+        Sun, 24 Mar 2024 16:56:12 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1711324572; cv=none;
         d=google.com; s=arc-20160816;
-        b=FuZ58lu8ZiudKNl8SNTAfznLBIy/Nv0RV7Lzl58ucLwH01HjU4e9oRUIoc08v7nV31
-         IYv+59VWEro+BFvJyXmAVeCWlOrunGtA2qNLWLmc72aiJvuAGDOBb6sS9z4GpPznxTYn
-         Qp4CnON1RQaEkau6oZblSY89//HFol0AkT7o+Y+R6P9T+mNgHDpGg0+Hzm8WmvL3ljDi
-         BLbAiH0oj2tF8cU09SZYSPCSWxMLVzXSgto2YQpT1AxAM3jZMwQkEcmqQ/3r+nne05in
-         0Xw/m43N5+TD1DpEYa4Svh21Fc5yjXI9gs/jpY1rJ/iNjxiV5Q/eHzT0q2ge1eTXHh9p
-         mI1g==
+        b=f2sXoujyj0+ee+CpuoambtRNHoKPCyFJDgfXr976nQndODg2vhrF8Rj47p7xRvsLMz
+         2zYPqX1ckhzgyOcFdDIBw0le57aqwF4SUE84CypQoy+92MqXYyHiwSGvDE1UwZkjcSkN
+         OQwxtDwM4JKWlp6g45mQm/kgoIRm0HzN1nD/jWPpL9MdL2BAyXHke0ooxTraatcjHize
+         R1/SmeOdGG+Vn3K9HXEeqaX6UovL4606Am9e0akAhYnsMt2b6aQh8eX2coF0Vs7f6qMO
+         W3xJzGnTEhNSffaUuUnqZUICr4ZvyHPsTBw7wxH8c+2uzE5xTL3XAc6oIuAyB7FYfRD9
+         qoKw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:dkim-signature;
-        bh=ouyfZJOprAivUD3pQoGhzFC7pBq223cKtZHCDHGO3TU=;
+        bh=pO7QUZsXXhu9HAXfSQAqPprtEItLE8G7INdiPk7KBF8=;
         fh=t86CCijjmN/1ilkIT+VdM3oaZOxEhtNXSf8+ryhWOUU=;
-        b=IvIEGl5hrgOQRPJwoPN5O+eKuC9QPsTP3C0VEfAYoEwD+VFyRi6b932gvO2GdCVpJD
-         wXHKgir42DKua917Te87T/ppR3bkxW1j3jXzsmwP3qIGeNb6KrU8x3g2N6CXu8mhbDYP
-         bw9LmiM7VG/iavVqui4CRBwBjALYHwF85Qcd66rNmn/MguoTYHeKd34doN5N93e8hBhw
-         8mSekJAF33CF11Ng9ur01jZJouE4qtT67KN4dvjn2M2ALDOLW4XkWWRQSpbmcp38zbsb
-         wo/4DLFnhHJSEs0uV+cCyjRVW1JaqUbrtTzu2lfeI9PT+deMZwauJQ10urM1ep8SuJnn
-         SRnw==;
+        b=LfU6mL8woyi+wMCweD/IxQrLevDb+nUxKtDYO6z9Y7Xqf6NRJcsLGRxQzcQqNiiX66
+         XmADCJNIyHADIsTO5nVbakboAeFNDkD/k9GNdA8ldRcXI5mgPKhX/BvPm/iM20xusrCG
+         XJPPR3uA44MuiddFVThT9k4ymaVbwfvWaH5E3Hjl3dD9C2Zn9f1uMaEYjdxYHjg065TF
+         m9Kl5L2zdb1Q7nf1HuqYfn64G3BciVP0aJmtSFyUFPhRAw9jAV5aqpO5bERPlymXQooI
+         959BYhDiSZb/N/canuAp8EDEY01P0YdeBkaYy0i5vW9QptpAdaOS9N5mu/7RWMZwa7g+
+         dZDw==;
         dara=google.com
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@infradead.org header.s=bombadil.20210309 header.b=yaNYGNDq;
+       dkim=pass header.i=@infradead.org header.s=bombadil.20210309 header.b=fZw6oQVE;
        spf=none (google.com: bombadil.srs.infradead.org does not designate permitted sender hosts) smtp.mailfrom=BATV+9b69c840030af2843ecd+7518+infradead.org+hch@bombadil.srs.infradead.org
 Received: from bombadil.infradead.org (bombadil.infradead.org. [2607:7c80:54:3::133])
-        by mx.google.com with ESMTPS id d3-20020a170903230300b001dd2b63e5d5si4181160plh.439.2024.03.24.16.56.11
+        by mx.google.com with ESMTPS id u11-20020a170903124b00b001e01481db7dsi4094711plh.249.2024.03.24.16.56.12
         for <usb-storage@lists.one-eyed-alien.net>
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 24 Mar 2024 16:56:11 -0700 (PDT)
+        Sun, 24 Mar 2024 16:56:12 -0700 (PDT)
 Received-SPF: none (google.com: bombadil.srs.infradead.org does not designate permitted sender hosts) client-ip=2607:7c80:54:3::133;
 Received: from [210.13.83.2] (helo=localhost)
 	by bombadil.infradead.org with esmtpsa (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1roXgy-0000000Dzft-48tF;
-	Sun, 24 Mar 2024 23:55:57 +0000
+	id 1roXh2-0000000Dzho-2g5B;
+	Sun, 24 Mar 2024 23:56:01 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Jens Axboe <axboe@kernel.dk>,
 	"Martin K. Petersen" <martin.petersen@oracle.com>
@@ -146,9 +146,9 @@ Cc: Damien Le Moal <dlemoal@kernel.org>,
 	linux-samsung-soc@vger.kernel.org,
 	linux-usb@vger.kernel.org,
 	usb-storage@lists.one-eyed-alien.net
-Subject: [usb-storage] [PATCH 14/23] hptiop: switch to using ->device_configure
-Date: Mon, 25 Mar 2024 07:54:39 +0800
-Message-Id: <20240324235448.2039074-15-hch@lst.de>
+Subject: [usb-storage] [PATCH 15/23] ipr: switch to using ->device_configure
+Date: Mon, 25 Mar 2024 07:54:40 +0800
+Message-Id: <20240324235448.2039074-16-hch@lst.de>
 X-Mailer: git-send-email 2.39.2
 In-Reply-To: <20240324235448.2039074-1-hch@lst.de>
 References: <20240324235448.2039074-1-hch@lst.de>
@@ -156,7 +156,7 @@ MIME-Version: 1.0
 X-SRS-Rewrite: SMTP reverse-path rewritten from <hch@infradead.org> by bombadil.infradead.org. See http://www.infradead.org/rpr.html
 X-Original-Sender: hch@lst.de
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@infradead.org header.s=bombadil.20210309 header.b=yaNYGNDq;
+ header.i=@infradead.org header.s=bombadil.20210309 header.b=fZw6oQVE;
        spf=none (google.com: bombadil.srs.infradead.org does not designate
  permitted sender hosts) smtp.mailfrom=BATV+9b69c840030af2843ecd+7518+infradead.org+hch@bombadil.srs.infradead.org
 Content-Type: text/plain; charset="UTF-8"
@@ -181,41 +181,55 @@ of using the per-limit accessors.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 ---
- drivers/scsi/hptiop.c | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+ drivers/scsi/ipr.c | 10 ++++++----
+ 1 file changed, 6 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/scsi/hptiop.c b/drivers/scsi/hptiop.c
-index f5334ccbf2cac3..e889f268601b4f 100644
---- a/drivers/scsi/hptiop.c
-+++ b/drivers/scsi/hptiop.c
-@@ -1151,11 +1151,11 @@ static struct attribute *hptiop_host_attrs[] = {
- 
- ATTRIBUTE_GROUPS(hptiop_host);
- 
--static int hptiop_slave_config(struct scsi_device *sdev)
-+static int hptiop_device_configure(struct scsi_device *sdev,
-+		struct queue_limits *lim)
- {
- 	if (sdev->type == TYPE_TAPE)
--		blk_queue_max_hw_sectors(sdev->request_queue, 8192);
--
-+		lim->max_hw_sectors = 8192;
- 	return 0;
+diff --git a/drivers/scsi/ipr.c b/drivers/scsi/ipr.c
+index 3819f7c42788bc..388c8a10295a67 100644
+--- a/drivers/scsi/ipr.c
++++ b/drivers/scsi/ipr.c
+@@ -4769,15 +4769,17 @@ static void ipr_slave_destroy(struct scsi_device *sdev)
  }
  
-@@ -1168,7 +1168,7 @@ static const struct scsi_host_template driver_template = {
- 	.emulated                   = 0,
- 	.proc_name                  = driver_name,
- 	.shost_groups		    = hptiop_host_groups,
--	.slave_configure            = hptiop_slave_config,
-+	.device_configure	    = hptiop_device_configure,
- 	.this_id                    = -1,
- 	.change_queue_depth         = hptiop_adjust_disk_queue_depth,
- 	.cmd_size		    = sizeof(struct hpt_cmd_priv),
+ /**
+- * ipr_slave_configure - Configure a SCSI device
++ * ipr_device_configure - Configure a SCSI device
+  * @sdev:	scsi device struct
++ * @lim:	queue limits
+  *
+  * This function configures the specified scsi device.
+  *
+  * Return value:
+  * 	0 on success
+  **/
+-static int ipr_slave_configure(struct scsi_device *sdev)
++static int ipr_device_configure(struct scsi_device *sdev,
++		struct queue_limits *lim)
+ {
+ 	struct ipr_ioa_cfg *ioa_cfg = (struct ipr_ioa_cfg *) sdev->host->hostdata;
+ 	struct ipr_resource_entry *res;
+@@ -4798,7 +4800,7 @@ static int ipr_slave_configure(struct scsi_device *sdev)
+ 			sdev->no_report_opcodes = 1;
+ 			blk_queue_rq_timeout(sdev->request_queue,
+ 					     IPR_VSET_RW_TIMEOUT);
+-			blk_queue_max_hw_sectors(sdev->request_queue, IPR_VSET_MAX_SECTORS);
++			lim->max_hw_sectors = IPR_VSET_MAX_SECTORS;
+ 		}
+ 		spin_unlock_irqrestore(ioa_cfg->host->host_lock, lock_flags);
+ 
+@@ -6397,7 +6399,7 @@ static const struct scsi_host_template driver_template = {
+ 	.eh_device_reset_handler = ipr_eh_dev_reset,
+ 	.eh_host_reset_handler = ipr_eh_host_reset,
+ 	.slave_alloc = ipr_slave_alloc,
+-	.slave_configure = ipr_slave_configure,
++	.device_configure = ipr_device_configure,
+ 	.slave_destroy = ipr_slave_destroy,
+ 	.scan_finished = ipr_scan_finished,
+ 	.target_destroy = ipr_target_destroy,
 -- 
 2.39.2
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20240324235448.2039074-15-hch%40lst.de.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20240324235448.2039074-16-hch%40lst.de.
