@@ -1,216 +1,211 @@
-Return-Path: <usb-storage+bncBD4JJBHQWAERB5VWSOYAMGQETZD6ZDI@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBD4JJBHQWAERBWF4SOYAMGQE2RV5SYA@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-oo1-xc45.google.com (mail-oo1-xc45.google.com [IPv6:2607:f8b0:4864:20::c45])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9DF5F88F58F
-	for <lists+usb-storage@lfdr.de>; Thu, 28 Mar 2024 03:52:40 +0100 (CET)
-Received: by mail-oo1-xc45.google.com with SMTP id 006d021491bc7-5a478fe8814sf423302eaf.3
-        for <lists+usb-storage@lfdr.de>; Wed, 27 Mar 2024 19:52:40 -0700 (PDT)
-ARC-Seal: i=3; a=rsa-sha256; t=1711594359; cv=pass;
+Received: from mail-pg1-x547.google.com (mail-pg1-x547.google.com [IPv6:2607:f8b0:4864:20::547])
+	by mail.lfdr.de (Postfix) with ESMTPS id 0415688F5AF
+	for <lists+usb-storage@lfdr.de>; Thu, 28 Mar 2024 04:04:59 +0100 (CET)
+Received: by mail-pg1-x547.google.com with SMTP id 41be03b00d2f7-5cec8bc5c66sf311041a12.1
+        for <lists+usb-storage@lfdr.de>; Wed, 27 Mar 2024 20:04:58 -0700 (PDT)
+ARC-Seal: i=3; a=rsa-sha256; t=1711595097; cv=pass;
         d=google.com; s=arc-20160816;
-        b=xLF1Kqbw3DhmaRqbnWWAy9YITKIz4B3NdcW9tqk+85ECencKQRhcg6QSyP/OKfpIwu
-         mi5MIjCPKjIz4Zb4gD5a0q1xu/iYSsjys71tQsKqGUntB1Br8Z8nsdHzHQXX48XKWZ0B
-         pYdT3Y6jFyowlUupPKDxCSIfRCh6jB2bxa82wlVuC1U8e0cvs3Al0raDoTTSo44xlsJ8
-         XJal6/GdG9uko50vw9LEfIuHBmwljNofl4x/BBeDB+JddcdsEzJ3sEJJ4MmHNXeAvQUR
-         oilpOidh3XGzVIUyiLlzvETzVO9071FYa6BH8WABx8nWuvatvSTyPLDkUzukodv+IGpP
-         d0vA==
+        b=BUuz+vbtDxw6HfPwD3kaF2scSuK7J3q51zkLoP6flmrS43+hsR2DazXXWSMccZhhIo
+         l0/ld90zF4DLa5QkJ0YeIF1AgjFq2NjQez3M9XVHxCjydAiZ/W8t1czmJ+lXXKN6hzYY
+         Y4VYssUo6pt13QM3ojaapppi4w82/8smLTzAe0x2gl00g5eLx5oRiH2Hfvov+ZOJYd9U
+         1wN3rwL4/g7Ti/mwZwhr+fQIv1D+bTpFolTKRSzVHh7m2ppbJDAhDfBPyxxi/ESvqDpN
+         S2luwY87lr4BqMjL8q3ersExrbCs2+yk2K7dUuhDzN+f0WPYPWRByis+DzF6jqCEvyU2
+         q/+w==
 ARC-Message-Signature: i=3; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:reply-to:mime-version
-         :content-transfer-encoding:content-language:accept-language
-         :in-reply-to:references:message-id:date:thread-index:thread-topic
-         :subject:cc:to:from:dkim-signature;
-        bh=FLnn40oLpH70v9ue26SAONOMeoOGmuSCFLHvcIit2WA=;
-        fh=GtDaCBCVpFvaFsA5AcPj8agkdUsXfMyx0bElxtxQqDo=;
-        b=XFZbBuDeDGp3d9ZEf1oFLlApommK7kX1KYC+YI7Ql76ns7lh2Iv3/yYJ9wxmQxdWEz
-         s4yThQ5te5XGie/72Wcu0iX8863zCW7ZBOfe3/FlDUg1T2pwGkx64dy3r+wfrRrbvLMs
-         d+mujoN/kWB6eEpTwIWzAC+7IXI+4GG/Ep2V08aQVKy0OVZqdnduZLrQQ8vCkdw7mGaJ
-         LGsuNKNH2RlWOeQXLMmaF1RrK2Y9miXNDWvpswrzcKZNmf5M0/S2HDg1dkMrknlFiDn2
-         mAO4Ku9nJZETwEKNkRfoiXj9mShze847/Ai4Xu7M1AJQle0+FPx+GgEtp3kQ4c7mtl/+
-         PqJQ==;
+         :content-language:accept-language:in-reply-to:references:message-id
+         :date:thread-index:thread-topic:subject:cc:to:from:dkim-signature;
+        bh=aWCf28q5MRicse9H27u4fk4LDBynQ4eVlsjGI/K2nJ0=;
+        fh=OC0z9suYg+wFaVH96ZCZoxoStfXPvcyt8IQ8Fiv1Klw=;
+        b=fVt39LK+eV5HJo2gFJIc7xK3MANx58cGEbDKnoqqTtNbyUT1JXmnMgYxny/1zU9RPs
+         sNmvEKXJfJOiZNaGqhr90/gDOkWDcugVSScAdH8t3sA6cOxfdvWrnEUCRNmPBRLwE+oH
+         xJCqpF4z7sEgjfU7eVmbMDmCuqGw++s4NRF1dXF95tAq0PM5eWrRiz33TwuNT/ilYWKE
+         oYALL91UZ5ObDrhHNh2g1Qj4E0Y8h5f6dqhB8V4dcJHhUZC6bICroTyv+VLdCRqWdV8M
+         4xMVyNqvYEwBF2f5bfZUuGY4G0Qg2mnZZ+8PgyKgzu1b+rmymhDnCiLHVarWt6mR4y3J
+         eHNQ==;
         darn=lfdr.de
 ARC-Authentication-Results: i=3; mx.google.com;
-       dkim=pass header.i=@alpsalpine.com header.s=selector1 header.b=IpxG38lA;
+       dkim=pass header.i=@alpsalpine.com header.s=selector1 header.b=jVoMX0Pl;
        arc=pass (i=1 spf=pass spfdomain=alpsalpine.com dkim=pass dkdomain=alpsalpine.com dmarc=pass fromdomain=alpsalpine.com);
        spf=pass (google.com: domain of norihiko.hama@alpsalpine.com designates 2a01:111:f403:2019::600 as permitted sender) smtp.mailfrom=norihiko.hama@alpsalpine.com;
        dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=alpsalpine.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1711594359; x=1712199159; darn=lfdr.de;
+        d=lists.one-eyed-alien.net; s=google; t=1711595097; x=1712199897; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:reply-to
          :x-original-authentication-results:x-original-sender:mime-version
-         :content-transfer-encoding:content-language:accept-language
-         :in-reply-to:references:message-id:date:thread-index:thread-topic
-         :subject:cc:to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=FLnn40oLpH70v9ue26SAONOMeoOGmuSCFLHvcIit2WA=;
-        b=DkDuLR6XdSlcByXoWNv3oFmZJPQckGyLti1vNNOPTsc8x+YkGmPy3ld//OdZP7WO6G
-         UWi6u5CztxD9YKhq0UXd9g+47dUlrbM+CnpWvgWgwcM4Qqsztqqq2vy1izRut2QqMc5q
-         djbam20nD54VXY5DZaGQS9emiiactjirqGOR8=
+         :content-language:accept-language:in-reply-to:references:message-id
+         :date:thread-index:thread-topic:subject:cc:to:from:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=aWCf28q5MRicse9H27u4fk4LDBynQ4eVlsjGI/K2nJ0=;
+        b=Q7SvurbcOjdwgScPohJCYhyIFmDILw8lRfynstxc6ZO8mWQJVKnKYUW4it7uk7/X6i
+         j6YZyQoTJsPAyS6SZK+Lku3kjmpF56Q7RY17JypNsiiWsIuI5u751Zxoie1RedbA3ta7
+         ki52gW6Or4KKaH1X8gon1OGHtRZjJfbow+nBg=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1711594359; x=1712199159;
+        d=1e100.net; s=20230601; t=1711595097; x=1712199897;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :x-spam-checked-in-group:list-id:mailing-list:precedence:reply-to
          :x-original-authentication-results:x-original-sender:mime-version
-         :content-transfer-encoding:content-language:accept-language
-         :in-reply-to:references:message-id:date:thread-index:thread-topic
-         :subject:cc:to:from:x-beenthere:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=FLnn40oLpH70v9ue26SAONOMeoOGmuSCFLHvcIit2WA=;
-        b=omF+mGwnTU1N+iIgkCetM7rEliKKCaQeSDWpdcNrO8YNXX8XTfIzhPSXFysBzITCA7
-         iRjjmtJTFe0wKOgqDgUcag8zGy9FzTd1BFLlq+5K/qjAtoCUiR41/OR4yXZ+1n1395KI
-         twkvHZzDC7WzThWhYmh8jWtCBsqO3DbNJFg0aU5vDtvB5/OV/Xlme/bJzImdPpup85Mc
-         r9zXOv/ayUM1nSv/9uSDR43n6M/oSE0x6i16JZ6GQRWrK73xrhcdHjJstCAictz0Y2k6
-         4RKyHsqLAQhoFJL7RB7vjn1RFnkv2RKU/KQf4scIKAePsguuf99XJhBJ6kMzxXFbvFBY
-         BdnQ==
-X-Forwarded-Encrypted: i=3; AJvYcCUMVC8cjKO+/MJ9qK/MEDLWEHQFGA/hvk73YSB/w4k+bXICbSpJXNa1n3vn8+6CN1yjB7JnSoMzXgWs4K7JAcyOFmqCrv/Vrugy
-X-Gm-Message-State: AOJu0YylujJvJkdSd4APiZYFaYOdbQ4QoQ/3SK7MgGyO4mgMWcWg8XUf
-	41wAJ3paa7rrW2rKxBWnoHVVgHiiWRL1LQrKS74+Z2rBMYq/fLW3q83KUTZE4CM=
-X-Google-Smtp-Source: AGHT+IH3uBcTdHCs/c0tNdi0lr6lB4Vdi31JOm5hNjwlmdiSdi4KUXIfQOAP86tw/H17px4CkMm6uA==
-X-Received: by 2002:a05:6820:1e08:b0:5a5:67a4:d58b with SMTP id dh8-20020a0568201e0800b005a567a4d58bmr1593336oob.0.1711594359299;
-        Wed, 27 Mar 2024 19:52:39 -0700 (PDT)
+         :content-language:accept-language:in-reply-to:references:message-id
+         :date:thread-index:thread-topic:subject:cc:to:from:x-beenthere
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=aWCf28q5MRicse9H27u4fk4LDBynQ4eVlsjGI/K2nJ0=;
+        b=mTpFYvBYP7hW+HlKbpCM2adWJKTG/4VJUfOM0Sy8XQ0BZeyHeJet1h4VKyFHbTMKVu
+         0tJZLad7TIxKP389C0zIb6sUw0LWBQC3rvKXerF5p5uarpOGhAK62FMsWnZy9JqUYR/B
+         RAApcfZaMhZhCDlpIqY7IhFHEDT/drCa6tHeL/aXt8XVndmg3qg+XiYwjCp6DKBXYd1c
+         KiVOjbTrYQ6WTai+T9dpJD93ZPkXNhgAnifzNM3UCvMDkPRLDGPZKJU49PcxFhGD1ZfD
+         9nsy9MudOrgy3lgxk5cOeilBbxk06mSUJvmpf7JYpvYAGp/Nx10PVNefQWVjGwg5lCVP
+         fP9Q==
+X-Forwarded-Encrypted: i=3; AJvYcCVlLrElSxA3HVuuTOJwNute//saTUtHQOLsG5C4mD30ooapc1icXITc2W5yEvFUgRovoHdIk1ZZXo5FUGiJiShc2/NvoMXhwLxX
+X-Gm-Message-State: AOJu0YzQk1+8SNGoxOqOtXYDbeFJWqiaG1DSTnIppTAHquLjvHsm9/u/
+	bBy9SvxPv61j2CKpA+O/Q838DZt8rOQbVyM7wio/AsS+/3VHiobUFp7j1cR5VyU=
+X-Google-Smtp-Source: AGHT+IFEMd27dGtHIgYlHN+3/QlqLZ7VAGQUzB656AydiXmFA2rDySy/lbdKEC4a3DazGae8uT8P/g==
+X-Received: by 2002:a05:6a20:da8c:b0:1a3:5fa1:3d4 with SMTP id iy12-20020a056a20da8c00b001a35fa103d4mr1809490pzb.0.1711595097223;
+        Wed, 27 Mar 2024 20:04:57 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a4a:dd81:0:b0:5a4:5c82:a148 with SMTP id h1-20020a4add81000000b005a45c82a148ls300699oov.0.-pod-prod-01-us;
- Wed, 27 Mar 2024 19:52:38 -0700 (PDT)
-X-Forwarded-Encrypted: i=3; AJvYcCW6eD3zJD1+loi/sprAqqfKCiIv0dz4tIOee84GZ1zhFRsPnmW5BI7ab2EkaxJVK/4BAhE/GXOaMRTSFaIs6VcypO85/P0brGowLtELmPteZY/81Lg=
-X-Received: by 2002:a05:6808:1389:b0:3c3:e2e2:ec7c with SMTP id c9-20020a056808138900b003c3e2e2ec7cmr2093515oiw.31.1711594358332;
-        Wed, 27 Mar 2024 19:52:38 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1711594358; cv=pass;
+Received: by 2002:a17:90b:48cd:b0:2a0:73c0:992 with SMTP id
+ li13-20020a17090b48cd00b002a073c00992ls276627pjb.0.-pod-prod-01-us; Wed, 27
+ Mar 2024 20:04:56 -0700 (PDT)
+X-Forwarded-Encrypted: i=3; AJvYcCUYjA/qgkzKtMYRMgDW4VYP1B4N5IG1bAfCh5fv8BOriw/OP/tomrz8OyAYfmjIAFkMygnRMxmyIBZRUzq5X2Jnj/uOcj4flpKEpS94BfRvNk95GmI=
+X-Received: by 2002:a17:90a:6b82:b0:29b:961a:29c3 with SMTP id w2-20020a17090a6b8200b0029b961a29c3mr1232795pjj.49.1711595096005;
+        Wed, 27 Mar 2024 20:04:56 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1711595095; cv=pass;
         d=google.com; s=arc-20160816;
-        b=n3iaijvZIjcQJI8OmsC2YtRFIe+C560GSAGMjdWKHeNkZ7dLwdgnQtm5e9QlIYUqLY
-         zvcwi789D5LFuXhSNabHMs0HZUk7W5wpK+AxPKQ/85fQCrAfqkqYIaQbfYP7eBEe9lyR
-         S270nvbm5L59GDqjuK3UfAn32vqeEHGIVoF4dPcANtPYvDJDnHVHL26z5sMuEYt0RxtZ
-         c0UFXNnI2xLfFjONEXtgjxCXC2n4CAB3BMj0Q00hzfB2EHJkGwiwohE1PUgu/dbfwye+
-         /8ax2YFJkcRT6YSyEE0wWuAV/4lcG/MpOtdd+KgSQOYWjC+VT2nC5RfbKcDLjisrDVyi
-         qtEQ==
+        b=zvPht8FFc+DS9+g6LBA1UGU3ZuR/5xSORsTCD8GX5n5vVnnnlvuW9cCh1bvdrVNlfw
+         uVEcxQnWxx5KVRBfoE+UYFttOd+tN7AZMYxHhuEXulzW7YM6dojWisQ3/fNLpRY0OtpU
+         FpvOQWiuu0i/lCecLze6qBfop27qKjvLnVZmsR01rPluZRYbkNgQQP5vvIWKkeEoI5kA
+         bPjrjmfTGK9IA5SJ780xvagH7aeU8D9bW1Jrqo200/eGQgTRLdx9EhaDCERGqG9ttUeR
+         RaD9hRFlOfOEQkPi/O0IEKIvzhbiZlensmndfDo+dYoplJNcvuwbpI6kTjfsouvfp6PN
+         3FxQ==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=mime-version:content-transfer-encoding:content-language
          :accept-language:in-reply-to:references:message-id:date:thread-index
          :thread-topic:subject:cc:to:from:dkim-signature;
-        bh=UjroXfKuJZthA1F0Z7CbH1CAQfagnEZUaYVtWUriaDA=;
-        fh=jZgb3H+gKzcp/z0a319gx7x/ZAZphEDmU+4AJnbeLTs=;
-        b=UuPgtp23oyuOd3oZCk5TBif5uxck5g7rMeCbIpDuOFiA4Uf2VJ0SYi9hcNs0PytoJr
-         KJugGVwkGCNqfV735rSWSjwoShfEqDD+iPNNIkWIE/a6UR1ZqFOQYKKcgmGxHzB3NyN8
-         LjcdAumyXCU1hmFCpZADK1twoGZKcwo87taxda0K2N6fv346+UWsyTTp5Qa9HFtOs7yC
-         KuETz19XB4yqmlIC3YzHaY45RmoqxEqx2bwFZzPPj7gO8qa2BMTuoFzAZrci94g6KMfp
-         9H/ArD1fK/iEA0S7aLpxlqDIYNBYbb3ajc4G0Wj8ieQLGwxbKgS43J3G+uVTE4vZrk/u
-         +o1w==;
+        bh=BKW3qS+TwUYz1PPd03eDk9VJDaWutyu2MdLzfZhJmN8=;
+        fh=BWKLF4/1Ary8SW4UTJ0WQbHavI7AJH/2DQwzNzPsXHc=;
+        b=rWCHeddkPPyMoXh3UBb7dFO6xAI2sUDvq4I+2/iCr0ufcoRd/LV+dVroHcdkcKmkmt
+         3CVUsiTKpfJcwIT1cmBAxKFn9f+vdNWL33vweKlWeBPWmHstd3FAODEnzFDR6LAoDNkY
+         r6liqK0FQcM2fhEe2sTbcLHD2P3U0cZ2mDkDAEbX0RUHmz5SAMyTv+28+LjkZkLtdKNB
+         j5ZZ7+9gb63R0IG3O2HvfWYdRElIcln9bC7jyRcq90qp7ViTI+QW09tJzU1WVmxMKpla
+         y+TOKuuwB3vouLlweyckoMY1jaFGo3vmV2QNQhdddhyK/fibimAwD2GuYFEWmql9VZqI
+         jQGg==;
         dara=google.com
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@alpsalpine.com header.s=selector1 header.b=IpxG38lA;
+       dkim=pass header.i=@alpsalpine.com header.s=selector1 header.b=jVoMX0Pl;
        arc=pass (i=1 spf=pass spfdomain=alpsalpine.com dkim=pass dkdomain=alpsalpine.com dmarc=pass fromdomain=alpsalpine.com);
        spf=pass (google.com: domain of norihiko.hama@alpsalpine.com designates 2a01:111:f403:2019::600 as permitted sender) smtp.mailfrom=norihiko.hama@alpsalpine.com;
        dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=alpsalpine.com
 Received: from JPN01-TYC-obe.outbound.protection.outlook.com (mail-tycjpn01on20600.outbound.protection.outlook.com. [2a01:111:f403:2019::600])
-        by mx.google.com with ESMTPS id j11-20020aa783cb000000b006ead086ea6bsi500629pfn.87.2024.03.27.19.52.38
+        by mx.google.com with ESMTPS id j6-20020a17090ac48600b0029bf0ec19fcsi591808pjt.132.2024.03.27.20.04.55
         for <usb-storage@lists.one-eyed-alien.net>
         (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Wed, 27 Mar 2024 19:52:38 -0700 (PDT)
+        Wed, 27 Mar 2024 20:04:55 -0700 (PDT)
 Received-SPF: pass (google.com: domain of norihiko.hama@alpsalpine.com designates 2a01:111:f403:2019::600 as permitted sender) client-ip=2a01:111:f403:2019::600;
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Dcb/Tc8agKexhW5FNtuEv8Ldjt0KjM/UbxEcGFX34j6I1LqsxYx4v+r7rOXat+yog2Q4Sz7gMFHU/Cy8W0ds+jbd0XphWuGu6PgnDVLu6CeOvR0bfogM4MwADCRNKRc7GYajokihfCZ7VkTaYjOTdxk5VHsBlrt2ADckcKB1q3Ei7sp+laahJZCt5jFGlzeBkuUpOmFP/o9DOom6QPa/j9EFO45QkGDaLpuThszN8qM7+1q+ZzywsBqidusYu5bQjilrEqW7m3DUKSShi5zNrWS01iHJu2B6pqoFHWMzRDqLrPcwsUluyr3LZbzU+SYqnnmdnYMTIKtA/+pKinptQg==
+ b=E2EjIkSOk0Q86EhaEzMMtDky0sLZEUlB4SQWwBwRFWPLIrX7tzgTEqfGUbCPed0AnXIag8PyTSGu2W31/rCn7ySa8ToWDCLdWTjn2k5l++BVb5yv94fDG81OC4Msq5vOUtvyvi9+LQHUKwsbV+EMHnrwLDJJlfNBMN5aHkB6mgoxzX0fbWFJF+kMxGv4jV0JireBkBYP++4a5H74mGCHOjntBitRsbP3rwtVw7Ci9WZXqE2Q9Bbn3ZPQsdYs8Glwnp+YqUhHv8Y+wQbgr3+Aw/EIBvo0KgxuEmnm5hSdie9lO6fCBix4a7xxkJY2ag8aSdRSr5/KQgO2v4r3ZhZu0A==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=UjroXfKuJZthA1F0Z7CbH1CAQfagnEZUaYVtWUriaDA=;
- b=FQtbcWN9m1TamNWQBvMlMm4BQEMPFsZVKa3xUj7jJA542oPn6TMKar0Y2fOWXzKEcAezkDL/Ju58T5wpPWvTtWAbMbK2mro7Sb+p/lIGfIYfMAzcpjyhnGYGVi8mq/MMCPbzU/SNVcM3m0zMqF70uCP2ZM8tDCMs5BJxZ8Vli096MY+oCcUT0xdJFIAVYwe2kJ/lXcrVHUKUSi0IedQtFvwsgvCf6N0xYU3alR5S4J4s5J8RqOKwCvJPv5kmeFuPfaNF1qzbdl8dSmJZgvpQ8rK68XT6MDVuMegBQgKGs0y/ep6K+JStA7MEgg2GePOsNhvS7ITNWg5WMJbU2rC2Iw==
+ bh=BKW3qS+TwUYz1PPd03eDk9VJDaWutyu2MdLzfZhJmN8=;
+ b=K08maiNtefEtlV0LE4OIFiCeS7FmaR9DicDkGNJNs5bc3L/F7aA2VOxlPeyDdThMK0QnKqgUctuMDhD5OHRkcuRDtZrvM0TuTbP1xRZJNWCoxc85WKAguAUG4TKnmxdRwowegB2m9PmEyR2szwnyqJaOI9L52E5ar4NaSoNvGvzVMtqh+Lbcs/oAV40GRwNhfDRa9AMko3FZV3rO3sXdi20VQdjAyApBFcVeppj86rxLgm4yz/X5a+rRQe6yvdk0heDV/X2raUcZN56z0dqtVlR3CgLUfLvIBGD/deImi1T8uqUbFCshHKhmiYIrGttRksXKbt66YdtOKDoj3wsTvw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=alpsalpine.com; dmarc=pass action=none
  header.from=alpsalpine.com; dkim=pass header.d=alpsalpine.com; arc=none
 Received: from TYVPR01MB10781.jpnprd01.prod.outlook.com
- (2603:1096:400:2ae::14) by TYWPR01MB10224.jpnprd01.prod.outlook.com
- (2603:1096:400:1e5::14) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7409.32; Thu, 28 Mar
- 2024 02:52:35 +0000
+ (2603:1096:400:2ae::14) by OSYPR01MB5432.jpnprd01.prod.outlook.com
+ (2603:1096:604:86::10) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7409.33; Thu, 28 Mar
+ 2024 03:04:47 +0000
 Received: from TYVPR01MB10781.jpnprd01.prod.outlook.com
  ([fe80::b541:f53c:6306:6e2b]) by TYVPR01MB10781.jpnprd01.prod.outlook.com
  ([fe80::b541:f53c:6306:6e2b%4]) with mapi id 15.20.7409.031; Thu, 28 Mar 2024
- 02:52:35 +0000
+ 03:04:47 +0000
 From: "'Norihiko Hama' via USB Mass Storage on Linux" <usb-storage@lists.one-eyed-alien.net>
-To: Greg KH <gregkh@linuxfoundation.org>
-CC: "stern@rowland.harvard.edu" <stern@rowland.harvard.edu>,
-	"linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
-	"usb-storage@lists.one-eyed-alien.net"
+To: Alan Stern <stern@rowland.harvard.edu>
+CC: Greg KH <gregkh@linuxfoundation.org>, "linux-usb@vger.kernel.org"
+	<linux-usb@vger.kernel.org>, "usb-storage@lists.one-eyed-alien.net"
 	<usb-storage@lists.one-eyed-alien.net>, "linux-kernel@vger.kernel.org"
 	<linux-kernel@vger.kernel.org>
 Subject: [usb-storage] RE: [PATCH] usb-storage: Optimize scan delay more precisely
 Thread-Topic: [PATCH] usb-storage: Optimize scan delay more precisely
-Thread-Index: AQHagAnskZ+PrXZ1a0CyN6BGkMIiXrFLFjOAgAAcfLCAAAKHgIAAAT8ggAAHUQCAATOvEA==
-Date: Thu, 28 Mar 2024 02:52:35 +0000
-Message-ID: <TYVPR01MB10781C18C8177783D8DEF7E69903B2@TYVPR01MB10781.jpnprd01.prod.outlook.com>
+Thread-Index: AQHagAnskZ+PrXZ1a0CyN6BGkMIiXrFLFjOAgAAcfLCAAG5DgIAA1Sdw
+Date: Thu, 28 Mar 2024 03:04:47 +0000
+Message-ID: <TYVPR01MB10781AA8B37E147E318597B46903B2@TYVPR01MB10781.jpnprd01.prod.outlook.com>
 References: <20240327055130.43206-1-Norihiko.Hama@alpsalpine.com>
  <2024032757-surcharge-grime-d3dd@gregkh>
  <TYVPR01MB107814D7A583CB986884AD4B290342@TYVPR01MB10781.jpnprd01.prod.outlook.com>
- <2024032745-transfer-dazzler-2e15@gregkh>
- <TYVPR01MB10781723CBD338DC3EEB5F20590342@TYVPR01MB10781.jpnprd01.prod.outlook.com>
- <2024032750-violator-trivial-90a3@gregkh>
-In-Reply-To: <2024032750-violator-trivial-90a3@gregkh>
+ <a446cdf4-3a9b-43d8-b22b-78c20cce2b4f@rowland.harvard.edu>
+In-Reply-To: <a446cdf4-3a9b-43d8-b22b-78c20cce2b4f@rowland.harvard.edu>
 Accept-Language: ja-JP, en-US
 Content-Language: ja-JP
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
 x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: TYVPR01MB10781:EE_|TYWPR01MB10224:EE_
-x-ms-office365-filtering-correlation-id: 54a2e613-bbc1-416a-9b75-08dc4ed21f37
+x-ms-traffictypediagnostic: TYVPR01MB10781:EE_|OSYPR01MB5432:EE_
+x-ms-office365-filtering-correlation-id: 58dddad0-7a2b-46b6-c61a-08dc4ed3d39f
 x-ms-exchange-senderadcheck: 1
 x-ms-exchange-antispam-relay: 0
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: fo8RMfpnV6cl9PlxNBXFUdXUe5MBY3F2KRY4R040oD6Sms8nOHpZJmLSzkxerd0Wn6rVxe7ghdf4QKv4WD/LvaUamhcn7+JluSvmjcpO1+2Vbryh1gmY4nTlsfhvr2eq7ME7NsMA3aKmKi2A1yeXj6MnK0u18KD6BfYrHmxyHDGNQzHTuRLy6NTOadi13nXxeZKgwBIxvuqhxRDIn17OqFwZBhQShnqzLeyp0D90oy3SIPJvlgNAi2L//hcsYoUKFRoLOUn9Vs8KpLYhZg09TD6UwG4ajAD/Sxe0GyCdJhO6AVZTARF9xPjRZEmehT5BX2HXlkNIOmZde0nT7R0Tym8/C42LQJL1dggo2ianipt+uosjrPYO14zBJslHsja+H2wkaQuBRfLYA+GliXh+4kcMbWEJbgPGiSN9SXNoJuSKFa5B/tQGKezTALvqCwJC6uAKcQdwKk/xbL64i7+HqOZywjb0vqmG8oACvcj0b6iXRDRGjy42HFJAa551DOSLHfxHm4OxnQyX3B5sZk6zLMarpkse+r+PxUlJ4mqG9gaPqtoCgZMMUYLL3BUQnHfhgeeZ35JckWyFSa6dS2UHkOvAKAky4kjW+x0Pw0EaG9QXtIkdqENYbetWhIm4P6T/LpO7ioXE1mMQu48uO1zRcptIPuUHnc31I/q1NffILK2N9L7vI++NyFdlZjUEmSuhXdzYdPUH3CFjVQm3Accp+w==
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:ja;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:TYVPR01MB10781.jpnprd01.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(376005)(366007)(1800799015)(38070700009);DIR:OUT;SFP:1101;
+x-microsoft-antispam-message-info: dlQRM3Db9y9Ms8wMH+rFvSCMXsAiwXT8FwwjrnFjb/1QNezRc8ZlX1h6rh4i2cMtGFjyFdp+gyKw8ECL3mvjsLf3wpw8zCc2XQGRv5WecRnhyCqX281i6jZVNCQXwX/sWQfJ7Um3nMpZp4qHJBc23Yo7sqJ5QYhEuxG6RS3Ew9IrzxyI4+39EofJsODEzk4xkYaXGEbA1l2V5uwsppW7xc6tLDv7zHAyZZjm1psiqIS3bthcFxyJZ2WK9GOYStS7iIrwQ2f93uytR0VPd8CSjP5L6Vy461nkt3M4zx8XgSB4Y4BE+IeQyXUpRS8NzjL0okO6nWTNwul0Jl0vQFF3rr3QMb3NYCniLWVBljQSuddoc0fRmTOhAhm4XVCMfImNzT2nYLtBAacOmY8R4YPNjC1vsZyKoN0+0WQ6pDVDb+gXEpffMwkmdMWTBE7yyw9h9zrnvnM/dTgYeWTt17rHo5AuKUxeOBvQWCI8TXlleU65x6EEH9I3BR/Z4fXaHrDehWpYOpUrdYlrcEtmTebMLl8GqwDYTUI6PE5uX7zHz+AsCgXviWXsHkmf5y6IjaxCKppZ4UC7mmis1xkteQd9Awl6d6/jw/nTP0JUVVtd3P2cvwAUJrxKQ+/ApIQUfAMhiFjH88/tnkSipK8got8+YhSzn9SbK2z3kdcCsWKny3hdAGKJP8PXlEdYC2HRj5z9FPtIwWnJHcjxG5nLtG2aqDOGjwzMa1W9D40/FV2E0Kg=
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:ja;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:TYVPR01MB10781.jpnprd01.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(376005)(1800799015)(366007)(38070700009);DIR:OUT;SFP:1101;
 x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?utf-7?B?bTNwVGdGWnh0ckV5NzI2dmxPeXJMSHE5ZG1rR3FCWlN3ZTdWam5RbTh3UVZW?=
- =?utf-7?B?emtsM1h3cXg4NjI5NGlzTWFiSUFGVHZ0bDcrLVBLdC9qY0F5ZzcwL3B4ZjZp?=
- =?utf-7?B?T1cyajB1UW0wOVVxMXVJSlZpRUZVRE5LSWlCSEpYS1BNN0RpOXlUYjBMR3lx?=
- =?utf-7?B?TkNLdmM3enpVR0lSNWlWV0xrN1EvbnR4d29xWXVqbUN0Um5wczdWY1JVbmZl?=
- =?utf-7?B?SUc0NXVScG1UWk1PeUFEL1BvWUhQYkUxKy1KQjBDckRGWU9uN00xM3FjaXBw?=
- =?utf-7?B?Sjc5NURvc1dxekdzWXJKYlVqZWtwbWlnR2VTcXFXM1hsemp4eTJ5ZVZhc3l1?=
- =?utf-7?B?R29ibkxBckFuQ29INDZpNE9TMVdza1d1NzNtL0JWaCstbWl0ZE1GaVpmKy1v?=
- =?utf-7?B?ZVZlSVgrLUhqd1lMd1pxYjBMMVZUakFSdkI4WTZ4aDRJZWJsZXJ5TXpvZlR4?=
- =?utf-7?B?QzU4SGVVbTY2QkVJd0hvR0RHNllxRnA5Ky1iMTFMTXJJUllsUHhleXVJaTJz?=
- =?utf-7?B?dElRTHFRb1JscUo2WTFWaVprZTF5WnNDb04wZGFOTDhBR3ZyU3R5cTRxUFNE?=
- =?utf-7?B?WFpydGtwTnlxMEFDRzJFcHVRZ25CYm9YNlUyQk1YdUU2VXk1aHFmVTlhZEhG?=
- =?utf-7?B?a1dDS0ZLMG1aWVdURGZzbGtBWXBXcFlQUkY3UFRHQVhETXV0N1gwTGZxRFFP?=
- =?utf-7?B?dVM3b0dRTjV4WlpyQmV5aDljNmFySGtReENsSGljTjB5WmNpQ05XTWVCMTFi?=
- =?utf-7?B?YllJOTRKTmFId001SjhtMEFtS3E2elk0OFd1WjQ0WWVKdFZtSXBCVm81aVVn?=
- =?utf-7?B?RkROc1BPdVRodUFTeUsvTmsyOGtEKy0xU1B3cEh2Z00wOHR3R1I0ckJGUEVT?=
- =?utf-7?B?TktVaU9TeWN4ZlkxMTRBcUNlM2VqOGpadHpRYkc3VGh4TTkrLWsxVWVnNmxp?=
- =?utf-7?B?aE5qU0o5Q3ZpbHJaT3VqR2hXbFhKa044b2VwYThpZ3hDdXdHL1N4dGZFNXdk?=
- =?utf-7?B?OWI4U1dIbzREdHFlajJ6MXlOTWJKcFpQR0gzZDE1TVR4L2VJQmpLemJTVGh3?=
- =?utf-7?B?VFpXRHp0SkhwQmlSY0pmc3lVS0t4NVBrdDJPMVhnTDZuT0Nqc0ZNVW1iazE2?=
- =?utf-7?B?UTU2NnlJRzdBRzBtT0ZCWndxNkZrUXJIWWRYZzNlQ3pHY2lsdDBndS8zcUZk?=
- =?utf-7?B?Ky1tekdlN1FxaHVSaUR6eXBNa2lvcGZQOGh0WFZkRndOSmE2VTNCSG55N2Jm?=
- =?utf-7?B?M3NqeU1aT2p5MlhpdzEybystOTZBSGxFZWZwUzlrQzI2czh2MFh2Zy9pRWV3?=
- =?utf-7?B?UW5jd1VwdkRHUTYxd1ZGWGJZaHdmZjd4Ky1DNWJOOTJwSC9vYmEyMXpKMlAv?=
- =?utf-7?B?NkNONlYvRGZhSnRaOXc3WDFOdHVjTTBONk50cHFlUlVZQUVZNzdxQTV6RDMy?=
- =?utf-7?B?cmxKMDNmWXNUckFFSEtjbTZ3c2FVSXJJdWtBZktYZ3JrVjBCZWI4TDkvZnUz?=
- =?utf-7?B?OVFTZVo4dUlXZWVpQ0xYcXlqdU8velE3bzJlVU5TekRuMXBmZmtQMUxhN1ha?=
- =?utf-7?B?SnJFVzk5eEJFMjlZT2dXMnJiREpSVVFzVG5iWFh2ZFdlT2ROaVJJc3dGOFZz?=
- =?utf-7?B?cHc4bjZKNHQxNHlsN2dkcC9vYUdQSlJkTWNaOXFOTURONkUxMUNhKy1pNzdY?=
- =?utf-7?B?V002dFhsVnowaXZLN0h4SGNXS0FXaU8xTVY4UFJUOWozMDBhVG9GVnhseFRt?=
- =?utf-7?B?OE1jY2FpZFlrVmlRYnFHeWVUYi84cWFXNTkrLWpydEErLXM0NFJzQXZKd3c=?=
- =?utf-7?B?Yk8rLXBmQlVuM2Q3U21nRjV4b3ozTHRxdzVBc0U5VmtNamxkT0VDbDQzTWx3?=
- =?utf-7?B?WTFwMmZQQXEveGNVaTN5dW81NmVFUk5STFJVMk81Ky1CdCstL1FMSXBsMnlr?=
- =?utf-7?B?b0JOZDR2bmxXUjRnVTBZQ0N0VTdQWUZ4T3RwTTBNbFRZMistMHRNSk1NRldR?=
- =?utf-7?B?SG1aWW9GS0h3YjZKdmlTT0x5VzV4NUtuWGttZjhvSzFqVWVuYTg1d2Y0REll?=
- =?utf-7?B?dDRjVSstckJvOUd5U0o5NkpGYXZWRHkwZXBSM0wyZmhTb2lIeEM3cGwyU0k2?=
- =?utf-7?B?cGRjZUlTRjlxMGlzYUUwbFFSWlYrLXRqakhpdEYwU2IxanBzZXpBcEY1REdx?=
- =?utf-7?B?WQ==?=
+x-ms-exchange-antispam-messagedata-0: =?utf-7?B?b1BNL1Q4QzlnSGFWZVA5c042V1Q3VmZkU3NzckpFZmFlN0cyMFBkS3NJdEU=?=
+ =?utf-7?B?Ky1vNVdHaG1hMHhJNXRRaVNNNSstS29JUElsbGVKd1ZkTHZOZVFvUlpRMFFm?=
+ =?utf-7?B?bXFlWFdWNHJ3MVpXdEtBeTNjaW1QUk9QeHd6TktlVUtRcnVSaDF1bUJ2RHdw?=
+ =?utf-7?B?QkdNM3EwT0lac0Mxa0pGQ1Fpd1VlZk11N3p2cWR2SURkNW1tdDg5bW1qZEdN?=
+ =?utf-7?B?cFJCUlJFRVhnV3VmKy1Fc3BYTEZVb0RWdElpWjUwQ1BBeFZpTGU2MlRNaFVp?=
+ =?utf-7?B?QVQwbW9IQnNTTjg0NmN6NWtOQXBTeHgzUVVnNXBhSSstS3dRallDbGxSZ1hl?=
+ =?utf-7?B?V08vYzVDTE9VU2RWb3hVSDV5NGRYNktIZFhncXBIekpGR0pKZGsvczVtTUR4?=
+ =?utf-7?B?MlR0aEpGZUZOL1R3azNsbzdLTGUrLUc5dTExbm5RNlBFOVkwcWtEUXAyR3E2?=
+ =?utf-7?B?RUVrOWdvRkNNT0Y5QmtNclFENC9NTEVrQlJTNU5xb1hqRnhWeGZrcG1xbWhT?=
+ =?utf-7?B?YnoyakF5UmJyL29YeHdyOXRIdTJlRVQwVFNnUm4yNistR1prYVcwcHpaQUJX?=
+ =?utf-7?B?eVZHaWtrazFxMmlKNGFsa042TTNrNjM2a1lJVlVSSjRNYW12bktvMWlMTTFI?=
+ =?utf-7?B?L3dBb0krLUkzYzFlcDhTRnZFalExdmVGUVdHYndGZ0VEeXNCN1VIUWNHcHBV?=
+ =?utf-7?B?T3lJQTdvcDdEaUFORXJ0Q3FyaDFvQUFiM0NOanUxV2dqTG9ETWNlZGQ4WjRV?=
+ =?utf-7?B?Z1lGdEJlQ3NFN1EwQlhENk9wMEN1bjBPbU5ycFJSa2NDamZHeEJQT04zbGtk?=
+ =?utf-7?B?aFdKaHBhQzd5VmhXaTZScWtGVHBibnd0WjFMQUJ0U2E3NldMTjA2WFJqN2xX?=
+ =?utf-7?B?dnRsTC9hVUdKUlBycEVnKy1jd1BWMnQybmlyOWRhODBvQXVSR2xOZFBCS20=?=
+ =?utf-7?B?Ky0xemx1RnlrNistcmdJZXdOZCstSGJlZXpyR3VPcDJjVW93aFdRWmYxQnFy?=
+ =?utf-7?B?OEs5c2dEeU1HazRjbkcyV3dZcm5pcVNrSXE0cXlZWnNFVTZ4M09UTS9CMGRU?=
+ =?utf-7?B?U1J0SDk0b010V1VkTmJCWThPenZCenliOW5YemY5M1BjNE1KNUY3bUt1dk1C?=
+ =?utf-7?B?Ky1saFNhQTRSQ0doWUFONzdvRnh0YlJzUTJhNElaNTlqd0tsZjZLR1J3SkNX?=
+ =?utf-7?B?M2VMc04vdjROb0tZRzJNbmQ2cE1EV2ZPWjVlKy00dldoaERWNW5jTXNVRVFN?=
+ =?utf-7?B?NkcvSGJIRnJiUWtsYnlHWGtxUk81cVE2VzBoNUN6U2ZqdEgvZEUzdVBZZ0Vh?=
+ =?utf-7?B?c2pxT3kzKy11VUxYc2hEaGt3ZThNUmRTa1JXZ29xeVVVMGJJKy1RQkpkN0N1?=
+ =?utf-7?B?Y21wd252NHY4R1ZncVk3Ky0vQWxMN2pCd2o1U3dhWkhHL0lFbjVFcUcvci9x?=
+ =?utf-7?B?NnF3VzNTTmdBYXMyZjRISjVZU2hJM0hLRm5ZclpvTFlsbTNPSE8zeXk0L1pW?=
+ =?utf-7?B?RFdiM3pQbHl5ejg0NG0wVkxqY21mNystd2kzTUIvc0lnMjllWWlVR09NMWhI?=
+ =?utf-7?B?Z1hRTFJFRmthd3FJbTVOTlVhaXZnaXk5d1lxZ21TbXZsQ1U5bUJOUHlRTnVn?=
+ =?utf-7?B?dVovUk9ua2hlbzBKNkN2c2NaNTY4ZVNMT3NsZUlnTmNxNUlOVXIwZVBFRWhp?=
+ =?utf-7?B?VTRtZWdGZmlZV1pvSTc4eGJ2SWlYUnk1VGdrei9uSVMzNDdaKy1sRnFmUDZR?=
+ =?utf-7?B?NXkyVHN2OWl6cHNwcTNHb1IwbkpWUHRUL0wxZDl4cnE4bXQ2YVlrQ1Z6Ni92?=
+ =?utf-7?B?ODBFWCstekdXMm9qUnU5bWZYU2ZpUVp3VzNOTEpQSm5uMHAySmpBakp1Q2k1?=
+ =?utf-7?B?LzYyNjZsc1NjU29NZlBMVjdJeThkMjVYTlQ4enBqV2tJUGg5S2xCNCstV1pw?=
+ =?utf-7?B?YkJFeTU1OXlER0dhMFU5Q1EzNDBIeDhTaXVFb25LZW5xbXhOZCstNWtSRzU4?=
+ =?utf-7?B?TEw4ZkRtVjQwZTk3MFRZUjcrLUJ6MUFIQmFRNXZuak1NZmhDYWJNZHFUS01q?=
+ =?utf-7?B?elpOVlhSYmc2amdqNWFaNU0wLzI4aUx2N29lRU54ZDhsV3B1S1ZpSGd6ZTEv?=
+ =?utf-7?B?TEFKaXNGZWF0ZWlXVWdmd2NBdEs4cXM1aUlvdUhvU00xd00vU255QlV6bFp2?=
+ =?utf-7?B?UXliOQ==?=
 Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
 MIME-Version: 1.0
 X-OriginatorOrg: alpsalpine.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
 X-MS-Exchange-CrossTenant-AuthSource: TYVPR01MB10781.jpnprd01.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 54a2e613-bbc1-416a-9b75-08dc4ed21f37
-X-MS-Exchange-CrossTenant-originalarrivaltime: 28 Mar 2024 02:52:35.3207
+X-MS-Exchange-CrossTenant-Network-Message-Id: 58dddad0-7a2b-46b6-c61a-08dc4ed3d39f
+X-MS-Exchange-CrossTenant-originalarrivaltime: 28 Mar 2024 03:04:47.4854
  (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 57e76998-77bd-4b82-a424-198f46eb2254
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: l+3ry7qiVdb7O1/VNUd7/tGPumWC6fHwnzRacdotK791zLor1S34R7Igt9uSy+AmSgFte+XXViwAhZhO53m43g==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYWPR01MB10224
+X-MS-Exchange-CrossTenant-userprincipalname: HUEtNeOX1XkNN/oQuIfCuzugno5d2qBfiBPQ7oqbK9VYV7fvxzgYxRyUEevGiw+eNDEUwMxleOCsgDYU/8fR/A==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: OSYPR01MB5432
 X-Original-Sender: Norihiko.Hama@alpsalpine.com
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@alpsalpine.com header.s=selector1 header.b=IpxG38lA;       arc=pass
+ header.i=@alpsalpine.com header.s=selector1 header.b=jVoMX0Pl;       arc=pass
  (i=1 spf=pass spfdomain=alpsalpine.com dkim=pass dkdomain=alpsalpine.com
  dmarc=pass fromdomain=alpsalpine.com);       spf=pass (google.com: domain of
  norihiko.hama@alpsalpine.com designates 2a01:111:f403:2019::600 as permitted
@@ -233,52 +228,24 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-> > On Wed, Mar 27, 2024 at 07:39:55AM +0000, Norihiko Hama wrote:
-> > > > > Sorry, but module parameters are from the 1990's, we will not go =
-back to that if at all possible as it's not easy to maintain and will not w=
-ork properly for multiple devices.
-> > > > >
-> > > > > I can understand wanting something between 1 and 0 seconds, but a=
-dding yet-another-option isn't probably the best way, sorry.
-> > > > 1 second does not meet with performance requirement.
+> On Wed, Mar 27, 2024 at 07:39:55AM +0000, Norihiko Hama wrote:
+> > > Sorry, but module parameters are from the 1990's, we will not go back to that if at all possible as it's not easy to maintain and will not work properly for multiple devices.
 > > >
-> > > Who is requiring such a performance requirement?  The USB specificati=
-on?
-> > > Or something else?
-> > This is our customer requirement.
+> > > I can understand wanting something between 1 and 0 seconds, but adding yet-another-option isn't probably the best way, sorry.
+> > 1 second does not meet with performance requirement.
+> > I have no good idea except module parameter so that we can maintain backward compatibility but be configurable out of module.
+> > Do you have any other better solution?
 >
-> If it is impossible to do, why are they making you do it?  :)
+> Can you accomplish what you want with a quirk flag?
 
-It's possible to do because we've changed code to minimize delay by ourselv=
-es,
-Then no issue observed when we configured delay to 100 msec as far as we ha=
-ve tested.
-The background for the requirement, it's important for end user how quickly=
- access to USB drive when it's connected.
-Of course there are a lot of overhead to do that but that's why we would li=
-ke to have a chance to minimize such a constant long delay.
+I think that it's hard to do that because 'quirk' is specified for a device
+but it's difficult to identify the devices to make quirk, especially for future introduced devices.
 
-> > I know we have multiple devices with delay_use=3D0, but then it's recov=
-ered and detected by reset after 30s timeout, that is too long than 1 sec.
->
-> So how do you know that making this smaller will help?  There are many ma=
-ny odd and broken devices out there that take a long time to spin up before=
- they are able to be > accessed.  That's what that option is there for, if =
-you "know" you don't need to wait, you don't have to wait.
-> Otherwise you HAVE to wait as you do not know how long things take.
+Can we change the design of existing 'delay_use' ?
+For example, 'delay_use' is 32-bit value and the value "1000 secs" does not make sense to set it,
+So if it's set to '1100', it's treated as "100 / 1000 = 0.1 sec". Is this possible?
 
-As previous my comment, we've changed code to minimize delay by ourselves,
-Then no issue observed when we configured delay to 100 msec as far as we ha=
-ve tested.
-Sorry, we have no theoretical proof but I think it's same situation with cu=
-rrent 1 sec delay.
-So we want to have a chance to change such a constant delay.
-
---=20
-You received this message because you are subscribed to the Google Groups "=
-USB Mass Storage on Linux" group.
-To unsubscribe from this group and stop receiving emails from it, send an e=
-mail to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.=
-one-eyed-alien.net/d/msgid/usb-storage/TYVPR01MB10781C18C8177783D8DEF7E6990=
-3B2%40TYVPR01MB10781.jpnprd01.prod.outlook.com.
+-- 
+You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
+To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/TYVPR01MB10781AA8B37E147E318597B46903B2%40TYVPR01MB10781.jpnprd01.prod.outlook.com.
