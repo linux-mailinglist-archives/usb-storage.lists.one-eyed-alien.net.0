@@ -1,143 +1,160 @@
-Return-Path: <usb-storage+bncBDT33UHK6EMBBTN2TCYAMGQELWKPJ6Y@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBDUNBGN3R4KRB7EFWCYAMGQEYCYSGVY@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-yb1-xb46.google.com (mail-yb1-xb46.google.com [IPv6:2607:f8b0:4864:20::b46])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2AC63891081
-	for <lists+usb-storage@lfdr.de>; Fri, 29 Mar 2024 02:45:51 +0100 (CET)
-Received: by mail-yb1-xb46.google.com with SMTP id 3f1490d57ef6-dbe9e13775asf2506404276.1
-        for <lists+usb-storage@lfdr.de>; Thu, 28 Mar 2024 18:45:51 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1711676750; cv=pass;
+Received: from mail-pg1-x547.google.com (mail-pg1-x547.google.com [IPv6:2607:f8b0:4864:20::547])
+	by mail.lfdr.de (Postfix) with ESMTPS id AF319895437
+	for <lists+usb-storage@lfdr.de>; Tue,  2 Apr 2024 15:07:10 +0200 (CEST)
+Received: by mail-pg1-x547.google.com with SMTP id 41be03b00d2f7-5dc4ffda13fsf4683184a12.0
+        for <lists+usb-storage@lfdr.de>; Tue, 02 Apr 2024 06:07:10 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1712063229; cv=pass;
         d=google.com; s=arc-20160816;
-        b=kh7/WmEyxd2x4MHlkxP72Qw9C+4aD2v9NzEO0dh7y02ysclnR3orNaLl+2M2l7n2oY
-         X+PVVH8gtOR54Mi30haqyFvKmH3zeu1BxBT0lrTJvH4IimDhaIGFqyQWkEFXQKbJWoVg
-         hhEQO5ABs4m2QG3FLRZ37VrmrRccstZ+tusFkX66lviWHs3KBsxipu0Tcfrxpx3JofaJ
-         Itb36ajrTDwSOuPpxoXoBXu40pweQzxGAZ8r8NeFL0AdSqk2Cy08abMVDrdUNDOdm8ti
-         XmTTLOPfCY7isEpQTzuuH9I24Fw9ILznajQ3Lsqg1djL6MZ7SzAN8tBihvcV0UNroso0
-         +LQA==
+        b=EG2WEJa0rbxOLh95/JpoYlweOuQkZH8VWgsO1CrXFfRCUifHVFwQqVXbeq4eFDDOVs
+         emQ+3iSdutoH+D/MWMcG+tntzyQbesBGM/Ps3kGVH/D5uSHHKLbHpwi8480ddS36HGit
+         M2I8ggClYcOgwgGClxqPbTRTp+2mae1uXungakLuCrEv1CHHK5+z3r3QDkMzbgf2nuFR
+         rkJAzrdZVNqwlV2/1qrZ8P/8ZySRWBi2mgptfM+ou21hHfNoi4CZoFiPKhyVIndQVg09
+         kpf1VigmVqSu/ywzK7URY+tzbSeoyl9RMrJpWnCuYIj++e3BgE7hQ5PSt/GNkqgbKzt4
+         fvkg==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:content-transfer-encoding:cc:to
-         :subject:message-id:date:from:in-reply-to:references:mime-version
-         :sender:dkim-signature:dkim-signature;
-        bh=Nh2mZ7Va/7N1mhoTGll3g3LsevgpZEb+WaL/VHPBz0Q=;
-        fh=kDQfSetqDMIpe1pUycxRHuUf64llk1rWUKgdt3yRbS0=;
-        b=YSjvSf+2ws3G7dij8Q71SJmue8cejQT5s+ib4MAXnxwrPZ7vjcuUjhyK+T5W0XU/hN
-         St5Mvxec3i1q4mDay8FFDLBrMTEWmhxSlvm+/3C3YDiTZ0E5RrQjqi98Wj9lorRQO3ID
-         Tx8fxo7zbmCTjngvzhA4ePVm7jGkBKGyWg806e6o2wfC/NSkdwVoHuxnQiK3jb+kAFb4
-         nxrb3ENtRlmwZUchyey3dpNI+/+CN4vRFTodWTo8s+zd23AbypFJ4ti05PbiZ/9EHcHL
-         Z8SSl94wty4ySbOJu1ANWogRf42wCFOnNZNrsWy8+0cr54kL9dfbBVYvszYOibtSyXHa
-         I8HQ==;
+         :list-id:mailing-list:precedence:mime-version:message-id:date
+         :subject:cc:to:from:sender:dkim-signature;
+        bh=gPgGWJTmzmbZ4W01ahFnoMKyshWLT2Gxa3lH4u1QGms=;
+        fh=B5htyWVkRo5rW5D6UAaPz8EfSJ7Ant7A8xNUlY6W6YY=;
+        b=eQoONM4GMTVC//OQq8E8kNkf5wrnJRhtRYHhLTMw2hYxfg2R+OU2zzKeYJGKORxtW/
+         /0vDTyajAUE1qqsXWEO86VD2rHQQ21DXLSWu8QeJ3peoycux8iGK7jJHb+Px8TasXSg3
+         VcyORuTDv8E8q493kNtdchGdwC0OwYMwC0Ob8AeKBOjsSmzBjnXoSVmjoqGThpzdgl1G
+         u6VFBSIyX6pR4g5TuCbnn7s8xeLk5oW4simZjY/fJho5/YHjcLLgkMkeaPyyKC30+Lxa
+         D7lvnmXzELKombZwGgjnZHblo5e3U3WNZ19ZDByWA+EIpf5/uctEQT9kPWwKwCD7LtQc
+         zrTA==;
         darn=lfdr.de
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@one-eyed-alien.net header.s=google header.b=C53UKEJE;
-       spf=pass (google.com: domain of mdharm@one-eyed-alien.net designates 209.85.220.41 as permitted sender) smtp.mailfrom=mdharm@one-eyed-alien.net
+       dkim=pass header.i=@infradead.org header.s=bombadil.20210309 header.b=5AkjCBFQ;
+       spf=none (google.com: bombadil.srs.infradead.org does not designate permitted sender hosts) smtp.mailfrom=BATV+db5ae43edc5588e6f7b7+7527+infradead.org+hch@bombadil.srs.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1711676750; x=1712281550; darn=lfdr.de;
+        d=lists.one-eyed-alien.net; s=google; t=1712063229; x=1712668029; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:x-original-authentication-results
-         :x-original-sender:content-transfer-encoding:cc:to:subject
-         :message-id:date:from:in-reply-to:references:mime-version:sender
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=Nh2mZ7Va/7N1mhoTGll3g3LsevgpZEb+WaL/VHPBz0Q=;
-        b=hA1Lu6YYTLfMNbKJPLlbFm6hg3l2VPYwEQAxGOQg1V29AD6ppACPSbKwE370R/UMsv
-         wo3mmxb/OspdJQRS/VHv5y5y8tylDI69jnX1YLl9RmwQcHiPXFVxop1+p5y2/f+15eAg
-         yjAw+qT+iyhIkiCnWGnPkRv/b/fxsxPk61gpo=
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=one-eyed-alien.net; s=google; t=1711676750; x=1712281550; darn=lfdr.de;
-        h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:x-original-authentication-results
-         :x-original-sender:content-transfer-encoding:cc:to:subject
-         :message-id:date:from:in-reply-to:references:mime-version:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=Nh2mZ7Va/7N1mhoTGll3g3LsevgpZEb+WaL/VHPBz0Q=;
-        b=cFr9bMAPgYUWn5jvzxyiX/86Zg7rlDJFY3aM6loIfw4rkd7j2JkgK23LwStnVRcO/q
-         A4Dx59wRC1QaLiJ0PNBgXA+HnupV7edx29ZrzW9CIl7Ls09GhMCD5F+Um/KUvs0rvINN
-         6rFMiss4be2MNl7TGSc3+tbu6V7pfH/40rI8Q=
+         :x-original-sender:mime-version:message-id:date:subject:cc:to:from
+         :sender:from:to:cc:subject:date:message-id:reply-to;
+        bh=gPgGWJTmzmbZ4W01ahFnoMKyshWLT2Gxa3lH4u1QGms=;
+        b=Z8lb6dpHSK1pRmkLPOivJEdX19owpRsgIFO1L+7Ga9B4AvozgReK7wF2RTyLUyB7UK
+         7Q2hm67XllqaXG+BJ4oQrEZsdKQFc0wLj0Ycpj1TwzbywW9qrhrnQKGjNQIPSZueO4Br
+         QgyLCqUp5Mi8S7ONZf6d80PnvkCgj7XpMp7O8=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1711676750; x=1712281550;
+        d=1e100.net; s=20230601; t=1712063229; x=1712668029;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :x-spam-checked-in-group:list-id:mailing-list:precedence
-         :x-original-authentication-results:x-original-sender
-         :content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-beenthere:x-gm-message-state
+         :x-original-authentication-results:x-original-sender:mime-version
+         :message-id:date:subject:cc:to:from:x-beenthere:x-gm-message-state
          :sender:from:to:cc:subject:date:message-id:reply-to;
-        bh=Nh2mZ7Va/7N1mhoTGll3g3LsevgpZEb+WaL/VHPBz0Q=;
-        b=Wqd9wLGssf5Yn6+wd57FYqCf7YsbmLSpRR3Ogm1N/BJXTNYE8pz2hs/PjRnTo87eic
-         oWOBcdyn+1nAfW2WBMU7k4k5R7lnbkbtYo3aOLEymOQy6DPwhFxmLP506eIqFI8EsY9i
-         CyU5AjwNidB9N6IErlmvw/t2m1UNz00w8Kc/UEN2uEfuC7GNIFCNf1BF+JrA4g+NQqv8
-         tn6jNCLB/OB04wW2W936qCi0qf/J3HSkKucXeMCAeVqHL60s3WZcuRvv46/YVHH4zIrp
-         RgO1yPa61XJBUfAdxuT49+eic56O2hJBwJyceRpQHT8QZ7C3XuA4uvWfxXXEyJwviaor
-         ngBQ==
+        bh=gPgGWJTmzmbZ4W01ahFnoMKyshWLT2Gxa3lH4u1QGms=;
+        b=pDZHF46pjwxUJbqT3B5GDaME35EqQKhpndEmM2mI/VEVsGCxa3mAbWgSuRVE0rEezL
+         +NqVGgDEEA8FHzhitguJqzHaMY6fklhhC/1Ek4oMh9iedR0TB4JvvknSMvOJd5uCc5hx
+         g66a56jO6rV5fdofp8W/KbGq2lO5cLDh7AL6qbr/Pa3tGOwe2/R4ezWOOC/D8up4KThV
+         7o4GALjaTUgIuwVKhxE63yWSId9PvsDsae8J37xsxTBGVUKUcNPM77n7Iw4d11n5D9ZH
+         I1C0Uv/lzmE1ZZAuqs6DIIhIEWRjj/UrGcwTWYM5kVKFWSRz4h+RXt+qwTcDzVwyEF9g
+         oJ7A==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Forwarded-Encrypted: i=2; AJvYcCXTC61f7dX5LV0r1QUwd2GIt5AUvcZa+DpIToQuQSVprYy3izi27Cww9iz49ZZ5rPzGq0Y3NeN5env3Gxdw254YpBc5I2Hr1aRy
-X-Gm-Message-State: AOJu0YxxT1rnC2LTJPE9o8kh2zRL45cM/gZ1UCsiUoshuNPg1mAWmqJs
-	4QCw4hfklXdXwlfhyeSwZhCT1dC7Bz00w2QxJEdZrjQ4sHdzdVIRAjwP/GyHojc=
-X-Google-Smtp-Source: AGHT+IFJrwWtUvhrSddDNUyUBIt9F7Qx8EQRhLclk72oKnLoo0RLfjhIR/w9KOR+lO2EuONxLowTbQ==
-X-Received: by 2002:a25:6983:0:b0:dcc:67a7:430 with SMTP id e125-20020a256983000000b00dcc67a70430mr1072527ybc.15.1711676749899;
-        Thu, 28 Mar 2024 18:45:49 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCU0B3qdqKiwOyihBNE6w2hRtwbwC66sCxSFcnSFWAgIkOXUD+prRMCnQwJJvtvTV0yYO65KKw6Frv0rOqhyddBRK34nHmKodPIs
+X-Gm-Message-State: AOJu0Yz/sRu72DB8zaGRWdXr7Fo7xsuVMmaNELTYqVmcfijAzDivmxSg
+	dVb2SCvA28Qju14ONSLWssf8L1RfanwpjoTYmBJCr0IaohrCSMQWfyXy3WKmfVY=
+X-Google-Smtp-Source: AGHT+IEqv9VnfQNbg6IDiogCTLoK58dD9GjSbhsKFmbzL3kOYcZDrIQSwt0gOxaLm8qjFhrFYppNWg==
+X-Received: by 2002:a17:90b:30c6:b0:2a1:fbdd:4219 with SMTP id hi6-20020a17090b30c600b002a1fbdd4219mr21122884pjb.2.1712063229143;
+        Tue, 02 Apr 2024 06:07:09 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a25:d8d7:0:b0:dcc:4b24:c0dd with SMTP id p206-20020a25d8d7000000b00dcc4b24c0ddls2238636ybg.0.-pod-prod-08-us;
- Thu, 28 Mar 2024 18:45:48 -0700 (PDT)
-X-Forwarded-Encrypted: i=2; AJvYcCW+p85Y2kEW/pONHWUNoEAfgM92yabEVLIArAO5I7ITgLSy4p4aNDTCaXJiTS3gtx2YtRk5xngzc4yqRGq3NN/0/6eUZYNCdyfv6i/RSWHVtsjMDAY=
-X-Received: by 2002:a0d:efc3:0:b0:608:d1b3:30ac with SMTP id y186-20020a0defc3000000b00608d1b330acmr1258278ywe.30.1711676748676;
-        Thu, 28 Mar 2024 18:45:48 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1711676748; cv=none;
+Received: by 2002:a17:90a:d805:b0:2a0:8523:bb1e with SMTP id
+ a5-20020a17090ad80500b002a08523bb1els3414107pjv.1.-pod-prod-00-us-canary;
+ Tue, 02 Apr 2024 06:07:08 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCXG2zcz927JipdMMGHL10bkH4uynECZkMrGXfmfYpKjcb1qvjPDjZy1l4wNDjatrMazrDAUgt5HAXPibjLRGgbGzTypcaEdZ9J/ceIkv5x1N0qdoBg=
+X-Received: by 2002:a17:903:183:b0:1e0:9926:aded with SMTP id z3-20020a170903018300b001e09926adedmr20898297plg.24.1712063227869;
+        Tue, 02 Apr 2024 06:07:07 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1712063227; cv=none;
         d=google.com; s=arc-20160816;
-        b=IritlIBcvWhNGms3qvhsmc0qinOfe8uqri36CA+phyfuTiSG9bTywotJMBZf1cbib9
-         NJRUrT7ic+tFIcpmt9flQNVCujunVumaWjGietUXw9V3aJpE9Y9QVmkAA3G6/mzjsL+H
-         Nnm0BBGEbitziVgZA/IBMJCZEOMwP22H6vHCCsCs6Q5Sp+9endj5hRu+poeCuFW940Zi
-         oEMMdcaKzH3lQcUYYBRibO1S3vDj+4BObr5sZLFvnj+CYVZ2KtlxWnds8DHKt0mja9EH
-         40SXtdWx5KqurCHQczlWqv1ylVaAzpZIrLB1Fww/XHDogZLadNzOHIoqF6fe2ggJ1NX0
-         qVNw==
+        b=wsu6QgdWyMN9lW6KbvfKIexFy3KFucKyWJwKfcxXH0orAudBFc+74ci/CJlQ/7Ud5H
+         4ciiiuevsciHb5xrUHbw56aavhg3CwGfM0iX5ZOuAg2/xOddm7IM/flCLvi3KdeSkfqL
+         vLRjM0PTR1F0Mp+bHxzB2f9Ui2TiNzy89g65YeC9YzHSkmOnvxB6TxxAn11EmpsYMhbP
+         C3eYvuHbv2Z4ciMYuLtZrglzuHJXyn0eiDQarvsDlwjisdh5JOqQ5yMV3x9bN+lGSSm/
+         jyofE6QyqARyMLRp5LJbRpIqd8TESpLM6q0Y/CB9fGfypnhWSyqGptqMevR75w+J+FcL
+         3VCQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:dkim-signature;
-        bh=vo2THDAmcgguZrArlqRwMiyipMqDod7x18NpKsBJsas=;
-        fh=uBpzP2VKqCQx5ZtCu1dKoUWxmAfgHU/wDnIOvVSHu3U=;
-        b=EnoaSF4q/7J+eErVaibdzobPgcfsMPu5QeeeCBwOefSI/XnDouTrx21RNjaVrOQG8/
-         NSBoxkhTGJqyyUTNIbZh8uSCoQ23QxTQ18hMRznjK7jjxv1M91EGmqoe+JRGiEh09EFO
-         VBfLTeJ4nrHFm7oMBL5QGB0lUAz/cRm7ggtvBM3erfhAM2kSvx4+d1w4NXreRNU6F9LZ
-         luSW5Og5P0CGffM+K8Qqd3j+TY7csQUaU5c1t6sfYHSqVekUH+cxK/eAevQBhQwrv89B
-         QN7HOSoWKndx5B8nRPtdqtoMSFt8LvEuRgfCk2Kzja6Cz4GinI1zmrRYiYvRA36maLaD
-         JPrA==;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:dkim-signature;
+        bh=WnMplBC7d5smH4h7cTd7I8II3Hw8mKB1V3xXI/Gj8Ow=;
+        fh=q8hCIvNb5vCUXXKMpVAwbkkPDpj7PtrvAVG6ascHy78=;
+        b=jYCFUxEAlK8BH5gYPHNFEgLb/t+s7L3qUAC64x7fleseHrDKguv4/r4IWtYiKucfgM
+         jj0hwArz1Ys5ksfiPZV3bH02mpsfX6L9WnI9QOY/Aksf1nFxMaddsBkHWXKbwoEozao5
+         YR2EgTw9nLg450tEKkixv0tp2rNac/SnuZ1WZzup+MhtYz64NYDGN/WxK7kbCGnDHrPM
+         DPIkH+6xpninsO+lsi7libcuvhAfXrR5wTpmeHZUUF/k19fpLML0wuTUXu9uhLztnLRr
+         FvQnHPgNiMB5eMcd1YMt1wM9sGVgrCyXESpDCgiyNOyQu2cMkN4M+D2YdbPK2Lm182Gu
+         tthg==;
         dara=google.com
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@one-eyed-alien.net header.s=google header.b=C53UKEJE;
-       spf=pass (google.com: domain of mdharm@one-eyed-alien.net designates 209.85.220.41 as permitted sender) smtp.mailfrom=mdharm@one-eyed-alien.net
-Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
-        by mx.google.com with SMTPS id h6-20020a0dc506000000b0061435c7f2dcsor441365ywd.14.2024.03.28.18.45.48
+       dkim=pass header.i=@infradead.org header.s=bombadil.20210309 header.b=5AkjCBFQ;
+       spf=none (google.com: bombadil.srs.infradead.org does not designate permitted sender hosts) smtp.mailfrom=BATV+db5ae43edc5588e6f7b7+7527+infradead.org+hch@bombadil.srs.infradead.org
+Received: from bombadil.infradead.org (bombadil.infradead.org. [2607:7c80:54:3::133])
+        by mx.google.com with ESMTPS id d126-20020a633684000000b005f0bc6ed83bsi4973715pga.193.2024.04.02.06.07.07
         for <usb-storage@lists.one-eyed-alien.net>
-        (Google Transport Security);
-        Thu, 28 Mar 2024 18:45:48 -0700 (PDT)
-Received-SPF: pass (google.com: domain of mdharm@one-eyed-alien.net designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
-X-Forwarded-Encrypted: i=1; AJvYcCVpmMrHfNqTxK0LqIQCD614MzgLUc8VAMFugk+4QFvVPTcG0Sz8yeRWlsCzZ8pBow8OTGAgNNfBZuXDsNJWUfCY6/XNl5kn90ZndUuIsWbsvU+v4Cg=
-X-Received: by 2002:a0d:f706:0:b0:610:b930:816a with SMTP id
- h6-20020a0df706000000b00610b930816amr1227020ywf.49.1711676748277; Thu, 28 Mar
- 2024 18:45:48 -0700 (PDT)
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 02 Apr 2024 06:07:07 -0700 (PDT)
+Received-SPF: none (google.com: bombadil.srs.infradead.org does not designate permitted sender hosts) client-ip=2607:7c80:54:3::133;
+Received: from [2001:4bb8:199:60a5:c70:4a89:bc61:2] (helo=localhost)
+	by bombadil.infradead.org with esmtpsa (Exim 4.97.1 #2 (Red Hat Linux))
+	id 1rrdqh-0000000BFIS-12gL;
+	Tue, 02 Apr 2024 13:06:47 +0000
+From: Christoph Hellwig <hch@lst.de>
+To: Jens Axboe <axboe@kernel.dk>,
+	"Martin K. Petersen" <martin.petersen@oracle.com>
+Cc: Damien Le Moal <dlemoal@kernel.org>,
+	Niklas Cassel <cassel@kernel.org>,
+	Takashi Sakamoto <o-takashi@sakamocchi.jp>,
+	Sathya Prakash <sathya.prakash@broadcom.com>,
+	Sreekanth Reddy <sreekanth.reddy@broadcom.com>,
+	Suganath Prabu Subramani <suganath-prabu.subramani@broadcom.com>,
+	"Juergen E. Fischer" <fischer@norbit.de>,
+	Xiang Chen <chenxiang66@hisilicon.com>,
+	HighPoint Linux Team <linux@highpoint-tech.com>,
+	Tyrel Datwyler <tyreld@linux.ibm.com>,
+	Brian King <brking@us.ibm.com>,
+	Lee Duncan <lduncan@suse.com>,
+	Chris Leech <cleech@redhat.com>,
+	Mike Christie <michael.christie@oracle.com>,
+	John Garry <john.g.garry@oracle.com>,
+	Jason Yan <yanaijie@huawei.com>,
+	Kashyap Desai <kashyap.desai@broadcom.com>,
+	Sumit Saxena <sumit.saxena@broadcom.com>,
+	Shivasharan S <shivasharan.srikanteshwara@broadcom.com>,
+	Chandrakanth patil <chandrakanth.patil@broadcom.com>,
+	Jack Wang <jinpu.wang@cloud.ionos.com>,
+	Nilesh Javali <njavali@marvell.com>,
+	GR-QLogic-Storage-Upstream@marvell.com,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Alim Akhtar <alim.akhtar@samsung.com>,
+	Avri Altman <avri.altman@wdc.com>,
+	Bart Van Assche <bvanassche@acm.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
+	Alan Stern <stern@rowland.harvard.edu>,
+	linux-block@vger.kernel.org,
+	linux-ide@vger.kernel.org,
+	linux1394-devel@lists.sourceforge.net,
+	MPT-FusionLinux.pdl@broadcom.com,
+	linux-scsi@vger.kernel.org,
+	megaraidlinux.pdl@broadcom.com,
+	mpi3mr-linuxdrv.pdl@broadcom.com,
+	linux-samsung-soc@vger.kernel.org,
+	linux-usb@vger.kernel.org,
+	usb-storage@lists.one-eyed-alien.net
+Subject: [usb-storage] convert SCSI to atomic queue limits, part 1 (v2)
+Date: Tue,  2 Apr 2024 15:06:22 +0200
+Message-Id: <20240402130645.653507-1-hch@lst.de>
+X-Mailer: git-send-email 2.39.2
 MIME-Version: 1.0
-References: <20240327055130.43206-1-Norihiko.Hama@alpsalpine.com>
- <2024032757-surcharge-grime-d3dd@gregkh> <TYVPR01MB107814D7A583CB986884AD4B290342@TYVPR01MB10781.jpnprd01.prod.outlook.com>
- <a446cdf4-3a9b-43d8-b22b-78c20cce2b4f@rowland.harvard.edu>
- <TYVPR01MB10781AA8B37E147E318597B46903B2@TYVPR01MB10781.jpnprd01.prod.outlook.com>
- <0c99daaf-c727-467f-b8c1-ba8846d8a9ab@rowland.harvard.edu>
- <CAA6KcBBcpug-rOytgnbb=c4O54m-Pfy=divqp12qOMrgmQrz7w@mail.gmail.com> <2483fb37-8939-4723-ae8d-7a7a7dba3322@rowland.harvard.edu>
-In-Reply-To: <2483fb37-8939-4723-ae8d-7a7a7dba3322@rowland.harvard.edu>
-From: Matthew Dharm <mdharm-usb@one-eyed-alien.net>
-Date: Thu, 28 Mar 2024 18:45:36 -0700
-Message-ID: <CAA6KcBC0JHMtKj=35TQgtbnoJQQDAmcxp=NKJ8bBxbJPCNNadQ@mail.gmail.com>
-Subject: [usb-storage] Re: [PATCH] usb-storage: Optimize scan delay more precisely
-To: Alan Stern <stern@rowland.harvard.edu>
-Cc: Norihiko Hama <norihiko.hama@alpsalpine.com>, Greg KH <gregkh@linuxfoundation.org>, 
-	"linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>, 
-	"usb-storage@lists.one-eyed-alien.net" <usb-storage@lists.one-eyed-alien.net>, 
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-X-Original-Sender: mdharm-usb@one-eyed-alien.net
+X-SRS-Rewrite: SMTP reverse-path rewritten from <hch@infradead.org> by bombadil.infradead.org. See http://www.infradead.org/rpr.html
+X-Original-Sender: hch@lst.de
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@one-eyed-alien.net header.s=google header.b=C53UKEJE;
-       spf=pass (google.com: domain of mdharm@one-eyed-alien.net designates
- 209.85.220.41 as permitted sender) smtp.mailfrom=mdharm@one-eyed-alien.net
+ header.i=@infradead.org header.s=bombadil.20210309 header.b=5AkjCBFQ;
+       spf=none (google.com: bombadil.srs.infradead.org does not designate
+ permitted sender hosts) smtp.mailfrom=BATV+db5ae43edc5588e6f7b7+7527+infradead.org+hch@bombadil.srs.infradead.org
+Content-Type: text/plain; charset="UTF-8"
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -153,75 +170,94 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On Thu, Mar 28, 2024 at 9:18=E2=80=AFAM Alan Stern <stern@rowland.harvard.e=
-du> wrote:
->
-> On Thu, Mar 28, 2024 at 08:21:18AM -0700, Matthew Dharm wrote:
-> > On Thu, Mar 28, 2024 at 7:51=E2=80=AFAM Alan Stern <stern@rowland.harva=
-rd.edu> wrote:
-> > >
-> > > On Thu, Mar 28, 2024 at 03:04:47AM +0000, Norihiko Hama wrote:
-> > > > > On Wed, Mar 27, 2024 at 07:39:55AM +0000, Norihiko Hama wrote:
-> > > > > > > Sorry, but module parameters are from the 1990's, we will not=
- go back to that if at all possible as it's not easy to maintain and will n=
-ot work properly for multiple devices.
-> > > > > > >
-> > > > > > > I can understand wanting something between 1 and 0 seconds, b=
-ut adding yet-another-option isn't probably the best way, sorry.
-> > > > > > 1 second does not meet with performance requirement.
-> > > > > > I have no good idea except module parameter so that we can main=
-tain backward compatibility but be configurable out of module.
-> > > > > > Do you have any other better solution?
-> > > > >
-> > > > > Can you accomplish what you want with a quirk flag?
-> > > >
-> > > > I think that it's hard to do that because 'quirk' is specified for =
-a device
-> > > > but it's difficult to identify the devices to make quirk, especiall=
-y for future introduced devices.
-> > > >
-> > > > Can we change the design of existing 'delay_use' ?
-> > > > For example, 'delay_use' is 32-bit value and the value "1000 secs" =
-does not make sense to set it,
-> > > > So if it's set to '1100', it's treated as "100 / 1000 =3D 0.1 sec".=
- Is this possible?
-> > >
-> > > Here's an approach that Greg might accept.
-> > >
-> > > Since we already have a delay_use module parameter, we could add a
-> > > delay_use_ms parameter.  The two module parameters would display the
-> > > same value, but delay_use_ms would be in milliseconds instead of in
-> > > seconds.  (This is similar to what we did for the autosuspend and
-> > > autosuspend_delay_ms sysfs attributes.)
-> >
-> > What about just changing the parser on the currently delay_use
-> > parameter to accept an optional suffix?  If it's just digits, it is in
-> > seconds.  If it ends in "ms", then interpret it as milliseconds.  This
-> > would be backwards compatible with existing uses, give you the
-> > flexibility you want, avoid adding another modules parameter, and
-> > potentially be expandable in the future (if, for some reason, someone
-> > wanted microseconds or kiloseconds).
->
-> A little unconventional, I think (at least, I don't know offhand of any
-> other module parameters or sysfs attributes that work this way), but it
-> would work.
+Hi all,
 
-Actually, I got the idea from the existing parameters such as "mem=3D"
-and similar, which accept K, M, or G as suffixes to denote the units
-for the number.  Credit where credit is due.
+this series converts the SCSI midlayer and LLDDs to use atomic queue limits
+API.  It is pretty straight forward, except for the mpt3mr driver which
+does really weird and probably already broken things by setting limits
+from unlocked device iteration callbacks.
 
-Matt
+I will probably defer the (more complicated) ULD changes to the next
+merge window as they would heavily conflict with Damien's zone write
+plugging series.  With that the series could go in through the SCSI
+tree if Jens' ACKs the core block layer bits.
 
+Changes since v1:
+ - print a different warning message for queue_limits_commit failure vs
+   ->device_configure failure
+ - cancel the queue limits update when ->device_configure fails
+ - spelling fixes
+ - improve comments
 
---=20
-Matthew Dharm
-Former Maintainer, USB Mass Storage driver for Linux
+Diffstat:
+ block/blk-settings.c                        |  245 ----------------------------
+ block/bsg-lib.c                             |    6 
+ drivers/ata/ahci.h                          |    2 
+ drivers/ata/libata-sata.c                   |   11 -
+ drivers/ata/libata-scsi.c                   |   19 +-
+ drivers/ata/libata.h                        |    3 
+ drivers/ata/pata_macio.c                    |   11 -
+ drivers/ata/sata_mv.c                       |    2 
+ drivers/ata/sata_nv.c                       |   24 +-
+ drivers/ata/sata_sil24.c                    |    2 
+ drivers/firewire/sbp2.c                     |   13 -
+ drivers/message/fusion/mptfc.c              |    1 
+ drivers/message/fusion/mptsas.c             |    1 
+ drivers/message/fusion/mptscsih.c           |    2 
+ drivers/message/fusion/mptspi.c             |    1 
+ drivers/s390/block/dasd_eckd.c              |    6 
+ drivers/scsi/aha152x.c                      |    8 
+ drivers/scsi/aic94xx/aic94xx_init.c         |    2 
+ drivers/scsi/hisi_sas/hisi_sas.h            |    3 
+ drivers/scsi/hisi_sas/hisi_sas_main.c       |    7 
+ drivers/scsi/hisi_sas/hisi_sas_v1_hw.c      |    2 
+ drivers/scsi/hisi_sas/hisi_sas_v2_hw.c      |    2 
+ drivers/scsi/hisi_sas/hisi_sas_v3_hw.c      |    7 
+ drivers/scsi/hosts.c                        |    6 
+ drivers/scsi/hptiop.c                       |    8 
+ drivers/scsi/ibmvscsi/ibmvfc.c              |    5 
+ drivers/scsi/imm.c                          |   12 -
+ drivers/scsi/ipr.c                          |   10 -
+ drivers/scsi/isci/init.c                    |    2 
+ drivers/scsi/iscsi_tcp.c                    |    2 
+ drivers/scsi/libsas/sas_scsi_host.c         |    7 
+ drivers/scsi/megaraid/megaraid_sas.h        |    2 
+ drivers/scsi/megaraid/megaraid_sas_base.c   |   29 +--
+ drivers/scsi/megaraid/megaraid_sas_fusion.c |    3 
+ drivers/scsi/mpi3mr/mpi3mr.h                |    1 
+ drivers/scsi/mpi3mr/mpi3mr_app.c            |   12 -
+ drivers/scsi/mpi3mr/mpi3mr_os.c             |   76 +++-----
+ drivers/scsi/mpt3sas/mpt3sas_scsih.c        |   18 --
+ drivers/scsi/mvsas/mv_init.c                |    2 
+ drivers/scsi/pm8001/pm8001_init.c           |    2 
+ drivers/scsi/pmcraid.c                      |   11 -
+ drivers/scsi/ppa.c                          |    8 
+ drivers/scsi/qla2xxx/qla_os.c               |    6 
+ drivers/scsi/scsi_lib.c                     |   40 +---
+ drivers/scsi/scsi_scan.c                    |   74 ++++----
+ drivers/scsi/scsi_transport_fc.c            |   15 +
+ drivers/scsi/scsi_transport_iscsi.c         |    6 
+ drivers/scsi/scsi_transport_sas.c           |    4 
+ drivers/staging/rts5208/rtsx.c              |   24 +-
+ drivers/ufs/core/ufs_bsg.c                  |    3 
+ drivers/ufs/core/ufshcd.c                   |    3 
+ drivers/ufs/host/ufs-exynos.c               |    8 
+ drivers/usb/image/microtek.c                |    8 
+ drivers/usb/storage/scsiglue.c              |   57 ++----
+ drivers/usb/storage/uas.c                   |   29 +--
+ drivers/usb/storage/usb.c                   |   10 +
+ include/linux/blkdev.h                      |   26 +-
+ include/linux/bsg-lib.h                     |    3 
+ include/linux/libata.h                      |   10 -
+ include/linux/mmc/host.h                    |    4 
+ include/scsi/libsas.h                       |    3 
+ include/scsi/scsi_host.h                    |    9 +
+ include/scsi/scsi_transport.h               |    2 
+ include/scsi/scsi_transport_fc.h            |    1 
+ include/ufs/ufshcd.h                        |    1 
+ 65 files changed, 347 insertions(+), 595 deletions(-)
 
---=20
-You received this message because you are subscribed to the Google Groups "=
-USB Mass Storage on Linux" group.
-To unsubscribe from this group and stop receiving emails from it, send an e=
-mail to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.=
-one-eyed-alien.net/d/msgid/usb-storage/CAA6KcBC0JHMtKj%3D35TQgtbnoJQQDAmcxp=
-%3DNKJ8bBxbJPCNNadQ%40mail.gmail.com.
+-- 
+You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
+To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20240402130645.653507-1-hch%40lst.de.
