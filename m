@@ -1,108 +1,108 @@
-Return-Path: <usb-storage+bncBDUNBGN3R4KRB64FWCYAMGQE2DBL4GQ@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBDUNBGN3R4KRB7UFWCYAMGQEYWR3U7A@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-pj1-x1047.google.com (mail-pj1-x1047.google.com [IPv6:2607:f8b0:4864:20::1047])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4E3B5895436
-	for <lists+usb-storage@lfdr.de>; Tue,  2 Apr 2024 15:07:10 +0200 (CEST)
-Received: by mail-pj1-x1047.google.com with SMTP id 98e67ed59e1d1-2a25ef79de4sf432528a91.3
-        for <lists+usb-storage@lfdr.de>; Tue, 02 Apr 2024 06:07:10 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1712063228; cv=pass;
+Received: from mail-pg1-x547.google.com (mail-pg1-x547.google.com [IPv6:2607:f8b0:4864:20::547])
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A0C9895438
+	for <lists+usb-storage@lfdr.de>; Tue,  2 Apr 2024 15:07:12 +0200 (CEST)
+Received: by mail-pg1-x547.google.com with SMTP id 41be03b00d2f7-5cfd6ba1c11sf3855093a12.0
+        for <lists+usb-storage@lfdr.de>; Tue, 02 Apr 2024 06:07:12 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1712063231; cv=pass;
         d=google.com; s=arc-20160816;
-        b=0QpCrL6GKN8MvIMCy0aTWWGghZleuaQLUyDl/6/DwUtlGVnxj7y2tWbn1qKnbWkze8
-         vcHSpmx+9XfwWAtrdHYOl7mvy60wLvfGmiHSCXHKGl/SyE/jusQsAWpjsQWtX5FdGWAh
-         vjjqIsegI/FrxzHPY5qRiRTNeLLz+xRyx+xsFuVNnTPmxSjQLPJWItUilsNNC9ZrpwCB
-         bxeSL61y7Yh/4RrfwG43OOnPw0nW3OlsZbGMXBGJqMLIRMGnrPdbmXlQwbh32tcj/SZ+
-         qJq3ovzv7JwLVEbaUzePDJwZ7HEKtwF9+036yklTCUroSxdz7hLxBVJbSNKTPBfYb7Qt
-         bZUA==
+        b=PO7pAevLlaQ2fcrwZtYU8OXrkYuz/jaXX0HdFEZbmV+JwhXj/JCt8Aq9IPvDqFp/UF
+         zj/bupLLdXz+eLN+qG6B/DrZsCdoUfMBue5+r0pJagjAr+SVAIYhwQptxgpXsfRsHir1
+         9r5tL0OGNafJH1HEoKApjO4C6uI7cSE+lINAZ0sIVL3OAh/HdfYTK1PFzMM8/78V7QNP
+         edtPkzrO6RyX9aJXe7aPXcfhFZibdDwkLXtmzm0bYizfBeuiSgek/J2YL312yVzUY6re
+         2wlHyi121e0PXv3b6hszQxaL3QC3Fxzuc5Fc6lYspgoTaoirGaeNpYaTX7nu7ZaMayi/
+         mg7A==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:sender:dkim-signature;
-        bh=LVo3vlJ1PEMITcGsOUJZu8ft3/x6ysvQSvqOfWjL0gw=;
-        fh=tdOSKfoqpIhckm398sqMjA6xSUxBwE7TwiNxjbn5CoE=;
-        b=QzwAkMiCHAkKMsUpOZu5byZKlbCBMsTV+ozxqPeKnbIClxCSN7GceW3nPNhanVj26G
-         7K4d+IxMe7BKCGbgAkI7UtnH2XfXefmsDVliuFdhf253zs74u+fZgXFiNaAXpOAq9tyy
-         cB5ci/ZajaQ8G1K7OMKi6kCBGselKv8Ehlx9HiJahK7nmmwtcDk/yhsMMfza5pz/mv4R
-         5dX0gPL8/j27EeREvGG6Lnp3PBavTRPyKDmdH8T1QwvvaOaEcvr3jFd4C1qO7/wny0UB
-         gucZj77C/vHk05AtTrel3+rg5RH3EtFAoXVZzxlj31G7E4ElQsC1+mHX+8fn8jycngsI
-         9wRA==;
+        bh=L74CFR6rw5BsZBIqwOZ1TXnbvKeK76rw76PKNgbQPC4=;
+        fh=8ahxXy09iiIzMvp4sCiZhXLt32R3skOXbwiaQBsggEk=;
+        b=QNBhn34DIP7feNfrrQiAFk2WdSyHYEcLuB38C0DM0Zcpd2mS2x00smqZAbZBPVw1cO
+         XyskKd1W+Nb0eqcwIrRNVNbPiO9jeYNrUziwV4liE/VTDIIZ94No3su+iZ8qV57NnZlh
+         VJKLBAjDbasmN+TuaoAAD+nt8hqvd3YKtYnd+yjVj94aM3l3T/c5Nox0AFH0ncjzFlIt
+         dTU3E5RYvnUr/A7eRz+GaUSqqYPTct10sG+y+iGOIaZFhbed4NBqNPYQT2pL9PItVE3x
+         wHroTVlhhTdHeoXnmXak7UVkGldo/mi3VlnEThYl9X/hV+JBVZSSx7Y0tq78Zdwcj9uD
+         r3Rg==;
         darn=lfdr.de
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@infradead.org header.s=bombadil.20210309 header.b=R2MxJ9Yr;
+       dkim=pass header.i=@infradead.org header.s=bombadil.20210309 header.b=VZhnyOE1;
        spf=none (google.com: bombadil.srs.infradead.org does not designate permitted sender hosts) smtp.mailfrom=BATV+db5ae43edc5588e6f7b7+7527+infradead.org+hch@bombadil.srs.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1712063228; x=1712668028; darn=lfdr.de;
+        d=lists.one-eyed-alien.net; s=google; t=1712063231; x=1712668031; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:x-original-authentication-results
          :x-original-sender:mime-version:references:in-reply-to:message-id
          :date:subject:cc:to:from:sender:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=LVo3vlJ1PEMITcGsOUJZu8ft3/x6ysvQSvqOfWjL0gw=;
-        b=eFnotNifsEfMvq1q1TgrPTl0u2hTqedWYAKEVKVvxlmdtz/afutdGebTsj0N388mk9
-         1B4aQmD3F15RIGioFfapMFAIDM4ejdp+G/GDNAEIVD0Xhf0KRYSQniawMCdw96+uFL1F
-         1EVSpLq4GFXlo2cQVRXt1brf5wJvs+8XRk90c=
+        bh=L74CFR6rw5BsZBIqwOZ1TXnbvKeK76rw76PKNgbQPC4=;
+        b=UpMcd042tQPWwo5LkdcPdhyhn3SvmR2dv3KFh8rQm6tpvZPTJY6vutai0WIgyEz5ry
+         DSsszX2ZMSs8q/5UfYlaEy155TTMEu8f9yWzXv9j4a7qRM1juGaEHlsteqPvrt1GEjQh
+         aEx5bsQw3IxikKjhde/hfOfkZywo2Z2VryP+8=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1712063228; x=1712668028;
+        d=1e100.net; s=20230601; t=1712063231; x=1712668031;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :x-spam-checked-in-group:list-id:mailing-list:precedence
          :x-original-authentication-results:x-original-sender:mime-version
          :references:in-reply-to:message-id:date:subject:cc:to:from
          :x-beenthere:x-gm-message-state:sender:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=LVo3vlJ1PEMITcGsOUJZu8ft3/x6ysvQSvqOfWjL0gw=;
-        b=bQXY+3afZ96vo1UdRbHeZQv8cOJeS/jOhn6LtPitoK/B19Xw2HMwFQ9Brv9gUxzPPS
-         DsWPRA7hfWeWjf1LXVqmq/cIlyzDCHuP5GBri29t3GLKVLX5A+yjJY521Lj3gXY+dedP
-         U4jzz94Vv5ekyvtiU8HvE2tUKU4PiVaVWef8trmm+Xs0jzOoPuRr3LTtFyhYMqf4misj
-         zKbhmkSdm6nNO2uOXJ3ECtyzWRNslb+3UyVdSGYcnt4qugss9bdqnSWXJPOt/HGXVaMD
-         GhsV7zwnWwpBa5IfGEllAELoxj72lOCdHGowornWN25/EWxGy9eDty48EcPbIjU31vN2
-         imiw==
+        bh=L74CFR6rw5BsZBIqwOZ1TXnbvKeK76rw76PKNgbQPC4=;
+        b=BQjIRvpMt0rwbbI6+8+ypBZz7sl6Zl/NB8FohJGuX585FOxxXqoPXq9woWEyS/BPEr
+         poMA55D8oY9xC3kVUcvHWWKVAZBx3nR5nDStpKqSyAbsXw+KhqD6VrFmTdXfB8nTWKal
+         QeCulPbYH6+jzxZjS0dNh4IXqYrlPRNmvMGX2bLZiG46l+Ml70uvM5ZuABVrlEFGXVzN
+         z8SeF5NIZufqFkqrScKYPmmILBQGviRmMy1czDOFKmNrIZMtZeKQwF5OqKVCD+060AMG
+         kDVr8r7KehrpOsSeHjJjJJJFEGpetmzGCO580lNSx2rpwhEafKz4t/ctewZu1ICG7QQ8
+         LbhQ==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Forwarded-Encrypted: i=2; AJvYcCWyWrWaqAaQkMROYYIVqBd3OXNg4tsf4MQyQrdr+5zrDyf6hd0bYKRfA0PfF6k3uLBdHuqUiyoFCQI1pGfUKge97VYRWgmEv+kQ
-X-Gm-Message-State: AOJu0Yy6+RexvSPTu1ENPfml17+hcQCh8Bdy2Vp0fCioUukeLCt1bfKK
-	vOeZhxX8Rc+NfPJhvRLoOpbzIZMEYf8Hsq7RmnWVHQ8RzZDyKyGxS0E9m1rUxUc=
-X-Google-Smtp-Source: AGHT+IEGCyauzVgY751th9Eqg23T6QZvPVjeRMjw7wcSkp0hPgsYcCqE2VMeAjN3uvIg50mTHoP4Ng==
-X-Received: by 2002:a17:90a:9305:b0:2a0:6676:fc9e with SMTP id p5-20020a17090a930500b002a06676fc9emr9694701pjo.42.1712063228234;
-        Tue, 02 Apr 2024 06:07:08 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCVtZS0pphAfEbJ0oQjFuBVEJmCrXDFjikPEbv12TENAbGqEn8P/6W2wS3oUtjBBpXFaDhI9uOc99sCRVFN+J9n1j0eAzYRglE7X
+X-Gm-Message-State: AOJu0Yybk7zPtwDsgfJr8PuaHBWJypqCOVhJZc4VzsUito3KR/myUj0o
+	KMScX+w6QzDiF3ewXIVlY3ngyPdn3MQVRY9cD1oDryKtYspPKrZYhXKlGI5BW/A=
+X-Google-Smtp-Source: AGHT+IEnt8sNqeHHkNnPC+z9r0Q4U4FsEZ2kYz0F0XGHhkBWBuTE1JInR244aCXv93xvM+mO0l3LYg==
+X-Received: by 2002:a17:902:c947:b0:1e0:ca47:4d9b with SMTP id i7-20020a170902c94700b001e0ca474d9bmr12961771pla.29.1712063230926;
+        Tue, 02 Apr 2024 06:07:10 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a17:90a:1285:b0:2a2:6c35:b46f with SMTP id
- g5-20020a17090a128500b002a26c35b46fls163965pja.1.-pod-prod-09-us; Tue, 02 Apr
- 2024 06:07:07 -0700 (PDT)
-X-Forwarded-Encrypted: i=2; AJvYcCXyzn/X5whFcbjl2unOffx+2zeaN+iIwV0EfHO7gQuPdAMuba52QDh0LWb3aqqb+7B1b8+jjJWCGvB9oItyR/owhEXWyk5gqk64UvI1Rf2gHWVJ9vo=
-X-Received: by 2002:a17:90a:6346:b0:29f:66e2:d2a6 with SMTP id v6-20020a17090a634600b0029f66e2d2a6mr10566392pjs.26.1712063226697;
-        Tue, 02 Apr 2024 06:07:06 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1712063226; cv=none;
+Received: by 2002:a17:903:22c8:b0:1dd:72ea:58b6 with SMTP id
+ y8-20020a17090322c800b001dd72ea58b6ls2875083plg.0.-pod-prod-09-us; Tue, 02
+ Apr 2024 06:07:09 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCXq2USGQeRb/NYTj0dsjnccz1Q9p8IYz9DBUDYtodjid0yez1JfTuCJ7nFHIcJGLeshNoQ4+Oz4D415+FBsdhe8s0ELEJHHQ//JHhngS9jpqYl94tw=
+X-Received: by 2002:a17:902:e94e:b0:1e2:3d05:5f4c with SMTP id b14-20020a170902e94e00b001e23d055f4cmr11764570pll.39.1712063229599;
+        Tue, 02 Apr 2024 06:07:09 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1712063229; cv=none;
         d=google.com; s=arc-20160816;
-        b=sD9c1avNrMixaIfY797X6fQK3VxX4FXu83BzBb/DmIlVIgeiyHrQYBhDxX8dqTaQHe
-         MEfdy7wSvHeU/Qd/B82zl9xmzd02ZVGc5SNQNk0ncbsQM+dbgMndSF/gNRhgFBhkJMMu
-         DOcqI5WBvYAAN/CT0Jdkq+XfBWfbTST/3/oO/WBX0z9sIooEoLBzuChoblDNz6sG48LE
-         EjkunDJvbAuTbPQCWrbjtbbiaIUqetVysR1SMnPNe0+vPhCsYCQlYfnaosIVIJ1GXU4M
-         3fIlmQGoaxO9FeLJpL5/xmuN46vYvVKd+h5Ho/qZm5d0RjLZGqoILsh/ohwIGLbV1QhV
-         iiKA==
+        b=A5NkfaPm5gD52dodo/+d/KcLXWpyRXANW99Xf7/iLj8jxT22QZzNqauJIo0GyqIctK
+         SH7qR3TYJ0nXzi1kxyZgG1c00vUk83dma+cPWW+ZNOxpOkbPvPAeqB0VHn61h4VVyPu+
+         5GOuuvIA5NvH9t7h7B3hq+f7maFjiNMpXG3im0KjYvct7pjsDAv0wRoXoPTPMIhvCoAx
+         U7Q4i5w09lGh/eJH1bQi9J34+2BBSvPDqxvEa5r5PplsrNEHXxUKcblXozTEqi3R834X
+         Wl0KdVgSspWecYfP9bHC32DGt0+y++N4h4xlZR98z3AwRwEUUMrjFnE3jj9AQG/qtbix
+         YWIA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:dkim-signature;
-        bh=Y6R85ITUqUhwT/3IQ1uLG/rghT5v0IaA7UulK+Ug8sg=;
+        bh=nFVtEH8kjrXq58VeMsY4DusbYHlTaq2Q83bR9XbKjL8=;
         fh=q8hCIvNb5vCUXXKMpVAwbkkPDpj7PtrvAVG6ascHy78=;
-        b=bEqXMUzHsdsfjX9F7ePZxw9RcmWPPwBx7GrxPx13/xGucCRVpMPKkr0H8VEsG/W4FW
-         hKP9qQ6dC9/gVpPdZKgTh8xRAKuGI06sgTkpDsWNsl7lrwmzYsrMHoJCFdPA09ImHoU/
-         9AkveiXMj1wd6hMNTbM1wluddpsUs9++xfVyi8ne579iJhUM7mNkJj2akt9HH6QCU9En
-         6EQtykYCtTSqH5pT9P5z3syarvwI6llEHyZaBYUhP+Rc67BHs7AKNFjEIxqSOSO8kSU+
-         MzFauFu8ryQjQJnYqtdICwuldlOKP+J/wEVKhs6IzwAtTlwuNfJUqbAFap0l7ZIy5qH6
-         yE9g==;
+        b=jwgNXyuWPq65lpL+aCk890nbmOv0YIGsHXcDS2zHjqGsPvhMS1N2o4e1LSNqyWVvp5
+         pE8iRVFK/AVrih57dNZ/WUnIUAWNez2dKUgzLIT38LDHT/4EN+g00FMpofAls9lqs6cV
+         vMBSrmNSbV8hwtMCMU75VE3NggbbVfX1zZ38UTD6sbnuE3K4WOs8rmI4EDXtaDlcmLX1
+         iyfRDtsRB5k059WpGmd53vCJ399I5sFxoRJ8uMiEUI1hrqjGeiVnwHumaAoxt2Bg7jtI
+         w5hXLIg+EvNXH3DRJ/Kzu3epJPU/+fA+VvL4bHX0AsZ1ff7MtNVNTuxPWkDCXBfV+RTC
+         HaAw==;
         dara=google.com
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@infradead.org header.s=bombadil.20210309 header.b=R2MxJ9Yr;
+       dkim=pass header.i=@infradead.org header.s=bombadil.20210309 header.b=VZhnyOE1;
        spf=none (google.com: bombadil.srs.infradead.org does not designate permitted sender hosts) smtp.mailfrom=BATV+db5ae43edc5588e6f7b7+7527+infradead.org+hch@bombadil.srs.infradead.org
 Received: from bombadil.infradead.org (bombadil.infradead.org. [2607:7c80:54:3::133])
-        by mx.google.com with ESMTPS id 90-20020a17090a09e300b002a25408f855si1486035pjo.157.2024.04.02.06.07.06
+        by mx.google.com with ESMTPS id z3-20020a170902d54300b001e2832e333dsi393775plf.511.2024.04.02.06.07.09
         for <usb-storage@lists.one-eyed-alien.net>
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 02 Apr 2024 06:07:06 -0700 (PDT)
+        Tue, 02 Apr 2024 06:07:09 -0700 (PDT)
 Received-SPF: none (google.com: bombadil.srs.infradead.org does not designate permitted sender hosts) client-ip=2607:7c80:54:3::133;
 Received: from [2001:4bb8:199:60a5:c70:4a89:bc61:2] (helo=localhost)
 	by bombadil.infradead.org with esmtpsa (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rrdqp-0000000BFL1-15TB;
-	Tue, 02 Apr 2024 13:06:56 +0000
+	id 1rrdqs-0000000BFMU-2NnW;
+	Tue, 02 Apr 2024 13:06:59 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Jens Axboe <axboe@kernel.dk>,
 	"Martin K. Petersen" <martin.petersen@oracle.com>
@@ -145,9 +145,10 @@ Cc: Damien Le Moal <dlemoal@kernel.org>,
 	linux-samsung-soc@vger.kernel.org,
 	linux-usb@vger.kernel.org,
 	usb-storage@lists.one-eyed-alien.net
-Subject: [usb-storage] [PATCH 03/23] mpi3mr: pass queue_limits to bsg_setup_queue
-Date: Tue,  2 Apr 2024 15:06:25 +0200
-Message-Id: <20240402130645.653507-4-hch@lst.de>
+Subject: [usb-storage] [PATCH 04/23] scsi: initialize scsi midlayer limits
+ before allocating the queue
+Date: Tue,  2 Apr 2024 15:06:26 +0200
+Message-Id: <20240402130645.653507-5-hch@lst.de>
 X-Mailer: git-send-email 2.39.2
 In-Reply-To: <20240402130645.653507-1-hch@lst.de>
 References: <20240402130645.653507-1-hch@lst.de>
@@ -155,7 +156,7 @@ MIME-Version: 1.0
 X-SRS-Rewrite: SMTP reverse-path rewritten from <hch@infradead.org> by bombadil.infradead.org. See http://www.infradead.org/rpr.html
 X-Original-Sender: hch@lst.de
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@infradead.org header.s=bombadil.20210309 header.b=R2MxJ9Yr;
+ header.i=@infradead.org header.s=bombadil.20210309 header.b=VZhnyOE1;
        spf=none (google.com: bombadil.srs.infradead.org does not designate
  permitted sender hosts) smtp.mailfrom=BATV+db5ae43edc5588e6f7b7+7527+infradead.org+hch@bombadil.srs.infradead.org
 Content-Type: text/plain; charset="UTF-8"
@@ -174,57 +175,220 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-Pass the limits to bsg_setup_queue instead of setting them up on the live
-queue.
+Turn __scsi_init_queue into scsi_init_limits which initializes
+queue_limits structure that can be passed to blk_mq_alloc_queue.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
+Reviewed-by: Bart Van Assche <bvanassche@acm.org>
 Reviewed-by: John Garry <john.g.garry@oracle.com>
 Reviewed-by: Damien Le Moal <dlemoal@kernel.org>
 ---
- drivers/scsi/mpi3mr/mpi3mr_app.c | 12 +++++-------
- 1 file changed, 5 insertions(+), 7 deletions(-)
+ drivers/scsi/scsi_lib.c             | 32 ++++++++++++++---------------
+ drivers/scsi/scsi_scan.c            |  5 +++--
+ drivers/scsi/scsi_transport_fc.c    | 11 +++++-----
+ drivers/scsi/scsi_transport_iscsi.c |  5 +++--
+ include/scsi/scsi_transport.h       |  2 +-
+ 5 files changed, 28 insertions(+), 27 deletions(-)
 
-diff --git a/drivers/scsi/mpi3mr/mpi3mr_app.c b/drivers/scsi/mpi3mr/mpi3mr_app.c
-index ce5445eb9d0e4e..05e061fc6d3a06 100644
---- a/drivers/scsi/mpi3mr/mpi3mr_app.c
-+++ b/drivers/scsi/mpi3mr/mpi3mr_app.c
-@@ -1838,6 +1838,10 @@ void mpi3mr_bsg_init(struct mpi3mr_ioc *mrioc)
- {
- 	struct device *bsg_dev = &mrioc->bsg_dev;
- 	struct device *parent = &mrioc->shost->shost_gendev;
-+	struct queue_limits lim = {
-+		.max_hw_sectors		= MPI3MR_MAX_APP_XFER_SECTORS,
-+		.max_segments		= MPI3MR_MAX_APP_XFER_SEGMENTS,
-+	};
+diff --git a/drivers/scsi/scsi_lib.c b/drivers/scsi/scsi_lib.c
+index 2e28e2360c8574..1deca84914e87a 100644
+--- a/drivers/scsi/scsi_lib.c
++++ b/drivers/scsi/scsi_lib.c
+@@ -32,7 +32,7 @@
+ #include <scsi/scsi_driver.h>
+ #include <scsi/scsi_eh.h>
+ #include <scsi/scsi_host.h>
+-#include <scsi/scsi_transport.h> /* __scsi_init_queue() */
++#include <scsi/scsi_transport.h> /* scsi_init_limits() */
+ #include <scsi/scsi_dh.h>
  
- 	device_initialize(bsg_dev);
- 
-@@ -1853,20 +1857,14 @@ void mpi3mr_bsg_init(struct mpi3mr_ioc *mrioc)
- 		return;
- 	}
- 
--	mrioc->bsg_queue = bsg_setup_queue(bsg_dev, dev_name(bsg_dev), NULL,
-+	mrioc->bsg_queue = bsg_setup_queue(bsg_dev, dev_name(bsg_dev), &lim,
- 			mpi3mr_bsg_request, NULL, 0);
- 	if (IS_ERR(mrioc->bsg_queue)) {
- 		ioc_err(mrioc, "%s: bsg registration failed\n",
- 		    dev_name(bsg_dev));
- 		device_del(bsg_dev);
- 		put_device(bsg_dev);
--		return;
- 	}
--
--	blk_queue_max_segments(mrioc->bsg_queue, MPI3MR_MAX_APP_XFER_SEGMENTS);
--	blk_queue_max_hw_sectors(mrioc->bsg_queue, MPI3MR_MAX_APP_XFER_SECTORS);
--
--	return;
+ #include <trace/events/scsi.h>
+@@ -1965,31 +1965,26 @@ static void scsi_map_queues(struct blk_mq_tag_set *set)
+ 	blk_mq_map_queues(&set->map[HCTX_TYPE_DEFAULT]);
  }
  
- /**
+-void __scsi_init_queue(struct Scsi_Host *shost, struct request_queue *q)
++void scsi_init_limits(struct Scsi_Host *shost, struct queue_limits *lim)
+ {
+ 	struct device *dev = shost->dma_dev;
+ 
+-	/*
+-	 * this limit is imposed by hardware restrictions
+-	 */
+-	blk_queue_max_segments(q, min_t(unsigned short, shost->sg_tablesize,
+-					SG_MAX_SEGMENTS));
++	memset(lim, 0, sizeof(*lim));
++	lim->max_segments =
++		min_t(unsigned short, shost->sg_tablesize, SG_MAX_SEGMENTS);
+ 
+ 	if (scsi_host_prot_dma(shost)) {
+ 		shost->sg_prot_tablesize =
+ 			min_not_zero(shost->sg_prot_tablesize,
+ 				     (unsigned short)SCSI_MAX_PROT_SG_SEGMENTS);
+ 		BUG_ON(shost->sg_prot_tablesize < shost->sg_tablesize);
+-		blk_queue_max_integrity_segments(q, shost->sg_prot_tablesize);
++		lim->max_integrity_segments = shost->sg_prot_tablesize;
+ 	}
+ 
+-	blk_queue_max_hw_sectors(q, shost->max_sectors);
+-	blk_queue_segment_boundary(q, shost->dma_boundary);
+-	dma_set_seg_boundary(dev, shost->dma_boundary);
+-
+-	blk_queue_max_segment_size(q, shost->max_segment_size);
+-	blk_queue_virt_boundary(q, shost->virt_boundary_mask);
+-	dma_set_max_seg_size(dev, queue_max_segment_size(q));
++	lim->max_hw_sectors = shost->max_sectors;
++	lim->seg_boundary_mask = shost->dma_boundary;
++	lim->max_segment_size = shost->max_segment_size;
++	lim->virt_boundary_mask = shost->virt_boundary_mask;
+ 
+ 	/*
+ 	 * Set a reasonable default alignment:  The larger of 32-byte (dword),
+@@ -1998,9 +1993,12 @@ void __scsi_init_queue(struct Scsi_Host *shost, struct request_queue *q)
+ 	 *
+ 	 * Devices that require a bigger alignment can increase it later.
+ 	 */
+-	blk_queue_dma_alignment(q, max(4, dma_get_cache_alignment()) - 1);
++	lim->dma_alignment = max(4, dma_get_cache_alignment()) - 1;
++
++	dma_set_seg_boundary(dev, shost->dma_boundary);
++	dma_set_max_seg_size(dev, shost->max_segment_size);
+ }
+-EXPORT_SYMBOL_GPL(__scsi_init_queue);
++EXPORT_SYMBOL_GPL(scsi_init_limits);
+ 
+ static const struct blk_mq_ops scsi_mq_ops_no_commit = {
+ 	.get_budget	= scsi_mq_get_budget,
+diff --git a/drivers/scsi/scsi_scan.c b/drivers/scsi/scsi_scan.c
+index ffd7e7e72933c5..ff3778f7009ebf 100644
+--- a/drivers/scsi/scsi_scan.c
++++ b/drivers/scsi/scsi_scan.c
+@@ -283,6 +283,7 @@ static struct scsi_device *scsi_alloc_sdev(struct scsi_target *starget,
+ 	struct request_queue *q;
+ 	int display_failure_msg = 1, ret;
+ 	struct Scsi_Host *shost = dev_to_shost(starget->dev.parent);
++	struct queue_limits lim;
+ 
+ 	sdev = kzalloc(sizeof(*sdev) + shost->transportt->device_size,
+ 		       GFP_KERNEL);
+@@ -332,7 +333,8 @@ static struct scsi_device *scsi_alloc_sdev(struct scsi_target *starget,
+ 
+ 	sdev->sg_reserved_size = INT_MAX;
+ 
+-	q = blk_mq_alloc_queue(&sdev->host->tag_set, NULL, NULL);
++	scsi_init_limits(shost, &lim);
++	q = blk_mq_alloc_queue(&sdev->host->tag_set, &lim, NULL);
+ 	if (IS_ERR(q)) {
+ 		/* release fn is set up in scsi_sysfs_device_initialise, so
+ 		 * have to free and put manually here */
+@@ -343,7 +345,6 @@ static struct scsi_device *scsi_alloc_sdev(struct scsi_target *starget,
+ 	kref_get(&sdev->host->tagset_refcnt);
+ 	sdev->request_queue = q;
+ 	q->queuedata = sdev;
+-	__scsi_init_queue(sdev->host, q);
+ 
+ 	depth = sdev->host->cmd_per_lun ?: 1;
+ 
+diff --git a/drivers/scsi/scsi_transport_fc.c b/drivers/scsi/scsi_transport_fc.c
+index 87b2235b8ece45..0799700b0fca77 100644
+--- a/drivers/scsi/scsi_transport_fc.c
++++ b/drivers/scsi/scsi_transport_fc.c
+@@ -4276,6 +4276,7 @@ fc_bsg_hostadd(struct Scsi_Host *shost, struct fc_host_attrs *fc_host)
+ {
+ 	struct device *dev = &shost->shost_gendev;
+ 	struct fc_internal *i = to_fc_internal(shost->transportt);
++	struct queue_limits lim;
+ 	struct request_queue *q;
+ 	char bsg_name[20];
+ 
+@@ -4286,8 +4287,8 @@ fc_bsg_hostadd(struct Scsi_Host *shost, struct fc_host_attrs *fc_host)
+ 
+ 	snprintf(bsg_name, sizeof(bsg_name),
+ 		 "fc_host%d", shost->host_no);
+-
+-	q = bsg_setup_queue(dev, bsg_name, NULL, fc_bsg_dispatch,
++	scsi_init_limits(shost, &lim);
++	q = bsg_setup_queue(dev, bsg_name, &lim, fc_bsg_dispatch,
+ 			fc_bsg_job_timeout, i->f->dd_bsg_size);
+ 	if (IS_ERR(q)) {
+ 		dev_err(dev,
+@@ -4295,7 +4296,6 @@ fc_bsg_hostadd(struct Scsi_Host *shost, struct fc_host_attrs *fc_host)
+ 			shost->host_no);
+ 		return PTR_ERR(q);
+ 	}
+-	__scsi_init_queue(shost, q);
+ 	blk_queue_rq_timeout(q, FC_DEFAULT_BSG_TIMEOUT);
+ 	fc_host->rqst_q = q;
+ 	return 0;
+@@ -4311,6 +4311,7 @@ fc_bsg_rportadd(struct Scsi_Host *shost, struct fc_rport *rport)
+ {
+ 	struct device *dev = &rport->dev;
+ 	struct fc_internal *i = to_fc_internal(shost->transportt);
++	struct queue_limits lim;
+ 	struct request_queue *q;
+ 
+ 	rport->rqst_q = NULL;
+@@ -4318,13 +4319,13 @@ fc_bsg_rportadd(struct Scsi_Host *shost, struct fc_rport *rport)
+ 	if (!i->f->bsg_request)
+ 		return -ENOTSUPP;
+ 
+-	q = bsg_setup_queue(dev, dev_name(dev), NULL, fc_bsg_dispatch_prep,
++	scsi_init_limits(shost, &lim);
++	q = bsg_setup_queue(dev, dev_name(dev), &lim, fc_bsg_dispatch_prep,
+ 				fc_bsg_job_timeout, i->f->dd_bsg_size);
+ 	if (IS_ERR(q)) {
+ 		dev_err(dev, "failed to setup bsg queue\n");
+ 		return PTR_ERR(q);
+ 	}
+-	__scsi_init_queue(shost, q);
+ 	blk_queue_rq_timeout(q, BLK_DEFAULT_SG_TIMEOUT);
+ 	rport->rqst_q = q;
+ 	return 0;
+diff --git a/drivers/scsi/scsi_transport_iscsi.c b/drivers/scsi/scsi_transport_iscsi.c
+index c131746bf20777..5e1bb488da15c0 100644
+--- a/drivers/scsi/scsi_transport_iscsi.c
++++ b/drivers/scsi/scsi_transport_iscsi.c
+@@ -1535,6 +1535,7 @@ iscsi_bsg_host_add(struct Scsi_Host *shost, struct iscsi_cls_host *ihost)
+ {
+ 	struct device *dev = &shost->shost_gendev;
+ 	struct iscsi_internal *i = to_iscsi_internal(shost->transportt);
++	struct queue_limits lim;
+ 	struct request_queue *q;
+ 	char bsg_name[20];
+ 
+@@ -1542,14 +1543,14 @@ iscsi_bsg_host_add(struct Scsi_Host *shost, struct iscsi_cls_host *ihost)
+ 		return -ENOTSUPP;
+ 
+ 	snprintf(bsg_name, sizeof(bsg_name), "iscsi_host%d", shost->host_no);
+-	q = bsg_setup_queue(dev, bsg_name, NULL, iscsi_bsg_host_dispatch, NULL,
++	scsi_init_limits(shost, &lim);
++	q = bsg_setup_queue(dev, bsg_name, &lim, iscsi_bsg_host_dispatch, NULL,
+ 			0);
+ 	if (IS_ERR(q)) {
+ 		shost_printk(KERN_ERR, shost, "bsg interface failed to "
+ 			     "initialize - no request queue\n");
+ 		return PTR_ERR(q);
+ 	}
+-	__scsi_init_queue(shost, q);
+ 
+ 	ihost->bsg_q = q;
+ 	return 0;
+diff --git a/include/scsi/scsi_transport.h b/include/scsi/scsi_transport.h
+index a0458bda314872..1394cf313bb37c 100644
+--- a/include/scsi/scsi_transport.h
++++ b/include/scsi/scsi_transport.h
+@@ -83,6 +83,6 @@ scsi_transport_device_data(struct scsi_device *sdev)
+ 		+ shost->transportt->device_private_offset;
+ }
+ 
+-void __scsi_init_queue(struct Scsi_Host *shost, struct request_queue *q);
++void scsi_init_limits(struct Scsi_Host *shost, struct queue_limits *lim);
+ 
+ #endif /* SCSI_TRANSPORT_H */
 -- 
 2.39.2
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20240402130645.653507-4-hch%40lst.de.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20240402130645.653507-5-hch%40lst.de.
