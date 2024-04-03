@@ -1,51 +1,51 @@
-Return-Path: <usb-storage+bncBCHZVHVFVMARBQXZWOYAMGQEYWXZLNI@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBCHZVHVFVMARBYH2WOYAMGQEQJWYKWY@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-ed1-x546.google.com (mail-ed1-x546.google.com [IPv6:2a00:1450:4864:20::546])
-	by mail.lfdr.de (Postfix) with ESMTPS id 028588964EE
-	for <lists+usb-storage@lfdr.de>; Wed,  3 Apr 2024 08:52:51 +0200 (CEST)
-Received: by mail-ed1-x546.google.com with SMTP id 4fb4d7f45d1cf-558aafe9bf2sf5086285a12.1
-        for <lists+usb-storage@lfdr.de>; Tue, 02 Apr 2024 23:52:51 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1712127170; cv=pass;
+Received: from mail-ed1-x548.google.com (mail-ed1-x548.google.com [IPv6:2a00:1450:4864:20::548])
+	by mail.lfdr.de (Postfix) with ESMTPS id 8C7AF8964FE
+	for <lists+usb-storage@lfdr.de>; Wed,  3 Apr 2024 08:55:29 +0200 (CEST)
+Received: by mail-ed1-x548.google.com with SMTP id 4fb4d7f45d1cf-56c1ac93679sf4276423a12.2
+        for <lists+usb-storage@lfdr.de>; Tue, 02 Apr 2024 23:55:29 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1712127329; cv=pass;
         d=google.com; s=arc-20160816;
-        b=OdNBBF4WldQjGZV50Ks1aDwh1SVoSQ3qrnOqDuB1qKB12K3LvrAwOsMXtI+OkYiksX
-         NI3/M1EQbyZlmkUYJe1c6KjmtB7xEsgWgeJ2MqxIRpFPJOhM2c26HSQWVfjgWFJaosDn
-         cgAM7L99mIFtByqz554qDigFlOMoRNZtXcAAitk6ETzxSSng/mlCulZRlPgiCNaINtuS
-         HupDfUu9e02dgOTDOZgjej9YpE0r4xfpk9uPb0YyLcREiZL6CPZW1RHOdhrrTo1MF51r
-         yP7dtEVyecg8F9Bb//U64PAyIztFVYv6V2tKVm0S8jrTNU0AQP2Z8Eu0CJuX/tiIBmd8
-         OYKQ==
+        b=q8B9f0TtOhfuR3wueluDW+3q0uXbm8+g62BqwXl8caBrY6b2S88NgDNZ1OI5x+fknL
+         BztP+ueqKhsbndqkh/YoY7ckPse7dqza8YQusa2X3vBjugFTPO0wM2ZvTR9wNL1g8QYc
+         JDPZkPtGFibu294s3vjgp7nj2KmXQkPiIFQZ7M7701eU3YoOJ7Zc2lnOALjvrg6eCRCC
+         0EO4EeX2Uarfugkt402QuGhDwBdHMuZdbtd/hwXOlbjItbeWqlJp+qUr1YZHWVDFvwJ3
+         e5WcK8mx9mZWs6bCVHT4RocAxZ8V0cPdK4HC5esUuz8126pQElfucg7XUXbzdD9lgNbM
+         nsow==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:content-transfer-encoding
          :in-reply-to:from:references:cc:to:content-language:subject
          :user-agent:mime-version:date:message-id:sender:dkim-signature;
-        bh=dLRpmj5Ed+fMfnMEEo7K9yu7DSSqKqnl7qPDk22u55k=;
-        fh=qItLFEdYJrHYtdVUKq9nhFWtQT4JxTvvZ/rUCOYpKCg=;
-        b=CPOZMraF0FvJ1W7/YqaVdtlKfZhcunFOpzM4KEWtsFiIzcQB1y6Dirx0nebVpHO5DO
-         nOO73DEzwPu3cTivPhSQMVU/+I/Z0RsRcgCgkkvXPopP+oNGfMy3lpJfBXfqyRHrxmum
-         +1c2ipMtT9Ssubba5BOaE4oge2TY+0TPmI+gOdeP/CmHfT6aCsyMgQoyLOSdl7qUL4CP
-         6cFWJMM/S1ZSNoa3J/4A+sAdRDpYxpRZGypwgbRJbxZBUac9r7/BDJ/JqfE1pr0oypBW
-         pbJcdtuxvNwwi6rS4+ZlRxAVv70OH8uLD3UiM9V/mP9SXjg9BMaGAsy3qiXuc3xmqrHG
-         5rqA==;
+        bh=1pWNk18IFeS4JBbu8FOkWpfLAxgWrZycfNx7RtFI+Tw=;
+        fh=7lEbubd3bGZiZR25VIimaiIjFVt/qxOyzMHhgJtsRpQ=;
+        b=ifELC3lGa6Bi2MDBdqU1iOL1RddUqdpE6PxUrlVw2hj3WyXJM9bgFI+cX8VsXUHF8h
+         RL/mym+pcH67ivu0qAcuq4aNK7O2SqzuNgt6Rn1SKeamQ9y6hJGpkNoLa8DxeXj/riYf
+         ARNrc+wzqhaB2pBgEarXmcDJ+ySUF4RqeNIT9sWrFXnDiZKt+ChOKKI3Z8Pv6IofGb2w
+         CP0frDDjZo2KfTRkopkfvf4clq8TiAC7MNWgScA3spbcypx/1zyqU9ZE1TZ8Bon/wblo
+         d1K7FsiavV/kFF3gqAYGGcwMn0tcl0ronQfB9SUnfhnIVFc6Es8CQUqw740/1RSj0mcm
+         jOLg==;
         darn=lfdr.de
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@suse.de header.s=susede2_rsa header.b=gwu0kIJn;
+       dkim=pass header.i=@suse.de header.s=susede2_rsa header.b=itHbDmfk;
        dkim=neutral (no key) header.i=@suse.de header.s=susede2_ed25519;
-       spf=pass (google.com: domain of hare@suse.de designates 2a07:de40:b251:101:10:150:64:1 as permitted sender) smtp.mailfrom=hare@suse.de;
+       spf=pass (google.com: domain of hare@suse.de designates 195.135.223.131 as permitted sender) smtp.mailfrom=hare@suse.de;
        dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=suse.de
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1712127170; x=1712731970; darn=lfdr.de;
+        d=lists.one-eyed-alien.net; s=google; t=1712127329; x=1712732129; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:x-original-authentication-results
          :x-original-sender:content-transfer-encoding:in-reply-to:from
          :references:cc:to:content-language:subject:user-agent:mime-version
          :date:message-id:sender:from:to:cc:subject:date:message-id:reply-to;
-        bh=dLRpmj5Ed+fMfnMEEo7K9yu7DSSqKqnl7qPDk22u55k=;
-        b=WH2XEqaY0YIuUJhdob7xOEH1wxBHC6yjl/Lv9AgDtwp84/MzSxpa1gCCb7T3CK0vJB
-         PnT+m63YLrsoBDxkrcSjQCXOCdGK0hOdqx3H1GJA7v52qUJSTU38nhpjMPqRFNC9evE+
-         4tbw69pqb/j1F3thybqyJq1vcTTSq7vk9SKmg=
+        bh=1pWNk18IFeS4JBbu8FOkWpfLAxgWrZycfNx7RtFI+Tw=;
+        b=MMOlxtPLe2amfBZ/TC6m02c+SZev00W5mVdcNButsnSyCNIJDOfIvbPLkz7Duyi22m
+         dzw9u9QYVM+QdKqQWixnznUF5pDVaIQnRRs/jYiw2qbh+1yuKSJ/3kv0ANTXKskWrVtK
+         ykpKHJRw4fZ3MM7ibM6+i1YvdZ+yXsuCO2NE0=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1712127170; x=1712731970;
+        d=1e100.net; s=20230601; t=1712127329; x=1712732129;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :x-spam-checked-in-group:list-id:mailing-list:precedence
          :x-original-authentication-results:x-original-sender
@@ -53,80 +53,81 @@ X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-beenthere:x-gm-message-state:sender:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=dLRpmj5Ed+fMfnMEEo7K9yu7DSSqKqnl7qPDk22u55k=;
-        b=qMuzNvsOpm6DrAlAWz8P11TjiMIxn28DBBvEHbGrHbOHKCZmrRl6xyPebp+He0DfNm
-         UXgdhcCqkRHgL333HNpDLqkaH8FIhLxyfttOeUliWdnbsz37Gkq+BkdM/22A/ndXq+5a
-         8DHmBXOa2doczVWGL2551ORyjlF6Op+jcRzUe3eXX0WTeWAC1rqil3nUbDNlDzLytq0z
-         cwNoWhZywtv0Gds+0rfA9V9LP05j2imJz39W/bjQ10U1fJFXZd1NHK0a8IVfVBIwv6Yf
-         /tsqsSv+MmGr/A+Xjlii2M2JgD/gAcL/6VKiGffJWGPbCY1N2Lc5xrphlegv2YXxKtbq
-         qA6w==
+        bh=1pWNk18IFeS4JBbu8FOkWpfLAxgWrZycfNx7RtFI+Tw=;
+        b=hVqzeeQJs+U0rDV67G9Ks2KR9duaKwtjI4JZcnGt68KfyfbnRUGybO5nZQJwIko/f2
+         xsWO5NOKrdJy/Ic0trYSIuBA80s0e0rwz3WCnj2yNPHzK/soJrNmlYs4AhDRJqjGCjA9
+         02rhmCZ+2ZP1zYyO3l/kNDGMQGnYbL43PKRny3qRp3Vw2jO92mQG+3Bft/iM90Py4pRw
+         mJ3dsp8NRm82jNhdmGzA2qIRyisr0mUFDJTcF1nhlNYJy/PKJ1aJPJUjNOBcitt9huSe
+         /WTGI3BF25RWVHHqMRgBHh6t7jx/LbKQA/grf5fV0opREwfSwfcGQIlflJEfpmy4vQMy
+         TWuw==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Forwarded-Encrypted: i=2; AJvYcCU89cQpASUtwMCIYFXh4yIYpmoy2zHdjZ+NkGcPVMSlMDwJJgIZ/ZbyPiEDfmxpikxZbx9Z0lJPCeak0gItYutcch51rE1vdStn
-X-Gm-Message-State: AOJu0YwU+EDhZJHIDbWei80x1LKGuze8Wsn4A08MCk5YHCiaAIgu7DXT
-	QfkHMz9ljexBTGUt6qIOyGLCUJSEaiIjFxYp0gMRppIwvE/ABm2UT6/8DBzV738=
-X-Google-Smtp-Source: AGHT+IGyfreBYE1XJ5SB9jex9L8VN3Ika95dykTWitQSCinw5mW8zWWRFJJIxsfO7CkdlZ9qZcK/Pg==
-X-Received: by 2002:a05:6402:358a:b0:56d:eed0:4dc6 with SMTP id y10-20020a056402358a00b0056deed04dc6mr1440282edc.23.1712127170523;
-        Tue, 02 Apr 2024 23:52:50 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCXGtzU9fn1TpKJWFSXpthKKXle+j8Bz3p68sLr5DVY7jsQwrV84x3QJNouJOltKvUVtG5w/lD0mHhYHO3uqFNKQANiuodGSfCdk
+X-Gm-Message-State: AOJu0YxKunqfrjD0kTyJN6b5+JNVxw/yAm+iWlEDKLRb9u9k0njKaMTN
+	PdpBcm8deYCC4h/+oGIRLCuM9VhLlBSpUO5dL8vZd7O1KcqE2dDn6LVl3TApmkg=
+X-Google-Smtp-Source: AGHT+IH4Ep1FisCAdk+FOijSdbXxleNcdsWQWpFAW4JQlkLdDVYUmCJRWHl7r5XY5Twr0wYPqL0YTg==
+X-Received: by 2002:a50:d501:0:b0:56e:bad:36b with SMTP id u1-20020a50d501000000b0056e0bad036bmr131255edi.21.1712127329055;
+        Tue, 02 Apr 2024 23:55:29 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a05:6402:2692:b0:56c:4cb0:f667 with SMTP id
- w18-20020a056402269200b0056c4cb0f667ls1549529edd.1.-pod-prod-03-eu; Tue, 02
- Apr 2024 23:52:49 -0700 (PDT)
-X-Forwarded-Encrypted: i=2; AJvYcCUNSrV19zh0EV6Iqo4Y5ASWEsmrryuASYYT9w70BD26pCSMtlEQwsQ/pD9cgdmNULQv2dYbA3cVlsKJ2gyEVYejjcjrLYMBwoiTjlMBZhhzvczNYRs=
-X-Received: by 2002:a50:f692:0:b0:56d:f937:9656 with SMTP id d18-20020a50f692000000b0056df9379656mr1537812edn.9.1712127168695;
-        Tue, 02 Apr 2024 23:52:48 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1712127168; cv=none;
+Received: by 2002:a05:6402:4311:b0:56d:e746:ab95 with SMTP id
+ m17-20020a056402431100b0056de746ab95ls862394edc.2.-pod-prod-04-eu; Tue, 02
+ Apr 2024 23:55:27 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCVCe8whHzSQLA9EHwoSENZ/SsZFE43Rx4h5I54vuKhpWV3N/4aMmVgQeEaHzmESv4PWMBFV69Iy3oDL4GSrOkmZwqq2y2JClnkdmfSJuY3/OuGXFBM=
+X-Received: by 2002:a17:906:e8b:b0:a4e:eab:a8c1 with SMTP id p11-20020a1709060e8b00b00a4e0eaba8c1mr9710366ejf.33.1712127327521;
+        Tue, 02 Apr 2024 23:55:27 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1712127327; cv=none;
         d=google.com; s=arc-20160816;
-        b=yAW8vWuWhjf6EHyvVQMTgy2TwsR8sfgSJqpWUVzra6/AdgMPNsUvgKZj8mKV2xj0Z7
-         VIwoYISzUjI9+LfnT2n1/hnvLcoZoLg79uNFeqA5hpSI3xIhyRc3IUHaUrV6pvJgloY7
-         Xwcgofcz5OSy9vQvFATFUSKFx+uXym1HCH7pPa/xP1I8RPp0FVWwHHRso+M3pZcU5x35
-         rn9gnhRNKGuGxD70kZ8szm0E0nhZNcSEwZuWCTj7s9BmH4MClpfBqFTV7On368ny7/gB
-         rWQDHnPVX1H69hYFVKqaGhg2V3YQBA8scRYWCsldgzVY+CYYbXLmUqLGW4K9xxsWq4+y
-         8uaQ==
+        b=peNTYecVplTqPIG/0g1vN231fJ6/KD88ZiWcql3clBhj/ikgccoa7oKoxZLjePNALO
+         k10nZN2uMudjq6bUmoIWKjV1Vo4r+EENAS0yAQ6957PU02xdcwkcCjQ0qstIynAytQYn
+         hwvgG4vGCt+i1Jk8ZVm+bULZfJrDucgYQXdLNmpWsTmZhx+/oOWo+1GYdfcCeeklNQi7
+         Q8te0j9RIfVVlc+dT0DZn627IXM1K2IONIkwxQTg5GUOIJu3AsC4R+cFTodU+sZwwvzf
+         RqYhgGKp4HdYS8w/8yRgTe363A+EVbKKonWv3qe5rY2qr2kwBt2WC/bkC36Bze72MsUR
+         vtXQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :dkim-signature:dkim-signature;
-        bh=ZUr6XkKZrdcHP0wDyRtX8qCliFtNN1gSLHElAYuZIq4=;
+        bh=B4Rk3nTXicXzf6+jzQoIlO860P+MmVaWukmgEMPG/x0=;
         fh=9aauSyI5eQk5b4s5O16fFO5a6x/LXiZqBjzkmnuA6As=;
-        b=znQwmb8gaZv5Vf1ACCA72n2O0yz1MmKvxdnp+HENDp0I3GRZMz2eX93qJOj1e50DWV
-         pPdierc/vJbWtG0sn5vGK/5NUzFJXvjjtkekYFTtepw/udvl0Kj1lLhiY3yZQWB46mcW
-         IHGbNjnFV1F3N3GrVPIkWgIG7XKWVXnHfxUDbJ+N4go76iC56HQcJh5xrLpu6cDL9pO9
-         OoTTOszVA2zqveq3bAKjDRS2GT3OYXXVHiDFBxnSBYa+Xip//y5KK+5gqdGr/S4SYcJJ
-         3CJgr/jlU7IrdbkvBvqSl1Zk3B95Ugw0sPbGiBILqFv5T67+rTo1jPHTtpYWVEcHLmFI
-         +mow==;
+        b=EdA8WfO4Wx86RbuNo5IuokVNLJ3EAQw5TW16K3MwWxQlmW8o49OmK7jl5Ts/Z/kvha
+         OKRFA3Ug6LLUh2Yc3N1ad7wFYGtBFBaK87w72Ozo5b/F5wvonWMgfM2bOhRt6Y2EFvGT
+         rG/DqoDk81XniIA4dLXDp3W8Tk/wtR0Yolg7IThmaShsVcNysxvpxgVXAlVQLKkiCIey
+         jWhNFgU97BfWH6BG+tvphAmlGVKS3XxtTZ3x6CZZlX+TyRIoKScyE65J+hBOJXFsLMdZ
+         jtOzeZV4bKEYSLEXySyjsXmuIZWsM/Icd6Cog7ConWHMxgirT6PPPxHkBGcFW1jBvIfH
+         JLEw==;
         dara=google.com
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@suse.de header.s=susede2_rsa header.b=gwu0kIJn;
+       dkim=pass header.i=@suse.de header.s=susede2_rsa header.b=itHbDmfk;
        dkim=neutral (no key) header.i=@suse.de header.s=susede2_ed25519;
-       spf=pass (google.com: domain of hare@suse.de designates 2a07:de40:b251:101:10:150:64:1 as permitted sender) smtp.mailfrom=hare@suse.de;
+       spf=pass (google.com: domain of hare@suse.de designates 195.135.223.131 as permitted sender) smtp.mailfrom=hare@suse.de;
        dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=suse.de
-Received: from smtp-out1.suse.de (smtp-out1.suse.de. [2a07:de40:b251:101:10:150:64:1])
-        by mx.google.com with ESMTPS id l16-20020a056402255000b0056c303d81adsi6685737edb.435.2024.04.02.23.52.48
+Received: from smtp-out2.suse.de (smtp-out2.suse.de. [195.135.223.131])
+        by mx.google.com with ESMTPS id qw33-20020a1709066a2100b00a4748283c4dsi6801908ejc.253.2024.04.02.23.55.27
         for <usb-storage@lists.one-eyed-alien.net>
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 02 Apr 2024 23:52:48 -0700 (PDT)
-Received-SPF: pass (google.com: domain of hare@suse.de designates 2a07:de40:b251:101:10:150:64:1 as permitted sender) client-ip=2a07:de40:b251:101:10:150:64:1;
+        Tue, 02 Apr 2024 23:55:27 -0700 (PDT)
+Received-SPF: pass (google.com: domain of hare@suse.de designates 195.135.223.131 as permitted sender) client-ip=195.135.223.131;
 Received: from imap2.dmz-prg2.suse.org (imap2.dmz-prg2.suse.org [IPv6:2a07:de40:b281:104:10:150:64:98])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
-	by smtp-out1.suse.de (Postfix) with ESMTPS id 2B64235018;
-	Wed,  3 Apr 2024 06:52:48 +0000 (UTC)
+	by smtp-out2.suse.de (Postfix) with ESMTPS id 003F65C8F4;
+	Wed,  3 Apr 2024 06:55:27 +0000 (UTC)
 Received: from imap2.dmz-prg2.suse.org (localhost [127.0.0.1])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
-	by imap2.dmz-prg2.suse.org (Postfix) with ESMTPS id 972BD13357;
-	Wed,  3 Apr 2024 06:52:46 +0000 (UTC)
+	by imap2.dmz-prg2.suse.org (Postfix) with ESMTPS id 8000B13357;
+	Wed,  3 Apr 2024 06:55:25 +0000 (UTC)
 Received: from dovecot-director2.suse.de ([2a07:de40:b281:106:10:150:64:167])
 	by imap2.dmz-prg2.suse.org with ESMTPSA
-	id ww7xIr78DGYnDAAAn2gu4w
-	(envelope-from <hare@suse.de>); Wed, 03 Apr 2024 06:52:46 +0000
-Message-ID: <692dbb62-3921-4305-9246-14307ec4ebfd@suse.de>
-Date: Wed, 3 Apr 2024 08:52:41 +0200
+	id aJkVHV39DGbeDAAAn2gu4w
+	(envelope-from <hare@suse.de>); Wed, 03 Apr 2024 06:55:25 +0000
+Message-ID: <9ebcdb1c-ebb6-4e72-83e8-f360fbc8754a@suse.de>
+Date: Wed, 3 Apr 2024 08:55:20 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: [usb-storage] Re: [PATCH 06/23] scsi: add a no_highmem flag to struct Scsi_Host
+Subject: [usb-storage] Re: [PATCH 07/23] scsi: add a dma_alignment field to
+ the host and host template
 Content-Language: en-US
 To: Christoph Hellwig <hch@lst.de>, Jens Axboe <axboe@kernel.dk>,
  "Martin K. Petersen" <martin.petersen@oracle.com>
@@ -159,22 +160,22 @@ Cc: Damien Le Moal <dlemoal@kernel.org>, Niklas Cassel <cassel@kernel.org>,
  linux-samsung-soc@vger.kernel.org, linux-usb@vger.kernel.org,
  usb-storage@lists.one-eyed-alien.net
 References: <20240402130645.653507-1-hch@lst.de>
- <20240402130645.653507-7-hch@lst.de>
+ <20240402130645.653507-8-hch@lst.de>
 From: Hannes Reinecke <hare@suse.de>
-In-Reply-To: <20240402130645.653507-7-hch@lst.de>
+In-Reply-To: <20240402130645.653507-8-hch@lst.de>
 Content-Type: text/plain; charset="UTF-8"; format=flowed
 Content-Transfer-Encoding: quoted-printable
-X-Spam-Score: 0.87
-X-Spamd-Bar: /
+X-Spam-Score: 1.84
 X-Spam-Flag: NO
-X-Spamd-Result: default: False [0.87 / 50.00];
+X-Spamd-Bar: +
+X-Spamd-Result: default: False [1.84 / 50.00];
 	 ARC_NA(0.00)[];
 	 RCVD_VIA_SMTP_AUTH(0.00)[];
 	 XM_UA_NO_VERSION(0.01)[];
 	 FROM_HAS_DN(0.00)[];
 	 TO_DN_SOME(0.00)[];
 	 TO_MATCH_ENVRCPT_ALL(0.00)[];
-	 BAYES_HAM(-1.57)[92.20%];
+	 BAYES_HAM(-0.50)[79.90%];
 	 MIME_GOOD(-0.10)[text/plain];
 	 RCVD_COUNT_THREE(0.00)[3];
 	 DKIM_SIGNED(0.00)[suse.de:s=susede2_rsa,suse.de:s=susede2_ed25519];
@@ -182,23 +183,23 @@ X-Spamd-Result: default: False [0.87 / 50.00];
 	 NEURAL_HAM_SHORT(-0.20)[-1.000];
 	 RCPT_COUNT_TWELVE(0.00)[42];
 	 DBL_BLOCKED_OPENRESOLVER(0.00)[lst.de:email,suse.de:email];
-	 NEURAL_SPAM_LONG(0.54)[0.154];
+	 NEURAL_SPAM_LONG(0.43)[0.124];
 	 FUZZY_BLOCKED(0.00)[rspamd.com];
 	 FROM_EQ_ENVFROM(0.00)[];
 	 R_DKIM_NA(2.20)[];
 	 MIME_TRACE(0.00)[0:+];
 	 RCVD_TLS_ALL(0.00)[];
 	 MID_RHS_MATCH_FROM(0.00)[]
-X-Spam-Level: 
+X-Spam-Level: *
 X-Rspamd-Server: rspamd1.dmz-prg2.suse.org
-X-Rspamd-Queue-Id: 2B64235018
+X-Rspamd-Queue-Id: 003F65C8F4
 X-Original-Sender: hare@suse.de
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@suse.de header.s=susede2_rsa header.b=gwu0kIJn;       dkim=neutral
+ header.i=@suse.de header.s=susede2_rsa header.b=itHbDmfk;       dkim=neutral
  (no key) header.i=@suse.de header.s=susede2_ed25519;       spf=pass
- (google.com: domain of hare@suse.de designates 2a07:de40:b251:101:10:150:64:1
- as permitted sender) smtp.mailfrom=hare@suse.de;       dmarc=pass (p=NONE
- sp=NONE dis=NONE) header.from=suse.de
+ (google.com: domain of hare@suse.de designates 195.135.223.131 as permitted
+ sender) smtp.mailfrom=hare@suse.de;       dmarc=pass (p=NONE sp=NONE
+ dis=NONE) header.from=suse.de
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -215,25 +216,31 @@ List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegro
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
 On 4/2/24 15:06, Christoph Hellwig wrote:
-> While we really should be killing the block layer bounce buffering ASAP,
-> I even more urgently need to stop the drivers to fiddle with the limits
-> from ->slave_configure.  Add a no_highmem flag to the Scsi_Host to
-> centralize this setting and switch the remaining four drivers that use
-> block layer bounce buffering to it.
+> Get drivers out of the business of having to call the block layer
+> dma alignment limits helpers themselves.
 >=20
 > Signed-off-by: Christoph Hellwig <hch@lst.de>
-> Reviewed-by: Damien Le Moal <dlemoal@kernel.org>
+> Reviewed-by: Bart Van Assche <bvanassche@acm.org>
 > Reviewed-by: John Garry <john.g.garry@oracle.com>
+> Reviewed-by: Damien Le Moal <dlemoal@kernel.org>
 > ---
->   drivers/scsi/aha152x.c         |  8 +-------
->   drivers/scsi/imm.c             | 12 +-----------
->   drivers/scsi/ppa.c             |  8 +-------
->   drivers/scsi/scsi_lib.c        |  3 +++
->   drivers/usb/storage/scsiglue.c | 10 ----------
->   drivers/usb/storage/usb.c      | 10 ++++++++++
->   include/scsi/scsi_host.h       |  2 ++
->   7 files changed, 18 insertions(+), 35 deletions(-)
-> Reviewed-by: Hannes Reinecke <hare@suse.de>
+>   drivers/firewire/sbp2.c           |  6 ------
+>   drivers/message/fusion/mptfc.c    |  1 +
+>   drivers/message/fusion/mptsas.c   |  1 +
+>   drivers/message/fusion/mptscsih.c |  2 --
+>   drivers/message/fusion/mptspi.c   |  1 +
+>   drivers/scsi/hosts.c              |  6 ++++++
+>   drivers/scsi/iscsi_tcp.c          |  2 +-
+>   drivers/scsi/qla2xxx/qla_os.c     |  6 +++---
+>   drivers/scsi/scsi_lib.c           | 11 ++---------
+>   drivers/staging/rts5208/rtsx.c    | 24 ++++++++++++------------
+>   drivers/usb/image/microtek.c      |  8 +-------
+>   drivers/usb/storage/scsiglue.c    | 11 +++++------
+>   drivers/usb/storage/uas.c         | 13 ++++++-------
+>   include/scsi/scsi_host.h          |  3 +++
+>   14 files changed, 42 insertions(+), 53 deletions(-)
+>=20
+Reviewed-by: Hannes Reinecke <hare@suse.de>
 
 Cheers,
 
@@ -250,5 +257,5 @@ USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an e=
 mail to usb-storage+unsubscribe@lists.one-eyed-alien.net.
 To view this discussion on the web visit https://groups.google.com/a/lists.=
-one-eyed-alien.net/d/msgid/usb-storage/692dbb62-3921-4305-9246-14307ec4ebfd=
+one-eyed-alien.net/d/msgid/usb-storage/9ebcdb1c-ebb6-4e72-83e8-f360fbc8754a=
 %40suse.de.
