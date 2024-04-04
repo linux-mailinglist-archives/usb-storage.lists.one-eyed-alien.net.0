@@ -1,164 +1,169 @@
-Return-Path: <usb-storage+bncBCUJ7YGL3QFBBZWJXKYAMGQEHWDIUVQ@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBD3JNNMDTMEBBBNWXOYAMGQE3GSIZYQ@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-pf1-x448.google.com (mail-pf1-x448.google.com [IPv6:2607:f8b0:4864:20::448])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0F094898872
-	for <lists+usb-storage@lfdr.de>; Thu,  4 Apr 2024 15:02:32 +0200 (CEST)
-Received: by mail-pf1-x448.google.com with SMTP id d2e1a72fcca58-6ecf84f7cb3sf55223b3a.0
-        for <lists+usb-storage@lfdr.de>; Thu, 04 Apr 2024 06:02:31 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1712235750; cv=pass;
+Received: from mail-pj1-x1048.google.com (mail-pj1-x1048.google.com [IPv6:2607:f8b0:4864:20::1048])
+	by mail.lfdr.de (Postfix) with ESMTPS id A8CA8898CA4
+	for <lists+usb-storage@lfdr.de>; Thu,  4 Apr 2024 18:53:27 +0200 (CEST)
+Received: by mail-pj1-x1048.google.com with SMTP id 98e67ed59e1d1-2a2c80fb803sf1010975a91.2
+        for <lists+usb-storage@lfdr.de>; Thu, 04 Apr 2024 09:53:27 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1712249606; cv=pass;
         d=google.com; s=arc-20160816;
-        b=cKU/mLcZxIDeX/ChtIX/kc8p1UL5zGecqDxBb83n0GyuX9MIIQmMEajkb00GSrJjRV
-         kXG0bjDduTK2zXWz3UPuToeqG4L73xCx+I4I/kbpqmAYTdJAz5hPHzEnxbnzMTtVtq+7
-         2MfDTr9Thtcn5cVlLVc+csp3nCxlZbo8roCFM/cfxAZ2o4soF92vyppKw/fGBGdbLVfo
-         x8R/Thc2fy4G4gP+kHV9waPt+S4EvlgoG1TYY02ilT0De1mRhE0BEUDMkcWlnTA4EuTj
-         QbQOHmzcdCMl2zdHWt+AYVEV1iC7CVGNgnRpdfz8HAfe7D6cJZHqqwGCorqRpq111Eaf
-         QV9g==
+        b=O/Z79Fu49y1zESddRPEVcxrooxzKDWhwiJW3HDLDbz1VClwSN8ZVE/Ll61JeIIkRAy
+         HZHJQTlXGJ08J2uXwVpZhzzld5VQu9t1NzC62Y2UbYt7EXcn8YM8V3MZ2HAcdACsgIBM
+         oNyNmaFDQ1ovW/7w6d0SzL0cYVpJkist2oAEC3oeBswIkbFFr1Oe68EHAA2ebBmc1Al1
+         qolxEsAD5HjiXOmOt4aviIQm40T3GhKKwmqD9jnygXyh9p0DVsTeCABiorfqUjPamRPb
+         WSkuX4wivV/7j7bJ8rLmN+ZR+LJQ9eKue9B6gwEfxjNkBnmLvHn5ArVM6cyeHBqNLCj4
+         QqEw==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:in-reply-to:content-disposition
-         :mime-version:references:message-id:subject:cc:to:from:date:sender
-         :dkim-signature;
-        bh=a0Of/fEcdUybZ9+BJjTCh3ppN+f9j8onXyXmfJbDGZA=;
-        fh=Jg+qoKhFfJh+C7H7v0m9cSLLbePoCKGjYfmikj7VzWM=;
-        b=Xy/4Z5dksrKrNDEXd8CV1WTrvwriHKA4U3/26VUae+CB7w17EE3BpOrugKYQF+H41o
-         1jVVkFZetCoujLFnJbLgWfExiwxl8WiAOzSd2D79kDjrozzSHIkG/Cf1ilENzf4eDTOB
-         iKAucx3OwEDGZleO/pWwL101P2iKsD+AGSNCbTEwY25edC2/8rx7DtJX7dy40wlOFLy+
-         DDhmk9q21LGgA2cqU/M8melTaB6p9nDpdcJcTDSnDr4SevYTTKW3hPoWoySFwFJ93WSN
-         m97KSz8cyHaeLHzoyhXKiu1ZDBcWD4+Rs9qHbH240sc31D96rjYkYwylFxQ4pxYyzP9N
-         FLKQ==;
+         :list-id:mailing-list:precedence:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :sender:dkim-signature;
+        bh=FZaJKZdSMgYfwrRZpKBXDf0Kzf1l/Pc3qG1DWbGIdQs=;
+        fh=rJWeJg9ptFiCrAoCrTsuen60nVHLdHFS5CFTDwgZ+LU=;
+        b=GQbbwoNlJck+PiIJv7rEcefVjPg+vNCnNvO75Nta66NnkWUZ9nbvNjfz25n6+rlQVS
+         NAjV4O6pHKDZFixjZD3z3XTcSyzIdkinKQkpinDDBV9KeWXCRb0/ZERMdpdoIKJxA9o3
+         nrzpTARnTQvpVBQqOOLv6TjjBlcDIfLbZdJdWLKSo/7WiFuy542YSLLkLSxZALJIUz0d
+         wKUzZYM5DCpZRu+oQUpHVU7hoBhBFP/iUQq0ryir/1ROLDqrJ0GcKWZUmO5Pl0Nz5y21
+         DTI9ogpuTXAlsCJd/ulfd9n70b/JIkM5HSChupLlPBhZfXllE/K0RC79r5dhGgQC3V/K
+         jNwA==;
         darn=lfdr.de
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@linuxfoundation.org header.s=korg header.b=wRPZ06sw;
-       spf=pass (google.com: domain of gregkh@linuxfoundation.org designates 145.40.73.55 as permitted sender) smtp.mailfrom=gregkh@linuxfoundation.org;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=linuxfoundation.org
+       dkim=pass header.i=@acm.org header.s=mr01 header.b=x6xybBpb;
+       spf=pass (google.com: domain of bvanassche@acm.org designates 199.89.1.12 as permitted sender) smtp.mailfrom=bvanassche@acm.org;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=acm.org
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1712235750; x=1712840550; darn=lfdr.de;
+        d=lists.one-eyed-alien.net; s=google; t=1712249606; x=1712854406; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:x-original-authentication-results
-         :x-original-sender:in-reply-to:content-disposition:mime-version
-         :references:message-id:subject:cc:to:from:date:sender:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=a0Of/fEcdUybZ9+BJjTCh3ppN+f9j8onXyXmfJbDGZA=;
-        b=Xu06qLPvtxPBz2aGlvrVGvvMdS+6MW2GVSEgKvQyYSczqLFxqfwE7OeD4BRjAOjBIj
-         RXIETL0/NtfKg4o7tVd7az+ZPwY5sG6hAbCOp/CX+i0it4WNIFaEcrtwBpGx9SxSdEem
-         XVc+rhvrU6Uq2H+crQXMhHtecvobdJcS5Ndvw=
+         :x-original-sender:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :sender:from:to:cc:subject:date:message-id:reply-to;
+        bh=FZaJKZdSMgYfwrRZpKBXDf0Kzf1l/Pc3qG1DWbGIdQs=;
+        b=QxUfnW/61+SqHIFQFiwg9DEl4yDkQ69FE/OkW46G6tAGb4AP4IvRYjfN2/DYRwfyaY
+         J5jIIzwpEG+dp/e21LFHDPquaa+AjLe6tLgFCTtTGdmqJBDI76vBRwUZ4Y7xuE2/IEo7
+         DezAg82PEsHg+RPz4Vr+T9Pkq7EtUlGRvrhrw=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1712235750; x=1712840550;
+        d=1e100.net; s=20230601; t=1712249606; x=1712854406;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :x-spam-checked-in-group:list-id:mailing-list:precedence
          :x-original-authentication-results:x-original-sender:in-reply-to
-         :content-disposition:mime-version:references:message-id:subject:cc
-         :to:from:date:x-beenthere:x-gm-message-state:sender:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=a0Of/fEcdUybZ9+BJjTCh3ppN+f9j8onXyXmfJbDGZA=;
-        b=eKdUGOon6micuWIeSZgKhyI/FX14/F8lUSLl+dMAR3ku+udiOyRLP8kL9JTNQHDqfZ
-         wFEAbncfcLHXKoqMLQf7CFWztEaNv6urqU02C30RLImeydBrKVnks4LNRO6/nLfd08sv
-         fBw7a3Med8INJc7MG4KVcIjqIBUDxo1M2N1ulID9sESnezJimUAH1jq2otruvDgguUtZ
-         Fx04oseyy3EMrKFjum04IsLnzdsDL3SND0VaOTvqwdmPm382avGehI/fCrLzP1U0tX62
-         GKce42nZ0LPxEfiAl2VfuCXVnaWSH5dmNZOOnpWz5YlNo80JzKbveYeMQBQ+HBGMQlka
-         dJDw==
+         :from:references:cc:to:content-language:subject:user-agent
+         :mime-version:date:message-id:x-beenthere:x-gm-message-state:sender
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=FZaJKZdSMgYfwrRZpKBXDf0Kzf1l/Pc3qG1DWbGIdQs=;
+        b=Wt7uKBxySKETmkCfl1Tc9b2WcJJUa8rlkK6ECVK9h/2KmBvdf8yB+B/j/gRlBwQUAD
+         /vhbggx9cFhKCv15MIRAqFy326zBs9sMlC8PB8g7yg7NVNi4H11JYQ01jzubLer7k4GL
+         zIf7zMO/bpBCvM3SNbigpVhQCYyAhzl4LwAHvZJgPtTebfaado95lKzonjcWxW8LU70y
+         beEIEfJ6yVHM8ERWjS/yYNPzODhIpRzi3XQr99js/Xz5TRVjXfDZX2pEaf2d/OaNzRYd
+         Mg5rUz60USmW6ywCzrmiaqXwr59SlvKil92nHwTN96M+f7ZNRPubabitCQJlz1ZwkDE5
+         owpw==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Forwarded-Encrypted: i=2; AJvYcCUacL5y684+PH/AW/UGtOs6OBsX2LskZhb3GEbTgDRKfwP+TmjZGTetHZx4N7XBcLapBT2U3gxIsQfCScyPMkFIUk16iGqEtlqC
-X-Gm-Message-State: AOJu0YyJg+zYgD1YKifCTuMOS4SYDN/mi7e3EzOhfhPiQrQhUT4XOgA8
-	vA9vWQhzG4rv664XHZLRGX5rJAg9Wq1uzTicisSkJqpaO7vjRDXUup9+0dfE0SQ=
-X-Google-Smtp-Source: AGHT+IELMw/zX+TMuYo8wpifB2bB3BsIncu3VpCutJK9cuw7vXpeHKU7er5eGfvJEDFqevF9JvTibQ==
-X-Received: by 2002:a05:6a00:1d1f:b0:6ea:8a2c:96fa with SMTP id a31-20020a056a001d1f00b006ea8a2c96famr2630270pfx.23.1712235750582;
-        Thu, 04 Apr 2024 06:02:30 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCWGEYcgWFUUUnS+0uQBAb7303z7CKKu8RhKh9OBfPh3bRc54w1UNDTuWb7mEIM5urcaogUamMW07z25IWZGq/GCKbL3NmqXzgO3
+X-Gm-Message-State: AOJu0YxJIWCGeAAwYgwlj2fTaMokUEEV/iloGl4W4PehT2WHATJwvZNs
+	7croDmEsj6FDoK808ArfPW43sgwtJJbqWkjBtXZW4SRr27AQiAv7uzXCM2tMv0I=
+X-Google-Smtp-Source: AGHT+IFX+uI4eYBENGuiFkGfs7vwASB+K/KD/EkPtf6Y52AJoaiYM9chE1Ff0M8uTNQjoG9pLJP4fg==
+X-Received: by 2002:a17:90a:bf8c:b0:29b:b70d:463a with SMTP id d12-20020a17090abf8c00b0029bb70d463amr2947536pjs.12.1712249606023;
+        Thu, 04 Apr 2024 09:53:26 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a05:6a00:2e9a:b0:6ea:a064:53cc with SMTP id
- fd26-20020a056a002e9a00b006eaa06453ccls35413pfb.2.-pod-prod-04-us; Thu, 04
- Apr 2024 06:02:29 -0700 (PDT)
-X-Forwarded-Encrypted: i=2; AJvYcCU9quAkX257HVT1wJJjaixykqHP/Eu/qQk988QORv7APiXUn/9xG/Tq2l9mAPoLtgbo6UVdkmJYDRULLm9zUsEvEqtROa1FghJ0gjlqFaUVbJag28U=
-X-Received: by 2002:a05:6a20:9c8d:b0:1a3:959f:a428 with SMTP id mj13-20020a056a209c8d00b001a3959fa428mr2152909pzb.52.1712235749385;
-        Thu, 04 Apr 2024 06:02:29 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1712235749; cv=none;
+Received: by 2002:a17:90a:6881:b0:2a2:8888:f263 with SMTP id
+ a1-20020a17090a688100b002a28888f263ls733845pjd.0.-pod-prod-06-us; Thu, 04 Apr
+ 2024 09:53:24 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCU87DO/6ooXoEAwxBG1kGTRUguSzgocdKG9XABa9aVSB2vS4U8TINZkPsTrY4MY4Vsbk8d7f2mR2AyVJtRPDuHcNzC9IXw/55VjqdUKViBNEgcRwv0=
+X-Received: by 2002:a17:902:f085:b0:1e2:a5b2:ee0f with SMTP id p5-20020a170902f08500b001e2a5b2ee0fmr2422365pla.24.1712249604472;
+        Thu, 04 Apr 2024 09:53:24 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1712249604; cv=none;
         d=google.com; s=arc-20160816;
-        b=Y8rpM1+PvqRKXTEjwqVVfl6c53KHEbrDihz1+tHl3Z/jFvMUPW0WEUo2xe+R1F8DrB
-         PNZlazD9ll1VQtUkqXezTN+oe43zdCvm13mxFu+jcfKbJVdVukJZoAIO7RMGYPS4jnkw
-         0eRBumnZK85oFz219AS4Um3m7P4KD3r3Y1NK7N1ulDF7YbJeCawvH2z9kcwbp5Z0orFU
-         t9EtKpPJJeZn/Ttk4AGlMe1oiaP9xlUh9+a5LK+dGA0cVVbutmvul3B8VxqqF6wxL3IR
-         1+pk/GdPtOmmltwsv6aC86oV9T5D//qsk+sQbKREWt/7PZ+7ETgwB0MEsX07fRsH6h23
-         EBfg==
+        b=XAYufUpUbf193CoYw60lXlx9NiKRniYlYjHaUf2o1b5W7xqFflpWhvHPojhL+705oW
+         AP8h5c4xQjPLDyHN9h7QUhOj/XNEiZqaamdbnW4yhA0hATQ4XRJZbE3JMTumk6v4SfWk
+         kaXWDOIsrb3xE2H/QRzOrWY+r0rumGfI+8R96KykNXMQTIQYAQlBJqMG1dZm6wpd47QM
+         8VZ5CeRS6aaEIiNUx9aJw+ObJScp3VB/eeQYnYllEmaBCsrTPCr2BLpSgqwqHa7oZADK
+         kfjIxt7IKeDRgLGkNigjQ0oLqlqniXmKvtKvYO9d35mUObAVKREtTXAGwRTXhpX3bNF9
+         MVEQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:dkim-signature;
-        bh=8dXSBbyv64569+ES4aWgPCJ7W59Pxi1C6DdDGWZnIOY=;
-        fh=g0s1ljxghhsrYvMxjWchNxQ116E+IuMhBEFDId3PuK8=;
-        b=WNnLBIyy+Y7HS0PJsWTE5nobmNFiL14jTbl7mXlDLG+ZEdtd5lZHugZraj3D7096cg
-         ctJwEXWs2I8XzshLGpZmb42SYO4erScjYD6+r08RJcF64qA0DhZNrRgnk/NSzlERb/WR
-         fX1z44zLVPnGRLq1msC8oOvrcpsTowXR9XZ7T3rEQFb79aEdA9WXU3QKPRCuLMLl3n3D
-         Vl07LS0wqxjBvgj5Tap2bKuPgKBDhpz9Roy0C8R8fsIgbXf6PjdAdcWfMTT+v+oBffKr
-         aAvLfdtd3qkbbZAZIx0EPEkGRxg3nOFF4cl5Ks8py+sqDivdyggXqHqWOcXusU7XwdnK
-         MjcQ==;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :dkim-signature;
+        bh=ZDHIypNAZMTo+VzP8iaJudcx+oAEkGDyDOLcGqvzK2U=;
+        fh=d+NN1/9nDuwnwJoao3XCncS9eXV4fvw18mXgsLtMD5A=;
+        b=t7ptxOCII/Ml6FK9ARqBv7HP/VjZhhj3BQtzuNmJKF9PoydvAJdssqw1XJBt2xwdjb
+         222FuS2u5aHV4Gd/2NYtjcwWmvpZaa8VC6BNz1v+zlMc+CKdt62xPkEeWFcoYHx3HyfE
+         seYfoxhsiKPiUUbWkJar6tHbNGS4Vcqmw/dqHYSPbOIhgEam87TX+GUwDO2IMLPDjF6W
+         LHJqRsVzqGwy3C51zLVX2z3tJC9WMVGppdU3G4MnlnLteXfPo8g3YKMWW7ob8t/n84+n
+         bowmSST85e8yXeQOFeaRf7pUgu7BIDWvKStSxmem1/QkHQg86MEnB/YizdQKdAZuZtvx
+         6yJw==;
         dara=google.com
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@linuxfoundation.org header.s=korg header.b=wRPZ06sw;
-       spf=pass (google.com: domain of gregkh@linuxfoundation.org designates 145.40.73.55 as permitted sender) smtp.mailfrom=gregkh@linuxfoundation.org;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=linuxfoundation.org
-Received: from sin.source.kernel.org (sin.source.kernel.org. [145.40.73.55])
-        by mx.google.com with ESMTPS id lp18-20020a056a003d5200b006ea89b79d7fsi15508970pfb.158.2024.04.04.06.02.28
+       dkim=pass header.i=@acm.org header.s=mr01 header.b=x6xybBpb;
+       spf=pass (google.com: domain of bvanassche@acm.org designates 199.89.1.12 as permitted sender) smtp.mailfrom=bvanassche@acm.org;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=acm.org
+Received: from 009.lax.mailroute.net (009.lax.mailroute.net. [199.89.1.12])
+        by mx.google.com with ESMTPS id s8-20020a17090302c800b001e2a44ff6c5si2375256plk.289.2024.04.04.09.53.24
         for <usb-storage@lists.one-eyed-alien.net>
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 04 Apr 2024 06:02:28 -0700 (PDT)
-Received-SPF: pass (google.com: domain of gregkh@linuxfoundation.org designates 145.40.73.55 as permitted sender) client-ip=145.40.73.55;
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 692E1CE3144;
-	Thu,  4 Apr 2024 13:02:26 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1AD9BC43390;
-	Thu,  4 Apr 2024 13:02:24 +0000 (UTC)
-Date: Thu, 4 Apr 2024 15:02:21 +0200
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: Christoph Hellwig <hch@lst.de>
-Cc: Jens Axboe <axboe@kernel.dk>,
-	"Martin K. Petersen" <martin.petersen@oracle.com>,
-	Damien Le Moal <dlemoal@kernel.org>,
-	Niklas Cassel <cassel@kernel.org>,
-	Takashi Sakamoto <o-takashi@sakamocchi.jp>,
-	Sathya Prakash <sathya.prakash@broadcom.com>,
-	Sreekanth Reddy <sreekanth.reddy@broadcom.com>,
-	Suganath Prabu Subramani <suganath-prabu.subramani@broadcom.com>,
-	"Juergen E. Fischer" <fischer@norbit.de>,
-	Xiang Chen <chenxiang66@hisilicon.com>,
-	HighPoint Linux Team <linux@highpoint-tech.com>,
-	Tyrel Datwyler <tyreld@linux.ibm.com>,
-	Brian King <brking@us.ibm.com>, Lee Duncan <lduncan@suse.com>,
-	Chris Leech <cleech@redhat.com>,
-	Mike Christie <michael.christie@oracle.com>,
-	John Garry <john.g.garry@oracle.com>,
-	Jason Yan <yanaijie@huawei.com>,
-	Kashyap Desai <kashyap.desai@broadcom.com>,
-	Sumit Saxena <sumit.saxena@broadcom.com>,
-	Shivasharan S <shivasharan.srikanteshwara@broadcom.com>,
-	Chandrakanth patil <chandrakanth.patil@broadcom.com>,
-	Jack Wang <jinpu.wang@cloud.ionos.com>,
-	Nilesh Javali <njavali@marvell.com>,
-	GR-QLogic-Storage-Upstream@marvell.com,
-	Alim Akhtar <alim.akhtar@samsung.com>,
-	Avri Altman <avri.altman@wdc.com>,
-	Bart Van Assche <bvanassche@acm.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
-	Alan Stern <stern@rowland.harvard.edu>, linux-block@vger.kernel.org,
-	linux-ide@vger.kernel.org, linux1394-devel@lists.sourceforge.net,
-	MPT-FusionLinux.pdl@broadcom.com, linux-scsi@vger.kernel.org,
-	megaraidlinux.pdl@broadcom.com, mpi3mr-linuxdrv.pdl@broadcom.com,
-	linux-samsung-soc@vger.kernel.org, linux-usb@vger.kernel.org,
-	usb-storage@lists.one-eyed-alien.net
-Subject: [usb-storage] Re: [PATCH 07/23] scsi: add a dma_alignment field to
- the host and host template
-Message-ID: <2024040412-reacquire-wrangle-3e1e@gregkh>
-References: <20240402130645.653507-1-hch@lst.de>
- <20240402130645.653507-8-hch@lst.de>
+        Thu, 04 Apr 2024 09:53:24 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bvanassche@acm.org designates 199.89.1.12 as permitted sender) client-ip=199.89.1.12;
+Received: from localhost (localhost [127.0.0.1])
+	by 009.lax.mailroute.net (Postfix) with ESMTP id 4V9SP00GDKzlgTGW;
+	Thu,  4 Apr 2024 16:53:24 +0000 (UTC)
+X-Virus-Scanned: by MailRoute
+Received: from 009.lax.mailroute.net ([127.0.0.1])
+ by localhost (009.lax [127.0.0.1]) (mroute_mailscanner, port 10029) with LMTP
+ id O2BQcxkjvo_y; Thu,  4 Apr 2024 16:53:09 +0000 (UTC)
+Received: from [100.96.154.173] (unknown [104.132.1.77])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: bvanassche@acm.org)
+	by 009.lax.mailroute.net (Postfix) with ESMTPSA id 4V9SNd04btzlgTHp;
+	Thu,  4 Apr 2024 16:53:04 +0000 (UTC)
+Message-ID: <bb458d47-5b5a-43c0-8cae-211b82b16309@acm.org>
+Date: Thu, 4 Apr 2024 09:53:03 -0700
 MIME-Version: 1.0
-Content-Type: text/plain; charset="UTF-8"
-Content-Disposition: inline
-In-Reply-To: <20240402130645.653507-8-hch@lst.de>
-X-Original-Sender: gregkh@linuxfoundation.org
+User-Agent: Mozilla Thunderbird
+Subject: [usb-storage] Re: [PATCH 01/23] block: add a helper to cancel atomic
+ queue limit updates
+Content-Language: en-US
+To: Christoph Hellwig <hch@lst.de>, Jens Axboe <axboe@kernel.dk>,
+ "Martin K. Petersen" <martin.petersen@oracle.com>
+Cc: Damien Le Moal <dlemoal@kernel.org>, Niklas Cassel <cassel@kernel.org>,
+ Takashi Sakamoto <o-takashi@sakamocchi.jp>,
+ Sathya Prakash <sathya.prakash@broadcom.com>,
+ Sreekanth Reddy <sreekanth.reddy@broadcom.com>,
+ Suganath Prabu Subramani <suganath-prabu.subramani@broadcom.com>,
+ "Juergen E. Fischer" <fischer@norbit.de>,
+ Xiang Chen <chenxiang66@hisilicon.com>,
+ HighPoint Linux Team <linux@highpoint-tech.com>,
+ Tyrel Datwyler <tyreld@linux.ibm.com>, Brian King <brking@us.ibm.com>,
+ Lee Duncan <lduncan@suse.com>, Chris Leech <cleech@redhat.com>,
+ Mike Christie <michael.christie@oracle.com>,
+ John Garry <john.g.garry@oracle.com>, Jason Yan <yanaijie@huawei.com>,
+ Kashyap Desai <kashyap.desai@broadcom.com>,
+ Sumit Saxena <sumit.saxena@broadcom.com>,
+ Shivasharan S <shivasharan.srikanteshwara@broadcom.com>,
+ Chandrakanth patil <chandrakanth.patil@broadcom.com>,
+ Jack Wang <jinpu.wang@cloud.ionos.com>, Nilesh Javali <njavali@marvell.com>,
+ GR-QLogic-Storage-Upstream@marvell.com,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Alim Akhtar <alim.akhtar@samsung.com>, Avri Altman <avri.altman@wdc.com>,
+ Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
+ Alan Stern <stern@rowland.harvard.edu>, linux-block@vger.kernel.org,
+ linux-ide@vger.kernel.org, linux1394-devel@lists.sourceforge.net,
+ MPT-FusionLinux.pdl@broadcom.com, linux-scsi@vger.kernel.org,
+ megaraidlinux.pdl@broadcom.com, mpi3mr-linuxdrv.pdl@broadcom.com,
+ linux-samsung-soc@vger.kernel.org, linux-usb@vger.kernel.org,
+ usb-storage@lists.one-eyed-alien.net
+References: <20240402130645.653507-1-hch@lst.de>
+ <20240402130645.653507-2-hch@lst.de>
+From: Bart Van Assche <bvanassche@acm.org>
+In-Reply-To: <20240402130645.653507-2-hch@lst.de>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
+X-Original-Sender: bvanassche@acm.org
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@linuxfoundation.org header.s=korg header.b=wRPZ06sw;       spf=pass
- (google.com: domain of gregkh@linuxfoundation.org designates 145.40.73.55 as
- permitted sender) smtp.mailfrom=gregkh@linuxfoundation.org;       dmarc=pass
- (p=NONE sp=NONE dis=NONE) header.from=linuxfoundation.org
+ header.i=@acm.org header.s=mr01 header.b=x6xybBpb;       spf=pass
+ (google.com: domain of bvanassche@acm.org designates 199.89.1.12 as permitted
+ sender) smtp.mailfrom=bvanassche@acm.org;       dmarc=pass (p=NONE sp=NONE
+ dis=NONE) header.from=acm.org
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -174,35 +179,51 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On Tue, Apr 02, 2024 at 03:06:29PM +0200, Christoph Hellwig wrote:
-> Get drivers out of the business of having to call the block layer
-> dma alignment limits helpers themselves.
+On 4/2/24 06:06, Christoph Hellwig wrote:
+> Drivers might have to perform complex actions to determine queue limits,
+> and those might fail.  Add a helper to cancel a queue limit update
+> that can be called in those cases.
 > 
 > Signed-off-by: Christoph Hellwig <hch@lst.de>
-> Reviewed-by: Bart Van Assche <bvanassche@acm.org>
-> Reviewed-by: John Garry <john.g.garry@oracle.com>
-> Reviewed-by: Damien Le Moal <dlemoal@kernel.org>
 > ---
->  drivers/firewire/sbp2.c           |  6 ------
->  drivers/message/fusion/mptfc.c    |  1 +
->  drivers/message/fusion/mptsas.c   |  1 +
->  drivers/message/fusion/mptscsih.c |  2 --
->  drivers/message/fusion/mptspi.c   |  1 +
->  drivers/scsi/hosts.c              |  6 ++++++
->  drivers/scsi/iscsi_tcp.c          |  2 +-
->  drivers/scsi/qla2xxx/qla_os.c     |  6 +++---
->  drivers/scsi/scsi_lib.c           | 11 ++---------
->  drivers/staging/rts5208/rtsx.c    | 24 ++++++++++++------------
->  drivers/usb/image/microtek.c      |  8 +-------
->  drivers/usb/storage/scsiglue.c    | 11 +++++------
->  drivers/usb/storage/uas.c         | 13 ++++++-------
->  include/scsi/scsi_host.h          |  3 +++
->  14 files changed, 42 insertions(+), 53 deletions(-)
+>   include/linux/blkdev.h | 13 +++++++++++++
+>   1 file changed, 13 insertions(+)
 > 
+> diff --git a/include/linux/blkdev.h b/include/linux/blkdev.h
+> index c3e8f7cf96be9e..ded7f66dc4b964 100644
+> --- a/include/linux/blkdev.h
+> +++ b/include/linux/blkdev.h
+> @@ -892,6 +892,19 @@ int queue_limits_commit_update(struct request_queue *q,
+>   		struct queue_limits *lim);
+>   int queue_limits_set(struct request_queue *q, struct queue_limits *lim);
+>   
+> +/**
+> + * queue_limits_cancel_update - cancel an atomic update of queue limits
+> + * @q:		queue to update
+> + *
+> + * This functions cancels an atomic update of the queue limits started by
+> + * queue_limits_start_update() and should be used when an error occurs after
+> + * starting update.
+> + */
+> +static inline void queue_limits_cancel_update(struct request_queue *q)
+> +{
+> +	mutex_unlock(&q->limits_lock);
+> +}
 
-Acked-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+At least in scsi_add_lun() there are multiple statements between
+queue_limits_start_update(), queue_limits_cancel_update() and
+queue_limits_commit_update(). Has it been considered to use __cleanup()
+to invoke queue_limits_commit_update() when the end of the current scope
+is reached? I think that would make code that uses the
+queue_limits_*_update() functions easier to verify. For an example of
+how to use the __cleanup() macro, see e.g. the __free() and
+no_free_ptr() macros in <linux/cleanup.h>.
+
+Thanks,
+
+Bart.
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/2024040412-reacquire-wrangle-3e1e%40gregkh.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/bb458d47-5b5a-43c0-8cae-211b82b16309%40acm.org.
