@@ -1,105 +1,106 @@
-Return-Path: <usb-storage+bncBDUNBGN3R4KRB4FWX2YAMGQEYRMMGHY@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBDUNBGN3R4KRBWVYX2YAMGQESQV3O5A@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-lf1-x148.google.com (mail-lf1-x148.google.com [IPv6:2a00:1450:4864:20::148])
-	by mail.lfdr.de (Postfix) with ESMTPS id A5818899567
-	for <lists+usb-storage@lfdr.de>; Fri,  5 Apr 2024 08:34:25 +0200 (CEST)
-Received: by mail-lf1-x148.google.com with SMTP id 2adb3069b0e04-516be4577bdsf1399934e87.3
-        for <lists+usb-storage@lfdr.de>; Thu, 04 Apr 2024 23:34:25 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1712298865; cv=pass;
+Received: from mail-wr1-x448.google.com (mail-wr1-x448.google.com [IPv6:2a00:1450:4864:20::448])
+	by mail.lfdr.de (Postfix) with ESMTPS id D2F8F899599
+	for <lists+usb-storage@lfdr.de>; Fri,  5 Apr 2024 08:38:19 +0200 (CEST)
+Received: by mail-wr1-x448.google.com with SMTP id ffacd0b85a97d-343ee8b13aesf101678f8f.2
+        for <lists+usb-storage@lfdr.de>; Thu, 04 Apr 2024 23:38:19 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1712299099; cv=pass;
         d=google.com; s=arc-20160816;
-        b=hWQiwmB6GwufpksW1IpVXCs15HPDxMrc7RmAyyEcrg8+OZ3Po7h0zaMxP6DYcyfkbP
-         OAdDQA6ySX04kW9ThmzRtSITtoJNgZhvWaj+WLp/ztq12VkjbZ3ldA2mLIJ0ACXKn7NG
-         Etjc8dyAn4FxmsUi+Lg5+UM8LcHnY+7jEQtv/x0rRK5ael++vArAg3gMHQGFS2eAhIne
-         AJHMH+5AtSDIpqy3uuwmMkhCd5HRjj/IO9DErNivattP9c64Nk4k7homxY6BerLZqGAG
-         435iA3iCqow91gZRaRev2G9vnFySlCJZyedMEWW/SyUCkQYu6e5p0WkiVGe0Zq1hgK2L
-         sVQg==
+        b=be2xtro4zp4Gm82JSVFcxN+NZdD/ZRK3jdjAjhoTFETKQ5ZFH5tkddIxJlmm+rHIJl
+         oPCXC2oHRQmJPWDFDQyt7HsOP/VJ3EkctBdK+KKzFH+tvTaMaXfZldYfiFdWQX2T4V4p
+         qd+pmj+Dd5aHXe0fYZbI4UBEznHnCEfJVcYNIEPQVewpwrhfRusIQJbaO0ZuWkwaNjTH
+         jfXmcH//ZLxm6LSu34Jop9drwx48TbGmF001ZclLh1thKy6fE6XjXrCAddQNHO9rL7dF
+         ykKWFqjhEuF4Thd85PohervyUIx3fevyyshJIelyy4RqYuRB7VIz5LmrQQZYIZGFFQ3/
+         HuHw==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:user-agent:in-reply-to
          :content-disposition:mime-version:references:message-id:subject:cc
          :to:from:date:sender:dkim-signature;
-        bh=ZHejwDk10zpyD79aP4sVlNG8dBSTAqG1Jnuly+mrhG8=;
-        fh=+pKUxsXBri4WARsSQ7Fh85+/v5i8vtjYaQbXRPkfAD8=;
-        b=gxJNM2bI0tGt6GGEQlUNBkdqfBTkVNjw58b+a23yedXz/+wJeVs/FpyI4leaErxvvK
-         H7Wu9/73xOTKTR6TKKQwUGVy6lye7U8WJyBXWQTnpDbh84JTcNolOsm1B7z4T6hW9PQ9
-         BeYFA9JaXgqi/Oxl4dXwmz5VzfX3MB4RVwHIkubBcI5KuOzgb8SReIxuS93XFw6F/+Tv
-         JvDd7gwHx0SYVXzJmdBxjmjCKcb5q3C7u4yrbMYdYDNIUZ7vFdKKue42UWnazeHIQqMx
-         oiVMtB+AdYHuFaETb5/AsILfmjERK5dSqY4i3bvAk10qxRdFc+JLTXy/2JnpP79IvuF9
-         au9A==;
+        bh=ZVwnrg1GV0lhlW3LkYXYacv0n1d7cDbLUz4WU3qUjYE=;
+        fh=H53IcdcU0W/G60KgAK3dTkoMI2r5YpbcLzPXkGaup34=;
+        b=H9/LXuY6C90nqHVG8w4v73Ry7rzP+l55L8pysi4A9o1Bscc+PxbmdWVKaovq8tDlM0
+         W7eUzaz/D2P1iLz4iOYlInuXAWSW7hqvL4HqckGEqFiTEoV6p8hX5eJ6Wemq0x/OyrtW
+         m414vZg2aoc2GG06nzhRg1sImyQBAgPbpmuQzFloOZtn+C97UwSLvy6GdQR8udly42sz
+         r/u7DhIjankCrmfa5aweRXQCQQSSsxNYwo2Z0WgpgD2WDb8DYNVBmpPkQqVR9iIPKa0P
+         xQTFDIc481sq2N4OT0tafiqN8+FkAcQpKpSbg4GaY5Hd3dRTWdtOiiSIICuPUUE5DcRl
+         FYZg==;
         darn=lfdr.de
 ARC-Authentication-Results: i=2; mx.google.com;
        spf=pass (google.com: domain of hch@lst.de designates 213.95.11.211 as permitted sender) smtp.mailfrom=hch@lst.de
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1712298865; x=1712903665; darn=lfdr.de;
+        d=lists.one-eyed-alien.net; s=google; t=1712299099; x=1712903899; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:x-original-authentication-results
          :x-original-sender:user-agent:in-reply-to:content-disposition
          :mime-version:references:message-id:subject:cc:to:from:date:sender
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=ZHejwDk10zpyD79aP4sVlNG8dBSTAqG1Jnuly+mrhG8=;
-        b=jJCXhNqUEwy+ECDztE7RoDBCgEpeix09mBkCkEcusni8T35UWaeUSoSt3smrRq3kze
-         2lJX9Jmr7jFZ+ojVFKydgNIvVzOKO+1+cOsdZSqsBICaksaoBWFOA/nlutAgC/8YoKEC
-         vQ/sjNpQQLAUN70+JGCDAQIbOCv6IGjwsVmZA=
+        bh=ZVwnrg1GV0lhlW3LkYXYacv0n1d7cDbLUz4WU3qUjYE=;
+        b=RbuWCC5Rzi2+x/CSqey5tcifzlJRf/A3DRtupuX6O5ZCqnO1xYpvXPT/ja1PARVoFC
+         gVfO2T/3W0YpCP3HzwPM4yB9HrsmO7WQGyhsZxu9HBWRxyBbacarZtGsDewFd4PRxCSE
+         RsU8hCOOYzLgZ8u5WfzTMhehobn+Yv+xEgrIA=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1712298865; x=1712903665;
+        d=1e100.net; s=20230601; t=1712299099; x=1712903899;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :x-spam-checked-in-group:list-id:mailing-list:precedence
          :x-original-authentication-results:x-original-sender:user-agent
          :in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-beenthere:x-gm-message-state:sender:from
          :to:cc:subject:date:message-id:reply-to;
-        bh=ZHejwDk10zpyD79aP4sVlNG8dBSTAqG1Jnuly+mrhG8=;
-        b=AGbLCaOfuBHY0I68gbEgEfmo9w2KjKs6hClz/UfwgPjsRQkXFa8Fr1ZXlJbN3NGK5h
-         JqEPmDt0aSvWEEpmFltH8ImWfNh5GCgDra8C7OE2Sc5cV0R5wTYg7j81hazLWThNwtFJ
-         BKg9Blv/TCh6LCfWB4qUx3jlRw3rGiGNbqNRcC5lKRkun7nPfWh8Qjvf1a3oZ4LisPY3
-         MaU/AZ/j99Vc9jgv/cLIelu/O76AniO35jwAS/yCRm26f5T8xN/B8NwK8ha2/LauBZyQ
-         I+buTcdpvupOcQfnbPDjmb2nXRRHWLY3zlOHo6qf54DUkVy1fBr3QlmI4f/mFbaspW8O
-         b69A==
+        bh=ZVwnrg1GV0lhlW3LkYXYacv0n1d7cDbLUz4WU3qUjYE=;
+        b=nA61GSKOGh4il+j/QbwolDeIWHKrKo5fQo72v5YLyB6o0kSIgvezYwXqn/Xp+59CFp
+         elPnppGaG5UpNA563EhlPSy2TZ8epmiC1U2lKRUE543ygNxozHMClZ9Jnm4JkUW4kou7
+         /4f6+Kq7Dsyo4lxOh/xEMNsfGZnUnJIQNfbBH5a2IFn6yR6KOcJHtqhuWXfssvJU4a6w
+         JsfqZOhJTNGRvTsEUh3b6xiDT+PP90k+nF4CSzjqex3gyciy3kbSaJ6LdWGhMyOT6NIm
+         cxAzl4zfdXPnFClbMFzV7P1rEYu7nPTMDCzGewG3I/9bvx8CfRlRxlmLbZMljpzuV6bD
+         jQTQ==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Forwarded-Encrypted: i=2; AJvYcCXYbaLmlg+7aNOOScfoPFyWg1ScU/rbX1XD3tcULr5uatN0GwboSqt16Deoepw3PABvNZRzSRon8Dqo+4q+A7oeHY93p64Y4cmT
-X-Gm-Message-State: AOJu0YxAZ/gPD5hytJ/wPJvtli0jtklePP3XiOXQuHq4kuzY/N+XkmWo
-	sD7EXuXu9e3J4ScAUdtx4ZlNVaDp5T65w3RTB5Yl/chkQ0MWXX6gQKExeo6R8SU=
-X-Google-Smtp-Source: AGHT+IEtBD1pU6oI3G19gT6sXQcJh7QI08HD+N1wugKOTwhOBK2HQSkS4Ux7XD54abbdl7AlrzA8qw==
-X-Received: by 2002:a05:6512:2387:b0:514:cbee:a261 with SMTP id c7-20020a056512238700b00514cbeea261mr429830lfv.27.1712298864977;
-        Thu, 04 Apr 2024 23:34:24 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCUUENqON1fcIiPiCcIwQRGz5VKZanXDercHzSNACYnwdLbXXb5FM7Jz1C4euxxFRP4QmUIbqKKFwBrDKxb0cxdQftY1yZ7wGT1c
+X-Gm-Message-State: AOJu0YzcwXWc0t3vv9WnwcfFEPsKMWxJTQ4RpWLkHv70pQLy3QC9w4S2
+	FwqeOzCDsJJAsuCTwwtwZzo1jLoVhXj0mJIjAsKYt1BmUwmGaY0fKIOMfCYYiOU=
+X-Google-Smtp-Source: AGHT+IGGuCvgimykhQ+yuYPq30fMvYzzSGcM+3u059iB/EIBpJ47f4RxWMORcZRI01ZxX9D6NBJ6ow==
+X-Received: by 2002:a5d:51d1:0:b0:341:dedd:9726 with SMTP id n17-20020a5d51d1000000b00341dedd9726mr528951wrv.3.1712299099270;
+        Thu, 04 Apr 2024 23:38:19 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a5d:4571:0:b0:343:8a1b:61aa with SMTP id a17-20020a5d4571000000b003438a1b61aals640019wrc.1.-pod-prod-04-eu;
- Thu, 04 Apr 2024 23:34:23 -0700 (PDT)
-X-Forwarded-Encrypted: i=2; AJvYcCVoVRI9mswOKxJ25cwk1emGkCpzdZ7UtaF7ITeadoDGNb6ls0YWiOx6mt/wfHa898ahFCPA+zX1PAJqWdHu+4hdUYau/u2eaMxIpl5l1Irl+AmFFa0=
-X-Received: by 2002:adf:e901:0:b0:343:97b0:fd1c with SMTP id f1-20020adfe901000000b0034397b0fd1cmr354969wrm.13.1712298862848;
-        Thu, 04 Apr 2024 23:34:22 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1712298862; cv=none;
+Received: by 2002:a05:6000:4012:b0:33e:8dbd:5dd9 with SMTP id
+ cp18-20020a056000401200b0033e8dbd5dd9ls883908wrb.2.-pod-prod-05-eu; Thu, 04
+ Apr 2024 23:38:17 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCWWqtCQnHE9+b1DR75m/IMfpnX47AXUPnYwyt0zo6uUjVprTsQmjq0zKZZeInaaeVxqDov6jza6S6WZNDzTqXpxF8wqUU9TH3AINGbU2TDslt9QEuc=
+X-Received: by 2002:a05:6000:188a:b0:343:39f4:3f2e with SMTP id a10-20020a056000188a00b0034339f43f2emr714497wri.5.1712299097117;
+        Thu, 04 Apr 2024 23:38:17 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1712299097; cv=none;
         d=google.com; s=arc-20160816;
-        b=NYv6pbL8m4Z87XV/BUdzNroDhT9eJE7/lQ29hVIPs1JP+cYopd6AAT/LTjR1J6zwcl
-         3C36Km+voxW20tExwtlz+ymNn4gYZ5FZZ4svNl8yIRB6oVcp4DlCBXzn65dWzmg2KHvk
-         bYIt4R/goqpLPWpQVNv0XNnT70vJAdpYDX/P2myTqI1edbPas17atla6DRIHRlLyK3Ne
-         a2yo9SX/u2kCZtwIuqlfem3LYe/QZ+5UoZGwmU4u1cXYFdORW8S9zbkNYO19QU0UNwr4
-         TR8PT7eIg1UZKQamccO2ATTmcb2yp9lqJoQAm9+mQLJvx5ZgoArCqO3jn0+sdrrc3fId
-         YNVA==
+        b=oPw6Y7CR1D3JHFy1ZxEQZaFlf3HOpa1lLIe7JGcpi0R84+2c0WUNbb8hE4YZCBXHnZ
+         v+LENuBLTN39MfTp4Va91FUh1wfSshAMCeCvhqbe4TGG/58zbwwbhzRq9jaCEZE+pyhG
+         wdoGeFeUFiJBtMk2fVUYeQXPKwc8QQb4IHA110alECUwoRO2g6VTxOkvjVjkJwoec4er
+         +B1/Vt5uB1PMnu7vz0nLIbN8K/OtvBDjBgg0ZssYRXd6aLmVTdEjh87tqwyCFVnbs+a8
+         mabQyCSqCVu2pF+9lljMSnXIle60BW/xBPfc+JTC9Pt6zvfCH1QNj3xXzJe9hyr1Na7G
+         3yyA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=user-agent:in-reply-to:content-disposition:mime-version:references
          :message-id:subject:cc:to:from:date;
-        bh=EXG66o3VvTLv1AywafRIV4xRi77JYxDpv3asC/GT9J8=;
+        bh=Kh7Gp5r6NoW+z9wUEur68g6O0iQhuL1pGF2KOXa72I4=;
         fh=O0spm9G4llVPbyHhJ041MDy14lImw6/CKpM6ogn4cVU=;
-        b=NHFE8vwxtLG8wDTLhfmNdQRpL6sG9s7qigDjN0XruiVqpibu+ld+6rglj442mjma8x
-         TdYPHW4D/6n3Fns/TZFxWuNUBT9CJxVUHADjwVpHQPIzw566mWzGzZjdWCpI63XzoplS
-         WQf6vFYWNXJ78yGtrL7JU++2VB2p/TpiaFou4nz02tznCpQu0o+72SLU2K1aw42pI/f/
-         i1RrOGvJb99hBc3vvot5n8xFDI95TsZ3/MxFyMWbm/DIHyin+x2YXWlnsALB+JcXRMkk
-         UlphWn0+UxwPY8LO1e7y45Zi8agh8MXwj3U0C+HWvZsp5TQJISCOzbdNjP4q/aFUhPMK
-         H2Kw==;
+        b=Bb0FlJfwYxp9NpBbw17WhucabvCZmdJr25n4AQbr3PkTMmG8wIcLnrFKteBgZ5KgdW
+         enEZkYVvTpU9+LHDOdzJP5CNEH3/k7iPA05G0BGk/4zJxnLX1JJXK29wYFhYScO1eyKD
+         1JsGzBoBiBcCHcjXBF4TiTKprYa+LnLysH6/H715NF/2Juif3y2jNbdjCTnmwrQO0D6F
+         DMHlg5fFJk+nluu1GUWGVFuvDFV3HEW1ltfGZVhl1EAZfRxSEYh3b2Ve8SPHcMnWXw6E
+         OK6C3tjZ5cde/z6TE/ghX4q7kphNv2qcvrk+xB3TV0cZEwKjtB7iZUaNVzEpSF5eXqFR
+         rNmA==;
         dara=google.com
 ARC-Authentication-Results: i=1; mx.google.com;
        spf=pass (google.com: domain of hch@lst.de designates 213.95.11.211 as permitted sender) smtp.mailfrom=hch@lst.de
 Received: from verein.lst.de (verein.lst.de. [213.95.11.211])
-        by mx.google.com with ESMTPS id n10-20020a5d4c4a000000b00343d5dd673esi582200wrt.848.2024.04.04.23.34.22
+        by mx.google.com with ESMTPS id r2-20020a5d6942000000b00343c6ab5538si568211wrw.836.2024.04.04.23.38.17
         for <usb-storage@lists.one-eyed-alien.net>
         (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Thu, 04 Apr 2024 23:34:22 -0700 (PDT)
+        Thu, 04 Apr 2024 23:38:17 -0700 (PDT)
 Received-SPF: pass (google.com: domain of hch@lst.de designates 213.95.11.211 as permitted sender) client-ip=213.95.11.211;
 Received: by verein.lst.de (Postfix, from userid 2407)
-	id 2BED168D07; Fri,  5 Apr 2024 08:34:19 +0200 (CEST)
-Date: Fri, 5 Apr 2024 08:34:18 +0200
+	id 36CB568D07; Fri,  5 Apr 2024 08:38:13 +0200 (CEST)
+Date: Fri, 5 Apr 2024 08:38:13 +0200
 From: Christoph Hellwig <hch@lst.de>
 To: John Garry <john.g.garry@oracle.com>
 Cc: Christoph Hellwig <hch@lst.de>, Jens Axboe <axboe@kernel.dk>,
@@ -138,12 +139,12 @@ Cc: Christoph Hellwig <hch@lst.de>, Jens Axboe <axboe@kernel.dk>,
 	usb-storage@lists.one-eyed-alien.net
 Subject: [usb-storage] Re: [PATCH 01/23] block: add a helper to cancel atomic
  queue limit updates
-Message-ID: <20240405063418.GB3480@lst.de>
-References: <20240402130645.653507-1-hch@lst.de> <20240402130645.653507-2-hch@lst.de> <fd99a58b-37c4-45dd-a738-cd2b49341c70@oracle.com> <20240403125116.GA19332@lst.de> <34c1f31b-2a67-4c3d-8efa-b08a50f20e31@oracle.com>
+Message-ID: <20240405063813.GC3480@lst.de>
+References: <20240402130645.653507-1-hch@lst.de> <20240402130645.653507-2-hch@lst.de> <fd99a58b-37c4-45dd-a738-cd2b49341c70@oracle.com> <20240403125116.GA19332@lst.de> <34c1f31b-2a67-4c3d-8efa-b08a50f20e31@oracle.com> <20240405063418.GB3480@lst.de>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="UTF-8"
 Content-Disposition: inline
-In-Reply-To: <34c1f31b-2a67-4c3d-8efa-b08a50f20e31@oracle.com>
+In-Reply-To: <20240405063418.GB3480@lst.de>
 User-Agent: Mutt/1.5.17 (2007-11-01)
 X-Original-Sender: hch@lst.de
 X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
@@ -163,26 +164,20 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On Thu, Apr 04, 2024 at 08:14:20AM +0100, John Garry wrote:
->
-> john@localhost:~/mnt_sda4/john/linux> make C=1 block/blk-settings.o
->  UPD     include/config/kernel.release
->  UPD     include/generated/utsrelease.h
->  CALL    scripts/checksyscalls.sh
->  DESCEND objtool
->  INSTALL libsubcmd_headers
->  CC      block/blk-settings.o
->  CHECK   block/blk-settings.c
-> block/blk-settings.c:263:9: warning: context imbalance in
-> 'queue_limits_commit_update' - wrong count at exit
-> john@localhost:~/mnt_sda4/john/linux>
->
-> Is that a known issue?
+On Fri, Apr 05, 2024 at 08:34:18AM +0200, Christoph Hellwig wrote:
+> > Is that a known issue?
+> 
+> I see that too, and it really confuses me as we have the proper
+> annotations there.  I'll see what I can do.
 
-I see that too, and it really confuses me as we have the proper
-annotations there.  I'll see what I can do.
+Seems like sparse lock annotations are really confused by inline
+function, because if I create an inline wrapper for
+queue_limits_commit_update that does the locking, that sorts out
+the warning and removes the need for any annotations.  I'll cook
+up a proper patch for that and will ask Jens if this isn't too
+ugly.
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20240405063418.GB3480%40lst.de.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20240405063813.GC3480%40lst.de.
