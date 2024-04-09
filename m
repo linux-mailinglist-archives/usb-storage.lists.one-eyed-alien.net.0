@@ -1,108 +1,108 @@
-Return-Path: <usb-storage+bncBDUNBGN3R4KRBA5G2WYAMGQEL4EET5I@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBDUNBGN3R4KRBCFG2WYAMGQECFSE36A@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-oo1-xc46.google.com (mail-oo1-xc46.google.com [IPv6:2607:f8b0:4864:20::c46])
-	by mail.lfdr.de (Postfix) with ESMTPS id C4CC489DC9B
-	for <lists+usb-storage@lfdr.de>; Tue,  9 Apr 2024 16:39:00 +0200 (CEST)
-Received: by mail-oo1-xc46.google.com with SMTP id 006d021491bc7-5aa18a128c6sf3225110eaf.3
-        for <lists+usb-storage@lfdr.de>; Tue, 09 Apr 2024 07:39:00 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1712673539; cv=pass;
+Received: from mail-oo1-xc48.google.com (mail-oo1-xc48.google.com [IPv6:2607:f8b0:4864:20::c48])
+	by mail.lfdr.de (Postfix) with ESMTPS id 45FE389DCA0
+	for <lists+usb-storage@lfdr.de>; Tue,  9 Apr 2024 16:39:06 +0200 (CEST)
+Received: by mail-oo1-xc48.google.com with SMTP id 006d021491bc7-5aa2faa7115sf3448106eaf.2
+        for <lists+usb-storage@lfdr.de>; Tue, 09 Apr 2024 07:39:06 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1712673545; cv=pass;
         d=google.com; s=arc-20160816;
-        b=p+iKbqLBs+of+GuA1pQrDK6bBA5wk+DjRf77hwiKmLxP6mMF+fnzhC7+18+RmXolcH
-         Z2HZJIMZBqQSZOj7UtlX8f0ZJviXof9jMvKHEeyysGvxLZ8C9VHkax5PkyZB+2VYD6U/
-         UAcJMz22a0731l7t+8F6E3LROHvuBso3MDp5Ex1n1Q5wWYiNeod4KI83u9diU+cY8xnY
-         LtgYpxEt47gJ4jFzLafxDFDMvG3rdnELqXRfU+sD+nJXOiSKLz3iJf6H5ypWO3UninS3
-         K/P8MWQlIilvBG/Zzk59dkm0ruO+IiK4mllag4JBcnuBWXDY78jCSPKi+etXcUr92UyY
-         /JFQ==
+        b=Vp4+ks/LQTnsEBE2boBM9/weEDSbpSFxA7uuVHShsrgKnJ+V47p4Lf/j7xDFHFAAsO
+         zjPSvaZpePQZh8IB3PAcFYPcZM5KNF47u0g0hJOb0c4ceP3FSlAY8OJ/NdpVL0Ym0beS
+         hnG07cawDIRlx0Jh6j/fiR5LgRXpno3SoHEVztkSpzQDRg5cXXhpraNYS7be46e4g0ZX
+         Z07LTXeBeSzlaYyR8COm9adP0EgNaEmPiinxBzUjioHBhYfKk+vRU86S/1jHBa7h6PaK
+         lKedNbITf8u442QrJOforNocnddx2Pq+YS4iYo/hT2AZdq7/bX6fp+cb+aTos0WHbuJx
+         VbaA==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:sender:dkim-signature;
-        bh=feSjA9Lr4+GtOEFIXF1BykYAuB/piBEmGasQpKZCmkc=;
-        fh=gXgrleFVsd+5RBwHyXHvKmeqR5gqKwIlyLJTB/JahLg=;
-        b=bPgy48tMKE2rH3lfhCF5rqnlj80KwI6OWayUH2VLfZMy/O0P3Vqjxb+zi6yKsGAhSo
-         bP9pkIJ3QVmkhJL8676vp0MOpznhdcWuSjl9Oq2m4fieh9Kf718RRTjfWpYgF8XLhS8d
-         7rAn4oqwUIKxxbznoNKfLP0oRi2mlxcI5bcMRsSzn9k+y6KGPmN1F7/99jtwU00vpPDy
-         HwOeHYcqL1/qgbot8EpyShXiScMFUYxtsuu/JxUandqthZLrWKphB3XnkaWdnyFY0wDB
-         iRZUGZ7UKlazgvhOkLoiZXmSI0b2DIyo+K0hgP0i8O8fMH8LgWCHMqya0Bs4PAvQZwVw
-         NPLw==;
+        bh=Mpr05MQGS7yRUygMjqS8BSY6qNOvKn5O2U2Sr+8BPg0=;
+        fh=KokDIi2NXKDVRgHMIeoaR2giLOSzsyWk2OSAt9LsXH4=;
+        b=DA4gtK2BZvOYNTtDl5NtN8pK9jcRjfjgLUXnxVFS/MQWapAZHeRXfG2ONAlAdjtWiu
+         nh6uXYERo/tPpelt2iWNw37a6iDw56idZ/S7Gk3JkyAau2a5cgSeaVM3tWL2xfX0ckZY
+         dCw/tSwBcwAaXVOnWYxI3hsyQ/L9laemJNm63AzPpr1FUzqZoeEeUmP9g7Sn4ctW4W64
+         GkoT3NHrgtcwe/mg8IDzA2jx1JyQBo3FB7AUYyqwoG9I9OMJ8+Xg26vFKNxze80ayAG9
+         wZ0AGwgntFmdm6+emcwuul/VBhXZjJRhJlAymaY4tl4HQLD9t8/hgLPtp0XAJ+zz62NA
+         qj6w==;
         darn=lfdr.de
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@infradead.org header.s=bombadil.20210309 header.b=pdhCZ3Uj;
+       dkim=pass header.i=@infradead.org header.s=bombadil.20210309 header.b=huC71k7P;
        spf=none (google.com: bombadil.srs.infradead.org does not designate permitted sender hosts) smtp.mailfrom=BATV+a1627a52d3ab203f3ac5+7534+infradead.org+hch@bombadil.srs.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1712673539; x=1713278339; darn=lfdr.de;
+        d=lists.one-eyed-alien.net; s=google; t=1712673545; x=1713278345; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:x-original-authentication-results
          :x-original-sender:mime-version:references:in-reply-to:message-id
          :date:subject:cc:to:from:sender:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=feSjA9Lr4+GtOEFIXF1BykYAuB/piBEmGasQpKZCmkc=;
-        b=N5hY21v8ixFwBKyrUpg3pNqbVuXokXcxLb2VkseIIEBHMGamdkdmqzndM3FcIHlFL4
-         M2jS2J8OjChEQryyei4BqSwf6+hZCRRRqw3bIZ9atDgvbYz6hRjmC6sowbnVixeTu63d
-         yBasKNkFdxAKnzMOGsk+1PyvSj3Dm6z5jzAOo=
+        bh=Mpr05MQGS7yRUygMjqS8BSY6qNOvKn5O2U2Sr+8BPg0=;
+        b=UYflvRz35tRdQPXaW/rsiw6ButVJGcs+xvj6tX2fl93gt7RUf9SVlAF457smb4CfkO
+         2Ek8o/eYi2AhNLCXGp9kWxna6LDezCYxDDQ+gByzZQQpOArF3q9b8k//4/yJKA9b5NBH
+         ofOlc9vZ+FjMTUH8BZ3yqrHApGMBE4kVqsIDs=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1712673539; x=1713278339;
+        d=1e100.net; s=20230601; t=1712673545; x=1713278345;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :x-spam-checked-in-group:list-id:mailing-list:precedence
          :x-original-authentication-results:x-original-sender:mime-version
          :references:in-reply-to:message-id:date:subject:cc:to:from
          :x-beenthere:x-gm-message-state:sender:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=feSjA9Lr4+GtOEFIXF1BykYAuB/piBEmGasQpKZCmkc=;
-        b=wA+vfD6HNZCD8ySAaiL8UZ/pYUNjs51Q5wrRyZrjWr/MVIqsU0N45xBeT15aCz+Lor
-         j6wH8MgIDakZ7eW27GtD45s3vzAPzZ0/6eGh70LpWlP4L2RqpimZ7MgqVHJtkS4mQZUQ
-         Ih08BRfURFOTej+WQrN0xcQuJqwtrQ8pHiI/sEcwdtiCNFh7wa3SlW3eTpDQyQr2Uyat
-         2deH2Cu8kDDHTFxxrAaa39prxl/ttpGZoLq2/wOHAuJSTQKrjZpifpmMOwRf7Ncav9y9
-         0hBeQbrh1qpEHmy0xYTQvrtSK0A/bRv0E0DuaKrYsCPqDkAWDPzuaSPEW7BDAo+zUfQX
-         Yz2w==
+        bh=Mpr05MQGS7yRUygMjqS8BSY6qNOvKn5O2U2Sr+8BPg0=;
+        b=YO15mc/ZIc9sjkzx40bcUv0czK7WySDPZydide8qP01n6Pi7+bCReOAPujy+ovKrsx
+         NL6+IqtgkgjdZpFs4/mxY16zD6jgQ+s3byqb7vQuOAzHLvyPeRqTP2hP51t+CoNNV5ST
+         OsHqBhsiAmqPgvY37fQGM6gFj1S20OFdTYlwigRtwp3u5AYEWQqUk/FooHjoF3TLsAmF
+         b+UfQrr1MELvaWtLmeddPgN7VMBo5gt139xmTGiIcAcXJT0oN7eSlGeTh5OdnZtqRn7U
+         Yoj0EeG0c3WlRhnFWqrOhkYKTKAkYxDnewfzyFCPFDcGIDq09yBz2BG0wxbr0hfXYxKZ
+         5vUw==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Forwarded-Encrypted: i=2; AJvYcCVPjOy3dU2VFpPmc20y4ZIMpc+wdV12S/hUWKMDTGn4lsCJJ4QnYzpRI7eErBXOHy4ttc0SG3dtk0EUf5UlLdCE4kkuNVmMSJCj
-X-Gm-Message-State: AOJu0Yx9DMFcyGT0uhb3BJ152t0/p0a9pqf7xyHisaeji/5ZzEXwTMNx
-	WGJfQmibaikD93C4kxNMF48kWCe6CdhItlGfoSbqFkZXLgQ4FA6M6hxtFti+8bw=
-X-Google-Smtp-Source: AGHT+IEVHtpDCEvP+y5sZdlGJjOTf2RfQ5BrcjDla5spxZwg5GKowMTi/rzZ+ietQ0uap2sOcHjR4A==
-X-Received: by 2002:a05:6870:a40c:b0:22e:8c51:db2f with SMTP id m12-20020a056870a40c00b0022e8c51db2fmr13564500oal.3.1712673539552;
-        Tue, 09 Apr 2024 07:38:59 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCVaUjGAUEu/6Fg6psbDKY/2c42J3LZRvNFzIM7uJKGi9Hp7tLAH9WpSaOpmt2vUBjK+7HjMwSC2B2Oq/+EGcuxE7CchgtrbZcqg
+X-Gm-Message-State: AOJu0Yz2z0Itd4mPOvRkxg4BtQa0Aoau08VAwrYJg8pUbCt7BC7QiZIy
+	BDtvIrWqdzm7UbgQDgkwEi5IX45QgVa+5bvapY9q/w5Rw7a6TLcgPaC8Qay7wJM=
+X-Google-Smtp-Source: AGHT+IGUaXNLpvtEvFNu2OOAflpqPcA5KpsDssQ79aUSu9kc/xmz0ldRsGdsvOgaaQW9TuiZrB7BCQ==
+X-Received: by 2002:a05:6870:a10d:b0:22e:922f:a4f3 with SMTP id m13-20020a056870a10d00b0022e922fa4f3mr13284938oae.15.1712673544911;
+        Tue, 09 Apr 2024 07:39:04 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a05:6870:9597:b0:22e:b386:74b6 with SMTP id
- k23-20020a056870959700b0022eb38674b6ls696723oao.0.-pod-prod-01-us; Tue, 09
- Apr 2024 07:38:58 -0700 (PDT)
-X-Forwarded-Encrypted: i=2; AJvYcCV0LWJE9Mue8mJPOI+C2GQOPmxT8Jvh5BYhiv2UajiBo67J+zpUmr0xJFH2ZqylfOUSEwz5aYePwhR1rJPzQOPVYnMbvx2vty6eVrAISMR6v6fk8NE=
-X-Received: by 2002:a05:6359:1907:b0:186:3c3:b412 with SMTP id mf7-20020a056359190700b0018603c3b412mr99496rwb.0.1712673538508;
-        Tue, 09 Apr 2024 07:38:58 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1712673538; cv=none;
+Received: by 2002:a05:6870:80d4:b0:22f:10a1:602d with SMTP id
+ r20-20020a05687080d400b0022f10a1602dls741647oab.1.-pod-prod-01-us; Tue, 09
+ Apr 2024 07:39:04 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCX3PXgTFZafN8s8Iq8IUr+Kja1ggI5IYCQxtZxGKC2+4UytInyf/9h1AsxETmNsyFwsnFhEWpZCKpLXPyPEDpVMHM2LJK6IZOw+JUli5ymgI+rieiw=
+X-Received: by 2002:a05:6359:1581:b0:184:69c5:c088 with SMTP id jv1-20020a056359158100b0018469c5c088mr44756rwb.12.1712673544120;
+        Tue, 09 Apr 2024 07:39:04 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1712673544; cv=none;
         d=google.com; s=arc-20160816;
-        b=nUD9Hnwe2fAM4+HZlIW+gub3qOFmNG75QtpTtuMs7zMijFFgsRt/BA4xqHTX1Vd0B5
-         2liGhdfPFgc9eeoixOEwbkWCri+aqNMa7ObK6J9XBmm9HROk9LnkzjuS3Q4tU2RVdrrE
-         oMgzzY/VNQjWF+3Nphc8g7OG8T+3z9PfUJS3dcFxOI1MUw9Pl3oKQMkFHslxWxARq+TQ
-         4Fb1GUpKEXgHdyKEARt/SIeIA4zRWSz4qcYmYntwHHoDy2wI56NBLjreNSKI+UdBtos6
-         rMYWnu0QQ/PJMy/V70PyjBSAN4XiYG/ZYEnhsitwUKW/3GFq+3/RuC/z6k+CX4INQQxo
-         WmlQ==
+        b=04RbnYzul0ujKW+bk/XhA3RjqoxhCnJZdCi063MZpmL6RhfGN3IqMVTuEQ6RpS9PrE
+         TX+ACm+yQLIhudUQdXurMxXDrs9P4jilGxYKdskvfN6B/6IdUHqXSywEC+C+ds3A2kJZ
+         wsMmvoDeQv98QxHTyBADFig2Iw5b4/EHID8LoZtNLJ+pulRC3lFdAdza9Y8SfDcS+9+M
+         McIwvpZ6YX4SZBYTJq3BE2eUhaj64p3iJyJMtlnJ04W3M03NMR1yCiOLex6NH3q9qTBX
+         9qfDH1PgHBCEPWZn+Q+s72Cb2f6HloX+dPqtgjdjF9wHdW4mqafNErGxBsoqqyo3cX4x
+         oCBg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:dkim-signature;
-        bh=+kKPekUGjXDsIE4V9mIKYRaU0Y5iWPDjhh0ZCd5FQeM=;
+        bh=tY9EZbVOWQQqN6Qy5rZAOJKfDHxH9ZT92YoWmtvtxeo=;
         fh=UaGMtZo/2j1iaYITUnmtOwHBR7+4Khs7sTR53qT7wM8=;
-        b=dsmcbiAi4R5X3Xk4EcIZNHE0QHAJigMtRyEsJBMr8Lfcc++QAcu+om3KOoStWIx7x6
-         R34L3MhXYnCpITP1PEcjcO8lnYGgLJTuTcKXbxwUpIZ34IN9CZqtpuAdBfGvPNAlZGJl
-         1QYI0MtLaLBs8jBd4CfQk8UmSLr4mhuvzZgo4TEOIe0TV8HQjLuY5+dFwWueBoLzgKzY
-         jZIysjLzBTTSaRPaYr0u2WsTQM/VB9nrqT3MVFV4zSvedn/jsgdg+uZY6ye/293G3+XF
-         i0nM8aSCX/X9TDxwTJbw0oPiqoW6CRKdIQP3yuM26Ua5E6sp9q/l3If07SaXuieaHAwE
-         rfBw==;
+        b=u+Recc3Eah4ZdFi4nOQDLpPkD04amYU0tuLfooVxqUFYUhJsAVBoyjeGtgulF2geuC
+         Vvvmi11Bm+AVdZKCZEDjPvyjsaj0dEHGU+a2IBa7UBi7TJGjF+iz7k2omjSKPsUoahvN
+         MnYHd1WEFop2dIcmE7QPWcDppJ6HI6SKi57YbmhuNvhlcgX9IU+gBIRkEjFK66hF1NU2
+         NTLDygqtSF/2HTDLcr3F3+x/7uSRnsFB/WAFiyA+Xv5BoI0MNY2CasbWJD3OJ4a04qpV
+         A4OxcHKuKgvCAquI35hVOke1KE34O9Lvmxvq04lWzTOqQtq15bXW/D+TEsyd3DEBcRZd
+         VepQ==;
         dara=google.com
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@infradead.org header.s=bombadil.20210309 header.b=pdhCZ3Uj;
+       dkim=pass header.i=@infradead.org header.s=bombadil.20210309 header.b=huC71k7P;
        spf=none (google.com: bombadil.srs.infradead.org does not designate permitted sender hosts) smtp.mailfrom=BATV+a1627a52d3ab203f3ac5+7534+infradead.org+hch@bombadil.srs.infradead.org
 Received: from bombadil.infradead.org (bombadil.infradead.org. [2607:7c80:54:3::133])
-        by mx.google.com with ESMTPS id 23-20020a630117000000b005f0c099624dsi8522611pgb.81.2024.04.09.07.38.58
+        by mx.google.com with ESMTPS id bv128-20020a632e86000000b005dcbba4b76csi8672649pgb.331.2024.04.09.07.39.04
         for <usb-storage@lists.one-eyed-alien.net>
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 09 Apr 2024 07:38:58 -0700 (PDT)
+        Tue, 09 Apr 2024 07:39:04 -0700 (PDT)
 Received-SPF: none (google.com: bombadil.srs.infradead.org does not designate permitted sender hosts) client-ip=2607:7c80:54:3::133;
 Received: from 2a02-8389-2341-5b80-39d3-4735-9a3c-88d8.cable.dynamic.v6.surfer.at ([2a02:8389:2341:5b80:39d3:4735:9a3c:88d8] helo=localhost)
 	by bombadil.infradead.org with esmtpsa (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1ruCca-00000002SHV-20wc;
-	Tue, 09 Apr 2024 14:38:48 +0000
+	id 1ruCch-00000002SJC-0Cq9;
+	Tue, 09 Apr 2024 14:38:55 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Jens Axboe <axboe@kernel.dk>,
 	"Martin K. Petersen" <martin.petersen@oracle.com>
@@ -146,9 +146,10 @@ Cc: Damien Le Moal <dlemoal@kernel.org>,
 	linux-usb@vger.kernel.org,
 	usb-storage@lists.one-eyed-alien.net,
 	Hannes Reinecke <hare@suse.de>
-Subject: [usb-storage] [PATCH 21/23] mpi3mr: switch to using ->device_configure
-Date: Tue,  9 Apr 2024 16:37:46 +0200
-Message-Id: <20240409143748.980206-22-hch@lst.de>
+Subject: [usb-storage] [PATCH 22/23] uas: switch to using ->device_configure
+ to configure queue limits
+Date: Tue,  9 Apr 2024 16:37:47 +0200
+Message-Id: <20240409143748.980206-23-hch@lst.de>
 X-Mailer: git-send-email 2.39.2
 In-Reply-To: <20240409143748.980206-1-hch@lst.de>
 References: <20240409143748.980206-1-hch@lst.de>
@@ -156,7 +157,7 @@ MIME-Version: 1.0
 X-SRS-Rewrite: SMTP reverse-path rewritten from <hch@infradead.org> by bombadil.infradead.org. See http://www.infradead.org/rpr.html
 X-Original-Sender: hch@lst.de
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@infradead.org header.s=bombadil.20210309 header.b=pdhCZ3Uj;
+ header.i=@infradead.org header.s=bombadil.20210309 header.b=huC71k7P;
        spf=none (google.com: bombadil.srs.infradead.org does not designate
  permitted sender hosts) smtp.mailfrom=BATV+a1627a52d3ab203f3ac5+7534+infradead.org+hch@bombadil.srs.infradead.org
 Content-Type: text/plain; charset="UTF-8"
@@ -175,175 +176,65 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-Switch to the ->device_configure method instead of ->slave_configure
+Switch to the ->device_configure method instead of ->slave_alloc
 and update the block limits on the passed in queue_limits instead
 of using the per-limit accessors.
 
-Note that mpi3mr also updates the limits from an event handler that
-iterates all SCSI devices.  This is also updated to use the
-queue_limits, but the complete locking of this path probably means
-it already is completely broken and needs a proper audit.
+Note that uas was the only driver setting these size limits from
+->slave_alloc and not ->slave_configure and this makes it match
+everyone else.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 Reviewed-by: Damien Le Moal <dlemoal@kernel.org>
 Reviewed-by: Hannes Reinecke <hare@suse.de>
 ---
- drivers/scsi/mpi3mr/mpi3mr.h    |  1 -
- drivers/scsi/mpi3mr/mpi3mr_os.c | 76 ++++++++++++++-------------------
- 2 files changed, 31 insertions(+), 46 deletions(-)
+ drivers/usb/storage/uas.c | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
 
-diff --git a/drivers/scsi/mpi3mr/mpi3mr.h b/drivers/scsi/mpi3mr/mpi3mr.h
-index d1c93978f28a58..f5a1529fa53715 100644
---- a/drivers/scsi/mpi3mr/mpi3mr.h
-+++ b/drivers/scsi/mpi3mr/mpi3mr.h
-@@ -1352,7 +1352,6 @@ void mpi3mr_wait_for_host_io(struct mpi3mr_ioc *mrioc, u32 timeout);
- void mpi3mr_cleanup_fwevt_list(struct mpi3mr_ioc *mrioc);
- void mpi3mr_flush_host_io(struct mpi3mr_ioc *mrioc);
- void mpi3mr_invalidate_devhandles(struct mpi3mr_ioc *mrioc);
--void mpi3mr_refresh_tgtdevs(struct mpi3mr_ioc *mrioc);
- void mpi3mr_flush_delayed_cmd_lists(struct mpi3mr_ioc *mrioc);
- void mpi3mr_check_rh_fault_ioc(struct mpi3mr_ioc *mrioc, u32 reason_code);
- void mpi3mr_print_fault_info(struct mpi3mr_ioc *mrioc);
-diff --git a/drivers/scsi/mpi3mr/mpi3mr_os.c b/drivers/scsi/mpi3mr/mpi3mr_os.c
-index 5f975e0db38831..17b4e70b9dbaf6 100644
---- a/drivers/scsi/mpi3mr/mpi3mr_os.c
-+++ b/drivers/scsi/mpi3mr/mpi3mr_os.c
-@@ -986,6 +986,25 @@ static int mpi3mr_change_queue_depth(struct scsi_device *sdev,
- 	return retval;
- }
+diff --git a/drivers/usb/storage/uas.c b/drivers/usb/storage/uas.c
+index 0668182e1c469c..738c183ccada8d 100644
+--- a/drivers/usb/storage/uas.c
++++ b/drivers/usb/storage/uas.c
+@@ -823,19 +823,19 @@ static int uas_slave_alloc(struct scsi_device *sdev)
+ 		(struct uas_dev_info *)sdev->host->hostdata;
  
-+static void mpi3mr_configure_nvme_dev(struct mpi3mr_tgt_dev *tgt_dev,
-+		struct queue_limits *lim)
-+{
-+	u8 pgsz = tgt_dev->dev_spec.pcie_inf.pgsz ? : MPI3MR_DEFAULT_PGSZEXP;
-+
-+	lim->max_hw_sectors = tgt_dev->dev_spec.pcie_inf.mdts / 512;
-+	lim->virt_boundary_mask = (1 << pgsz) - 1;
-+}
-+
-+static void mpi3mr_configure_tgt_dev(struct mpi3mr_tgt_dev *tgt_dev,
-+		struct queue_limits *lim)
-+{
-+	if (tgt_dev->dev_type == MPI3_DEVICE_DEVFORM_PCIE &&
-+	    (tgt_dev->dev_spec.pcie_inf.dev_info &
-+	     MPI3_DEVICE0_PCIE_DEVICE_INFO_TYPE_MASK) ==
-+			MPI3_DEVICE0_PCIE_DEVICE_INFO_TYPE_NVME_DEVICE)
-+		mpi3mr_configure_nvme_dev(tgt_dev, lim);
-+}
-+
- /**
-  * mpi3mr_update_sdev - Update SCSI device information
-  * @sdev: SCSI device reference
-@@ -1001,31 +1020,17 @@ static void
- mpi3mr_update_sdev(struct scsi_device *sdev, void *data)
- {
- 	struct mpi3mr_tgt_dev *tgtdev;
-+	struct queue_limits lim;
- 
- 	tgtdev = (struct mpi3mr_tgt_dev *)data;
- 	if (!tgtdev)
- 		return;
- 
- 	mpi3mr_change_queue_depth(sdev, tgtdev->q_depth);
--	switch (tgtdev->dev_type) {
--	case MPI3_DEVICE_DEVFORM_PCIE:
--		/*The block layer hw sector size = 512*/
--		if ((tgtdev->dev_spec.pcie_inf.dev_info &
--		    MPI3_DEVICE0_PCIE_DEVICE_INFO_TYPE_MASK) ==
--		    MPI3_DEVICE0_PCIE_DEVICE_INFO_TYPE_NVME_DEVICE) {
--			blk_queue_max_hw_sectors(sdev->request_queue,
--			    tgtdev->dev_spec.pcie_inf.mdts / 512);
--			if (tgtdev->dev_spec.pcie_inf.pgsz == 0)
--				blk_queue_virt_boundary(sdev->request_queue,
--				    ((1 << MPI3MR_DEFAULT_PGSZEXP) - 1));
--			else
--				blk_queue_virt_boundary(sdev->request_queue,
--				    ((1 << tgtdev->dev_spec.pcie_inf.pgsz) - 1));
--		}
--		break;
--	default:
--		break;
--	}
-+
-+	lim = queue_limits_start_update(sdev->request_queue);
-+	mpi3mr_configure_tgt_dev(tgtdev, &lim);
-+	WARN_ON_ONCE(queue_limits_commit_update(sdev->request_queue, &lim));
- }
- 
- /**
-@@ -1038,8 +1043,7 @@ mpi3mr_update_sdev(struct scsi_device *sdev, void *data)
-  *
-  * Return: Nothing.
-  */
+ 	sdev->hostdata = devinfo;
 -
--void mpi3mr_refresh_tgtdevs(struct mpi3mr_ioc *mrioc)
-+static void mpi3mr_rfresh_tgtdevs(struct mpi3mr_ioc *mrioc)
- {
- 	struct mpi3mr_tgt_dev *tgtdev, *tgtdev_next;
- 	struct mpi3mr_stgt_priv_data *tgt_priv;
-@@ -4393,15 +4397,17 @@ static void mpi3mr_target_destroy(struct scsi_target *starget)
+-	if (devinfo->flags & US_FL_MAX_SECTORS_64)
+-		blk_queue_max_hw_sectors(sdev->request_queue, 64);
+-	else if (devinfo->flags & US_FL_MAX_SECTORS_240)
+-		blk_queue_max_hw_sectors(sdev->request_queue, 240);
+-
+ 	return 0;
  }
  
- /**
-- * mpi3mr_slave_configure - Slave configure callback handler
-+ * mpi3mr_device_configure - Slave configure callback handler
-  * @sdev: SCSI device reference
-+ * @lim: queue limits
-  *
-  * Configure queue depth, max hardware sectors and virt boundary
-  * as required
-  *
-  * Return: 0 always.
-  */
--static int mpi3mr_slave_configure(struct scsi_device *sdev)
-+static int mpi3mr_device_configure(struct scsi_device *sdev,
+-static int uas_slave_configure(struct scsi_device *sdev)
++static int uas_device_configure(struct scsi_device *sdev,
 +		struct queue_limits *lim)
  {
- 	struct scsi_target *starget;
- 	struct Scsi_Host *shost;
-@@ -4432,28 +4438,8 @@ static int mpi3mr_slave_configure(struct scsi_device *sdev)
- 	sdev->eh_timeout = MPI3MR_EH_SCMD_TIMEOUT;
- 	blk_queue_rq_timeout(sdev->request_queue, MPI3MR_SCMD_TIMEOUT);
+ 	struct uas_dev_info *devinfo = sdev->hostdata;
  
--	switch (tgt_dev->dev_type) {
--	case MPI3_DEVICE_DEVFORM_PCIE:
--		/*The block layer hw sector size = 512*/
--		if ((tgt_dev->dev_spec.pcie_inf.dev_info &
--		    MPI3_DEVICE0_PCIE_DEVICE_INFO_TYPE_MASK) ==
--		    MPI3_DEVICE0_PCIE_DEVICE_INFO_TYPE_NVME_DEVICE) {
--			blk_queue_max_hw_sectors(sdev->request_queue,
--			    tgt_dev->dev_spec.pcie_inf.mdts / 512);
--			if (tgt_dev->dev_spec.pcie_inf.pgsz == 0)
--				blk_queue_virt_boundary(sdev->request_queue,
--				    ((1 << MPI3MR_DEFAULT_PGSZEXP) - 1));
--			else
--				blk_queue_virt_boundary(sdev->request_queue,
--				    ((1 << tgt_dev->dev_spec.pcie_inf.pgsz) - 1));
--		}
--		break;
--	default:
--		break;
--	}
--
-+	mpi3mr_configure_tgt_dev(tgt_dev, lim);
- 	mpi3mr_tgtdev_put(tgt_dev);
--
- 	return retval;
- }
++	if (devinfo->flags & US_FL_MAX_SECTORS_64)
++		lim->max_hw_sectors = 64;
++	else if (devinfo->flags & US_FL_MAX_SECTORS_240)
++		lim->max_hw_sectors = 240;
++
+ 	if (devinfo->flags & US_FL_NO_REPORT_OPCODES)
+ 		sdev->no_report_opcodes = 1;
  
-@@ -4921,7 +4907,7 @@ static const struct scsi_host_template mpi3mr_driver_template = {
- 	.queuecommand			= mpi3mr_qcmd,
- 	.target_alloc			= mpi3mr_target_alloc,
- 	.slave_alloc			= mpi3mr_slave_alloc,
--	.slave_configure		= mpi3mr_slave_configure,
-+	.device_configure		= mpi3mr_device_configure,
- 	.target_destroy			= mpi3mr_target_destroy,
- 	.slave_destroy			= mpi3mr_slave_destroy,
- 	.scan_finished			= mpi3mr_scan_finished,
+@@ -900,7 +900,7 @@ static const struct scsi_host_template uas_host_template = {
+ 	.queuecommand = uas_queuecommand,
+ 	.target_alloc = uas_target_alloc,
+ 	.slave_alloc = uas_slave_alloc,
+-	.slave_configure = uas_slave_configure,
++	.device_configure = uas_device_configure,
+ 	.eh_abort_handler = uas_eh_abort_handler,
+ 	.eh_device_reset_handler = uas_eh_device_reset_handler,
+ 	.this_id = -1,
 -- 
 2.39.2
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20240409143748.980206-22-hch%40lst.de.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20240409143748.980206-23-hch%40lst.de.
