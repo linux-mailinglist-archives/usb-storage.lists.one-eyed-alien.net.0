@@ -1,108 +1,108 @@
-Return-Path: <usb-storage+bncBDUNBGN3R4KRBZNF2WYAMGQEHIUJEWI@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBDUNBGN3R4KRB2VF2WYAMGQEKLT6IRQ@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-pg1-x546.google.com (mail-pg1-x546.google.com [IPv6:2607:f8b0:4864:20::546])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6F3EA89DC83
-	for <lists+usb-storage@lfdr.de>; Tue,  9 Apr 2024 16:38:31 +0200 (CEST)
-Received: by mail-pg1-x546.google.com with SMTP id 41be03b00d2f7-5c670f70a37sf4657271a12.2
-        for <lists+usb-storage@lfdr.de>; Tue, 09 Apr 2024 07:38:31 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1712673510; cv=pass;
+Received: from mail-pf1-x448.google.com (mail-pf1-x448.google.com [IPv6:2607:f8b0:4864:20::448])
+	by mail.lfdr.de (Postfix) with ESMTPS id 7BAE089DC86
+	for <lists+usb-storage@lfdr.de>; Tue,  9 Apr 2024 16:38:36 +0200 (CEST)
+Received: by mail-pf1-x448.google.com with SMTP id d2e1a72fcca58-6ecec819962sf5544338b3a.2
+        for <lists+usb-storage@lfdr.de>; Tue, 09 Apr 2024 07:38:36 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1712673515; cv=pass;
         d=google.com; s=arc-20160816;
-        b=EUKwOm+UAtN1NXHblg2OfcjdWGuHMRQCA6ew8Zk/mwMII4Kv6xaexB99RlnXMZP83t
-         4QbR5U4+ne7XMM+QNKSYYYO6TCggRRsFYugnLUkpJ9vKSN6Sby1ARQTDLgDyzof8eGVI
-         t41AcywdtnW92TpGkn3+UkvDppMgHDKqqh9++h8tMuSG/Lh/SvUKJCTDE8kQZirCGWl3
-         hRMKnkEVQxQI1ZpmaLpIf/QS4QNQW1bpAXg9Iw/ti/GCU23Nkx7n15ic6lSvd13l8vB7
-         Y/ZSd24sAcu0Oj/Vkbl3dJGGBzZXhFvepbnnjU2j97pHnrY2QG8tVrMTWEW81TROG8pH
-         lkWQ==
+        b=b+cA31+vTk2dcgUgS945NVSXk8o6FzW1v0BbIoz0dRHPI5bAeR3u6xoY20qbWGj461
+         WkRub1AdDBcVQCP7sE56kcp832XpG4qxaJK83dgAguQmlc3TZGUBvSAfFryRIXeo9VJx
+         jdV84SA1kIu1+uTQJ0kAdTaimWM5fPBeHgQYcSUjmelgSmXxQHx7sKDgTO9OctLT67Up
+         9nV0C9w2vDHiZTDyhqxTh/Yx3PasiJd6tKi9+yNbKjTXRPvMRqX/ZkSowezsMvS3PmAe
+         LrYW0HUvIE2f+3wQhs+7GBsNofUrIdUdYqStiY+YEmQgUt4QvqzkMTNiRIAuZqo556yr
+         BZ/w==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:sender:dkim-signature;
-        bh=Sfri9OZpyfuz74ISP+es977xgGCoL5ZfAKxRttorNJ0=;
-        fh=JQnSgZd5n/7WGIgLw0WB9LKoWV4ds1/1AwBE/0WnJ1U=;
-        b=adigIo58IXWugC6tyG6VLO438Vr/I9qfTzpDt2DqWXhY5FhYCtlXxVcPN4JOmFxjYj
-         fuSVI6ORIqLe/nHVKYgNwucWMlXZVBC++vCgTqQ11hk4oi3mx9J+YQXbPYqPXO7uaT65
-         gD296XK412ROamkho2o1QZQN27Xz0l2uypx+/lLhMSNwqKhkGoUVckNxdBRqhNvhHNF7
-         iVsNDMypN3daGXiwOyATKvLDON2pCxMGyRpMcbBQ4bVXZl25Qz8b8C+LFbvejjgqf5qo
-         XrDpVvagCTbZraJ00RFiOyCyxiidXU4veSJ3iMbN3rC7rDkqJ3tEDPbPSUIvMkruWV7q
-         Gp3w==;
+        bh=XLfMtRk+gwmrJ6YZmIe5hdsdlyBPMaqO+BcYmBEISFA=;
+        fh=jSHEdsvnpQRsSFMblJGUFqlrMrAeozyJalYhCQARBWM=;
+        b=Nx3Z/76EPGN/6UTu2wiLUiAWuh8DerYnAT7BwHReA/y+W0RIgC4HEJQgKzFTERoEaZ
+         gjiflxNFaTkIwqfvQpQUUiTbV65kLQpNrd2IXPDMHN29KSMGZOPfrhxkBUNBVUQJcfc4
+         vqJe/QUfD5bEfKJDDxU6zfH8Rrq5zxEwoZ8g1c+JFDwgDf0i0DlYeMLq6pkMmKwV8w9g
+         Mcu4BreoBCx/KTnyoFot+ssZEOduNz60Cu/G7/u/9a7596VwYOhgr38ep0PGrYZLzogl
+         D3mCZbhz/uhiTJcvOMw2Vj+/IvmWb4WqaH+HBOk+zMdcBObmgI2kVUR+Qkf5B5icJ471
+         QNmw==;
         darn=lfdr.de
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@infradead.org header.s=bombadil.20210309 header.b=bKOxGJQW;
+       dkim=pass header.i=@infradead.org header.s=bombadil.20210309 header.b=MOuX2Dqb;
        spf=none (google.com: bombadil.srs.infradead.org does not designate permitted sender hosts) smtp.mailfrom=BATV+a1627a52d3ab203f3ac5+7534+infradead.org+hch@bombadil.srs.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1712673510; x=1713278310; darn=lfdr.de;
+        d=lists.one-eyed-alien.net; s=google; t=1712673515; x=1713278315; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:x-original-authentication-results
          :x-original-sender:mime-version:references:in-reply-to:message-id
          :date:subject:cc:to:from:sender:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=Sfri9OZpyfuz74ISP+es977xgGCoL5ZfAKxRttorNJ0=;
-        b=MyWGlxDo0bhFwCS1XdbupviH9aqzSEciRtvaDaN8GoIylWkSaUGDBAgbqKFW20swgA
-         6ErT5VOHJAyoqsj3/EjtBt3XfUqY1xwDx8MwwFyjfI7GUWlr+lEpPT6Tb2KS5+66X5R9
-         RZC+JKNSxClcY31WKTZ6snd5Np7Dh3MBJATpU=
+        bh=XLfMtRk+gwmrJ6YZmIe5hdsdlyBPMaqO+BcYmBEISFA=;
+        b=k7915oxt+mdLqvuv5AptxCyeBBlSLJZKyokqFUaGfWvbe34bSIeszhzzwYB13CttDF
+         8gI1o/hHG2JkgRKpNlHtS1JNaMb631jJxhRTt3FsvmEnZRqx+V5pr/AsjpOw1vOWCHaZ
+         IRZtXweeRGgPNOnGnt6o4HlPUr9RYStDXGqkw=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1712673510; x=1713278310;
+        d=1e100.net; s=20230601; t=1712673515; x=1713278315;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :x-spam-checked-in-group:list-id:mailing-list:precedence
          :x-original-authentication-results:x-original-sender:mime-version
          :references:in-reply-to:message-id:date:subject:cc:to:from
          :x-beenthere:x-gm-message-state:sender:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=Sfri9OZpyfuz74ISP+es977xgGCoL5ZfAKxRttorNJ0=;
-        b=Nq4RtWAP6t2VmNpHjAHWMLj0m4TPo9AMz5DIs7W7S9O27tPxGIFbp2b0VcexRi3s1b
-         B8zBJf6QT9ulYsS4uBt6XKdzZFHrgWj+/1UH6y3WoQISaKyHFehej58vSct8chEAN+Pq
-         4tGrNmgqYSUWX4JsoaOXxKwaZKYUf4mP//SG98rBFRrs+nhf/i8y7hWgSSCOZrUxzAzy
-         pGZcO6C63AGTLWz3WvxlBNx7UIBudWWPQFBhEwyrfJ/Ju/Fd/cl7i4A8jOf1aKnFLq00
-         dCuYRiFrwQkeYXf7ziU0sKlFPT2INA/KppXfj/DXtlnaKoWI84wxUUFXnk/juSjJcZP7
-         jINQ==
+        bh=XLfMtRk+gwmrJ6YZmIe5hdsdlyBPMaqO+BcYmBEISFA=;
+        b=aZLUizti3lLOuE4C+XT81OtLsxpIFhGBK/RFfyuKJduPDN1IUa4+JCGUNXtR79aMXp
+         EupbrFar0JrIZYlIS6JEIW/EJMWwFAqH1SUuJeucJ36FESo855MymffUbyCvoBnrHM4R
+         O+KZsRSiQWQdGJKLf4JnjU/ugwY71F2xlq/F2BiE5MOADj2TAlrhm9yV9jc4mCd3LrzF
+         uX83gCrxjJEoJcc0kBeukSCDusBRyIlO8NNDu3oINqMF46V34moxGXhk5HNUbNMvXgrJ
+         GLZagPxJ3QTRe4GfNrmMvvN0tiy+luyb5zW3HZLMrvIg5Wi5/tIa2WAYvwFzJJwrOW/t
+         FjWg==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Forwarded-Encrypted: i=2; AJvYcCWtkjQr7egWTdoXsy8ZzGHV1yOChYAfZQZPTkBM3k1SHzv8rVrI+OeQZ6V4IAix8Frz21vtnrZPho1IaBZ8W0Q4EqC49UvYdryE
-X-Gm-Message-State: AOJu0Yz97e03TKQTQ0ErbQ0QFeGHaBiqpO0M8QW7GPZ1QqC4O5OYapuu
-	/gNCcpWKfmiZpPDHtuVJ3hnO/i93RJ2d1SzZt8NbjEIKAPCukmfZLiXL5dF4x+A=
-X-Google-Smtp-Source: AGHT+IEHC6NmUkBWoFkfpGW6Ay0B0nOjoo4IGca+kwy8++AsIy1Ie7+wMS+9djXC+2B0N+XdtYGjfQ==
-X-Received: by 2002:a05:6a20:dd96:b0:1a7:6f27:5704 with SMTP id kw22-20020a056a20dd9600b001a76f275704mr16042pzb.46.1712673510024;
-        Tue, 09 Apr 2024 07:38:30 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCXpieAf6DtAmRPWEpi8TKmOZb9WW0Ku+0Lke0ySPzLyCuRPO2mhwJzsi0WSiXJfW5s4IJGBRmUDBvkI6RQF+OxfC9dITPuWofml
+X-Gm-Message-State: AOJu0Yw7Gg1iY9NrhJ+netmjW0X+405lCFX0uD8LGamxNr/rS0LdvGRB
+	AUU/Iq6SOcXeXmgFbmu9GblVBghdOYpQBV9W/DY07O0IvWedJR0WjD2iWIu7omk=
+X-Google-Smtp-Source: AGHT+IEihd9Uk5RW7o+NX0dIyWrXH4UDHNUxKJolhj5r+4y/nQ1Iu6qA7N4b3B26DivPFRYBngvv/w==
+X-Received: by 2002:a05:6a00:c8b:b0:6ec:eacb:ecd2 with SMTP id a11-20020a056a000c8b00b006eceacbecd2mr13454559pfv.33.1712673514825;
+        Tue, 09 Apr 2024 07:38:34 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a17:902:e885:b0:1e2:c350:b352 with SMTP id
- w5-20020a170902e88500b001e2c350b352ls2670415plg.0.-pod-prod-08-us; Tue, 09
- Apr 2024 07:38:29 -0700 (PDT)
-X-Forwarded-Encrypted: i=2; AJvYcCWurnYkVHfIEjxJzLWYG1Hsauffmp+4MvOKLSMoir7jCNUY/Cr6wLBDvmKloeiugvHz00zwkas5VkVFiVT+sOwjDijUhmLSjszqdCd//DVr6CInDUk=
-X-Received: by 2002:a05:6a20:da9b:b0:1a7:23e4:1cd1 with SMTP id iy27-20020a056a20da9b00b001a723e41cd1mr30272pzb.13.1712673508711;
-        Tue, 09 Apr 2024 07:38:28 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1712673508; cv=none;
+Received: by 2002:a05:6a00:9288:b0:6eb:3c28:41d4 with SMTP id
+ jw8-20020a056a00928800b006eb3c2841d4ls3445006pfb.0.-pod-prod-03-us; Tue, 09
+ Apr 2024 07:38:34 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCVmJvgNUMHO9o/G8YlQe2Do6p+HH8oeGCwbEUbHL64AUVi04FzDzV/XYQ+3WNm3r3e0wCgBVixgJCwBNbTQm/lB0H1vLx6RQc0NCv/f9QMT+NYUYnM=
+X-Received: by 2002:a05:6a00:28c7:b0:6ed:21d5:fc2c with SMTP id ci7-20020a056a0028c700b006ed21d5fc2cmr6348471pfb.26.1712673513700;
+        Tue, 09 Apr 2024 07:38:33 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1712673513; cv=none;
         d=google.com; s=arc-20160816;
-        b=zGAIP05dXwF6jfOZt9O4qY5XYDA5cXN16pq8sunNpsWoDmAUkSJjsR55zXiXw2MMCf
-         FPYhe1SkOyMBk9KZbgCQJieAdDjo7TxALeEpCk70ExTM3oNJIeZ8IGa+Pv+okxthGRWL
-         X7nLWWSg0uipXn9hFNr7nR5aVtRZnVVR2yZeMf1ffDt7lhNOXKhKJgYY+/QWO5itX1ZV
-         pugmhDDmzJqth1VQ4OXteBFhAOdOF8X7WXhI75WlDXSiKXEAVn6kqgn/9tNy9G5lmxXR
-         Ta7jgTLQ5kjiGqQgHGR9CGjbDPO7xZFPIyLjYjqL5BZI1P9IbxzgznujWkN30hl1Rs+J
-         q2tQ==
+        b=dn4Q0LsiWVEm4MAutddWeS4ZB3theLGgMkK232Z4g5qtl7j43y2kgy2bmZ2AHj2muh
+         i6QrudEUBghIqfhSi9nTHlDPt+wULcwiMt1Vkl+ftiPMwUWgfOpovC3C3lOszLzvwKpb
+         kRO0XdlO0C4WCBQriLbV6a9ScwZ4X4hj/m22SwWhoC472SM8/bW6vyDh6M6TT6BLVHMT
+         qOZucALiE+5hPUb/Mfh0l/c/ew+vtELgkXBO3a/eDJlbdgV7Du8QRXbGGo64dH4ldFYs
+         +7Q1hoV6atjhkXMpAQBx0jotwJu2gkwwI9pSnmKZjHUb+yl3woiFjBI2zNNM+6I7wLcU
+         mlMw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:dkim-signature;
-        bh=UNIxgxuc9FtvbvzwSjpyY7cNQmLry7auIP83EtiGuVk=;
-        fh=UaGMtZo/2j1iaYITUnmtOwHBR7+4Khs7sTR53qT7wM8=;
-        b=neQL4dfNYVDmOUiq0aSmIBxHVI8qAGQi8JCJ3Jrgw6SboSKYlCnV+YWd6MjwGES6nm
-         juBSP6gD/mmdnUvNEuSFf47lhBdbC8HNW4FlM4NWqgXvnsWU9CYExhO6XRc78Yyymku6
-         6CMIh4ckHO0o2BMSNF2Ciy8P5yY4Wca5Pfo6bA5UaATirDfox++aPtbxF3VNfqXbET6j
-         vJBHUXRGvB+FJH9howOI2Ne8B2m8Mzy5o1BjpHWVBWRpJY4AAE/QTA6lR13CpkrO3MR8
-         1mYHR1fKsvIMeKOu7gt6DToKEVtgbfX2/WggxsHu/0NzkUueBWARREjzvoxSja0fY+Hf
-         387w==;
+        bh=W/4MX6Ta0iS+DzFN/hZaJgRdefyKJITkCBys0ksCJ1Q=;
+        fh=q8hCIvNb5vCUXXKMpVAwbkkPDpj7PtrvAVG6ascHy78=;
+        b=ohU14uFLk461ySkhrJZtns2ykaB1MzSxsZjgMXie+eTMwW4jvC6nMcO/vdS8XdvDXf
+         NVpyV2G7paSbXn9tCCA+PJ3sNwOLp1QnA0YQByJskWjjRziwn0RAqyGp+JGEwOLQW+RS
+         uZ231ZoOY4lTcSZ/f5aUHQ9E1si1Cjw9FYvrdrVXIg31I2Rn5z7y5VHx3fwXBWIYYDHh
+         pT2Gs9KDvKgzTZ7CUndHs38dcz403dLrkfGAmmaD2iimQ8Ac535JA0idOlq5MwtadCbZ
+         UY+gzrXYrlicJUFOC2zVaGVuhb8BzMdyLHUih0YNT6elXBFTY8ZPZ1bMUX0LYfsaL+Kd
+         i6qg==;
         dara=google.com
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@infradead.org header.s=bombadil.20210309 header.b=bKOxGJQW;
+       dkim=pass header.i=@infradead.org header.s=bombadil.20210309 header.b=MOuX2Dqb;
        spf=none (google.com: bombadil.srs.infradead.org does not designate permitted sender hosts) smtp.mailfrom=BATV+a1627a52d3ab203f3ac5+7534+infradead.org+hch@bombadil.srs.infradead.org
 Received: from bombadil.infradead.org (bombadil.infradead.org. [2607:7c80:54:3::133])
-        by mx.google.com with ESMTPS id t6-20020a170902e84600b001e43c7fbfe6si3903090plg.280.2024.04.09.07.38.28
+        by mx.google.com with ESMTPS id h14-20020a63120e000000b005e2c2fc5125si8528580pgl.249.2024.04.09.07.38.33
         for <usb-storage@lists.one-eyed-alien.net>
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 09 Apr 2024 07:38:28 -0700 (PDT)
+        Tue, 09 Apr 2024 07:38:33 -0700 (PDT)
 Received-SPF: none (google.com: bombadil.srs.infradead.org does not designate permitted sender hosts) client-ip=2607:7c80:54:3::133;
 Received: from 2a02-8389-2341-5b80-39d3-4735-9a3c-88d8.cable.dynamic.v6.surfer.at ([2a02:8389:2341:5b80:39d3:4735:9a3c:88d8] helo=localhost)
 	by bombadil.infradead.org with esmtpsa (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1ruCc6-00000002S0U-09Yy;
-	Tue, 09 Apr 2024 14:38:18 +0000
+	id 1ruCc9-00000002S2O-14gj;
+	Tue, 09 Apr 2024 14:38:21 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Jens Axboe <axboe@kernel.dk>,
 	"Martin K. Petersen" <martin.petersen@oracle.com>
@@ -144,12 +144,10 @@ Cc: Damien Le Moal <dlemoal@kernel.org>,
 	mpi3mr-linuxdrv.pdl@broadcom.com,
 	linux-samsung-soc@vger.kernel.org,
 	linux-usb@vger.kernel.org,
-	usb-storage@lists.one-eyed-alien.net,
-	Hannes Reinecke <hare@suse.de>
-Subject: [usb-storage] [PATCH 10/23] scsi: add a device_configure method to
- the host template
-Date: Tue,  9 Apr 2024 16:37:35 +0200
-Message-Id: <20240409143748.980206-11-hch@lst.de>
+	usb-storage@lists.one-eyed-alien.net
+Subject: [usb-storage] [PATCH 11/23] megaraid_sas: switch to using ->device_configure
+Date: Tue,  9 Apr 2024 16:37:36 +0200
+Message-Id: <20240409143748.980206-12-hch@lst.de>
 X-Mailer: git-send-email 2.39.2
 In-Reply-To: <20240409143748.980206-1-hch@lst.de>
 References: <20240409143748.980206-1-hch@lst.de>
@@ -157,7 +155,7 @@ MIME-Version: 1.0
 X-SRS-Rewrite: SMTP reverse-path rewritten from <hch@infradead.org> by bombadil.infradead.org. See http://www.infradead.org/rpr.html
 X-Original-Sender: hch@lst.de
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@infradead.org header.s=bombadil.20210309 header.b=bKOxGJQW;
+ header.i=@infradead.org header.s=bombadil.20210309 header.b=MOuX2Dqb;
        spf=none (google.com: bombadil.srs.infradead.org does not designate
  permitted sender hosts) smtp.mailfrom=BATV+a1627a52d3ab203f3ac5+7534+infradead.org+hch@bombadil.srs.infradead.org
 Content-Type: text/plain; charset="UTF-8"
@@ -176,123 +174,147 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-This is a version of ->slave_configure that also takes a queue_limits
-structure that the caller applies, and thus allows drivers to reconfigure
-the queue using the atomic queue limits API.
-
-In the long run it should also replace ->slave_configure entirely as
-there is no need to have two different methods here, and the slave
-name in addition to being politically charged also has no basis in
-the SCSI standards or the kernel code.
+Switch to the ->device_configure method instead of ->slave_configure
+and update the block limits on the passed in queue_limits instead
+of using the per-limit accessors.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
-Reviewed-by: Bart Van Assche <bvanassche@acm.org>
 Reviewed-by: Damien Le Moal <dlemoal@kernel.org>
-Reviewed-by: Hannes Reinecke <hare@suse.de>
 ---
- drivers/scsi/scsi_scan.c | 47 ++++++++++++++++++++++------------------
- include/scsi/scsi_host.h |  4 ++++
- 2 files changed, 30 insertions(+), 21 deletions(-)
+ drivers/scsi/megaraid/megaraid_sas.h        |  2 +-
+ drivers/scsi/megaraid/megaraid_sas_base.c   | 29 ++++++++++++---------
+ drivers/scsi/megaraid/megaraid_sas_fusion.c |  3 ++-
+ 3 files changed, 20 insertions(+), 14 deletions(-)
 
-diff --git a/drivers/scsi/scsi_scan.c b/drivers/scsi/scsi_scan.c
-index 1ec4b309af726d..463ce6e23dc678 100644
---- a/drivers/scsi/scsi_scan.c
-+++ b/drivers/scsi/scsi_scan.c
-@@ -227,7 +227,7 @@ static int scsi_realloc_sdev_budget_map(struct scsi_device *sdev,
- 
- 	/*
- 	 * realloc if new shift is calculated, which is caused by setting
--	 * up one new default queue depth after calling ->slave_configure
-+	 * up one new default queue depth after calling ->device_configure
- 	 */
- 	if (!need_alloc && new_shift != sdev->budget_map.shift)
- 		need_alloc = need_free = true;
-@@ -874,6 +874,7 @@ static int scsi_probe_lun(struct scsi_device *sdev, unsigned char *inq_result,
- static int scsi_add_lun(struct scsi_device *sdev, unsigned char *inq_result,
- 		blist_flags_t *bflags, int async)
+diff --git a/drivers/scsi/megaraid/megaraid_sas.h b/drivers/scsi/megaraid/megaraid_sas.h
+index 56624cbf7fa5e7..5680c6cdb22193 100644
+--- a/drivers/scsi/megaraid/megaraid_sas.h
++++ b/drivers/scsi/megaraid/megaraid_sas.h
+@@ -2701,7 +2701,7 @@ int megasas_get_ctrl_info(struct megasas_instance *instance);
+ int
+ megasas_sync_pd_seq_num(struct megasas_instance *instance, bool pend);
+ void megasas_set_dynamic_target_properties(struct scsi_device *sdev,
+-					   bool is_target_prop);
++		struct queue_limits *lim, bool is_target_prop);
+ int megasas_get_target_prop(struct megasas_instance *instance,
+ 			    struct scsi_device *sdev);
+ void megasas_get_snapdump_properties(struct megasas_instance *instance);
+diff --git a/drivers/scsi/megaraid/megaraid_sas_base.c b/drivers/scsi/megaraid/megaraid_sas_base.c
+index 3d4f13da1ae873..def0d905b6d9e3 100644
+--- a/drivers/scsi/megaraid/megaraid_sas_base.c
++++ b/drivers/scsi/megaraid/megaraid_sas_base.c
+@@ -1888,7 +1888,7 @@ static struct megasas_instance *megasas_lookup_instance(u16 host_no)
+ * Returns void
+ */
+ void megasas_set_dynamic_target_properties(struct scsi_device *sdev,
+-					   bool is_target_prop)
++		struct queue_limits *lim, bool is_target_prop)
  {
-+	const struct scsi_host_template *hostt = sdev->host->hostt;
- 	struct queue_limits lim;
- 	int ret;
+ 	u16 pd_index = 0, ld;
+ 	u32 device_id;
+@@ -1915,8 +1915,10 @@ void megasas_set_dynamic_target_properties(struct scsi_device *sdev,
+ 			return;
+ 		raid = MR_LdRaidGet(ld, local_map_ptr);
  
-@@ -1073,33 +1074,37 @@ static int scsi_add_lun(struct scsi_device *sdev, unsigned char *inq_result,
- 		lim.max_hw_sectors = 512;
- 	else if (*bflags & BLIST_MAX_1024)
- 		lim.max_hw_sectors = 1024;
-+
-+	if (hostt->device_configure)
-+		ret = hostt->device_configure(sdev, &lim);
-+	else if (hostt->slave_configure)
-+		ret = hostt->slave_configure(sdev);
-+	if (ret) {
-+		queue_limits_cancel_update(sdev->request_queue);
-+		/*
-+		 * If the LLDD reports device not present, don't clutter the
-+		 * console with failure messages.
-+		 */
-+		if (ret != -ENXIO)
-+			sdev_printk(KERN_ERR, sdev,
-+				"failed to configure device\n");
-+		return SCSI_SCAN_NO_RESPONSE;
-+	}
-+
- 	ret = queue_limits_commit_update(sdev->request_queue, &lim);
- 	if (ret) {
- 		sdev_printk(KERN_ERR, sdev, "failed to apply queue limits.\n");
- 		return SCSI_SCAN_NO_RESPONSE;
- 	}
+-		if (raid->capability.ldPiMode == MR_PROT_INFO_TYPE_CONTROLLER)
+-			blk_queue_update_dma_alignment(sdev->request_queue, 0x7);
++		if (raid->capability.ldPiMode == MR_PROT_INFO_TYPE_CONTROLLER) {
++			if (lim)
++				lim->dma_alignment = 0x7;
++		}
  
--	if (sdev->host->hostt->slave_configure) {
--		ret = sdev->host->hostt->slave_configure(sdev);
--		if (ret) {
--			/*
--			 * if LLDD reports slave not present, don't clutter
--			 * console with alloc failure messages
--			 */
--			if (ret != -ENXIO) {
--				sdev_printk(KERN_ERR, sdev,
--					"failed to configure device\n");
--			}
--			return SCSI_SCAN_NO_RESPONSE;
--		}
--
--		/*
--		 * The queue_depth is often changed in ->slave_configure.
--		 * Set up budget map again since memory consumption of
--		 * the map depends on actual queue depth.
--		 */
-+	/*
-+	 * The queue_depth is often changed in ->device_configure.
-+	 *
-+	 * Set up budget map again since memory consumption of the map depends
-+	 * on actual queue depth.
-+	 */
-+	if (hostt->device_configure || hostt->slave_configure)
- 		scsi_realloc_sdev_budget_map(sdev, sdev->queue_depth);
--	}
+ 		mr_device_priv_data->is_tm_capable =
+ 			raid->capability.tmCapable;
+@@ -1967,7 +1969,8 @@ void megasas_set_dynamic_target_properties(struct scsi_device *sdev,
+  *
+  */
+ static inline void
+-megasas_set_nvme_device_properties(struct scsi_device *sdev, u32 max_io_size)
++megasas_set_nvme_device_properties(struct scsi_device *sdev,
++		struct queue_limits *lim, u32 max_io_size)
+ {
+ 	struct megasas_instance *instance;
+ 	u32 mr_nvme_pg_size;
+@@ -1976,10 +1979,10 @@ megasas_set_nvme_device_properties(struct scsi_device *sdev, u32 max_io_size)
+ 	mr_nvme_pg_size = max_t(u32, instance->nvme_page_size,
+ 				MR_DEFAULT_NVME_PAGE_SIZE);
  
- 	if (sdev->scsi_level >= SCSI_3)
- 		scsi_attach_vpd(sdev);
-diff --git a/include/scsi/scsi_host.h b/include/scsi/scsi_host.h
-index b0948ab69e0fa6..92c8c3b08dfc90 100644
---- a/include/scsi/scsi_host.h
-+++ b/include/scsi/scsi_host.h
-@@ -211,7 +211,11 @@ struct scsi_host_template {
- 	 *     up after yourself before returning non-0
- 	 *
- 	 * Status: OPTIONAL
-+	 *
-+	 * Note: slave_configure is the legacy version, use device_configure for
-+	 * all new code.  A driver must never define both.
- 	 */
-+	int (* device_configure)(struct scsi_device *, struct queue_limits *lim);
- 	int (* slave_configure)(struct scsi_device *);
+-	blk_queue_max_hw_sectors(sdev->request_queue, (max_io_size / 512));
++	lim->max_hw_sectors = max_io_size / 512;
++	lim->virt_boundary_mask = mr_nvme_pg_size - 1;
  
- 	/*
+ 	blk_queue_flag_set(QUEUE_FLAG_NOMERGES, sdev->request_queue);
+-	blk_queue_virt_boundary(sdev->request_queue, mr_nvme_pg_size - 1);
+ }
+ 
+ /*
+@@ -2041,7 +2044,7 @@ static void megasas_set_fw_assisted_qd(struct scsi_device *sdev,
+  * @is_target_prop			true, if fw provided target properties.
+  */
+ static void megasas_set_static_target_properties(struct scsi_device *sdev,
+-						 bool is_target_prop)
++		struct queue_limits *lim, bool is_target_prop)
+ {
+ 	u32 max_io_size_kb = MR_DEFAULT_NVME_MDTS_KB;
+ 	struct megasas_instance *instance;
+@@ -2060,13 +2063,15 @@ static void megasas_set_static_target_properties(struct scsi_device *sdev,
+ 		max_io_size_kb = le32_to_cpu(instance->tgt_prop->max_io_size_kb);
+ 
+ 	if (instance->nvme_page_size && max_io_size_kb)
+-		megasas_set_nvme_device_properties(sdev, (max_io_size_kb << 10));
++		megasas_set_nvme_device_properties(sdev, lim,
++				max_io_size_kb << 10);
+ 
+ 	megasas_set_fw_assisted_qd(sdev, is_target_prop);
+ }
+ 
+ 
+-static int megasas_slave_configure(struct scsi_device *sdev)
++static int megasas_device_configure(struct scsi_device *sdev,
++		struct queue_limits *lim)
+ {
+ 	u16 pd_index = 0;
+ 	struct megasas_instance *instance;
+@@ -2096,10 +2101,10 @@ static int megasas_slave_configure(struct scsi_device *sdev)
+ 		ret_target_prop = megasas_get_target_prop(instance, sdev);
+ 
+ 	is_target_prop = (ret_target_prop == DCMD_SUCCESS) ? true : false;
+-	megasas_set_static_target_properties(sdev, is_target_prop);
++	megasas_set_static_target_properties(sdev, lim, is_target_prop);
+ 
+ 	/* This sdev property may change post OCR */
+-	megasas_set_dynamic_target_properties(sdev, is_target_prop);
++	megasas_set_dynamic_target_properties(sdev, lim, is_target_prop);
+ 
+ 	mutex_unlock(&instance->reset_mutex);
+ 
+@@ -3507,7 +3512,7 @@ static const struct scsi_host_template megasas_template = {
+ 	.module = THIS_MODULE,
+ 	.name = "Avago SAS based MegaRAID driver",
+ 	.proc_name = "megaraid_sas",
+-	.slave_configure = megasas_slave_configure,
++	.device_configure = megasas_device_configure,
+ 	.slave_alloc = megasas_slave_alloc,
+ 	.slave_destroy = megasas_slave_destroy,
+ 	.queuecommand = megasas_queue_command,
+diff --git a/drivers/scsi/megaraid/megaraid_sas_fusion.c b/drivers/scsi/megaraid/megaraid_sas_fusion.c
+index c60014e07b449e..6c1fb8149553a8 100644
+--- a/drivers/scsi/megaraid/megaraid_sas_fusion.c
++++ b/drivers/scsi/megaraid/megaraid_sas_fusion.c
+@@ -5119,7 +5119,8 @@ int megasas_reset_fusion(struct Scsi_Host *shost, int reason)
+ 					ret_target_prop = megasas_get_target_prop(instance, sdev);
+ 
+ 				is_target_prop = (ret_target_prop == DCMD_SUCCESS) ? true : false;
+-				megasas_set_dynamic_target_properties(sdev, is_target_prop);
++				megasas_set_dynamic_target_properties(sdev, NULL,
++						is_target_prop);
+ 			}
+ 
+ 			status_reg = instance->instancet->read_fw_status_reg
 -- 
 2.39.2
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20240409143748.980206-11-hch%40lst.de.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20240409143748.980206-12-hch%40lst.de.
