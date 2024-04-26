@@ -1,253 +1,222 @@
-Return-Path: <usb-storage+bncBD4JJBHQWAERBNE3VCYQMGQEHWFDHSQ@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBD4JJBHQWAERBTN4VWYQMGQEG7QCPKI@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-qv1-xf46.google.com (mail-qv1-xf46.google.com [IPv6:2607:f8b0:4864:20::f46])
-	by mail.lfdr.de (Postfix) with ESMTPS id 38FBA8B1C5F
-	for <lists+usb-storage@lfdr.de>; Thu, 25 Apr 2024 10:00:54 +0200 (CEST)
-Received: by mail-qv1-xf46.google.com with SMTP id 6a1803df08f44-6a07f485f75sf14804796d6.1
-        for <lists+usb-storage@lfdr.de>; Thu, 25 Apr 2024 01:00:54 -0700 (PDT)
-ARC-Seal: i=3; a=rsa-sha256; t=1714032052; cv=pass;
+Received: from mail-pf1-x447.google.com (mail-pf1-x447.google.com [IPv6:2607:f8b0:4864:20::447])
+	by mail.lfdr.de (Postfix) with ESMTPS id C61648B31C4
+	for <lists+usb-storage@lfdr.de>; Fri, 26 Apr 2024 09:57:03 +0200 (CEST)
+Received: by mail-pf1-x447.google.com with SMTP id d2e1a72fcca58-6ece5eeb7c0sf1923767b3a.2
+        for <lists+usb-storage@lfdr.de>; Fri, 26 Apr 2024 00:57:03 -0700 (PDT)
+ARC-Seal: i=3; a=rsa-sha256; t=1714118222; cv=pass;
         d=google.com; s=arc-20160816;
-        b=h3nZFK74F3stLT/JJbbOChc8MmlyT5t1RVBHmbjdgrvNj2dDkWAxTgwNWKFBAXZQJl
-         MihS0TjdUAUYd39u6imDuxNXFA7ontpFt8uBWIPPPiVfcOHoJJf1zz3jyAp4dmNrtdC8
-         b0572K9BuNHISOA4ULGrNfsG2FTME55DXTunpq0J7fCR1tj151LrEJxKOWwxXdKX6YJs
-         6mDiB2FX50Wg+ayfS7XT/US0KsK/5JSI3KVbOpB+PatCbuwwP9cgkSju4k6lOQWBhmDL
-         yAk48QwYksfB7vlEsbjk2GlVrKrHE1J66iO+aVNRzTIw5WJOhFUbiKeI0S6AFVyh07bs
-         QiIQ==
+        b=Nu6g718S7AxFrUSYk/bYNmkHoi8kG2Yk2WoCzMhLkWquoUFlx9dlwUPmchD0LjWWyk
+         K04rqjl2ZJz9bNU+CHqJfiGe672FccZTb7o0UecDD7wjhX/ON7xeEkeMO3I+wfk6JXmR
+         GYxmmNYK3lVgMCsKHYfVHldbd0JG7jrTpQkE7EubsAz/ldsgN3Iw9GzULL1aLf9Y9wXQ
+         G/h/dB/6ggxjpKNk/kQbNYSfaos+BM/zQMP1rwqnuwVLx4xIu4+PZ8PLpLJCao7Zldu1
+         nh4R9+lGS6LveWkvpJ0uuTuwHVoLnTqXip35mheUAFfMjdhmWGb6a6VwZKtMBcGfrLDW
+         paoQ==
 ARC-Message-Signature: i=3; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:reply-to:mime-version
-         :content-language:accept-language:in-reply-to:references:message-id
-         :deferred-delivery:date:thread-index:thread-topic:subject:cc:to:from
-         :dkim-signature;
-        bh=++cjmVHnkMFw77KzZl+WldRlnM0JuQmRejvzp/TP34w=;
-        fh=sj3TTuDdgCr6II5RgeFKhYOzmZnv/Vd9CSUEGGs944o=;
-        b=AqMmFmWguVenBFVhsI5iJK+ug49DGZGrTZ49tTVlqYuKi6myTvbhqJytsb57vLdoIB
-         8lsF51IeWDoEj3anOjkVCuX0uUB0JooWgSMI4E3E7tyLoiSELKi+dkjEHmM0bEsr3cLt
-         XcUPzb4RwWvJOpog/3CQehAg+5eFVlEKpAg9qYWgbBWonEjqMeix6+z+uQYgaLcVi1NW
-         9nHbumBKG3DuwJKO5G5k+G1Rf3sDn+hvqpnhVR1l6McEKZfyolbLxaA0ebaFcN+YdUQ2
-         uF7ufkG7yOrRiVzkneiv7ADYmjB3thocg35H2ixqBYHUK4feH5Et+ti7maJvA1qMAAjP
-         tXPg==;
+         :list-id:mailing-list:precedence:reply-to:mime-version:message-id
+         :date:subject:cc:to:from:dkim-signature;
+        bh=QDtzy76v8enOElxK4EC7EmY5elNkJyLIwuE7KqWVEQI=;
+        fh=Nu7Oox6OP7Wm93+jOFpiqwLh4HjDDPE0MDWUmne7gQc=;
+        b=MXNKn2j3GFf5s4q1xGvwrpA6EHS1+i1XglYD/3x2LueBIM8exHTG0pIndzU+WIQByP
+         YERPX2lwgUAlFoR4kV7kzXriMJoyouV72eUT5KXqZvfa51KzCw0EcTOQIjztkMcacHha
+         xLojdy9CtVo7MoLxsb4ZzJTrFkYXw8YmOY/3r/Xzx4ysJI3x06WOb/qjkBIIJ683P8oq
+         OJrvTgplUpnsS7/2nZGNNJ1ccLlkEY1+Mk+ytDzgiYVfSWuu1ap6WJbpHqkfSZoRrtr4
+         6rI+tUX8heaElN7sDs952QgDPEiA7PraPaIgUZ6yMkno9DPpZbTrm7wDTQOpyp/uoGaX
+         zxpw==;
         darn=lfdr.de
 ARC-Authentication-Results: i=3; mx.google.com;
-       dkim=pass header.i=@alpsalpine.com header.s=selector2 header.b=bnj8KwJZ;
+       dkim=pass header.i=@alpsalpine.com header.s=selector2 header.b=Q2Au9oRS;
        arc=pass (i=1 spf=pass spfdomain=alpsalpine.com dkim=pass dkdomain=alpsalpine.com dmarc=pass fromdomain=alpsalpine.com);
-       spf=pass (google.com: domain of norihiko.hama@alpsalpine.com designates 2a01:111:f403:c405:: as permitted sender) smtp.mailfrom=norihiko.hama@alpsalpine.com;
+       spf=pass (google.com: domain of norihiko.hama@alpsalpine.com designates 2a01:111:f403:201a::600 as permitted sender) smtp.mailfrom=norihiko.hama@alpsalpine.com;
        dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=alpsalpine.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1714032052; x=1714636852; darn=lfdr.de;
+        d=lists.one-eyed-alien.net; s=google; t=1714118222; x=1714723022; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:reply-to
          :x-original-authentication-results:x-original-sender:mime-version
-         :content-language:accept-language:in-reply-to:references:message-id
-         :deferred-delivery:date:thread-index:thread-topic:subject:cc:to:from
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=++cjmVHnkMFw77KzZl+WldRlnM0JuQmRejvzp/TP34w=;
-        b=QeefXU33s5S5H3LzDe2J+6Xi/faJ0VeLQncETKlFJzZpkQafSXrz1kI9StYiT1gM81
-         PXbar2zoxV9oe36cgncGd4JR7GBNqTAoFzcKRRMLlTXM0X31P4Sag5AxbUnw867UEicc
-         3Bjb8Aht+/ALVlCgQJrcQOdFwIbwUbWBQ44Cs=
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=QDtzy76v8enOElxK4EC7EmY5elNkJyLIwuE7KqWVEQI=;
+        b=gElO3gzeeRJY1Sxw35NN0JoCXCTOGU6JpRqZMGsOUItSfZQxVYU2FJmC9L6+GGGRvi
+         K423U0BwnrkgecnieIghAnE3vc5x+r4GW1GO5SpjiiU6ZAg3SE5PobzLIOzqk4gOvhVd
+         iezt08MIAQOX+qSc4rh9xIJWBaXa+4TI8VWbg=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1714032052; x=1714636852;
+        d=1e100.net; s=20230601; t=1714118222; x=1714723022;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :x-spam-checked-in-group:list-id:mailing-list:precedence:reply-to
          :x-original-authentication-results:x-original-sender:mime-version
-         :content-language:accept-language:in-reply-to:references:message-id
-         :deferred-delivery:date:thread-index:thread-topic:subject:cc:to:from
-         :x-beenthere:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=++cjmVHnkMFw77KzZl+WldRlnM0JuQmRejvzp/TP34w=;
-        b=ESjCSybvYGy9HeXMD8Di7nhMCkvOxpqCZSrUs9aKfYqPdBcfrqCBI/i+S3EKT1kut2
-         /JzTWOb55TY0DE2azZy2pV1qSMQfonJzyPSxkQ3+MYMkmzAd1qa7mNZAmB+C7lHsqEr/
-         hYSXQD3c6P/zJzYQdMKinvIJdJy9Uwwo/htIYt79KaeMTTvQtGZlFVjWKSvTNPUD1WXs
-         vhjsbeJi0oyGxSoykveCdUY1fGkY8uzruCpbKiMSg1X8TSABdGaoLyMfO6WJ7jhgGEe2
-         skKItXaQLeZujK8iyfkFLYiKn7svss6xR64CCTqXvEdyhbQ1gPfiqUJ54r1uiZroWrym
-         3huA==
-X-Forwarded-Encrypted: i=3; AJvYcCVAcm93OPnJZMP7zwrrSIPSH/mLdtVI8R0//4MRJ2mP2qv8hsuvY/VSTFHv7OeFGpqY+WDE+hwgvMi4rCX4iDHVzxYFESg+VUFV
-X-Gm-Message-State: AOJu0YzJXSKd1hGE9J8g1ga0z+KC1B2PqtZPzvbj01zkr/+lTI+DAcmk
-	cf2Iz20jJv+pM5/773oA4VMbN4ktrLjvlel5cB5CU8P6M9uzZ16QkDBpe6ngX2s=
-X-Google-Smtp-Source: AGHT+IGo8Mdl0pFe8pZlirYKrQf7XwftPBgzwPuM0QOc2jz3PUJcYpqEmgMtGrFYo+vgFufmRGqjVg==
-X-Received: by 2002:a0c:f789:0:b0:699:2527:9843 with SMTP id s9-20020a0cf789000000b0069925279843mr3516901qvn.5.1714032052518;
-        Thu, 25 Apr 2024 01:00:52 -0700 (PDT)
+         :message-id:date:subject:cc:to:from:x-beenthere:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=QDtzy76v8enOElxK4EC7EmY5elNkJyLIwuE7KqWVEQI=;
+        b=KzvAQB1y8OvCXwSVi6YlSHze+8oZAMYi3bR/8ym9CkM58+x13ONWHFj8Pp7+D9TSKA
+         AeglJjCCZUGhoiDKVX7LR2CwDq13xHIWOFkjiJ1tgm6Ge+HUlHma5ModCy8cFYwS6GZ1
+         d09WFGpf4pptdUi69KhyPH3huY7Bp8Ok2jwJIh6IQ3DCymIB2U6kPD0S6g7i2q3CjSWd
+         MGfd4nGFNro48TwDYcgHeTHdfnSkYB2HDP8gqP/nP4GhH8JmZo42Z3g5RO3URKm4WX5I
+         6PqsGCsBkI4ol4a3+2YYtpsqHghQe/x8/Lmic8tBK+KrwdTo3UVKq9Nv+a8rWVoFD+fx
+         MSrA==
+X-Forwarded-Encrypted: i=3; AJvYcCVQK3KwUue/ouD4A7JXjVM0WM0RXcDOFoz1MMFj4lSXZyuDgFLkbTvrjAAJNWtfNfambwr8woOcpq1UuoLhdte2M8asifzVUG+A
+X-Gm-Message-State: AOJu0Yz2DGa/yaV6X/RPUFaQ9SxhulhJdvxf4XqvZravUJ3u5ast7JgO
+	2XGM/WVcc/j1FZyXFlzrb1jhlLxfnTSF3Tl5gznb8nHEXMeQQeJhPaDbYY+mwQA=
+X-Google-Smtp-Source: AGHT+IHtvtBKtM7t7aULtWCZiDnDU6aCB3cQF+JhX26jbC4dpRZw2PoUCyTcb87tlcAXsJwxqY5lgQ==
+X-Received: by 2002:a05:6a21:32a1:b0:1a7:4f8b:6439 with SMTP id yt33-20020a056a2132a100b001a74f8b6439mr2864954pzb.34.1714118221846;
+        Fri, 26 Apr 2024 00:57:01 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a05:6214:501d:b0:6a0:5da1:b6d6 with SMTP id
- 6a1803df08f44-6a09c61a682ls15139606d6.1.-pod-prod-00-us; Thu, 25 Apr 2024
- 01:00:50 -0700 (PDT)
-X-Forwarded-Encrypted: i=3; AJvYcCXOVay0dfYBpIf4gofWkvNWgv7lgsVLb0S/wuGUG3EQYtfgEn1SOKsN7cIt6DhncFS6OxilWzWF0VphvJHIfJh2dSmT1NNP6uaGGcyvBgna9oLxljY=
-X-Received: by 2002:a05:6214:e82:b0:69b:7363:92a with SMTP id hf2-20020a0562140e8200b0069b7363092amr3331914qvb.8.1714032050555;
-        Thu, 25 Apr 2024 01:00:50 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1714032050; cv=pass;
+Received: by 2002:a17:90a:ba8a:b0:2ac:a20d:4b45 with SMTP id
+ 98e67ed59e1d1-2afa195a4a9ls1114313a91.1.-pod-prod-08-us; Fri, 26 Apr 2024
+ 00:57:00 -0700 (PDT)
+X-Forwarded-Encrypted: i=3; AJvYcCW8buFT1nmoguwVOp84pwAhw8EaDUjO+O1YGaBB07uzOCD3SABYkfVW4DWEq5cTw2LeNpNVPXt7nzGKGY4s1TLD7wJ2DTPJzPQN9fNFCdeKskcp0ao=
+X-Received: by 2002:a17:902:daca:b0:1e3:e243:1995 with SMTP id q10-20020a170902daca00b001e3e2431995mr2600086plx.1.1714118220483;
+        Fri, 26 Apr 2024 00:57:00 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1714118220; cv=pass;
         d=google.com; s=arc-20160816;
-        b=fI6GLN0pacWJRZKlHBLcrNTEu3jdMtcrXPv2ToOQp79zSwEo5bcIGeRz5AwfJk/9dZ
-         7ghK8SWnDq6PezjrzHUVtWGufhfcjREVCJjivYfUW7xNnajMgisjsOGI/TA/zSq8sl5s
-         rHeTW3R6Eodh/Ci/dZvLbV9+XtGWhQa8G9VUZbx8rd0/x+g5VGuTyJkFyXbjWO4Gf5Xz
-         T5LnMDECaDSC6z6Wy9btkQR12DOxtKktnx6DCRRZFNqUiFuP/X2yPs7ccH50slYTFu2k
-         2ySN8TWqpb5HBIRLh75DYj3Y24dteRRGq/7TL1vpxUDwNhhFYdzaCDr1LsuhH82cKtFs
-         8Pmg==
+        b=Chxr7zPZUaAJFuLEckFHQqeogCH4z56njq1f3kPWnKNzZoZVXGK0y921pPWbw0ncWy
+         ztQbuUD3u0Nh4t6n/M1WIvyZVp//3rMEEwTboT/OuxJmOBXItxN6/Al+GJrdz4abReD+
+         QTuKk9/Yfkcvh7o7oEPrMvw+7d9JKql0myyUaFlWUTpmBuTkgBO2+/1B4uGZ73h3s7aA
+         hqQUsKpknie3ZkAomU2+svL7icO7iVFi0QkVKGVMKOdUH1IhZEOqDrR2axAXcti9AH0N
+         LLf0P+0A204qIEZAlS1KnyritQ6nmDRZAnMg9amj7xSV/Lesoy+GJSBcLXOOOlEggDy6
+         6J6w==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=mime-version:content-transfer-encoding:content-language
-         :accept-language:in-reply-to:references:message-id:deferred-delivery
-         :date:thread-index:thread-topic:subject:cc:to:from:dkim-signature;
-        bh=MdLGeZwpaaL78Bm3fNtd55+k4TJuGO6oUlVHjzENf3s=;
-        fh=7GvZ5+2vkX+pDOlzKvxaT7IRRmFljajpPehVEfhu5ME=;
-        b=sApA+eR9LhJwrbBicfq+6mzI4ZaqsQvTM0VZvHKiUERdmdef7/w0W/8Nb7+th9TX0K
-         xJa9qhYWtS94XwvBtDA7HBuuc5Nxd8HMTvKIdQSMk59AQbB9Mb1j2GQNsSm2FK4eHalo
-         UJUiqVdDFKqUbpg+TBb7KrW+cvCEgM/Bb7vO91Tc+/xv1Hpzx0onSe0y2Ii5GwCH8kVK
-         oo0sL3rONrQkW/BGjZnFRbywBiQuk6AC7fUsDCwz1EYibxQOr6E78IdEH8wbzrHj0Z8F
-         j5Ny7igC/LeSYqx8sUCm8jN6/aaFF98xwT6wg8g75NnJ/wXPrWvBuGzSKXbXDAhQCb4e
-         6jPA==;
+        h=mime-version:content-transfer-encoding:message-id:date:subject:cc
+         :to:from:dkim-signature;
+        bh=20/4AfXMyYXSc5QyqccbGsJec3RXqadw1qrtxkA9Vi8=;
+        fh=Ki7uo1aunji59xu/uSzF360F8EICIUQGOQBTTlaqWJ0=;
+        b=kKqXEiMDvtyfDq0gVxA1Y9pwoupmYwAjFgb64Gld3uYGjTTbWs/ida4WYwzYiJ19Gl
+         +0ZZXbV5xU/obfd+IKs9MEsDamlpVm1YiUjzdU1KgSfSaT/UFqU4OPuRQX6OZ42jjlKL
+         6As3shO4tznyApYV9aTwDoIluj6h9GvD/2t60MGKvn77rJuNfXAA4vFLv19XTSDyEZzA
+         XvdAKmmDf7v9LMUjUM6ZHtdS/F2V/zf8Wa/qw6z4ea9qvgtUwk1XsB3PYQaWzy0fl2kG
+         PKRKWayvyllrmJwCZXVAgDvVP3qpJC0C+J9gZN3WtfBt/Bvt7XLtA7cuF2Bzz/rF4nDZ
+         ZXNA==;
         dara=google.com
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@alpsalpine.com header.s=selector2 header.b=bnj8KwJZ;
+       dkim=pass header.i=@alpsalpine.com header.s=selector2 header.b=Q2Au9oRS;
        arc=pass (i=1 spf=pass spfdomain=alpsalpine.com dkim=pass dkdomain=alpsalpine.com dmarc=pass fromdomain=alpsalpine.com);
-       spf=pass (google.com: domain of norihiko.hama@alpsalpine.com designates 2a01:111:f403:c405:: as permitted sender) smtp.mailfrom=norihiko.hama@alpsalpine.com;
+       spf=pass (google.com: domain of norihiko.hama@alpsalpine.com designates 2a01:111:f403:201a::600 as permitted sender) smtp.mailfrom=norihiko.hama@alpsalpine.com;
        dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=alpsalpine.com
-Received: from TYVP286CU001.outbound.protection.outlook.com (mail-japaneastazlp170100000.outbound.protection.outlook.com. [2a01:111:f403:c405::])
-        by mx.google.com with ESMTPS id j21-20020ac85f95000000b0043155865b0asi16330477qta.313.2024.04.25.01.00.50
+Received: from JPN01-OS0-obe.outbound.protection.outlook.com (mail-os0jpn01on20600.outbound.protection.outlook.com. [2a01:111:f403:201a::600])
+        by mx.google.com with ESMTPS id x5-20020a17090300c500b001e7b84f0172si13920300plc.320.2024.04.26.00.57.00
         for <usb-storage@lists.one-eyed-alien.net>
         (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Thu, 25 Apr 2024 01:00:50 -0700 (PDT)
-Received-SPF: pass (google.com: domain of norihiko.hama@alpsalpine.com designates 2a01:111:f403:c405:: as permitted sender) client-ip=2a01:111:f403:c405::;
+        Fri, 26 Apr 2024 00:57:00 -0700 (PDT)
+Received-SPF: pass (google.com: domain of norihiko.hama@alpsalpine.com designates 2a01:111:f403:201a::600 as permitted sender) client-ip=2a01:111:f403:201a::600;
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=L1SZ5K3mEriPdSDwS8Z9q2/qlKgxBL3Qg+kuWLhNjHe5VH/xdrFgIPhp1fT0glDbm2YuR6FZQe5daJ5MXz+IUDDOuLcDLigzZSdwitubQR22mszsRFBVAUf6vNhDcHIHmUozAbEtJ/Mj2z9htNhAs0QsF0fJjbXQMoYrY8QMOb+3XG8nHfara6d1YKhRaUqJrVhldMxG89E7faYlmt6oiI3tc9br6J5AJWMNW+LHP1HaROekmiGbS6U16z0gt0BFIYg+NvjMIFkRuLynOT1g7bjYmx7dM9Fkkz7F3/3P5x4IGyTpVKlDV5M9X91lbWLE2ODowNCXpFOqJJ/od1GfDQ==
+ b=YP+4LsTmnlskisHFFiWibgGUE4Hox3P2HuwnmGg9+AiJ7mt8T/YvIbH6iDLTKdcFnnWfI1QPjFv71A9dCo85XVpammX/5kfFrT3zj0DhBMPBojMu6rGoy0yG+wZ91RRvzfBGq31M+TpDycNLU2dnlo/via+c63eGkKw0QtGQLXFEV6bSobIihhmTwpFiIQVNXPdvjsQtYbaV3aWSKul0VoRVKFques65zGeAGml1tX8Nl8BWkPDNLh5w9mwRlQngAeRdzT7Ssi6SG+LTqJZmD6geJ/N/qf0b+xHDq7RrTQTY8LV7yKk1lHPqQZUqgFZgxg34xti5zfPHOl9sd7TMkA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=MdLGeZwpaaL78Bm3fNtd55+k4TJuGO6oUlVHjzENf3s=;
- b=c2GkLit+4bt34+kvKRUSVISMA4wOuAkdwhssNQ5xkzJFXWxDOVurU57KH2ovJ2fO9Uf7CgEUfroo/I/srUKJfb5lySiOYCIv0CRq/ZUbD/yhQziBw5B51iA7YKZyydnH2RGmRb/i9H3CHScoKVtZ/vx5wH413od5ek54/ft23p+4ZBz3pLVZSEHp2HvFOjv1UJ0VeeSGJl29Y9vP6OTWG4t6pAZDwxXGUBJ9f8NcYJGDAAqkYSPDVxUdYd3iikNgkQvSW4aeub/HqyWBMu120Hd1BdsRSeZ3hf9G2L+KGTq4Xb4rXAk5rmohMK/QObzIUtm4NbqMBEZNItJVFUFqIA==
+ bh=20/4AfXMyYXSc5QyqccbGsJec3RXqadw1qrtxkA9Vi8=;
+ b=lOL5D2/62MD7N3gYYgQuqpakBQuyo2cVB1FMKezwCg3mT8eZFOaT/A/D/3q8tmwqDa2QBFEmKc5VSlR37f9XfC8gR7HJiLBqcjH0kDQcOiPi3jxEh6HFYk5KScRn6Ymzac+RylOdic+W8THJkkvVMsuEHHHU3pUGqA7nKfU7zn4tsTtqkjaA1GdCt41RaqJbtquBrjnZhcuROeWYHcFfwKJN+0r0y7BkckjPdciZ7QN8sl1+d7BuhWPkPJPG0fkEIq4TZx9vRe7cv69SkmoZUo+bLHTIuJv57fw+gfJEqt/iV8xpFy5kWGezbsd1siEBQYLh0rQUfBPUHj+Qb+od9g==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=alpsalpine.com; dmarc=pass action=none
  header.from=alpsalpine.com; dkim=pass header.d=alpsalpine.com; arc=none
-Received: from TYWPR01MB10773.jpnprd01.prod.outlook.com (2603:1096:400:2a5::6)
- by TYWPR01MB11018.jpnprd01.prod.outlook.com (2603:1096:400:392::6) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7519.25; Thu, 25 Apr
- 2024 08:00:44 +0000
-Received: from TYWPR01MB10773.jpnprd01.prod.outlook.com
- ([fe80::5ef9:9250:d1a5:1aae]) by TYWPR01MB10773.jpnprd01.prod.outlook.com
- ([fe80::5ef9:9250:d1a5:1aae%3]) with mapi id 15.20.7472.044; Thu, 25 Apr 2024
- 08:00:44 +0000
+Received: from TYVPR01MB10781.jpnprd01.prod.outlook.com
+ (2603:1096:400:2ae::14) by TYCPR01MB10246.jpnprd01.prod.outlook.com
+ (2603:1096:400:1ef::10) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7472.48; Fri, 26 Apr
+ 2024 07:56:57 +0000
+Received: from TYVPR01MB10781.jpnprd01.prod.outlook.com
+ ([fe80::fe5b:1283:68a6:dacc]) by TYVPR01MB10781.jpnprd01.prod.outlook.com
+ ([fe80::fe5b:1283:68a6:dacc%4]) with mapi id 15.20.7472.045; Fri, 26 Apr 2024
+ 07:56:57 +0000
 From: "'Norihiko Hama' via USB Mass Storage on Linux" <usb-storage@lists.one-eyed-alien.net>
-To: Alan Stern <stern@rowland.harvard.edu>
-CC: "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
-	"corbet@lwn.net" <corbet@lwn.net>, "linux-doc@vger.kernel.org"
-	<linux-doc@vger.kernel.org>, "linux-kernel@vger.kernel.org"
-	<linux-kernel@vger.kernel.org>, "linux-usb@vger.kernel.org"
-	<linux-usb@vger.kernel.org>, "usb-storage@lists.one-eyed-alien.net"
-	<usb-storage@lists.one-eyed-alien.net>
-Subject: [usb-storage] RE: [PATCH v4] usb-storage: Optimize scan delay more precisely
-Thread-Topic: [PATCH v4] usb-storage: Optimize scan delay more precisely
-Thread-Index: AQHaleZUfInJEgZeY0OV7izYkTBKmLF3ghuAgAAB4QCAARgpEA==
-Date: Thu, 25 Apr 2024 08:00:44 +0000
-Deferred-Delivery: Thu, 25 Apr 2024 08:00:00 +0000
-Message-ID: <TYWPR01MB10773C220D1E6C1AFD1BD2F8890172@TYWPR01MB10773.jpnprd01.prod.outlook.com>
-References: <20240424013134.17307-1-Norihiko.Hama@alpsalpine.com>
- <c06aaaa1-a2af-47c6-a615-602f2c70de86@rowland.harvard.edu>
- <515c273c-9bb0-4830-a3a5-e9a485356434@rowland.harvard.edu>
-In-Reply-To: <515c273c-9bb0-4830-a3a5-e9a485356434@rowland.harvard.edu>
-Accept-Language: ja-JP, en-US
-Content-Language: ja-JP
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: TYWPR01MB10773:EE_|TYWPR01MB11018:EE_
-x-ms-office365-filtering-correlation-id: f1ed80dd-05cd-4b58-2e06-08dc64fdceec
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;ARA:13230031|1800799015|376005|366007|38070700009;
-x-microsoft-antispam-message-info: =?utf-7?B?TVVka2VtYk9kdm5MTFdGR3VqNnAzdFBYZk9hUTdqdkZJWmsxVGVPNDRrUVQ=?=
- =?utf-7?B?Ky1jUzZ0aEVwcG91TGZ4OGIxd0o1bENkR1RMYzJCQ04zTFZHSGFUc0lvbVlh?=
- =?utf-7?B?eXJDbjZLREYrLUxUOEpxMXFpOTRiN1lvSlI0WistTEI2ekE4eTkvVGNpQ3pj?=
- =?utf-7?B?TzRrb2QrLVN6NHhSaGpSenNRbE94SmhMTEllSENrTWFpMUNwY3RCY2ovVlNF?=
- =?utf-7?B?dlhuZzcwWDZrTlBhZk9DUVFCUGRpQ2MzbHExTXFIYWR0WVZGU3h4aSstalhI?=
- =?utf-7?B?QTRQRVh1djRQd01ucUJ1NGlsSWIxcXVTNmp4cERBVGUrLUpFVzZBVmRHUUJX?=
- =?utf-7?B?Q0hGcFFSM2EvbystWlZtZFBPMnFob3ltU0JSb3Z5V0Rad3U3UlN6WlpXNFBG?=
- =?utf-7?B?N3E1ckxVZS96U2Fock0vaVp3OVpiY0NIbG1jN21sKy1WSTBXYldNY0xQWlNo?=
- =?utf-7?B?dm1laDFOdlVPU1FOYzRxOW9YTFU4dmxydWlITjJGR3A5Ky1iVUxTNVFLMist?=
- =?utf-7?B?MGkxMHVZVmVDamVnTXl5M3BpcU5LQ1o5UDBLeVpxclBiKy03UlNyaUhTVlFt?=
- =?utf-7?B?VnNubWFnT1dwdm8vUnNuUXdUL0wwa2NiNDByWTFuWEE5MTBIRXpoem1XWG5Y?=
- =?utf-7?B?dWVnSnJKYXpTbjArLUJHaXZzek10d2h6ZzZEMHhmV3ozNFRFazRTblRTU2ty?=
- =?utf-7?B?RU5JVWR3WE16UDdScnA0YnphKy1pZFJGUHVueUgyMHpHNTBNSmp4YUNXZFlK?=
- =?utf-7?B?RGlJNHQ3QVcyMS9XWmkyOExVTkZ2U3NuN3FRaVh3MHZ6NVNtbzFzOUpGblFv?=
- =?utf-7?B?QlUrLS9sVks3R3pNN3JXV0VPNG5sYVBtdmdxTjdPN1ZtR1JodlBuUy8vQkJr?=
- =?utf-7?B?OEZSYXM0dTR6NVJCVistMXZReWdaaFBpSmsxN2pjSDdsaUZzMFNTbGRlZUgz?=
- =?utf-7?B?YjBMMXp0bUFFbDQ5SThBczlFc3NiNmhrSUlFM3NPcG5yQnhLdWRVeDNUUkNs?=
- =?utf-7?B?YkxoSEpxbGZRME04TXNUVVlwQTA4Mm42elMzUk1TdHc1RmNRYVZtZ2lSUVQ0?=
- =?utf-7?B?dWlTaTFFWXU2S25rVXdreTZCbTVpbEhrbllmZ1g1WDRySjQ5Q0xiQ2dCTzVv?=
- =?utf-7?B?S3NxL3lJS09YR2dLTWk5R1lnRWRBb2Q2bSstSFE2UFpxMEcwZUdZaEp2OWds?=
- =?utf-7?B?dTVLT0ZLZ1llMFBnMmRTYlJpVVFzUmdCQlZtUXZWTlUwUzVkajdWYnVRWmkv?=
- =?utf-7?B?WHhVRVgyaktRdFV0M1lMRHdaUlR3bEpZM1dCcDZIWlNJWEZhWnREVUNXa1pV?=
- =?utf-7?B?ZHh2eWVMbm84THJrTUFXd1UyZGJXN3BMSVVLUzJmZjJWU0VYbVY2djR5QjBi?=
- =?utf-7?B?Nk1EalZ3VkovMWRSU2V0VmNJdHl3Uk1VY3lOVWwxMjErLWhRYVdFT0RCaXFt?=
- =?utf-7?B?ZCstWlRqaWJMN2hMTWZ4bWRuMmdEZG8wdHNHVkdWME5UdFlyZTcvZ1plSDNX?=
- =?utf-7?B?L0xkUlJqZXhuOTBFczJnei9LM0xoQistN1h0Tkl4VDQwVk1Tems3M3NqSjI5?=
- =?utf-7?B?TDhCMmhVVldpV0NCZ3kxQTEvcGwyUE9GS29sQkdvZistdUl6dWdxdEZIUVFR?=
- =?utf-7?B?VlVSM1Ntcy8zMXo3dXdEdk9rOXNGeWcxM3BJM0JoMkRJN2p1Tnp1YWdud1lQ?=
- =?utf-7?B?Qkwyb0lpSTIvUFM5cEd5TWV1Z21uV0ltWmVvTnFTekRYbnY0UkZGbFJ2dTdY?=
- =?utf-7?B?MHYzdWdUelhZcHgvaDZnbzk5VHFrSFRVUGFvdVJOdTVoRCstTUJTVFJrdGNS?=
- =?utf-7?B?dUpQcERPYUJIMmdhMUxiRzBlc2JObHdwd2tZckd1OFRUN0kwQ1ErQUQwLQ==?=
- =?utf-7?B?K0FEMC0=?=
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:ja;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:TYWPR01MB10773.jpnprd01.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(1800799015)(376005)(366007)(38070700009);DIR:OUT;SFP:1101;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?utf-7?B?M1M2dnVzNnhXMWl6N0NJZnBSUVFmRkpteE50aXVqZkRyWSstSEhFM2NwU3Mw?=
- =?utf-7?B?SHRadDJsV2hERkYyWUF3WEJCTGFzeU1EYS8ySVJCWC9HWlFuSC9pSi9RV2Vk?=
- =?utf-7?B?ZWFwV3NRWTBDeHgvS243OEx6Z1QwSzN0VXVQSVR1dzU0U1g0TGhMaDFKaEVt?=
- =?utf-7?B?bzRiUzhZSER1UEFsM3JESVEvU2ZDdVpTRHFCNGxKcFpaMFhLbG03andrREMv?=
- =?utf-7?B?aW5weistc1IwcUFFTmJTb0JnWHZySXd3ZHh3N0k2emxRaUFDNTdBV0Zvc1Ey?=
- =?utf-7?B?NWd6ZUNKR0lrdi9ZRGw3cVQ1RDluNmpkMG5saGdoVjYyNThsTXp6N3hZM1Fv?=
- =?utf-7?B?djJVcDRiaTJsRno2dzU3RnJpOW1xQVpRS2ViVGZOb0w2NUMvUXl5QnBPbGRu?=
- =?utf-7?B?MUZiVktjemg5RERTVmlVbzJISE1PcVdrVkZ0RVRYRkFDbEFiR1pOZ1F2Umlo?=
- =?utf-7?B?bzNNTHNlRm1XM2R3bmxraXpwd0tiSy95QUkvYVk4VUJNSHBlQUhsSTJSVXdj?=
- =?utf-7?B?T3hjekpsU21TNFd0azJ5TEhNaWtwS1dkWTVSUllGOFpVV28xWm1ra3pXcDZl?=
- =?utf-7?B?QkpLWE84NXQ2d0VmM3pqTEZ3R2lsSFJzMUlKSlVnWmVhM0tyTWNxREFoYmIy?=
- =?utf-7?B?N1ZMWkJmdDFQOEVwZFkzZWhRQ1pHS21UUkZ4czhhaDY2L01ZWElXYzFQN3dr?=
- =?utf-7?B?WTNNcXRQOG9XdDNZSlVPeFIrLWx0YXpBRzFYMmY0bFZnTmRHSjdUNVpiRyst?=
- =?utf-7?B?dUcrLWh4SENNU1paWXhwaHJlanNBZi82TnBVYjZyb21OMWwyKy1NcnNMVDBJ?=
- =?utf-7?B?N29CSnRlVDFvYkY4Z0hveWx4eWkwTkhSN2VIWjIxbmE3Q1FpZjFvcjh5eVZs?=
- =?utf-7?B?Z1luaFVHKy1TMXZDRHdMR29aVXkxeS9mc2hwN0lOMW9FYU1qOHJTeHhKaGta?=
- =?utf-7?B?aTBlc3d6NTdRUFBMOUxHMzdOanZlWmtmRk9GdWl1WU5QSVgzUS8zYmhWbk54?=
- =?utf-7?B?Q1hVMVE3eXFpOVhzS1JSRlhWUzFpNmt5UHdYN2V4Q3QveVZ0SDZmWm8zSURu?=
- =?utf-7?B?N2RRYnJDSEl1OGVRV1JwcUN2UkRiN1VSZDJudi9sQlRIL2x1cWIyMDhpU2M0?=
- =?utf-7?B?UW5sWEE3UmIwRU1SRE1kYmFGeUN6dzZNblFQNGtwdWVyRXdTV1oyczByNHFV?=
- =?utf-7?B?OUlvelEzeFIzUmFGR1M2UmZiWDlqTXVodTRUUXZHdGpOYWZJQmx3QktraUJU?=
- =?utf-7?B?UUt4TS82WFFTS3p6SndFOGpoSExrVllwZEFnNUN6dTZGcmVla0J0V0RGRUNK?=
- =?utf-7?B?WlJJWEw4UmZOdWw4WkViQVVWSG00RldlbmNrQmkxTGExdTU2N1EwUjIxYUFC?=
- =?utf-7?B?OEZKWklHckZKZ2xKOUYvUVMvUUQzZE9BbTRoSUZUckVITTFsRVk4M1VNS0pi?=
- =?utf-7?B?b3NwSWJVWDJhTkwxeXpkQWtZQWFRL1FaWGVPZEdrS0lCdXpLUmxxQWZxcEVT?=
- =?utf-7?B?WkdaUy9xTTJuODNtSlZTWWNiamptZ05sdzNPc0pTeXNXcFZrYWl2YjhYdFNV?=
- =?utf-7?B?NEk2RlQvLzRJeTZjRS8wMk9weXBFVzNzU202T3pzYkZIU2tqbHlaRTRzdWtq?=
- =?utf-7?B?SDVXKy02RXorLWdRN2hyZW5BZmYxakg0bW5MbEhCejNoRkFobUxURERUV3hR?=
- =?utf-7?B?VTB6Q1A2TDNnQ0pmMFJQSkdCWG5IKy1mZFNLKy0rLUJOTDJ3MzNDaHRmV1dT?=
- =?utf-7?B?dEVFZmk4clA1d3pXNmV6SElrS1J1RGlHZHVlcXBzdWt2VFI2bzVKRnQ4YjUv?=
- =?utf-7?B?OSstdC9sZ2U4NzNzQistVXNENjgvVU5XY2pwLy9OOGpLVldQcDRBTFBBMWpE?=
- =?utf-7?B?RUxZMjlIZG9DTGRrNWVmbkl0T2JrdTBnbVNTbUd1Q0xYckxFRTlnNDBEVVdk?=
- =?utf-7?B?VG5MbXBPb1dYS2hpSTFYUFZFSnlYNGF1SSstZHcwVnhRL2djMFRBUE1BQmQ=?=
- =?utf-7?B?dCstVVNvajY3Qkc3V0UrLXRUKy1kVVRkUzlNWWtGOFc1eGJpRDBxN0NKdVFV?=
- =?utf-7?B?d2t1OHZPT0pNQ05vWlBxSFhwdm5YbjVyaHJZaGlYSzRYMFV1U25NU2lBKy1Z?=
- =?utf-7?B?cG9xeE8rLTJNb3A0NkFRR0x6dG1HZGVtbmhua0RnSktzbmhSaXR6WUtSOA==?=
- =?utf-7?B?Ky1MKy0=?=
+To: stern@rowland.harvard.edu,
+	gregkh@linuxfoundation.org,
+	corbet@lwn.net,
+	linux-doc@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-usb@vger.kernel.org,
+	usb-storage@lists.one-eyed-alien.net
+Cc: Norihiko Hama <Norihiko.Hama@alpsalpine.com>
+Subject: [usb-storage] [PATCH v5] usb-storage: Optimize scan delay more precisely
+Date: Fri, 26 Apr 2024 17:02:31 +0900
+Message-Id: <20240426080231.3062-1-Norihiko.Hama@alpsalpine.com>
+X-Mailer: git-send-email 2.17.1
 Content-Type: text/plain; charset="UTF-8"
+X-ClientProxiedBy: TYCP286CA0240.JPNP286.PROD.OUTLOOK.COM
+ (2603:1096:400:3c7::16) To TYVPR01MB10781.jpnprd01.prod.outlook.com
+ (2603:1096:400:2ae::14)
 MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: TYVPR01MB10781:EE_|TYCPR01MB10246:EE_
+X-MS-Office365-Filtering-Correlation-Id: d478ef31-0e50-403b-611f-08dc65c671fc
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?mdqqsgxgv5NAQr4YFj7eZGBCqFKvHoUFdbkCkocmWcZt+74dDdpULP/3RiES?=
+ =?us-ascii?Q?EUSZhmg83uEfkQZzQwHcMjxrG6zQwTOYFNNhf1gRD3bmIDSrPQ2+aCkOTXRz?=
+ =?us-ascii?Q?fDdLTiZliqdHBxAe+4Sbu+E8nPoSjowkwdmjz2lbgI60IRjUrI3qPDRE3cLc?=
+ =?us-ascii?Q?CvR8dX+DXmxQsa/6iRv0ZeSmrKHPigFr9He2H+liB+LSWdIOynK0W/1t/P0S?=
+ =?us-ascii?Q?zrTVZgVYmOxaFBJCUCM1WtWK47pXr6W5A/H8JJqWHeV4SpLeD7LZcE9FmFRn?=
+ =?us-ascii?Q?i9QZ6HGcKHPBko9xAQL2ppmgZ1l36qbznT9MzdB5xwKee/gP1X/AbOFzV47b?=
+ =?us-ascii?Q?FJyuAH6tbDu3rSnXqllF34Y9zbQtmfsk242pRHA85+4sLgMWF0PqH0f0kspf?=
+ =?us-ascii?Q?JeZb81Tq/h047Naew5I7zEadXwOsxMFePFKpRl3y6KuLFrrAXq6aod8TQMP5?=
+ =?us-ascii?Q?gA8HyEcCQ18X8yvLYSB9EkLubNRcPKUk6iHhWzd46SjKm/FyAtRlMFjXaxy3?=
+ =?us-ascii?Q?DjQqE+VE8cCfIQUi3JFrWrld1kOEABUoKP98LgRFMePfq0Lewki10JuqLDjf?=
+ =?us-ascii?Q?3GixcBJ0ng71XKMUHP+OAFVmipRuVQHAHhXheM56YOG3bV/FiWHYRBy6o9QT?=
+ =?us-ascii?Q?snvg0e6IGicmr6iKfoRuE78G6SCU9obAe8KJS/fBW77IPj1Zae+DQTlNreoP?=
+ =?us-ascii?Q?rZGHAWHsNEUcuY16CscqPhuGIllEurKnu+WnFMrdYvq+8qh68P5KOyrYq5aL?=
+ =?us-ascii?Q?n/14SayJvWE4LZkh+hUu6eOmnzL1vpIIXBOwcJIRKrAoUe3tSk3v7OLHTgRF?=
+ =?us-ascii?Q?FbXADLg3CAEpobTSxO85j5lGLem4Yuc+Eky5UCc8A6XEADcC1FKZJEeGOREV?=
+ =?us-ascii?Q?XijyGc5f1txGLNXNqTwbeODceiKDrGuM0id3tHg/5hp2kS7CbmVbl7WttQ2g?=
+ =?us-ascii?Q?YTjnnig+1Ka1A7pkZ6UWncYLqHiTO/zAqXJeOY0/oUZMymthe6JWg4/enYeO?=
+ =?us-ascii?Q?XOZVpVddUkeMAQ2BWYogLcH86H3kbhbc8anVpLToh5zoBrQsq7sICSsNoL+Y?=
+ =?us-ascii?Q?/G1gerYrD+6QhwwCZp636RxVdegO88TRVWUbzQux4rYwBlb0fLCRTmfLCfta?=
+ =?us-ascii?Q?k4rhXYqNCxemYrPJXl4BvOvgUCA46nvwvuS+qvaaNzLka7xpfZPdBWKBxYu4?=
+ =?us-ascii?Q?mMvuy0rFKfWOdzm1G4OsyrQtSEGE8EwUTYvQz52SQCPlebXvAMHKlIDAmoPl?=
+ =?us-ascii?Q?u0eQBG2576PJWPCf4m7wPJXQ2LRt7/uwX4Pz0JCedJaBxvrE+p9nj5wAEy/6?=
+ =?us-ascii?Q?UGbiNAm/+0evH+0LiX0IN4S51bBKUWpcjgPUqAGMhnWXyg=3D=3D?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:TYVPR01MB10781.jpnprd01.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(376005)(366007)(1800799015)(52116005)(38350700005);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?wNKo7GKE29mNgcu0TWfVzHg8OIsqr5NjU/arW7hX/pN1ZcsSqGjZuJ/ERFbq?=
+ =?us-ascii?Q?/P97GT9FFEvnyZKRizFkWPkA4bKyGgCj/X35gcfLrmSbXnrpB4c4d9ZTz3xp?=
+ =?us-ascii?Q?FZ+l0cNXzQEwt1y6xCRmk5RweVAJXs3eBNYQrqKLYGdnkX+NKnS2DaJtssUg?=
+ =?us-ascii?Q?F6NfR5qjinZJRy1/xdxjhC+bpzJIUxEvmxfkI/CtVrAcIt39KP2rdHuihnjI?=
+ =?us-ascii?Q?l+JnLWQZ7n56hxUmKN2WnMBa+birZQLlVGpuN24XAK1mtK6vVTyu1p/rAX22?=
+ =?us-ascii?Q?968yMmbqd3ZHSZDzoYqVpI6+1pHCTB75tygOfKIF8GWsrg7CGpwzWiNSpUl3?=
+ =?us-ascii?Q?8X2bdld6z/wM/Zw/JOzVGFKVtqbTVXXW0JmwrVRDeorUUIw2KLF7ZCbZw4wD?=
+ =?us-ascii?Q?+VmFUeXtdisVakasNe7b/f7X2rMXJzM/Wr3PogVeFHbrz+taWl+rzpZaCnFm?=
+ =?us-ascii?Q?OFdNsd71Fwf7CkBZVkI7EdSFfLOOFZT0bz+xVplXfg98+7KwMqrg0L6KXzW2?=
+ =?us-ascii?Q?JZ2hSZROk87ipyGCwUqPgZGGTzkN0xe99mVYcL3kBafxaANsDgVVd5NOPTNG?=
+ =?us-ascii?Q?CeNk6iqe85zTMt9pwcP/dDlJT6B0q59xr4d30i6mJEEGfKG+a5Y7YVxB70lC?=
+ =?us-ascii?Q?yHHVl4khAakwJV5JZJZ1jHQ9mUZvVSRoviFou1du7tLLPp4okayt1BQH6iIW?=
+ =?us-ascii?Q?OEUhoEZuxbI9gvaAidcDRI2D1Y2Yei3Nle+w/w5oEn7YpVq0k4utbgIxuuEL?=
+ =?us-ascii?Q?72eUHbxOeCwaMmvJkAJ0ZfV8W9R+hKOYELr5R6UeDq3xnIxAM/mzqf+qJmxK?=
+ =?us-ascii?Q?3JkdqnGYkyWcwq10YD5R3skEODcSTxIAQf3EiwBH6aTMalsWzGXyRsm59B3I?=
+ =?us-ascii?Q?gA77LKIxCkmRK53qDx04zlODixyIkopAo+tkmrtNbA2LODMiRgaLSZS6S88H?=
+ =?us-ascii?Q?6u+9SlmLioZxmG8D1thcX7sabGiAliJDp2oVnUSiBbd17+0ciZ9booYRiSnf?=
+ =?us-ascii?Q?DtXalJyOO4M6wUOhNCVMtcNx6QWNCvOhJ/6MY19Tj4kpikHdgA5FdsHTWUsT?=
+ =?us-ascii?Q?pR+/9Lznn8DxsQJFuMGYRyvTIDIKg/5LmD6QQNXIqGIMSK3cfNRocOuiHbiA?=
+ =?us-ascii?Q?qieyC9IRWGbVItnyigA9qdc0Gdjh22i4sYhu1eO8vOWrvhXH7f4+ueJZp4Pv?=
+ =?us-ascii?Q?XAEVu9aaCMg56ndlwN9lsg30VtgUT6WFdDN2gEz6Ha3HdiZRD+f2A4gh91+7?=
+ =?us-ascii?Q?XBUmrsgUsU2Oi4iJL0CZviL/OCWkwM18SPNmOKWpIYiPpGcmqnGYZgW9SebZ?=
+ =?us-ascii?Q?WApqAiSCG0vAjZRCxiRWawawSPaDRA50/EfkDHqqgDsYnTfPS9uKN0VN31NS?=
+ =?us-ascii?Q?9T+2vVXnmIUELJwnDz5HXSljIOb28eclOfdHCdpRF/qsTC8hkFOTquxVtDaQ?=
+ =?us-ascii?Q?CpzDOEZXoEvdt2DMtsF0EkkBiAeuGCGL+ggIAIuST4KL5NuwNOI8sYLsYkHA?=
+ =?us-ascii?Q?CKwHC8ahv2dHo7m2htbZqa5vNia/ndctFg7Ds6Zb4gkTHADrWJd02dXvkWcS?=
+ =?us-ascii?Q?DfZJDLDKfpaKoBMgMoiHH0c9xKcXQVtg+mX1mboS?=
 X-OriginatorOrg: alpsalpine.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: d478ef31-0e50-403b-611f-08dc65c671fc
+X-MS-Exchange-CrossTenant-AuthSource: TYVPR01MB10781.jpnprd01.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: TYWPR01MB10773.jpnprd01.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: f1ed80dd-05cd-4b58-2e06-08dc64fdceec
-X-MS-Exchange-CrossTenant-originalarrivaltime: 25 Apr 2024 08:00:44.0389
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 26 Apr 2024 07:56:57.1203
  (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 57e76998-77bd-4b82-a424-198f46eb2254
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: CeENFSVZ1+igDer6yGCmmSDFGe4dstn8Q6msIDe9Rq87My8uURlwB/NiShginPW3GDAjK1p86/rd9B3CEHluJw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYWPR01MB11018
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 57e76998-77bd-4b82-a424-198f46eb2254
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: UtbsMYEek5H8i+E7nIRfOcFeSMA9Pz+FyTdeunA2XTXgjByA+PH3iOwG3WATAnEuBFap4aDTVofYNDdOc+ARSg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYCPR01MB10246
 X-Original-Sender: Norihiko.Hama@alpsalpine.com
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@alpsalpine.com header.s=selector2 header.b=bnj8KwJZ;       arc=pass
+ header.i=@alpsalpine.com header.s=selector2 header.b=Q2Au9oRS;       arc=pass
  (i=1 spf=pass spfdomain=alpsalpine.com dkim=pass dkdomain=alpsalpine.com
  dmarc=pass fromdomain=alpsalpine.com);       spf=pass (google.com: domain of
- norihiko.hama@alpsalpine.com designates 2a01:111:f403:c405:: as permitted
+ norihiko.hama@alpsalpine.com designates 2a01:111:f403:201a::600 as permitted
  sender) smtp.mailfrom=norihiko.hama@alpsalpine.com;       dmarc=pass
  (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=alpsalpine.com
-X-Original-From: Norihiko Hama <norihiko.hama@alpsalpine.com>
-Reply-To: Norihiko Hama <norihiko.hama@alpsalpine.com>
+X-Original-From: Norihiko Hama <Norihiko.Hama@alpsalpine.com>
+Reply-To: Norihiko Hama <Norihiko.Hama@alpsalpine.com>
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -263,23 +232,196 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-> On Wed, Apr 24, 2024 at 10:51:57AM -0400, Alan Stern wrote:
-> > On Wed, Apr 24, 2024 at 10:31:34AM +0900, Norihiko Hama wrote:
-> > > +			Example:
-> > > +				delay_use=2.567
-> >
-> > This could go on the previous line.
-> >
-> > 			Example:  delay_use = 2.567
-> 
-> Oops, this shouldn't have the extra spaces around the '=' sign.
-> 
-> 			Example:  delay_use=2.567
-> 
-Thank you for reviewing patch.
-I'll fix it based on your proposal (also on your previous reply) and submit it as v5.
+Current storage scan delay is reduced by the following old commit.
+
+a4a47bc03fe5 ("Lower USB storage settling delay to something more reasonable")
+
+It means that delay is at least 'one second', or zero with delay_use=0.
+'one second' is still long delay especially for embedded system but
+when delay_use is set to 0 (no delay), still error observed on some USB drives.
+
+So delay_use should not be set to 0 but 'one second' is quite long.
+Especially for embedded system, it's important for end user
+how quickly access to USB drive when it's connected.
+That's why we have a chance to minimize such a constant long delay.
+
+This patch optimizes scan delay more precisely
+to minimize delay time but not to have any problems on USB drives
+by extending module parameter 'delay_use' in milliseconds internally.
+The parameter 'delay_use' is changed to be parsed as 3 decimal point value
+if it has digit values with '.'.
+It makes the range of value to 1 / 1000 in internal 32-bit value
+but it's still enough to set the delay time.
+By default, delay time is 'one second' for backward compatibility.
+
+For example, it seems to be good by changing delay_use=0.1,
+that is 100 millisecond delay without issues for most USB pen drives.
+
+Signed-off-by: Norihiko Hama <Norihiko.Hama@alpsalpine.com>
+---
+V4 -> V5: Simplify parser/formatter code and fix documentaion
+V3 -> V4: Separate parser functions from module parameter set/get
+V2 -> V3: Change to use kstrtouint only for parsing decimal point
+V1 -> V2: Extend existing module parameter 'delay_use' to support decimal points
+
+ .../admin-guide/kernel-parameters.txt         |   3 +
+ drivers/usb/storage/usb.c                     | 118 +++++++++++++++++-
+ 2 files changed, 117 insertions(+), 4 deletions(-)
+
+diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
+index 561d0dd776c7..1b22983b9a4e 100644
+--- a/Documentation/admin-guide/kernel-parameters.txt
++++ b/Documentation/admin-guide/kernel-parameters.txt
+@@ -6190,6 +6190,9 @@
+ 	usb-storage.delay_use=
+ 			[UMS] The delay in seconds before a new device is
+ 			scanned for Logical Units (default 1).
++			The delay can have up to 3 decimal places, giving a
++			resolution of one millisecond.
++			Example: delay_use=2.567
+ 
+ 	usb-storage.quirks=
+ 			[UMS] A list of quirks entries to supplement or
+diff --git a/drivers/usb/storage/usb.c b/drivers/usb/storage/usb.c
+index 90aa9c12ffac..72dfe7ba3e4e 100644
+--- a/drivers/usb/storage/usb.c
++++ b/drivers/usb/storage/usb.c
+@@ -67,9 +67,119 @@ MODULE_AUTHOR("Matthew Dharm <mdharm-usb@one-eyed-alien.net>");
+ MODULE_DESCRIPTION("USB Mass Storage driver for Linux");
+ MODULE_LICENSE("GPL");
+ 
+-static unsigned int delay_use = 1;
+-module_param(delay_use, uint, S_IRUGO | S_IWUSR);
+-MODULE_PARM_DESC(delay_use, "seconds to delay before using a new device");
++static unsigned int delay_use = 1 * MSEC_PER_SEC;
++
++/**
++ * str_to_fixed_point_uint - parse an unsigned fixed-point decimal integer
++ * @str: String to parse.
++ * @ndecimals: Number of decimal places in the fixed-point value.
++ * @val: Where to store the parsed value.
++ *
++ * Parse an unsigned fixed-point decimal value in @str, containing at
++ * most ndecimal digits to the right of the decimal point.
++ * Stores the parsed value in @val, scaled by 10^(@ndecimal).
++ *
++ * As with kstrtouint(), the string must be NUL-terminated and may
++ * include a single newline before the terminating NUL.  The first
++ * character may be a plus sign but not a minus sign.  The decimal
++ * point and fractional digits are optional.
++ *
++ * Returns 0 on success, a negative error code otherwise.
++ */
++static int str_to_fixed_point_uint(const char *str, int ndecimals,
++				   unsigned int *val)
++{
++	int n, n1, n2;
++	const char *p;
++	char *q;
++	char buf[16];
++
++	n = strlen(str);
++	if (n > 0 && str[n - 1] == '\n')
++		--n;
++
++	p = strnchr(str, n, '.');
++	if (p) {
++		n1 = p++ - str;
++		n2 = n - (n1 + 1);
++		if (n2 > ndecimals)
++			return -EINVAL;
++	} else {
++		n1 = n;
++		n2 = 0;
++	}
++	if (n1 + n2 == 0 || n1 + ndecimals > sizeof(buf) - 1)
++		return -EINVAL;
++
++	memcpy(buf, str, n1);
++	if (p)
++		memcpy(buf + n1, p, n2);
++	for (q = buf + n1 + n2; n2 < ndecimals; ++n2)
++		*q++ = '0';
++	*q = 0;
++
++	return kstrtouint(buf, 10, val);
++}
++
++/**
++ * fixed_point_uint_to_str - format a fixed-point decimal value into a string
++ * @val: The integer value to format, scaled by 10^(@ndecimals).
++ * @ndecimals: Number of decimal places in the fixed-point value.
++ * @str: Where to store the formatted string.
++ * @size: The size of buffer for @str.
++ *
++ * Format a fixed-point decimal value in @val scaled by 10^(@ndecimals)
++ * into a string in @str where to store the formatted string.
++ * The string trailing fractional part '0' is trimmed.
++ *
++ * Returns the number of characters written into @str.
++ */
++static int fixed_point_uint_to_str(unsigned int val, int ndecimals,
++				   char *str, int size)
++{
++	unsigned int delay_ms = val;
++	unsigned int rem = do_div(delay_ms, int_pow(10, ndecimals));
++	int len;
++	char buf[16];
++
++	len = scnprintf(buf, sizeof(buf), "%d", delay_ms);
++	if (rem) {
++		char format[8];
++
++		snprintf(format, sizeof(format) - 1, ".%%0%dd", ndecimals);
++		len += scnprintf(buf + len, sizeof(buf) - len, format, rem);
++		while (buf[--len] == '0')
++			buf[len] = '\0';
++	}
++	return scnprintf(str, size, "%s\n", buf);
++}
++
++static int delay_use_set(const char *s, const struct kernel_param *kp)
++{
++	unsigned int delay_ms;
++	int ret;
++
++	ret = str_to_fixed_point_uint(skip_spaces(s), 3, &delay_ms);
++	if (ret < 0)
++		return ret;
++
++	*((unsigned int *)kp->arg) = delay_ms;
++	return 0;
++}
++
++static int delay_use_get(char *s, const struct kernel_param *kp)
++{
++	unsigned int delay_ms = *((unsigned int *)kp->arg);
++
++	return fixed_point_uint_to_str(delay_ms, 3, s, PAGE_SIZE);
++}
++
++static const struct kernel_param_ops delay_use_ops = {
++	.set = delay_use_set,
++	.get = delay_use_get,
++};
++module_param_cb(delay_use, &delay_use_ops, &delay_use, 0644);
++MODULE_PARM_DESC(delay_use, "time to delay before using a new device");
+ 
+ static char quirks[128];
+ module_param_string(quirks, quirks, sizeof(quirks), S_IRUGO | S_IWUSR);
+@@ -1066,7 +1176,7 @@ int usb_stor_probe2(struct us_data *us)
+ 	if (delay_use > 0)
+ 		dev_dbg(dev, "waiting for device to settle before scanning\n");
+ 	queue_delayed_work(system_freezable_wq, &us->scan_dwork,
+-			delay_use * HZ);
++			msecs_to_jiffies(delay_use));
+ 	return 0;
+ 
+ 	/* We come here if there are any problems */
+-- 
+2.17.1
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/TYWPR01MB10773C220D1E6C1AFD1BD2F8890172%40TYWPR01MB10773.jpnprd01.prod.outlook.com.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20240426080231.3062-1-Norihiko.Hama%40alpsalpine.com.
