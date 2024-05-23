@@ -1,132 +1,133 @@
-Return-Path: <usb-storage+bncBCUJ7YGL3QFBBKE2XSZAMGQEEMZN2FY@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBC5J7HGFV4DBBTOTXSZAMGQE4MIVLBY@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-oo1-xc47.google.com (mail-oo1-xc47.google.com [IPv6:2607:f8b0:4864:20::c47])
-	by mail.lfdr.de (Postfix) with ESMTPS id 40B5B8CCF55
-	for <lists+usb-storage@lfdr.de>; Thu, 23 May 2024 11:32:27 +0200 (CEST)
-Received: by mail-oo1-xc47.google.com with SMTP id 006d021491bc7-5aa2faa7115sf1952198eaf.2
-        for <lists+usb-storage@lfdr.de>; Thu, 23 May 2024 02:32:27 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1716456745; cv=pass;
+Received: from mail-il1-x147.google.com (mail-il1-x147.google.com [IPv6:2607:f8b0:4864:20::147])
+	by mail.lfdr.de (Postfix) with ESMTPS id 1A1058CD14E
+	for <lists+usb-storage@lfdr.de>; Thu, 23 May 2024 13:34:39 +0200 (CEST)
+Received: by mail-il1-x147.google.com with SMTP id e9e14a558f8ab-371405718e0sf23077055ab.0
+        for <lists+usb-storage@lfdr.de>; Thu, 23 May 2024 04:34:39 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1716464077; cv=pass;
         d=google.com; s=arc-20160816;
-        b=a1Du2z9Ns89xPzhim5C+khS2OeCsO2YkawreGqZkt2MZtMmtGpHgMbfJg+YszY2Dro
-         /3ENhryxSkA0s6fsnHyj+dm6gJNUDTcdt7Kn/3mevhYMjGwrtp6wNa7QcKvBmYDeiArm
-         OiWz0zOlNd9BqaugtZQ2iVdVYsEXBKBQX02fkSCKUnq9H+/gwWuOLlOdLxn/nsFoDnwm
-         GX8orO0HGqIR4WotezwIgQrVhgCp0WsGhW1pauOcOvcxn01g9YBpRZO4z3ZmziXd13F6
-         mkJUmChQLqXhuJnRlrLa0iyF7WOZdC4qRmPPG1XVPUGCPOryXD66nLrNuqK6mCOx9uiK
-         e5Eg==
+        b=QHH1jyzENw8Sns/ELKz7Kz8Kf8fzXWqxgOmYqkoiDKe5Ym3pjGIxvc2mQxhUTT/hNz
+         df5PaSkKrzLZhqRn0QCvHvpn5EdI83d6Z0bkD0KFt37fAmPND2lu6lvPbTTQaSx5bxBh
+         aGoqV14MOcAHsrHSoNej5rmaT7KKCuVx5oBkZMaYNdSEE0nXkiFwMVt4R2mX0V/iWWzZ
+         I/BFIADGny8jZYEAy34RSDmGHnKx6Q2sxSo0FOapFb9PlQ4gpNgK8+k0FBpl+jICd5jm
+         eX3SqHfDVeCM69bPbZYaK6gHSPNMl3pLA/5z/DJIoz+nJxCpgLamAqyb5TtyJCVrT2vT
+         M98A==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:in-reply-to:content-disposition
-         :mime-version:references:message-id:subject:cc:to:from:date:sender
-         :dkim-signature;
-        bh=ElefShfm3vo8IIBmsFPq9CFOliwh55HKvjUHzle5oD0=;
-        fh=vYZFRmnEITLyQxujNjcHqGSIeXgFNIo7h4xTXfk2vJI=;
-        b=C1rKiw38z+QaqHUaQ+u8nvPN0nBoGdSjcQVQk/rikp9g0g1mp/yKBErAxDRzewFtHt
-         02etElQQxDxxqeSkEymPiqrst6eF8CM6hKO+d8y57CZFnKVj6sDJQLOWgyU+pfaEJV/6
-         +2G7eNANy31IyMbqHmp+TEerCrjAA8UoUtz079yu0aJeTFcK+JwoHI95HTReNozhcyBT
-         2/8ogOH3ui0a2VwZSdM+kOKtpO5f8CAT6cI53eKpfzWgn7fABEc5gvzfsm8g9b5rcC7k
-         dCJ1ET+51Nm3oK9sO5Xz7vIrB+Sd0izCuVL0PttopZjo4DNqgj/xPqhBJwmuDGmP9uDQ
-         O7YA==;
+         :list-id:mailing-list:precedence:mime-version:message-id:date
+         :subject:cc:to:from:sender:dkim-signature;
+        bh=NkEAEiDiqc8YQwyjYeZTKD2cMozA36eF/rQjzjpoGU8=;
+        fh=Gq5j4gPmsfKoQtN1ADqKKCGe04qV06SlEOhQlXBxyY4=;
+        b=LZS6HWbmzlaObHecr582KH0VKTmXW4Jx9TcTswPqXxfKF/TIJDIjpFH9GQnHI+CpSS
+         AOh+J3QEOjtpWZscHc0p2+zZjtyuay3fbPSiY5y9ZTO8IPq9RtRhFizMHRukhF8hlw8y
+         4b/tztyX+N7uS6050nOSwW2Ep8fGeNOn4x+rDbFZSLBJ4eWUKF9BYA9Y28P0n1eraNRE
+         aFk/gn5a5+CsAa1XMNWKpnKEcICYWeTxc2+SfqxMu5xx/nuVFzeJLx70IlEI5ReueIRn
+         vYSJQ+CcXv25YE90o855Krp1mnFUkvVby6z9CcI1m6nXdPmVgU0FnlxNUIBUD60UZjNM
+         lGyg==;
         darn=lfdr.de
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@linuxfoundation.org header.s=korg header.b=dxujooKk;
-       spf=pass (google.com: domain of gregkh@linuxfoundation.org designates 2604:1380:4641:c500::1 as permitted sender) smtp.mailfrom=gregkh@linuxfoundation.org;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=linuxfoundation.org
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=LY7VrMyH;
+       spf=pass (google.com: domain of shichaorai@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=shichaorai@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1716456745; x=1717061545; darn=lfdr.de;
+        d=lists.one-eyed-alien.net; s=google; t=1716464077; x=1717068877; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:x-original-authentication-results
-         :x-original-sender:in-reply-to:content-disposition:mime-version
-         :references:message-id:subject:cc:to:from:date:sender:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=ElefShfm3vo8IIBmsFPq9CFOliwh55HKvjUHzle5oD0=;
-        b=RzkEfjDDr2zubky4vvT/R6ABsLWM9FsVx9c7e6DdXF3zIoaiAKujMtIKH/Ik5EN7Yq
-         nnsEZpbMyDke2z5E2czLmIgm/d16g3JlIfg82iVOx9sxRXhFAP3X7FTAjOa/GReT1mYq
-         CgYSIdnkZgOE+ASpyp+CkUJfEvlBp4HxPZ/6c=
+         :x-original-sender:mime-version:message-id:date:subject:cc:to:from
+         :sender:from:to:cc:subject:date:message-id:reply-to;
+        bh=NkEAEiDiqc8YQwyjYeZTKD2cMozA36eF/rQjzjpoGU8=;
+        b=ATicpT7viHNLz1Yf7+9SOb/pU7xJJi8fs3HU2Kf82H0BgLuM0VnK8wHjWVBp/pxuB7
+         awbHU6g8Fn1xrl6thegGGKtwl7L53yKf9vz0jgob5OLwCpKtEXNAhBPgBpDnIFNROixq
+         wivycCBYaatKa9G0/XrXqzGDsSGCHZKTlDNsI=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1716456745; x=1717061545;
+        d=1e100.net; s=20230601; t=1716464077; x=1717068877;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :x-spam-checked-in-group:list-id:mailing-list:precedence
-         :x-original-authentication-results:x-original-sender:in-reply-to
-         :content-disposition:mime-version:references:message-id:subject:cc
-         :to:from:date:x-beenthere:x-gm-message-state:sender:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=ElefShfm3vo8IIBmsFPq9CFOliwh55HKvjUHzle5oD0=;
-        b=LuFOg0cwr0DS7FGGCRaSeKwJYL5KLUIkwEj19sF6yF1TDCoTWXGzwHeRBKY1mz4pJA
-         5MkD0eTmeA1RZMmbSfNBnxrgDD2WSkrxoGCOPXs3c/Y2GmisFKEWOSBvpCkrYfbLnB+p
-         4pIn22Vz7t61caE2mKRtcfbxVhUyiO6WNLNZYgICUwV3UfKIBCIgmzgGbXon0YremgiZ
-         a5yHUZbfOCLnq95lyBrS1W+UDuC2KtCBkduo2o1f96OSHg0NJ9TM6jm4+Coxn4ADzdVG
-         9fE0uQ7ja2j6CL5+gCgP9VxhPH6xXVH4uQZ0KPvKftBMWztBj05tsfm76hj2MKgto9Vn
-         SuYg==
+         :x-original-authentication-results:x-original-sender:mime-version
+         :message-id:date:subject:cc:to:from:x-beenthere:x-gm-message-state
+         :sender:from:to:cc:subject:date:message-id:reply-to;
+        bh=NkEAEiDiqc8YQwyjYeZTKD2cMozA36eF/rQjzjpoGU8=;
+        b=M+KJjvhWuxYJXsiviEpcsmuczTiGAE+Tj25g3F6SxtdIhIiV6G1ID6A/hGLuyWCjbm
+         sDvyYDBFdTMx4r1QUpjbNFCOCd6uTf4M71UCQwdgIdOgiwMlyMJ6Swy0xtLZc1ZdufsL
+         6ws5CijwVk6qRgL6kwDWkmiGuWNHhw4BmBTIYMUEuJCmbHj9U9O39F1Y7C5dlT2LvZAC
+         HwLVFveoCSDm0wsx2JwkmXH8fopdqgwY2k5lodcPeys2DAKwUaQwhV6B2kiJaaOHre7j
+         kuzp2c7raKbdoWWsAYPZJEzZH31rfQUQ4DsbON4bL/IUfdLgP7ENF+9nr/lL3eTtrJfv
+         iydw==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Forwarded-Encrypted: i=2; AJvYcCUqZrhgy5CZQ76EgbWRZwY0sZvpbZN5VGPzKGmnkarLLN4qJvCf5LOSB7WFWIuckk6JHrT43l1A41/jbtKQ4JTJzgTZ0r2IvkbG
-X-Gm-Message-State: AOJu0YzJHLfYDeUsINpOAQbrvwum24FH4k/mRpYBzzS8IA3iHG45woj/
-	YnihtnbdmMH5pQkTDSH808cYyel50sqfI9BBWdkaRHLzDkUwOkNHmIlXIisR/Pc=
-X-Google-Smtp-Source: AGHT+IElnmtHf466AnaNUNek5RzkEeqyB6KACer7tbDj2xroqZ7XWJDw+khjw6JfGU/McqkS8T4ToA==
-X-Received: by 2002:a05:6820:160d:b0:5b5:3852:75c4 with SMTP id 006d021491bc7-5b6a3a14b22mr4497325eaf.5.1716456744794;
-        Thu, 23 May 2024 02:32:24 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCXR3/IC9fIJRmQ++5WUg5u0wTxq7CuxV0rGqOIkx+0Q3nieUOb1YU68SO+92+lMtmz/eA2UhEYl8uMNqtnYlrgPXrHH9M7PAVg6
+X-Gm-Message-State: AOJu0YwNb8EN+yM+IXbTAfingC3nKqn1fQboeTqt8NfoAyloXIO2yBrG
+	A1H+47XYBYLI4b8J6E1BEaZ2a5MTquC4BM57mzzRUBFE1sSiG2E86bH58N8Sjrc=
+X-Google-Smtp-Source: AGHT+IEHDiyLIPP35jrZpXl3piCbkRoWA+4rxkN6Vzy82TOnMh/l3jrNwdE9VPPhU3XHZUGwEibf8g==
+X-Received: by 2002:a05:6e02:12e8:b0:36c:45bf:a8f0 with SMTP id e9e14a558f8ab-371fb91fe79mr53035835ab.25.1716464077515;
+        Thu, 23 May 2024 04:34:37 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a05:6820:16a6:b0:5af:6975:e41a with SMTP id
- 006d021491bc7-5b82ab31191ls514641eaf.2.-pod-prod-01-us; Thu, 23 May 2024
- 02:32:24 -0700 (PDT)
-X-Forwarded-Encrypted: i=2; AJvYcCVo9zqRvUCNhwdzX23weAgKwD5kpU8auMs7pjcyo1L1U3nzjqe8UV/75Gk5RJc+MyDYFbY4HszBd/A9RZTVNrAslAFMJvW0vu39TyJVXYd2Op7eejA=
-X-Received: by 2002:a9d:7dd1:0:b0:6f0:4365:c43a with SMTP id 46e09a7af769-6f6661ec7d6mr4709791a34.9.1716456744058;
-        Thu, 23 May 2024 02:32:24 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1716456744; cv=none;
+Received: by 2002:a92:ca0f:0:b0:36b:300b:3a62 with SMTP id e9e14a558f8ab-36cb7d522fels77272345ab.0.-pod-prod-02-us;
+ Thu, 23 May 2024 04:34:37 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCXpZbp4E+Aryo/tIC6+mzKuaWPSuMRk0C+joFYdM/fh2AzKf3GIo3Vw3dNelrATeL+Y/iV4UNWxQ+fi6NC1tAstsuZE/CJZnKY2sgUXVFcRzHli740=
+X-Received: by 2002:a92:ca4d:0:b0:36c:5120:941 with SMTP id e9e14a558f8ab-371f8f1ccc1mr52248855ab.6.1716464076773;
+        Thu, 23 May 2024 04:34:36 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1716464076; cv=none;
         d=google.com; s=arc-20160816;
-        b=BdkWengrHhU9to3mdtFLX6P0q3aOUuf3Gc4l8eML/jWbcaOLLRNTGm+w/1LSPKyITp
-         +yMa4WZKi/shOJFK5IjV+XhO261GgP9iYnfqjSfuSQR8/deJrzFS/dur6ylFRRx2f7MO
-         GFkSUR5yYelu3p5zWzaHyYXdS/FyuYKZaqDMEf3wrFu4wlTBvonTdJL8t2PooZVZvYjP
-         LvhjY8Hllzty8Ty3Pa1yo8lqzXEAnf5ad6ijdNJvaIqYEU7wfv0WLf4NizmTfAFUylMR
-         W6i7hdEYJqcawNknvoJPrZuFTBfr5vNbjvWonSEnpGMlK583xvx7/mVTG88p9ySDAk8j
-         ze8w==
+        b=yQEqiRLoERoDTkE9cV6bM27Q7ict3f8a46Df/6WE5Ns0lKtJbQ20j1UZnozgXknCHU
+         3Ic6tX0YYc0mJAAe05FRIea8f9E02NEoOyNLfMXo1u9kfS1u/CFYpVLviJPXh6gRv+xa
+         9OQOre5BOdCCDdyQ3KTex8XUZGfwvjWGuoeTaQVaEqWrhqjblOTQmA+7IBsd6Gm50opX
+         15U1TKkOiGov+UAAEwMzEpMttGUhhH8icrhS5Nk3cBbsaoruQSKyoWMp5x0osb6+uBPC
+         WiMV/qExTzGR9bNI7j/Ml9DYl8Qt8uheO/DD8GaNWzOAjS8GlP6C+rdqXnXzPpkrM+HT
+         RuMg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:dkim-signature;
-        bh=ZRZH0NlZmUF/AlF+eADLhpbrnyNBqm3kVtdK2+ASXg8=;
-        fh=O/bTNhn8EPfL1d+9hdDmuy3NpGdjkdf2/kbT3Jj2cMk=;
-        b=mf6l1wGvLsx5ekJnT/OTB0OpjGkdTxnXPRINa/kdtG+w1BsiXScLDWhGWH5Tv4f/gW
-         UfbxoX/Ue/1k8uMi7qYacdFD+aICdJgiztP7wJKOjJ5d7aIu0Jij05AgHcI1kbmAC5T9
-         DGdKJdmKqNQAUew+cpYs41/i+Znl6yC6KeOIaNYnubAzA2A1TPHunq/q4/mkF1m4EuNt
-         1syDnCZtMbGrbezhaZl13wMMSA9VQmsVMrRs/pjZF9chh/EpyHX70jqcjV/7KPYItpsJ
-         fJgkNyRsYjfyoA42HV0yXFHzk3656ZibTKvcbBGfq6Gxo3itQnbOxcvzIIj9F1E9hfDN
-         nLnw==;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:dkim-signature;
+        bh=eshNdi8MhibtA7UrHJyZzzh5soo9ttxdAWbEOJelcIk=;
+        fh=cOozBB3SAXZW8Xl9xnEEP14B4lUqoqALtphIG2x1aro=;
+        b=RJq+X3AKtKDVsyDfG02iG9qvbbQXusXgsw9CVQ5S0u462hUku5eh02+3TUesQpXLGv
+         C56wY3/wCD+klArnaRwhgrCelwAf0IpX2zl1zoTU8MY5NRN93bkm0c+0hAqRYt8f1fYH
+         rZrMhGRRDSfkgEMX48wSQcRo0QN1DMQX06Bso9SYcJvNSGsTJ8Pw1PJOlxhtoGPTXr+N
+         +NOBOLh52bXcZl88mZJSKJiqWy7ie/Yw15JdhTzaxREZQt0Ma4UXkm/ChBxMWkfSd/j8
+         UrDYebK1+c15YVlinfSiGZdIYMZsTdIpjR+Xo6A3tbRgcPHaSGJIoWDa87qGm4N0eJvV
+         +oRg==;
         dara=google.com
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@linuxfoundation.org header.s=korg header.b=dxujooKk;
-       spf=pass (google.com: domain of gregkh@linuxfoundation.org designates 2604:1380:4641:c500::1 as permitted sender) smtp.mailfrom=gregkh@linuxfoundation.org;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=linuxfoundation.org
-Received: from dfw.source.kernel.org (dfw.source.kernel.org. [2604:1380:4641:c500::1])
-        by mx.google.com with ESMTPS id 46e09a7af769-6f124b90280si6385075a34.116.2024.05.23.02.32.23
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=LY7VrMyH;
+       spf=pass (google.com: domain of shichaorai@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=shichaorai@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id d2e1a72fcca58-6f4d2b3ceb5sor5857319b3a.12.2024.05.23.04.34.36
         for <usb-storage@lists.one-eyed-alien.net>
+        (Google Transport Security);
+        Thu, 23 May 2024 04:34:36 -0700 (PDT)
+Received-SPF: pass (google.com: domain of shichaorai@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+X-Forwarded-Encrypted: i=1; AJvYcCViAN4zFXr8ffH8fJ27A+Guhqtv3qacJUr7zmcD1pmgMKiXI7YUN2UNa2ttyXXtgtBilm07v9a4l6Oa2l9mVIzbsz0wNM7oJ94DLuKIYSqxrHM7QbM=
+X-Received: by 2002:a17:903:950:b0:1eb:144f:63b7 with SMTP id d9443c01a7336-1f31c9e173bmr56580715ad.56.1716464076410;
+        Thu, 23 May 2024 04:34:36 -0700 (PDT)
+Received: from velvet.. ([111.42.148.111])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-1f0958fd757sm146846395ad.45.2024.05.23.04.34.30
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 23 May 2024 02:32:23 -0700 (PDT)
-Received-SPF: pass (google.com: domain of gregkh@linuxfoundation.org designates 2604:1380:4641:c500::1 as permitted sender) client-ip=2604:1380:4641:c500::1;
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 8B16162CE1;
-	Thu, 23 May 2024 09:32:23 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 061B2C3277B;
-	Thu, 23 May 2024 09:32:22 +0000 (UTC)
-Date: Thu, 23 May 2024 11:32:20 +0200
-From: Greg KH <gregkh@linuxfoundation.org>
-To: Shichao Lai <shichaorai@gmail.com>
-Cc: stern@rowland.harvard.edu, oneukum@suse.com, linux-usb@vger.kernel.org,
-	usb-storage@lists.one-eyed-alien.net, linux-kernel@vger.kernel.org,
+        Thu, 23 May 2024 04:34:36 -0700 (PDT)
+From: Shichao Lai <shichaorai@gmail.com>
+To: stern@rowland.harvard.edu,
+	gregkh@linuxfoundation.org,
+	oneukum@suse.com
+Cc: linux-usb@vger.kernel.org,
+	usb-storage@lists.one-eyed-alien.net,
+	linux-kernel@vger.kernel.org,
+	Shichao Lai <shichaorai@gmail.com>,
 	xingwei lee <xrivendell7@gmail.com>,
 	yue sun <samsun1006219@gmail.com>
-Subject: [usb-storage] Re: [PATCHv2] Check whether divisor is non-zero before division
-Message-ID: <2024052359-clothes-plentiful-c320@gregkh>
-References: <20240523092608.874986-1-shichaorai@gmail.com>
+Subject: [usb-storage] [PATCH v2] usb-storage: Check whether divisor is
+ non-zero before division
+Date: Thu, 23 May 2024 19:34:10 +0800
+Message-Id: <20240523113410.983875-1-shichaorai@gmail.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-Content-Type: text/plain; charset="UTF-8"
-Content-Disposition: inline
-In-Reply-To: <20240523092608.874986-1-shichaorai@gmail.com>
-X-Original-Sender: gregkh@linuxfoundation.org
+X-Original-Sender: shichaorai@gmail.com
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@linuxfoundation.org header.s=korg header.b=dxujooKk;       spf=pass
- (google.com: domain of gregkh@linuxfoundation.org designates
- 2604:1380:4641:c500::1 as permitted sender) smtp.mailfrom=gregkh@linuxfoundation.org;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=linuxfoundation.org
+ header.i=@gmail.com header.s=20230601 header.b=LY7VrMyH;       spf=pass
+ (google.com: domain of shichaorai@gmail.com designates 209.85.220.41 as
+ permitted sender) smtp.mailfrom=shichaorai@gmail.com;       dmarc=pass
+ (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Content-Type: text/plain; charset="UTF-8"
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -142,76 +143,46 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On Thu, May 23, 2024 at 05:26:08PM +0800, Shichao Lai wrote:
-> Since uzonesize may be zero, so judgements for non-zero are nessesary in both place.
-> Previous check is moved out of loop, and one more check is added in alauda_write_lba.
-> 
-> Reported-by: xingwei lee <xrivendell7@gmail.com>
-> Reported-by: yue sun <samsun1006219@gmail.com>
-> Signed-off-by: Shichao Lai <shichaorai@gmail.com>
-> ---
->  drivers/usb/storage/alauda.c | 4 ++++
->  1 file changed, 4 insertions(+)
-> 
-> diff --git a/drivers/usb/storage/alauda.c b/drivers/usb/storage/alauda.c
-> index 115f05a6201a..a6e60ef5cb0d 100644
-> --- a/drivers/usb/storage/alauda.c
-> +++ b/drivers/usb/storage/alauda.c
-> @@ -818,6 +818,8 @@ static int alauda_write_lba(struct us_data *us, u16 lba,
->  	unsigned int blocksize = MEDIA_INFO(us).blocksize;
->  	unsigned int lba_offset = lba % uzonesize;
->  	unsigned int new_pba_offset;
-> +	if (!uzonesize)
-> +		return USB_STOR_TRANSPORT_ERROR;
->  	unsigned int zone = lba / uzonesize;
->  
->  	alauda_ensure_map_for_zone(us, zone);
-> @@ -923,6 +925,8 @@ static int alauda_read_data(struct us_data *us, unsigned long address,
->  	unsigned int uzonesize = MEDIA_INFO(us).uzonesize;
->  	struct scatterlist *sg;
->  	int result;
-> +	if (!uzonesize)
-> +		return USB_STOR_TRANSPORT_ERROR;
->  
->  	/*
->  	 * Since we only read in one block at a time, we have to create
-> -- 
-> 2.34.1
-> 
-> 
+Since uzonesize may be zero, so judgements for non-zero
+are nessesary in both place.
 
-Hi,
+Changes since v1:
+- Add one more check in alauda_write_lba().
+- Move check ahead of loop in alauda_read_data().
 
-This is the friendly patch-bot of Greg Kroah-Hartman.  You have sent him
-a patch that has triggered this response.  He used to manually respond
-to these common problems, but in order to save his sanity (he kept
-writing the same thing over and over, yet to different people), I was
-created.  Hopefully you will not take offence and will fix the problem
-in your patch and resubmit it so that it can be accepted into the Linux
-kernel tree.
+Reported-by: xingwei lee <xrivendell7@gmail.com>
+Reported-by: yue sun <samsun1006219@gmail.com>
+Signed-off-by: Shichao Lai <shichaorai@gmail.com>
+---
+ drivers/usb/storage/alauda.c | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-You are receiving this message because of the following common error(s)
-as indicated below:
-
-- Your patch contains warnings and/or errors noticed by the
-  scripts/checkpatch.pl tool.
-
-- This looks like a new version of a previously submitted patch, but you
-  did not list below the --- line any changes from the previous version.
-  Please read the section entitled "The canonical patch format" in the
-  kernel file, Documentation/process/submitting-patches.rst for what
-  needs to be done here to properly describe this.
-
-If you wish to discuss this problem further, or you have questions about
-how to resolve this issue, please feel free to respond to this email and
-Greg will reply once he has dug out from the pending patches received
-from other developers.
-
-thanks,
-
-greg k-h's patch email bot
+diff --git a/drivers/usb/storage/alauda.c b/drivers/usb/storage/alauda.c
+index 115f05a6201a..17c73acd3b02 100644
+--- a/drivers/usb/storage/alauda.c
++++ b/drivers/usb/storage/alauda.c
+@@ -813,6 +813,8 @@ static int alauda_write_lba(struct us_data *us, u16 lba,
+ 	unsigned char ecc[3];
+ 	int i, result;
+ 	unsigned int uzonesize = MEDIA_INFO(us).uzonesize;
++	if (!uzonesize)
++		return USB_STOR_TRANSPORT_ERROR;
+ 	unsigned int zonesize = MEDIA_INFO(us).zonesize;
+ 	unsigned int pagesize = MEDIA_INFO(us).pagesize;
+ 	unsigned int blocksize = MEDIA_INFO(us).blocksize;
+@@ -921,6 +923,8 @@ static int alauda_read_data(struct us_data *us, unsigned long address,
+ 	unsigned int blocksize = MEDIA_INFO(us).blocksize;
+ 	unsigned int pagesize = MEDIA_INFO(us).pagesize;
+ 	unsigned int uzonesize = MEDIA_INFO(us).uzonesize;
++	if (!uzonesize)
++		return USB_STOR_TRANSPORT_ERROR;
+ 	struct scatterlist *sg;
+ 	int result;
+ 
+-- 
+2.34.1
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/2024052359-clothes-plentiful-c320%40gregkh.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20240523113410.983875-1-shichaorai%40gmail.com.
