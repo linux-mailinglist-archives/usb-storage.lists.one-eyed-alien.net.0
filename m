@@ -1,139 +1,131 @@
-Return-Path: <usb-storage+bncBAABB4WRW62AMGQEAEQO4NA@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBAABB7VDYK2AMGQEJ4BLOWA@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
 Received: from mail-oa1-x47.google.com (mail-oa1-x47.google.com [IPv6:2001:4860:4864:20::47])
-	by mail.lfdr.de (Postfix) with ESMTPS id CCD2692C818
-	for <lists+usb-storage@lfdr.de>; Wed, 10 Jul 2024 03:50:43 +0200 (CEST)
-Received: by mail-oa1-x47.google.com with SMTP id 586e51a60fabf-25e3350651esf6073200fac.3
-        for <lists+usb-storage@lfdr.de>; Tue, 09 Jul 2024 18:50:43 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1720576242; cv=pass;
+	by mail.lfdr.de (Postfix) with ESMTPS id 84E3592F3FA
+	for <lists+usb-storage@lfdr.de>; Fri, 12 Jul 2024 04:16:32 +0200 (CEST)
+Received: by mail-oa1-x47.google.com with SMTP id 586e51a60fabf-25e2a0f2643sf1670418fac.1
+        for <lists+usb-storage@lfdr.de>; Thu, 11 Jul 2024 19:16:32 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1720750591; cv=pass;
         d=google.com; s=arc-20160816;
-        b=p0zOjL/0mopbfNxqQZ25ylp4wT+G6SOwzqjf7P8hJKP2+RVO6whB3XysZgYDi3mpt1
-         yoqKHnTHs28lnp6+uPsmSp8K6VUwH9Covw518awsD6yOgrl4/v6oQ3IERYt89KHoBw/g
-         MOjeQ+kVX2AzaMH9wGNyEz6S/1GGiuF08UhcEd34CQX6tCaYgVdqlvF/oVs+D660FApZ
-         bEYZwd1CpKi+sfFFdVCYqxRsYlwNrH+6MxodvH5B+kAVLol51dXBmL4xnXWSEv3DFqrs
-         sgNrH2DMfUXYc/Ql/vaVYFJd+aFC6NSHlX90oRv7ZbJliSjRXV0wJu75vw2oR7yLAPLu
-         bT6g==
+        b=MTf0ZEgd8nPlOZd5P9xUwA/oUisSFaVRUptfYTDdUgGdWpLyKljalcYyepBb/5LSzo
+         r0DIGe7R4DHZvOB5OgXoHjVqERQpiZL+lAeUciDe5chKMiZmq95i4mepBwQQiZES+u2h
+         CxFCQjMniMIFFfe/B4/jM0q/1ZWTFC6jMKSUel15+qFNsYjmsLYofXuevcORkZqbY7cX
+         iSYe3W44JQIuBUvju91Hp47JeeL3aR/MkJUd8DuEBd4AzMeH7v9eTFt3HlTd+M+ThFxX
+         tIW3X5ZoxL5Ix8XGssnfcIvWWVKqgNnFlzi8LVukLNovIvw4HiLMX9WYESkEnB9rA5az
+         Tbow==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:in-reply-to:content-disposition
-         :mime-version:references:message-id:subject:cc:to:from:date:sender
-         :dkim-signature;
-        bh=CwTa9CBifY+aV9Kcoh6H2lZEntCIDIDXS0ECEjYre84=;
-        fh=sD76cTwIfGkaFmcfGWAOkzZJ+b5E55iHPwdri8tYh1o=;
-        b=jBm6QlXJijbDtHTdXDMEtHe3i22jMN2ZV6zph1atbHNBL4ymxS4spWm9pzoD0hsV+M
-         wdIKbcrh9DROsG+YV3oaIPwGq5DFg/kFpY6W+/chDgg73D8q/BPl9D3Sr7+3+AmMSQEQ
-         t2Ek6UC3bPX/RAdhPRM/kg57NqZtXWsXoliTPzfQSdwR0NLYzebQa3vMCQGs3Yi11RUo
-         qcxdIpb+apy1no+OMd7NqGRMkxXV9XlRtaLTQeOA3frsYbwxFjzxaAE7RJdL/CYDrZVa
-         TIcOQ3E4AeJhYoCxiru9KHFmiEaxVoke9bj9KPt/Gg7xBZdOT3uTpgcI5Qu834tDSOXv
-         PXng==;
+         :list-id:mailing-list:precedence:message-id:mime-version:subject:to
+         :from:date:sender:dkim-signature;
+        bh=ME1EBGC74aEUXDhPzjUgsFXMiNrIS0Ym6KyFYDKdleU=;
+        fh=4RiELeg62Z9UdRgwhBOOVeDxKz+RrLnDcEetaZm3AHQ=;
+        b=hhLLwZwwU2Ua/xk6IG/wV7QVSEg7mbTFJG7a3MShW0dXljR0bS24nqTn9j2jL8ycbz
+         oMiAjG837JsTeS7AWfSmfDsKNaqA4dvsJ88SFqKGwP2HFcpnShVxtFtn9zgiOtSuqYpK
+         RkXWafHSRg0Z3164V7eK/ucp0MbTIkjAIYj4Ak7EFk9QFOErfBqPW11j+qTzSHntwqDM
+         5JJ6cR7KFcWHOOqWAmJ/pvj4/dLfuMU6dCQ0Q+VH3eehlFmKOu5FO+E+qJDvJBOcvNw8
+         0MLPcqXeyhaYHAlBf6TeWtIEW0HUcwecHsc8z5Q24035Nn/pswoIQHIMPfR558lj16Fu
+         ElNQ==;
         darn=lfdr.de
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@kernel.org header.s=k20201202 header.b=NE207wwx;
-       spf=pass (google.com: domain of peter.chen@kernel.org designates 2604:1380:4641:c500::1 as permitted sender) smtp.mailfrom=peter.chen@kernel.org;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=kernel.org
+       spf=pass (google.com: domain of longchongyu22@mails.ucas.edu.cn designates 159.226.251.37 as permitted sender) smtp.mailfrom=longchongyu22@mails.ucas.edu.cn
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1720576242; x=1721181042; darn=lfdr.de;
+        d=lists.one-eyed-alien.net; s=google; t=1720750591; x=1721355391; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:x-original-authentication-results
-         :x-original-sender:in-reply-to:content-disposition:mime-version
-         :references:message-id:subject:cc:to:from:date:sender:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=CwTa9CBifY+aV9Kcoh6H2lZEntCIDIDXS0ECEjYre84=;
-        b=WjVrPVBXYe/Sorjn0LiOItOLwQJGakaApgQWgwpodWaOhFaPnnIHmniBsoicwv34la
-         +qFhlIfhFEXuSgMndXhIOz4/z2a7qLRC/Zz5hELX818F24dVbOeIQ0/vzsaruqNTcoBb
-         MgT6FHOwxvJwrKnS2UjgcaaR3Mc82ELHInLjc=
+         :x-original-sender:message-id:mime-version:subject:to:from:date
+         :sender:from:to:cc:subject:date:message-id:reply-to;
+        bh=ME1EBGC74aEUXDhPzjUgsFXMiNrIS0Ym6KyFYDKdleU=;
+        b=ZwTLJMCU2PvXXTVinIfhaNjOKsgniFRQVqWM6yT/m5q5bgIg+NFLOGTeikvuwcpQ2s
+         mtQ0ltC6v2fB/L/cDDCguAz9tAJ+x9KTtMcvywn0hAojzD2YyAohpYMAF6tfKz6yBbQe
+         QC4rPkRyxRBVz4Pwv5aT1Q0RDE455Q2zDDVVU=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1720576242; x=1721181042;
+        d=1e100.net; s=20230601; t=1720750591; x=1721355391;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:x-original-authentication-results
-         :x-original-sender:in-reply-to:content-disposition:mime-version
-         :references:message-id:subject:cc:to:from:date:x-beenthere
-         :x-gm-message-state:sender:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=CwTa9CBifY+aV9Kcoh6H2lZEntCIDIDXS0ECEjYre84=;
-        b=rkuvngR++5Z+xz1LYlCXKy+CEjgrxEthsx+bhVThGR2N/Vi1ktsarBPwyQKuDYKM6i
-         8QxKcYA63xzNhianSuixaJbAzqJfeVIAShJxJBrV7ttmIXYHqWVKIFfWrFMUvf+BU8o9
-         gPeiRHp5Mx9jfb6kTObc6WcgsYNPWC7iB5CDbXMfWYZx+vT02DDnO/lGPpNQxXfmWu0O
-         z/1VNM9w6iLZVDurnuAmT2h6q7ZI3P6L1nnNZu/S0LAEL+CrAmE2fSfennoL9xqWPeWb
-         RZVz88C6Qefjbw4lrDwfrzsWAY60mVYRgTAgdeWPOLkWob2hXnt8iCLuQ7YFrM73PvNL
-         Liew==
+         :x-original-sender:message-id:mime-version:subject:to:from:date
+         :x-beenthere:x-gm-message-state:sender:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=ME1EBGC74aEUXDhPzjUgsFXMiNrIS0Ym6KyFYDKdleU=;
+        b=mpPlhxTo+tJ69HzHt/w/Jugz00L7hJ+7TlLOPFVjp9wF8gW2IsIA+3Fh1/5qFK3gVa
+         aAA9yTHgt7dqE68fL2gcsQ3hgWc1cLrwNJrLBm4sscVda1JArNq1Gu4h1s8Zfp0lhc7m
+         BPH9misZLJa5Q+RuozQAqARyagD+wZF+V6FqdYUG50oHe+RQIYRfpL7sPxmUhVzA+xfm
+         F69efp4eY4JZl5n4SOE5E99R5UKMc3ApRQ7+SjhAWWksDul4k7Kgkrnx5WKc/p18Pd6x
+         ZSQhDIYm6oDVtvqFTLr4rHje1gQfJbhtsSc6Nyw7lw/VD3ElNMyrtT1TODHHG69HOI3Q
+         R5JQ==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Forwarded-Encrypted: i=2; AJvYcCX6BTjX7kiVX62IrAJHzFreswLnjw99QvSMobCvVSavj01GnlANW5lLjmPfS0TaIJF9My9KKRvryctpUj1Ga6kT0aUtVvNPpbiw
-X-Gm-Message-State: AOJu0YyeOeZZoMdRnXXtdKxUftrXMKOmKeKguBgBO942a6HUZEEX7Ers
-	yOzJDDsS1msEPBKAxlOj31BjTKLB3QFM72SMGTZph56OIsk0wOm8fyzOcAAMp4E=
-X-Google-Smtp-Source: AGHT+IEf0erZ2BYBzewA/Q7wEBXS7LvL0x8weGaZM62CAIwvReojMRvbmKM32+pLQ39o0Y34pnuNQA==
-X-Received: by 2002:a05:6870:fb94:b0:25e:c7b:ca96 with SMTP id 586e51a60fabf-25eae756de6mr3560686fac.10.1720576242180;
-        Tue, 09 Jul 2024 18:50:42 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCXoLUOPNJIAjY86S7V/RgwQuXS3Q69KwZFXnj4gS630RRbdaLN/dNptLz0E81WzGEZiYNtOM83SIoIG9NXeynmkCm03vlih0bKc
+X-Gm-Message-State: AOJu0YzirWk8vbPyUqJhwtY1R9rIsukfMaGAisBzTqTawdZyMpknZspu
+	pDzmUpd9PdPpoYyApyF1u7HC4bmnX6AlU1F/gzvO5artY1cm+gev+OoeB6aQR1A=
+X-Google-Smtp-Source: AGHT+IG0yBt3YdZPDYLnOOW8ih/BR+dfN3tF52h74pKs1DKgk7GUcrsgojd8inEC0bZ01QJjwe0AqA==
+X-Received: by 2002:a05:6871:611:b0:25e:1610:9705 with SMTP id 586e51a60fabf-25eae784630mr8989311fac.2.1720750590971;
+        Thu, 11 Jul 2024 19:16:30 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a05:6871:3329:b0:25a:6d0f:1a98 with SMTP id
- 586e51a60fabf-25e27ef6a26ls1801349fac.0.-pod-prod-08-us; Tue, 09 Jul 2024
- 18:50:41 -0700 (PDT)
-X-Forwarded-Encrypted: i=2; AJvYcCXoiWHr5fXSn8SzAsnQIqpP/IK206E2tpRLBJcptskcraIsJefcdKRIEwe3YOO/AiswFl9+HEU+ZCiCs55P7uruJuSYZ4mQM8Ia9d3CQOuZS4KP3k0=
-X-Received: by 2002:a05:6870:a116:b0:25e:cd43:fce0 with SMTP id 586e51a60fabf-25ecd43fee2mr78516fac.1.1720576241780;
-        Tue, 09 Jul 2024 18:50:41 -0700 (PDT)
-Received: by 2002:a05:6808:1a82:b0:3d9:302f:bb85 with SMTP id 5614622812f47-3d9dd6374dbmsb6e;
-        Tue, 9 Jul 2024 18:49:43 -0700 (PDT)
-X-Forwarded-Encrypted: i=2; AJvYcCWox1IyUexunddp/0UCrwHdMvyPnJ6wtdwxnVv8fxzXJ6DkskwRvGTZDu3J+qG4w4h6QWl+t//XD+jNUtDk+RFA5BhpnLsq1lXREScsjHMqZ684ZMc=
-X-Received: by 2002:a05:6808:1795:b0:3d9:37b8:dae7 with SMTP id 5614622812f47-3d93bde42f0mr5212454b6e.1.1720576183077;
-        Tue, 09 Jul 2024 18:49:43 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1720576183; cv=none;
+Received: by 2002:a05:6871:7245:b0:25d:f93b:9be0 with SMTP id
+ 586e51a60fabf-2603ad1a4ecls68052fac.1.-pod-prod-05-us; Thu, 11 Jul 2024
+ 19:16:30 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCXshGH3KWV8vGDMx+7yAby+7hDrIFRw4TGy+d5C8BGNMaXCGQxpNu3N/8YfX47Vlz5G1X4NueR6gvr7vtm7ZRkg/+SGofTtSy1Dg4KFCXODoAPQBVM=
+X-Received: by 2002:a05:6870:fbab:b0:254:80cd:d2c7 with SMTP id 586e51a60fabf-25eae88b82fmr622423fac.5.1720750590154;
+        Thu, 11 Jul 2024 19:16:30 -0700 (PDT)
+Received: by 2002:a05:6808:e92:b0:3da:a27f:25ca with SMTP id 5614622812f47-3daa27f291cmsb6e;
+        Thu, 11 Jul 2024 17:29:16 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCXFcjIy6Jgeact7YAkADOIym8arxykbodk+G1T5CpPuRwo74jfXmARuebofIFSxrRc/Bof7ROmoAKihFxu1yLYXUHzTybZOfzRnrrgnCcru6x+7nR4=
+X-Received: by 2002:a05:6808:130b:b0:3d9:2697:d398 with SMTP id 5614622812f47-3d93bdd179dmr12456212b6e.9.1720744156230;
+        Thu, 11 Jul 2024 17:29:16 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1720744156; cv=none;
         d=google.com; s=arc-20160816;
-        b=U9pTgT84brL/MqV3NewCjtkod1LPNvckAfDrU8NU/gX0EIsZPk4hRu8b7o/zyOiIu6
-         0BpoMMAYnyzIP63m5ET2cNSvgg/6oXaEYx1InYZ52C7vQC46BpmcEaPXSvWgu900a07j
-         LyTcLSlOKNw0UsXEEqXBSQWP/wQz9kWpJhFmkj9/OH1NjFOCqxi5KE2VFQujHxrTa5Ht
-         v5NlBzSY60g5vYgyppPqYwdlItTSiN6BZdYkkkqvO1/sKhYxxHpE1mVEvBu6U8QrcaUO
-         nS08UX0usVDtuQZOQtgGJ9mfat+JhIefFPXKaV61/NxAjU0J2eygSKMaBQliTJuLNW6q
-         4KLA==
+        b=gvG/I0d8Cz70WbaKCbnYzOC06t+huPzpidDM2G/YrwA7btcinokknOoaGtjnkrPk9Y
+         vQJJlKp7oPdNnS4yRslYbzAvcsSTFfyYDkFx8SEQoFE23Ovuw+mkn6ih8Lhpcv+D0Eu5
+         Rso+nlMeZFL9fWOnesfVUE+J2AvsqkWUTn6CwKOJdpN0BXH+7kAtQhOkfvE7/1cldbYs
+         /wNgeIVrTW6nPvlQo+nVcRAUtCuiqe9nmCHyzZt+m0lmqW1uVAIYbX10gwtD18/C0Eqs
+         cc7rVC7J9DVmj49njzCBgZ7KsbhHhsVsPzH9PsR6ql2NwiPps3/m5o3BjQ0PCI7Y6ule
+         FKFg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:dkim-signature;
-        bh=rOs7ExCeGhjD7qoZPIUBpN/lSbpcCaH7fi9hFWfifTU=;
-        fh=fWdn+Gj4f7TMPf4+6n1DOaggyL+XCuQ8zX83mnNR0XU=;
-        b=vYznpaOjyzrVGb7Dcb7x5/4ci96xp9cYxFVVP57JwNCtXNKeCpi08OA0Edm2NJq6oK
-         7pZ4oqxWbf2aOV0rpjO1mDjXiG0Ox2uevCugUxRKHT2a4byYwFZ4dxmc5d9Rkyi4XWSL
-         vQMSsmQZUhuskGmiSH+vBKYih75Lff6JICsGDr3Qj5A8q5WnCHKZbxqZ54F1c1hAmrWm
-         4bPGTPg32AM4L7zYoyH1ScWSeh1vU9D2qRT+5nQNGhyDkdgP5wLMHkVGBrcUcSWUEpPk
-         cDz5Exlp0ZN3ETO3xzPC8k9h+XD+YX9LsOv2Ab4paRgCPzWgUe/ltqYB9CDE0+TWO9Zd
-         RpYA==;
+        h=message-id:mime-version:subject:to:from:date;
+        bh=fs15D89eg83D7aB0zKIAAh6n1ruHvNfi7iFfDiDar5w=;
+        fh=w1giylt0bLyh1rWo1agSJaYosTIGrrEPTdBXjdMp/ug=;
+        b=j3/IWt5a/T6shhCXDGxSuiscUC8tbmObGb7J4Ca4eXDvjxbmXpZxVxkRoM483BU89+
+         T9K6UeErYRaRJxCUTeBZi+VTJQn4id31ttx1ScW7697CXk2CLE9OHETf8SpL3tVOdRRc
+         VJyGO59cnMgRiiR+pnFhS8QLvYJVF0xiqEsgqgvcMdPgJZhTXlyqOhYRh4xRKNNY+oCi
+         8gDPCPf/85AwZ90f9JpWakpajQRxiHW9x5Ub8LbO59DWMhewCZPitrK6qFJzrvJwCiEy
+         KxNUbYlSHjIBPs2SOXYzuY0h613klA4BIH5+lqbudnKW8NKanda0xeGAdJKY4AHSEbDj
+         imBA==;
         dara=google.com
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@kernel.org header.s=k20201202 header.b=NE207wwx;
-       spf=pass (google.com: domain of peter.chen@kernel.org designates 2604:1380:4641:c500::1 as permitted sender) smtp.mailfrom=peter.chen@kernel.org;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=kernel.org
-Received: from dfw.source.kernel.org (dfw.source.kernel.org. [2604:1380:4641:c500::1])
-        by mx.google.com with ESMTPS id 5614622812f47-3d941ef172bsi652512b6e.269.2024.07.09.18.49.43
+       spf=pass (google.com: domain of longchongyu22@mails.ucas.edu.cn designates 159.226.251.37 as permitted sender) smtp.mailfrom=longchongyu22@mails.ucas.edu.cn
+Received: from cstnet.cn (smtp37.cstnet.cn. [159.226.251.37])
+        by mx.google.com with ESMTPS id 5614622812f47-3d93f1a071esi2585474b6e.231.2024.07.11.17.29.13
         for <usb-storage@lists.one-eyed-alien.net>
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 09 Jul 2024 18:49:43 -0700 (PDT)
-Received-SPF: pass (google.com: domain of peter.chen@kernel.org designates 2604:1380:4641:c500::1 as permitted sender) client-ip=2604:1380:4641:c500::1;
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id D33CD61692;
-	Wed, 10 Jul 2024 01:49:42 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E7534C3277B;
-	Wed, 10 Jul 2024 01:49:40 +0000 (UTC)
-Date: Wed, 10 Jul 2024 09:49:34 +0800
-From: Peter Chen <peter.chen@kernel.org>
-To: Jeff Johnson <quic_jjohnson@quicinc.com>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Oliver Neukum <oneukum@suse.com>,
-	Alan Stern <stern@rowland.harvard.edu>, linux-usb@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-scsi@vger.kernel.org,
-	usb-storage@lists.one-eyed-alien.net,
-	kernel-janitors@vger.kernel.org
-Subject: [usb-storage] Re: [PATCH v2] usb: add missing MODULE_DESCRIPTION() macros
-Message-ID: <20240710014934.GA2914204@nchen-desktop>
-References: <20240618-md-drivers-usb-v2-1-e9b20a5eb7f9@quicinc.com>
+        Thu, 11 Jul 2024 17:29:14 -0700 (PDT)
+Received-SPF: pass (google.com: domain of longchongyu22@mails.ucas.edu.cn designates 159.226.251.37 as permitted sender) client-ip=159.226.251.37;
+Received: from longchongyu22$mails.ucas.edu.cn ( [121.195.114.26] ) by
+ ajax-webmail-APP-12 (Coremail) ; Fri, 12 Jul 2024 08:28:39 +0800
+ (GMT+08:00)
+X-Originating-IP: [121.195.114.26]
+Date: Fri, 12 Jul 2024 08:28:39 +0800 (GMT+08:00)
+X-CM-HeaderCharset: UTF-8
+From: =?UTF-8?B?6b6Z6YeN5L2Z?= <longchongyu22@mails.ucas.edu.cn>
+To: linux-usb@vger.kernel.org, usb-storage@lists.one-eyed-alien.net
+Subject: [usb-storage] Consultation about max_sectors in Linux SCSI Drivers
+X-Priority: 3
+X-Mailer: Coremail Webmail Server Version XT5.0.15 build 20240418(6ec7583a)
+ Copyright (c) 2002-2024 www.mailtech.cn cnic.cn
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_2025654_1227497804.1720744119493"
 MIME-Version: 1.0
-Content-Type: text/plain; charset="UTF-8"
-Content-Disposition: inline
-In-Reply-To: <20240618-md-drivers-usb-v2-1-e9b20a5eb7f9@quicinc.com>
-X-Original-Sender: peter.chen@kernel.org
-X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@kernel.org header.s=k20201202 header.b=NE207wwx;       spf=pass
- (google.com: domain of peter.chen@kernel.org designates 2604:1380:4641:c500::1
- as permitted sender) smtp.mailfrom=peter.chen@kernel.org;       dmarc=pass
- (p=NONE sp=NONE dis=NONE) header.from=kernel.org
+Message-ID: <5546a67e.90bd9.190a4578cc6.Coremail.longchongyu22@mails.ucas.edu.cn>
+X-Coremail-Locale: zh_CN
+X-CM-TRANSID: tgCowAD32Sm4eJBm_fkVAA--.30000W
+X-CM-SenderInfo: 5orqwu5krqw5rxssqzpdlo2hpxfd2hldfou0/1tbiDAUPCWaPGlVi
+	4gAEst
+X-Coremail-Antispam: 1Ur529EdanIXcx71UUUUU7IcSsGvfJ3iIAIbVAYjsxI4VWxJw
+	CS07vEb4IE77IF4wCS07vE1I0E4x80FVAKz4kxMIAIbVAFxVCaYxvI4VCIwcAKzIAtYxBI
+	daVFxhVjvjDU=
+X-Original-Sender: longchongyu22@mails.ucas.edu.cn
+X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
+ domain of longchongyu22@mails.ucas.edu.cn designates 159.226.251.37 as
+ permitted sender) smtp.mailfrom=longchongyu22@mails.ucas.edu.cn
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -148,105 +140,139 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On 24-06-18 08:18:26, Jeff Johnson wrote:
-> With ARCH=x86, make allmodconfig && make W=1 C=1 reports:
-> WARNING: modpost: missing MODULE_DESCRIPTION() in drivers/usb/core/usbcore.o
-> WARNING: modpost: missing MODULE_DESCRIPTION() in drivers/usb/mon/usbmon.o
-> WARNING: modpost: missing MODULE_DESCRIPTION() in drivers/usb/class/usbtmc.o
-> WARNING: modpost: missing MODULE_DESCRIPTION() in drivers/usb/storage/uas.o
-> WARNING: modpost: missing MODULE_DESCRIPTION() in drivers/usb/chipidea/ci_hdrc_msm.o
-> 
-> Add the missing invocations of the MODULE_DESCRIPTION() macro.
-> 
-> Signed-off-by: Jeff Johnson <quic_jjohnson@quicinc.com>
-> ---
-> This is the remaining one-off fixes in usb.
-> 
-> Corrections to these descriptions are welcomed. I'm not an expert in
-> this code so in most cases I've taken these descriptions directly from
-> code comments, Kconfig descriptions, or git logs.  History has shown
-> that in some cases these are originally wrong due to cut-n-paste
-> errors, and in other cases the drivers have evolved such that the
-> original information is no longer accurate.
-> 
-> Let me know if any of these changes need to be segregated into
-> separate patches to go through different maintainer trees.
-> ---
-> Changes in v2:
-> - Updated drivers/usb/core/usb.c description per Alan
-> - Link to v1: https://lore.kernel.org/r/20240611-md-drivers-usb-v1-1-8b8d669e8e73@quicinc.com
-> ---
->  drivers/usb/chipidea/ci_hdrc_msm.c | 1 +
->  drivers/usb/class/usbtmc.c         | 1 +
->  drivers/usb/core/usb.c             | 1 +
->  drivers/usb/mon/mon_main.c         | 1 +
->  drivers/usb/storage/uas.c          | 1 +
->  5 files changed, 5 insertions(+)
-> 
-> diff --git a/drivers/usb/chipidea/ci_hdrc_msm.c b/drivers/usb/chipidea/ci_hdrc_msm.c
-> index 7b5b47ce8a02..1661639cd2eb 100644
-> --- a/drivers/usb/chipidea/ci_hdrc_msm.c
-> +++ b/drivers/usb/chipidea/ci_hdrc_msm.c
-> @@ -303,4 +303,5 @@ module_platform_driver(ci_hdrc_msm_driver);
->  
->  MODULE_ALIAS("platform:msm_hsusb");
->  MODULE_ALIAS("platform:ci13xxx_msm");
-> +MODULE_DESCRIPTION("ChipIdea Highspeed Dual Role Controller");
+------=_Part_2025654_1227497804.1720744119493
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 
-MODULE_DESCRIPTION("MSM ChipIdea Glue Layer Driver");
+Hello!
 
-Peter
 
->  MODULE_LICENSE("GPL v2");
-> diff --git a/drivers/usb/class/usbtmc.c b/drivers/usb/class/usbtmc.c
-> index 311007b1d904..6bd9fe565385 100644
-> --- a/drivers/usb/class/usbtmc.c
-> +++ b/drivers/usb/class/usbtmc.c
-> @@ -2592,4 +2592,5 @@ static struct usb_driver usbtmc_driver = {
->  
->  module_usb_driver(usbtmc_driver);
->  
-> +MODULE_DESCRIPTION("USB Test & Measurement class driver");
->  MODULE_LICENSE("GPL");
-> diff --git a/drivers/usb/core/usb.c b/drivers/usb/core/usb.c
-> index a0c432b14b20..0b4685aad2d5 100644
-> --- a/drivers/usb/core/usb.c
-> +++ b/drivers/usb/core/usb.c
-> @@ -1150,4 +1150,5 @@ static void __exit usb_exit(void)
->  
->  subsys_initcall(usb_init);
->  module_exit(usb_exit);
-> +MODULE_DESCRIPTION("USB core host-side support");
->  MODULE_LICENSE("GPL");
-> diff --git a/drivers/usb/mon/mon_main.c b/drivers/usb/mon/mon_main.c
-> index 824904abe76f..af852d53aac6 100644
-> --- a/drivers/usb/mon/mon_main.c
-> +++ b/drivers/usb/mon/mon_main.c
-> @@ -419,4 +419,5 @@ static void __exit mon_exit(void)
->  module_init(mon_init);
->  module_exit(mon_exit);
->  
-> +MODULE_DESCRIPTION("USB Monitor");
->  MODULE_LICENSE("GPL");
-> diff --git a/drivers/usb/storage/uas.c b/drivers/usb/storage/uas.c
-> index a48870a87a29..9b8f578eef53 100644
-> --- a/drivers/usb/storage/uas.c
-> +++ b/drivers/usb/storage/uas.c
-> @@ -1280,6 +1280,7 @@ static void __exit uas_exit(void)
->  module_init(uas_init);
->  module_exit(uas_exit);
->  
-> +MODULE_DESCRIPTION("USB Attached SCSI driver");
->  MODULE_LICENSE("GPL");
->  MODULE_IMPORT_NS(USB_STORAGE);
->  MODULE_AUTHOR(
-> 
-> ---
-> base-commit: 83a7eefedc9b56fe7bfeff13b6c7356688ffa670
-> change-id: 20240611-md-drivers-usb-86999d57ed16
-> 
 
--- 
-You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
-To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20240710014934.GA2914204%40nchen-desktop.
+
+I'm sorry to bother you. Here is the problem: My usb storage device has a 6=
+4kB (limited by hardware) buffer used to cache reads/writes which means it =
+can only cache up to 128 blocks(512B) of memory.  The SCSI Write-10 and Rea=
+d-10 command has a total-blocks field that can be up to 240 blocks (120kB) =
+for USB2.0.  When originally testing the product on Windows 11 it never wri=
+tes more than 128 blocks at a time but when tested on Linux it sometimes wr=
+ites more than 128 blocks, which causes the usb storage device to crash.
+
+
+Is there a way to tell the host OS not to request more than 128 blocks?
+I have implemented block limit VPD page, and it works well on Windows 10/11=
+.  I even set the block limit to be 64 blocks, it's OK too. Because before =
+the data transfer, the windows host issue an SCSI inquiry order with the VP=
+D PAGE CODE is 0xB0, so the device could transmit the block limits informat=
+ion to the host. And then the windows host could adjust the amount of data =
+transferred.
+
+However, on Linux or MacOS, the host does not appear to be running the bloc=
+k limits command.  So the host don't know what is the block limits. So the =
+write/read blocks number beyond the buffer size.
+
+
+
+
+Could you please tell me what can I do to dissolve the problem?
+
+
+
+
+Thanks in advance.
+
+
+
+
+Best wishes.
+
+--=20
+You received this message because you are subscribed to the Google Groups "=
+USB Mass Storage on Linux" group.
+To unsubscribe from this group and stop receiving emails from it, send an e=
+mail to usb-storage+unsubscribe@lists.one-eyed-alien.net.
+To view this discussion on the web visit https://groups.google.com/a/lists.=
+one-eyed-alien.net/d/msgid/usb-storage/5546a67e.90bd9.190a4578cc6.Coremail.=
+longchongyu22%40mails.ucas.edu.cn.
+
+------=_Part_2025654_1227497804.1720744119493
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<p style=3D"font-family:=E5=AE=8B=E4=BD=93, arial, Verdana, sans-serif;font=
+-size:14px;text-wrap:wrap;">
+	Hello!
+</p>
+<p style=3D"font-family:=E5=AE=8B=E4=BD=93, arial, Verdana, sans-serif;font=
+-size:14px;text-wrap:wrap;">
+	<br>
+</p>
+<p style=3D"font-family:=E5=AE=8B=E4=BD=93, arial, Verdana, sans-serif;font=
+-size:14px;text-wrap:wrap;">
+	I'm sorry to bother you. Here is the problem: My usb storage device has a =
+64kB (limited by hardware) buffer used to cache reads/writes which means it=
+ can only cache up to 128 blocks(512B) of memory.&nbsp; The SCSI Write-10 a=
+nd Read-10&nbsp;command has a total-blocks field that can be up to 240 bloc=
+ks (120kB) for USB2.0.&nbsp; When originally testing the product on Windows=
+ 11 it never writes more than 128 blocks at a time but when tested on Linux=
+ it sometimes writes more than 128 blocks, which causes the usb storage dev=
+ice&nbsp;to crash.
+</p>
+<p style=3D"font-family:=E5=AE=8B=E4=BD=93, arial, Verdana, sans-serif;font=
+-size:14px;text-wrap:wrap;">
+	<br>
+Is there a way to tell the host OS not to request more than 128 blocks?<br>
+I have implemented block limit VPD page, and it works well on Windows 10/11=
+.&nbsp; I even set the block limit to be 64 blocks, it's OK too. Because be=
+fore the data transfer, the windows host issue an SCSI inquiry order with t=
+he VPD PAGE CODE is 0xB0, so the device could transmit the block limits inf=
+ormation to the host. And then the windows host could adjust the amount of =
+data transferred.
+</p>
+<p style=3D"font-family:=E5=AE=8B=E4=BD=93, arial, Verdana, sans-serif;font=
+-size:14px;text-wrap:wrap;">
+	However, on Linux or MacOS, the host does not appear to be running the blo=
+ck limits command.&nbsp; So the host don't know what is the block limits. S=
+o the write/read blocks number beyond the buffer size.
+</p>
+<p style=3D"font-family:=E5=AE=8B=E4=BD=93, arial, Verdana, sans-serif;font=
+-size:14px;text-wrap:wrap;">
+	<br>
+</p>
+<p style=3D"font-family:=E5=AE=8B=E4=BD=93, arial, Verdana, sans-serif;font=
+-size:14px;text-wrap:wrap;">
+	Could you please tell me what can I do to dissolve the problem?
+</p>
+<p style=3D"font-family:=E5=AE=8B=E4=BD=93, arial, Verdana, sans-serif;font=
+-size:14px;text-wrap:wrap;">
+	<br>
+</p>
+<p style=3D"font-family:=E5=AE=8B=E4=BD=93, arial, Verdana, sans-serif;font=
+-size:14px;text-wrap:wrap;">
+	Thanks in advance.
+</p>
+<p style=3D"font-family:=E5=AE=8B=E4=BD=93, arial, Verdana, sans-serif;font=
+-size:14px;text-wrap:wrap;">
+	<br>
+</p>
+<p style=3D"font-family:=E5=AE=8B=E4=BD=93, arial, Verdana, sans-serif;font=
+-size:14px;text-wrap:wrap;">
+	Best wishes.
+</p>
+
+<p></p>
+
+-- <br />
+You received this message because you are subscribed to the Google Groups &=
+quot;USB Mass Storage on Linux&quot; group.<br />
+To unsubscribe from this group and stop receiving emails from it, send an e=
+mail to <a href=3D"mailto:usb-storage+unsubscribe@lists.one-eyed-alien.net"=
+>usb-storage+unsubscribe@lists.one-eyed-alien.net</a>.<br />
+To view this discussion on the web visit <a href=3D"https://groups.google.c=
+om/a/lists.one-eyed-alien.net/d/msgid/usb-storage/5546a67e.90bd9.190a4578cc=
+6.Coremail.longchongyu22%40mails.ucas.edu.cn?utm_medium=3Demail&utm_source=
+=3Dfooter">https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb=
+-storage/5546a67e.90bd9.190a4578cc6.Coremail.longchongyu22%40mails.ucas.edu=
+.cn</a>.<br />
+
+------=_Part_2025654_1227497804.1720744119493--
+
