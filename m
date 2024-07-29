@@ -1,142 +1,141 @@
-Return-Path: <usb-storage+bncBCFZHPHU3ENBB2N4T62QMGQEW6SCXVI@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBD64ZMV5YYBRBS6BT62QMGQEJKPI6JQ@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-ot1-x346.google.com (mail-ot1-x346.google.com [IPv6:2607:f8b0:4864:20::346])
-	by mail.lfdr.de (Postfix) with ESMTPS id 50BCA93FD48
-	for <lists+usb-storage@lfdr.de>; Mon, 29 Jul 2024 20:24:43 +0200 (CEST)
-Received: by mail-ot1-x346.google.com with SMTP id 46e09a7af769-709313dd2d1sf2117907a34.0
-        for <lists+usb-storage@lfdr.de>; Mon, 29 Jul 2024 11:24:43 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1722277482; cv=pass;
+Received: from mail-oo1-xc47.google.com (mail-oo1-xc47.google.com [IPv6:2607:f8b0:4864:20::c47])
+	by mail.lfdr.de (Postfix) with ESMTPS id DB8A293FD64
+	for <lists+usb-storage@lfdr.de>; Mon, 29 Jul 2024 20:34:53 +0200 (CEST)
+Received: by mail-oo1-xc47.google.com with SMTP id 006d021491bc7-5d5ba96af29sf3730049eaf.0
+        for <lists+usb-storage@lfdr.de>; Mon, 29 Jul 2024 11:34:53 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1722278092; cv=pass;
         d=google.com; s=arc-20160816;
-        b=xNLjCIJLEMzI3HaS+3pIUmKo2pdvyzpmjPtOHz8fsgsw2/1/78BU7sMcoLXTr38SUf
-         /fZM3XaUYh1XC7jTYp+SFE+PZXpdeojKmBVtdLXu0Ty5R85Mg1XCc9Iq7si07uQJTGa4
-         WsoVFAgzWKGHDw+49cFlapUlCLeRjyul9LUS33nEe/wx2Hs1gf368aLKf5u3SpA+YjB1
-         Ols9T91Pzpuzq5q6s01eXBltGoapbnVXDP9U6g2LuGKaXi8nPGCCfRrBVumKUdb3vNlc
-         f6ZL6kzGuVlSZdaXpBAn1usu0Mk/O5Rl9P4TROCoD2ma+qPDhyuJ4DWxkdDQRN7mYKS7
-         f9jQ==
+        b=n8F9+NRgxIfxGec4A6Rtj/fTyHFzXslzzymTuQxIfuPLsYfTboRpJv1qKg5GsZPTPO
+         0dFBcVH6O9MYt+x1S9zfrJQ23r7kKOCc/wdvfolOJmBorkOhw6nY46nxp9uNP/PbAM7E
+         2RsCKwvLqn0hrgv7GvJsdzU/sMhpoxOKgoNYWfGn/s274JtfrFtMrsJ5jnnVcsRhiLSF
+         3dxUhhJMZYpoz4+NuR4fPDyj8tGkddRkcbH16lyX8zZUDuogWkCfCmbXXalsLuYWgdTg
+         jJkVfxMYXTvwZq2EvL9zczF1J5rJzvRsOdo1YlmYllZrGzjozO5wxVLpwyZRLFOagMbj
+         QAOQ==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:mime-version:message-id:date
-         :subject:cc:to:from:sender:dkim-signature;
-        bh=3z/WOz2b0X8bjvOYO7kVlXsT95Bl48Flq+XB2izpdfY=;
-        fh=LMMB30vABip/eaDvmi2qGxtH73hpf9HknxXS13IPIYU=;
-        b=Gc1N/VTxe/LbhxpgAukZ7415lPyr4rjmMZLOd2PS/S8K8Yzg9xQu2ZmEj6EK46t8TG
-         V2RdEtYbkStn4rV4Q0ytAGy0A22OskGxhhgavQ9evct5gxikoybs7vop2hL19lBuZfbv
-         YHlpbVa2PhegsH1G7WHmjdP3a23996XnjHENIzqTZrFOuAma+Z+ZnDOVKbaNgPVZUReQ
-         UN6Z9F1CpywcwOjh0qyb7nOgBoYKcy0QhMfz0fgeXH/uYPqj8lF6GONbo8CGWzDmybCc
-         EtnMvpFerJsnkuYrsnNRj+TPSGyNbE8RXGKEfQFLndJpGCF+U09Vwwyxpz96PPtHMVGd
-         ySag==;
+         :list-id:mailing-list:precedence:in-reply-to:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date:sender
+         :dkim-signature;
+        bh=PgKT4WiwTn/qvsnHgRBGuJdXfHgqZWlaHFd2vKlcoMs=;
+        fh=8qYJLImhvj5JQzgNpzQ9Vr2wN89tMQEQO//5Q+VWvFI=;
+        b=ip5qvWek9GjfGpDG6xEXUjojjH6W9hbmoyKNUuOtE3KxZv/iHxxRkzf4HRzbQLihoH
+         +0NOHh45WPJnvbaeQH/6FF95blP8so64yPIMD04GXYBTHOA4BRNC9O3bmy/sdlRUXnBH
+         X3Eqv8mSbOk8+Bq2rnFm24MMNEcVXNAfqlf9jsoM+pd+EKlPD6vdx+A2+rSMOM6xZ5lj
+         h4weKokv6iLth8WXwicNQnJHHkofMY/IHcDhfYkZdt4nwq0hqgZALwRB6lSy3LBvlkWx
+         s/UK/0AWk+YueAxKhvukmPx5Atk03ldSeuPVLZkEJU50owdLBpMXtydMe3zE8FbbN+Sz
+         Koyw==;
         darn=lfdr.de
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@gmail.com header.s=20230601 header.b=H3dqNkut;
-       spf=pass (google.com: domain of abhishektamboli9@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=abhishektamboli9@gmail.com;
-       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dkim=pass header.i=@rowland.harvard.edu header.s=google header.b=VR2QjpI3;
+       spf=pass (google.com: domain of stern@g.harvard.edu designates 209.85.220.41 as permitted sender) smtp.mailfrom=stern@g.harvard.edu;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=rowland.harvard.edu;
        dara=pass header.i=@lists.one-eyed-alien.net
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1722277482; x=1722882282; darn=lfdr.de;
+        d=lists.one-eyed-alien.net; s=google; t=1722278092; x=1722882892; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:x-original-authentication-results
-         :x-original-sender:mime-version:message-id:date:subject:cc:to:from
-         :sender:from:to:cc:subject:date:message-id:reply-to;
-        bh=3z/WOz2b0X8bjvOYO7kVlXsT95Bl48Flq+XB2izpdfY=;
-        b=S+Bog7Shi+ATUU2VfimSefPhBeIXa6HHbh0beCjUoYjXNCEdooTrLjK+B4DUM+LSg2
-         sIJ72guAcKyKrfrJjJQ1gaxSPhB10s05XRgF/vhMBjbpng96pkv5JiojS/YvDy+QjSXw
-         XQqu1//iC2fULmhtFazmtz+v1xaLKVKP3AVmw=
+         :x-original-sender:in-reply-to:content-disposition:mime-version
+         :references:message-id:subject:cc:to:from:date:sender:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=PgKT4WiwTn/qvsnHgRBGuJdXfHgqZWlaHFd2vKlcoMs=;
+        b=dPjhVdjikR8ibo6UH3NU3HpBhL1GnJtx2V06BQ3OGDxmcFCDgn7BlJpCA74wbQZLgL
+         sRB1kyzpmd8h3woHFoDLcil4c43hDuXLg93B6OCAiVkdVln+GtkvPHYP65qPeXoy6xaT
+         foA5OhdoSYw5rV5Unm1WJ+lTAJibL8uF7gass=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1722277482; x=1722882282;
+        d=1e100.net; s=20230601; t=1722278092; x=1722882892;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:x-original-authentication-results
-         :x-original-sender:mime-version:message-id:date:subject:cc:to:from
-         :x-beenthere:x-gm-message-state:sender:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=3z/WOz2b0X8bjvOYO7kVlXsT95Bl48Flq+XB2izpdfY=;
-        b=n3Dq4AuXkmXblvPRXIo74s2KwODfSnrCVgkz6HOl3UQ67zlJwY3E2U7TP/IEd9cPba
-         QM5FUhi278wGDRjgpAuIFhxmLQpfWjsHHPaaE3cHvvIMQFB4u1dEq6Rm7SKUslg9/nNZ
-         5lAM4rSq9r66gGb7UpG3HU2YqCpUtQkTIckMPQB0DTn9f2vDKto67hDqCV72DPQmojxG
-         qiss1iTgyI8vWAirnAZJXdFr9VSbdefdIMIPl+rho/3O2kHSrEYgu1eZoGwMWrV+O5UQ
-         VzSMRRyFJlJHdQf0spzoilg8kdCEQuFQb0qPnmPYf7I6//2GkUL1MV4B0xZuutmMdJ/U
-         WDAw==
+         :x-spam-checked-in-group:list-id:mailing-list:precedence
+         :x-original-authentication-results:x-original-sender:in-reply-to
+         :content-disposition:mime-version:references:message-id:subject:cc
+         :to:from:date:x-beenthere:x-gm-message-state:sender:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=PgKT4WiwTn/qvsnHgRBGuJdXfHgqZWlaHFd2vKlcoMs=;
+        b=bW8o9mb+Uphei3lnnHA7ap0L5RmGt9SPXVISghLQIbHHNEdl/fAMQcefVC4G7uYgV5
+         BV9YPjb397hqv5Cwb/Y/uOlg+mLhC6st3zsOohPdb/HagMmDIO9tibdmbDMcWVnuSsji
+         hCSWDgfdYJrlhaQw24Dk+lUWeS7VxrONgzrkxy8+ZY45di75VVPwg9UNyxG3uiYVxsGw
+         gGP21KbYVLN6n/ywcPelrFC/17dOnsWLcTYj0rQpxbrAxNmlv/0Sg3ayEGjEY+/QiHM1
+         LWH2Wkav258buxF8XucYn+kiYMuQTMnwKO2izRHbVe6+L1pFEHcmO8IhpY8cNKD912WE
+         w+UQ==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Forwarded-Encrypted: i=2; AJvYcCWqG8saWkkyPrd8P+fjCfJoxcy1Bqvo1CR+cn3IgX4gIzRuus+AfBw+EHHKTz0qd0DzJZC3438Kq2/LLYTUIoQ2BHYmitfnnXEa
-X-Gm-Message-State: AOJu0YxV/BmwG33LB0emmk0b5GIVfqNwzr1vQhLIWvofQ7EEjJP+t5Sf
-	faWbTIXDF61kNkt0A75wozwHW2FOvQtgCyRLSG/G5ucq9QMVCunWGdjR1/FnbSo=
-X-Google-Smtp-Source: AGHT+IGiuwtT5D/5Z1CVxjUPSuGnTAnkPwHrNb3I9J0o/2jP/z4Yt//P/fKysQ06PtF418M2RPEPgw==
-X-Received: by 2002:a9d:67cc:0:b0:703:6f95:98e9 with SMTP id 46e09a7af769-70940c1d0aemr4440116a34.10.1722277481880;
-        Mon, 29 Jul 2024 11:24:41 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCWdgbqq7ePm8uNNK6h0oI5Uc7eH9Qp2Yjd5AhOAqRwv7Csg0AYM9/3MC92g9gqB6JUNwGWY3cXjQ331GmXq+hlbtMZ+A7KxUXGY
+X-Gm-Message-State: AOJu0YxsXAhpk3MXPJ++kVLHryj1cncS+OHo5e69pt87g0hii1ufgOgh
+	pgpTGqASGVbtTfU7OarQzhW+0n6g+5b4OgOnPeVUe+1TZbV3dndr2gN6fxe/t30=
+X-Google-Smtp-Source: AGHT+IG3YUWDpKxlM50bu10hSRQb1OxN1Shi2Nxi6PJpwYJKPflUDoNu1lyxhitStzy2BAtdXTEX4g==
+X-Received: by 2002:a05:6820:162b:b0:5ba:ec8b:44b5 with SMTP id 006d021491bc7-5d5d0ef49afmr9824823eaf.3.1722278091793;
+        Mon, 29 Jul 2024 11:34:51 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a4a:3059:0:b0:5c2:1c26:de10 with SMTP id 006d021491bc7-5d5ae8db2b9ls4214484eaf.1.-pod-prod-04-us;
- Mon, 29 Jul 2024 11:24:41 -0700 (PDT)
-X-Forwarded-Encrypted: i=2; AJvYcCUxUF4o8TO/hB/kd5HKCYKIRE6fF6+JcN1+Mhc+Oip9LX6G/ibTDi6kN7N4Mug/DzqJOYPfzKTUqnNt8cLexaWIsQELk7gCrnxngYOwuVTc6+cFw84=
-X-Received: by 2002:a05:6820:50c:b0:5c7:b7c5:7df with SMTP id 006d021491bc7-5d5d0eaa0f5mr181012eaf.1.1722277481429;
-        Mon, 29 Jul 2024 11:24:41 -0700 (PDT)
-Received: by 2002:a05:6808:d2:b0:3d9:3291:87dc with SMTP id 5614622812f47-3db1accbc20msb6e;
-        Mon, 29 Jul 2024 11:23:57 -0700 (PDT)
-X-Forwarded-Encrypted: i=2; AJvYcCU0pVVRKH8brcagpDXQVwnqH7O3IH02i7zNaOuo9zeDpMtcZbBgHiX9dtFGn5aRCN/MIG8q9nEmOxoI+9E3dwShYVrZdCzWNiSf4evLXZOnOH2+SiU=
-X-Received: by 2002:a05:6a00:859a:b0:70d:34a1:5ccc with SMTP id d2e1a72fcca58-70ece822cd7mr13961254b3a.13.1722277436095;
-        Mon, 29 Jul 2024 11:23:56 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1722277436; cv=none;
+Received: by 2002:a4a:d299:0:b0:5ba:a73a:6de7 with SMTP id 006d021491bc7-5d5ae8d9574ls5018735eaf.1.-pod-prod-08-us;
+ Mon, 29 Jul 2024 11:34:51 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCWhmQFQH7B5W5ziNaGRCxkVC8PDB6JhFbKgKml4e/JvyACdkdJCixmzXl4//sxLtfvZG6JmnMyox8x5ZtQIoT9jVNoU95arVd7StxSxK/k1FQIzJu8=
+X-Received: by 2002:a05:6830:4701:b0:703:6ca6:27 with SMTP id 46e09a7af769-70940c1c7c8mr12768903a34.16.1722278091050;
+        Mon, 29 Jul 2024 11:34:51 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1722278091; cv=none;
         d=google.com; s=arc-20160816;
-        b=0YjFrMW17NCtIYntzEJIUjx6DgrieWjNee1y23ILY1b//R51WAeiMgwbCp1/QPt64z
-         9u6Oq00Pk2kSBt92eHX3DDCrXGY9qeDPMYn1qNfE8YNR/8fjvdTUtIpz2aop4BVceMLu
-         l6z9qBoVhtkYYWfquJwPisiGTC4JO8bdM7hcnCmOkKG7mFee6U4WFCwANVmUX+sGVdAT
-         51wvAj5Kberruq3id8T2hdrsZD6YlcjCk3nLrrogcOk2AOIXpBMUz9qcgJnNC6TsutND
-         RYnK4jW8QPwcRPcQcRB4uQaJiGI5+WZYk7HPrUCPFlPusVVQcpX0GlryY+FZSyZtaY0O
-         UKuQ==
+        b=OEk4HCTXBtdbNpztxY06ae7mgGYfq0nm7VbLtMU+NwuY6Q/3OvPcOLUORdtErxqlZc
+         e9yCStEbUUQcVaNYNImqwYXZMqI19mBE3Ab/AdRSFDS/pYolTfyWAD3Z52oY2nRvHb70
+         0qRxi4ThPYiIfLZs5xRWXEvg79rKRXdkB1Lh5ALKpuIVzs3a3s/PlT9fcExNQaKry2cw
+         NaNIAjSj0bIfHbi9Cbt3IW6amSd6iTtcK05xibI3bBK/CDyd81u0LCpJuZBc+uHrz3pW
+         0bHhaMPGDzMjt9nxyrKm+GYh1ER0lQmmeuDkeHUwJ49QgSdO3debkwpEwaiocxMzu3Gg
+         ON6Q==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:dkim-signature;
-        bh=yemLqtqvWl8R5S6sIbsu7pMycbwVn/6prDN8HksHxqM=;
-        fh=mQlnuSjIqM/myAbpTgK2OaI/NaT0Gmr6FqYVbFgQiU8=;
-        b=dHoENxlR88LcLYkAxahg22OuAiN6Yrgmx9Izh5YLoAY67q4FuswI+RC1d5ccXmzGB1
-         ojOT501p6gYYz7EN6tkGTPW2O+VMHWkYhNhsw9mTjze5qflUMdsIdaXWIwZv9DifH51s
-         /vVP2zZv18RK5ovYHwjL1TPxL5a5OT1fYFT6HxAnaHXaTyOM7as9n4WVAIIJP997G2HV
-         yNDLqSqrGCWoW5AWdc61+uGgNKHqOjIZ8uMloE8vs9rMFTNHosB3Wjh0+Kk8ktN/PaVp
-         Sgd0ht6tk6g8qeYxxG/qjjFRyBsGYw2s1gm+4Sh3OWLBsfnTbZ9FMHmZiXR/umGsv2xC
-         gFrQ==;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:dkim-signature;
+        bh=imNjbcelp3B6lXsHYN7XqqAWMw2+xVAXpWIJw514jNs=;
+        fh=SmPJnKgqh80snE2VccXgaGTIa1i2IAemIW7uOt8XYLQ=;
+        b=qpMSrIHF2qGHwFyOL/4hHpyiqqEwwBM1zLWhQIo4fjic4wyOUj/of1jZDlMxm39qrX
+         ztJazuxfkfkAxTOLLew1TKbxrh0tBFbpS2k6suMxqsM1N4Ul4yYpW/6GUHCnXtGB2TYE
+         nJpaY8Bj0ojtImlWWlaD5MtBjHL3Nolv/PGB1dBvwUlrL+rGLX3cJgQkXFzvbUY6euUA
+         9wSUHpb5ovonolRDpyjbf2zgFMz3wtzF3+ay5ATkhTAU1v/pCyS0tlFflbo+qKVyFarC
+         v6FBVO0X22d6PnhXlieq/IViXqnLfumR5ixAWH0mVH71k3c532JinbgRUgHlZjZXaAJb
+         x6vA==;
         dara=google.com
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@gmail.com header.s=20230601 header.b=H3dqNkut;
-       spf=pass (google.com: domain of abhishektamboli9@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=abhishektamboli9@gmail.com;
-       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dkim=pass header.i=@rowland.harvard.edu header.s=google header.b=VR2QjpI3;
+       spf=pass (google.com: domain of stern@g.harvard.edu designates 209.85.220.41 as permitted sender) smtp.mailfrom=stern@g.harvard.edu;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=rowland.harvard.edu;
        dara=pass header.i=@lists.one-eyed-alien.net
 Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
-        by mx.google.com with SMTPS id 41be03b00d2f7-7a895b7dde3sor8368878a12.5.2024.07.29.11.23.56
+        by mx.google.com with SMTPS id 46e09a7af769-70930706ef4sor3535365a34.7.2024.07.29.11.34.51
         for <usb-storage@lists.one-eyed-alien.net>
         (Google Transport Security);
-        Mon, 29 Jul 2024 11:23:56 -0700 (PDT)
-Received-SPF: pass (google.com: domain of abhishektamboli9@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
-X-Forwarded-Encrypted: i=1; AJvYcCU2O8M1RkjAn71m1ikgA18jyaMVImRQrpaUp2CoGrX7sDjI/C3wKKXH26g3NkCE8I5PUMMCii4oCkPpbxEM/XBgUSQxWuZWCHGeiICbkKsozQUyD9c=
-X-Received: by 2002:a17:90b:1a86:b0:2c8:2236:e2c3 with SMTP id 98e67ed59e1d1-2cf7cf7fdb3mr14524692a91.17.1722277435364;
-        Mon, 29 Jul 2024 11:23:55 -0700 (PDT)
-Received: from embed-PC.. ([106.205.109.112])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-2cdb738fe04sm10925787a91.12.2024.07.29.11.23.51
+        Mon, 29 Jul 2024 11:34:51 -0700 (PDT)
+Received-SPF: pass (google.com: domain of stern@g.harvard.edu designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+X-Forwarded-Encrypted: i=1; AJvYcCU7c87EFDR8x9pYpwSX9ImUEyy6Up7Fm03i14YvNzriLW/DGcSpMv9ZNZ54DdLkq/yjwlG8xuFlKAkYL84DMz33rIqEPEQL08C/kJpiM5R3VghU0hQ=
+X-Received: by 2002:a05:6358:e924:b0:19e:fa9c:5ec9 with SMTP id e5c5f4694b2df-1adc0665bfdmr914934655d.9.1722278090607;
+        Mon, 29 Jul 2024 11:34:50 -0700 (PDT)
+Received: from rowland.harvard.edu (iolanthe.rowland.org. [192.131.102.54])
+        by smtp.gmail.com with ESMTPSA id 6a1803df08f44-6bb3f8fb75esm55530016d6.37.2024.07.29.11.34.50
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 29 Jul 2024 11:23:55 -0700 (PDT)
-From: Abhishek Tamboli <abhishektamboli9@gmail.com>
-To: stern@rowland.harvard.edu
-Cc: gregkh@linuxfoundation.org,
-	usb-storage@lists.one-eyed-alien.net,
-	linux-usb@vger.kernel.org,
-	skhan@linuxfoundation.org,
-	dan.carpenter@linaro.org,
-	rbmarliere@gmail.com,
+        Mon, 29 Jul 2024 11:34:50 -0700 (PDT)
+Date: Mon, 29 Jul 2024 14:34:47 -0400
+From: Alan Stern <stern@rowland.harvard.edu>
+To: Abhishek Tamboli <abhishektamboli9@gmail.com>
+Cc: gregkh@linuxfoundation.org, usb-storage@lists.one-eyed-alien.net,
+	linux-usb@vger.kernel.org, skhan@linuxfoundation.org,
+	dan.carpenter@linaro.org, rbmarliere@gmail.com,
 	linux-kernel-mentees@lists.linuxfoundation.org,
 	linux-kernel@vger.kernel.org
-Subject: [usb-storage] [PATCH] usb: storage: ene_ub6250: Fix right shift warnings
-Date: Mon, 29 Jul 2024 23:53:48 +0530
-Message-Id: <20240729182348.451436-1-abhishektamboli9@gmail.com>
-X-Mailer: git-send-email 2.34.1
+Subject: [usb-storage] Re: [PATCH] usb: storage: ene_ub6250: Fix right shift warnings
+Message-ID: <040f84a0-f299-4165-b261-636f8c9c2060@rowland.harvard.edu>
+References: <20240729182348.451436-1-abhishektamboli9@gmail.com>
 MIME-Version: 1.0
-X-Original-Sender: abhishektamboli9@gmail.com
-X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@gmail.com header.s=20230601 header.b=H3dqNkut;       spf=pass
- (google.com: domain of abhishektamboli9@gmail.com designates 209.85.220.41 as
- permitted sender) smtp.mailfrom=abhishektamboli9@gmail.com;       dmarc=pass
- (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;       dara=pass header.i=@lists.one-eyed-alien.net
 Content-Type: text/plain; charset="UTF-8"
+Content-Disposition: inline
+In-Reply-To: <20240729182348.451436-1-abhishektamboli9@gmail.com>
+X-Original-Sender: stern@rowland.harvard.edu
+X-Original-Authentication-Results: mx.google.com;       dkim=pass
+ header.i=@rowland.harvard.edu header.s=google header.b=VR2QjpI3;
+       spf=pass (google.com: domain of stern@g.harvard.edu designates
+ 209.85.220.41 as permitted sender) smtp.mailfrom=stern@g.harvard.edu;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=rowland.harvard.edu;
+       dara=pass header.i=@lists.one-eyed-alien.net
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
+X-Spam-Checked-In-Group: usb-storage@lists.one-eyed-alien.net
 X-Google-Group-Id: 960895140360
 List-Post: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/post>,
  <mailto:usb-storage@lists.one-eyed-alien.net>
@@ -148,35 +147,36 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-Change bl_len from u16 to u32 to accommodate the necessary bit shifts.
+On Mon, Jul 29, 2024 at 11:53:48PM +0530, Abhishek Tamboli wrote:
+> Change bl_len from u16 to u32 to accommodate the necessary bit shifts.
+> 
+> Fix the following smatch warnings:
+> 
+> drivers/usb/storage/ene_ub6250.c:1509 ms_scsi_read_capacity() warn: right shifting more than type allows 16 vs 24
+> drivers/usb/storage/ene_ub6250.c:1510 ms_scsi_read_capacity() warn: right shifting more than type allows 16 vs 16
+> 
+> Signed-off-by: Abhishek Tamboli <abhishektamboli9@gmail.com>
+> ---
+>  drivers/usb/storage/ene_ub6250.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/drivers/usb/storage/ene_ub6250.c b/drivers/usb/storage/ene_ub6250.c
+> index 97c66c0d91f4..ab6718dc874f 100644
+> --- a/drivers/usb/storage/ene_ub6250.c
+> +++ b/drivers/usb/storage/ene_ub6250.c
+> @@ -1484,7 +1484,7 @@ static int ms_scsi_mode_sense(struct us_data *us, struct scsi_cmnd *srb)
+>  static int ms_scsi_read_capacity(struct us_data *us, struct scsi_cmnd *srb)
+>  {
+>  	u32   bl_num;
+> -	u16    bl_len;
+> +	u32    bl_len;
+>  	unsigned int offset = 0;
+>  	unsigned char    buf[8];
+>  	struct scatterlist *sg = NULL;
 
-Fix the following smatch warnings:
-
-drivers/usb/storage/ene_ub6250.c:1509 ms_scsi_read_capacity() warn: right shifting more than type allows 16 vs 24
-drivers/usb/storage/ene_ub6250.c:1510 ms_scsi_read_capacity() warn: right shifting more than type allows 16 vs 16
-
-Signed-off-by: Abhishek Tamboli <abhishektamboli9@gmail.com>
----
- drivers/usb/storage/ene_ub6250.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/drivers/usb/storage/ene_ub6250.c b/drivers/usb/storage/ene_ub6250.c
-index 97c66c0d91f4..ab6718dc874f 100644
---- a/drivers/usb/storage/ene_ub6250.c
-+++ b/drivers/usb/storage/ene_ub6250.c
-@@ -1484,7 +1484,7 @@ static int ms_scsi_mode_sense(struct us_data *us, struct scsi_cmnd *srb)
- static int ms_scsi_read_capacity(struct us_data *us, struct scsi_cmnd *srb)
- {
- 	u32   bl_num;
--	u16    bl_len;
-+	u32    bl_len;
- 	unsigned int offset = 0;
- 	unsigned char    buf[8];
- 	struct scatterlist *sg = NULL;
--- 
-2.34.1
+Acked-by: Alan Stern <stern@rowland.harvard.edu>
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20240729182348.451436-1-abhishektamboli9%40gmail.com.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/040f84a0-f299-4165-b261-636f8c9c2060%40rowland.harvard.edu.
