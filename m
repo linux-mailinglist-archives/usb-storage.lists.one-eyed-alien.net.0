@@ -1,135 +1,138 @@
-Return-Path: <usb-storage+bncBCJLBW6OUMMRB3GIU63AMGQE4UYB5UI@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBD64ZMV5YYBRBX7UU63AMGQEDQMWYJA@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-yb1-xb46.google.com (mail-yb1-xb46.google.com [IPv6:2607:f8b0:4864:20::b46])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5A4ED95DE24
-	for <lists+usb-storage@lfdr.de>; Sat, 24 Aug 2024 15:47:27 +0200 (CEST)
-Received: by mail-yb1-xb46.google.com with SMTP id 3f1490d57ef6-e117634c516sf4935759276.0
-        for <lists+usb-storage@lfdr.de>; Sat, 24 Aug 2024 06:47:27 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1724507246; cv=pass;
-        d=google.com; s=arc-20240605;
-        b=TbNiPfIqnWNaM9nm9p8g/C98dZi5GLSCrmT46F+bZgG5WJ+NUB1OrdaoXRVVzrh1vK
-         yL7oi980RbHDuKqNYGqAaOGoV9j2w3rowzGmH06bUxEFIsx4bUcbruwGvtwbIBnJxr3Z
-         Yqv968HbG0D/awbHc27FebTdgdDKN0F07RZ59ECtkhxtNXp7JXbY+7CTuBO5P0R2K5lq
-         4FTmGAp8zlsMbO/xd6xqfxleEOrtn8bG9b20K4iw9dZhb09Yg9TIC7AHRUWgV2EhSopc
-         DohIp6qEu4lw7OOb7ZqzhM/pbTOZVt7fasN1uXHZ82FYHcJnxSvIVtgAMXDYdqgsTGwz
-         yRCQ==
-ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+Received: from mail-ot1-x347.google.com (mail-ot1-x347.google.com [IPv6:2607:f8b0:4864:20::347])
+	by mail.lfdr.de (Postfix) with ESMTPS id 2FA0F95DEAB
+	for <lists+usb-storage@lfdr.de>; Sat, 24 Aug 2024 17:21:05 +0200 (CEST)
+Received: by mail-ot1-x347.google.com with SMTP id 46e09a7af769-70938633d8asf5423864a34.3
+        for <lists+usb-storage@lfdr.de>; Sat, 24 Aug 2024 08:21:05 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1724512863; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=spiaozs93rVFuEPYPv2myvkPDBpYdLhjaldB22GKbhaONI2aEfYK+i8oxuktYOWRXK
+         brJ0JaEgLkm0yDexJUDFYFNkwBHu0row72O7idy3upDQ+295DNo/y4l8d434IDXRpprk
+         2pBgTFzwbTJyRZto1dZgy5iqWjaUeRTo5NgVdJ5fx8Hqo68+HEKbhscdSsSBXK5X3nn5
+         qu3kU1V1KuPZzojxGILCpChPH5Cap6nHNuukV96FblZpew1xCuSKlO8aQbr2+T7Jgwwk
+         +9X7aXEZktG0ykpgX+cFYWqFo66/dxB+2FlC8pGVXoONvgjPjXGIxAugMeUWhdS+fsG4
+         T8LQ==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:reply-to:mime-version:message-id
-         :date:subject:cc:to:from:dkim-signature;
-        bh=lbInJxGjO9/E/vi5Gccqg7lUq9fYWFD9G4yeP3kym10=;
-        fh=3mFAfb5HspCMiF6dwC+8pg0BEQ8QSBOmQktbH13F1Yc=;
-        b=GgnsU94KdB+dFzNBFr3dlDnbne8GoASadwB4NDN99HRbkZHcxcefBH+NB2ETddxriX
-         qCZN6nWpkrvUM5Fd6JRD4Lv1ckOueTbBqM20ZfYWCsRLnokX2Rwj/PLkTSJDd7iydzgb
-         JCFBdrkruQJN/kHe+E33v+eKMpFIHwLgtN831AkFGLgLHFmfIed9wNj9IoxirugtxvOu
-         4CDkIdDAUbxoq6GOvt83f86AieVhi8baK3XQGrFYERI5iq8L2vlnCXD5N93kJRplKn95
-         lL4nAFY/QOzGCXnTJx3T0+KkM2/WLPStFeUMR25+V5dpkODaf+1LJXDx923yy/VNHS18
-         pMUg==;
+         :list-id:mailing-list:precedence:in-reply-to:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date:sender
+         :dkim-signature;
+        bh=DC63Nc4Jkm3MX5Ol1yG38bFRli8tx0F9XcM6xG3+zCs=;
+        fh=NCyfDAbLABJ7nSYWkocaTGF4UIu1Gci1WWz2o2+DM8o=;
+        b=Za69qyuFsJ4sw4XFS2vHmQjgiFStUw3jR3cYqrD6XkwL/IuS0eUOy096bdA+v3D2aa
+         1it3+hpmf5TqIyTfHpVsiIUAjlbpq519ahcwayJBmD2ogo15rfbkNtPaf8KGP/tK5S7z
+         614NIXYA7spDRsb3k33ykpaPFpRx6etK29K7XatWIuaxw+cCDORkMwpNnX+T5rIhD4TT
+         z4kGUrbnOO0giShsqr7cQ0SS5Z18KhbmeWbgm2EM7G+v75GxwPq6O+VImO3b1sWzafO6
+         md0so/p1II0Ur0DHRzqLcuK/+pcIoWiS6K5VUtgURsCh5oNoxKt//lzhrV43QvFmsdrz
+         wFoA==;
         darn=lfdr.de
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@wanadoo.fr header.s=t20230301 header.b=AQac5zvA;
-       spf=pass (google.com: domain of christophe.jaillet@wanadoo.fr designates 80.12.242.80 as permitted sender) smtp.mailfrom=christophe.jaillet@wanadoo.fr;
-       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=wanadoo.fr
+       dkim=pass header.i=@rowland.harvard.edu header.s=google header.b=kSjKsEsu;
+       spf=pass (google.com: domain of stern@g.harvard.edu designates 209.85.220.41 as permitted sender) smtp.mailfrom=stern@g.harvard.edu;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=rowland.harvard.edu;
+       dara=pass header.i=@lists.one-eyed-alien.net
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1724507246; x=1725112046; darn=lfdr.de;
+        d=lists.one-eyed-alien.net; s=google; t=1724512863; x=1725117663; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:reply-to
-         :x-original-authentication-results:x-original-sender:mime-version
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=lbInJxGjO9/E/vi5Gccqg7lUq9fYWFD9G4yeP3kym10=;
-        b=JmCZStVTeQyzh8t+2nxZlAG5q/vuEvEw3+wX7w0Ww8KSUvF2kJh8HU3Zuj6ZXfeAZR
-         gwPPcE0oWQKFnEaDWaFE0+udhAFbnGQPLA25PIdLhdLIdWhqpktnROLqoFarUPjvEa1K
-         wgaelSnkw5FUx5NTQ0ILWStgmDJIJvUOhyYdw=
+         :list-id:mailing-list:precedence:x-original-authentication-results
+         :x-original-sender:in-reply-to:content-disposition:mime-version
+         :references:message-id:subject:cc:to:from:date:sender:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=DC63Nc4Jkm3MX5Ol1yG38bFRli8tx0F9XcM6xG3+zCs=;
+        b=Idx4e9Jde0ZbraNEhZGHbLBZ9OxZyNaBpu0a9PI9VwqG8JTCsprTpz/7A1bwFOJTqx
+         NyH7uAYLhzSuxXCsWTB3EmBEFgKfyRdGWVyzNbG3/53RaoKecx2GQX2OlvmqzR8yXxK/
+         YuvOKxQH9ctDXVSJh7PZH6kikFWhn0gJdNebo=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1724507246; x=1725112046;
+        d=1e100.net; s=20230601; t=1724512863; x=1725117663;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :x-spam-checked-in-group:list-id:mailing-list:precedence:reply-to
-         :x-original-authentication-results:x-original-sender:mime-version
-         :message-id:date:subject:cc:to:from:x-beenthere:x-gm-message-state
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=lbInJxGjO9/E/vi5Gccqg7lUq9fYWFD9G4yeP3kym10=;
-        b=JuJqb9AFKkggPU5pnaZPgEPbeln0pgAX5LCaJrZu1vF3W5wvHLW5qAou9HV81Pt/Ic
-         NaYNalZZsEnIEhrWikmkNUXwyJ5/D75nMVCZQ+Yb0IyIprt5yJbGjKLLUgwdYXmDVUcn
-         H8KQsLMGORLpGWXCBel5SkdMpQhDCaYHmm5Dsnl0nGAHP0q1HXdRbp2GmRXk3sGyh1os
-         7+Fj6mg+0DySqHJyslhrppcpCGv1QyCPknx8PPvOVi9OjP29r9fpmqheD+/ZaVDcDh+/
-         tSE7HTMNXmCzd7ypFIRngL94MWfWDJNJmB7JOoddPfzh/48JlWhYMBIbG28D0g8Sc3Zy
-         Fjxw==
-X-Forwarded-Encrypted: i=2; AJvYcCVdc4/6TQoP+H41tpYB+XJ54EvDw9HSHdv1Wmp5Bo6UeYti/l9+uG77Ui1g6dAlgZoLBLo1hQ==@lfdr.de
-X-Gm-Message-State: AOJu0Yz7tBwsf51YUUa9wAEo9ugAPw6RMN2h1SgcSfDVWlMYf61HmKej
-	ORkBe29g+AVSj00vH39dF9tXrw6pHq0ISqzpkGpvpQwNsrjlX5FKYbQTvBV8K6I=
-X-Google-Smtp-Source: AGHT+IGiWYX49nYCgzG5hsdOl/nxoP65Jx+CoZRLayc2DbmuJfBZQPZGrLAw61trHQ5EvnyPZdpN0A==
-X-Received: by 2002:a05:6902:268a:b0:e0b:b2d6:f528 with SMTP id 3f1490d57ef6-e17a868617emr5087123276.38.1724507246020;
-        Sat, 24 Aug 2024 06:47:26 -0700 (PDT)
+         :x-spam-checked-in-group:list-id:mailing-list:precedence
+         :x-original-authentication-results:x-original-sender:in-reply-to
+         :content-disposition:mime-version:references:message-id:subject:cc
+         :to:from:date:x-beenthere:x-gm-message-state:sender:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=DC63Nc4Jkm3MX5Ol1yG38bFRli8tx0F9XcM6xG3+zCs=;
+        b=BHBvsJQlvTb+AL8wTmQlFNPbzZXvfGId8sx8zOmbHUzlmcshlmc6+49UD9lA6oe7Ms
+         L4LZsccD+N04BxeVcVc859X/yboUDmCZSXrbzuvVngzkfbJlqOXcAUHvBGNIKGDFk6RF
+         zIoBU5KAntlrXPVYvjapEOxBSMk6cFED6vYF2o+ZcXdE34w3refmt9f8Wo7ni2iZ1HKk
+         vtaoaWxPESpSBBo/XV6LQj707FxTJmCSnZX3K0igIeciw8ONcJI0GkTTc6/K8CN53HFS
+         Mnx0p278a4Ro9a6cx4AN3ZeUowkxkqNfXQLa6+nxZPl1atvEU4je1tgpQSYJIYDFmvuc
+         +I7w==
+Sender: usb-storage@lists.one-eyed-alien.net
+X-Forwarded-Encrypted: i=2; AJvYcCW5PmA2a7r5tqCm9cLtPhnqg8meo+Jjzl0SchT3YHP8WCtl8Shj2cplwpGYyapgVzKYyQ5bRQ==@lfdr.de
+X-Gm-Message-State: AOJu0YzTmth7zPcRX9TVd72Oap9T18fHu/InsRCtMkZXDmPK3zJe0hU6
+	prOiytmurmDM9K3aT2y+oxWwB80Fy02gMB21Zkoh4AclJsOCUt4kNi+o9JcaiSE=
+X-Google-Smtp-Source: AGHT+IETkQ7Nl/P5u5LOb09PSjGRHn6gNu/QZ2hvESIHGsYc8l3SBNRo3uAulTMfK0yXl0CzX6hJAA==
+X-Received: by 2002:a05:6808:138b:b0:3d9:e109:a6d3 with SMTP id 5614622812f47-3de2a8a8f3bmr6731385b6e.26.1724512863565;
+        Sat, 24 Aug 2024 08:21:03 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a05:6902:18d1:b0:e02:c175:85f8 with SMTP id
- 3f1490d57ef6-e178bd2ea92ls1296342276.1.-pod-prod-04-us; Sat, 24 Aug 2024
- 06:47:24 -0700 (PDT)
-X-Forwarded-Encrypted: i=2; AJvYcCU0S+oS8zMrlhsZwF1hUvcgYCL6xCxge1wPwom/j5+9b/3eiB/HBQmJKU7DUx5wb+OWAvQQQtGvBNQC/Q==@lists.one-eyed-alien.net
-X-Received: by 2002:a05:690c:4244:b0:6ab:e840:7f4d with SMTP id 00721157ae682-6c6299ff431mr43529897b3.46.1724507244016;
-        Sat, 24 Aug 2024 06:47:24 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1724507244; cv=none;
+Received: by 2002:a05:622a:198c:b0:447:f206:4e7c with SMTP id
+ d75a77b69052e-454fc357b21ls38056711cf.2.-pod-prod-07-us; Sat, 24 Aug 2024
+ 08:21:02 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCXRiSIsX11soGAMOFkJEkne7Aj40cNRVn5mftaRF3fk3+TsW7m9u7tRELwSWFC6H8M+lyVN6129A4kHzw==@lists.one-eyed-alien.net
+X-Received: by 2002:a05:620a:1994:b0:7a5:419:24c3 with SMTP id af79cd13be357-7a689701f9dmr649858885a.21.1724512862355;
+        Sat, 24 Aug 2024 08:21:02 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1724512862; cv=none;
         d=google.com; s=arc-20160816;
-        b=pVRhzRHeTo4d/kBO4cGG2jQPlAIXUcAJ8CWoE8mW8+OJj6mQVLIv7ocnF0mNsXxwP+
-         N7nsqGURM4Kobo/g58+ygXTvdZcqgAbHyjQOz31v6k0Shu47dcRnJrzonba/MU1c9BTH
-         c5DqcfzL7SJwjBuVLlDEYAcFJHpWuc3KVYeLqTpZ0r2wKbFwjBoaQkqm4Xr5mNtgPwF7
-         TwBf7AvlCman1YNbzwg0HmE643GANbRC7cd0WvrQf3VvAprss2Mm92U1vAeGCqdY7qWf
-         3J74pESWy3BHal/mEtdcyKkS0uMaHEkoSqRvweMdej95Ht+V8iXjpS166jgujs7XfTta
-         XO4g==
+        b=NmVKqNfNvA5RKSr7PqyLkSaF14fJUEOGAkZ1N0oUhmb1uPN9eRCRsxjnDOmLTe3jYz
+         LFbK712awQJWiLzpMeQHkZ74SwLgyxOBX4JL2mefazthg925t/BP7U4kvTwkigg68P3n
+         aNtDwhn3GzBkpnpMnNhkbgPawhyCM1h1lLMzQ5vt5UIst/RcYzldqlas3DznkexeIq1k
+         dnXBJJpmkgbf6uaHDRfuj5Glj+08NCyh5+ZczatdAIb5C8/IOaDLDDL1bqJAjWKoq/w3
+         EKc3VPNIT+vZ6+Ot2zpSarsx9v3GgNzACes0WuVa5pb8vtICyR/WfsqZ0AHgun7LL8Sy
+         WxOQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:dkim-signature;
-        bh=VrJTdN+d9FOn7wLbxMX7FhFh6wourAJWHL5OBIY5qyw=;
-        fh=+8KszCyil37HuaApPQjQ+4OrdbHeYKvGaowYSTI0/D0=;
-        b=KjpUBcgO1FkFowbcPc7IbfrlVMavNs8UludiNK8V31Nzxy8itXPBLATbNNsdJB4Bk+
-         l3X8GDI3SB9MGZXJh/nV6kZqFfwLLjzIIy9zrvjSy7hRdTKEqWU1S+1iUE1dppLAuHVN
-         aOKnyjgnoo1Y73uuh6pnGy4IzQe98EltrtAphWCuGBUMicGkUKoHido1F8Lw0XggbcAW
-         /dloQsdOuSBpxQ3A+90KdFTzCoV8ZCqsFwVHFjSvN9zcqCEWLo7AH5R+/8Ied5yXjA4r
-         6maP/v8f37z7j0mnkWQnuLfJsEbPxSWma/EH+rcNEKHFQrAsDJvk/BKZcLX5yP0+1bvZ
-         QXJQ==;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:dkim-signature;
+        bh=iFD/HdZvKaQemZyniW7+rQ360L3m9+rOVbHWSYB5I1E=;
+        fh=MMt7USFoQdlV9VWsTnYExQ9tY4GEqVkL1BJQyWk8OSM=;
+        b=jaNIbhEDLDwCmouQiYxcyE0K2jV+swzvOFehZMmZa0H0vR4MHATUhe6t3DJmvTfXVs
+         SuzbL7/tEvFDVUXJENYJFOjtKJFJ+cNf4+YdPuB9suwZAuirDo3/yt0pmRYV3bZcUg4E
+         cR6U1eXFk8H6LyQOVt6hW9lPgnQUdOk/2DdLTjqA8sU8UUHmRWwqOflIHw1jzAL6KYCf
+         sO/AF0s7G0CwYj3Rx1XxirGBpd6LVSdOsduCGCUG/fxTuxZhDqzizL6CJCiF1dHO5KHF
+         Of03XD2v+gxCuwOn/d7K9KZkTQnBI3v4XLzrb/LnhsSMYbg2O/2Jgv/OQ1s/cWJ852E8
+         mkFg==;
         dara=google.com
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@wanadoo.fr header.s=t20230301 header.b=AQac5zvA;
-       spf=pass (google.com: domain of christophe.jaillet@wanadoo.fr designates 80.12.242.80 as permitted sender) smtp.mailfrom=christophe.jaillet@wanadoo.fr;
-       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=wanadoo.fr
-Received: from msa.smtpout.orange.fr (smtp-80.smtpout.orange.fr. [80.12.242.80])
-        by mx.google.com with ESMTPS id af79cd13be357-7a67f40002csi670821385a.391.2024.08.24.06.47.23
+       dkim=pass header.i=@rowland.harvard.edu header.s=google header.b=kSjKsEsu;
+       spf=pass (google.com: domain of stern@g.harvard.edu designates 209.85.220.41 as permitted sender) smtp.mailfrom=stern@g.harvard.edu;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=rowland.harvard.edu;
+       dara=pass header.i=@lists.one-eyed-alien.net
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id af79cd13be357-7a67f3dc773sor452942485a.15.2024.08.24.08.21.02
         for <usb-storage@lists.one-eyed-alien.net>
-        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Sat, 24 Aug 2024 06:47:23 -0700 (PDT)
-Received-SPF: pass (google.com: domain of christophe.jaillet@wanadoo.fr designates 80.12.242.80 as permitted sender) client-ip=80.12.242.80;
-Received: from fedora.home ([90.11.132.44])
-	by smtp.orange.fr with ESMTPA
-	id hr6vsE2q1aZQfhr6vsx39B; Sat, 24 Aug 2024 15:47:23 +0200
-X-ME-Helo: fedora.home
-X-ME-Auth: Y2hyaXN0b3BoZS5qYWlsbGV0QHdhbmFkb28uZnI=
-X-ME-Date: Sat, 24 Aug 2024 15:47:23 +0200
-X-ME-IP: 90.11.132.44
-From: "'Christophe JAILLET' via USB Mass Storage on Linux" <usb-storage@lists.one-eyed-alien.net>
-To: Alan Stern <stern@rowland.harvard.edu>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Oliver Neukum <oneukum@suse.com>
-Cc: linux-kernel@vger.kernel.org,
-	kernel-janitors@vger.kernel.org,
-	Christophe JAILLET <christophe.jaillet@wanadoo.fr>,
-	linux-usb@vger.kernel.org,
-	usb-storage@lists.one-eyed-alien.net,
-	linux-scsi@vger.kernel.org
-Subject: [usb-storage] [PATCH] usb-storage: Constify struct usb_device_id and us_unusual_dev
-Date: Sat, 24 Aug 2024 15:47:07 +0200
-Message-ID: <b1b75a2a64b1f6cfad2a611f71393f281178fd3f.1724507157.git.christophe.jaillet@wanadoo.fr>
-X-Mailer: git-send-email 2.46.0
+        (Google Transport Security);
+        Sat, 24 Aug 2024 08:21:02 -0700 (PDT)
+Received-SPF: pass (google.com: domain of stern@g.harvard.edu designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+X-Forwarded-Encrypted: i=1; AJvYcCVe4YHmndCph+nCtJKJMPbe/Bi+Z9eUfVeWA2HNEFBPFm4TPSh890N/dCZwTiAIdsI0teWJHuAov2+2ow==@lists.one-eyed-alien.net
+X-Received: by 2002:a05:620a:24d0:b0:79e:ff1a:2359 with SMTP id af79cd13be357-7a6896e3e5amr812084585a.14.1724512861875;
+        Sat, 24 Aug 2024 08:21:01 -0700 (PDT)
+Received: from rowland.harvard.edu ([2601:19b:681:fd10::546])
+        by smtp.gmail.com with ESMTPSA id af79cd13be357-7a67f3fbdafsm285372585a.119.2024.08.24.08.21.00
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 24 Aug 2024 08:21:01 -0700 (PDT)
+Date: Sat, 24 Aug 2024 11:20:58 -0400
+From: Alan Stern <stern@rowland.harvard.edu>
+To: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Oliver Neukum <oneukum@suse.com>, linux-kernel@vger.kernel.org,
+	kernel-janitors@vger.kernel.org, linux-usb@vger.kernel.org,
+	usb-storage@lists.one-eyed-alien.net, linux-scsi@vger.kernel.org
+Subject: [usb-storage] Re: [PATCH] usb-storage: Constify struct usb_device_id
+ and us_unusual_dev
+Message-ID: <59fe0f83-168c-4f23-b2bf-504649f29d75@rowland.harvard.edu>
+References: <b1b75a2a64b1f6cfad2a611f71393f281178fd3f.1724507157.git.christophe.jaillet@wanadoo.fr>
 MIME-Version: 1.0
-X-Original-Sender: christophe.jaillet@wanadoo.fr
-X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@wanadoo.fr header.s=t20230301 header.b=AQac5zvA;       spf=pass
- (google.com: domain of christophe.jaillet@wanadoo.fr designates 80.12.242.80
- as permitted sender) smtp.mailfrom=christophe.jaillet@wanadoo.fr;
-       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=wanadoo.fr
-X-Original-From: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
-Reply-To: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
 Content-Type: text/plain; charset="UTF-8"
+Content-Disposition: inline
+In-Reply-To: <b1b75a2a64b1f6cfad2a611f71393f281178fd3f.1724507157.git.christophe.jaillet@wanadoo.fr>
+X-Original-Sender: stern@rowland.harvard.edu
+X-Original-Authentication-Results: mx.google.com;       dkim=pass
+ header.i=@rowland.harvard.edu header.s=google header.b=kSjKsEsu;
+       spf=pass (google.com: domain of stern@g.harvard.edu designates
+ 209.85.220.41 as permitted sender) smtp.mailfrom=stern@g.harvard.edu;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=rowland.harvard.edu;
+       dara=pass header.i=@lists.one-eyed-alien.net
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -145,328 +148,51 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-'struct usb_device_id' and 'struct us_unusual_dev' are not modified in
-these drivers.
+On Sat, Aug 24, 2024 at 03:47:07PM +0200, 'Christophe JAILLET' via USB Mass Storage on Linux wrote:
+> 'struct usb_device_id' and 'struct us_unusual_dev' are not modified in
+> these drivers.
+> 
+> Constifying these structures moves some data to a read-only section, so
+> increase overall security, especially when the structure holds some
+> function pointers (which is the case for struct us_unusual_dev).
+> 
+> On a x86_64, with allmodconfig, as an example:
+> Before:
+> ======
+>    text	   data	    bss	    dec	    hex	filename
+>   25249	   4261	    896	  30406	   76c6	drivers/usb/storage/alauda.o
+>    3969	    672	    360	   5001	   1389	drivers/usb/storage/cypress_atacb.o
+> 
+> After:
+> =====
+>    text	   data	    bss	    dec	    hex	filename
+>   25461	   4041	    896	  30398	   76be	drivers/usb/storage/alauda.o
+>    4225	    400	    360	   4985	   1379	drivers/usb/storage/cypress_atacb.o
+> 
+> Signed-off-by: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
+> ---
+> Compile tested-only.
+> 
+> I hope that a single patch for all drivers in drivers/usb/storage/ is fine.
+> ---
+>  drivers/usb/storage/alauda.c        | 4 ++--
+>  drivers/usb/storage/cypress_atacb.c | 4 ++--
+>  drivers/usb/storage/datafab.c       | 4 ++--
+>  drivers/usb/storage/ene_ub6250.c    | 4 ++--
+>  drivers/usb/storage/freecom.c       | 4 ++--
+>  drivers/usb/storage/isd200.c        | 4 ++--
+>  drivers/usb/storage/jumpshot.c      | 4 ++--
+>  drivers/usb/storage/karma.c         | 4 ++--
+>  drivers/usb/storage/onetouch.c      | 4 ++--
+>  drivers/usb/storage/sddr09.c        | 4 ++--
+>  drivers/usb/storage/sddr55.c        | 4 ++--
+>  drivers/usb/storage/shuttle_usbat.c | 4 ++--
+>  drivers/usb/storage/uas.c           | 2 +-
+>  13 files changed, 25 insertions(+), 25 deletions(-)
 
-Constifying these structures moves some data to a read-only section, so
-increase overall security, especially when the structure holds some
-function pointers (which is the case for struct us_unusual_dev).
-
-On a x86_64, with allmodconfig, as an example:
-Before:
-======
-   text	   data	    bss	    dec	    hex	filename
-  25249	   4261	    896	  30406	   76c6	drivers/usb/storage/alauda.o
-   3969	    672	    360	   5001	   1389	drivers/usb/storage/cypress_atacb.o
-
-After:
-=====
-   text	   data	    bss	    dec	    hex	filename
-  25461	   4041	    896	  30398	   76be	drivers/usb/storage/alauda.o
-   4225	    400	    360	   4985	   1379	drivers/usb/storage/cypress_atacb.o
-
-Signed-off-by: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
----
-Compile tested-only.
-
-I hope that a single patch for all drivers in drivers/usb/storage/ is fine.
----
- drivers/usb/storage/alauda.c        | 4 ++--
- drivers/usb/storage/cypress_atacb.c | 4 ++--
- drivers/usb/storage/datafab.c       | 4 ++--
- drivers/usb/storage/ene_ub6250.c    | 4 ++--
- drivers/usb/storage/freecom.c       | 4 ++--
- drivers/usb/storage/isd200.c        | 4 ++--
- drivers/usb/storage/jumpshot.c      | 4 ++--
- drivers/usb/storage/karma.c         | 4 ++--
- drivers/usb/storage/onetouch.c      | 4 ++--
- drivers/usb/storage/sddr09.c        | 4 ++--
- drivers/usb/storage/sddr55.c        | 4 ++--
- drivers/usb/storage/shuttle_usbat.c | 4 ++--
- drivers/usb/storage/uas.c           | 2 +-
- 13 files changed, 25 insertions(+), 25 deletions(-)
-
-diff --git a/drivers/usb/storage/alauda.c b/drivers/usb/storage/alauda.c
-index 40d34cc28344..a9d3c58ce7d9 100644
---- a/drivers/usb/storage/alauda.c
-+++ b/drivers/usb/storage/alauda.c
-@@ -132,7 +132,7 @@ static int init_alauda(struct us_data *us);
- { USB_DEVICE_VER(id_vendor, id_product, bcdDeviceMin, bcdDeviceMax), \
-   .driver_info = (flags) }
- 
--static struct usb_device_id alauda_usb_ids[] = {
-+static const struct usb_device_id alauda_usb_ids[] = {
- #	include "unusual_alauda.h"
- 	{ }		/* Terminating entry */
- };
-@@ -154,7 +154,7 @@ MODULE_DEVICE_TABLE(usb, alauda_usb_ids);
- 	.initFunction = init_function,	\
- }
- 
--static struct us_unusual_dev alauda_unusual_dev_list[] = {
-+static const struct us_unusual_dev alauda_unusual_dev_list[] = {
- #	include "unusual_alauda.h"
- 	{ }		/* Terminating entry */
- };
-diff --git a/drivers/usb/storage/cypress_atacb.c b/drivers/usb/storage/cypress_atacb.c
-index 98b3ec352a13..30dfd0082474 100644
---- a/drivers/usb/storage/cypress_atacb.c
-+++ b/drivers/usb/storage/cypress_atacb.c
-@@ -33,7 +33,7 @@ MODULE_IMPORT_NS(USB_STORAGE);
- { USB_DEVICE_VER(id_vendor, id_product, bcdDeviceMin, bcdDeviceMax), \
-   .driver_info = (flags) }
- 
--static struct usb_device_id cypress_usb_ids[] = {
-+static const struct usb_device_id cypress_usb_ids[] = {
- #	include "unusual_cypress.h"
- 	{ }		/* Terminating entry */
- };
-@@ -55,7 +55,7 @@ MODULE_DEVICE_TABLE(usb, cypress_usb_ids);
- 	.initFunction = init_function,	\
- }
- 
--static struct us_unusual_dev cypress_unusual_dev_list[] = {
-+static const struct us_unusual_dev cypress_unusual_dev_list[] = {
- #	include "unusual_cypress.h"
- 	{ }		/* Terminating entry */
- };
-diff --git a/drivers/usb/storage/datafab.c b/drivers/usb/storage/datafab.c
-index bcc4a2fad863..3ea5601d16b8 100644
---- a/drivers/usb/storage/datafab.c
-+++ b/drivers/usb/storage/datafab.c
-@@ -80,7 +80,7 @@ static int datafab_determine_lun(struct us_data *us,
- { USB_DEVICE_VER(id_vendor, id_product, bcdDeviceMin, bcdDeviceMax), \
-   .driver_info = (flags) }
- 
--static struct usb_device_id datafab_usb_ids[] = {
-+static const struct usb_device_id datafab_usb_ids[] = {
- #	include "unusual_datafab.h"
- 	{ }		/* Terminating entry */
- };
-@@ -102,7 +102,7 @@ MODULE_DEVICE_TABLE(usb, datafab_usb_ids);
- 	.initFunction = init_function,	\
- }
- 
--static struct us_unusual_dev datafab_unusual_dev_list[] = {
-+static const struct us_unusual_dev datafab_unusual_dev_list[] = {
- #	include "unusual_datafab.h"
- 	{ }		/* Terminating entry */
- };
-diff --git a/drivers/usb/storage/ene_ub6250.c b/drivers/usb/storage/ene_ub6250.c
-index 97c66c0d91f4..73dd276ce59c 100644
---- a/drivers/usb/storage/ene_ub6250.c
-+++ b/drivers/usb/storage/ene_ub6250.c
-@@ -43,7 +43,7 @@ MODULE_FIRMWARE(MS_RW_FIRMWARE);
- { USB_DEVICE_VER(id_vendor, id_product, bcdDeviceMin, bcdDeviceMax), \
- 	.driver_info = (flags)}
- 
--static struct usb_device_id ene_ub6250_usb_ids[] = {
-+static const struct usb_device_id ene_ub6250_usb_ids[] = {
- #	include "unusual_ene_ub6250.h"
- 	{ }		/* Terminating entry */
- };
-@@ -65,7 +65,7 @@ MODULE_DEVICE_TABLE(usb, ene_ub6250_usb_ids);
- 	.initFunction = init_function,	\
- }
- 
--static struct us_unusual_dev ene_ub6250_unusual_dev_list[] = {
-+static const struct us_unusual_dev ene_ub6250_unusual_dev_list[] = {
- #	include "unusual_ene_ub6250.h"
- 	{ }		/* Terminating entry */
- };
-diff --git a/drivers/usb/storage/freecom.c b/drivers/usb/storage/freecom.c
-index c3ce51c2dabd..cab27ba7a32a 100644
---- a/drivers/usb/storage/freecom.c
-+++ b/drivers/usb/storage/freecom.c
-@@ -119,7 +119,7 @@ static int init_freecom(struct us_data *us);
- { USB_DEVICE_VER(id_vendor, id_product, bcdDeviceMin, bcdDeviceMax), \
-   .driver_info = (flags) }
- 
--static struct usb_device_id freecom_usb_ids[] = {
-+static const struct usb_device_id freecom_usb_ids[] = {
- #	include "unusual_freecom.h"
- 	{ }		/* Terminating entry */
- };
-@@ -141,7 +141,7 @@ MODULE_DEVICE_TABLE(usb, freecom_usb_ids);
- 	.initFunction = init_function,	\
- }
- 
--static struct us_unusual_dev freecom_unusual_dev_list[] = {
-+static const struct us_unusual_dev freecom_unusual_dev_list[] = {
- #	include "unusual_freecom.h"
- 	{ }		/* Terminating entry */
- };
-diff --git a/drivers/usb/storage/isd200.c b/drivers/usb/storage/isd200.c
-index 300aeef160e7..f2254eb3c0d7 100644
---- a/drivers/usb/storage/isd200.c
-+++ b/drivers/usb/storage/isd200.c
-@@ -67,7 +67,7 @@ static int isd200_Initialization(struct us_data *us);
- { USB_DEVICE_VER(id_vendor, id_product, bcdDeviceMin, bcdDeviceMax), \
-   .driver_info = (flags) }
- 
--static struct usb_device_id isd200_usb_ids[] = {
-+static const struct usb_device_id isd200_usb_ids[] = {
- #	include "unusual_isd200.h"
- 	{ }		/* Terminating entry */
- };
-@@ -89,7 +89,7 @@ MODULE_DEVICE_TABLE(usb, isd200_usb_ids);
- 	.initFunction = init_function,	\
- }
- 
--static struct us_unusual_dev isd200_unusual_dev_list[] = {
-+static const struct us_unusual_dev isd200_unusual_dev_list[] = {
- #	include "unusual_isd200.h"
- 	{ }		/* Terminating entry */
- };
-diff --git a/drivers/usb/storage/jumpshot.c b/drivers/usb/storage/jumpshot.c
-index 229bf0c1afc9..0e71a8f33c2b 100644
---- a/drivers/usb/storage/jumpshot.c
-+++ b/drivers/usb/storage/jumpshot.c
-@@ -62,7 +62,7 @@ MODULE_IMPORT_NS(USB_STORAGE);
- { USB_DEVICE_VER(id_vendor, id_product, bcdDeviceMin, bcdDeviceMax), \
-   .driver_info = (flags) }
- 
--static struct usb_device_id jumpshot_usb_ids[] = {
-+static const struct usb_device_id jumpshot_usb_ids[] = {
- #	include "unusual_jumpshot.h"
- 	{ }		/* Terminating entry */
- };
-@@ -84,7 +84,7 @@ MODULE_DEVICE_TABLE(usb, jumpshot_usb_ids);
- 	.initFunction = init_function,	\
- }
- 
--static struct us_unusual_dev jumpshot_unusual_dev_list[] = {
-+static const struct us_unusual_dev jumpshot_unusual_dev_list[] = {
- #	include "unusual_jumpshot.h"
- 	{ }		/* Terminating entry */
- };
-diff --git a/drivers/usb/storage/karma.c b/drivers/usb/storage/karma.c
-index 38ddfedef629..d6a5e54f2ca8 100644
---- a/drivers/usb/storage/karma.c
-+++ b/drivers/usb/storage/karma.c
-@@ -51,7 +51,7 @@ static int rio_karma_init(struct us_data *us);
- { USB_DEVICE_VER(id_vendor, id_product, bcdDeviceMin, bcdDeviceMax), \
-   .driver_info = (flags) }
- 
--static struct usb_device_id karma_usb_ids[] = {
-+static const struct usb_device_id karma_usb_ids[] = {
- #	include "unusual_karma.h"
- 	{ }		/* Terminating entry */
- };
-@@ -73,7 +73,7 @@ MODULE_DEVICE_TABLE(usb, karma_usb_ids);
- 	.initFunction = init_function,	\
- }
- 
--static struct us_unusual_dev karma_unusual_dev_list[] = {
-+static const struct us_unusual_dev karma_unusual_dev_list[] = {
- #	include "unusual_karma.h"
- 	{ }		/* Terminating entry */
- };
-diff --git a/drivers/usb/storage/onetouch.c b/drivers/usb/storage/onetouch.c
-index 01f3c2779ccf..f97cf6cadb8e 100644
---- a/drivers/usb/storage/onetouch.c
-+++ b/drivers/usb/storage/onetouch.c
-@@ -55,7 +55,7 @@ struct usb_onetouch {
- { USB_DEVICE_VER(id_vendor, id_product, bcdDeviceMin, bcdDeviceMax), \
-   .driver_info = (flags) }
- 
--static struct usb_device_id onetouch_usb_ids[] = {
-+static const struct usb_device_id onetouch_usb_ids[] = {
- #	include "unusual_onetouch.h"
- 	{ }		/* Terminating entry */
- };
-@@ -77,7 +77,7 @@ MODULE_DEVICE_TABLE(usb, onetouch_usb_ids);
- 	.initFunction = init_function,	\
- }
- 
--static struct us_unusual_dev onetouch_unusual_dev_list[] = {
-+static const struct us_unusual_dev onetouch_unusual_dev_list[] = {
- #	include "unusual_onetouch.h"
- 	{ }		/* Terminating entry */
- };
-diff --git a/drivers/usb/storage/sddr09.c b/drivers/usb/storage/sddr09.c
-index 51bcd4a43690..03d1b9c69ea1 100644
---- a/drivers/usb/storage/sddr09.c
-+++ b/drivers/usb/storage/sddr09.c
-@@ -63,7 +63,7 @@ static int usb_stor_sddr09_init(struct us_data *us);
- { USB_DEVICE_VER(id_vendor, id_product, bcdDeviceMin, bcdDeviceMax), \
-   .driver_info = (flags) }
- 
--static struct usb_device_id sddr09_usb_ids[] = {
-+static const struct usb_device_id sddr09_usb_ids[] = {
- #	include "unusual_sddr09.h"
- 	{ }		/* Terminating entry */
- };
-@@ -85,7 +85,7 @@ MODULE_DEVICE_TABLE(usb, sddr09_usb_ids);
- 	.initFunction = init_function,	\
- }
- 
--static struct us_unusual_dev sddr09_unusual_dev_list[] = {
-+static const struct us_unusual_dev sddr09_unusual_dev_list[] = {
- #	include "unusual_sddr09.h"
- 	{ }		/* Terminating entry */
- };
-diff --git a/drivers/usb/storage/sddr55.c b/drivers/usb/storage/sddr55.c
-index 0aa079405d23..b8227478a7ad 100644
---- a/drivers/usb/storage/sddr55.c
-+++ b/drivers/usb/storage/sddr55.c
-@@ -40,7 +40,7 @@ MODULE_IMPORT_NS(USB_STORAGE);
- { USB_DEVICE_VER(id_vendor, id_product, bcdDeviceMin, bcdDeviceMax), \
-   .driver_info = (flags) }
- 
--static struct usb_device_id sddr55_usb_ids[] = {
-+static const struct usb_device_id sddr55_usb_ids[] = {
- #	include "unusual_sddr55.h"
- 	{ }		/* Terminating entry */
- };
-@@ -62,7 +62,7 @@ MODULE_DEVICE_TABLE(usb, sddr55_usb_ids);
- 	.initFunction = init_function,	\
- }
- 
--static struct us_unusual_dev sddr55_unusual_dev_list[] = {
-+static const struct us_unusual_dev sddr55_unusual_dev_list[] = {
- #	include "unusual_sddr55.h"
- 	{ }		/* Terminating entry */
- };
-diff --git a/drivers/usb/storage/shuttle_usbat.c b/drivers/usb/storage/shuttle_usbat.c
-index f0d0ca37163d..e7c224b7c464 100644
---- a/drivers/usb/storage/shuttle_usbat.c
-+++ b/drivers/usb/storage/shuttle_usbat.c
-@@ -162,7 +162,7 @@ static int init_usbat_flash(struct us_data *us);
- { USB_DEVICE_VER(id_vendor, id_product, bcdDeviceMin, bcdDeviceMax), \
-   .driver_info = (flags) }
- 
--static struct usb_device_id usbat_usb_ids[] = {
-+static const struct usb_device_id usbat_usb_ids[] = {
- #	include "unusual_usbat.h"
- 	{ }		/* Terminating entry */
- };
-@@ -184,7 +184,7 @@ MODULE_DEVICE_TABLE(usb, usbat_usb_ids);
- 	.initFunction = init_function,	\
- }
- 
--static struct us_unusual_dev usbat_unusual_dev_list[] = {
-+static const struct us_unusual_dev usbat_unusual_dev_list[] = {
- #	include "unusual_usbat.h"
- 	{ }		/* Terminating entry */
- };
-diff --git a/drivers/usb/storage/uas.c b/drivers/usb/storage/uas.c
-index c223b4dc1b19..03043d567fa1 100644
---- a/drivers/usb/storage/uas.c
-+++ b/drivers/usb/storage/uas.c
-@@ -927,7 +927,7 @@ static const struct scsi_host_template uas_host_template = {
- { USB_DEVICE_VER(id_vendor, id_product, bcdDeviceMin, bcdDeviceMax), \
- 	.driver_info = (flags) }
- 
--static struct usb_device_id uas_usb_ids[] = {
-+static const struct usb_device_id uas_usb_ids[] = {
- #	include "unusual_uas.h"
- 	{ USB_INTERFACE_INFO(USB_CLASS_MASS_STORAGE, USB_SC_SCSI, USB_PR_BULK) },
- 	{ USB_INTERFACE_INFO(USB_CLASS_MASS_STORAGE, USB_SC_SCSI, USB_PR_UAS) },
--- 
-2.46.0
+Acked-by: Alan Stern <stern@rowland.harvard.edu>
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/b1b75a2a64b1f6cfad2a611f71393f281178fd3f.1724507157.git.christophe.jaillet%40wanadoo.fr.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/59fe0f83-168c-4f23-b2bf-504649f29d75%40rowland.harvard.edu.
