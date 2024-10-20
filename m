@@ -1,140 +1,135 @@
-Return-Path: <usb-storage+bncBCU3TE7MRIPRB5FS2C4AMGQEZIMV4LI@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBCUJ7YGL3QFBB4WA2K4AMGQEE3RTTOQ@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-oi1-x248.google.com (mail-oi1-x248.google.com [IPv6:2607:f8b0:4864:20::248])
-	by mail.lfdr.de (Postfix) with ESMTPS id 74E569A50C9
-	for <lists+usb-storage@lfdr.de>; Sat, 19 Oct 2024 22:41:26 +0200 (CEST)
-Received: by mail-oi1-x248.google.com with SMTP id 5614622812f47-3e27a0b942esf2684639b6e.3
-        for <lists+usb-storage@lfdr.de>; Sat, 19 Oct 2024 13:41:26 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1729370485; cv=pass;
+Received: from mail-oa1-x47.google.com (mail-oa1-x47.google.com [IPv6:2001:4860:4864:20::47])
+	by mail.lfdr.de (Postfix) with ESMTPS id 736849A52DA
+	for <lists+usb-storage@lfdr.de>; Sun, 20 Oct 2024 08:17:24 +0200 (CEST)
+Received: by mail-oa1-x47.google.com with SMTP id 586e51a60fabf-288c53ab7absf3348041fac.3
+        for <lists+usb-storage@lfdr.de>; Sat, 19 Oct 2024 23:17:23 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1729405042; cv=pass;
         d=google.com; s=arc-20240605;
-        b=I7Btk4PEMOR3FMeSUQgVIYUaWp+YYwTJCnzppCoAcCwnam7MESqg2FUuBehjFFWdtu
-         3W9zU5Yhlh6epNyl6I3pU2cXGAU1QM6W8y+n786etv+1JG2m4ZrwJw0zjPDXGWTUWmap
-         0qzLfwO7on/baCm+PZ+A/hqetR7wc7RR5bqy+VvgIR4TUD084TzI1+oQ6hr9LqNrmdcm
-         I+g6jn325XMlcol7fqvF4BLvrp0akIvrCSM5Tj8sMnXuj3eXvoqDUv5XvUy5+Y7Ckex/
-         ZHGkq38hij/52pKUNcALpGTrW4wlVgObV48bs/EvBslSLsyked4kzwiN3wa6xASR39Iv
-         7KDQ==
+        b=VTjad6WbODywIXV8weSZNF1Ufa5nixgINDRDAIQGOkg89DPSFMJPkl8DVzabZMAzRq
+         YPkEkHVdEQvtn0q3zE4YsKuEbHvlN4OfCc0+jjbQNSvEz/4SQgDZqqOuroVWp5d5ZNuH
+         NPyFWsAlfg+yleunbyNr61KskisY0ICd/MnQZWzDxLVDWXAeHy5XBsZOVtbfvn38CQjH
+         Ge+N/cn8U2SiihRlNM5tEgFVjxmoO/BvU+6gYJcu5ecs78OAeWPcqjyn3I0sFRu0wtG3
+         xtC8yWfFtRsDF87ppex5q1ZQ5/sY6fO7v9X2Mar06VVuIYwzZcFRwLhazj4lt+5XnVaB
+         Uy5Q==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:mime-version:message-id:date
-         :subject:cc:to:from:sender:dkim-signature;
-        bh=V2pS2WiTqi0k837l4xxz0w5hjo+z38+xUum4kjhhEe4=;
-        fh=QrLddoDHd93IPNpgLuAUiLwmk7sIhu1xNHKtzDofh/A=;
-        b=F+0ncoGneTy2h/qNppNkA2urbI/PquW45Ie0aVLLkGV4u2ewynris2fSGH4lENV5us
-         J2MeeKp5phq1j/P3OALoRvdYdhFRVfvnoUDQeviToCUY07kuu+UAsqmmr09EOfWhCV7O
-         lgfh5OQZHPGHYw3BodY0ZxysfmbkZBh/XCT3HRN/moGPl7IHba8wP2eixaXHQms/n+Kc
-         +zbsClcqUehS0U1C//7H1qTjrc0hd52gZMBjgLfgv53M3d7OmkjQdghsINTiorzY5MCb
-         M6Hcv+/7a66/gIxj4pnV8doinbZn/U0b2QZyHw1INuJluoxaF29BHZdREKIBj+r+f9Ns
-         tzmA==;
+         :list-id:mailing-list:precedence:in-reply-to:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date:sender
+         :dkim-signature;
+        bh=iI+QANBGmVPAYb/aYiMvLFHzn2q/0B/QCcO/UIaMumY=;
+        fh=7aZUkD2aDZG3gIB4KcNC2EolbLGO8Oj9Bqa3bejoGIU=;
+        b=Iog9XTqwQp6HexyS+VZB2U8nTyqOTVh4FGIzhUhA4Mt1yxP8EViYC/Yva8gbwX/y/B
+         GfkVSoOqMl8fQUgXEiJm12rI/98XO9iV4Tybl4uXjr/L99SMsO7FOHNUyKF+vX3EHiEa
+         ArZrqSf546qD6jwA/YCKwLw+4Xx9S0yV9EIgQ64KGJt2EWmfI/w0WxAFMuTjZ02ZXUS4
+         NF1cUA0ZZMCyCkfOJLr74uymfz68Os7cDvPXPMIm4WfJS8FEEZD2YN4hrWQzfd6BqudH
+         J4DhzWd4+xJLFQttyLsrwWV2N/GcHwajxpWVCsZ2sIjMVom1srHj02PLIWazmIeNFcoT
+         IrrQ==;
         darn=lfdr.de
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@163.com header.s=s110527 header.b=KvvaeNvA;
-       spf=pass (google.com: domain of 18500469033@163.com designates 117.135.210.2 as permitted sender) smtp.mailfrom=18500469033@163.com;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=163.com
+       dkim=pass header.i=@linuxfoundation.org header.s=korg header.b=1zO+4W+q;
+       spf=pass (google.com: domain of gregkh@linuxfoundation.org designates 139.178.84.217 as permitted sender) smtp.mailfrom=gregkh@linuxfoundation.org;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=linuxfoundation.org
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1729370485; x=1729975285; darn=lfdr.de;
+        d=lists.one-eyed-alien.net; s=google; t=1729405042; x=1730009842; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:x-original-authentication-results
-         :x-original-sender:mime-version:message-id:date:subject:cc:to:from
-         :sender:from:to:cc:subject:date:message-id:reply-to;
-        bh=V2pS2WiTqi0k837l4xxz0w5hjo+z38+xUum4kjhhEe4=;
-        b=Wx6M4cT11z4GpLvSI+qSn1veyI5cZ1LGDyHdiIHTlRGTC2ZLiAcm3CKdPgqGXfSCyU
-         v0MIh24o/Ww0XI0m1oCtL3EOy/uXXJ/GpE3vAkqBi7tzs1gV65lfMtsgf3xx5yHzMs8L
-         caXNK9pJssUbfBLS3ukH9kj+ff2wo1EmOr50w=
+         :x-original-sender:in-reply-to:content-disposition:mime-version
+         :references:message-id:subject:cc:to:from:date:sender:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=iI+QANBGmVPAYb/aYiMvLFHzn2q/0B/QCcO/UIaMumY=;
+        b=UN2zTJnpSU6B00OP1iX8dEhV+OLdVAh/BlB0ykOtgVuoBGa5bruruf4zJyE0mZJAgT
+         ost1an8DZ+oZhMwOWxarE5lagP1VCFHS3IrN3iihxqbbRUtl0zgq1dYNT47UFuG0SoIH
+         OOKjlGKZAGWmO/Zt9fG+mDfQ0VKW2lRZqo/5w=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1729370485; x=1729975285;
+        d=1e100.net; s=20230601; t=1729405042; x=1730009842;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:x-original-authentication-results
-         :x-original-sender:mime-version:message-id:date:subject:cc:to:from
-         :x-beenthere:x-gm-message-state:sender:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=V2pS2WiTqi0k837l4xxz0w5hjo+z38+xUum4kjhhEe4=;
-        b=ok+f+LTtI/dNA+HeTqy5m4Tgv90+bdRJ5m9jJhtYPEEhGxL4mGT1td8F5Qc4B7kmVV
-         Ej3D40HI8g+wj5JjqBmwxJTccEYp2mcx1z0nEY42SNBSRujtshEbzCNgx0sSPc/DeU9z
-         Ne/EMVF2RVzv2bJFTNbYZOdAYqYLoqGq50nIm4L7YuQqJV0z12jr46alBqRihGUfcAtg
-         LyTd1b2naVZupRpkzmMbp8hT32WLJdChIDwF17yxmrUU29Q9ox8Q0FSGTr49/auBFti9
-         eM7skoMXKCY6+NSCEu/cjGrzqwoSZ62Yxj2I//+tslGtkRqXOh651+vdIqy6Itl1SsLT
-         cOFw==
+         :x-spam-checked-in-group:list-id:mailing-list:precedence
+         :x-original-authentication-results:x-original-sender:in-reply-to
+         :content-disposition:mime-version:references:message-id:subject:cc
+         :to:from:date:x-beenthere:x-gm-message-state:sender:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=iI+QANBGmVPAYb/aYiMvLFHzn2q/0B/QCcO/UIaMumY=;
+        b=tlw3/unU03aAiAgrq/z5VYtAAdUpGfrJbBeKWsEvZ4j/PaFmfBvAxlKE7dr4hPvTJY
+         QlxR6jTgxQFT2PzQynwtmK8vUPiwZKLnCRlERKk9wXgpmkvGBTs2NT7Tgli22WZODzrJ
+         QrUJfpgvXVB25Pbjb87NatLxlacXYJwaH46RuTMsWodefIJLcUgr7mhDRWnZbPNG5te4
+         LqhSEdM/ZL54FiEP2fMrCBXES6nrFDiL0T/5hc72Am/4RDYAoky3NHbzgouPY6ahFO7K
+         XxNcrQyPJzaobZ+xyAv5RfHktNEyC48R4tzDl6IugcIAQi7Ij0MRrxGo/YlpSBKE+VOU
+         NwVQ==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Forwarded-Encrypted: i=2; AJvYcCWXDRpd93ufjtccI16fqZtsVhmfZNagNbQ4339ieDw/891cb6COwnwt5A7++kgPtPujS/jKLg==@lfdr.de
-X-Gm-Message-State: AOJu0YyXCa0UpTaNz8qi6EwtTPAi9Kw6Qj6V6GkjOUJwDlT0CCI/IrR9
-	lKpFdvsmYn3et1fChFk2GQ6n0ouOMuNX2gLXrvTxJbUeAE1miF3Urf033wjd2IE=
-X-Google-Smtp-Source: AGHT+IGt0hDlZi50a1h/MUbSXDbbi7UAQUpLmpSVfepQOQhyErwje9bofwq7m5JjXPglv8gA9KXSaA==
-X-Received: by 2002:a05:6870:3925:b0:26f:ddfa:3564 with SMTP id 586e51a60fabf-2892c2577cdmr5235182fac.6.1729370484797;
-        Sat, 19 Oct 2024 13:41:24 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCV5b2kXGiQMvzcmFaug/Tmev4hpupMhReiakFdrQzRnncd8lgeY2eunYMZ6llCnVwGij240AA==@lfdr.de
+X-Gm-Message-State: AOJu0Ywwt5H9xYV5LAdR9nJrfzAA0iB5NyISu9q6As4TLud8Q270LZEm
+	A49VR6SZkI5Olp8VSh+E3VsMqMfEBMgKdEKgowC/HotgerzqB0F8QX3Qb04y6dU=
+X-Google-Smtp-Source: AGHT+IGy7FjTzF8457NCnKKehBbFII3goMoZVPfw+7io4H66coWQD7poIrHlEmCo3jddUpM8+uDftQ==
+X-Received: by 2002:a05:6820:610:b0:5eb:7e7c:5303 with SMTP id 006d021491bc7-5eb8b3a7aa3mr4419062eaf.2.1729405042299;
+        Sat, 19 Oct 2024 23:17:22 -0700 (PDT)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a05:6870:6711:b0:25c:b2c1:8569 with SMTP id
- 586e51a60fabf-2890ccb2db0ls2051332fac.1.-pod-prod-04-us; Sat, 19 Oct 2024
- 13:41:24 -0700 (PDT)
-X-Forwarded-Encrypted: i=2; AJvYcCVlB0gAI9s9ykdg8BlDTX4qcw8ERMdeq2h2I2kI4xjUbePYVBIdaN4vVObp3bhWenu3+W65j/kLh5j1Ew==@lists.one-eyed-alien.net
-X-Received: by 2002:a05:6808:399b:b0:3e6:105d:33db with SMTP id 5614622812f47-3e6105d357fmr172985b6e.7.1729370484237;
-        Sat, 19 Oct 2024 13:41:24 -0700 (PDT)
-Received: by 2002:aca:240a:0:b0:3d9:2ea5:e56e with SMTP id 5614622812f47-3e6015a01e0msb6e;
-        Sat, 19 Oct 2024 09:09:39 -0700 (PDT)
-X-Forwarded-Encrypted: i=2; AJvYcCXlKqTK66vMDFic5WsZwlIozqu+IcSHDtkEHFceXufX4xwNGzIFKmaoZYgFMQRpXJPumJKnuhfzGCRx1A==@lists.one-eyed-alien.net
-X-Received: by 2002:a17:902:d507:b0:20c:6ac0:f1f3 with SMTP id d9443c01a7336-20e5a8cfb59mr94672305ad.34.1729354178694;
-        Sat, 19 Oct 2024 09:09:38 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1729354178; cv=none;
+Received: by 2002:a05:6820:22aa:b0:5eb:aaa3:6dad with SMTP id
+ 006d021491bc7-5ebaaa36e5fls310646eaf.0.-pod-prod-09-us; Sat, 19 Oct 2024
+ 23:17:21 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCXuXy0P4X+BYB9SEBYUjaHmbkqgM4fEpUtGl6ReravuJlgDfZv2VR9vMwjw0txmYffwD9080i6rh7x8yQ==@lists.one-eyed-alien.net
+X-Received: by 2002:a05:6830:3687:b0:718:3b7:23e4 with SMTP id 46e09a7af769-7181a8f7b69mr6576846a34.23.1729405041565;
+        Sat, 19 Oct 2024 23:17:21 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1729405041; cv=none;
         d=google.com; s=arc-20240605;
-        b=iU297Xefm4uMA8JuvV1984EDCNmywXjhpEEjAzW/2NryM+i2giZ1VS1HKWK95o0KVS
-         65aH2i+Pfla8G4lvz7gHuyUR5IjiK8ViUg0s/6HRCss/GGxYzID/Zikpllh0BLbaHB1d
-         8naI41q1mHhmtZViTeamlM9wAzItLlmv4RRGs8o552d4J52qfn81tU6lM7DJ7Pyjz6mG
-         lfcQkA3xYh+o4LfTZHjuj+993zsl/JzzWumsuZXvarhjyESvGbnii2pSc1FjoWgPp4mO
-         iMlV81/n2x71mj2bwk2+OO8Res9TezpCjGAUGwIe8Aswqrc6yIZL4yi3iCre8o2gK649
-         oqFg==
+        b=QIzvXBlqigs0cI1X86x8E/9td38M0Cqf6VDUW7Bg+62anFaFdLgWX8QQ95ac/FwY7q
+         SRIufc0zt00HdWVHKRNEsVbCU1a99Y2sxd4HEfQ4eWnRPpPKIF9nmGtJG3SE/jtfnABR
+         uzBIlaSMGNGcY7C/1vd/GtVVmRW8W0PtckmstxdKveB6ccz8aUv+oCP940cdbceNsp8N
+         KEK5OpdgF4F+/D4SmKWB0ijRvN2aSlw127ynTTjoDoH8OzEKDl3O9kHn0xFuOA8yQan4
+         209rSgbGwwbW1gmEZ+AOx/fGakqq9cDwWYrsNlyNQ/9TgzGCK/k+OIUICCE3zVNmUy6E
+         UuQA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:dkim-signature;
-        bh=/nbGo3iWxU6M38i9I2wk5DzIIidP1/C0p11d4f3XdLo=;
-        fh=s91vz4eF0sDHh7hh5nqy0gBc+HglsUgKir+hPvVHJe8=;
-        b=KHjIrYSeUh2S3qEqoWlD5WxkSv3HUefSmNZXdJsQGwzzdwJJtGtQqSJ3axLIuKkk88
-         XbPheoeVHHeQiJ8k7f/cTvk2OlRehDVE/XICGW2xU7cvGLo+tpQwNtd+fRul8a6cHQ6n
-         Fkh6XpTDeJw33AU3K/POgXk10XtytlYgHGdR5o+dtPTdxjn0o44g0olyDQyhBE8WmXT4
-         +p/Yegsf0g6sanUtBwWp8gPrIFZDN3/eLjg7BygVJdqPo3bP7Ekqhnwfl9jjjHui5Rpx
-         vjBLHFDB5bFvj30IlZPHZ3bjHx6cM5+cSlpnRccVyhmXTQOZgeg6KM1usVuyFDlfrXJS
-         fWhw==;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:dkim-signature;
+        bh=ldOoNhi4IdrJjyWljDeozR5mBLUjHei28hhfCdhcuho=;
+        fh=JRI2/7ywVLyOY7Bw8kiJy5Gek2f7ldssQWb5rMa5vWg=;
+        b=JjRrQTQ8ZAI62T2VFWx5OqJpuFqRWqV9qE6gFgE6K5ZV4IL+3JBy36KAEBtb/iuw26
+         rSz+FfolYDCguci69PN3q7NsihBipxCDpwq3PxlY9xP0UNL35ADkbShyyjtGwwB3+8K4
+         fpvaeV4qH/KxvwQm7JM17y8Mkdc4ATRsl+kItPJOv2leoERxk/78yf1S41K3ryBGQwQy
+         6zrvaqavlgsGlq84tw0Rx9SbH/lmC+9ofu43Y9HX67PYERSAIjpTtv5YZX0c1u6czCUf
+         Jix5Fr2h93LJgwsalDKTRXN4g2XP9/esnuorPzKwHJpt8vvJ0zvYSewaw4C/jJOJEz4U
+         QTVw==;
         dara=google.com
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@163.com header.s=s110527 header.b=KvvaeNvA;
-       spf=pass (google.com: domain of 18500469033@163.com designates 117.135.210.2 as permitted sender) smtp.mailfrom=18500469033@163.com;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=163.com
-Received: from m16.mail.163.com (m16.mail.163.com. [117.135.210.2])
-        by mx.google.com with ESMTP id d9443c01a7336-20e5a75320asi41417845ad.146.2024.10.19.09.09.38
-        for <usb-storage@lists.one-eyed-alien.net>;
-        Sat, 19 Oct 2024 09:09:38 -0700 (PDT)
-Received-SPF: pass (google.com: domain of 18500469033@163.com designates 117.135.210.2 as permitted sender) client-ip=117.135.210.2;
-Received: from localhost.localdomain (unknown [114.253.22.201])
-	by gzga-smtp-mtada-g0-4 (Coremail) with SMTP id _____wCnz6a32RNn7NcBCA--.25777S2;
-	Sun, 20 Oct 2024 00:09:31 +0800 (CST)
-From: Dingyan Li <18500469033@163.com>
-To: stern@rowland.harvard.edu,
-	gregkh@linuxfoundation.org
-Cc: linux-usb@vger.kernel.org,
-	usb-storage@lists.one-eyed-alien.net,
-	linux-kernel@vger.kernel.org
-Subject: [usb-storage] [PATCH v1] usb: storage: use US_BULK_FLAG_OUT instead
- of constant values
-Date: Sun, 20 Oct 2024 00:08:22 +0800
-Message-Id: <20241019160822.6862-1-18500469033@163.com>
-X-Mailer: git-send-email 2.25.1
+       dkim=pass header.i=@linuxfoundation.org header.s=korg header.b=1zO+4W+q;
+       spf=pass (google.com: domain of gregkh@linuxfoundation.org designates 139.178.84.217 as permitted sender) smtp.mailfrom=gregkh@linuxfoundation.org;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=linuxfoundation.org
+Received: from dfw.source.kernel.org (dfw.source.kernel.org. [139.178.84.217])
+        by mx.google.com with ESMTPS id 46e09a7af769-7182eb3ddeesi507673a34.89.2024.10.19.23.17.21
+        for <usb-storage@lists.one-eyed-alien.net>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 19 Oct 2024 23:17:21 -0700 (PDT)
+Received-SPF: pass (google.com: domain of gregkh@linuxfoundation.org designates 139.178.84.217 as permitted sender) client-ip=139.178.84.217;
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 7C20F5C53FB;
+	Sun, 20 Oct 2024 06:17:16 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C6CCEC4CEC6;
+	Sun, 20 Oct 2024 06:17:19 +0000 (UTC)
+Date: Sun, 20 Oct 2024 08:17:16 +0200
+From: Greg KH <gregkh@linuxfoundation.org>
+To: Dingyan Li <18500469033@163.com>
+Cc: stern@rowland.harvard.edu, linux-usb@vger.kernel.org,
+	usb-storage@lists.one-eyed-alien.net, linux-kernel@vger.kernel.org
+Subject: [usb-storage] Re: [PATCH v1] usb: storage: use US_BULK_FLAG_OUT
+ instead of constant values
+Message-ID: <2024102056-yearly-caregiver-d684@gregkh>
+References: <20241019160822.6862-1-18500469033@163.com>
 MIME-Version: 1.0
-X-CM-TRANSID: _____wCnz6a32RNn7NcBCA--.25777S2
-X-Coremail-Antispam: 1Uf129KBjvJXoWxZr4DGrWUuFy3uryrCFWDtwb_yoWrur4Upa
-	yDA3y5CFyrKF4Fvw4DJw4UCFWrAwnYgr9rKFWfC3s5ur9xZa48GF90kFZ8Xw1rWrnrZFy2
-	kr4qqF4UCryFgwUanT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
-	9KBjDUYxBIdaVFxhVjvjDU0xZFpf9x07jnMa8UUUUU=
-X-Originating-IP: [114.253.22.201]
-X-CM-SenderInfo: jprykiiquwmiitt6il2tof0z/xtbBZwp9y2cTyut26gAAsS
-X-Original-Sender: 18500469033@163.com
-X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@163.com header.s=s110527 header.b=KvvaeNvA;       spf=pass
- (google.com: domain of 18500469033@163.com designates 117.135.210.2 as
- permitted sender) smtp.mailfrom=18500469033@163.com;       dmarc=pass (p=NONE
- sp=NONE dis=NONE) header.from=163.com
 Content-Type: text/plain; charset="UTF-8"
+Content-Disposition: inline
+In-Reply-To: <20241019160822.6862-1-18500469033@163.com>
+X-Original-Sender: gregkh@linuxfoundation.org
+X-Original-Authentication-Results: mx.google.com;       dkim=pass
+ header.i=@linuxfoundation.org header.s=korg header.b=1zO+4W+q;       spf=pass
+ (google.com: domain of gregkh@linuxfoundation.org designates 139.178.84.217
+ as permitted sender) smtp.mailfrom=gregkh@linuxfoundation.org;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=linuxfoundation.org
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
+X-Spam-Checked-In-Group: usb-storage@lists.one-eyed-alien.net
 X-Google-Group-Id: 960895140360
 List-Post: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/post>,
  <mailto:usb-storage@lists.one-eyed-alien.net>
@@ -146,109 +141,18 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-Macros with good names offer better readability. Besides, fix an error
-in the comments. In the flags, direction is in bit 7 instead of bit 0.
+On Sun, Oct 20, 2024 at 12:08:22AM +0800, Dingyan Li wrote:
+> Macros with good names offer better readability. Besides, fix an error
+> in the comments. In the flags, direction is in bit 7 instead of bit 0.
 
-Signed-off-by: Dingyan Li <18500469033@163.com>
----
- drivers/usb/storage/ene_ub6250.c | 8 ++++----
- drivers/usb/storage/realtek_cr.c | 4 ++--
- drivers/usb/storage/transport.c  | 2 +-
- include/linux/usb/storage.h      | 2 +-
- 4 files changed, 8 insertions(+), 8 deletions(-)
+That means this should be at least 2 different patches please.
+Remember, each change only does one logical thing.
 
-diff --git a/drivers/usb/storage/ene_ub6250.c b/drivers/usb/storage/ene_ub6250.c
-index a4bfbecbf16c..fd46e81388d2 100644
---- a/drivers/usb/storage/ene_ub6250.c
-+++ b/drivers/usb/storage/ene_ub6250.c
-@@ -737,7 +737,7 @@ static int sd_scsi_write(struct us_data *us, struct scsi_cmnd *srb)
- 	memset(bcb, 0, sizeof(struct bulk_cb_wrap));
- 	bcb->Signature = cpu_to_le32(US_BULK_CB_SIGN);
- 	bcb->DataTransferLength = blenByte;
--	bcb->Flags  = 0x00;
-+	bcb->Flags  = US_BULK_FLAG_OUT;
- 	bcb->CDB[0] = 0xF0;
- 	bcb->CDB[5] = (unsigned char)(bnByte);
- 	bcb->CDB[4] = (unsigned char)(bnByte>>8);
-@@ -1163,7 +1163,7 @@ static int ms_read_copyblock(struct us_data *us, u16 oldphy, u16 newphy,
- 	memset(bcb, 0, sizeof(struct bulk_cb_wrap));
- 	bcb->Signature = cpu_to_le32(US_BULK_CB_SIGN);
- 	bcb->DataTransferLength = 0x200*len;
--	bcb->Flags = 0x00;
-+	bcb->Flags = US_BULK_FLAG_OUT;
- 	bcb->CDB[0] = 0xF0;
- 	bcb->CDB[1] = 0x08;
- 	bcb->CDB[4] = (unsigned char)(oldphy);
-@@ -1759,7 +1759,7 @@ static int ms_scsi_write(struct us_data *us, struct scsi_cmnd *srb)
- 		memset(bcb, 0, sizeof(struct bulk_cb_wrap));
- 		bcb->Signature = cpu_to_le32(US_BULK_CB_SIGN);
- 		bcb->DataTransferLength = blenByte;
--		bcb->Flags  = 0x00;
-+		bcb->Flags  = US_BULK_FLAG_OUT;
- 		bcb->CDB[0] = 0xF0;
- 		bcb->CDB[1] = 0x04;
- 		bcb->CDB[5] = (unsigned char)(bn);
-@@ -1931,7 +1931,7 @@ static int ene_load_bincode(struct us_data *us, unsigned char flag)
- 	memset(bcb, 0, sizeof(struct bulk_cb_wrap));
- 	bcb->Signature = cpu_to_le32(US_BULK_CB_SIGN);
- 	bcb->DataTransferLength = sd_fw->size;
--	bcb->Flags = 0x00;
-+	bcb->Flags = US_BULK_FLAG_OUT;
- 	bcb->CDB[0] = 0xEF;
- 
- 	result = ene_send_scsi_cmd(us, FDIR_WRITE, buf, 0);
-diff --git a/drivers/usb/storage/realtek_cr.c b/drivers/usb/storage/realtek_cr.c
-index 0c423916d7bf..54ffff86c6fa 100644
---- a/drivers/usb/storage/realtek_cr.c
-+++ b/drivers/usb/storage/realtek_cr.c
-@@ -212,7 +212,7 @@ static int rts51x_bulk_transport(struct us_data *us, u8 lun,
- 	/* set up the command wrapper */
- 	bcb->Signature = cpu_to_le32(US_BULK_CB_SIGN);
- 	bcb->DataTransferLength = cpu_to_le32(buf_len);
--	bcb->Flags = (dir == DMA_FROM_DEVICE) ? US_BULK_FLAG_IN : 0;
-+	bcb->Flags = (dir == DMA_FROM_DEVICE) ? US_BULK_FLAG_IN : US_BULK_FLAG_OUT;
- 	bcb->Tag = ++us->tag;
- 	bcb->Lun = lun;
- 	bcb->Length = cmd_len;
-@@ -301,7 +301,7 @@ static int rts51x_bulk_transport_special(struct us_data *us, u8 lun,
- 	/* set up the command wrapper */
- 	bcb->Signature = cpu_to_le32(US_BULK_CB_SIGN);
- 	bcb->DataTransferLength = cpu_to_le32(buf_len);
--	bcb->Flags = (dir == DMA_FROM_DEVICE) ? US_BULK_FLAG_IN : 0;
-+	bcb->Flags = (dir == DMA_FROM_DEVICE) ? US_BULK_FLAG_IN : US_BULK_FLAG_OUT;
- 	bcb->Tag = ++us->tag;
- 	bcb->Lun = lun;
- 	bcb->Length = cmd_len;
-diff --git a/drivers/usb/storage/transport.c b/drivers/usb/storage/transport.c
-index 7449e379077a..9d767f6bf722 100644
---- a/drivers/usb/storage/transport.c
-+++ b/drivers/usb/storage/transport.c
-@@ -1133,7 +1133,7 @@ int usb_stor_Bulk_transport(struct scsi_cmnd *srb, struct us_data *us)
- 	bcb->Signature = cpu_to_le32(US_BULK_CB_SIGN);
- 	bcb->DataTransferLength = cpu_to_le32(transfer_length);
- 	bcb->Flags = srb->sc_data_direction == DMA_FROM_DEVICE ?
--		US_BULK_FLAG_IN : 0;
-+		US_BULK_FLAG_IN : US_BULK_FLAG_OUT;
- 	bcb->Tag = ++us->tag;
- 	bcb->Lun = srb->device->lun;
- 	if (us->fflags & US_FL_SCM_MULT_TARG)
-diff --git a/include/linux/usb/storage.h b/include/linux/usb/storage.h
-index 2827ce72e502..8539956bc2be 100644
---- a/include/linux/usb/storage.h
-+++ b/include/linux/usb/storage.h
-@@ -53,7 +53,7 @@ struct bulk_cb_wrap {
- 	__le32	Signature;		/* contains 'USBC' */
- 	__u32	Tag;			/* unique per command id */
- 	__le32	DataTransferLength;	/* size of data */
--	__u8	Flags;			/* direction in bit 0 */
-+	__u8	Flags;			/* direction in bit 7 */
- 	__u8	Lun;			/* LUN normally 0 */
- 	__u8	Length;			/* length of the CDB */
- 	__u8	CDB[16];		/* max command */
--- 
-2.25.1
+thanks,
+
+greg k-h
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20241019160822.6862-1-18500469033%40163.com.
+To view this discussion on the web visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/2024102056-yearly-caregiver-d684%40gregkh.
