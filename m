@@ -1,141 +1,133 @@
-Return-Path: <usb-storage+bncBD64ZMV5YYBRBQNESK5AMGQEO6VWTUI@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBDG6BBUEQIJBBAXZYC5AMGQE5MUKCGY@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-qt1-x848.google.com (mail-qt1-x848.google.com [IPv6:2607:f8b0:4864:20::848])
-	by mail.lfdr.de (Postfix) with ESMTPS id EB6DA9D88B7
-	for <lists+usb-storage@lfdr.de>; Mon, 25 Nov 2024 16:05:39 +0100 (CET)
-Received: by mail-qt1-x848.google.com with SMTP id d75a77b69052e-4669be6c87asf5822011cf.3
-        for <lists+usb-storage@lfdr.de>; Mon, 25 Nov 2024 07:05:39 -0800 (PST)
-ARC-Seal: i=2; a=rsa-sha256; t=1732547137; cv=pass;
+Received: from mail-oo1-xc47.google.com (mail-oo1-xc47.google.com [IPv6:2607:f8b0:4864:20::c47])
+	by mail.lfdr.de (Postfix) with ESMTPS id BA3179E38BF
+	for <lists+usb-storage@lfdr.de>; Wed,  4 Dec 2024 12:26:59 +0100 (CET)
+Received: by mail-oo1-xc47.google.com with SMTP id 006d021491bc7-5f1e2358e96sf3732770eaf.0
+        for <lists+usb-storage@lfdr.de>; Wed, 04 Dec 2024 03:26:59 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1733311618; cv=pass;
         d=google.com; s=arc-20240605;
-        b=AsuXB6BVGvCzyb9wmT8HJK0HlDKAL07PsVZSSrx4wOWaG2Dq/CKLMY1TgOkWS3F1TJ
-         lGzLykuHBF97jnAsr9HUqBUhZ2+/Z3co/jc/PQbhEbmJKuo7TRIFYW7E0Ja5aXQjoRug
-         /Ldg2ho/XB2R4fx5Do7oZpFUQSKEQDPlJZJzyY9HFDeIUyIgB0/knALAp0t48/yzUym/
-         290SaKRmDHaBsQqE+lQ5Zvtxq6dh5z9fIyV/f51ZHAxzyGEl/PFFZD5tTTx1kOY/nsHf
-         yGsmVrlFaR+v0JfBDkVsaE34ywIWqqAELgM2YzSYgOpitFeSdaudLaLedB02HoY4Lplx
-         bU2Q==
+        b=EkrDmO1dCuE5RUSO3iIwDWR6A8IVxo02170hZVL5s8JzwKoQikGnBzjHrPxYE1sIT9
+         zrgn39Z6S8pti5lQ17zq3tpmJQJOUc7yJXKAI6N89aNyX7SyEs5D9bMur+hZU+CGJIou
+         RoqBTDpkpZxveCrtWNvMOhK6DpTHdXbDp+XJg+sp+2wQEEZgbVD7y9UFWuIAJiO+Gas2
+         R7paqbtjwFvUKaDt4SP1NFaSnPgGKwHK99GQDlROiOXJGQ92DO2FSSJQHkMrwM1U4neJ
+         0nw4E2v/qq5IkOeTXBiWyjQRGHFGbQqudNt1Bmj38olgdKXUFENbSKPNLo7kdx4TPh2i
+         2gkw==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:in-reply-to:content-disposition
-         :mime-version:references:message-id:subject:cc:to:from:date:sender
-         :dkim-signature;
-        bh=dI5yhJ7CHTB/8MAA0jk5NYgqKfE3mIOqUmGDaLf/I8g=;
-        fh=MSu41r7aBI1NHHSIkWn07efQBBt0cSFSLC3FpJe3mgM=;
-        b=DkTXGSCAOCMOUKaxtfqbKdnHxFoQWOu2SjgW86W05+4Y0yWPkM8XCruS2P1qEA1bpZ
-         9Dnj7+9bpzx3D3lLgx8bVd34/vO5560ZY3GbP1RzcXUrxcqwuJA9zTKiUaiec/h5bhbf
-         9un6L5extBpW/I4UJP95ERH2UHfq9JLAOdrth5LH3Bh0039h2vHrQssZmoh51whrgpYU
-         yzR7vtrjOOdQ3HVskiNDWhGjjbPi14WDN1sKdTws37krPMRcXJxaP56/UeA5Gj4/8+Lk
-         rkStVDiSCEQZ/H+0jWMwkrnmmhBKPZ7RWRGHbfnaa+IMCRY5sbi0KlHmxQEl2fXWTi2U
-         Z4jA==;
+         :list-id:mailing-list:precedence:reply-to:content-disposition
+         :mime-version:message-id:subject:cc:to:from:date:dkim-signature;
+        bh=yXGVwL/KoNnS+GBKZGT83r/WbwFsjOm4otPjax2Umko=;
+        fh=7zlbO1VKzmCd7KhUM2+4wRc0piTTGQCojFedhl1ntQM=;
+        b=T1XjKgOd9zp7RVxiLD8WoTaX+IHI2yngXET6kMUg6pH/5wkCLlXDaBiIdAMDBukAsG
+         ZZEOWQIaDkaZgO92bvkaXzG9CKmuDxlJL7+NNO7DOnbRYeC4BCF6rBke09owv6ZudTmJ
+         eoSb0UpVDbXyW4IyXNBNz3M+CqmAVORcWLd5HGof0dWlLIeLtIjP0gI7Zquca2j2oY6k
+         uC4kTV0kkrJU0XhLSHM1nsDe7h/EljfFLyJBPS6wTelR6Y90jECeJZsgXHPoxzOPgj6u
+         Ao7A84IOx1YXnJyfihlu0mR0rtWWexpOWyw+aZGiFZN6cnzQB8+qebxyLQw3k35b6sgZ
+         WJcw==;
         darn=lfdr.de
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@rowland.harvard.edu header.s=google header.b="fW1d/Zgd";
-       spf=pass (google.com: domain of stern@g.harvard.edu designates 209.85.220.65 as permitted sender) smtp.mailfrom=stern@g.harvard.edu;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=rowland.harvard.edu;
-       dara=pass header.i=@lists.one-eyed-alien.net
+       dkim=pass header.i=@kernel.org header.s=k20201202 header.b=XM9jBZ1P;
+       spf=pass (google.com: domain of johan@kernel.org designates 2604:1380:4641:c500::1 as permitted sender) smtp.mailfrom=johan@kernel.org;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=kernel.org
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1732547137; x=1733151937; darn=lfdr.de;
+        d=lists.one-eyed-alien.net; s=google; t=1733311618; x=1733916418; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:x-original-authentication-results
-         :x-original-sender:in-reply-to:content-disposition:mime-version
-         :references:message-id:subject:cc:to:from:date:sender:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=dI5yhJ7CHTB/8MAA0jk5NYgqKfE3mIOqUmGDaLf/I8g=;
-        b=KTL/q7Gj8tbBBUcveucjaP86PZD6zWcWjByH3vCePT40y0T3Ek3uFhVQuOh3L6Y0cp
-         5q2FKsursZ7iT00DJqa+xYfrqGKVtxu/hiKn9YQzN/F+TBkv/jUD//4xHkytYpnED/vd
-         t+hUQmHSjLnu4L0YbdLriQ+vIEm0heDjvp3GE=
+         :list-id:mailing-list:precedence:reply-to
+         :x-original-authentication-results:x-original-sender
+         :content-disposition:mime-version:message-id:subject:cc:to:from:date
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=yXGVwL/KoNnS+GBKZGT83r/WbwFsjOm4otPjax2Umko=;
+        b=Je+N2tUrkGy+ogzAVGSV7PcOctS3B5P64PafBYRFR0LKoQfYSLqwVgx+2WRV3hnw13
+         upgYdUjpwMp3pSGh9HOcy6XIFhaAgx1H5hDgULoI9NpNr2HnXCt06mgKqShi++oRGv+z
+         dlbwES4IraiNWro2hpfRbNFt8jpQBiTU5hb70=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1732547137; x=1733151937;
+        d=1e100.net; s=20230601; t=1733311618; x=1733916418;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :x-spam-checked-in-group:list-id:mailing-list:precedence
-         :x-original-authentication-results:x-original-sender:in-reply-to
-         :content-disposition:mime-version:references:message-id:subject:cc
-         :to:from:date:x-beenthere:x-gm-message-state:sender:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=dI5yhJ7CHTB/8MAA0jk5NYgqKfE3mIOqUmGDaLf/I8g=;
-        b=b4hdaY/aZxC57tX4sF+fG8S8m7/vgfccjkT8QIxomFv5JSBtpUuXltzGx2QA3CvvOh
-         l7fWWQnwkHRNs0mMj+uKjbPUWyTF+Tbk+mxfJxAQ95TMG+lz+Me6JlXsjt38V3QlCOE+
-         nVNipy9mvproRVR0iIdFL3qZp+kNU7aIHvjHCEPYoVXpL6t/ptftAZpZEZsIpRY2qn/Y
-         RJIobi3ienfZxJSkc+uFCDUp9tIv+Dpzcw8hDwxyYdWrw1CK3kRtqAmAoeazqRJlO2Fe
-         bJllgF/d3bD2elfSXROrVOf0qCNjwSara0fPgRsC07tlb1rEqe1NuuwmHTRUPhd5Mm6Y
-         2XTA==
-Sender: usb-storage@lists.one-eyed-alien.net
-X-Forwarded-Encrypted: i=2; AJvYcCWfK32owR/O+44GpCVwlkAk1cjBSKHkHKOqDAvgM6snoxUHku/ThnTjvF8jyNlX8p5kRyKgDQ==@lfdr.de
-X-Gm-Message-State: AOJu0YwdTtwuLROLnyB8eJiiTkabc5Ex2uvhe2CtEDHwW782lR+U0Sdq
-	KphIBpym7IW/wr7onrd90m5S/v7W2XyeqgTW7wYT2U5D3iIRnLuKyHrSlKGFvMM=
-X-Google-Smtp-Source: AGHT+IEmgTwieRku34e+WSZ/J0JsqVuJ5Q0sRLsGXkJVKTAGYfN5kxGW2WnJljoaxt9UhXBOxIkHzQ==
-X-Received: by 2002:a05:622a:14c:b0:464:94cf:98a6 with SMTP id d75a77b69052e-4653d52df38mr209726671cf.3.1732547137363;
-        Mon, 25 Nov 2024 07:05:37 -0800 (PST)
+         :x-spam-checked-in-group:list-id:mailing-list:precedence:reply-to
+         :x-original-authentication-results:x-original-sender
+         :content-disposition:mime-version:message-id:subject:cc:to:from:date
+         :x-beenthere:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=yXGVwL/KoNnS+GBKZGT83r/WbwFsjOm4otPjax2Umko=;
+        b=g6I/TQE1c4+B8TxB39+zaDJpjuVadPXvxq4jQcPO33JCChvLhk+0rrcL7v3hG9H4aS
+         4cYqhEmV4Fbg/O2789QX0awrv2umDu6PQcRCknPNYbU1FqbDU/mtVfJm5+bkJ8EhDuSR
+         ICZUl3UHu2UtdgHfuJdqzaXl0Nmk8vtDPcdH/yONX9R4yJBexykxiKD2/25U3yhNr/dy
+         BFTlIiYx14Q8b2CdroojtBgLI6ulsxmDzmZ0aziyQKMEiVHDBuRT1BsIx+hWoCaXlTFo
+         9JBj/pFS3ZTQWOOCFFT9MBWjoB04g36601cbXcToCpljqNZ4H05B0CESoGGvi79QAap5
+         Hh0Q==
+X-Forwarded-Encrypted: i=2; AJvYcCXOSg5Dt6h+TNd0494y8T2yWWNeY9miyHhZ2Cj6vpJdky0J+yWh3fzUVSdbft8ygU5r5v5dzA==@lfdr.de
+X-Gm-Message-State: AOJu0YxUdpnZVd8tAtyY8jRNxbN9wWKI1MMGp4SbVZEILO7K0TVyxhOs
+	fbznQ5BJgoHs1I0eECqpeUM9dRY6hyLbqO22hdveEj5Y2bFEYHqERFCRUDNYr8o=
+X-Google-Smtp-Source: AGHT+IH/w02QMo8Pe+HF6ft0wks1qiE5LYXc1Pou6t1hC1WKvSAIN3w2je2GaFlpu8KHYubuY8BIKw==
+X-Received: by 2002:a05:6820:208:b0:5ee:dc92:ffb9 with SMTP id 006d021491bc7-5f25adf28fcmr5825303eaf.4.1733311618449;
+        Wed, 04 Dec 2024 03:26:58 -0800 (PST)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a05:622a:1a99:b0:463:1039:f939 with SMTP id
- d75a77b69052e-46539068cb4ls62417871cf.2.-pod-prod-03-us; Mon, 25 Nov 2024
- 07:05:36 -0800 (PST)
-X-Forwarded-Encrypted: i=2; AJvYcCUeBoXNt8f/XHEX6t4mYMZAohtaoyKEqOSzGR+MGrEAMr3vLkIoYTwM2AhbS50vXX9UDUQOq0lZnb9xjg==@lists.one-eyed-alien.net
-X-Received: by 2002:a05:620a:1b8b:b0:7b6:6765:4ca6 with SMTP id af79cd13be357-7b667654ef0mr492417085a.34.1732547136077;
-        Mon, 25 Nov 2024 07:05:36 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1732547136; cv=none;
+Received: by 2002:a4a:b483:0:b0:5f2:32b1:a144 with SMTP id 006d021491bc7-5f232b1a29fls2523709eaf.2.-pod-prod-09-us;
+ Wed, 04 Dec 2024 03:26:57 -0800 (PST)
+X-Forwarded-Encrypted: i=2; AJvYcCV8vvFnQyzOM17EPC5NBSAquG5dhzlG4sGsMw2nAaoGXBVrtPe5hCOqyMPR03d1Lrcu61uyCXzmFuDp1g==@lists.one-eyed-alien.net
+X-Received: by 2002:a4a:e918:0:b0:5f1:e905:bc93 with SMTP id 006d021491bc7-5f25ae0e5c4mr5003912eaf.5.1733311617284;
+        Wed, 04 Dec 2024 03:26:57 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1733311617; cv=none;
         d=google.com; s=arc-20240605;
-        b=Ccy3IcVQ5tAY+ukjcdrRNUBoeO9OPxLWAUwsmq3ConPn8TkW7xJ/V+nJjpnwZz34mI
-         gVQTcWsBCAmlCrzMC21Oy1GcZYDWIhYlbWjfumFtG9XlOa+hi07mfwKD4KM4WCtVJOm/
-         R03FPMc/wr8dul6M0nWxSF/2LbrdPbv1+Eus9H3N4oj17b/riBQfognyjdoO8X3mStlD
-         fAcM/C0w450sRVzDk1Ro6092zQZbfu2cFSOOPHVwy2DxTZVMeZTMV5KkZXueIRsFDRe1
-         5sjcWiIZk8NUio9iU6cq42AbafVDjIb8NXdNkRizdPy27FCXq8DdBVqUNTUuwbPP6Gty
-         zcuw==
+        b=RpGPbwuh/mMFAAFOEpJP4FQquTFotRN8/VEgLgTeGXwwRN37NSLjUb3/CN/1ksC2dQ
+         IlYueDx8/6Pe0NT5LCYykOEkRWNpuZiEcYxHxtGFSehdWBczCK9eSROxaNvDls/pMu9n
+         ZG+vR+Veoh94aLA5uYMV3FuxCDbC+jkRpBqxZddmyeEpz6rjwOwe1JXhvkjO5RyVIVO1
+         MHVzWS8tO6RM/UuM1V0uZOMj9cnLY7sTLGiUMWK9pFLXGCaslGA9kkDeKo1Cr30FrF/6
+         NtttGC+Uhh1wUOZIxCTRZ39KvkQW/r1Z016vQo9gNvOYO3zRmNFgFuItZzM81lwHoceF
+         Kf0Q==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:dkim-signature;
-        bh=eIcIEwreB6jMpQBW0713qszSdgFb5KeefQ1lDCrxAUU=;
-        fh=uCA0lTlaxR5iX3RV6UgB921Jd5pYEzNoufdrqHYktko=;
-        b=hsBTl/pcnqW9cGYBasjcMvut02hCLeFVUF5pAWCYYX+Z9xfMqQGaa46qx/mc9SI4nF
-         OSIgJ/XgPrudp/I92jbqrYwTqpBo8N4A8flURLdr4knhH9mh6qSqWE2xJ15l0U/bM7S2
-         XILupwsFk1r8LcnO/UFDdCMBvHhE8a9wYHaLmjZjbqScrwtfbjkJzeY3xdHaxwRKXVPI
-         xk5gS0cUsV0R/sXRROxoEWh9dsh8DybRXHw8cZVcrvUELGzOIfetjTwbteaz7+cOcf/n
-         GjYOgK/CleR/5Qp9W9Pdi6a1arDLRyLIRYW1G7QGS51Z9OA6DjwpP/NTto4oFpwsy//j
-         mEWQ==;
+        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
+         :dkim-signature;
+        bh=1ctLiJWbESKCH0WrRkUdh7eZNcYhnQ4WD7fpwmODNsY=;
+        fh=9JNLguUlA5HhIyfxybh4ACswYUGOSJLur0f+dESUM7Y=;
+        b=fECokoUkaxUaY+A8Ccy5Wl3RWIWLzZYzplXjlU5olzCCW0CdPU2G0Wb/l0WdCLAeC0
+         kSaCJ2WuB+f8MI6JfWnCGAdVJ5qpoPDZ8Dq6g0C5+q3/9208bSY/Z+ENLQEXjcnm3O0R
+         DVXPwMFu+7vRps/exis9ZK2DNoGnOrbbtv/LD6Tdg2t2ifCKByu4n/0wH5groPUjxrck
+         NEi1o2/NcTaDrFRP7zF8hIUGq0BK0G67ep37F3cYMw5EVk9GNZEZtdgq8d59J/H6qulg
+         3rRmvx82x9hVY3DC0bHjGCABRwIA2IsPhIjzC6XvRzmYxnKN7klVGc5/mVHI2MfH2Mm5
+         i42Q==;
         dara=google.com
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@rowland.harvard.edu header.s=google header.b="fW1d/Zgd";
-       spf=pass (google.com: domain of stern@g.harvard.edu designates 209.85.220.65 as permitted sender) smtp.mailfrom=stern@g.harvard.edu;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=rowland.harvard.edu;
-       dara=pass header.i=@lists.one-eyed-alien.net
-Received: from mail-sor-f65.google.com (mail-sor-f65.google.com. [209.85.220.65])
-        by mx.google.com with SMTPS id af79cd13be357-7b66b12aea8sor212274585a.5.2024.11.25.07.05.35
+       dkim=pass header.i=@kernel.org header.s=k20201202 header.b=XM9jBZ1P;
+       spf=pass (google.com: domain of johan@kernel.org designates 2604:1380:4641:c500::1 as permitted sender) smtp.mailfrom=johan@kernel.org;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=kernel.org
+Received: from dfw.source.kernel.org (dfw.source.kernel.org. [2604:1380:4641:c500::1])
+        by mx.google.com with ESMTPS id 006d021491bc7-5f21a4dbc4esi6757607eaf.59.2024.12.04.03.26.57
         for <usb-storage@lists.one-eyed-alien.net>
-        (Google Transport Security);
-        Mon, 25 Nov 2024 07:05:35 -0800 (PST)
-Received-SPF: pass (google.com: domain of stern@g.harvard.edu designates 209.85.220.65 as permitted sender) client-ip=209.85.220.65;
-X-Forwarded-Encrypted: i=1; AJvYcCXlOyhgt0MWMxnc4cuN+tAEbqtCttPVeJQxiyNT4NZfkbckkzB7owuCOAjfT+9YLRVUtyU2FmGDBj4avg==@lists.one-eyed-alien.net
-X-Gm-Gg: ASbGncsTQt2faYp9U4I/nteSwq4bj0WPtB1qyUoJFqbqJwr9ayjZubGBGKAbVjg6DhP
-	uIq3KsKfnd6cD7cPlLcaHxKjg64RukSeTWTZrgZ8VaKr0Wf43Bs6H2wkioaAtW6Seacms1yIC46
-	Q5pGk+qBG7f+o1Io9iHVm6UgQVW11+hB0OSfXla0yBTwDYPq824nqdeKcazjxHCQHZ1XVrn+keQ
-	BuEe9c9SQQ5eBZvlFPnOiKZvUAyXxnhnDaHEmaiLssGtz0OkgXtj17bAP10TrtOE9pn
-X-Received: by 2002:a05:6214:21a9:b0:6d4:22e9:b8b6 with SMTP id 6a1803df08f44-6d4514b68dbmr185354926d6.41.1732547135280;
-        Mon, 25 Nov 2024 07:05:35 -0800 (PST)
-Received: from rowland.harvard.edu ([140.247.181.15])
-        by smtp.gmail.com with ESMTPSA id 6a1803df08f44-6d451ab532bsm43616236d6.69.2024.11.25.07.05.34
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 25 Nov 2024 07:05:34 -0800 (PST)
-Date: Mon, 25 Nov 2024 10:05:33 -0500
-From: Alan Stern <stern@rowland.harvard.edu>
-To: Dingyan Li <18500469033@163.com>
-Cc: gregkh@linuxfoundation.org, linux-usb@vger.kernel.org,
-	linux-kernel@vger.kernel.org, usb-storage@lists.one-eyed-alien.net
-Subject: [usb-storage] Re: [PATCH v1] usb: storage: add a macro for the upper
- limit of max LUN
-Message-ID: <30019a70-d496-41d5-9159-c991ac93f326@rowland.harvard.edu>
-References: <20241030083858.46907-1-18500469033@163.com>
- <56abaf44.86c3.19362571bee.Coremail.18500469033@163.com>
+        Wed, 04 Dec 2024 03:26:57 -0800 (PST)
+Received-SPF: pass (google.com: domain of johan@kernel.org designates 2604:1380:4641:c500::1 as permitted sender) client-ip=2604:1380:4641:c500::1;
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 1AEB25C6CFA;
+	Wed,  4 Dec 2024 11:26:14 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 89EEAC4CED1;
+	Wed,  4 Dec 2024 11:26:56 +0000 (UTC)
+Received: from johan by xi.lan with local (Exim 4.97.1)
+	(envelope-from <johan@kernel.org>)
+	id 1tInWv-000000002Gw-0Mne;
+	Wed, 04 Dec 2024 12:26:53 +0100
+Date: Wed, 4 Dec 2024 12:26:53 +0100
+From: "'Johan Hovold' via USB Mass Storage on Linux" <usb-storage@lists.one-eyed-alien.net>
+To: Jens Axboe <axboe@kernel.dk>, Ming Lei <ming.lei@redhat.com>,
+	Christoph Hellwig <hch@lst.de>
+Cc: Alan Stern <stern@rowland.harvard.edu>, linux-block@vger.kernel.org,
+	linux-usb@vger.kernel.org, usb-storage@lists.one-eyed-alien.net,
+	linux-kernel@vger.kernel.org, regressions@lists.linux.dev
+Subject: [usb-storage] Lockdep splat on UMS disconnect (6.13-rc1)
+Message-ID: <Z1A8fai9_fQFhs1s@hovoldconsulting.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="UTF-8"
 Content-Disposition: inline
-In-Reply-To: <56abaf44.86c3.19362571bee.Coremail.18500469033@163.com>
-X-Original-Sender: stern@rowland.harvard.edu
+X-Original-Sender: johan@kernel.org
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@rowland.harvard.edu header.s=google header.b="fW1d/Zgd";
-       spf=pass (google.com: domain of stern@g.harvard.edu designates
- 209.85.220.65 as permitted sender) smtp.mailfrom=stern@g.harvard.edu;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=rowland.harvard.edu;
-       dara=pass header.i=@lists.one-eyed-alien.net
+ header.i=@kernel.org header.s=k20201202 header.b=XM9jBZ1P;       spf=pass
+ (google.com: domain of johan@kernel.org designates 2604:1380:4641:c500::1 as
+ permitted sender) smtp.mailfrom=johan@kernel.org;       dmarc=pass
+ (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=kernel.org
+X-Original-From: Johan Hovold <johan@kernel.org>
+Reply-To: Johan Hovold <johan@kernel.org>
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -151,113 +143,208 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On Mon, Nov 25, 2024 at 04:01:36PM +0800, Dingyan Li wrote:
-> Hi Experts,
-> 
-> Any thoughts on this patch?
-> 
-> Regards,
+Hi,
 
-It looks fine to me.
+I'm seeing a new lockdep splat with 6.13-rc1 on resume after having
+disconnected a USB mass storage device while suspended. This does not
+seem to show up with 6.12.
 
-Reviewed-by: Alan Stern <stern@rowland.harvard.edu>
+On one attempt to reproduce this with a ThinkPad T14s, the NVMe was
+hosed after resume as well so I fear that this is not just about missing
+annotation.
 
-Alan Stern
+I don't have time to look into this myself right now so I'm reporting in
+the hope that someone familiar with these paths would be able to
+pinpoint any potential regression without too much effort.
 
-> At 2024-10-30 16:38:58, "Dingyan Li" <18500469033@163.com> wrote:
-> >The meaning of this value is already used in several places,
-> >but with constant values and comments to explain it separately.
-> >It's better to have a central place to do this then use the macro
-> >in those places for better readability.
-> >
-> >Signed-off-by: Dingyan Li <18500469033@163.com>
-> >---
-> > drivers/usb/gadget/function/f_tcm.c          | 8 ++------
-> > drivers/usb/gadget/function/storage_common.h | 2 +-
-> > drivers/usb/storage/transport.c              | 8 ++------
-> > include/linux/usb/storage.h                  | 8 ++++++++
-> > 4 files changed, 13 insertions(+), 13 deletions(-)
-> >
-> >diff --git a/drivers/usb/gadget/function/f_tcm.c b/drivers/usb/gadget/function/f_tcm.c
-> >index 15bb3aa12aa8..e1914b20f816 100644
-> >--- a/drivers/usb/gadget/function/f_tcm.c
-> >+++ b/drivers/usb/gadget/function/f_tcm.c
-> >@@ -441,14 +441,10 @@ static int usbg_bot_setup(struct usb_function *f,
-> > 			pr_err("No LUNs configured?\n");
-> > 			return -EINVAL;
-> > 		}
-> >-		/*
-> >-		 * If 4 LUNs are present we return 3 i.e. LUN 0..3 can be
-> >-		 * accessed. The upper limit is 0xf
-> >-		 */
-> > 		luns--;
-> >-		if (luns > 0xf) {
-> >+		if (luns > US_BULK_MAX_LUN_LIMIT) {
-> > 			pr_info_once("Limiting the number of luns to 16\n");
-> >-			luns = 0xf;
-> >+			luns = US_BULK_MAX_LUN_LIMIT;
-> > 		}
-> > 		ret_lun = cdev->req->buf;
-> > 		*ret_lun = luns;
-> >diff --git a/drivers/usb/gadget/function/storage_common.h b/drivers/usb/gadget/function/storage_common.h
-> >index ced5d2b09234..11ac785d5eee 100644
-> >--- a/drivers/usb/gadget/function/storage_common.h
-> >+++ b/drivers/usb/gadget/function/storage_common.h
-> >@@ -131,7 +131,7 @@ static inline bool fsg_lun_is_open(struct fsg_lun *curlun)
-> > #define FSG_BUFLEN	((u32)16384)
-> > 
-> > /* Maximal number of LUNs supported in mass storage function */
-> >-#define FSG_MAX_LUNS	16
-> >+#define FSG_MAX_LUNS	(US_BULK_MAX_LUN_LIMIT + 1)
-> > 
-> > enum fsg_buffer_state {
-> > 	BUF_STATE_SENDING = -2,
-> >diff --git a/drivers/usb/storage/transport.c b/drivers/usb/storage/transport.c
-> >index 9d767f6bf722..e6bc8ecaecbb 100644
-> >--- a/drivers/usb/storage/transport.c
-> >+++ b/drivers/usb/storage/transport.c
-> >@@ -1087,13 +1087,9 @@ int usb_stor_Bulk_max_lun(struct us_data *us)
-> > 	usb_stor_dbg(us, "GetMaxLUN command result is %d, data is %d\n",
-> > 		     result, us->iobuf[0]);
-> > 
-> >-	/*
-> >-	 * If we have a successful request, return the result if valid. The
-> >-	 * CBW LUN field is 4 bits wide, so the value reported by the device
-> >-	 * should fit into that.
-> >-	 */
-> >+	/* If we have a successful request, return the result if valid. */
-> > 	if (result > 0) {
-> >-		if (us->iobuf[0] < 16) {
-> >+		if (us->iobuf[0] <= US_BULK_MAX_LUN_LIMIT) {
-> > 			return us->iobuf[0];
-> > 		} else {
-> > 			dev_info(&us->pusb_intf->dev,
-> >diff --git a/include/linux/usb/storage.h b/include/linux/usb/storage.h
-> >index 8539956bc2be..51be3bb8fccb 100644
-> >--- a/include/linux/usb/storage.h
-> >+++ b/include/linux/usb/storage.h
-> >@@ -82,4 +82,12 @@ struct bulk_cs_wrap {
-> > #define US_BULK_RESET_REQUEST   0xff
-> > #define US_BULK_GET_MAX_LUN     0xfe
-> > 
-> >+/*
-> >+ * If 4 LUNs are supported then the LUNs would be
-> >+ * numbered from 0 to 3, and the return value for
-> >+ * US_BULK_GET_MAX_LUN request would be 3. The valid
-> >+ * LUN field is 4 bits wide, the upper limit is 0x0f.
-> >+ */
-> >+#define US_BULK_MAX_LUN_LIMIT   0x0f
-> >+
-> > #endif
-> >-- 
-> >2.25.1
-> 
-> -- 
-> You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
-> To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-> To view this discussion visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/56abaf44.86c3.19362571bee.Coremail.18500469033%40163.com.
+Johan
+
+
+#regzbot introduced: v6.12..v6.13-rc1
+
+
+[   59.529878] Restarting tasks ... done.
+[   59.534619] usb 5-1: USB disconnect, device number 2
+[   59.536537] random: crng reseeded on system resumption
+[   59.541059] xhci-hcd xhci-hcd.7.auto: remove, state 1
+[   59.547012] PM: suspend exit
+[   59.584871] ======================================================
+[   59.584873] WARNING: possible circular locking dependency detected
+[   59.584875] 6.13.0-rc1 #11 Tainted: G        W         
+[   59.584877] ------------------------------------------------------
+[   59.584878] kworker/0:2/126 is trying to acquire lock:
+[   59.584880] ffff1a9a948b83e0 ((work_completion)(&(&wb->dwork)->work)){+.+.}-{0:0}, at: __flush_work+0x1c0/0x504
+[   59.584894] 
+               but task is already holding lock:
+[   59.584895] ffff1a9a948b00e0 (&q->q_usage_counter(queue)#3){++++}-{0:0}, at: sd_remove+0x38/0x88
+[   59.584905] 
+               which lock already depends on the new lock.
+
+[   59.584906] 
+               the existing dependency chain (in reverse order) is:
+[   59.584907] 
+               -> #3 (&q->q_usage_counter(queue)#3){++++}-{0:0}:
+[   59.584912]        blk_queue_enter+0x174/0x1c4
+[   59.584917]        blk_mq_alloc_request+0xa0/0xcc
+[   59.584921]        scsi_execute_cmd+0xbc/0x3c8
+[   59.584924]        read_capacity_10+0xcc/0x1e0
+[   59.584927]        sd_revalidate_disk.isra.0+0xad4/0x26fc
+[   59.584930]        sd_probe+0x2a0/0x42c
+[   59.584933]        really_probe+0xc0/0x388
+[   59.584938]        __driver_probe_device+0x7c/0x160
+[   59.584941]        driver_probe_device+0x40/0x110
+[   59.584944]        __device_attach_driver+0xbc/0x158
+[   59.584948]        bus_for_each_drv+0x84/0xe0
+[   59.584950]        __device_attach_async_helper+0xb0/0x10c
+[   59.584954]        async_run_entry_fn+0x34/0x14c
+[   59.584956]        process_one_work+0x20c/0x610
+[   59.584960]        worker_thread+0x23c/0x378
+[   59.584963]        kthread+0x124/0x128
+[   59.584965]        ret_from_fork+0x10/0x20
+[   59.584968] 
+               -> #2 (&q->limits_lock){+.+.}-{4:4}:
+[   59.584972]        __mutex_lock+0xa8/0x468
+[   59.584976]        mutex_lock_nested+0x24/0x30
+[   59.584978]        nvme_update_ns_info_block+0x1a4/0x6c4 [nvme_core]
+[   59.584990]        nvme_update_ns_info+0x9c/0xf0 [nvme_core]
+[   59.584995]        nvme_alloc_ns+0x2f0/0x9f0 [nvme_core]
+[   59.584999]        nvme_scan_ns+0x278/0x378 [nvme_core]
+[   59.585004]        nvme_scan_ns_async+0x2c/0x70 [nvme_core]
+[   59.585008]        async_run_entry_fn+0x34/0x14c
+[   59.585010]        process_one_work+0x20c/0x610
+[   59.585014]        worker_thread+0x23c/0x378
+[   59.585017]        kthread+0x124/0x128
+[   59.585019]        ret_from_fork+0x10/0x20
+[   59.585021] 
+               -> #1 (&q->q_usage_counter(io)){++++}-{0:0}:
+[   59.585025]        blk_mq_submit_bio+0x82c/0x9ac
+[   59.585028]        __submit_bio+0x78/0x168
+[   59.585030]        submit_bio_noacct_nocheck+0x2d4/0x3b8
+[   59.585033]        submit_bio_noacct+0x148/0x3f8
+[   59.585035]        submit_bio+0x12c/0x200
+[   59.585037]        submit_bh_wbc+0x144/0x1c0
+[   59.585042]        __block_write_full_folio+0x210/0x4cc
+[   59.585045]        block_write_full_folio+0xc8/0x14c
+[   59.585048]        write_cache_pages+0x64/0xd4
+[   59.585054]        blkdev_writepages+0x4c/0x88
+[   59.585057]        do_writepages+0x84/0x2b8
+[   59.585059]        __writeback_single_inode+0x64/0x5d8
+[   59.585062]        writeback_sb_inodes+0x244/0x500
+[   59.585065]        __writeback_inodes_wb+0x50/0x108
+[   59.585068]        wb_writeback+0x3a8/0x4a0
+[   59.585070]        wb_workfn+0x2e4/0x5fc
+[   59.585073]        process_one_work+0x20c/0x610
+[   59.585076]        worker_thread+0x23c/0x378
+[   59.585079]        kthread+0x124/0x128
+[   59.585082]        ret_from_fork+0x10/0x20
+[   59.585085] 
+               -> #0 ((work_completion)(&(&wb->dwork)->work)){+.+.}-{0:0}:
+[   60.565855]        __lock_acquire+0x1344/0x20e8
+[   60.565860]        lock_acquire+0x1c8/0x354
+[   60.565863]        __flush_work+0x1e8/0x504
+[   60.565868]        flush_delayed_work+0x50/0x84
+[   60.565874]        wb_shutdown+0x9c/0x10c
+[   60.565881]        bdi_unregister+0x88/0x1e8
+[   60.565887]        del_gendisk+0x330/0x370
+[   60.565892]        sd_remove+0x38/0x88
+[   60.565897]        device_remove+0x70/0x80
+[   60.565902]        device_release_driver_internal+0x1e4/0x240
+[   60.565908]        device_release_driver+0x18/0x24
+[   60.565913]        bus_remove_device+0xd0/0x148
+[   60.565918]        device_del+0x148/0x374
+[   60.565921]        __scsi_remove_device+0x124/0x18c
+[   60.565925]        scsi_forget_host+0x78/0x80
+[   60.565930]        scsi_remove_host+0x74/0x194
+[   60.565934]        usb_stor_disconnect+0x74/0xfc [usb_storage]
+[   60.565942]        usb_unbind_interface+0x80/0x2bc
+[   60.565946]        device_remove+0x70/0x80
+[   60.565951]        device_release_driver_internal+0x1e4/0x240
+[   60.565957]        device_release_driver+0x18/0x24
+[   60.565962]        bus_remove_device+0xd0/0x148
+[   60.565967]        device_del+0x148/0x374
+[   60.565970]        usb_disable_device+0xf8/0x244
+[   60.565976]        usb_disconnect+0xe4/0x314
+[   60.565980]        hub_event+0xbe8/0x1950
+[   60.565985]        process_one_work+0x20c/0x610
+[   60.565990]        worker_thread+0x23c/0x378
+[   60.565995]        kthread+0x124/0x128
+[   60.565998]        ret_from_fork+0x10/0x20
+[   60.566003] 
+               other info that might help us debug this:
+
+[   60.566004] Chain exists of:
+                 (work_completion)(&(&wb->dwork)->work) --> &q->limits_lock --> &q->q_usage_counter(queue)#3
+
+[   60.566014]  Possible unsafe locking scenario:
+
+[   60.566015]        CPU0                    CPU1
+[   60.566016]        ----                    ----
+[   60.566018]   lock(&q->q_usage_counter(queue)#3);
+[   60.566022]                                lock(&q->limits_lock);
+[   60.566026]                                lock(&q->q_usage_counter(queue)#3);
+[   60.566030]   lock((work_completion)(&(&wb->dwork)->work));
+[   60.566033] 
+                *** DEADLOCK ***
+
+[   60.566035] 9 locks held by kworker/0:2/126:
+[   60.566038]  #0: ffff1a9a81cb8148 ((wq_completion)usb_hub_wq){+.+.}-{0:0}, at: process_one_work+0x190/0x610
+[   60.566049]  #1: ffff800081c63de0 ((work_completion)(&hub->events)){+.+.}-{0:0}, at: process_one_work+0x1b8/0x610
+[   60.566060]  #2: ffff1a9a9960f990 (&dev->mutex){....}-{4:4}, at: hub_event+0x5c/0x1950
+[   60.566070]  #3: ffff1a9a94f8a990 (&dev->mutex){....}-{4:4}, at: usb_disconnect+0x84/0x314
+[   60.566080]  #4: ffff1a9a94f8b160 (&dev->mutex){....}-{4:4}, at: device_release_driver_internal+0x40/0x240
+[   60.566092]  #5: ffff1a9a9409c0e0 (&shost->scan_mutex){+.+.}-{4:4}, at: scsi_remove_host+0x24/0x194
+[   60.566101]  #6: ffff1a9a94abf378 (&dev->mutex){....}-{4:4}, at: device_release_driver_internal+0x40/0x240
+[   60.566112]  #7: ffff1a9a948b00e0 (&q->q_usage_counter(queue)#3){++++}-{0:0}, at: sd_remove+0x38/0x88
+[   60.566123]  #8: ffffd15e3cd706c0 (rcu_read_lock){....}-{1:3}, at: __flush_work+0x48/0x504
+[   60.566134]
+               stack backtrace:
+[   60.566137] CPU: 0 UID: 0 PID: 126 Comm: kworker/0:2 Tainted: G        W          6.13.0-rc1 #11
+[   60.566143] Tainted: [W]=WARN
+[   60.566145] Hardware name: Qualcomm CRD, BIOS 6.0.231221.BOOT.MXF.2.4-00348.1-HAMOA-1 12/21/2023
+[   60.566149] Workqueue: usb_hub_wq hub_event
+[   60.566155] Call trace:
+[   60.566158]  show_stack+0x18/0x24 (C)
+[   60.566163]  dump_stack_lvl+0x90/0xd0
+[   61.400051]  dump_stack+0x18/0x24
+[   61.400055]  print_circular_bug+0x298/0x37c
+[   61.400059]  check_noncircular+0x15c/0x170
+[   61.400062]  __lock_acquire+0x1344/0x20e8
+[   61.400066]  lock_acquire+0x1c8/0x354
+[   61.400069]  __flush_work+0x1e8/0x504
+[   61.400074]  flush_delayed_work+0x50/0x84
+[   61.400080]  wb_shutdown+0x9c/0x10c
+[   61.400086]  bdi_unregister+0x88/0x1e8
+[   61.400091]  del_gendisk+0x330/0x370
+[   61.400097]  sd_remove+0x38/0x88
+[   61.400102]  device_remove+0x70/0x80
+[   61.400107]  device_release_driver_internal+0x1e4/0x240
+[   61.400113]  device_release_driver+0x18/0x24
+[   61.400118]  bus_remove_device+0xd0/0x148
+[   61.400123]  device_del+0x148/0x374
+[   61.400126]  __scsi_remove_device+0x124/0x18c
+[   61.400130]  scsi_forget_host+0x78/0x80
+[   61.400135]  scsi_remove_host+0x74/0x194
+[   61.400139]  usb_stor_disconnect+0x74/0xfc [usb_storage]
+[   61.400144]  usb_unbind_interface+0x80/0x2bc
+[   61.400148]  device_remove+0x70/0x80
+[   61.400153]  device_release_driver_internal+0x1e4/0x240
+[   61.400158]  device_release_driver+0x18/0x24
+[   61.400164]  bus_remove_device+0xd0/0x148
+[   61.400169]  device_del+0x148/0x374
+[   61.400172]  usb_disable_device+0xf8/0x244
+[   61.400178]  usb_disconnect+0xe4/0x314
+[   61.400182]  hub_event+0xbe8/0x1950
+[   61.400187]  process_one_work+0x20c/0x610
+[   61.400192]  worker_thread+0x23c/0x378
+[   61.400197]  kthread+0x124/0x128
+[   61.400201]  ret_from_fork+0x10/0x20
+[   61.508474] usb usb5: USB disconnect, device number 1
+[   61.618437] xhci-hcd xhci-hcd.7.auto: USB bus 5 deregistered
+[   61.618467] xhci-hcd xhci-hcd.7.auto: remove, state 4
+[   61.618472] usb usb4: USB disconnect, device number 1
+[   61.619930] xhci-hcd xhci-hcd.7.auto: USB bus 4 deregistered
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/30019a70-d496-41d5-9159-c991ac93f326%40rowland.harvard.edu.
+To view this discussion visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/Z1A8fai9_fQFhs1s%40hovoldconsulting.com.
