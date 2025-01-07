@@ -1,108 +1,107 @@
-Return-Path: <usb-storage+bncBDUNBGN3R4KRBRUU6O5QMGQE4EA3U7Y@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBDUNBGN3R4KRBSUU6O5QMGQENYAKN5Y@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-pl1-x646.google.com (mail-pl1-x646.google.com [IPv6:2607:f8b0:4864:20::646])
-	by mail.lfdr.de (Postfix) with ESMTPS id 11790A037E6
+Received: from mail-pj1-x1045.google.com (mail-pj1-x1045.google.com [IPv6:2607:f8b0:4864:20::1045])
+	by mail.lfdr.de (Postfix) with ESMTPS id BEC22A037EC
 	for <lists+usb-storage@lfdr.de>; Tue,  7 Jan 2025 07:31:49 +0100 (CET)
-Received: by mail-pl1-x646.google.com with SMTP id d9443c01a7336-2167141e00esf211134475ad.2
-        for <lists+usb-storage@lfdr.de>; Mon, 06 Jan 2025 22:31:48 -0800 (PST)
-ARC-Seal: i=2; a=rsa-sha256; t=1736231495; cv=pass;
+Received: by mail-pj1-x1045.google.com with SMTP id 98e67ed59e1d1-2f129f77173sf4878377a91.1
+        for <lists+usb-storage@lfdr.de>; Mon, 06 Jan 2025 22:31:49 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1736231498; cv=pass;
         d=google.com; s=arc-20240605;
-        b=Y2i0f516V4XegcQCzwMF1baIvYIbz/X3SCE5EtzswSGTY0ISZN2qvmzSbw5KB7rhPo
-         U3C94WVX6EB1yxccj2ykv51BM3ke3XoCoh9s+knQ6+oEd6qhQhWd9ChaCaAxwUbgV0MK
-         HQM2J2SYcQFjWHiOmH3g+yNVkacijxMBa0PIioVcEyrljnBDsWbmJRg+DsxjhIVfHIRQ
-         a8xwgdUNDQQrK+VAJ9UkWCnk9OhIsSAT4ueC0XJ5oZa9ZFpqOvsFv5IbHd7gbCLhqc9A
-         rCfh2+sA8o4dt0jHlOll4OclYg6NprPegWFqPKqARYKt4ORP6SLhYFExjMJ6RY0Y9NQ9
-         ThLw==
+        b=k4QaSpGgUKk3DOJWy4szosW8tee2dhpRGw3pOkByY/zcs9kFqqZwz+ycodym8iGnZA
+         ND79A1NQckR23ZDFn3Mzdu385QdMo0AAS7mVlty+YvEsA5W7uPEsCFMDL2pclnDWT8rr
+         SYolTm7dP4MzxhJM7zmIfM5LYAzlrXetgw/Cn/fPB49SaWU2nubfLyG22rbabm54nhBo
+         ze/R9A7Tt7T8meqj85x8rvum6RBONY2ZHbPVbQrisG/J8qhLvrXynwQqjifYyFu5TCKe
+         sBIe588m4ZCgkixvBsR5CCF1GdFfg8rUXMYuTSyaoTuAL7Q8rT/a9noC4SCAI3yQe97I
+         Lydg==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:sender:dkim-signature;
-        bh=Duq4k/SE9LEYR+mLMPx8l7yV7OsjnrH0J4XTi6eqknQ=;
-        fh=qTFAWI3WROCb85+PfcEzmnx+tXhpToq51rQ/CUyCnXI=;
-        b=PzsFLA0BtpeyShJP93B3kTkk79rCSS4HNcbrEvIgWXXMdO3T7xgtKVgKQXnEtmoLu+
-         nDI9GZ5yTb83+tnoDnyTz5A1QQNAXSyc+97pSwTQC0reOYpB9USmJ5GbaNcERT9QBP6N
-         0Alv4j9nWkQCibFR9DNAiTKtzxifFbjeW2fnp8QpqnuBh4O0W7uciq0WbyG3fJyjWljC
-         CWzlR0Cq7VoiWDtxXMHHxfC29jvBlLfh8v/bu35/uYQo4ZKhnwk94/vJ9mkux6wcfPTs
-         QL7iH3RO8vuXkSlhnA/CLfjE01Y0SSKn6v7lnjILnB9QqBQ7JHg0LIlSEVBT8fSYfgZm
-         KL3A==;
+        bh=Yr50ilf4z3O0174BH4MsHorDCyUUok8myDZCWKklVxc=;
+        fh=2D1ZegXNW+52yMWiL2RXq+7k4J9grGB5GR/yNLx50Ew=;
+        b=XRm79p5lm53ayhMQ8YZAD5RVo19q04tfKgQ5CuioeSPeS2grPzaerFXrQydqsP0d+G
+         AbkVJPliK6AkUF8a9Egf88701KXHHd5b7gLtuWFat/7uKctrjJMZTVMDwhaZtzkmCZxR
+         tBCweoyY8XJQf4JuZVH2BsWVCtZbjg9+oBPAMYpZlijaK7D1rKonmVaugQW/bzv+qsLQ
+         CffspdYTOdXzzKWzGii9Bdd1o9IFIeZ6mCdRmZumQ/lCzU8n7V2u/qbd34WT3I8JkA6b
+         uuTfoD+z+LorZa/cM8DeDAaBAfWkJWkNVpsLuLzVaDU5FObCoiAe3QZjft1NRECEIt26
+         Roow==;
         darn=lfdr.de
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@infradead.org header.s=bombadil.20210309 header.b=fr+rWfYm;
+       dkim=pass header.i=@infradead.org header.s=bombadil.20210309 header.b=n2iN6rsN;
        spf=none (google.com: batv+ca79fa4415f544dfc9f5+7807+infradead.org+hch@bombadil.srs.infradead.org does not designate permitted sender hosts) smtp.mailfrom=BATV+ca79fa4415f544dfc9f5+7807+infradead.org+hch@bombadil.srs.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1736231495; x=1736836295; darn=lfdr.de;
+        d=lists.one-eyed-alien.net; s=google; t=1736231498; x=1736836298; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:x-original-authentication-results
          :x-original-sender:mime-version:references:in-reply-to:message-id
          :date:subject:cc:to:from:sender:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=Duq4k/SE9LEYR+mLMPx8l7yV7OsjnrH0J4XTi6eqknQ=;
-        b=gXMX3/WZ3RxaVVvewtIK0nAj7o5vr0ZVf9NAZCmVLjRbFrOCrd4VHEIiyc0ADxuK8L
-         B69Tm6L2LQxANM7+qUCd6d7QObYyG15qv+AGa6Nm/LpbEpDWYZxF+lVpQ246qulSM2ir
-         /1BVAdt74zbmjXMFPPn3iDcScHOwNRjLt9QJU=
+        bh=Yr50ilf4z3O0174BH4MsHorDCyUUok8myDZCWKklVxc=;
+        b=LblcI5oJJ1FZwuMxaixBV7YrDQIOuyRQVunpqhMLN1sMUhIKCiKAf/yZZ3/Pgz52Zr
+         5fb2b+xf7WZ84ZvZFeUZOz/lW6fjGoOdJ3DsJqL5ZLBZBLvkCNRQp48p2Iv7qspXtfgu
+         Ygj4B64XFDnTn7rBLuKFXqPKEe0vQ2VhfhoHg=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1736231495; x=1736836295;
+        d=1e100.net; s=20230601; t=1736231498; x=1736836298;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :x-spam-checked-in-group:list-id:mailing-list:precedence
          :x-original-authentication-results:x-original-sender:mime-version
          :references:in-reply-to:message-id:date:subject:cc:to:from
          :x-beenthere:x-gm-message-state:sender:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=Duq4k/SE9LEYR+mLMPx8l7yV7OsjnrH0J4XTi6eqknQ=;
-        b=riaYBVOgZ9dv+oKg+81BDL4IpmaAqgos0CwwGhg8S8klzroJzzCOgr+6UFUAimi86t
-         ornLLbxP6s2TMiPdnEFnW9rnnckGA0VY8toUYz4BCTiVZunVS6SYgv7t5dIQIq7Q/IEA
-         gIKfn4ce/OhZCCafaN4yYgnP7eoWTvOXpiYXaelwR0qQvuf5EqNUMDC/L1DNt6MjP/nN
-         uTc1nv8eK/YXd8AtHHJ7Lpg1drN3AO/e+GhEt8EFHFc1PjnI8tkROqs+UsYC7mbFTMKg
-         e4I3Pj7y06VyB3tF9yl/r+jhQOyRYXGfr6clmXJpr+P1GJP2gzam6YoEOf9sx36rSNr+
-         HGNw==
+        bh=Yr50ilf4z3O0174BH4MsHorDCyUUok8myDZCWKklVxc=;
+        b=N8SKVmNE/E+TOkT0dj4yWXixauAPSreEpeF428Uka4maDxCQV/ZPujl6HZNirKjW32
+         gbv7cq15hwPncDBqADS5MJsme4ShcyrvnzM6NQReWck7hh2EjbTdzhgeM76/6B3DoYel
+         SG3ajD/DV7g7DMS4sY+9XZNP1NM+2tKf/nJzLqn7XHcfK1wMC50S0jBEf2Lb4kyqX8KB
+         07cIeK44x02SlyLCm7NhkI87/qCdOrfUMf9WGCl03PtClO5fyjBk/Yd9Qe6wppSw+1oY
+         427KWiUsrszukL+7Hh3UNGqh05yo1ciacyC4bO09IJYgff5OI+Xn3fmaqvNH3pcBrPbJ
+         HSjA==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Forwarded-Encrypted: i=2; AJvYcCWBeASUj8sULk5LRbu1ZsdTGkxZu6wOQm+CYaJebbh/qkEngMTxDgEGs8A0Rx/QUa3M0/Kr3w==@lfdr.de
-X-Gm-Message-State: AOJu0YxNywj6pXUHm5Vyc/5htMBvPRryMp1MetTFpcfc7VigdO2cSSoe
-	udQnjJJZGSK3QYZA0k/jjDd/0QolAKV6JJi6cfo3NLAuS9gsfyFKW9Nz3C7zniU=
-X-Google-Smtp-Source: AGHT+IEVlY3IDDTTjbR5LRNWNJ2jxHWCsiO3LfB/KvZw5B2MJXjDR8jEVsaXa/yF3T3tfMkfe2779g==
-X-Received: by 2002:a17:902:c409:b0:216:6fb5:fd83 with SMTP id d9443c01a7336-219e6ebdd95mr880684925ad.29.1736231494392;
-        Mon, 06 Jan 2025 22:31:34 -0800 (PST)
+X-Forwarded-Encrypted: i=2; AJvYcCW3NJN98A3DXLrIX+41aZGkvSnvuxUrf+txzZ1w38InWfABVJAdG6osex31bdlpNp1DEGWLng==@lfdr.de
+X-Gm-Message-State: AOJu0Yzwx1YzKE+TFqQB9VjSIOWQgK4icXbLZWDAuunCLGwn1cVwDUb0
+	in2YcNldJ/3Cv6wIGC7/iWoVWfKAnygNyy52LL3p4m4e3fm9MvfQ7zgO0qhkfic=
+X-Google-Smtp-Source: AGHT+IEcviHdIVlQQ7/7UnNdN01x1MCRCZ1/PIIMoFB2QNHM5PLTJnP0amw30SGSRVbZydb4HRo4ow==
+X-Received: by 2002:a05:6a00:1309:b0:725:b75a:1c13 with SMTP id d2e1a72fcca58-72abdf0ec10mr29799658b3a.4.1736231498269;
+        Mon, 06 Jan 2025 22:31:38 -0800 (PST)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a17:902:dacd:b0:216:7a9f:41cb with SMTP id
- d9443c01a7336-219d9fc2e2els11730045ad.1.-pod-prod-09-us; Mon, 06 Jan 2025
- 22:31:33 -0800 (PST)
-X-Forwarded-Encrypted: i=2; AJvYcCVEbR3DjRLA7RWj2cKkJFPkF1CPw08WOsXGr1X0dbtolFqiND6B2rmP2/COP+ugxeOhFfvIDmttlhwHVg==@lists.one-eyed-alien.net
-X-Received: by 2002:a05:6300:6681:b0:1e0:c6c0:1e1f with SMTP id adf61e73a8af0-1e5e07f8a98mr86999908637.36.1736231493073;
-        Mon, 06 Jan 2025 22:31:33 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1736231493; cv=none;
+Received: by 2002:aa7:8752:0:b0:725:d903:a684 with SMTP id d2e1a72fcca58-72aa9935674ls7759199b3a.1.-pod-prod-01-us;
+ Mon, 06 Jan 2025 22:31:37 -0800 (PST)
+X-Forwarded-Encrypted: i=2; AJvYcCU8UlzL4o0L5wifiMT4nT6Q3PAQdZi4oTb5Muzzb0wQsPkljQkrUN2RAa02JolJFaNzZPUk1yxr2KgrMA==@lists.one-eyed-alien.net
+X-Received: by 2002:a05:6a00:a908:b0:728:cd4f:d5d7 with SMTP id d2e1a72fcca58-72abdbe8b1dmr80246922b3a.0.1736231496946;
+        Mon, 06 Jan 2025 22:31:36 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1736231496; cv=none;
         d=google.com; s=arc-20240605;
-        b=gQVQn8ypTOjLTQE2hbfBspZlD6lm+QThXrG1qZroDd38eJ5z1iGRl3yEJGPkrqZYlr
-         YOqfT6YuPspSOqLUrzPelgdBUR3oFHULehuC5rexk/4Vk0JqdVJIQ9RlC3AWy6bWMdg+
-         fH8HB79szf/IYTBDRIJbFCNp1fPV3UlV63LbQCe4kfjsEld22KyslbqP/dzxLhvA1G/U
-         UUcoDkK6aRhVuSVu1Jlu7UC031Is7/bheygplhHs8dc5Xs4XZkW5I3C4VLOUuVWUVVsZ
-         d6M7BX5iDlDU36hJ8xwVSR+nwBiLHligmjD5KYcfC48xYUaP2YpQITIOefEIs6z2EWEg
-         W5Uw==
+        b=ap08CWq3u7ezw/l6MyKxgmdlMYu56u4MSXldfyJdZFdTb9ng12VREWu8CBR9MeyP2g
+         PiqOFXjIKmJdyw3yk3TYEgLSSlSamIhpphpVIUFxO+G3F3dgmVpSYwsiwq5Lfv2c2Jse
+         BFuTHYmwAfKUvZYZRKVijyoFzPei7F0fk/AwqPzVMEnvmZaZ4FMcCFIXktY9X00DigMj
+         I5iJFC3pPzyhwMq5O2VxNjeJw7cxlLWJF3KIdncGoUD3n2wz6svQWMB51wbtL99245ph
+         KGtuKispf8fAn00jPK6mYd+iON1rKlcc0kpPtegr9Ro63k4EPgsvdvUhLbOEuovpkSir
+         jpng==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:dkim-signature;
-        bh=AXp5b/SaMnyr0NyPtwbboGVI2AIHtcycWI2fx/lObGg=;
+        bh=td9hXTRm3bIkt4nDSZFirDvnCCVcnWUnxIQRddOHupE=;
         fh=/IQ3556OhCBpzuvXgLE22Yzy616bQT8dDlkj0uCHKWQ=;
-        b=RXL494Q0Em4CUbwUb3HYKPGwSXaHvUHlICGAE7r7rYMRoCCPvYMMMTO0WwT/rNEZFB
-         ueoIIWiWI3R1m4ciJrWsjhvteJzDe0YIMt3g48I1JOE0/FrqJ+AkXuQlFEZXLdedSvxB
-         kxccCOlTTuKQ4ynhOO9RtQXK/eExuJ6TqzDac9jJ1ZO4NjeNcerlJtrmEfE9UfoHRzDx
-         HFeBblQQ0wPPmJfyQHErnCvuHamIuRwnPqAXEMZr3ZlQ9sKVWzHFDMBOe6d1iLJ9hgSO
-         4lKNf542IZ4oe0D7DEdfxI3WnECejlgKJ05/etvChWvUK5+YEzyPrXxLRVOiqh93rT+3
-         4xRQ==;
+        b=kEPW19XjnVzKTfh3rrjGUsxKtL+2DEKGDh6tep+47GAw1omChHZc7LVioH+vQ43I7q
+         xyKV2TI8gsM7ivlYo5qBeAtKdIAdLNeXxDFeN/byNYpYFY1vrIRVGDxliXlnhZsKC0uj
+         HGM1Qoul+zQvN/xWFP1pbT1sEhpG/igPopLyo2VsuoHvn4c+pn4yjVXombIaBQNjRZLB
+         yYoWbKrsOu2PrljTXMMCMLf1qKNiDchCb6/ZSRJ/yhg89AwnEnasPzT8aF8J4cd2eZIp
+         4wpgJfjuqYX9fkCGIslmfygyG1uFxmZurT4454WOhPjN9rdpf/ORYYzmiG/D1tLwKiid
+         VGeg==;
         dara=google.com
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@infradead.org header.s=bombadil.20210309 header.b=fr+rWfYm;
+       dkim=pass header.i=@infradead.org header.s=bombadil.20210309 header.b=n2iN6rsN;
        spf=none (google.com: batv+ca79fa4415f544dfc9f5+7807+infradead.org+hch@bombadil.srs.infradead.org does not designate permitted sender hosts) smtp.mailfrom=BATV+ca79fa4415f544dfc9f5+7807+infradead.org+hch@bombadil.srs.infradead.org
 Received: from bombadil.infradead.org (bombadil.infradead.org. [2607:7c80:54:3::133])
-        by mx.google.com with ESMTPS id 41be03b00d2f7-842e91a0814si32020510a12.320.2025.01.06.22.31.33
+        by mx.google.com with ESMTPS id 41be03b00d2f7-842b63918f5si44756592a12.229.2025.01.06.22.31.36
         for <usb-storage@lists.one-eyed-alien.net>
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 06 Jan 2025 22:31:33 -0800 (PST)
+        Mon, 06 Jan 2025 22:31:36 -0800 (PST)
 Received-SPF: none (google.com: batv+ca79fa4415f544dfc9f5+7807+infradead.org+hch@bombadil.srs.infradead.org does not designate permitted sender hosts) client-ip=2607:7c80:54:3::133;
 Received: from 2a02-8389-2341-5b80-d467-d75d-35bf-0eb6.cable.dynamic.v6.surfer.at ([2a02:8389:2341:5b80:d467:d75d:35bf:eb6] helo=localhost)
 	by bombadil.infradead.org with esmtpsa (Exim 4.98 #2 (Red Hat Linux))
-	id 1tV37g-00000003dqF-3fMc;
-	Tue, 07 Jan 2025 06:31:29 +0000
+	id 1tV37j-00000003ds7-1Qz0;
+	Tue, 07 Jan 2025 06:31:31 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Jens Axboe <axboe@kernel.dk>
 Cc: Damien Le Moal <dlemoal@kernel.org>,
@@ -113,10 +112,9 @@ Cc: Damien Le Moal <dlemoal@kernel.org>,
 	nbd@other.debian.org,
 	linux-scsi@vger.kernel.org,
 	usb-storage@lists.one-eyed-alien.net
-Subject: [usb-storage] [PATCH 2/8] block: add a queue_limits_commit_update_frozen
- helper
-Date: Tue,  7 Jan 2025 07:30:34 +0100
-Message-ID: <20250107063120.1011593-3-hch@lst.de>
+Subject: [usb-storage] [PATCH 3/8] block: don't update BLK_FEAT_POLL in __blk_mq_update_nr_hw_queues
+Date: Tue,  7 Jan 2025 07:30:35 +0100
+Message-ID: <20250107063120.1011593-4-hch@lst.de>
 X-Mailer: git-send-email 2.45.2
 In-Reply-To: <20250107063120.1011593-1-hch@lst.de>
 References: <20250107063120.1011593-1-hch@lst.de>
@@ -124,7 +122,7 @@ MIME-Version: 1.0
 X-SRS-Rewrite: SMTP reverse-path rewritten from <hch@infradead.org> by bombadil.infradead.org. See http://www.infradead.org/rpr.html
 X-Original-Sender: hch@lst.de
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@infradead.org header.s=bombadil.20210309 header.b=fr+rWfYm;
+ header.i=@infradead.org header.s=bombadil.20210309 header.b=n2iN6rsN;
        spf=none (google.com: batv+ca79fa4415f544dfc9f5+7807+infradead.org+hch@bombadil.srs.infradead.org
  does not designate permitted sender hosts) smtp.mailfrom=BATV+ca79fa4415f544dfc9f5+7807+infradead.org+hch@bombadil.srs.infradead.org
 Content-Type: text/plain; charset="UTF-8"
@@ -143,193 +141,119 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-Add a helper that freezes the queue, updates the queue limits and
-unfreezes the queue and convert all open coded versions of that to the
-new helper.
+When __blk_mq_update_nr_hw_queues changes the number of tag sets, it
+might have to disable poll queues.  Currently it does so by adjusting
+the BLK_FEAT_POLL, which is a bit against the intent of features that
+describe hardware / driver capabilities, but more importantly causes
+nasty lock order problems with the broadly held freeze when updating the
+number of hardware queues and the limits lock.  Fix this by leaving
+BLK_FEAT_POLL alone, and instead check for the number of poll queues in
+the bio submission and poll handlers.  While this adds extra work to the
+fast path, the variables are in cache lines used by these operations
+anyway, so it should be cheap enough.
 
+Fixes: 8023e144f9d6 ("block: move the poll flag to queue_limits")
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 ---
- block/blk-integrity.c      |  4 +---
- block/blk-settings.c       | 24 ++++++++++++++++++++++++
- block/blk-zoned.c          |  7 +------
- drivers/block/virtio_blk.c |  4 +---
- drivers/scsi/sd.c          | 17 +++++------------
- drivers/scsi/sr.c          |  5 +----
- include/linux/blkdev.h     |  2 ++
- 7 files changed, 35 insertions(+), 28 deletions(-)
+ block/blk-core.c | 17 ++++++++++++++---
+ block/blk-mq.c   | 17 +----------------
+ 2 files changed, 15 insertions(+), 19 deletions(-)
 
-diff --git a/block/blk-integrity.c b/block/blk-integrity.c
-index b180cac61a9d..013469faa5e7 100644
---- a/block/blk-integrity.c
-+++ b/block/blk-integrity.c
-@@ -218,9 +218,7 @@ static ssize_t flag_store(struct device *dev, const char *page, size_t count,
- 	else
- 		lim.integrity.flags |= flag;
- 
--	blk_mq_freeze_queue(q);
--	err = queue_limits_commit_update(q, &lim);
--	blk_mq_unfreeze_queue(q);
-+	err = queue_limits_commit_update_frozen(q, &lim);
- 	if (err)
- 		return err;
- 	return count;
-diff --git a/block/blk-settings.c b/block/blk-settings.c
-index b6b8c580d018..2afc67182efd 100644
---- a/block/blk-settings.c
-+++ b/block/blk-settings.c
-@@ -444,6 +444,30 @@ int queue_limits_commit_update(struct request_queue *q,
+diff --git a/block/blk-core.c b/block/blk-core.c
+index 666efe8fa202..bd5bec843d37 100644
+--- a/block/blk-core.c
++++ b/block/blk-core.c
+@@ -753,6 +753,18 @@ static blk_status_t blk_validate_atomic_write_op_size(struct request_queue *q,
+ 	return BLK_STS_OK;
  }
- EXPORT_SYMBOL_GPL(queue_limits_commit_update);
  
-+/**
-+ * queue_limits_commit_update_frozen - commit an atomic update of queue limits
-+ * @q:		queue to update
-+ * @lim:	limits to apply
-+ *
-+ * Apply the limits in @lim that were obtained from queue_limits_start_update()
-+ * and updated by the caller to @q.  Freezes the queue before the updated and
-+ * unfreezes it after.
-+ *
-+ * Returns 0 if successful, else a negative error code.
-+ */
-+int queue_limits_commit_update_frozen(struct request_queue *q,
-+		struct queue_limits *lim)
++static bool bdev_can_poll(struct block_device *bdev)
 +{
-+	int ret;
++	struct request_queue *q = bdev_get_queue(bdev);
 +
-+	blk_mq_freeze_queue(q);
-+	ret = queue_limits_commit_update(q, lim);
-+	blk_mq_unfreeze_queue(q);
++	if (!(q->limits.features & BLK_FEAT_POLL))
++		return false;
 +
-+	return ret;
++	if (queue_is_mq(q))
++		return q->tag_set->map[HCTX_TYPE_POLL].nr_queues;
++	return true;
 +}
-+EXPORT_SYMBOL_GPL(queue_limits_commit_update_frozen);
 +
  /**
-  * queue_limits_set - apply queue limits to queue
-  * @q:		queue to update
-diff --git a/block/blk-zoned.c b/block/blk-zoned.c
-index 4b0be40a8ea7..9d08a54c201e 100644
---- a/block/blk-zoned.c
-+++ b/block/blk-zoned.c
-@@ -1444,7 +1444,6 @@ static int disk_update_zone_resources(struct gendisk *disk,
- 	unsigned int nr_seq_zones, nr_conv_zones;
- 	unsigned int pool_size;
- 	struct queue_limits lim;
--	int ret;
- 
- 	disk->nr_zones = args->nr_zones;
- 	disk->zone_capacity = args->zone_capacity;
-@@ -1495,11 +1494,7 @@ static int disk_update_zone_resources(struct gendisk *disk,
+  * submit_bio_noacct - re-submit a bio to the block device layer for I/O
+  * @bio:  The bio describing the location in memory and on the device.
+@@ -805,8 +817,7 @@ void submit_bio_noacct(struct bio *bio)
+ 		}
  	}
  
- commit:
--	blk_mq_freeze_queue(q);
--	ret = queue_limits_commit_update(q, &lim);
--	blk_mq_unfreeze_queue(q);
+-	if (!(q->limits.features & BLK_FEAT_POLL) &&
+-			(bio->bi_opf & REQ_POLLED)) {
++	if ((bio->bi_opf & REQ_POLLED) && !bdev_can_poll(bdev)) {
+ 		bio_clear_polled(bio);
+ 		goto not_supported;
+ 	}
+@@ -935,7 +946,7 @@ int bio_poll(struct bio *bio, struct io_comp_batch *iob, unsigned int flags)
+ 		return 0;
+ 
+ 	q = bdev_get_queue(bdev);
+-	if (cookie == BLK_QC_T_NONE || !(q->limits.features & BLK_FEAT_POLL))
++	if (cookie == BLK_QC_T_NONE || !bdev_can_poll(bdev))
+ 		return 0;
+ 
+ 	blk_flush_plug(current->plug, false);
+diff --git a/block/blk-mq.c b/block/blk-mq.c
+index 2e6132f778fd..f795d81b6b38 100644
+--- a/block/blk-mq.c
++++ b/block/blk-mq.c
+@@ -4320,12 +4320,6 @@ void blk_mq_release(struct request_queue *q)
+ 	blk_mq_sysfs_deinit(q);
+ }
+ 
+-static bool blk_mq_can_poll(struct blk_mq_tag_set *set)
+-{
+-	return set->nr_maps > HCTX_TYPE_POLL &&
+-		set->map[HCTX_TYPE_POLL].nr_queues;
+-}
 -
--	return ret;
-+	return queue_limits_commit_update_frozen(q, &lim);
- }
+ struct request_queue *blk_mq_alloc_queue(struct blk_mq_tag_set *set,
+ 		struct queue_limits *lim, void *queuedata)
+ {
+@@ -4336,7 +4330,7 @@ struct request_queue *blk_mq_alloc_queue(struct blk_mq_tag_set *set,
+ 	if (!lim)
+ 		lim = &default_lim;
+ 	lim->features |= BLK_FEAT_IO_STAT | BLK_FEAT_NOWAIT;
+-	if (blk_mq_can_poll(set))
++	if (set->nr_maps > HCTX_TYPE_POLL)
+ 		lim->features |= BLK_FEAT_POLL;
  
- static int blk_revalidate_conv_zone(struct blk_zone *zone, unsigned int idx,
-diff --git a/drivers/block/virtio_blk.c b/drivers/block/virtio_blk.c
-index 71a7ffeafb32..bbaa26b523b8 100644
---- a/drivers/block/virtio_blk.c
-+++ b/drivers/block/virtio_blk.c
-@@ -1105,9 +1105,7 @@ cache_type_store(struct device *dev, struct device_attribute *attr,
- 		lim.features |= BLK_FEAT_WRITE_CACHE;
- 	else
- 		lim.features &= ~BLK_FEAT_WRITE_CACHE;
--	blk_mq_freeze_queue(disk->queue);
--	i = queue_limits_commit_update(disk->queue, &lim);
--	blk_mq_unfreeze_queue(disk->queue);
-+	i = queue_limits_commit_update_frozen(disk->queue, &lim);
- 	if (i)
- 		return i;
- 	return count;
-diff --git a/drivers/scsi/sd.c b/drivers/scsi/sd.c
-index 8947dab132d7..af62a8ed8620 100644
---- a/drivers/scsi/sd.c
-+++ b/drivers/scsi/sd.c
-@@ -177,9 +177,8 @@ cache_type_store(struct device *dev, struct device_attribute *attr,
+ 	q = blk_alloc_queue(lim, set->numa_node);
+@@ -5024,8 +5018,6 @@ static void __blk_mq_update_nr_hw_queues(struct blk_mq_tag_set *set,
+ fallback:
+ 	blk_mq_update_queue_map(set);
+ 	list_for_each_entry(q, &set->tag_list, tag_set_list) {
+-		struct queue_limits lim;
+-
+ 		blk_mq_realloc_hw_ctxs(set, q);
  
- 		lim = queue_limits_start_update(sdkp->disk->queue);
- 		sd_set_flush_flag(sdkp, &lim);
--		blk_mq_freeze_queue(sdkp->disk->queue);
--		ret = queue_limits_commit_update(sdkp->disk->queue, &lim);
--		blk_mq_unfreeze_queue(sdkp->disk->queue);
-+		ret = queue_limits_commit_update_frozen(sdkp->disk->queue,
-+				&lim);
- 		if (ret)
- 			return ret;
- 		return count;
-@@ -483,9 +482,7 @@ provisioning_mode_store(struct device *dev, struct device_attribute *attr,
+ 		if (q->nr_hw_queues != set->nr_hw_queues) {
+@@ -5039,13 +5031,6 @@ static void __blk_mq_update_nr_hw_queues(struct blk_mq_tag_set *set,
+ 			set->nr_hw_queues = prev_nr_hw_queues;
+ 			goto fallback;
+ 		}
+-		lim = queue_limits_start_update(q);
+-		if (blk_mq_can_poll(set))
+-			lim.features |= BLK_FEAT_POLL;
+-		else
+-			lim.features &= ~BLK_FEAT_POLL;
+-		if (queue_limits_commit_update(q, &lim) < 0)
+-			pr_warn("updating the poll flag failed\n");
+ 		blk_mq_map_swqueue(q);
+ 	}
  
- 	lim = queue_limits_start_update(sdkp->disk->queue);
- 	sd_config_discard(sdkp, &lim, mode);
--	blk_mq_freeze_queue(sdkp->disk->queue);
--	err = queue_limits_commit_update(sdkp->disk->queue, &lim);
--	blk_mq_unfreeze_queue(sdkp->disk->queue);
-+	err = queue_limits_commit_update_frozen(sdkp->disk->queue, &lim);
- 	if (err)
- 		return err;
- 	return count;
-@@ -594,9 +591,7 @@ max_write_same_blocks_store(struct device *dev, struct device_attribute *attr,
- 
- 	lim = queue_limits_start_update(sdkp->disk->queue);
- 	sd_config_write_same(sdkp, &lim);
--	blk_mq_freeze_queue(sdkp->disk->queue);
--	err = queue_limits_commit_update(sdkp->disk->queue, &lim);
--	blk_mq_unfreeze_queue(sdkp->disk->queue);
-+	err = queue_limits_commit_update_frozen(sdkp->disk->queue, &lim);
- 	if (err)
- 		return err;
- 	return count;
-@@ -3803,9 +3798,7 @@ static int sd_revalidate_disk(struct gendisk *disk)
- 	sd_config_write_same(sdkp, &lim);
- 	kfree(buffer);
- 
--	blk_mq_freeze_queue(sdkp->disk->queue);
--	err = queue_limits_commit_update(sdkp->disk->queue, &lim);
--	blk_mq_unfreeze_queue(sdkp->disk->queue);
-+	err = queue_limits_commit_update_frozen(sdkp->disk->queue, &lim);
- 	if (err)
- 		return err;
- 
-diff --git a/drivers/scsi/sr.c b/drivers/scsi/sr.c
-index 198bec87bb8e..b17796d5ee66 100644
---- a/drivers/scsi/sr.c
-+++ b/drivers/scsi/sr.c
-@@ -797,10 +797,7 @@ static int get_sectorsize(struct scsi_cd *cd)
- 
- 	lim = queue_limits_start_update(q);
- 	lim.logical_block_size = sector_size;
--	blk_mq_freeze_queue(q);
--	err = queue_limits_commit_update(q, &lim);
--	blk_mq_unfreeze_queue(q);
--	return err;
-+	return queue_limits_commit_update_frozen(q, &lim);
- }
- 
- static int get_capabilities(struct scsi_cd *cd)
-diff --git a/include/linux/blkdev.h b/include/linux/blkdev.h
-index e781d4e6f92d..13d353351c37 100644
---- a/include/linux/blkdev.h
-+++ b/include/linux/blkdev.h
-@@ -952,6 +952,8 @@ queue_limits_start_update(struct request_queue *q)
- 	mutex_lock(&q->limits_lock);
- 	return q->limits;
- }
-+int queue_limits_commit_update_frozen(struct request_queue *q,
-+		struct queue_limits *lim);
- int queue_limits_commit_update(struct request_queue *q,
- 		struct queue_limits *lim);
- int queue_limits_set(struct request_queue *q, struct queue_limits *lim);
 -- 
 2.45.2
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20250107063120.1011593-3-hch%40lst.de.
+To view this discussion visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20250107063120.1011593-4-hch%40lst.de.
