@@ -1,145 +1,168 @@
-Return-Path: <usb-storage+bncBCZNB4MJSMHRBY4L725QMGQESGN7NCQ@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBD4KDUPW5UNBBC5B725QMGQEMH65P4Q@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-qt1-x846.google.com (mail-qt1-x846.google.com [IPv6:2607:f8b0:4864:20::846])
-	by mail.lfdr.de (Postfix) with ESMTPS id 42056A06FD1
-	for <lists+usb-storage@lfdr.de>; Thu,  9 Jan 2025 09:16:37 +0100 (CET)
-Received: by mail-qt1-x846.google.com with SMTP id d75a77b69052e-467ae19e34bsf18811921cf.2
-        for <lists+usb-storage@lfdr.de>; Thu, 09 Jan 2025 00:16:37 -0800 (PST)
-ARC-Seal: i=2; a=rsa-sha256; t=1736410596; cv=pass;
+Received: from mail-il1-x148.google.com (mail-il1-x148.google.com [IPv6:2607:f8b0:4864:20::148])
+	by mail.lfdr.de (Postfix) with ESMTPS id D12C4A0709D
+	for <lists+usb-storage@lfdr.de>; Thu,  9 Jan 2025 10:02:04 +0100 (CET)
+Received: by mail-il1-x148.google.com with SMTP id e9e14a558f8ab-3a814406be9sf11367115ab.1
+        for <lists+usb-storage@lfdr.de>; Thu, 09 Jan 2025 01:02:04 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1736413323; cv=pass;
         d=google.com; s=arc-20240605;
-        b=NCY7yfbMEhWXuhPMKYUAMiXMY8DHgiHBJqzOPHT/myVhS4vt81jepcMCIogrZK3M0V
-         8NLJ95FP7LPMXvvfYSO+V0FULYEFAEadgCPMpu3EBGIm03OAvjHaE5//BuqODYwqZrjD
-         CBjtA5AY2347GPkMol5vNq+7OAlj4F0Zjc1YgeldBkYDy+ATlnMkL6uALlSYM0GFF8bO
-         BtRtVcjirY2hGIoTY7IhkdfT7AXaruGz1I2fnDgE9veGMNmX4u3xw40uSAev6K+Fy0t8
-         yRI5EnmMJmaW4gwThZCFxr4uJmHGu3vFMkyt7r0yRQcPf2GFK0scjr7xOcLgm9QTUFIC
-         MBLQ==
+        b=BCSR7krU/imWcAfKFBT/PJCeqdlurLZqxFVAjGy6cp5tBE7qLc7nl/9rhU2rS3UMAH
+         KasBezkpTcRGKSSO7tbJeQjod7qVrpiQWT/Ngk+hQ7r9s9Fl16r5OTAekVXUUNyAWj5N
+         Zf9TswC4fHYdjyKGS7YccBzjk4WCduSPQcrziFSW/CoQdOAaEuH2uMS9xymu0CBx9OJY
+         B40Dsdng8q/e6Ex5VNXPOQ2udwqzmDux1C7bXi4b68LQj8WzXWrwpqnL3dFPViqniule
+         H/SfTgGXsDLfNkhjJBW0QRaSfMOhupqjTY+PVkVgANjXps+36BmMwzA//q/8JjCpDQGu
+         2GHg==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:in-reply-to:content-disposition
-         :mime-version:references:message-id:subject:cc:to:from:date:sender
-         :dkim-signature;
-        bh=L8R/fr+7BI4qVF9tpy6V3JIPn+rliNc9Axzl9gkmM48=;
-        fh=aaCLhMRGynlBU1wGavZraM/71j01tEkr4AwhPZ0czRc=;
-        b=jeEoY9CtvoE8nbsxMcTqeRnUFaCsve7AlTdN4oUQLxWoFM1Zcen+mqeviXpIYWIF03
-         e5c46tRtZJYiyW/xh2vQcKVsGkf+CRA3jr/gxb9tOUCPhHSX4Yow2DfUweYNydajg2Nd
-         g9aLbe3eYLc3pVJpk5RFZCuwU5bFz10evGJgIl4PyIhF4AwlpsiGqxD+zoAWzjQz/n9a
-         875C4rYatrYLxZoZlTTJxMOI4E9AosMxNsH3yEZSp+ObyjJrJdf0wYYNW1N7WvVGxNDL
-         ROGjesBkays/66Vo/OV89tswStl0+X5Sl2Owu1cAwJo8Yqz2QQkB5Cn5cIvnTctcTIvY
-         FjaQ==;
+         :list-id:mailing-list:precedence:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :sender:dkim-signature;
+        bh=bqO3P8yMQOZ6T9PR6jbI+BxxUpB5GCwpB2RuvViLN7E=;
+        fh=k2xT5UWCN18a17WbqyCCU5PamXGLaRjk08kejpV6kBw=;
+        b=U+ryygNVF0YxSW4QIQlj6FjW3iTC3b5XxXz/EqHP23/yHtPEYKbjLbQ7V8jP6oRqAc
+         PgTOoWd9/SHmxii+/vJuPLlRBivc2VWVxhHjVhiwnZFVDRkSl94Zk00icbMfJnvrLwX2
+         iuUfMwtt+1HwyYQtSq1EThlO+PKZ95oRE5njvRquLWPAVMtjmspRludXO8TWNZQ44S3T
+         XV2+5fKLilxpQaOK7cLYpVClz7w29hzR/U7rzNhBKFb2r6/xXrDldSen/RxfRF2aoV2f
+         j1Id1BG1pH6o+1Po1TxzLHNYXhNLKJ11PY5+F0iqv6kgSMNg0YvkOs7/bMWIYZS78zjN
+         1dJQ==;
         darn=lfdr.de
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@redhat.com header.s=mimecast20190719 header.b=eb2xZcHa;
-       spf=pass (google.com: domain of ming.lei@redhat.com designates 170.10.133.124 as permitted sender) smtp.mailfrom=ming.lei@redhat.com;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=redhat.com
+       dkim=pass header.i=@ibm.com header.s=pp1 header.b=CZaMxwNk;
+       spf=pass (google.com: domain of nilay@linux.ibm.com designates 148.163.156.1 as permitted sender) smtp.mailfrom=nilay@linux.ibm.com;
+       dmarc=pass (p=REJECT sp=NONE dis=NONE) header.from=ibm.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1736410596; x=1737015396; darn=lfdr.de;
+        d=lists.one-eyed-alien.net; s=google; t=1736413323; x=1737018123; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:x-original-authentication-results
-         :x-original-sender:in-reply-to:content-disposition:mime-version
-         :references:message-id:subject:cc:to:from:date:sender:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=L8R/fr+7BI4qVF9tpy6V3JIPn+rliNc9Axzl9gkmM48=;
-        b=XZ9gUYJ5W+nenqbyULkZtseQ+Zq0Igmd6JDf3Ni9+3BpKUaqaRt7peH7W7qyUPXZ5/
-         ABTo48QeKYkHRQlQMaa9BT8NDh3m+m79H5HB7cYMVAgm/y50W7Jqzvt7TZgcJwj7Ldv8
-         gT2XfFifarApeWCtxNRydefSjqaQYmqeZF/oU=
+         :x-original-sender:in-reply-to:from:content-language:references:cc
+         :to:subject:user-agent:mime-version:date:message-id:sender:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=bqO3P8yMQOZ6T9PR6jbI+BxxUpB5GCwpB2RuvViLN7E=;
+        b=DOd5heFQF+liE410IfKiGm+OYcdLuAKHQEvQ62pU5r2yKOw0xi2Ie4b5Uf1RvFpukx
+         wnIN8zqMiytwi/Jk49QoLi6Qt1L4+St7hst4TM9sMXERivzacm7p60BfmXsG4W5nA5p+
+         79JYtaaFMCRofUB+u98fIgrtA3ZWoWEhudE/w=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1736410596; x=1737015396;
+        d=1e100.net; s=20230601; t=1736413323; x=1737018123;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :x-spam-checked-in-group:list-id:mailing-list:precedence
          :x-original-authentication-results:x-original-sender:in-reply-to
-         :content-disposition:mime-version:references:message-id:subject:cc
-         :to:from:date:x-beenthere:x-gm-message-state:sender:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=L8R/fr+7BI4qVF9tpy6V3JIPn+rliNc9Axzl9gkmM48=;
-        b=FAyupDEGHUGomuC4YoDvb+aLsS8utILYNk1JLft19i14aLvKQwP1Qxi5WxYrHW3jCH
-         86jYMFLJaUYuKXCiwLoFIxln7JucvfytC1mSb/DH6F1+b9zvR+2tF0VrVRtJ/OBoC+St
-         wqcNmHYeT2lOvp/iNylqp7gXCI/yOxJOCOt2ekl83YAyh8RFNyFFMi2XXdwuDrWKSz/z
-         WOZno/rMq6+5lVXmiIC/lzrSRmXuFI78jcrQhfWlTHeAbt4GlYBu+34Va/akYGG5SgJc
-         lZc3uOSOEhAwkVywEDDaLPcSH+EXDCUC7pYDcMumx0JaZTfvHHD9/ADsRcwuicnKi1jS
-         cS5Q==
+         :from:content-language:references:cc:to:subject:user-agent
+         :mime-version:date:message-id:x-beenthere:x-gm-message-state:sender
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=bqO3P8yMQOZ6T9PR6jbI+BxxUpB5GCwpB2RuvViLN7E=;
+        b=XJBAS8G/OtGUE48OhMaobqSP4VFx3QLt4+J5efevA+2yIDNxk/OuGtnfW2xi7zyD0o
+         yW+ImzdVZsAJ/W21IjF8NzDgDy5lWmF9l47ctDcCko6W+gGgcFXZsRg4bSH9ZogchpAZ
+         QKrsIBK9OomnlOAXjggg5H/mnjakytr4AozsZA9P5FplzssjF0lqs2B+jlcEPF1f6mBv
+         j+5hJSKYFHq44RTOsQqmsWclCn84xj4M0OSsUtDaCLJF2VZqQqmhupE2Up/nt2iRW3kE
+         +GQ3RIW5TSEnpJWFB17agU4J6BV2DtoAh5RV+IgROqE2Xqilu1Ef8qeqjzpDB3vQI7pK
+         wHdQ==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Forwarded-Encrypted: i=2; AJvYcCWNhg4hoPqfuhuu/wPmfJlQlWRXNMR4aw/j5su26YgoHqw0+2RlQ8CAtcTBL5gvvUNsD6nqZQ==@lfdr.de
-X-Gm-Message-State: AOJu0YztIfB9OEamYCeC90mqaPJrRBgTPDpkTwvY87+w3LBS+Ta+5tnD
-	h4yOVxgE4iMDmZ23BC3u/i5uN4QgvMyA6biyMM5+tBn3UiTv2gttXY/89C4atxk=
-X-Google-Smtp-Source: AGHT+IE/CIfFlY84+yFGnSMFaKa4HXQHzNG0X0eAqeKtcMShR1+TniKV/TqA4XBalAvzWCLDDyOoZA==
-X-Received: by 2002:a05:622a:450:b0:464:af64:a90a with SMTP id d75a77b69052e-46c7102c391mr98562111cf.23.1736410595931;
-        Thu, 09 Jan 2025 00:16:35 -0800 (PST)
+X-Forwarded-Encrypted: i=2; AJvYcCU2jVNaKNRS+KVpHy8/YKmNaG/mAvoiLS/edtQMEkZK43fKzozzoVCuFMRlGUvBu6sFtk3m7A==@lfdr.de
+X-Gm-Message-State: AOJu0YwwMLbq6YAjJ6RAsDTd120qU4gJGV4qGlJVdKXPsWyAetlPZTDs
+	t8JFN34ggltzx6iCRlvSg/TNk2A9yoGm2hwXYgy1diSAsSEOpweSXx8P/v633dk=
+X-Google-Smtp-Source: AGHT+IFNu+8pgiX9V3p1IqYEk+90JPWU5Q3CKBzhYQCHJR4dD2Dl2bc69pRMf0A7Ff5RoVvYQYDyjA==
+X-Received: by 2002:a05:6e02:1c44:b0:3a4:eca2:95f1 with SMTP id e9e14a558f8ab-3ce3a9b541emr54763155ab.6.1736413323316;
+        Thu, 09 Jan 2025 01:02:03 -0800 (PST)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:ac8:5647:0:b0:466:98fc:1e3f with SMTP id d75a77b69052e-46c7ab5d4f1ls8812291cf.1.-pod-prod-04-us;
- Thu, 09 Jan 2025 00:16:35 -0800 (PST)
-X-Forwarded-Encrypted: i=2; AJvYcCWe0DKcHRau9eOv7fGNDh9aiE/VqCP66AkpAOzfjVJxPdRIvyEzCxH1jd+G5WALnxjUd/HwG5ipKOzOWg==@lists.one-eyed-alien.net
-X-Received: by 2002:a05:620a:19a3:b0:7b6:f1b8:8a03 with SMTP id af79cd13be357-7bcd9799272mr1039377885a.36.1736410594894;
-        Thu, 09 Jan 2025 00:16:34 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1736410594; cv=none;
+Received: by 2002:a92:d08b:0:b0:3a9:cf3c:6a49 with SMTP id e9e14a558f8ab-3ce475dfbd3ls4207045ab.1.-pod-prod-05-us;
+ Thu, 09 Jan 2025 01:02:02 -0800 (PST)
+X-Forwarded-Encrypted: i=2; AJvYcCUmWBeaNR0VjMcSI0reHAF6U/Ka5TbaDub+14NK0kSrx6tENm02Y/6sD2jhZ3c+1oOMf9vjI5R653bqiA==@lists.one-eyed-alien.net
+X-Received: by 2002:a05:6e02:1f02:b0:3a7:955e:1cc5 with SMTP id e9e14a558f8ab-3ce3a9a4288mr53125655ab.1.1736413322508;
+        Thu, 09 Jan 2025 01:02:02 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1736413322; cv=none;
         d=google.com; s=arc-20240605;
-        b=GVGmEdgrDx9v1KNIPRM+S2OMQvAvsZDP1yMuHV24gzVD/LrWZ/HKuhcofk1GMSBRxD
-         EMn3WTfUye/OQu7XpzkEZ0E1XvIVCK0Y6T6iI0zfBZqaNXGd0HH1JHwT8F4OznBNpWLA
-         Y5hr0X5kr6/fNV/ngvLRokL6PSX1hNml077tPwsh2mJL1fzFXtB2MHU1I/mxt+4RidrX
-         YvRxJll2jIxCdl0gBtcjEMlA+Q8WWjY3aNaS61BsWmSmrBxCbFwmCdY7+JmCcguhjcF2
-         QeLZ1YTYOAYymYLkWMBKPpYOt6cwamcB7LK8xawllZVD1VeJtfIS4j+IWwH8Gi74u7H2
-         SP6Q==
+        b=a9h73w5zqQMfllq9K1GTHlxcMj3BWvhJnfItCcGA+FCVXSOi7h9Qb7GWXMBxOgD6Oq
+         QHXvXkpN7H2tYO3vbN3GAvuWN48QNmkdnk+07K2o4eZr0TM4HyAHfC9+oQHkyFXABQvj
+         It7mieJodM6YvGaVC+w1MtuUgqrrY1IeDKNAJtMSYX/BLKr7EKwpZ7PEhqsXxav3rFW7
+         s0gusprJEBOD0P0vCOMxDWUtGWuy5lUfpUP9keerSncmbJm4ys9Uj8iaPcvf2VqhDlNE
+         DS4OKE8+ZdJjHYwE7+6l2z1lbwVxVOIUw5uS385GRjUF3ai7GhJ9Do4a8B19SQGHd9gm
+         e6/w==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:dkim-signature;
-        bh=eD4PQ2lqozBCLy6ODlL7uzyXEhGgP3XjJCgY56pBPH0=;
-        fh=7dZM2XeuomGHIllC5bwDR/SHxoJbo2Rj1OhR3VTXnEs=;
-        b=Zk4W13FSSefCgHiKNPtjLfe92OvRX7Myaq+CtWhv8rRBez1AauchmFukl2LMinCOSC
-         e8mYcvZSMs4RFtFK5uwh43nOsQ58RZmWTX3d0iZOQRN61g8lHoeCq6H6Ium7CHExRBxO
-         zYsF/y7oc/rgYjUHVOUuijwK3pXWwV44hPHQPbiZ5NTSd7VC/im3sOLi/mgPFyh5lOS0
-         37md+mvfLnqoDjgoM9yXBsC9G9MBDsJcrSgYACPLqW/mCt36kjIpY7fqRIW/9U3vMaE1
-         WnxKzYBh2fAmdHjlrxxLCFty8RJy74rVbV1OQxTOjHqrVDbG3kHJnCBXezcqCfwDcQ0W
-         V58w==;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :dkim-signature;
+        bh=Mt7svNWjnS+/9gpPmbijyojfhnqpHdDHs3IaA1MReO0=;
+        fh=JcTRum9t0ZI17fMSO8Piq5mdunIaND7RKWuNvd6BEto=;
+        b=Kz8m0UzygKjAyzZ2z7ENUP7wFyCozCe78dUKAl6l1Yv/lsNeuY99VQRorUB8OqsdW0
+         mgbw9xxEIqLOSIalh3txfGnGdc31LXG0M0b0ihlP6e5TLqU+a5iUJ365ZXJig5VhKyrT
+         gXfMDcElScKIZUV1l/N2WM4GkWrawb8uBdak8vWQEJEj3KIVP+Uzk0xMrU8REKdpnq28
+         /hmM+7q2BNe32PGtnI/bz3U1SAQqWoqskk9OsVBv/Gjxn8cYN7D3wOzCMyYCIV3AXeni
+         0xHgKr8J24efzWJWsyi0I5cJcwEaZvJHj3Lt9fSlhbessvf5flN/miqzEUC4af2rCdPX
+         y7Lw==;
         dara=google.com
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@redhat.com header.s=mimecast20190719 header.b=eb2xZcHa;
-       spf=pass (google.com: domain of ming.lei@redhat.com designates 170.10.133.124 as permitted sender) smtp.mailfrom=ming.lei@redhat.com;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=redhat.com
-Received: from us-smtp-delivery-124.mimecast.com (us-smtp-delivery-124.mimecast.com. [170.10.133.124])
-        by mx.google.com with ESMTPS id af79cd13be357-7bce34fdc13si105378285a.379.2025.01.09.00.16.34
+       dkim=pass header.i=@ibm.com header.s=pp1 header.b=CZaMxwNk;
+       spf=pass (google.com: domain of nilay@linux.ibm.com designates 148.163.156.1 as permitted sender) smtp.mailfrom=nilay@linux.ibm.com;
+       dmarc=pass (p=REJECT sp=NONE dis=NONE) header.from=ibm.com
+Received: from mx0a-001b2d01.pphosted.com (mx0a-001b2d01.pphosted.com. [148.163.156.1])
+        by mx.google.com with ESMTPS id 8926c6da1cb9f-4ea1b61331csi407493173.51.2025.01.09.01.02.02
         for <usb-storage@lists.one-eyed-alien.net>
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 09 Jan 2025 00:16:34 -0800 (PST)
-Received-SPF: pass (google.com: domain of ming.lei@redhat.com designates 170.10.133.124 as permitted sender) client-ip=170.10.133.124;
-Received: from mx-prod-mc-04.mail-002.prod.us-west-2.aws.redhat.com
- (ec2-54-186-198-63.us-west-2.compute.amazonaws.com [54.186.198.63]) by
- relay.mimecast.com with ESMTP with STARTTLS (version=TLSv1.3,
- cipher=TLS_AES_256_GCM_SHA384) id us-mta-436-NkzkPsgmN0iiF3ToB2oXgQ-1; Thu,
- 09 Jan 2025 03:16:29 -0500
-X-MC-Unique: NkzkPsgmN0iiF3ToB2oXgQ-1
-X-Mimecast-MFC-AGG-ID: NkzkPsgmN0iiF3ToB2oXgQ
-Received: from mx-prod-int-05.mail-002.prod.us-west-2.aws.redhat.com (mx-prod-int-05.mail-002.prod.us-west-2.aws.redhat.com [10.30.177.17])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
-	(No client certificate requested)
-	by mx-prod-mc-04.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTPS id EA31A1955D71;
-	Thu,  9 Jan 2025 08:16:26 +0000 (UTC)
-Received: from fedora (unknown [10.72.116.139])
-	by mx-prod-int-05.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTPS id 4B49C1955BE3;
-	Thu,  9 Jan 2025 08:16:19 +0000 (UTC)
-Date: Thu, 9 Jan 2025 16:16:14 +0800
-From: Ming Lei <ming.lei@redhat.com>
-To: Christoph Hellwig <hch@lst.de>
-Cc: Jens Axboe <axboe@kernel.dk>, Damien Le Moal <dlemoal@kernel.org>,
-	Nilay Shroff <nilay@linux.ibm.com>, linux-block@vger.kernel.org,
-	linux-nvme@lists.infradead.org, nbd@other.debian.org,
-	linux-scsi@vger.kernel.org, usb-storage@lists.one-eyed-alien.net,
-	Johannes Thumshirn <johannes.thumshirn@wdc.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 09 Jan 2025 01:02:02 -0800 (PST)
+Received-SPF: pass (google.com: domain of nilay@linux.ibm.com designates 148.163.156.1 as permitted sender) client-ip=148.163.156.1;
+Received: from pps.filterd (m0360083.ppops.net [127.0.0.1])
+	by mx0a-001b2d01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5093qUlO005304;
+	Thu, 9 Jan 2025 09:01:56 GMT
+Received: from ppma22.wdc07v.mail.ibm.com (5c.69.3da9.ip4.static.sl-reverse.com [169.61.105.92])
+	by mx0a-001b2d01.pphosted.com (PPS) with ESMTPS id 4426xc96eu-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 09 Jan 2025 09:01:56 +0000 (GMT)
+Received: from pps.filterd (ppma22.wdc07v.mail.ibm.com [127.0.0.1])
+	by ppma22.wdc07v.mail.ibm.com (8.18.1.2/8.18.1.2) with ESMTP id 50988l41008970;
+	Thu, 9 Jan 2025 09:01:55 GMT
+Received: from smtprelay07.wdc07v.mail.ibm.com ([172.16.1.74])
+	by ppma22.wdc07v.mail.ibm.com (PPS) with ESMTPS id 43yfq04fq8-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 09 Jan 2025 09:01:55 +0000
+Received: from smtpav02.wdc07v.mail.ibm.com (smtpav02.wdc07v.mail.ibm.com [10.39.53.229])
+	by smtprelay07.wdc07v.mail.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id 50991sM012780244
+	(version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+	Thu, 9 Jan 2025 09:01:55 GMT
+Received: from smtpav02.wdc07v.mail.ibm.com (unknown [127.0.0.1])
+	by IMSVA (Postfix) with ESMTP id D48F058058;
+	Thu,  9 Jan 2025 09:01:54 +0000 (GMT)
+Received: from smtpav02.wdc07v.mail.ibm.com (unknown [127.0.0.1])
+	by IMSVA (Postfix) with ESMTP id 16E905805B;
+	Thu,  9 Jan 2025 09:01:51 +0000 (GMT)
+Received: from [9.171.90.198] (unknown [9.171.90.198])
+	by smtpav02.wdc07v.mail.ibm.com (Postfix) with ESMTP;
+	Thu,  9 Jan 2025 09:01:50 +0000 (GMT)
+Message-ID: <69605291-315f-423f-aa7b-ea26b50c1065@linux.ibm.com>
+Date: Thu, 9 Jan 2025 14:31:49 +0530
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
 Subject: [usb-storage] Re: [PATCH 04/11] block: don't update BLK_FEAT_POLL in __blk_mq_update_nr_hw_queues
-Message-ID: <Z3-Fzrj-En-l82Uc@fedora>
+To: Christoph Hellwig <hch@lst.de>, Jens Axboe <axboe@kernel.dk>
+Cc: Damien Le Moal <dlemoal@kernel.org>, Ming Lei <ming.lei@redhat.com>,
+        linux-block@vger.kernel.org, linux-nvme@lists.infradead.org,
+        nbd@other.debian.org, linux-scsi@vger.kernel.org,
+        usb-storage@lists.one-eyed-alien.net,
+        Johannes Thumshirn <johannes.thumshirn@wdc.com>
 References: <20250109055810.1402918-1-hch@lst.de>
  <20250109055810.1402918-5-hch@lst.de>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="UTF-8"
-Content-Disposition: inline
+Content-Language: en-US
+From: Nilay Shroff <nilay@linux.ibm.com>
 In-Reply-To: <20250109055810.1402918-5-hch@lst.de>
-X-Scanned-By: MIMEDefang 3.0 on 10.30.177.17
-X-Original-Sender: ming.lei@redhat.com
+Content-Type: text/plain; charset="UTF-8"
+X-TM-AS-GCONF: 00
+X-Proofpoint-GUID: 4OaTNShCEKjwsjjhv6lQJ1E2nKmW2JMx
+X-Proofpoint-ORIG-GUID: 4OaTNShCEKjwsjjhv6lQJ1E2nKmW2JMx
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1051,Hydra:6.0.680,FMLib:17.12.62.30
+ definitions=2024-10-15_01,2024-10-11_01,2024-09-30_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1011
+ priorityscore=1501 phishscore=0 suspectscore=0 adultscore=0
+ impostorscore=0 mlxscore=0 malwarescore=0 spamscore=0 bulkscore=0
+ mlxlogscore=999 lowpriorityscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.19.0-2411120000 definitions=main-2501090074
+X-Original-Sender: nilay@linux.ibm.com
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@redhat.com header.s=mimecast20190719 header.b=eb2xZcHa;
-       spf=pass (google.com: domain of ming.lei@redhat.com designates
- 170.10.133.124 as permitted sender) smtp.mailfrom=ming.lei@redhat.com;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=redhat.com
+ header.i=@ibm.com header.s=pp1 header.b=CZaMxwNk;       spf=pass (google.com:
+ domain of nilay@linux.ibm.com designates 148.163.156.1 as permitted sender)
+ smtp.mailfrom=nilay@linux.ibm.com;       dmarc=pass (p=REJECT sp=NONE
+ dis=NONE) header.from=ibm.com
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -155,7 +178,9 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On Thu, Jan 09, 2025 at 06:57:25AM +0100, Christoph Hellwig wrote:
+
+
+On 1/9/25 11:27 AM, Christoph Hellwig wrote:
 > When __blk_mq_update_nr_hw_queues changes the number of tag sets, it
 > might have to disable poll queues.  Currently it does so by adjusting
 > the BLK_FEAT_POLL, which is a bit against the intent of features that
@@ -172,12 +197,15 @@ On Thu, Jan 09, 2025 at 06:57:25AM +0100, Christoph Hellwig wrote:
 > Reviewed-by: Damien Le Moal <dlemoal@kernel.org>
 > Reviewed-by: Johannes Thumshirn <johannes.thumshirn@wdc.com>
 
-Reviewed-by: Ming Lei <ming.lei@redhat.com>
+Looks good to me, also with this new change in v3, I re-tested use case: 
+When a driver announces the support of polled I/O during initialization
+and later resizing the queue so that there's no poll queue left. Both 
+these cases works fine. So:
 
-Thanks,
-Ming
+Reviewed-by: Nilay Shroff <nilay@linux.ibm.com>
+
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/Z3-Fzrj-En-l82Uc%40fedora.
+To view this discussion visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/69605291-315f-423f-aa7b-ea26b50c1065%40linux.ibm.com.
