@@ -1,139 +1,148 @@
-Return-Path: <usb-storage+bncBDJNPU5KREFBBYNF7S5QMGQE3NVVZCQ@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBCZNB4MJSMHRBAXE7S5QMGQEVDNP5QY@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-qv1-xf47.google.com (mail-qv1-xf47.google.com [IPv6:2607:f8b0:4864:20::f47])
-	by mail.lfdr.de (Postfix) with ESMTPS id 52929A069BB
-	for <lists+usb-storage@lfdr.de>; Thu,  9 Jan 2025 01:05:55 +0100 (CET)
-Received: by mail-qv1-xf47.google.com with SMTP id 6a1803df08f44-6d884999693sf8156796d6.0
-        for <lists+usb-storage@lfdr.de>; Wed, 08 Jan 2025 16:05:55 -0800 (PST)
-ARC-Seal: i=2; a=rsa-sha256; t=1736381154; cv=pass;
+Received: from mail-qt1-x848.google.com (mail-qt1-x848.google.com [IPv6:2607:f8b0:4864:20::848])
+	by mail.lfdr.de (Postfix) with ESMTPS id 0102EA06ACB
+	for <lists+usb-storage@lfdr.de>; Thu,  9 Jan 2025 03:18:44 +0100 (CET)
+Received: by mail-qt1-x848.google.com with SMTP id d75a77b69052e-467b0b0aed4sf8694431cf.2
+        for <lists+usb-storage@lfdr.de>; Wed, 08 Jan 2025 18:18:43 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1736389123; cv=pass;
         d=google.com; s=arc-20240605;
-        b=NGUL/KgfyPdt+v4gAusgsTUgQkBCbkfl6p7tnYbP6T1SoGVyZcolzFv284sV7oY9Kt
-         g7xVPbG3+t3PuaIUTGQsToiTXDv7zRtkT97QSDI80X6HDipSHOBrAx34PRJMdWUtWL3c
-         voVcE1iPUuXwSfI9H2zir9Eb0eshB/PFN3lLpwu0dKjqkyWzP2LAlugkrkFkVSwYkI8r
-         ve7o3aQTHGy8kJnSNPhwawTWMXkK5mEivBIkYmhJJgg5ewutaRhSflxrABhgdMonr9zH
-         OiJE8CyPNey/3woQ+YcOnJEraPZ3BzO9cP/kdnVhtKOexyzyO18S/isOhTkL3XZqArZV
-         +5hQ==
+        b=bVQl+eKO8elZOL0+zF/8RRyuLKnkLcE1ExRV/VX7A9TT0HfiXWBMSQ82Hxa+FmYWjL
+         HIVyO8h+OE5bFFCvgOUtRJlpiAHD0oBk0ZsAvHDSOptEFyv5CQuchj1ZtI0hsSPsTWRE
+         hFmeaAcgPf/FPj4YNtA2n/LVRIdgrzjPpiOGxkMewKJDMQJYBYj+CEUGT6AVojmxo15R
+         nCsmqVfH/mQNxmdfwHnnxEi/JrNseObOjmj1BPnbgpNvpRUPuBpFwaIpcmxySQ/a56wN
+         S5YS6ME3bxAGVtB90885UV8nRiSw8rmEzaLADgXyloF48GvR6I4tyVs1kiz0fSdIfZn6
+         pIsg==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:reply-to:in-reply-to:organization
-         :content-language:from:references:cc:to:subject:user-agent
-         :mime-version:date:message-id:dkim-signature;
-        bh=iZo3p23/1da2GeMRT3tf4eCSRJl0L+vgERSYdKs+/q0=;
-        fh=4SC2jygtMCvynP02eVaOMEQkZpkmQNvmwFUh0QZbnTQ=;
-        b=A168vWVNMpLyfz6bNYRD5i1CGy8uJa+BS6Y8N0GyMZQl69D2PE4UgkmjL532e5A7B1
-         9yJCHiJsXDGJAW7L8+Z4Dv+s7/GFN/KJmP0wGFb+0c3Q5zWJvZ7nYZUb65W2HPR9/1F7
-         yTDCGBujzZNa8dWuGzpgniM8lRoajV2zcR9edgbXwwqH6bCTkwmY1MF9jsdtJNksssVQ
-         Np9I5udqus9Fb//UiPGwqxBW12zDNTMNlbGQateFLqmmF6jqRhcggDhzq3kYBr4Eb4Fs
-         BgTOsF7B0/6/cl9viv6IVn4Tbw4YcuskCBBL/FhkoDG4Za5XExbVlOH95DlrzLnWNEfm
-         IqSw==;
+         :list-id:mailing-list:precedence:in-reply-to:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date:sender
+         :dkim-signature;
+        bh=YaL18dkE/3xwpLeoMkUFMprhErgrsM/riJ1q6PixsK8=;
+        fh=TgffrXurdy9wiJOpTUyIN5JLskfwuE5zmxeyLrxSEHA=;
+        b=hNt7O028J00gXBRqf3/xzvV2fyl4iKZtJ1fI3bTKnZQXBe3OYI6oiVdTzMa5rMmGu+
+         CgnG5Lv8heHCWnwQsqRlq7gQofq6zltoc7w3CgPf2ZF2d7lTuuJ93jRlCJ9B6wTBHKYg
+         UcDEd453LEJmQvkHaWouVr+HWnzfYUTJoaz4LuQsoO3jbSq/guHzSiPSLAkaPDaRcBZZ
+         rhUzDY09qQPcqX0d7r6E0JjRiG607Ev49ppT2ivkVyIkegnS6XPROBuARxrvNAnR5xa9
+         Gv4/ap2vJCASTPATuaIRjks2Ih7UvPB+sM489tiiImklrjanaO5uC3+jpGGA58Z5rzuu
+         unkw==;
         darn=lfdr.de
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@kernel.org header.s=k20201202 header.b=FcZSPW5M;
-       spf=pass (google.com: domain of dlemoal@kernel.org designates 147.75.193.91 as permitted sender) smtp.mailfrom=dlemoal@kernel.org;
-       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=kernel.org
+       dkim=pass header.i=@redhat.com header.s=mimecast20190719 header.b="UHoSDBN/";
+       spf=pass (google.com: domain of ming.lei@redhat.com designates 170.10.129.124 as permitted sender) smtp.mailfrom=ming.lei@redhat.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=redhat.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1736381154; x=1736985954; darn=lfdr.de;
+        d=lists.one-eyed-alien.net; s=google; t=1736389123; x=1736993923; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:reply-to
-         :x-original-authentication-results:x-original-sender:in-reply-to
-         :organization:content-language:from:references:cc:to:subject
-         :user-agent:mime-version:date:message-id:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=iZo3p23/1da2GeMRT3tf4eCSRJl0L+vgERSYdKs+/q0=;
-        b=jDdyJN/xTGxvNMuqD99ATsrHHbJNFV9DIUrf2JhxI03FlxhDh9LwtIf6kJdmPnVQVC
-         pT80+PJ1jGfolejd8+ltpFaVu/Vp8WCnx0ev67meFhvNbH8fE+9/0pAFF0H1zalg5acz
-         4EllqvyUrPNOsuf+xqa/1oO5LE+4iHim5r2n0=
+         :list-id:mailing-list:precedence:x-original-authentication-results
+         :x-original-sender:in-reply-to:content-disposition:mime-version
+         :references:message-id:subject:cc:to:from:date:sender:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=YaL18dkE/3xwpLeoMkUFMprhErgrsM/riJ1q6PixsK8=;
+        b=fevBGo6yaZGgZhXm6eCMhrKvzQzLAwrm91+/CiqsobkuU7OB4Xsgwrl5bOgzvGUY0d
+         vrsSrVmX2S3XG7wtCX16m0i2yojXsoMDdURYd4zgTOHPLCT57nvjAX9fWl604WqK8b8/
+         pWVgvo6oB+Nb3Bw/ZaoKlhn4HPkMS1Jgb4MFs=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1736381154; x=1736985954;
+        d=1e100.net; s=20230601; t=1736389123; x=1736993923;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :x-spam-checked-in-group:list-id:mailing-list:precedence:reply-to
+         :x-spam-checked-in-group:list-id:mailing-list:precedence
          :x-original-authentication-results:x-original-sender:in-reply-to
-         :organization:content-language:from:references:cc:to:subject
-         :user-agent:mime-version:date:message-id:x-beenthere
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=iZo3p23/1da2GeMRT3tf4eCSRJl0L+vgERSYdKs+/q0=;
-        b=YL9wTvpYQ1DZFjbA99EID4oiaAjli0CLUVDF1xsKCu7i5V8KE+vmqGW+muowHsbmjO
-         d9+ubX5czH0cFBHEATFTKiPQSN9YoHjRUTlrmCdfdNKmf18o8269/61KMiosUdZ9zdol
-         lthKKjHefkGrBl1aWt4d6A9cQ8CrMaG6VS7PLB0ZhSAK0bx+u0uTc/keVjtkdBV7DoSn
-         FDvLcbIJF7LeYBP/u1cYoawqwBJ9x1WIe6kZ/+iu8hVKIDk7KwAqh/CYHJjlqrEGV4XB
-         wGdRAskTUUyYwKhl2h6JOsMllEsLWT3oaPdR8qG3iffMgkf9sPW8THuJ8X9Pp53kCu6N
-         e4Ww==
-X-Forwarded-Encrypted: i=2; AJvYcCX2r99HtDO/TP5PpxFNz0qwvCi46xnNWEaFPRprsC620WTRXpn4nFVoiH9FWyjC65eTKUFF8A==@lfdr.de
-X-Gm-Message-State: AOJu0Yxd8tb0dv0SE0cwu4urlUcbiWm88Pyk9c4qIbG4Qce0SkZKyBF+
-	WWcrBHJg1K466PTjmmdNx2JU3HfHrGyLIY04MndMRd9xIdN6wl1MxtuAbchreuE=
-X-Google-Smtp-Source: AGHT+IHYVU1518VxgewXsdCWNOEuXwcaqjG5IMxRYMk6nRmJNh4Nxs8brWUu/80SEGYvtzs9zqx1rQ==
-X-Received: by 2002:ad4:5748:0:b0:6d8:850a:4d7d with SMTP id 6a1803df08f44-6df9b1cc40fmr82914066d6.2.1736381153910;
-        Wed, 08 Jan 2025 16:05:53 -0800 (PST)
+         :content-disposition:mime-version:references:message-id:subject:cc
+         :to:from:date:x-beenthere:x-gm-message-state:sender:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=YaL18dkE/3xwpLeoMkUFMprhErgrsM/riJ1q6PixsK8=;
+        b=trX5faqqWAJ8wifESNbY63JpWFheT1wBv98JyEGyrlahiCKXEMJgBRgohvFLw4LQOU
+         9vs4qm7dMdw2KAjmrYozN09BxjJfKmaYMJK0SDm9MfFLr2zH++hQYooXGtBiqkcJma1j
+         f8VhMa2zbnjoUCecb/fz0ukywViblvNBD0CuIzIOVM32u6Tr2CHtEPWXgCNVwUb+kvtr
+         wlSwiewd76tm0sxutHpzV6WmJCNvVMSxWRJ5aZ03LDXYwgfcSbg8vbNo2E4TXmhjUeYK
+         nWHbi9iwd2Hp0CTh4H4G2/UtN8zMDhkuHrATtGQN6iN0GcOqWgkG9DucRFxEDvb7Ni+N
+         Tuug==
+Sender: usb-storage@lists.one-eyed-alien.net
+X-Forwarded-Encrypted: i=2; AJvYcCUPrrGbOaRWW5DRPE6uHU1em0WLMjNW2UhIuVo4YHvKxEC9pxwoMfoQq7d9rE0HAQ0vZSjwbA==@lfdr.de
+X-Gm-Message-State: AOJu0YxllsOS1aeILnFHfJEHyDkoEivYs1Ur4T6/dM82pDyzF7NAPkNU
+	qHwWMboiTVBmF2voTYRfb1mzzD7m7YcfhK9a416icd9BXmrk7Q7yN5uQIuIvUG4=
+X-Google-Smtp-Source: AGHT+IHFn093hP5LIF1UX9sifGS8QlQc5VQfqjjefWsEytX13iJUuKfiZZmxMtD34sb7jc0QhBDURQ==
+X-Received: by 2002:a05:622a:1a07:b0:467:4b94:cfaf with SMTP id d75a77b69052e-46c710a1681mr22330331cf.51.1736389122672;
+        Wed, 08 Jan 2025 18:18:42 -0800 (PST)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a05:6214:5411:b0:6d8:a5f7:f114 with SMTP id
- 6a1803df08f44-6dfa36d1b00ls6404666d6.0.-pod-prod-03-us; Wed, 08 Jan 2025
- 16:05:53 -0800 (PST)
-X-Forwarded-Encrypted: i=2; AJvYcCVoRVAgyVtgvuLLnS3qt00ubWTq8SyetycpZTGPVlgVDDFomDRTba6UsYlHiDZIeYksh3NBQg47LOZc2g==@lists.one-eyed-alien.net
-X-Received: by 2002:a05:6214:1bc7:b0:6cb:d1ae:27a6 with SMTP id 6a1803df08f44-6df9b227ea3mr62632366d6.24.1736381152990;
-        Wed, 08 Jan 2025 16:05:52 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1736381152; cv=none;
+Received: by 2002:a05:622a:1b20:b0:466:98fc:1e40 with SMTP id
+ d75a77b69052e-46c7ab5d334ls8907721cf.1.-pod-prod-03-us; Wed, 08 Jan 2025
+ 18:18:42 -0800 (PST)
+X-Forwarded-Encrypted: i=2; AJvYcCVJD4bUsQTmRP+jG5ODcrBOPGkcYhg43ReZR8kO1E7YUwl31ij+uOugjUvYOHiZ1vXIFTiuaDPFlAeQiA==@lists.one-eyed-alien.net
+X-Received: by 2002:a05:620a:3709:b0:7b6:6642:b5f0 with SMTP id af79cd13be357-7bcd9727ac9mr259846685a.11.1736389121771;
+        Wed, 08 Jan 2025 18:18:41 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1736389121; cv=none;
         d=google.com; s=arc-20240605;
-        b=RMqWEGclNPIFJky5QaPmkFvg7ihQLRTS569bIbcWx+VJ9WX5KYd3miEt2gFQj1NnUX
-         auc/Txkamr/RXPnayG6rkshZbBpYKb2tvN9Wo6eKb8SROBHxB8/72HBbe9pbMlnrHgCw
-         4cfwbuopSovWuLHtfOUDDgN0xQJSr9dRlVMfJmKTGBfbHkckomv7WWcE3UejjI74cfuT
-         CyR3SoRf8RlEirBMTJR9dCh4eywBY85D5qRO5hNXuwQcJGDe+3eZDfB68XSW1CNc23VZ
-         ee+je1fO4qsMcZy9/UQIa9T42uhhYsrxD0Z1qGaI/BOOQ4QqyUYx9rdWtu8v9xe2VXI3
-         cfZw==
+        b=FaRQIKWYce42Q87qYNb28MI6rtXnPrCy1Fqx2ilxeyypFCsojiwlbEVAY2fYo00mmT
+         YExOMhFmgnMVCamhBnPMaJcVksIqgtz7Rdck7mOt39C3yX6lqoljFlhgqKDqVGD35g4P
+         4/GNXOHV2ms1cio7HWUAfuw9cFwlzjsBxoHn31HYQ7Tmfh/2SQKtHP+eaQj8qzPiSqtr
+         H/NV6jHxqHYSDSqAezFmQOTvSjAzUcj4/Oj4Yyqs8LgcMgz5ifK9ZWSnRlqN/9/xNVPn
+         dgKOMCGcscp8jMUDjO/Q3jMQHSIzWVm0b2QP2zQcCkoZNILEO4yz+iII6G3taXV2jZWx
+         FAjA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
-        h=content-transfer-encoding:in-reply-to:organization:content-language
-         :from:references:cc:to:subject:user-agent:mime-version:date
-         :message-id:dkim-signature;
-        bh=nNMjgwkvc4CVPYylzinrLP3qUf2CLZh2II8+wHRpa5w=;
-        fh=coeDUU7wMZEHPiv1fgqfbhds5QQX4LJTccFT3cdMs2k=;
-        b=f5YpHH5BeyFuvAtS/1PJHkb9aSa/Aqh390Fu9JbXgOAokdDvvq1GNsP7f8xl/djr+6
-         7ZFX+4rxXIZLFXRI9A+efq7h35VivHhjykfCHhlDDclHD2eWxyHzv2/ouf4Gjl7VHAV6
-         xvyw94aO9g8lPYL5fUAYGtn2wqz6ZSbeRBJO3VWiliXZ3ihD2aID8uw6DswNLGLjVyCl
-         W2JWaaetsrFF3dRKkBl3r6f27d3sPldr0eXjUGD4HH7udUP6vycZHLI90M79UPiA8kAc
-         iN5hUbr7BWsSzTA1Efgl4djGLFtXwbHgd/0+RWx+XGpLqbiPLYtz0UaPERLTAkj6c9jf
-         E4xw==;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:dkim-signature;
+        bh=NI/7sQZJsUB7MRKETVbNrqqCnlEl+xyWkxCJ71vt8Ik=;
+        fh=QWQ5sUO1jicnIS+V+0mkXr1hzwuRfgAlufzC3DFgx3Y=;
+        b=fdB7nu5mJCZkb8gip9caQ8irtpHDrlYo3U1DwwlybI7Ma9gw6DcW0zpzNQ1s5vXvYp
+         dS8di/2kUnCM9IFYbT9zz2NZZkFAz5lTnmDb9WUFLUtz8Ne1K/52X6jvbN+k60RGXYYD
+         DrWuH8Cbo1f9ub5ds+UXHHrnL+qxK3Z/zmCA3a+1S3oyqzsyJWSst4IPPpsuE1Mbbbsc
+         z/uZ2K27Eiar/W1j4YrmXHalWtqZSRh7M8lgBi7u8yk4r9bz5XeD6AVA/lruhsOQUICC
+         7yZ8r2EGscvI8qJz2CGMIm+BoX9OSzbjbJZCdwvm3M63cEsySLmQfjH8ONJeO/lTOI9Q
+         4yzw==;
         dara=google.com
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@kernel.org header.s=k20201202 header.b=FcZSPW5M;
-       spf=pass (google.com: domain of dlemoal@kernel.org designates 147.75.193.91 as permitted sender) smtp.mailfrom=dlemoal@kernel.org;
-       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=kernel.org
-Received: from nyc.source.kernel.org (nyc.source.kernel.org. [147.75.193.91])
-        by mx.google.com with ESMTPS id 6a1803df08f44-6dd18363a6esi508973716d6.479.2025.01.08.16.05.52
+       dkim=pass header.i=@redhat.com header.s=mimecast20190719 header.b="UHoSDBN/";
+       spf=pass (google.com: domain of ming.lei@redhat.com designates 170.10.129.124 as permitted sender) smtp.mailfrom=ming.lei@redhat.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=redhat.com
+Received: from us-smtp-delivery-124.mimecast.com (us-smtp-delivery-124.mimecast.com. [170.10.129.124])
+        by mx.google.com with ESMTPS id af79cd13be357-7bce34fceffsi56911785a.417.2025.01.08.18.18.41
         for <usb-storage@lists.one-eyed-alien.net>
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 08 Jan 2025 16:05:52 -0800 (PST)
-Received-SPF: pass (google.com: domain of dlemoal@kernel.org designates 147.75.193.91 as permitted sender) client-ip=147.75.193.91;
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 01400A41DBE;
-	Thu,  9 Jan 2025 00:04:04 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 18AC5C4CED3;
-	Thu,  9 Jan 2025 00:05:50 +0000 (UTC)
-Message-ID: <a3bd231c-0568-4dad-9268-bc7edaace94b@kernel.org>
-Date: Thu, 9 Jan 2025 09:05:49 +0900
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
+        Wed, 08 Jan 2025 18:18:41 -0800 (PST)
+Received-SPF: pass (google.com: domain of ming.lei@redhat.com designates 170.10.129.124 as permitted sender) client-ip=170.10.129.124;
+Received: from mx-prod-mc-05.mail-002.prod.us-west-2.aws.redhat.com
+ (ec2-54-186-198-63.us-west-2.compute.amazonaws.com [54.186.198.63]) by
+ relay.mimecast.com with ESMTP with STARTTLS (version=TLSv1.3,
+ cipher=TLS_AES_256_GCM_SHA384) id us-mta-357-7FSoSldJMXm3ogIjfdzqow-1; Wed,
+ 08 Jan 2025 21:18:37 -0500
+X-MC-Unique: 7FSoSldJMXm3ogIjfdzqow-1
+X-Mimecast-MFC-AGG-ID: 7FSoSldJMXm3ogIjfdzqow
+Received: from mx-prod-int-03.mail-002.prod.us-west-2.aws.redhat.com (mx-prod-int-03.mail-002.prod.us-west-2.aws.redhat.com [10.30.177.12])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(No client certificate requested)
+	by mx-prod-mc-05.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTPS id E3DF5195608B;
+	Thu,  9 Jan 2025 02:18:34 +0000 (UTC)
+Received: from fedora (unknown [10.72.116.23])
+	by mx-prod-int-03.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTPS id 8EB1419560AD;
+	Thu,  9 Jan 2025 02:18:28 +0000 (UTC)
+Date: Thu, 9 Jan 2025 10:18:22 +0800
+From: Ming Lei <ming.lei@redhat.com>
+To: Damien Le Moal <dlemoal@kernel.org>
+Cc: Christoph Hellwig <hch@lst.de>, Jens Axboe <axboe@kernel.dk>,
+	Nilay Shroff <nilay@linux.ibm.com>, linux-block@vger.kernel.org,
+	linux-nvme@lists.infradead.org, nbd@other.debian.org,
+	linux-scsi@vger.kernel.org, usb-storage@lists.one-eyed-alien.net
 Subject: [usb-storage] Re: [PATCH 03/10] block: don't update BLK_FEAT_POLL in __blk_mq_update_nr_hw_queues
-To: Christoph Hellwig <hch@lst.de>, Ming Lei <ming.lei@redhat.com>
-Cc: Jens Axboe <axboe@kernel.dk>, Nilay Shroff <nilay@linux.ibm.com>,
- linux-block@vger.kernel.org, linux-nvme@lists.infradead.org,
- nbd@other.debian.org, linux-scsi@vger.kernel.org,
- usb-storage@lists.one-eyed-alien.net
+Message-ID: <Z38x7mzrQPEiUOpv@fedora>
 References: <20250108092520.1325324-1-hch@lst.de>
- <20250108092520.1325324-4-hch@lst.de> <Z35T8xeLxhXe-zAS@fedora>
+ <20250108092520.1325324-4-hch@lst.de>
+ <Z35T8xeLxhXe-zAS@fedora>
  <20250108152705.GA24792@lst.de>
-From: "'Damien Le Moal' via USB Mass Storage on Linux" <usb-storage@lists.one-eyed-alien.net>
-Content-Language: en-US
-Organization: Western Digital Research
-In-Reply-To: <20250108152705.GA24792@lst.de>
+ <a3bd231c-0568-4dad-9268-bc7edaace94b@kernel.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="UTF-8"
-X-Original-Sender: dlemoal@kernel.org
+Content-Disposition: inline
+In-Reply-To: <a3bd231c-0568-4dad-9268-bc7edaace94b@kernel.org>
+X-Scanned-By: MIMEDefang 3.0 on 10.30.177.12
+X-Original-Sender: ming.lei@redhat.com
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@kernel.org header.s=k20201202 header.b=FcZSPW5M;       spf=pass
- (google.com: domain of dlemoal@kernel.org designates 147.75.193.91 as
- permitted sender) smtp.mailfrom=dlemoal@kernel.org;       dmarc=pass
- (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=kernel.org
-X-Original-From: Damien Le Moal <dlemoal@kernel.org>
-Reply-To: Damien Le Moal <dlemoal@kernel.org>
+ header.i=@redhat.com header.s=mimecast20190719 header.b="UHoSDBN/";
+       spf=pass (google.com: domain of ming.lei@redhat.com designates
+ 170.10.129.124 as permitted sender) smtp.mailfrom=ming.lei@redhat.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=redhat.com
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -149,87 +158,60 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On 1/9/25 00:27, Christoph Hellwig wrote:
-> On Wed, Jan 08, 2025 at 06:31:15PM +0800, Ming Lei wrote:
->>> -	if (!(q->limits.features & BLK_FEAT_POLL) &&
->>> -			(bio->bi_opf & REQ_POLLED)) {
->>> +	if ((bio->bi_opf & REQ_POLLED) && !bdev_can_poll(bdev)) {
->>
->> submit_bio_noacct() is called without grabbing .q_usage_counter,
->> so tagset may be freed now, then use-after-free on q->tag_set?
+On Thu, Jan 09, 2025 at 09:05:49AM +0900, Damien Le Moal wrote:
+> On 1/9/25 00:27, Christoph Hellwig wrote:
+> > On Wed, Jan 08, 2025 at 06:31:15PM +0800, Ming Lei wrote:
+> >>> -	if (!(q->limits.features & BLK_FEAT_POLL) &&
+> >>> -			(bio->bi_opf & REQ_POLLED)) {
+> >>> +	if ((bio->bi_opf & REQ_POLLED) && !bdev_can_poll(bdev)) {
+> >>
+> >> submit_bio_noacct() is called without grabbing .q_usage_counter,
+> >> so tagset may be freed now, then use-after-free on q->tag_set?
+> > 
+> > Indeed.  That also means the previous check wasn't reliable either.
+> > I think we can simple move the check into
+> > blk_mq_submit_bio/__submit_bio which means we'll do a bunch more
+> > checks before we eventually fail, but otherwise it'll work the
+> > same.
 > 
-> Indeed.  That also means the previous check wasn't reliable either.
-> I think we can simple move the check into
-> blk_mq_submit_bio/__submit_bio which means we'll do a bunch more
-> checks before we eventually fail, but otherwise it'll work the
-> same.
+> Given that the request queue is the same for all tag sets, I do not think we
 
-Given that the request queue is the same for all tag sets, I do not think we
-need to have the queue_limits_start_update()/commit_update() within the tag set
-loop in __blk_mq_update_nr_hw_queues(). So something like this should be enough
-for an initial fix, no ?
+No, it isn't same.
 
-diff --git a/block/blk-mq.c b/block/blk-mq.c
-index 8ac19d4ae3c0..ac71e9cee25b 100644
---- a/block/blk-mq.c
-+++ b/block/blk-mq.c
-@@ -4986,6 +4986,7 @@ static void __blk_mq_update_nr_hw_queues(struct
-blk_mq_tag_set *set,
-                                                        int nr_hw_queues)
- {
-        struct request_queue *q;
-+       struct queue_limits lim;
-        LIST_HEAD(head);
-        int prev_nr_hw_queues = set->nr_hw_queues;
-        int i;
-@@ -4999,8 +5000,10 @@ static void __blk_mq_update_nr_hw_queues(struct
-blk_mq_tag_set *set,
-        if (set->nr_maps == 1 && nr_hw_queues == set->nr_hw_queues)
-                return;
+> need to have the queue_limits_start_update()/commit_update() within the tag set
+> loop in __blk_mq_update_nr_hw_queues(). So something like this should be enough
+> for an initial fix, no ?
+> 
+> diff --git a/block/blk-mq.c b/block/blk-mq.c
+> index 8ac19d4ae3c0..ac71e9cee25b 100644
+> --- a/block/blk-mq.c
+> +++ b/block/blk-mq.c
+> @@ -4986,6 +4986,7 @@ static void __blk_mq_update_nr_hw_queues(struct
+> blk_mq_tag_set *set,
+>                                                         int nr_hw_queues)
+>  {
+>         struct request_queue *q;
+> +       struct queue_limits lim;
+>         LIST_HEAD(head);
+>         int prev_nr_hw_queues = set->nr_hw_queues;
+>         int i;
+> @@ -4999,8 +5000,10 @@ static void __blk_mq_update_nr_hw_queues(struct
+> blk_mq_tag_set *set,
+>         if (set->nr_maps == 1 && nr_hw_queues == set->nr_hw_queues)
+>                 return;
+> 
+> +       lim = queue_limits_start_update(q);
+>         list_for_each_entry(q, &set->tag_list, tag_set_list)
+>                 blk_mq_freeze_queue(q);
 
-+       lim = queue_limits_start_update(q);
-        list_for_each_entry(q, &set->tag_list, tag_set_list)
-                blk_mq_freeze_queue(q);
-+
-        /*
-         * Switch IO scheduler to 'none', cleaning up the data associated
-         * with the previous scheduler. We will switch back once we are done
-@@ -5036,13 +5039,10 @@ static void __blk_mq_update_nr_hw_queues(struct
-blk_mq_tag_set *set,
-                        set->nr_hw_queues = prev_nr_hw_queues;
-                        goto fallback;
-                }
--               lim = queue_limits_start_update(q);
-                if (blk_mq_can_poll(set))
-                        lim.features |= BLK_FEAT_POLL;
-                else
-                        lim.features &= ~BLK_FEAT_POLL;
--               if (queue_limits_commit_update(q, &lim) < 0)
--                       pr_warn("updating the poll flag failed\n");
-                blk_mq_map_swqueue(q);
-        }
+It could be worse, since the limits_lock is connected with lots of other
+subsystem's lock(debugfs, sysfs dir, ...), it may introduce new deadlock
+risk.
 
-@@ -5059,6 +5059,9 @@ static void __blk_mq_update_nr_hw_queues(struct
-blk_mq_tag_set *set,
-        list_for_each_entry(q, &set->tag_list, tag_set_list)
-                blk_mq_unfreeze_queue(q);
-
-+       if (queue_limits_commit_update(q, &lim) < 0)
-+               pr_warn("updating the poll flag failed\n");
-+
-        /* Free the excess tags when nr_hw_queues shrink. */
-        for (i = set->nr_hw_queues; i < prev_nr_hw_queues; i++)
-                __blk_mq_free_map_and_rqs(set, i);
-
-With that, no modification of the hot path to check the poll feature should be
-needed. And I also fail to see why we need to do the queue freeze for all tag
-sets. Once should be enough as well...
-
--- 
-Damien Le Moal
-Western Digital Research
+Thanks,
+Ming
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/a3bd231c-0568-4dad-9268-bc7edaace94b%40kernel.org.
+To view this discussion visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/Z38x7mzrQPEiUOpv%40fedora.
