@@ -1,108 +1,108 @@
-Return-Path: <usb-storage+bncBDUNBGN3R4KRB77IQK6AMGQECKXVLTQ@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBDUNBGN3R4KRBAPJQK6AMGQEWVDMDWQ@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-pj1-x1045.google.com (mail-pj1-x1045.google.com [IPv6:2607:f8b0:4864:20::1045])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4B5E6A086C6
-	for <lists+usb-storage@lfdr.de>; Fri, 10 Jan 2025 06:47:45 +0100 (CET)
-Received: by mail-pj1-x1045.google.com with SMTP id 98e67ed59e1d1-2ee5616e986sf4480949a91.2
-        for <lists+usb-storage@lfdr.de>; Thu, 09 Jan 2025 21:47:45 -0800 (PST)
-ARC-Seal: i=2; a=rsa-sha256; t=1736488064; cv=pass;
+Received: from mail-pl1-x645.google.com (mail-pl1-x645.google.com [IPv6:2607:f8b0:4864:20::645])
+	by mail.lfdr.de (Postfix) with ESMTPS id BA3FBA086C9
+	for <lists+usb-storage@lfdr.de>; Fri, 10 Jan 2025 06:47:47 +0100 (CET)
+Received: by mail-pl1-x645.google.com with SMTP id d9443c01a7336-2163d9a730asf32249455ad.1
+        for <lists+usb-storage@lfdr.de>; Thu, 09 Jan 2025 21:47:47 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1736488066; cv=pass;
         d=google.com; s=arc-20240605;
-        b=Yiyix40M/u075DRagI4bsrHjSmhZeQSWFdaKj74EHj1Jdy/lxkKQIJlX9cmI3OND0S
-         u+RkEpVCQ+R/Y38yMFSmVoXh/6sNvcLTWyxjr3/YGixQQQJfE7xJyTELtn90FOfFMT88
-         181DSrEOYj7sNw61h/BMsZyJyAeAO/T488qQjOFhDAYrTBco5ET31fJJXgx6kWaUGlnY
-         6QDJSv/Q1Cjw6kYebe4UcMSdzNq5nU0qUhB9GXXtTL5y0W8cfVqEPAYnToKwtSi7OLdg
-         sjPVj2LXH+yC2DA8/RaG74tB/H49vUP0isxRL0EBrauQLnghF8ssmlTZMtOa/kKLxlLZ
-         voPA==
+        b=IKSSufguXrSAxOR9ydkBqUq1apJrbr48h3Js73RKLSBWgCrmGhpocr04AHd+Q360FN
+         UbCJRMiVpu9T0bd1IdAm/GQV8ZQUPqeje4/aNpCJjtFlppX1OXsypj28mm6bYWeLPntc
+         qODJSLJ6vc2QpJp2stU8PN9jzCvK3oFDo7WnsY7Xsia1v38xivNCIPThlg7U2JLjzPGJ
+         0iS8eZZM/nl5emlIMsd4v/3a/kQv2fULXlzK4/V9spf4Yxn8BGRNAHPu1W5drWqsRy9e
+         pOoOaP87SVTU9lGQ9zkYNOmTzYJP+uKumVPrL2RnAIf41T1dvfP2g0C4/6la+rO5OssH
+         yp2g==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:sender:dkim-signature;
-        bh=DFaCE8enPPCnuGFnUGH7TCWw+lw6DTE4RobzL7S3+Y8=;
-        fh=zLA/Xg37LTneKIdBE15Nv7X1fwly1eJXGOSv3IEuBI0=;
-        b=h1pedf3e2HG6Rwg/dwfdHEQCy7DCwMIqsDjxdrO9rLDdk4jNSQYXPEeMjEMfNTdQ8L
-         ngbMmsnuPNTkic7OYZhMRDHHlSm/2XKgws/88+Ct6kKPfJG5Yy0znEWg/S/R2OAVrRDZ
-         rgahsK8uD3TqIYBEUdPUQ5LWz5Ov28d07DcJLGli8j9YC8ouG4Alam5RrRfGnVc65495
-         4bm8PxNplF758+EPnT/VkniTqlX3fSTz+qOB05RzZvimTfJYXr6gd9LhXCQq/a4d4/ep
-         own8Qn5/0jtbvUt3pApzKxoskj9spgclAVAJvv23mW744tyrBCc2Kldx6IPt19vBPoyS
-         sPTg==;
+        bh=ztP5rTo+5Ebi7CshiHad8eqrOyRXOy8clE2380HM55A=;
+        fh=rc8hnG3kgaM5PGGhI7h5fL42/Px3CGTmC2wOiZ+z+Zo=;
+        b=auAdoxevqUXKvkJiUR75uRpLIfDiVRH1rkTfOBuTbor2ixLP6O8PtSYIxbcMTU4W4p
+         Eg8FUpuKNwYlQcSI7yu+ll2nnOfKO0GA1VCkHs4+Rs+2t82sBfbzZl/CDD/J8ofddw4Q
+         Csp4CXwayqDR6xtV5qy19Xvz56xaODpalg9T7SjPRkz+Dx1k3pkyz0mYVCcjn/ZPBe7D
+         DDEPISw1hWIjV4JOS/4kp5YWId2UlulU1CTcR15YURvHo7XXmAcP/7fVWgnQC+xg5jP1
+         Z3WOqlWUVAmGBxsqvjAnCHFoYb9lzB8/YKGb18TIe0e3BN1sFSGTSDgPRgVegowAZ36L
+         aABw==;
         darn=lfdr.de
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@infradead.org header.s=bombadil.20210309 header.b=cpbtTnmV;
+       dkim=pass header.i=@infradead.org header.s=bombadil.20210309 header.b=ht5SV70e;
        spf=none (google.com: batv+d77ff3599ace4b46004a+7810+infradead.org+hch@bombadil.srs.infradead.org does not designate permitted sender hosts) smtp.mailfrom=BATV+d77ff3599ace4b46004a+7810+infradead.org+hch@bombadil.srs.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1736488064; x=1737092864; darn=lfdr.de;
+        d=lists.one-eyed-alien.net; s=google; t=1736488066; x=1737092866; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:x-original-authentication-results
          :x-original-sender:mime-version:references:in-reply-to:message-id
          :date:subject:cc:to:from:sender:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=DFaCE8enPPCnuGFnUGH7TCWw+lw6DTE4RobzL7S3+Y8=;
-        b=j06AYPUvsuCcfYenasHSHTJAffJ0PXHtpx78w8phmOLoG23nt34/72uoJAAWmPjk4j
-         +pAnFPMkdhktnB9rWFO0y/hXp+UWPgy+NfngovPVBGSF91DAy5QVAE74/gDaJQGp7LqM
-         WrDEoD9wJAGoVXFQLD3nmzAEBsL95IS0a5cLo=
+        bh=ztP5rTo+5Ebi7CshiHad8eqrOyRXOy8clE2380HM55A=;
+        b=JTMaKAaMiEi3nuvpru7JO/IIaFfINsFs7Bz5p2GhDNDDAsr9r0x/D/6dnLUJUwlGlp
+         PwaTYLE2coD4z509JCbDaIo1imMb9xGw9xId7U9xYHP/Qg9rf6haWztLbPKxAfKlibo2
+         leravl8+QWM5OlYBUEPICOWZil9LfT8Tr+U+M=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1736488064; x=1737092864;
+        d=1e100.net; s=20230601; t=1736488066; x=1737092866;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :x-spam-checked-in-group:list-id:mailing-list:precedence
          :x-original-authentication-results:x-original-sender:mime-version
          :references:in-reply-to:message-id:date:subject:cc:to:from
          :x-beenthere:x-gm-message-state:sender:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=DFaCE8enPPCnuGFnUGH7TCWw+lw6DTE4RobzL7S3+Y8=;
-        b=qAsk2RbBvub1HZSnpi0OYZgHKTFcWtEAmwIAd1dOpQwzI84AovfamgclHG09SqiZ4l
-         P+tifs7BKn7MLo23SSftbE/Xxx/jUU4v4QNbQe0YyLJuFm3iaAKG4yPhJQ/sF6cdDqsk
-         0DtibpCzo+ea6WVcnjHibGokPKgvzUjI7IpWHPfZtdobTUnEzx9L2haYAx2KKO2cwPSP
-         4Kd7Hynapo9wAyXeVPBl6/SFHhB1L1samykJMH/uiXiLGj4wc4ZTzevTo1KCcNkAqWEx
-         eBkT0ggWX3c8ERe1fJ0nUxcBcGC1we0pzlllcPj+SfE/l5PqroIo9LTjTPURzjrRy9Xs
-         oNzg==
+        bh=ztP5rTo+5Ebi7CshiHad8eqrOyRXOy8clE2380HM55A=;
+        b=ORIyx2+BHRfoEQnY2dH520E6SggSW+VjEwa6IjI3Pes97/a+JPFwxCstVV9XRp0T6O
+         oCgApUSsCvetgMV4QUJ+UugcuwFhhscg6E4h23TOxYzJJUY4PndQXMzGwN8p/kQgMt0S
+         7/M0yT5a/b071Xgf0n2c4ipMnWyDoO5rdsowxo4VBupsXlaiWPPoALZN/31EEPAY+Zcw
+         OMlbquMLIbBffvhwhwfW+HKJBtt0k/2xwLtfOhs4ROTQdGRwb8RAsEf82AUFFqcU25vz
+         mCU9zj80+e8LQffiUwwHSyn8fUxMQ8Sc2zjaqPTBfHGqRVBiwwEfTqwTJmAerVZFMXl/
+         c+JQ==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Forwarded-Encrypted: i=2; AJvYcCUp8J161ErfS2GP9KPr14PDur82n/83q6r4EvAmhYO5Fh/PQhq5tjXCS2r6FZQby674M8stAw==@lfdr.de
-X-Gm-Message-State: AOJu0YyyDtRYXuA48aMVxdxuYWDvqSbZPFpimwm2ccUjINJoRqEz7zrU
-	m8iZpTgomDul/brF0FGsd2O8zX5R2dW/zAlrCug2KMdRiLK3Q5qLmEsrugjRAOE=
-X-Google-Smtp-Source: AGHT+IEzgEU1aMaKwNh/+vQkbP0gqyNuHlE8JHeb3oBzBy/Q/ydPVEoixoBzTC2wpUy5kMRx2lFMKg==
-X-Received: by 2002:a05:6a20:cd8f:b0:1e1:adcd:eae5 with SMTP id adf61e73a8af0-1e88d0fc495mr13647477637.42.1736488063721;
-        Thu, 09 Jan 2025 21:47:43 -0800 (PST)
+X-Forwarded-Encrypted: i=2; AJvYcCXoTx+dKv1KOr9XeEgZ3O4ZaLp3EnriNlQKGGBqueXhD60+fEN98cVi8m8gcRIyTRvFtIW7Iw==@lfdr.de
+X-Gm-Message-State: AOJu0Yz8WUrtwRxeih6uF453u9xFwrKTOJDYt/+r+UgFIVJaPqO80Unf
+	TqXqhCc7BCJM2foY3vEstKMEh7rEKYnoZkRBrWwE/HdYQIGp+ie8vhmqhTUL4AM=
+X-Google-Smtp-Source: AGHT+IFqy2/LZqqzRIBlDQPq43D9ITiGgtYjkswPhCWO1zOMlO4hjRVqIR/fxMJLqST+nFT90qPJYw==
+X-Received: by 2002:a17:903:2cc:b0:21a:874f:1de1 with SMTP id d9443c01a7336-21a8d6c7c39mr73711455ad.21.1736488065805;
+        Thu, 09 Jan 2025 21:47:45 -0800 (PST)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a05:6a00:398f:b0:725:ed76:c92 with SMTP id
- d2e1a72fcca58-72d2fb56ab2ls1934912b3a.0.-pod-prod-06-us; Thu, 09 Jan 2025
- 21:47:42 -0800 (PST)
-X-Forwarded-Encrypted: i=2; AJvYcCU4BXzy4Wm0h2fuSGaOAkENMIKh1pO55SzKNFWEZ8EWH5kxLEQzGorFpbC+JNetorcLUvq/1j6YjY98dQ==@lists.one-eyed-alien.net
-X-Received: by 2002:a05:6a20:4303:b0:1e6:5323:58c5 with SMTP id adf61e73a8af0-1e88cfa6845mr13375430637.12.1736488062440;
-        Thu, 09 Jan 2025 21:47:42 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1736488062; cv=none;
+Received: by 2002:a17:903:32c9:b0:215:6775:371e with SMTP id
+ d9443c01a7336-21a8d2eaa10ls14872425ad.2.-pod-prod-00-us; Thu, 09 Jan 2025
+ 21:47:44 -0800 (PST)
+X-Forwarded-Encrypted: i=2; AJvYcCXnpFUnms+kMWUF2vOH3jvFs2hXkAW4GxvJ4AxqOEj91oU2ogbpZsb3q2dRQspWlbEP+KLrOV0aU/H5zQ==@lists.one-eyed-alien.net
+X-Received: by 2002:a05:6a20:9150:b0:1e1:ffec:b1a9 with SMTP id adf61e73a8af0-1e89c898731mr8848725637.3.1736488064407;
+        Thu, 09 Jan 2025 21:47:44 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1736488064; cv=none;
         d=google.com; s=arc-20240605;
-        b=KVoZmscGvMamd5MB6JRaulfJXB6cNha8daBEsC98gMrrKkWVjGOr/a20eIeqKgFSe4
-         O1fv5Mf5zBPnDaPsGfEbtJQRPQe9gZD+WpFC1xGeEBVBWkdwrw3kP1YxC+w0owQy6Odd
-         PgZh7bqwynIpf5mGwH1+W693GB4BrnYk72rFRscjX0yXaT6BpCmtmLC1teGAljvfiUE8
-         h4rL3yAl215bhhSEZGsMOoTfVEcVng/bTZRn4JGDj8EY9VJX8stvj50pFxaCLal0EBF/
-         XAt05/hS0luRHPNkHYwuT1KqwLlDcDc9xRfpV6C6Y0/q9kNCcSTBAJwS+dNgQdHU/XTl
-         6Brw==
+        b=Ddpu0fe/v67WqdfaHdzAMivuD1g1c0UVHG33/S7jM24EvhBmkBzopdBkUx6mV2PnOd
+         uWGlZpwJFK35alsHo0FzWFHeTV4zJStTfV50NfhZ/AS8pUpku12f/JonNPyEWNwtd4b5
+         QXS8NHU5DlC7hzykjwxb5rLwmLCO47HpnFww7OqF/5ucmKfatgKvwu64nVc9JEGKnG4M
+         2kyh+ETcBPGVFtlum5fIG7VoDd63bI0fzylxsk6Lnx2/mslfzc/1CQLL3CgfFDyAg8o8
+         IELLgnzS0d+MwOZvmpOWIobXRJM1NzLFB8n/N4uhnzfd8xYOq1zYYjjWvZiEFLhkPQON
+         oyjQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:dkim-signature;
-        bh=4+M/a1saPkRkWtbgQnGkaOBFpblhl20ESeTBBEj+2T4=;
+        bh=FzOI+jy13btiFS8fSFYwfB6ydfiYqToeAvETLECru2s=;
         fh=K4mYBT/f9uT4NDiXg9vO0QvGda7RTqDR2brfxQ7Fzow=;
-        b=eY4qTPKPGJenHSwf0V0sDw8Xj+xK4bhHbz2ywmQvSf41y49f2IZO2b+ddkVV2fx1xO
-         6oCbmIpF6yutj9K3R3p2MMuKHvVtpcCk2htS8qJ/BvFLc+0JQqQEilRj1yJFZiixsYuH
-         e4S6sb4aldgKBdOLOA83Fh8K0SOdmiV4Kpnps+vuWwZbCdf54yFVJk49NS7m/Q83VMFB
-         /IIh4OAIyQA8pdUYNuH6Pp5+0JxhQnlGDkiRiDTTYi+2k2UqJmSAXFZIkG4fnC8ZIPp0
-         3XFyNCDdmXg3E8sAqc62WdvYXsuGkM0ZZNaZO0KYLJJS9Ig/vx+YQcQwUv0l2JjIJaG+
-         7yCQ==;
+        b=ksc8Dn/x1Je0RVf4XhGxMBoNPD9uje3y+Gr6w7M1IRLVwyOf/tIuWL5CRMbI4ntxU4
+         RlENAgubUNQDoVfY4oP13bPjG3TMuvQope2lOFslf6QBv3hMw1ePTA4nyHsHwMvuWCn3
+         TDK67PcDFk4BgaAawxl5xH2HNipvFgOAYFYhKp/LPJPFZefglE8HQWfpAe+aKHhafjjW
+         bdp5JgRzrEN6inIm/N4REeURP7nACFQj3zKw6MS5yWaqI9WZ4dKjDoHSYMqSNvtlEwBH
+         GueQiJR6dRo0RmHN+ElyEbtpnBGLack7rB98UEP4fyQ1ONP02jjNovi/Yh/sX3XSVe03
+         u6Ig==;
         dara=google.com
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@infradead.org header.s=bombadil.20210309 header.b=cpbtTnmV;
+       dkim=pass header.i=@infradead.org header.s=bombadil.20210309 header.b=ht5SV70e;
        spf=none (google.com: batv+d77ff3599ace4b46004a+7810+infradead.org+hch@bombadil.srs.infradead.org does not designate permitted sender hosts) smtp.mailfrom=BATV+d77ff3599ace4b46004a+7810+infradead.org+hch@bombadil.srs.infradead.org
 Received: from bombadil.infradead.org (bombadil.infradead.org. [2607:7c80:54:3::133])
-        by mx.google.com with ESMTPS id 41be03b00d2f7-a31e43af384si3540590a12.303.2025.01.09.21.47.42
+        by mx.google.com with ESMTPS id 41be03b00d2f7-a31e43ac7e0si3437602a12.309.2025.01.09.21.47.44
         for <usb-storage@lists.one-eyed-alien.net>
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 09 Jan 2025 21:47:42 -0800 (PST)
+        Thu, 09 Jan 2025 21:47:44 -0800 (PST)
 Received-SPF: none (google.com: batv+d77ff3599ace4b46004a+7810+infradead.org+hch@bombadil.srs.infradead.org does not designate permitted sender hosts) client-ip=2607:7c80:54:3::133;
 Received: from 2a02-8389-2341-5b80-76c3-a3dc-14f6-94e8.cable.dynamic.v6.surfer.at ([2a02:8389:2341:5b80:76c3:a3dc:14f6:94e8] helo=localhost)
 	by bombadil.infradead.org with esmtpsa (Exim 4.98 #2 (Red Hat Linux))
-	id 1tW7rv-0000000E4vS-0IAb;
-	Fri, 10 Jan 2025 05:47:39 +0000
+	id 1tW7rx-0000000E4wS-2C7x;
+	Fri, 10 Jan 2025 05:47:42 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Jens Axboe <axboe@kernel.dk>
 Cc: Damien Le Moal <dlemoal@kernel.org>,
@@ -115,9 +115,10 @@ Cc: Damien Le Moal <dlemoal@kernel.org>,
 	usb-storage@lists.one-eyed-alien.net,
 	"Martin K . Petersen" <martin.petersen@oracle.com>,
 	Johannes Thumshirn <johannes.thumshirn@wdc.com>
-Subject: [usb-storage] [PATCH 04/11] block: don't update BLK_FEAT_POLL in __blk_mq_update_nr_hw_queues
-Date: Fri, 10 Jan 2025 06:47:12 +0100
-Message-ID: <20250110054726.1499538-5-hch@lst.de>
+Subject: [usb-storage] [PATCH 05/11] block: add a store_limit operations for
+ sysfs entries
+Date: Fri, 10 Jan 2025 06:47:13 +0100
+Message-ID: <20250110054726.1499538-6-hch@lst.de>
 X-Mailer: git-send-email 2.45.2
 In-Reply-To: <20250110054726.1499538-1-hch@lst.de>
 References: <20250110054726.1499538-1-hch@lst.de>
@@ -125,7 +126,7 @@ MIME-Version: 1.0
 X-SRS-Rewrite: SMTP reverse-path rewritten from <hch@infradead.org> by bombadil.infradead.org. See http://www.infradead.org/rpr.html
 X-Original-Sender: hch@lst.de
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@infradead.org header.s=bombadil.20210309 header.b=cpbtTnmV;
+ header.i=@infradead.org header.s=bombadil.20210309 header.b=ht5SV70e;
        spf=none (google.com: batv+d77ff3599ace4b46004a+7810+infradead.org+hch@bombadil.srs.infradead.org
  does not designate permitted sender hosts) smtp.mailfrom=BATV+d77ff3599ace4b46004a+7810+infradead.org+hch@bombadil.srs.infradead.org
 Content-Type: text/plain; charset="UTF-8"
@@ -144,167 +145,305 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-When __blk_mq_update_nr_hw_queues changes the number of tag sets, it
-might have to disable poll queues.  Currently it does so by adjusting
-the BLK_FEAT_POLL, which is a bit against the intent of features that
-describe hardware / driver capabilities, but more importantly causes
-nasty lock order problems with the broadly held freeze when updating the
-number of hardware queues and the limits lock.  Fix this by leaving
-BLK_FEAT_POLL alone, and instead check for the number of poll queues in
-the bio submission and poll handlers.  While this adds extra work to the
-fast path, the variables are in cache lines used by these operations
-anyway, so it should be cheap enough.
+De-duplicate the code for updating queue limits by adding a store_limit
+method that allows having common code handle the actual queue limits
+update.
 
-Fixes: 8023e144f9d6 ("block: move the poll flag to queue_limits")
+Note that this is a pure refactoring patch and does not address the
+existing freeze vs limits lock order problem in the refactored code,
+which will be addressed next.
+
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 Reviewed-by: Ming Lei <ming.lei@redhat.com>
 Reviewed-by: Damien Le Moal <dlemoal@kernel.org>
 Reviewed-by: Martin K. Petersen <martin.petersen@oracle.com>
-Reviewed-by: Johannes Thumshirn <johannes.thumshirn@wdc.com>
 Reviewed-by: Nilay Shroff <nilay@linux.ibm.com>
+Reviewed-by: Johannes Thumshirn <johannes.thumshirn@wdc.com>
 ---
- block/blk-core.c  |  7 +++----
- block/blk-mq.c    | 26 +++++---------------------
- block/blk-mq.h    |  6 ++++++
- block/blk-sysfs.c |  9 ++++++++-
- 4 files changed, 22 insertions(+), 26 deletions(-)
+ block/blk-sysfs.c | 128 ++++++++++++++++++++++------------------------
+ 1 file changed, 61 insertions(+), 67 deletions(-)
 
-diff --git a/block/blk-core.c b/block/blk-core.c
-index 6309b3f5a89d..32fb28a6372c 100644
---- a/block/blk-core.c
-+++ b/block/blk-core.c
-@@ -951,14 +951,13 @@ int bio_poll(struct bio *bio, struct io_comp_batch *iob, unsigned int flags)
- 	 */
- 	if (!percpu_ref_tryget(&q->q_usage_counter))
- 		return 0;
--	if (!(q->limits.features & BLK_FEAT_POLL)) {
--		ret = 0;
--	} else if (queue_is_mq(q)) {
-+	if (queue_is_mq(q)) {
- 		ret = blk_mq_poll(q, cookie, iob, flags);
- 	} else {
- 		struct gendisk *disk = q->disk;
- 
--		if (disk && disk->fops->poll_bio)
-+		if ((q->limits.features & BLK_FEAT_POLL) && disk &&
-+		    disk->fops->poll_bio)
- 			ret = disk->fops->poll_bio(bio, iob, flags);
- 	}
- 	blk_queue_exit(q);
-diff --git a/block/blk-mq.c b/block/blk-mq.c
-index 02c9232a8fff..655dcc16db76 100644
---- a/block/blk-mq.c
-+++ b/block/blk-mq.c
-@@ -3105,8 +3105,7 @@ void blk_mq_submit_bio(struct bio *bio)
- 		goto queue_exit;
- 	}
- 
--	if ((bio->bi_opf & REQ_POLLED) &&
--	    !(q->limits.features & BLK_FEAT_POLL)) {
-+	if ((bio->bi_opf & REQ_POLLED) && !blk_mq_can_poll(q)) {
- 		bio->bi_status = BLK_STS_NOTSUPP;
- 		bio_endio(bio);
- 		goto queue_exit;
-@@ -4328,12 +4327,6 @@ void blk_mq_release(struct request_queue *q)
- 	blk_mq_sysfs_deinit(q);
- }
- 
--static bool blk_mq_can_poll(struct blk_mq_tag_set *set)
--{
--	return set->nr_maps > HCTX_TYPE_POLL &&
--		set->map[HCTX_TYPE_POLL].nr_queues;
--}
--
- struct request_queue *blk_mq_alloc_queue(struct blk_mq_tag_set *set,
- 		struct queue_limits *lim, void *queuedata)
- {
-@@ -4344,7 +4337,7 @@ struct request_queue *blk_mq_alloc_queue(struct blk_mq_tag_set *set,
- 	if (!lim)
- 		lim = &default_lim;
- 	lim->features |= BLK_FEAT_IO_STAT | BLK_FEAT_NOWAIT;
--	if (blk_mq_can_poll(set))
-+	if (set->nr_maps > HCTX_TYPE_POLL)
- 		lim->features |= BLK_FEAT_POLL;
- 
- 	q = blk_alloc_queue(lim, set->numa_node);
-@@ -5032,8 +5025,6 @@ static void __blk_mq_update_nr_hw_queues(struct blk_mq_tag_set *set,
- fallback:
- 	blk_mq_update_queue_map(set);
- 	list_for_each_entry(q, &set->tag_list, tag_set_list) {
--		struct queue_limits lim;
--
- 		blk_mq_realloc_hw_ctxs(set, q);
- 
- 		if (q->nr_hw_queues != set->nr_hw_queues) {
-@@ -5047,13 +5038,6 @@ static void __blk_mq_update_nr_hw_queues(struct blk_mq_tag_set *set,
- 			set->nr_hw_queues = prev_nr_hw_queues;
- 			goto fallback;
- 		}
--		lim = queue_limits_start_update(q);
--		if (blk_mq_can_poll(set))
--			lim.features |= BLK_FEAT_POLL;
--		else
--			lim.features &= ~BLK_FEAT_POLL;
--		if (queue_limits_commit_update(q, &lim) < 0)
--			pr_warn("updating the poll flag failed\n");
- 		blk_mq_map_swqueue(q);
- 	}
- 
-@@ -5113,9 +5097,9 @@ static int blk_hctx_poll(struct request_queue *q, struct blk_mq_hw_ctx *hctx,
- int blk_mq_poll(struct request_queue *q, blk_qc_t cookie,
- 		struct io_comp_batch *iob, unsigned int flags)
- {
--	struct blk_mq_hw_ctx *hctx = xa_load(&q->hctx_table, cookie);
--
--	return blk_hctx_poll(q, hctx, iob, flags);
-+	if (!blk_mq_can_poll(q))
-+		return 0;
-+	return blk_hctx_poll(q, xa_load(&q->hctx_table, cookie), iob, flags);
- }
- 
- int blk_rq_poll(struct request *rq, struct io_comp_batch *iob,
-diff --git a/block/blk-mq.h b/block/blk-mq.h
-index c872bbbe6411..44979e92b79f 100644
---- a/block/blk-mq.h
-+++ b/block/blk-mq.h
-@@ -448,4 +448,10 @@ do {								\
- #define blk_mq_run_dispatch_ops(q, dispatch_ops)		\
- 	__blk_mq_run_dispatch_ops(q, true, dispatch_ops)	\
- 
-+static inline bool blk_mq_can_poll(struct request_queue *q)
-+{
-+	return (q->limits.features & BLK_FEAT_POLL) &&
-+		q->tag_set->map[HCTX_TYPE_POLL].nr_queues;
-+}
-+
- #endif
 diff --git a/block/blk-sysfs.c b/block/blk-sysfs.c
-index 767598e719ab..e9f1c82b2f3e 100644
+index e9f1c82b2f3e..d2aa2177e4ba 100644
 --- a/block/blk-sysfs.c
 +++ b/block/blk-sysfs.c
-@@ -245,10 +245,17 @@ static ssize_t queue_##_name##_show(struct gendisk *disk, char *page)	\
- 		!!(disk->queue->limits.features & _feature));		\
+@@ -24,6 +24,8 @@ struct queue_sysfs_entry {
+ 	struct attribute attr;
+ 	ssize_t (*show)(struct gendisk *disk, char *page);
+ 	ssize_t (*store)(struct gendisk *disk, const char *page, size_t count);
++	int (*store_limit)(struct gendisk *disk, const char *page,
++			size_t count, struct queue_limits *lim);
+ 	void (*load_module)(struct gendisk *disk, const char *page, size_t count);
+ };
+ 
+@@ -153,13 +155,11 @@ QUEUE_SYSFS_SHOW_CONST(discard_zeroes_data, 0)
+ QUEUE_SYSFS_SHOW_CONST(write_same_max, 0)
+ QUEUE_SYSFS_SHOW_CONST(poll_delay, -1)
+ 
+-static ssize_t queue_max_discard_sectors_store(struct gendisk *disk,
+-		const char *page, size_t count)
++static int queue_max_discard_sectors_store(struct gendisk *disk,
++		const char *page, size_t count, struct queue_limits *lim)
+ {
+ 	unsigned long max_discard_bytes;
+-	struct queue_limits lim;
+ 	ssize_t ret;
+-	int err;
+ 
+ 	ret = queue_var_store(&max_discard_bytes, page, count);
+ 	if (ret < 0)
+@@ -171,38 +171,28 @@ static ssize_t queue_max_discard_sectors_store(struct gendisk *disk,
+ 	if ((max_discard_bytes >> SECTOR_SHIFT) > UINT_MAX)
+ 		return -EINVAL;
+ 
+-	lim = queue_limits_start_update(disk->queue);
+-	lim.max_user_discard_sectors = max_discard_bytes >> SECTOR_SHIFT;
+-	err = queue_limits_commit_update(disk->queue, &lim);
+-	if (err)
+-		return err;
+-	return ret;
++	lim->max_user_discard_sectors = max_discard_bytes >> SECTOR_SHIFT;
++	return 0;
  }
  
--QUEUE_SYSFS_FEATURE_SHOW(poll, BLK_FEAT_POLL);
- QUEUE_SYSFS_FEATURE_SHOW(fua, BLK_FEAT_FUA);
- QUEUE_SYSFS_FEATURE_SHOW(dax, BLK_FEAT_DAX);
+-static ssize_t
+-queue_max_sectors_store(struct gendisk *disk, const char *page, size_t count)
++static int
++queue_max_sectors_store(struct gendisk *disk, const char *page, size_t count,
++		struct queue_limits *lim)
+ {
+ 	unsigned long max_sectors_kb;
+-	struct queue_limits lim;
+ 	ssize_t ret;
+-	int err;
  
-+static ssize_t queue_poll_show(struct gendisk *disk, char *page)
-+{
-+	if (queue_is_mq(disk->queue))
-+		return sysfs_emit(page, "%u\n", blk_mq_can_poll(disk->queue));
-+	return sysfs_emit(page, "%u\n",
-+		!!(disk->queue->limits.features & BLK_FEAT_POLL));
+ 	ret = queue_var_store(&max_sectors_kb, page, count);
+ 	if (ret < 0)
+ 		return ret;
+ 
+-	lim = queue_limits_start_update(disk->queue);
+-	lim.max_user_sectors = max_sectors_kb << 1;
+-	err = queue_limits_commit_update(disk->queue, &lim);
+-	if (err)
+-		return err;
+-	return ret;
++	lim->max_user_sectors = max_sectors_kb << 1;
++	return 0;
+ }
+ 
+ static ssize_t queue_feature_store(struct gendisk *disk, const char *page,
+-		size_t count, blk_features_t feature)
++		size_t count, struct queue_limits *lim, blk_features_t feature)
+ {
+-	struct queue_limits lim;
+ 	unsigned long val;
+ 	ssize_t ret;
+ 
+@@ -210,15 +200,11 @@ static ssize_t queue_feature_store(struct gendisk *disk, const char *page,
+ 	if (ret < 0)
+ 		return ret;
+ 
+-	lim = queue_limits_start_update(disk->queue);
+ 	if (val)
+-		lim.features |= feature;
++		lim->features |= feature;
+ 	else
+-		lim.features &= ~feature;
+-	ret = queue_limits_commit_update(disk->queue, &lim);
+-	if (ret)
+-		return ret;
+-	return count;
++		lim->features &= ~feature;
++	return 0;
+ }
+ 
+ #define QUEUE_SYSFS_FEATURE(_name, _feature)				\
+@@ -227,10 +213,10 @@ static ssize_t queue_##_name##_show(struct gendisk *disk, char *page)	\
+ 	return sysfs_emit(page, "%u\n",					\
+ 		!!(disk->queue->limits.features & _feature));		\
+ }									\
+-static ssize_t queue_##_name##_store(struct gendisk *disk,		\
+-		const char *page, size_t count)				\
++static int queue_##_name##_store(struct gendisk *disk,			\
++		const char *page, size_t count, struct queue_limits *lim) \
+ {									\
+-	return queue_feature_store(disk, page, count, _feature);	\
++	return queue_feature_store(disk, page, count, lim, _feature);	\
+ }
+ 
+ QUEUE_SYSFS_FEATURE(rotational, BLK_FEAT_ROTATIONAL)
+@@ -273,10 +259,9 @@ static ssize_t queue_iostats_passthrough_show(struct gendisk *disk, char *page)
+ 	return queue_var_show(!!blk_queue_passthrough_stat(disk->queue), page);
+ }
+ 
+-static ssize_t queue_iostats_passthrough_store(struct gendisk *disk,
+-					       const char *page, size_t count)
++static int queue_iostats_passthrough_store(struct gendisk *disk,
++		const char *page, size_t count, struct queue_limits *lim)
+ {
+-	struct queue_limits lim;
+ 	unsigned long ios;
+ 	ssize_t ret;
+ 
+@@ -284,18 +269,13 @@ static ssize_t queue_iostats_passthrough_store(struct gendisk *disk,
+ 	if (ret < 0)
+ 		return ret;
+ 
+-	lim = queue_limits_start_update(disk->queue);
+ 	if (ios)
+-		lim.flags |= BLK_FLAG_IOSTATS_PASSTHROUGH;
++		lim->flags |= BLK_FLAG_IOSTATS_PASSTHROUGH;
+ 	else
+-		lim.flags &= ~BLK_FLAG_IOSTATS_PASSTHROUGH;
+-
+-	ret = queue_limits_commit_update(disk->queue, &lim);
+-	if (ret)
+-		return ret;
+-
+-	return count;
++		lim->flags &= ~BLK_FLAG_IOSTATS_PASSTHROUGH;
++	return 0;
+ }
++
+ static ssize_t queue_nomerges_show(struct gendisk *disk, char *page)
+ {
+ 	return queue_var_show((blk_queue_nomerges(disk->queue) << 1) |
+@@ -398,12 +378,10 @@ static ssize_t queue_wc_show(struct gendisk *disk, char *page)
+ 	return sysfs_emit(page, "write through\n");
+ }
+ 
+-static ssize_t queue_wc_store(struct gendisk *disk, const char *page,
+-			      size_t count)
++static int queue_wc_store(struct gendisk *disk, const char *page,
++		size_t count, struct queue_limits *lim)
+ {
+-	struct queue_limits lim;
+ 	bool disable;
+-	int err;
+ 
+ 	if (!strncmp(page, "write back", 10)) {
+ 		disable = false;
+@@ -414,15 +392,11 @@ static ssize_t queue_wc_store(struct gendisk *disk, const char *page,
+ 		return -EINVAL;
+ 	}
+ 
+-	lim = queue_limits_start_update(disk->queue);
+ 	if (disable)
+-		lim.flags |= BLK_FLAG_WRITE_CACHE_DISABLED;
++		lim->flags |= BLK_FLAG_WRITE_CACHE_DISABLED;
+ 	else
+-		lim.flags &= ~BLK_FLAG_WRITE_CACHE_DISABLED;
+-	err = queue_limits_commit_update(disk->queue, &lim);
+-	if (err)
+-		return err;
+-	return count;
++		lim->flags &= ~BLK_FLAG_WRITE_CACHE_DISABLED;
++	return 0;
+ }
+ 
+ #define QUEUE_RO_ENTRY(_prefix, _name)			\
+@@ -438,6 +412,13 @@ static struct queue_sysfs_entry _prefix##_entry = {	\
+ 	.store	= _prefix##_store,			\
+ };
+ 
++#define QUEUE_LIM_RW_ENTRY(_prefix, _name)			\
++static struct queue_sysfs_entry _prefix##_entry = {	\
++	.attr		= { .name = _name, .mode = 0644 },	\
++	.show		= _prefix##_show,			\
++	.store_limit	= _prefix##_store,			\
 +}
 +
- static ssize_t queue_zoned_show(struct gendisk *disk, char *page)
- {
- 	if (blk_queue_is_zoned(disk->queue))
+ #define QUEUE_RW_LOAD_MODULE_ENTRY(_prefix, _name)		\
+ static struct queue_sysfs_entry _prefix##_entry = {		\
+ 	.attr		= { .name = _name, .mode = 0644 },	\
+@@ -448,7 +429,7 @@ static struct queue_sysfs_entry _prefix##_entry = {		\
+ 
+ QUEUE_RW_ENTRY(queue_requests, "nr_requests");
+ QUEUE_RW_ENTRY(queue_ra, "read_ahead_kb");
+-QUEUE_RW_ENTRY(queue_max_sectors, "max_sectors_kb");
++QUEUE_LIM_RW_ENTRY(queue_max_sectors, "max_sectors_kb");
+ QUEUE_RO_ENTRY(queue_max_hw_sectors, "max_hw_sectors_kb");
+ QUEUE_RO_ENTRY(queue_max_segments, "max_segments");
+ QUEUE_RO_ENTRY(queue_max_integrity_segments, "max_integrity_segments");
+@@ -464,7 +445,7 @@ QUEUE_RO_ENTRY(queue_io_opt, "optimal_io_size");
+ QUEUE_RO_ENTRY(queue_max_discard_segments, "max_discard_segments");
+ QUEUE_RO_ENTRY(queue_discard_granularity, "discard_granularity");
+ QUEUE_RO_ENTRY(queue_max_hw_discard_sectors, "discard_max_hw_bytes");
+-QUEUE_RW_ENTRY(queue_max_discard_sectors, "discard_max_bytes");
++QUEUE_LIM_RW_ENTRY(queue_max_discard_sectors, "discard_max_bytes");
+ QUEUE_RO_ENTRY(queue_discard_zeroes_data, "discard_zeroes_data");
+ 
+ QUEUE_RO_ENTRY(queue_atomic_write_max_sectors, "atomic_write_max_bytes");
+@@ -484,11 +465,11 @@ QUEUE_RO_ENTRY(queue_max_open_zones, "max_open_zones");
+ QUEUE_RO_ENTRY(queue_max_active_zones, "max_active_zones");
+ 
+ QUEUE_RW_ENTRY(queue_nomerges, "nomerges");
+-QUEUE_RW_ENTRY(queue_iostats_passthrough, "iostats_passthrough");
++QUEUE_LIM_RW_ENTRY(queue_iostats_passthrough, "iostats_passthrough");
+ QUEUE_RW_ENTRY(queue_rq_affinity, "rq_affinity");
+ QUEUE_RW_ENTRY(queue_poll, "io_poll");
+ QUEUE_RW_ENTRY(queue_poll_delay, "io_poll_delay");
+-QUEUE_RW_ENTRY(queue_wc, "write_cache");
++QUEUE_LIM_RW_ENTRY(queue_wc, "write_cache");
+ QUEUE_RO_ENTRY(queue_fua, "fua");
+ QUEUE_RO_ENTRY(queue_dax, "dax");
+ QUEUE_RW_ENTRY(queue_io_timeout, "io_timeout");
+@@ -501,10 +482,10 @@ static struct queue_sysfs_entry queue_hw_sector_size_entry = {
+ 	.show = queue_logical_block_size_show,
+ };
+ 
+-QUEUE_RW_ENTRY(queue_rotational, "rotational");
+-QUEUE_RW_ENTRY(queue_iostats, "iostats");
+-QUEUE_RW_ENTRY(queue_add_random, "add_random");
+-QUEUE_RW_ENTRY(queue_stable_writes, "stable_writes");
++QUEUE_LIM_RW_ENTRY(queue_rotational, "rotational");
++QUEUE_LIM_RW_ENTRY(queue_iostats, "iostats");
++QUEUE_LIM_RW_ENTRY(queue_add_random, "add_random");
++QUEUE_LIM_RW_ENTRY(queue_stable_writes, "stable_writes");
+ 
+ #ifdef CONFIG_BLK_WBT
+ static ssize_t queue_var_store64(s64 *var, const char *page)
+@@ -702,7 +683,7 @@ queue_attr_store(struct kobject *kobj, struct attribute *attr,
+ 	struct request_queue *q = disk->queue;
+ 	ssize_t res;
+ 
+-	if (!entry->store)
++	if (!entry->store_limit && !entry->store)
+ 		return -EIO;
+ 
+ 	/*
+@@ -713,11 +694,24 @@ queue_attr_store(struct kobject *kobj, struct attribute *attr,
+ 	if (entry->load_module)
+ 		entry->load_module(disk, page, length);
+ 
+-	blk_mq_freeze_queue(q);
+ 	mutex_lock(&q->sysfs_lock);
+-	res = entry->store(disk, page, length);
+-	mutex_unlock(&q->sysfs_lock);
++	blk_mq_freeze_queue(q);
++	if (entry->store_limit) {
++		struct queue_limits lim = queue_limits_start_update(q);
++
++		res = entry->store_limit(disk, page, length, &lim);
++		if (res < 0) {
++			queue_limits_cancel_update(q);
++		} else {
++			res = queue_limits_commit_update(q, &lim);
++			if (!res)
++				res = length;
++		}
++	} else {
++		res = entry->store(disk, page, length);
++	}
+ 	blk_mq_unfreeze_queue(q);
++	mutex_unlock(&q->sysfs_lock);
+ 	return res;
+ }
+ 
 -- 
 2.45.2
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20250110054726.1499538-5-hch%40lst.de.
+To view this discussion visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20250110054726.1499538-6-hch%40lst.de.
