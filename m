@@ -1,34 +1,34 @@
 Return-Path: <usb-storage+bncBCB6X76TWIIRBXWMTO6AMGQE7FRIXPQ@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-qt1-x847.google.com (mail-qt1-x847.google.com [IPv6:2607:f8b0:4864:20::847])
-	by mail.lfdr.de (Postfix) with ESMTPS id 82EE6A1142B
+Received: from mail-qt1-x848.google.com (mail-qt1-x848.google.com [IPv6:2607:f8b0:4864:20::848])
+	by mail.lfdr.de (Postfix) with ESMTPS id 9959CA1142C
 	for <lists+usb-storage@lfdr.de>; Tue, 14 Jan 2025 23:34:07 +0100 (CET)
-Received: by mail-qt1-x847.google.com with SMTP id d75a77b69052e-4678f97242fsf160681191cf.0
+Received: by mail-qt1-x848.google.com with SMTP id d75a77b69052e-467bb3eea80sf2110891cf.2
         for <lists+usb-storage@lfdr.de>; Tue, 14 Jan 2025 14:34:07 -0800 (PST)
 ARC-Seal: i=2; a=rsa-sha256; t=1736894046; cv=pass;
         d=google.com; s=arc-20240605;
-        b=ZYtwJCcTvbXOTEHttODKq9NOPF5W+xSRn0YyD5fnwnYWZ4OrpFSG52BkCBeq3CwDJc
-         71tJNpm45SJFtV9UDkRtXKSC/gCIqu7VqaqZk8W5VMNRgYgCBa4ow96BIOrlQbGoFzJo
-         gv2FOilrf0TEu0hf0u1HetEktvr3XaHnJ36nLXHjCaX2DTBa2tBby6hr2mpt+eyhc23A
-         8DYExgsgqSzvvLuisipX0y5df8pxFxCd9eHE7cldb91uWjJoyKwV0BYNtsBgh0O3mf67
-         RguaYTA2HEENeZ8v3oQxHQ9yCEnVK04IbFb5eV7rVDuHaxn5Dp6cOsDW1FyolHNHa6nO
-         Vulg==
+        b=YJAvWh9SOKCVO/dW9hXcCCUTUAxq9vwitGZlo8OmayjrqgO9vYZnhmtHeiAvXs8iWC
+         4mj6EvTJ9fZyN/b8/+CZvQ9vKMQHNJ3oZR7doLTkiR/FS6yr/txYZiFVdKC3WtMxRtPK
+         DJ8t5+t505QCFqp7res0ChqS54KOGFvpknZSlcQPChV5m+Q9c/nHrsmn3fu/j+4txjOV
+         cWUAYo3XHy1Zod9JKsTlEpNgDLtc8NykxIbtDyWNCfYQKSIQgbZaXSwxRK6Io6N/A6hW
+         eiOeqLfSpt4GeLXfJRhOwkFIiCo615wxuwS4gOdPaboVyRYT2oEjfWXByUOgiyiak9bw
+         WLzQ==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:cc:to:in-reply-to:references
          :message-id:mime-version:subject:date:from:sender:dkim-signature;
-        bh=PbG71TXHRF88dfZss74n4gQhxZCmbYb6X4Jh1k2K2Bk=;
-        fh=NRZ7Nw+0iACz8FdnxaJoxNZIexDaZZ32FS4WA3kdkZo=;
-        b=bbjE2Cfgodlj4KYEb1k8mYc+ApbMw6IQ5tf5XIhfC5Rz+Y7bexFgdrFGHm9ib8mgp2
-         VMBkpum8DCYyELl1czlePx+OhJaSY5BHd3E8MPjB0tVTHLEOWkJmHqJG65eSBLOIB8wJ
-         Zi0qPi5JsMKWHTf3t+2JWSvBL3PICTPj6IDyYgPkEfls4ILb59kYCEuyrb5FAH87aGJC
-         I+Hnxg40OWFV1wFUcs06iida4COaOw4XbkjPTSBj//etJsBCJ1eujMEbaIUrjbBOJDb3
-         dUwv6NbtmzSG9I+j441tOk46R5755NFsJkyeMDCZVgaFENWAo/Jt/HAtEgrokED56QRa
-         d6wg==;
+        bh=z8r86Y/eOAyXzGyw6uYT9Lyw9rswIUPXDdL2rZkiGLw=;
+        fh=yQxjCHXeJBx2OS+/4DMmx5CFD4z1SsEAEbTrAcePeoA=;
+        b=YcXx+/VTYZj/HCtO7VCjl2jOIBSLIFfrNozJ/wnHIf9AdCrTv7/D3SkmMzsR2fU7ku
+         P8xelTxdIxN9SJuNQgmS3znSsZZVsf0ns8YU3l2+/KXxrdLr8Pe1O3rUZGDdF6VkPIgx
+         5F3ae3ldB3qa5v+b8IY+00cw/IOYWVeLlOMafMx8kpgft8JjcqjPad/7nzBu3JKSOsC5
+         7A6BE2MpRcxDyLlFDIt/nR7OeuEmy0GOHqXKARuV2JRzgTBhaUP3NGIGF4YK8rJlY6As
+         Ki+/ZdJeLHFHuUD95zatVd2Z2jqpEW3Y774SKjUa8FZdrjYLAR2DKda1Q41MR0KyZ7EI
+         w10Q==;
         darn=lfdr.de
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@linaro.org header.s=google header.b="QKM9+3m/";
+       dkim=pass header.i=@linaro.org header.s=google header.b=VOcYskqk;
        spf=pass (google.com: domain of krzysztof.kozlowski@linaro.org designates 209.85.220.41 as permitted sender) smtp.mailfrom=krzysztof.kozlowski@linaro.org;
        dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=linaro.org;
        dara=pass header.i=@lists.one-eyed-alien.net
@@ -39,10 +39,10 @@ DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
          :x-original-sender:cc:to:in-reply-to:references:message-id
          :mime-version:subject:date:from:sender:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=PbG71TXHRF88dfZss74n4gQhxZCmbYb6X4Jh1k2K2Bk=;
-        b=Ym6irZraK4YF9o7WE1442ujmtL4SHyAZl6wxaj4PJxAjZ42nQJeka+CjPiWyAE8I8h
-         OSvI8p2PL7sGL6aB6GM5DUUOCcJuN/kY1njNi1DrQGZ3HdBcSkC8YId0ztPUQnYkswn2
-         hIa5SswOZ6+nl/+RWU+Yhlmkj2JeDxssfeKBM=
+        bh=z8r86Y/eOAyXzGyw6uYT9Lyw9rswIUPXDdL2rZkiGLw=;
+        b=CtaRAAxzu5JVE1HWQlyu5mZMbJ588pg3YODJLtqa8I5ljQxX69Irz680Z2vHa4zvdt
+         gc5Na7LXnbE8dxBH9s4Ek9T4PIq2wATNXNJzTU6+4abiLHncYArdoouTNnxK2HqWW9jv
+         moWdzGCKzn6ODMSnOP1WdjlF1sufW71/z3jLM=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20230601; t=1736894046; x=1737498846;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
@@ -50,80 +50,80 @@ X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
          :x-original-sender:cc:to:in-reply-to:references:message-id
          :mime-version:subject:date:from:x-beenthere:x-gm-message-state
          :sender:from:to:cc:subject:date:message-id:reply-to;
-        bh=PbG71TXHRF88dfZss74n4gQhxZCmbYb6X4Jh1k2K2Bk=;
-        b=XE7LuagvxXf8zQsfdzv1EJBKapDv9gJm/8TgMbgn8uN7nlXSNPWYJqEMu5z16fIbKf
-         5FqLO1L7Nc6LPfY2piFig7wGLrgJXlK4SYhpTJk2kchdEotz0hy5oY1sf1vnAigZj/ha
-         YPI2oY7DVFIlxr9atLEpAU/39hUVkFI6Qtscef4Xxog1AvWxdAXsnpQZQhs2ozJ0CTML
-         P6Ozpp1SMMF1e4R8bvGUOQklpg1mNcJoQHsYiMvGn0ZvRMFhT6j/axqIbWqGmBpluw5f
-         Iq75fxpJPE1H4Owwf3XiQ2DX+sqXMwFboyO5FOBGPIl3gr+/rq2rMtIj/UJrpH2tGYjQ
-         0emQ==
+        bh=z8r86Y/eOAyXzGyw6uYT9Lyw9rswIUPXDdL2rZkiGLw=;
+        b=gIy7MqOZtyYHlLMmamud1ZUzIVNU31zkiHd+TcrT7SEEyci1bbvkb5O56KywSCMB2+
+         uRx0QZlFtV0hNs56E0/SNDg6HyKWwUR8ksHV1By1QlopL1JofzQZ0KRMUgDZCBd1w/aM
+         gNG1PVaqA4aTVBjwbR7nZ+2YPFalxAsH2hYU0jtlhjt4iXyQtgTxt8OEx/etx5RP5SEX
+         W6y6HAPr61TR2h0t0ARqS64kuP47HnjfG1rcQV3CwCekwjPUs4Kc9GnOX+y1Ye9woARt
+         +Nhq/EHComdtZKi8bOy+vPH6uno4hxFKDfkeqbPtFFgsIClbGykS5OEo9xZcOZZYXpUw
+         oxhA==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Forwarded-Encrypted: i=2; AJvYcCWnBmg12wt6VHudpTeM5ey1MJp2Fb9rGOQK8t+weI6XbFRzahQOQbuVURD+Uhd/1+LwVZC0AA==@lfdr.de
-X-Gm-Message-State: AOJu0Yxems2RTylh7AI6vw1lu45j47zcDTienR6ZYWM9xOZ+rB4Ts71t
-	YH40FTUMxVxUhPLhM9RiUrH/0uS2RFIEOj1buVZZpkZSYybV37j8HKD9IYWM3SU=
-X-Google-Smtp-Source: AGHT+IGHSUAw9FW2NMG+LDFAr5ItcNGIrdAWwNBa/XiLO6JMMb03PuHMYtQNINyXSy/h7pIu2pPDtg==
-X-Received: by 2002:ac8:7d12:0:b0:46a:1932:b07f with SMTP id d75a77b69052e-46c7107ebeemr423771671cf.39.1736894046189;
+X-Forwarded-Encrypted: i=2; AJvYcCUnIUIPvET7mV6SrmglOXwLD6D7YWsJ/v7upJThxu4k9mcRaY8783vJWlVw5A7457o8x1aQkQ==@lfdr.de
+X-Gm-Message-State: AOJu0YxXChp6mr0N8ulKDe0L3NyKq5fUSm2trbIj9w5vC/giMSsK1ZFo
+	iCThAH296Z8U0ZCEgmGQexwmIjhwFRhQHzGj6H/3QorlBhHZ+e2CnWZwsgK/GAk=
+X-Google-Smtp-Source: AGHT+IH3EfCnCtUMP172Gt4sLKNH23Q8lCEK8lqNOSMqx2zTmvSd/3fDso72/uxvc4HYYwUtw/Osxw==
+X-Received: by 2002:a05:622a:1488:b0:467:6092:841c with SMTP id d75a77b69052e-46c70f76185mr155476201cf.0.1736894046360;
         Tue, 14 Jan 2025 14:34:06 -0800 (PST)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a05:622a:5814:b0:46b:2e03:7b85 with SMTP id
- d75a77b69052e-46c7ab7e487ls74067791cf.2.-pod-prod-04-us; Tue, 14 Jan 2025
- 14:34:05 -0800 (PST)
-X-Forwarded-Encrypted: i=2; AJvYcCWOodzCLPLfu2sCJC9SK0B2hhhvfPJzRB9ubrAY8ftWOMN/3PR3TcGgu49vhmPcTa/Lzkr0CxXpQ1+UeA==@lists.one-eyed-alien.net
-X-Received: by 2002:a05:620a:178b:b0:7b6:7a87:744a with SMTP id af79cd13be357-7bcd9729f9cmr4369975085a.5.1736894045716;
+Received: by 2002:a05:622a:510d:b0:466:9e59:9807 with SMTP id
+ d75a77b69052e-46c7ab568f8ls89017081cf.1.-pod-prod-05-us; Tue, 14 Jan 2025
+ 14:34:06 -0800 (PST)
+X-Forwarded-Encrypted: i=2; AJvYcCUissBxwWNEMET98iTQzdllMdWJj+IgEIaYLC0EcjEEqGPOzBZ4qwURPKdJCO5WCjZBCkbglqnbge0SLg==@lists.one-eyed-alien.net
+X-Received: by 2002:a05:620a:2697:b0:7b1:5763:4ba2 with SMTP id af79cd13be357-7bcd9761f18mr4770364085a.40.1736894045871;
         Tue, 14 Jan 2025 14:34:05 -0800 (PST)
-Received: by 2002:a05:620a:5649:b0:7b6:d314:a4e5 with SMTP id af79cd13be357-7bce9daadaams85a;
-        Tue, 14 Jan 2025 12:05:51 -0800 (PST)
-X-Forwarded-Encrypted: i=2; AJvYcCUdwTCJGxClW5iWvQmOist7V6kDzbskjL0apBn5PgN1FPUXI3FO5/WnQT/e+lhOf8BSzKbNxXgdPr6D+w==@lists.one-eyed-alien.net
-X-Received: by 2002:a5d:598b:0:b0:38a:5ce8:df6d with SMTP id ffacd0b85a97d-38a872fb0eemr22369776f8f.1.1736885149375;
-        Tue, 14 Jan 2025 12:05:49 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1736885149; cv=none;
+Received: by 2002:a05:620a:3944:b0:7b6:67a8:4fcd with SMTP id af79cd13be357-7bce9dbb048ms85a;
+        Tue, 14 Jan 2025 12:05:53 -0800 (PST)
+X-Forwarded-Encrypted: i=2; AJvYcCWl0ReZy2Nlu9GkEmw1P7x1PPdih2X8WhFkMKG+VRjUFZEiB4FHgR4YBFfBVxS2TvmAi5/q34t2MVlqMw==@lists.one-eyed-alien.net
+X-Received: by 2002:a05:600c:1e29:b0:434:e892:1033 with SMTP id 5b1f17b1804b1-437c6b7b184mr2132425e9.2.1736885152178;
+        Tue, 14 Jan 2025 12:05:52 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1736885152; cv=none;
         d=google.com; s=arc-20240605;
-        b=lJE1dYTM9GobiP4TC1ZMXb4ewUZICZ07QgGfIBsFavJWkmmJwHvgXtb3XVeBsHE++D
-         GTvJRUSO8kof4kBlE1cGCW7GS4uN4ecoBR/QiuH0Z3WJ5F9oeNg/JGeDRtfMMfX8/dKD
-         dHzcbd1W9yS1C9RO7po5LAPsOwkNdxu9HxpJXVZYQYploNTbqC6S7UReGlK+AOCO7gdo
-         gDCfQ3c4Xs/L0QeJTO9LFxoCQ5Uv5WMDoFUR7xt3zzIENKQcYE0rXIlB0Tip95FsOFaN
-         KCcZY32TZHZKeuZwKnDI+EseE9sZAU5B/2S26yGZ/+eh6CnwYJFjrXQoJwoKgAFkQqwk
-         6vTg==
+        b=T6oob7fGuBoe3ai1wkg4mOZxevT1ZP7Fi5+DRmkFWRtsqB2qFZc1OJKzPFcIyJRC7L
+         MZU0YF0WUmqPcQUn8nt47mAkjOA+uCBoBSC3Mw3D9eHamxWM70qCSQ56CJAXVWq8SPc6
+         /mJwZOQ9AfQRSY+2oRE0zwiIwRfZGLRIPgg3dMiZAwyl/+wTyY+SF5dHIB9g4BHGfdH2
+         P2MaiCSGzCYmUmrkbZL00HL3gfRqNswUSsV7R9aHMa0874FzGHW8gzsytlrszw370Ex/
+         qNQ/ARw6iDMPPp/6mTuX9eFy/vBnTIWstSrF0ZMbGvEi5jkvJ6DLStbR8bDm72QPQcdi
+         r5+w==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:dkim-signature;
-        bh=3qM/tcI7j/OfvD0CcvoyLKgC3FnLS8o6FdfzDJsqGic=;
-        fh=Y+bpRj2btr3G9ZjJaOOg0xUOdJdf5nnFR3rk3coz6Mc=;
-        b=HqJQRyL+Aqi6cVQh76qWMq5xIAIsDZtitMksmfSfcRw4PGtoUH0JxuaiGeljnKTjnU
-         Grw6dVnmIth85AwwtAcomhYlKb2TmH5aefyU9NOruF4d5vywkEaNIhzz7AKnz2fLc9rz
-         dNzcV5qrqkx3q88N0jR8MHnLNq6vI81AIvjUaL9xV/HpvI1nlKQSVhXBhqsWadcGSV97
-         sLuUYRoKES9UwDEw62cXefwEwUliR7t1SWdC+CdOHXlJ5YC5izMKVsBOCGOSvD+dWkLV
-         W/c84Ly088nUnAAXZTYDO+UF4TQPB/mqFFUJlzuxSAjUM8n0D4u5Slv7VVJAKcEgS09n
-         Y1Pg==;
+        bh=lUd9pE4ibsdIBdg8Wzjk/goShzuEiiFqbneq+H7LmXk=;
+        fh=fDYXkSFNB6oeyXna7DL07YayNu/9U9kIpmaTHwSNNVk=;
+        b=arzvqKLOqbqOMMY7Zmft6InQz3GVpzE6QzpENKcjdFImZMabkRQCWS9U6bniWbtMq4
+         HXvi5Qu7aB/kr1qci7OKbSZY2+MQD8+mp1D7HGle06vJgcyAKSwnKox5HiEXyB45h75w
+         M2tpYFTAtpjIoGI4o2r8V3JqWrZxhRlr78cESPSQF+sCur+c8HvGvhEf7X0iL3DG76Q4
+         zTLGbHIy+pWTVvQmZJEOEEOjnkXucDgWKnFcElQhp16Le9uOV3EL77MA0y4pOXRPbyUg
+         DIy1jSVxxe5+NCgebC8eHt6ArcmowLoIGRafHm44Dn6sNS/BaVvuVZUJBHMViqM7IhoG
+         0WiA==;
         dara=google.com
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@linaro.org header.s=google header.b="QKM9+3m/";
+       dkim=pass header.i=@linaro.org header.s=google header.b=VOcYskqk;
        spf=pass (google.com: domain of krzysztof.kozlowski@linaro.org designates 209.85.220.41 as permitted sender) smtp.mailfrom=krzysztof.kozlowski@linaro.org;
        dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=linaro.org;
        dara=pass header.i=@lists.one-eyed-alien.net
 Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
-        by mx.google.com with SMTPS id 5b1f17b1804b1-436ed45ac40sor19163895e9.2.2025.01.14.12.05.49
+        by mx.google.com with SMTPS id 5b1f17b1804b1-436e99b5019sor21961375e9.2.2025.01.14.12.05.52
         for <usb-storage@lists.one-eyed-alien.net>
         (Google Transport Security);
-        Tue, 14 Jan 2025 12:05:49 -0800 (PST)
+        Tue, 14 Jan 2025 12:05:52 -0800 (PST)
 Received-SPF: pass (google.com: domain of krzysztof.kozlowski@linaro.org designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
-X-Forwarded-Encrypted: i=1; AJvYcCU06HJJsrOOLPMdEN51pvB+QK6U1Slx3rKI+7Jv9Fu5KBeo+weVupEg98K5QvKFxQZ3wH5bR3ZEIpM9GQ==@lists.one-eyed-alien.net
-X-Gm-Gg: ASbGncuf5b8v20i16Vlk+usWCj6gi8tiAWXODz1ol5ORqxwzjWG9OKX5Xjh0l3KGd+Q
-	xqpB7Y3BhQKxMChEOuPeOGsjiwO+8PTALfp5IvnkkLH1N5V4fjoKDu6+4HP1zKjJnrPywO7pp+n
-	+GcBusTqLK4EgbbS7Jblx7f0ljGMtuCQ9pzdEDYn4uhGahk82ZOqlG69ZhLTJx0VhZFcUJEsIWD
-	IjasFwOEmENjdCy3G14bZ4OFUtiDnos1jGpX0Pfv8mB2p7wppaGunJIiwCmeBnP2gWDHDBd
-X-Received: by 2002:a05:600c:3b08:b0:42c:c0d8:bf49 with SMTP id 5b1f17b1804b1-436e2560720mr96739485e9.0.1736885148916;
-        Tue, 14 Jan 2025 12:05:48 -0800 (PST)
+X-Forwarded-Encrypted: i=1; AJvYcCVZ77I5eZ7ZUMZgQnHxvOt+IisGflXsADU+329VYql1PZekLLmQ6ZFcvKzAVDSPJxW5j7WUhB2ZAifAaQ==@lists.one-eyed-alien.net
+X-Gm-Gg: ASbGnct7Y9mTVt2LmhpFbLAIbkz0QT+42/iz38w4QySlvffQwOdqfn6RniNHC/zRLyn
+	C6dELosCIY+v865TfXMQWesxUmmTT6zYVhnBee+Speu2giXH61Zx/MHUwsDU5ZveIV9RyNDApwE
+	eu42ehIVGnFVPNNfIqwDRFNUUTmmolJpdafd1xS3HAnWjqVJl1rE0eC+qPHdirtZ7JaPrg10x3D
+	+pGzgqBq+Qf6ziZyuQ1L/TEIvagicytdpXS/NaZotF6ywhMOzDaT3Snp6K+jh2Qpw+OA/+2
+X-Received: by 2002:a05:600c:4e52:b0:434:a339:ec67 with SMTP id 5b1f17b1804b1-436eba35780mr83014555e9.3.1736885151629;
+        Tue, 14 Jan 2025 12:05:51 -0800 (PST)
 Received: from [127.0.1.1] ([178.197.223.165])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-436e9dc8802sm184622025e9.10.2025.01.14.12.05.46
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-436e9dc8802sm184622025e9.10.2025.01.14.12.05.49
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 14 Jan 2025 12:05:48 -0800 (PST)
+        Tue, 14 Jan 2025 12:05:50 -0800 (PST)
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Date: Tue, 14 Jan 2025 21:05:35 +0100
-Subject: [usb-storage] [PATCH 2/6] USB: host: Use str_enable_disable-like helpers
+Date: Tue, 14 Jan 2025 21:05:36 +0100
+Subject: [usb-storage] [PATCH 3/6] USB: typec: Use str_enable_disable-like helpers
 MIME-Version: 1.0
 Content-Type: text/plain; charset="UTF-8"
-Message-Id: <20250114-str-enable-disable-usb-v1-2-c8405df47c19@linaro.org>
+Message-Id: <20250114-str-enable-disable-usb-v1-3-c8405df47c19@linaro.org>
 References: <20250114-str-enable-disable-usb-v1-0-c8405df47c19@linaro.org>
 In-Reply-To: <20250114-str-enable-disable-usb-v1-0-c8405df47c19@linaro.org>
 To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
@@ -143,26 +143,26 @@ Cc: linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
  usb-storage@lists.one-eyed-alien.net, 
  Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=openpgp-sha256; l=5423;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=10285;
  i=krzysztof.kozlowski@linaro.org; h=from:subject:message-id;
- bh=6gsuWbH88x9KgXoI5TgmCdvl5bUYE9XYTxx1EDNabmI=;
- b=owEBbQKS/ZANAwAKAcE3ZuaGi4PXAcsmYgBnhsOStoOcTYIheQheuxTvcNt6qNGqwgv4Mrucb
- HQfcC8AoGiJAjMEAAEKAB0WIQTd0mIoPREbIztuuKjBN2bmhouD1wUCZ4bDkgAKCRDBN2bmhouD
- 116uD/4pUHkYVwXjtXupkx4piF1QjTdJqIeQMmpgViZX1SSVvola2wMqHd7L0mTS4axfqr/Rwj/
- WI+LNzEX+tbz1FbtSpXuk5xAy9hn1u536wKGFprj/qinJIqZ6UykfwOE5xhpFjft8Bv8B116enk
- KsmoVSqZhtX9JJak44+tbXuPRRJAfBME/2p7hDNhoJ+gxeh8VNHcGo4Mf1cGg+5b17gStjlogF0
- yz56HV6XS4C+UIdtu6nlwUyoCJfqJRmJd90J1zCgX8LdigNU9lA4DYnfHg1mVQQBV7mO7TTD5qv
- RxZN40B7NtpGvXpXZgOOE3dpeupV9KmSPnVaCiErynSUpwojakhIpYJsCs9Wwihu+gmSvPiCT10
- p8ycLvxfEtXiGbWF+fM8lQQlELVofXa3wmI37ipCMZTc5t4XXzFYeQJI+glL+S1gOE06OMVpuFC
- N5WMZjELYyp3W3/O0KLYMqJ0MogG/eF6wa3bY/9l0Z7qh8A+iX90PZJ28INhPhwo1QFW9K3rriR
- 0RlJBemWOA+xMFxBHOqZKcY9H9Z0M2GrDjqH6nzMnst7hrJFdzwhb2EJWzd+3APBWLENlXhY6ZA
- z8VxayvKVWQmB+J5Q0BjIEYorPzk1EEMJvgO9X36XpRXQHG7YmpYtluPO6QnQfP6wr8QRgWa5Ol
- TxWH79PhGdn8YTg==
+ bh=op/DCt6ROIee0t+eYACLLqRtmspLz0pZPqJlNXnqaN4=;
+ b=owEBbQKS/ZANAwAKAcE3ZuaGi4PXAcsmYgBnhsOT5omtXZe4pNX5FucIXi5M/SLvLnE6Fx0dg
+ 5RFTZwpizSJAjMEAAEKAB0WIQTd0mIoPREbIztuuKjBN2bmhouD1wUCZ4bDkwAKCRDBN2bmhouD
+ 1wniEACTnxh/J9HADUSXH/B4PxpTjFV+HrzcRy0yJFO5nAqDf8CUvzoxy5LiOSJDsxsv27LeepD
+ N5ehvpyz+w2gWupb8eKYhihGTkZ1w0IyNmJj6Ohn4aBEU9WxRZyebFGmFgq+U+5Yq3MgEfoEDl9
+ KLU9ATXXCmI42YpRmlk8329azwR3r8wRSmREHw9PbPr1Q997cij4f6FSC5kDaf7XqNFkq3Biy7r
+ sEKxzqtAq+1zMUbuRJqVoc5bDq1zmjPaX5XF9BSD1luW+oTxpU5XewskSF2zy4llNlDkvOBhpUf
+ brYhgStgG0YmQovvVmwGF13nw6GRW3xN/8/O7VG1jmMJMg8U3XDEHcRJFG1uyfxZelW5vyKCFr0
+ yNMHm1IfLNSSd0BhcGE/R4kUyI6N/XkeZJzVba/Kc5KZA7HVTb+CSpIBtIJuKtpm39WM+W60PHx
+ qSoLgrOPGXZ7fArYjAsMCi2yWV/ZbGsWzpCAblo9RjEYJnvrxUhNTJ181Oy/dCLY58C86yX2j5H
+ noV1BpUMujRYSzzVCK93IgHmRlnfKI9vkAa0hJPXjsbXDcJjMtDlNEFGlcCnRGzSSGK2ASCSXY0
+ nDWJOYR13ka9BCCBi+4IFPoETK1PdZLOY0+MSfRDgq+ikD5D/uZlMz7v8y0W7VtlqdLvOeEVUr+
+ DK2pcX225G0ItrA==
 X-Developer-Key: i=krzysztof.kozlowski@linaro.org; a=openpgp;
  fpr=9BD07E0E0C51F8D59677B7541B93437D3B41629B
 X-Original-Sender: krzysztof.kozlowski@linaro.org
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@linaro.org header.s=google header.b="QKM9+3m/";       spf=pass
+ header.i=@linaro.org header.s=google header.b=VOcYskqk;       spf=pass
  (google.com: domain of krzysztof.kozlowski@linaro.org designates
  209.85.220.41 as permitted sender) smtp.mailfrom=krzysztof.kozlowski@linaro.org;
        dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=linaro.org;
@@ -193,129 +193,245 @@ from string_choices.h because:
 
 Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 ---
- drivers/usb/host/oxu210hp-hcd.c | 3 ++-
- drivers/usb/host/sl811-hcd.c    | 3 ++-
- drivers/usb/host/xhci-ring.c    | 5 +++--
- drivers/usb/host/xhci-tegra.c   | 5 +++--
- drivers/usb/host/xhci.c         | 3 ++-
- 5 files changed, 12 insertions(+), 7 deletions(-)
+ drivers/usb/typec/class.c                          |  7 ++++---
+ drivers/usb/typec/tcpm/fusb302.c                   | 24 +++++++++++-----------
+ .../usb/typec/tcpm/qcom/qcom_pmic_typec_pdphy.c    |  3 ++-
+ .../typec/tcpm/qcom/qcom_pmic_typec_pdphy_stub.c   |  3 ++-
+ drivers/usb/typec/tcpm/qcom/qcom_pmic_typec_port.c |  4 +++-
+ drivers/usb/typec/tcpm/tcpm.c                      |  7 ++++---
+ 6 files changed, 27 insertions(+), 21 deletions(-)
 
-diff --git a/drivers/usb/host/oxu210hp-hcd.c b/drivers/usb/host/oxu210hp-hcd.c
-index a6c20facf9450153121001d36547eee68d6c9ca9..fce800ba4c614ca0ccf23b5af0c0b13423e2a95d 100644
---- a/drivers/usb/host/oxu210hp-hcd.c
-+++ b/drivers/usb/host/oxu210hp-hcd.c
-@@ -15,6 +15,7 @@
- #include <linux/ioport.h>
- #include <linux/sched.h>
+diff --git a/drivers/usb/typec/class.c b/drivers/usb/typec/class.c
+index d9d019cff01908eaa8dcb484a87147f3d9992bf3..9c76c3d0c6cff9c9b94ef35fb0cb4be0e395aad6 100644
+--- a/drivers/usb/typec/class.c
++++ b/drivers/usb/typec/class.c
+@@ -10,6 +10,7 @@
+ #include <linux/mutex.h>
+ #include <linux/property.h>
  #include <linux/slab.h>
 +#include <linux/string_choices.h>
- #include <linux/errno.h>
- #include <linux/timer.h>
- #include <linux/list.h>
-@@ -2756,7 +2757,7 @@ static void ehci_port_power(struct oxu_hcd *oxu, int is_on)
- 	if (!HCS_PPC(oxu->hcs_params))
- 		return;
+ #include <linux/usb/pd_vdo.h>
+ #include <linux/usb/typec_mux.h>
+ #include <linux/usb/typec_retimer.h>
+@@ -361,7 +362,7 @@ active_show(struct device *dev, struct device_attribute *attr, char *buf)
+ {
+ 	struct typec_altmode *alt = to_typec_altmode(dev);
  
--	oxu_dbg(oxu, "...power%s ports...\n", is_on ? "up" : "down");
-+	oxu_dbg(oxu, "...power%s ports...\n", str_up_down(is_on));
- 	for (port = HCS_N_PORTS(oxu->hcs_params); port > 0; ) {
- 		if (is_on)
- 			oxu_hub_control(oxu_to_hcd(oxu), SetPortFeature,
-diff --git a/drivers/usb/host/sl811-hcd.c b/drivers/usb/host/sl811-hcd.c
-index 036f5fd6d159feee18f3be187c6bc9d5ea59dc4f..fa2e4badd288c0d355b121f27e9d9b5460fa4e7c 100644
---- a/drivers/usb/host/sl811-hcd.c
-+++ b/drivers/usb/host/sl811-hcd.c
-@@ -48,6 +48,7 @@
- #include <linux/usb/hcd.h>
- #include <linux/platform_device.h>
- #include <linux/prefetch.h>
+-	return sprintf(buf, "%s\n", alt->active ? "yes" : "no");
++	return sprintf(buf, "%s\n", str_yes_no(alt->active));
+ }
+ 
+ static ssize_t active_store(struct device *dev, struct device_attribute *attr,
+@@ -707,7 +708,7 @@ static ssize_t supports_usb_power_delivery_show(struct device *dev,
+ {
+ 	struct typec_partner *p = to_typec_partner(dev);
+ 
+-	return sprintf(buf, "%s\n", p->usb_pd ? "yes" : "no");
++	return sprintf(buf, "%s\n", str_yes_no(p->usb_pd));
+ }
+ static DEVICE_ATTR_RO(supports_usb_power_delivery);
+ 
+@@ -1855,7 +1856,7 @@ static ssize_t vconn_source_show(struct device *dev,
+ 	struct typec_port *port = to_typec_port(dev);
+ 
+ 	return sprintf(buf, "%s\n",
+-		       port->vconn_role == TYPEC_SOURCE ? "yes" : "no");
++		       str_yes_no(port->vconn_role == TYPEC_SOURCE));
+ }
+ static DEVICE_ATTR_RW(vconn_source);
+ 
+diff --git a/drivers/usb/typec/tcpm/fusb302.c b/drivers/usb/typec/tcpm/fusb302.c
+index e2fe479e16ada018930ea0dbbf58ee37ce9a1990..f15c63d3a8f441569ec98302f5b241430d8e4547 100644
+--- a/drivers/usb/typec/tcpm/fusb302.c
++++ b/drivers/usb/typec/tcpm/fusb302.c
+@@ -24,6 +24,7 @@
+ #include <linux/slab.h>
+ #include <linux/spinlock.h>
+ #include <linux/string.h>
 +#include <linux/string_choices.h>
- #include <linux/debugfs.h>
- #include <linux/seq_file.h>
+ #include <linux/types.h>
+ #include <linux/usb.h>
+ #include <linux/usb/typec.h>
+@@ -733,7 +734,7 @@ static int tcpm_set_vconn(struct tcpc_dev *dev, bool on)
  
-@@ -98,7 +99,7 @@ static void port_power(struct sl811 *sl811, int is_on)
- 	if (sl811->board && sl811->board->port_power) {
- 		/* switch VBUS, at 500mA unless hub power budget gets set */
- 		dev_dbg(hcd->self.controller, "power %s\n",
--			is_on ? "on" : "off");
-+			str_on_off(is_on));
- 		sl811->board->port_power(hcd->self.controller, is_on);
+ 	mutex_lock(&chip->lock);
+ 	if (chip->vconn_on == on) {
+-		fusb302_log(chip, "vconn is already %s", on ? "On" : "Off");
++		fusb302_log(chip, "vconn is already %s", str_on_off(on));
+ 		goto done;
  	}
+ 	if (on) {
+@@ -746,7 +747,7 @@ static int tcpm_set_vconn(struct tcpc_dev *dev, bool on)
+ 	if (ret < 0)
+ 		goto done;
+ 	chip->vconn_on = on;
+-	fusb302_log(chip, "vconn := %s", on ? "On" : "Off");
++	fusb302_log(chip, "vconn := %s", str_on_off(on));
+ done:
+ 	mutex_unlock(&chip->lock);
  
-diff --git a/drivers/usb/host/xhci-ring.c b/drivers/usb/host/xhci-ring.c
-index 3d66ed240dc375af3d51a7c6bcb1970efc7ecd49..965bffce301e24502310fd4a848ede01e1348530 100644
---- a/drivers/usb/host/xhci-ring.c
-+++ b/drivers/usb/host/xhci-ring.c
-@@ -55,6 +55,7 @@
- #include <linux/jiffies.h>
- #include <linux/scatterlist.h>
- #include <linux/slab.h>
-+#include <linux/string_choices.h>
- #include <linux/dma-mapping.h>
- #include "xhci.h"
- #include "xhci-trace.h"
-@@ -3441,8 +3442,8 @@ static void check_interval(struct urb *urb, struct xhci_ep_ctx *ep_ctx)
- 	if (xhci_interval != ep_interval) {
- 		dev_dbg_ratelimited(&urb->dev->dev,
- 				"Driver uses different interval (%d microframe%s) than xHCI (%d microframe%s)\n",
--				ep_interval, ep_interval == 1 ? "" : "s",
--				xhci_interval, xhci_interval == 1 ? "" : "s");
-+				ep_interval, str_plural(ep_interval),
-+				xhci_interval, str_plural(xhci_interval));
- 		urb->interval = xhci_interval;
- 		/* Convert back to frames for LS/FS devices */
- 		if (urb->dev->speed == USB_SPEED_LOW ||
-diff --git a/drivers/usb/host/xhci-tegra.c b/drivers/usb/host/xhci-tegra.c
-index 06ae193ec87407f13487556862c9caf03f51b786..a51ce71a6a77eb7ce5308669624c7b8bb735e382 100644
---- a/drivers/usb/host/xhci-tegra.c
-+++ b/drivers/usb/host/xhci-tegra.c
-@@ -26,6 +26,7 @@
+@@ -761,7 +762,7 @@ static int tcpm_set_vbus(struct tcpc_dev *dev, bool on, bool charge)
+ 
+ 	mutex_lock(&chip->lock);
+ 	if (chip->vbus_on == on) {
+-		fusb302_log(chip, "vbus is already %s", on ? "On" : "Off");
++		fusb302_log(chip, "vbus is already %s", str_on_off(on));
+ 	} else {
+ 		if (on)
+ 			ret = regulator_enable(chip->vbus);
+@@ -769,15 +770,14 @@ static int tcpm_set_vbus(struct tcpc_dev *dev, bool on, bool charge)
+ 			ret = regulator_disable(chip->vbus);
+ 		if (ret < 0) {
+ 			fusb302_log(chip, "cannot %s vbus regulator, ret=%d",
+-				    on ? "enable" : "disable", ret);
++				    str_enable_disable(on), ret);
+ 			goto done;
+ 		}
+ 		chip->vbus_on = on;
+-		fusb302_log(chip, "vbus := %s", on ? "On" : "Off");
++		fusb302_log(chip, "vbus := %s", str_on_off(on));
+ 	}
+ 	if (chip->charge_on == charge)
+-		fusb302_log(chip, "charge is already %s",
+-			    charge ? "On" : "Off");
++		fusb302_log(chip, "charge is already %s", str_on_off(charge));
+ 	else
+ 		chip->charge_on = charge;
+ 
+@@ -854,16 +854,16 @@ static int tcpm_set_pd_rx(struct tcpc_dev *dev, bool on)
+ 	ret = fusb302_pd_set_auto_goodcrc(chip, on);
+ 	if (ret < 0) {
+ 		fusb302_log(chip, "cannot turn %s auto GCRC, ret=%d",
+-			    on ? "on" : "off", ret);
++			    str_on_off(on), ret);
+ 		goto done;
+ 	}
+ 	ret = fusb302_pd_set_interrupts(chip, on);
+ 	if (ret < 0) {
+ 		fusb302_log(chip, "cannot turn %s pd interrupts, ret=%d",
+-			    on ? "on" : "off", ret);
++			    str_on_off(on), ret);
+ 		goto done;
+ 	}
+-	fusb302_log(chip, "pd := %s", on ? "on" : "off");
++	fusb302_log(chip, "pd := %s", str_on_off(on));
+ done:
+ 	mutex_unlock(&chip->lock);
+ 
+@@ -1531,7 +1531,7 @@ static void fusb302_irq_work(struct work_struct *work)
+ 	if (interrupt & FUSB_REG_INTERRUPT_VBUSOK) {
+ 		vbus_present = !!(status0 & FUSB_REG_STATUS0_VBUSOK);
+ 		fusb302_log(chip, "IRQ: VBUS_OK, vbus=%s",
+-			    vbus_present ? "On" : "Off");
++			    str_on_off(vbus_present));
+ 		if (vbus_present != chip->vbus_present) {
+ 			chip->vbus_present = vbus_present;
+ 			tcpm_vbus_change(chip->tcpm_port);
+@@ -1562,7 +1562,7 @@ static void fusb302_irq_work(struct work_struct *work)
+ 	if ((interrupt & FUSB_REG_INTERRUPT_COMP_CHNG) && intr_comp_chng) {
+ 		comp_result = !!(status0 & FUSB_REG_STATUS0_COMP);
+ 		fusb302_log(chip, "IRQ: COMP_CHNG, comp=%s",
+-			    comp_result ? "true" : "false");
++			    str_true_false(comp_result));
+ 		if (comp_result) {
+ 			/* cc level > Rd_threshold, detach */
+ 			chip->cc1 = TYPEC_CC_OPEN;
+diff --git a/drivers/usb/typec/tcpm/qcom/qcom_pmic_typec_pdphy.c b/drivers/usb/typec/tcpm/qcom/qcom_pmic_typec_pdphy.c
+index 726423684bae0a690bd20547313704b7d2f4cfdc..18303b34594bbf6f43d1138177c4ab58f0dec395 100644
+--- a/drivers/usb/typec/tcpm/qcom/qcom_pmic_typec_pdphy.c
++++ b/drivers/usb/typec/tcpm/qcom/qcom_pmic_typec_pdphy.c
+@@ -12,6 +12,7 @@
+ #include <linux/regmap.h>
  #include <linux/regulator/consumer.h>
- #include <linux/reset.h>
  #include <linux/slab.h>
 +#include <linux/string_choices.h>
- #include <linux/usb/otg.h>
- #include <linux/usb/phy.h>
- #include <linux/usb/role.h>
-@@ -724,7 +725,7 @@ static void tegra_xusb_mbox_handle(struct tegra_xusb *tegra,
- 		if (err < 0) {
- 			dev_err(dev,
- 				"failed to %s LFPS detection on USB3#%u: %d\n",
--				enable ? "enable" : "disable", port, err);
-+				str_enable_disable(enable), port, err);
- 			rsp.cmd = MBOX_CMD_NAK;
- 		} else {
- 			rsp.cmd = MBOX_CMD_ACK;
-@@ -1349,7 +1350,7 @@ static void tegra_xhci_id_work(struct work_struct *work)
- 	u32 status;
- 	int ret;
+ #include <linux/usb/pd.h>
+ #include <linux/usb/tcpm.h>
+ #include "qcom_pmic_typec.h"
+@@ -418,7 +419,7 @@ static int qcom_pmic_typec_pdphy_set_pd_rx(struct tcpc_dev *tcpc, bool on)
  
--	dev_dbg(tegra->dev, "host mode %s\n", tegra->host_mode ? "on" : "off");
-+	dev_dbg(tegra->dev, "host mode %s\n", str_on_off(tegra->host_mode));
+ 	spin_unlock_irqrestore(&pmic_typec_pdphy->lock, flags);
  
- 	mutex_lock(&tegra->lock);
+-	dev_dbg(pmic_typec_pdphy->dev, "set_pd_rx: %s\n", on ? "on" : "off");
++	dev_dbg(pmic_typec_pdphy->dev, "set_pd_rx: %s\n", str_on_off(on));
  
-diff --git a/drivers/usb/host/xhci.c b/drivers/usb/host/xhci.c
-index 5ebde8cae4fc44cdb997b0f61314e309bda56c0d..45653114ccd7fcc4a1c6872e749c660d4cab705f 100644
---- a/drivers/usb/host/xhci.c
-+++ b/drivers/usb/host/xhci.c
-@@ -17,6 +17,7 @@
- #include <linux/module.h>
- #include <linux/moduleparam.h>
+ 	return ret;
+ }
+diff --git a/drivers/usb/typec/tcpm/qcom/qcom_pmic_typec_pdphy_stub.c b/drivers/usb/typec/tcpm/qcom/qcom_pmic_typec_pdphy_stub.c
+index df79059cda6755d4de35b7239fadc2dff2e699b1..8fac171778daf471fe4d03de8cc4f9c7ce1f323b 100644
+--- a/drivers/usb/typec/tcpm/qcom/qcom_pmic_typec_pdphy_stub.c
++++ b/drivers/usb/typec/tcpm/qcom/qcom_pmic_typec_pdphy_stub.c
+@@ -12,6 +12,7 @@
+ #include <linux/regmap.h>
+ #include <linux/regulator/consumer.h>
  #include <linux/slab.h>
 +#include <linux/string_choices.h>
- #include <linux/dmi.h>
- #include <linux/dma-mapping.h>
+ #include <linux/usb/pd.h>
+ #include <linux/usb/tcpm.h>
+ #include "qcom_pmic_typec.h"
+@@ -38,7 +39,7 @@ static int qcom_pmic_typec_pdphy_stub_set_pd_rx(struct tcpc_dev *tcpc, bool on)
+ 	struct pmic_typec *tcpm = tcpc_to_tcpm(tcpc);
+ 	struct device *dev = tcpm->dev;
  
-@@ -4523,7 +4524,7 @@ static int xhci_set_usb2_hardware_lpm(struct usb_hcd *hcd,
- 	hlpm_addr = ports[port_num]->addr + PORTHLPMC;
+-	dev_dbg(dev, "set_pd_rx: %s\n", on ? "on" : "off");
++	dev_dbg(dev, "set_pd_rx: %s\n", str_on_off(on));
  
- 	xhci_dbg(xhci, "%s port %d USB2 hardware LPM\n",
--			enable ? "enable" : "disable", port_num + 1);
-+		 str_enable_disable(enable), port_num + 1);
+ 	return 0;
+ }
+diff --git a/drivers/usb/typec/tcpm/qcom/qcom_pmic_typec_port.c b/drivers/usb/typec/tcpm/qcom/qcom_pmic_typec_port.c
+index c37dede62e12cd8a105da108838b5ca4f5e632d7..4fc83dcfae643e7a8b8e89ac6e6f5a9aaba3f65b 100644
+--- a/drivers/usb/typec/tcpm/qcom/qcom_pmic_typec_port.c
++++ b/drivers/usb/typec/tcpm/qcom/qcom_pmic_typec_port.c
+@@ -13,6 +13,7 @@
+ #include <linux/regmap.h>
+ #include <linux/regulator/consumer.h>
+ #include <linux/slab.h>
++#include <linux/string_choices.h>
+ #include <linux/usb/tcpm.h>
+ #include <linux/usb/typec_mux.h>
+ #include <linux/workqueue.h>
+@@ -562,7 +563,8 @@ static int qcom_pmic_typec_port_set_vconn(struct tcpc_dev *tcpc, bool on)
+ 	spin_unlock_irqrestore(&pmic_typec_port->lock, flags);
  
- 	if (enable) {
- 		/* Host supports BESL timeout instead of HIRD */
+ 	dev_dbg(dev, "set_vconn: orientation %d control 0x%08x state %s cc %s vconn %s\n",
+-		orientation, value, on ? "on" : "off", misc_to_vconn(misc), misc_to_cc(misc));
++		orientation, value, str_on_off(on), misc_to_vconn(misc),
++		misc_to_cc(misc));
+ 
+ 	return ret;
+ }
+diff --git a/drivers/usb/typec/tcpm/tcpm.c b/drivers/usb/typec/tcpm/tcpm.c
+index fcf2d7902352c447651f30610d59fef2471f3124..ef2cec386d965512c64e8b7e640199e10bb7bc94 100644
+--- a/drivers/usb/typec/tcpm/tcpm.c
++++ b/drivers/usb/typec/tcpm/tcpm.c
+@@ -21,6 +21,7 @@
+ #include <linux/seq_file.h>
+ #include <linux/slab.h>
+ #include <linux/spinlock.h>
++#include <linux/string_choices.h>
+ #include <linux/usb.h>
+ #include <linux/usb/pd.h>
+ #include <linux/usb/pd_ado.h>
+@@ -892,8 +893,8 @@ static int tcpm_enable_auto_vbus_discharge(struct tcpm_port *port, bool enable)
+ 
+ 	if (port->tcpc->enable_auto_vbus_discharge) {
+ 		ret = port->tcpc->enable_auto_vbus_discharge(port->tcpc, enable);
+-		tcpm_log_force(port, "%s vbus discharge ret:%d", enable ? "enable" : "disable",
+-			       ret);
++		tcpm_log_force(port, "%s vbus discharge ret:%d",
++			       str_enable_disable(enable), ret);
+ 		if (!ret)
+ 			port->auto_vbus_discharge_enabled = enable;
+ 	}
+@@ -4439,7 +4440,7 @@ static void tcpm_unregister_altmodes(struct tcpm_port *port)
+ 
+ static void tcpm_set_partner_usb_comm_capable(struct tcpm_port *port, bool capable)
+ {
+-	tcpm_log(port, "Setting usb_comm capable %s", capable ? "true" : "false");
++	tcpm_log(port, "Setting usb_comm capable %s", str_true_false(capable));
+ 
+ 	if (port->tcpc->set_partner_usb_comm_capable)
+ 		port->tcpc->set_partner_usb_comm_capable(port->tcpc, capable);
 
 -- 
 2.43.0
@@ -323,4 +439,4 @@ index 5ebde8cae4fc44cdb997b0f61314e309bda56c0d..45653114ccd7fcc4a1c6872e749c660d
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20250114-str-enable-disable-usb-v1-2-c8405df47c19%40linaro.org.
+To view this discussion visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20250114-str-enable-disable-usb-v1-3-c8405df47c19%40linaro.org.
