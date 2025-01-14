@@ -1,34 +1,34 @@
 Return-Path: <usb-storage+bncBCB6X76TWIIRBXWMTO6AMGQE7FRIXPQ@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-qv1-xf47.google.com (mail-qv1-xf47.google.com [IPv6:2607:f8b0:4864:20::f47])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7AC8BA1142A
+Received: from mail-qt1-x845.google.com (mail-qt1-x845.google.com [IPv6:2607:f8b0:4864:20::845])
+	by mail.lfdr.de (Postfix) with ESMTPS id 76ECEA11429
 	for <lists+usb-storage@lfdr.de>; Tue, 14 Jan 2025 23:34:07 +0100 (CET)
-Received: by mail-qv1-xf47.google.com with SMTP id 6a1803df08f44-6d8f51b49e5sf108206456d6.1
+Received: by mail-qt1-x845.google.com with SMTP id d75a77b69052e-46792701b64sf115299051cf.3
         for <lists+usb-storage@lfdr.de>; Tue, 14 Jan 2025 14:34:07 -0800 (PST)
 ARC-Seal: i=2; a=rsa-sha256; t=1736894046; cv=pass;
         d=google.com; s=arc-20240605;
-        b=OPkRQj0Eu12aT+O/N3+FZtJWBeLvel0JumWdH+pogIt0EyONDjteloMeaf63/ULjNv
-         ND+1Dq0VzwNhJvnTJ8e3Gxy1j+xU52c0Q8q0Z+hr9pW161OGbuNY6P/Iw92Euzy/564x
-         33tDF4AZKo0wAJhUoVvZTdakLUmJtkN+PJcCDGmHKkK7U8tmyAcvf8+i+iOMUqXkNs3x
-         rkzRO7H8XagSPyvr7MRQxAGv0al8pBNV9Jxeqg+PDLbNA//BTqGE982KY6d8jmPi6UEW
-         gV0z1fZqs/ZQ4MQaq86QkaViRuIAUUmq/Bv3SZCb2Hy8nXHAN7029ZxxIYOWz3KMGOLb
-         204A==
+        b=Kev62xjshXncO/R/6aIAuFPuLhzwKdQTFSFyKGcglTu6LRvGfvpGISXUvQNLIsJ9vE
+         yYzniIPYaW5Snvcuwq3UAF0ZbBfReqrkHLRLotDTMdduGohMDQMmUo+wiYHTSrX1pr9A
+         JCs7vi0UlLEI3gi1Vtqm1ou6kvLmbCMb5RDGdYhvcdwO/jAKTTedUDOi5BMyeWCZXzYb
+         UC4vQQBajl5QL2B6PGw+tqQ3JTUXaUZbjGnLgCh465ULpaffp4judaVGRK15eEAKOjUc
+         ebM205sEM9xTFOgt5gR9TDdkWNGOUQ3Ovvj5I4VXtbXK9meyLnLBG6rQRqDIpbPhEMuP
+         +DYw==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:cc:to:mime-version:message-id:date
-         :subject:from:sender:dkim-signature;
-        bh=pzD1MW+0ZhEAXF4CpzUA+E7VliYvnOkQq8NriIFtG5g=;
-        fh=i6sYP/OU4PwYKwUH+NDS9rIgjtJK52mvhb85kpc7hwk=;
-        b=f5lVphkhq6MRD6yC/+Cu1WbVtC9q2qInD+6ECPjg1fgFR1BJl9eEExssV2DuBH1ceq
-         GQ5OUxKL4priftUDUUJYOq4rchQHH5idQRZFxzzxHvPdeyQ4j0YLjXuj8JvFZQhIfw74
-         +ME31k4oi8Zrk9dlWF8woHSC1KIJVIGrMCnS5yygfxcMbrfgwP2hTdMTOI/keKVaxv0s
-         qxoGLdGRdBY0to0C2MTld6R9hvr84c4oAYLsZtQSMsLfvOokozj8owiDcMb98jItCQqV
-         7ku9ZppKr34TP+SOTWuHIMM1jwOKRjsh924knFhZ3L5oztGGLfPuEF/DVoJ0VK28o8CO
-         iRqg==;
+         :list-id:mailing-list:precedence:cc:to:in-reply-to:references
+         :message-id:mime-version:subject:date:from:sender:dkim-signature;
+        bh=j4R5fxWHTkbF5HLcXcYyXaBgDeGEV85rCHQCX4vT/JY=;
+        fh=cYw83pt2FVwLPg3T1NZt3DlpBEkkmf/bpIA98Ch+vjA=;
+        b=HTqDyaRDCZ0Na85MeTZRKl5ptOc9q5mHmzVJNg9TSxDJmo8l/XsMqCrzBn1fXgzWrf
+         aJSQVstc7Jpu/hp+1m+0LMljD/PTsndMOAw+1VGG6xHkHKoMKPthJpORA/4V8Z33+ANQ
+         XftSjrgg7blaQRrAGEPbEDxqOiUN8Vohlk3SmyPSgSz8uBfISzM83ak4JI7AIVpEGfRp
+         qQbfGHGIi5e8g2cF8xFSmH/yN8WLly2pViy+i7Begay81ZtDhcUf07UTVW62UfR0cCgS
+         a4CWDZ39DGsBEmou2nm8FcxgHkFfeBjAdxPwYdJCQEnROud2oZZaw/gC2qshcKTgtM7G
+         RWUw==;
         darn=lfdr.de
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@linaro.org header.s=google header.b=hRBBdPSl;
+       dkim=pass header.i=@linaro.org header.s=google header.b=n8CM89kS;
        spf=pass (google.com: domain of krzysztof.kozlowski@linaro.org designates 209.85.220.41 as permitted sender) smtp.mailfrom=krzysztof.kozlowski@linaro.org;
        dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=linaro.org;
        dara=pass header.i=@lists.one-eyed-alien.net
@@ -36,97 +36,95 @@ DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google; t=1736894046; x=1737498846; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:x-original-authentication-results
-         :x-original-sender:cc:to:mime-version:message-id:date:subject:from
-         :sender:from:to:cc:subject:date:message-id:reply-to;
-        bh=pzD1MW+0ZhEAXF4CpzUA+E7VliYvnOkQq8NriIFtG5g=;
-        b=VJ43uN1KOo1jpNuYmIL+EFWU1UeJLXqSgEuZiZkufMnmvum8HPBducwZtajGcyA4yt
-         +Pyn9rNZOVL4qUZeNIKsMlVEtwi6GyRlLuSrDqQtXDOHgVlLJf/PMi0uZpakBRKhBbiR
-         KoOCvpUfX/bDDGQNW3JvVwM65o7AGmoyTgrEU=
+         :x-original-sender:cc:to:in-reply-to:references:message-id
+         :mime-version:subject:date:from:sender:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=j4R5fxWHTkbF5HLcXcYyXaBgDeGEV85rCHQCX4vT/JY=;
+        b=Ym752NMipnrUTwPCodyizhuOZ6kjcWtV07J3yHRzNXan7YvzfZZxAHS2OjUfkvJlP8
+         YgJruG0ci8Qu325fu09VUiD4E65oFJ8ZjyvJjxU0aLRoIBx7FkgqRC0GN2qCPlkMRSpB
+         fBwPHtopj1r6FymT6K1lNsr6AAe2Ew76C1eKY=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20230601; t=1736894046; x=1737498846;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:x-original-authentication-results
-         :x-original-sender:cc:to:mime-version:message-id:date:subject:from
-         :x-beenthere:x-gm-message-state:sender:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=pzD1MW+0ZhEAXF4CpzUA+E7VliYvnOkQq8NriIFtG5g=;
-        b=oabYF6WUESFaDC9APHIGgVwajHOu2wl9iIVes4UjAhxrSy0PBzfrbayyxoSgKBi43n
-         A5+Z5NQli2mX3YvGY/lFPjXRzJW1BwkYuYxOtHNTn9D6gvQydF6k+EsNTBCJzQ/HR/PC
-         vMiWUiBFvohnfiSI4EKSCUAu3qLqKK+W0MALRjL/h08BsXxkDRP9DguEXvncr76yahON
-         Xb5XqN+NYYoGi3YVxCIZV7V3l3PKdmbGJDBN88WZLC9ZF0sQp4tRMGeeDHj59b/yVb3P
-         STtSJtdPfd/SHBBgYcu65yfoRkIEEhJ9YCfI4IDdCGAjuncWwyd8kwuBULMvMNakNONs
-         4zKg==
+         :x-original-sender:cc:to:in-reply-to:references:message-id
+         :mime-version:subject:date:from:x-beenthere:x-gm-message-state
+         :sender:from:to:cc:subject:date:message-id:reply-to;
+        bh=j4R5fxWHTkbF5HLcXcYyXaBgDeGEV85rCHQCX4vT/JY=;
+        b=WrQy/uExb9cJKUwid0OmoxVZ3ZjUF9CXL7i+B8P3DZksEjZHcKPEGHZ25hk/G6kVqt
+         0Wn4iqxcquYmtgeebIbdD1CSo5mILD62HRhXaYEqwAEodc2wvkgA0ciTPMSrKISh4EBC
+         iEN1zyalj+pgn+RNpwRWzave+WBDXS/epFf1YDx4HUNDYtAzS1sM341+AoYhjuvtcmyw
+         kPqGvrtv8XDjbth1+OPtRtQekhvDJsBxoUn5OzUovohkilcMXUZdR+ZPKGjK6S5jRYpk
+         aaPhT00GIRjvUKTRsZ7qSYc0e4Zuo64X4StOW1CPrqOkOwxiXkC/g6sUmbf2AGLufunR
+         TmCA==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Forwarded-Encrypted: i=2; AJvYcCV3LrVv/doSwBPSoueeE/gxbr9bHeyEjo3u17m2mdxdMqHf8ENjQXkzRwlGkoNWKNOgugSCGA==@lfdr.de
-X-Gm-Message-State: AOJu0Yw5m/Uly6fsCChtvcE1ie6KMsU67kdNcTyp12CnPDHafs+vccC5
-	bTU2539A3spk/ceazVUz34gYHR2nceS1vZ4muO/mKlmBM6+x1NFFa0MZWQc7pJM=
-X-Google-Smtp-Source: AGHT+IGDnw5sZkfVFTYz7fzOkqkOISesRAjS2g54ZLPzRz4I+//PXbTphtHYjIxidqg1oyCovQ3Cdg==
-X-Received: by 2002:a05:6214:501a:b0:6df:9740:68a3 with SMTP id 6a1803df08f44-6df9b2b3231mr487404526d6.38.1736894046351;
+X-Forwarded-Encrypted: i=2; AJvYcCWaJ4xJIzbObFa23r2IG4qr3F5riUSZzY9ux7O8F7f8LP4+7B/UHAWOrMcL+ioHoDlvb+CLwg==@lfdr.de
+X-Gm-Message-State: AOJu0YyMcs8q4ySagXViMNOZVFoxfRT7jweDXayYMYw4qLv5kjNcUUQa
+	E2iPGF6xybQcToAt7yxmXTYfHLG+GV/MkP8EkjDEECeTva61tbUv9SKaLMXzMiY=
+X-Google-Smtp-Source: AGHT+IEglk7+IRm0F3TXl+nSO0YsEv7/oVRg6VlX+JkYTZaBENKX/6K+VYO2D7Yw+P43lsLGcEZt1Q==
+X-Received: by 2002:ac8:5a16:0:b0:467:67db:ef7a with SMTP id d75a77b69052e-46c71083cddmr397456331cf.44.1736894046257;
         Tue, 14 Jan 2025 14:34:06 -0800 (PST)
 X-BeenThere: usb-storage@lists.one-eyed-alien.net
-Received: by 2002:a05:6214:2c0e:b0:6d8:f5b9:2be3 with SMTP id
- 6a1803df08f44-6dfa36fb374ls141100266d6.0.-pod-prod-07-us; Tue, 14 Jan 2025
- 14:34:06 -0800 (PST)
-X-Forwarded-Encrypted: i=2; AJvYcCUYwcEFoDmOhbPwtklqPJoi8ljgQq+yCUIo3mxIthGg2mZdfk8SnCTDfMOOfhhMGMIX1uvnjiZdNOJDbA==@lists.one-eyed-alien.net
-X-Received: by 2002:a05:620a:2588:b0:7b6:d26e:9d89 with SMTP id af79cd13be357-7bcd97ae014mr3818010385a.42.1736894045870;
+Received: by 2002:ac8:6d13:0:b0:467:769b:e63f with SMTP id d75a77b69052e-46c7a9fa075ls60490571cf.0.-pod-prod-07-us;
+ Tue, 14 Jan 2025 14:34:05 -0800 (PST)
+X-Forwarded-Encrypted: i=2; AJvYcCWUz2IOIhqVz93ItG5nZwOWQhs9mGnJkxQqCqGl8Y2bqW8liUp59nZWKI/lvyn2LS9gJNrjo13xrgnRIg==@lists.one-eyed-alien.net
+X-Received: by 2002:a05:620a:4155:b0:7ac:9e4d:8060 with SMTP id af79cd13be357-7bcd97ebcfdmr3633752585a.58.1736894045712;
         Tue, 14 Jan 2025 14:34:05 -0800 (PST)
-Received: by 2002:a05:620a:5649:b0:7b6:d314:a4e5 with SMTP id af79cd13be357-7bce9daadaams85a;
-        Tue, 14 Jan 2025 12:05:47 -0800 (PST)
-X-Forwarded-Encrypted: i=2; AJvYcCVchUyb7n/wq9aH+YTmBKtWG8GrIL7wGnWqB3ZyfPD0F+G0G/vmaDk6SRHLzvhJlx1Z8CZpwYaukOYH/g==@lists.one-eyed-alien.net
-X-Received: by 2002:a05:600c:3c85:b0:434:a1d3:a30f with SMTP id 5b1f17b1804b1-436e267736cmr211273515e9.6.1736885144716;
-        Tue, 14 Jan 2025 12:05:44 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1736885144; cv=none;
+Received: by 2002:a05:620a:b92:b0:7b6:dcc4:6708 with SMTP id af79cd13be357-7bce27c44ecms85a;
+        Tue, 14 Jan 2025 12:05:48 -0800 (PST)
+X-Forwarded-Encrypted: i=2; AJvYcCXtgFgooQcAwtwzwVKbEvChnf5JJ7ecgjnEU8r2Of6CeWmEIb+MHNvYY2za/WqPzv+Hdp0bDgfnsm1x5A==@lists.one-eyed-alien.net
+X-Received: by 2002:a05:600c:808:b0:436:488f:4f3 with SMTP id 5b1f17b1804b1-436e26a1b3dmr256389415e9.17.1736885146506;
+        Tue, 14 Jan 2025 12:05:46 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1736885146; cv=none;
         d=google.com; s=arc-20240605;
-        b=abfp6WnhCL35y7dDeYUzquT4nHE7ngyPuhaKQC+iqCX3QyuWXSrhVAPmyoxeRGgAkl
-         MAstLhiQlO2H5IDHwI8l4DPb89NzMo2U+IGnE3i3aucw9yGT4K26vBW+QenH+VADlFwN
-         WTlxMcrLi6JXw4djFJ3B9a/MHNBXsYQup6pO60APONXviRoa2proPeKaVj7xUytp7coL
-         WmSex4p8kFKUwBnvsy2Nd8wu0AafOAQZkiO32RyW1vVzUK+VPmQupG4+Zh5celChjaud
-         5rXlkzqh/gVg4mq9hLa9Q5g0mE+1U9mNx3VDygPFUjmVopYHPT1R4sv1BRSTrONDi+1I
-         kfqg==
+        b=AEUFawyORgWeW3BWKA8RJKgFM0avVAR2WtRXa9rcLj57ZR1UIvWkHCLVLiJdHXe7Dj
+         CGarwPkQXYApZP+dPz4Bp3PRXRBZIO0HtL0AlVLlid7ynf4f69UvhN/+5xfdOuzS688u
+         G3GjLyI7D3kS+6NzA2HJz+7cZDUSnAfTFa4Pzj7cBiV61Zboy3EeakvY8OLjcVtyMm7V
+         Y34d+I/Xpd4M9WC2BeU7heWKs6veytDm0kqmn5aAZfYJoYrNogTbUVXH0eyQeddHQzBW
+         aVTYZm2Jc3NGioMVXeJcXYw/O2jYseMiDyAvM2TeADlLyiZ+FAW9A4w/Nb71lIM5BTrZ
+         +/IQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
-        h=cc:to:content-transfer-encoding:mime-version:message-id:date
-         :subject:from:dkim-signature;
-        bh=v/k2E/bpxZ+0pCBE5McUXWaXdlpSIskBjR60ldq6c2s=;
-        fh=lSPymtJkJ4f4sVDle1y8SOa6cOvLnioYzHQNqcgYpxM=;
-        b=RWY/pndYoMyKORg5XJ6U/8mO24YN0aARoacMgGFRVQeTCJkUrSul5UUZT+fbUajTp5
-         84L0idsZVLZ1Sw77PhIAvTzpssycTuO/AAMsdKGrYaGv/JKI+2ZZLM68xKDrbZsBTdLf
-         M+LuVhIxFicDw1ssB9zQpDEUWGsW5wlw0QuhXVB6CiwsoP6buGuf5QI2rQEd6C5+mEvC
-         h2vorDueddh8f5XrWu8dZwWLCs6ZifgzGrW/UDAe1n+7/4Q2wbOuNm6pD3zB6icYSGNq
-         yGR5DNSljkT39msUY2FJd8O1DEJmQRfwrN8id1nEYI0SV/F8XcxzWRmocY8vHESpTTuo
-         /4qw==;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :mime-version:subject:date:from:dkim-signature;
+        bh=ix4BWT9qwOiJ6xVGoiI7oaTduq2Ilx63FNUEN2N3zfk=;
+        fh=nzJHIqHGSB6vhEkpzhLuElCFuv27su6D66gF9XG+b14=;
+        b=lNeK+8p9k9WUClRU13fRG5VFNaAhoTR6W8/2meY78XjMvGkcdF9d/JdqccIuIcSTNC
+         FLAAfYSgRlWrJs5cM4/fBadobXENmrIRbX4oKa9dEgxlE+5B1VqBv2TKsImxnvVOs/IE
+         D/h//a/oi91brlh/OFm1CObiA7PT8dmw5Q0wM+W/sPn07sOEpUJLJ7IIEmph3tQ91Nrd
+         ICX0m22HdrheBYzHMc2mBgBOygxu5FIL3S6DchJD4fFN39m47VYsz8D1++jIuV4WYeXt
+         YnbGFgotkt9Jh8pwFHkxXEW96uJUzSJw1DS8ErVvugYrcQx269rftaf5yJcBmOIOQbt2
+         fGvQ==;
         dara=google.com
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@linaro.org header.s=google header.b=hRBBdPSl;
+       dkim=pass header.i=@linaro.org header.s=google header.b=n8CM89kS;
        spf=pass (google.com: domain of krzysztof.kozlowski@linaro.org designates 209.85.220.41 as permitted sender) smtp.mailfrom=krzysztof.kozlowski@linaro.org;
        dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=linaro.org;
        dara=pass header.i=@lists.one-eyed-alien.net
 Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
-        by mx.google.com with SMTPS id 5b1f17b1804b1-436e98cd3ebsor22334545e9.0.2025.01.14.12.05.44
+        by mx.google.com with SMTPS id 5b1f17b1804b1-436e98caab5sor20802625e9.0.2025.01.14.12.05.46
         for <usb-storage@lists.one-eyed-alien.net>
         (Google Transport Security);
-        Tue, 14 Jan 2025 12:05:44 -0800 (PST)
+        Tue, 14 Jan 2025 12:05:46 -0800 (PST)
 Received-SPF: pass (google.com: domain of krzysztof.kozlowski@linaro.org designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
-X-Forwarded-Encrypted: i=1; AJvYcCWC3JaTcsktuBRTM1qsRz6HI99/UZP29KfEqL+CaGEYaoW138NrazpGKJ7zCRaJXXgDwvglMJxjdHVoVA==@lists.one-eyed-alien.net
-X-Gm-Gg: ASbGncu1jRKtLFIIhhF7yFO6UXMAvCom6gsLN2vg/S9MEgnmoWaQ8u8g8twNz6+GeAq
-	aq0keyCrOxdfXQcH2Hw9HpT09EylUDr1sDGtx9Ha8VmKGayQFAT7GnfIIpSiemzBN/B4N+kDHrj
-	C3otTvzYXGS2pprhbTVo5jzAWzGdzItLK7G6Ikfz+R6bc5nrDopE52i5G/cWKm2m0PapmLp7o+O
-	83rjEXa4/YCIZVSTd4pLXYeVbpMJh+mLpgEA6xGk9iK2GtC2vC4TtrtkpQNbMLc7lgvTwIK
-X-Received: by 2002:a05:600c:3b83:b0:434:f586:7535 with SMTP id 5b1f17b1804b1-436e256093dmr93862205e9.0.1736885144276;
-        Tue, 14 Jan 2025 12:05:44 -0800 (PST)
+X-Forwarded-Encrypted: i=1; AJvYcCUoXVHafLCuq0NEvJrZe8vVfNMqhtKPqZPsa9buoWIsvYbLkRx7vC/ZqehnTcj7XCvvq9+ic6GCz43uww==@lists.one-eyed-alien.net
+X-Gm-Gg: ASbGncsaoJBDiNY7UevrqaslZDvSisycYS0JR2GQNUkp2BNpyuiwcRs2T5hRRzKrL+p
+	jXRrTFTJOmM+JVLXhWVtWXTNdZ273Xeg8+eysAJ9F3zzKWFyEYioNEO1yMs6D/Ik3ZH9M2f5ldu
+	1GvFF0o2FBsms0cPHRMAKBoANZFaZkTA6lSzSu6sMrMKnhNJrWa83pGaGFHg4XbvhRq2mza2khE
+	oFg9Mp6oMlFqJb3+VkJYqySJ4kneUqecmakjU0npt/4UWv4zaPhIiRqr8MkAi9mu6CgPXR/
+X-Received: by 2002:a05:600c:3b11:b0:42c:bb35:b6d0 with SMTP id 5b1f17b1804b1-436e267f21bmr104196145e9.1.1736885146061;
+        Tue, 14 Jan 2025 12:05:46 -0800 (PST)
 Received: from [127.0.1.1] ([178.197.223.165])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-436e9dc8802sm184622025e9.10.2025.01.14.12.05.42
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-436e9dc8802sm184622025e9.10.2025.01.14.12.05.44
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 14 Jan 2025 12:05:43 -0800 (PST)
+        Tue, 14 Jan 2025 12:05:45 -0800 (PST)
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Subject: [usb-storage] [PATCH 0/6] USB: Use str_enable_disable-like helpers
-Date: Tue, 14 Jan 2025 21:05:33 +0100
-Message-Id: <20250114-str-enable-disable-usb-v1-0-c8405df47c19@linaro.org>
+Date: Tue, 14 Jan 2025 21:05:34 +0100
+Subject: [usb-storage] [PATCH 1/6] USB: Replace own str_plural with common one
 MIME-Version: 1.0
 Content-Type: text/plain; charset="UTF-8"
-X-B4-Tracking: v=1; b=H4sIAI7DhmcC/x2MQQqAIBAAvxJ7bkGzQPpKdMjcaiEs3IpA/HvSa
- ZjDTAKhyCTQVwkiPSx8hCK6rmDeprASsi8OjWo6pXWLckWkMLmd0LP8vMWhsdbPzhilrYcSn5E
- Wfv/xMOb8AVcM1WBoAAAA
-X-Change-ID: 20250114-str-enable-disable-usb-388dcb33018d
+Message-Id: <20250114-str-enable-disable-usb-v1-1-c8405df47c19@linaro.org>
+References: <20250114-str-enable-disable-usb-v1-0-c8405df47c19@linaro.org>
+In-Reply-To: <20250114-str-enable-disable-usb-v1-0-c8405df47c19@linaro.org>
 To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
  Mathias Nyman <mathias.nyman@intel.com>, 
  Thierry Reding <thierry.reding@gmail.com>, 
@@ -144,26 +142,26 @@ Cc: linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
  usb-storage@lists.one-eyed-alien.net, 
  Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=openpgp-sha256; l=3465;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=4557;
  i=krzysztof.kozlowski@linaro.org; h=from:subject:message-id;
- bh=nmJr11UuY4Bfe29oETroChEz/oyxl2OwFdz3Ug4E48g=;
- b=owEBbQKS/ZANAwAKAcE3ZuaGi4PXAcsmYgBnhsOQUrWOP1qt6ZaAtaAURvG8jnYVem92OdTKj
- NPA4ew2kaqJAjMEAAEKAB0WIQTd0mIoPREbIztuuKjBN2bmhouD1wUCZ4bDkAAKCRDBN2bmhouD
- 14N9D/9J6AaiLvv8QH+8H2cFh6pdmm/rQfg4Frl5WMv096NwDBf/uAl0OEVqaGylkk8cdPx7rUU
- 3hBYhQmcLC5M/2+8Mo1AWu/CHY9Mcs5jm9bNvxAGg3jCJkJutCGxrXXZ0ZNyLT9MaaJvdVQf2JF
- 80P4moM43/4fZDeaPo6q/VZes+cT+SpLCwbs9yX5eqgm/h9PPYGzsr/7shMxY7i5hrLDYV2mGUQ
- rpsQa44S7n6O5R4A4Tt+6ymJJzeoK9bEvs843GBlgaayhVTt6EmyzZkn+734u1peR1WDyj7oKNS
- 4RgXHZngvusbGWjqueO3MNqy1bONr2+mclpIqnXHDeEuhA1lhbWfK0iiwrgy0jIrAJSm6Nuv/6w
- Bk6m/V4WhIO47l9UUcSoTKPrNbl0EGq+Z4pKF5VBV8gFgMtWMV527L4sdZzzaR+P+Hr22jZAdQm
- Mr82TWOFHJBZmRnieYa03lVXHGE6Te9SNOXK6E3Y4anz9NRJXfJ/fbq34pbmav3FjnXvn67CayC
- xW5JBsFXs92jzLXES7dcmncDS3SkC4ID6Hy2lK+9nYslS2uA0IDkrkP4ngMFPSYPBKd0Lnxf18z
- dQ/EhSJTd+8aBdYz/g0thsoW+VjBDZOXs8pMWAIchZ3Y2p96bHaCaG1k38Dk5g0ttv3jeZlcWHj
- 8kEXX7jBl9sCL5A==
+ bh=oBRrldCGEtQDH9TkaLDR4/zC/3PP573MIhVqsz9gJTw=;
+ b=owEBbQKS/ZANAwAKAcE3ZuaGi4PXAcsmYgBnhsORQpZSPRfkKaL3N8KwomBIhzaY4ZZ1/V+EP
+ p3YB7iKfC2JAjMEAAEKAB0WIQTd0mIoPREbIztuuKjBN2bmhouD1wUCZ4bDkQAKCRDBN2bmhouD
+ 1/ihD/4zYcA+M7tRdqi7/4Eu0P6oiHwpIW+zgjjC8mO4dKq/fzdsBl6GN0MPubf3R+62Dn9SnlZ
+ gBkxcpdPfMPzibVeDxdAxqS/QFZCYYfiYHTOUfNvFX4yjYDZ/F+e34/1VyxC/CsP4NiGivuM1qy
+ zhYf6dMBMFG2cvEw2a1kyx/HYLvdjFakU6qqy8zckY9c+NkUVSzs7hcIfn8b8XLf6VJk3CCsbFC
+ eFAvoZoXKQdleAAlT1D0Pj5QXP+piUPJYY1zpD7AatwpaCgQS3tAaO2qTKebXHVAQlcYgrnWjNO
+ U/JAwvdS2ckWppCHDH9hPb0M0WbFxji74szMZm/F6faWFlHxLVs+NDFB+umXtlluIAM4lLH0fxt
+ g7V7Ma5GLHOJjzXMOk0Nx/MKFiDPnDeHOEEdn/zazix7cPwagALIFuZIRHyS+2Hb6E7Jim4VQPy
+ EjG0PB4bNJw7WoOzXhMBUuem1SAaRPOw7M1CPetC6vw1w7l7PoyevPZLHy6Qc5xW1YZOKrGR5kh
+ qI/1IOST1DLVe+KRGyTwfCBs/ZdurCWpWaseYe6pmkR46WH9pJj+50nK91+HRsuj/cAoU/2jFs0
+ 59Ytog3gzGwCenTSUtSlN7SsMs7uDj8jCE/rC4cMXVQj4nqZXGsiWEkXD8mSi/5aADZGy32Pm1i
+ 6OczTp8+0UGp3Jg==
 X-Developer-Key: i=krzysztof.kozlowski@linaro.org; a=openpgp;
  fpr=9BD07E0E0C51F8D59677B7541B93437D3B41629B
 X-Original-Sender: krzysztof.kozlowski@linaro.org
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@linaro.org header.s=google header.b=hRBBdPSl;       spf=pass
+ header.i=@linaro.org header.s=google header.b=n8CM89kS;       spf=pass
  (google.com: domain of krzysztof.kozlowski@linaro.org designates
  209.85.220.41 as permitted sender) smtp.mailfrom=krzysztof.kozlowski@linaro.org;
        dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=linaro.org;
@@ -182,74 +180,141 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-Simple refactoring to replace ternary operator for string pairs like
-"enable/disable".
+Use existing str_plural() helper from string_choices.h to reduce amount
+of duplicated code.
 
-Best regards,
-Krzysztof
-
+Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 ---
-Krzysztof Kozlowski (6):
-      USB: Replace own str_plural with common one
-      USB: host: Use str_enable_disable-like helpers
-      USB: typec: Use str_enable_disable-like helpers
-      USB: phy: Use str_enable_disable-like helpers
-      USB: gadget: Use str_enable_disable-like helpers
-      USB: Use str_enable_disable-like helpers
+ drivers/usb/core/config.c  | 19 +++++++------------
+ drivers/usb/core/generic.c | 12 ++++--------
+ 2 files changed, 11 insertions(+), 20 deletions(-)
 
- drivers/usb/cdns3/cdnsp-gadget.c                   | 13 ++++++------
- drivers/usb/chipidea/host.c                        |  3 ++-
- drivers/usb/common/usb-conn-gpio.c                 |  3 ++-
- drivers/usb/core/config.c                          | 19 +++++++----------
- drivers/usb/core/generic.c                         | 12 ++++-------
- drivers/usb/core/hub.c                             | 10 ++++-----
- drivers/usb/core/port.c                            |  3 ++-
- drivers/usb/fotg210/fotg210-core.c                 |  5 +++--
- drivers/usb/gadget/function/f_ecm.c                |  4 ++--
- drivers/usb/gadget/function/f_ncm.c                |  3 ++-
- drivers/usb/gadget/function/u_serial.c             |  3 ++-
- drivers/usb/gadget/legacy/inode.c                  |  3 ++-
- drivers/usb/gadget/udc/aspeed-vhub/hub.c           |  3 ++-
- drivers/usb/gadget/udc/at91_udc.c                  |  3 ++-
- drivers/usb/gadget/udc/cdns2/cdns2-gadget.c        | 13 ++++++------
- drivers/usb/gadget/udc/dummy_hcd.c                 |  3 ++-
- drivers/usb/gadget/udc/fsl_udc_core.c              |  3 ++-
- drivers/usb/gadget/udc/omap_udc.c                  |  3 ++-
- drivers/usb/gadget/udc/pxa27x_udc.c                |  3 ++-
- drivers/usb/host/oxu210hp-hcd.c                    |  3 ++-
- drivers/usb/host/sl811-hcd.c                       |  3 ++-
- drivers/usb/host/xhci-ring.c                       |  5 +++--
- drivers/usb/host/xhci-tegra.c                      |  5 +++--
- drivers/usb/host/xhci.c                            |  3 ++-
- drivers/usb/mtu3/mtu3_debugfs.c                    |  3 ++-
- drivers/usb/mtu3/mtu3_dr.c                         |  3 ++-
- drivers/usb/mtu3/mtu3_gadget.c                     |  3 ++-
- drivers/usb/musb/da8xx.c                           |  3 ++-
- drivers/usb/musb/musb_core.c                       |  3 ++-
- drivers/usb/musb/musb_dsps.c                       |  3 ++-
- drivers/usb/musb/musb_gadget.c                     |  3 ++-
- drivers/usb/musb/musb_host.c                       |  3 ++-
- drivers/usb/phy/phy-fsl-usb.c                      |  3 ++-
- drivers/usb/phy/phy-mv-usb.c                       |  3 ++-
- drivers/usb/phy/phy-tahvo.c                        |  3 ++-
- drivers/usb/storage/shuttle_usbat.c                |  4 ++--
- drivers/usb/typec/class.c                          |  7 ++++---
- drivers/usb/typec/tcpm/fusb302.c                   | 24 +++++++++++-----------
- .../usb/typec/tcpm/qcom/qcom_pmic_typec_pdphy.c    |  3 ++-
- .../typec/tcpm/qcom/qcom_pmic_typec_pdphy_stub.c   |  3 ++-
- drivers/usb/typec/tcpm/qcom/qcom_pmic_typec_port.c |  4 +++-
- drivers/usb/typec/tcpm/tcpm.c                      |  7 ++++---
- drivers/usb/usbip/vhci_hcd.c                       |  3 ++-
- 43 files changed, 124 insertions(+), 95 deletions(-)
----
-base-commit: 114d4ae3196721b07f1159730665e0c3f032058a
-change-id: 20250114-str-enable-disable-usb-388dcb33018d
+diff --git a/drivers/usb/core/config.c b/drivers/usb/core/config.c
+index 25a00f974934fb5a562caf3f5f259ba23031e457..f7bf8d1de3adeb16a540ec5236726fc7b03517df 100644
+--- a/drivers/usb/core/config.c
++++ b/drivers/usb/core/config.c
+@@ -9,6 +9,7 @@
+ #include <linux/usb/quirks.h>
+ #include <linux/module.h>
+ #include <linux/slab.h>
++#include <linux/string_choices.h>
+ #include <linux/device.h>
+ #include <asm/byteorder.h>
+ #include "usb.h"
+@@ -18,12 +19,6 @@
+ 
+ #define USB_MAXCONFIG			8	/* Arbitrary limit */
+ 
+-
+-static inline const char *plural(int n)
+-{
+-	return (n == 1 ? "" : "s");
+-}
+-
+ static int find_next_descriptor(unsigned char *buffer, int size,
+     int dt1, int dt2, int *num_skipped)
+ {
+@@ -484,7 +479,7 @@ static int usb_parse_endpoint(struct device *ddev, int cfgno,
+ 	retval = buffer - buffer0 + i;
+ 	if (n > 0)
+ 		dev_dbg(ddev, "skipped %d descriptor%s after %s\n",
+-		    n, plural(n), "endpoint");
++		    n, str_plural(n), "endpoint");
+ 	return retval;
+ 
+ skip_to_next_endpoint_or_interface_descriptor:
+@@ -563,7 +558,7 @@ static int usb_parse_interface(struct device *ddev, int cfgno,
+ 	alt->extralen = i;
+ 	if (n > 0)
+ 		dev_dbg(ddev, "skipped %d descriptor%s after %s\n",
+-		    n, plural(n), "interface");
++		    n, str_plural(n), "interface");
+ 	buffer += i;
+ 	size -= i;
+ 
+@@ -605,7 +600,7 @@ static int usb_parse_interface(struct device *ddev, int cfgno,
+ 		dev_notice(ddev, "config %d interface %d altsetting %d has %d "
+ 		    "endpoint descriptor%s, different from the interface "
+ 		    "descriptor's value: %d\n",
+-		    cfgno, inum, asnum, n, plural(n), num_ep_orig);
++		    cfgno, inum, asnum, n, str_plural(n), num_ep_orig);
+ 	return buffer - buffer0;
+ 
+ skip_to_next_interface_descriptor:
+@@ -664,7 +659,7 @@ static int usb_parse_configuration(struct usb_device *dev, int cfgidx,
+ 		if (size2 < sizeof(struct usb_descriptor_header)) {
+ 			dev_notice(ddev, "config %d descriptor has %d excess "
+ 			    "byte%s, ignoring\n",
+-			    cfgno, size2, plural(size2));
++			    cfgno, size2, str_plural(size2));
+ 			break;
+ 		}
+ 
+@@ -754,7 +749,7 @@ static int usb_parse_configuration(struct usb_device *dev, int cfgidx,
+ 	if (n != nintf)
+ 		dev_notice(ddev, "config %d has %d interface%s, different from "
+ 		    "the descriptor's value: %d\n",
+-		    cfgno, n, plural(n), nintf_orig);
++		    cfgno, n, str_plural(n), nintf_orig);
+ 	else if (n == 0)
+ 		dev_notice(ddev, "config %d has no interfaces?\n", cfgno);
+ 	config->desc.bNumInterfaces = nintf = n;
+@@ -798,7 +793,7 @@ static int usb_parse_configuration(struct usb_device *dev, int cfgidx,
+ 	config->extralen = i;
+ 	if (n > 0)
+ 		dev_dbg(ddev, "skipped %d descriptor%s after %s\n",
+-		    n, plural(n), "configuration");
++		    n, str_plural(n), "configuration");
+ 	buffer += i;
+ 	size -= i;
+ 
+diff --git a/drivers/usb/core/generic.c b/drivers/usb/core/generic.c
+index b134bff5c3fe3e86215bdcd14a2591a521f5ba3c..9c6ae5e1198bb2043d27e2f309a46f8ce512225f 100644
+--- a/drivers/usb/core/generic.c
++++ b/drivers/usb/core/generic.c
+@@ -21,14 +21,10 @@
+ 
+ #include <linux/usb.h>
+ #include <linux/usb/hcd.h>
++#include <linux/string_choices.h>
+ #include <uapi/linux/usb/audio.h>
+ #include "usb.h"
+ 
+-static inline const char *plural(int n)
+-{
+-	return (n == 1 ? "" : "s");
+-}
+-
+ static int is_rndis(struct usb_interface_descriptor *desc)
+ {
+ 	return desc->bInterfaceClass == USB_CLASS_COMM
+@@ -194,18 +190,18 @@ int usb_choose_configuration(struct usb_device *udev)
+ 	if (insufficient_power > 0)
+ 		dev_info(&udev->dev, "rejected %d configuration%s "
+ 			"due to insufficient available bus power\n",
+-			insufficient_power, plural(insufficient_power));
++			insufficient_power, str_plural(insufficient_power));
+ 
+ 	if (best) {
+ 		i = best->desc.bConfigurationValue;
+ 		dev_dbg(&udev->dev,
+ 			"configuration #%d chosen from %d choice%s\n",
+-			i, num_configs, plural(num_configs));
++			i, num_configs, str_plural(num_configs));
+ 	} else {
+ 		i = -1;
+ 		dev_warn(&udev->dev,
+ 			"no configuration chosen from %d choice%s\n",
+-			num_configs, plural(num_configs));
++			num_configs, str_plural(num_configs));
+ 	}
+ 	return i;
+ }
 
-Best regards,
 -- 
-Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+2.43.0
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20250114-str-enable-disable-usb-v1-0-c8405df47c19%40linaro.org.
+To view this discussion visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20250114-str-enable-disable-usb-v1-1-c8405df47c19%40linaro.org.
