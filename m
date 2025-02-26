@@ -1,144 +1,154 @@
-Return-Path: <usb-storage+bncBAABBDXX7C6QMGQEUL3VKHI@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBCD353VB3ABBB7GE7S6QMGQERX7242Q@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-qk1-x745.google.com (mail-qk1-x745.google.com [IPv6:2607:f8b0:4864:20::745])
-	by mail.lfdr.de (Postfix) with ESMTPS id F3BC5A44F3A
-	for <lists+usb-storage@lfdr.de>; Tue, 25 Feb 2025 22:52:15 +0100 (CET)
-Received: by mail-qk1-x745.google.com with SMTP id af79cd13be357-7c096d65f9fsf1230217285a.1
-        for <lists+usb-storage@lfdr.de>; Tue, 25 Feb 2025 13:52:15 -0800 (PST)
-ARC-Seal: i=2; a=rsa-sha256; t=1740520335; cv=pass;
+Received: from mail-oo1-xc45.google.com (mail-oo1-xc45.google.com [IPv6:2607:f8b0:4864:20::c45])
+	by mail.lfdr.de (Postfix) with ESMTPS id 3DBA0A4621F
+	for <lists+usb-storage@lfdr.de>; Wed, 26 Feb 2025 15:17:34 +0100 (CET)
+Received: by mail-oo1-xc45.google.com with SMTP id 006d021491bc7-5fcdf31ec8dsf795871eaf.0
+        for <lists+usb-storage@lfdr.de>; Wed, 26 Feb 2025 06:17:34 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1740579453; cv=pass;
         d=google.com; s=arc-20240605;
-        b=jGnqotgd9ycR43Pka5TZftlPwAYhEtGLNNRiM7sOTXgiXFg8RPhv9CTKG5j3bMrZsx
-         eluPZu1vovN8wTkQK6Z/YCR/lSXWLN88B9IXiksUyGOf1xLpCS02QAhk/AfWgIF0qS+u
-         mSRtWJvW572CypPIOlVX9uL7PtOLayQvKmSWhRw3ySTEsj+JjjA1JzPeCJadVrg5pB+6
-         WylwgVyD+Y7Cc1w51LMH128vx5QIRYyTw1B00n9S2PUR8rlyO6lzSeQWfQhzZ/upea3x
-         XbQKa6vZ3N+bQidwMLRZfYiaKb2ti33WFxbf58xGYle119RuaHDfWaYsSnn3F87xQ0Lr
-         I6og==
+        b=fFjimLziM7hM5DgK9HojMarEbVrGCuOdwbsoNUWJbc8xMXg4WgxztSQEbxtVEAFysE
+         2397lVIdOQ7sHtpb9VJQ6ob0E1r8ATLTVPXc/Ml0sj9Y0ieGsH+wT38inDJK4lLIT9Jb
+         FSWs8sqq/jw3wiSMRe2YAeniCadEznHs1NVlirQAFEozddL4Nws/XNuNU5eCBqrB5Yd6
+         RyHoi46aegp1V++DU/hv9CgBmjzx/S4m4ynQqEmp4YZRN4t0FDTyHCZ1OG1M1A2CTpBd
+         NCKS89nfwtMZXeVMaOoBWGwZkBw8ic7WNJToaAqIBIesHLvKxMYmTz0pkKhT7P2rkEMR
+         CNnw==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:in-reply-to
-         :content-transfer-encoding:content-disposition:mime-version
-         :references:message-id:subject:cc:to:from:date:sender:dkim-signature;
-        bh=FjjwI4Oq+8HRWoxROG2bGcSGQJJgI02tbdI+9Q9j3S0=;
-        fh=to6qQD2Pn0iq7NDdtmQ/1pYRGaLnZXEsqFcjbKh9nks=;
-        b=Tdi5MdQ8vMZuLbxkcp5S2bJ8ychhzIfzBFg4RKNbO1pOPU/7hkJ8xu1HtWAUpVCu4q
-         6k/Qc88lW4D/B1FjEggzpZFfdrY6WjnDpACRXleptzAzBl9gD7BtSvA9uMpjayAPu7LQ
-         ZmdzJjK0WO/NvbbjRea69QqQrzJYvisKtoMGTIRrorKS/2t9t18e2FHD9dW3ZOrF5zXq
-         p2fSf7ig6ykveLisQ4XaQcpC1iDQwnBrRujxkUnPtz4pjkon9MZTjP3w3rGq6Ddgtm/u
-         WlA///LLrbfB4/bmyv+M4YyZ1MLI4SWfaB54PD9pUqnFbf9TynY7NeEaFg8LSA82Ww1O
-         wnGg==;
+         :list-id:mailing-list:precedence:reply-to:cc:to
+         :content-transfer-encoding:mime-version:message-id:date:subject:from
+         :dkim-signature;
+        bh=MOp1sBAdHO1uVQiXgKl9gjNS8ALmqyHU8V+waYmjZPk=;
+        fh=HvUoYwD6BXJuJxlwK/+7hDGfN+MI5wFQvjb0jDf/EMQ=;
+        b=KDMQ3yr0UO+2dbN18YY9WCmjqmHj+D5lie3gbkvZ/oalm3/MmiX/OK/VybsX2r8P6k
+         LfGTFOhR7KkYBlwFvVT8kGx7nxeVH5blc00hJp1XBL2ZKc9zDWX9F9974LZUBx+ajyyD
+         bCP49QRuOjZQDfd5RrzAjGFiFGkrkxsmnGhjpw20Dg9ZDOxJYo5WIL6J8GhxKJDKbhfD
+         P5wI/0Fc6yrGmYyEmc2ifBWE2U9w7zYTvZBvBDeyfDhwKiNZDBtrufStlEch+9ZU/aez
+         KqapMQZvXCGcskm5tYt+n5ViFgC2N08HQBsmdhvRVCVSlPHCf6yQlhfkZj37ayf0LhZe
+         2wTA==;
         darn=lfdr.de
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@posteo.net header.s=2017 header.b=LKrvjzfz;
-       spf=pass (google.com: domain of j.ne@posteo.net designates 185.67.36.65 as permitted sender) smtp.mailfrom=j.ne@posteo.net;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=posteo.net
+       dkim=pass header.i=@kernel.org header.s=k20201202 header.b=dtU0fFzl;
+       spf=pass (google.com: domain of devnull+j.ne.posteo.net@kernel.org designates 139.178.84.217 as permitted sender) smtp.mailfrom=devnull+j.ne.posteo.net@kernel.org;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=kernel.org
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1740520335; x=1741125135; darn=lfdr.de;
+        d=lists.one-eyed-alien.net; s=google; t=1740579453; x=1741184253; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:x-original-authentication-results
-         :x-original-sender:in-reply-to:content-transfer-encoding
-         :content-disposition:mime-version:references:message-id:subject:cc
-         :to:from:date:sender:from:to:cc:subject:date:message-id:reply-to;
-        bh=FjjwI4Oq+8HRWoxROG2bGcSGQJJgI02tbdI+9Q9j3S0=;
-        b=KONQ1rlBys6EzrYciWF8BuInmkdI9Q1VvjfNGCjQfovJWmwAk7HfNOJe+oKC3gNsdf
-         +hrYMThb3tvZfh1PPhSxLOoVwMqh93N4469tTcMy37d7LSXtVlE51BnvmZWQJzP2eqy0
-         VvClB/DcHEahzYNYGnakelZU1aiDw+dgggW0I=
+         :x-original-sender:reply-to:cc:to:content-transfer-encoding
+         :mime-version:message-id:date:subject:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=MOp1sBAdHO1uVQiXgKl9gjNS8ALmqyHU8V+waYmjZPk=;
+        b=FTaUpnZHh+q3h4GpmljpJ1fo3OpU36TuadO/f7cMmiagVXtsLtTpbde36QiUzGcI2c
+         iwMGE+jr7qfLxdNibZmAkIXM2lRlpFbkkCUljqwyKwSrscdLXNFY34oPurZn9DUUfu5s
+         7K9pA26xu3wLcLUHKQvzJNwA0+yqYvMhE1Uro=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1740520335; x=1741125135;
+        d=1e100.net; s=20230601; t=1740579453; x=1741184253;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:x-original-authentication-results
-         :x-original-sender:in-reply-to:content-transfer-encoding
-         :content-disposition:mime-version:references:message-id:subject:cc
-         :to:from:date:x-beenthere:x-gm-message-state:sender:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=FjjwI4Oq+8HRWoxROG2bGcSGQJJgI02tbdI+9Q9j3S0=;
-        b=L1ISjYeWiqEmEcPkeASttlA1CWU3YllLMwXDOj+YypzEhR6uEIit1xMsLFONz52rnl
-         m/x1yDPd6x+NNq+dgAwv+eMiXfiYOe6/uhYN4msncpA9TuXS6CK2fW1wElzUTzWWWOQ7
-         fslpx1i6S5/WLFh57UR4QTUuLv5KsrjnZACNvMRy2wHUyYQC88zQH5KnTErjmC79uZwN
-         l+sbXQJ0LEBMlmulIv5DJgTsHJromr/htTCf8rIzMlvHSA/+UnWjnMkQ6cLLmZaUERt4
-         KXsV5NTk6UnDXJbBnsw5S7RG2LXlXB5zaha0lib2+VJiirG5/yiIpxTYHN/WxcjFfPDi
-         ZGkA==
-Sender: usb-storage@lists.one-eyed-alien.net
-X-Forwarded-Encrypted: i=2; AJvYcCWiyEuvONKUl/Fcm8DCjECqOGLiBdKodYcMSHcdQDu1LFg9O0LCKjfzkVkh7JRYW+S7et29mQ==@lfdr.de
-X-Gm-Message-State: AOJu0YwHQzBTwW7aUBKu8XxuLMyD3LY01OOZ62iTXzuH1WrSMJVatbdI
-	vxk2s4PdsuZQgCA12XwdMnuGjPJqWgoHuAbE7VlYwSbbS3CVDV87Z4BJ0RL5g2o=
-X-Google-Smtp-Source: AGHT+IH/+Akkj84Em/1dtfv8sb3+ANQ6OvUwoSMJkwRwvlOteINJ0EvLUgp/cfSO6kMj5S3VzNQK+Q==
-X-Received: by 2002:a05:620a:2494:b0:7c0:9df3:a0cb with SMTP id af79cd13be357-7c247fe223cmr163732985a.53.1740520334695;
-        Tue, 25 Feb 2025 13:52:14 -0800 (PST)
-X-BeenThere: usb-storage@lists.one-eyed-alien.net; h=Adn5yVGhfq1vKsgh1Z1aOVA5nJKKFCRrXdIEFus6KVHa4u9NUA==
-Received: by 2002:a0c:ee85:0:b0:6d4:18b4:dc77 with SMTP id 6a1803df08f44-6e886b35145ls3270866d6.0.-pod-prod-09-us;
- Tue, 25 Feb 2025 13:52:13 -0800 (PST)
-X-Forwarded-Encrypted: i=2; AJvYcCW1Q6LczLcAOEfHG6SwzMVCkx1oPC0MXW4GgmbhVbruST7a6cv9whh1q1OfKwvK5+MGHxF++SFTkeDVTw==@lists.one-eyed-alien.net
-X-Received: by 2002:a05:620a:4247:b0:7c0:a075:3d93 with SMTP id af79cd13be357-7c247e0ac60mr162542085a.0.1740520333645;
-        Tue, 25 Feb 2025 13:52:13 -0800 (PST)
-Received: by 2002:ab3:1083:0:b0:290:34b3:7e37 with SMTP id a1c4a302cd1d6-29053b8899emsc7a;
-        Tue, 25 Feb 2025 13:23:43 -0800 (PST)
-X-Forwarded-Encrypted: i=2; AJvYcCVdFBI/ld39lhfWo/oVfM0jTNyHB1TP2uUk2q1q+9BAqvAya1JehNYfDl5AJfBbOurioR/fDcrnUhyuoA==@lists.one-eyed-alien.net
-X-Received: by 2002:a05:6512:1116:b0:545:10e1:b1c9 with SMTP id 2adb3069b0e04-548510cf98amr3437983e87.20.1740518621969;
-        Tue, 25 Feb 2025 13:23:41 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1740518621; cv=none;
+         :x-spam-checked-in-group:list-id:mailing-list:precedence
+         :x-original-authentication-results:x-original-sender:reply-to:cc:to
+         :content-transfer-encoding:mime-version:message-id:date:subject:from
+         :x-beenthere:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=MOp1sBAdHO1uVQiXgKl9gjNS8ALmqyHU8V+waYmjZPk=;
+        b=Q23ftMWt174YNxZE7Gn/lGE2sghzXwb30/GYTF6mg4OxAf5loFbABHZrePY65/eb4y
+         ouwOFOqM2FWOJURRw6uHppDPTLN8POL1JwDnWsV0nOLkXYQgFCNMic4valiHZsnqQJ5l
+         Ow5IvIypoJQAlTe0HAxEpOcG5pKKOUCmoazS8tz/4Ip8yaWX1PNvMwLrGr18OGI0ue+F
+         pE+w8EX8+c1FTzb+frbOsB9cPqhqIAAs0KQUxGZ5YzZcKLAUGpXY92bEB/PlOI7AMZqn
+         nc1jn5ggg/umF2Sun3hKadgh54xvJMtQf5+FfyTFVc8dHOyzGxzPciYzdsiqr/kivrgl
+         rFKA==
+X-Forwarded-Encrypted: i=2; AJvYcCWNeZkJSoWrHO58Z+I0cl7ukve7RrJOBaOClNaQuOz1XAmLZTSouNfb2boRZ0OV6zdm+S5uZw==@lfdr.de
+X-Gm-Message-State: AOJu0YyDfBF6KvN0YnaBh+O6cTFDi8LP11TzIgzSm6eRZCApip1tHKvh
+	XAAaQem0NF0SyhKwYrfxv+CdKlUx/rZ/eR/Z5sy1gwrNmEeOJFqyebTn7RzXDiQ=
+X-Google-Smtp-Source: AGHT+IFyQAuS2gZoHajBGAcAWn8flrj8Zp1klOo9DJwaKEtg7Kcldlp/ROGC9tPv5uJ+1955poAu+g==
+X-Received: by 2002:a05:6871:5228:b0:2b8:5b8d:4281 with SMTP id 586e51a60fabf-2bd2fcd36edmr17441676fac.12.1740579453004;
+        Wed, 26 Feb 2025 06:17:33 -0800 (PST)
+X-BeenThere: usb-storage@lists.one-eyed-alien.net; h=Adn5yVHmAXHpLkUlhreuCG1IyxsNTV3vZxptJFBKvgf9SESqqA==
+Received: by 2002:a05:6870:210:b0:2b8:9182:e0ff with SMTP id
+ 586e51a60fabf-2bd2f8f19d6ls615895fac.1.-pod-prod-00-us; Wed, 26 Feb 2025
+ 06:17:32 -0800 (PST)
+X-Forwarded-Encrypted: i=2; AJvYcCVo93PYQ23wsgKxJA2KtoUBowotmWMSDIExQIYD4Fa6/52XAQwiaqnhmwtI1Rqkx21Y777Ryf2EVrN/ZA==@lists.one-eyed-alien.net
+X-Received: by 2002:a05:6808:13d6:b0:3f4:566:6847 with SMTP id 5614622812f47-3f424cc92eamr15111924b6e.16.1740579452056;
+        Wed, 26 Feb 2025 06:17:32 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1740579452; cv=none;
         d=google.com; s=arc-20240605;
-        b=BQXefvAh0SH+W9eY9QxtFzY1cYkmBgtwGtTIx9PT5y46fhG80ZFkZ0pNkTn0HVn+v9
-         pfB/Jo0/G7ncqUxaYYGv0/UISgdNw02AYsqd8euIEmjulHSbodEfhOKsltsrt3/O5weo
-         NbQYqjMmv387oei7IyZ84n7vG9hvIX4iYYQBQTL0b64rmaLfdcBM30Ar2zb07eKcH8jC
-         qFsdxkZsry7k6QahOl8RkjL2kfpDLHgmiDOgPMGKlLF+mhqTFB44vCo54/bnYJpVXPwb
-         u7KiQhwEeKiIpGIaKWOnT7OczYPWZcSfJ15Yb8HYZE5eSq/O/EGemrG+HwmYBBFQmrf+
-         O/gw==
+        b=VRiYEa1uGTelyv+CPmc96iAv3tYfpylR0UOuMQU77ySdSyxNqgiQYlLY/yGOzc1ZHe
+         T6JjF3f/JNW3Fbda8eYHuoj12A8vqi0pbBcKuZq+yy8h5pjewoG9aGP/yCdbII+ZIpIr
+         ruPVYfW+yXsGZl6+XFvqbJ0ib72xJ0yg1o8I18LIKF7xaIBFBvWcb5L7hoY//stBLKdu
+         Ufp6SAf3E95hSYugTzs74iSA0K2Uy8/RIZk6rXd1tyjicWwsNItBi0pVvaxg3Ue3y9Wn
+         9Qxun3PY+VuTHxPpdRSYnjks2zmOqqwO50q4uMZBelXStg6uJ3Hvv3bHbAaacfDYPJFH
+         mgGw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
-        h=in-reply-to:content-transfer-encoding:content-disposition
-         :mime-version:references:message-id:subject:cc:to:from:date
-         :dkim-signature;
-        bh=twSR6nm0v2u5b8nLKcly7K8fOKCAVPw7rvz6nEDVynw=;
-        fh=wKK0Oi3HvNTSZVPzr63pIKEUIHtBH8rHnG2ZGERQNXE=;
-        b=PiitwU+Vl9NBrj0kgmWuG+nNtY/hfMtaHrmtonI3nJ15XVHFl7uTwQn9THs1ezvIF6
-         Eg204XFH1tlmI69M04BJbeZl/4UeceR0c0U8K1Px3I6LnWS7u+kPyXe4sL18Bk7OXqgI
-         ScX+x001vvKaDGu97q5+HAf+wOkUIC+oaDLoWjgoH0A8AXbgGNaRbrLUMJkTVI3ObB0n
-         +99aRecEntuAZd1PvHjhrQmQ6JuMKKZfIDQSl6uwgdZYKBCCwSkEugb597bM/clwnQwM
-         C3Y2H5zF6QlGVr1jfJGJGAlbUkvIbrpiAQSkwyBR6EqJ8tfoBlSlBSIDbx+yPbvDxuee
-         b+/Q==;
+        h=reply-to:cc:to:content-transfer-encoding:mime-version:message-id
+         :date:subject:from:dkim-signature;
+        bh=uUAeJYvH9NWFm/1pdv4xuJnlpxr8sOLpvEw1gf+LcXo=;
+        fh=t85edx+sQ1Skfp7ZeTpNIH3lUx4BfFwBq5zypEnFHfI=;
+        b=dirFbGZ2yuQa5v+mRLjNgOdu1NLKcPGMXAg/wSgHm095x0cBUG+jX6ILYJD5ri+cS0
+         GGK7WQM/YMuwRtliyiEHlbgictuJxA6NVu6+FEd/hF7cuN8QiLccrOJVqyR+BzSaSwdR
+         6kWhZnK4ZurCidqBHRfweGFWJKs1sqnqoDm7mHZc/xrUx71heC2yWMNHg3nf7AJIp339
+         Zil8dFg0Dx8Mo1iTeQYTSV7Fjj4CqFcjPw+vL1h+NQghe59BfANbB+O6AizmxkjV6eO9
+         WJ8+k+K+56BQKLLSxDgvLqa0kzMcRBsYgJDk6m/BQj0ZxSHumULuVtXjQvt4Ry/eINZ0
+         iE0g==;
         dara=google.com
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@posteo.net header.s=2017 header.b=LKrvjzfz;
-       spf=pass (google.com: domain of j.ne@posteo.net designates 185.67.36.65 as permitted sender) smtp.mailfrom=j.ne@posteo.net;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=posteo.net
-Received: from mout01.posteo.de (mout01.posteo.de. [185.67.36.65])
-        by mx.google.com with ESMTPS id 2adb3069b0e04-548514ee1d0si1965674e87.269.2025.02.25.13.23.41
+       dkim=pass header.i=@kernel.org header.s=k20201202 header.b=dtU0fFzl;
+       spf=pass (google.com: domain of devnull+j.ne.posteo.net@kernel.org designates 139.178.84.217 as permitted sender) smtp.mailfrom=devnull+j.ne.posteo.net@kernel.org;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=kernel.org
+Received: from dfw.source.kernel.org (dfw.source.kernel.org. [139.178.84.217])
+        by mx.google.com with ESMTPS id 5614622812f47-3f541c455f5si2553289b6e.214.2025.02.26.06.17.32
         for <usb-storage@lists.one-eyed-alien.net>
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 25 Feb 2025 13:23:41 -0800 (PST)
-Received-SPF: pass (google.com: domain of j.ne@posteo.net designates 185.67.36.65 as permitted sender) client-ip=185.67.36.65;
-Received: from submission (posteo.de [185.67.36.169]) 
-	by mout01.posteo.de (Postfix) with ESMTPS id 45F81240028
-	for <usb-storage@lists.one-eyed-alien.net>; Tue, 25 Feb 2025 22:23:41 +0100 (CET)
-Received: from customer (localhost [127.0.0.1])
-	by submission (posteo.de) with ESMTPSA id 4Z2Vvw1c3Wz9rxB;
-	Tue, 25 Feb 2025 22:23:40 +0100 (CET)
-Date: Tue, 25 Feb 2025 21:23:40 +0000
-From: =?utf-8?Q?J=2E_Neusch=C3=A4fer?= <j.ne@posteo.net>
-To: Alan Stern <stern@rowland.harvard.edu>
-Cc: j.ne@posteo.net, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	linux-usb@vger.kernel.org, usb-storage@lists.one-eyed-alien.net,
-	linux-kernel@vger.kernel.org,
-	Jonathan =?utf-8?Q?Neusch=C3=A4fer?= <j.neuschaefer@gmx.net>
-Subject: [usb-storage] Re: [PATCH] usb: storage: jumpshot: Use const for
- constant arrays
-Message-ID: <Z7403OPZUf7WZ5Ai@probook>
-References: <20250225-misc-const-v1-1-121ff3b86437@posteo.net>
- <a4e81827-b506-491f-8087-204044705c42@rowland.harvard.edu>
+        Wed, 26 Feb 2025 06:17:32 -0800 (PST)
+Received-SPF: pass (google.com: domain of devnull+j.ne.posteo.net@kernel.org designates 139.178.84.217 as permitted sender) client-ip=139.178.84.217;
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id EC8735C5CBC;
+	Wed, 26 Feb 2025 14:16:52 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 7FE9CC4CEE4;
+	Wed, 26 Feb 2025 14:17:31 +0000 (UTC)
+Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 662EAC021B8;
+	Wed, 26 Feb 2025 14:17:31 +0000 (UTC)
+From: =?UTF-8?Q?=27Jonathan_Neusch=C3=A4fer_via_B4_Relay=27_via_USB_Mass_Storag?=
+	=?UTF-8?Q?e_on_Linux?= <usb-storage@lists.one-eyed-alien.net>
+Subject: [usb-storage] [PATCH v2 0/9] usb: storage: Mark various arrays as const
+Date: Wed, 26 Feb 2025 15:17:22 +0100
+Message-Id: <20250226-misc-const-v2-0-ab655a4a29cc@posteo.net>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="UTF-8"
-Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
-In-Reply-To: <a4e81827-b506-491f-8087-204044705c42@rowland.harvard.edu>
-X-Original-Sender: j.ne@posteo.net
+X-B4-Tracking: v=1; b=H4sIAHIiv2cC/03MwQ6CMAzG8VchPTuzlSHKyfcwHGR00oMbWReiI
+ by7g5Pp6d/k+60glJgEumqFRAsLx1ACTxW46RlepHgsDajRaquNerM45WKQrKgdrPOox8bfoAz
+ mRJ4/B/boS08sOabvYS9m/+5MoxGbf2Yxqhwa7+vherF1e5+jZIrnQBn6bdt+jdaCTqUAAAA=
+X-Change-ID: 20240401-misc-const-e7b4cf20d5f9
+To: Alan Stern <stern@rowland.harvard.edu>, 
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Cc: linux-usb@vger.kernel.org, usb-storage@lists.one-eyed-alien.net, 
+ linux-kernel@vger.kernel.org, 
+ =?utf-8?q?Jonathan_Neusch=C3=A4fer?= <j.ne@posteo.net>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1740579450; l=1711;
+ i=j.ne@posteo.net; s=20240329; h=from:subject:message-id;
+ bh=fwV5Igl0YjoYekgCo39bGuXYUSU/ztIwTAkRyvKRrqw=;
+ b=cAY4Rp6m9M3AvBzybF691EpSlg/bOe3SSQGlpgxsasvXQbedMVBuVulj6Zf+ouOBi6nKXQE0k
+ QdsBdhUC+08AxBp3ev6/NJGILI74xu5IsDqO2kQcONXgyBdj8x00U9A
+X-Developer-Key: i=j.ne@posteo.net; a=ed25519;
+ pk=NIe0bK42wNaX/C4bi6ezm7NJK0IQE+8MKBm7igFMIS4=
+X-Endpoint-Received: by B4 Relay for j.ne@posteo.net/20240329 with
+ auth_id=156
+X-Original-From: =?utf-8?q?Jonathan_Neusch=C3=A4fer?= <j.ne@posteo.net>
+Reply-To: j.ne@posteo.net
+X-Original-Sender: devnull@kernel.org
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@posteo.net header.s=2017 header.b=LKrvjzfz;       spf=pass
- (google.com: domain of j.ne@posteo.net designates 185.67.36.65 as permitted
- sender) smtp.mailfrom=j.ne@posteo.net;       dmarc=pass (p=NONE sp=NONE
- dis=NONE) header.from=posteo.net
+ header.i=@kernel.org header.s=k20201202 header.b=dtU0fFzl;       spf=pass
+ (google.com: domain of devnull+j.ne.posteo.net@kernel.org designates
+ 139.178.84.217 as permitted sender) smtp.mailfrom=devnull+j.ne.posteo.net@kernel.org;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=kernel.org
+X-Original-From: =?utf-8?q?Jonathan_Neusch=C3=A4fer_via_B4_Relay?= <devnull+j.ne.posteo.net@kernel.org>
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
+X-Spam-Checked-In-Group: usb-storage@lists.one-eyed-alien.net
 X-Google-Group-Id: 960895140360
 List-Post: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/post>,
  <mailto:usb-storage@lists.one-eyed-alien.net>
@@ -150,87 +160,50 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On Tue, Feb 25, 2025 at 10:11:02AM -0500, Alan Stern wrote:
-> On Tue, Feb 25, 2025 at 01:25:03PM +0100, J. Neusch=C3=A4fer via B4 Relay=
- wrote:
-> > From: "J. Neusch=C3=A4fer" <j.ne@posteo.net>
-> >=20
-> > These arrays are not modified. Make them const.
->=20
-> This does not explain _why_ you want to declare these arrays const.
->=20
-> > Signed-off-by: J. Neusch=C3=A4fer <j.ne@posteo.net>
-> > ---
-> > Signed-off-by: Jonathan Neusch=C3=A4fer <j.neuschaefer@gmx.net>
->=20
-> There should not be two Signed-off-by lines for the same person.  You=20
-> should keep only the one with the email address you used for sending the=
-=20
-> patch.  And it should have your full name, just like signing a legal=20
-> document.
+While reading code, I noticed that some arrays in USB mass storage
+drivers are declared static but not const, even though they are not
+modified. This patchset marks them const.
 
-Ah sorry, editing error on my part (I started the patch a while ago and
-since switched to a different email provider).
+All patches were compile-tested.
 
->=20
-> > ---
-> >=20
-> > This change was compile-tested with ARCH=3Dpowerpc
-> > ---
-> >  drivers/usb/storage/jumpshot.c | 10 +++++-----
-> >  1 file changed, 5 insertions(+), 5 deletions(-)
-> >=20
-> > diff --git a/drivers/usb/storage/jumpshot.c b/drivers/usb/storage/jumps=
-hot.c
-> > index 39ca84d6859122903de4e64b13e697e8b7d4ab31..089c6f8ac85fbb683cca8b0=
-3a2ff06c0ca776167 100644
-> > --- a/drivers/usb/storage/jumpshot.c
-> > +++ b/drivers/usb/storage/jumpshot.c
-> > @@ -367,16 +367,16 @@ static int jumpshot_handle_mode_sense(struct us_d=
-ata *us,
-> >  				      struct scsi_cmnd * srb,=20
-> >  				      int sense_6)
-> >  {
-> > -	static unsigned char rw_err_page[12] =3D {
-> > +	static const unsigned char rw_err_page[12] =3D {
-> >  		0x1, 0xA, 0x21, 1, 0, 0, 0, 0, 1, 0, 0, 0
-> >  	};
-> > -	static unsigned char cache_page[12] =3D {
-> > +	static const unsigned char cache_page[12] =3D {
-> >  		0x8, 0xA, 0x1, 0, 0, 0, 0, 0, 0, 0, 0, 0
-> >  	};
-> > -	static unsigned char rbac_page[12] =3D {
-> > +	static const unsigned char rbac_page[12] =3D {
-> >  		0x1B, 0xA, 0, 0x81, 0, 0, 0, 0, 0, 0, 0, 0
-> >  	};
-> > -	static unsigned char timer_page[8] =3D {
-> > +	static const unsigned char timer_page[8] =3D {
-> >  		0x1C, 0x6, 0, 0, 0, 0
-> >  	};
-> >  	unsigned char pc, page_code;
-> > @@ -477,7 +477,7 @@ static int jumpshot_transport(struct scsi_cmnd *srb=
-, struct us_data *us)
-> >  	int rc;
-> >  	unsigned long block, blocks;
-> >  	unsigned char *ptr =3D us->iobuf;
-> > -	static unsigned char inquiry_response[8] =3D {
-> > +	static const unsigned char inquiry_response[8] =3D {
-> >  		0x00, 0x80, 0x00, 0x01, 0x1F, 0x00, 0x00, 0x00
-> >  	};
->=20
-> There's nothing wrong with this.  However, several other source files in=
-=20
-> this directory also have static arrays that are never written to.  Why=20
-> don't you change all of them?
->=20
-> If you do, it will be best to put the changes for each of the files in=20
-> its own patch, and then submit them as a series of patches.
+Signed-off-by: Jonathan Neusch=C3=A4fer <j.ne@posteo.net>
+---
+Changes in v2:
+- Add new patches 2-9
+- Use consistent authorship information
+- Link to v1: https://lore.kernel.org/r/20250225-misc-const-v1-1-121ff3b864=
+37@posteo.net
 
-That's a good idea, I'll do it.
+---
+Jonathan Neusch=C3=A4fer (9):
+      usb: storage: jumpshot: Use const for constant arrays
+      usb: storage: transport: Use const for constant array
+      usb: storage: alauda: Use const for card ID array
+      usb: storage: datafab: Use const for constant arrays
+      usb: storage: initializers: Use const for constant array
+      usb: storage: realtek_cr: Use const for constant arrays
+      usb: storage: sddr09: Use const for constant arrays
+      usb: storage: sddr55: Use const for constant arrays
+      usb: storage: shuttle_usbat: Use const for constant array
 
+ drivers/usb/storage/alauda.c        |  8 ++++----
+ drivers/usb/storage/datafab.c       | 14 +++++++-------
+ drivers/usb/storage/initializers.c  |  2 +-
+ drivers/usb/storage/jumpshot.c      | 10 +++++-----
+ drivers/usb/storage/realtek_cr.c    |  6 +++---
+ drivers/usb/storage/sddr09.c        | 14 +++++++-------
+ drivers/usb/storage/sddr55.c        |  4 ++--
+ drivers/usb/storage/shuttle_usbat.c |  2 +-
+ drivers/usb/storage/transport.c     |  2 +-
+ 9 files changed, 31 insertions(+), 31 deletions(-)
+---
+base-commit: 2014c95afecee3e76ca4a56956a936e23283f05b
+change-id: 20240401-misc-const-e7b4cf20d5f9
 
->=20
-> Alan Stern
+Best regards,
+--=20
+Jonathan Neusch=C3=A4fer <j.ne@posteo.net>
+
 
 --=20
 You received this message because you are subscribed to the Google Groups "=
@@ -238,4 +211,5 @@ USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an e=
 mail to usb-storage+unsubscribe@lists.one-eyed-alien.net.
 To view this discussion visit https://groups.google.com/a/lists.one-eyed-al=
-ien.net/d/msgid/usb-storage/Z7403OPZUf7WZ5Ai%40probook.
+ien.net/d/msgid/usb-storage/20250226-misc-const-v2-0-ab655a4a29cc%40posteo.=
+net.
