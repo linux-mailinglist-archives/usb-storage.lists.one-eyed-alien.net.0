@@ -1,36 +1,36 @@
 Return-Path: <usb-storage+bncBCD353VB3ABBB7OE7S6QMGQEVAG42YI@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-oa1-x45.google.com (mail-oa1-x45.google.com [IPv6:2001:4860:4864:20::45])
-	by mail.lfdr.de (Postfix) with ESMTPS id 91926A46226
+Received: from mail-il1-x145.google.com (mail-il1-x145.google.com [IPv6:2607:f8b0:4864:20::145])
+	by mail.lfdr.de (Postfix) with ESMTPS id 9B6D3A46227
 	for <lists+usb-storage@lfdr.de>; Wed, 26 Feb 2025 15:17:34 +0100 (CET)
-Received: by mail-oa1-x45.google.com with SMTP id 586e51a60fabf-2bc78038557sf408744fac.0
+Received: by mail-il1-x145.google.com with SMTP id e9e14a558f8ab-3d2a40e470fsf53675425ab.3
         for <lists+usb-storage@lfdr.de>; Wed, 26 Feb 2025 06:17:34 -0800 (PST)
 ARC-Seal: i=2; a=rsa-sha256; t=1740579453; cv=pass;
         d=google.com; s=arc-20240605;
-        b=APyZTiLRoe36g2NmJVTcucosjJAhlvsXijL2u9TjoJOx3TLOAbe9KWuWdQbkryaSai
-         Yo6Vv638wSwD/UyqJYHjWnYDTXfXpVg11mxzPsuUKgb+sIFda0ZeSpQMGEuTgE2PDgwn
-         c/zzaAPkcZhzFXXOw5KH5+xpIVOFiqfoT0AOcH52SHOoiw7ekTEAFpB5qyeblpGCbKQS
-         2pPnobljmBUCmv5WVHpNXnkrLMxR5KCzwis70SgPCPL+IkwRQW1jn3erRfzpNoCWoOU2
-         sP2Ogl6dlkr7xbxDwqcFo4wkLY6MaOrXAn4I7SMGf+gvKc2XYU+oo8zM6wZN3JVaEPWz
-         Rg4A==
+        b=MbycZQFYgjGRovJOPsG+RUhMsMsv5egAzouUTBS1dAFmvzirwMwbWfWeMTj8psiuLH
+         JFs4euecnuu7P6M/yLlgqu9WTRItJp805MvaMjcWbzm+r3vvN3937hgIsTiFrQ7L6BRj
+         QhcdBEKmMUCCjHenvwLxtFq4/rLmoVYfPHMCD5nPWlQ8YqsFxsMZfHNMRjJRgrbRWdlw
+         I9CTxqN95DqXfpN5teX5f+RXzaUR1TKy3whn3K6UZ4c2Das6L7yhpCs3KpPGTVE+/8aS
+         PA8wVJ+1m+qnIWfhp96BTXLE8PhP3rN4Ab3qfgtiCiWGqFjYcnKZi4y9FlCQqvjXz60K
+         8mFA==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:reply-to:cc:to:in-reply-to
          :references:message-id:content-transfer-encoding:mime-version
          :subject:date:from:dkim-signature;
-        bh=Lve+7O08xmxfEmtyZzFkw9WZWebBfmIZMXDH+CBmf5A=;
-        fh=qfo3qCjRqkMIOR341RUbv3128u/60MrjpTvCCTIv7PY=;
-        b=f5O3eDy/NxeHpqbNLgDGHmU8uESAIHL7vkPhr8g7NantJ90chJbpxUWrN9Cfy4zmdF
-         02wu8n65FJKWKiwGFO801YZUpIOIGjkEroXpzMjyf0BrHe7My+hcNQHEIqqkLzCaRk3V
-         Nd3Ql7WtzJGhkuYJu/QG0DRZqhowsZtekTFpZjNBmeO0oTeGZn+PFSzBZ9UaQ8LgSfKZ
-         x58RSjU4pzcFpv9Ppfo/+DLn2V50AuRx2TXfs2miXXhat8JwvCNhwRFKXCRFGGuikp7h
-         igCuQXcXDSYq6MAw3qE2u1tbAb5QR+YUZxdAye8rfESBlOSg2NH+Hr7H3f1NP3AOd+eI
-         kMwg==;
+        bh=kyyY5qHWYz1W2ebiXec454jXE5lM+ZNab6WP1lXvtkc=;
+        fh=3rbw1ccsBrc+Ew7Lcy3IzVPkzfcwxKxbs35s94H9nEM=;
+        b=BM/jpfarlAr/tuw8j/7We5aZa+RXEMeCHeqizxvVPGdFig6niaKuESo8bzacI9DVcY
+         UcqK45vZ2voXXYlj8H7Gnei1xs6VzzIv633OnhT7oQhjcQTe1ObMlmPWAfrkPmTQ5PxM
+         QNRkaDFlRKiuNkkUuMnRo5LttfJYv2GbfenX6+AoKs+er4u/uUJpNFB0ChsHO6oIpgNG
+         hOIvyKt4ay7yyk9bx8mev/mWy8gz09aTVIsRSyf0Md4Fm4VpCRZIdd6sQWvIVQXv6toK
+         RlJjjR6VdBGhyya7nRf2JPBXGXTZ+WWZqzMZ3Sbf7I+39w1L3u2Dfo4c+bVhKHryxf6/
+         GXcA==;
         darn=lfdr.de
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@kernel.org header.s=k20201202 header.b=n6x+Y3e8;
-       spf=pass (google.com: domain of devnull+j.ne.posteo.net@kernel.org designates 139.178.84.217 as permitted sender) smtp.mailfrom=devnull+j.ne.posteo.net@kernel.org;
+       dkim=pass header.i=@kernel.org header.s=k20201202 header.b=LBR+PAyE;
+       spf=pass (google.com: domain of devnull+j.ne.posteo.net@kernel.org designates 172.105.4.254 as permitted sender) smtp.mailfrom=devnull+j.ne.posteo.net@kernel.org;
        dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=kernel.org
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=lists.one-eyed-alien.net; s=google; t=1740579453; x=1741184253; darn=lfdr.de;
@@ -39,10 +39,10 @@ DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
          :x-original-sender:reply-to:cc:to:in-reply-to:references:message-id
          :content-transfer-encoding:mime-version:subject:date:from:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=Lve+7O08xmxfEmtyZzFkw9WZWebBfmIZMXDH+CBmf5A=;
-        b=dDp4T1QEIDOMKYPn4EukD43gj41kDto/urNGsDbvd6rpOYLHFdzWXMvrxLpyJ/iQyI
-         yyKLFwmex1n0KlXZs/3MtIV3XK4e1ZgQkxw8WQAzYn2817U5ULPdtW3UrLnpXD5btwhe
-         Ow+4R4A9MbXGG2lFM8iK/73A8LlcW8YfuNs5s=
+        bh=kyyY5qHWYz1W2ebiXec454jXE5lM+ZNab6WP1lXvtkc=;
+        b=HVwdCoNcC+iPE/hbc5Yel7HNz7kCkT7CG6QLTI9KsoJOCRVHhwmb4oJpSJaapv452b
+         nA1STK1VoxDPQpB07fUK2LPNOIsDJOoSuiIro49zh+ePuqv7p2kVHSHssgaBk1EsLsDr
+         OD9eRF69FmjelwjaDW2hWg3vA6NBck+yQyPwg=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20230601; t=1740579453; x=1741184253;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
@@ -51,74 +51,73 @@ X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
          :in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-beenthere:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to;
-        bh=Lve+7O08xmxfEmtyZzFkw9WZWebBfmIZMXDH+CBmf5A=;
-        b=ZGwF7kMIchCvrLv4O/oezRKWyU+irOIbS7QJenI122Vqed9jAztwFodA3S+KA9k8kH
-         OmFf8vdVBMV78rFAqw0my4xhMkD1ryNn+N38PhXTNXKldCeBDsfHedmxkBy7cqamOfT4
-         8MA6FWKtIZsU7Fi8KslvFVTPRT/5Cw/EBCtoouch4MXDFaQKRtWUluL+l/5KrZoE4rwv
-         PE1NOAgfjRz4XUNinp0SZ4h53apqwpU2TomKAjbj50fw/wzJo6kCIJxkTQ95i4emoPvg
-         1mJWO6aqsqylDMRMId0JHOpNoofVkNhfGP3ta6VQno4njqT88eGR3dI3wo7MW7U5mD7G
-         y1MA==
-X-Forwarded-Encrypted: i=2; AJvYcCXk5+zmx5ZJqkeqepqM1HqvKa/Myjqrakpmqs8hiLsvCfGBboEjX/YKTSmkXrViZSHWUVuymw==@lfdr.de
-X-Gm-Message-State: AOJu0YwMYpIx0e2sm7f5QHoUZ43wVLsS0xNJOxauFG+t1oFqFZ9kX/qF
-	mFTPvdSIbJl1rEMpJPkhmJdVroiUt4tgL1ADqHjImGSJRfJeYKt0edItJlk/CVs=
-X-Google-Smtp-Source: AGHT+IFMrc+vwx//LrlnonMAhP/d8E6qdzq0mQk2/IqOsKs+drB0RYfdxm0wPOXFSnstdmHS4hJ6XQ==
-X-Received: by 2002:a05:6870:b152:b0:29e:37d7:3f56 with SMTP id 586e51a60fabf-2bd50ff15c5mr5659512fac.12.1740579453225;
+        bh=kyyY5qHWYz1W2ebiXec454jXE5lM+ZNab6WP1lXvtkc=;
+        b=S3Ib5/nXDMg7ZG8wm6jkiZLwleW4fcWv/NSmSQNuBSARV9kdhULBv+elroQe49Ckmp
+         temmWzl75DZsoSbYLdGzNQhvGbsAFpHzgji4RfbyLz15pYQXGfpjN0VRwB/XGQWsf4ZJ
+         hkCEImJLORHOveR7m08GPhJTp03TvLhA8oqxCrPkw6bM0AMIlYPqzBl9+8NH4Y4Qsjo5
+         LLyokWSYTkhIQziSM8cIAakV22ajkG6gyFsi4uZ3eQQUVICmzYDt9/SOmjXSeL57QSOF
+         2DuRTVc9VuPAgq6K6iTpZ2nIa0ntfk1c8Lv5kkNfGXzBt8PF/EpgHWEW5FdZreFHyqqp
+         kYkg==
+X-Forwarded-Encrypted: i=2; AJvYcCWzVagV+NgTlaQRyv7pypXPmCYKgnzquJlyh+IdrOAOwaWK+UbAZEuoPOvd7H4c9ghvSLTtng==@lfdr.de
+X-Gm-Message-State: AOJu0YyTe9scArz4R7Jgqxf4ucFuTCyAMRgV1iFIf3COK3T1VJ1eRBDY
+	g2ZmhiLC1W+7hRS/Ho4EhVODCdJOKwd9mk/tZVSWFETYt+r+WbXZta8pZKJivgU=
+X-Google-Smtp-Source: AGHT+IFdmFS2LzRwKi6B5S9jqhp+YnFw3QojQdxL7dTNFBDYut3r+6OVwO7TNLyN5xB9FvUCR3fR2w==
+X-Received: by 2002:a05:6e02:1fc7:b0:3d1:883c:6e86 with SMTP id e9e14a558f8ab-3d3d1f45871mr38468575ab.8.1740579453382;
         Wed, 26 Feb 2025 06:17:33 -0800 (PST)
-X-BeenThere: usb-storage@lists.one-eyed-alien.net; h=Adn5yVHkncHxnwS5MQQA3briDIZhZPqnHyt5TZuhBkuI/XAMcg==
-Received: by 2002:a05:6870:a90e:b0:2b8:f3e5:a817 with SMTP id
- 586e51a60fabf-2bd50bf1d9bls2139340fac.2.-pod-prod-02-us; Wed, 26 Feb 2025
- 06:17:32 -0800 (PST)
-X-Forwarded-Encrypted: i=2; AJvYcCUXffO/aW0swkLIyo4zjpquk7LMZ9pJNvCIbXi9IHVRspJbcd5/7BNAJabtD2NdRvFs1tVlzq/Yipoc7w==@lists.one-eyed-alien.net
-X-Received: by 2002:a05:6870:5e48:b0:2bc:79c8:f781 with SMTP id 586e51a60fabf-2bd51504ab5mr13744619fac.3.1740579452463;
+X-BeenThere: usb-storage@lists.one-eyed-alien.net; h=Adn5yVF3S6lXlGI/PE6Vss6RIxd4ja7dH68oulJ/qVbULhFFOw==
+Received: by 2002:a92:da0d:0:b0:3d2:abdb:b6ea with SMTP id e9e14a558f8ab-3d3d25bbc05ls4669085ab.0.-pod-prod-07-us;
+ Wed, 26 Feb 2025 06:17:32 -0800 (PST)
+X-Forwarded-Encrypted: i=2; AJvYcCXOBIM8LU9BwvoIwIsEAMwzcBtmlvh7AIrSgOMC0tsQLsmDl/RjkfRlN9k0lidY83JM6eBPobL8mpCB1Q==@lists.one-eyed-alien.net
+X-Received: by 2002:a92:c267:0:b0:3d1:9cee:3d24 with SMTP id e9e14a558f8ab-3d3d1f4f0c9mr35866965ab.11.1740579452636;
         Wed, 26 Feb 2025 06:17:32 -0800 (PST)
 ARC-Seal: i=1; a=rsa-sha256; t=1740579452; cv=none;
         d=google.com; s=arc-20240605;
-        b=hJtpw1wsUPERN7ErM4RXgaHyqzIZN5jyghwcPVBHlrZCFIMMfS5UIIkwZ+V9rpy8kj
-         Kb7iS+Z+nEDQRry4CNtQr0EJf7sPY4kcFSmAIq5AKuCidRNMQs815wQiBSPeIF4Svk6h
-         4i1dqRCAFXmMLhEw2i0Abl9P/HNU/dLsD+g+IDONTI7tYDfirgkvH3PivwCuuA6UBcb3
-         JwOJs3Sv9rqUUi9LVLQoTUvnG8pUuiht3cEVASUFzh4H012uDxNOBKzuBz7RZ+J0KByT
-         gH/SIxZ47c+YeQAED4eOnBpwxzaU70ibErjV05DwHS8ejmQiUZjKIoTdeG3zUAr49SUD
-         zTOw==
+        b=PT1wwXTHG4noM4k9UbAMiEO5K6GuvZ7mBSl9bAYIk+LHrkV0RfHsDrcSjV3lGJNn1U
+         fluXBSrO3No/Ug5T6RgW8rXJb9fRqYNbIt7744mYgIWLv7cxV72ZoaKikQpnnL1qKfxy
+         2uM35aA5qiGu9ZNzWkGPs7ayOUWxCMDx0sjIctbSMPU3JSVKRXWdAIo6syTjqBrf5QM3
+         cv8/Ubf5jgs5GniX/z93O/Mbww1677SBiqiEnykIzUMPs4RzU5HlR5WZTgDT7GZuLToD
+         m4PRaN5nb9gujCKfGSouZAriDSBDfxaovub6mHseToJ5qgcMu55Y6d/Kj1opdMIxnivM
+         /0AQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
         h=reply-to:cc:to:in-reply-to:references:message-id
          :content-transfer-encoding:mime-version:subject:date:from
          :dkim-signature;
-        bh=rPepjAOnGoWPgSTst3wD5heneobgN1vILU7ycu3BVZA=;
+        bh=dl/r10bmbH0hTjnjPeUXMzlsQe9WdK4YBL0QQIMLdek=;
         fh=t85edx+sQ1Skfp7ZeTpNIH3lUx4BfFwBq5zypEnFHfI=;
-        b=Cs6Q0RZ5SSXx3QEiTE0801AHV1dMYhKPaizNeCJ61dSHgHsjE4/g0nilsfSycaKyvI
-         VnrDqU93J5ibBtk3CtnKVaFmy3IcmNLP9n1lBa/oZ9zk4CRjlJokta2iOXV6tRZFOI0d
-         vAZw4ERCSQYk4Zca+g0O059LTDET1lTN3j0dwuCcukK7Tn8AX0BuRZ85RfhKaJggILwL
-         +fc+90BORkoQ/O7Mm+ju9+sAwVHb3yU0T07hZbCEdSxH9J8/jaFs51nO0tKEb9UBYB8Q
-         ew7dyW3vw9ME+rpjx6F9xTDl+CuK40b1XgNHoQuvKiAWptGsm5VxMyNneprhtce7NtlT
-         6ImA==;
+        b=HajVFCVU5/4O+CJxumH2t2WbhFI0nhv1PRpMw+nf2CbABWduSbJd0Sl209uLqUKaM9
+         5rvLtI5Uw3pyiIHqv4AhodCfA/ReJbzJaTQrF9d92SpIVUMuSUHLDQhSdGs/w1vbtlqL
+         SnKUb1/sZfuQhJDFP8toIINtz0dqmDO3GNuwWMkLGf2YXZsAkCeMM2WnvCsRImJR2fxl
+         3TwtqwHVgFn5+3bQ1oX4vZGls57pmJ6MGmyoBVAkndHZ6wcC0EeH0Kniq5x5sfuZpQSE
+         I56AcjQdfLOogxHISTxbm66I1HrUC2akdrlZyMKhLuLyIfByjpFZrg3XUVUby1Asa5uP
+         VtzQ==;
         dara=google.com
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@kernel.org header.s=k20201202 header.b=n6x+Y3e8;
-       spf=pass (google.com: domain of devnull+j.ne.posteo.net@kernel.org designates 139.178.84.217 as permitted sender) smtp.mailfrom=devnull+j.ne.posteo.net@kernel.org;
+       dkim=pass header.i=@kernel.org header.s=k20201202 header.b=LBR+PAyE;
+       spf=pass (google.com: domain of devnull+j.ne.posteo.net@kernel.org designates 172.105.4.254 as permitted sender) smtp.mailfrom=devnull+j.ne.posteo.net@kernel.org;
        dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=kernel.org
-Received: from dfw.source.kernel.org (dfw.source.kernel.org. [139.178.84.217])
-        by mx.google.com with ESMTPS id 586e51a60fabf-2c11165b5acsi3179148fac.189.2025.02.26.06.17.32
+Received: from tor.source.kernel.org (tor.source.kernel.org. [172.105.4.254])
+        by mx.google.com with ESMTPS id 8926c6da1cb9f-4f047455b7asi2697318173.8.2025.02.26.06.17.32
         for <usb-storage@lists.one-eyed-alien.net>
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
         Wed, 26 Feb 2025 06:17:32 -0800 (PST)
-Received-SPF: pass (google.com: domain of devnull+j.ne.posteo.net@kernel.org designates 139.178.84.217 as permitted sender) client-ip=139.178.84.217;
+Received-SPF: pass (google.com: domain of devnull+j.ne.posteo.net@kernel.org designates 172.105.4.254 as permitted sender) client-ip=172.105.4.254;
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 659DC5C705C;
-	Wed, 26 Feb 2025 14:16:53 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id E350DC4CEEC;
+	by tor.source.kernel.org (Postfix) with ESMTP id 7E70E6123C;
+	Wed, 26 Feb 2025 14:17:24 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id F37D8C4CEEE;
 	Wed, 26 Feb 2025 14:17:31 +0000 (UTC)
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id DC020C021B8;
+	by smtp.lore.kernel.org (Postfix) with ESMTP id EA84AC19778;
 	Wed, 26 Feb 2025 14:17:31 +0000 (UTC)
 From: =?UTF-8?Q?=27Jonathan_Neusch=C3=A4fer_via_B4_Relay=27_via_USB_Mass_Storag?=
 	=?UTF-8?Q?e_on_Linux?= <usb-storage@lists.one-eyed-alien.net>
-Date: Wed, 26 Feb 2025 15:17:29 +0100
-Subject: [usb-storage] [PATCH v2 7/9] usb: storage: sddr09: Use const for
+Date: Wed, 26 Feb 2025 15:17:30 +0100
+Subject: [usb-storage] [PATCH v2 8/9] usb: storage: sddr55: Use const for
  constant arrays
 MIME-Version: 1.0
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
-Message-Id: <20250226-misc-const-v2-7-ab655a4a29cc@posteo.net>
+Message-Id: <20250226-misc-const-v2-8-ab655a4a29cc@posteo.net>
 References: <20250226-misc-const-v2-0-ab655a4a29cc@posteo.net>
 In-Reply-To: <20250226-misc-const-v2-0-ab655a4a29cc@posteo.net>
 To: Alan Stern <stern@rowland.harvard.edu>, 
@@ -127,11 +126,11 @@ Cc: linux-usb@vger.kernel.org, usb-storage@lists.one-eyed-alien.net,
  linux-kernel@vger.kernel.org, 
  =?utf-8?q?Jonathan_Neusch=C3=A4fer?= <j.ne@posteo.net>
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1740579450; l=2338;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1740579450; l=1112;
  i=j.ne@posteo.net; s=20240329; h=from:subject:message-id;
- bh=oiy7JMUiNsF7jAMsycKXLX9emEI7I94zOx6UYYuFPIw=;
- b=gx+Ezsp8uEFwYxCFguYAQ7PobyhDzls3okFaCAh+nL8rrv6XFFty+YUMMmwHnb7BhBZh5e4vk
- 7dyi9axEobvADVttTncX8A31Uw6xBxvf/GxHsGOxZD9V2rqr3bBRRWn
+ bh=C7r28z1CFDV+sjQ7yiPOSMNteEWeKSpRUku1z3cAVDw=;
+ b=YuvuOBJy+MirOAneLt7BuRHA3K01RUAXy/oJzPdR4gMU/FUr1G0Dut5fQeBkMLP3Mqei9WLw5
+ /KKgx2FY460BuIB3Lj4iv23TkpxIWhNYdfxfbm3NITH3RwC8Wx4X46r
 X-Developer-Key: i=j.ne@posteo.net; a=ed25519;
  pk=NIe0bK42wNaX/C4bi6ezm7NJK0IQE+8MKBm7igFMIS4=
 X-Endpoint-Received: by B4 Relay for j.ne@posteo.net/20240329 with
@@ -140,9 +139,9 @@ X-Original-From: =?utf-8?q?Jonathan_Neusch=C3=A4fer?= <j.ne@posteo.net>
 Reply-To: j.ne@posteo.net
 X-Original-Sender: devnull@kernel.org
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@kernel.org header.s=k20201202 header.b=n6x+Y3e8;       spf=pass
+ header.i=@kernel.org header.s=k20201202 header.b=LBR+PAyE;       spf=pass
  (google.com: domain of devnull+j.ne.posteo.net@kernel.org designates
- 139.178.84.217 as permitted sender) smtp.mailfrom=devnull+j.ne.posteo.net@kernel.org;
+ 172.105.4.254 as permitted sender) smtp.mailfrom=devnull+j.ne.posteo.net@kernel.org;
        dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=kernel.org
 X-Original-From: =?utf-8?q?Jonathan_Neusch=C3=A4fer_via_B4_Relay?= <devnull+j.ne.posteo.net@kernel.org>
 Precedence: list
@@ -162,8 +161,7 @@ List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegro
 
 From: Jonathan Neusch=C3=A4fer <j.ne@posteo.net>
 
-The nand_flash_ids, inquiry_response, and mode_page_01 arrays are only
-read, not modified.
+These arrays are only read, not modified.
 
 Signed-off-by: Jonathan Neusch=C3=A4fer <j.ne@posteo.net>
 ---
@@ -171,72 +169,29 @@ Signed-off-by: Jonathan Neusch=C3=A4fer <j.ne@posteo.net>
 V2:
 - new patch
 ---
- drivers/usb/storage/sddr09.c | 14 +++++++-------
- 1 file changed, 7 insertions(+), 7 deletions(-)
+ drivers/usb/storage/sddr55.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/usb/storage/sddr09.c b/drivers/usb/storage/sddr09.c
-index d21ce3466e25842757b3e278d522c55b7c1f19de..e66b920e99e25c90b581ff1f3ea=
-e16ed0cfd903c 100644
---- a/drivers/usb/storage/sddr09.c
-+++ b/drivers/usb/storage/sddr09.c
-@@ -144,7 +144,7 @@ static inline char *nand_flash_manufacturer(int manuf_i=
-d) {
-  * 256 MB NAND flash has a 5-byte ID with 2nd byte 0xaa, 0xba, 0xca or 0xd=
-a.
-  */
-=20
--static struct nand_flash_dev nand_flash_ids[] =3D {
-+static const struct nand_flash_dev nand_flash_ids[] =3D {
- 	/* NAND flash */
- 	{ 0x6e, 20, 8, 4, 8, 2},	/* 1 MB */
- 	{ 0xe8, 20, 8, 4, 8, 2},	/* 1 MB */
-@@ -169,7 +169,7 @@ static struct nand_flash_dev nand_flash_ids[] =3D {
- 	{ 0,}
- };
-=20
--static struct nand_flash_dev *
-+static const struct nand_flash_dev *
- nand_find_id(unsigned char id) {
- 	int i;
-=20
-@@ -1133,9 +1133,9 @@ sddr09_reset(struct us_data *us) {
- }
- #endif
-=20
--static struct nand_flash_dev *
-+static const struct nand_flash_dev *
- sddr09_get_cardinfo(struct us_data *us, unsigned char flags) {
--	struct nand_flash_dev *cardinfo;
-+	const struct nand_flash_dev *cardinfo;
- 	unsigned char deviceID[4];
- 	char blurbtxt[256];
+diff --git a/drivers/usb/storage/sddr55.c b/drivers/usb/storage/sddr55.c
+index d5cdff30f6f31f98d3d58ffcdd2426d7cd385cbb..b323f0a3626031905b946ce64dd=
+f04539a6e3232 100644
+--- a/drivers/usb/storage/sddr55.c
++++ b/drivers/usb/storage/sddr55.c
+@@ -775,11 +775,11 @@ static void sddr55_card_info_destructor(void *extra) =
+{
+ static int sddr55_transport(struct scsi_cmnd *srb, struct us_data *us)
+ {
  	int result;
-@@ -1545,12 +1545,12 @@ static int sddr09_transport(struct scsi_cmnd *srb, =
-struct us_data *us)
-=20
- 	struct sddr09_card_info *info;
-=20
 -	static unsigned char inquiry_response[8] =3D {
 +	static const unsigned char inquiry_response[8] =3D {
  		0x00, 0x80, 0x00, 0x02, 0x1F, 0x00, 0x00, 0x00
  	};
-=20
- 	/* note: no block descriptor support */
--	static unsigned char mode_page_01[19] =3D {
-+	static const unsigned char mode_page_01[19] =3D {
- 		0x00, 0x0F, 0x00, 0x0, 0x0, 0x0, 0x00,
+  	// write-protected for now, no block descriptor support
+-	static unsigned char mode_page_01[20] =3D {
++	static const unsigned char mode_page_01[20] =3D {
+ 		0x0, 0x12, 0x00, 0x80, 0x0, 0x0, 0x0, 0x0,
  		0x01, 0x0A,
  		0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
-@@ -1584,7 +1584,7 @@ static int sddr09_transport(struct scsi_cmnd *srb, st=
-ruct us_data *us)
- 	}
-=20
- 	if (srb->cmnd[0] =3D=3D READ_CAPACITY) {
--		struct nand_flash_dev *cardinfo;
-+		const struct nand_flash_dev *cardinfo;
-=20
- 		sddr09_get_wp(us, info);	/* read WP bit */
-=20
 
 --=20
 2.48.0.rc1.219.gb6b6757d772
@@ -248,5 +203,5 @@ USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an e=
 mail to usb-storage+unsubscribe@lists.one-eyed-alien.net.
 To view this discussion visit https://groups.google.com/a/lists.one-eyed-al=
-ien.net/d/msgid/usb-storage/20250226-misc-const-v2-7-ab655a4a29cc%40posteo.=
+ien.net/d/msgid/usb-storage/20250226-misc-const-v2-8-ab655a4a29cc%40posteo.=
 net.
