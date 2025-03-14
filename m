@@ -1,142 +1,147 @@
-Return-Path: <usb-storage+bncBCWN5IOWUIIRBY5IZ27AMGQELIP5Q3Y@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBDT33UHK6EMBBPEBZ67AMGQEVLH27RY@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-pl1-x645.google.com (mail-pl1-x645.google.com [IPv6:2607:f8b0:4864:20::645])
-	by mail.lfdr.de (Postfix) with ESMTPS id C87B7A6077F
-	for <lists+usb-storage@lfdr.de>; Fri, 14 Mar 2025 03:28:53 +0100 (CET)
-Received: by mail-pl1-x645.google.com with SMTP id d9443c01a7336-225501825a6sf3645225ad.1
-        for <lists+usb-storage@lfdr.de>; Thu, 13 Mar 2025 19:28:53 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1741919332; cv=pass;
+Received: from mail-wm1-x348.google.com (mail-wm1-x348.google.com [IPv6:2a00:1450:4864:20::348])
+	by mail.lfdr.de (Postfix) with ESMTPS id 33C0BA6085A
+	for <lists+usb-storage@lfdr.de>; Fri, 14 Mar 2025 06:38:06 +0100 (CET)
+Received: by mail-wm1-x348.google.com with SMTP id 5b1f17b1804b1-43cf44b66f7sf9877325e9.1
+        for <lists+usb-storage@lfdr.de>; Thu, 13 Mar 2025 22:38:06 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1741930686; cv=pass;
         d=google.com; s=arc-20240605;
-        b=EDnKM1WqaigVABD4xjkcPpH7adv2BdBxgLYdHnGQXdekZdPPMkCydZ55tUn/BSOWnl
-         a8CGTBaXHAYocX1KtWNI63iAEJ94ddXfSfSKKuo+W5bzcp3AOlzPVdaq0yX/YeGtAl7c
-         qvHDcAvBSnvJSQrjyxtNW6gBdvR+Wx7qC9fOazWQoMrTIweCyO3GV84o55Fwc+O1dego
-         A59kxVyT1CebubTcG7qvUmBdZoNKRB9mf312DlQ1cHIcGhbQHBG1grYgOsp65uqbUGC4
-         6KbMAea7NdYmrnmll4OwV4K1Q8MLcOxmvpeBDJzORkYCT2YubB15fi44Lxwjtic0yb7c
-         1IPw==
+        b=YyJhYXH6X+V1aWd7xCouT7yZfXz/6TKQnpL4XcxWjAUZO9FrrMEfh6v1ysZGTh/yfY
+         sTZqOBbpeGw4yKT+6Fd6phpUDY3wqKJTrG2VqWiAquml2UyrVcbu5uQ+5AfLwYGo4M06
+         9ipYEC9S4pZqOYpvDb6HD5EOByqjYTJ9V6hEsYe+KBf1+oQtLqRRbp2/EFlGcka6Swyx
+         xVomuHodgt8bx105GjfHfygy4C7ux80yF74B6pN7vcXX2EeO/fAEtCpvVoXMLnk/3k+u
+         RqQ3UXPDZipAi++S42Ogs6pzan+a3rCGcrUZjeRVepK8MwD2hp1XD2uRjhL9Ik3HmXyd
+         8Vjw==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:message-id:mime-version:references
-         :in-reply-to:subject:cc:to:from:date:sender:dkim-signature;
-        bh=j4L9xHjeYEEGYhV2c+qHXHj+ltlsCwG+LevDYSeIjjI=;
-        fh=F1dJYV1MATXRAe4TF+csZbZQI2T4cQRXcGmUl+IZheE=;
-        b=CZqAwVO7qeo9/1/HMXMTsx8CFjnGdweWu72WyvKLJyW1P6bja1IAlE0meT11vZEXtX
-         v0nrEprsjv4zqA7/xijUA3RWn43R/reMEfnBhcmm2gAXdXEfJ8NdK67KHYIlaikOuvks
-         RHVX8fL4hhtqkDeiIh+4fRmB6T9uhL77CpvojDEM3uLkSQooIbbAHDAe5juDegL+3spf
-         lbOtBpXqpIOxKAaqXOvfXphg1x7/+RvxxqgsDPDr3N1SbHp9Ti31J/rAjHPBCMQXUcTa
-         mpgtwxJJnRqbdOfaRRT1P0sxCTN+hcG4Qpp/bOPsxvYEgF1TUZELKg5fRV2ubYzYlOMj
-         qUwA==;
+         :list-id:mailing-list:precedence:content-transfer-encoding:cc:to
+         :subject:message-id:date:from:in-reply-to:references:mime-version
+         :sender:dkim-signature:dkim-signature;
+        bh=msLQhSls51NGbGGZZSfzxV8Cn3RIkfRqrYtZeccZhdo=;
+        fh=OLYktc3ScBvgwLPbrovJL6SlDPz8pjBRDsKrL91Jy0Q=;
+        b=CcZ+UiTxBcI2PZCDEtAObExIAZPMlWzA5dBFLcfKYYZV/nSaZd5+KuKK5nLttjOk0f
+         UGpmgpSZL6yvaCKcUqJwJlCP1dfLmVKRuzQtX8Vr/AWmWRwQSDZYr3vU8XOYXsO2o+rH
+         lt8WJGH4O/H5iv4E4IEZ38Uro/gxoTAMkg1/bjditu9XUjdJO/LXtlTZBD9NYEvjjYTC
+         3NxR20YQP3rHiao0XNHf2w1NkR7Gme3pq5a5FJA24cnU4xfYzu0GOUWSo6w0GVzioQk6
+         hkwAlRnljXCqaPE3bz7qBxlZ0TYOUd1CIhW16MfjNLEsWCE4RgbziAPo7fsTc/USzvlC
+         3F3g==;
         darn=lfdr.de
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@163.com header.s=s110527 header.b=imDT4Chi;
-       spf=pass (google.com: domain of daixin_tkzc@163.com designates 220.197.31.2 as permitted sender) smtp.mailfrom=daixin_tkzc@163.com;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=163.com
+       dkim=pass header.i=@one-eyed-alien.net header.s=google header.b=rVFVdELt;
+       spf=pass (google.com: domain of mdharm@one-eyed-alien.net designates 209.85.220.41 as permitted sender) smtp.mailfrom=mdharm@one-eyed-alien.net;
+       dara=pass header.i=@lists.one-eyed-alien.net
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1741919332; x=1742524132; darn=lfdr.de;
+        d=lists.one-eyed-alien.net; s=google; t=1741930686; x=1742535486; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:x-original-authentication-results
-         :x-original-sender:message-id:mime-version:references:in-reply-to
-         :subject:cc:to:from:date:sender:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=j4L9xHjeYEEGYhV2c+qHXHj+ltlsCwG+LevDYSeIjjI=;
-        b=jfF/DMf2bnExT219qjX27RWPn6p642O6G/gmpT1OIKp8iaTAZt8sd0lHC5NXNWYEce
-         ftqMWWgiiEx0GNEJMax+40WIc4uTfRRMNQ5TLr0ITorOjKvFlJ4Ob6jGfyXMutZeJ02m
-         Ytr4OmQ8qHpyqc0Xt4H9uZGidjVxvY8gx19Bc=
+         :x-original-sender:content-transfer-encoding:cc:to:subject
+         :message-id:date:from:in-reply-to:references:mime-version:sender
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=msLQhSls51NGbGGZZSfzxV8Cn3RIkfRqrYtZeccZhdo=;
+        b=b3b6MfYZCf2jDZMElVibWyuHuAqb3Z0lfU2Beh+tJxUImyU1H3X+G2Tnl/kltwaqar
+         wI5EjmtibQwsRtJx7wK/WR8+uzRHdwSs4tR98B+MzIGoWNztUfD/whmgoXEdObZ8SOMH
+         Zn+thDioYQyXrAW3/zPvoMJXzfoWD3MKpdIpA=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=one-eyed-alien.net; s=google; t=1741930686; x=1742535486; darn=lfdr.de;
+        h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
+         :list-id:mailing-list:precedence:x-original-authentication-results
+         :x-original-sender:content-transfer-encoding:cc:to:subject
+         :message-id:date:from:in-reply-to:references:mime-version:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=msLQhSls51NGbGGZZSfzxV8Cn3RIkfRqrYtZeccZhdo=;
+        b=HfpmeBUytZ7tZhHH2AGIoIt6eGp/eaiWwbZRdZ1wOUTlKxEWXze/r6nDAzCwwpl3Bf
+         ZgcH8coF9+DH4kHFeBguGp6gCZ6oABx7gY8iiSjSJQbrwviUAdaCk/K7ZG1pcEAzt8l5
+         w/k0V6lb+GFtFcMVDBUS/NyGXn9wTlTm+8uKU=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1741919332; x=1742524132;
+        d=1e100.net; s=20230601; t=1741930686; x=1742535486;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :x-spam-checked-in-group:list-id:mailing-list:precedence
-         :x-original-authentication-results:x-original-sender:message-id
-         :mime-version:references:in-reply-to:subject:cc:to:from:date
-         :x-beenthere:x-gm-message-state:sender:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=j4L9xHjeYEEGYhV2c+qHXHj+ltlsCwG+LevDYSeIjjI=;
-        b=cQnW89pyuSLzFUlOd7JNoHF7jq/63vIAkHBwmBEocp/0qSlY8tgJE/zF2htN6uG4Sv
-         cegW1pF80Q7O2EgpiLCYy5l4N3yoLq6CJ3lCfTe3tm5M4cLBbVZ/xJuEgFMxgPPT0TFL
-         3ZFxIZJR1m46iopFLG6F996rcIHnld5mxVLkLAz+IGRIDkgv6NZ30w42abxMBTvLwpBt
-         DbxR+eYj2Vz/n5i33xb8fZzGDgi7LpepA+xlQ0meNl7ONAxa18Y8EYbEYrtFVHyS/zE9
-         6thBStO6AZmg2/ZKBK6Es9ao7+8GsbvF+pWB4GHvXtm49gbBNleXS9ic0jsY6XYl7Fdq
-         4cGQ==
+         :x-original-authentication-results:x-original-sender
+         :content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-beenthere:x-gm-message-state
+         :sender:from:to:cc:subject:date:message-id:reply-to;
+        bh=msLQhSls51NGbGGZZSfzxV8Cn3RIkfRqrYtZeccZhdo=;
+        b=d8cVi2t/vbMo1zkJR9dB07mzE9ZDpI+0qEQLLKPTar8nrLYq7lKLY+uys7gxr6zfwQ
+         BberuCqaQp1sWewWxc8UBBKlI6C8PfjetyroMKh5blfjm1vu9U+5iFD+i/kNuMm56xqI
+         lWhUr5TZe0pqvsyJ0918aUkennTiKo3ljtFHCMJQlRaTX7D9I/cQo9iXqs4Y9uWiucA0
+         s66MvQFMdmCyxyWeRpIfZimeXNp/KBdvvC40klQYfiwcZPpWcQo/qoXVFkF7KwwG9E2r
+         9ljQO9HXSzLGK/PUO8tOXSeyoKsVkIvtsqaBfyJebjXuzTqSXEz/1XE7CEKj70NuJ460
+         zWMQ==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Forwarded-Encrypted: i=2; AJvYcCUL8NMDZVsGC330sq7+HwNGYGlngpw9kCkwbDLNx9XreagA8ezzWas3Sett/msKd3tBpBe8LQ==@lfdr.de
-X-Gm-Message-State: AOJu0Yz/oSWd5I/rIxjNcxejVKV1Bn6+CMdiilE/XzWwl3MspaKHsft2
-	1VyJgzzIjN3ZNPgV32y3mzZgf+XAYJtE/lNNDUbTEMtcMrYgelfhkaVYuaLRsSM=
-X-Google-Smtp-Source: AGHT+IH5WU1xntGLJ4Zhw3W4FkLNW5pl2Ne6zrvNBUxDMAF1Au9F0yyS7vO5kBLF0SN+9Ck6DV4w0Q==
-X-Received: by 2002:a17:902:e745:b0:224:8bf:6d83 with SMTP id d9443c01a7336-225e0ab5221mr4254465ad.8.1741919331874;
-        Thu, 13 Mar 2025 19:28:51 -0700 (PDT)
-X-BeenThere: usb-storage@lists.one-eyed-alien.net; h=ARLLPALGhbC+mF0cYWSaLw0GCP2OpFz+g0wuE5TMVJ93qQG10w==
-Received: by 2002:a17:90a:6d02:b0:2ff:4b06:9a15 with SMTP id
- 98e67ed59e1d1-3015330359als85535a91.1.-pod-prod-05-us; Thu, 13 Mar 2025
- 19:28:50 -0700 (PDT)
-X-Forwarded-Encrypted: i=2; AJvYcCWbdQLUkr0Y07lc39vDQSaUmSWrbQcvH2jPVSrM+aQXFqo8R6t7yzy3h8x6ufh83fuNcMUwS4SInGoOmw==@lists.one-eyed-alien.net
-X-Received: by 2002:a17:902:e808:b0:224:2657:2c04 with SMTP id d9443c01a7336-225e0a285f2mr9983665ad.4.1741919330469;
-        Thu, 13 Mar 2025 19:28:50 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1741919330; cv=none;
+X-Forwarded-Encrypted: i=2; AJvYcCX0C/STc+hlArMh5ywXTj1+ltwh1p8QSHzLsuo7xnVeIsm73tGSBPpdpsTJJJNEg5VBb3WDJg==@lfdr.de
+X-Gm-Message-State: AOJu0YxhagPf0sZYHo6bbpc43eA4jcJqHkyz/CiHajzmXh7uK9qHk08c
+	Ciizr5iMZ8aLbVFzHRD8CNFxEKRL3+b9ogDqPcDEmNqrsHjYo34KLMkZa5kz3p8=
+X-Google-Smtp-Source: AGHT+IFeOA9PAYQ49ySMlJrOndjJiDzvDuF0IsNNAAB8oT2MlYHZdnH2+9WdwAjE0jhxufebF2S8pg==
+X-Received: by 2002:a05:600c:470e:b0:43c:ee62:33f5 with SMTP id 5b1f17b1804b1-43d1eccf8c6mr13954855e9.27.1741930685343;
+        Thu, 13 Mar 2025 22:38:05 -0700 (PDT)
+X-BeenThere: usb-storage@lists.one-eyed-alien.net; h=Adn5yVH4JidVNP3wGmVjptrHe2WmkOfWnZcCtKpTvt4gFtNpow==
+Received: by 2002:a05:600c:687:b0:43c:f1c0:1f7f with SMTP id
+ 5b1f17b1804b1-43d1fc7ededls910765e9.2.-pod-prod-03-eu; Thu, 13 Mar 2025
+ 22:38:02 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCWwFuA11VIML8EgdZpe17zR9uNQ5DdQyL5dGowtwBtjrgEpe8r0m4QDQ2rcg2+o79QV42opW+SjmAgVDg==@lists.one-eyed-alien.net
+X-Received: by 2002:a05:600c:4fcc:b0:43c:fab3:4fad with SMTP id 5b1f17b1804b1-43d1ec80ebcmr16508965e9.16.1741930681663;
+        Thu, 13 Mar 2025 22:38:01 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1741930681; cv=none;
         d=google.com; s=arc-20240605;
-        b=lUY8aT4RXYVHVDp0UBk+19B7e+HKJ5pOfdCyJZeDBHlbKEuKyVPvolZ0aYu2I594Lg
-         WG1ead5i8AuufCRYsdGgRBrvDwLgNVQSEm85+Q0vwTa9DjAA1ZQmYX7hM7FhGxzYJCcG
-         z0UxxGT/tqrV/UDKmdLUjvKZ/Nu9KwfLQQsMIy+eY5DCaja/q9kmY9Wkrzp2mUMy7Fmv
-         qfji02o9cWkQaMTQ5tu0VBjpdy+jpM783RyQh7KbZsTfsZhU3pbO4tZekvhJDTBQwOFp
-         ss//ODBh+Hl4F5cGpgTzsiVSiAfTHd178HEaBkHl1XGYYwjHzF37HbaCRsTj9ZLlMZaB
-         a0nw==
+        b=hFbH/wbfsGHs3YYBrSnRS1ckZhh7XHxrlCF2AEL8wxqDh3qE/WPIO0URGBReegRKee
+         c6aUqlJphv2NsmWMNio7ZJnGHDlW6IErKb4RB1TTvY1EhZ4UEsM3og+jY5u+WW9e26Mp
+         yNfdsRj/CcPTNfVV1Cx3Wcyj2/lFPQBme60WJc5pD+YPT9trKqdyDqZQN9COkRNakh01
+         OwUtxT01/b8/6hQo61FnmXTDUJjwvN8BCSL2Q7o9vuO2FQTVQL97PwLcjoytn4yisueN
+         uaSVjSC82yQ35dI50P9OFmJ7kl7AdJper8vjYqqqJUF1f414YSwVP2yZjft6uavGFo9d
+         rPjQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
-        h=message-id:mime-version:references:in-reply-to:subject:cc:to:from
-         :date:dkim-signature;
-        bh=ttYIR07/b0IN4FWP9Kuvt7ogc4YLjvjpNyKCgS+1CDU=;
-        fh=lQNfSRDnw9GzlGborSlzbRL1I2L8N/HAopc7rK4o/70=;
-        b=cJbMNbmOT27UZ5FH/y1A+8SziYzarDj3866q8IuhZisI291WSXjpi8NMXP2fGn+ih9
-         3wRow5V35k/iSXHYIqnt4orX8qCBqp7SrYyfi9YoPiVlb8Ly8rEagb2JxeP462QAYovu
-         sH+ceoEfkdOlqMaFVKASAMKAfhCut6VkmJcgyN3CIdb/6Kwr8MhwOeL0YDK/kJKqYfqx
-         Sx91xmzFL5Ry6nahu4HCyH+1OHv/rujPHhdyNQTBLdEH8ZYfHL0JpWdRdmuAVq+cMRjY
-         dw83sttAGXdFtJ1idryc6msLystBc7LmQjchHCJj7aRYl3mLNNq4Dp5U6bKVDi+6DAHk
-         IKiQ==;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:dkim-signature;
+        bh=nMdQC/9roImk0s7GMGocgKU0Ea/u69+eAi5KKCuOS4g=;
+        fh=AMJvbSnVLq+5kKxvJwq5Nm08akXX0ulDGbwPumMk0aI=;
+        b=KVpAOPYWPvHSCEhpa3rfac/DnzavAUbcUzismQtUYfENeobpyYIyQb70gshw0zucJy
+         pSMMjTms09D8fthI3DN/Woxxy28aPEC5F/XWZzlJh7FGMOtDJOuSG6apgdfPtS6P+69P
+         914ViPHTQgSd2nUyJbDxPdo1aHr3a1LPoQAFM0bQW/qwfDDjdVUVQXDQyvXfEFPvs1yw
+         jlB84g3LXNztHlM3zPAk2KxqXbT58eNMFVYR7bHtKY3CLcUSRDVYmKcbPqUhdnU3OJav
+         L8MbRtuTJSWB7swOHOp2IdXe8gmd+y2PGfgd3tfr7vE2GMbm8ZFNk3JJo6wbjjxE8urw
+         JSng==;
         dara=google.com
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@163.com header.s=s110527 header.b=imDT4Chi;
-       spf=pass (google.com: domain of daixin_tkzc@163.com designates 220.197.31.2 as permitted sender) smtp.mailfrom=daixin_tkzc@163.com;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=163.com
-Received: from m16.mail.163.com (m16.mail.163.com. [220.197.31.2])
-        by mx.google.com with ESMTP id d9443c01a7336-225c6b89889si35856345ad.441.2025.03.13.19.28.48
-        for <usb-storage@lists.one-eyed-alien.net>;
-        Thu, 13 Mar 2025 19:28:50 -0700 (PDT)
-Received-SPF: pass (google.com: domain of daixin_tkzc@163.com designates 220.197.31.2 as permitted sender) client-ip=220.197.31.2;
-Received: from daixin_tkzc$163.com ( [122.97.221.93] ) by
- ajax-webmail-wmsvr-40-132 (Coremail) ; Fri, 14 Mar 2025 10:28:41 +0800
- (CST)
-X-Originating-IP: [122.97.221.93]
-Date: Fri, 14 Mar 2025 10:28:41 +0800 (CST)
-From: daixin_tkzc  <daixin_tkzc@163.com>
-To: "Alan Stern" <stern@rowland.harvard.edu>
-Cc: "Greg KH" <gregkh@linuxfoundation.org>,
-	"matthew dharm" <mdharm-usb@one-eyed-alien.net>,
-	linux-usb@vger.kernel.org, usb-storage@lists.one-eyed-alien.net,
-	linux-kernel@vger.kernel.org
-Subject: [usb-storage] Re:Re:[PATCH] usb: storage: Fix `us->iobuf` size for
- BOT transmission to prevent memory overflow
-X-Priority: 3
-X-Mailer: Coremail Webmail Server Version XT5.0.14 build 20240801(9da12a7b)
- Copyright (c) 2002-2025 www.mailtech.cn 163com
-In-Reply-To: <814316b6-013b-4735-995d-b6c0c616c71b@rowland.harvard.edu>
-References: <20250311084111.322351-1-daixin_tkzc@163.com>
- <2b6c4aa7.b165.1958f6b7a3a.Coremail.daixin_tkzc@163.com>
- <814316b6-013b-4735-995d-b6c0c616c71b@rowland.harvard.edu>
-X-CM-CTRLMSGS: ck1ZgXRyYWNlS2V5PXByZV8zZmM1M2EzZGNhYTUwZjAxYTdmM2NhM2ZkM2NjZ
- jk0Yw==
-X-NTES-SC: AL_Qu2fA/Watksp5yKQZ+kfmU4Thu4+Wse2svku1I9fPp94jAPo0SkNd0JSDGf/6+O0OimUmgmGVjtO4OB9Ro1mZ4MQzj8tmIfu3zQM0K/BBARZBQ==
-Content-Type: multipart/alternative; 
-	boundary="----=_Part_38362_1064403213.1741919321291"
+       dkim=pass header.i=@one-eyed-alien.net header.s=google header.b=rVFVdELt;
+       spf=pass (google.com: domain of mdharm@one-eyed-alien.net designates 209.85.220.41 as permitted sender) smtp.mailfrom=mdharm@one-eyed-alien.net;
+       dara=pass header.i=@lists.one-eyed-alien.net
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id 5b1f17b1804b1-43d1fe5eac9sor1333255e9.7.2025.03.13.22.38.01
+        for <usb-storage@lists.one-eyed-alien.net>
+        (Google Transport Security);
+        Thu, 13 Mar 2025 22:38:01 -0700 (PDT)
+Received-SPF: pass (google.com: domain of mdharm@one-eyed-alien.net designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+X-Forwarded-Encrypted: i=1; AJvYcCXTp4gMly2y5AGEIohLcL+wfpXMWO7UF0VUtTAGy9r1bMaLpT/8oOHb5MWH1GVWhyxpUqe5tNFJP3VCfg==@lists.one-eyed-alien.net
+X-Gm-Gg: ASbGnctZmwzarEek95T0DAgq3shuHfyl2skCnFCn77UJZmy4hE4LEDSDsnR23wEqdty
+	tArJb69zWLGvo899C0SsFjX4vseErPUPupkZs/yxAl19gDwm1bAzXbjR0pFoXy2goDc9QDpEEXR
+	Iwm+rKH5KZssaczmSOMYZM6VbpD9nkm+Nai4FtM+I5Wh5lbQ+ifpZR1BO1QStg
+X-Received: by 2002:a05:600c:458e:b0:43b:d1ad:9241 with SMTP id
+ 5b1f17b1804b1-43d1ec7264bmr12970265e9.9.1741930681134; Thu, 13 Mar 2025
+ 22:38:01 -0700 (PDT)
 MIME-Version: 1.0
-Message-ID: <1681f087.2727.195927b7ccb.Coremail.daixin_tkzc@163.com>
-X-Coremail-Locale: zh_CN
-X-CM-TRANSID: hCgvCgD3f6BZlNNnjoOBAA--.28725W
-X-CM-SenderInfo: xgdl5xpqbwy6rf6rljoofrz/1tbiqB0P1WfS6bN2YQAEsT
-X-Coremail-Antispam: 1U5529EdanIXcx71UUUUU7vcSsGvfC2KfnxnUU==
-X-Original-Sender: daixin_tkzc@163.com
+References: <20250311084111.322351-1-daixin_tkzc@163.com> <2b6c4aa7.b165.1958f6b7a3a.Coremail.daixin_tkzc@163.com>
+ <814316b6-013b-4735-995d-b6c0c616c71b@rowland.harvard.edu> <1681f087.2727.195927b7ccb.Coremail.daixin_tkzc@163.com>
+In-Reply-To: <1681f087.2727.195927b7ccb.Coremail.daixin_tkzc@163.com>
+From: Matthew Dharm <mdharm-usb@one-eyed-alien.net>
+Date: Thu, 13 Mar 2025 22:37:50 -0700
+X-Gm-Features: AQ5f1JqK7mfkFRnnHhbib_ouPOR3RruHwBQMl_f6l0-0E-jlRPVLn-J2Iu35hI8
+Message-ID: <CAA6KcBAU75TS348_NNLudMv=Ub=h_K2x9CC3=RfLtRvxKiq5Dw@mail.gmail.com>
+Subject: Re: [usb-storage] Re:Re:[PATCH] usb: storage: Fix `us->iobuf` size
+ for BOT transmission to prevent memory overflow
+To: daixin_tkzc <daixin_tkzc@163.com>
+Cc: Alan Stern <stern@rowland.harvard.edu>, Greg KH <gregkh@linuxfoundation.org>, 
+	linux-usb@vger.kernel.org, usb-storage@lists.one-eyed-alien.net, 
+	linux-kernel@vger.kernel.org
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-Original-Sender: mdharm-usb@one-eyed-alien.net
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@163.com header.s=s110527 header.b=imDT4Chi;       spf=pass
- (google.com: domain of daixin_tkzc@163.com designates 220.197.31.2 as
- permitted sender) smtp.mailfrom=daixin_tkzc@163.com;       dmarc=pass (p=NONE
- sp=NONE dis=NONE) header.from=163.com
+ header.i=@one-eyed-alien.net header.s=google header.b=rVFVdELt;
+       spf=pass (google.com: domain of mdharm@one-eyed-alien.net designates
+ 209.85.220.41 as permitted sender) smtp.mailfrom=mdharm@one-eyed-alien.net;
+       dara=pass header.i=@lists.one-eyed-alien.net
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -152,115 +157,36 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-------=_Part_38362_1064403213.1741919321291
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-
-I'm sorry for not making my point clear.=20
-
-DWC_otg driver can handle packet babble in the data phase properly. It prov=
-ides interrupt function, dwc2_hc_babble_intr, It mainly does two things:
-
-1) Delete the URB request from the endpoint linked list maintained by the U=
-SB host controller, mark the URB transfer result as OVERFLOW error, and del=
-ete the remaining URB requests in the data phase of the BOT transfer.
-
-2) Halt the currently used channel and indicate that the reason for the cha=
-nnel halt is Babble Error.
-
-When the urb complete (babble error occurs), the sg_complete function of ur=
-b(s) will notify the mass storage driver that the data phase of the BOT tra=
-nsfer is over. The rest is done by the mass storage driver, such us:
-
-1) Get CSW for device status, interpret CSW, return USB_STOR_TRANSPORT_ERRO=
-R.
-
-2) Handle Errors(here is USB_STOR_TRANSPORT_ERROR).
-
-3) Initiate port reset.
-
-4) Notify the SCSI layer implements a retransmission mechanism.
-
-How us->iobuf overflow could occur?
-
-For 1), the USB device does not know that a Babble Error has occurred at th=
-is time (DWC_otg knows what happened), It actually continuously returns 512=
- bytes data through DMA write to CSW address (As can be seen in the wavefor=
-m in the appendix document before). The DWC_otg controller driver cannot co=
-ntrol how much data the device returns(13 or 512 bytes). However, the USB s=
-torage driver pre-allocates a default buffer size of 64 bytes for CBW/CSW.
-
-For 3), the device does not realize that a babble error has occurred until =
-the port reset is successfully completed (by interface usb_stor_port_reset)=
-. Then device will enter the enumeration process. It looks like things are =
-heading in the right direction.
-
-For 4), as for the urb that has a babble error, SCSI will execute a retrans=
-mission mechanism.
-
-thanks,
-
-Dai xin
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-At 2025-03-13 22:36:32, "Alan Stern" <stern@rowland.harvard.edu> wrote:
->On Thu, Mar 13, 2025 at 08:12:20PM +0800, daixin_tkzc wrote:
->> Thank you for reviewing my patch.
->>=20
->>=20
->> I'm sorry I just responded individually.
->>=20
->>=20
->> Of course, when the USB device and host are transmitting normally, us->i=
-obuf size is 64, which is enough for CBW/CSW and there will be no problem.=
-=20
->> Howerver, we encountered a problem in the FPGA verification environment,=
- that is, the DWC otg controller detected a Babble Error, and we believe th=
-at the processing flow of the device driver will cause the risk of us->iobu=
-f overflow.=20
->>=20
->>=20
->> Regarding USB Babble Error, the DWC_otg_programming manual describes it =
-as follows:
->> |
->>=20
->> 3.8.1 Handling Babble Conditions
->>=20
->> DWC_otg handles two cases of babble: packet babble and port babble. Pack=
-et babble occurs if the device sends more data than the maximum packet size=
- for the channel. Port babble occurs if the controller continues to receive=
- data from the device at EOF2 (the end of frame 2, which is very close to S=
-OF).
->>=20
->> When DWC_otg detects a packet babble, it stops writing data into the Rx =
-buffer and waits for the end of packet (EOP). When it detects an EOP, it fl=
-ushes already-written data in the Rx buffer and generates a Babble interrup=
-t to the application
->>=20
->> |
+On Thu, Mar 13, 2025 at 7:28=E2=80=AFPM daixin_tkzc <daixin_tkzc@163.com> w=
+rote:
 >
->What is your point?
->
->Are you claiming that the DWC_otg driver doesn't handle packet babble=20
->properly?  If that is true then you need to fix the DWC_otg driver, not=20
->change the usb-storage driver.
->
->You have not done a good job of explaining how us->iobuf overflow could=20
->occur.
->
->Alan Stern
+> When the urb complete (babble error occurs), the sg_complete function of =
+urb(s) will notify the mass storage driver that the data phase of the BOT t=
+ransfer is over. The rest is done by the mass storage driver, such us:
+
+You appear very focused on a specific sequence of events which causes
+the babble error, but we are telling you that you are looking in the
+wrong place.
+
+If the DWC_otc driver does, in fact, handle packet babble properly,
+then it will never overflow the buffer.
+
+For example, forget the specifics of usb-storage.  Consider a BULK IN
+request to an arbitrary device with an URB that provides an iobuf of
+only 32 bytes, but the device sends 512 bytes -- the reason the device
+sends too much data is not important; this is a babble condition.  The
+controller and controller driver is *required* NOT to overflow the
+32-byte buffer.  The remaining bytes received by the host are required
+to be discarded.
+
+Thus, even when a usb-storage device gets "out of sync" (i.e. is
+sending data instead of a CSW), a buffer overflow is NOT POSSIBLE if
+the controller is functioning properly.  If the controller writes data
+beyond the end of the buffer, then that is an error of the controller
+and/or controller driver software.  The design of the Linux USB stack
+places this requirement on the controllers.
+
+Matt
 
 --=20
 You received this message because you are subscribed to the Google Groups "=
@@ -268,287 +194,5 @@ USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an e=
 mail to usb-storage+unsubscribe@lists.one-eyed-alien.net.
 To view this discussion visit https://groups.google.com/a/lists.one-eyed-al=
-ien.net/d/msgid/usb-storage/1681f087.2727.195927b7ccb.Coremail.daixin_tkzc%=
-40163.com.
-
-------=_Part_38362_1064403213.1741919321291
-Content-Type: text/html; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-
-<div data-ntes=3D"ntes_mail_body_root" style=3D"line-height:1.7;color:#0000=
-00;font-size:14px;font-family:Arial"><div id=3D"spnEditorContent"><p style=
-=3D"margin: 0;"><span style=3D"font-family: Calibri; font-size: 10.5pt;">I'=
-m sorry for not making my point clear.</span><span style=3D"font-family: =
-=E5=AE=8B=E4=BD=93; font-size: 10.5pt;">&nbsp;</span></p><p class=3D"MsoNor=
-mal"><span style=3D"mso-spacerun:'yes';font-family:=E5=AE=8B=E4=BD=93;mso-a=
-scii-font-family:Calibri;
-mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-s=
-ize:10.5000pt;
-mso-font-kerning:1.0000pt;"><font face=3D"Calibri" class=3D"">DWC_otg drive=
-r can&nbsp;h</font></span><span style=3D"mso-spacerun:'yes';font-family:=E5=
-=AE=8B=E4=BD=93;mso-ascii-font-family:Calibri;
-mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-s=
-ize:10.5000pt;
-mso-font-kerning:1.0000pt;"><font face=3D"Calibri">andle packet babble </fo=
-nt></span><span style=3D"mso-spacerun:'yes';font-family:=E5=AE=8B=E4=BD=93;=
-mso-ascii-font-family:Calibri;
-mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-s=
-ize:10.5000pt;
-mso-font-kerning:1.0000pt;"><font face=3D"Calibri">in the data phase </font=
-></span><span style=3D"mso-spacerun:'yes';font-family:=E5=AE=8B=E4=BD=93;ms=
-o-ascii-font-family:Calibri;
-mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-s=
-ize:10.5000pt;
-mso-font-kerning:1.0000pt;"><font face=3D"Calibri">properly</font></span><s=
-pan style=3D"mso-spacerun:'yes';font-family:=E5=AE=8B=E4=BD=93;mso-ascii-fo=
-nt-family:Calibri;
-mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-s=
-ize:10.5000pt;
-mso-font-kerning:1.0000pt;"><font face=3D"Calibri">. It provides interrupt =
-function, </font></span><b><span style=3D"font-family: =E5=AE=8B=E4=BD=93; =
-font-size: 10.5pt;"><font face=3D"Calibri">dwc2_hc_babble_intr</font></span=
-></b><span style=3D"mso-spacerun:'yes';font-family:=E5=AE=8B=E4=BD=93;mso-a=
-scii-font-family:Calibri;
-mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-s=
-ize:10.5000pt;
-mso-font-kerning:1.0000pt;"><font face=3D"Calibri">, It mainly does two thi=
-ngs:</font></span><span style=3D"mso-spacerun:'yes';font-family:=E5=AE=8B=
-=E4=BD=93;mso-ascii-font-family:Calibri;
-mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-s=
-ize:10.5000pt;
-mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class=3D"MsoNormal"><!=
---[if !supportLists]--><span style=3D"font-family:Calibri;mso-fareast-font-=
-family:=E5=AE=8B=E4=BD=93;mso-bidi-font-family:'Times New Roman';
-font-size:10.5000pt;mso-font-kerning:1.0000pt;">1)&nbsp;</span><!--[endif]-=
--><span style=3D"mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-fa=
-mily:=E5=AE=8B=E4=BD=93;
-mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning=
-:1.0000pt;">Delete the URB request from the endpoint linked list maintained=
- by the USB host controller, mark the URB transfer result as OVERFLOW error=
-, and delete the remaining URB requests in the data </span><span style=3D"m=
-so-spacerun:'yes';font-family:=E5=AE=8B=E4=BD=93;mso-ascii-font-family:Cali=
-bri;
-mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-s=
-ize:10.5000pt;
-mso-font-kerning:1.0000pt;"><font face=3D"Calibri" class=3D"">phase&nbsp;of=
- the BOT transfer.</font></span><span style=3D"mso-spacerun:'yes';font-fami=
-ly:Calibri;mso-fareast-font-family:=E5=AE=8B=E4=BD=93;
-mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning=
-:1.0000pt;"><o:p></o:p></span></p><p class=3D"MsoNormal"><!--[if !supportLi=
-sts]--><span style=3D"font-family:Calibri;mso-fareast-font-family:=E5=AE=8B=
-=E4=BD=93;mso-bidi-font-family:'Times New Roman';
-font-size:10.5000pt;mso-font-kerning:1.0000pt;">2)&nbsp;</span><!--[endif]-=
--><span style=3D"mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-fa=
-mily:=E5=AE=8B=E4=BD=93;
-mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning=
-:1.0000pt;">Halt the currently used channel and indicate that the reason fo=
-r the channel halt is Babble Error.</span><span style=3D"mso-spacerun:'yes'=
-;font-family:Calibri;mso-fareast-font-family:=E5=AE=8B=E4=BD=93;
-mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning=
-:1.0000pt;"><o:p></o:p></span></p><p class=3D"MsoNormal"><span style=3D"fon=
-t-size: 10.5pt; font-family: Calibri;">When the urb complete&nbsp;</span><s=
-pan style=3D"font-size: 10.5pt; font-family: =E5=AE=8B=E4=BD=93;"><font fac=
-e=3D"Calibri">(babble error occurs)</font></span><span style=3D"font-size: =
-10.5pt; font-family: Calibri;">, the </span><b><span style=3D"font-family: =
-Calibri; font-size: 10.5pt;">sg_complete</span></b><span style=3D"font-size=
-: 10.5pt; font-family: Calibri;">&nbsp;function&nbsp;</span><span style=3D"=
-font-size: 10.5pt; font-family: =E5=AE=8B=E4=BD=93;"><font face=3D"Calibri"=
->of urb(s)</font></span><span style=3D"font-size: 10.5pt; font-family: Cali=
-bri;">&nbsp;</span><span style=3D"font-size: 10.5pt; font-family: =E5=AE=8B=
-=E4=BD=93;"><font face=3D"Calibri">will </font></span><span style=3D"font-s=
-ize: 10.5pt; font-family: Calibri;">notify the mass storage driver that the=
- data</span><span style=3D"mso-spacerun:'yes';font-family:Calibri;mso-farea=
-st-font-family:=E5=AE=8B=E4=BD=93;
-mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning=
-:1.0000pt;" class=3D""> phase of the BOT&nbsp;transfer&nbsp;is over.&nbsp;T=
-he rest is done by the mass</span><span style=3D"font-size: 10.5pt; font-fa=
-mily: =E5=AE=8B=E4=BD=93;"><font face=3D"Calibri"> storage </font></span><s=
-pan style=3D"font-size: 10.5pt; font-family: Calibri;">driver</span><span s=
-tyle=3D"font-size: 10.5pt; font-family: =E5=AE=8B=E4=BD=93;"><font face=3D"=
-Calibri">, such us:</font></span></p><p class=3D"MsoNormal"><!--[if !suppor=
-tLists]--><span style=3D"font-family:=E5=AE=8B=E4=BD=93;mso-ascii-font-fami=
-ly:Calibri;mso-hansi-font-family:Calibri;
-mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning=
-:1.0000pt;">1)&nbsp;</span><!--[endif]--><span style=3D"mso-spacerun:'yes';=
-font-family:=E5=AE=8B=E4=BD=93;mso-ascii-font-family:Calibri;
-mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-s=
-ize:10.5000pt;
-mso-font-kerning:1.0000pt;"><font face=3D"Calibri">Get CSW for device statu=
-s, interpret CSW, return USB_STOR_TRANSPORT_ERROR.</font></span><span style=
-=3D"mso-spacerun:'yes';font-family:=E5=AE=8B=E4=BD=93;mso-ascii-font-family=
-:Calibri;
-mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-s=
-ize:10.5000pt;
-mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class=3D"MsoNormal"><!=
---[if !supportLists]--><span style=3D"font-family:=E5=AE=8B=E4=BD=93;mso-as=
-cii-font-family:Calibri;mso-hansi-font-family:Calibri;
-mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning=
-:1.0000pt;">2)&nbsp;</span><!--[endif]--><span style=3D"mso-spacerun:'yes';=
-font-family:=E5=AE=8B=E4=BD=93;mso-ascii-font-family:Calibri;
-mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-s=
-ize:10.5000pt;
-mso-font-kerning:1.0000pt;"><font face=3D"Calibri">Handle Errors(here is US=
-B_STOR_TRANSPORT_ERROR).</font></span><span style=3D"mso-spacerun:'yes';fon=
-t-family:Calibri;mso-fareast-font-family:=E5=AE=8B=E4=BD=93;
-mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning=
-:1.0000pt;"><o:p></o:p></span></p><p class=3D"MsoNormal"><!--[if !supportLi=
-sts]--><span style=3D"font-family:=E5=AE=8B=E4=BD=93;mso-ascii-font-family:=
-Calibri;mso-hansi-font-family:Calibri;
-mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning=
-:1.0000pt;">3)&nbsp;</span><!--[endif]--><span style=3D"mso-spacerun:'yes';=
-font-family:=E5=AE=8B=E4=BD=93;mso-ascii-font-family:Calibri;
-mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-s=
-ize:10.5000pt;
-mso-font-kerning:1.0000pt;"><font face=3D"Calibri">Initiate port reset.</fo=
-nt></span><span style=3D"mso-spacerun:'yes';font-family:Calibri;mso-fareast=
--font-family:=E5=AE=8B=E4=BD=93;
-mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning=
-:1.0000pt;"><o:p></o:p></span></p><p class=3D"MsoNormal"><!--[if !supportLi=
-sts]--><span style=3D"font-family:=E5=AE=8B=E4=BD=93;mso-ascii-font-family:=
-Calibri;mso-hansi-font-family:Calibri;
-mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning=
-:1.0000pt;">4)&nbsp;</span><!--[endif]--><span style=3D"mso-spacerun:'yes';=
-font-family:=E5=AE=8B=E4=BD=93;mso-ascii-font-family:Calibri;
-mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-s=
-ize:10.5000pt;
-mso-font-kerning:1.0000pt;"><font face=3D"Calibri">Notify t</font></span><s=
-pan style=3D"mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family=
-:=E5=AE=8B=E4=BD=93;
-mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning=
-:1.0000pt;">he SCSI layer implements a retransmission mechanism</span><span=
- style=3D"mso-spacerun:'yes';font-family:=E5=AE=8B=E4=BD=93;mso-ascii-font-=
-family:Calibri;
-mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-s=
-ize:10.5000pt;
-mso-font-kerning:1.0000pt;"><font face=3D"Calibri">.</font></span></p><p cl=
-ass=3D"MsoNormal"><span style=3D"mso-spacerun:'yes';font-family:=E5=AE=8B=
-=E4=BD=93;mso-ascii-font-family:Calibri;
-mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-s=
-ize:10.5000pt;
-mso-font-kerning:1.0000pt;"><font face=3D"Calibri">H</font></span><span sty=
-le=3D"mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:=E5=AE=
-=8B=E4=BD=93;
-mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning=
-:1.0000pt;">ow us-&gt;iobuf overflow could occur</span><span style=3D"mso-s=
-pacerun:'yes';font-family:=E5=AE=8B=E4=BD=93;mso-ascii-font-family:Calibri;
-mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-s=
-ize:10.5000pt;
-mso-font-kerning:1.0000pt;"><font face=3D"Calibri">?</font></span></p><p cl=
-ass=3D"MsoNormal"><span style=3D"mso-spacerun:'yes';font-family:=E5=AE=8B=
-=E4=BD=93;mso-ascii-font-family:Calibri;
-mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-s=
-ize:10.5000pt;
-mso-font-kerning:1.0000pt;"><font face=3D"Calibri">For 1), the USB device d=
-oes not know that a Babble Error has occurred at this time (DWC_otg knows w=
-hat happened), It actually continuously returns 512 bytes data through DMA =
-write to CSW address (As can be seen in the waveform in the appendix docume=
-nt before). The DWC_otg controller driver cannot control how much data the =
-device returns(13 or 512 bytes). However, the USB storage driver pre-alloca=
-tes a default buffer size of 64 bytes for CBW/CSW.</font></span><span style=
-=3D"mso-spacerun:'yes';font-family:=E5=AE=8B=E4=BD=93;mso-ascii-font-family=
-:Calibri;
-mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-s=
-ize:10.5000pt;
-mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class=3D"MsoNormal"><s=
-pan style=3D"font-size: 10.5pt; font-family: =E5=AE=8B=E4=BD=93;"><font fac=
-e=3D"Calibri">For 3), the device does not realize that a babble error has o=
-ccurred until the port reset is successfully completed (by interface </font=
-></span><b><span style=3D"font-family: =E5=AE=8B=E4=BD=93; font-size: 10.5p=
-t;"><font face=3D"Calibri">usb_stor_port_reset</font></span></b><span style=
-=3D"font-size: 10.5pt; font-family: =E5=AE=8B=E4=BD=93;"><font face=3D"Cali=
-bri">). Then device will enter the enumeration process. It looks like thing=
-s are heading in the right direction.</font></span></p><p class=3D"MsoNorma=
-l"><span style=3D"font-size: 10.5pt; font-family: =E5=AE=8B=E4=BD=93;"><fon=
-t face=3D"Calibri" class=3D"">For 4),&nbsp;as for the urb that has a babble=
- error, SCSI will execute a retransmission mechanism.</font></span></p><p c=
-lass=3D"MsoNormal"><span style=3D"mso-spacerun:'yes';font-family:=E5=AE=8B=
-=E4=BD=93;mso-ascii-font-family:Calibri;
-mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-s=
-ize:10.5000pt;
-mso-font-kerning:1.0000pt;"><font face=3D"Calibri">thanks,</font></span><sp=
-an style=3D"mso-spacerun:'yes';font-family:=E5=AE=8B=E4=BD=93;mso-ascii-fon=
-t-family:Calibri;
-mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-s=
-ize:10.5000pt;
-mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class=3D"MsoNormal"><s=
-pan style=3D"mso-spacerun:'yes';font-family:=E5=AE=8B=E4=BD=93;mso-ascii-fo=
-nt-family:Calibri;
-mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-s=
-ize:10.5000pt;
-mso-font-kerning:1.0000pt;"><font face=3D"Calibri">Dai xin</font></span><sp=
-an style=3D"mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:=
-=E5=AE=8B=E4=BD=93;
-mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning=
-:1.0000pt;"><o:p></o:p></span></p><p style=3D"margin: 0;"><br></p><p style=
-=3D"margin: 0;"><br></p><p style=3D"margin: 0;"><br></p></div><div style=3D=
-"position:relative;zoom:1"></div><div id=3D"divNeteaseMailCard"></div><p st=
-yle=3D"margin: 0;"><br></p><pre><br>At 2025-03-13 22:36:32, "Alan Stern" &l=
-t;stern@rowland.harvard.edu&gt; wrote:
-&gt;On Thu, Mar 13, 2025 at 08:12:20PM +0800, daixin_tkzc wrote:
-&gt;&gt; Thank you for reviewing my patch.
-&gt;&gt;=20
-&gt;&gt;=20
-&gt;&gt; I'm sorry I just responded individually.
-&gt;&gt;=20
-&gt;&gt;=20
-&gt;&gt; Of course, when the USB device and host are transmitting normally,=
- us-&gt;iobuf size is 64, which is enough for CBW/CSW and there will be no =
-problem.=20
-&gt;&gt; Howerver, we encountered a problem in the FPGA verification enviro=
-nment, that is, the DWC otg controller detected a Babble Error, and we beli=
-eve that the processing flow of the device driver will cause the risk of us=
--&gt;iobuf overflow.=20
-&gt;&gt;=20
-&gt;&gt;=20
-&gt;&gt; Regarding USB Babble Error, the DWC_otg_programming manual describ=
-es it as follows:
-&gt;&gt; |
-&gt;&gt;=20
-&gt;&gt; 3.8.1 Handling Babble Conditions
-&gt;&gt;=20
-&gt;&gt; DWC_otg handles two cases of babble: packet babble and port babble=
-. Packet babble occurs if the device sends more data than the maximum packe=
-t size for the channel. Port babble occurs if the controller continues to r=
-eceive data from the device at EOF2 (the end of frame 2, which is very clos=
-e to SOF).
-&gt;&gt;=20
-&gt;&gt; When DWC_otg detects a packet babble, it stops writing data into t=
-he Rx buffer and waits for the end of packet (EOP). When it detects an EOP,=
- it flushes already-written data in the Rx buffer and generates a Babble in=
-terrupt to the application
-&gt;&gt;=20
-&gt;&gt; |
-&gt;
-&gt;What is your point?
-&gt;
-&gt;Are you claiming that the DWC_otg driver doesn't handle packet babble=
-=20
-&gt;properly?  If that is true then you need to fix the DWC_otg driver, not=
-=20
-&gt;change the usb-storage driver.
-&gt;
-&gt;You have not done a good job of explaining how us-&gt;iobuf overflow co=
-uld=20
-&gt;occur.
-&gt;
-&gt;Alan Stern
-</pre></div><img style=3D"width:1px;height:1px" src=3D"https://count.mail.1=
-63.com/beacon/webmail.gif?type=3Dwebmail_mailtrace&amp;guid=3Dpre_3fc53a3dc=
-aa50f01a7f3ca3fd3ccf94c">
-
-<p></p>
-
--- <br />
-You received this message because you are subscribed to the Google Groups &=
-quot;USB Mass Storage on Linux&quot; group.<br />
-To unsubscribe from this group and stop receiving emails from it, send an e=
-mail to <a href=3D"mailto:usb-storage+unsubscribe@lists.one-eyed-alien.net"=
->usb-storage+unsubscribe@lists.one-eyed-alien.net</a>.<br />
-To view this discussion visit <a href=3D"https://groups.google.com/a/lists.=
-one-eyed-alien.net/d/msgid/usb-storage/1681f087.2727.195927b7ccb.Coremail.d=
-aixin_tkzc%40163.com?utm_medium=3Demail&utm_source=3Dfooter">https://groups=
-.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/1681f087.2727.19=
-5927b7ccb.Coremail.daixin_tkzc%40163.com</a>.<br />
-
-------=_Part_38362_1064403213.1741919321291--
-
+ien.net/d/msgid/usb-storage/CAA6KcBAU75TS348_NNLudMv%3DUb%3Dh_K2x9CC3%3DRfL=
+tRvxKiq5Dw%40mail.gmail.com.
