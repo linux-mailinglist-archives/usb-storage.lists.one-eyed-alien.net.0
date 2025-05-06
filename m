@@ -1,172 +1,145 @@
-Return-Path: <usb-storage+bncBDTZTRGMXIFBB4PY4TAAMGQEQNORAJY@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBD4N5C5IZAFBB3OI5HAAMGQEB6ENZOA@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-il1-x145.google.com (mail-il1-x145.google.com [IPv6:2607:f8b0:4864:20::145])
-	by mail.lfdr.de (Postfix) with ESMTPS id F1416AAA023
-	for <lists+usb-storage@lfdr.de>; Tue,  6 May 2025 00:32:36 +0200 (CEST)
-Received: by mail-il1-x145.google.com with SMTP id e9e14a558f8ab-3d6e10f8747sf44926275ab.3
-        for <lists+usb-storage@lfdr.de>; Mon, 05 May 2025 15:32:36 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1746484338; cv=pass;
+Received: from mail-qk1-x746.google.com (mail-qk1-x746.google.com [IPv6:2607:f8b0:4864:20::746])
+	by mail.lfdr.de (Postfix) with ESMTPS id 1651DAACE25
+	for <lists+usb-storage@lfdr.de>; Tue,  6 May 2025 21:35:22 +0200 (CEST)
+Received: by mail-qk1-x746.google.com with SMTP id af79cd13be357-7c543ab40d3sf337124585a.2
+        for <lists+usb-storage@lfdr.de>; Tue, 06 May 2025 12:35:22 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1746560121; cv=pass;
         d=google.com; s=arc-20240605;
-        b=K37KZajM0YyQQpiS/MoitYyQ/AxMyGvChkZkWlp6oCtTKkRqPSElUcAwEs1Z1ZFlKL
-         voVUtt/FG4OJAhlpp8ER69c3ExINZK6R5NHSVnkQCtKHqAm2s1rN4jacGMZTxDFxwX8C
-         b36SdxBTM3k2xT9cbpNyjzK/WHUQ4+k7AsmTEpp+YRk129ce3QICLE2qQyuvGL2Q6vdV
-         7X4KYgH5jhSxRA0+79xYmV2k+3fYKo1ZJq3E8E4A2gp/fhEFidigZTz9iJXQE8r+yZ4p
-         86se9qezewg0uwxBpdvkN+wmm7q5MUqa2mbVrT1CQK3pH7PJl/GK9YPoUaithlB0au+U
-         cMlw==
+        b=ag7SciB5lPpGXfjFlBa9GONyh1qW8wOc3hy68WUJhNsd6sGKlFC9UZ7wF0SWeu3GzH
+         YkLgX2GIL6thppKdAmtTMyhjTmdKnuImQ6SkhDYcyIPf6TkLtMzXQO9BQPkaE28MAlfF
+         PolKdbZL05CU9rC9W0gYCfkkJGuJt0dsvuB3vLkoCK5Pu1/K4kwgcvHuuWhMrq+ktOBk
+         AVyZC2LeHCplLJ+KAvrLIGRC3iseOGHmuG3u1mQkZsjBV+zq9scuHJbL9DQWDKLWgxKk
+         BfrFrpQVPye2ksbogcb6f+TBk1sC8UFX90rf5cxpOvKzDbsr/AK9Gl3/W0Zf++KMBkNq
+         s/tg==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:reply-to:mime-version:references
-         :in-reply-to:message-id:date:subject:cc:to:from:dkim-signature;
-        bh=RF8IUpszWyo0PONS/tY7ZsD9/Yy7q8cQJYE7dME87tc=;
-        fh=vZ+LrTiKbyZxWMrJxidheV8efq1qLSmhHntFYXmQmJM=;
-        b=GjoVY6/LCyPumzBqHt0s+FUNYZoxi9ZNfXcGApz5Zi/09ngkmA78U0em5wR0ISLoun
-         O1NnkkyUuPPFGtZ7kyBVfDQdHT/i9Cc9dZkKD6MyY8DP1aln8hhoC/rRcWN/A+RLq84O
-         9gvve6viNHVebMrFKbXXCdRc9u2uQ/ia2OGIQ5rK+eYPOD8ShCZ5M6dwMyK43tMw7D5e
-         ZCem91GoOPzBi7dpInFF0e3zdEon4aMac+M/0ps0YRsvzu3sTkvciWgRiEwJs851U0Fi
-         kLmwzwSRZWI91UBZEMs10WiMb08NOZwXYZakjvIEy5WrtoWmip71xA8y1ujJW3tkuIE8
-         jl9w==;
+         :list-id:mailing-list:precedence:mime-version:message-id:date
+         :subject:cc:to:from:sender:dkim-signature;
+        bh=TLayJTUlX9z91M+G0+RLAcdxS/Zbz0W5DH5E7Ezkz1E=;
+        fh=80kVwD0d7g2Cie3CvmS0w0Zl901nKIOP1ST0pH60AKE=;
+        b=HxyjAFtWZL9B0domXEcaUyms1oDBWChuE7nZT/A9RAzsH+5+sgOnILkiMRvodXBUd+
+         1e9q1RJUCTpYzlBi2JxbTgHAJDol2CnlqOfmdJBGNWNyEaLcg9swI+PrAyDZmF+X7Bk+
+         TDi0XFSuP7d1KrSviuqXopl6ckHG0e7bBPV2PhsZCGkyZwbBsjN59z1eb3X5Ohc3MfXZ
+         EVKASGHbjXIudnAilDwTY98uj6GEl4d6eRRK3LFYGtG4sI78ypeEoUSXBc0DejSDmwqU
+         K6AQFjOS60mKVJTJSoTvi8KI5gAhGTZoRWl4q6B6/WUgYcF/EUJ/W6TnD46ikcqpKJ9L
+         Irow==;
         darn=lfdr.de
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@kernel.org header.s=k20201202 header.b=aMC6aGjO;
-       spf=pass (google.com: domain of sashal@kernel.org designates 172.105.4.254 as permitted sender) smtp.mailfrom=sashal@kernel.org;
-       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=kernel.org
+       dkim=pass header.i=@jakerice-dev.20230601.gappssmtp.com header.s=20230601 header.b=h20A4G2I;
+       spf=pass (google.com: domain of jake@jakerice.dev designates 209.85.220.41 as permitted sender) smtp.mailfrom=jake@jakerice.dev;
+       dara=pass header.i=@lists.one-eyed-alien.net
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1746484337; x=1747089137; darn=lfdr.de;
+        d=lists.one-eyed-alien.net; s=google; t=1746560121; x=1747164921; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:reply-to
-         :x-original-authentication-results:x-original-sender:mime-version
-         :references:in-reply-to:message-id:date:subject:cc:to:from:from:to
-         :cc:subject:date:message-id:reply-to;
-        bh=RF8IUpszWyo0PONS/tY7ZsD9/Yy7q8cQJYE7dME87tc=;
-        b=QMjqBcgFBMwYp4j6ogeENLUmLMVYG8+ZGue+M+4zAfeVHD4yMzJvm65WyJ6U4vugtM
-         gpJCrFZu13mi1rXNBhRSN2btJnDYH/0OHsu/PkZQ41OyNnAccffqFc8CD9i0d1Zo2CO+
-         UycFU9HMDAsEfwT+KVred2l0NC4U0x/3wiR0Y=
+         :list-id:mailing-list:precedence:x-original-authentication-results
+         :x-original-sender:mime-version:message-id:date:subject:cc:to:from
+         :sender:from:to:cc:subject:date:message-id:reply-to;
+        bh=TLayJTUlX9z91M+G0+RLAcdxS/Zbz0W5DH5E7Ezkz1E=;
+        b=elmfGXllTrxp0g1053keUMYymw+E6P+qFB3EAHW/lRcKHa8cQN6xwCUv6Kk90ckIeo
+         LSxbe9wAQkgIiGpZfz8i7hSu9GgZ55pCX73nVAWYLkhs6TOEYxVDNVSh318+7Kc8Quwc
+         0ton5k4eAi9y+VU8ldo7WW3aVWOwXpYNaj6S0=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1746484338; x=1747089138;
+        d=1e100.net; s=20230601; t=1746560121; x=1747164921;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :x-spam-checked-in-group:list-id:mailing-list:precedence:reply-to
-         :x-original-authentication-results:x-original-sender:mime-version
-         :references:in-reply-to:message-id:date:subject:cc:to:from
-         :x-beenthere:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=RF8IUpszWyo0PONS/tY7ZsD9/Yy7q8cQJYE7dME87tc=;
-        b=JW7ElEuzVl46MwyddLU0nrqKmYQQ8xgJiymuamhJnP6RsqsrcwCytova/Tz86hb2Wv
-         N2rKvxASuDw0cJ8wiXsNMVnWqoTgdAmcjJUPYLGrw6/TvXZqbNQkW1MByOp3dkbvxiOP
-         71F3GNpFHlisg8NqwvwmdtAmD4OI7Ap1a01GIKftwG52wW4Wb9ysN1puIa/MZPXM/V6v
-         INIXIYOKXLx1j6+flLazdUm8MOQeAz3Rp7Q9Wy9MtuEmFwyH9vMl3ozcq9v9OGOQCo8h
-         5EnCIPtHZ8AmFWsaRVC0KKDT41cDkG8OoMMpdme33JEtQL3mZYHLTTDAbL/NLc9d1bYf
-         X3ug==
-X-Forwarded-Encrypted: i=2; AJvYcCWsl4pYvFLKFHbytLXuGXdOfTQKcmAGN862crCY2gay3LeYqrMzp07t8ak8mYDbJhvaduSjHA==@lfdr.de
-X-Gm-Message-State: AOJu0YyIZ1ni06+lCr/bynG53mxxZT/IS8KC9uEvzTxQKWvbi+F9d2rH
-	Jj0NHKoxIg0jHyOyyR7UcSQrfm92N6D4KUMWwSqmk7yWavOY8OJBsvHNA/v425E=
-X-Google-Smtp-Source: AGHT+IGDODtgEWA0ULloVSYJq2rMxP7iPVqSPbTW4pEZfKxl6RXiD42KcKz/Qhwvl2mfA+6/tSGhrw==
-X-Received: by 2002:a05:6e02:3281:b0:3d6:d3f7:8813 with SMTP id e9e14a558f8ab-3da5b349365mr106533125ab.22.1746484337638;
-        Mon, 05 May 2025 15:32:17 -0700 (PDT)
-X-BeenThere: usb-storage@lists.one-eyed-alien.net; h=AVT/gBH8IKg/B8R7mSGGjCCNV73jvFQvTvey7Sjl3qAo/L+PBw==
-Received: by 2002:a92:c26d:0:b0:3d8:fe92:af4a with SMTP id e9e14a558f8ab-3d96e7f8327ls10377145ab.1.-pod-prod-07-us;
- Mon, 05 May 2025 15:32:16 -0700 (PDT)
-X-Forwarded-Encrypted: i=2; AJvYcCX/+VxvjgmBWTJJQ3iAoTA+h/JNLtggpDUHlk9AFzVbiGQul2XZeVqtyU2bonIkbTK5OpwmuOb+8NSaag==@lists.one-eyed-alien.net
-X-Received: by 2002:a05:6e02:1b0a:b0:3d3:d994:e92e with SMTP id e9e14a558f8ab-3da5b31e5e4mr80778865ab.17.1746484336594;
-        Mon, 05 May 2025 15:32:16 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1746484336; cv=none;
+         :list-id:mailing-list:precedence:x-original-authentication-results
+         :x-original-sender:mime-version:message-id:date:subject:cc:to:from
+         :x-beenthere:x-gm-message-state:sender:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=TLayJTUlX9z91M+G0+RLAcdxS/Zbz0W5DH5E7Ezkz1E=;
+        b=aL8Z/6VKl+H5mREotGLjiE65VJ2OPX9wY8qwng5NrnkM+Ve/1C92tp8UlxmJbcCsNe
+         GG6s/KHLywsEUIg9fACip58E30VS85QajwN1zCdEQB4Znxar45ju6d4If6yjI+hCqObR
+         OOOsJ9+AcjkLTYN+RxTeEyRMBYZMnCp9qTIAVhMIhefyMFpeHxQPgSd5bdY6ofnrdDTS
+         lFxJSBFW1z6xL1ZQg3Rx/+mvzDZnxw3L1S094FYqe4wJd/avXuL8cQqlg/MUkSOIIo0t
+         rkNz8mN1HGsJqJi703TwiGy2H01ZtTvbia+0m7iYGi9cOT6PXbSmxHuPwV8ZqxQYTUtp
+         94Lw==
+Sender: usb-storage@lists.one-eyed-alien.net
+X-Forwarded-Encrypted: i=2; AJvYcCUK1w0rkmgi74sP+2oeh1V86+Eev2DFNEE3uiHJEjzx5IeO+ZRO+UQMFk3KnVqtMpmxaUXASQ==@lfdr.de
+X-Gm-Message-State: AOJu0YwLn5g0w+N1D2Ql44gUQofx/7cXN9gwC+ys1p4HPxTwqyalZgfn
+	/HghsrtZ+tnG0q5tiQJbP5/+R42SB7hDap24XxhOGC5aupJjkFGgOwLF3ppqlSQ=
+X-Google-Smtp-Source: AGHT+IHlBwnlZVIqAr7mnTl5hu+/oleO9I3ZJXzY/VIcvXzvOWPjiBFtKMQoD+E6MXU1f8sZ2sxaww==
+X-Received: by 2002:ad4:5c4b:0:b0:6e6:6713:3ea8 with SMTP id 6a1803df08f44-6f542a16398mr7702456d6.23.1746560109678;
+        Tue, 06 May 2025 12:35:09 -0700 (PDT)
+X-BeenThere: usb-storage@lists.one-eyed-alien.net; h=AVT/gBHif6DmejuzTZyS0X82vKgVhgqPOoXp5fmb3jJvbA8jIA==
+Received: by 2002:a05:6214:248a:b0:6e8:fa98:8af6 with SMTP id
+ 6a1803df08f44-6f5084e1c07ls22661616d6.1.-pod-prod-03-us; Tue, 06 May 2025
+ 12:35:09 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCXbIUMXmqAVwAKYD30VfFFIUYk4esIc2EeQVQtt5L6bWxeDIVZ4GRYoXXT5mwO6B7JMPRWJLcF/MFJh5w==@lists.one-eyed-alien.net
+X-Received: by 2002:a05:620a:4592:b0:7c8:e67b:8076 with SMTP id af79cd13be357-7caf741986amr85500485a.50.1746560109106;
+        Tue, 06 May 2025 12:35:09 -0700 (PDT)
+Received: by 2002:a05:620a:8415:b0:7b6:d2da:e6ae with SMTP id af79cd13be357-7caf78d4af6ms85a;
+        Tue, 6 May 2025 12:15:48 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCX7kAObwGvbSunTh+ZuMv0Zx2NHTK/hKUSWoU/mnJ22EhNZPmhWIh2o08sAusgb+k2jrDMwHxJNmDDYrA==@lists.one-eyed-alien.net
+X-Received: by 2002:a05:620a:439e:b0:7c5:5883:8fbf with SMTP id af79cd13be357-7caf739b2f3mr89743585a.21.1746558947816;
+        Tue, 06 May 2025 12:15:47 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1746558947; cv=none;
         d=google.com; s=arc-20240605;
-        b=e9+2WWorGXyRwcb56uSezEgds998IVDl1BiT21QhIgJ+2K4+14H4wkeTp9PDFmFqfh
-         it2cfQnlAvsIrZoF6wCLiESAyfxUrGI7JjzSuKuPNaKynmjfyCAZ/hI1xaQ0qa8q4NwO
-         8bXLZ+XMEnsOjdNhp7+VXrCO+UbknR4hNpaQhsU9OeFBFtHjwXOaKQ3I9qKHU6LqjN+1
-         GH8EzrRy07k2o68511hLKW2jiveoEOtLCgFfk27qEYtbITr1rKgDdg9ZvZ+LYB/+CBgn
-         MraIU65A5Wue2GKStCSsQWvcORRJESkoORe5NGm7qlZJ4qOdXgNX532cnK5TpAxg1QXO
-         dYrw==
+        b=KbW8NZs3eMNeaepTeUkimo08T09YbtSUAWpPz6Tf9cmF25y61kR42NE3RHq4v1stxC
+         2p/lar3vwJX5humI894ny7vJrxc4lDf6+x2KjszNGxhw0npb9G1K0M0lkNrwRwW0d/jh
+         2q85+KC//VFlZyL1QGeO7iZAJPCjZSM8VsMt5hZKU+k8CUWEaAGBGGazE7lRLlq1D2sC
+         iHY+8/kFY+9muaZsZCOcoJqfMtAZNCLXp4hCbPizx8W/UDzvMydoMOgolmT2lmOetBL2
+         1fcioRvnxD0prl+V0gpj+4D12Wj6+XzxvcJNex5iBvoJx2hKBSkcKucWL9BP5n0eatgE
+         XM7Q==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:dkim-signature;
-        bh=S2EvH2lJDz6GjiaJdiR+O9eJfbjQVvyvDLIgorLdd28=;
-        fh=fE51aj1lzuRO9cHwb+16+sSGInAHRqk6w46B4dLosOE=;
-        b=CFwuNSXw5cGrXgLdyms2K5iUTlgfGIRloNb/FDFd4DI/V+494pE9Jz0k0CWNLGIV4b
-         P6MDY2YuWbQLrC1TBl1/GF738I/80h71AQpI1QiZCTw8IV4fcKygmTwYp7f+wny9+Ig0
-         ++flX1Fk711Ag66BDtW1K2dPaMR9QNe9okytbIVHlFYPHyohJZvRGWULuDm0qPeWC/X5
-         X5POz0GRX7/ucZi+tkGI/ENBzipQeUL/+0kqq2KDlTgJiXuIsOff76y3xZ1rpoLG3ZwR
-         LaS/EUEQe6hAFvBe+cdmdKU03EZZJnosT7+PM4NIUlTdOWWXUM43QIz+zJkkxTgcV5xv
-         O8kg==;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:dkim-signature;
+        bh=7taY46IGc0mDFv9NltJivBJOSYvv+pAntv3/xJ8NA4w=;
+        fh=HXH7UsZCs0fXZ4wjWZmDA9dYgqDkgfM6AfYmOTtyIQA=;
+        b=W/Zmh/0iuf8jizb0TTa8f5U6syb/I5G9OfEc5eDQDBrYkQvQOj50g79o3E6nhAiFE3
+         jCw1yPSIrr+8trkr4vOMS46Qh3MLJ+YkqgbtCmXw1tP0n8kzEORApnkSNwAwBvCVtrx6
+         k4lwwubTiHBQfTimkRYuuuP8K7rEmjLneLmPxN0pzxi25fq53iY8/OzADO0Tn0TauZM9
+         fIdBaRwg3XAVy780BVTFYiqkuBxhAf1zWEUDUYwoJey2bkfvlRk5b/Y2nBIL4yPRmfdR
+         9TicAx8pG5GKurbox8l3vQZP5Ww/421CxNcpNPsx0xtno/b++KnZanGJq4c7hXMBiMQl
+         3/fQ==;
         dara=google.com
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@kernel.org header.s=k20201202 header.b=aMC6aGjO;
-       spf=pass (google.com: domain of sashal@kernel.org designates 172.105.4.254 as permitted sender) smtp.mailfrom=sashal@kernel.org;
-       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=kernel.org
-Received: from tor.source.kernel.org (tor.source.kernel.org. [172.105.4.254])
-        by mx.google.com with ESMTPS id e9e14a558f8ab-3d975e1de78si91992055ab.25.2025.05.05.15.32.16
+       dkim=pass header.i=@jakerice-dev.20230601.gappssmtp.com header.s=20230601 header.b=h20A4G2I;
+       spf=pass (google.com: domain of jake@jakerice.dev designates 209.85.220.41 as permitted sender) smtp.mailfrom=jake@jakerice.dev;
+       dara=pass header.i=@lists.one-eyed-alien.net
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id af79cd13be357-7cad23c5ab0sor958783585a.5.2025.05.06.12.15.47
         for <usb-storage@lists.one-eyed-alien.net>
+        (Google Transport Security);
+        Tue, 06 May 2025 12:15:47 -0700 (PDT)
+Received-SPF: pass (google.com: domain of jake@jakerice.dev designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+X-Forwarded-Encrypted: i=1; AJvYcCVX09AAjBRGwO/WH7wlysg/HxD6fmb9APfCmM+dD5wh1K8EpygztJOjeIx6cTcIecUimnE69mEVVaJUtA==@lists.one-eyed-alien.net
+X-Gm-Gg: ASbGnct2obsgjnGtRTrPa06wJ5ed7m8jPHpxd/Qy16JneeZRkzCB49NHFYNUZKkv49A
+	naZUTNwaX8CY3Ie20zv9eviGuutRBTh8NagXuLFBWB/lZ/O2fja1H8pYvGDNKA45syHSnOthWGh
+	UlwHp3FQ5MbbPNmo2WYZGTAImblHUWl9ejfJYCaS6ep4NtapEEL/DmR2Vyw5JjZsIjIKg/gK6Na
+	4CmBOD35RV3sB6E3U+fiUE/iPswLOWBqqVRVzH5qh/B/TLQa6cOddYiMMGHNPG2pXwC0SKBxDPL
+	auc7ckTmlCQoPgg9oNaj5uSbofRBulTJrE1TdbJm6Ng8Vfsj7EOTW3xUzIn/gTJxK/dOnnwlnQ0
+	AnZsonCKa/w==
+X-Received: by 2002:a05:620a:40c7:b0:7c5:af73:4f72 with SMTP id af79cd13be357-7caf74020bbmr76661085a.42.1746558943029;
+        Tue, 06 May 2025 12:15:43 -0700 (PDT)
+Received: from localhost (c-67-162-238-230.hsd1.md.comcast.net. [67.162.238.230])
+        by smtp.gmail.com with ESMTPSA id af79cd13be357-7caf75b884csm14778485a.86.2025.05.06.12.15.42
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 05 May 2025 15:32:16 -0700 (PDT)
-Received-SPF: pass (google.com: domain of sashal@kernel.org designates 172.105.4.254 as permitted sender) client-ip=172.105.4.254;
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 4225D61F1B;
-	Mon,  5 May 2025 22:31:44 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0E16DC4CEE4;
-	Mon,  5 May 2025 22:32:11 +0000 (UTC)
-From: "'Sasha Levin' via USB Mass Storage on Linux" <usb-storage@lists.one-eyed-alien.net>
-To: linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org
-Cc: Bart Van Assche <bvanassche@acm.org>,
-	Christoph Hellwig <hch@lst.de>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	"Martin K . Petersen" <martin.petersen@oracle.com>,
-	Sasha Levin <sashal@kernel.org>,
-	sathya.prakash@broadcom.com,
-	sreekanth.reddy@broadcom.com,
-	suganath-prabu.subramani@broadcom.com,
-	aacraid@microsemi.com,
-	James.Bottomley@HansenPartnership.com,
-	linux@armlinux.org.uk,
-	kashyap.desai@broadcom.com,
-	sumit.saxena@broadcom.com,
-	shivasharan.srikanteshwara@broadcom.com,
-	chandrakanth.patil@broadcom.com,
-	stern@rowland.harvard.edu,
-	rostedt@goodmis.org,
-	mhiramat@kernel.org,
-	snovitoll@gmail.com,
-	jeff.johnson@oss.qualcomm.com,
-	lihongbo22@huawei.com,
-	viro@zeniv.linux.org.uk,
-	djwong@kernel.org,
-	axboe@kernel.dk,
-	john.g.garry@oracle.com,
-	jani.nikula@intel.com,
-	rafael@kernel.org,
-	christian.koenig@amd.com,
-	MPT-FusionLinux.pdl@broadcom.com,
-	linux-scsi@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	megaraidlinux.pdl@broadcom.com,
-	target-devel@vger.kernel.org,
-	linux-usb@vger.kernel.org,
+        Tue, 06 May 2025 12:15:42 -0700 (PDT)
+From: Jake Rice <jake@jakerice.dev>
+To: linux-usb@vger.kernel.org
+Cc: stern@rowland.harvard.edu,
+	gregkh@linuxfoundation.org,
 	usb-storage@lists.one-eyed-alien.net,
-	linux-trace-kernel@vger.kernel.org
-Subject: [usb-storage] [PATCH AUTOSEL 6.14 457/642] scsi: usb: Rename the
- RESERVE and RELEASE constants
-Date: Mon,  5 May 2025 18:11:13 -0400
-Message-Id: <20250505221419.2672473-457-sashal@kernel.org>
-X-Mailer: git-send-email 2.39.5
-In-Reply-To: <20250505221419.2672473-1-sashal@kernel.org>
-References: <20250505221419.2672473-1-sashal@kernel.org>
+	linux-kernel@vger.kernel.org,
+	Jake Rice <jake@jakerice.dev>
+Subject: [usb-storage] [RFC PATCH] usb: storage: Add blockbuffer ptr to info
+ struct of sddr09 driver
+Date: Tue,  6 May 2025 15:15:31 -0400
+Message-Id: <20250506191531.3326-1-jake@jakerice.dev>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
-X-stable-base: Linux 6.14.5
-X-Original-Sender: sashal@kernel.org
+X-Original-Sender: jake@jakerice.dev
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@kernel.org header.s=k20201202 header.b=aMC6aGjO;       spf=pass
- (google.com: domain of sashal@kernel.org designates 172.105.4.254 as
- permitted sender) smtp.mailfrom=sashal@kernel.org;       dmarc=pass
- (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=kernel.org
-X-Original-From: Sasha Levin <sashal@kernel.org>
-Reply-To: Sasha Levin <sashal@kernel.org>
+ header.i=@jakerice-dev.20230601.gappssmtp.com header.s=20230601
+ header.b=h20A4G2I;       spf=pass (google.com: domain of jake@jakerice.dev
+ designates 209.85.220.41 as permitted sender) smtp.mailfrom=jake@jakerice.dev;
+       dara=pass header.i=@lists.one-eyed-alien.net
 Content-Type: text/plain; charset="UTF-8"
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
-X-Spam-Checked-In-Group: usb-storage@lists.one-eyed-alien.net
 X-Google-Group-Id: 960895140360
 List-Post: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/post>,
  <mailto:usb-storage@lists.one-eyed-alien.net>
@@ -178,401 +151,193 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-From: Bart Van Assche <bvanassche@acm.org>
+Hi all,
 
-[ Upstream commit 0ea163a18b17f9e0f8350bb348ae69c4a376be66 ]
+This patch updates the sddr09 driver to allocate a reusable block
+buffer. Unfortunately, I don't have access to the SDDR-00 hardware
+(which I know is pretty ancient), so I'm requesting testing from anyone who does. 
+Please let me now if the patch causes any issues or improves performance.
 
-The names RESERVE and RELEASE are not only used in <scsi/scsi_proto.h> but
-also elsewhere in the kernel:
+Best,
+Jake
 
-$ git grep -nHE 'define[[:blank:]]*(RESERVE|RELEASE)[[:blank:]]'
-drivers/input/joystick/walkera0701.c:13:#define RESERVE 20000
-drivers/s390/char/tape_std.h:56:#define RELEASE			0xD4	/* 3420 NOP, 3480 REJECT */
-drivers/s390/char/tape_std.h:58:#define RESERVE			0xF4	/* 3420 NOP, 3480 REJECT */
-
-Additionally, while the names of the symbolic constants RESERVE_10 and
-RELEASE_10 include the command length, the command length is not included
-in the RESERVE and RELEASE names. Address both issues by renaming the
-RESERVE and RELEASE constants into RESERVE_6 and RELEASE_6 respectively.
-
-Reviewed-by: Christoph Hellwig <hch@lst.de>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Signed-off-by: Bart Van Assche <bvanassche@acm.org>
-Link: https://lore.kernel.org/r/20250210205031.2970833-1-bvanassche@acm.org
-Signed-off-by: Martin K. Petersen <martin.petersen@oracle.com>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/message/fusion/mptscsih.c            |  4 ++--
- drivers/scsi/aacraid/aachba.c                |  4 ++--
- drivers/scsi/arm/acornscsi.c                 |  2 +-
- drivers/scsi/ips.c                           |  8 ++++----
- drivers/scsi/megaraid.c                      | 10 +++++-----
- drivers/scsi/megaraid/megaraid_mbox.c        | 10 +++++-----
- drivers/target/target_core_device.c          |  8 ++++----
- drivers/target/target_core_pr.c              |  6 +++---
- drivers/target/target_core_spc.c             | 20 ++++++++++----------
- drivers/usb/gadget/function/f_mass_storage.c |  4 ++--
- drivers/usb/storage/debug.c                  |  4 ++--
- include/scsi/scsi_proto.h                    |  4 ++--
- include/trace/events/scsi.h                  |  4 ++--
- include/trace/events/target.h                |  4 ++--
- 14 files changed, 46 insertions(+), 46 deletions(-)
+Currently, upon every write the block buffer is allocated and freed which is
+computationally expensive. With this implementation, a buffer pointer
+is added as a member to the info struct and allocated when the card
+information is read. The buffer is freed during desconstruction if
+necessary.
 
-diff --git a/drivers/message/fusion/mptscsih.c b/drivers/message/fusion/mptscsih.c
-index a9604ba3c8058..f0746db92ca61 100644
---- a/drivers/message/fusion/mptscsih.c
-+++ b/drivers/message/fusion/mptscsih.c
-@@ -2915,14 +2915,14 @@ mptscsih_do_cmd(MPT_SCSI_HOST *hd, INTERNAL_CMD *io)
- 		timeout = 10;
- 		break;
+Signed-off-by: Jake Rice <jake@jakerice.dev>
+---
+ drivers/usb/storage/sddr09.c | 60 +++++++++++++++++++-----------------
+ 1 file changed, 31 insertions(+), 29 deletions(-)
+
+diff --git a/drivers/usb/storage/sddr09.c b/drivers/usb/storage/sddr09.c
+index e66b920e99e2..1d75b1a88c17 100644
+--- a/drivers/usb/storage/sddr09.c
++++ b/drivers/usb/storage/sddr09.c
+@@ -255,6 +255,7 @@ struct sddr09_card_info {
+ 	int		*pba_to_lba;	/* physical to logical map */
+ 	int		lbact;		/* number of available pages */
+ 	int		flags;
++	unsigned char   *blockbuffer;
+ #define	SDDR09_WP	1		/* write protected */
+ };
  
--	case RESERVE:
-+	case RESERVE_6:
- 		cmdLen = 6;
- 		dir = MPI_SCSIIO_CONTROL_READ;
- 		CDB[0] = cmd;
- 		timeout = 10;
- 		break;
+@@ -850,7 +851,7 @@ sddr09_find_unused_pba(struct sddr09_card_info *info, unsigned int lba) {
+ static int
+ sddr09_write_lba(struct us_data *us, unsigned int lba,
+ 		 unsigned int page, unsigned int pages,
+-		 unsigned char *ptr, unsigned char *blockbuffer) {
++		 unsigned char *ptr) {
  
--	case RELEASE:
-+	case RELEASE_6:
- 		cmdLen = 6;
- 		dir = MPI_SCSIIO_CONTROL_READ;
- 		CDB[0] = cmd;
-diff --git a/drivers/scsi/aacraid/aachba.c b/drivers/scsi/aacraid/aachba.c
-index abf6a82b74af3..0be719f383770 100644
---- a/drivers/scsi/aacraid/aachba.c
-+++ b/drivers/scsi/aacraid/aachba.c
-@@ -3221,8 +3221,8 @@ int aac_scsi_cmd(struct scsi_cmnd * scsicmd)
+ 	struct sddr09_card_info *info = (struct sddr09_card_info *) us->extra;
+ 	unsigned long address;
+@@ -890,13 +891,13 @@ sddr09_write_lba(struct us_data *us, unsigned int lba,
+ 	/* read old contents */
+ 	address = (pba << (info->pageshift + info->blockshift));
+ 	result = sddr09_read22(us, address>>1, info->blocksize,
+-			       info->pageshift, blockbuffer, 0);
++			       info->pageshift, info->blockbuffer, 0);
+ 	if (result)
+ 		return result;
+ 
+ 	/* check old contents and fill lba */
+ 	for (i = 0; i < info->blocksize; i++) {
+-		bptr = blockbuffer + i*pagelen;
++		bptr = info->blockbuffer + i*pagelen;
+ 		cptr = bptr + info->pagesize;
+ 		nand_compute_ecc(bptr, ecc);
+ 		if (!nand_compare_ecc(cptr+13, ecc)) {
+@@ -917,7 +918,7 @@ sddr09_write_lba(struct us_data *us, unsigned int lba,
+ 	/* copy in new stuff and compute ECC */
+ 	xptr = ptr;
+ 	for (i = page; i < page+pages; i++) {
+-		bptr = blockbuffer + i*pagelen;
++		bptr = info->blockbuffer + i*pagelen;
+ 		cptr = bptr + info->pagesize;
+ 		memcpy(bptr, xptr, info->pagesize);
+ 		xptr += info->pagesize;
+@@ -930,7 +931,7 @@ sddr09_write_lba(struct us_data *us, unsigned int lba,
+ 	usb_stor_dbg(us, "Rewrite PBA %d (LBA %d)\n", pba, lba);
+ 
+ 	result = sddr09_write_inplace(us, address>>1, info->blocksize,
+-				      info->pageshift, blockbuffer, 0);
++				      info->pageshift, info->blockbuffer, 0);
+ 
+ 	usb_stor_dbg(us, "sddr09_write_inplace returns %d\n", result);
+ 
+@@ -961,8 +962,6 @@ sddr09_write_data(struct us_data *us,
+ 
+ 	struct sddr09_card_info *info = (struct sddr09_card_info *) us->extra;
+ 	unsigned int lba, maxlba, page, pages;
+-	unsigned int pagelen, blocklen;
+-	unsigned char *blockbuffer;
+ 	unsigned char *buffer;
+ 	unsigned int len, offset;
+ 	struct scatterlist *sg;
+@@ -975,21 +974,6 @@ sddr09_write_data(struct us_data *us,
+ 	if (lba >= maxlba)
+ 		return -EIO;
+ 
+-	/*
+-	 * blockbuffer is used for reading in the old data, overwriting
+-	 * with the new data, and performing ECC calculations
+-	 */
+-
+-	/*
+-	 * TODO: instead of doing kmalloc/kfree for each write,
+-	 * add a bufferpointer to the info structure
+-	 */
+-
+-	pagelen = (1 << info->pageshift) + (1 << CONTROL_SHIFT);
+-	blocklen = (pagelen << info->blockshift);
+-	blockbuffer = kmalloc(blocklen, GFP_NOIO);
+-	if (!blockbuffer)
+-		return -ENOMEM;
+ 
+ 	/*
+ 	 * Since we don't write the user data directly to the device,
+@@ -999,10 +983,8 @@ sddr09_write_data(struct us_data *us,
+ 
+ 	len = min_t(unsigned int, sectors, info->blocksize) * info->pagesize;
+ 	buffer = kmalloc(len, GFP_NOIO);
+-	if (!buffer) {
+-		kfree(blockbuffer);
++	if (!buffer)
+ 		return -ENOMEM;
+-	}
+ 
+ 	result = 0;
+ 	offset = 0;
+@@ -1028,7 +1010,7 @@ sddr09_write_data(struct us_data *us,
+ 				&sg, &offset, FROM_XFER_BUF);
+ 
+ 		result = sddr09_write_lba(us, lba, page, pages,
+-				buffer, blockbuffer);
++				buffer);
+ 		if (result)
  			break;
- 		}
- 		fallthrough;
--	case RESERVE:
--	case RELEASE:
-+	case RESERVE_6:
-+	case RELEASE_6:
- 	case REZERO_UNIT:
- 	case REASSIGN_BLOCKS:
- 	case SEEK_10:
-diff --git a/drivers/scsi/arm/acornscsi.c b/drivers/scsi/arm/acornscsi.c
-index e50a3dbf9de3e..ef21b85cf0146 100644
---- a/drivers/scsi/arm/acornscsi.c
-+++ b/drivers/scsi/arm/acornscsi.c
-@@ -591,7 +591,7 @@ datadir_t acornscsi_datadirection(int command)
-     case CHANGE_DEFINITION:	case COMPARE:		case COPY:
-     case COPY_VERIFY:		case LOG_SELECT:	case MODE_SELECT:
-     case MODE_SELECT_10:	case SEND_DIAGNOSTIC:	case WRITE_BUFFER:
--    case FORMAT_UNIT:		case REASSIGN_BLOCKS:	case RESERVE:
-+    case FORMAT_UNIT:		case REASSIGN_BLOCKS:	case RESERVE_6:
-     case SEARCH_EQUAL:		case SEARCH_HIGH:	case SEARCH_LOW:
-     case WRITE_6:		case WRITE_10:		case WRITE_VERIFY:
-     case UPDATE_BLOCK:		case WRITE_LONG:	case WRITE_SAME:
-diff --git a/drivers/scsi/ips.c b/drivers/scsi/ips.c
-index cce6c6b409ad5..94adb6ac02a4e 100644
---- a/drivers/scsi/ips.c
-+++ b/drivers/scsi/ips.c
-@@ -3631,8 +3631,8 @@ ips_send_cmd(ips_ha_t * ha, ips_scb_t * scb)
  
- 			break;
- 
--		case RESERVE:
--		case RELEASE:
-+		case RESERVE_6:
-+		case RELEASE_6:
- 			scb->scsi_cmd->result = DID_OK << 16;
- 			break;
- 
-@@ -3899,8 +3899,8 @@ ips_chkstatus(ips_ha_t * ha, IPS_STATUS * pstatus)
- 			case WRITE_6:
- 			case READ_10:
- 			case WRITE_10:
--			case RESERVE:
--			case RELEASE:
-+			case RESERVE_6:
-+			case RELEASE_6:
- 				break;
- 
- 			case MODE_SENSE:
-diff --git a/drivers/scsi/megaraid.c b/drivers/scsi/megaraid.c
-index adab151663dd8..2006094af4189 100644
---- a/drivers/scsi/megaraid.c
-+++ b/drivers/scsi/megaraid.c
-@@ -855,8 +855,8 @@ mega_build_cmd(adapter_t *adapter, struct scsi_cmnd *cmd, int *busy)
- 			return scb;
- 
- #if MEGA_HAVE_CLUSTERING
--		case RESERVE:
--		case RELEASE:
-+		case RESERVE_6:
-+		case RELEASE_6:
- 
- 			/*
- 			 * Do we support clustering and is the support enabled
-@@ -875,7 +875,7 @@ mega_build_cmd(adapter_t *adapter, struct scsi_cmnd *cmd, int *busy)
- 			}
- 
- 			scb->raw_mbox[0] = MEGA_CLUSTER_CMD;
--			scb->raw_mbox[2] = ( *cmd->cmnd == RESERVE ) ?
-+			scb->raw_mbox[2] = *cmd->cmnd == RESERVE_6 ?
- 				MEGA_RESERVE_LD : MEGA_RELEASE_LD;
- 
- 			scb->raw_mbox[3] = ldrv_num;
-@@ -1618,8 +1618,8 @@ mega_cmd_done(adapter_t *adapter, u8 completed[], int nstatus, int status)
- 			 * failed or the input parameter is invalid
- 			 */
- 			if( status == 1 &&
--				(cmd->cmnd[0] == RESERVE ||
--					 cmd->cmnd[0] == RELEASE) ) {
-+			    (cmd->cmnd[0] == RESERVE_6 ||
-+			     cmd->cmnd[0] == RELEASE_6) ) {
- 
- 				cmd->result |= (DID_ERROR << 16) |
- 					SAM_STAT_RESERVATION_CONFLICT;
-diff --git a/drivers/scsi/megaraid/megaraid_mbox.c b/drivers/scsi/megaraid/megaraid_mbox.c
-index 60cc3372991fd..3ba837b3093f8 100644
---- a/drivers/scsi/megaraid/megaraid_mbox.c
-+++ b/drivers/scsi/megaraid/megaraid_mbox.c
-@@ -1725,8 +1725,8 @@ megaraid_mbox_build_cmd(adapter_t *adapter, struct scsi_cmnd *scp, int *busy)
- 
- 			return scb;
- 
--		case RESERVE:
--		case RELEASE:
-+		case RESERVE_6:
-+		case RELEASE_6:
- 			/*
- 			 * Do we support clustering and is the support enabled
- 			 */
-@@ -1748,7 +1748,7 @@ megaraid_mbox_build_cmd(adapter_t *adapter, struct scsi_cmnd *scp, int *busy)
- 			scb->dev_channel	= 0xFF;
- 			scb->dev_target		= target;
- 			ccb->raw_mbox[0]	= CLUSTER_CMD;
--			ccb->raw_mbox[2]	=  (scp->cmnd[0] == RESERVE) ?
-+			ccb->raw_mbox[2]	= scp->cmnd[0] == RESERVE_6 ?
- 						RESERVE_LD : RELEASE_LD;
- 
- 			ccb->raw_mbox[3]	= target;
-@@ -2334,8 +2334,8 @@ megaraid_mbox_dpc(unsigned long devp)
- 			 * Error code returned is 1 if Reserve or Release
- 			 * failed or the input parameter is invalid
- 			 */
--			if (status == 1 && (scp->cmnd[0] == RESERVE ||
--					 scp->cmnd[0] == RELEASE)) {
-+			if (status == 1 && (scp->cmnd[0] == RESERVE_6 ||
-+					    scp->cmnd[0] == RELEASE_6)) {
- 
- 				scp->result = DID_ERROR << 16 |
- 					SAM_STAT_RESERVATION_CONFLICT;
-diff --git a/drivers/target/target_core_device.c b/drivers/target/target_core_device.c
-index d1ae3df069a4f..cc2da086f96e2 100644
---- a/drivers/target/target_core_device.c
-+++ b/drivers/target/target_core_device.c
-@@ -1078,8 +1078,8 @@ passthrough_parse_cdb(struct se_cmd *cmd,
- 	if (!dev->dev_attrib.emulate_pr &&
- 	    ((cdb[0] == PERSISTENT_RESERVE_IN) ||
- 	     (cdb[0] == PERSISTENT_RESERVE_OUT) ||
--	     (cdb[0] == RELEASE || cdb[0] == RELEASE_10) ||
--	     (cdb[0] == RESERVE || cdb[0] == RESERVE_10))) {
-+	     (cdb[0] == RELEASE_6 || cdb[0] == RELEASE_10) ||
-+	     (cdb[0] == RESERVE_6 || cdb[0] == RESERVE_10))) {
- 		return TCM_UNSUPPORTED_SCSI_OPCODE;
+@@ -1037,9 +1019,6 @@ sddr09_write_data(struct us_data *us,
+ 		sectors -= pages;
  	}
  
-@@ -1101,7 +1101,7 @@ passthrough_parse_cdb(struct se_cmd *cmd,
- 			return target_cmd_size_check(cmd, size);
- 		}
+-	kfree(buffer);
+-	kfree(blockbuffer);
+-
+ 	return result;
+ }
  
--		if (cdb[0] == RELEASE || cdb[0] == RELEASE_10) {
-+		if (cdb[0] == RELEASE_6 || cdb[0] == RELEASE_10) {
- 			cmd->execute_cmd = target_scsi2_reservation_release;
- 			if (cdb[0] == RELEASE_10)
- 				size = get_unaligned_be16(&cdb[7]);
-@@ -1109,7 +1109,7 @@ passthrough_parse_cdb(struct se_cmd *cmd,
- 				size = cmd->data_length;
- 			return target_cmd_size_check(cmd, size);
- 		}
--		if (cdb[0] == RESERVE || cdb[0] == RESERVE_10) {
-+		if (cdb[0] == RESERVE_6 || cdb[0] == RESERVE_10) {
- 			cmd->execute_cmd = target_scsi2_reservation_reserve;
- 			if (cdb[0] == RESERVE_10)
- 				size = get_unaligned_be16(&cdb[7]);
-diff --git a/drivers/target/target_core_pr.c b/drivers/target/target_core_pr.c
-index 4f4ad6af416c8..34cf2c399b399 100644
---- a/drivers/target/target_core_pr.c
-+++ b/drivers/target/target_core_pr.c
-@@ -91,7 +91,7 @@ target_scsi2_reservation_check(struct se_cmd *cmd)
+@@ -1405,6 +1384,7 @@ sddr09_card_info_destructor(void *extra) {
  
- 	switch (cmd->t_task_cdb[0]) {
- 	case INQUIRY:
--	case RELEASE:
-+	case RELEASE_6:
- 	case RELEASE_10:
- 		return 0;
- 	default:
-@@ -418,12 +418,12 @@ static int core_scsi3_pr_seq_non_holder(struct se_cmd *cmd, u32 pr_reg_type,
- 			return -EINVAL;
- 		}
- 		break;
--	case RELEASE:
-+	case RELEASE_6:
- 	case RELEASE_10:
- 		/* Handled by CRH=1 in target_scsi2_reservation_release() */
- 		ret = 0;
- 		break;
--	case RESERVE:
-+	case RESERVE_6:
- 	case RESERVE_10:
- 		/* Handled by CRH=1 in target_scsi2_reservation_reserve() */
- 		ret = 0;
-diff --git a/drivers/target/target_core_spc.c b/drivers/target/target_core_spc.c
-index 61c065702350e..785a97536212b 100644
---- a/drivers/target/target_core_spc.c
-+++ b/drivers/target/target_core_spc.c
-@@ -1674,9 +1674,9 @@ static bool tcm_is_pr_enabled(struct target_opcode_descriptor *descr,
- 		return true;
+ 	kfree(info->lba_to_pba);
+ 	kfree(info->pba_to_lba);
++	kfree(info->blockbuffer);
+ }
  
- 	switch (descr->opcode) {
--	case RESERVE:
-+	case RESERVE_6:
- 	case RESERVE_10:
--	case RELEASE:
-+	case RELEASE_6:
- 	case RELEASE_10:
- 		/*
- 		 * The pr_ops which are used by the backend modules don't
-@@ -1828,9 +1828,9 @@ static struct target_opcode_descriptor tcm_opcode_pro_register_move = {
+ static int
+@@ -1585,6 +1565,8 @@ static int sddr09_transport(struct scsi_cmnd *srb, struct us_data *us)
  
- static struct target_opcode_descriptor tcm_opcode_release = {
- 	.support = SCSI_SUPPORT_FULL,
--	.opcode = RELEASE,
-+	.opcode = RELEASE_6,
- 	.cdb_size = 6,
--	.usage_bits = {RELEASE, 0x00, 0x00, 0x00,
-+	.usage_bits = {RELEASE_6, 0x00, 0x00, 0x00,
- 		       0x00, SCSI_CONTROL_MASK},
- 	.enabled = tcm_is_pr_enabled,
- };
-@@ -1847,9 +1847,9 @@ static struct target_opcode_descriptor tcm_opcode_release10 = {
+ 	if (srb->cmnd[0] == READ_CAPACITY) {
+ 		const struct nand_flash_dev *cardinfo;
++		unsigned int pagelen;
++		unsigned int blocklen;
  
- static struct target_opcode_descriptor tcm_opcode_reserve = {
- 	.support = SCSI_SUPPORT_FULL,
--	.opcode = RESERVE,
-+	.opcode = RESERVE_6,
- 	.cdb_size = 6,
--	.usage_bits = {RESERVE, 0x00, 0x00, 0x00,
-+	.usage_bits = {RESERVE_6, 0x00, 0x00, 0x00,
- 		       0x00, SCSI_CONTROL_MASK},
- 	.enabled = tcm_is_pr_enabled,
- };
-@@ -2267,9 +2267,9 @@ spc_parse_cdb(struct se_cmd *cmd, unsigned int *size)
- 	unsigned char *cdb = cmd->t_task_cdb;
+ 		sddr09_get_wp(us, info);	/* read WP bit */
  
- 	switch (cdb[0]) {
--	case RESERVE:
-+	case RESERVE_6:
- 	case RESERVE_10:
--	case RELEASE:
-+	case RELEASE_6:
- 	case RELEASE_10:
- 		if (!dev->dev_attrib.emulate_pr)
- 			return TCM_UNSUPPORTED_SCSI_OPCODE;
-@@ -2313,7 +2313,7 @@ spc_parse_cdb(struct se_cmd *cmd, unsigned int *size)
- 		*size = get_unaligned_be32(&cdb[5]);
- 		cmd->execute_cmd = target_scsi3_emulate_pr_out;
- 		break;
--	case RELEASE:
-+	case RELEASE_6:
- 	case RELEASE_10:
- 		if (cdb[0] == RELEASE_10)
- 			*size = get_unaligned_be16(&cdb[7]);
-@@ -2322,7 +2322,7 @@ spc_parse_cdb(struct se_cmd *cmd, unsigned int *size)
+@@ -1603,6 +1585,26 @@ static int sddr09_transport(struct scsi_cmnd *srb, struct us_data *us)
+ 		info->blockshift = cardinfo->blockshift;
+ 		info->blocksize = (1 << info->blockshift);
+ 		info->blockmask = info->blocksize - 1;
++		
++		pagelen = (1 << info->pageshift) + (1 << CONTROL_SHIFT);
++		blocklen = (pagelen << info->blockshift);
++
++		/*
++		 * If it has already been allocated and is changed 
++		 * (i.e. a new card is inserted), we want to free
++		 * it and reallocate it with the updates size
++		 */
++
++		kfree(info->blockbuffer);
++
++		/*
++		 * blockbuffer is used for reading in the old data, overwriting
++		 * with the new data, and performing ECC calculations
++		 */
++
++		info->blockbuffer = kmalloc(blocklen, GFP_NOIO);
++		if (!info->blockbuffer)
++			return -ENOMEM;
  
- 		cmd->execute_cmd = target_scsi2_reservation_release;
- 		break;
--	case RESERVE:
-+	case RESERVE_6:
- 	case RESERVE_10:
- 		/*
- 		 * The SPC-2 RESERVE does not contain a size in the SCSI CDB.
-diff --git a/drivers/usb/gadget/function/f_mass_storage.c b/drivers/usb/gadget/function/f_mass_storage.c
-index 2eae8fc2e0db7..94d478b6bcd3d 100644
---- a/drivers/usb/gadget/function/f_mass_storage.c
-+++ b/drivers/usb/gadget/function/f_mass_storage.c
-@@ -2142,8 +2142,8 @@ static int do_scsi_command(struct fsg_common *common)
- 	 * of Posix locks.
- 	 */
- 	case FORMAT_UNIT:
--	case RELEASE:
--	case RESERVE:
-+	case RELEASE_6:
-+	case RESERVE_6:
- 	case SEND_DIAGNOSTIC:
- 
- 	default:
-diff --git a/drivers/usb/storage/debug.c b/drivers/usb/storage/debug.c
-index 576be66ad9627..dda610f689b73 100644
---- a/drivers/usb/storage/debug.c
-+++ b/drivers/usb/storage/debug.c
-@@ -58,8 +58,8 @@ void usb_stor_show_command(const struct us_data *us, struct scsi_cmnd *srb)
- 	case INQUIRY: what = "INQUIRY"; break;
- 	case RECOVER_BUFFERED_DATA: what = "RECOVER_BUFFERED_DATA"; break;
- 	case MODE_SELECT: what = "MODE_SELECT"; break;
--	case RESERVE: what = "RESERVE"; break;
--	case RELEASE: what = "RELEASE"; break;
-+	case RESERVE_6: what = "RESERVE"; break;
-+	case RELEASE_6: what = "RELEASE"; break;
- 	case COPY: what = "COPY"; break;
- 	case ERASE: what = "ERASE"; break;
- 	case MODE_SENSE: what = "MODE_SENSE"; break;
-diff --git a/include/scsi/scsi_proto.h b/include/scsi/scsi_proto.h
-index 70e1262b2e202..aeca37816506d 100644
---- a/include/scsi/scsi_proto.h
-+++ b/include/scsi/scsi_proto.h
-@@ -33,8 +33,8 @@
- #define INQUIRY               0x12
- #define RECOVER_BUFFERED_DATA 0x14
- #define MODE_SELECT           0x15
--#define RESERVE               0x16
--#define RELEASE               0x17
-+#define RESERVE_6             0x16
-+#define RELEASE_6             0x17
- #define COPY                  0x18
- #define ERASE                 0x19
- #define MODE_SENSE            0x1a
-diff --git a/include/trace/events/scsi.h b/include/trace/events/scsi.h
-index 05f1945ed204e..bf6cc98d91228 100644
---- a/include/trace/events/scsi.h
-+++ b/include/trace/events/scsi.h
-@@ -29,8 +29,8 @@
- 		scsi_opcode_name(INQUIRY),			\
- 		scsi_opcode_name(RECOVER_BUFFERED_DATA),	\
- 		scsi_opcode_name(MODE_SELECT),			\
--		scsi_opcode_name(RESERVE),			\
--		scsi_opcode_name(RELEASE),			\
-+		scsi_opcode_name(RESERVE_6),			\
-+		scsi_opcode_name(RELEASE_6),			\
- 		scsi_opcode_name(COPY),				\
- 		scsi_opcode_name(ERASE),			\
- 		scsi_opcode_name(MODE_SENSE),			\
-diff --git a/include/trace/events/target.h b/include/trace/events/target.h
-index a13cbf2b34050..7e2e20ba26f1c 100644
---- a/include/trace/events/target.h
-+++ b/include/trace/events/target.h
-@@ -31,8 +31,8 @@
- 		scsi_opcode_name(INQUIRY),			\
- 		scsi_opcode_name(RECOVER_BUFFERED_DATA),	\
- 		scsi_opcode_name(MODE_SELECT),			\
--		scsi_opcode_name(RESERVE),			\
--		scsi_opcode_name(RELEASE),			\
-+		scsi_opcode_name(RESERVE_6),			\
-+		scsi_opcode_name(RELEASE_6),			\
- 		scsi_opcode_name(COPY),				\
- 		scsi_opcode_name(ERASE),			\
- 		scsi_opcode_name(MODE_SENSE),			\
+ 		// map initialization, must follow get_cardinfo()
+ 		if (sddr09_read_map(us)) {
 -- 
-2.39.5
+2.34.1
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20250505221419.2672473-457-sashal%40kernel.org.
+To view this discussion visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20250506191531.3326-1-jake%40jakerice.dev.
