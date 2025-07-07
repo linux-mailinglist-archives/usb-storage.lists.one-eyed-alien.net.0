@@ -1,125 +1,125 @@
-Return-Path: <usb-storage+bncBDTPNYNWQEIBBV5LV3BQMGQEMG3WGMI@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBDTPNYNWQEIBBDVSV3BQMGQEYF4AHPA@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
 Received: from mail-pl1-x648.google.com (mail-pl1-x648.google.com [IPv6:2607:f8b0:4864:20::648])
-	by mail.lfdr.de (Postfix) with ESMTPS id 81C3CAFAFED
-	for <lists+usb-storage@lfdr.de>; Mon,  7 Jul 2025 11:39:38 +0200 (CEST)
-Received: by mail-pl1-x648.google.com with SMTP id d9443c01a7336-235e1d66fa6sf25201405ad.0
-        for <lists+usb-storage@lfdr.de>; Mon, 07 Jul 2025 02:39:38 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1751881176; cv=pass;
+	by mail.lfdr.de (Postfix) with ESMTPS id 092CAAFB055
+	for <lists+usb-storage@lfdr.de>; Mon,  7 Jul 2025 11:53:20 +0200 (CEST)
+Received: by mail-pl1-x648.google.com with SMTP id d9443c01a7336-236725af87fsf50108345ad.3
+        for <lists+usb-storage@lfdr.de>; Mon, 07 Jul 2025 02:53:19 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1751881998; cv=pass;
         d=google.com; s=arc-20240605;
-        b=QgCPTY5TiMABtXUYAjjNWgTj3xoY2VlZqdv1nuzkUOs5+NissHoOpDwe0+DGO1plOV
-         T+E6RHn10Dg6KRPZDaGJqJfmKEkBJITINpH50G5xgUB/cImP+T/WgoiGmBi9EL31yZ2q
-         wBMg6WcjvUk2nLtjwipGTH2kGF1D65/Op/BJF0/Yq0zf9+8nuO/XINWnYXopReIRdnKO
-         x3LOe+MrD2mzPY156Xj8829w2+CAmMbpWXjIRG2Y4AuOo3HZ2818yTp6yY9UCeqv6sEQ
-         kUBfPb5PS7anS8wEpVRujLaliGWAU9mVNupC8hL/rcyttAKVlBV0x9g55fxWbOGkNKlc
-         1XRQ==
+        b=YV1KpjV6lTECW2ITjBMF2wzMYdE11DuHGdYX+q8+JhW4aI+0YEoWcSDpyndEb2vjf0
+         Eq07Ddg5hBy6sgz0iZz1AaOSfOHuah0Xeu+sCILCwU5OhaE22TGPc+7tbNr95ofcrDiU
+         2tUp99tiZFxhQJ2NNVSNk30ZqYik9usINiZfBFlZetx7sV3Y3a41z3ALKjvoHbQD/gbt
+         i/A5hzs1+O2SM97Fi1JxzXIBF6qU+c6hl3qnyX+s6gh3sAuzRytAEh2uOPrwFe8ITSJz
+         Cur8nSRVfmS+YhV+DcQ/gKo47qHQgKHAXuDrrw0TZuLDx6vO1Z8ejU4xWrTRenV39tsa
+         ry9Q==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:in-reply-to:from:references:cc:to
-         :subject:user-agent:mime-version:date:message-id:sender
-         :dkim-signature;
-        bh=hTv1bp2hzJTOb5SfL7lGSYUBDsujm4Y5yXmH/il8ByY=;
-        fh=PmXw8BYiK/H1haJ7Ocn80bmrHGxEcdJNTkICKLIorag=;
-        b=awndxZDjZDDI6In3WYmek5MqM2fRIV88SdPixCzdgsS+Qd4qkxqmUdKjIWhEDhX+Z3
-         q/eYfME62mJuVBXavNc+zYwH4zgu45zWZkQJwjSt27b6O5UqVahZgY+Qee79fUahiqTW
-         kpxK7u78xaNp2RV8QaWGJ8xfwTydCk9iTvSP/dSABzTMxzurBQFAERDUlhLv2T/L4l6i
-         fYG3+6CIQ0JX2lc0TC2XvVs4Tud/3pJTAikNAbDk7t9g+cl+KsRHqRG+irKFrPlBWYGy
-         eZHJQ9LJDrZ0/O0SO9jdnhPiCQOlYrVDm+eU+jglZWVlxRJnRPNSSdMuvRAnBP/jMVDy
-         //Eg==;
+         :list-id:mailing-list:precedence:content-transfer-encoding
+         :in-reply-to:from:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:sender:dkim-signature;
+        bh=Zib3Cqd1Da75qeoOR8Tm92bk1Fdel57TCrN6KYF1ofQ=;
+        fh=nCHDxJv6SOHzGvXUBQfGdRyVUtdHVFHmzVo8lKX3MkM=;
+        b=JiEKYeGzL6wNaU44YfHuGt120XjKo3rP7nyFARDok4yBMFZ/HHVaZ1CzeGZwjFf/EO
+         0HZ9PHf8h/13kMb3nO4fbAl5p9tmvRuOD4c9rcuccO5wj3qxooBe+VFFKK3Bn1gnKqC4
+         IlFyOrz3tCNFH7PdtDoHFomwQVHmV3stBG0hFCZMnlJBL77XX8pyN0ickMjHn1kqWdoH
+         0UjmH3RGDOX4b5HTiL+vOdcbSx6+gjxgZTpNUOhjLcbac0PZac4Wx+zn4df1ZAENYYmI
+         dSHp7IKxMD/3SFCo+U0fXwtdiIh2FhLwc4MHLohS9NxRVdumAN+LAwm19jzNkxbuRSTP
+         7aHw==;
         darn=lfdr.de
 ARC-Authentication-Results: i=2; mx.google.com;
        spf=pass (google.com: domain of dengjie03@kylinos.cn designates 124.126.103.232 as permitted sender) smtp.mailfrom=dengjie03@kylinos.cn
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1751881176; x=1752485976; darn=lfdr.de;
+        d=lists.one-eyed-alien.net; s=google; t=1751881998; x=1752486798; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:x-original-authentication-results
-         :x-original-sender:in-reply-to:from:references:cc:to:subject
-         :user-agent:mime-version:date:message-id:sender:from:to:cc:subject
-         :date:message-id:reply-to;
-        bh=hTv1bp2hzJTOb5SfL7lGSYUBDsujm4Y5yXmH/il8ByY=;
-        b=PwATaP4KAVnVzJHoeW2f/U8VTgPTqJClWUpr/QvV5ox9PWvkrYkVi1AA7HXLUO75ym
-         Pe8I0FcmZp+MWumdneDzgegyMbtkePLsg5Apq3uRM4hq3NKyyoF0Q+cA7kdyXmYw1fvR
-         5rYgINTH16Te3XdJJdSdd8IayTSiDPEpN54q4=
+         :x-original-sender:content-transfer-encoding:in-reply-to:from
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :sender:from:to:cc:subject:date:message-id:reply-to;
+        bh=Zib3Cqd1Da75qeoOR8Tm92bk1Fdel57TCrN6KYF1ofQ=;
+        b=PfaJgVc1aTdJAXYxNVU628HxSEShhfj0jA8154DKpYiBTVcl5tGNUUXQzRV8rF0tUV
+         de+Ie4gs+uLYtNdKizVVBEkqlQfUSkxgJCezkLNjPnXS5povJwSEt/3AWsDU2DpPJgiY
+         3ld9jgQoChJjzSHrJQbLWdoSAKZpR/Ki7GHgg=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1751881176; x=1752485976;
+        d=1e100.net; s=20230601; t=1751881998; x=1752486798;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :x-spam-checked-in-group:list-id:mailing-list:precedence
-         :x-original-authentication-results:x-original-sender:in-reply-to
-         :from:references:cc:to:subject:user-agent:mime-version:date
-         :message-id:x-beenthere:x-gm-message-state:sender:from:to:cc:subject
-         :date:message-id:reply-to;
-        bh=hTv1bp2hzJTOb5SfL7lGSYUBDsujm4Y5yXmH/il8ByY=;
-        b=QYdf7wlkqkTTOh5/QQsoy5i/dtDWlC/Ugmf8Ivf2EK9waVl6F+Z+XlbAkuHaoOExlz
-         B2hTWOHMG2yuyjsmXz7KPk5iWYlbVyzS6Y1m+1Vi4+Qvwrsvo+bd43wdVuOgGhj9MsPd
-         d204NdeTvLdsQGK+JaPFGnkvdugY9vg9JxZVaLImBeHmsgLhbT9jbRCvjhxeSzYVVxIo
-         DkhsOen6O4CYNSSiNARL4AMGrqzugqplCrEzw3hhyMYORVoYc8tSm/05ECYY1qgPG55l
-         fh5Uq9KQ3l89fQTi7wpzLMx8kVjz2TF0LtiBQ/1XEwrXlZkt+aZ8EmdLFJhwo1rxI453
-         z7Qw==
+         :x-original-authentication-results:x-original-sender
+         :content-transfer-encoding:in-reply-to:from:references:cc:to:subject
+         :user-agent:mime-version:date:message-id:x-beenthere
+         :x-gm-message-state:sender:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=Zib3Cqd1Da75qeoOR8Tm92bk1Fdel57TCrN6KYF1ofQ=;
+        b=FUcnV+oyPaiBNykyhKrQgqgjru/jHgfq6+JIEuuxgPZP3jt7+aWtXKS4x5V/TAqk7z
+         lxGY66NNOj66iexfLnTqoHwZ8zAp3QtBMeivubrM/fi38jiGdu/HfQbo98RHpXUDDhZH
+         AeaTlkbgo2w8akuzVk8tc5LKF9z97Bqoi7465OJMlnMD8lYLXEZSyP1F7mnWazyvWQCz
+         7nlacC3I0hIteEFc6fthVC0hjjevvQlbphGT2meTz20vIx8Jncs/H4FmCif/v9Ew+8DO
+         hXEqGke98VyMWv9vp/NMWMEynW3oBcC7ta9TFiHkq1/wGQ8H4PRobxePRYh7yZngD0lB
+         oeDw==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Forwarded-Encrypted: i=2; AJvYcCWtXyATtD7Er8cpFj5BBn1icHREFbAH8G4MIqBbpt4pYUlHCFoSCSjto9rGW34DR6bm42lT8A==@lfdr.de
-X-Gm-Message-State: AOJu0YxTgxN9xbRyYMLYEquxagLWZxAdAx96eqfKRifmxmLq6pOA+0nb
-	C5hx2MAVCA4UxEkq/oSYbQI9/plgK3Oq7QG/16wTtXDldXspdtTbP7TlsHY8bxnGM6Q=
-X-Google-Smtp-Source: AGHT+IFmFxXnH3Gw0FjXdKDLqHoebx3i7fm27+44VfQXScu9RhaPz38ar45LZ7eF+Vz0764skSXpXQ==
-X-Received: by 2002:a17:903:946:b0:235:e76c:4353 with SMTP id d9443c01a7336-23c9109540amr137875055ad.51.1751881176225;
-        Mon, 07 Jul 2025 02:39:36 -0700 (PDT)
-X-BeenThere: usb-storage@lists.one-eyed-alien.net; h=AZMbMZeVgWmwufTZhWIESu7WNscxPKFMfW3Cm3GuGqU9mxuWtw==
-Received: by 2002:a17:902:8b84:b0:234:ae27:bf49 with SMTP id
- d9443c01a7336-23c89bb2122ls21530395ad.1.-pod-prod-01-us; Mon, 07 Jul 2025
- 02:39:35 -0700 (PDT)
-X-Forwarded-Encrypted: i=2; AJvYcCWanbCc/NzHlDCYPZ1N8V59deT71kO0/uWvWOIv7s0N96ufRmj5KGs4OyzKLJu3BZ6c62FcW9bXdtLZ1A==@lists.one-eyed-alien.net
-X-Received: by 2002:a17:903:984:b0:234:9497:69e3 with SMTP id d9443c01a7336-23c9105c63amr106580905ad.25.1751881174908;
-        Mon, 07 Jul 2025 02:39:34 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1751881174; cv=none;
+X-Forwarded-Encrypted: i=2; AJvYcCWzhgan/7qXrN8E333Em6t9Jku+ky11w+NKc3z8OBxIWU+v2SP/fZEDsfoeMFQBP4xuc/19uA==@lfdr.de
+X-Gm-Message-State: AOJu0Yz6+Ss1iC4uxAUeNe4pcQb5X2Tkg3BLELCE6HRKQPuDJhQg2k6i
+	pBIW/uMAx678GinaChbsZYwpJwtQvwgAcZ38Qc3DN4WbjGheg/FbZ9XvU3GaoFK0Daw=
+X-Google-Smtp-Source: AGHT+IGbbFC7FMWzBdzR1YcucgsPDoZBtf6eaHoWEkFez2SeAaITptSmOs93s9fDalRiR9Qy3kkifw==
+X-Received: by 2002:a17:902:e5cd:b0:234:986c:66d4 with SMTP id d9443c01a7336-23c90fc7d9cmr100985785ad.26.1751881998485;
+        Mon, 07 Jul 2025 02:53:18 -0700 (PDT)
+X-BeenThere: usb-storage@lists.one-eyed-alien.net; h=AZMbMZcGzRks777ocjYyhxsOVyDhqmnhq3e5XLbAbGikdg7xDg==
+Received: by 2002:a17:90b:50c3:b0:311:cc50:50a7 with SMTP id
+ 98e67ed59e1d1-31ab0371343ls2900149a91.2.-pod-prod-03-us; Mon, 07 Jul 2025
+ 02:53:17 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCUU06zVtyV5kBmQNKF7APO3Cyhn8jtEJ417tLfajRjx24ABCu0aovq9pu9RMhdU6v3MPXFG0q7Xsn8G3Q==@lists.one-eyed-alien.net
+X-Received: by 2002:a17:90b:2643:b0:313:f6fa:5bb3 with SMTP id 98e67ed59e1d1-31aba8d2c4emr10615223a91.26.1751881997139;
+        Mon, 07 Jul 2025 02:53:17 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1751881997; cv=none;
         d=google.com; s=arc-20240605;
-        b=Gmlruw2gd5ep++Sd7rG6CGVSRu/gUUAMpn1xia/FL6IURhICa4KYPGibflAurl7P75
-         Rf7j5t9mVUdYu7FTq5VMZdjn7zJNCdmomlPc+wBMhNtjnmr78bC4ZhPMS3psQ5tlMZGU
-         YExzAY110X2kFyShp80RNbzHEmRQmmglnwrbIHLJ06TI06SVSITLi6+Mu+aDBjQfuatq
-         A4OeUAsbPpCLawSufdakIkmYhhowaLehU8xhA5v7ZROr/mXC6dacpTHy+4/vlPRtzxr+
-         oodyy0BtY0tOem+S5PvG2EFxcjAOYj0tQYQ8N3mkKE0L6A09YgndXaNdrG6AS9/0vcQe
-         KM6g==
+        b=CptChxxOSSYF5NFVgBGG0XQQBQ6gZ/gkquTF9eQQ0rOG14/MDmHlUtZk6H9WttSxxh
+         dMVguIHWUDkKvcADlYrlU+5UShJobwdL2dbVyvIIiqol1bCFz8+wFmtgQdHg47MakA0Z
+         m5KU8ofL599t5Rm55gNriYqHjva7Le6FIAY99KCX0ZY6exuDr/ibm1pyRDHUIidC012S
+         bQ/w3audeG4sXtJ0/ReemX775auDCxIw9sdPKwhUaHFjpAhV58ZizEWoGSr8V1Te6wgY
+         7iXGEo6onP0XhS8fb/640rXM5q/iRgwUi1/n5nLbc4XtKEJlAisjVYwKrhE3Q5F0GM6H
+         nM3w==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
-        h=in-reply-to:from:references:cc:to:subject:user-agent:mime-version
-         :date:message-id;
-        bh=k9XKFw/C9EfTKf+ON5FnTKjDlqovt5etTRagaEf1pgo=;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to:subject
+         :user-agent:mime-version:date:message-id;
+        bh=dHoiUrFnx8+EIY5Ig9XdcIKzzAFI4S9wu6fZV9tebqA=;
         fh=aQQzdJRFsORi1PMls268opEIcpN9488iDRYb/9EBMrk=;
-        b=eXhmcK93zOLRAVRBoMTQfZmXfwJK9gi+FfnmvISXP6rPUKEom7SCur6ueLClTkxg/P
-         5LaDnyxrj6Ol7LMc22bT0ac13v+n8y3OOvGEgFoTgCoZuOxjX2oDmNT4I2UM5Uql9UhD
-         L4lmOCfhj38bhC7o5U4pLCXdKf1SEw1Wn00w8E4a4ySUhDnoLnP+ga4K0qKEtClnd/l7
-         VTwxU9PJoxh86E5dOZVxv3j5Qc221TEfEvZxUIfQvjWalzYyYtDi40G0zlcalBsn9SA4
-         xu8/+mMJGvyv3rSSsnH1w8sb/7MQjTtb6IxrTQStpA8mtPIbGJAYXRDiVEi/gPhFGlg8
-         ep8g==;
+        b=LnBMS3wmufrxRJmgs6+YyynvSZJ8gl2kjYULELqPdlKWnA+DvHNKxP/VOLCJBK+qtI
+         jtY7EkaSgKnrEZphQNcrG3N939FzycMPlPvO7CMBOyTbLMsVzHNEC7/OcvhYOAS8F9tp
+         i8gTMfqwOYWEzFRSXrdfOKpevWdCmIgQ/Y3RgZWPZq9Feldx3WvmuG6yL0rVyxxBxV3H
+         w4gVUEUFHINO3KBe9D5a/LYw2S5bQ5zToDxFnlA1gBzxEOtu70lsMuhZwRCALtL4wxXR
+         XyYROiffUevvyUD/oHSv2IYt7RE+oXNGpXcY4xhBG2umuw7woucaSxY2OluWVEasgcdi
+         arQA==;
         dara=google.com
 ARC-Authentication-Results: i=1; mx.google.com;
        spf=pass (google.com: domain of dengjie03@kylinos.cn designates 124.126.103.232 as permitted sender) smtp.mailfrom=dengjie03@kylinos.cn
 Received: from mailgw.kylinos.cn (mailgw.kylinos.cn. [124.126.103.232])
-        by mx.google.com with ESMTPS id d9443c01a7336-23c842cfb00si102066015ad.7.2025.07.07.02.39.33
+        by mx.google.com with ESMTPS id 98e67ed59e1d1-31a9cd020c6si14174395a91.77.2025.07.07.02.53.15
         for <usb-storage@lists.one-eyed-alien.net>
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 07 Jul 2025 02:39:34 -0700 (PDT)
+        Mon, 07 Jul 2025 02:53:16 -0700 (PDT)
 Received-SPF: pass (google.com: domain of dengjie03@kylinos.cn designates 124.126.103.232 as permitted sender) client-ip=124.126.103.232;
-X-UUID: 473e68f45b1611f0b29709d653e92f7d-20250707
+X-UUID: 2e93fc545b1811f0b29709d653e92f7d-20250707
+X-CID-CACHE: Type:Local,Time:202507071739+08,HitQuantity:1
 X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.1.45,REQID:d7e7bd0b-d239-4b9d-bbdf-11e748b66ab5,IP:0,U
+X-CID-O-INFO: VERSION:1.1.45,REQID:2ab2d498-7f91-40bb-bdd8-b619344a3bb3,IP:0,U
 	RL:0,TC:10,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION
 	:release,TS:10
 X-CID-META: VersionHash:6493067,CLOUDID:0e0ec62399c8d822338bf1a4d728e3dd,BulkI
 	D:nil,BulkQuantity:0,Recheck:0,SF:80|81|82|83|102,TC:4,Content:0|52,EDM:-3
 	,IP:nil,URL:0,File:nil,RT:nil,Bulk:nil,QS:nil,BEC:nil,COL:0,OSI:0,OSA:0,AV
 	:0,LES:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
-X-CID-BVR: 0
-X-CID-BAS: 0,_,0,_
+X-CID-BVR: 1,FCT|NGT
+X-CID-BAS: 1,FCT|NGT,0,_
 X-CID-FACTOR: TF_CID_SPAM_SNR
-X-UUID: 473e68f45b1611f0b29709d653e92f7d-20250707
+X-UUID: 2e93fc545b1811f0b29709d653e92f7d-20250707
 X-User: dengjie03@kylinos.cn
 Received: from [10.42.12.86] [(10.44.16.150)] by mailgw.kylinos.cn
 	(envelope-from <dengjie03@kylinos.cn>)
 	(Generic MTA with TLSv1.3 TLS_AES_128_GCM_SHA256 128/128)
-	with ESMTP id 417384217; Mon, 07 Jul 2025 17:39:29 +0800
-Content-Type: multipart/alternative;
- boundary="------------U01QCpZArcjT00cB6gnUgI2z"
-Message-ID: <0923eae0-adbf-439e-8b83-4641f873a294@kylinos.cn>
-Date: Mon, 7 Jul 2025 17:39:07 +0800
+	with ESMTP id 428882174; Mon, 07 Jul 2025 17:53:06 +0800
+Message-ID: <2c4af4f8-5763-4ebf-8070-c7eabf43fe5e@kylinos.cn>
+Date: Mon, 7 Jul 2025 17:52:31 +0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: [usb-storage] Re: [PATCH v2] usb: storage: Ignore UAS driver for
@@ -132,6 +132,8 @@ References: <2025070422-punctured-opal-f51e@gregkh>
  <2025070725-circle-recite-bc04@gregkh>
 From: Jie Deng <dengjie03@kylinos.cn>
 In-Reply-To: <2025070725-circle-recite-bc04@gregkh>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
+Content-Transfer-Encoding: quoted-printable
 X-Original-Sender: dengjie03@kylinos.cn
 X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
  domain of dengjie03@kylinos.cn designates 124.126.103.232 as permitted
@@ -151,14 +153,9 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-This is a multi-part message in MIME format.
---------------U01QCpZArcjT00cB6gnUgI2z
-Content-Type: text/plain; charset="UTF-8"; format=flowed
-Content-Transfer-Encoding: quoted-printable
-
 
 =E5=9C=A8 2025/7/7 16:47, Greg KH =E5=86=99=E9=81=93:
-> > So ignore UAS driver for this device.
+>   =E3=80=80> So ignore UAS driver for this device.
 > >=20
 > > Signed-off-by: Jie Deng <dengjie03@kylinos.cn>
 > > ---
@@ -200,21 +197,15 @@ usual_uas.h
 >
 > confused,
 >
-> greg k-h=E3=80=80=E3=80=80 =E3=80=80 =E3=80=80 =E3=80=80=E3=80=80 =E3=80=
-=80 =E3=80=80 =E3=80=80 =E3=80=80 =E3=80=80
-
-The first sent=C2=A0 V2 patch was missing the description of the difference=
-s
-
-between V1 and V2 patches. The V2 patch sent for the second time only
-
-adds a description of the differences from the V1 patch compared to the
-
- =C2=A0V2 patch sent for the first time. There is no modification to the co=
-de.
-
-So it is rashly believed that it does not need to be defined as a V3=20
-patch.=E3=80=80 =E3=80=80 =E3=80=80 =E3=80=80 =E3=80=80=E3=80=80
+> greg k-h =E3=80=80 =E3=80=80 =E3=80=80 =E3=80=80 =E3=80=80 =E3=80=80 =E3=
+=80=80 =E3=80=80 =E3=80=80 =E3=80=80=E3=80=80
+>
+The first sent V2 patch was missing the description of the
+differences between V1 and V2 patches. The V2 patch sent for
+the second time only adds a description of the differences
+from the V1 patch compared to the V2 patch sent for the first time.
+There is no modification to the code. So it is rashly believed
+that it does not need to be defined as a V3 patch.
 
 --=20
 You received this message because you are subscribed to the Google Groups "=
@@ -222,103 +213,5 @@ USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an e=
 mail to usb-storage+unsubscribe@lists.one-eyed-alien.net.
 To view this discussion visit https://groups.google.com/a/lists.one-eyed-al=
-ien.net/d/msgid/usb-storage/0923eae0-adbf-439e-8b83-4641f873a294%40kylinos.=
+ien.net/d/msgid/usb-storage/2c4af4f8-5763-4ebf-8070-c7eabf43fe5e%40kylinos.=
 cn.
-
---------------U01QCpZArcjT00cB6gnUgI2z
-Content-Type: text/html; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8=
-">
-  </head>
-  <body>
-    <p><br>
-    </p>
-    <div class=3D"moz-cite-prefix">=E5=9C=A8 2025/7/7 16:47, Greg KH =E5=86=
-=99=E9=81=93:<br>
-    </div>
-    <blockquote type=3D"cite"
-      cite=3D"mid:2025070725-circle-recite-bc04@gregkh">
-      <pre wrap=3D"" class=3D"moz-quote-pre">&gt; So ignore UAS driver for =
-this device.
-&gt;=20
-&gt; Signed-off-by: Jie Deng <a class=3D"moz-txt-link-rfc2396E" href=3D"mai=
-lto:dengjie03@kylinos.cn">&lt;dengjie03@kylinos.cn&gt;</a>
-&gt; ---
-&gt; v2:
-&gt; 	* According to the file modification rules (sort by VendorID=20
-&gt; 	  first, then by ProductID.) Add the newly added "UNUSUAL_DEV"=20
-&gt; 	  in the correct position.
-&gt; v1:
-&gt; 	* The newly added "UNUSUAL_DEV" was directly added to the end=20
-&gt; 	  without modifying the format according to the file.
-&gt;=20
-&gt; ---
-&gt;  drivers/usb/storage/unusual_uas.h | 7 +++++++
-&gt;  1 file changed, 7 insertions(+)
-&gt;=20
-&gt; diff --git a/drivers/usb/storage/unusual_uas.h b/drivers/usb/storage/u=
-nusual_uas.h
-&gt; index 1477e31d7763..6b1a08e2e724 100644
-&gt; --- a/drivers/usb/storage/unusual_uas.h
-&gt; +++ b/drivers/usb/storage/unusual_uas.h
-&gt; @@ -52,6 +52,13 @@ UNUSUAL_DEV(0x059f, 0x1061, 0x0000, 0x9999,
-&gt;  		USB_SC_DEVICE, USB_PR_DEVICE, NULL,
-&gt;  		US_FL_NO_REPORT_OPCODES | US_FL_NO_SAME),
-&gt; =20
-&gt; +/* Reported-by: Jie Deng <a class=3D"moz-txt-link-rfc2396E" href=3D"m=
-ailto:dengjie03@kylinos.cn">&lt;dengjie03@kylinos.cn&gt;</a> */
-&gt; +UNUSUAL_DEV(0x0781, 0x55af, 0x0000, 0x9999,
-&gt; +		"SanDisk",
-&gt; +		"Extreme Pro 55AF",
-&gt; +		USB_SC_DEVICE, USB_PR_DEVICE, NULL,
-&gt; +		US_FL_IGNORE_UAS),
-&gt; +
-&gt;  /* Reported-by: Zhihong Zhou <a class=3D"moz-txt-link-rfc2396E" href=
-=3D"mailto:zhouzhihong@greatwall.com.cn">&lt;zhouzhihong@greatwall.com.cn&g=
-t;</a> */
-&gt;  UNUSUAL_DEV(0x0781, 0x55e8, 0x0000, 0x9999,
-&gt;  		"SanDisk",
-&gt; --=20
-&gt; 2.25.1
-
-Why is there two "v2" patches sent here?  Shouldn't this be "v3"?
-
-confused,
-
-greg k-h=E3=80=80=E3=80=80 =E3=80=80 =E3=80=80 =E3=80=80=E3=80=80 =E3=80=80=
- =E3=80=80 =E3=80=80 =E3=80=80 =E3=80=80</pre>
-    </blockquote>
-    <p>The first sent=C2=A0 V2 patch was missing the description of the
-      differences=C2=A0</p>
-    <p>between V1 and V2 patches. The V2 patch sent for the second time
-      only=C2=A0</p>
-    <p>adds a description of the differences from the V1 patch compared
-      to the</p>
-    <p>=C2=A0V2 patch sent for the first time. There is no modification to
-      the code.=C2=A0</p>
-    <p>So it is rashly believed that it does not need to be defined as a
-      V3 patch.<span style=3D"white-space: pre-wrap"> =E3=80=80 =E3=80=80 =
-=E3=80=80 =E3=80=80 =E3=80=80=E3=80=80 </span></p>
-  </body>
-</html>
-
-<p></p>
-
--- <br />
-You received this message because you are subscribed to the Google Groups &=
-quot;USB Mass Storage on Linux&quot; group.<br />
-To unsubscribe from this group and stop receiving emails from it, send an e=
-mail to <a href=3D"mailto:usb-storage+unsubscribe@lists.one-eyed-alien.net"=
->usb-storage+unsubscribe@lists.one-eyed-alien.net</a>.<br />
-To view this discussion visit <a href=3D"https://groups.google.com/a/lists.=
-one-eyed-alien.net/d/msgid/usb-storage/0923eae0-adbf-439e-8b83-4641f873a294=
-%40kylinos.cn?utm_medium=3Demail&utm_source=3Dfooter">https://groups.google=
-.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/0923eae0-adbf-439e-8b83=
--4641f873a294%40kylinos.cn</a>.<br />
-
---------------U01QCpZArcjT00cB6gnUgI2z--
