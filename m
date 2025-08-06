@@ -1,145 +1,153 @@
-Return-Path: <usb-storage+bncBCW3F5WP2UHBB25CR7CAMGQE7Z3ZYOQ@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBAABB3V6ZXCAMGQEDSH6IFY@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-oi1-x246.google.com (mail-oi1-x246.google.com [IPv6:2607:f8b0:4864:20::246])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8CA9FB12442
-	for <lists+usb-storage@lfdr.de>; Fri, 25 Jul 2025 20:48:13 +0200 (CEST)
-Received: by mail-oi1-x246.google.com with SMTP id 5614622812f47-41b916dca69sf1400734b6e.3
-        for <lists+usb-storage@lfdr.de>; Fri, 25 Jul 2025 11:48:13 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1753469292; cv=pass;
+Received: from mail-ot1-x345.google.com (mail-ot1-x345.google.com [IPv6:2607:f8b0:4864:20::345])
+	by mail.lfdr.de (Postfix) with ESMTPS id 02342B1C72B
+	for <lists+usb-storage@lfdr.de>; Wed,  6 Aug 2025 15:58:08 +0200 (CEST)
+Received: by mail-ot1-x345.google.com with SMTP id 46e09a7af769-741a7181acbsf3971809a34.2
+        for <lists+usb-storage@lfdr.de>; Wed, 06 Aug 2025 06:58:07 -0700 (PDT)
+ARC-Seal: i=3; a=rsa-sha256; t=1754488686; cv=pass;
         d=google.com; s=arc-20240605;
-        b=gWiL2885sisNvrXEG0MEXkR/wqaUxf3upF+YCnKa7hSICVHGwC7tZgFZTRDeP+MlLK
-         VoL5sQ30BNj8kEUDfZli31brZV2Q0yzhKV+lUrN9EEuLka0f9Gmflk1maWGS3Xd5ucDb
-         t7LF+feA4EXAZsKTNDLwHqh74CX0yF+IsqOe9neyCEc1g/gJ9NigkPZ2PHXHnPCMhDEz
-         TPuF5r6LUi9f9nxpEBBTdFzxxAbC3OgutLSEbq8gpXCpxTkwFTRfThZe81Bd1lyG4Lpn
-         lM6lNKPGbJcch6tc6i/U2IvHKiL8pgErUt2c8y74eyJ8OZGqJHrerhFBBiQYbXcyZRW6
-         J/nA==
-ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        b=B9GK6w05tZd52q3FW9As14HZG0jjvPSna+OxNvcBNKPGU4A1kojjBq4nXVnoximYnz
+         0wdWNyx6y26Cu836Q1uhTHlkOAzIr323tuQZdUnhPiOAbLfNcygV1REr7+kwhmPdcfBk
+         ukkvJKddqqUZIvbD+erSTzSR5P5rtN6ohpLsZKeC8KHwP3rSxxo4vesaF1MxaVMpyDWT
+         3obUT9nMnKYCtvVZeLYfQUXHlCFr7hGIOpWgbaXqJzHUvTGwfdoDl8c64zA8ODQD94Qi
+         mH7p03nz4vAMM7wwmh57zbGu67U1u7H2/UGNdw1TB9sX9IquwWwdXjryRUABK2iqZr5Z
+         1sSA==
+ARC-Message-Signature: i=3; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:mime-version:message-id:date
-         :subject:cc:to:from:sender:dkim-signature;
-        bh=Z21IPM1dDJ8IthuIK4Rsi7YWcQukaYkDa/oSZ9GWtE0=;
-        fh=Gd1U30b7dhUFqpkYI2j2FmyhlYSyPpFyd+PrizB6ykE=;
-        b=Fq3PZdDNPxHg3TO/hE6Vk48270Hv4Y4VdUrASipsgyEP6P7W9KwjkzZv2qdl5awLvu
-         bSbkbm5vwB5z8aB+SmQuMnzdPX2ayK2GkwkJfvnrhqcHNduxt46+4sjRgFq42Bkme2DD
-         9rd1cTQ6Btg3TmfKEa3uJnJlT51EyA1/bWtPKw4xPcv4tI6mVi8DFyQDynPPdT1zUpsN
-         D1rqWiCYxDYEiQiQgRGHDFxU33YDBl5O/tpvK/TIr4tQ4I4Uz2PIy+2aRvHEfkoMPAWt
-         CMD5Ve4uAG+CTdsJ/g7fhr9BzyWHhr6HNJhZlSCEKCo4uW+VUkzFdr6+pCJDFR0deX0I
-         PoXA==;
+         :list-id:mailing-list:precedence:reply-to:mime-version:message-id
+         :date:subject:cc:to:from:dkim-signature;
+        bh=d707iKYm+S2Cmzx+o1/pksRFa0Hq8//OomU6Rl5AXxY=;
+        fh=ypIcAHao5SbmmlzFLuhEOKgFdipH0HzTvAnjUvehK2w=;
+        b=WlJha70zcLtDaj9jXE+2h5H2AcYfREsLCs0910gwE1WVBWRS21af8kRJPoS1MTPivA
+         lYLnFPJ+7t9Ydfvn/xPs/MTx+bPY6wCJuU9UtRvVuKLLwQAwc40S8bPYg5xCdacb3lYg
+         72lIK2STbid1Xy8Gmtki8wJX0hfMEKKWqyFvYGCMc4VsHrILfiAT6Y1CK3n3EPm63Lp5
+         6v1vEbuEiVc1J6dI4VUes8FM03hDrjzOIH/YNrCXfM8nAMcI9Oinikqb4dJ92ko4GiGi
+         QZ8vW9qErDlMTy7ELtrfSeaQz4iicRrxZpw/Nk8D8VLqI40iCtBb31bnwoO/ECgy0C56
+         TZng==;
         darn=lfdr.de
-ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@gmail.com header.s=20230601 header.b=H4W5+t5N;
-       spf=pass (google.com: domain of rathod.darshan.0896@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=rathod.darshan.0896@gmail.com;
-       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
-       dara=pass header.i=@lists.one-eyed-alien.net
+ARC-Authentication-Results: i=3; mx.google.com;
+       dkim=pass header.i=@murena.io header.s=mail3 header.b=3X7WPClh;
+       arc=pass (i=1);
+       spf=pass (google.com: domain of mael.guerin@murena.io designates 135.181.139.185 as permitted sender) smtp.mailfrom=mael.guerin@murena.io;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=murena.io
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1753469292; x=1754074092; darn=lfdr.de;
+        d=lists.one-eyed-alien.net; s=google; t=1754488686; x=1755093486; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:x-original-authentication-results
-         :x-original-sender:mime-version:message-id:date:subject:cc:to:from
-         :sender:from:to:cc:subject:date:message-id:reply-to;
-        bh=Z21IPM1dDJ8IthuIK4Rsi7YWcQukaYkDa/oSZ9GWtE0=;
-        b=bQ7tY4hQvj9BNEpRj2a1WAjttG7zy9UhzCnUAPFzbI9Qes2FJ8wU5qkfaI71/zMZJM
-         C1T5n1M+yDWzX6sUknMoOruhDsnY3hAuFqieEwZ9yu/o9yy5ikTHj1vIqOSpmygx6IHO
-         v6/3EyE03iGSccdUy+E6lJBMzo+WTtPoKR5Fo=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1753469292; x=1754074092;
-        h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:x-original-authentication-results
-         :x-original-sender:mime-version:message-id:date:subject:cc:to:from
-         :x-beenthere:x-gm-message-state:sender:from:to:cc:subject:date
+         :list-id:mailing-list:precedence:reply-to
+         :x-original-authentication-results:x-original-sender:mime-version
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=Z21IPM1dDJ8IthuIK4Rsi7YWcQukaYkDa/oSZ9GWtE0=;
-        b=N4Kh5+moU2LOagNbWVBivmy6A5iUe+IrebmH7h3+9FpVke+CYmOGka4Y0+3PdbyUHh
-         tsyWsu2qB8+kzntbIeEM+jIgPJF+t25YTw78wI7Qr+OqSwEEHQiTttlP8kA9XUCbFxBw
-         t0d8vQy+iN7omr3nRV/YrvTadd4g5uFRbhhw+EmN0SDBcIhOhF37VR3KTHaPdKXnqOLI
-         vnEX4YaOCTVUSK7NLQZXGN2wSNfUrmZ9bmOu69wmXPpwHdIoquviN/L6UeS3fAybM3q0
-         WCoipueNFmkk+8OzGy5D5QaCrLLf7qixYfh9o1PMVXsMABZOv1i3ymkwNBrhtZEXjc+A
-         zlow==
-Sender: usb-storage@lists.one-eyed-alien.net
-X-Forwarded-Encrypted: i=2; AJvYcCURTVI5TvwELfp5OFGpezahEGK3oonWbwld4bdpCNPzCk36MH90Vpk/oqxUzPsJ1qS5QNCREg==@lfdr.de
-X-Gm-Message-State: AOJu0YxFRL+Qb9oMIz3lzdT12ilvA61FAIkkHUTMJcocs43jzxQ9iREW
-	wQiybW+TSxKOMqEPlx9vGafMe7RpOJ4pO2FLKvp8O0EgLmvuv7kILlQ4M/tEBbaSEXs=
-X-Google-Smtp-Source: AGHT+IFGsx/1qkuuXQTxsX/kH2CWqCgIfav+beETItl4hka84mGcaQUTrfbMiCIu10FFf44QF7d59w==
-X-Received: by 2002:a05:6808:10d6:b0:40b:4208:7b45 with SMTP id 5614622812f47-42bb9d07c49mr1817492b6e.26.1753469291891;
-        Fri, 25 Jul 2025 11:48:11 -0700 (PDT)
-X-BeenThere: usb-storage@lists.one-eyed-alien.net; h=AZMbMZdBLiTqpF1gNoSqxsST1WEvgDSey5JF7w26Bj9VSJ61qQ==
-Received: by 2002:a05:6820:4690:b0:611:cba5:4626 with SMTP id
- 006d021491bc7-618fa27430els594643eaf.2.-pod-prod-02-us; Fri, 25 Jul 2025
- 11:48:11 -0700 (PDT)
-X-Forwarded-Encrypted: i=2; AJvYcCW7R7SCIJlZ3pAwlYtb5+8LcCg1WGSV/NE0LfwreR0zb8G5pdmBBekqqOyHULtHC6ZlUTb7NedbMDQJ0A==@lists.one-eyed-alien.net
-X-Received: by 2002:a05:6808:150e:b0:40d:547d:397 with SMTP id 5614622812f47-42bb972b822mr1744462b6e.23.1753469291364;
-        Fri, 25 Jul 2025 11:48:11 -0700 (PDT)
-Received: by 2002:a05:6808:1b0e:b0:40d:498:c1f6 with SMTP id 5614622812f47-4263504e6a3msb6e;
-        Fri, 25 Jul 2025 06:55:12 -0700 (PDT)
-X-Forwarded-Encrypted: i=2; AJvYcCVQessa7KckMbM1YE7sgI73UZii7AbybgOkWhsI62WKDcmehQjgXt2ZwlVs8T3ODzzfXZDHls+Emvjaeg==@lists.one-eyed-alien.net
-X-Received: by 2002:a17:90b:5623:b0:313:f6fa:5bca with SMTP id 98e67ed59e1d1-31e779f9e9dmr2621511a91.22.1753451710953;
-        Fri, 25 Jul 2025 06:55:10 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1753451710; cv=none;
+        bh=d707iKYm+S2Cmzx+o1/pksRFa0Hq8//OomU6Rl5AXxY=;
+        b=QBWun1fQnpvcLHXNuW+aUqKYzPLMMSUCJ+IoZdVEiEyqpXC35TzUkeBd8EYIaiR/0b
+         TeM3Hjo5aatTY21MtY84UxxzwaiMAUbyi2qHs2rAvlW4ZtvWnG3JLmUbjeMlvVAf85Gh
+         x2JTI1bRFXZ1nDDQXK6TX6LT8quI+KBETkXJI=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1754488686; x=1755093486;
+        h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
+         :list-id:mailing-list:precedence:reply-to
+         :x-original-authentication-results:x-original-sender:mime-version
+         :message-id:date:subject:cc:to:from:x-beenthere:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=d707iKYm+S2Cmzx+o1/pksRFa0Hq8//OomU6Rl5AXxY=;
+        b=H/KIOa+m8K9Zy50AIrM29UNtjeGGLgDwYZafqOHF3WssYdckkDPmmsMwyfJn8nzXqf
+         2T4mN1RP6JG0j+rIXvwtsb8h2qDlKg/fRrImySto4S/M8WIuHfeqzF3bS45eUygTx4RY
+         InShKnNnGBtZkdhlWoCdfJkQzQjBPhbWIFPe5OrEns9fipTOa2RuEy4X5T+dX6mmemPc
+         AWxwEmK7Gg7beXNjVi1qyRbY0Kg5HjKw38nPgJgsRILlZw8Orsl+YHnd1uvMLW8VfzTA
+         f52B6RsvEo+LYr9foTDcZwpntJxvZd42/+z3D8IVZ8H+A/ceDq2pI1h/5aFYoO5LcNcA
+         MzUg==
+X-Forwarded-Encrypted: i=3; AJvYcCURez41Gp7Th1njzusotFTw1nlFtH7Qnknwlo2WjNfmZ6t3yAgfZ/1P3uSzimbsw/LVT201pQ==@lfdr.de
+X-Gm-Message-State: AOJu0YzKjC7hOwmmWfLraIApHmwwQgeSM2X+nD3YigV+Q58d2mdeoK8l
+	HhePLuLdWkgGUxCU3qgNSxYNO7xwuZDCiuCJ2SbY/KYtm+njBr1BvAmmlEcuqPZPHXI=
+X-Google-Smtp-Source: AGHT+IFnfyRatopKBT2L+XYw3rw+iC3mQaeCc7KR7l2/Y92zmJr6o5c+RnirvGde2D4hjEmPH7AOpA==
+X-Received: by 2002:a05:6830:4901:b0:743:823:a094 with SMTP id 46e09a7af769-7430b28d2d8mr1744782a34.10.1754488686431;
+        Wed, 06 Aug 2025 06:58:06 -0700 (PDT)
+X-BeenThere: usb-storage@lists.one-eyed-alien.net; h=AZMbMZdO/iVeZFvLDgO+uRaHykmb5Pyx053wGjvOBy++8xe/Og==
+Received: by 2002:a05:6820:c314:b0:619:7067:defd with SMTP id
+ 006d021491bc7-6197067e0efls1483686eaf.0.-pod-prod-07-us; Wed, 06 Aug 2025
+ 06:58:06 -0700 (PDT)
+X-Forwarded-Encrypted: i=3; AJvYcCV8EfgIoL/4B8D7HB1DxxS0yKrBkuTejDS/5jMScCTNW5ev987xduzu2R0zNHdB6Syv51pZor2BhnpleA==@lists.one-eyed-alien.net
+X-Received: by 2002:a05:6808:4f53:b0:3fe:aecb:5c49 with SMTP id 5614622812f47-4357c59d9efmr1472989b6e.21.1754488685950;
+        Wed, 06 Aug 2025 06:58:05 -0700 (PDT)
+Received: by 2002:ab3:7c9c:0:b0:2b1:9db7:3101 with SMTP id a1c4a302cd1d6-2bf23463e9amsc7a;
+        Wed, 6 Aug 2025 06:45:59 -0700 (PDT)
+X-Forwarded-Encrypted: i=3; AJvYcCVJFtd/GXWAg4GLh+AzClm5hACia0Ur+Dr1vcbsOXgw0jnM2stzJ8/wdHmqjU/Jc39Nxz2EqmI1xv2VDw==@lists.one-eyed-alien.net
+X-Received: by 2002:a05:651c:220d:b0:32b:7ddd:275f with SMTP id 38308e7fff4ca-3338141419amr9429501fa.30.1754487955914;
+        Wed, 06 Aug 2025 06:45:55 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1754487955; cv=pass;
         d=google.com; s=arc-20240605;
-        b=jF0jrcTpbxBbj5B/osUbIGS8Rf1jGG+BLrGKvYaDZhfUSyAVphz802mYAbHDcNf7mJ
-         SoPbhAxFALVUIZaNQmJ10M/XrHrt7UvN0iwtyLRhkh0+5ItFsHabuPJQVO8HiG//ZbMK
-         AW8COayHBpSdwPNJlII1fFATc/O6mKLxNRie0ikvooUNjiHCXO9NKeBAZHryjTJjymjJ
-         Xto2OPFpAaHymJmUm2aAuJm+LbWPem9TrggI0q79TfT4tOXvnSu8PPWKZqsUbwVXQ9O5
-         OteGr29qu4T+wYagl+r51NtmhykLwWn8HkWOspN2B8aM31BZPzFFMomj2CGhbLy6DbW2
-         JEgg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        b=Vi4JJnZbv05XFEngNr+K7rbw8ieBbQEu0mDqgv0X3wEgMlkic47tbsC26jAt02Qx5u
+         o+AOp5TyDoufoXGytv6PjtUKM2o2kCoxnZMXLwIosTbpJ8kMzESLxczwgLB1b7fVfuJ4
+         yaKnkxJ1O6XUOGRPjaAk/4GUMsM7NGX8r0KaF9tvC7ACeJB+RMyc0rhntKMxOMi49+Ee
+         QDoacG/TIoIP3I0TdiJRKpffGtwAVvLs4DDpzQSwMW0cNKT0DoW7xcNZpWWPKurslfQD
+         vaK84WH4rC9Vel3MMXkhoJY79ICvDWyXP237aRupwEb3THt1U4LoXH0kxnvd4/rlrbNY
+         pN+w==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
         h=content-transfer-encoding:mime-version:message-id:date:subject:cc
          :to:from:dkim-signature;
-        bh=WNTDfjxhZB9Hjmc5HFtSd7mAOD+kVA3++KbmQ5chN8w=;
-        fh=RWoOYQZtuzVyeNzij1Cce3UheGPGJ348hTgA9W7lfVs=;
-        b=Y5G4PWorLDvz5kFBYNbgrtRXEwNiv30D2WcztxQoC4LBW3npw43bn5sgJOk0hXTTFD
-         MnHadJC7npgPMDV7zTFHCaLpznDyRyCjK+/SLQ92oJMfQKULmKO7sXCmOLUUUbKU3EWt
-         wqDc/qhpNEIDdw3WRVoh9Vb5Sjx2wj+bcnTgV/CFVCImVeiu/v6yz9ZA1P+86kjMt3BP
-         uUE53oN/e76CNuPL7hhEaVNE/x8sq94Tl2puxWabRV+69hjgNIGXF7z8NKd/KBZncJni
-         pvqlQoDphSM5HkNm6QcaxPMPYVtreoF08BkFbAHM/eMfHj6swuB7C9986AclFtDfTeMg
-         DGFg==;
+        bh=YR1yS45wdvooEjIeF84tr73vMkd8J1BhZxP/TC1Yqyc=;
+        fh=trZDlAkUlX5rfkLqdb/8HBKXqg3YpTpf+K2bUWySUaU=;
+        b=bBFjyJyN/1graCQUkM6b27k5qfWO1ehuVX6bzSc1HCcqp2DB7QotBNUcbSLzwc+diR
+         OYWbrlDAQlj+vgUE4L2wBRadD+BbesBNzfZDWV2kr5zjMRKNTD8f7I5zfYFh928e6iOS
+         K+ADqK/tW7X16SOQwC1L29VOGA7fW+Nt2EF3ZEr09WbFHc992LvzIdCWwwnNXB0fNzWI
+         EbWjl4dR3JZPz6uECJTHiHQHTha3TeIVE0pugT3RoI+uek9ErdajjHCwH6o0I+z/Wh2W
+         ZitXJiRSD7kVgUSnqQfwcoWmhBgt2U/FdoJ4Ag7JVmeNIw+OfFpyGBxhiGKGXku2r5Aq
+         OdBg==;
         dara=google.com
-ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@gmail.com header.s=20230601 header.b=H4W5+t5N;
-       spf=pass (google.com: domain of rathod.darshan.0896@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=rathod.darshan.0896@gmail.com;
-       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
-       dara=pass header.i=@lists.one-eyed-alien.net
-Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
-        by mx.google.com with SMTPS id 98e67ed59e1d1-31e63ac89fbsor3197296a91.6.2025.07.25.06.55.10
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@murena.io header.s=mail3 header.b=3X7WPClh;
+       arc=pass (i=1);
+       spf=pass (google.com: domain of mael.guerin@murena.io designates 135.181.139.185 as permitted sender) smtp.mailfrom=mael.guerin@murena.io;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=murena.io
+Received: from mail3.ecloud.global (mail3.ecloud.global. [135.181.139.185])
+        by mx.google.com with ESMTPS id 38308e7fff4ca-33238715bfesi38428411fa.422.2025.08.06.06.45.55
         for <usb-storage@lists.one-eyed-alien.net>
-        (Google Transport Security);
-        Fri, 25 Jul 2025 06:55:10 -0700 (PDT)
-Received-SPF: pass (google.com: domain of rathod.darshan.0896@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
-X-Forwarded-Encrypted: i=1; AJvYcCV1u+8UwRb0poYrijV7jffW9V11dYX2CzFe7VxcBH8lhGkVWlbnors73lGENcKshF89tQmlux+NM8fowQ==@lists.one-eyed-alien.net
-X-Gm-Gg: ASbGncsrmHojaBwOZeVfsMhHv11qKnSdXsSH/3oBOInaSFAvzh6A/XgEz6cmM3w3qML
-	wm9851tVPi32yiL8YEcW4tyq2YT0Mg8thFYOHbVT6HGggtu8PwCnJ98A8n6Lb85qLTNvAD1QTbS
-	hVdJb8A1TS3+6wY4vQrh1TxC8J3Qg4c0XLeBWQ0qUpPtw/20SLup8wML+W5Vc4I2OV4y7ATLWVX
-	Cp1ekIvyyZmYg1LGK6/z7MegNJHFHDyzcbOs7MgQq7rkLtYI6eK9t+kG2NYr/x+3pa2GK5JiPZZ
-	bHlSEb0OWZvAmvAVuyz+3xs71ETNqYz/qh525jf6LYsSyyxVqBleZMtrBp1+jpiz+X/tDw/BNV3
-	Gtk1/Grh/OGSjGH/jXHbwGTTIg07VS1EOIUEqxoD3cZ4+a+xJ8OzWCrp/7wnbtyv/Kxv7dAD/fa
-	W+Fw==
-X-Received: by 2002:a17:90a:fc4e:b0:313:d79d:87eb with SMTP id 98e67ed59e1d1-31e77a32a33mr3207824a91.35.1753451710127;
-        Fri, 25 Jul 2025 06:55:10 -0700 (PDT)
-Received: from SIQOL-WIN-0002-DARSHAN.localdomain ([49.36.70.207])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-31e63a766d9sm2797962a91.2.2025.07.25.06.55.07
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 25 Jul 2025 06:55:09 -0700 (PDT)
-From: "Darshan R." <rathod.darshan.0896@gmail.com>
-To: stern@rowland.harvard.edu
-Cc: gregkh@linuxfoundation.org,
-	linux-usb@vger.kernel.org,
+        Wed, 06 Aug 2025 06:45:55 -0700 (PDT)
+Received-SPF: pass (google.com: domain of mael.guerin@murena.io designates 135.181.139.185 as permitted sender) client-ip=135.181.139.185;
+Received: from authenticated-user (mail3.ecloud.global [127.0.0.1])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(No client certificate requested)
+	by mail3.ecloud.global (Postfix) with ESMTPSA id CCC7688A551;
+	Wed,  6 Aug 2025 13:45:54 +0000 (UTC)
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=murena.io;
+	s=mail3; t=1754487955;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:
+	 content-transfer-encoding:content-transfer-encoding;
+	bh=YR1yS45wdvooEjIeF84tr73vMkd8J1BhZxP/TC1Yqyc=;
+	b=+eJqvMhsH+9Lr0nWpvAELJ69+XqRsZ+nFVW2yzAm0PHP/U7krp89UQ3vpnhTTXhMp6O3ts
+	tLhVSVXF0y1AhvyNsLcBfvTfrvER2sEIVzhpQ47UL2iyUiPuh1Jw1pEqDFdK5TO03ewJHc
+	sCMSKKQl5zRZJrXuLSJULnnyKG9BUKU=
+ARC-Authentication-Results: i=1;
+	mail3.ecloud.global;
+	auth=pass smtp.mailfrom=mael.guerin@murena.io
+ARC-Seal: i=1; s=mail3; d=murena.io; t=1754487955; a=rsa-sha256; cv=none;
+	b=uYMcLFsURRTxn1Rr11qPte77BeAXJRfDBxLqzN6xqavdNZ3NCV2FebQ/6/FjV7B7KbaUDa
+	nARTJkVEk2KG3rwLm1KjB5Iq+MFQsiHH/FjipZ9+62xXo3WraNF0tHwsIHs2wmacJyqYn9
+	aVPr7dLOrymAptI5fJZVIyT9qDEG69o=
+From: "'Mael GUERIN' via USB Mass Storage on Linux" <usb-storage@lists.one-eyed-alien.net>
+To: linux-usb@vger.kernel.org,
 	usb-storage@lists.one-eyed-alien.net,
-	linux-kernel@vger.kernel.org,
-	"Darshan R." <rathod.darshan.0896@gmail.com>
-Subject: [usb-storage] [PATCH] usb: storage: Checkpatch fix done and Clean up
- coding style
-Date: Fri, 25 Jul 2025 13:55:33 +0000
-Message-ID: <20250725135533.8410-1-rathod.darshan.0896@gmail.com>
-X-Mailer: git-send-email 2.43.0
+	linux-kernel@vger.kernel.org
+Cc: Alan Stern <stern@rowland.harvard.edu>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Mael GUERIN <mael.guerin@murena.io>
+Subject: [usb-storage] [PATCH 0/1] usb-storage: add quirk for Novatek
+ NTK96550-based camera
+Date: Wed,  6 Aug 2025 15:45:22 +0200
+Message-ID: <20250806134524.32016-1-mael.guerin@murena.io>
 MIME-Version: 1.0
-X-Original-Sender: rathod.darshan.0896@gmail.com
+X-Original-Sender: mael.guerin@murena.io
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@gmail.com header.s=20230601 header.b=H4W5+t5N;       spf=pass
- (google.com: domain of rathod.darshan.0896@gmail.com designates 209.85.220.41
- as permitted sender) smtp.mailfrom=rathod.darshan.0896@gmail.com;
-       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
-       dara=pass header.i=@lists.one-eyed-alien.net
+ header.i=@murena.io header.s=mail3 header.b=3X7WPClh;       arc=pass (i=1);
+       spf=pass (google.com: domain of mael.guerin@murena.io designates
+ 135.181.139.185 as permitted sender) smtp.mailfrom=mael.guerin@murena.io;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=murena.io
+X-Original-From: Mael GUERIN <mael.guerin@murena.io>
+Reply-To: Mael GUERIN <mael.guerin@murena.io>
 Content-Type: text/plain; charset="UTF-8"
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
@@ -155,702 +163,36 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-The shuttle_usbat.c driver has several coding style inconsistencies that deviate from the Linux kernel standard.
-This makes the code harder to read and maintain.
+Add the US_FL_BULK_IGNORE_TAG quirk for Novatek NTK96550-based camera
+to fix USB resets after sending SCSI vendor commands due to CBW and
+CSW tags difference, leading to undesired slowness while communicating
+with the device.
 
-This patch is a pure cleanup effort to address these style issues.
-The changes include:
+Please find below the copy of /sys/kernel/debug/usb/devices with my
+device plugged in (listed as TechSys USB mass storage here, the
+underlying chipset being the Novatek NTK96550-based camera):
 
-- Adding proper spacing around operators (=, *, +, !=, etc.).
-- Adjusting pointer declarations to the standard type *var style.
-- Fixing spacing in pointer casts, e.g., (struct usbat_info *).
-- Removing the redundant = 0 initializer for the static transferred
-  variable, as it's guaranteed to be zero-initialized.
-- Tidying up miscellaneous whitespace and removing extra blank lines.
+T:  Bus=03 Lev=01 Prnt=01 Port=00 Cnt=01 Dev#=  3 Spd=480  MxCh= 0
+D:  Ver= 2.00 Cls=00(>ifc ) Sub=00 Prot=00 MxPS=64 #Cfgs=  1
+P:  Vendor=0603 ProdID=8611 Rev= 0.01
+S:  Manufacturer=TechSys
+S:  Product=USB Mass Storage
+S:  SerialNumber=966110000000100
+C:* #Ifs= 1 Cfg#= 1 Atr=c0 MxPwr=100mA
+I:* If#= 0 Alt= 0 #EPs= 2 Cls=08(stor.) Sub=06 Prot=50 Driver=usb-storage
+E:  Ad=81(I) Atr=02(Bulk) MxPS= 512 Ivl=0ms
+E:  Ad=02(O) Atr=02(Bulk) MxPS= 512 Ivl=0ms
 
-These changes were guided by checkpatch.pl.
-No functional changes have been made.
+Mael GUERIN (1):
+  usb-storage: Add unusual-devs entry for Novatek NTK96550-based camera
 
-Signed-off-by: Darshan R. <rathod.darshan.0896@gmail.com>
----
- drivers/usb/storage/shuttle_usbat.c | 252 +++++++++++++---------------
- 1 file changed, 120 insertions(+), 132 deletions(-)
+ drivers/usb/storage/unusual_devs.h | 7 +++++++
+ 1 file changed, 7 insertions(+)
 
-diff --git a/drivers/usb/storage/shuttle_usbat.c b/drivers/usb/storage/shuttle_usbat.c
-index 27faa0ead11d..d4a5ad500886 100644
---- a/drivers/usb/storage/shuttle_usbat.c
-+++ b/drivers/usb/storage/shuttle_usbat.c
-@@ -16,7 +16,7 @@
-  * market by using some kind of translation from ATAPI to USB on the host,
-  * and the peripheral would translate from USB back to ATAPI.
-  *
-- * SCM Microsystems (www.scmmicro.com) makes a device, sold to OEM's only, 
-+ * SCM Microsystems (www.scmmicro.com) makes a device, sold to OEM's only,
-  * which does the USB-to-ATAPI conversion.  By obtaining the data sheet on
-  * their device under nondisclosure agreement, I have been able to write
-  * this driver for Linux.
-@@ -141,19 +141,18 @@ struct usbat_info {
- 	unsigned long sense_ascq;  /* additional sense code qualifier */
- };
- 
--#define short_pack(LSB,MSB) ( ((u16)(LSB)) | ( ((u16)(MSB))<<8 ) )
--#define LSB_of(s) ((s)&0xFF)
--#define MSB_of(s) ((s)>>8)
-+#define short_pack(LSB, MSB) (((u16)(LSB)) | (((u16)(MSB)) << 8))
-+#define LSB_of(s) ((s) & 0xFF)
-+#define MSB_of(s) ((s) >> 8)
- 
--static int transferred = 0;
-+static int transferred;
- 
--static int usbat_flash_transport(struct scsi_cmnd * srb, struct us_data *us);
-+static int usbat_flash_transport(struct scsi_cmnd *srb, struct us_data *us);
- static int usbat_hp8200e_transport(struct scsi_cmnd *srb, struct us_data *us);
- 
- static int init_usbat_cd(struct us_data *us);
- static int init_usbat_flash(struct us_data *us);
- 
--
- /*
-  * The table of devices
-  */
-@@ -214,7 +213,7 @@ static void usbat_pack_ata_sector_cmd(unsigned char *buf,
-  */
- static int usbat_get_device_type(struct us_data *us)
- {
--	return ((struct usbat_info*)us->extra)->devicetype;
-+	return ((struct usbat_info *)us->extra)->devicetype;
- }
- 
- /*
-@@ -257,7 +256,7 @@ static int usbat_write(struct us_data *us,
-  * Convenience function to perform a bulk read
-  */
- static int usbat_bulk_read(struct us_data *us,
--			   void* buf,
-+			   void *buf,
- 			   unsigned int len,
- 			   int use_sg)
- {
-@@ -272,7 +271,7 @@ static int usbat_bulk_read(struct us_data *us,
-  * Convenience function to perform a bulk write
-  */
- static int usbat_bulk_write(struct us_data *us,
--			    void* buf,
-+			    void *buf,
- 			    unsigned int len,
- 			    int use_sg)
- {
-@@ -303,6 +302,7 @@ static int usbat_execute_command(struct us_data *us,
- static int usbat_get_status(struct us_data *us, unsigned char *status)
- {
- 	int rc;
-+
- 	rc = usbat_read(us, USBAT_ATA, USBAT_ATA_STATUS, status);
- 
- 	usb_stor_dbg(us, "0x%02X\n", *status);
-@@ -405,11 +405,10 @@ static int usbat_wait_not_busy(struct us_data *us, int minutes)
- 	 * minutes!
- 	 */
- 
--	for (i=0; i<1200+minutes*60; i++) {
--
-- 		result = usbat_get_status(us, status);
-+	for (i = 0; i < 1200 + minutes * 60; i++) {
-+		result = usbat_get_status(us, status);
- 
--		if (result!=USB_STOR_XFER_GOOD)
-+		if (result != USB_STOR_XFER_GOOD)
- 			return USB_STOR_TRANSPORT_ERROR;
- 		if (*status & 0x01) { /* check condition */
- 			result = usbat_read(us, USBAT_ATA, 0x10, status);
-@@ -418,16 +417,16 @@ static int usbat_wait_not_busy(struct us_data *us, int minutes)
- 		if (*status & 0x20) /* device fault */
- 			return USB_STOR_TRANSPORT_FAILED;
- 
--		if ((*status & 0x80)==0x00) { /* not busy */
-+		if ((*status & 0x80) == 0x00) { /* not busy */
- 			usb_stor_dbg(us, "Waited not busy for %d steps\n", i);
- 			return USB_STOR_TRANSPORT_GOOD;
- 		}
- 
--		if (i<500)
-+		if (i < 500)
- 			msleep(10); /* 5 seconds */
--		else if (i<700)
-+		else if (i < 700)
- 			msleep(50); /* 10 seconds */
--		else if (i<1200)
-+		else if (i < 1200)
- 			msleep(100); /* 50 seconds */
- 		else
- 			msleep(1000); /* X minutes */
-@@ -442,7 +441,7 @@ static int usbat_wait_not_busy(struct us_data *us, int minutes)
-  * Read block data from the data register
-  */
- static int usbat_read_block(struct us_data *us,
--			    void* buf,
-+			    void *buf,
- 			    unsigned short len,
- 			    int use_sg)
- {
-@@ -475,7 +474,7 @@ static int usbat_read_block(struct us_data *us,
-  */
- static int usbat_write_block(struct us_data *us,
- 			     unsigned char access,
--			     void* buf,
-+			     void *buf,
- 			     unsigned short len,
- 			     int minutes,
- 			     int use_sg)
-@@ -535,22 +534,21 @@ static int usbat_hp8200e_rw_block_test(struct us_data *us,
- 	unsigned char *data = us->iobuf;
- 	unsigned char *status = us->iobuf;
- 
--	BUG_ON(num_registers > US_IOBUF_SIZE/2);
--
--	for (i=0; i<20; i++) {
-+	BUG_ON(num_registers > US_IOBUF_SIZE / 2);
- 
-+	for (i = 0; i < 20; i++) {
- 		/*
- 		 * The first time we send the full command, which consists
- 		 * of downloading the SCSI command followed by downloading
- 		 * the data via a write-and-test.  Any other time we only
- 		 * send the command to download the data -- the SCSI command
- 		 * is still 'active' in some sense in the device.
--		 * 
-+		 *
- 		 * We're only going to try sending the data 10 times. After
- 		 * that, we just return a failure.
- 		 */
- 
--		if (i==0) {
-+		if (i == 0) {
- 			cmdlen = 16;
- 			/*
- 			 * Write to multiple registers
-@@ -564,39 +562,37 @@ static int usbat_hp8200e_rw_block_test(struct us_data *us,
- 			command[3] = 0x17;
- 			command[4] = 0xFC;
- 			command[5] = 0xE7;
--			command[6] = LSB_of(num_registers*2);
--			command[7] = MSB_of(num_registers*2);
-+			command[6] = LSB_of(num_registers * 2);
-+			command[7] = MSB_of(num_registers * 2);
- 		} else
- 			cmdlen = 8;
- 
- 		/* Conditionally read or write blocks */
--		command[cmdlen-8] = (direction==DMA_TO_DEVICE ? 0x40 : 0xC0);
--		command[cmdlen-7] = access |
--				(direction==DMA_TO_DEVICE ?
-+		command[cmdlen - 8] = (direction == DMA_TO_DEVICE ? 0x40 : 0xC0);
-+		command[cmdlen - 7] = access |
-+				(direction == DMA_TO_DEVICE ?
- 				 USBAT_CMD_COND_WRITE_BLOCK : USBAT_CMD_COND_READ_BLOCK);
--		command[cmdlen-6] = data_reg;
--		command[cmdlen-5] = status_reg;
--		command[cmdlen-4] = timeout;
--		command[cmdlen-3] = qualifier;
--		command[cmdlen-2] = LSB_of(len);
--		command[cmdlen-1] = MSB_of(len);
-+		command[cmdlen - 6] = data_reg;
-+		command[cmdlen - 5] = status_reg;
-+		command[cmdlen - 4] = timeout;
-+		command[cmdlen - 3] = qualifier;
-+		command[cmdlen - 2] = LSB_of(len);
-+		command[cmdlen - 1] = MSB_of(len);
- 
- 		result = usbat_execute_command(us, command, cmdlen);
- 
- 		if (result != USB_STOR_XFER_GOOD)
- 			return USB_STOR_TRANSPORT_ERROR;
- 
--		if (i==0) {
--
--			for (j=0; j<num_registers; j++) {
--				data[j<<1] = registers[j];
--				data[1+(j<<1)] = data_out[j];
-+		if (i == 0) {
-+			for (j = 0; j < num_registers; j++) {
-+				data[j << 1] = registers[j];
-+				data[1 + (j << 1)] = data_out[j];
- 			}
- 
- 			result = usbat_bulk_write(us, data, num_registers*2, 0);
- 			if (result != USB_STOR_XFER_GOOD)
- 				return USB_STOR_TRANSPORT_ERROR;
--
- 		}
- 
- 		result = usb_stor_bulk_transfer_sg(us,
-@@ -629,7 +625,7 @@ static int usbat_hp8200e_rw_block_test(struct us_data *us,
- 			 * the bulk output pipe only the first time.
- 			 */
- 
--			if (direction==DMA_FROM_DEVICE && i==0) {
-+			if (direction == DMA_FROM_DEVICE && i == 0) {
- 				if (usb_stor_clear_halt(us,
- 						us->send_bulk_pipe) < 0)
- 					return USB_STOR_TRANSPORT_ERROR;
-@@ -639,12 +635,12 @@ static int usbat_hp8200e_rw_block_test(struct us_data *us,
- 			 * Read status: is the device angry, or just busy?
- 			 */
- 
-- 			result = usbat_read(us, USBAT_ATA, 
--				direction==DMA_TO_DEVICE ?
-+			result = usbat_read(us, USBAT_ATA,
-+				direction == DMA_TO_DEVICE ?
- 					USBAT_ATA_STATUS : USBAT_ATA_ALTSTATUS,
- 				status);
- 
--			if (result!=USB_STOR_XFER_GOOD)
-+			if (result != USB_STOR_XFER_GOOD)
- 				return USB_STOR_TRANSPORT_ERROR;
- 			if (*status & 0x01) /* check condition */
- 				return USB_STOR_TRANSPORT_FAILED;
-@@ -683,7 +679,7 @@ static int usbat_multiple_write(struct us_data *us,
- 	unsigned char *data = us->iobuf;
- 	unsigned char *command = us->iobuf;
- 
--	BUG_ON(num_registers > US_IOBUF_SIZE/2);
-+	BUG_ON(num_registers > US_IOBUF_SIZE / 2);
- 
- 	/* Write to multiple registers, ATA access */
- 	command[0] = 0x40;
-@@ -696,8 +692,8 @@ static int usbat_multiple_write(struct us_data *us,
- 	command[5] = 0;
- 
- 	/* Number of bytes to be transferred (incl. addresses and data) */
--	command[6] = LSB_of(num_registers*2);
--	command[7] = MSB_of(num_registers*2);
-+	command[6] = LSB_of(num_registers * 2);
-+	command[7] = MSB_of(num_registers * 2);
- 
- 	/* The setup command */
- 	result = usbat_execute_command(us, command, 8);
-@@ -705,13 +701,13 @@ static int usbat_multiple_write(struct us_data *us,
- 		return USB_STOR_TRANSPORT_ERROR;
- 
- 	/* Create the reg/data, reg/data sequence */
--	for (i=0; i<num_registers; i++) {
--		data[i<<1] = registers[i];
--		data[1+(i<<1)] = data_out[i];
-+	for (i = 0; i < num_registers; i++) {
-+		data[i << 1] = registers[i];
-+		data[1 + (i << 1)] = data_out[i];
- 	}
- 
- 	/* Send the data */
--	result = usbat_bulk_write(us, data, num_registers*2, 0);
-+	result = usbat_bulk_write(us, data, num_registers * 2, 0);
- 	if (result != USB_STOR_XFER_GOOD)
- 		return USB_STOR_TRANSPORT_ERROR;
- 
-@@ -734,7 +730,7 @@ static int usbat_multiple_write(struct us_data *us,
-  * other related details) are defined beforehand with _set_shuttle_features().
-  */
- static int usbat_read_blocks(struct us_data *us,
--			     void* buffer,
-+			     void *buffer,
- 			     int len,
- 			     int use_sg)
- {
-@@ -754,7 +750,7 @@ static int usbat_read_blocks(struct us_data *us,
- 	result = usbat_execute_command(us, command, 8);
- 	if (result != USB_STOR_XFER_GOOD)
- 		return USB_STOR_TRANSPORT_FAILED;
--	
-+
- 	/* Read the blocks we just asked for */
- 	result = usbat_bulk_read(us, buffer, len, use_sg);
- 	if (result != USB_STOR_XFER_GOOD)
-@@ -776,7 +772,7 @@ static int usbat_read_blocks(struct us_data *us,
-  * other related details) are defined beforehand with _set_shuttle_features().
-  */
- static int usbat_write_blocks(struct us_data *us,
--			      void* buffer,
-+			      void *buffer,
- 			      int len,
- 			      int use_sg)
- {
-@@ -796,7 +792,7 @@ static int usbat_write_blocks(struct us_data *us,
- 	result = usbat_execute_command(us, command, 8);
- 	if (result != USB_STOR_XFER_GOOD)
- 		return USB_STOR_TRANSPORT_FAILED;
--	
-+
- 	/* Write the data */
- 	result = usbat_bulk_write(us, buffer, len, use_sg);
- 	if (result != USB_STOR_XFER_GOOD)
-@@ -860,7 +856,7 @@ static int usbat_device_reset(struct us_data *us)
- 							 USBAT_UIO_EPAD | USBAT_UIO_1);
- 	if (rc != USB_STOR_XFER_GOOD)
- 		return USB_STOR_TRANSPORT_ERROR;
--			
-+
- 	/*
- 	 * Enable peripheral control signals
- 	 * (bring reset signal down)
-@@ -958,7 +954,7 @@ static int usbat_flash_check_media(struct us_data *us,
- 		rc = usbat_read_user_io(us, uio);
- 		if (rc != USB_STOR_XFER_GOOD)
- 			return USB_STOR_TRANSPORT_ERROR;
--		
-+
- 		info->sense_key = UNIT_ATTENTION;
- 		info->sense_asc = 0x28;
- 		info->sense_ascq = 0x00;
-@@ -994,12 +990,12 @@ static int usbat_identify_device(struct us_data *us,
- 	 * CDROM drives), it should succeed.
- 	 */
- 	rc = usbat_write(us, USBAT_ATA, USBAT_ATA_CMD, 0xA1);
-- 	if (rc != USB_STOR_XFER_GOOD)
-- 		return USB_STOR_TRANSPORT_ERROR;
-+	if (rc != USB_STOR_XFER_GOOD)
-+		return USB_STOR_TRANSPORT_ERROR;
- 
- 	rc = usbat_get_status(us, &status);
-- 	if (rc != USB_STOR_XFER_GOOD)
-- 		return USB_STOR_TRANSPORT_ERROR;
-+	if (rc != USB_STOR_XFER_GOOD)
-+		return USB_STOR_TRANSPORT_ERROR;
- 
- 	/* Check for error bit, or if the command 'fell through' */
- 	if (status == 0xA1 || !(status & 0x01)) {
-@@ -1092,7 +1088,7 @@ static int usbat_flash_get_sector_count(struct us_data *us,
- 	info->sectors = ((u32)(reply[117]) << 24) |
- 		((u32)(reply[116]) << 16) |
- 		((u32)(reply[115]) <<  8) |
--		((u32)(reply[114])      );
-+		((u32)(reply[114]));
- 
- 	rc = USB_STOR_TRANSPORT_GOOD;
- 
-@@ -1160,7 +1156,7 @@ static int usbat_flash_read_data(struct us_data *us,
- 		 */
- 		len = min(totallen, alloclen);
- 		thistime = (len / info->ssize) & 0xff;
-- 
-+
- 		/* ATA command 0x20 (READ SECTORS) */
- 		usbat_pack_ata_sector_cmd(command, thistime, sector, 0x20);
- 
-@@ -1173,9 +1169,9 @@ static int usbat_flash_read_data(struct us_data *us,
- 		result = usbat_read_blocks(us, buffer, len, 0);
- 		if (result != USB_STOR_TRANSPORT_GOOD)
- 			goto leave;
--  	 
-+
- 		usb_stor_dbg(us, "%d bytes\n", len);
--	
-+
- 		/* Store the data in the transfer buffer */
- 		usb_stor_access_xfer_buf(buffer, len, us->srb,
- 					 &sg, &sg_offset, TO_XFER_BUF);
-@@ -1301,7 +1297,7 @@ static int usbat_hp8200e_handle_read10(struct us_data *us,
- 
- 	if (scsi_bufflen(srb) < 0x10000) {
- 
--		result = usbat_hp8200e_rw_block_test(us, USBAT_ATA, 
-+		result = usbat_hp8200e_rw_block_test(us, USBAT_ATA,
- 			registers, data, 19,
- 			USBAT_ATA_DATA, USBAT_ATA_STATUS, 0xFD,
- 			(USBAT_QUAL_FCQ | USBAT_QUAL_ALQ),
-@@ -1320,10 +1316,10 @@ static int usbat_hp8200e_handle_read10(struct us_data *us,
- 	 * (see linux/drivers/scsi/sr.c).
- 	 */
- 
--	if (data[7+0] == GPCMD_READ_CD) {
--		len = short_pack(data[7+9], data[7+8]);
-+	if (data[7 + 0] == GPCMD_READ_CD) {
-+		len = short_pack(data[7 + 9], data[7 + 8]);
- 		len <<= 16;
--		len |= data[7+7];
-+		len |= data[7 + 7];
- 		usb_stor_dbg(us, "GPCMD_READ_CD: len %d\n", len);
- 		srb->transfersize = scsi_bufflen(srb)/len;
- 	}
-@@ -1340,15 +1336,15 @@ static int usbat_hp8200e_handle_read10(struct us_data *us,
- 	 * bounce buffer and the actual transfer buffer.
- 	 */
- 
--	len = (65535/srb->transfersize) * srb->transfersize;
-+	len = (65535 / srb->transfersize) * srb->transfersize;
- 	usb_stor_dbg(us, "Max read is %d bytes\n", len);
- 	len = min(len, scsi_bufflen(srb));
- 	buffer = kmalloc(len, GFP_NOIO);
- 	if (buffer == NULL) /* bloody hell! */
- 		return USB_STOR_TRANSPORT_FAILED;
--	sector = short_pack(data[7+3], data[7+2]);
-+	sector = short_pack(data[7 + 3], data[7 + 2]);
- 	sector <<= 16;
--	sector |= short_pack(data[7+5], data[7+4]);
-+	sector |= short_pack(data[7 + 5], data[7 + 4]);
- 	transferred = 0;
- 
- 	while (transferred != scsi_bufflen(srb)) {
-@@ -1356,27 +1352,26 @@ static int usbat_hp8200e_handle_read10(struct us_data *us,
- 		if (len > scsi_bufflen(srb) - transferred)
- 			len = scsi_bufflen(srb) - transferred;
- 
--		data[3] = len&0xFF; 	  /* (cylL) = expected length (L) */
--		data[4] = (len>>8)&0xFF;  /* (cylH) = expected length (H) */
-+		data[3] = len & 0xFF;	/* (cylL) = expected length (L) */
-+		data[4] = (len >> 8) & 0xFF;	/* (cylH) = expected length (H) */
- 
- 		/* Fix up the SCSI command sector and num sectors */
- 
--		data[7+2] = MSB_of(sector>>16); /* SCSI command sector */
--		data[7+3] = LSB_of(sector>>16);
--		data[7+4] = MSB_of(sector&0xFFFF);
--		data[7+5] = LSB_of(sector&0xFFFF);
--		if (data[7+0] == GPCMD_READ_CD)
--			data[7+6] = 0;
--		data[7+7] = MSB_of(len / srb->transfersize); /* SCSI command */
--		data[7+8] = LSB_of(len / srb->transfersize); /* num sectors */
--
--		result = usbat_hp8200e_rw_block_test(us, USBAT_ATA, 
--			registers, data, 19,
--			USBAT_ATA_DATA, USBAT_ATA_STATUS, 0xFD, 
--			(USBAT_QUAL_FCQ | USBAT_QUAL_ALQ),
--			DMA_FROM_DEVICE,
--			buffer,
--			len, 0, 1);
-+		data[7 + 2] = MSB_of(sector >> 16); /* SCSI command sector */
-+		data[7 + 3] = LSB_of(sector >> 16);
-+		data[7 + 4] = MSB_of(sector & 0xFFFF);
-+		data[7 + 5] = LSB_of(sector & 0xFFFF);
-+		if (data[7 + 0] == GPCMD_READ_CD)
-+			data[7 + 6] = 0;
-+		data[7 + 7] = MSB_of(len / srb->transfersize); /* SCSI command */
-+		data[7 + 8] = LSB_of(len / srb->transfersize); /* num sectors */
-+
-+		result = usbat_hp8200e_rw_block_test(us, USBAT_ATA,
-+				registers, data, 19,
-+				USBAT_ATA_DATA, USBAT_ATA_STATUS, 0xFD,
-+				(USBAT_QUAL_FCQ | USBAT_QUAL_ALQ),
-+				DMA_FROM_DEVICE,
-+				buffer, len, 0, 1);
- 
- 		if (result != USB_STOR_TRANSPORT_GOOD)
- 			break;
-@@ -1407,35 +1402,35 @@ static int usbat_select_and_test_registers(struct us_data *us)
- 				USB_STOR_XFER_GOOD)
- 			return USB_STOR_TRANSPORT_ERROR;
- 
--		if (usbat_read(us, USBAT_ATA, USBAT_ATA_STATUS, status) != 
-+		if (usbat_read(us, USBAT_ATA, USBAT_ATA_STATUS, status) !=
- 				USB_STOR_XFER_GOOD)
- 			return USB_STOR_TRANSPORT_ERROR;
- 
--		if (usbat_read(us, USBAT_ATA, USBAT_ATA_DEVICE, status) != 
-+		if (usbat_read(us, USBAT_ATA, USBAT_ATA_DEVICE, status) !=
- 				USB_STOR_XFER_GOOD)
- 			return USB_STOR_TRANSPORT_ERROR;
- 
--		if (usbat_read(us, USBAT_ATA, USBAT_ATA_LBA_ME, status) != 
-+		if (usbat_read(us, USBAT_ATA, USBAT_ATA_LBA_ME, status) !=
- 				USB_STOR_XFER_GOOD)
- 			return USB_STOR_TRANSPORT_ERROR;
- 
--		if (usbat_read(us, USBAT_ATA, USBAT_ATA_LBA_HI, status) != 
-+		if (usbat_read(us, USBAT_ATA, USBAT_ATA_LBA_HI, status) !=
- 				USB_STOR_XFER_GOOD)
- 			return USB_STOR_TRANSPORT_ERROR;
- 
--		if (usbat_write(us, USBAT_ATA, USBAT_ATA_LBA_ME, 0x55) != 
-+		if (usbat_write(us, USBAT_ATA, USBAT_ATA_LBA_ME, 0x55) !=
- 				USB_STOR_XFER_GOOD)
- 			return USB_STOR_TRANSPORT_ERROR;
- 
--		if (usbat_write(us, USBAT_ATA, USBAT_ATA_LBA_HI, 0xAA) != 
-+		if (usbat_write(us, USBAT_ATA, USBAT_ATA_LBA_HI, 0xAA) !=
- 				USB_STOR_XFER_GOOD)
- 			return USB_STOR_TRANSPORT_ERROR;
- 
--		if (usbat_read(us, USBAT_ATA, USBAT_ATA_LBA_ME, status) != 
-+		if (usbat_read(us, USBAT_ATA, USBAT_ATA_LBA_ME, status) !=
- 				USB_STOR_XFER_GOOD)
- 			return USB_STOR_TRANSPORT_ERROR;
- 
--		if (usbat_read(us, USBAT_ATA, USBAT_ATA_LBA_ME, status) != 
-+		if (usbat_read(us, USBAT_ATA, USBAT_ATA_LBA_ME, status) !=
- 				USB_STOR_XFER_GOOD)
- 			return USB_STOR_TRANSPORT_ERROR;
- 	}
-@@ -1458,7 +1453,7 @@ static int init_usbat(struct us_data *us, int devicetype)
- 	if (!us->extra)
- 		return -ENOMEM;
- 
--	info = (struct usbat_info *) (us->extra);
-+	info = (struct usbat_info *)(us->extra);
- 
- 	/* Enable peripheral control signals */
- 	rc = usbat_write_user_io(us,
-@@ -1532,7 +1527,7 @@ static int init_usbat(struct us_data *us, int devicetype)
- 
- 	usb_stor_dbg(us, "INIT 10\n");
- 
--	if (usbat_get_device_type(us) == USBAT_DEV_FLASH) { 
-+	if (usbat_get_device_type(us) == USBAT_DEV_FLASH) {
- 		subcountH = 0x02;
- 		subcountL = 0x00;
- 	}
-@@ -1564,7 +1559,7 @@ static int usbat_hp8200e_transport(struct scsi_cmnd *srb, struct us_data *us)
- 	 * Send A0 (ATA PACKET COMMAND).
- 	 * Note: I guess we're never going to get any of the ATA
- 	 * commands... just ATA Packet Commands.
-- 	 */
-+	 */
- 
- 	registers[0] = USBAT_ATA_FEATURES;
- 	registers[1] = USBAT_ATA_SECCNT;
-@@ -1576,14 +1571,14 @@ static int usbat_hp8200e_transport(struct scsi_cmnd *srb, struct us_data *us)
- 	data[0] = 0x00;
- 	data[1] = 0x00;
- 	data[2] = 0x00;
--	data[3] = len&0xFF; 		/* (cylL) = expected length (L) */
--	data[4] = (len>>8)&0xFF; 	/* (cylH) = expected length (H) */
--	data[5] = 0xB0; 		/* (device sel) = slave */
--	data[6] = 0xA0; 		/* (command) = ATA PACKET COMMAND */
-+	data[3] = len & 0xFF;		/* (cylL) = expected length (L) */
-+	data[4] = (len >> 8) & 0xFF;	/* (cylH) = expected length (H) */
-+	data[5] = 0xB0;			/* (device sel) = slave */
-+	data[6] = 0xA0;			/* (command) = ATA PACKET COMMAND */
- 
--	for (i=7; i<19; i++) {
-+	for (i = 7; i < 19; i++) {
- 		registers[i] = 0x10;
--		data[i] = (i-7 >= srb->cmd_len) ? 0 : srb->cmnd[i-7];
-+		data[i] = (i - 7 >= srb->cmd_len) ? 0 : srb->cmnd[i - 7];
- 	}
- 
- 	result = usbat_get_status(us, status);
-@@ -1594,8 +1589,7 @@ static int usbat_hp8200e_transport(struct scsi_cmnd *srb, struct us_data *us)
- 		transferred = 0;
- 
- 	if (srb->sc_data_direction == DMA_TO_DEVICE) {
--
--		result = usbat_hp8200e_rw_block_test(us, USBAT_ATA, 
-+		result = usbat_hp8200e_rw_block_test(us, USBAT_ATA,
- 			registers, data, 19,
- 			USBAT_ATA_DATA, USBAT_ATA_STATUS, 0xFD,
- 			(USBAT_QUAL_FCQ | USBAT_QUAL_ALQ),
-@@ -1614,7 +1608,6 @@ static int usbat_hp8200e_transport(struct scsi_cmnd *srb, struct us_data *us)
- 		   srb->cmnd[0] == GPCMD_READ_CD) {
- 
- 		return usbat_hp8200e_handle_read10(us, registers, data, srb);
--
- 	}
- 
- 	if (len > 0xFFFF) {
-@@ -1647,28 +1640,24 @@ static int usbat_hp8200e_transport(struct scsi_cmnd *srb, struct us_data *us)
- 	/* If there is response data to be read in then do it here. */
- 
- 	if (len != 0 && (srb->sc_data_direction == DMA_FROM_DEVICE)) {
--
- 		/* How many bytes to read in? Check cylL register */
--
--		if (usbat_read(us, USBAT_ATA, USBAT_ATA_LBA_ME, status) != 
--		    	USB_STOR_XFER_GOOD) {
-+		if (usbat_read(us, USBAT_ATA, USBAT_ATA_LBA_ME, status) !=
-+				USB_STOR_XFER_GOOD) {
- 			return USB_STOR_TRANSPORT_ERROR;
- 		}
- 
- 		if (len > 0xFF) { /* need to read cylH also */
- 			len = *status;
- 			if (usbat_read(us, USBAT_ATA, USBAT_ATA_LBA_HI, status) !=
--				    USB_STOR_XFER_GOOD) {
-+			USB_STOR_XFER_GOOD) {
- 				return USB_STOR_TRANSPORT_ERROR;
- 			}
--			len += ((unsigned int) *status)<<8;
--		}
--		else
-+			len += ((unsigned int)*status) << 8;
-+		} else
- 			len = *status;
- 
--
- 		result = usbat_read_block(us, scsi_sglist(srb), len,
--			                                   scsi_sg_count(srb));
-+					  scsi_sg_count(srb));
- 	}
- 
- 	return result;
-@@ -1677,10 +1666,10 @@ static int usbat_hp8200e_transport(struct scsi_cmnd *srb, struct us_data *us)
- /*
-  * Transport for USBAT02-based CompactFlash and similar storage devices
-  */
--static int usbat_flash_transport(struct scsi_cmnd * srb, struct us_data *us)
-+static int usbat_flash_transport(struct scsi_cmnd *srb, struct us_data *us)
- {
- 	int rc;
--	struct usbat_info *info = (struct usbat_info *) (us->extra);
-+	struct usbat_info *info = (struct usbat_info *)(us->extra);
- 	unsigned long block, blocks;
- 	unsigned char *ptr = us->iobuf;
- 	static const unsigned char inquiry_response[36] = {
-@@ -1713,8 +1702,8 @@ static int usbat_flash_transport(struct scsi_cmnd * srb, struct us_data *us)
- 		 * note: must return the sector number of the last sector,
- 		 * *not* the total number of sectors
- 		 */
--		((__be32 *) ptr)[0] = cpu_to_be32(info->sectors - 1);
--		((__be32 *) ptr)[1] = cpu_to_be32(info->ssize);
-+		((__be32 *)ptr)[0] = cpu_to_be32(info->sectors - 1);
-+		((__be32 *)ptr)[1] = cpu_to_be32(info->ssize);
- 		usb_stor_set_xfer_buf(ptr, 8, srb);
- 
- 		return USB_STOR_TRANSPORT_GOOD;
-@@ -1741,10 +1730,10 @@ static int usbat_flash_transport(struct scsi_cmnd * srb, struct us_data *us)
- 		 * I don't think we'll ever see a READ_12 but support it anyway
- 		 */
- 		block = ((u32)(srb->cmnd[2]) << 24) | ((u32)(srb->cmnd[3]) << 16) |
--		        ((u32)(srb->cmnd[4]) <<  8) | ((u32)(srb->cmnd[5]));
-+			((u32)(srb->cmnd[4]) <<  8) | ((u32)(srb->cmnd[5]));
- 
- 		blocks = ((u32)(srb->cmnd[6]) << 24) | ((u32)(srb->cmnd[7]) << 16) |
--		         ((u32)(srb->cmnd[8]) <<  8) | ((u32)(srb->cmnd[9]));
-+			 ((u32)(srb->cmnd[8]) <<  8) | ((u32)(srb->cmnd[9]));
- 
- 		usb_stor_dbg(us, "READ_12: read block 0x%04lx  count %ld\n",
- 			     block, blocks);
-@@ -1753,7 +1742,7 @@ static int usbat_flash_transport(struct scsi_cmnd * srb, struct us_data *us)
- 
- 	if (srb->cmnd[0] == WRITE_10) {
- 		block = ((u32)(srb->cmnd[2]) << 24) | ((u32)(srb->cmnd[3]) << 16) |
--		        ((u32)(srb->cmnd[4]) <<  8) | ((u32)(srb->cmnd[5]));
-+			((u32)(srb->cmnd[4]) <<  8) | ((u32)(srb->cmnd[5]));
- 
- 		blocks = ((u32)(srb->cmnd[7]) << 8) | ((u32)(srb->cmnd[8]));
- 
-@@ -1767,17 +1756,16 @@ static int usbat_flash_transport(struct scsi_cmnd * srb, struct us_data *us)
- 		 * I don't think we'll ever see a WRITE_12 but support it anyway
- 		 */
- 		block = ((u32)(srb->cmnd[2]) << 24) | ((u32)(srb->cmnd[3]) << 16) |
--		        ((u32)(srb->cmnd[4]) <<  8) | ((u32)(srb->cmnd[5]));
-+			((u32)(srb->cmnd[4]) <<  8) | ((u32)(srb->cmnd[5]));
- 
- 		blocks = ((u32)(srb->cmnd[6]) << 24) | ((u32)(srb->cmnd[7]) << 16) |
--		         ((u32)(srb->cmnd[8]) <<  8) | ((u32)(srb->cmnd[9]));
-+			 ((u32)(srb->cmnd[8]) <<  8) | ((u32)(srb->cmnd[9]));
- 
- 		usb_stor_dbg(us, "WRITE_12: write block 0x%04lx  count %ld\n",
- 			     block, blocks);
- 		return usbat_flash_write_data(us, info, block, blocks);
- 	}
- 
--
- 	if (srb->cmnd[0] == TEST_UNIT_READY) {
- 		usb_stor_dbg(us, "TEST_UNIT_READY\n");
- 
 -- 
-2.43.0
+2.50.1
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20250725135533.8410-1-rathod.darshan.0896%40gmail.com.
+To view this discussion visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20250806134524.32016-1-mael.guerin%40murena.io.
