@@ -1,130 +1,142 @@
-Return-Path: <usb-storage+bncBCC2JRVCV4NRBQOM6HCAMGQELLE6JOQ@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBD64ZMV5YYBRBLVU6LCAMGQEGR6YFYY@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-wr1-x447.google.com (mail-wr1-x447.google.com [IPv6:2a00:1450:4864:20::447])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5986DB246F2
-	for <lists+usb-storage@lfdr.de>; Wed, 13 Aug 2025 12:17:39 +0200 (CEST)
-Received: by mail-wr1-x447.google.com with SMTP id ffacd0b85a97d-3b782c29be3sf3413589f8f.0
-        for <lists+usb-storage@lfdr.de>; Wed, 13 Aug 2025 03:17:39 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1755080258; cv=pass;
+Received: from mail-qk1-x747.google.com (mail-qk1-x747.google.com [IPv6:2607:f8b0:4864:20::747])
+	by mail.lfdr.de (Postfix) with ESMTPS id 48C51B24B53
+	for <lists+usb-storage@lfdr.de>; Wed, 13 Aug 2025 15:59:12 +0200 (CEST)
+Received: by mail-qk1-x747.google.com with SMTP id af79cd13be357-7e7ffcbce80sf1407551585a.3
+        for <lists+usb-storage@lfdr.de>; Wed, 13 Aug 2025 06:59:12 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1755093551; cv=pass;
         d=google.com; s=arc-20240605;
-        b=HjqmRZjq3vc/h9PObB9q5JxN7CG9LZHtuaxIYR9vFZVumNrpPPXCI2Zd/yzJVu3u/y
-         m/tkivsOCglWiPJ/4hj4sfaIKJlkMQduaFZ2mX3U3KJnCP7eMzN1dFOkaaLFAqoPXEwO
-         lxiKwTOBufg0UWP1lFoA3dZ+jf3Aw/absjesHRx7tfNOPnSUU0FpIRWSqzTRCPKxw4w4
-         Fmjqw8IY9FKroukMfAErjAglQAJJnzzSwyXaBAy8NOtsfciDUNWedAI1fB77tKWuKK/P
-         Rnl8w1IJfO4vKs8AwuZYwID+FingMsv5KtauBt1XMCedTA6zkgHdf9dJ2NeHn/3qSDaT
-         d5sw==
+        b=fcQvE4vxth/HPsb8ylpm7L+HqxKkQm7jvtTqLOWAOJ2JitdcnaPg3Yp7+ZsyJZQXDc
+         fROYxWyHBHhBtvhEL+qAqBftSTWE9m1QC8/0Qi0vUGH3Bp6XFtMiyYjOI70kGifXTN+L
+         RwZKNsfccJyMyuMjXWJAOG0luW/aoGWPrxkjJAI4vIwfrmVsDWQo5Rp9CPPTMgoG2jJK
+         xUuee8a11hKEXj+9Sel+aU5gvB6wCoaDxPMFcE4lso0vU/gFrs0K9kEkCa2+pC9OIj0Z
+         shZFQL+L+8g0fj2IwdDwubqw9eTqt1M7bcdMvqlz81sPq8YPFbjp2GoqclwkoRIURxVz
+         oMpQ==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:to:references:message-id:cc:date
-         :in-reply-to:from:subject:mime-version:sender:dkim-signature;
-        bh=ktKrnn6fo0JmK5xBq99ECoiglOeKxVDCzvB3LBFMDHE=;
-        fh=RyUUU7fY1OZNlqk3NHlEKFZaCmmLNsTIqzJ+S4Ds1Io=;
-        b=jt942ffSwSKj028xs9km/R1AFcah9nt9XmfoCQ5qyCRvIXuOjd/yrYtfdZZogMc8hp
-         JoXCS22z+9vOhjIQkIkQfrgIIFasWgTekPJXcXaslZ2F57hnji++aFZW/WtKcdjxCl1M
-         89Zy2WWgM5n0+W18osXBOWVASixqw3JIrZfO3jqO8COCs1c/dBcBy15xGGrRklEqLdlN
-         DFHb0O/Wp4lqWzir6boYox3C8C2ClWWe/EUcUqtHyRzcQ0mL+YoTx/x/I7Z2Q94Ewmm3
-         qwfMQZk/mEDFwvtG3ZAMv5PTJJWwesfjpD8r3jj6oJx0y2fVMV2FnQ4ulzjL7rE7WOl5
-         Q40A==;
+         :list-id:mailing-list:precedence:in-reply-to:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date:sender
+         :dkim-signature;
+        bh=417N4bmx0nrxhueMl3XAuipF+0FK2oLnl3YIJH3pR4M=;
+        fh=6b4YTwX0zNbNRKUAeYV47UVGhRcX8uqHMAUG9IFaS/Y=;
+        b=acVj97gW3XyIq+inWb6kNG+VN6Tv2xicplZXql8NpN2xzxgFCW2oxCtA7D8SiABKpz
+         RNVX2gmcVU9S9gz5RvhWvaZ+XxwkSens7nWZrczGrFWecMIG7iX96+ewnwnYAgkKIN8v
+         8eqno3PNicdA3ijl1eMDfbY0p2JDmeuqiWpxJxNVJVUvELTGUoGQ1ds75kUwY6624UGx
+         NokNQeOKi9d2vofQZYPbci3uK0+Lg8AfqnrpG3qCnqgJAKlAk/s4Dzztg3elZTGKazpm
+         LUucdGIEZ2EDgB5PWoH4UozUQFaWDO9DtpnEdQO8bA+X1w7B/QH2hMmBgD1PMMRFBMIF
+         sGZg==;
         darn=lfdr.de
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@linux.dev header.s=key1 header.b=oliG3B5M;
-       spf=pass (google.com: domain of thorsten.blum@linux.dev designates 2001:41d0:1004:224b::bc as permitted sender) smtp.mailfrom=thorsten.blum@linux.dev;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=linux.dev
+       dkim=pass header.i=@rowland.harvard.edu header.s=google header.b=WkJ5hEXp;
+       spf=pass (google.com: domain of stern@g.harvard.edu designates 209.85.220.41 as permitted sender) smtp.mailfrom=stern@g.harvard.edu;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=rowland.harvard.edu;
+       dara=pass header.i=@lists.one-eyed-alien.net
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1755080258; x=1755685058; darn=lfdr.de;
+        d=lists.one-eyed-alien.net; s=google; t=1755093551; x=1755698351; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:x-original-authentication-results
-         :x-original-sender:to:references:message-id:cc:date:in-reply-to:from
-         :subject:mime-version:sender:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=ktKrnn6fo0JmK5xBq99ECoiglOeKxVDCzvB3LBFMDHE=;
-        b=X40+S49CjuXg+xjj4V85bruFTawCzNwewVdsozXFZQJz5X5iT/qwzBNs9mV1KW2dr8
-         pgQSLmKYWmRPE3OJ1Mhi/CqrLF5J/c6HjCd0/Ai91kCc6KJrJzGKrFK9GtybZ+AG0ak6
-         mTT2OZkyeDncAKK9ZwiQFnfZgVaPAIOahcsUw=
+         :x-original-sender:in-reply-to:content-disposition:mime-version
+         :references:message-id:subject:cc:to:from:date:sender:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=417N4bmx0nrxhueMl3XAuipF+0FK2oLnl3YIJH3pR4M=;
+        b=H6W/022xoAnEi/6vtmM+9QREzn2krHQ5SqZoZ9all7/U6mhO24trV2gyUsxtRomtAU
+         cw6uyblcYYrdow0Mv4ovJpJjVwdYtvweXW22iu8xwxNLlQGp55mQ8q0MhIdysmRz/B2j
+         M29BPVNTCrgaElwNWXD/8mn+IRlIqfYUhJcGk=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1755080258; x=1755685058;
+        d=1e100.net; s=20230601; t=1755093551; x=1755698351;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :x-spam-checked-in-group:list-id:mailing-list:precedence
-         :x-original-authentication-results:x-original-sender:to:references
-         :message-id:cc:date:in-reply-to:from:subject:mime-version
-         :x-beenthere:x-gm-message-state:sender:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=ktKrnn6fo0JmK5xBq99ECoiglOeKxVDCzvB3LBFMDHE=;
-        b=GxSXD6CncoOKHNR/FyV/M0xizz057XyBaCEQmCYj2CuUm3rosabCk9WeK825VitE9T
-         1bqfqQHvHBTobN/WSiiwgyeTKZtOyUWc8D/4LCBjbOiJl4sM84rqeYynqBc4j69YWw/d
-         iRVcwNciPmg8eY8gsm1ynkyZDLZI3vgaKtR7YO5a1+G3E7yT+ZrzDt8dPlE639IQRNgW
-         9unSMAw2wgIfuiAnYjIDreXngxZPjITYv+x6whLMJqDYdifZEH4Oog8kix91+WJjs1rb
-         XdiNmEZEFkLmG9RJ1s6XArkZLZlYeFq2mAkFjGh8+l5y2b1izqaMsePCt4d5l15UTlYz
-         5jXQ==
+         :x-original-authentication-results:x-original-sender:in-reply-to
+         :content-disposition:mime-version:references:message-id:subject:cc
+         :to:from:date:x-beenthere:x-gm-message-state:sender:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=417N4bmx0nrxhueMl3XAuipF+0FK2oLnl3YIJH3pR4M=;
+        b=KxOkXHR7R9zDRKu/hnH2VonIY1dtwJ6QpwqqNPCJgV4Whu08UXewTIJumkfVc8HF8P
+         y7KR2XSAB6Eh5GgBqSIe78potSy7hw+I9AC06YXhnmHf5qTNRi2qF/gKVqOzZzWoU0fA
+         gKbr8mlpsMmjF3nIiU2KFIAb6RkP+jR4t/WhVAKheo0+ngWllQ3Ye4Al+tV+Wgdc2b8f
+         CMM9zwCm1T5ExqRkb9dgh0U07MmzVLTo0NBHdAWTgsazzoqbTKa4nSO/jYsbjZW5ZLjr
+         q4hbifQj1h+NMs2VFVAnmHpWaVFRB7yY6gXYsvDPGBdHCIpEGIaNgEV8E8jBTvM/7HWs
+         Jk0w==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Forwarded-Encrypted: i=2; AJvYcCW00zqk8HaNre2COQDiClVGnrztHqQ+bg7AUNW1+T2Jwg+D7+yGSCq+tyEFh3fFi0g4d6py1g==@lfdr.de
-X-Gm-Message-State: AOJu0YzNWVgD5wJgTIKDux5kHKdOcbppjLiRhAd+RgrPqv+/umzJXNRM
-	VEYaQzgJwvuCv35hTtVR9IRTYbiAIfQ3l49YXt3cWflZF+eTAwAL96u7TTpGnLvcCt0=
-X-Google-Smtp-Source: AGHT+IEJTxoYgDLK569jCpx2yV/cYjtNHC2PkZM7mXPg6qMwJ0DYE3zKWiG6kEbooEMH2YmCfU4sMA==
-X-Received: by 2002:a5d:5f56:0:b0:3b7:6828:5f78 with SMTP id ffacd0b85a97d-3b917e2da18mr1602492f8f.4.1755080258520;
-        Wed, 13 Aug 2025 03:17:38 -0700 (PDT)
-X-BeenThere: usb-storage@lists.one-eyed-alien.net; h=AZMbMZcyq7iNd57z++us0XDIsbi4py1BhN9IpFRIg9NykbbGpg==
-Received: by 2002:a05:600c:8b04:b0:43c:ed2c:bcf2 with SMTP id
- 5b1f17b1804b1-459f03fb315ls35652925e9.1.-pod-prod-05-eu; Wed, 13 Aug 2025
- 03:17:36 -0700 (PDT)
-X-Forwarded-Encrypted: i=2; AJvYcCWZnhPExQweYx7x1C0xl3fMxRuMr/Hofj7Rpp7SPeEYTfdCTG4LADCScrvxNVeCSPXh+0vMNRbWJJbPQg==@lists.one-eyed-alien.net
-X-Received: by 2002:a05:600c:154f:b0:459:e3a1:a0c4 with SMTP id 5b1f17b1804b1-45a1665b4bamr23994985e9.30.1755080255870;
-        Wed, 13 Aug 2025 03:17:35 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1755080255; cv=none;
+X-Forwarded-Encrypted: i=2; AJvYcCUJeqWZJs/d8KXHvxHu3pnhU+Nt93Y7IK9lP7GhK8BpE54PlOvlW92+z6lzj2MowL3CnpFZ4Q==@lfdr.de
+X-Gm-Message-State: AOJu0YwKzNtoUtzdA+uvcI4yQe6hkKzwmYuYlNhe5yPt9MzBGQKjfuoL
+	jDoNiMyO/gMalMepuFd1p1GxEDDENLiPQQ86kZXICaQuQaakugLJR1/nrXEuElZAYM8=
+X-Google-Smtp-Source: AGHT+IEqTycU/0J2JBLv8px5ymFKDRpmvxQL8XNGdgHEvo+d+MxT9AAoy6gIoYUB/rXN/zA6ftl0WQ==
+X-Received: by 2002:a05:620a:6014:b0:7e8:2f4d:461 with SMTP id af79cd13be357-7e86529d7e6mr357071985a.2.1755093550953;
+        Wed, 13 Aug 2025 06:59:10 -0700 (PDT)
+X-BeenThere: usb-storage@lists.one-eyed-alien.net; h=AZMbMZcBpOcr82mPe7sI1IVh82fwaPMWgsA62ewEgrCPh2T4qA==
+Received: by 2002:ac8:5803:0:b0:4ab:8dcf:6968 with SMTP id d75a77b69052e-4b0a04cdea5ls122063761cf.1.-pod-prod-09-us;
+ Wed, 13 Aug 2025 06:59:10 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCV10KsX7Fvodczvj8koMIo0u7BwqEaz9wOLZzkX6AB9iuAPZYfzMrowRsSrbkyUy1rV6zOMwoEM6f75yg==@lists.one-eyed-alien.net
+X-Received: by 2002:a05:622a:312:b0:4af:1d64:b073 with SMTP id d75a77b69052e-4b0fc685aebmr44944181cf.10.1755093549726;
+        Wed, 13 Aug 2025 06:59:09 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1755093549; cv=none;
         d=google.com; s=arc-20240605;
-        b=HVlV6aAmVXNDyP26eSefXvVGt6dIVVYiVeUOkdB3rwgwDIixbD2qoO60iIDH2RQ0Mv
-         7egHZmxma+9tMCl11WX7iej6Lit87/PeavDPAyGi6ujkKy7Uy4hK2zQq4p8+UeY4vIa4
-         NOCHQq5HGTwVL60vDFGAsascXqmDI6LQ4TzKPUKADn9BVr29GEo7h8TcMqgzrj1idwjQ
-         WchasEzYNpM9e3Bsl4f5v9koXaPWcwWt7nbtjqDGtnAStRXGqTBQPlbSbKOrFv07YJk0
-         xnm3HKytLdhWs3lOv+WRh54GCWmntlLSaRuhyVX4QzkLEaJWepGod5LT8kdb+SLyUg9v
-         /YkA==
+        b=NXtot1PrrJR/mitoxPELTv1L2E/7/8Zg2qtpZYb3OUslC6PGdmnaBRReqOSbzBwYI7
+         ZHjN1UTqHcmATUcQFcbZxjb2dzisMATFxJXtFcUzKmxdiT8N8qv5nAOQH7cLxqng3rOn
+         vSh6fRkYIWkarLuXdSjZHsoZitU36Dv/oZjp13VSN228H+KbW23YrsH2jF2LFnptpRFG
+         7+w5MDPNUrZQvmGojHsl8eRZmOiOTa5aAnD/zP9He5gXKWXdqZE9847V105K5Qj8GL/l
+         529ePnwe3XrsciUlokXSkMDKEr0gphPygwp68EXIWvkDMQorYrupxXnKSB9WUyyraiQX
+         Xgmg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
-        h=to:references:message-id:content-transfer-encoding:cc:date
-         :in-reply-to:from:subject:mime-version:dkim-signature;
-        bh=eBogFjsAW/CzbqvTDnhDBJE6o6dXCGpP/yXDyp5i38Q=;
-        fh=B7xbHsbzpr1nfc1/MaaVznvaaqc15A98N35CKO/jcR4=;
-        b=a3CoWp5cdf55RDGZUxBIoB1vIS985ZOM5Wip0cV5L0FMIYlMbVpODWH30HAgw4f8ix
-         DJRmVKwk+CQhhiL03fm2S68IPxjn2FLogS2mgCJgO5+Trh+xlbXm/jtNWh2Pkp2qy1Wk
-         vJ7G4j+pC5VBdFlgR+wADqMoR5fBGEuM8cosKulhOX1l7HnbQ8UoHrvpbz97ki6JjoAv
-         GNdGj2I4hy6rTjq6f1H1jte47LtNIfGa0CyLdA/6Ju/194rgvNzj1vGw16tuGgjwvzmA
-         VA67OhsbqIzpbVcYxpGhSRQFSicgim9ATku4yyL6Vai6Rc9VTGcBR/PnR5Te99K3KwZb
-         nVAQ==;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:dkim-signature;
+        bh=0B5+KCwTYeMl+r7+gOvY6gHETkIvCqXubWBUjPQk9aQ=;
+        fh=L9Ntfuj78rb0pP+ga5c/p5QbQdnjwpyBUGhRv0ylk4E=;
+        b=hSO+n/7k4jCLNyJBA5L2vd/z9MXbqvuTJwZDdPFkXvuaMGWV/+iT8IPOPWNWO2Vj4U
+         O/6NIKMrunm3feTNwWBjsQE3mZKCt3sQLNA8lCewwBRp0HRyo6tnDN+gQDIE0l96FrJJ
+         pO1IZYF/i4kt/ex6bu55I09mQ4jAmKap8sCXNd6Bl4aHLSF41ra/wjkL2eEzIOdHG3sE
+         s9e0hDA8EQ1Zr2c06XQlvRscxXbM0dSPu6eEHH1HozRgoHZHoosmrmlOVfcZbDnadau2
+         aaEPi1oZQSCJZSt1abj/V40h5hbVN9+3eQMECD6Cu1eetAPAzu6MrVntVEePLt6WDMbq
+         08dw==;
         dara=google.com
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@linux.dev header.s=key1 header.b=oliG3B5M;
-       spf=pass (google.com: domain of thorsten.blum@linux.dev designates 2001:41d0:1004:224b::bc as permitted sender) smtp.mailfrom=thorsten.blum@linux.dev;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=linux.dev
-Received: from out-188.mta0.migadu.com (out-188.mta0.migadu.com. [2001:41d0:1004:224b::bc])
-        by mx.google.com with ESMTPS id 5b1f17b1804b1-45a16e1cb50si9920495e9.72.2025.08.13.03.17.35
+       dkim=pass header.i=@rowland.harvard.edu header.s=google header.b=WkJ5hEXp;
+       spf=pass (google.com: domain of stern@g.harvard.edu designates 209.85.220.41 as permitted sender) smtp.mailfrom=stern@g.harvard.edu;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=rowland.harvard.edu;
+       dara=pass header.i=@lists.one-eyed-alien.net
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id d75a77b69052e-4b091f557adsor136188551cf.0.2025.08.13.06.59.09
         for <usb-storage@lists.one-eyed-alien.net>
+        (Google Transport Security);
+        Wed, 13 Aug 2025 06:59:09 -0700 (PDT)
+Received-SPF: pass (google.com: domain of stern@g.harvard.edu designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+X-Forwarded-Encrypted: i=1; AJvYcCUxn2aYYMdh82UJfCm1rF63AtjETus2u7L9FnBmSMcLqGThhu0hw0FD/6ddn2rgXgE5bO+lKtYM2NxSuA==@lists.one-eyed-alien.net
+X-Gm-Gg: ASbGncvNnfrtoF4KvzHFM2O6HcGwHQcBzSYhsoV3Vh7KpDspGIOL4ZjbBtXiAYffc3/
+	P0V0bWB0/sQRqvxCMnH5mzOHKKtw6cWuvPeoIoi6Nih+KmhPZ1G2ar4G4S7+Y5DHKCXT7VTzgCt
+	UCVRxDd2+dNsED3EoxlwsaBM6K9zaT8SDbwI85EjucB4FAPovfhOjUbL3Rv/LQOsqJGx0VazSlG
+	uzvQ5yXtqI4dKbh0s2EAhY08PIDTnFwTI4aKYESMgWadZlLc/qHSLEnn+zGengw0PymkhLG3GCk
+	2mNe/UBk4Ne5F14jLKBrTf8PCgaw05VQhykUXnS1kwqt1RTbqMgKbcH3aMIjAUJJ7DIU4U8FaP3
+	lCzu6Pj36YOW7V2Q2bWskRUi0V+VoWJ71O1LU5yIz
+X-Received: by 2002:a05:622a:4107:b0:4b0:6703:db95 with SMTP id d75a77b69052e-4b0fc687c82mr34072551cf.9.1755093548792;
+        Wed, 13 Aug 2025 06:59:08 -0700 (PDT)
+Received: from rowland.harvard.edu ([140.247.181.15])
+        by smtp.gmail.com with ESMTPSA id d75a77b69052e-4b0a41a2ab2sm95720401cf.18.2025.08.13.06.59.07
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 13 Aug 2025 03:17:35 -0700 (PDT)
-Received-SPF: pass (google.com: domain of thorsten.blum@linux.dev designates 2001:41d0:1004:224b::bc as permitted sender) client-ip=2001:41d0:1004:224b::bc;
-Content-Type: text/plain; charset="UTF-8"
-Mime-Version: 1.0 (Mac OS X Mail 16.0 \(3826.700.81\))
-Subject: Re: [usb-storage] [PATCH] usb: storage: realtek_cr: Simplify rts51x_bulk_transport()
-X-Report-Abuse: Please report any abuse attempt to abuse@migadu.com and include these headers.
-From: Thorsten Blum <thorsten.blum@linux.dev>
-In-Reply-To: <49559415-4493-4b90-a9bc-c6b9074a61f6@rowland.harvard.edu>
-Date: Wed, 13 Aug 2025 12:17:21 +0200
+        Wed, 13 Aug 2025 06:59:08 -0700 (PDT)
+Date: Wed, 13 Aug 2025 09:59:05 -0400
+From: Alan Stern <stern@rowland.harvard.edu>
+To: Thorsten Blum <thorsten.blum@linux.dev>
 Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-usb@vger.kernel.org,
- usb-storage@lists.one-eyed-alien.net,
- linux-kernel@vger.kernel.org
-Message-Id: <8AD61006-EA99-48A3-879A-49A575081F15@linux.dev>
-References: <20250812144358.122154-1-thorsten.blum@linux.dev>
- <b11a19b6-9fb3-4fdc-b94e-33ff01a634b3@rowland.harvard.edu>
- <19E72C72-AFD3-4D13-8F14-9A1F96B971D3@linux.dev>
- <49559415-4493-4b90-a9bc-c6b9074a61f6@rowland.harvard.edu>
-To: Alan Stern <stern@rowland.harvard.edu>
-X-Migadu-Flow: FLOW_OUT
-X-Original-Sender: thorsten.blum@linux.dev
+	linux-usb@vger.kernel.org, usb-storage@lists.one-eyed-alien.net,
+	linux-kernel@vger.kernel.org
+Subject: Re: [usb-storage] [PATCH 1/3] usb: storage: realtek_cr: Improve
+ function parameter data types
+Message-ID: <a6deb8d0-dc8e-4d4a-94d2-ed2617091eef@rowland.harvard.edu>
+References: <20250813101249.158270-2-thorsten.blum@linux.dev>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="UTF-8"
+Content-Disposition: inline
+In-Reply-To: <20250813101249.158270-2-thorsten.blum@linux.dev>
+X-Original-Sender: stern@rowland.harvard.edu
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@linux.dev header.s=key1 header.b=oliG3B5M;       spf=pass
- (google.com: domain of thorsten.blum@linux.dev designates 2001:41d0:1004:224b::bc
- as permitted sender) smtp.mailfrom=thorsten.blum@linux.dev;       dmarc=pass
- (p=NONE sp=NONE dis=NONE) header.from=linux.dev
+ header.i=@rowland.harvard.edu header.s=google header.b=WkJ5hEXp;
+       spf=pass (google.com: domain of stern@g.harvard.edu designates
+ 209.85.220.41 as permitted sender) smtp.mailfrom=stern@g.harvard.edu;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=rowland.harvard.edu;
+       dara=pass header.i=@lists.one-eyed-alien.net
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -140,17 +152,56 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On 13. Aug 2025, at 03:38, Alan Stern wrote:
-> If you would like to submit three new patches, please do.
+On Wed, Aug 13, 2025 at 12:12:47PM +0200, Thorsten Blum wrote:
+> In rts51x_bulk_transport() and rts51x_read_status(), change the function
+> parameters 'buf_len' and 'len' from 'int' to 'unsigned int' because
+> their values cannot be negative.
+> 
+> Signed-off-by: Thorsten Blum <thorsten.blum@linux.dev>
+> ---
+>  drivers/usb/storage/realtek_cr.c | 5 +++--
+>  1 file changed, 3 insertions(+), 2 deletions(-)
+> 
+> diff --git a/drivers/usb/storage/realtek_cr.c b/drivers/usb/storage/realtek_cr.c
+> index 7dea28c2b8ee..d2c3e3a39693 100644
+> --- a/drivers/usb/storage/realtek_cr.c
+> +++ b/drivers/usb/storage/realtek_cr.c
+> @@ -199,7 +199,8 @@ static const struct us_unusual_dev realtek_cr_unusual_dev_list[] = {
+>  #undef UNUSUAL_DEV
+>  
+>  static int rts51x_bulk_transport(struct us_data *us, u8 lun,
+> -				 u8 *cmd, int cmd_len, u8 *buf, int buf_len,
+> +				 u8 *cmd, int cmd_len, u8 *buf,
+> +				 unsigned int buf_len,
+>  				 enum dma_data_direction dir, int *act_len)
+>  {
+>  	struct bulk_cb_wrap *bcb = (struct bulk_cb_wrap *)us->iobuf;
+> @@ -417,7 +418,7 @@ static int rts51x_write_mem(struct us_data *us, u16 addr, u8 *data, u16 len)
+>  }
+>  
+>  static int rts51x_read_status(struct us_data *us,
+> -			      u8 lun, u8 *status, int len, int *actlen)
+> +			      u8 lun, u8 *status, unsigned int len, int *actlen)
+>  {
+>  	int retval;
+>  	u8 cmnd[12] = { 0 };
 
-I just submitted this as three separate patches:
+I just looked through the original source file.  What about 
+rts51x_bulk_transport_special()?  Shouldn't its buf_len parameter also 
+be unsigned?
 
-https://lore.kernel.org/lkml/20250813101249.158270-2-thorsten.blum@linux.dev/
+For that matter, what about cmd_len in both routines?
 
-Thanks,
-Thorsten
+And have you checked the corresponding values in all the other 
+usb-storage subdrivers?
+
+As you can see, worrying about the difference between signed and 
+unsigned values, when it doesn't really matter, quickly leads to a 
+morass.
+
+Alan Stern
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/8AD61006-EA99-48A3-879A-49A575081F15%40linux.dev.
+To view this discussion visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/a6deb8d0-dc8e-4d4a-94d2-ed2617091eef%40rowland.harvard.edu.
