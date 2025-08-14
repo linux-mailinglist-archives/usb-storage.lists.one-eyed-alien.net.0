@@ -1,147 +1,150 @@
-Return-Path: <usb-storage+bncBCENHXXO3EBRBPWZ67CAMGQE45PMUQY@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBCENHXXO3EBRBX7G67CAMGQELO424RY@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-pf1-x445.google.com (mail-pf1-x445.google.com [IPv6:2607:f8b0:4864:20::445])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D365B26866
-	for <lists+usb-storage@lfdr.de>; Thu, 14 Aug 2025 16:03:45 +0200 (CEST)
-Received: by mail-pf1-x445.google.com with SMTP id d2e1a72fcca58-76e2eac5c63sf871401b3a.2
-        for <lists+usb-storage@lfdr.de>; Thu, 14 Aug 2025 07:03:45 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1755180224; cv=pass;
+Received: from mail-pg1-x545.google.com (mail-pg1-x545.google.com [IPv6:2607:f8b0:4864:20::545])
+	by mail.lfdr.de (Postfix) with ESMTPS id 74792B26967
+	for <lists+usb-storage@lfdr.de>; Thu, 14 Aug 2025 16:32:01 +0200 (CEST)
+Received: by mail-pg1-x545.google.com with SMTP id 41be03b00d2f7-b47174b2582sf1480168a12.2
+        for <lists+usb-storage@lfdr.de>; Thu, 14 Aug 2025 07:32:01 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1755181920; cv=pass;
         d=google.com; s=arc-20240605;
-        b=dUeYCh1SjqcGGB7TqNfvl8oxpbLBLnzWxMLzASLoh8Z0dpmjh0cZnfM1dflp5i3sBp
-         ZLm3FzHXISPbgqY3CorUJRVV4BHvnFqxOfWc6YsM59Vd7njQGdb2pWpbDNH+CtIOSjrz
-         e03tERmRuAhAu0sSsuPvc0xr90Tstvre0Hf4DG1bty3tosJgSWwDlnMOnDzilExApq4O
-         6nPrjWeDhvxLHjtyPbiiZwHkCWTpInAB7SvwNwOd5AQtTEuDoqfWyyp9tPK21gZ4GB0s
-         FH5z89sUJj0h2QTgazGwXQXLnrVkC79rI6AnudgoAtXWfFKSXMUB41VV6WZmD0b87V+u
-         9Tuw==
+        b=SUR3AQYbhhH2WXwiM3uCzHS4lnEZaX/XXDHteYWm2w01e0ruQgqSXrYWfexLEXuoGp
+         si8VlX3QjSmW+0ruesdXsJV1ZHUgqH8+lBLZeUN/GksOxUdqbDxgM4lrPvcu+ICtT3ba
+         sMy12vrbK9KY3EoiXORFXQlJYo4TDS4m8ytN/pnBMP+0jOh7yInLMmRPSifA60CYytQS
+         wvC9Up51UlMH2HloYbxL+dTWefsQNXJ3jzytWPXEfO9nZvXZXzKozzN/AL8FcsBZqPSh
+         8itdvz16//CRAli6FU1cS8nx4n8Cw1d+HxC7CIKDfTfFCrLoOaAlumzlQbKqTr5GgP8E
+         DUtw==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:sender:dkim-signature;
-        bh=EgXfgzDnqeH6VrUwRuaBAPsSpxTBEOieIz732BGm37o=;
-        fh=+8/cuRNfelxrM0cT0iG5OmPti3j2RysQf2OAN7Lcpus=;
-        b=dhL9XTcyrZ5Y2cHHn7zMD9JJzcSHBxP6+KAnjBpnbCyOhQ0tEyRjcKUBTxplYLnX78
-         ODsRpO3Epy9QJ0bBoQmEJgsIGg2NeUZEFim7ClQSSBmPiOVnlxyyKOCAFd4p4QfpyQ4Z
-         ytojYdQPfBEUbbB40n2I2YphmsPVe/9DzhI512fbJIhvaSYJr5Sr3QyeGQ3hFxZv+/0X
-         61JAwwtcQlDLMY1qy0i2IU/sNwNOK2KmgQL1PFeRX+Lk5LLLFFsSASJkB6Inqn3FqWn1
-         ssxg/nHLE7+Nn2kpNPsKGQOe1c4h8PWku1g1gwmPfPWf74rlJDEZSYav5twy9DpSdwsn
-         RW5g==;
+         :list-id:mailing-list:precedence:content-transfer-encoding
+         :mime-version:references:in-reply-to:message-id:date:subject:cc:to
+         :from:sender:dkim-signature;
+        bh=oPfssW8BLwMHC5/gdEDqcrtxdfJqIfaR/kMuLVXBPyY=;
+        fh=4PxFTT/XD/CFtsn6IW+KUNNVnXoNg6lb8aAfPlfK5eQ=;
+        b=PoPYVShEb9iXWfHJVAWqFmJc2l01GgMlL4yupgZIWajsuhTQGv+Oe7Ckf36ax0bFcB
+         O7cpREQHwfESqbHEPi3KSnxIR2eRheEBFqaOtWPGkT/kc/htQ1IEWHleqRB3fMsQZYor
+         C0I4zyLIH0rDssyNZQu1upf03uiKRO7vOdLu5E0ln9fcQC6fb3PRu8jZLife4BqPxt0K
+         VoVu6b7qwbeI5zH8SC9qUmlWEI2L5Mt+bQ/cNIwR5ktkAlSh1F04+nq8ZR7is5zNYzEp
+         +Y57ckJ8EEmD++/5qdiobaoz3htSEbyKvFXxU1I8IUj7nG7dXw4Sjh6eJmatFivGU90C
+         u88w==;
         darn=lfdr.de
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@gmail.com header.s=20230601 header.b=hPsdiciJ;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=iDkZ3DiF;
        spf=pass (google.com: domain of zenmchen@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=zenmchen@gmail.com;
        dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
        dara=pass header.i=@lists.one-eyed-alien.net
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1755180223; x=1755785023; darn=lfdr.de;
+        d=lists.one-eyed-alien.net; s=google; t=1755181919; x=1755786719; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:x-original-authentication-results
-         :x-original-sender:mime-version:references:in-reply-to:message-id
-         :date:subject:cc:to:from:sender:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=EgXfgzDnqeH6VrUwRuaBAPsSpxTBEOieIz732BGm37o=;
-        b=Y7MNm5MIbrkQU95uFmV7u8E+pcgofGlOIeyzLLxlNSL56WEz8DdlAgAV8XQ/J03REx
-         2sg7URzvuWOWUqntGlh1H3l/M/2l9dVzElmH4hvO0SnjduswmnwIVOBHwNBce33bGuzh
-         Vuoz8owqwahlWyH0Lz6EB0v45xvgVAvAtvd1w=
+         :x-original-sender:content-transfer-encoding:mime-version:references
+         :in-reply-to:message-id:date:subject:cc:to:from:sender:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=oPfssW8BLwMHC5/gdEDqcrtxdfJqIfaR/kMuLVXBPyY=;
+        b=KalbVckl6nF2fkmav9k0YVQ5LMcoSQMNOgSosOvZchltzBb2nvKS9b7jmkkgaOBtGn
+         W0oBE5YX0mPzCXLJSE9akPtpDJFSPPBvivWhsSUDIXN6dZ6m2EsoXup9fDN7Sp53RNUS
+         1r7qwEzunGB+aOJz/B8/xu3q9/QPlki/wDGQQ=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1755180224; x=1755785024;
+        d=1e100.net; s=20230601; t=1755181919; x=1755786719;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :x-spam-checked-in-group:list-id:mailing-list:precedence
-         :x-original-authentication-results:x-original-sender:mime-version
-         :references:in-reply-to:message-id:date:subject:cc:to:from
-         :x-beenthere:x-gm-message-state:sender:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=EgXfgzDnqeH6VrUwRuaBAPsSpxTBEOieIz732BGm37o=;
-        b=Nxvm+dKs1Yt4foiQYNFM7au1/ld1/ItEa6p/0YzMNpxET1JQIuxArlIwca+xJi+IUi
-         4opCCVGZmONrqBhy9Z+D/smnEWBNDyawfhZ7wlrIrEjI8wwZxMTHB+xGTXFh3c7ei56w
-         p7lwyNn6GYVCvclziYYmzhgKN7SmUpafzemF2vsqH6Jwx8Xqa6xDcjUDznpLVa2ZLPYE
-         6vCUjFTXp1GqHj3eDR/yJzaBWiuyDQV6/av/DY8nHRYRo+KxPdDs7ESbgriWM70GT98y
-         PszbqthJ7vNCbi3+NLUDuuNEncKE5F5RE6y1dN62QMH6G2QAggEoR9yoFc1HsEdgDLct
-         Qweg==
+         :x-original-authentication-results:x-original-sender
+         :content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-beenthere:x-gm-message-state
+         :sender:from:to:cc:subject:date:message-id:reply-to;
+        bh=oPfssW8BLwMHC5/gdEDqcrtxdfJqIfaR/kMuLVXBPyY=;
+        b=qt2eVGaP7NW+6gpc/VA6fNLj9lEFuiq3pC95g8kUvwdKpZIKyNEl17c0wQ9iFBwS2w
+         LiPR0foSKZOOBMCOaMb4eID8z58LEdmYkxkQBeT5Qf489gEhoSFwCAS+P0GdwtkNItBq
+         zUr/AqFzqmpgkaap8wkiXVW0KeGjXb1EHCDolk07Pmo3xI7bnXj1SLpSnafvFbpLkIS7
+         AF83oKKkd01f/KAkIeLlVVvto7gj57Zk6LkD6YMPvaiRdmQpQD8pXlArQutrwKckR5xr
+         NWXsg0dbyvJNHW5VeTrNbuir6ykqrhch4z6V/G683zrP6YtCBWOf2m5jVI9zjSq1q/cl
+         AQlA==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Forwarded-Encrypted: i=2; AJvYcCVR/E163eWiH2QvYIA8L+iGtHEh/nfhnvmpyaJfHbSxohLZNgx5AwVvy4OyP1mPH6wskKk6+w==@lfdr.de
-X-Gm-Message-State: AOJu0Ywinyy1sh3O6PHZ7PBhiePw20fVAQ2ZHW7yvEUXYy+1xwYlbL2N
-	GBqT59KmcOOtMN6AFkvevEY8gpgCGDRJlIqAZmWxpSkY4HWVjMeysaZu9Nw52hH37k0=
-X-Google-Smtp-Source: AGHT+IFaBehanXpJI+x08RRo9ltDHMEGYjLiJcVK1QJb4YFYlqvduHQ8vLwd3Ry2Cop3rKMYMeqD2g==
-X-Received: by 2002:a05:6a20:3ca7:b0:230:3710:9aa9 with SMTP id adf61e73a8af0-240bd06e0b1mr5099035637.4.1755180223229;
-        Thu, 14 Aug 2025 07:03:43 -0700 (PDT)
-X-BeenThere: usb-storage@lists.one-eyed-alien.net; h=AZMbMZfX7syz5VMhn9FtLpDhznbsDn4p+kMrzj1SU83JAmOvtA==
-Received: by 2002:a05:6a00:1f1a:b0:742:c6df:df1d with SMTP id
- d2e1a72fcca58-76e2e5852fels970373b3a.2.-pod-prod-05-us; Thu, 14 Aug 2025
- 07:03:41 -0700 (PDT)
-X-Forwarded-Encrypted: i=2; AJvYcCXaAa8ltvg24FkUushG38sB56WD/Z9tU04m0IqWuV3ERqQ6ryUIbS+87AohlrtYKhKAcgAmIwJ9PVcMIQ==@lists.one-eyed-alien.net
-X-Received: by 2002:a05:6a00:84f:b0:76b:cadf:5dbe with SMTP id d2e1a72fcca58-76e2f5c1b40mr4911102b3a.0.1755180221329;
-        Thu, 14 Aug 2025 07:03:41 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1755180221; cv=none;
+X-Forwarded-Encrypted: i=2; AJvYcCXdsu5b0+L6BlKWhCi4ia8FFocsbkhiL/p+5SHL4vXTvgcSi84ULYdj2fK+OXOHMkPTZXo1vg==@lfdr.de
+X-Gm-Message-State: AOJu0YwwfU2h74v9tm5UrTTg1weqAAvlgFx+qVTQV0KtHSP5A0kDI36D
+	iofGKn+VXsnS1WJQrKnFPQP8QFc68ZpM4KtlZYMAzeShyJLeoBkzmlJmwvjtYlFkK+A=
+X-Google-Smtp-Source: AGHT+IH+PGLjZbn2irE8xGXcW+BUjG6JDMKgDomyMs8ySGsJ0TwXDyhaRLgUCG1ySoYx1mT63sbTtg==
+X-Received: by 2002:a05:6a20:9392:b0:23d:ac50:333e with SMTP id adf61e73a8af0-240bd2aba0dmr5184434637.43.1755181919317;
+        Thu, 14 Aug 2025 07:31:59 -0700 (PDT)
+X-BeenThere: usb-storage@lists.one-eyed-alien.net; h=AZMbMZdfEKdnYZhgVGUzMlTvwuKMsvCeyoyFNxx9Z9kM0osjBw==
+Received: by 2002:a05:6a00:1996:b0:730:8b18:e9ff with SMTP id
+ d2e1a72fcca58-76e2e3ca5f3ls1235954b3a.0.-pod-prod-06-us; Thu, 14 Aug 2025
+ 07:31:58 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCVFjvitFM5kcvU+42y456I7p63lc2EfZhoLX4lJjNd+NZ1VRnZCPLneZMYfJ5JF7eHyqvt8VLP4HOEOiA==@lists.one-eyed-alien.net
+X-Received: by 2002:a05:6a20:3d8b:b0:20b:a75e:fa32 with SMTP id adf61e73a8af0-240bd2a8ac1mr5598288637.40.1755181917679;
+        Thu, 14 Aug 2025 07:31:57 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1755181917; cv=none;
         d=google.com; s=arc-20240605;
-        b=Jqwji/Qht9YztUiNQ9g2UBPELXlFgbQ33H3/hltve7/xG0hiyACb5XUPyKXJ5w3mQy
-         wUr8kU2oalTx2ej7p4WZO6a5PA/mmxNDi+N533+7yXaRfYzl9Og0jo/hJIoZQEtwdM5x
-         KEZgxR9//+IeOnTHsohezFbvkst/9HQugyU7N05MhbzsRpaP5wtr03hGuo0KCpnuHMN7
-         98p0aR5L9lVmTxvyo40BGFe+D8GKzJEO90KDeW9ofUBV7ajtA8MVjen3QGqyOXYKyhZ3
-         knvseNgeRdL3SaimTL47rTrG54LTyzE7d8iivzMpc0/mxG3qzDWJMfjHY1eftrdkOUyx
-         ccQQ==
+        b=ZgbbAMY7Rkjv5FLdVblVmUo4BAtw8L91SLeTbKAgKNwtYmERMP1bpFBlydRHTx0wB1
+         CDB7mM4Er3pov45rBDSPQQ7RNfW/yLkXs/lRfISNnVFl0uUeFFz+b1e1CFCihHq4+fUw
+         I5kas9INkIiy3O+YFwOc8jxfp4GgROl1x+YW8AlyLboGfTem02R8pMzwFXdeYjd8EgOk
+         QBTNn4vZfS8vyJ4XK/bUtIDVH9gofxnHcznD9kDO4jCoJXY5XdxGlxEk78ZAQSO1yZm3
+         1UqnIxtviOsWptaWIy1m1soJHXmPSjOIV1xzArztV6/zGQpNQl3S+dB4oclxHFeWjxdn
+         RUQw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:dkim-signature;
-        bh=4G2/iMFZ9Hn3OFIxIHBrbMgTw04X4dunyaNSXLoY6v4=;
-        fh=zJR5h+qg5DVHkXCWyxlCt5w9j2JhEDT/6tnDxXODaqw=;
-        b=SooJWJmZVNuamhspnC3Ch4sI/1TFVdYSoVKc0jIOODgieFEgQDJtOjrLbf/xmU6LJc
-         6ePIvNuX6d9GoALckAt1QSp4NonfNTNE55uQMIL02AxMg116fDw63RxvMurB71PJtcJS
-         nEIJPdnkkkONjSqQqSBumYHIv9qwjIyzS2YOKSvJ/wgxooEOcRqEJa3jC2RVNeCn5bec
-         yGZgKRE7lU+3UqlaTiTZLKZjsriVSbPcP7cEmh8raQwDtzhuCGCL/lhs4kshtME1bRlb
-         dGdpfO37Jtd82mWg9I5kBpqDFHTijXs7PQlW55Zu1mEusN8R3mxT3RXQ5NsWP02WAVNL
-         YQ3Q==;
+        bh=4aG1knjr2XkgI9gROa3CqmwxDD9UKXcvHoHGLwsGucQ=;
+        fh=+3e4wgWIN0Lc4S53Vtm7+3pRB3nmxulX1/YZbTRsB38=;
+        b=JAWUCNr0gZBwRIXi8SJRHT+WEPU3Ggp3ATOclSzZnyzSRzf28y+CgLkaEEoRiIodJs
+         JYIFt/T7O8zoMdO6Q0VZ08YfavjgZcQKdPU9LXL7V27K5Echc2Lm+rdyK14daG31tyLm
+         zVfW+KZH9HQC/nUJwvixYnasA3ObDojlKuxxA2uiudF7IxFyi0WlJs173GamSCIubj9U
+         b2mkXWsSUapn5vqCuArxy2xzkooYxlG0eMhOgz++oxF9rQMDIltl1DALTWAqxHRjF4VG
+         oXVSI8DMdwxXHLeRJoM8n7K1/amiyXOb0cSKc9nlj6hv7dFNG2eE4okFd8DfT+wyAdDe
+         JG/g==;
         dara=google.com
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@gmail.com header.s=20230601 header.b=hPsdiciJ;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=iDkZ3DiF;
        spf=pass (google.com: domain of zenmchen@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=zenmchen@gmail.com;
        dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
        dara=pass header.i=@lists.one-eyed-alien.net
 Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
-        by mx.google.com with SMTPS id d2e1a72fcca58-76bf4e01557sor10204334b3a.6.2025.08.14.07.03.41
+        by mx.google.com with SMTPS id d2e1a72fcca58-76c22df8cfasor18498187b3a.4.2025.08.14.07.31.57
         for <usb-storage@lists.one-eyed-alien.net>
         (Google Transport Security);
-        Thu, 14 Aug 2025 07:03:41 -0700 (PDT)
+        Thu, 14 Aug 2025 07:31:57 -0700 (PDT)
 Received-SPF: pass (google.com: domain of zenmchen@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
-X-Forwarded-Encrypted: i=1; AJvYcCVrwzzaeo+MlI3gSCwPEYIAqPsZb2QHIqAQdlo2g1R/I1cSkGJkF3hdRm7NamGYE6eWmCQxwImUm68hqQ==@lists.one-eyed-alien.net
-X-Gm-Gg: ASbGncvCMkkQlf315RFSAapbd0B4fKGsjcAJeOaTEYm0amnM/2+OK6nL7CK6VKAtDaq
-	7absyI+YVJ1SIW8wrJnRrELgvYhhkGSDLQ5yXfLPbAWH2gqsOwNRmklYETlt411XO5HKiaELhax
-	y+lQh9mEjKWnN/5Oa864K1U1/KmJQSyz33QnFInE1a/1hNc7EYiU+lJGIPxw7MFbMsJff/JuKFu
-	Kgjb9mYDczSF934+qVJUGeP8FCWL8gZoTKVzTFDE8N62srKgPX8VmQ0J0q+tVU81m4cGACB3TMk
-	yYcg5vPpvEhmu1ijcx4R1v+dH1pkncCmvpaaVKA9RwQJKxtTYiqc8/kBdCoHsu2PaHPxJT+aG1o
-	a+t0fgp9snDe27jicxdPivCkvGstpEF4byZdTiZrIptMWU7wCZReh
-X-Received: by 2002:a05:6a00:1746:b0:76b:fe65:71d2 with SMTP id d2e1a72fcca58-76e2f90907emr4322021b3a.10.1755180218824;
-        Thu, 14 Aug 2025 07:03:38 -0700 (PDT)
+X-Forwarded-Encrypted: i=1; AJvYcCUgGio7HFICj48lWaOZzObI7uhj/veAkiKiSRWK8nP+qEnD02SXGBggdXeOyVudZYBgH7Hj4VuRCtiGZw==@lists.one-eyed-alien.net
+X-Gm-Gg: ASbGncvBQi2rFukIFxU0vEyf+MKZ1bBjKc5Esvt70+Jhq9+tABZjb8HRLc5YAQjchXJ
+	6GmT3ZHHDM62pQr7tpxZMeKKUk8HEO10zxRf0ypK/OlsI2IdeoGdJyZuIX25i36QBncErDrFgpD
+	uaoAmUmn9XIRFLFNpM1HSyPa1yCiIRmrIOYwbsMIx0Q6qvYmpKBpvx4K9bkgIh8FDr9pBFEibDO
+	1AWWRu4iL/SoiSq6ZCd8msFjRcF556I5kxbhomcXJxVDb5oEtWlVYsx/2OceEfwmHrQbfYWdplt
+	m0qEHtn3RgstCahfnQFO6Ep1vkkvfMgIBRhjWazu/8h163EguSBfSxPl6jyZesp38i3faQX2RsD
+	lIAIriC4vAC80+Fv3axy03/qZdy7VfBN71D7QPcwkjqstGnAtAOa4
+X-Received: by 2002:a05:6a00:2315:b0:76a:d724:d712 with SMTP id d2e1a72fcca58-76e2fbf070bmr5510060b3a.3.1755181915657;
+        Thu, 14 Aug 2025 07:31:55 -0700 (PDT)
 Received: from BM5220 (118-232-8-190.dynamic.kbronet.com.tw. [118.232.8.190])
-        by smtp.googlemail.com with ESMTPSA id d2e1a72fcca58-76c2efd89aesm20499502b3a.106.2025.08.14.07.03.34
+        by smtp.googlemail.com with ESMTPSA id d2e1a72fcca58-76bf77210aesm28703960b3a.113.2025.08.14.07.31.50
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 14 Aug 2025 07:03:37 -0700 (PDT)
+        Thu, 14 Aug 2025 07:31:55 -0700 (PDT)
 From: Zenm Chen <zenmchen@gmail.com>
-To: stern@rowland.harvard.edu
+To: larsm17@gmail.com
 Cc: gregkh@linuxfoundation.org,
 	linux-kernel@vger.kernel.org,
 	linux-usb@vger.kernel.org,
 	pkshih@realtek.com,
 	rtl8821cerfe2@gmail.com,
 	stable@vger.kernel.org,
+	stern@rowland.harvard.edu,
 	usb-storage@lists.one-eyed-alien.net,
 	usbwifi2024@gmail.com,
 	zenmchen@gmail.com
 Subject: [usb-storage] Re: [PATCH] USB: storage: Ignore driver CD mode for
  Realtek multi-mode Wi-Fi dongles
-Date: Thu, 14 Aug 2025 22:03:29 +0800
-Message-ID: <20250814140329.2170-1-zenmchen@gmail.com>
+Date: Thu, 14 Aug 2025 22:31:44 +0800
+Message-ID: <20250814143145.1290-1-zenmchen@gmail.com>
 X-Mailer: git-send-email 2.50.1
-In-Reply-To: <03d4c721-f96d-4ace-b01e-c7adef150209@rowland.harvard.edu>
-References: <03d4c721-f96d-4ace-b01e-c7adef150209@rowland.harvard.edu>
+In-Reply-To: <8e9066d4-1b04-4423-869d-2bac0a3385a2@gmail.com>
+References: <8e9066d4-1b04-4423-869d-2bac0a3385a2@gmail.com>
 MIME-Version: 1.0
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 X-Original-Sender: ZenmChen@gmail.com
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@gmail.com header.s=20230601 header.b=hPsdiciJ;       spf=pass
+ header.i=@gmail.com header.s=20230601 header.b=iDkZ3DiF;       spf=pass
  (google.com: domain of zenmchen@gmail.com designates 209.85.220.41 as
  permitted sender) smtp.mailfrom=zenmchen@gmail.com;       dmarc=pass (p=NONE
  sp=QUARANTINE dis=NONE) header.from=gmail.com;       dara=pass header.i=@lists.one-eyed-alien.net
-Content-Type: text/plain; charset="UTF-8"
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -157,2169 +160,1466 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-> Also, can you collect a usbmon trace showing what happens when the dongle is plugged in?
+Lars Melin <larsm17@gmail.com> =E6=96=BC 2025=E5=B9=B48=E6=9C=8814=E6=97=A5=
+ =E9=80=B1=E5=9B=9B =E4=B8=8A=E5=8D=889:57=E5=AF=AB=E9=81=93=EF=BC=9A
+> Hi Zenm,
+>
+> 0bda:1a2b
+> It is a USB Id supported by usb-modeswitch, I suspect that you would not
+> had got all the error messages for the device if you had let
+> usb-modeswitch access the device early (through udev) before the linux
+> storage driver tried to access it. The long time to switch when running
+> usb-modeswitch manually is likely also caused by clashes with
+> communication by the storage driver.
+>
+> 0bda:a192
+> This USB Id is not yet supported by usb-modeswitch and it probably has a
+> different method than ejecting the virtual CD drive, the failure to
+> switch it when manually running usb-modeswitch is an indication of that.
+> If you are a representative of Realtek or if you know how to switch the
+> device then contact the usb-modeswitch maintainer (Joshua Dietze) and
+> ask him to add switch support for it.
+>
+> thanks
+> Lars
 
-Hi Alan,
+Hi Lars,
 
-Today I removed usb_modeswitch from my system and grabbed some data, could you please take
-a look what was wrong? many thanks!
+If I apply this patch to my kernel, usb_modeswitch can switch both to
+Wi-Fi mode smoothly and fastly, but I don't know why. @@
 
-D-Link AX9U
-ffff8ae1f0beec00 769747196 S Ci:2:001:0 s a3 00 0000 0001 0004 4 <
-ffff8ae1f0beec00 769747235 C Ci:2:001:0 0 4 = 00010000
-ffff8ae1f0beec00 769747361 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1f0beec00 769747384 C Ci:2:001:0 0 4 = 01050100
-ffff8ae1f0beec00 769747392 S Co:2:001:0 s 23 01 0010 0002 0000 0
-ffff8ae1f0beec00 769747401 C Co:2:001:0 0 0
-ffff8ae1f0beec00 769747408 S Ci:2:001:0 s a3 00 0000 0003 0004 4 <
-ffff8ae1f0beec00 769747416 C Ci:2:001:0 0 4 = 00010000
-ffff8ae1f0beec00 769747422 S Ci:2:001:0 s a3 00 0000 0004 0004 4 <
-ffff8ae1f0beec00 769747431 C Ci:2:001:0 0 4 = 00010000
-ffff8ae1f0beec00 769747437 S Ci:2:001:0 s a3 00 0000 0005 0004 4 <
-ffff8ae1f0beec00 769747445 C Ci:2:001:0 0 4 = 00010000
-ffff8ae184c6dd80 769853164 S Ii:2:001:1 -115:2048 4 <
-ffff8ae1f0beec00 769853215 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1f0beec00 769853234 C Ci:2:001:0 0 4 = 01050000
-ffff8ae1f0beec00 769853270 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1f0beec00 769853283 C Co:2:001:0 0 0
-ffff8ae1f0beec00 769914111 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1f0beec00 769914159 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1f0beec00 769914175 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1f0beec00 769914186 C Co:2:001:0 0 0
-ffff8ae1f0beec00 769965210 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae1f0beec00 769965294 C Ci:2:000:0 0 18 = 12010002 00000040 da0b2b1a 00000102 0001
-ffff8ae1f0beec00 769965322 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1f0beec00 769965338 C Co:2:001:0 0 0
-ffff8ae1f0beec00 770026216 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1f0beec00 770026300 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1f0beec00 770026315 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1f0beec00 770026328 C Co:2:001:0 0 0
-ffff8ae1f0beec00 770077029 S Co:2:000:0 s 00 05 0035 0000 0000 0
-ffff8ae1f0beec00 770077137 C Co:2:000:0 0 0
-ffff8ae1f0bee180 770090097 S Ci:2:053:0 s 80 06 0100 0000 0012 18 <
-ffff8ae1f0bee180 770090388 C Ci:2:053:0 0 18 = 12010002 00000040 da0b2b1a 00000102 0001
-ffff8ae1f0bee180 770090418 S Ci:2:053:0 s 80 06 0200 0000 0009 9 <
-ffff8ae1f0bee180 770090500 C Ci:2:053:0 0 9 = 09022000 010100e0 fa
-ffff8ae1f0bee180 770090519 S Ci:2:053:0 s 80 06 0200 0000 0020 32 <
-ffff8ae1f0bee180 770090624 C Ci:2:053:0 0 32 = 09022000 010100e0 fa090400 00020806 50000705 84020002 00070505 02000200
-ffff8ae1f0beeb40 770090646 S Ci:2:053:0 s 80 06 0300 0000 00ff 255 <
-ffff8ae1f0beeb40 770090749 C Ci:2:053:0 0 4 = 04030904
-ffff8ae1f0beeb40 770090767 S Ci:2:053:0 s 80 06 0302 0409 00ff 255 <
-ffff8ae1f0beeb40 770090874 C Ci:2:053:0 0 10 = 0a034400 49005300 4b00
-ffff8ae1f0beeb40 770090893 S Ci:2:053:0 s 80 06 0301 0409 00ff 255 <
-ffff8ae1f0beeb40 770090999 C Ci:2:053:0 0 16 = 10035200 65006100 6c007400 65006b00
-ffff8ae1f0beeb40 770091268 S Co:2:053:0 s 00 09 0001 0000 0000 0
-ffff8ae1f0beeb40 770091375 C Co:2:053:0 0 0
-ffff8ae1f0bee000 771093180 S Ci:2:053:0 s a1 fe 0000 0000 0001 1 <
-ffff8ae1f0bee000 771093396 C Ci:2:053:0 0 1 = 00
-ffff8ae1f0bee000 771093554 S Bo:2:053:5 -115 31 = 55534243 01000000 24000000 80000612 00000024 00000000 00000000 000000
-ffff8ae1f0bee000 771093626 C Bo:2:053:5 0 31 >
-ffff8ae1df416240 771093647 S Bi:2:053:4 -115 36 <
-ffff8ae1df416240 771353684 C Bi:2:053:4 0 36 = 05800001 1f000000 52544b20 00000000 44726976 65722053 746f7261 67652020
-ffff8ae1f0bee000 771353807 S Bi:2:053:4 -115 13 <
-ffff8ae1f0bee000 771353937 C Bi:2:053:4 0 13 = 55534253 01000000 00000000 00
-ffff8ae1f0bee000 771354546 S Bo:2:053:5 -115 31 = 55534243 02000000 00000000 00000600 00000000 00000000 00000000 000000
-ffff8ae1f0bee000 771355187 C Bo:2:053:5 0 31 >
-ffff8ae1f0bee000 771355214 S Bi:2:053:4 -115 13 <
-ffff8ae1f0bee000 771355310 C Bi:2:053:4 0 13 = 55534253 02000000 00000000 00
-ffff8ae1f0bee000 771355388 S Bo:2:053:5 -115 31 = 55534243 03000000 80000000 80000a5a 002a0000 00000080 00000000 000000
-ffff8ae1f0bee000 771355435 C Bo:2:053:5 0 31 >
-ffff8ae1b52d8780 771355454 S Bi:2:053:4 -115 128 <
-ffff8ae1b52d8780 771355563 C Bi:2:053:4 -121 0
-ffff8ae1f0bee000 771355583 S Bi:2:053:4 -115 13 <
-ffff8ae1f0bee000 771355935 C Bi:2:053:4 0 13 = 55534253 03000000 80000000 01
-ffff8ae1f0bee000 771355954 S Bo:2:053:5 -115 31 = 55534243 04000000 12000000 80000603 00000012 00000000 00000000 000000
-ffff8ae1f0bee000 771356060 C Bo:2:053:5 0 31 >
-ffff8ae1b52d8780 771356078 S Bi:2:053:4 -115 18 <
-ffff8ae1b52d8780 771356186 C Bi:2:053:4 0 18 = 70000500 0000000a 00000000 20000000 0000
-ffff8ae1f0bee000 771356205 S Bi:2:053:4 -115 13 <
-ffff8ae1f0bee000 771356310 C Bi:2:053:4 0 13 = 55534253 04000000 00000000 00
-ffff8ae1f0bee000 771356387 S Bo:2:053:5 -115 31 = 55534243 05000000 80000000 8000061a 002a0080 00000000 00000000 000000
-ffff8ae1f0bee000 771356434 C Bo:2:053:5 0 31 >
-ffff8ae1b52d83c0 771356453 S Bi:2:053:4 -115 128 <
-ffff8ae1b52d83c0 771356562 C Bi:2:053:4 -121 4 = 03008000
-ffff8ae1f0bee000 771356581 S Bi:2:053:4 -115 13 <
-ffff8ae1f0bee000 771356934 C Bi:2:053:4 0 13 = 55534253 05000000 7c000000 00
-ffff8ae1f0bee000 771357074 S Bo:2:053:5 -115 31 = 55534243 06000000 00000000 00000600 00000000 00000000 00000000 000000
-ffff8ae1f0bee000 771357185 C Bo:2:053:5 0 31 >
-ffff8ae1f0bee000 771357205 S Bi:2:053:4 -115 13 <
-ffff8ae1f0bee000 771357309 C Bi:2:053:4 0 13 = 55534253 06000000 00000000 00
-ffff8ae1f0bee000 771357376 S Bo:2:053:5 -115 31 = 55534243 07000000 0c000000 80000a43 00000000 0000000c 40000000 000000
-ffff8ae1f0bee000 771357434 C Bo:2:053:5 0 31 >
-ffff8ae1b52d83c0 771357452 S Bi:2:053:4 -115 12 <
-ffff8ae1b52d83c0 771357561 C Bi:2:053:4 0 12 = 000a0101 00140100 00000000
-ffff8ae1f0bee000 771357578 S Bi:2:053:4 -115 13 <
-ffff8ae1f0bee000 771357684 C Bi:2:053:4 0 13 = 55534253 07000000 00000000 00
-ffff8ae1f0bee000 771357745 S Bo:2:053:5 -115 31 = 55534243 08000000 0c000000 80000a43 00000000 0000000c 00000000 000000
-ffff8ae1f0bee000 771357809 C Bo:2:053:5 0 31 >
-ffff8ae1b52d83c0 771357826 S Bi:2:053:4 -115 12 <
-ffff8ae1b52d83c0 771357935 C Bi:2:053:4 0 12 = 00120101 00140100 00000000
-ffff8ae1f0bee000 771357954 S Bi:2:053:4 -115 13 <
-ffff8ae1f0bee000 771358059 C Bi:2:053:4 0 13 = 55534253 08000000 00000000 00
-ffff8ae1f0bee000 771358694 S Bo:2:053:5 -115 31 = 55534243 09000000 0c000000 80000a43 00000000 0001000c 00000000 000000
-ffff8ae1f0bee000 771359309 C Bo:2:053:5 0 31 >
-ffff8ae1b52d83c0 771359329 S Bi:2:053:4 -115 12 <
-ffff8ae1b52d83c0 771359435 C Bi:2:053:4 0 12 = 00120101 00140100 00000000
-ffff8ae1f0bee000 771359453 S Bi:2:053:4 -115 13 <
-ffff8ae1f0bee000 771359558 C Bi:2:053:4 0 13 = 55534253 09000000 00000000 00
-ffff8ae1f0bee000 771359614 S Bo:2:053:5 -115 31 = 55534243 0a000000 08000000 80000a25 00000000 00000000 00000000 000000
-ffff8ae1f0bee000 771359684 C Bo:2:053:5 0 31 >
-ffff8ae1b52d83c0 771359702 S Bi:2:053:4 -115 8 <
-ffff8ae1b52d83c0 771359812 C Bi:2:053:4 0 8 = 00007bff 00000200
-ffff8ae1f0bee000 771359853 S Bi:2:053:4 -115 13 <
-ffff8ae1f0bee000 771359935 C Bi:2:053:4 0 13 = 55534253 0a000000 00000000 00
-ffff8ae1f0bee000 771359989 S Bo:2:053:5 -115 31 = 55534243 0b000000 02000000 80000a51 00000000 00000002 00000000 000000
-ffff8ae1f0bee000 771360063 C Bo:2:053:5 0 31 >
-ffff8ae1b52d83c0 771360083 S Bi:2:053:4 -115 2 <
-ffff8ae1b52d83c0 771360187 C Bi:2:053:4 -121 0
-ffff8ae1f0bee000 771360205 S Bi:2:053:4 -115 13 <
-ffff8ae1f0bee000 771360558 C Bi:2:053:4 0 13 = 55534253 0b000000 02000000 01
-ffff8ae1f0bee000 771360577 S Bo:2:053:5 -115 31 = 55534243 0c000000 12000000 80000603 00000012 00000000 00000000 000000
-ffff8ae1f0bee000 771360684 C Bo:2:053:5 0 31 >
-ffff8ae1b52d83c0 771360702 S Bi:2:053:4 -115 18 <
-ffff8ae1b52d83c0 771360810 C Bi:2:053:4 0 18 = 70000500 0000000a 00000000 20000000 0000
-ffff8ae1f0bee000 771360828 S Bi:2:053:4 -115 13 <
-ffff8ae1f0bee000 771360934 C Bi:2:053:4 0 13 = 55534253 0c000000 00000000 00
-ffff8ae1f0bee000 771360986 S Bo:2:053:5 -115 31 = 55534243 0d000000 0c000000 80000a43 02000000 00aa000c 00000000 000000
-ffff8ae1f0bee000 771361059 C Bo:2:053:5 0 31 >
-ffff8ae1b52d83c0 771361077 S Bi:2:053:4 -115 12 <
-ffff8ae1b52d83c0 771361185 C Bi:2:053:4 0 12 = 00120101 00140100 00000002
-ffff8ae1f0bee000 771361205 S Bi:2:053:4 -115 13 <
-ffff8ae1f0bee000 771361309 C Bi:2:053:4 0 13 = 55534253 0d000000 00000000 00
-ffff8ae1f0bee000 771361779 S Bo:2:053:5 -115 31 = 55534243 0e000000 08000000 80000a4a 01000010 00000008 00000000 000000
-ffff8ae1f0bee000 771362559 C Bo:2:053:5 0 31 >
-ffff8ae1b52d83c0 771362625 S Bi:2:053:4 -115 8 <
-ffff8ae1b52d83c0 771362688 C Bi:2:053:4 -121 0
-ffff8ae1f0bee000 771362708 S Bi:2:053:4 -115 13 <
-ffff8ae1f0bee000 771363058 C Bi:2:053:4 0 13 = 55534253 0e000000 08000000 01
-ffff8ae1f0bee000 771363074 S Bo:2:053:5 -115 31 = 55534243 0f000000 12000000 80000603 00000012 00000000 00000000 000000
-ffff8ae1f0bee000 771363183 C Bo:2:053:5 0 31 >
-ffff8ae218ff2900 771363198 S Bi:2:053:4 -115 18 <
-ffff8ae218ff2900 771363310 C Bi:2:053:4 0 18 = 70000500 0000000a 00000000 20000000 0000
-ffff8ae1f0bee000 771363324 S Bi:2:053:4 -115 13 <
-ffff8ae1f0bee000 771363433 C Bi:2:053:4 0 13 = 55534253 0f000000 00000000 00
-ffff8ae1f0bee000 771363543 S Bo:2:053:5 -115 31 = 55534243 10000000 08000000 80000a4a 01000010 00000008 00000000 000000
-ffff8ae1f0bee000 771363683 C Bo:2:053:5 0 31 >
-ffff8ae218ff2900 771363699 S Bi:2:053:4 -115 8 <
-ffff8ae218ff2900 771363812 C Bi:2:053:4 -121 0
-ffff8ae1f0bee000 771363826 S Bi:2:053:4 -115 13 <
-ffff8ae1f0bee000 771364182 C Bi:2:053:4 0 13 = 55534253 10000000 08000000 01
-ffff8ae1f0bee000 771364197 S Bo:2:053:5 -115 31 = 55534243 11000000 12000000 80000603 00000012 00000000 00000000 000000
-ffff8ae1f0bee000 771364308 C Bo:2:053:5 0 31 >
-ffff8ae218ff2900 771364321 S Bi:2:053:4 -115 18 <
-ffff8ae218ff2900 771364435 C Bi:2:053:4 0 18 = 70000500 0000000a 00000000 20000000 0000
-ffff8ae1f0bee000 771364448 S Bi:2:053:4 -115 13 <
-ffff8ae1f0bee000 771364558 C Bi:2:053:4 0 13 = 55534253 11000000 00000000 00
-ffff8ae1f0bee000 771364613 S Bo:2:053:5 -115 31 = 55534243 12000000 00000000 00000600 00000000 00000000 00000000 000000
-ffff8ae1f0bee000 771364683 C Bo:2:053:5 0 31 >
-ffff8ae1f0bee000 771364698 S Bi:2:053:4 -115 13 <
-ffff8ae1f0bee000 771364808 C Bi:2:053:4 0 13 = 55534253 12000000 00000000 00
-ffff8ae1f0bee000 771364853 S Bo:2:053:5 -115 31 = 55534243 13000000 00000000 00000600 00000000 00000000 00000000 000000
-ffff8ae1f0bee000 771364934 C Bo:2:053:5 0 31 >
-ffff8ae1f0bee000 771364946 S Bi:2:053:4 -115 13 <
-ffff8ae1f0bee000 771365058 C Bi:2:053:4 0 13 = 55534253 13000000 00000000 00
-ffff8ae1f0bee000 771365106 S Bo:2:053:5 -115 31 = 55534243 14000000 0c000000 80000a43 00000000 0000000c 40000000 000000
-ffff8ae1f0bee000 771365184 C Bo:2:053:5 0 31 >
-ffff8ae218ff2900 771365196 S Bi:2:053:4 -115 12 <
-ffff8ae218ff2900 771365309 C Bi:2:053:4 0 12 = 000a0101 00140100 00000000
-ffff8ae1f0bee000 771365321 S Bi:2:053:4 -115 13 <
-ffff8ae1f0bee000 771365433 C Bi:2:053:4 0 13 = 55534253 14000000 00000000 00
-ffff8ae1f0bee000 771365479 S Bo:2:053:5 -115 31 = 55534243 15000000 0c000000 80000a43 00000000 0000000c 00000000 000000
-ffff8ae1f0bee000 771365558 C Bo:2:053:5 0 31 >
-ffff8ae218ff2900 771365570 S Bi:2:053:4 -115 12 <
-ffff8ae218ff2900 771365684 C Bi:2:053:4 0 12 = 00120101 00140100 00000000
-ffff8ae1f0bee000 771365696 S Bi:2:053:4 -115 13 <
-ffff8ae1f0bee000 771365808 C Bi:2:053:4 0 13 = 55534253 15000000 00000000 00
-ffff8ae1f0bee000 771365856 S Bo:2:053:5 -115 31 = 55534243 16000000 0c000000 80000a43 00000000 0001000c 00000000 000000
-ffff8ae1f0bee000 771365934 C Bo:2:053:5 0 31 >
-ffff8ae218ff2900 771365946 S Bi:2:053:4 -115 12 <
-ffff8ae218ff2900 771366059 C Bi:2:053:4 0 12 = 00120101 00140100 00000000
-ffff8ae1f0bee000 771366072 S Bi:2:053:4 -115 13 <
-ffff8ae1f0bee000 771366183 C Bi:2:053:4 0 13 = 55534253 16000000 00000000 00
-ffff8ae1f0bee000 771366235 S Bo:2:053:5 -115 31 = 55534243 17000000 0c000000 00000615 1000000c 00000000 00000000 000000
-ffff8ae1f0bee000 771366306 C Bo:2:053:5 0 31 >
-ffff8ae218ff2900 771366317 S Bo:2:053:5 -115 12 = 00000008 00000000 00000800
-ffff8ae218ff2900 771366432 C Bo:2:053:5 0 12 >
-ffff8ae1f0bee000 771366443 S Bi:2:053:4 -115 13 <
-ffff8ae1f0bee000 771366556 C Bi:2:053:4 0 13 = 55534253 17000000 0c000000 01
-ffff8ae1f0bee000 771366567 S Bo:2:053:5 -115 31 = 55534243 18000000 12000000 80000603 00000012 00000000 00000000 000000
-ffff8ae1f0bee000 801899370 C Bo:2:053:5 -104 0
-ffff8ae1ff57f0c0 801899436 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1ff57f0c0 801899460 C Co:2:001:0 0 0
-ffff8ae1ff57f0c0 801960047 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1ff57f0c0 801960135 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1ff57f0c0 801960153 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1ff57f0c0 801960164 C Co:2:001:0 0 0
-ffff8ae1ff57f0c0 802011117 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae1ff57f0c0 802011233 C Ci:2:000:0 0 18 = 12010002 00000040 da0b2b1a 00000102 0001
-ffff8ae218ff2e40 802011265 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae218ff2e40 802011283 C Co:2:001:0 0 0
-ffff8ae218ff2e40 802072046 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218ff2e40 802072087 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218ff2e40 802072100 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218ff2e40 802072113 C Co:2:001:0 0 0
-ffff8ae218ff2cc0 802123029 S Co:2:000:0 s 00 05 0035 0000 0000 0
-ffff8ae218ff2cc0 802123077 C Co:2:000:0 0 0
-ffff8ae218ff2cc0 802137052 S Ci:2:053:0 s 80 06 0100 0000 0012 18 <
-ffff8ae218ff2cc0 802137826 C Ci:2:053:0 0 18 = 12010002 00000040 da0b2b1a 00000102 0001
-ffff8ae218ff2cc0 802137862 S Ci:2:053:0 s 80 06 0200 0000 0020 32 <
-ffff8ae218ff2cc0 802137941 C Ci:2:053:0 0 32 = 09022000 010100e0 fa090400 00020806 50000705 84020002 00070505 02000200
-ffff8ae218ff2cc0 802137965 S Co:2:053:0 s 00 09 0001 0000 0000 0
-ffff8ae218ff2cc0 802138065 C Co:2:053:0 0 0
-ffff8ae1f0bee000 802138316 S Bo:2:053:5 -115 31 = 55534243 19000000 08000000 80000a25 00000000 00000000 00000000 000000
-ffff8ae1f0bee000 832618388 C Bo:2:053:5 -104 0
-ffff8ae1b52d8d80 832618415 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1b52d8d80 832618431 C Co:2:001:0 0 0
-ffff8ae1b52d8d80 832680043 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1b52d8d80 832680092 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1b52d8d80 832680152 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1b52d8d80 832680161 C Co:2:001:0 0 0
-ffff8ae1b52d83c0 832732107 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae1b52d83c0 832732238 C Ci:2:000:0 0 18 = 12010002 00000040 da0b2b1a 00000102 0001
-ffff8ae1b52d83c0 832732252 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1b52d83c0 832732262 C Co:2:001:0 0 0
-ffff8ae1b52d83c0 832793041 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1b52d83c0 832793107 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1b52d83c0 832793119 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1b52d83c0 832793129 C Co:2:001:0 0 0
-ffff8ae1b52d83c0 832844131 S Co:2:000:0 s 00 05 0035 0000 0000 0
-ffff8ae1b52d83c0 832844232 C Co:2:000:0 0 0
-ffff8ae1b52d8d80 832857099 S Ci:2:053:0 s 80 06 0100 0000 0012 18 <
-ffff8ae1b52d8d80 832857483 C Ci:2:053:0 0 18 = 12010002 00000040 da0b2b1a 00000102 0001
-ffff8ae1b52d8d80 832857512 S Ci:2:053:0 s 80 06 0200 0000 0020 32 <
-ffff8ae1b52d8d80 832857589 C Ci:2:053:0 0 32 = 09022000 010100e0 fa090400 00020806 50000705 84020002 00070505 02000200
-ffff8ae1b52d8cc0 832857611 S Co:2:053:0 s 00 09 0001 0000 0000 0
-ffff8ae1b52d8cc0 832857712 C Co:2:053:0 0 0
-ffff8ae1f0bee000 832857930 S Bo:2:053:5 -115 31 = 55534243 1a000000 08000000 80000a25 00000000 00000000 00000000 000000
-ffff8ae1f0bee000 863342471 C Bo:2:053:5 -104 0
-ffff8ae218ff2cc0 863342530 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae218ff2cc0 863342550 C Co:2:001:0 0 0
-ffff8ae218ff2000 863404031 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218ff2000 863404110 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218ff2000 863404124 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218ff2000 863404136 C Co:2:001:0 0 0
-ffff8ae218ff2000 863455145 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae218ff2000 863455226 C Ci:2:000:0 0 18 = 12010002 00000040 da0b2b1a 00000102 0001
-ffff8ae218ff2000 863455245 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae218ff2000 863455261 C Co:2:001:0 0 0
-ffff8ae218ff23c0 863517023 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218ff23c0 863517060 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218ff23c0 863517069 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218ff23c0 863517086 C Co:2:001:0 0 0
-ffff8ae218ff23c0 863568125 S Co:2:000:0 s 00 05 0035 0000 0000 0
-ffff8ae218ff23c0 863568238 C Co:2:000:0 0 0
-ffff8ae1df416600 863581069 S Ci:2:053:0 s 80 06 0100 0000 0012 18 <
-ffff8ae1df416600 863581456 C Ci:2:053:0 0 18 = 12010002 00000040 da0b2b1a 00000102 0001
-ffff8ae1df416600 863581481 S Ci:2:053:0 s 80 06 0200 0000 0020 32 <
-ffff8ae1df416600 863581563 C Ci:2:053:0 0 32 = 09022000 010100e0 fa090400 00020806 50000705 84020002 00070505 02000200
-ffff8ae1df416600 863581579 S Co:2:053:0 s 00 09 0001 0000 0000 0
-ffff8ae1df416600 863581687 C Co:2:053:0 0 0
-ffff8ae1f0bee000 863581853 S Bo:2:053:5 -115 31 = 55534243 1b000000 08000000 80000a25 00000000 00000000 00000000 000000
-ffff8ae1f0bee000 894062314 C Bo:2:053:5 -104 0
-ffff8ae1f75f1d80 894062347 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1f75f1d80 894062369 C Co:2:001:0 0 0
-ffff8ae1f75f1900 894123119 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1f75f1900 894123177 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1f75f1900 894123191 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1f75f1900 894123201 C Co:2:001:0 0 0
-ffff8ae1f75f19c0 894175153 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae1f75f19c0 894175332 C Ci:2:000:0 0 18 = 12010002 00000040 da0b2b1a 00000102 0001
-ffff8ae1f75f19c0 894175359 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1f75f19c0 894175377 C Co:2:001:0 0 0
-ffff8ae218ff2cc0 894236617 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218ff2cc0 894236658 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218ff2cc0 894236704 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218ff2cc0 894236713 C Co:2:001:0 0 0
-ffff8ae218ff2cc0 894287422 S Co:2:000:0 s 00 05 0035 0000 0000 0
-ffff8ae218ff2cc0 894287561 C Co:2:000:0 0 0
-ffff8ae1b52d8780 894301032 S Ci:2:053:0 s 80 06 0100 0000 0012 18 <
-ffff8ae1b52d8780 894301539 C Ci:2:053:0 0 18 = 12010002 00000040 da0b2b1a 00000102 0001
-ffff8ae1b52d8780 894301554 S Ci:2:053:0 s 80 06 0200 0000 0020 32 <
-ffff8ae1b52d8780 894301653 C Ci:2:053:0 0 32 = 09022000 010100e0 fa090400 00020806 50000705 84020002 00070505 02000200
-ffff8ae1b52d8780 894301665 S Co:2:053:0 s 00 09 0001 0000 0000 0
-ffff8ae1b52d8780 894301777 C Co:2:053:0 0 0
-ffff8ae1f0bee000 894301899 S Bo:2:053:5 -115 31 = 55534243 1c000000 08000000 80000a25 00000000 00000000 00000000 000000
-ffff8ae1f0bee000 924778521 C Bo:2:053:5 -104 0
-ffff8ae1b52d8d80 924778588 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1b52d8d80 924778609 C Co:2:001:0 0 0
-ffff8ae1b52d86c0 924839037 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1b52d86c0 924839091 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1b52d86c0 924839105 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1b52d86c0 924839123 C Co:2:001:0 0 0
-ffff8ae1b52d86c0 924890257 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae1b52d86c0 924890436 C Ci:2:000:0 0 18 = 12010002 00000040 da0b2b1a 00000102 0001
-ffff8ae18942d9c0 924890521 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae18942d9c0 924890551 C Co:2:001:0 0 0
-ffff8ae18942d9c0 924951050 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae18942d9c0 924951129 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218e71540 924951186 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218e71540 924951200 C Co:2:001:0 0 0
-ffff8ae218e71b40 925002067 S Co:2:000:0 s 00 05 0035 0000 0000 0
-ffff8ae218e71b40 925002226 C Co:2:000:0 0 0
-ffff8ae218e71b40 925015160 S Ci:2:053:0 s 80 06 0100 0000 0012 18 <
-ffff8ae218e71b40 925015464 C Ci:2:053:0 0 18 = 12010002 00000040 da0b2b1a 00000102 0001
-ffff8ae218e71b40 925015501 S Ci:2:053:0 s 80 06 0200 0000 0020 32 <
-ffff8ae218e71b40 925015573 C Ci:2:053:0 0 32 = 09022000 010100e0 fa090400 00020806 50000705 84020002 00070505 02000200
-ffff8ae218e71b40 925015599 S Co:2:053:0 s 00 09 0001 0000 0000 0
-ffff8ae218e71b40 925015697 C Co:2:053:0 0 0
-ffff8ae1f0bee000 925025079 S Bo:2:053:5 -115 31 = 55534243 1d000000 00000000 0000061e 00000000 00000000 00000000 000000
-ffff8ae1f0bee000 935086334 C Bo:2:053:5 -104 0
-ffff8ae187f51540 935086387 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae187f51540 935086413 C Co:2:001:0 0 0
-ffff8ae187f51540 935147052 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae187f51540 935147123 C Ci:2:001:0 0 4 = 03051000
-ffff8ae187f51540 935147139 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae187f51540 935147151 C Co:2:001:0 0 0
-ffff8ae187f51900 935198121 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae187f51900 935198261 C Ci:2:000:0 0 18 = 12010002 00000040 da0b2b1a 00000102 0001
-ffff8ae187f51900 935198282 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae187f51900 935198300 C Co:2:001:0 0 0
-ffff8ae187f51900 935259033 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae187f51900 935259091 C Ci:2:001:0 0 4 = 03051000
-ffff8ae187f51900 935259107 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae187f51900 935259119 C Co:2:001:0 0 0
-ffff8ae187f51900 935310211 S Co:2:000:0 s 00 05 0035 0000 0000 0
-ffff8ae187f51900 935310315 C Co:2:000:0 0 0
-ffff8ae20dc69240 935323027 S Ci:2:053:0 s 80 06 0100 0000 0012 18 <
-ffff8ae20dc69240 935323546 C Ci:2:053:0 0 18 = 12010002 00000040 da0b2b1a 00000102 0001
-ffff8ae20dc69240 935323573 S Ci:2:053:0 s 80 06 0200 0000 0020 32 <
-ffff8ae20dc69240 935323658 C Ci:2:053:0 0 32 = 09022000 010100e0 fa090400 00020806 50000705 84020002 00070505 02000200
-ffff8ae20dc69240 935323679 S Co:2:053:0 s 00 09 0001 0000 0000 0
-ffff8ae20dc69240 935323782 C Co:2:053:0 0 0
-ffff8ae1f0bee000 935327059 S Bo:2:053:5 -115 31 = 55534243 1e000000 08000000 80000a4a 01000010 00000008 00000000 000000
-ffff8ae1f0bee000 965742384 C Bo:2:053:5 -104 0
-ffff8ae1ff43af00 965742520 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1ff43af00 965742553 C Co:2:001:0 0 0
-ffff8ae1ff43af00 965803033 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1ff43af00 965803089 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1ff43af00 965803103 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1ff43af00 965803114 C Co:2:001:0 0 0
-ffff8ae1ff43a480 965854083 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae1ff43a480 965854200 C Ci:2:000:0 0 18 = 12010002 00000040 da0b2b1a 00000102 0001
-ffff8ae1ff43a480 965854227 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1ff43a480 965854246 C Co:2:001:0 0 0
-ffff8ae1c8745e40 965915024 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1c8745e40 965915063 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1c8745e40 965915072 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1c8745e40 965915082 C Co:2:001:0 0 0
-ffff8ae1c8745e40 965966237 S Co:2:000:0 s 00 05 0035 0000 0000 0
-ffff8ae1c8745e40 965966381 C Co:2:000:0 0 0
-ffff8ae1c8745e40 965979125 S Ci:2:053:0 s 80 06 0100 0000 0012 18 <
-ffff8ae1c8745e40 965979618 C Ci:2:053:0 0 18 = 12010002 00000040 da0b2b1a 00000102 0001
-ffff8ae1c8745e40 965979647 S Ci:2:053:0 s 80 06 0200 0000 0020 32 <
-ffff8ae1c8745e40 965979725 C Ci:2:053:0 0 32 = 09022000 010100e0 fa090400 00020806 50000705 84020002 00070505 02000200
-ffff8ae1c8745e40 965979748 S Co:2:053:0 s 00 09 0001 0000 0000 0
-ffff8ae1c8745e40 965979848 C Co:2:053:0 0 0
-ffff8ae1f0bee000 965980058 S Bo:2:053:5 -115 31 = 55534243 1f000000 00000000 00000600 00000000 00000000 00000000 000000
-ffff8ae1f0bee000 996462662 C Bo:2:053:5 -104 0
-ffff8ae1c85100c0 996462800 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1c85100c0 996462829 C Co:2:001:0 0 0
-ffff8ae1c8510cc0 996524050 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1c8510cc0 996524108 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1c8510cc0 996524118 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1c8510cc0 996524128 C Co:2:001:0 0 0
-ffff8ae1c8510cc0 996575310 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae1c8510cc0 996575424 C Ci:2:000:0 0 18 = 12010002 00000040 da0b2b1a 00000102 0001
-ffff8ae1b52d8300 996575452 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1b52d8300 996575470 C Co:2:001:0 0 0
-ffff8ae1b52d8300 996636047 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1b52d8300 996636114 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1b52d8300 996636270 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1b52d8300 996636287 C Co:2:001:0 0 0
-ffff8ae218ff2900 996687048 S Co:2:000:0 s 00 05 0035 0000 0000 0
-ffff8ae218ff2900 996687143 C Co:2:000:0 0 0
-ffff8ae218ff2900 996700019 S Ci:2:053:0 s 80 06 0100 0000 0012 18 <
-ffff8ae218ff2900 996700416 C Ci:2:053:0 0 18 = 12010002 00000040 da0b2b1a 00000102 0001
-ffff8ae218ff2900 996700430 S Ci:2:053:0 s 80 06 0200 0000 0020 32 <
-ffff8ae218ff2900 996700532 C Ci:2:053:0 0 32 = 09022000 010100e0 fa090400 00020806 50000705 84020002 00070505 02000200
-ffff8ae218ff2900 996700543 S Co:2:053:0 s 00 09 0001 0000 0000 0
-ffff8ae218ff2900 996700657 C Co:2:053:0 0 0
-ffff8ae1f0bee000 996700839 S Bo:2:053:5 -115 31 = 55534243 20000000 08000000 80000a4a 01000010 00000008 00000000 000000
-ffff8ae1f0bee000 1027182530 C Bo:2:053:5 -104 0
-ffff8ae218ff2780 1027182600 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae218ff2780 1027182622 C Co:2:001:0 0 0
-ffff8ae218ff2780 1027243214 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218ff2780 1027243288 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218ff2780 1027243313 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218ff2780 1027243327 C Co:2:001:0 0 0
-ffff8ae218ff2780 1027294296 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae218ff2780 1027294474 C Ci:2:000:0 0 18 = 12010002 00000040 da0b2b1a 00000102 0001
-ffff8ae218ff2780 1027294497 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae218ff2780 1027294513 C Co:2:001:0 0 0
-ffff8ae218ff2780 1027356032 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218ff2780 1027356083 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218ff2780 1027356096 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218ff2780 1027356105 C Co:2:001:0 0 0
-ffff8ae218ff2780 1027407205 S Co:2:000:0 s 00 05 0035 0000 0000 0
-ffff8ae218ff2780 1027407289 C Co:2:000:0 0 0
-ffff8ae218ff2cc0 1027420166 S Ci:2:053:0 s 80 06 0100 0000 0012 18 <
-ffff8ae218ff2cc0 1027420549 C Ci:2:053:0 0 18 = 12010002 00000040 da0b2b1a 00000102 0001
-ffff8ae218ff2cc0 1027420574 S Ci:2:053:0 s 80 06 0200 0000 0020 32 <
-ffff8ae218ff2cc0 1027420661 C Ci:2:053:0 0 32 = 09022000 010100e0 fa090400 00020806 50000705 84020002 00070505 02000200
-ffff8ae218ff2cc0 1027420680 S Co:2:053:0 s 00 09 0001 0000 0000 0
-ffff8ae218ff2cc0 1027420785 C Co:2:053:0 0 0
-ffff8ae1f0bee000 1027420994 S Bo:2:053:5 -115 31 = 55534243 21000000 00000000 00000600 00000000 00000000 00000000 000000
-ffff8ae1f0bee000 1057899315 C Bo:2:053:5 -104 0
-ffff8ae218ff2780 1057899350 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae218ff2780 1057899365 C Co:2:001:0 0 0
-ffff8ae218ff2780 1057960037 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218ff2780 1057960092 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218ff2780 1057960108 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218ff2780 1057960121 C Co:2:001:0 0 0
-ffff8ae218ff2780 1058011226 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae218ff2780 1058011361 C Ci:2:000:0 0 18 = 12010002 00000040 da0b2b1a 00000102 0001
-ffff8ae218ff2780 1058011409 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae218ff2780 1058011498 C Co:2:001:0 0 0
-ffff8ae218e78300 1058072042 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218e78300 1058072117 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218e78300 1058072135 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218e78300 1058072146 C Co:2:001:0 0 0
-ffff8ae218e78f00 1058123044 S Co:2:000:0 s 00 05 0035 0000 0000 0
-ffff8ae218e78f00 1058123166 C Co:2:000:0 0 0
-ffff8ae218e78f00 1058136038 S Ci:2:053:0 s 80 06 0100 0000 0012 18 <
-ffff8ae218e78f00 1058136457 C Ci:2:053:0 0 18 = 12010002 00000040 da0b2b1a 00000102 0001
-ffff8ae218e78f00 1058136487 S Ci:2:053:0 s 80 06 0200 0000 0020 32 <
-ffff8ae218e78f00 1058136638 C Ci:2:053:0 0 32 = 09022000 010100e0 fa090400 00020806 50000705 84020002 00070505 02000200
-ffff8ae218e78f00 1058136662 S Co:2:053:0 s 00 09 0001 0000 0000 0
-ffff8ae218e78f00 1058136761 C Co:2:053:0 0 0
-ffff8ae1f0bee000 1058137050 S Bo:2:053:5 -115 31 = 55534243 22000000 08000000 80000a4a 01000010 00000008 00000000 000000
-ffff8ae1f0bee000 1088622460 C Bo:2:053:5 -104 0
-ffff8ae20dc693c0 1088622595 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae20dc693c0 1088622623 C Co:2:001:0 0 0
-ffff8ae20dc69300 1088683033 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae20dc69300 1088683095 C Ci:2:001:0 0 4 = 03051000
-ffff8ae20dc69300 1088683107 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae20dc69300 1088683117 C Co:2:001:0 0 0
-ffff8ae20dc69300 1088734277 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae20dc69300 1088734450 C Ci:2:000:0 0 18 = 12010002 00000040 da0b2b1a 00000102 0001
-ffff8ae20dc69300 1088734481 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae20dc69300 1088734501 C Co:2:001:0 0 0
-ffff8ae20dc69c00 1088795049 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae20dc69c00 1088795104 C Ci:2:001:0 0 4 = 03051000
-ffff8ae20dc69c00 1088795117 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae20dc69c00 1088795130 C Co:2:001:0 0 0
-ffff8ae20dc69b40 1088846205 S Co:2:000:0 s 00 05 0035 0000 0000 0
-ffff8ae20dc69b40 1088846310 C Co:2:000:0 0 0
-ffff8ae20dc69180 1088860018 S Ci:2:053:0 s 80 06 0100 0000 0012 18 <
-ffff8ae20dc69180 1088860300 C Ci:2:053:0 0 18 = 12010002 00000040 da0b2b1a 00000102 0001
-ffff8ae20dc69180 1088860319 S Ci:2:053:0 s 80 06 0200 0000 0020 32 <
-ffff8ae20dc69180 1088860414 C Ci:2:053:0 0 32 = 09022000 010100e0 fa090400 00020806 50000705 84020002 00070505 02000200
-ffff8ae20dc69180 1088860444 S Co:2:053:0 s 00 09 0001 0000 0000 0
-ffff8ae20dc69180 1088860538 C Co:2:053:0 0 0
-ffff8ae1f0bee000 1088860710 S Bo:2:053:5 -115 31 = 55534243 23000000 00000000 00000600 00000000 00000000 00000000 000000
-ffff8ae1f0bee000 1119340660 C Bo:2:053:5 -104 0
-ffff8ae1efca0780 1119340702 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1efca0780 1119340725 C Co:2:001:0 0 0
-ffff8ae1efca0300 1119401016 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1efca0300 1119401037 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1efca0300 1119401043 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1efca0300 1119401048 C Co:2:001:0 0 0
-ffff8ae1efca0300 1119452280 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae1efca0300 1119452397 C Ci:2:000:0 0 18 = 12010002 00000040 da0b2b1a 00000102 0001
-ffff8ae1efca0300 1119452705 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1efca0300 1119452730 C Co:2:001:0 0 0
-ffff8ae1efca0300 1119513053 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1efca0300 1119513122 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1efca0300 1119513138 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1efca0300 1119513150 C Co:2:001:0 0 0
-ffff8ae1efca0600 1119564236 S Co:2:000:0 s 00 05 0035 0000 0000 0
-ffff8ae1efca0600 1119564351 C Co:2:000:0 0 0
-ffff8ae1efca0180 1119577101 S Ci:2:053:0 s 80 06 0100 0000 0012 18 <
-ffff8ae1efca0180 1119577584 C Ci:2:053:0 0 18 = 12010002 00000040 da0b2b1a 00000102 0001
-ffff8ae1efca0180 1119577616 S Ci:2:053:0 s 80 06 0200 0000 0020 32 <
-ffff8ae1efca0180 1119577694 C Ci:2:053:0 0 32 = 09022000 010100e0 fa090400 00020806 50000705 84020002 00070505 02000200
-ffff8ae1efca0180 1119577720 S Co:2:053:0 s 00 09 0001 0000 0000 0
-ffff8ae1efca0180 1119577818 C Co:2:053:0 0 0
-ffff8ae1f0bee000 1119578028 S Bo:2:053:5 -115 31 = 55534243 24000000 00000000 00000600 00000000 00000000 00000000 000000
-ffff8ae1f0bee000 1150063386 C Bo:2:053:5 -104 0
-ffff8ae1efca0600 1150063440 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1efca0600 1150063455 C Co:2:001:0 0 0
-ffff8ae1efca0600 1150124049 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1efca0600 1150124109 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1efca0600 1150124119 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1efca0600 1150124128 C Co:2:001:0 0 0
-ffff8ae1efca0600 1150175323 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae1efca0600 1150175442 C Ci:2:000:0 0 18 = 12010002 00000040 da0b2b1a 00000102 0001
-ffff8ae1efca0600 1150175518 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1efca0600 1150175542 C Co:2:001:0 0 0
-ffff8ae1efca0600 1150237041 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1efca0600 1150237127 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1efca0600 1150237143 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1efca0600 1150237152 C Co:2:001:0 0 0
-ffff8ae1efca0600 1150288181 S Co:2:000:0 s 00 05 0035 0000 0000 0
-ffff8ae1efca0600 1150288243 C Co:2:000:0 0 0
-ffff8ae1efca0b40 1150301161 S Ci:2:053:0 s 80 06 0100 0000 0012 18 <
-ffff8ae1efca0b40 1150301486 C Ci:2:053:0 0 18 = 12010002 00000040 da0b2b1a 00000102 0001
-ffff8ae1efca0b40 1150301521 S Ci:2:053:0 s 80 06 0200 0000 0020 32 <
-ffff8ae1efca0b40 1150301595 C Ci:2:053:0 0 32 = 09022000 010100e0 fa090400 00020806 50000705 84020002 00070505 02000200
-ffff8ae1efca0180 1150301622 S Co:2:053:0 s 00 09 0001 0000 0000 0
-ffff8ae1efca0180 1150301720 C Co:2:053:0 0 0
-ffff8ae1f0bee000 1150301931 S Bo:2:053:5 -115 31 = 55534243 25000000 08000000 80000a4a 01000010 00000008 00000000 000000
-ffff8ae1f0bee000 1157358511 C Bo:2:053:5 -104 0
-ffff8ae1efca0600 1157358648 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1efca0600 1157358682 C Co:2:001:0 0 0
-ffff8ae1efca0600 1157419043 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1efca0600 1157419096 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1efca0600 1157419107 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1efca0600 1157419116 C Co:2:001:0 0 0
-ffff8ae1efca0600 1157470101 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae1efca0600 1157470228 C Ci:2:000:0 0 18 = 12010002 00000040 da0b2b1a 00000102 0001
-ffff8ae1efca0600 1157470254 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1efca0600 1157470273 C Co:2:001:0 0 0
-ffff8ae1efca0600 1157532038 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1efca0600 1157532105 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1efca0600 1157532117 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1efca0600 1157532126 C Co:2:001:0 0 0
-ffff8ae1efca0600 1157583193 S Co:2:000:0 s 00 05 0035 0000 0000 0
-ffff8ae1efca0600 1157583302 C Co:2:000:0 0 0
-ffff8ae1efca0780 1157596024 S Ci:2:053:0 s 80 06 0100 0000 0012 18 <
-ffff8ae1efca0780 1157596525 C Ci:2:053:0 0 18 = 12010002 00000040 da0b2b1a 00000102 0001
-ffff8ae1efca0780 1157596558 S Ci:2:053:0 s 80 06 0200 0000 0020 32 <
-ffff8ae1efca0780 1157596634 C Ci:2:053:0 0 32 = 09022000 010100e0 fa090400 00020806 50000705 84020002 00070505 02000200
-ffff8ae1efca0180 1157596658 S Co:2:053:0 s 00 09 0001 0000 0000 0
-ffff8ae1efca0180 1157596758 C Co:2:053:0 0 0
-ffff8ae1f0bee000 1157596959 S Bo:2:053:5 -115 31 = 55534243 26000000 00000000 0000061e 00000000 00000000 00000000 000000
-ffff8ae1f0bee000 1167662392 C Bo:2:053:5 -104 0
-ffff8ae1efca0600 1167662423 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1efca0600 1167662439 C Co:2:001:0 0 0
-ffff8ae1efca0300 1167723171 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1efca0300 1167723239 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1efca0300 1167723252 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1efca0300 1167723261 C Co:2:001:0 0 0
-ffff8ae1efca0300 1167774131 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae1efca0300 1167774243 C Ci:2:000:0 0 18 = 12010002 00000040 da0b2b1a 00000102 0001
-ffff8ae1efca0300 1167774521 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1efca0300 1167774544 C Co:2:001:0 0 0
-ffff8ae1efca0300 1167836034 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1efca0300 1167836102 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1efca0300 1167836116 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1efca0300 1167836130 C Co:2:001:0 0 0
-ffff8ae1efca0780 1167887046 S Co:2:000:0 s 00 05 0035 0000 0000 0
-ffff8ae1efca0780 1167887149 C Co:2:000:0 0 0
-ffff8ae1efca0600 1167900031 S Ci:2:053:0 s 80 06 0100 0000 0012 18 <
-ffff8ae1efca0600 1167900393 C Ci:2:053:0 0 18 = 12010002 00000040 da0b2b1a 00000102 0001
-ffff8ae1efca0600 1167900426 S Ci:2:053:0 s 80 06 0200 0000 0020 32 <
-ffff8ae1efca0600 1167900505 C Ci:2:053:0 0 32 = 09022000 010100e0 fa090400 00020806 50000705 84020002 00070505 02000200
-ffff8ae1efca0180 1167900531 S Co:2:053:0 s 00 09 0001 0000 0000 0
-ffff8ae1efca0180 1167900629 C Co:2:053:0 0 0
-ffff8ae1f0bee000 1167900852 S Bo:2:053:5 -115 31 = 55534243 27000000 08000000 80000a4a 01000010 00000008 00000000 000000
-ffff8ae1f0bee000 1198186539 C Bo:2:053:5 -104 0
-ffff8ae1efca0780 1198186679 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1efca0780 1198186711 C Co:2:001:0 0 0
-ffff8ae1efca0780 1198247210 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1efca0780 1198247260 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1efca0780 1198247274 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1efca0780 1198247283 C Co:2:001:0 0 0
-ffff8ae1efca0780 1198298369 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae1efca0780 1198298456 C Ci:2:000:0 0 18 = 12010002 00000040 da0b2b1a 00000102 0001
-ffff8ae1efca0780 1198298479 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1efca0780 1198298498 C Co:2:001:0 0 0
-ffff8ae1efca0780 1198359030 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1efca0780 1198359094 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1efca0780 1198359105 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1efca0780 1198359115 C Co:2:001:0 0 0
-ffff8ae1efca0780 1198410437 S Co:2:000:0 s 00 05 0035 0000 0000 0
-ffff8ae1efca0780 1198410674 C Co:2:000:0 0 0
-ffff8ae1efca0600 1198423170 S Ci:2:053:0 s 80 06 0100 0000 0012 18 <
-ffff8ae1efca0600 1198424018 C Ci:2:053:0 0 18 = 12010002 00000040 da0b2b1a 00000102 0001
-ffff8ae1efca0600 1198424050 S Ci:2:053:0 s 80 06 0200 0000 0020 32 <
-ffff8ae1efca0600 1198424200 C Ci:2:053:0 0 32 = 09022000 010100e0 fa090400 00020806 50000705 84020002 00070505 02000200
-ffff8ae1efca0180 1198424224 S Co:2:053:0 s 00 09 0001 0000 0000 0
-ffff8ae1efca0180 1198424324 C Co:2:053:0 0 0
-ffff8ae1f0bee000 1198424557 S Bo:2:053:5 -115 31 = 55534243 28000000 00000000 00000600 00000000 00000000 00000000 000000
-ffff8ae1f0bee000 1228905399 C Bo:2:053:5 -104 0
-ffff8ae1efca0780 1228905426 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1efca0780 1228905440 C Co:2:001:0 0 0
-ffff8ae1efca0780 1228966034 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1efca0780 1228966067 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1efca0780 1228966075 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1efca0780 1228966083 C Co:2:001:0 0 0
-ffff8ae1efca0780 1229018103 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae1efca0780 1229018283 C Ci:2:000:0 0 18 = 12010002 00000040 da0b2b1a 00000102 0001
-ffff8ae1efca0780 1229018422 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1efca0780 1229018438 C Co:2:001:0 0 0
-ffff8ae1efca0b40 1229079036 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1efca0b40 1229079069 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1efca0b40 1229079081 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1efca0b40 1229079090 C Co:2:001:0 0 0
-ffff8ae1f0b48000 1229130054 S Co:2:000:0 s 00 05 0035 0000 0000 0
-ffff8ae1f0b48000 1229130156 C Co:2:000:0 0 0
-ffff8ae1efca0300 1229143038 S Ci:2:053:0 s 80 06 0100 0000 0012 18 <
-ffff8ae1efca0300 1229143398 C Ci:2:053:0 0 18 = 12010002 00000040 da0b2b1a 00000102 0001
-ffff8ae1efca0300 1229143429 S Ci:2:053:0 s 80 06 0200 0000 0020 32 <
-ffff8ae1efca0300 1229143514 C Ci:2:053:0 0 32 = 09022000 010100e0 fa090400 00020806 50000705 84020002 00070505 02000200
-ffff8ae1efca0180 1229143540 S Co:2:053:0 s 00 09 0001 0000 0000 0
-ffff8ae1efca0180 1229143638 C Co:2:053:0 0 0
-ffff8ae1f0bee000 1229143934 S Bo:2:053:5 -115 31 = 55534243 29000000 08000000 80000a4a 01000010 00000008 00000000 000000
+[    0.000000] Linux version 6.15.9-arch1-1 (linux@archlinux) (gcc (GCC) 15=
+.1.1 20250729, GNU ld (GNU Binutils) 2.45.0) #1 SMP PREEMPT_DYNAMIC Sat, 02=
+ Aug 2025 01:20:06 +0000
+[    0.000000] Command line: BOOT_IMAGE=3D/boot/vmlinuz-linux root=3DUUID=
+=3D7e5f26b7-dfb4-4127-a8db-b4a8a512c3c0 rw loglevel=3D3 quiet intel_iommu=
+=3Don
+[    0.000000] BIOS-provided physical RAM map:
+[    0.000000] BIOS-e820: [mem 0x0000000000000000-0x000000000009ffff] usabl=
+e
+[    0.000000] BIOS-e820: [mem 0x0000000000100000-0x000000009d3dffff] usabl=
+e
+[    0.000000] BIOS-e820: [mem 0x000000009d3e0000-0x000000009d6c3fff] reser=
+ved
+[    0.000000] BIOS-e820: [mem 0x000000009d6c4000-0x000000009d6d3fff] ACPI =
+data
+[    0.000000] BIOS-e820: [mem 0x000000009d6d4000-0x000000009da36fff] ACPI =
+NVS
+[    0.000000] BIOS-e820: [mem 0x000000009da37000-0x000000009e60cfff] reser=
+ved
+[    0.000000] BIOS-e820: [mem 0x000000009e60d000-0x000000009e60dfff] usabl=
+e
+[    0.000000] BIOS-e820: [mem 0x000000009e60e000-0x000000009e813fff] ACPI =
+NVS
+[    0.000000] BIOS-e820: [mem 0x000000009e814000-0x000000009ec4afff] usabl=
+e
+[    0.000000] BIOS-e820: [mem 0x000000009ec4b000-0x000000009eff3fff] reser=
+ved
+[    0.000000] BIOS-e820: [mem 0x000000009eff4000-0x000000009effffff] usabl=
+e
+[    0.000000] BIOS-e820: [mem 0x00000000fec00000-0x00000000fec00fff] reser=
+ved
+[    0.000000] BIOS-e820: [mem 0x00000000fec10000-0x00000000fec10fff] reser=
+ved
+[    0.000000] BIOS-e820: [mem 0x00000000fed00000-0x00000000fed00fff] reser=
+ved
+[    0.000000] BIOS-e820: [mem 0x00000000fed40000-0x00000000fed44fff] reser=
+ved
+[    0.000000] BIOS-e820: [mem 0x00000000fed80000-0x00000000fed8ffff] reser=
+ved
+[    0.000000] BIOS-e820: [mem 0x00000000ff000000-0x00000000ffffffff] reser=
+ved
+[    0.000000] BIOS-e820: [mem 0x0000000100001000-0x000000023effffff] usabl=
+e
+[    0.000000] NX (Execute Disable) protection: active
+[    0.000000] APIC: Static calls initialized
+[    0.000000] efi: EFI v32.3.1 by American Megatrends
+[    0.000000] efi: ACPI=3D0x9d6cb000 ACPI 2.0=3D0x9d6cb000 SMBIOS=3D0xf04c=
+0 INITRD=3D0x8b896e18=20
+[    0.000000] efi: Not removing mem165: MMIO range=3D[0xfec00000-0xfec00ff=
+f] (4KB) from e820 map
+[    0.000000] efi: Not removing mem166: MMIO range=3D[0xfec10000-0xfec10ff=
+f] (4KB) from e820 map
+[    0.000000] efi: Not removing mem167: MMIO range=3D[0xfed00000-0xfed00ff=
+f] (4KB) from e820 map
+[    0.000000] efi: Not removing mem168: MMIO range=3D[0xfed40000-0xfed44ff=
+f] (20KB) from e820 map
+[    0.000000] efi: Not removing mem169: MMIO range=3D[0xfed80000-0xfed80ff=
+f] (4KB) from e820 map
+[    0.000000] efi: Not removing mem170: MMIO range=3D[0xfed81000-0xfed8fff=
+f] (60KB) from e820 map
+[    0.000000] efi: Remove mem171: MMIO range=3D[0xff000000-0xffffffff] (16=
+MB) from e820 map
+[    0.000000] e820: remove [mem 0xff000000-0xffffffff] reserved
+[    0.000000] SMBIOS 2.7 present.
+[    0.000000] DMI: System manufacturer System Product Name/F2A85-M, BIOS 6=
+508 07/11/2014
+[    0.000000] DMI: Memory slots populated: 4/4
+[    0.000000] tsc: Fast TSC calibration using PIT
+[    0.000000] tsc: Detected 3818.865 MHz processor
+[    0.000782] e820: update [mem 0x00000000-0x00000fff] usable =3D=3D> rese=
+rved
+[    0.000784] e820: remove [mem 0x000a0000-0x000fffff] usable
+[    0.000790] last_pfn =3D 0x23f000 max_arch_pfn =3D 0x400000000
+[    0.000799] total RAM covered: 2544M
+[    0.001071] Found optimal setting for mtrr clean up
+[    0.001071]  gran_size: 64K 	chunk_size: 32M 	num_reg: 3  	lose cover RA=
+M: 0G
+[    0.001075] MTRR map: 8 entries (5 fixed + 3 variable; max 22), built fr=
+om 9 variable MTRRs
+[    0.001078] x86/PAT: Configuration [0-7]: WB  WC  UC- UC  WB  WP  UC- WT=
+ =20
+[    0.001364] e820: update [mem 0x9f000000-0xffffffff] usable =3D=3D> rese=
+rved
+[    0.001372] last_pfn =3D 0x9f000 max_arch_pfn =3D 0x400000000
+[    0.005404] found SMP MP-table at [mem 0x000fd7b0-0x000fd7bf]
+[    0.005445] Using GB pages for direct mapping
+[    0.006164] Secure boot disabled
+[    0.006165] RAMDISK: [mem 0x84433000-0x879fdfff]
+[    0.006422] ACPI: Early table checksum verification disabled
+[    0.006425] ACPI: RSDP 0x000000009D6CB000 000024 (v02 ALASKA)
+[    0.006429] ACPI: XSDT 0x000000009D6CB078 000064 (v01 ALASKA A M I    01=
+072009 AMI  00010013)
+[    0.006434] ACPI: FACP 0x000000009D6D1E50 00010C (v05 ALASKA A M I    01=
+072009 AMI  00010013)
+[    0.006439] ACPI BIOS Warning (bug): Optional FADT field Pm2ControlBlock=
+ has valid Length but zero Address: 0x0000000000000000/0x1 (20240827/tbfadt=
+-611)
+[    0.006443] ACPI: DSDT 0x000000009D6CB170 006CDB (v02 ALASKA A M I    00=
+000000 INTL 20051117)
+[    0.006447] ACPI: FACS 0x000000009DA2C080 000040
+[    0.006449] ACPI: APIC 0x000000009D6D1F60 000072 (v03 ALASKA A M I    01=
+072009 AMI  00010013)
+[    0.006453] ACPI: FPDT 0x000000009D6D1FD8 000044 (v01 ALASKA A M I    01=
+072009 AMI  00010013)
+[    0.006456] ACPI: MCFG 0x000000009D6D2020 00003C (v01 ALASKA A M I    01=
+072009 MSFT 00010013)
+[    0.006459] ACPI: SSDT 0x000000009D6D2EA0 0004B7 (v02 AMD    ANNAPURN 00=
+000001 MSFT 04000000)
+[    0.006462] ACPI: HPET 0x000000009D6D20B8 000038 (v01 ALASKA A M I    01=
+072009 AMI  00000005)
+[    0.006465] ACPI: IVRS 0x000000009D6D20F0 000070 (v02 AMD    ANNAPURN 00=
+000001 AMD  00000000)
+[    0.006468] ACPI: SSDT 0x000000009D6D2160 000D40 (v01 AMD    ANNAPURN 00=
+000001 AMD  00000001)
+[    0.006470] ACPI: Reserving FACP table memory at [mem 0x9d6d1e50-0x9d6d1=
+f5b]
+[    0.006472] ACPI: Reserving DSDT table memory at [mem 0x9d6cb170-0x9d6d1=
+e4a]
+[    0.006473] ACPI: Reserving FACS table memory at [mem 0x9da2c080-0x9da2c=
+0bf]
+[    0.006474] ACPI: Reserving APIC table memory at [mem 0x9d6d1f60-0x9d6d1=
+fd1]
+[    0.006475] ACPI: Reserving FPDT table memory at [mem 0x9d6d1fd8-0x9d6d2=
+01b]
+[    0.006476] ACPI: Reserving MCFG table memory at [mem 0x9d6d2020-0x9d6d2=
+05b]
+[    0.006477] ACPI: Reserving SSDT table memory at [mem 0x9d6d2ea0-0x9d6d3=
+356]
+[    0.006478] ACPI: Reserving HPET table memory at [mem 0x9d6d20b8-0x9d6d2=
+0ef]
+[    0.006480] ACPI: Reserving IVRS table memory at [mem 0x9d6d20f0-0x9d6d2=
+15f]
+[    0.006481] ACPI: Reserving SSDT table memory at [mem 0x9d6d2160-0x9d6d2=
+e9f]
+[    0.006554] No NUMA configuration found
+[    0.006555] Faking a node at [mem 0x0000000000000000-0x000000023effffff]
+[    0.006564] NODE_DATA(0) allocated [mem 0x23efd5280-0x23effffff]
+[    0.006784] Zone ranges:
+[    0.006784]   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+[    0.006786]   DMA32    [mem 0x0000000001000000-0x00000000ffffffff]
+[    0.006788]   Normal   [mem 0x0000000100000000-0x000000023effffff]
+[    0.006789]   Device   empty
+[    0.006790] Movable zone start for each node
+[    0.006793] Early memory node ranges
+[    0.006793]   node   0: [mem 0x0000000000001000-0x000000000009ffff]
+[    0.006794]   node   0: [mem 0x0000000000100000-0x000000009d3dffff]
+[    0.006795]   node   0: [mem 0x000000009e60d000-0x000000009e60dfff]
+[    0.006796]   node   0: [mem 0x000000009e814000-0x000000009ec4afff]
+[    0.006797]   node   0: [mem 0x000000009eff4000-0x000000009effffff]
+[    0.006798]   node   0: [mem 0x0000000100001000-0x000000023effffff]
+[    0.006800] Initmem setup node 0 [mem 0x0000000000001000-0x000000023efff=
+fff]
+[    0.006807] On node 0, zone DMA: 1 pages in unavailable ranges
+[    0.006848] On node 0, zone DMA: 96 pages in unavailable ranges
+[    0.014435] On node 0, zone DMA32: 4653 pages in unavailable ranges
+[    0.014457] On node 0, zone DMA32: 518 pages in unavailable ranges
+[    0.014471] On node 0, zone DMA32: 937 pages in unavailable ranges
+[    0.029877] On node 0, zone Normal: 4097 pages in unavailable ranges
+[    0.029938] On node 0, zone Normal: 4096 pages in unavailable ranges
+[    0.030098] ACPI: PM-Timer IO Port: 0x808
+[    0.030108] ACPI: LAPIC_NMI (acpi_id[0xff] high edge lint[0x1])
+[    0.030117] IOAPIC[0]: apic_id 5, version 33, address 0xfec00000, GSI 0-=
+23
+[    0.030121] ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+[    0.030123] ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 low level)
+[    0.030127] ACPI: Using ACPI (MADT) for SMP configuration information
+[    0.030128] ACPI: HPET id: 0x10228210 base: 0xfed00000
+[    0.030138] CPU topo: Max. logical packages:   1
+[    0.030139] CPU topo: Max. logical dies:       1
+[    0.030140] CPU topo: Max. dies per package:   1
+[    0.030144] CPU topo: Max. threads per core:   1
+[    0.030145] CPU topo: Num. cores per package:     4
+[    0.030145] CPU topo: Num. threads per package:   4
+[    0.030146] CPU topo: Allowing 4 present CPUs plus 0 hotplug CPUs
+[    0.030165] PM: hibernation: Registered nosave memory: [mem 0x00000000-0=
+x00000fff]
+[    0.030168] PM: hibernation: Registered nosave memory: [mem 0x000a0000-0=
+x000fffff]
+[    0.030170] PM: hibernation: Registered nosave memory: [mem 0x9d3e0000-0=
+x9e60cfff]
+[    0.030171] PM: hibernation: Registered nosave memory: [mem 0x9e60e000-0=
+x9e813fff]
+[    0.030173] PM: hibernation: Registered nosave memory: [mem 0x9ec4b000-0=
+x9eff3fff]
+[    0.030175] PM: hibernation: Registered nosave memory: [mem 0x9f000000-0=
+x100000fff]
+[    0.030177] [mem 0x9f000000-0xfebfffff] available for PCI devices
+[    0.030180] Booting paravirtualized kernel on bare hardware
+[    0.030182] clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0=
+xffffffff, max_idle_ns: 1910969940391419 ns
+[    0.035886] setup_percpu: NR_CPUS:8192 nr_cpumask_bits:4 nr_cpu_ids:4 nr=
+_node_ids:1
+[    0.036296] percpu: Embedded 62 pages/cpu s217088 r8192 d28672 u524288
+[    0.036304] pcpu-alloc: s217088 r8192 d28672 u524288 alloc=3D1*2097152
+[    0.036307] pcpu-alloc: [0] 0 1 2 3=20
+[    0.036326] Kernel command line: BOOT_IMAGE=3D/boot/vmlinuz-linux root=
+=3DUUID=3D7e5f26b7-dfb4-4127-a8db-b4a8a512c3c0 rw loglevel=3D3 quiet intel_=
+iommu=3Don
+[    0.036410] DMAR: IOMMU enabled
+[    0.036413] Unknown kernel command line parameters "BOOT_IMAGE=3D/boot/v=
+mlinuz-linux", will be passed to user space.
+[    0.036423] printk: log buffer data + meta data: 131072 + 458752 =3D 589=
+824 bytes
+[    0.037965] Dentry cache hash table entries: 1048576 (order: 11, 8388608=
+ bytes, linear)
+[    0.038729] Inode-cache hash table entries: 524288 (order: 10, 4194304 b=
+ytes, linear)
+[    0.038813] software IO TLB: area num 4.
+[    0.063001] Fallback order for Node 0: 0=20
+[    0.063006] Built 1 zonelists, mobility grouping on.  Total pages: 19516=
+82
+[    0.063008] Policy zone: Normal
+[    0.063463] mem auto-init: stack:all(zero), heap alloc:on, heap free:off
+[    0.099148] SLUB: HWalign=3D64, Order=3D0-3, MinObjects=3D0, CPUs=3D4, N=
+odes=3D1
+[    0.110177] ftrace: allocating 55585 entries in 220 pages
+[    0.110181] ftrace: allocated 220 pages with 5 groups
+[    0.110361] Dynamic Preempt: full
+[    0.110496] rcu: Preemptible hierarchical RCU implementation.
+[    0.110497] rcu: 	RCU restricting CPUs from NR_CPUS=3D8192 to nr_cpu_ids=
+=3D4.
+[    0.110498] rcu: 	RCU priority boosting: priority 1 delay 500 ms.
+[    0.110499] 	Trampoline variant of Tasks RCU enabled.
+[    0.110500] 	Rude variant of Tasks RCU enabled.
+[    0.110500] 	Tracing variant of Tasks RCU enabled.
+[    0.110501] rcu: RCU calculated value of scheduler-enlistment delay is 1=
+00 jiffies.
+[    0.110502] rcu: Adjusting geometry for rcu_fanout_leaf=3D16, nr_cpu_ids=
+=3D4
+[    0.110509] RCU Tasks: Setting shift to 2 and lim to 1 rcu_task_cb_adjus=
+t=3D1 rcu_task_cpu_ids=3D4.
+[    0.110511] RCU Tasks Rude: Setting shift to 2 and lim to 1 rcu_task_cb_=
+adjust=3D1 rcu_task_cpu_ids=3D4.
+[    0.110513] RCU Tasks Trace: Setting shift to 2 and lim to 1 rcu_task_cb=
+_adjust=3D1 rcu_task_cpu_ids=3D4.
+[    0.117142] NR_IRQS: 524544, nr_irqs: 456, preallocated irqs: 16
+[    0.117350] rcu: srcu_init: Setting srcu_struct sizes based on contentio=
+n.
+[    0.117445] kfence: initialized - using 2097152 bytes for 255 objects at=
+ 0x(____ptrval____)-0x(____ptrval____)
+[    0.117529] Console: colour dummy device 80x25
+[    0.117533] printk: legacy console [tty0] enabled
+[    0.117743] ACPI: Core revision 20240827
+[    0.117936] clocksource: hpet: mask: 0xffffffff max_cycles: 0xffffffff, =
+max_idle_ns: 133484873504 ns
+[    0.117950] APIC: Switch to symmetric I/O mode setup
+[    0.118793] AMD-Vi: Using global IVHD EFR:0x0, EFR2:0x0
+[    0.152388] ..TIMER: vector=3D0x30 apic1=3D0 pin1=3D2 apic2=3D-1 pin2=3D=
+-1
+[    0.156951] clocksource: tsc-early: mask: 0xffffffffffffffff max_cycles:=
+ 0x6e17ec1bf68, max_idle_ns: 881590834882 ns
+[    0.156961] Calibrating delay loop (skipped), value calculated using tim=
+er frequency.. 7637.73 BogoMIPS (lpj=3D3818865)
+[    0.157006] Last level iTLB entries: 4KB 512, 2MB 1024, 4MB 512
+[    0.157008] Last level dTLB entries: 4KB 1024, 2MB 1024, 4MB 512, 1GB 0
+[    0.157014] Spectre V1 : Mitigation: usercopy/swapgs barriers and __user=
+ pointer sanitization
+[    0.157016] Spectre V2 : Mitigation: Retpolines
+[    0.157017] Spectre V2 : Spectre v2 / SpectreRSB: Filling RSB on context=
+ switch and VMEXIT
+[    0.157019] RETBleed: Mitigation: untrained return thunk
+[    0.157020] Speculative Store Bypass: Mitigation: Speculative Store Bypa=
+ss disabled via prctl
+[    0.157026] x86/fpu: Supporting XSAVE feature 0x001: 'x87 floating point=
+ registers'
+[    0.157028] x86/fpu: Supporting XSAVE feature 0x002: 'SSE registers'
+[    0.157029] x86/fpu: Supporting XSAVE feature 0x004: 'AVX registers'
+[    0.157030] x86/fpu: xstate_offset[2]:  576, xstate_sizes[2]:  256
+[    0.157032] x86/fpu: Enabled xstate features 0x7, context size is 832 by=
+tes, using 'standard' format.
+[    0.183958] Freeing SMP alternatives memory: 52K
+[    0.183966] pid_max: default: 32768 minimum: 301
+[    0.192240] LSM: initializing lsm=3Dcapability,landlock,lockdown,yama,bp=
+f
+[    0.192959] landlock: Up and running.
+[    0.192963] Yama: becoming mindful.
+[    0.193196] LSM support for eBPF active
+[    0.193425] Mount-cache hash table entries: 16384 (order: 5, 131072 byte=
+s, linear)
+[    0.193454] Mountpoint-cache hash table entries: 16384 (order: 5, 131072=
+ bytes, linear)
+[    0.297335] smpboot: CPU0: AMD A10-5800K APU with Radeon(tm) HD Graphics=
+ (family: 0x15, model: 0x10, stepping: 0x1)
+[    0.297668] Performance Events: Fam15h core perfctr, AMD PMU driver.
+[    0.297673] ... version:                0
+[    0.297674] ... bit width:              48
+[    0.297675] ... generic registers:      6
+[    0.297676] ... value mask:             0000ffffffffffff
+[    0.297677] ... max period:             00007fffffffffff
+[    0.297678] ... fixed-purpose events:   0
+[    0.297679] ... event mask:             000000000000003f
+[    0.297771] signal: max sigframe size: 1776
+[    0.297956] rcu: Hierarchical SRCU implementation.
+[    0.297956] rcu: 	Max phase no-delay instances is 400.
+[    0.297956] Timer migration: 1 hierarchy levels; 8 children per group; 1=
+ crossnode level
+[    0.301953] MCE: In-kernel MCE decoding enabled.
+[    0.302041] NMI watchdog: Enabled. Permanently consumes one hw-PMU count=
+er.
+[    0.302124] smp: Bringing up secondary CPUs ...
+[    0.302300] smpboot: x86: Booting SMP configuration:
+[    0.302302] .... node  #0, CPUs:      #1 #2 #3
+[    0.306009] smp: Brought up 1 node, 4 CPUs
+[    0.306009] smpboot: Total of 4 processors activated (30550.92 BogoMIPS)
+[    0.307087] Memory: 7475544K/7806728K available (19713K kernel code, 294=
+0K rwdata, 16528K rodata, 4644K init, 5024K bss, 318256K reserved, 0K cma-r=
+eserved)
+[    0.307532] devtmpfs: initialized
+[    0.307999] x86/mm: Memory block size: 128MB
+[    0.309047] ACPI: PM: Registering ACPI NVS region [mem 0x9d6d4000-0x9da3=
+6fff] (3551232 bytes)
+[    0.309056] ACPI: PM: Registering ACPI NVS region [mem 0x9e60e000-0x9e81=
+3fff] (2121728 bytes)
+[    0.309203] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xfffffff=
+f, max_idle_ns: 1911260446275000 ns
+[    0.309203] posixtimers hash table entries: 2048 (order: 3, 32768 bytes,=
+ linear)
+[    0.309203] futex hash table entries: 1024 (order: 4, 65536 bytes, linea=
+r)
+[    0.309506] pinctrl core: initialized pinctrl subsystem
+[    0.310036] PM: RTC time: 14:21:52, date: 2025-08-14
+[    0.311237] NET: Registered PF_NETLINK/PF_ROUTE protocol family
+[    0.311604] DMA: preallocated 1024 KiB GFP_KERNEL pool for atomic alloca=
+tions
+[    0.311811] DMA: preallocated 1024 KiB GFP_KERNEL|GFP_DMA pool for atomi=
+c allocations
+[    0.312032] DMA: preallocated 1024 KiB GFP_KERNEL|GFP_DMA32 pool for ato=
+mic allocations
+[    0.312051] audit: initializing netlink subsys (disabled)
+[    0.312085] audit: type=3D2000 audit(1755181311.162:1): state=3Dinitiali=
+zed audit_enabled=3D0 res=3D1
+[    0.312128] thermal_sys: Registered thermal governor 'fair_share'
+[    0.312131] thermal_sys: Registered thermal governor 'bang_bang'
+[    0.312132] thermal_sys: Registered thermal governor 'step_wise'
+[    0.312133] thermal_sys: Registered thermal governor 'user_space'
+[    0.312134] thermal_sys: Registered thermal governor 'power_allocator'
+[    0.312149] cpuidle: using governor ladder
+[    0.312149] cpuidle: using governor menu
+[    0.312149] acpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5
+[    0.312405] PCI: ECAM [mem 0xe0000000-0xefffffff] (base 0xe0000000) for =
+domain 0000 [bus 00-ff]
+[    0.312411] PCI: not using ECAM ([mem 0xe0000000-0xefffffff] not reserve=
+d)
+[    0.312413] PCI: Using configuration type 1 for base access
+[    0.312414] PCI: Using configuration type 1 for extended access
+[    0.313036] kprobes: kprobe jump-optimization is enabled. All kprobes ar=
+e optimized if possible.
+[    0.315121] HugeTLB: allocation took 0ms with hugepage_allocation_thread=
+s=3D1
+[    0.315121] HugeTLB: registered 1.00 GiB page size, pre-allocated 0 page=
+s
+[    0.315121] HugeTLB: 16380 KiB vmemmap can be freed for a 1.00 GiB page
+[    0.315121] HugeTLB: registered 2.00 MiB page size, pre-allocated 0 page=
+s
+[    0.315121] HugeTLB: 28 KiB vmemmap can be freed for a 2.00 MiB page
+[    0.318029] raid6: skipped pq benchmark and selected sse2x4
+[    0.318029] raid6: using ssse3x2 recovery algorithm
+[    0.318080] ACPI: Added _OSI(Module Device)
+[    0.318080] ACPI: Added _OSI(Processor Device)
+[    0.318080] ACPI: Added _OSI(Processor Aggregator Device)
+[    0.322588] ACPI: 3 ACPI AML tables successfully acquired and loaded
+[    0.328097] ACPI: Interpreter enabled
+[    0.328123] ACPI: PM: (supports S0 S3 S4 S5)
+[    0.328125] ACPI: Using IOAPIC for interrupt routing
+[    0.328689] PCI: ECAM [mem 0xe0000000-0xefffffff] (base 0xe0000000) for =
+domain 0000 [bus 00-ff]
+[    0.328743] PCI: ECAM [mem 0xe0000000-0xefffffff] reserved as ACPI mothe=
+rboard resource
+[    0.328764] PCI: Using host bridge windows from ACPI; if necessary, use =
+"pci=3Dnocrs" and report a bug
+[    0.328766] PCI: Using E820 reservations for host bridge windows
+[    0.329063] ACPI: Enabled 8 GPEs in block 00 to 1F
+[    0.337726] ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+[    0.337736] acpi PNP0A03:00: _OSC: OS supports [ExtendedConfig ASPM Cloc=
+kPM Segments MSI EDR HPX-Type3]
+[    0.337864] acpi PNP0A03:00: _OSC: platform does not support [PCIeHotplu=
+g SHPCHotplug PME LTR DPC]
+[    0.338100] acpi PNP0A03:00: _OSC: OS now controls [AER PCIeCapability]
+[    0.338580] PCI host bridge to bus 0000:00
+[    0.338584] pci_bus 0000:00: root bus resource [io  0x0000-0x03af window=
+]
+[    0.338587] pci_bus 0000:00: root bus resource [io  0x03e0-0x0cf7 window=
+]
+[    0.338590] pci_bus 0000:00: root bus resource [io  0x03b0-0x03df window=
+]
+[    0.338592] pci_bus 0000:00: root bus resource [io  0x0d00-0xffff window=
+]
+[    0.338594] pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000dfff=
+f window]
+[    0.338597] pci_bus 0000:00: root bus resource [mem 0xc0000000-0xfffffff=
+f window]
+[    0.338599] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    0.338615] pci 0000:00:00.0: [1022:1410] type 00 class 0x060000 convent=
+ional PCI endpoint
+[    0.338748] pci 0000:00:00.2: [1022:1419] type 00 class 0x080600 convent=
+ional PCI endpoint
+[    0.338876] pci 0000:00:01.0: [1002:9901] type 00 class 0x030000 PCIe Ro=
+ot Complex Integrated Endpoint
+[    0.338905] pci 0000:00:01.0: BAR 0 [mem 0xc0000000-0xcfffffff pref]
+[    0.338908] pci 0000:00:01.0: BAR 1 [io  0xf000-0xf0ff]
+[    0.338911] pci 0000:00:01.0: BAR 2 [mem 0xfeb00000-0xfeb3ffff]
+[    0.338921] pci 0000:00:01.0: enabling Extended Tags
+[    0.338933] pci 0000:00:01.0: Video device with shadowed ROM at [mem 0x0=
+00c0000-0x000dffff]
+[    0.338971] pci 0000:00:01.0: supports D1 D2
+[    0.339037] pci 0000:00:01.1: [1002:9902] type 00 class 0x040300 PCIe Ro=
+ot Complex Integrated Endpoint
+[    0.339063] pci 0000:00:01.1: BAR 0 [mem 0xfeb40000-0xfeb43fff]
+[    0.339074] pci 0000:00:01.1: enabling Extended Tags
+[    0.339105] pci 0000:00:01.1: supports D1 D2
+[    0.339195] pci 0000:00:10.0: [1022:7812] type 00 class 0x0c0330 PCIe Ro=
+ot Complex Integrated Endpoint
+[    0.339249] pci 0000:00:10.0: BAR 0 [mem 0xfeb46000-0xfeb47fff 64bit]
+[    0.339327] pci 0000:00:10.0: PME# supported from D0 D3hot D3cold
+[    0.339461] pci 0000:00:10.1: [1022:7812] type 00 class 0x0c0330 PCIe Ro=
+ot Complex Integrated Endpoint
+[    0.339515] pci 0000:00:10.1: BAR 0 [mem 0xfeb44000-0xfeb45fff 64bit]
+[    0.339594] pci 0000:00:10.1: PME# supported from D0 D3hot D3cold
+[    0.339722] pci 0000:00:11.0: [1022:7801] type 00 class 0x010601 convent=
+ional PCI endpoint
+[    0.339766] pci 0000:00:11.0: BAR 0 [io  0xf140-0xf147]
+[    0.339770] pci 0000:00:11.0: BAR 1 [io  0xf130-0xf133]
+[    0.339773] pci 0000:00:11.0: BAR 2 [io  0xf120-0xf127]
+[    0.339776] pci 0000:00:11.0: BAR 3 [io  0xf110-0xf113]
+[    0.339779] pci 0000:00:11.0: BAR 4 [io  0xf100-0xf10f]
+[    0.339782] pci 0000:00:11.0: BAR 5 [mem 0xfeb4c000-0xfeb4c7ff]
+[    0.339894] pci 0000:00:12.0: [1022:7807] type 00 class 0x0c0310 convent=
+ional PCI endpoint
+[    0.339938] pci 0000:00:12.0: BAR 0 [mem 0xfeb4b000-0xfeb4bfff]
+[    0.340053] pci 0000:00:12.2: [1022:7808] type 00 class 0x0c0320 convent=
+ional PCI endpoint
+[    0.340098] pci 0000:00:12.2: BAR 0 [mem 0xfeb4a000-0xfeb4a0ff]
+[    0.340140] pci 0000:00:12.2: supports D1 D2
+[    0.340142] pci 0000:00:12.2: PME# supported from D0 D1 D2 D3hot
+[    0.340242] pci 0000:00:13.0: [1022:7807] type 00 class 0x0c0310 convent=
+ional PCI endpoint
+[    0.340287] pci 0000:00:13.0: BAR 0 [mem 0xfeb49000-0xfeb49fff]
+[    0.340393] pci 0000:00:13.2: [1022:7808] type 00 class 0x0c0320 convent=
+ional PCI endpoint
+[    0.340438] pci 0000:00:13.2: BAR 0 [mem 0xfeb48000-0xfeb480ff]
+[    0.340480] pci 0000:00:13.2: supports D1 D2
+[    0.340482] pci 0000:00:13.2: PME# supported from D0 D1 D2 D3hot
+[    0.340573] pci 0000:00:14.0: [1022:780b] type 00 class 0x0c0500 convent=
+ional PCI endpoint
+[    0.340674] pci 0000:00:14.3: [1022:780e] type 00 class 0x060100 convent=
+ional PCI endpoint
+[    0.340833] pci 0000:00:14.4: [1022:780f] type 01 class 0x060401 convent=
+ional PCI bridge
+[    0.340862] pci 0000:00:14.4: PCI bridge to [bus 01] (subtractive decode=
+)
+[    0.340995] pci 0000:00:15.0: [1022:43a0] type 01 class 0x060400 PCIe Ro=
+ot Port
+[    0.341022] pci 0000:00:15.0: PCI bridge to [bus 02]
+[    0.341029] pci 0000:00:15.0:   bridge window [io  0xe000-0xefff]
+[    0.341033] pci 0000:00:15.0:   bridge window [mem 0xfea00000-0xfeafffff=
+]
+[    0.341053] pci 0000:00:15.0: enabling Extended Tags
+[    0.341106] pci 0000:00:15.0: supports D1 D2
+[    0.341220] pci 0000:00:15.1: [1022:43a1] type 01 class 0x060400 PCIe Ro=
+ot Port
+[    0.341245] pci 0000:00:15.1: PCI bridge to [bus 03]
+[    0.341251] pci 0000:00:15.1:   bridge window [io  0xd000-0xdfff]
+[    0.341262] pci 0000:00:15.1:   bridge window [mem 0xd0000000-0xd00fffff=
+ 64bit pref]
+[    0.341273] pci 0000:00:15.1: enabling Extended Tags
+[    0.341321] pci 0000:00:15.1: supports D1 D2
+[    0.341416] pci 0000:00:18.0: [1022:1400] type 00 class 0x060000 convent=
+ional PCI endpoint
+[    0.341476] pci 0000:00:18.1: [1022:1401] type 00 class 0x060000 convent=
+ional PCI endpoint
+[    0.341532] pci 0000:00:18.2: [1022:1402] type 00 class 0x060000 convent=
+ional PCI endpoint
+[    0.341588] pci 0000:00:18.3: [1022:1403] type 00 class 0x060000 convent=
+ional PCI endpoint
+[    0.341652] pci 0000:00:18.4: [1022:1404] type 00 class 0x060000 convent=
+ional PCI endpoint
+[    0.341719] pci 0000:00:18.5: [1022:1405] type 00 class 0x060000 convent=
+ional PCI endpoint
+[    0.341787] pci_bus 0000:01: extended config space not accessible
+[    0.341845] pci 0000:00:14.4: PCI bridge to [bus 01] (subtractive decode=
+)
+[    0.341854] pci 0000:00:14.4:   bridge window [io  0x0000-0x03af window]=
+ (subtractive decode)
+[    0.341856] pci 0000:00:14.4:   bridge window [io  0x03e0-0x0cf7 window]=
+ (subtractive decode)
+[    0.341857] pci 0000:00:14.4:   bridge window [io  0x03b0-0x03df window]=
+ (subtractive decode)
+[    0.341859] pci 0000:00:14.4:   bridge window [io  0x0d00-0xffff window]=
+ (subtractive decode)
+[    0.341861] pci 0000:00:14.4:   bridge window [mem 0x000a0000-0x000dffff=
+ window] (subtractive decode)
+[    0.341862] pci 0000:00:14.4:   bridge window [mem 0xc0000000-0xffffffff=
+ window] (subtractive decode)
+[    0.341930] pci 0000:02:00.0: [10ec:c852] type 00 class 0x028000 PCIe En=
+dpoint
+[    0.341988] pci 0000:02:00.0: BAR 0 [io  0xe000-0xe0ff]
+[    0.341995] pci 0000:02:00.0: BAR 2 [mem 0xfea00000-0xfeafffff 64bit]
+[    0.342093] pci 0000:02:00.0: PME# supported from D0 D3hot D3cold
+[    0.342254] pci 0000:00:15.0: PCI bridge to [bus 02]
+[    0.342338] pci 0000:03:00.0: [10ec:8168] type 00 class 0x020000 PCIe En=
+dpoint
+[    0.342398] pci 0000:03:00.0: BAR 0 [io  0xd000-0xd0ff]
+[    0.342404] pci 0000:03:00.0: BAR 2 [mem 0xd0004000-0xd0004fff 64bit pre=
+f]
+[    0.342409] pci 0000:03:00.0: BAR 4 [mem 0xd0000000-0xd0003fff 64bit pre=
+f]
+[    0.342506] pci 0000:03:00.0: supports D1 D2
+[    0.342507] pci 0000:03:00.0: PME# supported from D0 D1 D2 D3hot D3cold
+[    0.342675] pci 0000:00:15.1: PCI bridge to [bus 03]
+[    0.343195] ACPI: PCI: Interrupt link LNKA configured for IRQ 0
+[    0.343268] ACPI: PCI: Interrupt link LNKB configured for IRQ 0
+[    0.343344] ACPI: PCI: Interrupt link LNKC configured for IRQ 0
+[    0.343418] ACPI: PCI: Interrupt link LNKD configured for IRQ 0
+[    0.343479] ACPI: PCI: Interrupt link LNKE configured for IRQ 0
+[    0.343526] ACPI: PCI: Interrupt link LNKF configured for IRQ 0
+[    0.343573] ACPI: PCI: Interrupt link LNKG configured for IRQ 0
+[    0.343621] ACPI: PCI: Interrupt link LNKH configured for IRQ 0
+[    0.343847] iommu: Default domain type: Translated
+[    0.343847] iommu: DMA domain TLB invalidation policy: lazy mode
+[    0.344038] SCSI subsystem initialized
+[    0.344049] libata version 3.00 loaded.
+[    0.344049] ACPI: bus type USB registered
+[    0.344049] usbcore: registered new interface driver usbfs
+[    0.344049] usbcore: registered new interface driver hub
+[    0.344049] usbcore: registered new device driver usb
+[    0.344061] EDAC MC: Ver: 3.0.0
+[    0.344140] efivars: Registered efivars operations
+[    0.344205] NetLabel: Initializing
+[    0.344206] NetLabel:  domain hash size =3D 128
+[    0.344207] NetLabel:  protocols =3D UNLABELED CIPSOv4 CALIPSO
+[    0.344224] NetLabel:  unlabeled traffic allowed by default
+[    0.344228] mctp: management component transport protocol core
+[    0.344229] NET: Registered PF_MCTP protocol family
+[    0.344243] PCI: Using ACPI for IRQ routing
+[    0.353116] PCI: pci_cache_line_size set to 64 bytes
+[    0.353170] e820: reserve RAM buffer [mem 0x9d3e0000-0x9fffffff]
+[    0.353172] e820: reserve RAM buffer [mem 0x9e60e000-0x9fffffff]
+[    0.353174] e820: reserve RAM buffer [mem 0x9ec4b000-0x9fffffff]
+[    0.353175] e820: reserve RAM buffer [mem 0x9f000000-0x9fffffff]
+[    0.353177] e820: reserve RAM buffer [mem 0x23f000000-0x23fffffff]
+[    0.353228] pci 0000:00:01.0: vgaarb: setting as boot VGA device
+[    0.353228] pci 0000:00:01.0: vgaarb: bridge control possible
+[    0.353228] pci 0000:00:01.0: vgaarb: VGA device added: decodes=3Dio+mem=
+,owns=3Dio+mem,locks=3Dnone
+[    0.353228] vgaarb: loaded
+[    0.353228] hpet0: at MMIO 0xfed00000, IRQs 2, 8, 0
+[    0.353228] hpet0: 3 comparators, 32-bit 14.318180 MHz counter
+[    0.355040] clocksource: Switched to clocksource tsc-early
+[    0.355681] VFS: Disk quotas dquot_6.6.0
+[    0.355715] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 byte=
+s)
+[    0.355860] pnp: PnP ACPI init
+[    0.355999] system 00:00: [mem 0xe0000000-0xefffffff] has been reserved
+[    0.356072] system 00:01: [mem 0xa0000000-0xbfffffff] has been reserved
+[    0.356149] system 00:02: [mem 0xfeb80000-0xfebfffff] could not be reser=
+ved
+[    0.356457] system 00:03: [io  0x04d0-0x04d1] has been reserved
+[    0.356460] system 00:03: [io  0x040b] has been reserved
+[    0.356461] system 00:03: [io  0x04d6] has been reserved
+[    0.356463] system 00:03: [io  0x0c00-0x0c01] has been reserved
+[    0.356465] system 00:03: [io  0x0c14] has been reserved
+[    0.356466] system 00:03: [io  0x0c50-0x0c51] has been reserved
+[    0.356468] system 00:03: [io  0x0c52] has been reserved
+[    0.356470] system 00:03: [io  0x0c6c] has been reserved
+[    0.356471] system 00:03: [io  0x0c6f] has been reserved
+[    0.356473] system 00:03: [io  0x0cd0-0x0cd1] has been reserved
+[    0.356474] system 00:03: [io  0x0cd2-0x0cd3] has been reserved
+[    0.356476] system 00:03: [io  0x0cd4-0x0cd5] has been reserved
+[    0.356477] system 00:03: [io  0x0cd6-0x0cd7] has been reserved
+[    0.356479] system 00:03: [io  0x0cd8-0x0cdf] has been reserved
+[    0.356480] system 00:03: [io  0x0800-0x089f] has been reserved
+[    0.356482] system 00:03: [io  0x0b20-0x0b3f] has been reserved
+[    0.356484] system 00:03: [io  0x0900-0x090f] has been reserved
+[    0.356485] system 00:03: [io  0x0910-0x091f] has been reserved
+[    0.356487] system 00:03: [io  0xfe00-0xfefe] has been reserved
+[    0.356489] system 00:03: [mem 0xfec00000-0xfec00fff] could not be reser=
+ved
+[    0.356492] system 00:03: [mem 0xfee00000-0xfee00fff] has been reserved
+[    0.356494] system 00:03: [mem 0xfed80000-0xfed8ffff] has been reserved
+[    0.356497] system 00:03: [mem 0xfed61000-0xfed70fff] has been reserved
+[    0.356499] system 00:03: [mem 0xfec10000-0xfec10fff] has been reserved
+[    0.356501] system 00:03: [mem 0xfed00000-0xfed00fff] could not be reser=
+ved
+[    0.356503] system 00:03: [mem 0xff000000-0xffffffff] has been reserved
+[    0.356687] system 00:04: [io  0x0300-0x031f] has been reserved
+[    0.356690] system 00:04: [io  0x0290-0x029f] has been reserved
+[    0.356692] system 00:04: [io  0x0230-0x023f] has been reserved
+[    0.356780] system 00:06: [io  0x04d0-0x04d1] has been reserved
+[    0.357183] pnp: PnP ACPI: found 8 devices
+[    0.363785] clocksource: acpi_pm: mask: 0xffffff max_cycles: 0xffffff, m=
+ax_idle_ns: 2085701024 ns
+[    0.363979] NET: Registered PF_INET protocol family
+[    0.364188] IP idents hash table entries: 131072 (order: 8, 1048576 byte=
+s, linear)
+[    0.380196] tcp_listen_portaddr_hash hash table entries: 4096 (order: 4,=
+ 65536 bytes, linear)
+[    0.380246] Table-perturb hash table entries: 65536 (order: 6, 262144 by=
+tes, linear)
+[    0.380327] TCP established hash table entries: 65536 (order: 7, 524288 =
+bytes, linear)
+[    0.380785] TCP bind hash table entries: 65536 (order: 9, 2097152 bytes,=
+ linear)
+[    0.381141] TCP: Hash tables configured (established 65536 bind 65536)
+[    0.381345] MPTCP token hash table entries: 8192 (order: 5, 196608 bytes=
+, linear)
+[    0.381455] UDP hash table entries: 4096 (order: 6, 262144 bytes, linear=
+)
+[    0.381534] UDP-Lite hash table entries: 4096 (order: 6, 262144 bytes, l=
+inear)
+[    0.381635] NET: Registered PF_UNIX/PF_LOCAL protocol family
+[    0.381644] NET: Registered PF_XDP protocol family
+[    0.381661] pci 0000:00:14.4: PCI bridge to [bus 01]
+[    0.381675] pci 0000:00:15.0: PCI bridge to [bus 02]
+[    0.381678] pci 0000:00:15.0:   bridge window [io  0xe000-0xefff]
+[    0.381683] pci 0000:00:15.0:   bridge window [mem 0xfea00000-0xfeafffff=
+]
+[    0.381690] pci 0000:00:15.1: PCI bridge to [bus 03]
+[    0.381693] pci 0000:00:15.1:   bridge window [io  0xd000-0xdfff]
+[    0.381699] pci 0000:00:15.1:   bridge window [mem 0xd0000000-0xd00fffff=
+ 64bit pref]
+[    0.381705] pci_bus 0000:00: resource 4 [io  0x0000-0x03af window]
+[    0.381708] pci_bus 0000:00: resource 5 [io  0x03e0-0x0cf7 window]
+[    0.381709] pci_bus 0000:00: resource 6 [io  0x03b0-0x03df window]
+[    0.381711] pci_bus 0000:00: resource 7 [io  0x0d00-0xffff window]
+[    0.381712] pci_bus 0000:00: resource 8 [mem 0x000a0000-0x000dffff windo=
+w]
+[    0.381714] pci_bus 0000:00: resource 9 [mem 0xc0000000-0xffffffff windo=
+w]
+[    0.381716] pci_bus 0000:01: resource 4 [io  0x0000-0x03af window]
+[    0.381717] pci_bus 0000:01: resource 5 [io  0x03e0-0x0cf7 window]
+[    0.381719] pci_bus 0000:01: resource 6 [io  0x03b0-0x03df window]
+[    0.381720] pci_bus 0000:01: resource 7 [io  0x0d00-0xffff window]
+[    0.381721] pci_bus 0000:01: resource 8 [mem 0x000a0000-0x000dffff windo=
+w]
+[    0.381723] pci_bus 0000:01: resource 9 [mem 0xc0000000-0xffffffff windo=
+w]
+[    0.381725] pci_bus 0000:02: resource 0 [io  0xe000-0xefff]
+[    0.381726] pci_bus 0000:02: resource 1 [mem 0xfea00000-0xfeafffff]
+[    0.381728] pci_bus 0000:03: resource 0 [io  0xd000-0xdfff]
+[    0.381729] pci_bus 0000:03: resource 2 [mem 0xd0000000-0xd00fffff 64bit=
+ pref]
+[    0.381819] pci 0000:00:01.1: D0 power state depends on 0000:00:01.0
+[    0.406517] pci 0000:00:12.0: quirk_usb_early_handoff+0x0/0x760 took 236=
+86 usecs
+[    0.406675] pci 0000:00:12.2: PME# does not work under D3, disabling it
+[    0.428528] pci 0000:00:13.0: quirk_usb_early_handoff+0x0/0x760 took 213=
+35 usecs
+[    0.428683] pci 0000:00:13.2: PME# does not work under D3, disabling it
+[    0.428714] PCI: CLS 64 bytes, default 64
+[    0.428784] Trying to unpack rootfs image as initramfs...
+[    0.428785] pci 0000:00:00.0: Adding to iommu group 0
+[    0.428809] pci 0000:00:01.0: Adding to iommu group 1
+[    0.428821] pci 0000:00:01.1: Adding to iommu group 1
+[    0.428848] pci 0000:00:10.0: Adding to iommu group 2
+[    0.428860] pci 0000:00:10.1: Adding to iommu group 2
+[    0.428872] pci 0000:00:11.0: Adding to iommu group 3
+[    0.428893] pci 0000:00:12.0: Adding to iommu group 4
+[    0.428904] pci 0000:00:12.2: Adding to iommu group 4
+[    0.428932] pci 0000:00:13.0: Adding to iommu group 5
+[    0.428944] pci 0000:00:13.2: Adding to iommu group 5
+[    0.428969] pci 0000:00:14.0: Adding to iommu group 6
+[    0.428981] pci 0000:00:14.3: Adding to iommu group 6
+[    0.428997] pci 0000:00:14.4: Adding to iommu group 7
+[    0.429019] pci 0000:00:15.0: Adding to iommu group 8
+[    0.429032] pci 0000:00:15.1: Adding to iommu group 8
+[    0.429072] pci 0000:00:18.0: Adding to iommu group 9
+[    0.429085] pci 0000:00:18.1: Adding to iommu group 9
+[    0.429101] pci 0000:00:18.2: Adding to iommu group 9
+[    0.429118] pci 0000:00:18.3: Adding to iommu group 9
+[    0.429134] pci 0000:00:18.4: Adding to iommu group 9
+[    0.429148] pci 0000:00:18.5: Adding to iommu group 9
+[    0.429154] pci 0000:02:00.0: Adding to iommu group 8
+[    0.429160] pci 0000:03:00.0: Adding to iommu group 8
+[    0.430785] AMD-Vi: Extended features (0x800000853, 0x0): PreF PPR GT IA
+[    0.430800] AMD-Vi: Interrupt remapping enabled
+[    0.430982] PCI-DMA: Using software bounce buffering for IO (SWIOTLB)
+[    0.430984] software IO TLB: mapped [mem 0x000000008c2ee000-0x0000000090=
+2ee000] (64MB)
+[    0.431046] LVT offset 0 assigned for vector 0x400
+[    0.431100] perf: AMD IBS detected (0x000000ff)
+[    0.460909] Initialise system trusted keyrings
+[    0.460925] Key type blacklist registered
+[    0.461004] workingset: timestamp_bits=3D36 max_order=3D21 bucket_order=
+=3D0
+[    0.462715] fuse: init (API version 7.43)
+[    0.462895] integrity: Platform Keyring initialized
+[    0.462901] integrity: Machine keyring initialized
+[    0.475437] xor: automatically using best checksumming function   avx   =
+   =20
+[    0.475439] Key type asymmetric registered
+[    0.475440] Asymmetric key parser 'x509' registered
+[    0.475499] Block layer SCSI generic (bsg) driver version 0.4 loaded (ma=
+jor 246)
+[    0.475556] io scheduler mq-deadline registered
+[    0.475557] io scheduler kyber registered
+[    0.475599] io scheduler bfq registered
+[    0.475743] ledtrig-cpu: registered to indicate activity on CPUs
+[    0.476378] input: Power Button as /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0=
+C0C:00/input/input0
+[    0.476407] ACPI: button: Power Button [PWRB]
+[    0.476449] input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/inpu=
+t/input1
+[    0.480455] ACPI: button: Power Button [PWRF]
+[    0.480895] Could not retrieve perf counters (-19)
+[    0.481121] Serial: 8250/16550 driver, 32 ports, IRQ sharing enabled
+[    0.483763] Non-volatile memory driver v1.3
+[    0.483766] Linux agpgart interface v0.103
+[    0.483818] ACPI: bus type drm_connector registered
+[    0.484488] ahci 0000:00:11.0: version 3.0
+[    0.484845] ahci 0000:00:11.0: AHCI vers 0001.0300, 32 command slots, 6 =
+Gbps, SATA mode
+[    0.484848] ahci 0000:00:11.0: 8/8 ports implemented (port mask 0xff)
+[    0.484850] ahci 0000:00:11.0: flags: 64bit ncq sntf ilck pm led clo pmp=
+ pio sxs=20
+[    0.485782] scsi host0: ahci
+[    0.485984] scsi host1: ahci
+[    0.486129] scsi host2: ahci
+[    0.486267] scsi host3: ahci
+[    0.486434] scsi host4: ahci
+[    0.486564] scsi host5: ahci
+[    0.486700] scsi host6: ahci
+[    0.486839] scsi host7: ahci
+[    0.486902] ata1: SATA max UDMA/133 abar m2048@0xfeb4c000 port 0xfeb4c10=
+0 irq 27 lpm-pol 0
+[    0.486905] ata2: SATA max UDMA/133 abar m2048@0xfeb4c000 port 0xfeb4c18=
+0 irq 28 lpm-pol 0
+[    0.486907] ata3: SATA max UDMA/133 abar m2048@0xfeb4c000 port 0xfeb4c20=
+0 irq 29 lpm-pol 0
+[    0.486909] ata4: SATA max UDMA/133 abar m2048@0xfeb4c000 port 0xfeb4c28=
+0 irq 30 lpm-pol 0
+[    0.486911] ata5: SATA max UDMA/133 abar m2048@0xfeb4c000 port 0xfeb4c30=
+0 irq 31 lpm-pol 0
+[    0.486913] ata6: SATA max UDMA/133 abar m2048@0xfeb4c000 port 0xfeb4c38=
+0 irq 32 lpm-pol 0
+[    0.486915] ata7: SATA max UDMA/133 abar m2048@0xfeb4c000 port 0xfeb4c40=
+0 irq 33 lpm-pol 0
+[    0.486918] ata8: SATA max UDMA/133 abar m2048@0xfeb4c000 port 0xfeb4c48=
+0 irq 34 lpm-pol 0
+[    0.487206] QUIRK: Enable AMD PLL fix
+[    0.487228] ohci-pci 0000:00:12.0: OHCI PCI host controller
+[    0.487234] ohci-pci 0000:00:12.0: new USB bus registered, assigned bus =
+number 1
+[    0.487281] ohci-pci 0000:00:12.0: irq 18, io mem 0xfeb4b000
+[    0.542492] usb usb1: New USB device found, idVendor=3D1d6b, idProduct=
+=3D0001, bcdDevice=3D 6.15
+[    0.542495] usb usb1: New USB device strings: Mfr=3D3, Product=3D2, Seri=
+alNumber=3D1
+[    0.542497] usb usb1: Product: OHCI PCI host controller
+[    0.542499] usb usb1: Manufacturer: Linux 6.15.9-arch1-1 ohci_hcd
+[    0.542500] usb usb1: SerialNumber: 0000:00:12.0
+[    0.542671] hub 1-0:1.0: USB hub found
+[    0.542681] hub 1-0:1.0: 5 ports detected
+[    0.543025] ehci-pci 0000:00:12.2: EHCI Host Controller
+[    0.543033] ehci-pci 0000:00:12.2: new USB bus registered, assigned bus =
+number 2
+[    0.543037] ehci-pci 0000:00:12.2: applying AMD SB700/SB800/Hudson-2/3 E=
+HCI dummy qh workaround
+[    0.543049] ehci-pci 0000:00:12.2: debug port 1
+[    0.543093] ehci-pci 0000:00:12.2: irq 17, io mem 0xfeb4a000
+[    0.548289] ehci-pci 0000:00:12.2: USB 2.0 started, EHCI 1.00
+[    0.548340] usb usb2: New USB device found, idVendor=3D1d6b, idProduct=
+=3D0002, bcdDevice=3D 6.15
+[    0.548342] usb usb2: New USB device strings: Mfr=3D3, Product=3D2, Seri=
+alNumber=3D1
+[    0.548344] usb usb2: Product: EHCI Host Controller
+[    0.548346] usb usb2: Manufacturer: Linux 6.15.9-arch1-1 ehci_hcd
+[    0.548347] usb usb2: SerialNumber: 0000:00:12.2
+[    0.548457] hub 2-0:1.0: USB hub found
+[    0.548464] hub 2-0:1.0: 5 ports detected
+[    0.589624] ata5: SATA link down (SStatus 0 SControl 300)
+[    0.590283] ata1: SATA link down (SStatus 0 SControl 300)
+[    0.591283] ata7: SATA link down (SStatus 0 SControl 300)
+[    0.591417] ata8: SATA link down (SStatus 0 SControl 300)
+[    0.594417] ata3: SATA link down (SStatus 0 SControl 300)
+[    0.597305] hub 1-0:1.0: USB hub found
+[    0.597314] hub 1-0:1.0: 5 ports detected
+[    0.597487] ehci-pci 0000:00:13.2: EHCI Host Controller
+[    0.597501] ehci-pci 0000:00:13.2: new USB bus registered, assigned bus =
+number 3
+[    0.597509] ehci-pci 0000:00:13.2: applying AMD SB700/SB800/Hudson-2/3 E=
+HCI dummy qh workaround
+[    0.597520] ehci-pci 0000:00:13.2: debug port 1
+[    0.597575] ehci-pci 0000:00:13.2: irq 17, io mem 0xfeb48000
+[    0.603615] ehci-pci 0000:00:13.2: USB 2.0 started, EHCI 1.00
+[    0.603726] usb usb3: New USB device found, idVendor=3D1d6b, idProduct=
+=3D0002, bcdDevice=3D 6.15
+[    0.603730] usb usb3: New USB device strings: Mfr=3D3, Product=3D2, Seri=
+alNumber=3D1
+[    0.603732] usb usb3: Product: EHCI Host Controller
+[    0.603735] usb usb3: Manufacturer: Linux 6.15.9-arch1-1 ehci_hcd
+[    0.603736] usb usb3: SerialNumber: 0000:00:13.2
+[    0.603907] hub 3-0:1.0: USB hub found
+[    0.603917] hub 3-0:1.0: 5 ports detected
+[    0.604127] ohci-pci 0000:00:13.0: OHCI PCI host controller
+[    0.604138] ohci-pci 0000:00:13.0: new USB bus registered, assigned bus =
+number 4
+[    0.604175] ohci-pci 0000:00:13.0: irq 18, io mem 0xfeb49000
+[    0.658460] usb usb4: New USB device found, idVendor=3D1d6b, idProduct=
+=3D0001, bcdDevice=3D 6.15
+[    0.658463] usb usb4: New USB device strings: Mfr=3D3, Product=3D2, Seri=
+alNumber=3D1
+[    0.658465] usb usb4: Product: OHCI PCI host controller
+[    0.658466] usb usb4: Manufacturer: Linux 6.15.9-arch1-1 ohci_hcd
+[    0.658467] usb usb4: SerialNumber: 0000:00:13.0
+[    0.658563] hub 4-0:1.0: USB hub found
+[    0.658572] hub 4-0:1.0: 5 ports detected
+[    0.658964] xhci_hcd 0000:00:10.0: xHCI Host Controller
+[    0.658969] xhci_hcd 0000:00:10.0: new USB bus registered, assigned bus =
+number 5
+[    0.659133] xhci_hcd 0000:00:10.0: hcc params 0x014042c3 hci version 0x9=
+6 quirks 0x0000000000000208
+[    0.659379] xhci_hcd 0000:00:10.0: xHCI Host Controller
+[    0.659382] xhci_hcd 0000:00:10.0: new USB bus registered, assigned bus =
+number 6
+[    0.659385] xhci_hcd 0000:00:10.0: Host supports USB 3.0 SuperSpeed
+[    0.662590] usb usb5: New USB device found, idVendor=3D1d6b, idProduct=
+=3D0002, bcdDevice=3D 6.15
+[    0.662593] usb usb5: New USB device strings: Mfr=3D3, Product=3D2, Seri=
+alNumber=3D1
+[    0.662595] usb usb5: Product: xHCI Host Controller
+[    0.662596] usb usb5: Manufacturer: Linux 6.15.9-arch1-1 xhci-hcd
+[    0.662597] usb usb5: SerialNumber: 0000:00:10.0
+[    0.662693] hub 5-0:1.0: USB hub found
+[    0.662703] hub 5-0:1.0: 2 ports detected
+[    0.662803] usb usb6: We don't know the algorithms for LPM for this host=
+, disabling LPM.
+[    0.662834] usb usb6: New USB device found, idVendor=3D1d6b, idProduct=
+=3D0003, bcdDevice=3D 6.15
+[    0.662836] usb usb6: New USB device strings: Mfr=3D3, Product=3D2, Seri=
+alNumber=3D1
+[    0.662838] usb usb6: Product: xHCI Host Controller
+[    0.662839] usb usb6: Manufacturer: Linux 6.15.9-arch1-1 xhci-hcd
+[    0.662840] usb usb6: SerialNumber: 0000:00:10.0
+[    0.662933] hub 6-0:1.0: USB hub found
+[    0.662942] hub 6-0:1.0: 2 ports detected
+[    0.663132] xhci_hcd 0000:00:10.1: xHCI Host Controller
+[    0.663136] xhci_hcd 0000:00:10.1: new USB bus registered, assigned bus =
+number 7
+[    0.663298] xhci_hcd 0000:00:10.1: hcc params 0x014042c3 hci version 0x9=
+6 quirks 0x0000000000000208
+[    0.663535] xhci_hcd 0000:00:10.1: xHCI Host Controller
+[    0.663538] xhci_hcd 0000:00:10.1: new USB bus registered, assigned bus =
+number 8
+[    0.663541] xhci_hcd 0000:00:10.1: Host supports USB 3.0 SuperSpeed
+[    0.666757] usb usb7: New USB device found, idVendor=3D1d6b, idProduct=
+=3D0002, bcdDevice=3D 6.15
+[    0.666759] usb usb7: New USB device strings: Mfr=3D3, Product=3D2, Seri=
+alNumber=3D1
+[    0.666761] usb usb7: Product: xHCI Host Controller
+[    0.666762] usb usb7: Manufacturer: Linux 6.15.9-arch1-1 xhci-hcd
+[    0.666763] usb usb7: SerialNumber: 0000:00:10.1
+[    0.666863] hub 7-0:1.0: USB hub found
+[    0.666872] hub 7-0:1.0: 2 ports detected
+[    0.666970] usb usb8: We don't know the algorithms for LPM for this host=
+, disabling LPM.
+[    0.666996] usb usb8: New USB device found, idVendor=3D1d6b, idProduct=
+=3D0003, bcdDevice=3D 6.15
+[    0.666999] usb usb8: New USB device strings: Mfr=3D3, Product=3D2, Seri=
+alNumber=3D1
+[    0.667000] usb usb8: Product: xHCI Host Controller
+[    0.667002] usb usb8: Manufacturer: Linux 6.15.9-arch1-1 xhci-hcd
+[    0.667003] usb usb8: SerialNumber: 0000:00:10.1
+[    0.667098] hub 8-0:1.0: USB hub found
+[    0.667107] hub 8-0:1.0: 2 ports detected
+[    0.667229] usbcore: registered new interface driver usbserial_generic
+[    0.667238] usbserial: USB Serial support registered for generic
+[    0.667276] i8042: PNP: No PS/2 controller found.
+[    0.667373] rtc_cmos 00:05: RTC can wake from S4
+[    0.667595] rtc_cmos 00:05: registered as rtc0
+[    0.667620] rtc_cmos 00:05: setting system clock to 2025-08-14T14:21:52 =
+UTC (1755181312)
+[    0.667650] rtc_cmos 00:05: alarms up to one month, y3k, 114 bytes nvram=
+, hpet irqs
+[    0.667701] amd_pstate: the _CPC object is not present in SBIOS or ACPI =
+disabled
+[    0.668124] simple-framebuffer simple-framebuffer.0: [drm] Registered 1 =
+planes with drm panic
+[    0.668126] [drm] Initialized simpledrm 1.0.0 for simple-framebuffer.0 o=
+n minor 0
+[    0.669705] fbcon: Deferring console take-over
+[    0.669711] simple-framebuffer simple-framebuffer.0: [drm] fb0: simpledr=
+mdrmfb frame buffer device
+[    0.669769] hid: raw HID events driver (C) Jiri Kosina
+[    0.669808] usbcore: registered new interface driver usbhid
+[    0.669809] usbhid: USB HID core driver
+[    0.669891] drop_monitor: Initializing network drop monitor service
+[    0.670194] NET: Registered PF_INET6 protocol family
+[    0.719840] Freeing initrd memory: 55084K
+[    0.727642] Segment Routing with IPv6
+[    0.727647] RPL Segment Routing with IPv6
+[    0.727668] In-situ OAM (IOAM) with IPv6
+[    0.727699] NET: Registered PF_PACKET protocol family
+[    0.727760] x86/pm: family 0x15 cpu detected, MSR saving is needed durin=
+g suspending.
+[    0.728047] microcode: Current revision: 0x06001119
+[    0.728136] IPI shorthand broadcast: enabled
+[    0.731101] sched_clock: Marking stable (697660220, 32581741)->(75725627=
+5, -27014314)
+[    0.731274] registered taskstats version 1
+[    0.731596] Loading compiled-in X.509 certificates
+[    0.740018] Loaded X.509 cert 'Build time autogenerated kernel key: fe6b=
+385b4e4616e889bee7ce4d741f05caf1b4d2'
+[    0.744963] zswap: loaded using pool zstd/zsmalloc
+[    0.745064] Demotion targets for Node 0: null
+[    0.745356] Key type .fscrypt registered
+[    0.745357] Key type fscrypt-provisioning registered
+[    0.746988] Btrfs loaded, zoned=3Dyes, fsverity=3Dyes
+[    0.747035] Key type big_key registered
+[    0.747267] integrity: Loading X.509 certificate: UEFI:db
+[    0.751378] integrity: Loaded X.509 cert 'ASUSTeK MotherBoard SW Key Cer=
+tificate: da83b990422ebc8c441f8d8b039a65a2'
+[    0.751384] integrity: Loading X.509 certificate: UEFI:db
+[    0.751605] integrity: Loaded X.509 cert 'ASUSTeK Notebook SW Key Certif=
+icate: b8e581e4df77a5bb4282d5ccfc00c071'
+[    0.751606] integrity: Loading X.509 certificate: UEFI:db
+[    0.751631] integrity: Loaded X.509 cert 'Microsoft Corporation UEFI CA =
+2011: 13adbf4309bd82709c8cd54f316ed522988a1bd4'
+[    0.751633] integrity: Loading X.509 certificate: UEFI:db
+[    0.751651] integrity: Loaded X.509 cert 'Microsoft Windows Production P=
+CA 2011: a92902398e16c49778cd90f99e4f9ae17c55af53'
+[    0.751653] integrity: Loading X.509 certificate: UEFI:db
+[    0.751870] integrity: Loaded X.509 cert 'Canonical Ltd. Master Certific=
+ate Authority: ad91990bc22ab1f517048c23b6655a268e345a63'
+[    0.754691] PM:   Magic number: 5:372:384
+[    0.754707] usb usb2: hash matches
+[    0.755276] ata2: SATA link up 6.0 Gbps (SStatus 133 SControl 300)
+[    0.755307] ata4: SATA link up 6.0 Gbps (SStatus 133 SControl 300)
+[    0.755392] ata6: SATA link up 3.0 Gbps (SStatus 123 SControl 300)
+[    0.755997] ata2.00: ATA-10: ADATA SU800, Q0518BS, max UDMA/133
+[    0.756019] ata2.00: 250069680 sectors, multi 2: LBA48 NCQ (depth 32), A=
+A
+[    0.756123] ata4.00: HPA detected: current 976771055, native 976773168
+[    0.756132] ata4.00: ATA-8: HGST HTS545050A7E680, GR2OA3B0, max UDMA/133
+[    0.756340] ata6.00: ATA-8: ST31000528AS, HP35, max UDMA/100
+[    0.756343] ata6.00: 1953525168 sectors, multi 16: LBA48 NCQ (depth 32)
+[    0.756358] ata2.00: Features: Dev-Sleep
+[    0.756473] ata4.00: 976771055 sectors, multi 16: LBA48 NCQ (depth 32), =
+AA
+[    0.756834] ata2.00: configured for UDMA/133
+[    0.756971] scsi 1:0:0:0: Direct-Access     ATA      ADATA SU800      8B=
+S  PQ: 0 ANSI: 5
+[    0.757077] RAS: Correctable Errors collector initialized.
+[    0.757318] sd 1:0:0:0: [sda] 250069680 512-byte logical blocks: (128 GB=
+/119 GiB)
+[    0.757331] sd 1:0:0:0: [sda] Write Protect is off
+[    0.757334] sd 1:0:0:0: [sda] Mode Sense: 00 3a 00 00
+[    0.757350] sd 1:0:0:0: [sda] Write cache: enabled, read cache: enabled,=
+ doesn't support DPO or FUA
+[    0.757377] sd 1:0:0:0: [sda] Preferred minimum I/O size 512 bytes
+[    0.757491] ata6.00: configured for UDMA/100
+[    0.757503] ata4.00: configured for UDMA/133
+[    0.757596] scsi 3:0:0:0: Direct-Access     ATA      HGST HTS545050A7 A3=
+B0 PQ: 0 ANSI: 5
+[    0.758039] sd 3:0:0:0: [sdb] 976771055 512-byte logical blocks: (500 GB=
+/466 GiB)
+[    0.758046] sd 3:0:0:0: [sdb] 4096-byte physical blocks
+[    0.758058] sd 3:0:0:0: [sdb] Write Protect is off
+[    0.758061] sd 3:0:0:0: [sdb] Mode Sense: 00 3a 00 00
+[    0.758079] scsi 5:0:0:0: Direct-Access     ATA      ST31000528AS     HP=
+35 PQ: 0 ANSI: 5
+[    0.758081] sd 3:0:0:0: [sdb] Write cache: enabled, read cache: enabled,=
+ doesn't support DPO or FUA
+[    0.758120] sd 3:0:0:0: [sdb] Preferred minimum I/O size 4096 bytes
+[    0.758593] sd 5:0:0:0: [sdc] 1953525168 512-byte logical blocks: (1.00 =
+TB/932 GiB)
+[    0.758607] sd 5:0:0:0: [sdc] Write Protect is off
+[    0.758609] sd 5:0:0:0: [sdc] Mode Sense: 00 3a 00 00
+[    0.758624] sd 5:0:0:0: [sdc] Write cache: enabled, read cache: enabled,=
+ doesn't support DPO or FUA
+[    0.758653] sd 5:0:0:0: [sdc] Preferred minimum I/O size 512 bytes
+[    0.766278] clk: Disabling unused clocks
+[    0.766285] PM: genpd: Disabling unused power domains
+[    0.766291]  sda: sda1 sda2 sda3 sda4
+[    0.766457] sd 1:0:0:0: [sda] Attached SCSI disk
+[    0.774984]  sdc: sdc1
+[    0.775039] sd 5:0:0:0: [sdc] Attached SCSI disk
+[    0.787384] usb 2-3: new high-speed USB device number 2 using ehci-pci
+[    0.803345]  sdb: sdb1
+[    0.803425] sd 3:0:0:0: [sdb] Attached SCSI disk
+[    0.805413] Freeing unused decrypted memory: 2028K
+[    0.806743] Freeing unused kernel image (initmem) memory: 4644K
+[    0.806787] Write protecting the kernel read-only data: 38912k
+[    0.807214] Freeing unused kernel image (text/rodata gap) memory: 764K
+[    0.807891] Freeing unused kernel image (rodata/data gap) memory: 1904K
+[    0.843556] usb 3-2: new high-speed USB device number 2 using ehci-pci
+[    0.848644] x86/mm: Checked W+X mappings: passed, no W+X pages found.
+[    0.848649] rodata_test: all tests were successful
+[    0.848655] Run /init as init process
+[    0.848656]   with arguments:
+[    0.848658]     /init
+[    0.848659]   with environment:
+[    0.848659]     HOME=3D/
+[    0.848660]     TERM=3Dlinux
+[    0.848661]     BOOT_IMAGE=3D/boot/vmlinuz-linux
+[    0.913830] usb 2-3: New USB device found, idVendor=3D0bda, idProduct=3D=
+1a2b, bcdDevice=3D 0.00
+[    0.913837] usb 2-3: New USB device strings: Mfr=3D1, Product=3D2, Seria=
+lNumber=3D0
+[    0.913839] usb 2-3: Product: DISK
+[    0.913841] usb 2-3: Manufacturer: Realtek
+[    0.925099] usb_storage: loading out-of-tree module taints kernel.
+[    0.925170] usb_storage: module verification failed: signature and/or re=
+quired key missing - tainting kernel
+[    0.931483] usb-storage 2-3:1.0: USB Mass Storage device detected
+[    0.931772] usb-storage 2-3:1.0: device ignored
+[    0.938318] usbcore: registered new interface driver usb-storage
+[    0.942880] usbcore: registered new interface driver uas
+[    0.969559] usb 3-2: New USB device found, idVendor=3D0bda, idProduct=3D=
+a192, bcdDevice=3D 2.00
+[    0.969567] usb 3-2: New USB device strings: Mfr=3D1, Product=3D2, Seria=
+lNumber=3D0
+[    0.969570] usb 3-2: Product: DISK
+[    0.969572] usb 3-2: Manufacturer: Realtek
+[    0.969858] usb-storage 3-2:1.0: USB Mass Storage device detected
+[    0.970001] usb-storage 3-2:1.0: device ignored
+[    1.216448] [drm] radeon kernel modesetting enabled.
+[    1.239880] radeon 0000:00:01.0: vgaarb: deactivate vga console
+[    1.240053] [drm] initializing kernel modesetting (ARUBA 0x1002:0x9901 0=
+x1043:0x8526 0x00).
+[    1.240127] ATOM BIOS: 113
+[    1.240189] radeon 0000:00:01.0: VRAM: 512M 0x0000000000000000 - 0x00000=
+0001FFFFFFF (512M used)
+[    1.240192] radeon 0000:00:01.0: GTT: 1024M 0x0000000020000000 - 0x00000=
+0005FFFFFFF
+[    1.240196] [drm] Detected VRAM RAM=3D512M, BAR=3D256M
+[    1.240197] [drm] RAM width 64bits DDR
+[    1.240294] [drm] radeon: 512M of VRAM memory ready
+[    1.240297] [drm] radeon: 1024M of GTT memory ready.
+[    1.240310] [drm] Loading ARUBA Microcode
+[    1.240517] [drm] Internal thermal controller without fan control
+[    1.240898] [drm] radeon: dpm initialized
+[    1.242779] [drm] Found VCE firmware/feedback version 50.0.1 / 17!
+[    1.242794] [drm] GART: num cpu pages 262144, num gpu pages 262144
+[    1.245602] usb 1-5: new full-speed USB device number 2 using ohci-pci
+[    1.253595] usb 4-4: new low-speed USB device number 2 using ohci-pci
+[    1.266013] [drm] PCIE GART of 1024M enabled (table at 0x00000000001D600=
+0).
+[    1.266132] radeon 0000:00:01.0: WB enabled
+[    1.266135] radeon 0000:00:01.0: fence driver on ring 0 uses gpu addr 0x=
+0000000020000c00
+[    1.266511] radeon 0000:00:01.0: fence driver on ring 5 uses gpu addr 0x=
+0000000000075a18
+[    1.286701] radeon 0000:00:01.0: fence driver on ring 6 uses gpu addr 0x=
+0000000020000c18
+[    1.286706] radeon 0000:00:01.0: fence driver on ring 7 uses gpu addr 0x=
+0000000020000c1c
+[    1.286708] radeon 0000:00:01.0: fence driver on ring 1 uses gpu addr 0x=
+0000000020000c04
+[    1.286710] radeon 0000:00:01.0: fence driver on ring 2 uses gpu addr 0x=
+0000000020000c08
+[    1.286712] radeon 0000:00:01.0: fence driver on ring 3 uses gpu addr 0x=
+0000000020000c0c
+[    1.286713] radeon 0000:00:01.0: fence driver on ring 4 uses gpu addr 0x=
+0000000020000c10
+[    1.286906] radeon 0000:00:01.0: radeon: MSI limited to 32-bit
+[    1.286967] radeon 0000:00:01.0: radeon: using MSI.
+[    1.286988] [drm] radeon: irq initialized.
+[    1.305501] [drm] ring test on 0 succeeded in 3 usecs
+[    1.305510] [drm] ring test on 3 succeeded in 4 usecs
+[    1.305516] [drm] ring test on 4 succeeded in 3 usecs
+[    1.351556] [drm] ring test on 5 succeeded in 2 usecs
+[    1.371570] [drm] UVD initialized successfully.
+[    1.407424] usb 1-5: New USB device found, idVendor=3D0bda, idProduct=3D=
+5852, bcdDevice=3D 0.00
+[    1.407432] usb 1-5: New USB device strings: Mfr=3D1, Product=3D2, Seria=
+lNumber=3D3
+[    1.407434] usb 1-5: Product: Bluetooth Radio
+[    1.407436] usb 1-5: Manufacturer: Realtek
+[    1.407437] usb 1-5: SerialNumber: 00e04c000001
+[    1.412428] usb 4-4: New USB device found, idVendor=3D046d, idProduct=3D=
+c077, bcdDevice=3D72.00
+[    1.412432] usb 4-4: New USB device strings: Mfr=3D1, Product=3D2, Seria=
+lNumber=3D0
+[    1.412434] usb 4-4: Product: USB Optical Mouse
+[    1.412435] usb 4-4: Manufacturer: Logitech
+[    1.418655] input: Logitech USB Optical Mouse as /devices/pci0000:00/000=
+0:00:13.0/usb4/4-4/4-4:1.0/0003:046D:C077.0001/input/input2
+[    1.418749] hid-generic 0003:046D:C077.0001: input,hidraw0: USB HID v1.1=
+1 Mouse [Logitech USB Optical Mouse] on usb-0000:00:13.0-4/input0
+[    1.462600] tsc: Refined TSC clocksource calibration: 3818.998 MHz
+[    1.462607] clocksource: tsc: mask: 0xffffffffffffffff max_cycles: 0x6e1=
+8e4af21c, max_idle_ns: 881590542384 ns
+[    1.462659] clocksource: Switched to clocksource tsc
+[    1.481704] [drm] ring test on 6 succeeded in 18 usecs
+[    1.481716] [drm] ring test on 7 succeeded in 4 usecs
+[    1.481717] [drm] VCE initialized successfully.
+[    1.481992] [drm] ib test on ring 0 succeeded in 0 usecs
+[    1.482050] [drm] ib test on ring 3 succeeded in 0 usecs
+[    1.482103] [drm] ib test on ring 4 succeeded in 0 usecs
+[    1.999769] usb 4-5: new full-speed USB device number 3 using ohci-pci
+[    2.005796] [drm] ib test on ring 5 succeeded
+[    2.156420] usb 4-5: New USB device found, idVendor=3D05af, idProduct=3D=
+1023, bcdDevice=3D 0.00
+[    2.156427] usb 4-5: New USB device strings: Mfr=3D1, Product=3D2, Seria=
+lNumber=3D0
+[    2.156429] usb 4-5: Product: Ghost Key Elimiantion Keyboard
+[    2.156431] usb 4-5: Manufacturer: Sunrex/JME
+[    2.162697] input: Sunrex/JME Ghost Key Elimiantion Keyboard as /devices=
+/pci0000:00/0000:00:13.0/usb4/4-5/4-5:1.0/0003:05AF:1023.0002/input/input3
+[    2.250784] hid-generic 0003:05AF:1023.0002: input,hidraw1: USB HID v1.1=
+1 Keyboard [Sunrex/JME Ghost Key Elimiantion Keyboard] on usb-0000:00:13.0-=
+5/input0
+[    2.253805] input: Sunrex/JME Ghost Key Elimiantion Keyboard Consumer Co=
+ntrol as /devices/pci0000:00/0000:00:13.0/usb4/4-5/4-5:1.1/0003:05AF:1023.0=
+003/input/input4
+[    2.305093] input: Sunrex/JME Ghost Key Elimiantion Keyboard System Cont=
+rol as /devices/pci0000:00/0000:00:13.0/usb4/4-5/4-5:1.1/0003:05AF:1023.000=
+3/input/input5
+[    2.305180] hid-generic 0003:05AF:1023.0003: input,hidraw2: USB HID v1.1=
+1 Device [Sunrex/JME Ghost Key Elimiantion Keyboard] on usb-0000:00:13.0-5/=
+input1
+[    2.533782] [drm] ib test on ring 6 succeeded
+[    3.037832] [drm] ib test on ring 7 succeeded
+[    3.038102] [drm] Radeon Display Connectors
+[    3.038103] [drm] Connector 0:
+[    3.038105] [drm]   HDMI-A-1
+[    3.038106] [drm]   HPD1
+[    3.038107] [drm]   DDC: 0x6530 0x6530 0x6534 0x6534 0x6538 0x6538 0x653=
+c 0x653c
+[    3.038110] [drm]   Encoders:
+[    3.038111] [drm]     DFP1: INTERNAL_UNIPHY2
+[    3.038112] [drm] Connector 1:
+[    3.038114] [drm]   VGA-1
+[    3.038115] [drm]   HPD2
+[    3.038116] [drm]   DDC: 0x6540 0x6540 0x6544 0x6544 0x6548 0x6548 0x654=
+c 0x654c
+[    3.038118] [drm]   Encoders:
+[    3.038119] [drm]     CRT1: INTERNAL_UNIPHY2
+[    3.038120] [drm]     CRT1: NUTMEG
+[    3.038121] [drm] Connector 2:
+[    3.038122] [drm]   DVI-D-1
+[    3.038123] [drm]   HPD3
+[    3.038124] [drm]   DDC: 0x6550 0x6550 0x6554 0x6554 0x6558 0x6558 0x655=
+c 0x655c
+[    3.038126] [drm]   Encoders:
+[    3.038127] [drm]     DFP2: INTERNAL_UNIPHY
+[    3.060284] [drm] Initialized radeon 2.50.0 for 0000:00:01.0 on minor 0
+[    3.162235] [drm] fb mappable at 0xC03E9000
+[    3.162240] [drm] vram apper at 0xC0000000
+[    3.162242] [drm] size 8294400
+[    3.162243] [drm] fb depth is 24
+[    3.162244] [drm]    pitch is 7680
+[    3.162411] fbcon: radeondrmfb (fb0) is primary device
+[    3.162413] fbcon: Deferring console take-over
+[    3.162416] radeon 0000:00:01.0: [drm] fb0: radeondrmfb frame buffer dev=
+ice
+[    3.213465] fbcon: Taking over console
+[    3.235521] EXT4-fs (sda3): mounted filesystem 7e5f26b7-dfb4-4127-a8db-b=
+4a8a512c3c0 r/w with ordered data mode. Quota mode: none.
+[    3.360538] Console: switching to colour frame buffer device 240x67
+[    3.549597] systemd[1]: systemd 257.8-1-arch running in system mode (+PA=
+M +AUDIT -SELINUX -APPARMOR -IMA +IPE +SMACK +SECCOMP +GCRYPT +GNUTLS +OPEN=
+SSL +ACL +BLKID +CURL +ELFUTILS +FIDO2 +IDN2 -IDN +IPTC +KMOD +LIBCRYPTSETU=
+P +LIBCRYPTSETUP_PLUGINS +LIBFDISK +PCRE2 +PWQUALITY +P11KIT +QRENCODE +TPM=
+2 +BZIP2 +LZ4 +XZ +ZLIB +ZSTD +BPF_FRAMEWORK +BTF +XKBCOMMON +UTMP -SYSVINI=
+T +LIBARCHIVE)
+[    3.549604] systemd[1]: Detected architecture x86-64.
+[    3.551520] systemd[1]: Hostname set to <BM5220>.
+[    3.706540] systemd[1]: bpf-restrict-fs: LSM BPF program attached
+[    3.999835] systemd[1]: Queued start job for default target Graphical In=
+terface.
+[    4.022064] systemd[1]: Created slice Virtual Machine and Container Slic=
+e.
+[    4.022978] systemd[1]: Created slice Slice /system/dirmngr.
+[    4.023344] systemd[1]: Created slice Slice /system/getty.
+[    4.023734] systemd[1]: Created slice Slice /system/gpg-agent.
+[    4.024120] systemd[1]: Created slice Slice /system/gpg-agent-browser.
+[    4.024497] systemd[1]: Created slice Slice /system/gpg-agent-extra.
+[    4.024898] systemd[1]: Created slice Slice /system/gpg-agent-ssh.
+[    4.025281] systemd[1]: Created slice Slice /system/keyboxd.
+[    4.025657] systemd[1]: Created slice Slice /system/modprobe.
+[    4.026038] systemd[1]: Created slice Slice /system/systemd-fsck.
+[    4.026318] systemd[1]: Created slice User and Session Slice.
+[    4.026385] systemd[1]: Started Dispatch Password Requests to Console Di=
+rectory Watch.
+[    4.026431] systemd[1]: Started Forward Password Requests to Wall Direct=
+ory Watch.
+[    4.026622] systemd[1]: Set up automount Arbitrary Executable File Forma=
+ts File System Automount Point.
+[    4.026648] systemd[1]: Expecting device /dev/disk/by-uuid/6B8E-B343...
+[    4.026658] systemd[1]: Expecting device /dev/disk/by-uuid/b9849882-1cdf=
+-4abc-99e8-5ea9811ca848...
+[    4.026665] systemd[1]: Expecting device /dev/disk/by-uuid/bb847ad5-cf9a=
+-46c3-a6bc-b1a6a02f25fb...
+[    4.026677] systemd[1]: Reached target Local Encrypted Volumes.
+[    4.026693] systemd[1]: Reached target Login Prompts.
+[    4.026712] systemd[1]: Reached target Local Integrity Protected Volumes=
+.
+[    4.026737] systemd[1]: Reached target Path Units.
+[    4.026754] systemd[1]: Reached target Remote File Systems.
+[    4.026768] systemd[1]: Reached target Slice Units.
+[    4.026790] systemd[1]: Reached target Swaps.
+[    4.026813] systemd[1]: Reached target Local Verity Protected Volumes.
+[    4.026892] systemd[1]: Listening on Device-mapper event daemon FIFOs.
+[    4.027012] systemd[1]: Listening on LVM2 poll daemon socket.
+[    4.028501] systemd[1]: Listening on Process Core Dump Socket.
+[    4.029377] systemd[1]: Listening on Credential Encryption/Decryption.
+[    4.029482] systemd[1]: Listening on Journal Socket (/dev/log).
+[    4.029569] systemd[1]: Listening on Journal Sockets.
+[    4.029614] systemd[1]: TPM PCR Measurements was skipped because of an u=
+nmet condition check (ConditionSecurity=3Dmeasured-uki).
+[    4.029630] systemd[1]: Make TPM PCR Policy was skipped because of an un=
+met condition check (ConditionSecurity=3Dmeasured-uki).
+[    4.029718] systemd[1]: Listening on udev Control Socket.
+[    4.029773] systemd[1]: Listening on udev Kernel Socket.
+[    4.031062] systemd[1]: Mounting Huge Pages File System...
+[    4.031794] systemd[1]: Mounting POSIX Message Queue File System...
+[    4.032800] systemd[1]: Mounting Kernel Debug File System...
+[    4.036767] systemd[1]: Mounting Kernel Trace File System...
+[    4.038063] systemd[1]: Starting Create List of Static Device Nodes...
+[    4.040331] systemd[1]: Starting Monitoring of LVM2 mirrors, snapshots e=
+tc. using dmeventd or progress polling...
+[    4.044056] systemd[1]: Starting Load Kernel Module configfs...
+[    4.054499] systemd[1]: Starting Load Kernel Module dm_mod...
+[    4.055931] systemd[1]: Starting Load Kernel Module drm...
+[    4.057251] systemd[1]: Starting Load Kernel Module fuse...
+[    4.059778] systemd[1]: Starting Load Kernel Module loop...
+[    4.059842] systemd[1]: File System Check on Root Device was skipped bec=
+ause of an unmet condition check (ConditionPathIsReadWrite=3D!/).
+[    4.059898] systemd[1]: Clear Stale Hibernate Storage Info was skipped b=
+ecause of an unmet condition check (ConditionPathExists=3D/sys/firmware/efi=
+/efivars/HibernateLocation-8cf2644b-4b0b-428f-9387-6d876050dc67).
+[    4.064311] systemd[1]: Starting Journal Service...
+[    4.068352] systemd[1]: Starting Load Kernel Modules...
+[    4.068380] systemd[1]: TPM PCR Machine ID Measurement was skipped becau=
+se of an unmet condition check (ConditionSecurity=3Dmeasured-uki).
+[    4.069666] systemd[1]: Starting Remount Root and Kernel File Systems...
+[    4.069752] systemd[1]: Early TPM SRK Setup was skipped because of an un=
+met condition check (ConditionSecurity=3Dmeasured-uki).
+[    4.072374] systemd[1]: Starting Load udev Rules from Credentials...
+[    4.074788] systemd[1]: Starting Coldplug All udev Devices...
+[    4.077223] systemd[1]: Mounted Huge Pages File System.
+[    4.077344] systemd[1]: Mounted POSIX Message Queue File System.
+[    4.077440] systemd[1]: Mounted Kernel Debug File System.
+[    4.084397] systemd[1]: Mounted Kernel Trace File System.
+[    4.084807] systemd[1]: Finished Create List of Static Device Nodes.
+[    4.085161] systemd[1]: modprobe@configfs.service: Deactivated successfu=
+lly.
+[    4.085391] systemd[1]: Finished Load Kernel Module configfs.
+[    4.085727] systemd[1]: modprobe@drm.service: Deactivated successfully.
+[    4.085958] systemd[1]: Finished Load Kernel Module drm.
+[    4.086344] systemd[1]: modprobe@fuse.service: Deactivated successfully.
+[    4.087181] systemd[1]: Finished Load Kernel Module fuse.
+[    4.088627] loop: module loaded
+[    4.090013] systemd[1]: Mounting FUSE Control File System...
+[    4.093240] device-mapper: uevent: version 1.0.3
+[    4.093630] device-mapper: ioctl: 4.49.0-ioctl (2025-01-17) initialised:=
+ dm-devel@lists.linux.dev
+[    4.094786] systemd[1]: Mounting Kernel Configuration File System...
+[    4.101938] systemd[1]: Starting Create Static Device Nodes in /dev grac=
+efully...
+[    4.103673] systemd[1]: modprobe@dm_mod.service: Deactivated successfull=
+y.
+[    4.107859] systemd[1]: Finished Load Kernel Module dm_mod.
+[    4.108356] systemd[1]: modprobe@loop.service: Deactivated successfully.
+[    4.108580] systemd[1]: Finished Load Kernel Module loop.
+[    4.110878] sd 1:0:0:0: Attached scsi generic sg0 type 0
+[    4.110968] sd 3:0:0:0: Attached scsi generic sg1 type 0
+[    4.111016] sd 5:0:0:0: Attached scsi generic sg2 type 0
+[    4.111270] systemd[1]: Finished Load udev Rules from Credentials.
+[    4.112305] EXT4-fs (sda3): re-mounted 7e5f26b7-dfb4-4127-a8db-b4a8a512c=
+3c0.
+[    4.113805] systemd[1]: Repartition Root Disk was skipped because no tri=
+gger condition checks were met.
+[    4.114578] systemd[1]: Mounted FUSE Control File System.
+[    4.117653] systemd[1]: Finished Remount Root and Kernel File Systems.
+[    4.118609] systemd-journald[291]: Collecting audit messages is disabled=
+.
+[    4.121680] systemd[1]: Rebuild Hardware Database was skipped because no=
+ trigger condition checks were met.
+[    4.125829] systemd[1]: Starting Load/Save OS Random Seed...
+[    4.125865] systemd[1]: TPM SRK Setup was skipped because of an unmet co=
+ndition check (ConditionSecurity=3Dmeasured-uki).
+[    4.126675] systemd[1]: Mounted Kernel Configuration File System.
+[    4.137679] it87: Found IT8603E chip at 0x290, revision 1
+[    4.144753] systemd[1]: Finished Load Kernel Modules.
+[    4.146461] systemd[1]: Starting Apply Kernel Variables...
+[    4.180844] systemd[1]: Finished Create Static Device Nodes in /dev grac=
+efully.
+[    4.182250] systemd[1]: Starting Create System Users...
+[    4.188181] systemd[1]: Finished Apply Kernel Variables.
+[    4.192598] random: crng init done
+[    4.197271] systemd[1]: Finished Load/Save OS Random Seed.
+[    4.208738] systemd[1]: Started Journal Service.
+[    4.230133] systemd-journald[291]: Received client request to flush runt=
+ime journal.
+[    4.612658] mousedev: PS/2 mouse device common for all mice
+[    4.684261] input: PC Speaker as /devices/platform/pcspkr/input/input6
+[    4.708542] acpi_cpufreq: overriding BIOS provided _PSD data
+[    4.723660] piix4_smbus 0000:00:14.0: SMBus Host Controller at 0xb00, re=
+vision 0
+[    4.723667] piix4_smbus 0000:00:14.0: Using register 0x2e for SMBus port=
+ selection
+[    4.724508] i2c i2c-7: Successfully instantiated SPD at 0x50
+[    4.725099] i2c i2c-7: Successfully instantiated SPD at 0x51
+[    4.726513] i2c i2c-7: Successfully instantiated SPD at 0x52
+[    4.727089] i2c i2c-7: Successfully instantiated SPD at 0x53
+[    4.727186] piix4_smbus 0000:00:14.0: Auxiliary SMBus Host Controller at=
+ 0xb20
+[    4.731682] cryptd: max_cpu_qlen set to 1000
+[    4.826788] asus_wmi: ASUS WMI generic driver loaded
+[    4.828761] sp5100_tco: SP5100/SB800 TCO WatchDog Timer Driver
+[    4.829823] sp5100-tco sp5100-tco: Using 0xfed80b00 for watchdog MMIO ad=
+dress
+[    4.836595] cfg80211: Loading compiled-in X.509 certificates for regulat=
+ory database
+[    4.836689] sp5100-tco sp5100-tco: initialized. heartbeat=3D60 sec (nowa=
+yout=3D0)
+[    4.838178] Loaded X.509 cert 'sforshee: 00b28ddf47aef9cea7'
+[    4.838415] Loaded X.509 cert 'wens: 61c038651aabdcf94bd0ac7ff06c7248db1=
+8c600'
+[    4.848209] asus_wmi: Initialization: 0x0
+[    4.848252] asus_wmi: BIOS WMI version: 0.9
+[    4.848319] asus_wmi: SFUN value: 0x0
+[    4.848323] eeepc-wmi eeepc-wmi: Detected ASUSWMI, use DCTS
+[    4.859180] snd_hda_intel 0000:00:01.1: enabling device (0000 -> 0002)
+[    4.859330] snd_hda_intel 0000:00:01.1: Force to non-snoop mode
+[    4.866610] input: Eee PC WMI hotkeys as /devices/platform/eeepc-wmi/inp=
+ut/input7
+[    4.871299] at24 7-0050: supply vcc not found, using dummy regulator
+[    4.873346] r8169 0000:03:00.0 eth0: RTL8168f/8111f, 50:46:5d:b3:63:82, =
+XID 480, IRQ 46
+[    4.873355] r8169 0000:03:00.0 eth0: jumbo features [frames: 9194 bytes,=
+ tx checksumming: ko]
+[    4.876127] at24 7-0050: 256 byte spd EEPROM, read-only
+[    4.876173] at24 7-0051: supply vcc not found, using dummy regulator
+[    4.878022] at24 7-0051: 256 byte spd EEPROM, read-only
+[    4.878090] at24 7-0052: supply vcc not found, using dummy regulator
+[    4.880066] at24 7-0052: 256 byte spd EEPROM, read-only
+[    4.880097] at24 7-0053: supply vcc not found, using dummy regulator
+[    4.881904] at24 7-0053: 256 byte spd EEPROM, read-only
+[    4.921894] snd_hda_intel 0000:00:01.1: bound 0000:00:01.0 (ops radeon_a=
+udio_component_bind_ops [radeon])
+[    4.923814] r8169 0000:03:00.0 enp3s0: renamed from eth0
+[    4.926114] input: HDA ATI HDMI HDMI/DP,pcm=3D3 as /devices/pci0000:00/0=
+000:00:01.1/sound/card0/input8
+[    5.102138] rtw89_8852ce_git 0000:02:00.0: loaded firmware rtw89/rtw8852=
+c_fw-2.bin
+[    5.102267] ACPI: \: failed to evaluate _DSM e8c3a8d2-694b-004f-82bd-fe8=
+607803aa7 rev:0 func:5 (0x1001)
+[    5.102278] rtw89_8852ce_git 0000:02:00.0: enabling device (0000 -> 0003=
+)
+[    5.105322] rtw89_8852ce_git 0000:02:00.0: git commit 2b491dca7e3dda64ee=
+ada28079ee4c02b78f48ac
+[    5.110995] rtw89_8852ce_git 0000:02:00.0: Firmware version 0.27.129.1 (=
+a71be205), cmd version 0, type 1
+[    5.110999] rtw89_8852ce_git 0000:02:00.0: Firmware version 0.27.129.1 (=
+a71be205), cmd version 0, type 3
+[    5.153723] EXT4-fs (sdc1): warning: mounting unchecked fs, running e2fs=
+ck is recommended
+[    5.182971] EXT4-fs (sdc1): mounted filesystem bb847ad5-cf9a-46c3-a6bc-b=
+1a6a02f25fb r/w without journal. Quota mode: none.
+[    5.222426] kvm_amd: TSC scaling supported
+[    5.222431] kvm_amd: Nested Virtualization enabled
+[    5.222432] kvm_amd: Nested Paging enabled
+[    5.222434] kvm_amd: LBR virtualization supported
+[    5.357776] rtw89_8852ce_git 0000:02:00.0: chip rfe_type is 1
+[    5.379444] rtw89_8852ce_git 0000:02:00.0: Firmware element BB version: =
+00 28 00 00
+[    5.379524] rtw89_8852ce_git 0000:02:00.0: Firmware element radio A vers=
+ion: 00 63 00 00
+[    5.379580] rtw89_8852ce_git 0000:02:00.0: Firmware element NCTL version=
+: 00 11 00 00
+[    5.379798] rtw89_8852ce_git 0000:02:00.0: Firmware element TXPWR versio=
+n: 00 78 00 00
+[    5.379805] rtw89_8852ce_git 0000:02:00.0: Firmware element PWR_TRK vers=
+ion: 00 26 00 00
+[    5.379814] rtw89_8852ce_git 0000:02:00.0: Firmware element REGD version=
+: 00 48 00 39
+[    5.381917] ACPI: \: failed to evaluate _DSM e8c3a8d2-694b-004f-82bd-fe8=
+607803aa7 rev:0 func:10 (0x1001)
+[    5.381922] ACPI: \: failed to evaluate _DSM e8c3a8d2-694b-004f-82bd-fe8=
+607803aa7 rev:0 func:6 (0x1001)
+[    5.381926] ACPI: \: failed to evaluate _DSM e8c3a8d2-694b-004f-82bd-fe8=
+607803aa7 rev:0 func:3 (0x1001)
+[    5.381928] ACPI: \: failed to evaluate _DSM e8c3a8d2-694b-004f-82bd-fe8=
+607803aa7 rev:0 func:4 (0x1001)
+[    5.381931] ACPI: \: failed to evaluate _DSM e8c3a8d2-694b-004f-82bd-fe8=
+607803aa7 rev:0 func:7 (0x1001)
+[    5.381933] ACPI: \: failed to evaluate _DSM e8c3a8d2-694b-004f-82bd-fe8=
+607803aa7 rev:0 func:11 (0x1001)
+[    5.382450] rtw89_8852ce_git 0000:02:00.0: rfkill hardware state changed=
+ to enable
+[    5.390599] rtw89_8852ce_git 0000:02:00.0 wlp2s0: renamed from wlan0
+[    5.493025] EXT4-fs (sdb1): mounted filesystem b9849882-1cdf-4abc-99e8-5=
+ea9811ca848 r/w with ordered data mode. Quota mode: none.
+[    6.285927] RTL8211E Gigabit Ethernet r8169-0-300:00: attached PHY drive=
+r (mii_bus:phy_addr=3Dr8169-0-300:00, irq=3DMAC)
+[    6.449956] r8169 0000:03:00.0 enp3s0: Link is Down
+[    6.543755] usb 2-3: USB disconnect, device number 2
+[    6.585348] usb 3-2: USB disconnect, device number 2
+[    6.906595] usb 3-2: new high-speed USB device number 5 using ehci-pci
+[    7.033535] usb 3-2: New USB device found, idVendor=3D0bda, idProduct=3D=
+f192, bcdDevice=3D 2.00
+[    7.033548] usb 3-2: New USB device strings: Mfr=3D1, Product=3D2, Seria=
+lNumber=3D3
+[    7.033554] usb 3-2: Product: 802.11n  WLAN Adapter
+[    7.033559] usb 3-2: Manufacturer: Realtek
+[    7.033563] usb 3-2: SerialNumber: 005CC2FF1087
+[    7.166604] usb 2-3: new high-speed USB device number 4 using ehci-pci
+[    7.281654] r8169 0000:03:00.0: invalid VPD tag 0xff (size 0) at offset =
+0; assume missing optional EEPROM
+[    7.292699] usb 2-3: New USB device found, idVendor=3D2001, idProduct=3D=
+332a, bcdDevice=3D 0.00
+[    7.292706] usb 2-3: New USB device strings: Mfr=3D1, Product=3D2, Seria=
+lNumber=3D3
+[    7.292709] usb 2-3: Product: 802.11ax WLAN Adapter
+[    7.292711] usb 2-3: Manufacturer: Realtek
+[    7.292713] usb 2-3: SerialNumber: 00e04c000001
+[    7.360311] rtw89_8851bu_git 2-3:1.2: loaded firmware rtw89/rtw8851b_fw.=
+bin
+[    7.360458] rtw89_8851bu_git 2-3:1.2: git commit 2b491dca7e3dda64eeada28=
+079ee4c02b78f48ac
+[    7.362189] rtw89_8851bu_git 2-3:1.2: MAC has already powered on
+[    7.391818] rtw89_8851bu_git 2-3:1.2: Firmware version 0.29.41.3 (65cefb=
+31), cmd version 0, type 5
+[    7.391826] rtw89_8851bu_git 2-3:1.2: Firmware version 0.29.41.3 (65cefb=
+31), cmd version 0, type 3
+[    7.941618] rtw89_8851bu_git 2-3:1.2: chip rfe_type is 4
+[    8.007127] ACPI: \: failed to evaluate _DSM e8c3a8d2-694b-004f-82bd-fe8=
+607803aa7 rev:0 func:10 (0x1001)
+[    8.007142] ACPI: \: failed to evaluate _DSM e8c3a8d2-694b-004f-82bd-fe8=
+607803aa7 rev:0 func:6 (0x1001)
+[    8.009628] rtw89_8851bu_git 2-3:1.2: rfkill hardware state changed to e=
+nable
+[    8.009885] usbcore: registered new interface driver rtw89_8851bu_git
+[    8.031906] rtw89_8851bu_git 2-3:1.2 wlp0s18f2u3i2: renamed from wlan0
 
-
-
-
-
-
-
-Mercury MW310UH
-ffff8ae218ff2b40 1463314139 S Ci:2:001:0 s a3 00 0000 0001 0004 4 <
-ffff8ae218ff2b40 1463314178 C Ci:2:001:0 0 4 = 00010000
-ffff8ae218ff2b40 1463314318 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218ff2b40 1463314339 C Ci:2:001:0 0 4 = 01050100
-ffff8ae218ff2b40 1463314346 S Co:2:001:0 s 23 01 0010 0002 0000 0
-ffff8ae218ff2b40 1463314356 C Co:2:001:0 0 0
-ffff8ae218ff2b40 1463314363 S Ci:2:001:0 s a3 00 0000 0003 0004 4 <
-ffff8ae218ff2b40 1463314371 C Ci:2:001:0 0 4 = 00010000
-ffff8ae218ff2b40 1463314377 S Ci:2:001:0 s a3 00 0000 0004 0004 4 <
-ffff8ae218ff2b40 1463314385 C Ci:2:001:0 0 4 = 00010000
-ffff8ae218ff2b40 1463314391 S Ci:2:001:0 s a3 00 0000 0005 0004 4 <
-ffff8ae218ff2b40 1463314399 C Ci:2:001:0 0 4 = 00010000
-ffff8ae184c6dd80 1463421113 S Ii:2:001:1 -115:2048 4 <
-ffff8ae218ff2b40 1463421144 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218ff2b40 1463421163 C Ci:2:001:0 0 4 = 01050000
-ffff8ae218ff2b40 1463421278 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae218ff2b40 1463421294 C Co:2:001:0 0 0
-ffff8ae218ff2b40 1463482073 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218ff2b40 1463482145 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218ff2b40 1463482222 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218ff2b40 1463482237 C Co:2:001:0 0 0
-ffff8ae218ff23c0 1463533205 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae218ff23c0 1463533360 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae218ff23c0 1463533387 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae218ff23c0 1463533401 C Co:2:001:0 0 0
-ffff8ae218ff23c0 1463594154 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218ff23c0 1463594225 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218ff23c0 1463594303 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218ff23c0 1463594343 C Co:2:001:0 0 0
-ffff8ae218ff23c0 1463645167 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae218ff23c0 1463645250 C Co:2:000:0 0 0
-ffff8ae218ff2240 1463658154 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae218ff2240 1463658460 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae218ff2240 1463658490 S Ci:2:054:0 s 80 06 0200 0000 0009 9 <
-ffff8ae218ff2240 1463658572 C Ci:2:054:0 0 9 = 09022000 01010080 fa
-ffff8ae218ff2240 1463658589 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae218ff2240 1463658697 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae218ff2cc0 1463658717 S Ci:2:054:0 s 80 06 0300 0000 00ff 255 <
-ffff8ae218ff2cc0 1463658821 C Ci:2:054:0 0 4 = 04030904
-ffff8ae218ff2cc0 1463658837 S Ci:2:054:0 s 80 06 0302 0409 00ff 255 <
-ffff8ae218ff2cc0 1463658945 C Ci:2:054:0 0 10 = 0a034400 49005300 4b00
-ffff8ae218ff2cc0 1463658963 S Ci:2:054:0 s 80 06 0301 0409 00ff 255 <
-ffff8ae218ff2cc0 1463659070 C Ci:2:054:0 0 16 = 10035200 65006100 6c007400 65006b00
-ffff8ae218ff2cc0 1463659444 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae218ff2cc0 1463660319 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1464725128 S Ci:2:054:0 s a1 fe 0000 0000 0001 1 <
-ffff8ae218ff29c0 1464725189 C Ci:2:054:0 0 1 = 00
-ffff8ae218ff29c0 1464725343 S Bo:2:054:11 -115 31 = 55534243 01000000 24000000 80000612 00000024 00000000 00000000 000000
-ffff8ae218ff29c0 1464725428 C Bo:2:054:11 0 31 >
-ffff8ae218ff2b40 1464725448 S Bi:2:054:10 -115 36 <
-ffff8ae218ff2b40 1464726306 C Bi:2:054:10 0 36 = 05800021 1f000000 5265616c 74656b20 55534220 4469736b 20617574 6f72756e
-ffff8ae218ff29c0 1464726326 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1464726923 C Bi:2:054:10 0 13 = 55534253 01000000 00000000 00
-ffff8ae218ff29c0 1464727478 S Bo:2:054:11 -115 31 = 55534243 02000000 00000000 00000600 00000000 00000000 00000000 000000
-ffff8ae218ff29c0 1464728169 C Bo:2:054:11 0 31 >
-ffff8ae218ff29c0 1464728192 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1464728921 C Bi:2:054:10 0 13 = 55534253 02000000 00000000 01
-ffff8ae218ff29c0 1464728941 S Bo:2:054:11 -115 31 = 55534243 03000000 12000000 80000603 00000012 00000000 00000000 000000
-ffff8ae218ff29c0 1464729043 C Bo:2:054:11 0 31 >
-ffff8ae218e78780 1464729061 S Bi:2:054:10 -115 18 <
-ffff8ae218e78780 1464729795 C Bi:2:054:10 0 18 = 70000200 0000000a 00000000 3a000000 0000
-ffff8ae218ff29c0 1464729821 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1464730291 C Bi:2:054:10 0 13 = 55534253 03000000 00000000 00
-ffff8ae218ff29c0 1464730350 S Bo:2:054:11 -115 31 = 55534243 04000000 80000000 80000a5a 002a0000 00000080 00000000 000000
-ffff8ae218ff29c0 1464730415 C Bo:2:054:11 0 31 >
-ffff8ae218e78780 1464730434 S Bi:2:054:10 -115 128 <
-ffff8ae218e78780 1464731792 C Bi:2:054:10 -121 40 = 00200200 00000000 2a180700 71672923 23c000ff 008023c0 00100000 00000000
-ffff8ae218ff29c0 1464731815 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1464732158 C Bi:2:054:10 0 13 = 55534253 04000000 80000000 01
-ffff8ae218ff29c0 1464732174 S Bo:2:054:11 -115 31 = 55534243 05000000 12000000 80000603 00000012 00000000 00000000 000000
-ffff8ae218ff29c0 1464732284 C Bo:2:054:11 0 31 >
-ffff8ae218e78780 1464732297 S Bi:2:054:10 -115 18 <
-ffff8ae218e78780 1464733044 C Bi:2:054:10 0 18 = 70000500 0000000a 00000000 20000000 0000
-ffff8ae218ff29c0 1464733066 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1464733530 C Bi:2:054:10 0 13 = 55534253 05000000 00000000 00
-ffff8ae218ff29c0 1464733563 S Bo:2:054:11 -115 31 = 55534243 06000000 80000000 8000061a 002a0080 00000000 00000000 000000
-ffff8ae218ff29c0 1464733654 C Bo:2:054:11 0 31 >
-ffff8ae1ff4d6840 1464733665 S Bi:2:054:10 -115 128 <
-ffff8ae1ff4d6840 1464735029 C Bi:2:054:10 -121 40 = 1d020000 2a180700 71672923 23c000ff 008023c0 00100000 00000000 00000000
-ffff8ae218ff29c0 1464735042 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1464735398 C Bi:2:054:10 0 13 = 55534253 06000000 80000000 01
-ffff8ae218ff29c0 1464735409 S Bo:2:054:11 -115 31 = 55534243 07000000 12000000 80000603 00000012 00000000 00000000 000000
-ffff8ae218ff29c0 1464735524 C Bo:2:054:11 0 31 >
-ffff8ae1ff4d6840 1464735534 S Bi:2:054:10 -115 18 <
-ffff8ae1ff4d6840 1464736148 C Bi:2:054:10 0 18 = 70000500 0000000a 00000000 20000000 0000
-ffff8ae218ff29c0 1464736159 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1464736770 C Bi:2:054:10 0 13 = 55534253 07000000 00000000 00
-ffff8ae218ff29c0 1464736803 S Bo:2:054:11 -115 31 = 55534243 08000000 00000000 00000600 00000000 00000000 00000000 000000
-ffff8ae218ff29c0 1464736895 C Bo:2:054:11 0 31 >
-ffff8ae218ff29c0 1464736904 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1464737644 C Bi:2:054:10 0 13 = 55534253 08000000 00000000 01
-ffff8ae218ff29c0 1464737656 S Bo:2:054:11 -115 31 = 55534243 09000000 12000000 80000603 00000012 00000000 00000000 000000
-ffff8ae218ff29c0 1464737768 C Bo:2:054:11 0 31 >
-ffff8ae1ff4d6840 1464737778 S Bi:2:054:10 -115 18 <
-ffff8ae1ff4d6840 1464738518 C Bi:2:054:10 0 18 = 70000600 0000000a 00000000 28000000 0000
-ffff8ae218ff29c0 1464738529 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1464739140 C Bi:2:054:10 0 13 = 55534253 09000000 00000000 00
-ffff8ae218ff29c0 1464739187 S Bo:2:054:11 -115 31 = 55534243 0a000000 00000000 00000600 00000000 00000000 00000000 000000
-ffff8ae218ff29c0 1464739264 C Bo:2:054:11 0 31 >
-ffff8ae218ff29c0 1464739279 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1464740016 C Bi:2:054:10 0 13 = 55534253 0a000000 00000000 00
-ffff8ae218ff29c0 1464740069 S Bo:2:054:11 -115 31 = 55534243 0b000000 0c000000 80000a43 00000000 0000000c 40000000 000000
-ffff8ae218ff29c0 1464740136 C Bo:2:054:11 0 31 >
-ffff8ae1ff4d6840 1464740152 S Bi:2:054:10 -115 12 <
-ffff8ae1ff4d6840 1464740885 C Bi:2:054:10 0 12 = 000a0101 00140100 00000000
-ffff8ae218ff29c0 1464740903 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1464741508 C Bi:2:054:10 0 13 = 55534253 0b000000 0c000000 00
-ffff8ae218ff29c0 1464741572 S Bo:2:054:11 -115 31 = 55534243 0c000000 0c000000 80000a43 00000000 0000000c 00000000 000000
-ffff8ae218ff29c0 1464741632 C Bo:2:054:11 0 31 >
-ffff8ae1ff4d6840 1464741649 S Bi:2:054:10 -115 12 <
-ffff8ae1ff4d6840 1464742383 C Bi:2:054:10 -75 0
-ffff8ae218ff29c0 1464742398 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1464742756 C Bi:2:054:10 -75 0
-ffff8ae1ff4d6840 1464742775 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1ff4d6840 1464742789 C Co:2:001:0 0 0
-ffff8ae1c81f1cc0 1464803038 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1c81f1cc0 1464803115 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1c81f1cc0 1464803126 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1c81f1cc0 1464803136 C Co:2:001:0 0 0
-ffff8ae1c81f1cc0 1464854054 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae1c81f1cc0 1464854206 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1c81f1cc0 1464854229 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1c81f1cc0 1464854248 C Co:2:001:0 0 0
-ffff8ae218e78cc0 1464915176 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218e78cc0 1464915264 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218e78cc0 1464915281 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218e78cc0 1464915292 C Co:2:001:0 0 0
-ffff8ae218e78a80 1464966174 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae218e78a80 1464966276 C Co:2:000:0 0 0
-ffff8ae218e78a80 1464979158 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae218e78a80 1464979482 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae218e78a80 1464979510 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae218e78a80 1464979591 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae218e78a80 1464979615 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae218e78a80 1464979715 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1464987136 S Bo:2:054:11 -115 31 = 55534243 0d000000 0c000000 80000a43 00000000 0000000c 00000000 000000
-ffff8ae218ff29c0 1464987701 C Bo:2:054:11 0 31 >
-ffff8ae218e78b40 1464987729 S Bi:2:054:10 -115 12 <
-ffff8ae218e78b40 1464987822 C Bi:2:054:10 -75 0
-ffff8ae218ff29c0 1464987841 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1464988190 C Bi:2:054:10 -75 0
-ffff8ae218e789c0 1464990127 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae218e789c0 1464990155 C Co:2:001:0 0 0
-ffff8ae218e78cc0 1465051027 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218e78cc0 1465051072 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218e78cc0 1465051083 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218e78cc0 1465051092 C Co:2:001:0 0 0
-ffff8ae218e78cc0 1465102268 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae218e78cc0 1465102389 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae218e78cc0 1465102421 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae218e78cc0 1465102438 C Co:2:001:0 0 0
-ffff8ae218e78cc0 1465163022 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218e78cc0 1465163081 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218e78cc0 1465163094 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218e78cc0 1465163103 C Co:2:001:0 0 0
-ffff8ae218e78cc0 1465214153 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae218e78cc0 1465214319 C Co:2:000:0 0 0
-ffff8ae218e78b40 1465227168 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae218e78b40 1465227539 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae218e78b40 1465227589 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae218e78b40 1465227645 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae218e78a80 1465227668 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae218e78a80 1465227767 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1465235135 S Bo:2:054:11 -115 31 = 55534243 0e000000 0c000000 80000a43 00000000 0000000c 00000000 000000
-ffff8ae218ff29c0 1465235754 C Bo:2:054:11 0 31 >
-ffff8ae218e78000 1465235782 S Bi:2:054:10 -115 12 <
-ffff8ae218e78000 1465235875 C Bi:2:054:10 -75 0
-ffff8ae218ff29c0 1465235894 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1465236243 C Bi:2:054:10 -75 0
-ffff8ae218e78cc0 1465238106 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae218e78cc0 1465238134 C Co:2:001:0 0 0
-ffff8ae218e78cc0 1465299039 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218e78cc0 1465299080 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218e78cc0 1465299096 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218e78cc0 1465299108 C Co:2:001:0 0 0
-ffff8ae1ff478c00 1465350118 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae1ff478c00 1465350184 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1ff478c00 1465350203 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1ff478c00 1465350221 C Co:2:001:0 0 0
-ffff8ae1ff478c00 1465412031 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1ff478c00 1465412089 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1ff478c00 1465412104 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1ff478c00 1465412115 C Co:2:001:0 0 0
-ffff8ae1ff478300 1465463062 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae1ff478300 1465463127 C Co:2:000:0 0 0
-ffff8ae1ff4786c0 1465476026 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae1ff4786c0 1465476337 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1ff4786c0 1465476365 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae1ff4786c0 1465476444 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae1ff4786c0 1465476468 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae1ff4786c0 1465476568 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1465484135 S Bo:2:054:11 -115 31 = 55534243 0f000000 0c000000 80000a43 00000000 0000000c 00000000 000000
-ffff8ae218ff29c0 1465484556 C Bo:2:054:11 0 31 >
-ffff8ae1ff478cc0 1465484582 S Bi:2:054:10 -115 12 <
-ffff8ae1ff478cc0 1465484675 C Bi:2:054:10 -75 0
-ffff8ae218ff29c0 1465484692 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1465485043 C Bi:2:054:10 -75 0
-ffff8ae1ff478300 1465487037 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1ff478300 1465487057 C Co:2:001:0 0 0
-ffff8ae1ff478cc0 1465548114 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1ff478cc0 1465548199 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1ff478cc0 1465548227 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1ff478cc0 1465548239 C Co:2:001:0 0 0
-ffff8ae1ff478cc0 1465599197 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae1ff478cc0 1465599417 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1ff478cc0 1465599513 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1ff478cc0 1465599538 C Co:2:001:0 0 0
-ffff8ae1ff4783c0 1465660036 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1ff4783c0 1465660089 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1ff4783c0 1465660105 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1ff4783c0 1465660116 C Co:2:001:0 0 0
-ffff8ae1ff4783c0 1465711168 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae1ff4783c0 1465711316 C Co:2:000:0 0 0
-ffff8ae1ff4783c0 1465724178 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae1ff4783c0 1465724579 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1ff4783c0 1465724610 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae1ff4783c0 1465724758 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae1ff4786c0 1465724782 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae1ff4786c0 1465724881 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1465724989 S Bo:2:054:11 -115 31 = 55534243 10000000 0c000000 80000a43 00000000 0000000c 00000000 000000
-ffff8ae218ff29c0 1465725130 C Bo:2:054:11 0 31 >
-ffff8ae1ff478180 1465725150 S Bi:2:054:10 -115 12 <
-ffff8ae1ff478180 1465725258 C Bi:2:054:10 -75 0
-ffff8ae218ff29c0 1465725276 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1465725629 C Bi:2:054:10 -75 0
-ffff8ae218e78a80 1465728037 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae218e78a80 1465728063 C Co:2:001:0 0 0
-ffff8ae218e78a80 1465789112 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218e78a80 1465789174 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218e78a80 1465789186 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218e78a80 1465789198 C Co:2:001:0 0 0
-ffff8ae218e78a80 1465840067 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae218e78a80 1465840215 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae218e78a80 1465840239 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae218e78a80 1465840255 C Co:2:001:0 0 0
-ffff8ae218e78a80 1465901163 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218e78a80 1465901223 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218e78a80 1465901236 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218e78a80 1465901245 C Co:2:001:0 0 0
-ffff8ae218e78a80 1465952174 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae218e78a80 1465952289 C Co:2:000:0 0 0
-ffff8ae218e78b40 1465965211 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae218e78b40 1465965505 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae218e78b40 1465965610 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae218e78b40 1465965739 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae218e78b40 1465965766 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae218e78b40 1465965863 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1465973137 S Bo:2:054:11 -115 31 = 55534243 11000000 0c000000 80000a43 00000000 0000000c 00000000 000000
-ffff8ae218ff29c0 1465973850 C Bo:2:054:11 0 31 >
-ffff8ae218e78000 1465973883 S Bi:2:054:10 -115 12 <
-ffff8ae218e78000 1465973971 C Bi:2:054:10 -75 0
-ffff8ae218ff29c0 1465973994 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1465974339 C Bi:2:054:10 -75 0
-ffff8ae218e78a80 1465977026 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae218e78a80 1465977044 C Co:2:001:0 0 0
-ffff8ae218e78a80 1466038049 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218e78a80 1466038131 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218e78a80 1466038143 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218e78a80 1466038152 C Co:2:001:0 0 0
-ffff8ae218e78a80 1466089252 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae218e78a80 1466089424 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae218e78a80 1466089446 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae218e78a80 1466089462 C Co:2:001:0 0 0
-ffff8ae218e78a80 1466150093 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218e78a80 1466150133 C Ci:2:001:0 0 4 = 03051000
-ffff8ae18942da80 1466150164 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae18942da80 1466150180 C Co:2:001:0 0 0
-ffff8ae18942da80 1466201177 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae18942da80 1466201251 C Co:2:000:0 0 0
-ffff8ae218e789c0 1466214058 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae218e789c0 1466214464 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae218e789c0 1466214531 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae218e789c0 1466214699 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae218e78b40 1466214727 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae218e78b40 1466214822 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1466222107 S Bo:2:054:11 -115 31 = 55534243 12000000 0c000000 80000a43 00000000 0000000c 00000000 000000
-ffff8ae218ff29c0 1466222807 C Bo:2:054:11 0 31 >
-ffff8ae218e78cc0 1466222834 S Bi:2:054:10 -115 12 <
-ffff8ae218e78cc0 1466222931 C Bi:2:054:10 -75 0
-ffff8ae218ff29c0 1466222951 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1466223298 C Bi:2:054:10 -75 0
-ffff8ae218e78000 1466225020 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae218e78000 1466225041 C Co:2:001:0 0 0
-ffff8ae218e78000 1466286047 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218e78000 1466286089 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218e78000 1466286101 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218e78000 1466286111 C Co:2:001:0 0 0
-ffff8ae218e78000 1466337276 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae218e78000 1466337389 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae218e78000 1466337422 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae218e78000 1466337439 C Co:2:001:0 0 0
-ffff8ae218e78000 1466398038 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218e78000 1466398094 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218e78000 1466398107 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218e78000 1466398116 C Co:2:001:0 0 0
-ffff8ae218e78000 1466449128 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae218e78000 1466449205 C Co:2:000:0 0 0
-ffff8ae218e78cc0 1466462232 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae218e78cc0 1466462427 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae218e78cc0 1466462468 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae218e78cc0 1466462536 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae218e78b40 1466462562 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae218e78b40 1466462659 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1466470106 S Bo:2:054:11 -115 31 = 55534243 13000000 0c000000 80000a43 00000000 0000000c 00000000 000000
-ffff8ae218ff29c0 1466470644 C Bo:2:054:11 0 31 >
-ffff8ae218e789c0 1466470673 S Bi:2:054:10 -115 12 <
-ffff8ae218e789c0 1466470768 C Bi:2:054:10 -75 0
-ffff8ae218ff29c0 1466470790 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1466471136 C Bi:2:054:10 -75 0
-ffff8ae218e78000 1466474026 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae218e78000 1466474046 C Co:2:001:0 0 0
-ffff8ae218e78000 1466535091 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218e78000 1466535179 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218e78000 1466535193 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218e78000 1466535202 C Co:2:001:0 0 0
-ffff8ae218e78000 1466586181 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae218e78000 1466586345 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae218e78000 1466586374 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae218e78000 1466586391 C Co:2:001:0 0 0
-ffff8ae218e78000 1466647209 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218e78000 1466647255 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218e78000 1466647268 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218e78000 1466647277 C Co:2:001:0 0 0
-ffff8ae218e78a80 1466699047 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae218e78a80 1466699173 C Co:2:000:0 0 0
-ffff8ae218e78a80 1466712023 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae218e78a80 1466712388 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae218e78a80 1466712417 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae218e78a80 1466712501 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae218e78b40 1466712524 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae218e78b40 1466712625 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1466712736 S Bo:2:054:11 -115 31 = 55534243 14000000 08000000 80000a25 00000000 00000000 00000000 000000
-ffff8ae218ff29c0 1466712873 C Bo:2:054:11 0 31 >
-ffff8ae218e78b40 1466712893 S Bi:2:054:10 -115 8 <
-ffff8ae218e78b40 1466713007 C Bi:2:054:10 -75 0
-ffff8ae218ff29c0 1466713027 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1466713371 C Bi:2:054:10 -75 0
-ffff8ae218e78780 1466715018 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae218e78780 1466715035 C Co:2:001:0 0 0
-ffff8ae1b7836300 1466776105 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1b7836300 1466776171 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1b7836300 1466776186 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1b7836300 1466776198 C Co:2:001:0 0 0
-ffff8ae1b7836300 1466827163 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae1b7836300 1466827368 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1b7836300 1466827408 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1b7836300 1466827426 C Co:2:001:0 0 0
-ffff8ae1b7836300 1466888157 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1b7836300 1466888213 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1b7836300 1466888229 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1b7836300 1466888251 C Co:2:001:0 0 0
-ffff8ae1b7836300 1466939151 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae1b7836300 1466939307 C Co:2:000:0 0 0
-ffff8ae1b52d89c0 1466952161 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae1b52d89c0 1466952527 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1b52d89c0 1466952557 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae1b52d89c0 1466952639 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae1b52d89c0 1466952664 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae1b52d89c0 1466952763 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1466960089 S Bo:2:054:11 -115 31 = 55534243 15000000 08000000 80000a25 00000000 00000000 00000000 000000
-ffff8ae218ff29c0 1466960749 C Bo:2:054:11 0 31 >
-ffff8ae1b52d83c0 1466960774 S Bi:2:054:10 -115 8 <
-ffff8ae1b52d83c0 1466960871 C Bi:2:054:10 -75 0
-ffff8ae218ff29c0 1466960897 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1466961241 C Bi:2:054:10 -75 0
-ffff8ae1ff43a540 1466963034 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1ff43a540 1466963052 C Co:2:001:0 0 0
-ffff8ae1ff43a540 1467024209 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1ff43a540 1467024272 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1ff43a540 1467024287 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1ff43a540 1467024297 C Co:2:001:0 0 0
-ffff8ae1ff43a540 1467075203 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae1ff43a540 1467075339 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1ff43a540 1467075376 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1ff43a540 1467075393 C Co:2:001:0 0 0
-ffff8ae1ff43a540 1467136073 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1ff43a540 1467136161 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1ff43a540 1467136179 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1ff43a540 1467136190 C Co:2:001:0 0 0
-ffff8ae1ff43a540 1467187233 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae1ff43a540 1467187302 C Co:2:000:0 0 0
-ffff8ae1ff43ab40 1467200099 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae1ff43ab40 1467200521 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1ff43ab40 1467200552 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae1ff43ab40 1467200633 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae1ff43a600 1467200658 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae1ff43a600 1467200757 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1467208172 S Bo:2:054:11 -115 31 = 55534243 16000000 08000000 80000a25 00000000 00000000 00000000 000000
-ffff8ae218ff29c0 1467208745 C Bo:2:054:11 0 31 >
-ffff8ae1ff43ab40 1467208773 S Bi:2:054:10 -115 8 <
-ffff8ae1ff43ab40 1467208865 C Bi:2:054:10 -75 0
-ffff8ae218ff29c0 1467208888 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1467209240 C Bi:2:054:10 -75 0
-ffff8ae1ff43a540 1467211026 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1ff43a540 1467211046 C Co:2:001:0 0 0
-ffff8ae1ff43a540 1467272205 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1ff43a540 1467272266 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1ff43a540 1467272280 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1ff43a540 1467272291 C Co:2:001:0 0 0
-ffff8ae1ff43a540 1467323201 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae1ff43a540 1467323333 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1ff43a540 1467323358 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1ff43a540 1467323387 C Co:2:001:0 0 0
-ffff8ae1ff43a780 1467384027 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1ff43a780 1467384109 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1ff43a780 1467384125 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1ff43a780 1467384138 C Co:2:001:0 0 0
-ffff8ae1ff43a780 1467435065 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae1ff43a780 1467435169 C Co:2:000:0 0 0
-ffff8ae1b7836300 1467448049 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae1b7836300 1467448392 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1b7836300 1467448419 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae1b7836300 1467448502 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae1b7836300 1467448610 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae1b7836300 1467448753 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1467457035 S Bo:2:054:11 -115 31 = 55534243 17000000 08000000 80000a25 00000000 00000000 00000000 000000
-ffff8ae218ff29c0 1467457479 C Bo:2:054:11 0 31 >
-ffff8ae218ff2c00 1467457496 S Bi:2:054:10 -115 8 <
-ffff8ae218ff2c00 1467457606 C Bi:2:054:10 -75 0
-ffff8ae218ff29c0 1467457619 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1467457976 C Bi:2:054:10 -75 0
-ffff8ae218ff2c00 1467461023 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae218ff2c00 1467461045 C Co:2:001:0 0 0
-ffff8ae218ff2c00 1467522038 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218ff2c00 1467522095 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218ff2c00 1467522108 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218ff2c00 1467522119 C Co:2:001:0 0 0
-ffff8ae218ff2c00 1467573070 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae218ff2c00 1467573193 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae218ff2c00 1467573211 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae218ff2c00 1467573224 C Co:2:001:0 0 0
-ffff8ae218ff2c00 1467634056 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218ff2c00 1467634113 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218ff2c00 1467634126 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218ff2c00 1467634137 C Co:2:001:0 0 0
-ffff8ae218ff2c00 1467685137 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae218ff2c00 1467685292 C Co:2:000:0 0 0
-ffff8ae218ff2b40 1467698155 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae218ff2b40 1467698511 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae218ff2b40 1467698535 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae218ff2b40 1467698622 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae218ff23c0 1467698641 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae218ff23c0 1467698746 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1467698860 S Bo:2:054:11 -115 31 = 55534243 18000000 08000000 80000a25 00000000 00000000 00000000 000000
-ffff8ae218ff29c0 1467698994 C Bo:2:054:11 0 31 >
-ffff8ae218ff2b40 1467699012 S Bi:2:054:10 -115 8 <
-ffff8ae218ff2b40 1467699122 C Bi:2:054:10 -75 0
-ffff8ae218ff29c0 1467699137 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1467699493 C Bi:2:054:10 -75 0
-ffff8ae1b7836d80 1467701019 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1b7836d80 1467701034 C Co:2:001:0 0 0
-ffff8ae1bbfa63c0 1467762025 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1bbfa63c0 1467762064 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1bbfa63c0 1467762072 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1bbfa63c0 1467762078 C Co:2:001:0 0 0
-ffff8ae1bbfa6b40 1467813064 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae1bbfa6b40 1467813226 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1bbfa6b40 1467813250 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1bbfa6b40 1467813270 C Co:2:001:0 0 0
-ffff8ae1bbfa6840 1467874036 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1bbfa6840 1467874115 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1bbfa6840 1467874133 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1bbfa6840 1467874145 C Co:2:001:0 0 0
-ffff8ae218eac180 1467926050 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae218eac180 1467926208 C Co:2:000:0 0 0
-ffff8ae218ff2c00 1467940038 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae218ff2c00 1467940918 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae218eac180 1467940955 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae218eac180 1467941034 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae218eac180 1467941083 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae218eac180 1467941159 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1467949061 S Bo:2:054:11 -115 31 = 55534243 19000000 08000000 80000a25 00000000 00000000 00000000 000000
-ffff8ae218ff29c0 1467949894 C Bo:2:054:11 0 31 >
-ffff8ae218eac600 1467949922 S Bi:2:054:10 -115 8 <
-ffff8ae218eac600 1467950022 C Bi:2:054:10 -75 0
-ffff8ae218ff29c0 1467950042 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1467950385 C Bi:2:054:10 -75 0
-ffff8ae218eac600 1467952028 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae218eac600 1467952058 C Co:2:001:0 0 0
-ffff8ae218eac480 1468013102 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218eac480 1468013149 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218eac480 1468013164 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218eac480 1468013175 C Co:2:001:0 0 0
-ffff8ae218eac480 1468064199 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae218eac480 1468064382 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae218eac480 1468064407 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae218eac480 1468064426 C Co:2:001:0 0 0
-ffff8ae218eac540 1468125211 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218eac540 1468125302 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218eac540 1468125316 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218eac540 1468125328 C Co:2:001:0 0 0
-ffff8ae218eac780 1468176146 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae218eac780 1468176229 C Co:2:000:0 0 0
-ffff8ae218eac3c0 1468190022 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae218eac3c0 1468190943 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae218eac3c0 1468190971 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae218eac3c0 1468191053 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae218eac180 1468191076 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae218eac180 1468191176 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1468199047 S Bo:2:054:11 -115 31 = 55534243 1a000000 08000000 80000a25 00000000 00000000 00000000 000000
-ffff8ae218ff29c0 1468199914 C Bo:2:054:11 0 31 >
-ffff8ae218eac9c0 1468199943 S Bi:2:054:10 -115 8 <
-ffff8ae218eac9c0 1468200038 C Bi:2:054:10 -75 0
-ffff8ae218ff29c0 1468200064 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1468200403 C Bi:2:054:10 -75 0
-ffff8ae218eac780 1468202021 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae218eac780 1468202053 C Co:2:001:0 0 0
-ffff8ae218eac9c0 1468263157 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218eac9c0 1468263215 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218eac9c0 1468263230 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218eac9c0 1468263240 C Co:2:001:0 0 0
-ffff8ae218eac780 1468314248 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae218eac780 1468314399 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1bbfa66c0 1468314422 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1bbfa66c0 1468314443 C Co:2:001:0 0 0
-ffff8ae218eac780 1468375040 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218eac780 1468375112 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218eac780 1468375140 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218eac780 1468375152 C Co:2:001:0 0 0
-ffff8ae1c87733c0 1468426211 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae1c87733c0 1468426378 C Co:2:000:0 0 0
-ffff8ae1c87733c0 1468439166 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae1c87733c0 1468439643 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1c87733c0 1468439676 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae1c87733c0 1468439824 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae1c87733c0 1468439849 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae1c87733c0 1468439947 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1468448137 S Bo:2:054:11 -115 31 = 55534243 1b000000 08000000 80000a25 00000000 00000000 00000000 000000
-ffff8ae218ff29c0 1468448734 C Bo:2:054:11 0 31 >
-ffff8ae1c87730c0 1468448762 S Bi:2:054:10 -115 8 <
-ffff8ae1c87730c0 1468448931 C Bi:2:054:10 -75 0
-ffff8ae218ff29c0 1468448950 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1468449299 C Bi:2:054:10 -75 0
-ffff8ae1c8773600 1468451021 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1c8773600 1468451041 C Co:2:001:0 0 0
-ffff8ae1c87730c0 1468512215 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1c87730c0 1468512262 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1c87730c0 1468512288 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1c87730c0 1468512303 C Co:2:001:0 0 0
-ffff8ae1c8773c00 1468563073 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae1c8773c00 1468563163 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1c8773c00 1468563186 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1c8773c00 1468563203 C Co:2:001:0 0 0
-ffff8ae1c8773b40 1468624163 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1c8773b40 1468624240 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1c8773b40 1468624252 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1c8773b40 1468624261 C Co:2:001:0 0 0
-ffff8ae1c8773b40 1468675151 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae1c8773b40 1468675268 C Co:2:000:0 0 0
-ffff8ae1c8773180 1468688030 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae1c8773180 1468688488 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1c8773180 1468688516 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae1c8773180 1468688598 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae1c87733c0 1468688622 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae1c87733c0 1468688721 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1468688847 S Bo:2:054:11 -115 31 = 55534243 1c000000 08000000 80000a25 00000000 00000000 00000000 000000
-ffff8ae218ff29c0 1468688970 C Bo:2:054:11 0 31 >
-ffff8ae1c8773f00 1468688998 S Bi:2:054:10 -115 8 <
-ffff8ae1c8773f00 1468689100 C Bi:2:054:10 -75 0
-ffff8ae218ff29c0 1468689123 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1468689470 C Bi:2:054:10 -75 0
-ffff8ae1c8773b40 1468692023 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1c8773b40 1468692042 C Co:2:001:0 0 0
-ffff8ae1c8773f00 1468753205 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1c8773f00 1468753263 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1c8773f00 1468753276 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1c8773f00 1468753285 C Co:2:001:0 0 0
-ffff8ae1c8773e40 1468804269 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae1c8773e40 1468804360 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1c8773e40 1468804396 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1c8773e40 1468804413 C Co:2:001:0 0 0
-ffff8ae1c8773e40 1468865103 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1c8773e40 1468865175 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1c8773e40 1468865189 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1c8773e40 1468865198 C Co:2:001:0 0 0
-ffff8ae1c8773e40 1468916130 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae1c8773e40 1468916224 C Co:2:000:0 0 0
-ffff8ae1c8773540 1468929183 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae1c8773540 1468929452 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1c8773540 1468929494 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae1c8773540 1468929542 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae1c8773180 1468929564 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae1c8773180 1468929665 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1468937135 S Bo:2:054:11 -115 31 = 55534243 1d000000 08000000 80000a25 00000000 00000000 00000000 000000
-ffff8ae218ff29c0 1468937655 C Bo:2:054:11 0 31 >
-ffff8ae1c8773540 1468937684 S Bi:2:054:10 -115 8 <
-ffff8ae1c8773540 1468937776 C Bi:2:054:10 -75 0
-ffff8ae218ff29c0 1468937795 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1468938144 C Bi:2:054:10 -75 0
-ffff8ae1c8773e40 1468940022 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1c8773e40 1468940040 C Co:2:001:0 0 0
-ffff8ae1c8773e40 1469001017 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1c8773e40 1469001047 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1c8773e40 1469001055 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1c8773e40 1469001062 C Co:2:001:0 0 0
-ffff8ae1c8773e40 1469052085 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae1c8773e40 1469052275 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1c8773e40 1469052295 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1c8773e40 1469052309 C Co:2:001:0 0 0
-ffff8ae1c8773540 1469113190 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1c8773540 1469113251 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1c8773540 1469113264 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1c8773540 1469113273 C Co:2:001:0 0 0
-ffff8ae1c8773540 1469164151 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae1c8773540 1469164267 C Co:2:000:0 0 0
-ffff8ae1c87730c0 1469177182 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae1c87730c0 1469177488 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1c87730c0 1469177531 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae1c87730c0 1469177592 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae1c8773180 1469177616 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae1c8773180 1469177715 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1469185132 S Bo:2:054:11 -115 31 = 55534243 1e000000 08000000 80000a25 00000000 00000000 00000000 000000
-ffff8ae218ff29c0 1469185706 C Bo:2:054:11 0 31 >
-ffff8ae1c87733c0 1469185735 S Bi:2:054:10 -115 8 <
-ffff8ae1c87733c0 1469185827 C Bi:2:054:10 -75 0
-ffff8ae218ff29c0 1469185847 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1469186195 C Bi:2:054:10 -75 0
-ffff8ae1c8773540 1469188025 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1c8773540 1469188043 C Co:2:001:0 0 0
-ffff8ae1c87733c0 1469249147 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1c87733c0 1469249185 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1c87733c0 1469249199 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1c87733c0 1469249209 C Co:2:001:0 0 0
-ffff8ae218eac180 1469300285 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae218eac180 1469300455 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae218eac180 1469300490 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae218eac180 1469300507 C Co:2:001:0 0 0
-ffff8ae218eac180 1469361012 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218eac180 1469361060 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218eac180 1469361136 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218eac180 1469361143 C Co:2:001:0 0 0
-ffff8ae218eac180 1469412213 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae218eac180 1469412331 C Co:2:000:0 0 0
-ffff8ae218eac3c0 1469425156 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae218eac3c0 1469425535 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae218eac3c0 1469425567 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae218eac3c0 1469425642 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae218eac3c0 1469425666 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae218eac3c0 1469425766 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1469433149 S Bo:2:054:11 -115 31 = 55534243 1f000000 08000000 80000a25 00000000 00000000 00000000 000000
-ffff8ae218ff29c0 1469433757 C Bo:2:054:11 0 31 >
-ffff8ae1bbfa6840 1469433784 S Bi:2:054:10 -115 8 <
-ffff8ae1bbfa6840 1469433878 C Bi:2:054:10 -75 0
-ffff8ae218ff29c0 1469433897 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1469434246 C Bi:2:054:10 -75 0
-ffff8ae1bbfa6840 1469436024 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1bbfa6840 1469436046 C Co:2:001:0 0 0
-ffff8ae1bbfa6840 1469497113 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1bbfa6840 1469497183 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1bbfa6840 1469497198 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1bbfa6840 1469497210 C Co:2:001:0 0 0
-ffff8ae218eac180 1469548166 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae218eac180 1469548324 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1ff57f300 1469548391 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1ff57f300 1469548415 C Co:2:001:0 0 0
-ffff8ae1ff57fcc0 1469609217 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1ff57fcc0 1469609301 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1ff57fcc0 1469609316 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1ff57fcc0 1469609327 C Co:2:001:0 0 0
-ffff8ae1ff57fcc0 1469660130 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae1ff57fcc0 1469660238 C Co:2:000:0 0 0
-ffff8ae1ff57f0c0 1469673104 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae1ff57f0c0 1469673448 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1ff57f0c0 1469673474 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae1ff57f0c0 1469673571 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae1ff57f0c0 1469673596 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae1ff57f0c0 1469673694 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1469673815 S Bo:2:054:11 -115 31 = 55534243 20000000 08000000 80000a25 00000000 00000000 00000000 000000
-ffff8ae218ff29c0 1469673943 C Bo:2:054:11 0 31 >
-ffff8ae1ff57ff00 1469673963 S Bi:2:054:10 -115 8 <
-ffff8ae1ff57ff00 1469674072 C Bi:2:054:10 -75 0
-ffff8ae218ff29c0 1469674091 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1469674443 C Bi:2:054:10 -75 0
-ffff8ae1ff57fcc0 1469677023 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1ff57fcc0 1469677043 C Co:2:001:0 0 0
-ffff8ae2bdebc000 1469738189 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae2bdebc000 1469738237 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1ff57ff00 1469738264 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1ff57ff00 1469738277 C Co:2:001:0 0 0
-ffff8ae1ff57f600 1469789183 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae1ff57f600 1469789386 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1ff57f600 1469789412 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1ff57f600 1469789431 C Co:2:001:0 0 0
-ffff8ae218eac3c0 1469850230 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218eac3c0 1469850316 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218eac3c0 1469850344 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218eac3c0 1469850357 C Co:2:001:0 0 0
-ffff8ae218eac3c0 1469901223 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae218eac3c0 1469901343 C Co:2:000:0 0 0
-ffff8ae218eac180 1469914120 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae218eac180 1469914555 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae218eac180 1469914584 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae218eac180 1469914664 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae218eac180 1469914688 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae218eac180 1469914788 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1469922114 S Bo:2:054:11 -115 31 = 55534243 21000000 08000000 80000a25 00000000 00000000 00000000 000000
-ffff8ae218ff29c0 1469922779 C Bo:2:054:11 0 31 >
-ffff8ae18219c240 1469922803 S Bi:2:054:10 -115 8 <
-ffff8ae18219c240 1469922901 C Bi:2:054:10 -75 0
-ffff8ae218ff29c0 1469922920 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1469923269 C Bi:2:054:10 -75 0
-ffff8ae1dc398f00 1469925035 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1dc398f00 1469925058 C Co:2:001:0 0 0
-ffff8ae1dc398f00 1469986140 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1dc398f00 1469986215 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1dc398f00 1469986240 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1dc398f00 1469986252 C Co:2:001:0 0 0
-ffff8ae218e78f00 1470037188 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae218e78f00 1470037339 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae218e78f00 1470037364 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae218e78f00 1470037385 C Co:2:001:0 0 0
-ffff8ae218e78f00 1470098166 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218e78f00 1470098223 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218e78f00 1470098238 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218e78f00 1470098249 C Co:2:001:0 0 0
-ffff8ae218e78f00 1470149185 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae218e78f00 1470149291 C Co:2:000:0 0 0
-ffff8ae218e78cc0 1470162153 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae218e78cc0 1470162514 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae218e78cc0 1470162545 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae218e78cc0 1470162617 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae218e78cc0 1470162642 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae218e78cc0 1470162740 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1470170146 S Bo:2:054:11 -115 31 = 55534243 22000000 08000000 80000a25 00000000 00000000 00000000 000000
-ffff8ae218ff29c0 1470170734 C Bo:2:054:11 0 31 >
-ffff8ae218e78780 1470170762 S Bi:2:054:10 -115 8 <
-ffff8ae218e78780 1470170853 C Bi:2:054:10 -75 0
-ffff8ae218ff29c0 1470170872 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1470171222 C Bi:2:054:10 -75 0
-ffff8ae218e78f00 1470173032 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae218e78f00 1470173053 C Co:2:001:0 0 0
-ffff8ae218e78f00 1470234205 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218e78f00 1470234276 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218e78f00 1470234291 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218e78f00 1470234301 C Co:2:001:0 0 0
-ffff8ae218e78f00 1470285111 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae218e78f00 1470285242 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae218e78f00 1470285267 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae218e78f00 1470285285 C Co:2:001:0 0 0
-ffff8ae18930f300 1470346020 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae18930f300 1470346068 C Ci:2:001:0 0 4 = 03051000
-ffff8ae18930f300 1470346081 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae18930f300 1470346094 C Co:2:001:0 0 0
-ffff8ae18930fb40 1470397037 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae18930fb40 1470397115 C Co:2:000:0 0 0
-ffff8ae18930fb40 1470411026 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae18930fb40 1470411887 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae18930fb40 1470411916 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae18930fb40 1470412066 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae18930fb40 1470412089 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae18930fb40 1470412189 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1470420166 S Bo:2:054:11 -115 31 = 55534243 23000000 08000000 80000a25 00000000 00000000 00000000 000000
-ffff8ae218ff29c0 1470420929 C Bo:2:054:11 0 31 >
-ffff8ae18930f540 1470420949 S Bi:2:054:10 -115 8 <
-ffff8ae18930f540 1470421050 C Bi:2:054:10 -75 0
-ffff8ae218ff29c0 1470421077 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1470421419 C Bi:2:054:10 -75 0
-ffff8ae18930f000 1470423022 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae18930f000 1470423044 C Co:2:001:0 0 0
-ffff8ae18930f000 1470484139 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae18930f000 1470484190 C Ci:2:001:0 0 4 = 03051000
-ffff8ae18930f000 1470484205 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae18930f000 1470484218 C Co:2:001:0 0 0
-ffff8ae18930f540 1470535187 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae18930f540 1470535318 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae18930f540 1470535343 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae18930f540 1470535361 C Co:2:001:0 0 0
-ffff8ae218e78000 1470596075 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218e78000 1470596139 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218e78000 1470596151 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218e78000 1470596162 C Co:2:001:0 0 0
-ffff8ae218e78000 1470647122 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae218e78000 1470647186 C Co:2:000:0 0 0
-ffff8ae1ff43ab40 1470660045 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae1ff43ab40 1470660406 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1ff43ab40 1470660435 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae1ff43ab40 1470660519 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae1ff43ab40 1470660543 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae1ff43ab40 1470660642 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1470661322 S Bo:2:054:11 -115 31 = 55534243 24000000 08000000 80000a4a 01000010 00000008 00000000 000000
-ffff8ae218ff29c0 1470661889 C Bo:2:054:11 0 31 >
-ffff8ae218ff2b40 1470661907 S Bi:2:054:10 -115 8 <
-ffff8ae218ff2b40 1470662039 C Bi:2:054:10 -75 0
-ffff8ae218ff29c0 1470662058 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1470662388 C Bi:2:054:10 -75 0
-ffff8ae218ff2b40 1470665022 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae218ff2b40 1470665040 C Co:2:001:0 0 0
-ffff8ae1b7836300 1470726166 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1b7836300 1470726216 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1b7836300 1470726231 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1b7836300 1470726242 C Co:2:001:0 0 0
-ffff8ae1b7836300 1470777182 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae1b7836300 1470777285 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1b7836300 1470777304 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1b7836300 1470777320 C Co:2:001:0 0 0
-ffff8ae1b7836300 1470838020 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1b7836300 1470838068 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1b7836300 1470838079 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1b7836300 1470838086 C Co:2:001:0 0 0
-ffff8ae1b7836300 1470889173 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae1b7836300 1470889297 C Co:2:000:0 0 0
-ffff8ae1b7836d80 1470902172 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae1b7836d80 1470902520 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1b7836d80 1470902545 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae1b7836d80 1470902633 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae1b7836d80 1470902655 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae1b7836d80 1470902756 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1470910091 S Bo:2:054:11 -115 31 = 55534243 25000000 08000000 80000a4a 01000010 00000008 00000000 000000
-ffff8ae218ff29c0 1470910746 C Bo:2:054:11 0 31 >
-ffff8ae218ff2c00 1470910767 S Bi:2:054:10 -115 8 <
-ffff8ae218ff2c00 1470910868 C Bi:2:054:10 -75 0
-ffff8ae218ff29c0 1470910885 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1470911238 C Bi:2:054:10 -75 0
-ffff8ae218ff2c00 1470913029 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae218ff2c00 1470913047 C Co:2:001:0 0 0
-ffff8ae218ff2c00 1470974211 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218ff2c00 1470974290 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218ff2c00 1470974306 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218ff2c00 1470974318 C Co:2:001:0 0 0
-ffff8ae218ff2c00 1471025161 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae218ff2c00 1471025268 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae218ff2c00 1471025289 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae218ff2c00 1471025305 C Co:2:001:0 0 0
-ffff8ae218ff2c00 1471086176 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218ff2c00 1471086253 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218ff2c00 1471086280 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218ff2c00 1471086293 C Co:2:001:0 0 0
-ffff8ae218ff2c00 1471137123 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae218ff2c00 1471137274 C Co:2:000:0 0 0
-ffff8ae218ff2c00 1471150157 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae218ff2c00 1471150498 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae218ff2c00 1471150523 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae218ff2c00 1471150609 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae218ff23c0 1471150631 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae218ff23c0 1471150733 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1471158103 S Bo:2:054:11 -115 31 = 55534243 26000000 08000000 80000a4a 01000010 00000008 00000000 000000
-ffff8ae218ff29c0 1471158723 C Bo:2:054:11 0 31 >
-ffff8ae218ff2c00 1471158742 S Bi:2:054:10 -115 8 <
-ffff8ae218ff2c00 1471158845 C Bi:2:054:10 -75 0
-ffff8ae218ff29c0 1471158863 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1471159215 C Bi:2:054:10 -75 0
-ffff8ae1b7836300 1471161028 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1b7836300 1471161047 C Co:2:001:0 0 0
-ffff8ae1b7836300 1471222165 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1b7836300 1471222217 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1b7836300 1471222243 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1b7836300 1471222265 C Co:2:001:0 0 0
-ffff8ae1b7836300 1471273110 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae1b7836300 1471273240 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1b7836300 1471273261 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1b7836300 1471273277 C Co:2:001:0 0 0
-ffff8ae1ff43a540 1471334039 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1ff43a540 1471334086 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1ff43a540 1471334282 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1ff43a540 1471334299 C Co:2:001:0 0 0
-ffff8ae1b7836300 1471385066 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae1b7836300 1471385127 C Co:2:000:0 0 0
-ffff8ae1b7836300 1471398028 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae1b7836300 1471398350 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1b7836300 1471398373 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae1b7836300 1471398461 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae1b7836d80 1471398481 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae1b7836d80 1471398585 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1471406173 S Bo:2:054:11 -115 31 = 55534243 27000000 08000000 80000a4a 01000010 00000008 00000000 000000
-ffff8ae218ff29c0 1471406577 C Bo:2:054:11 0 31 >
-ffff8ae1b7836300 1471406597 S Bi:2:054:10 -115 8 <
-ffff8ae1b7836300 1471406697 C Bi:2:054:10 -75 0
-ffff8ae218ff29c0 1471406715 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1471407068 C Bi:2:054:10 -75 0
-ffff8ae218ff2c00 1471409034 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae218ff2c00 1471409053 C Co:2:001:0 0 0
-ffff8ae218ff2c00 1471470023 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218ff2c00 1471470090 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218ff2c00 1471470103 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218ff2c00 1471470115 C Co:2:001:0 0 0
-ffff8ae218ff2c00 1471521179 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae218ff2c00 1471521338 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae218ff2c00 1471521360 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae218ff2c00 1471521376 C Co:2:001:0 0 0
-ffff8ae218ff2c00 1471582160 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218ff2c00 1471582232 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218ff2c00 1471582246 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218ff2c00 1471582258 C Co:2:001:0 0 0
-ffff8ae218ff2c00 1471633174 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae218ff2c00 1471633356 C Co:2:000:0 0 0
-ffff8ae218ff2c00 1471646166 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae218ff2c00 1471646578 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae218ff2c00 1471646604 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae218ff2c00 1471646688 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae218ff23c0 1471646711 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae218ff23c0 1471646812 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1471646990 S Bo:2:054:11 -115 31 = 55534243 28000000 08000000 80000a4a 01000010 00000008 00000000 000000
-ffff8ae218ff29c0 1471647062 C Bo:2:054:11 0 31 >
-ffff8ae1ff43a540 1471647085 S Bi:2:054:10 -115 8 <
-ffff8ae1ff43a540 1471647189 C Bi:2:054:10 -75 0
-ffff8ae218ff29c0 1471647209 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1471647559 C Bi:2:054:10 -75 0
-ffff8ae1ff43a540 1471649022 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1ff43a540 1471649040 C Co:2:001:0 0 0
-ffff8ae1ff43af00 1471710039 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1ff43af00 1471710093 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1ff43af00 1471710108 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1ff43af00 1471710119 C Co:2:001:0 0 0
-ffff8ae1ff43aa80 1471761203 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae1ff43aa80 1471761343 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1ff43aa80 1471761369 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1ff43aa80 1471761385 C Co:2:001:0 0 0
-ffff8ae1ff43aa80 1471822178 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1ff43aa80 1471822243 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1ff43aa80 1471822269 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1ff43aa80 1471822282 C Co:2:001:0 0 0
-ffff8ae1ff43aa80 1471873209 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae1ff43aa80 1471873369 C Co:2:000:0 0 0
-ffff8ae1ff43af00 1471886152 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae1ff43af00 1471886697 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1ff43af00 1471886760 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae1ff43af00 1471886829 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae1ff43ab40 1471886855 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae1ff43ab40 1471886953 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1471895187 S Bo:2:054:11 -115 31 = 55534243 29000000 08000000 80000a4a 01000010 00000008 00000000 000000
-ffff8ae218ff29c0 1471895691 C Bo:2:054:11 0 31 >
-ffff8ae1ff43a900 1471895717 S Bi:2:054:10 -115 8 <
-ffff8ae1ff43a900 1471895814 C Bi:2:054:10 -75 0
-ffff8ae218ff29c0 1471895835 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1471896191 C Bi:2:054:10 -75 0
-ffff8ae1ff43aa80 1471898021 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1ff43aa80 1471898039 C Co:2:001:0 0 0
-ffff8ae1ff43aa80 1471959159 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1ff43aa80 1471959240 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1ff43aa80 1471959265 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1ff43aa80 1471959280 C Co:2:001:0 0 0
-ffff8ae218e78cc0 1472010135 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae218e78cc0 1472010220 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae218e78cc0 1472010241 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae218e78cc0 1472010259 C Co:2:001:0 0 0
-ffff8ae218e78cc0 1472071131 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218e78cc0 1472071220 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218e78cc0 1472071232 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218e78cc0 1472071241 C Co:2:001:0 0 0
-ffff8ae218e78cc0 1472122142 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae218e78cc0 1472122244 C Co:2:000:0 0 0
-ffff8ae218e78a80 1472135155 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae218e78a80 1472135469 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae218e78a80 1472135505 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae218e78a80 1472135578 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae218e78a80 1472135605 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae218e78a80 1472135701 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1472143164 S Bo:2:054:11 -115 31 = 55534243 2a000000 08000000 80000a4a 01000010 00000008 00000000 000000
-ffff8ae218ff29c0 1472143692 C Bo:2:054:11 0 31 >
-ffff8ae218e78780 1472143718 S Bi:2:054:10 -115 8 <
-ffff8ae218e78780 1472143816 C Bi:2:054:10 -75 0
-ffff8ae218ff29c0 1472143838 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1472144183 C Bi:2:054:10 -75 0
-ffff8ae218e78cc0 1472146025 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae218e78cc0 1472146073 C Co:2:001:0 0 0
-ffff8ae218e78cc0 1472207180 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218e78cc0 1472207269 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218e78cc0 1472207285 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218e78cc0 1472207296 C Co:2:001:0 0 0
-ffff8ae218e78cc0 1472258057 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae218e78cc0 1472258221 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae218e78cc0 1472258239 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae218e78cc0 1472258254 C Co:2:001:0 0 0
-ffff8ae218e78cc0 1472319177 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218e78cc0 1472319271 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218e78cc0 1472319298 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218e78cc0 1472319311 C Co:2:001:0 0 0
-ffff8ae1876db540 1472370046 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae1876db540 1472370131 C Co:2:000:0 0 0
-ffff8ae1876db540 1472383010 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae1876db540 1472383395 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1876db540 1472383425 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae1876db540 1472383576 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae1876db540 1472383600 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae1876db540 1472383699 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1472391141 S Bo:2:054:11 -115 31 = 55534243 2b000000 08000000 80000a4a 01000010 00000008 00000000 000000
-ffff8ae218ff29c0 1472391695 C Bo:2:054:11 0 31 >
-ffff8ae1876db780 1472391721 S Bi:2:054:10 -115 8 <
-ffff8ae1876db780 1472391814 C Bi:2:054:10 -75 0
-ffff8ae218ff29c0 1472391832 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1472392182 C Bi:2:054:10 -75 0
-ffff8ae1876db480 1472394022 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1876db480 1472394042 C Co:2:001:0 0 0
-ffff8ae1876db480 1472455133 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1876db480 1472455248 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1876db480 1472455261 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1876db480 1472455270 C Co:2:001:0 0 0
-ffff8ae1876db780 1472506195 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae1876db780 1472506345 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1876db780 1472506367 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1876db780 1472506384 C Co:2:001:0 0 0
-ffff8ae180b916c0 1472567031 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae180b916c0 1472567077 C Ci:2:001:0 0 4 = 03051000
-ffff8ae180b916c0 1472567084 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae180b916c0 1472567091 C Co:2:001:0 0 0
-ffff8ae180b916c0 1472618210 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae180b916c0 1472618368 C Co:2:000:0 0 0
-ffff8ae180b916c0 1472631156 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae180b916c0 1472631592 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae180b916c0 1472631705 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae180b916c0 1472631826 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae180b916c0 1472631853 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae180b916c0 1472631950 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1472632072 S Bo:2:054:11 -115 31 = 55534243 2c000000 00000000 00000600 00000000 00000000 00000000 000000
-ffff8ae218ff29c0 1472632198 C Bo:2:054:11 0 31 >
-ffff8ae218ff29c0 1472632219 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1472632325 C Bi:2:054:10 -75 0
-ffff8ae1876db6c0 1472634019 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1876db6c0 1472634037 C Co:2:001:0 0 0
-ffff8ae1876db000 1472695138 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1876db000 1472695213 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1876db000 1472695227 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1876db000 1472695236 C Co:2:001:0 0 0
-ffff8ae1b7bc20c0 1472746041 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae1b7bc20c0 1472746148 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1df6b5180 1472746166 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1df6b5180 1472746177 C Co:2:001:0 0 0
-ffff8ae1df6b5000 1472807158 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1df6b5000 1472807222 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1df6b5000 1472807236 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1df6b5000 1472807245 C Co:2:001:0 0 0
-ffff8ae1df6b5000 1472858058 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae1df6b5000 1472858156 C Co:2:000:0 0 0
-ffff8ae1df6b5f00 1472871033 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae1df6b5f00 1472871378 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1df6b5f00 1472871427 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae1df6b5f00 1472871488 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae1df6b5f00 1472871520 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae1df6b5f00 1472871612 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1472879108 S Bo:2:054:11 -115 31 = 55534243 2d000000 00000000 00000600 00000000 00000000 00000000 000000
-ffff8ae218ff29c0 1472879603 C Bo:2:054:11 0 31 >
-ffff8ae218ff29c0 1472879632 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1472879724 C Bi:2:054:10 -75 0
-ffff8ae218e78a80 1472881036 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae218e78a80 1472881056 C Co:2:001:0 0 0
-ffff8ae218e78a80 1472942204 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218e78a80 1472942289 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218e78a80 1472942301 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218e78a80 1472942310 C Co:2:001:0 0 0
-ffff8ae218e78f00 1472993092 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae218e78f00 1472993268 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae218e78f00 1472993304 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae218e78f00 1472993323 C Co:2:001:0 0 0
-ffff8ae218e78000 1473054022 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218e78000 1473054068 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218e78000 1473054082 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218e78000 1473054094 C Co:2:001:0 0 0
-ffff8ae218e78000 1473105044 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae218e78000 1473105176 C Co:2:000:0 0 0
-ffff8ae218e78b40 1473118022 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae218e78b40 1473118393 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae218e78b40 1473118419 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae218e78b40 1473118509 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae218e789c0 1473118531 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae218e789c0 1473118633 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1473118727 S Bo:2:054:11 -115 31 = 55534243 2e000000 00000000 00000600 00000000 00000000 00000000 000000
-ffff8ae218ff29c0 1473118758 C Bo:2:054:11 0 31 >
-ffff8ae218ff29c0 1473118774 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1473118884 C Bi:2:054:10 -75 0
-ffff8ae218e78000 1473122017 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae218e78000 1473122036 C Co:2:001:0 0 0
-ffff8ae2bded8000 1473183179 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae2bded8000 1473183224 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218e78f00 1473183250 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218e78f00 1473183262 C Co:2:001:0 0 0
-ffff8ae218e78780 1473234060 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae218e78780 1473234183 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae218e78780 1473234204 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae218e78780 1473234222 C Co:2:001:0 0 0
-ffff8ae218e78f00 1473295101 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218e78f00 1473295183 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218e78f00 1473295198 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218e78f00 1473295209 C Co:2:001:0 0 0
-ffff8ae20ae04c00 1473346035 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae20ae04c00 1473346203 C Co:2:000:0 0 0
-ffff8ae20ae04c00 1473360023 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae20ae04c00 1473360925 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae218e78b40 1473360946 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae218e78b40 1473361044 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae218e789c0 1473362135 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae218e789c0 1473362289 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1473371058 S Bo:2:054:11 -115 31 = 55534243 2f000000 00000000 00000600 00000000 00000000 00000000 000000
-ffff8ae218ff29c0 1473371779 C Bo:2:054:11 0 31 >
-ffff8ae218ff29c0 1473371804 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1473371896 C Bi:2:054:10 -75 0
-ffff8ae218ff2c00 1473376047 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae218ff2c00 1473376073 C Co:2:001:0 0 0
-ffff8ae1ff43a600 1473437042 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1ff43a600 1473437127 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1ff43a600 1473437142 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1ff43a600 1473437153 C Co:2:001:0 0 0
-ffff8ae1ff43a600 1473488058 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae1ff43a600 1473488186 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1ff43a600 1473488434 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1ff43a600 1473488453 C Co:2:001:0 0 0
-ffff8ae1ff43a600 1473549027 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1ff43a600 1473549074 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1ff43a600 1473549093 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1ff43a600 1473549100 C Co:2:001:0 0 0
-ffff8ae1ff43a600 1473601044 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae1ff43a600 1473601214 C Co:2:000:0 0 0
-ffff8ae1ff43a780 1473614030 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae1ff43a780 1473614449 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1ff43a780 1473614534 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae1ff43a780 1473614678 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae1ff43a900 1473614709 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae1ff43a900 1473614801 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1473623304 S Bo:2:054:11 -115 31 = 55534243 30000000 08000000 80000a4a 01000010 00000008 00000000 000000
-ffff8ae218ff29c0 1473623538 C Bo:2:054:11 0 31 >
-ffff8ae1ff43a480 1473623561 S Bi:2:054:10 -115 8 <
-ffff8ae1ff43a480 1473623662 C Bi:2:054:10 -75 0
-ffff8ae218ff29c0 1473623683 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1473624032 C Bi:2:054:10 -75 0
-ffff8ae1ff43a600 1473627041 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1ff43a600 1473627067 C Co:2:001:0 0 0
-ffff8ae1ff43a540 1473688206 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1ff43a540 1473688247 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1ff43a540 1473688261 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1ff43a540 1473688270 C Co:2:001:0 0 0
-ffff8ae1ff43a600 1473739166 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae1ff43a600 1473739333 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1ff43a600 1473739355 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1ff43a600 1473739368 C Co:2:001:0 0 0
-ffff8ae1ff43a600 1473800028 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1ff43a600 1473800086 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1ff43a600 1473800098 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1ff43a600 1473800108 C Co:2:001:0 0 0
-ffff8ae1ff43a600 1473851172 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae1ff43a600 1473851252 C Co:2:000:0 0 0
-ffff8ae1ff43ab40 1473864023 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae1ff43ab40 1473864474 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1ff43ab40 1473864500 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae1ff43ab40 1473864588 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae1ff43a900 1473864608 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae1ff43a900 1473864711 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1473872078 S Bo:2:054:11 -115 31 = 55534243 31000000 08000000 80000a4a 01000010 00000008 00000000 000000
-ffff8ae218ff29c0 1473872704 C Bo:2:054:11 0 31 >
-ffff8ae1ff43a780 1473872728 S Bi:2:054:10 -115 8 <
-ffff8ae1ff43a780 1473872825 C Bi:2:054:10 -75 0
-ffff8ae218ff29c0 1473872844 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1473873195 C Bi:2:054:10 -75 0
-ffff8ae1ff43a600 1473875038 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1ff43a600 1473875056 C Co:2:001:0 0 0
-ffff8ae1ff43a600 1473936151 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1ff43a600 1473936214 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1ff43a600 1473936228 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1ff43a600 1473936237 C Co:2:001:0 0 0
-ffff8ae1ff43a600 1473987189 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae1ff43a600 1473987251 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1ff43a600 1473987273 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1ff43a600 1473987287 C Co:2:001:0 0 0
-ffff8ae218ff2000 1474048042 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218ff2000 1474048109 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218ff2000 1474048129 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218ff2000 1474048142 C Co:2:001:0 0 0
-ffff8ae1ff43a600 1474099041 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae1ff43a600 1474099156 C Co:2:000:0 0 0
-ffff8ae218ff2000 1474112065 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae218ff2000 1474112392 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae20dea3000 1474113027 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae20dea3000 1474113641 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae20dea3000 1474113677 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae20dea3000 1474113749 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1474121021 S Bo:2:054:11 -115 31 = 55534243 32000000 08000000 80000a4a 01000010 00000008 00000000 000000
-ffff8ae218ff29c0 1474121743 C Bo:2:054:11 0 31 >
-ffff8ae20dea33c0 1474121764 S Bi:2:054:10 -115 8 <
-ffff8ae20dea33c0 1474121866 C Bi:2:054:10 -75 0
-ffff8ae218ff29c0 1474121879 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1474122233 C Bi:2:054:10 -75 0
-ffff8ae218e78f00 1474124040 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae218e78f00 1474124074 C Co:2:001:0 0 0
-ffff8ae218e78780 1474185152 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218e78780 1474185206 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218e78780 1474185219 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218e78780 1474185228 C Co:2:001:0 0 0
-ffff8ae218e78780 1474236177 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae218e78780 1474236290 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1ff43a780 1474236325 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1ff43a780 1474236346 C Co:2:001:0 0 0
-ffff8ae1ff43a780 1474297159 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1ff43a780 1474297246 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1ff43a780 1474297273 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1ff43a780 1474297287 C Co:2:001:0 0 0
-ffff8ae1ff43a780 1474348129 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae1ff43a780 1474348203 C Co:2:000:0 0 0
-ffff8ae1ff43a780 1474361104 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae1ff43a780 1474361431 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1ff43a780 1474361461 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae1ff43a780 1474361543 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae1ff43a780 1474361570 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae1ff43a780 1474361667 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1474369048 S Bo:2:054:11 -115 31 = 55534243 33000000 08000000 80000a4a 01000010 00000008 00000000 000000
-ffff8ae218ff29c0 1474369665 C Bo:2:054:11 0 31 >
-ffff8ae1ff43af00 1474369700 S Bi:2:054:10 -115 8 <
-ffff8ae1ff43af00 1474369784 C Bi:2:054:10 -75 0
-ffff8ae218ff29c0 1474369818 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1474370157 C Bi:2:054:10 -75 0
-ffff8ae1ff43a600 1474372035 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1ff43a600 1474372057 C Co:2:001:0 0 0
-ffff8ae1ff43a600 1474433157 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1ff43a600 1474433244 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1ff43a600 1474433260 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1ff43a600 1474433272 C Co:2:001:0 0 0
-ffff8ae1ff43a600 1474484121 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae1ff43a600 1474484201 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1ff43a600 1474484220 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1ff43a600 1474484236 C Co:2:001:0 0 0
-ffff8ae1ff43a600 1474545164 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1ff43a600 1474545213 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1ff43a600 1474545228 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1ff43a600 1474545239 C Co:2:001:0 0 0
-ffff8ae1ff43a600 1474596180 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae1ff43a600 1474596245 C Co:2:000:0 0 0
-ffff8ae20dea3000 1474609032 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae20dea3000 1474609472 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae20dea3000 1474609503 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae20dea3000 1474609586 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae20dea3000 1474609612 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae20dea3000 1474609709 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1474609799 S Bo:2:054:11 -115 31 = 55534243 34000000 00000000 00000600 00000000 00000000 00000000 000000
-ffff8ae218ff29c0 1474609831 C Bo:2:054:11 0 31 >
-ffff8ae218ff29c0 1474609846 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1474609959 C Bi:2:054:10 -75 0
-ffff8ae184c2b6c0 1474613015 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae184c2b6c0 1474613030 C Co:2:001:0 0 0
-ffff8ae184c2b6c0 1474674208 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae184c2b6c0 1474674277 C Ci:2:001:0 0 4 = 03051000
-ffff8ae184c2b6c0 1474674291 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae184c2b6c0 1474674301 C Co:2:001:0 0 0
-ffff8ae184c2b6c0 1474725069 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae184c2b6c0 1474725177 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae184c2b6c0 1474725200 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae184c2b6c0 1474725218 C Co:2:001:0 0 0
-ffff8ae184c2b6c0 1474786150 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae184c2b6c0 1474786204 C Ci:2:001:0 0 4 = 03051000
-ffff8ae184c2b6c0 1474786217 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae184c2b6c0 1474786226 C Co:2:001:0 0 0
-ffff8ae20dea3cc0 1474837163 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae20dea3cc0 1474837319 C Co:2:000:0 0 0
-ffff8ae20dea3cc0 1474850035 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae20dea3cc0 1474850601 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae20dea3cc0 1474850631 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae20dea3cc0 1474850779 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae20dea3000 1474850804 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae20dea3000 1474850903 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1474858149 S Bo:2:054:11 -115 31 = 55534243 35000000 00000000 00000600 00000000 00000000 00000000 000000
-ffff8ae218ff29c0 1474858900 C Bo:2:054:11 0 31 >
-ffff8ae218ff29c0 1474858924 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1474859016 C Bi:2:054:10 -75 0
-ffff8ae20dea3cc0 1474861093 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae20dea3cc0 1474861123 C Co:2:001:0 0 0
-ffff8ae20dea3cc0 1474922209 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae20dea3cc0 1474922285 C Ci:2:001:0 0 4 = 03051000
-ffff8ae20dea3cc0 1474922300 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae20dea3cc0 1474922312 C Co:2:001:0 0 0
-ffff8ae20dea3cc0 1474973064 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae20dea3cc0 1474973207 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae20dea3cc0 1474973231 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae20dea3cc0 1474973249 C Co:2:001:0 0 0
-ffff8ae18ed410c0 1475034211 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae18ed410c0 1475034263 C Ci:2:001:0 0 4 = 03051000
-ffff8ae18ed410c0 1475034279 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae18ed410c0 1475034291 C Co:2:001:0 0 0
-ffff8ae18ed410c0 1475085057 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae18ed410c0 1475085136 C Co:2:000:0 0 0
-ffff8ae18ed410c0 1475098050 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae18ed410c0 1475098358 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae18ed410c0 1475098385 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae18ed410c0 1475098466 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae18ed410c0 1475098490 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae18ed410c0 1475098589 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1475098707 S Bo:2:054:11 -115 31 = 55534243 36000000 00000000 00000600 00000000 00000000 00000000 000000
-ffff8ae218ff29c0 1475098837 C Bo:2:054:11 0 31 >
-ffff8ae218ff29c0 1475098853 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1475098964 C Bi:2:054:10 -75 0
-ffff8ae18ed41f00 1475102031 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae18ed41f00 1475102051 C Co:2:001:0 0 0
-ffff8ae20dea3000 1475163212 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae20dea3000 1475163286 C Ci:2:001:0 0 4 = 03051000
-ffff8ae20dea3000 1475163301 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae20dea3000 1475163313 C Co:2:001:0 0 0
-ffff8ae184c2b900 1475214045 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae184c2b900 1475214150 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae184c2b900 1475214171 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae184c2b900 1475214189 C Co:2:001:0 0 0
-ffff8ae20dea33c0 1475275050 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae20dea33c0 1475275110 C Ci:2:001:0 0 4 = 03051000
-ffff8ae20dea33c0 1475275124 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae20dea33c0 1475275136 C Co:2:001:0 0 0
-ffff8ae20dea3000 1475326074 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae20dea3000 1475326205 C Co:2:000:0 0 0
-ffff8ae218e78000 1475339023 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae218e78000 1475339416 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae218e78000 1475339445 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae218e78000 1475339539 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae218e78000 1475339563 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae218e78000 1475339662 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1475348071 S Bo:2:054:11 -115 31 = 55534243 37000000 00000000 00000600 00000000 00000000 00000000 000000
-ffff8ae218ff29c0 1475348405 C Bo:2:054:11 0 31 >
-ffff8ae218ff29c0 1475348554 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1475348646 C Bi:2:054:10 -75 0
-ffff8ae20dea33c0 1475350072 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae20dea33c0 1475350102 C Co:2:001:0 0 0
-ffff8ae20dea33c0 1475411097 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae20dea33c0 1475411192 C Ci:2:001:0 0 4 = 03051000
-ffff8ae20dea33c0 1475411208 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae20dea33c0 1475411220 C Co:2:001:0 0 0
-ffff8ae21a62c480 1475462071 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae21a62c480 1475462213 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae21a62c480 1475462234 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae21a62c480 1475462253 C Co:2:001:0 0 0
-ffff8ae21a62c480 1475523146 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae21a62c480 1475523220 C Ci:2:001:0 0 4 = 03051000
-ffff8ae21a62c480 1475523235 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae21a62c480 1475523247 C Co:2:001:0 0 0
-ffff8ae21a62cc00 1475574048 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae21a62cc00 1475574139 C Co:2:000:0 0 0
-ffff8ae21a62c180 1475587156 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae21a62c180 1475587368 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae21a62c180 1475587398 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae21a62c180 1475587473 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae21a62c180 1475587497 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae21a62c180 1475587596 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1475587709 S Bo:2:054:11 -115 31 = 55534243 38000000 08000000 80000a4a 01000010 00000008 00000000 000000
-ffff8ae218ff29c0 1475587845 C Bo:2:054:11 0 31 >
-ffff8ae21a62c3c0 1475587865 S Bi:2:054:10 -115 8 <
-ffff8ae21a62c3c0 1475587973 C Bi:2:054:10 -75 0
-ffff8ae218ff29c0 1475587992 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1475588344 C Bi:2:054:10 -75 0
-ffff8ae21a62cc00 1475590022 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae21a62cc00 1475590041 C Co:2:001:0 0 0
-ffff8ae218e78000 1475651041 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218e78000 1475651091 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218e78000 1475651198 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218e78000 1475651222 C Co:2:001:0 0 0
-ffff8ae1876db6c0 1475702077 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae1876db6c0 1475702160 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1876db6c0 1475702178 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1876db6c0 1475702191 C Co:2:001:0 0 0
-ffff8ae21a62ca80 1475763052 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae21a62ca80 1475763125 C Ci:2:001:0 0 4 = 03051000
-ffff8ae21a62ca80 1475763137 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae21a62ca80 1475763148 C Co:2:001:0 0 0
-ffff8ae21a62c840 1475814038 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae21a62c840 1475814098 C Co:2:000:0 0 0
-ffff8ae1ff43a900 1475827029 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae1ff43a900 1475827321 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1ff43a900 1475827349 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae1ff43a900 1475827435 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae1ff43a900 1475827456 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae1ff43a900 1475827559 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1475835046 S Bo:2:054:11 -115 31 = 55534243 39000000 08000000 80000a4a 01000010 00000008 00000000 000000
-ffff8ae218ff29c0 1475835554 C Bo:2:054:11 0 31 >
-ffff8ae1ff43a540 1475835575 S Bi:2:054:10 -115 8 <
-ffff8ae1ff43a540 1475835675 C Bi:2:054:10 -75 0
-ffff8ae218ff29c0 1475835694 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1475836045 C Bi:2:054:10 -75 0
-ffff8ae1ff43ab40 1475838038 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1ff43ab40 1475838057 C Co:2:001:0 0 0
-ffff8ae1ff43ab40 1475899110 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1ff43ab40 1475899171 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1ff43ab40 1475899184 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1ff43ab40 1475899194 C Co:2:001:0 0 0
-ffff8ae1ff43ab40 1475950147 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae1ff43ab40 1475950242 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1ff43ab40 1475950264 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1ff43ab40 1475950278 C Co:2:001:0 0 0
-ffff8ae1ff43ab40 1476012023 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1ff43ab40 1476012101 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1ff43ab40 1476012113 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1ff43ab40 1476012123 C Co:2:001:0 0 0
-ffff8ae1ff43ab40 1476063040 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae1ff43ab40 1476063171 C Co:2:000:0 0 0
-ffff8ae1876db6c0 1476076040 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae1876db6c0 1476076402 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1876db6c0 1476076427 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae1876db6c0 1476076511 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae1876db6c0 1476076530 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae1876db6c0 1476076635 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1476084072 S Bo:2:054:11 -115 31 = 55534243 3a000000 08000000 80000a4a 01000010 00000008 00000000 000000
-ffff8ae218ff29c0 1476084628 C Bo:2:054:11 0 31 >
-ffff8ae1876db540 1476084647 S Bi:2:054:10 -115 8 <
-ffff8ae1876db540 1476084750 C Bi:2:054:10 -75 0
-ffff8ae218ff29c0 1476084765 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1476085120 C Bi:2:054:10 -75 0
-ffff8ae1876db480 1476087036 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1876db480 1476087051 C Co:2:001:0 0 0
-ffff8ae21a62cf00 1476148044 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae21a62cf00 1476148129 C Ci:2:001:0 0 4 = 03051000
-ffff8ae21a62cf00 1476148194 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae21a62cf00 1476148207 C Co:2:001:0 0 0
-ffff8ae1876db000 1476199077 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae1876db000 1476199188 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1876db000 1476200586 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1876db000 1476200614 C Co:2:001:0 0 0
-ffff8ae1876db000 1476261041 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1876db000 1476261135 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1876db000 1476261155 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1876db000 1476261167 C Co:2:001:0 0 0
-ffff8ae1ff43ab40 1476312084 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae1ff43ab40 1476312245 C Co:2:000:0 0 0
-ffff8ae1ff43ab40 1476325027 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae1ff43ab40 1476325473 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1ff43ab40 1476325497 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae1ff43ab40 1476325587 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae1ff43ab40 1476325608 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae1ff43ab40 1476325711 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1476333168 S Bo:2:054:11 -115 31 = 55534243 3b000000 08000000 80000a4a 01000010 00000008 00000000 000000
-ffff8ae218ff29c0 1476333707 C Bo:2:054:11 0 31 >
-ffff8ae1ff43af00 1476333729 S Bi:2:054:10 -115 8 <
-ffff8ae1ff43af00 1476333826 C Bi:2:054:10 -75 0
-ffff8ae218ff29c0 1476333844 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1476334196 C Bi:2:054:10 -75 0
-ffff8ae1ff43aa80 1476336040 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1ff43aa80 1476336057 C Co:2:001:0 0 0
-ffff8ae1ff43aa80 1476397102 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1ff43aa80 1476397175 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1ff43aa80 1476397191 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1ff43aa80 1476397200 C Co:2:001:0 0 0
-ffff8ae1876db480 1476448040 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae1876db480 1476448132 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1876db480 1476448141 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1876db480 1476448149 C Co:2:001:0 0 0
-ffff8ae1ff43af00 1476509021 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1ff43af00 1476509048 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1ff43af00 1476509056 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1ff43af00 1476509062 C Co:2:001:0 0 0
-ffff8ae1ff43af00 1476560020 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae1ff43af00 1476560066 C Co:2:000:0 0 0
-ffff8ae1ff43af00 1476573032 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae1ff43af00 1476573306 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1ff43af00 1476573333 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae1ff43af00 1476573415 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae1ff43ab40 1476573437 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae1ff43ab40 1476573538 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1476573684 S Bo:2:054:11 -115 31 = 55534243 3c000000 24000000 80000612 00000024 00000000 00000000 000000
-ffff8ae218ff29c0 1476573787 C Bo:2:054:11 0 31 >
-ffff8ae1ff43a600 1476573805 S Bi:2:054:10 -115 36 <
-ffff8ae1ff43a600 1476573915 C Bi:2:054:10 -121 20 = 55534253 36000000 00000000 0014aa00 00000400
-ffff8ae218ff29c0 1476573936 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1476574287 C Bi:2:054:10 0 13 = 55534253 3b000000 08000000 01
-ffff8ae1ff43a540 1476576033 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1ff43a540 1476576051 C Co:2:001:0 0 0
-ffff8ae1876db540 1476637040 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1876db540 1476637115 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1876db540 1476637130 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1876db540 1476637145 C Co:2:001:0 0 0
-ffff8ae1876db540 1476688088 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae1876db540 1476688236 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1876db540 1476688253 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1876db540 1476688268 C Co:2:001:0 0 0
-ffff8ae1876db540 1476749038 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1876db540 1476749103 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1876db540 1476749114 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1876db540 1476749123 C Co:2:001:0 0 0
-ffff8ae1876db540 1476800046 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae1876db540 1476800174 C Co:2:000:0 0 0
-ffff8ae1876db780 1476813018 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae1876db780 1476813398 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1876db780 1476813418 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae1876db780 1476813518 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae1876db780 1476813536 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae1876db780 1476813642 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1476813816 S Bo:2:054:11 -115 31 = 55534243 3d000000 08000000 80000a4a 01000010 00000008 00000000 000000
-ffff8ae218ff29c0 1476813891 C Bo:2:054:11 0 31 >
-ffff8ae1876db000 1476813904 S Bi:2:054:10 -115 8 <
-ffff8ae1876db000 1476814022 C Bi:2:054:10 -75 0
-ffff8ae218ff29c0 1476814037 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1476814390 C Bi:2:054:10 -75 0
-ffff8ae18930fb40 1476816034 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae18930fb40 1476816053 C Co:2:001:0 0 0
-ffff8ae218e78b40 1476877177 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218e78b40 1476877245 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218e78b40 1476877256 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218e78b40 1476877266 C Co:2:001:0 0 0
-ffff8ae218e78b40 1476928197 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae218e78b40 1476928347 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae218e78b40 1476928369 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae218e78b40 1476928386 C Co:2:001:0 0 0
-ffff8ae18930f600 1476989033 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae18930f600 1476989102 C Ci:2:001:0 0 4 = 03051000
-ffff8ae18930f600 1476989114 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae18930f600 1476989120 C Co:2:001:0 0 0
-ffff8ae18930f3c0 1477040265 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae18930f3c0 1477040411 C Co:2:000:0 0 0
-ffff8ae18930f3c0 1477053032 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae18930f3c0 1477053638 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae18930f3c0 1477053669 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae18930f3c0 1477053751 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae18930f3c0 1477053777 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae18930f3c0 1477053875 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1477061054 S Bo:2:054:11 -115 31 = 55534243 3e000000 00000000 0000061e 00000000 00000000 00000000 000000
-ffff8ae218ff29c0 1477061861 C Bo:2:054:11 0 31 >
-ffff8ae218ff29c0 1477061882 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1477061987 C Bi:2:054:10 -75 0
-ffff8ae18930f840 1477064109 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae18930f840 1477064130 C Co:2:001:0 0 0
-ffff8ae18930f600 1477125043 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae18930f600 1477125087 C Ci:2:001:0 0 4 = 03051000
-ffff8ae18930f600 1477125097 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae18930f600 1477125106 C Co:2:001:0 0 0
-ffff8ae21a62cc00 1477176188 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae21a62cc00 1477176317 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae21a62cc00 1477176342 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae21a62cc00 1477176364 C Co:2:001:0 0 0
-ffff8ae21a62c840 1477237024 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae21a62c840 1477237082 C Ci:2:001:0 0 4 = 03051000
-ffff8ae21a62c840 1477237093 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae21a62c840 1477237102 C Co:2:001:0 0 0
-ffff8ae187400480 1477288205 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae187400480 1477288399 C Co:2:000:0 0 0
-ffff8ae187400480 1477301160 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae187400480 1477301611 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae187400480 1477301718 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae187400480 1477301845 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae187400480 1477301873 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae187400480 1477301969 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1477306270 S Bo:2:054:11 -115 31 = 55534243 3f000000 08000000 80000a4a 01000010 00000008 00000000 000000
-ffff8ae218ff29c0 1477306968 C Bo:2:054:11 0 31 >
-ffff8ae187400d80 1477306994 S Bi:2:054:10 -115 8 <
-ffff8ae187400d80 1477307092 C Bi:2:054:10 -75 0
-ffff8ae218ff29c0 1477307117 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1477307459 C Bi:2:054:10 -75 0
-ffff8ae187400780 1477309021 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae187400780 1477309042 C Co:2:001:0 0 0
-ffff8ae187400780 1477370177 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae187400780 1477370236 C Ci:2:001:0 0 4 = 03051000
-ffff8ae187400780 1477370247 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae187400780 1477370257 C Co:2:001:0 0 0
-ffff8ae187400d80 1477421273 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae187400d80 1477421415 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae187400d80 1477421437 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae187400d80 1477421453 C Co:2:001:0 0 0
-ffff8ae218e78a80 1477482019 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae218e78a80 1477482070 C Ci:2:001:0 0 4 = 03051000
-ffff8ae218e78a80 1477482076 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae218e78a80 1477482082 C Co:2:001:0 0 0
-ffff8ae187400180 1477533050 S Co:2:000:0 s 00 05 0036 0000 0000 0
-ffff8ae187400180 1477533235 C Co:2:000:0 0 0
-ffff8ae1ff43a900 1477546026 S Ci:2:054:0 s 80 06 0100 0000 0012 18 <
-ffff8ae1ff43a900 1477546456 C Ci:2:054:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1ff43a900 1477546485 S Ci:2:054:0 s 80 06 0200 0000 0020 32 <
-ffff8ae1ff43a900 1477546570 C Ci:2:054:0 0 32 = 09022000 01010080 fa090400 00020806 50000705 8a020002 0007050b 02000200
-ffff8ae1ff43a900 1477546595 S Co:2:054:0 s 00 09 0001 0000 0000 0
-ffff8ae1ff43a900 1477546694 C Co:2:054:0 0 0
-ffff8ae218ff29c0 1477554095 S Bo:2:054:11 -115 31 = 55534243 40000000 00000000 0000061e 00000000 00000000 00000000 000000
-ffff8ae218ff29c0 1477554687 C Bo:2:054:11 0 31 >
-ffff8ae218ff29c0 1477554710 S Bi:2:054:10 -115 13 <
-ffff8ae218ff29c0 1477554807 C Bi:2:054:10 -75 0
-ffff8ae1ff43a480 1477558027 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1ff43a480 1477558046 C Co:2:001:0 0 0
-ffff8ae1ff43a480 1477619102 S Ci:2:001:0 s a3 00 0000 0002 0004 4 <
-ffff8ae1ff43a480 1477619162 C Ci:2:001:0 0 4 = 03051000
-ffff8ae1ff43a480 1477619177 S Co:2:001:0 s 23 01 0014 0002 0000 0
-ffff8ae1ff43a480 1477619189 C Co:2:001:0 0 0
-ffff8ae1ff43a480 1477670072 S Ci:2:000:0 s 80 06 0100 0000 0040 64 <
-ffff8ae1ff43a480 1477670129 C Ci:2:000:0 0 18 = 12010002 00000040 da0b92a1 00020102 0001
-ffff8ae1ff43a480 1477670149 S Co:2:001:0 s 23 03 0004 0002 0000 0
-ffff8ae1ff43a480 1477670165 C Co:2:001:0 0 0
-
--- 
-You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
-To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20250814140329.2170-1-zenmchen%40gmail.com.
+--=20
+You received this message because you are subscribed to the Google Groups "=
+USB Mass Storage on Linux" group.
+To unsubscribe from this group and stop receiving emails from it, send an e=
+mail to usb-storage+unsubscribe@lists.one-eyed-alien.net.
+To view this discussion visit https://groups.google.com/a/lists.one-eyed-al=
+ien.net/d/msgid/usb-storage/20250814143145.1290-1-zenmchen%40gmail.com.
