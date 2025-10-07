@@ -1,147 +1,142 @@
-Return-Path: <usb-storage+bncBCTPRFE7TUKRBKNT57DAMGQEXYRM63A@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBDTKFFUOY4CBBN75SXDQMGQEBKSO3AQ@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-ed1-x545.google.com (mail-ed1-x545.google.com [IPv6:2a00:1450:4864:20::545])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0BF0ABAD0AF
-	for <lists+usb-storage@lfdr.de>; Tue, 30 Sep 2025 15:22:51 +0200 (CEST)
-Received: by mail-ed1-x545.google.com with SMTP id 4fb4d7f45d1cf-634741fccc9sf4570349a12.2
-        for <lists+usb-storage@lfdr.de>; Tue, 30 Sep 2025 06:22:51 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1759238570; cv=pass;
+Received: from mail-lf1-x146.google.com (mail-lf1-x146.google.com [IPv6:2a00:1450:4864:20::146])
+	by mail.lfdr.de (Postfix) with ESMTPS id B2B4DBC2B67
+	for <lists+usb-storage@lfdr.de>; Tue, 07 Oct 2025 22:57:29 +0200 (CEST)
+Received: by mail-lf1-x146.google.com with SMTP id 2adb3069b0e04-57a898f0932sf3885856e87.2
+        for <lists+usb-storage@lfdr.de>; Tue, 07 Oct 2025 13:57:29 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1759870649; cv=pass;
         d=google.com; s=arc-20240605;
-        b=kSWO7/ODq1cSJNeDPddCtaHPbburCi40qsizxoCwTDsov41DqzfUPpqEbP7t4j1o83
-         OkfQ7PrVTKQMV/+UOpCI863UMSbgcCw/SI4yhk6KurTIK5K3yaKi0ue1E+GyJlZoGH+V
-         b306/w/ykWNT0ZQDGveSFgz223psNjgBjB0nX2b0aOY4eU86NJCmi5EfLtZ3672XsZDS
-         y5TrAr6MI5r4KplzbeqZptjjAyEogcRHCUztseDrDq7WjFNAQEl090OgmxEDfXwoW4Pa
-         FrfVKIfQHJT2qhMycvVmtqyvUWhdf+BmigzrhvPJ75n4NIN8l5brML7NBr5GpTszfHZW
-         ilIg==
+        b=jdfP/C5bSM09CMTe/mGBJOGhho8ps9dWBU+6wt7h8PZwsImEmwZFqjsE5WCchEE1YZ
+         5gm5YZyZI1CSUtWt2p0RzoI7V/MWJ20SorRtYkq+iwN58YyhdWy+JtuFwmhL5saEoQlw
+         5jjZSqd5vC9pQsbe9axQZP+Gm7R1tkJiyfitfO4g10faNelF9aH37OfDR8hog+jPdRlM
+         Zqv8al2Cbkt8IK3uFm5ZZk44xD/+q9KQtwq9qfve0+hzU4QIP/ECq79VW24+6fszNJ1+
+         36VBSj6x2XOxbV5RO77AMO7eKC01gtjSTHQJ8EL9bxC3M9UTGKuQu5xheU9BytjdvzWj
+         mmpg==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:reply-to:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:dkim-signature;
-        bh=4N1rkzyLXrj/5/nfv7sZJLe6Vb3gWOYAe6GOpaZIPc8=;
-        fh=nXzSO5Ll3YbTGcAko/ufANXMW26tCj4VdU11wDADc1M=;
-        b=ah403+YXqvCg0nA00qdlvzmfthDXCUlTyls5vZd6ujPUPsygv97SoYIT/y5kZaQw+l
-         QLSDQUD8JKpTlLw5aCWTLl+9uTGEcCoHF9EFjd9qyibSA5mswRjPMLxoKFqB25GK5S6M
-         XNfIrMgOvlMC2OKeZBMba6nDUxwaNtRXfkJ/DeVuPJN3SHB9UXqEegvhlgYQ9+1nBm70
-         BN05PWadp1rvWfaXBvBnh0QdUecpMWBUTyHU5gavZQsJtS06EOCzKi7PTTAR0ChwhJzv
-         kfTwBJ2kCwghW1E85pybMyxqlk34LGa6toQGd7+Qs9Qux6rzozzfVSmq+gFYx/dYOv0F
-         3TUg==;
+         :list-id:mailing-list:precedence:mime-version:references:in-reply-to
+         :message-id:subject:cc:to:from:date:sender:dkim-signature;
+        bh=TdS9/QG0W6+AM1OC38ymykMfi28ihAP7Mk/JtW9vCTw=;
+        fh=AdoazTh5Oa25inLltLTqiew08gI8QZRyNWKEi3r3Glk=;
+        b=hPEkKLq0+EZG9J3oTC4aaidRkZWwD+SWNEXOA5EBCXPHbpT7ir59rj5rx6860+vxCF
+         yfgqETB7JBvxgHGoDnaZ+I4CfMsG3yv0HhoQM7EXEOfZAC7Y3GhwHl3iJwq28YccObdM
+         EYxe1bdujnTDEOBpvLHmw8fyuKgN5Oaqs+apuQzPI8+v38bCNq1Wgytw9XBvLKi6dcp9
+         MdRZrJW5b+l+0BRhiz6RjYX78ud+as1qIDGiVaAX9AFmu5LLTW1rtlch54qhGt43P1x7
+         Un4FlklbbSK0RFuetQXTHqOJIul00dGB+n8Z/d5uB8oDKYuxJP1S8Ho/mSvgfZWgd45d
+         sEDA==;
         darn=lfdr.de
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@suse.com header.s=google header.b=aCUHKW1I;
-       spf=pass (google.com: domain of oneukum@suse.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=oneukum@suse.com;
-       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=suse.com;
-       dara=pass header.i=@lists.one-eyed-alien.net
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=OzBE4hPF;
+       spf=pass (google.com: domain of michal.pecio@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=michal.pecio@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=neutral header.i=@lists.one-eyed-alien.net
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1759238570; x=1759843370; darn=lfdr.de;
+        d=lists.one-eyed-alien.net; s=google; t=1759870649; x=1760475449; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:reply-to
-         :x-original-authentication-results:x-original-sender:in-reply-to
-         :from:content-language:references:cc:to:subject:user-agent
-         :mime-version:date:message-id:from:to:cc:subject:date:message-id
+         :list-id:mailing-list:precedence:x-original-authentication-results
+         :x-original-sender:mime-version:references:in-reply-to:message-id
+         :subject:cc:to:from:date:sender:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=4N1rkzyLXrj/5/nfv7sZJLe6Vb3gWOYAe6GOpaZIPc8=;
-        b=kH+kcxU5nVBIM9QtkdZ+4fCBdLq5OIRmjtJMiBMy01fze7/WWtz7+prJPM7A4EoMLq
-         lnIlVU6GAiAOsGupudBQtQ+vH9sklyYNu6bxJ2ZNlUf/8ZL1eu5br89UGTCpiJnWq38C
-         UBNR8kQMwU5QzBW1JqZ4VkdedmnsmdYVyZBW0=
+        bh=TdS9/QG0W6+AM1OC38ymykMfi28ihAP7Mk/JtW9vCTw=;
+        b=ZYi/aGAKLr0tuDeqyAnvD8U0g4Ae1mI4Ric82WLFEE+VZXamgF55XdgL4Bop3GT1cf
+         fhMp06APJoEt8SeXBzdIsyZSB0rVHODTQhr64PLPPsp8dZcLE+hMXr+2MfSuepgm9jw1
+         w+H7N+hRnY26Mi8InULhHk6XJR8Tn/ss6D+t8=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1759238570; x=1759843370;
+        d=1e100.net; s=20230601; t=1759870649; x=1760475449;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :x-spam-checked-in-group:list-id:mailing-list:precedence:reply-to
-         :x-original-authentication-results:x-original-sender:in-reply-to
-         :from:content-language:references:cc:to:subject:user-agent
-         :mime-version:date:message-id:x-beenthere:x-gm-message-state:from:to
-         :cc:subject:date:message-id:reply-to;
-        bh=4N1rkzyLXrj/5/nfv7sZJLe6Vb3gWOYAe6GOpaZIPc8=;
-        b=ROZSU7GarGe1Z64/PN0itMGuQtlcHskbLTFL8PU9WK8TOeGEb45l52h1CbgwYrOpuM
-         q997tOxd2OeUAgVAlHHHr9OVk0pxkDIdkdrusnL+7Y6Hpfh+DlxLvZONda/KHNirdR2O
-         mG0DswsTK2F7R4K5hd8ljTRVFcN17ghunGc0tSAVoozp2M8Mdl/bZF4jrURMM+QZjiZJ
-         EEanotqORuQMiFN/l9VJ+KAXQeIZzEhHbCp+Xcs3GHCeLFrTe0fMYojLTM1mC821cavV
-         tPRjdA5sNgCCE2v0ZOKHLO71B8fXbtTT/5K+SIceGpvpCKC39qV5n/JPykSHiVzLl+GI
-         qqHw==
-X-Forwarded-Encrypted: i=2; AJvYcCV8qYEcSC//fHqa0wcuxYPgUgTVAqowq/B/llzy4Y0N3kNooCvNaWAfpG+IYX9ZtHnLiqtxMQ==@lfdr.de
-X-Gm-Message-State: AOJu0YwjHpyFQ5XyQLyd2X807i426pZByiQVMmq/SBpAMrUGV9b2Gv0M
-	cUPrte5JRZfqF2y1u6VkUBeqoZ8fIF/CP5cYn245QsYNlGFNI22UiNNn9JoPUjMhzOg=
-X-Google-Smtp-Source: AGHT+IFL4SrobBtWZ2RrjpI2zuVXj+VZr+wfUrZFewcoz1wGeqe9D9ndjiTmBtTNNqwo8WsDAVrzsA==
-X-Received: by 2002:a05:6402:40ce:b0:634:a852:5104 with SMTP id 4fb4d7f45d1cf-634a85259dfmr18742162a12.24.1759238570016;
-        Tue, 30 Sep 2025 06:22:50 -0700 (PDT)
-X-BeenThere: usb-storage@lists.one-eyed-alien.net; h="ARHlJd6wmQDkXIJ0xyiljsdODwD902xKbdR73EI77mXuhWXtyA=="
-Received: by 2002:a50:c048:0:b0:634:be0f:8f51 with SMTP id 4fb4d7f45d1cf-634be0f94f7ls4028510a12.2.-pod-prod-07-eu;
- Tue, 30 Sep 2025 06:22:47 -0700 (PDT)
-X-Forwarded-Encrypted: i=2; AJvYcCXv67dBFA02UDq4Da7OXVCV21JjKcKLEuIGcxAnWZr8UPV+iLCPbbzv3qYe6IQkMkHIhutjRlLp3xlCXg==@lists.one-eyed-alien.net
-X-Received: by 2002:a17:907:86a9:b0:b3d:b8c3:768d with SMTP id a640c23a62f3a-b3db8c3a7f6mr844389266b.7.1759238566945;
-        Tue, 30 Sep 2025 06:22:46 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1759238566; cv=none;
+         :x-spam-checked-in-group:list-id:mailing-list:precedence
+         :x-original-authentication-results:x-original-sender:mime-version
+         :references:in-reply-to:message-id:subject:cc:to:from:date
+         :x-beenthere:x-gm-message-state:sender:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=TdS9/QG0W6+AM1OC38ymykMfi28ihAP7Mk/JtW9vCTw=;
+        b=pk/F1WF/muHcB06auUkwfYmuhEmm+bJI1ofhCOhy73MkuGh0jeuR+1+YTgSb1Se34p
+         +l0GBiN3lgk3O66CVgvxlW7AD2kBkk2FJc+Deui2hBKt6ub28vEm72Er1roJ5lot0XDR
+         SPjz9I+d0gIkMYQa7Iwv/az45SMpL4RLLokEkXeF9RBISzJ94kn/ae8VS1iaG0UFiUXi
+         D/puJqmaxTs7F+iCPyW4aYc1cAqY3wqdWmAgIT6Zo7tnVf3nlcKfG7U1FwA2nc3SuxFz
+         o0LNycqMj2dsO+0L5VHA3/wnO5KcCabKcBH0pfjyGAJBCfT/TGODgqL1p6ZlJrDcQsu5
+         v8dw==
+Sender: usb-storage@lists.one-eyed-alien.net
+X-Forwarded-Encrypted: i=2; AJvYcCXy/X/WIA9Amd3szmBl5zq4ucPbcV+GRnMTrTghs/ahnXCO+nxQidL83wxA8US9LaenUdeFZg==@lfdr.de
+X-Gm-Message-State: AOJu0YzZcBcFxv/3KvLnjaM84Tuw/2BKbRVMWXnKROFUCZ36ALsnqpzn
+	bgouTqjBEcs+XOMLKKo2inYKhRUTOtnBcZY/+XxXfe6DfMoXOa5KfHJB0nhPDzouid0=
+X-Google-Smtp-Source: AGHT+IGsbyPvFeXVnGTOaSYuFhJc8xBBQTS2cyR0sRLkippaxMz4tTODBd4cL3+SOtIOqbp1vgDu4A==
+X-Received: by 2002:a05:6512:234e:b0:586:5c83:beb1 with SMTP id 2adb3069b0e04-5906dae55aamr273082e87.38.1759870648595;
+        Tue, 07 Oct 2025 13:57:28 -0700 (PDT)
+X-BeenThere: usb-storage@lists.one-eyed-alien.net; h="ARHlJd5kq3Mz26Qme/UQ4NP45cc/HnXDERPQDG0+P1aWqHoOpA=="
+Received: by 2002:a05:6512:23a9:b0:55f:697c:f9b7 with SMTP id
+ 2adb3069b0e04-58b010bc0a3ls500423e87.1.-pod-prod-06-eu; Tue, 07 Oct 2025
+ 13:57:24 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCWJ7Ns2B+1YYnIKBibnW9K1YfxAKGctOhhqaui/iR40EReUAJr1aoAaJewbQs1yiEvLxpozWQzpOeZ1KQ==@lists.one-eyed-alien.net
+X-Received: by 2002:a05:6512:2c06:b0:58a:92cc:581d with SMTP id 2adb3069b0e04-5906dafd171mr288623e87.50.1759870644072;
+        Tue, 07 Oct 2025 13:57:24 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1759870644; cv=none;
         d=google.com; s=arc-20240605;
-        b=WoQY7+wk7ri3j47s2yS2MpAYru86u5v/7rwl7oqkGgyhuHUjQ4L/O6Fbe93Yi73KvX
-         E4lGh998zS5/jC9kustmwolDVQgbsRQdzFjMcjinzvfkdokpE9A/DlUMPpkJsLfRJHoC
-         tPYNth7lvsll/f1Mad6ffkPUuRzx4Qn2He2Us2Np8qufx4vXVLl2b0Adk/dZUbE6+wGQ
-         5vC5wAYkxwzQceNjXipAaXFSRUXQyY8q0X0wmJHJuJBEfqY9xAAiyEUUiEOkVOJCpXfy
-         V9VGuZwsL6tMGvy9etBdfHeWBx/dU42EH3qN+SfwDuWJeHCTRs5U/LnqgIQBnmbkcS3g
-         8b8Q==
+        b=O8h6cH8SHe4XQ5L+ScmP7NctnFlzGJ7rJGcHyPMd3o1Yrpbv9DNbZWt0iVoJ2PJ/jw
+         iEwexeDj8CBg3Nbxm+Ziq6N3YtTDGztbO39nh+9iqPS3nkiSOHRH+evwlj9OyL1lZgKt
+         T2SNvFMS+X4hkXR6P1F9jtRQ6Ilw+Y7RaFwvmTjcSgS9fBkwX8MUCdRSCeSX8t/5SCyM
+         beod91UEt4Y8LvlwdM81KJQuuqTO9LxSgCc8YeuyF5/CL8pnINOuEcn8JBSgWX/uH2V1
+         Dw2k74TM6zzwjAfnEPa7sLNNNNLQmzheBaI2DO3FFuVL6D33YiJWrkkizflpX7iIf0VF
+         unoA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :dkim-signature;
-        bh=uwAebk43If0gjy3ve3r9IFpSG2OftYAndV3V+n10Lek=;
-        fh=Eajbxn0+0nRf1LDZ4xBzQMDPG0rvUVY5qRqYdG8fZqM=;
-        b=V5G01FlELIBrg/VDg4Vheob2JFyGLIBK3NLw933fkYj19GuSzC+1nJyEphrmkZ/hoN
-         2uQGefQMzgTKhPNmU4pS2S9z3lvCUa7iB76D7OiADbTZ5cYwFNCkvpg7YDh8dcOspUbN
-         YhjCx+aBH64Rx1FNvrUMrzvWU5cDE/WNVxsON1UfjuFB4L9lj+NuVWZRhy9KOa3JNa0G
-         JaQxFlWeVRHjkr9vMQeaHSy3HZ4ZgamU9Zmh9JVyrPlwtSxJ/w91ObGx6R9FivuAXnn4
-         E9R6ANzgU6lY/hgDLScNL9mUM78GZsr/zEn49494fhwtRn4FdEa2tNRcFzBwKdCk46VZ
-         eeEg==;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:subject:cc:to:from:date:dkim-signature;
+        bh=g03JkHUsqdzLl3r9exUSIw17r9a2Np//6olnzHZA6Y4=;
+        fh=NOQZsm3i0+725itrPNijUjPVSkbe5Wtl+zoEzf9GEQA=;
+        b=jHhn3QorplM5+IdqztntHDJsXflBZZsGj1bybO7siSb9CnAeuPtgmXEp97zbZG8JYq
+         anDO3HEpilLYpLZEhZUkf9fTTQ3zZKivjrclA4rsmmCqut8ocIT5dgpaHp/p6ym2/BrO
+         n/IgVceuO3FAhL+9bttQMnlAh20mujJ1f7IfqgtkoL9L7zrCIKF5bGYbDh4XbGbLi5Ky
+         U2ruv9jCXll8Wn4dkMoKkKtieLULwoholGO4KRH4R2eGT+kDPdlRMjBsgAIaNEY6A3EO
+         5oPxZZIWiuIbP416Xsq6+TQlj5bH4+YyT1APNDvDpK6xSHuslsdIyhvDmStgOkpj4pWU
+         dJRA==;
         dara=google.com
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@suse.com header.s=google header.b=aCUHKW1I;
-       spf=pass (google.com: domain of oneukum@suse.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=oneukum@suse.com;
-       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=suse.com;
-       dara=pass header.i=@lists.one-eyed-alien.net
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=OzBE4hPF;
+       spf=pass (google.com: domain of michal.pecio@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=michal.pecio@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=neutral header.i=@lists.one-eyed-alien.net
 Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
-        by mx.google.com with SMTPS id a640c23a62f3a-b4560ade553sor55994266b.12.2025.09.30.06.22.46
+        by mx.google.com with SMTPS id 2adb3069b0e04-5906d25b9fasor193430e87.3.2025.10.07.13.57.24
         for <usb-storage@lists.one-eyed-alien.net>
         (Google Transport Security);
-        Tue, 30 Sep 2025 06:22:46 -0700 (PDT)
-Received-SPF: pass (google.com: domain of oneukum@suse.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
-X-Forwarded-Encrypted: i=1; AJvYcCXJHXFGWw4fjo+ALxrzrr9OvoAdwCdVjuLdZ3XHgo7/nCSnI0duyKA1SwzC08Hh656czL3ll3F+l8JtWg==@lists.one-eyed-alien.net
-X-Gm-Gg: ASbGncv66B2XVKw115c+LgnJTAOBjsWqqEsMSPNCs2hHcCuBLa0+5LbA4aaGRfIghtY
-	8zBG0lWovWlczgWBMMgGpF+22+URxHIW55TgKnfB+rYMrK3tv+4GXnO/iLEm+gyzrQJpC1nrDqP
-	i/H5Y+EOGINFEpoqGGbuND3QdFynLM/4OEsu39OnzP4hmLxD/jPIvzwPo353/kOJ0tleUaXGuvj
-	tTV3KBJr1idHOMQ788kXym0y6/YQzuEYQRwjGWk6bBhWX5M27P2pDuOmMaGWF4pJHUciz3D+5Ks
-	+BlM+R+9FQ/tXqVGfYjsXyOvBq1spvnJpxnfiQoU8NvA3W/qgMimXa03lzRKDTLYiM85d2QVA9Y
-	hd23PUCIi1VPwDgtNzk3bUZlLg32KYj6dMHGBG8d73/RknyzHqM93E8IbCsFFIxOkY/gWzG79r4
-	OPCP84mvDAYtghtxoaE+DfbFs=
-X-Received: by 2002:a17:906:c150:b0:b04:6fc9:f108 with SMTP id a640c23a62f3a-b34b86a19b0mr2094007966b.24.1759238566474;
-        Tue, 30 Sep 2025 06:22:46 -0700 (PDT)
-Received: from ?IPV6:2001:a61:13a9:ac01:423a:d8a6:b2d:25a7? ([2001:a61:13a9:ac01:423a:d8a6:b2d:25a7])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-b3b0c9c9e8esm686349166b.59.2025.09.30.06.22.45
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 30 Sep 2025 06:22:46 -0700 (PDT)
-Message-ID: <6c65094e-81e5-4ce8-8592-9458c51116f7@suse.com>
-Date: Tue, 30 Sep 2025 15:22:45 +0200
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
+        Tue, 07 Oct 2025 13:57:24 -0700 (PDT)
+Received-SPF: pass (google.com: domain of michal.pecio@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+X-Forwarded-Encrypted: i=1; AJvYcCXZuF4u/Z3a7cuW+FM19+17xM8C4ZNsiIqCHoUeN9O6KQDJDmcHEFm+nW5bd7Y+4coQlxtu1gFJlwfnOQ==@lists.one-eyed-alien.net
+X-Gm-Gg: ASbGncszAepPUBD5l1D5fC37MmIhhW+jXmOwm7QxCDtnLa8fYA0NECSOkQaKKZT8DSG
+	az8KMI3CZA5hYZ9mZX8vUVOJyiWPb0hifOMXD7u1QiXpwctHXENkOXbpfQ6WZpIyv5ixM6ouR99
+	TKh20vAPpjxHXwiXp1Dh8yxcvCe6GzBWnx3MYWDmK9Gyt36gpxhUeK5VC9s8fb7N0iL5S/r5U28
+	wDEsgegtBth3GYc6BkbehoEVnl9OwhcUPbXE/uPhzvFFHXAzKvDFUt1I8IldShcUkJtDkBYOJbn
+	5ftxEsQvBu8YCwlH0GaPvxL/hWWI28MZIdRBSxVtw0LukxEOZeDHmMVDKqH6xlx+okKhaCMFrOK
+	qFVrWnp7V4Om2qH6/jyDsZ4ct+e16qrY80T4QF212laLT+aEoB3CilBxXRj8=
+X-Received: by 2002:a05:6512:398c:b0:57e:4998:95ce with SMTP id 2adb3069b0e04-5906d8ed6famr305072e87.35.1759870643322;
+        Tue, 07 Oct 2025 13:57:23 -0700 (PDT)
+Received: from foxbook (bff184.neoplus.adsl.tpnet.pl. [83.28.43.184])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-58b0112462esm6473271e87.3.2025.10.07.13.57.22
+        (version=TLS1_2 cipher=AES128-SHA bits=128/128);
+        Tue, 07 Oct 2025 13:57:22 -0700 (PDT)
+Date: Tue, 7 Oct 2025 22:57:18 +0200
+From: Michal Pecio <michal.pecio@gmail.com>
+To: guhuinan <guhuinan@xiaomi.com>
+Cc: Oliver Neukum <oneukum@suse.com>, Alan Stern
+ <stern@rowland.harvard.edu>, Greg Kroah-Hartman
+ <gregkh@linuxfoundation.org>, <linux-usb@vger.kernel.org>,
+ <linux-scsi@vger.kernel.org>, <usb-storage@lists.one-eyed-alien.net>,
+ <linux-kernel@vger.kernel.org>, "Yu Chen" <chenyu45@xiaomi.com>
 Subject: [usb-storage] Re: [PATCH] fix urb unmapping issue when the uas device
  is remove during ongoing data transfer
-To: guhuinan <guhuinan@xiaomi.com>, Alan Stern <stern@rowland.harvard.edu>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Cc: linux-usb@vger.kernel.org, linux-scsi@vger.kernel.org,
- usb-storage@lists.one-eyed-alien.net, linux-kernel@vger.kernel.org,
- Yu Chen <chenyu45@xiaomi.com>
-References: <20250930045309.21588-1-guhuinan@xiaomi.com>
-Content-Language: en-US
-From: "'Oliver Neukum' via USB Mass Storage on Linux" <usb-storage@lists.one-eyed-alien.net>
+Message-ID: <20251007225718.3c8b2cd8.michal.pecio@gmail.com>
 In-Reply-To: <20250930045309.21588-1-guhuinan@xiaomi.com>
-Content-Type: text/plain; charset="UTF-8"; format=flowed
-X-Original-Sender: oneukum@suse.com
+References: <20250930045309.21588-1-guhuinan@xiaomi.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="UTF-8"
+X-Original-Sender: michal.pecio@gmail.com
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@suse.com header.s=google header.b=aCUHKW1I;       spf=pass
- (google.com: domain of oneukum@suse.com designates 209.85.220.41 as permitted
- sender) smtp.mailfrom=oneukum@suse.com;       dmarc=pass (p=QUARANTINE
- sp=QUARANTINE dis=NONE) header.from=suse.com;       dara=pass header.i=@lists.one-eyed-alien.net
-X-Original-From: Oliver Neukum <oneukum@suse.com>
-Reply-To: Oliver Neukum <oneukum@suse.com>
+ header.i=@gmail.com header.s=20230601 header.b=OzBE4hPF;       spf=pass
+ (google.com: domain of michal.pecio@gmail.com designates 209.85.220.41 as
+ permitted sender) smtp.mailfrom=michal.pecio@gmail.com;       dmarc=pass
+ (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;       dara=neutral header.i=@lists.one-eyed-alien.net
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -157,9 +152,7 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-Hi,
-
-On 30.09.25 06:53, guhuinan wrote:
+On Tue, 30 Sep 2025 12:53:08 +0800, guhuinan wrote:
 > From: Owen Gu <guhuinan@xiaomi.com>
 > 
 > When a UAS device is unplugged during data transfer, there is
@@ -193,34 +186,31 @@ On 30.09.25 06:53, guhuinan wrote:
 > 
 > Signed-off-by: Yu Chen <chenyu45@xiaomi.com>
 > Signed-off-by: Owen Gu <guhuinan@xiaomi.com>
-> ---
->   drivers/usb/storage/uas.c | 4 +++-
->   1 file changed, 3 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/usb/storage/uas.c b/drivers/usb/storage/uas.c
-> index 4ed0dc19afe0..6bfc7281f7ad 100644
-> --- a/drivers/usb/storage/uas.c
-> +++ b/drivers/usb/storage/uas.c
-> @@ -699,7 +699,9 @@ static int uas_queuecommand_lck(struct scsi_cmnd *cmnd)
->   	 */
->   	if (err == -ENODEV) {
->   		set_host_byte(cmnd, DID_NO_CONNECT);
 
-Why then set the host byte unconditionally?
+Hi,
 
-> -		scsi_done(cmnd);
-> +		if (!(cmdinfo->state & (COMMAND_INFLIGHT | DATA_IN_URB_INFLIGHT |
-> +				DATA_OUT_URB_INFLIGHT)))
-> +			scsi_done(cmnd);
+Was this situation seen in the wild and/or reproduced, or only
+predicted theoretically? Was the patch tested?
 
-It would seem to me that in this case you need to make sure
-in the completion handlers that scsi_done() is always called,
-even if the resetting flag is set.
+I wonder what happens to the submitted URBs when scsi_done() is
+not called. Since the command URB was not submitted (or else we
+wouldn't be here I guess?) the device shouldn't have selected this
+stream before disconnection and it seems that the xHC won't try
+to move data on those URBs, so they won't complete with -EPROTO.
 
-	Regards
-		Oliver
+Will they sit there stuck until SCSI core times out and aborts
+the command? That's poor UX, speaking from experience here.
+
+Maybe it would make sense to unlink them? Unlinking Streams URBs
+is a sensitive topic because it's forbidden if they can become
+the Current Stream, but in this case it looks like they can't.
+
+Or am I missing something?
+
+Regards,
+Michal
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/6c65094e-81e5-4ce8-8592-9458c51116f7%40suse.com.
+To view this discussion visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20251007225718.3c8b2cd8.michal.pecio%40gmail.com.
