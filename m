@@ -1,158 +1,150 @@
-Return-Path: <usb-storage+bncBCBZDM6RSIMRBUGHXHEAMGQEZ5XWGCQ@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBC4LXIPCY4NRBVV4YDEAMGQE36UOQMY@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-oo1-xc47.google.com (mail-oo1-xc47.google.com [IPv6:2607:f8b0:4864:20::c47])
-	by mail.lfdr.de (Postfix) with ESMTPS id D9605C41C73
-	for <lists+usb-storage@lfdr.de>; Fri, 07 Nov 2025 22:25:38 +0100 (CET)
-Received: by mail-oo1-xc47.google.com with SMTP id 006d021491bc7-656ceb0c967sf489725eaf.1
-        for <lists+usb-storage@lfdr.de>; Fri, 07 Nov 2025 13:25:38 -0800 (PST)
-ARC-Seal: i=2; a=rsa-sha256; t=1762550737; cv=pass;
+Received: from mail-pl1-x648.google.com (mail-pl1-x648.google.com [IPv6:2607:f8b0:4864:20::648])
+	by mail.lfdr.de (Postfix) with ESMTPS id D8B2BC4389F
+	for <lists+usb-storage@lfdr.de>; Sun, 09 Nov 2025 05:53:44 +0100 (CET)
+Received: by mail-pl1-x648.google.com with SMTP id d9443c01a7336-294df925293sf23667725ad.2
+        for <lists+usb-storage@lfdr.de>; Sat, 08 Nov 2025 20:53:44 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1762664023; cv=pass;
         d=google.com; s=arc-20240605;
-        b=YOaA27K1ny6LHbGVzsp3O8GUc3GzKqYSK2IEgPz4QNzsj9RyL3lodn1Jr1qi7I8Pkq
-         4zJ3ShrzlKBPYIe34Cbos4qG9eEEEcwyu0Bk2PZ8EoU2Ep6eHlpLrGghZHeIpIly3xNw
-         irMb85scQuQfmb9uuywZ6eDABxtt8pJxZaGY3uA8SGWfa7cBpx+aFDPL0+qaffh/iRDU
-         0PULlKuTPFzGg6Ud4lgRvV/PYM+bLk4NuPZf/rQWSHQkRhmsryoiU2PVYUkMKfR0++7q
-         G7RUmGHwEpvekSWbv0HLprjY5zPuJ13PsAr/sWU4LVpsrtEudo+IAD0/8vm+ujZ98HjI
-         /CGw==
+        b=BHJ3Cl2MPBmkWpnUwBfUyM4Tsz3q75fu61zd6S5jQgHJG2zOjG43gcsUHnTrDHriHp
+         UlI2c0gpWNHEJ5LIDEImTKFtKAH0DvuRbx3bVVI3YzpiBEK+4VtxzOrtmc9muqa8mmxo
+         coexqMksV2C8FfNm7EDf2GwykhFeEB6U4BjTPTfxLYjH3dhwB5W9fHjJNmODT6e2aZIG
+         LRyfdq57V5G8TE1+HJpwVBg+hYt8XAkfq1Gqe8iFhbTyICU+oPr88CbXqZOq4Nuir7Mp
+         42EEzST5fQomQF1KzIe537oX15i+SaF7Gg00TBjtCP4P45G/sPWfbMGPDYvkCtORs6HU
+         lO+g==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:reply-to:content-transfer-encoding
-         :mime-version:message-id:date:subject:cc:to:from:dkim-signature;
-        bh=WSLcsfD/ogeerO9mAer5vPH7W3ctj7VrHO+oalz1oKw=;
-        fh=DUnPegFSumG+rzZVSakDUWhJOpjUwKEfj+Q23s258sA=;
-        b=LmNMpxVJNPuf4sFl4A5X0HrZ8giJ1+jeEZad5p+7stLK6Du7bB2bfGdgtTbpb6FJdr
-         Ly8I0zWg3o37eWiQd4ZWSlW7TvwENJYoRZPRNJVb9Hc+lvV/IAa17V6lc4amWNWQDJmh
-         CG+Sdl94Tu3AQ3BXdErya7ZecFxinyv+nZ+RBzL9IQCVy3aqMbKkpGCLHLFwtyzK+vOY
-         7vPVywxGhfH2nLHpog0kmOgnc/Zzm4JKY9q23X8PabLRGkrQ0TZFkIZfr1UPPce/E13I
-         VxOiOdKCQhvOIlC6y07Kzdou9suH/UzQQaEEtLpngFcWf15JIbJ9NHQfQYNXr+lkG56U
-         r1vg==;
+         :list-id:mailing-list:precedence:in-reply-to:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date:sender
+         :dkim-signature;
+        bh=2ZoGYWOm3BvKaj/+ZWuC1Z82EZMvGdSeeiU89Oq29Ok=;
+        fh=/NO0edNRSgAtFFLy6nbISlFmJ/DVJQUvmYeAfLjTR9c=;
+        b=BrLNyvWEJ/aYNnD+4f/lW31Rrs/qcUUIdeVvBdSBmqNjrk2oFkKA9GTzKMWEiyiJ4v
+         tuYWERXzkATpLemXRzk3R4ByFT11EyHmJ6s/5YGSABVKaEZHoZeAKBV7xv0veO2MccFH
+         Cx7lc8JMGcbPQpGGMb9IDWBYvag8GTJmd2/cgQQZpkdjPlMryRlLQkaWBgEGHmkERS3g
+         MPsKOc7RZGX+WNeqjiFiqdg32hCNBVDhLW5/mNF3iUmu0h5S3b00ECRbUZHJxv2JJS9N
+         gfpDnqFqlVO3JrZJjWOTrG924Dhj5o39SPo+4Hp0uX9FRXUomxQtwWMbzxuCtedDWjOC
+         qZeQ==;
         darn=lfdr.de
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@suse.com header.s=google header.b=Gj8dFZbz;
-       spf=pass (google.com: domain of marco.crivellari@suse.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=marco.crivellari@suse.com;
-       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=suse.com;
-       dara=neutral header.i=@lists.one-eyed-alien.net
+       dkim=pass header.i=@intel.com header.s=Intel header.b=T37iSCDK;
+       spf=pass (google.com: domain of lkp@intel.com designates 192.198.163.14 as permitted sender) smtp.mailfrom=lkp@intel.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=intel.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1762550737; x=1763155537; darn=lfdr.de;
+        d=lists.one-eyed-alien.net; s=google; t=1762664023; x=1763268823; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:reply-to
-         :x-original-authentication-results:x-original-sender
-         :content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=WSLcsfD/ogeerO9mAer5vPH7W3ctj7VrHO+oalz1oKw=;
-        b=c49PlT4f69zet/tCtUtVrMUMDUoso3h7UodJGbIbP5H/dK91KgYM5zwuu0FgaECejj
-         FdmTcDdzSvck2mcuDm8yIIUogk9/20KrKrvdWD/BOc1kYRDaCYTN8TTL8pjmRpMV42Kg
-         QC8RHkNCDgEQBBf411rHk4qn9kKV0vRcDER0w=
+         :list-id:mailing-list:precedence:x-original-authentication-results
+         :x-original-sender:in-reply-to:content-disposition:mime-version
+         :references:message-id:subject:cc:to:from:date:sender:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=2ZoGYWOm3BvKaj/+ZWuC1Z82EZMvGdSeeiU89Oq29Ok=;
+        b=L7B2+4CEZ+qkzekh0dP5wiMtAAygogA/KzAO8NrHmnZ+RbP6dFurOJAAgEm5SWltiQ
+         bvL2Qp0hNH3wN1ePfdaN1j1hqnpNsXCQJvsAn6lO3aYUazSS6/is3ppA+coe2NlRYKjk
+         RCSNz7DUaM/bpKZeatDNCKGuUU/Ty5eyQOMNI=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1762550737; x=1763155537;
+        d=1e100.net; s=20230601; t=1762664023; x=1763268823;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:reply-to
-         :x-original-authentication-results:x-original-sender
-         :content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-beenthere:x-gm-message-state:from:to:cc:subject
-         :date:message-id:reply-to;
-        bh=WSLcsfD/ogeerO9mAer5vPH7W3ctj7VrHO+oalz1oKw=;
-        b=MAEbZ71HO9LsufgpUd0Ncz8Ip/ohgN1eP/VbyIyjOD9sMZf873DYCS8+Pgcq8Ygj0+
-         GDnTPXNuvtTvS8BsRR9ADkzD9LwSNbZ5kkCPIPq6dueUVm5dt3hJrjyCKPPQx3XBZeT3
-         rrdaYrDJbBSARVfrB5so8YDJNQ7McpGlmlX1RTRhLIFiKnMKkBq6ZozxgJTowmovdP5R
-         9121YdvZJ+z7j7EYZP8ny5KUsm/co1bUPYvKyjzRoKQuwc4imhVKnky3VIJtosQ/8plh
-         1+045O0qLrTT4nnVSIC+B+5OOg1WklFLD12jV1gWKOks4Tx26ZgHg3yVw+bFPHGDQZhZ
-         1x1w==
-X-Forwarded-Encrypted: i=2; AJvYcCWB9NMKDVC6WH0ah1Cc6ePEBxqQZ+n7slEOjRTADHqKmZ5rw3ESP28r5C5NcImFkzFwdWmT7w==@lfdr.de
-X-Gm-Message-State: AOJu0Yy28MnWe8pOqwrlOtKJCUZ8ls+qr9lke6L6+SYm/qdhHJtd7Q2g
-	kFH1hjbKE7Brdb/lcUqYGEzBmeu4Uv/6l+V39zjLPjYrIs+OVh7KXcJijuOicbHXvIs=
-X-Google-Smtp-Source: AGHT+IE43Ovb2rwUDNDnMt7noVorM1R4auRDMs0pnT5M21XXcxkMB7+EuG76OO8CIXEZnz0dVrPS+g==
-X-Received: by 2002:a05:6820:4d51:10b0:653:6c32:6fe9 with SMTP id 006d021491bc7-656d8e24a61mr513873eaf.2.1762550737418;
-        Fri, 07 Nov 2025 13:25:37 -0800 (PST)
-X-BeenThere: usb-storage@lists.one-eyed-alien.net; h="Ae8XA+Z8+GcDhBSQwIQ74tYfU2c1W4J3SKE0Mjzx/s25xdLDuA=="
-Received: by 2002:a4a:db69:0:b0:656:d1ea:96fc with SMTP id 006d021491bc7-656d1ea9ae8ls275153eaf.2.-pod-prod-06-us;
- Fri, 07 Nov 2025 13:25:36 -0800 (PST)
-X-Forwarded-Encrypted: i=2; AJvYcCVmdKPf2McDnKIilI8FyC9scBDcN7rJ1hU3gxk27VofJLtcr/LeYjVh68kN3h1J7vyBwa0d0GiK/I9e0w==@lists.one-eyed-alien.net
-X-Received: by 2002:a05:6808:6f8c:b0:44f:e3d2:59db with SMTP id 5614622812f47-4502a24a4e6mr539926b6e.16.1762550736353;
-        Fri, 07 Nov 2025 13:25:36 -0800 (PST)
-Received: by 2002:a05:600c:5881:b0:471:cf5:89b with SMTP id 5b1f17b1804b1-4775d0034f2ms5e9;
-        Fri, 7 Nov 2025 07:42:48 -0800 (PST)
-X-Forwarded-Encrypted: i=2; AJvYcCWpEt71RJvuIS5hCHagp/LuzQj4ZM0j7NxQp4giSH9dbQ/qbatducrunbojK1l7rMRxxVHgnWdeUHW2zw==@lists.one-eyed-alien.net
-X-Received: by 2002:a05:6000:2882:b0:427:a37:ea3e with SMTP id ffacd0b85a97d-42ae5ae858bmr3305400f8f.52.1762530166401;
-        Fri, 07 Nov 2025 07:42:46 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1762530166; cv=none;
+         :x-spam-checked-in-group:list-id:mailing-list:precedence
+         :x-original-authentication-results:x-original-sender:in-reply-to
+         :content-disposition:mime-version:references:message-id:subject:cc
+         :to:from:date:x-beenthere:x-gm-message-state:sender:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=2ZoGYWOm3BvKaj/+ZWuC1Z82EZMvGdSeeiU89Oq29Ok=;
+        b=OaMwAtcGPrZ3Wuvya9B5JrxyzMX30ie5i1n+xw0/EdBArrXI8GKRv6EnAFgvJa2Ink
+         DdTKax9X9SjcgVY1w9gi6+/mDkfvYCABIyiVlUcCHHS+EPJmJ9vZq8y9jgB/ZDLkg1Km
+         IQuyRs7toGQ3Br2IpO2iyZCXFF/Cf/oC1Jing1IliA5S8HAlcYHHwHR7Lr8QuXW+NRLo
+         jPgC9sAfec97T1yFPt+cn5U1btxoInJqYBcxOdXNGb8VbixFmGxNrIt0PLlMlo3L5p3Q
+         qSMdwq4v3PEtoL0CcSmHUE7Xs0aN++pkcj2E9qpnDHyFez36x/9K6vrbsoCsExx59Sr5
+         eU/Q==
+Sender: usb-storage@lists.one-eyed-alien.net
+X-Forwarded-Encrypted: i=2; AJvYcCWQ4Im9vQt5+xWLpXwI1x9pdhxykKYq5iWmXVKlRQsbM1W65oudGz3zDA0nG1KM8AOndMsUwA==@lfdr.de
+X-Gm-Message-State: AOJu0YxJXxbd8t1kKIt+aLyVxyexnuks5XTzhLlihq2d18P9CYfzwzz4
+	7g4SCyzqWOENsqh7NsIlD1StGUiGdigBuRVdKdtUO/uQuwR598HqE4uJds6GG+JiPQk=
+X-Google-Smtp-Source: AGHT+IG2ZntTKfshQ9dVwTe8+Nvnj3yZ+zQhdjGD0gaXfzaq33mYtHCe3QhrLkMx3zbaDCobv+JjnQ==
+X-Received: by 2002:a17:902:fc46:b0:269:4759:904b with SMTP id d9443c01a7336-297e570bf23mr51988525ad.58.1762664023132;
+        Sat, 08 Nov 2025 20:53:43 -0800 (PST)
+X-BeenThere: usb-storage@lists.one-eyed-alien.net; h="Ae8XA+bsJI/Y+FpB3+dHvzpZo6VwPANrDa6GtMeGv1wLicI0Fw=="
+Received: by 2002:a17:90b:274d:b0:33b:529a:13ed with SMTP id
+ 98e67ed59e1d1-341cd1b9389ls3308674a91.0.-pod-prod-05-us; Sat, 08 Nov 2025
+ 20:53:41 -0800 (PST)
+X-Forwarded-Encrypted: i=2; AJvYcCUGzqEacR/dRD7wMbpebhYSTXZ3XFlMAMf4eYr8Yesc0v7mxjpFs01GaoD/NOHM5KpNryoPnWnCwy8IGw==@lists.one-eyed-alien.net
+X-Received: by 2002:a05:6a20:3ca5:b0:351:d6ff:dd0a with SMTP id adf61e73a8af0-353a3e69e57mr5564948637.49.1762664021343;
+        Sat, 08 Nov 2025 20:53:41 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1762664021; cv=none;
         d=google.com; s=arc-20240605;
-        b=dXtUYoI51JmwCRORcKonFrCF9t7IiIjnK0cIPR9tg5t7njwfaNuqhVmsL3LCED7CDV
-         GfwAD5QQ9HX8TyctEssuPVUUcczEUw5bpZ+M+cvJdXv3hEAZQfxbpnfEcfUXC10U91an
-         KjYRgpdkQ8tkbTaVmO99skwWTHvkD/csmjTValZDWU90BMaL3+/m+MPVOP2l50VhEVQl
-         AVWiXEOz5hj3QqYoowKM7bxs6XDB1mweODgqwKZ6y2bck255jbgmLXQkEzck7FZldNGk
-         5AIqZFU5ZxG05ROj1Wp85wEN0BEjm0s4UuVCzDupRSrG6ArBNRKoYYNdY/8/Km4o5vEL
-         OovQ==
+        b=FcQEBk5CWw8Y9i4bG6zZimZoM7gcuj2qRT8dyYb9aNQelFwPIRvteJ8fC3KeBF+ZPn
+         K+0yvMO0fkIyiNELDcAflX0t680l42deZE0HqjSrLRMGdYqwFCX8n9k4Njo/AWtwux5x
+         j+/fpM8vcQA0p81hjDChDiB778zkCae7GOIOn/BayMVEUbelrZI5qWIkbjmDPEw/SekA
+         P8GkEnVYmqZHph06eFduL+36GMzKZOeRwRjIZAofdfYjKIynF7YzqJFIYlszxiDIQJGx
+         3fo8PsT8pNZtoFLwbsgHq4cS5VZcsaBsavME1F04CDiDUJqbj6hsTv0sfP/gm4sdpd+J
+         TJvQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:dkim-signature;
-        bh=EEllDksTQmdd3u8PyFwFKXQ1ssazmQ/lfWRUKOA18nI=;
-        fh=W9A11W+xr1gfvKb10nvw5/dGxP9idbmhu0a++7ioRZw=;
-        b=HqF3SBRCZhNKghWpk+DUvGloqaagS+ZdX2t+WcsEWEZC97wZD/pH/Vf5x7z+sGkQ9M
-         X+t0WHcxdobePAzH8uoL2TP7E+V60dVVfzs4bTzl7XcPL08kexJ4M0VP+5uuXkid1wbF
-         7NgbW0ofvVLpCTsued+YngL8K4jQodYg5SIZM3LTvspdNi3EkfZC378/ezGbM6h9a4ZS
-         0kP1aMehyOW5q7Rw88tABavQWvYPrE7JPbX8Ju7cfUvgk7zIB7ZIc8bVk0kMT0yYyRWh
-         nJ5zkMNUAv1PUknWgvQ6GP3a6/M/3TFIS/Z4dAS1mU534hkp0Bzd0eUipIBZOOMq3Azc
-         s02w==;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:dkim-signature;
+        bh=FslYhnTepWULyevPdMS6JbmWeiIAi0U9cm4ndY59QQI=;
+        fh=lTgjTFSVgFDmf8r2xTtRPhUPzie8fSTjG6Q57y9dhSM=;
+        b=boz//IdWVdnjodUOKSCiVluZ2NPdnhMYYgGNaZ35tvDh6OFkb6VdOm07uEan4McvsY
+         gkL5INuWprI/lom19FmOUuIHPrr97/TYmJNBqqYRRcskuNt06AAGmRE6zzeo+EJqyE/Z
+         YE9joTwZgclif31Jb1BTvfNyp1rsGZxFFIof6j0XCe/ObsxI2AahZhIWTr0TqGKkNz8u
+         zAOKfOYjuMbntQgBfvqYWGAaAaNSlmSg/QkAZ35o+DirZ9nyJS/hzgYFBk3IyBixfbK8
+         avjXl4vlrYMZ6pJD2QUlVdA+9eKv0XL4BmQHAFCMEjVXj+yU5T0w13ZWvGIjHunicFub
+         QHaQ==;
         dara=google.com
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@suse.com header.s=google header.b=Gj8dFZbz;
-       spf=pass (google.com: domain of marco.crivellari@suse.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=marco.crivellari@suse.com;
-       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=suse.com;
-       dara=neutral header.i=@lists.one-eyed-alien.net
-Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
-        by mx.google.com with SMTPS id ffacd0b85a97d-42ac6769ec8sor481979f8f.9.2025.11.07.07.42.46
+       dkim=pass header.i=@intel.com header.s=Intel header.b=T37iSCDK;
+       spf=pass (google.com: domain of lkp@intel.com designates 192.198.163.14 as permitted sender) smtp.mailfrom=lkp@intel.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=intel.com
+Received: from mgamail.intel.com (mgamail.intel.com. [192.198.163.14])
+        by mx.google.com with ESMTPS id 41be03b00d2f7-ba8f5a725c8si2543624a12.264.2025.11.08.20.53.41
         for <usb-storage@lists.one-eyed-alien.net>
-        (Google Transport Security);
-        Fri, 07 Nov 2025 07:42:46 -0800 (PST)
-Received-SPF: pass (google.com: domain of marco.crivellari@suse.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
-X-Forwarded-Encrypted: i=1; AJvYcCVB3GYEmjIo2dGR62UNDt6Nm+A05165aOol4xTL4aku7VdBGmHYFh/jjui9PAqVsE/dsMuNx7oL5xq8Lg==@lists.one-eyed-alien.net
-X-Gm-Gg: ASbGncuQzrlsczm3X8Wgk014OnLmWenUo6N3FW0Kd1uyFEYWDA8UtTIOGDao23o92GN
-	//CSEGHVL6y0Xz2ZONaL3u0DMLKZhhQhjLtI7qDWZyUzj8XGLTBuQN+eRxAX4/SosTdBXUL60Ls
-	TcGldQyiYWDiW+jzi6sPII8Y0kNpS4CtMsMTgKXsRRQvUIXXxUWvTLVugp5jmRNa/6pQhaVNlA5
-	3ndvAaTSF42drzxlu6T70Rg8CSIrpcw9mbOo5jqb1IgseLa/Kqptw0PtAXJX+j8W67NlyN5wLsB
-	iBumBQIbaGSpVY+xrCOCn8WxSUlURoigPDNm5CgChZJyUak/zRTvFZw5V0O9u8+EcLdjpcc2GrS
-	QFoN/X7J+bJq0n/tVMRYP06dOiSGr9R/ydTryTpZ7+bJiyd1zgsJ+Ks01xXlm3lBvsezSVUVhgV
-	zUhKxkUvDBF5e53AccY3emoospNaUIRAUPNBY=
-X-Received: by 2002:a05:6000:1867:b0:429:d19f:d922 with SMTP id ffacd0b85a97d-42adc6895b6mr3593700f8f.11.1762530165930;
-        Fri, 07 Nov 2025 07:42:45 -0800 (PST)
-Received: from localhost.localdomain ([2a00:6d43:105:c401:e307:1a37:2e76:ce91])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-42ac67921c3sm6213783f8f.40.2025.11.07.07.42.44
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 07 Nov 2025 07:42:45 -0800 (PST)
-From: "'Marco Crivellari' via USB Mass Storage on Linux" <usb-storage@lists.one-eyed-alien.net>
-To: linux-kernel@vger.kernel.org,
-	linux-usb@vger.kernel.org,
-	linux-scsi@vger.kernel.org,
-	usb-storage@lists.one-eyed-alien.net
-Cc: Tejun Heo <tj@kernel.org>,
-	Lai Jiangshan <jiangshanlai@gmail.com>,
-	Frederic Weisbecker <frederic@kernel.org>,
-	Sebastian Andrzej Siewior <bigeasy@linutronix.de>,
-	Marco Crivellari <marco.crivellari@suse.com>,
-	Michal Hocko <mhocko@suse.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Oliver Neukum <oneukum@suse.com>,
-	Alan Stern <stern@rowland.harvard.edu>
-Subject: [usb-storage] [PATCH] usb: uas: add WQ_PERCPU to alloc_workqueue users
-Date: Fri,  7 Nov 2025 16:42:36 +0100
-Message-ID: <20251107154236.306620-1-marco.crivellari@suse.com>
-X-Mailer: git-send-email 2.51.1
+        (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
+        Sat, 08 Nov 2025 20:53:41 -0800 (PST)
+Received-SPF: pass (google.com: domain of lkp@intel.com designates 192.198.163.14 as permitted sender) client-ip=192.198.163.14;
+X-CSE-ConnectionGUID: HQLU3LVvREeKxm2Av+2fJw==
+X-CSE-MsgGUID: K+xYWCnvQES/qJrcevuIJg==
+X-IronPort-AV: E=McAfee;i="6800,10657,11607"; a="64792742"
+X-IronPort-AV: E=Sophos;i="6.19,291,1754982000"; 
+   d="scan'208";a="64792742"
+Received: from fmviesa006.fm.intel.com ([10.60.135.146])
+  by fmvoesa108.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 08 Nov 2025 20:53:41 -0800
+X-CSE-ConnectionGUID: h5x42WdvTqu1BX/UaJUSBw==
+X-CSE-MsgGUID: Tj0BVNGOSm68/3cRdyBYDA==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.19,291,1754982000"; 
+   d="scan'208";a="188227193"
+Received: from lkp-server01.sh.intel.com (HELO 6ef82f2de774) ([10.239.97.150])
+  by fmviesa006.fm.intel.com with ESMTP; 08 Nov 2025 20:53:38 -0800
+Received: from kbuild by 6ef82f2de774 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1vHxQm-0001mV-1n;
+	Sun, 09 Nov 2025 04:53:36 +0000
+Date: Sun, 9 Nov 2025 12:53:32 +0800
+From: kernel test robot <lkp@intel.com>
+To: ccc194101@163.com, stern@rowland.harvard.edu,
+	gregkh@linuxfoundation.org
+Cc: oe-kbuild-all@lists.linux.dev, linux-usb@vger.kernel.org,
+	usb-storage@lists.one-eyed-alien.net, linux-kernel@vger.kernel.org,
+	Chen Changcheng <chenchangcheng@kylinos.cn>
+Subject: [usb-storage] Re: [PATCH] usb: usb-storage: No additional quirks need
+ to be added to the ECD819-SU3 optical drive.
+Message-ID: <202511091243.dnLsy9w5-lkp@intel.com>
+References: <20251107061046.32339-1-ccc194101@163.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-X-Original-Sender: marco.crivellari@suse.com
+Content-Disposition: inline
+In-Reply-To: <20251107061046.32339-1-ccc194101@163.com>
+X-Original-Sender: lkp@intel.com
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@suse.com header.s=google header.b=Gj8dFZbz;       spf=pass
- (google.com: domain of marco.crivellari@suse.com designates 209.85.220.41 as
- permitted sender) smtp.mailfrom=marco.crivellari@suse.com;       dmarc=pass
- (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=suse.com;
-       dara=neutral header.i=@lists.one-eyed-alien.net
-X-Original-From: Marco Crivellari <marco.crivellari@suse.com>
-Reply-To: Marco Crivellari <marco.crivellari@suse.com>
+ header.i=@intel.com header.s=Intel header.b=T37iSCDK;       spf=pass
+ (google.com: domain of lkp@intel.com designates 192.198.163.14 as permitted
+ sender) smtp.mailfrom=lkp@intel.com;       dmarc=pass (p=NONE sp=NONE
+ dis=NONE) header.from=intel.com
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
+X-Spam-Checked-In-Group: usb-storage@lists.one-eyed-alien.net
 X-Google-Group-Id: 960895140360
 List-Post: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/post>,
  <mailto:usb-storage@lists.one-eyed-alien.net>
@@ -164,65 +156,62 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-Currently if a user enqueues a work item using schedule_delayed_work() the
-used wq is "system_wq" (per-cpu wq) while queue_delayed_work() use
-WORK_CPU_UNBOUND (used when a cpu is not specified). The same applies to
-schedule_work() that is using system_wq and queue_work(), that makes use
-again of WORK_CPU_UNBOUND.
-This lack of consistency cannot be addressed without refactoring the API.
+Hi,
 
-alloc_workqueue() treats all queues as per-CPU by default, while unbound
-workqueues must opt-in via WQ_UNBOUND.
+kernel test robot noticed the following build warnings:
 
-This default is suboptimal: most workloads benefit from unbound queues,
-allowing the scheduler to place worker threads where they=E2=80=99re needed=
- and
-reducing noise when CPUs are isolated.
+[auto build test WARNING on 284922f4c563aa3a8558a00f2a05722133237fe8]
 
-This continues the effort to refactor workqueue APIs, which began with
-the introduction of new workqueues and a new alloc_workqueue flag in:
+url:    https://github.com/intel-lab-lkp/linux/commits/ccc194101-163-com/usb-usb-storage-No-additional-quirks-need-to-be-added-to-the-ECD819-SU3-optical-drive/20251107-141330
+base:   284922f4c563aa3a8558a00f2a05722133237fe8
+patch link:    https://lore.kernel.org/r/20251107061046.32339-1-ccc194101%40163.com
+patch subject: [PATCH] usb: usb-storage: No additional quirks need to be added to the ECD819-SU3 optical drive.
+config: nios2-randconfig-001-20251109 (https://download.01.org/0day-ci/archive/20251109/202511091243.dnLsy9w5-lkp@intel.com/config)
+compiler: nios2-linux-gcc (GCC) 11.5.0
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20251109/202511091243.dnLsy9w5-lkp@intel.com/reproduce)
 
-commit 128ea9f6ccfb ("workqueue: Add system_percpu_wq and system_dfl_wq")
-commit 930c2ea566af ("workqueue: Add new WQ_PERCPU flag")
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202511091243.dnLsy9w5-lkp@intel.com/
 
-This change adds a new WQ_PERCPU flag to explicitly request
-alloc_workqueue() to be per-cpu when WQ_UNBOUND has not been specified.
+All warnings (new ones prefixed by >>):
 
-With the introduction of the WQ_PERCPU flag (equivalent to !WQ_UNBOUND),
-any alloc_workqueue() caller that doesn=E2=80=99t explicitly specify WQ_UNB=
-OUND
-must now use WQ_PERCPU.
+>> drivers/usb/storage/uas.c:928:24: warning: initialization of 'long unsigned int' from 'void *' makes integer from pointer without a cast [-Wint-conversion]
+     928 |         .driver_info = (flags) }
+         |                        ^
+   drivers/usb/storage/unusual_uas.h:100:1: note: in expansion of macro 'UNUSUAL_DEV'
+     100 | UNUSUAL_DEV(0x13fd, 0x3940, 0x0310, 0x0310,
+         | ^~~~~~~~~~~
+   drivers/usb/storage/uas.c:928:24: note: (near initialization for 'uas_usb_ids[9].driver_info')
+     928 |         .driver_info = (flags) }
+         |                        ^
+   drivers/usb/storage/unusual_uas.h:100:1: note: in expansion of macro 'UNUSUAL_DEV'
+     100 | UNUSUAL_DEV(0x13fd, 0x3940, 0x0310, 0x0310,
+         | ^~~~~~~~~~~
 
-Once migration is complete, WQ_UNBOUND can be removed and unbound will
-become the implicit default.
+Kconfig warnings: (for reference only)
+   WARNING: unmet direct dependencies detected for LEDS_EXPRESSWIRE
+   Depends on [n]: GPIOLIB [=n] || NEW_LEDS [=y] && GPIOLIB [=n]
+   Selected by [m]:
+   - BACKLIGHT_KTD2801 [=m] && HAS_IOMEM [=y] && BACKLIGHT_CLASS_DEVICE [=y]
 
-Suggested-by: Tejun Heo <tj@kernel.org>
-Signed-off-by: Marco Crivellari <marco.crivellari@suse.com>
----
- drivers/usb/storage/uas.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/usb/storage/uas.c b/drivers/usb/storage/uas.c
-index 4ed0dc19afe0..0657f5f7a51f 100644
---- a/drivers/usb/storage/uas.c
-+++ b/drivers/usb/storage/uas.c
-@@ -1265,7 +1265,7 @@ static int __init uas_init(void)
- {
- 	int rv;
-=20
--	workqueue =3D alloc_workqueue("uas", WQ_MEM_RECLAIM, 0);
-+	workqueue =3D alloc_workqueue("uas", WQ_MEM_RECLAIM | WQ_PERCPU, 0);
- 	if (!workqueue)
- 		return -ENOMEM;
-=20
---=20
-2.51.1
+vim +928 drivers/usb/storage/uas.c
 
---=20
-You received this message because you are subscribed to the Google Groups "=
-USB Mass Storage on Linux" group.
-To unsubscribe from this group and stop receiving emails from it, send an e=
-mail to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion visit https://groups.google.com/a/lists.one-eyed-al=
-ien.net/d/msgid/usb-storage/20251107154236.306620-1-marco.crivellari%40suse=
-.com.
+115bb1ffa54c39 Matthew Wilcox 2010-10-07  923  
+79b4c06112f12c Hans de Goede  2013-10-25  924  #define UNUSUAL_DEV(id_vendor, id_product, bcdDeviceMin, bcdDeviceMax, \
+79b4c06112f12c Hans de Goede  2013-10-25  925  		    vendorName, productName, useProtocol, useTransport, \
+79b4c06112f12c Hans de Goede  2013-10-25  926  		    initFunction, flags) \
+79b4c06112f12c Hans de Goede  2013-10-25  927  { USB_DEVICE_VER(id_vendor, id_product, bcdDeviceMin, bcdDeviceMax), \
+79b4c06112f12c Hans de Goede  2013-10-25 @928  	.driver_info = (flags) }
+79b4c06112f12c Hans de Goede  2013-10-25  929  
+
+-- 
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
+
+-- 
+You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
+To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
+To view this discussion visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/202511091243.dnLsy9w5-lkp%40intel.com.
