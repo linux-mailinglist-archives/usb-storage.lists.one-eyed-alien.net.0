@@ -1,135 +1,135 @@
-Return-Path: <usb-storage+bncBC4LXIPCY4NRBVV4YDEAMGQE36UOQMY@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBC4LXIPCY4NRBJ6CYDEAMGQEMHOIPXI@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-pl1-x648.google.com (mail-pl1-x648.google.com [IPv6:2607:f8b0:4864:20::648])
-	by mail.lfdr.de (Postfix) with ESMTPS id D8B2BC4389F
-	for <lists+usb-storage@lfdr.de>; Sun, 09 Nov 2025 05:53:44 +0100 (CET)
-Received: by mail-pl1-x648.google.com with SMTP id d9443c01a7336-294df925293sf23667725ad.2
-        for <lists+usb-storage@lfdr.de>; Sat, 08 Nov 2025 20:53:44 -0800 (PST)
-ARC-Seal: i=2; a=rsa-sha256; t=1762664023; cv=pass;
+Received: from mail-pj1-x1046.google.com (mail-pj1-x1046.google.com [IPv6:2607:f8b0:4864:20::1046])
+	by mail.lfdr.de (Postfix) with ESMTPS id A908DC438AF
+	for <lists+usb-storage@lfdr.de>; Sun, 09 Nov 2025 06:05:48 +0100 (CET)
+Received: by mail-pj1-x1046.google.com with SMTP id 98e67ed59e1d1-3418ad76023sf5045983a91.0
+        for <lists+usb-storage@lfdr.de>; Sat, 08 Nov 2025 21:05:47 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1762664744; cv=pass;
         d=google.com; s=arc-20240605;
-        b=BHJ3Cl2MPBmkWpnUwBfUyM4Tsz3q75fu61zd6S5jQgHJG2zOjG43gcsUHnTrDHriHp
-         UlI2c0gpWNHEJ5LIDEImTKFtKAH0DvuRbx3bVVI3YzpiBEK+4VtxzOrtmc9muqa8mmxo
-         coexqMksV2C8FfNm7EDf2GwykhFeEB6U4BjTPTfxLYjH3dhwB5W9fHjJNmODT6e2aZIG
-         LRyfdq57V5G8TE1+HJpwVBg+hYt8XAkfq1Gqe8iFhbTyICU+oPr88CbXqZOq4Nuir7Mp
-         42EEzST5fQomQF1KzIe537oX15i+SaF7Gg00TBjtCP4P45G/sPWfbMGPDYvkCtORs6HU
-         lO+g==
+        b=klrAXYXlX2B3Cnsfu/73Y2ql+J/zBw3KYsD5MfMLnk37FSPuRY5h+JAnihIObtcZHt
+         4cHMXmO9BcURjN10bcwdg/hIFsi2T/BdC9zXfzq+00kDTRerVFtCEZSEcRaDqGC7i5+F
+         nc2qb8ZqGWBGrx0psqtR2qOns4CQTYzujyRuab1ATTykfqgDG6pdw+4g6LDkx9hoxhw+
+         L2GJTC/i8+ssQvxSJLjckHYLnRuul/huBYHV0B2y1kpmSY8x+5p+PWxS6VQ+zXRSdRW2
+         Nd4QNFvrCED8eEel7wYQEdFAFPD41bCFmXR+5B32oXnm7zh/RKoksqoDDpPr/70kkzeB
+         NzJA==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:in-reply-to:content-disposition
          :mime-version:references:message-id:subject:cc:to:from:date:sender
          :dkim-signature;
-        bh=2ZoGYWOm3BvKaj/+ZWuC1Z82EZMvGdSeeiU89Oq29Ok=;
-        fh=/NO0edNRSgAtFFLy6nbISlFmJ/DVJQUvmYeAfLjTR9c=;
-        b=BrLNyvWEJ/aYNnD+4f/lW31Rrs/qcUUIdeVvBdSBmqNjrk2oFkKA9GTzKMWEiyiJ4v
-         tuYWERXzkATpLemXRzk3R4ByFT11EyHmJ6s/5YGSABVKaEZHoZeAKBV7xv0veO2MccFH
-         Cx7lc8JMGcbPQpGGMb9IDWBYvag8GTJmd2/cgQQZpkdjPlMryRlLQkaWBgEGHmkERS3g
-         MPsKOc7RZGX+WNeqjiFiqdg32hCNBVDhLW5/mNF3iUmu0h5S3b00ECRbUZHJxv2JJS9N
-         gfpDnqFqlVO3JrZJjWOTrG924Dhj5o39SPo+4Hp0uX9FRXUomxQtwWMbzxuCtedDWjOC
-         qZeQ==;
+        bh=Dd1Y2XanEyLocKu6P3YWxIukcWu0pIvWOeKFyyXOALQ=;
+        fh=rrLODbvabqxNVaGPEr7dEe3wYkDFddVaXM36mKCgn9o=;
+        b=LY7m3eBmGYeHcqz057SdzsAkM+JsW6AYEaV7INFR6nPKuI5MwIoxNWAyBQoJ/6x4Zq
+         TOjtA9MKylt08zl8cocdBsDJ7tkIxCTQyJoCjhsWQPFitsI++xKnzu5JuJ+vzFuERCHF
+         drfFeT5arN5t8ribzoU8/xXhT6LF0IOVAnvf7TK1Aytm7gMhehQ0g57RaA1mhwD202gF
+         HfAhLut11xqJp48ox/89tHnF7sY1NYyh55cULqA4CbeIVZxiNjK6vfgNUHzDSra6j40w
+         v0tKmOQso26b3shs+F0fEa+WjccvLr3Azf7FfJj9hMIzJFMwnKQ1XAMw92xocVqZInTr
+         HSFQ==;
         darn=lfdr.de
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@intel.com header.s=Intel header.b=T37iSCDK;
-       spf=pass (google.com: domain of lkp@intel.com designates 192.198.163.14 as permitted sender) smtp.mailfrom=lkp@intel.com;
+       dkim=pass header.i=@intel.com header.s=Intel header.b=Xrm449qO;
+       spf=pass (google.com: domain of lkp@intel.com designates 198.175.65.19 as permitted sender) smtp.mailfrom=lkp@intel.com;
        dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=intel.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1762664023; x=1763268823; darn=lfdr.de;
+        d=lists.one-eyed-alien.net; s=google; t=1762664744; x=1763269544; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:x-original-authentication-results
          :x-original-sender:in-reply-to:content-disposition:mime-version
          :references:message-id:subject:cc:to:from:date:sender:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=2ZoGYWOm3BvKaj/+ZWuC1Z82EZMvGdSeeiU89Oq29Ok=;
-        b=L7B2+4CEZ+qkzekh0dP5wiMtAAygogA/KzAO8NrHmnZ+RbP6dFurOJAAgEm5SWltiQ
-         bvL2Qp0hNH3wN1ePfdaN1j1hqnpNsXCQJvsAn6lO3aYUazSS6/is3ppA+coe2NlRYKjk
-         RCSNz7DUaM/bpKZeatDNCKGuUU/Ty5eyQOMNI=
+        bh=Dd1Y2XanEyLocKu6P3YWxIukcWu0pIvWOeKFyyXOALQ=;
+        b=HRHs6baMfrwU2u9dPQfTbQdnC5OfdIntKucue3x217pkuWSdNgUP7mSSBZ9cwGvDNf
+         olqYrPlIgdbpjb+8Elg5YRlbblQpZd7G6OywWdtGNoqrJNXyrdqd2JNNkmfhaKs4WqiO
+         k5aDZhOB91FV9VEEUHFzkV14yjyQY1AHLEKEo=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1762664023; x=1763268823;
+        d=1e100.net; s=20230601; t=1762664744; x=1763269544;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :x-spam-checked-in-group:list-id:mailing-list:precedence
          :x-original-authentication-results:x-original-sender:in-reply-to
          :content-disposition:mime-version:references:message-id:subject:cc
          :to:from:date:x-beenthere:x-gm-message-state:sender:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=2ZoGYWOm3BvKaj/+ZWuC1Z82EZMvGdSeeiU89Oq29Ok=;
-        b=OaMwAtcGPrZ3Wuvya9B5JrxyzMX30ie5i1n+xw0/EdBArrXI8GKRv6EnAFgvJa2Ink
-         DdTKax9X9SjcgVY1w9gi6+/mDkfvYCABIyiVlUcCHHS+EPJmJ9vZq8y9jgB/ZDLkg1Km
-         IQuyRs7toGQ3Br2IpO2iyZCXFF/Cf/oC1Jing1IliA5S8HAlcYHHwHR7Lr8QuXW+NRLo
-         jPgC9sAfec97T1yFPt+cn5U1btxoInJqYBcxOdXNGb8VbixFmGxNrIt0PLlMlo3L5p3Q
-         qSMdwq4v3PEtoL0CcSmHUE7Xs0aN++pkcj2E9qpnDHyFez36x/9K6vrbsoCsExx59Sr5
-         eU/Q==
+        bh=Dd1Y2XanEyLocKu6P3YWxIukcWu0pIvWOeKFyyXOALQ=;
+        b=PMjloeaTaX3Q4KhYf80B3wI8xBOno2GUU7Fc5WO1MFwkjUSVVgtZDeLzY872IoAOxT
+         wiRX8FHsb11NlpsTpjeraF7QVmetd5PAOmpqY4Ka2EUxsV18tAKYFdsoC3JUEUQOCccM
+         NIggZjihbsmiAcYYXgVO52FlqqDUVBiObqG8V/bpRiDcPjS0VZKUcYJuTRtGAsHtTrB6
+         9qGFQ3qHsC2RQ+FsVxVNsYlvQ74d7lnJSpOu8U0adiw6H3t2IlMSlwBjX/5IaP6d0CVU
+         aSpnIIOF5Bg5a9rs3yTCk6z3noPCSwm5f9VVM3ZCCPWo3GhQU6e4OCTGRwWYQikZvNAP
+         AGVg==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Forwarded-Encrypted: i=2; AJvYcCWQ4Im9vQt5+xWLpXwI1x9pdhxykKYq5iWmXVKlRQsbM1W65oudGz3zDA0nG1KM8AOndMsUwA==@lfdr.de
-X-Gm-Message-State: AOJu0YxJXxbd8t1kKIt+aLyVxyexnuks5XTzhLlihq2d18P9CYfzwzz4
-	7g4SCyzqWOENsqh7NsIlD1StGUiGdigBuRVdKdtUO/uQuwR598HqE4uJds6GG+JiPQk=
-X-Google-Smtp-Source: AGHT+IG2ZntTKfshQ9dVwTe8+Nvnj3yZ+zQhdjGD0gaXfzaq33mYtHCe3QhrLkMx3zbaDCobv+JjnQ==
-X-Received: by 2002:a17:902:fc46:b0:269:4759:904b with SMTP id d9443c01a7336-297e570bf23mr51988525ad.58.1762664023132;
-        Sat, 08 Nov 2025 20:53:43 -0800 (PST)
-X-BeenThere: usb-storage@lists.one-eyed-alien.net; h="Ae8XA+bsJI/Y+FpB3+dHvzpZo6VwPANrDa6GtMeGv1wLicI0Fw=="
-Received: by 2002:a17:90b:274d:b0:33b:529a:13ed with SMTP id
- 98e67ed59e1d1-341cd1b9389ls3308674a91.0.-pod-prod-05-us; Sat, 08 Nov 2025
- 20:53:41 -0800 (PST)
-X-Forwarded-Encrypted: i=2; AJvYcCUGzqEacR/dRD7wMbpebhYSTXZ3XFlMAMf4eYr8Yesc0v7mxjpFs01GaoD/NOHM5KpNryoPnWnCwy8IGw==@lists.one-eyed-alien.net
-X-Received: by 2002:a05:6a20:3ca5:b0:351:d6ff:dd0a with SMTP id adf61e73a8af0-353a3e69e57mr5564948637.49.1762664021343;
-        Sat, 08 Nov 2025 20:53:41 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1762664021; cv=none;
+X-Forwarded-Encrypted: i=2; AJvYcCV2YBlhOT24nOLvAOEqOs2C3T/kMYqeEEG+am5WHhuIWyD4Iz6d6N99QZs3tCVZuJAMu/X3cw==@lfdr.de
+X-Gm-Message-State: AOJu0YwWhkDTPxz/IxMAZFXMW2MN+iykfkfvfTfYffol6CXlgVLKi4sU
+	HdSylecB4edxNKPMfU+ER/hdETZ3M5TY8thCXXZZrxWhIhewFr2Z7JkN+fZazx4TTjY=
+X-Google-Smtp-Source: AGHT+IHN6WLqO9jLYs/tjEvziOUXQRVL6031B/hp8DtJ0x864khS6Hj7SVwpYsIaUD5CzPFWatk/9Q==
+X-Received: by 2002:a17:90b:2e85:b0:340:c261:f9db with SMTP id 98e67ed59e1d1-3436cb946c8mr5420547a91.10.1762664744221;
+        Sat, 08 Nov 2025 21:05:44 -0800 (PST)
+X-BeenThere: usb-storage@lists.one-eyed-alien.net; h="Ae8XA+asTqWa9mrfWBK9CLE0Y/gjAR/q0SxvMpGN8SUtVas0Pw=="
+Received: by 2002:a17:90b:42:b0:343:6a95:b0d2 with SMTP id 98e67ed59e1d1-3436a95b505ls1458999a91.1.-pod-prod-03-us;
+ Sat, 08 Nov 2025 21:05:43 -0800 (PST)
+X-Forwarded-Encrypted: i=2; AJvYcCVEhuOKk5eo+m/apCYh77JJgAxu4uI+5rF/JyZ4U3vtGHBUQ+BLLbZ0/e3jjYlW4HuUl2AbvD+2YJp2pA==@lists.one-eyed-alien.net
+X-Received: by 2002:a05:6a20:7283:b0:350:fa56:3f47 with SMTP id adf61e73a8af0-353a2f358f0mr5829550637.37.1762664742817;
+        Sat, 08 Nov 2025 21:05:42 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1762664742; cv=none;
         d=google.com; s=arc-20240605;
-        b=FcQEBk5CWw8Y9i4bG6zZimZoM7gcuj2qRT8dyYb9aNQelFwPIRvteJ8fC3KeBF+ZPn
-         K+0yvMO0fkIyiNELDcAflX0t680l42deZE0HqjSrLRMGdYqwFCX8n9k4Njo/AWtwux5x
-         j+/fpM8vcQA0p81hjDChDiB778zkCae7GOIOn/BayMVEUbelrZI5qWIkbjmDPEw/SekA
-         P8GkEnVYmqZHph06eFduL+36GMzKZOeRwRjIZAofdfYjKIynF7YzqJFIYlszxiDIQJGx
-         3fo8PsT8pNZtoFLwbsgHq4cS5VZcsaBsavME1F04CDiDUJqbj6hsTv0sfP/gm4sdpd+J
-         TJvQ==
+        b=F6cMixDInyZrWSup6cWkO+P0FtAtQ++aL7zLq4rdR7OAIWkIEzngL7mpL1fxeFw3fe
+         dwFDUhzoQFjd0JvpDwN4/COtV3msE0gk9dUgzuScqQzd4rfv0XA3BwsnNPFY/x6S30iC
+         DfZc9etJe4hkA8CDR9iQGuNiaA4AirLfbtlUQ8Bp2ni5fR/yJk9juDrT18u71ft1zdJM
+         +MqFiib8FupN74vwt0cFl1FWDyfEkjjnGtTm1x62AaEGgdAF0ttqVTP1x1qhic0I09fB
+         QAs4tafIUalvHOoWpEVJ+uwczW8TqeP4BkCeQc1XO5GMQLn2PFsehHqR1kLD+ibSP5ix
+         CqOw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:dkim-signature;
-        bh=FslYhnTepWULyevPdMS6JbmWeiIAi0U9cm4ndY59QQI=;
-        fh=lTgjTFSVgFDmf8r2xTtRPhUPzie8fSTjG6Q57y9dhSM=;
-        b=boz//IdWVdnjodUOKSCiVluZ2NPdnhMYYgGNaZ35tvDh6OFkb6VdOm07uEan4McvsY
-         gkL5INuWprI/lom19FmOUuIHPrr97/TYmJNBqqYRRcskuNt06AAGmRE6zzeo+EJqyE/Z
-         YE9joTwZgclif31Jb1BTvfNyp1rsGZxFFIof6j0XCe/ObsxI2AahZhIWTr0TqGKkNz8u
-         zAOKfOYjuMbntQgBfvqYWGAaAaNSlmSg/QkAZ35o+DirZ9nyJS/hzgYFBk3IyBixfbK8
-         avjXl4vlrYMZ6pJD2QUlVdA+9eKv0XL4BmQHAFCMEjVXj+yU5T0w13ZWvGIjHunicFub
-         QHaQ==;
+        bh=h0MgXN5FRuCYzRD9PgUgKKfX+xz3j5lRGkFq5of0MwU=;
+        fh=QIHRcab1SMF5YuVaTNhk2MA7UMSymMgLtTbs8Rcklnw=;
+        b=D9JXb/An0iWh/0qbUEUbIOkogMBCESofV7L7aqECGUUlNaViaGsUC98vrLgnAAq3KH
+         zlgL+ZVRbj279VAvOfLKuyttAAn458wME7Jm6DDq2be76bU2ow3rRGkpqRl0CjrlX2i/
+         iMUhHftT3p72Ivcu26yTEMyR3B+0viaoINjIMXYEHIVE2xtn1lnZBTis6vPWkBlOFe61
+         uaEEMP7ZP1GN8FSjzRHumVqBqVvQ6PxIikDLiHnp1VpAaY4762D/LQIMDcBeUWOY9j3d
+         GvqCXStSHd5cginpmY+XscltNW+PjRVIO4e6y+iGkAcJn3Ky7pRNolEOrqWRH3xygckn
+         aqRg==;
         dara=google.com
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@intel.com header.s=Intel header.b=T37iSCDK;
-       spf=pass (google.com: domain of lkp@intel.com designates 192.198.163.14 as permitted sender) smtp.mailfrom=lkp@intel.com;
+       dkim=pass header.i=@intel.com header.s=Intel header.b=Xrm449qO;
+       spf=pass (google.com: domain of lkp@intel.com designates 198.175.65.19 as permitted sender) smtp.mailfrom=lkp@intel.com;
        dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=intel.com
-Received: from mgamail.intel.com (mgamail.intel.com. [192.198.163.14])
-        by mx.google.com with ESMTPS id 41be03b00d2f7-ba8f5a725c8si2543624a12.264.2025.11.08.20.53.41
+Received: from mgamail.intel.com (mgamail.intel.com. [198.175.65.19])
+        by mx.google.com with ESMTPS id 41be03b00d2f7-ba8f5889329si5577967a12.284.2025.11.08.21.05.42
         for <usb-storage@lists.one-eyed-alien.net>
         (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
-        Sat, 08 Nov 2025 20:53:41 -0800 (PST)
-Received-SPF: pass (google.com: domain of lkp@intel.com designates 192.198.163.14 as permitted sender) client-ip=192.198.163.14;
-X-CSE-ConnectionGUID: HQLU3LVvREeKxm2Av+2fJw==
-X-CSE-MsgGUID: K+xYWCnvQES/qJrcevuIJg==
-X-IronPort-AV: E=McAfee;i="6800,10657,11607"; a="64792742"
+        Sat, 08 Nov 2025 21:05:42 -0800 (PST)
+Received-SPF: pass (google.com: domain of lkp@intel.com designates 198.175.65.19 as permitted sender) client-ip=198.175.65.19;
+X-CSE-ConnectionGUID: XxzbJ2n0Q/KVWa574X/lRQ==
+X-CSE-MsgGUID: 0mzi2tDqRqiYgHZVzJsvhA==
+X-IronPort-AV: E=McAfee;i="6800,10657,11607"; a="64638518"
 X-IronPort-AV: E=Sophos;i="6.19,291,1754982000"; 
-   d="scan'208";a="64792742"
-Received: from fmviesa006.fm.intel.com ([10.60.135.146])
-  by fmvoesa108.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 08 Nov 2025 20:53:41 -0800
-X-CSE-ConnectionGUID: h5x42WdvTqu1BX/UaJUSBw==
-X-CSE-MsgGUID: Tj0BVNGOSm68/3cRdyBYDA==
+   d="scan'208";a="64638518"
+Received: from orviesa005.jf.intel.com ([10.64.159.145])
+  by orvoesa111.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 08 Nov 2025 21:05:42 -0800
+X-CSE-ConnectionGUID: tfmRiFbtTsmEFp5uVbgV2Q==
+X-CSE-MsgGUID: 5e89+h57RXiGDU9wxyxXYQ==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.19,291,1754982000"; 
-   d="scan'208";a="188227193"
+   d="scan'208";a="193572600"
 Received: from lkp-server01.sh.intel.com (HELO 6ef82f2de774) ([10.239.97.150])
-  by fmviesa006.fm.intel.com with ESMTP; 08 Nov 2025 20:53:38 -0800
+  by orviesa005.jf.intel.com with ESMTP; 08 Nov 2025 21:05:40 -0800
 Received: from kbuild by 6ef82f2de774 with local (Exim 4.96)
 	(envelope-from <lkp@intel.com>)
-	id 1vHxQm-0001mV-1n;
-	Sun, 09 Nov 2025 04:53:36 +0000
-Date: Sun, 9 Nov 2025 12:53:32 +0800
+	id 1vHxcP-0001mp-1I;
+	Sun, 09 Nov 2025 05:05:37 +0000
+Date: Sun, 9 Nov 2025 13:05:25 +0800
 From: kernel test robot <lkp@intel.com>
 To: ccc194101@163.com, stern@rowland.harvard.edu,
 	gregkh@linuxfoundation.org
-Cc: oe-kbuild-all@lists.linux.dev, linux-usb@vger.kernel.org,
-	usb-storage@lists.one-eyed-alien.net, linux-kernel@vger.kernel.org,
+Cc: llvm@lists.linux.dev, oe-kbuild-all@lists.linux.dev,
+	linux-usb@vger.kernel.org, usb-storage@lists.one-eyed-alien.net,
+	linux-kernel@vger.kernel.org,
 	Chen Changcheng <chenchangcheng@kylinos.cn>
 Subject: [usb-storage] Re: [PATCH] usb: usb-storage: No additional quirks need
  to be added to the ECD819-SU3 optical drive.
-Message-ID: <202511091243.dnLsy9w5-lkp@intel.com>
+Message-ID: <202511091255.ohMJwQcj-lkp@intel.com>
 References: <20251107061046.32339-1-ccc194101@163.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="UTF-8"
@@ -137,8 +137,8 @@ Content-Disposition: inline
 In-Reply-To: <20251107061046.32339-1-ccc194101@163.com>
 X-Original-Sender: lkp@intel.com
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@intel.com header.s=Intel header.b=T37iSCDK;       spf=pass
- (google.com: domain of lkp@intel.com designates 192.198.163.14 as permitted
+ header.i=@intel.com header.s=Intel header.b=Xrm449qO;       spf=pass
+ (google.com: domain of lkp@intel.com designates 198.175.65.19 as permitted
  sender) smtp.mailfrom=lkp@intel.com;       dmarc=pass (p=NONE sp=NONE
  dis=NONE) header.from=intel.com
 Precedence: list
@@ -158,54 +158,51 @@ List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegro
 
 Hi,
 
-kernel test robot noticed the following build warnings:
+kernel test robot noticed the following build errors:
 
-[auto build test WARNING on 284922f4c563aa3a8558a00f2a05722133237fe8]
+[auto build test ERROR on 284922f4c563aa3a8558a00f2a05722133237fe8]
 
 url:    https://github.com/intel-lab-lkp/linux/commits/ccc194101-163-com/usb-usb-storage-No-additional-quirks-need-to-be-added-to-the-ECD819-SU3-optical-drive/20251107-141330
 base:   284922f4c563aa3a8558a00f2a05722133237fe8
 patch link:    https://lore.kernel.org/r/20251107061046.32339-1-ccc194101%40163.com
 patch subject: [PATCH] usb: usb-storage: No additional quirks need to be added to the ECD819-SU3 optical drive.
-config: nios2-randconfig-001-20251109 (https://download.01.org/0day-ci/archive/20251109/202511091243.dnLsy9w5-lkp@intel.com/config)
-compiler: nios2-linux-gcc (GCC) 11.5.0
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20251109/202511091243.dnLsy9w5-lkp@intel.com/reproduce)
+config: loongarch-randconfig-001-20251109 (https://download.01.org/0day-ci/archive/20251109/202511091255.ohMJwQcj-lkp@intel.com/config)
+compiler: clang version 22.0.0git (https://github.com/llvm/llvm-project b9ea93cd5c37fb6d606502fd01208dd48330549d)
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20251109/202511091255.ohMJwQcj-lkp@intel.com/reproduce)
 
 If you fix the issue in a separate patch/commit (i.e. not just a new version of
 the same patch/commit), kindly add following tags
 | Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202511091243.dnLsy9w5-lkp@intel.com/
+| Closes: https://lore.kernel.org/oe-kbuild-all/202511091255.ohMJwQcj-lkp@intel.com/
 
-All warnings (new ones prefixed by >>):
+All errors (new ones prefixed by >>):
 
->> drivers/usb/storage/uas.c:928:24: warning: initialization of 'long unsigned int' from 'void *' makes integer from pointer without a cast [-Wint-conversion]
-     928 |         .driver_info = (flags) }
-         |                        ^
-   drivers/usb/storage/unusual_uas.h:100:1: note: in expansion of macro 'UNUSUAL_DEV'
+   In file included from drivers/usb/storage/uas.c:931:
+>> drivers/usb/storage/unusual_uas.h:100:1: error: incompatible pointer to integer conversion initializing 'kernel_ulong_t' (aka 'unsigned long') with an expression of type 'void *' [-Wint-conversion]
      100 | UNUSUAL_DEV(0x13fd, 0x3940, 0x0310, 0x0310,
-         | ^~~~~~~~~~~
-   drivers/usb/storage/uas.c:928:24: note: (near initialization for 'uas_usb_ids[9].driver_info')
+         | ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     101 |                 "Initio Corporation",
+         |                 ~~~~~~~~~~~~~~~~~~~~~
+     102 |                 "external DVD burner ECD819-SU3",
+         |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     103 |                 USB_SC_DEVICE, USB_PR_DEVICE, NULL,
+         |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     104 |                 NULL),
+         |                 ~~~~~
+   drivers/usb/storage/uas.c:928:17: note: expanded from macro 'UNUSUAL_DEV'
      928 |         .driver_info = (flags) }
-         |                        ^
-   drivers/usb/storage/unusual_uas.h:100:1: note: in expansion of macro 'UNUSUAL_DEV'
-     100 | UNUSUAL_DEV(0x13fd, 0x3940, 0x0310, 0x0310,
-         | ^~~~~~~~~~~
-
-Kconfig warnings: (for reference only)
-   WARNING: unmet direct dependencies detected for LEDS_EXPRESSWIRE
-   Depends on [n]: GPIOLIB [=n] || NEW_LEDS [=y] && GPIOLIB [=n]
-   Selected by [m]:
-   - BACKLIGHT_KTD2801 [=m] && HAS_IOMEM [=y] && BACKLIGHT_CLASS_DEVICE [=y]
+         |                        ^~~~~~~
+   1 error generated.
 
 
-vim +928 drivers/usb/storage/uas.c
+vim +100 drivers/usb/storage/unusual_uas.h
 
-115bb1ffa54c39 Matthew Wilcox 2010-10-07  923  
-79b4c06112f12c Hans de Goede  2013-10-25  924  #define UNUSUAL_DEV(id_vendor, id_product, bcdDeviceMin, bcdDeviceMax, \
-79b4c06112f12c Hans de Goede  2013-10-25  925  		    vendorName, productName, useProtocol, useTransport, \
-79b4c06112f12c Hans de Goede  2013-10-25  926  		    initFunction, flags) \
-79b4c06112f12c Hans de Goede  2013-10-25  927  { USB_DEVICE_VER(id_vendor, id_product, bcdDeviceMin, bcdDeviceMax), \
-79b4c06112f12c Hans de Goede  2013-10-25 @928  	.driver_info = (flags) }
-79b4c06112f12c Hans de Goede  2013-10-25  929  
+ > 100	UNUSUAL_DEV(0x13fd, 0x3940, 0x0310, 0x0310,
+   101			"Initio Corporation",
+   102			"external DVD burner ECD819-SU3",
+   103			USB_SC_DEVICE, USB_PR_DEVICE, NULL,
+   104			NULL),
+   105	
 
 -- 
 0-DAY CI Kernel Test Service
@@ -214,4 +211,4 @@ https://github.com/intel/lkp-tests/wiki
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/202511091243.dnLsy9w5-lkp%40intel.com.
+To view this discussion visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/202511091255.ohMJwQcj-lkp%40intel.com.
