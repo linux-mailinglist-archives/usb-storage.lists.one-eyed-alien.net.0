@@ -1,146 +1,142 @@
-Return-Path: <usb-storage+bncBC4LXIPCY4NRBJ6CYDEAMGQEMHOIPXI@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBDVZHOPX5EOBBW4FYXEAMGQEYE4J7OI@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-pj1-x1046.google.com (mail-pj1-x1046.google.com [IPv6:2607:f8b0:4864:20::1046])
-	by mail.lfdr.de (Postfix) with ESMTPS id A908DC438AF
-	for <lists+usb-storage@lfdr.de>; Sun, 09 Nov 2025 06:05:48 +0100 (CET)
-Received: by mail-pj1-x1046.google.com with SMTP id 98e67ed59e1d1-3418ad76023sf5045983a91.0
-        for <lists+usb-storage@lfdr.de>; Sat, 08 Nov 2025 21:05:47 -0800 (PST)
-ARC-Seal: i=2; a=rsa-sha256; t=1762664744; cv=pass;
+Received: from mail-pj1-x1047.google.com (mail-pj1-x1047.google.com [IPv6:2607:f8b0:4864:20::1047])
+	by mail.lfdr.de (Postfix) with ESMTPS id 00592C44BE0
+	for <lists+usb-storage@lfdr.de>; Mon, 10 Nov 2025 02:41:49 +0100 (CET)
+Received: by mail-pj1-x1047.google.com with SMTP id 98e67ed59e1d1-3438744f12fsf2096348a91.2
+        for <lists+usb-storage@lfdr.de>; Sun, 09 Nov 2025 17:41:49 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1762738908; cv=pass;
         d=google.com; s=arc-20240605;
-        b=klrAXYXlX2B3Cnsfu/73Y2ql+J/zBw3KYsD5MfMLnk37FSPuRY5h+JAnihIObtcZHt
-         4cHMXmO9BcURjN10bcwdg/hIFsi2T/BdC9zXfzq+00kDTRerVFtCEZSEcRaDqGC7i5+F
-         nc2qb8ZqGWBGrx0psqtR2qOns4CQTYzujyRuab1ATTykfqgDG6pdw+4g6LDkx9hoxhw+
-         L2GJTC/i8+ssQvxSJLjckHYLnRuul/huBYHV0B2y1kpmSY8x+5p+PWxS6VQ+zXRSdRW2
-         Nd4QNFvrCED8eEel7wYQEdFAFPD41bCFmXR+5B32oXnm7zh/RKoksqoDDpPr/70kkzeB
-         NzJA==
+        b=LI9yMNd6FfzEJZrVptCD7hjir3gmffrv5w5TlhaEC/s21jqsV9nXJlgGUTLFfO6dZ5
+         qxxNzZgVFF/0mmOxFWyDHB/GG738ZGAFgjhWSibrWQq7QGIcT9sjE71Pq102zEcc1/Hw
+         eQOiCUVnkdZU9YDrFk2X1+VBk2sE8oXu1NRWMJv4RGcDt3M4FEvhr+d0nuFs6x8CBhUP
+         PvccF5MvZZoTtqPEDMnF6XEvbdJymsYQRbwDKgXokQU0XTs91FdmbXHJZuUjwfHBNsuB
+         HueCe9i/aAIg3+teDnCYoeLa47IExOfiQAbx7Q/b8cpKw4Lvp5uQGlBpmtj5Sao/CY6H
+         KhjA==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:in-reply-to:content-disposition
-         :mime-version:references:message-id:subject:cc:to:from:date:sender
-         :dkim-signature;
-        bh=Dd1Y2XanEyLocKu6P3YWxIukcWu0pIvWOeKFyyXOALQ=;
-        fh=rrLODbvabqxNVaGPEr7dEe3wYkDFddVaXM36mKCgn9o=;
-        b=LY7m3eBmGYeHcqz057SdzsAkM+JsW6AYEaV7INFR6nPKuI5MwIoxNWAyBQoJ/6x4Zq
-         TOjtA9MKylt08zl8cocdBsDJ7tkIxCTQyJoCjhsWQPFitsI++xKnzu5JuJ+vzFuERCHF
-         drfFeT5arN5t8ribzoU8/xXhT6LF0IOVAnvf7TK1Aytm7gMhehQ0g57RaA1mhwD202gF
-         HfAhLut11xqJp48ox/89tHnF7sY1NYyh55cULqA4CbeIVZxiNjK6vfgNUHzDSra6j40w
-         v0tKmOQso26b3shs+F0fEa+WjccvLr3Azf7FfJj9hMIzJFMwnKQ1XAMw92xocVqZInTr
-         HSFQ==;
+         :list-id:mailing-list:precedence:message-id:mime-version:references
+         :subject:cc:to:from:date:sender:dkim-signature;
+        bh=ci+TnNaTqkUb/LqwSBXiHV+0nKDrEakYXgaEqnj0GBs=;
+        fh=Ot54iTIuWye0Y3lOvohQQToPORCuQQfHWSaD0VyCT1Q=;
+        b=EMTK8zWGN7KRlJpvprmLQ9m7GS01EeosryzgEj/Iwxi5ubtOPj8VxYTmKt/4/GNxPz
+         TNiut9hqWggN8XxSAl9Jo8ddsnWpzQxHNo2ss/yodP70CizMcqFEfQKFWlHKjCNAWGbA
+         E4lwEQrKttfzfucW9LhtXLPFR3Np2IbOBMoWs5H2HaflNABsCEXFm/RCNCI/f5l/tL0D
+         Fuv7u1+Qlr1RGj7Rz7Jg2WpPkbZ862visjokrHI7QMBJFFBAJH5UXhqzkI0/7KpAYMr0
+         l916ZFTDjOdIWLyoXY4oZ9F6DVX6BqPFxUz5sa0RgyG+75+sNB2qj0L5+VVmaWEjBToT
+         45/Q==;
         darn=lfdr.de
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@intel.com header.s=Intel header.b=Xrm449qO;
-       spf=pass (google.com: domain of lkp@intel.com designates 198.175.65.19 as permitted sender) smtp.mailfrom=lkp@intel.com;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=intel.com
+       dkim=pass header.i=@163.com header.s=s110527 header.b="RZscf/x9";
+       spf=pass (google.com: domain of ccc194101@163.com designates 220.197.31.2 as permitted sender) smtp.mailfrom=ccc194101@163.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=163.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1762664744; x=1763269544; darn=lfdr.de;
+        d=lists.one-eyed-alien.net; s=google; t=1762738908; x=1763343708; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :list-id:mailing-list:precedence:x-original-authentication-results
-         :x-original-sender:in-reply-to:content-disposition:mime-version
-         :references:message-id:subject:cc:to:from:date:sender:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=Dd1Y2XanEyLocKu6P3YWxIukcWu0pIvWOeKFyyXOALQ=;
-        b=HRHs6baMfrwU2u9dPQfTbQdnC5OfdIntKucue3x217pkuWSdNgUP7mSSBZ9cwGvDNf
-         olqYrPlIgdbpjb+8Elg5YRlbblQpZd7G6OywWdtGNoqrJNXyrdqd2JNNkmfhaKs4WqiO
-         k5aDZhOB91FV9VEEUHFzkV14yjyQY1AHLEKEo=
+         :x-original-sender:message-id:mime-version:references:subject:cc:to
+         :from:date:sender:from:to:cc:subject:date:message-id:reply-to;
+        bh=ci+TnNaTqkUb/LqwSBXiHV+0nKDrEakYXgaEqnj0GBs=;
+        b=Op7O6JDiEo3ZSo55C2OGte0gCM+s/3rU499vugSls41JZFoJr/C1Gb6O77F7n8sN7c
+         3cjoj26VUuCLTM00YcvcIz3zLHOsmCsBm4sKX2CW21eF6xtAPxW6ATpQvSXf1PIJU7Pm
+         mPjIeTsJCyq1CTShyvS13+X9gVt/ngBP/JFeY=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1762664744; x=1763269544;
+        d=1e100.net; s=20230601; t=1762738908; x=1763343708;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
          :x-spam-checked-in-group:list-id:mailing-list:precedence
-         :x-original-authentication-results:x-original-sender:in-reply-to
-         :content-disposition:mime-version:references:message-id:subject:cc
-         :to:from:date:x-beenthere:x-gm-message-state:sender:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=Dd1Y2XanEyLocKu6P3YWxIukcWu0pIvWOeKFyyXOALQ=;
-        b=PMjloeaTaX3Q4KhYf80B3wI8xBOno2GUU7Fc5WO1MFwkjUSVVgtZDeLzY872IoAOxT
-         wiRX8FHsb11NlpsTpjeraF7QVmetd5PAOmpqY4Ka2EUxsV18tAKYFdsoC3JUEUQOCccM
-         NIggZjihbsmiAcYYXgVO52FlqqDUVBiObqG8V/bpRiDcPjS0VZKUcYJuTRtGAsHtTrB6
-         9qGFQ3qHsC2RQ+FsVxVNsYlvQ74d7lnJSpOu8U0adiw6H3t2IlMSlwBjX/5IaP6d0CVU
-         aSpnIIOF5Bg5a9rs3yTCk6z3noPCSwm5f9VVM3ZCCPWo3GhQU6e4OCTGRwWYQikZvNAP
-         AGVg==
+         :x-original-authentication-results:x-original-sender:message-id
+         :mime-version:references:subject:cc:to:from:date:x-beenthere
+         :x-gm-message-state:sender:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=ci+TnNaTqkUb/LqwSBXiHV+0nKDrEakYXgaEqnj0GBs=;
+        b=ugomsE54ts8EnFqieEncWAVj71d1hZgChMJp4BUqUZm+raJbv74Mg/sk6IW0Aeap4t
+         Fdqe3i7w3BVoIEaZS8kWi6uN4NaJ7AwOzAoDLVIBVoCb7QEbJqKTlIiwMv6ExUK3GpnR
+         B+QZ14ehQVMv0kfNCmacNS05f8OJhSaMmXi4mI91m9alYNkJmoNyfRsvZeVTxWrtjSdH
+         4QfwCAVf6aJn4L3DmotPL1EzDdyYZk8yc2bAVBcMrmMX0XvtXMg4Me+GfS9f1C5VgGYL
+         zHY0WtganuCVjvXEv9XODe8OcbGIpToOipxt4nRT4ucqVJ1XctRm/3I2jinQDvE5KB+S
+         I3vQ==
 Sender: usb-storage@lists.one-eyed-alien.net
-X-Forwarded-Encrypted: i=2; AJvYcCV2YBlhOT24nOLvAOEqOs2C3T/kMYqeEEG+am5WHhuIWyD4Iz6d6N99QZs3tCVZuJAMu/X3cw==@lfdr.de
-X-Gm-Message-State: AOJu0YwWhkDTPxz/IxMAZFXMW2MN+iykfkfvfTfYffol6CXlgVLKi4sU
-	HdSylecB4edxNKPMfU+ER/hdETZ3M5TY8thCXXZZrxWhIhewFr2Z7JkN+fZazx4TTjY=
-X-Google-Smtp-Source: AGHT+IHN6WLqO9jLYs/tjEvziOUXQRVL6031B/hp8DtJ0x864khS6Hj7SVwpYsIaUD5CzPFWatk/9Q==
-X-Received: by 2002:a17:90b:2e85:b0:340:c261:f9db with SMTP id 98e67ed59e1d1-3436cb946c8mr5420547a91.10.1762664744221;
-        Sat, 08 Nov 2025 21:05:44 -0800 (PST)
-X-BeenThere: usb-storage@lists.one-eyed-alien.net; h="Ae8XA+asTqWa9mrfWBK9CLE0Y/gjAR/q0SxvMpGN8SUtVas0Pw=="
-Received: by 2002:a17:90b:42:b0:343:6a95:b0d2 with SMTP id 98e67ed59e1d1-3436a95b505ls1458999a91.1.-pod-prod-03-us;
- Sat, 08 Nov 2025 21:05:43 -0800 (PST)
-X-Forwarded-Encrypted: i=2; AJvYcCVEhuOKk5eo+m/apCYh77JJgAxu4uI+5rF/JyZ4U3vtGHBUQ+BLLbZ0/e3jjYlW4HuUl2AbvD+2YJp2pA==@lists.one-eyed-alien.net
-X-Received: by 2002:a05:6a20:7283:b0:350:fa56:3f47 with SMTP id adf61e73a8af0-353a2f358f0mr5829550637.37.1762664742817;
-        Sat, 08 Nov 2025 21:05:42 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1762664742; cv=none;
+X-Forwarded-Encrypted: i=2; AJvYcCUsrVK2fbGS90pUCgV0w+VyFmXP6uRyI6Y13R4aGWZTHTDxdvuBNhVLcmq8rp/+1V4jwtDBNQ==@lfdr.de
+X-Gm-Message-State: AOJu0YzPpTDJN9hWPLG7zRfdsy5L6IMZM+defqCQgJzap1QijqLw/BmK
+	u8MSLFaehOJQhTbqXFMovX6XxiICQnV5fwxjWDEByvd0/DYvkUrygYUVNbl1GzBfzNE=
+X-Google-Smtp-Source: AGHT+IGnSRlbEY3VZbjbODer0/cI56tWOXzLT4478eN9Pn+2cUl58ZD6loUws+YyDYJYQbmxpB9sQg==
+X-Received: by 2002:a17:90b:3848:b0:33f:ebc2:645 with SMTP id 98e67ed59e1d1-3436cbb3b4dmr7750876a91.20.1762738908098;
+        Sun, 09 Nov 2025 17:41:48 -0800 (PST)
+X-BeenThere: usb-storage@lists.one-eyed-alien.net; h="Ae8XA+ZsJE8Zr0DTqsz3pIhp7mEJYn3xrnsvbO3z/qkQj3Fvkw=="
+Received: by 2002:a17:90b:48c3:b0:340:7380:d09b with SMTP id
+ 98e67ed59e1d1-341cd19e724ls4887403a91.2.-pod-prod-08-us; Sun, 09 Nov 2025
+ 17:41:46 -0800 (PST)
+X-Forwarded-Encrypted: i=2; AJvYcCVoKHHrIeUqTftJ18s30RfinXRAqTRoceSyyjQjQKvpo2KTkgblRY8mSjGyONdrK9SRYVA6EQSMCNpGBA==@lists.one-eyed-alien.net
+X-Received: by 2002:a17:90b:2d48:b0:330:84c8:92d0 with SMTP id 98e67ed59e1d1-3436cbb3b7bmr7832265a91.24.1762738906376;
+        Sun, 09 Nov 2025 17:41:46 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1762738906; cv=none;
         d=google.com; s=arc-20240605;
-        b=F6cMixDInyZrWSup6cWkO+P0FtAtQ++aL7zLq4rdR7OAIWkIEzngL7mpL1fxeFw3fe
-         dwFDUhzoQFjd0JvpDwN4/COtV3msE0gk9dUgzuScqQzd4rfv0XA3BwsnNPFY/x6S30iC
-         DfZc9etJe4hkA8CDR9iQGuNiaA4AirLfbtlUQ8Bp2ni5fR/yJk9juDrT18u71ft1zdJM
-         +MqFiib8FupN74vwt0cFl1FWDyfEkjjnGtTm1x62AaEGgdAF0ttqVTP1x1qhic0I09fB
-         QAs4tafIUalvHOoWpEVJ+uwczW8TqeP4BkCeQc1XO5GMQLn2PFsehHqR1kLD+ibSP5ix
-         CqOw==
+        b=O7/X/b6wQKvlhoZzALP4VTo2JJ8mzwV0CclFtOX2ElwItKjervrkoshGYKADQarjda
+         ku9DvU+YI1cUMxMQZN07Ohjd7Uefz+LVlwFLrTpWT5oBnd5U4MIIDSSKoprNZyAGOj/B
+         bHMyT41ZfYnLrGX35uRqt6NEadOr49AQy6axIS+JeXawEeKiX0S6v9e4HGY3Oz8VjWu2
+         ZaIRQ7Hd4L3d/Q/rz1QAOdI/bp/0LXu89DaxOmdAwhSkspFSGtmsftNjZK9WvtOUpNPl
+         mEgVpFnJe2Cgk4DdiCDIfdOk+6IY3vbPexpzR3LnbmWSYy++gz32q8l9a+av7nmuovoo
+         7giw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
+        h=content-transfer-encoding:message-id:mime-version:references
          :subject:cc:to:from:date:dkim-signature;
-        bh=h0MgXN5FRuCYzRD9PgUgKKfX+xz3j5lRGkFq5of0MwU=;
-        fh=QIHRcab1SMF5YuVaTNhk2MA7UMSymMgLtTbs8Rcklnw=;
-        b=D9JXb/An0iWh/0qbUEUbIOkogMBCESofV7L7aqECGUUlNaViaGsUC98vrLgnAAq3KH
-         zlgL+ZVRbj279VAvOfLKuyttAAn458wME7Jm6DDq2be76bU2ow3rRGkpqRl0CjrlX2i/
-         iMUhHftT3p72Ivcu26yTEMyR3B+0viaoINjIMXYEHIVE2xtn1lnZBTis6vPWkBlOFe61
-         uaEEMP7ZP1GN8FSjzRHumVqBqVvQ6PxIikDLiHnp1VpAaY4762D/LQIMDcBeUWOY9j3d
-         GvqCXStSHd5cginpmY+XscltNW+PjRVIO4e6y+iGkAcJn3Ky7pRNolEOrqWRH3xygckn
-         aqRg==;
+        bh=QnfMvaPTMRSHfNakYl6JhID6E7Ylz4P5ZDkx8TBftPg=;
+        fh=AQqeQFlH/T9bHVCJYjN38Rswocg+hDDiqs93Mn+50fI=;
+        b=AzAKmivx/ksQxwqCP2SUikIrUOIt45QbmRnkJe+jHIz2w7xhJb7PREh/V3qmoe2P1x
+         SW/mqdbNsIEFXWjPUlfMEreIQQVP7YWE4H71Z07mXv8Qlr+6tgrs6gP6XV3uMnuI8LHv
+         5HYQxssUUZ4Q/23iZ+rWdXfx60TzwXl2jEG2qouy4yaCmnkbwSaMM4IThOJTuuIVkhRq
+         +4cfCbWMLsIhh/rkCt6s4VBSnTUMrjo9EWj8uu4W3IOzh44xY1w/o2W8ewvPy9yUMHp6
+         NFyx0Bj08QLB0tqCcVyF1HHtaX7PV0Lh2PM7CKfH160biRI8OcIDMQyJ89l5MGwizQD/
+         AraQ==;
         dara=google.com
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@intel.com header.s=Intel header.b=Xrm449qO;
-       spf=pass (google.com: domain of lkp@intel.com designates 198.175.65.19 as permitted sender) smtp.mailfrom=lkp@intel.com;
-       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=intel.com
-Received: from mgamail.intel.com (mgamail.intel.com. [198.175.65.19])
-        by mx.google.com with ESMTPS id 41be03b00d2f7-ba8f5889329si5577967a12.284.2025.11.08.21.05.42
+       dkim=pass header.i=@163.com header.s=s110527 header.b="RZscf/x9";
+       spf=pass (google.com: domain of ccc194101@163.com designates 220.197.31.2 as permitted sender) smtp.mailfrom=ccc194101@163.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=163.com
+Received: from m16.mail.163.com (m16.mail.163.com. [220.197.31.2])
+        by mx.google.com with ESMTPS id 98e67ed59e1d1-341a68b6943si8507792a91.25.2025.11.09.17.41.44
         for <usb-storage@lists.one-eyed-alien.net>
-        (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
-        Sat, 08 Nov 2025 21:05:42 -0800 (PST)
-Received-SPF: pass (google.com: domain of lkp@intel.com designates 198.175.65.19 as permitted sender) client-ip=198.175.65.19;
-X-CSE-ConnectionGUID: XxzbJ2n0Q/KVWa574X/lRQ==
-X-CSE-MsgGUID: 0mzi2tDqRqiYgHZVzJsvhA==
-X-IronPort-AV: E=McAfee;i="6800,10657,11607"; a="64638518"
-X-IronPort-AV: E=Sophos;i="6.19,291,1754982000"; 
-   d="scan'208";a="64638518"
-Received: from orviesa005.jf.intel.com ([10.64.159.145])
-  by orvoesa111.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 08 Nov 2025 21:05:42 -0800
-X-CSE-ConnectionGUID: tfmRiFbtTsmEFp5uVbgV2Q==
-X-CSE-MsgGUID: 5e89+h57RXiGDU9wxyxXYQ==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.19,291,1754982000"; 
-   d="scan'208";a="193572600"
-Received: from lkp-server01.sh.intel.com (HELO 6ef82f2de774) ([10.239.97.150])
-  by orviesa005.jf.intel.com with ESMTP; 08 Nov 2025 21:05:40 -0800
-Received: from kbuild by 6ef82f2de774 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1vHxcP-0001mp-1I;
-	Sun, 09 Nov 2025 05:05:37 +0000
-Date: Sun, 9 Nov 2025 13:05:25 +0800
-From: kernel test robot <lkp@intel.com>
-To: ccc194101@163.com, stern@rowland.harvard.edu,
-	gregkh@linuxfoundation.org
-Cc: llvm@lists.linux.dev, oe-kbuild-all@lists.linux.dev,
-	linux-usb@vger.kernel.org, usb-storage@lists.one-eyed-alien.net,
-	linux-kernel@vger.kernel.org,
-	Chen Changcheng <chenchangcheng@kylinos.cn>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sun, 09 Nov 2025 17:41:46 -0800 (PST)
+Received-SPF: pass (google.com: domain of ccc194101@163.com designates 220.197.31.2 as permitted sender) client-ip=220.197.31.2;
+Received: from ccc-pc (unknown [])
+	by gzsmtp3 (Coremail) with SMTP id PigvCgBXcvHFQhFpJ7ubDQ--.63164S2;
+	Mon, 10 Nov 2025 09:41:26 +0800 (CST)
+Date: Mon, 10 Nov 2025 09:41:25 +0800
+From: "ccc194101@163.com" <ccc194101@163.com>
+To: stern <stern@rowland.harvard.edu>, 
+	"Benjamin Tissoires" <benjamin.tissoires@redhat.com>, 
+	"Alan Swanson" <reiver@improbability.net>
+Cc: gregkh <gregkh@linuxfoundation.org>, 
+	linux-usb <linux-usb@vger.kernel.org>, 
+	usb-storage <usb-storage@lists.one-eyed-alien.net>, 
+	linux-kernel <linux-kernel@vger.kernel.org>, 
+	chenchangcheng <chenchangcheng@kylinos.cn>
 Subject: [usb-storage] Re: [PATCH] usb: usb-storage: No additional quirks need
  to be added to the ECD819-SU3 optical drive.
-Message-ID: <202511091255.ohMJwQcj-lkp@intel.com>
-References: <20251107061046.32339-1-ccc194101@163.com>
-MIME-Version: 1.0
+References: <20251107061046.32339-1-ccc194101@163.com>, 
+	<c7bf59b5-8078-4b47-b56a-7b5568272d07@rowland.harvard.edu>
+X-Priority: 3
+X-GUID: 01AFFED0-E363-49A2-9672-038AE8F694B6
+X-Has-Attach: no
+X-Mailer: Foxmail 7.2.25.375[cn]
+Mime-Version: 1.0
+Message-ID: <202511100941253989454@163.com>
 Content-Type: text/plain; charset="UTF-8"
-Content-Disposition: inline
-In-Reply-To: <20251107061046.32339-1-ccc194101@163.com>
-X-Original-Sender: lkp@intel.com
+X-CM-TRANSID: PigvCgBXcvHFQhFpJ7ubDQ--.63164S2
+X-Coremail-Antispam: 1Uf129KBjvJXoWxXry5XryrJF4UGFW8KFyUWrg_yoWrJFW8pr
+	WUta1DCrWkGF1fGwn2yr1UuFyFq3WkAFn5GayUG3y5Xr1Y93WkJr4UAw4UJa4UCrs3ZF1I
+	9ayqvr9rKFW8CaDanT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDUYxBIdaVFxhVjvjDU0xZFpf9x07Ua9aPUUUUU=
+X-Originating-IP: [116.128.244.169]
+X-CM-SenderInfo: 5fffimiurqiqqrwthudrp/1tbiQRgB3mkQG10v6wACs-
+X-Original-Sender: ccc194101@163.com
 X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@intel.com header.s=Intel header.b=Xrm449qO;       spf=pass
- (google.com: domain of lkp@intel.com designates 198.175.65.19 as permitted
- sender) smtp.mailfrom=lkp@intel.com;       dmarc=pass (p=NONE sp=NONE
- dis=NONE) header.from=intel.com
+ header.i=@163.com header.s=s110527 header.b="RZscf/x9";       spf=pass
+ (google.com: domain of ccc194101@163.com designates 220.197.31.2 as permitted
+ sender) smtp.mailfrom=ccc194101@163.com;       dmarc=pass (p=NONE sp=NONE
+ dis=NONE) header.from=163.com
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -156,59 +152,85 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-Hi,
-
-kernel test robot noticed the following build errors:
-
-[auto build test ERROR on 284922f4c563aa3a8558a00f2a05722133237fe8]
-
-url:    https://github.com/intel-lab-lkp/linux/commits/ccc194101-163-com/usb-usb-storage-No-additional-quirks-need-to-be-added-to-the-ECD819-SU3-optical-drive/20251107-141330
-base:   284922f4c563aa3a8558a00f2a05722133237fe8
-patch link:    https://lore.kernel.org/r/20251107061046.32339-1-ccc194101%40163.com
-patch subject: [PATCH] usb: usb-storage: No additional quirks need to be added to the ECD819-SU3 optical drive.
-config: loongarch-randconfig-001-20251109 (https://download.01.org/0day-ci/archive/20251109/202511091255.ohMJwQcj-lkp@intel.com/config)
-compiler: clang version 22.0.0git (https://github.com/llvm/llvm-project b9ea93cd5c37fb6d606502fd01208dd48330549d)
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20251109/202511091255.ohMJwQcj-lkp@intel.com/reproduce)
-
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202511091255.ohMJwQcj-lkp@intel.com/
-
-All errors (new ones prefixed by >>):
-
-   In file included from drivers/usb/storage/uas.c:931:
->> drivers/usb/storage/unusual_uas.h:100:1: error: incompatible pointer to integer conversion initializing 'kernel_ulong_t' (aka 'unsigned long') with an expression of type 'void *' [-Wint-conversion]
-     100 | UNUSUAL_DEV(0x13fd, 0x3940, 0x0310, 0x0310,
-         | ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-     101 |                 "Initio Corporation",
-         |                 ~~~~~~~~~~~~~~~~~~~~~
-     102 |                 "external DVD burner ECD819-SU3",
-         |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-     103 |                 USB_SC_DEVICE, USB_PR_DEVICE, NULL,
-         |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-     104 |                 NULL),
-         |                 ~~~~~
-   drivers/usb/storage/uas.c:928:17: note: expanded from macro 'UNUSUAL_DEV'
-     928 |         .driver_info = (flags) }
-         |                        ^~~~~~~
-   1 error generated.
 
 
-vim +100 drivers/usb/storage/unusual_uas.h
+>On Fri, Nov 07, 2025 at 02:10:46PM +0800, ccc194101@163.com wrote:
+>> From: Chen Changcheng <chenchangcheng@kylinos.cn>
+>> 
+>> The optical drive of ECD819-SU3 has the same vid and pid as INIC-3069,
+>> as follows:
+>> T:? Bus=02 Lev=02 Prnt=02 Port=01 Cnt=01 Dev#=? 3 Spd=5000 MxCh= 0
+>> D:? Ver= 3.00 Cls=00(>ifc ) Sub=00 Prot=00 MxPS= 9 #Cfgs=? 1
+>> P:? Vendor=13fd ProdID=3940 Rev= 3.10
+>> S:? Manufacturer=HL-DT-ST
+>> S:? Product= DVD+-RW GT80N
+>> S:? SerialNumber=423349524E4E38303338323439202020
+>> C:* #Ifs= 1 Cfg#= 1 Atr=80 MxPwr=144mA
+>> I:* If#= 0 Alt= 0 #EPs= 2 Cls=08(stor.) Sub=02 Prot=50 Driver=usb-storage
+>> E:? Ad=83(I) Atr=02(Bulk) MxPS=1024 Ivl=0ms
+>> E:? Ad=0a(O) Atr=02(Bulk) MxPS=1024 Ivl=0ms
+>> 
+>> This will result in the optical drive device also adding
+>> the quirks of US_FL_NO_ATA_1X. When performing an erase operation,
+>> it will fail, and the reason for the failure is as follows:
+>> [? 388.967742] sr 5:0:0:0: [sr0] tag#0 Send: scmd 0x00000000d20c33a7
+>> [? 388.967742] sr 5:0:0:0: [sr0] tag#0 CDB: ATA command pass through(12)/Blank a1 11 00 00 00 00 00 00 00 00 00 00
+>> [? 388.967773] sr 5:0:0:0: [sr0] tag#0 Done: SUCCESS Result: hostbyte=DID_TARGET_FAILURE driverbyte=DRIVER_OK cmd_age=0s
+>> [? 388.967773] sr 5:0:0:0: [sr0] tag#0 CDB: ATA command pass through(12)/Blank a1 11 00 00 00 00 00 00 00 00 00 00
+>> [? 388.967803] sr 5:0:0:0: [sr0] tag#0 Sense Key : Illegal Request [current]
+>> [? 388.967803] sr 5:0:0:0: [sr0] tag#0 Add. Sense: Invalid field in cdb
+>> [? 388.967803] sr 5:0:0:0: [sr0] tag#0 scsi host busy 1 failed 0
+>> [? 388.967803] sr 5:0:0:0: Notifying upper driver of completion (result 8100002)
+>> [? 388.967834] sr 5:0:0:0: [sr0] tag#0 0 sectors total, 0 bytes done.
+>> 
+>> Signed-off-by: Chen Changcheng <chenchangcheng@kylinos.cn>
+>> ---
+>>? drivers/usb/storage/unusual_uas.h | 6 ++++++
+>>? 1 file changed, 6 insertions(+)
+>> 
+>> diff --git a/drivers/usb/storage/unusual_uas.h b/drivers/usb/storage/unusual_uas.h
+>> index 1477e31d7763..6d32b787bff8 100644
+>> --- a/drivers/usb/storage/unusual_uas.h
+>> +++ b/drivers/usb/storage/unusual_uas.h
+>> @@ -97,6 +97,12 @@ UNUSUAL_DEV(0x125f, 0xa94a, 0x0160, 0x0160,
+>>? 		USB_SC_DEVICE, USB_PR_DEVICE, NULL,
+>>? 		US_FL_NO_ATA_1X),
+>>? 
+>> +UNUSUAL_DEV(0x13fd, 0x3940, 0x0310, 0x0310,
+>> +		"Initio Corporation",
+>> +		"external DVD burner ECD819-SU3",
+>> +		USB_SC_DEVICE, USB_PR_DEVICE, NULL,
+>> +		NULL),
+>> +
+>>? /* Reported-by: Benjamin Tissoires <benjamin.tissoires@redhat.com> */
+>>? UNUSUAL_DEV(0x13fd, 0x3940, 0x0000, 0x9999,
+>>? 		"Initio Corporation",
+>
+>It's unprecedented to have two quirks with the same VID and PID, where 
+>the second augments the first by virtue of its wider range of bcdDevice 
+>values.
+>
+>As explained in commit 89f23d51defc ("uas: Add US_FL_IGNORE_RESIDUE for 
+>Initio Corporation INIC-3069"), the original Initio Corporation 
+>quirk in unusual_uas.h was added as a copy of the corresponding quirk in 
+>unusual_devs.h, which applies only to bcdDevice = 0x0209.? Should we 
+>simply limit the existing unusual_uas.h quirk in the same way?
+>
+>Benjamin and Alan, you two appear to be the people who originally
+>reported the need for this uas quirk.? Do you have any objection to 
+>changing the bcdDevice range from 0x0000 - 0x9999 to 0x0209 - 0x0209?? 
+>Or can you suggest a range that does not include 0x0310?
+>
+>Alan Stern
 
- > 100	UNUSUAL_DEV(0x13fd, 0x3940, 0x0310, 0x0310,
-   101			"Initio Corporation",
-   102			"external DVD burner ECD819-SU3",
-   103			USB_SC_DEVICE, USB_PR_DEVICE, NULL,
-   104			NULL),
-   105	
+Of course, we cannot have two quirks on devices with the same PID and VID. 
+However, since we do not have the INIC-3069 USB device here, we cannot
+determine how to narrow down the scope. As you suggested,
+it would be best to narrow the bcdDevice range to 0x0209 - 0x0209.
 
--- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+Chen Changcheng
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/202511091255.ohMJwQcj-lkp%40intel.com.
+To view this discussion visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/202511100941253989454%40163.com.
