@@ -1,146 +1,184 @@
-Return-Path: <usb-storage+bncBCO3PDUQQMDRBBMZ7HEAMGQE6LLQMFI@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBD2NT6VEXYMRBPPG7HEAMGQEQOHVUDA@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-qt1-x846.google.com (mail-qt1-x846.google.com [IPv6:2607:f8b0:4864:20::846])
-	by mail.lfdr.de (Postfix) with ESMTPS id A2418C7168F
-	for <lists+usb-storage@lfdr.de>; Thu, 20 Nov 2025 00:02:41 +0100 (CET)
-Received: by mail-qt1-x846.google.com with SMTP id d75a77b69052e-4ee09693109sf6290721cf.3
-        for <lists+usb-storage@lfdr.de>; Wed, 19 Nov 2025 15:02:41 -0800 (PST)
-ARC-Seal: i=2; a=rsa-sha256; t=1763593350; cv=pass;
+Received: from mail-pl1-x645.google.com (mail-pl1-x645.google.com [IPv6:2607:f8b0:4864:20::645])
+	by mail.lfdr.de (Postfix) with ESMTPS id 3B682C71B45
+	for <lists+usb-storage@lfdr.de>; Thu, 20 Nov 2025 02:47:43 +0100 (CET)
+Received: by mail-pl1-x645.google.com with SMTP id d9443c01a7336-297f587dc2esf9067535ad.2
+        for <lists+usb-storage@lfdr.de>; Wed, 19 Nov 2025 17:47:43 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1763603261; cv=pass;
         d=google.com; s=arc-20240605;
-        b=D/i7vOmvUyOcjBwNo29eptVsxeO1TP8z5HGfbErdJWVT7BHS1vkxlQmWI9RXqK7HEr
-         cvAILE0/AR77biX5VzInJgXla0RCVcguni3Qu2cEiOJ3ar1dczM14OtdkBiz3Bf3dEZU
-         v01GMxYY1mBOB5Ybeh6tqcgzZKNTEN1cWwIB4z5Yf2nIbnbw4RbCH9+nfNNGDK6/XvV3
-         fA+xIzbmD9rMSUqMJlWeimXNZRvDJDuhXX7JEKT63nmq8lgXJSuAv/V6WUdO8VP7FW1D
-         2nM6vS6pXBBW+NfuOf5YbExUbPRbZUljwyOUOEo1kB3P28ywjrf8RVkFT+u5mN0lAsy4
-         BbNA==
+        b=Gp0jFfLh9Se7yj/lQj6375VA9cNKjPaZEqPk9fF+XVeDISl61cA+9cuQV2vQzeUuv6
+         VHVicFNTHNNccIdkP6BMVZap6KQxN99/5j48oyX0JTm6YKQigboQ4B3L3ZxUKRHipULt
+         ma/0j102aSz22WE+ZZL7icPDt9sS/jbU1PmJ6SS6sC9ZI6qi5rFM4AbPc3mvYsULN27U
+         BjN3IaqgRaKWZ2i6aoTmkwDs6KXwNchXzDx64UybBtwlHyQo9zCiDhaHuATXocHrf52s
+         9Mj7UdnF0lhcM2nJnvFj8PRF505zR6jB0sYfPuBCQ3Z29Rlnr6aNPgcmuA6Dk+hGFPkM
+         2yfA==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:sender:dkim-signature;
-        bh=wXX8fQGOzjFVUAJgFud5xLEpldg5BlBqitwKQDQtDpU=;
-        fh=8WyckiietTOTHwqjtGoTaizufPFq/dycApBBQUfn690=;
-        b=V2Cxn/0chiZWwlIlxVPDKZfaBtH8hHz+kh01FRxdI9+jSwM/EjF4gOamW3kfqjIHIn
-         X0h69bbbtvzHuw7E7POhKQ3aborIrUQAz3KKkDwdi5xWlM0dlXiygAo7rP2Xt5mjjcyI
-         N3Xxb0V4AcipiraQswe/+461te5cP2XaBJoy5Ppa52gBgig0aXFgHr+HA8g17h06u7uq
-         U1FvzgnFrnqNaJzWzHitVRegrU6O3z5faet0YXQaRzW4+V5+ki09Wbi2/TDHG+f2cRXq
-         bYeML9psr1gzTaGkZZtxjYK0cA/o7D9w37gj0p8RZRzEqgSbdJoSMKzB88+jVMH8WOYv
-         hXjA==;
+         :list-id:mailing-list:precedence:reply-to:mime-version:references
+         :in-reply-to:message-id:subject:cc:to:from:date:dkim-signature;
+        bh=A8XdfEV2Z6/q2HJ6zuqB0UT9Fa/p99/ijROLiGfgd/g=;
+        fh=TS14IMZmk/iDFr0RiK4zWfs4qrrBksoLPDEArjZNtic=;
+        b=gndRmXn/JB2sczX/0GJN01tQcu0LNtaZEpQDzH2h3Zl+5JNDE7Jy0Yg+4A+K9ZtOyk
+         6tVnD3ID4BUcgKWlkC31zQFfBWWm2kbMv6kSLpgiqNN1UphWiUwOMgzZ62Z7AD5YSIES
+         AcobvLUNMUzgwKbCWL9zfqPrWbUsWaduScAjwbhWpAjJjFo+G/C05K1rLQ7ZO5y5h6/y
+         RHPUWNynuik0DNJvuJHYBuEolIgpCEI+Qg3sroZr9YpeGGUnlk/P2AR935dK7MVkHPUA
+         Nztw+agPXvfNzMenfgAV0BvcIWlOaf35XXFTqhToJIHBnFCeDI/6znKC5Av1jaJCIfZa
+         M2tg==;
         darn=lfdr.de
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@runbox.com header.s=selector1 header.b=PlFDAXm9;
-       spf=pass (google.com: domain of david.laight.linux_spam@runbox.com designates 2a0c:5a00:149::25 as permitted sender) smtp.mailfrom=david.laight.linux_spam@runbox.com;
-       dmarc=fail (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+       dkim=pass header.i=@kernel.org header.s=k20201202 header.b=uF2z7xSs;
+       spf=pass (google.com: domain of kuba@kernel.org designates 172.234.252.31 as permitted sender) smtp.mailfrom=kuba@kernel.org;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=kernel.org
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1763593350; x=1764198150; darn=lfdr.de;
+        d=lists.one-eyed-alien.net; s=google; t=1763603261; x=1764208061; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:x-original-authentication-results
-         :x-original-sender:mime-version:references:in-reply-to:message-id
-         :date:subject:cc:to:from:sender:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=wXX8fQGOzjFVUAJgFud5xLEpldg5BlBqitwKQDQtDpU=;
-        b=Gh+9HtKqBQIi46hywrfOkXPSneWuXJ9X+z0EDlWU0jAU7YUbhYpH9Pc5xRRdwrViig
-         0BzHD4lYHX/QrWlIGqwqVa9i23u2qG1/vW0sCukiJ6xuEI9bW3BfZhbBpLCFHfbogw8K
-         F9Vhh78Yw55hSizDZWSNlfskib9A3/xi+YcA4=
+         :list-id:mailing-list:precedence:reply-to
+         :x-original-authentication-results:x-original-sender:mime-version
+         :references:in-reply-to:message-id:subject:cc:to:from:date:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=A8XdfEV2Z6/q2HJ6zuqB0UT9Fa/p99/ijROLiGfgd/g=;
+        b=jxDYm7AGpccrVMICRMy2D9VnP2rAaTQYUvDTehT6NPmK9mUeT939sea3IcTVsW72RT
+         Bff5Dc4l7KgAIC535sMX0hfltsX/MKbMVJyL4OLljralTtzi/cVnVAvrdrvVxDlMkNp+
+         OQkyrhw9GW2uLAC8HUtKp13d+GzwGl6Fl21kU=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1763593350; x=1764198150;
+        d=1e100.net; s=20230601; t=1763603261; x=1764208061;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:x-original-authentication-results
-         :x-original-sender:mime-version:references:in-reply-to:message-id
-         :date:subject:cc:to:from:x-beenthere:x-gm-message-state:sender:from
-         :to:cc:subject:date:message-id:reply-to;
-        bh=wXX8fQGOzjFVUAJgFud5xLEpldg5BlBqitwKQDQtDpU=;
-        b=fUt7Vuq0wbK05zajNZREDOKrieolu2zCKc4BuhojD3y+VBL3V4cNsH30D7GHWu8Wwn
-         N/KkF4oC/hhcPq1qmxtXfWkek12snBPmns03hM/wWWzf7bSUzrSsdSFmFLOAIzSAafFo
-         L0j1XFlduq1xC139jUiHwEbZ4IQ6nIMb2OKFAVa2BvceA2E6cdJzkJLKzfYtMQ7e7Qup
-         F+zUi3nvMrCDhk7OcuosN4T9u+T7Wn52fZTerAnYkMEVNJp+gidI4UPkut8TQeJAJuAH
-         uzsXyx+IDGT8aAGUd3L+PXaNvOlQ2Lmj22nfs+ttxv1IYZUCix42fozZ+xXHdGnucMFp
-         vvxg==
-Sender: usb-storage@lists.one-eyed-alien.net
-X-Forwarded-Encrypted: i=2; AJvYcCXYSIwNWccXcMo9tRLCktdufdM6KdV/MyqiF8WT7OXuYH8CiH/7ba8uHSVLR2qk0pQLAxha9Q==@lfdr.de
-X-Gm-Message-State: AOJu0YxNV8qJsKUvgyP9xJRujSiGUJauMy5lljjS00pcwK2eu01jeC3Q
-	UF8VXLOjDvOa5kwLu7mCQQBC9SS7F0P3CxXHz5U6Bv3j0Iho0lXEFyYpEXsQy5PAAUM=
-X-Google-Smtp-Source: AGHT+IH/ko+eoFvZxtI9wZecMVU7uDYK1WM4ZI9W/2V2mIjpbI+kJHYex15zkwDxqWdJtm3zKtmeMg==
-X-Received: by 2002:ac8:5a43:0:b0:4ed:a6b0:5c26 with SMTP id d75a77b69052e-4ee49685315mr14778481cf.58.1763593349552;
-        Wed, 19 Nov 2025 15:02:29 -0800 (PST)
-X-BeenThere: usb-storage@lists.one-eyed-alien.net; h="Ae8XA+YCBCB2AA56vdHJexIDKO2BVziWUP5EZGbh1Ivh/Z5TYg=="
-Received: by 2002:a05:622a:85:b0:4ee:1544:bc7e with SMTP id
- d75a77b69052e-4ee4912073dls6182441cf.1.-pod-prod-07-us; Wed, 19 Nov 2025
- 15:02:29 -0800 (PST)
-X-Forwarded-Encrypted: i=2; AJvYcCVan9GStMBf4cAn9IH+8hoYqC9NmFQmytvK+iOUqgd7KTPXDa/7lgcRnK0ux8vwkSp956msXCUxcMJVnw==@lists.one-eyed-alien.net
-X-Received: by 2002:a05:620a:44d4:b0:893:31da:1028 with SMTP id af79cd13be357-8b3274b5313mr167234485a.90.1763593348891;
-        Wed, 19 Nov 2025 15:02:28 -0800 (PST)
-Received: by 2002:ab3:1c02:0:b0:2d1:a641:6210 with SMTP id a1c4a302cd1d6-2d1c47211eamsc7a;
-        Wed, 19 Nov 2025 14:42:56 -0800 (PST)
-X-Forwarded-Encrypted: i=2; AJvYcCWJoG4Q3I3UaIVC8khVaMVbFCF6k7U8UAIZ1bwnrKdmrLCzcPfLVbTsODoUCyOuy6pdFp4Cn3kYUP0s8g==@lists.one-eyed-alien.net
-X-Received: by 2002:a05:6512:2392:b0:595:7d95:eab8 with SMTP id 2adb3069b0e04-5969e309fe5mr174332e87.23.1763592174751;
-        Wed, 19 Nov 2025 14:42:54 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1763592174; cv=none;
+         :x-spam-checked-in-group:list-id:mailing-list:precedence:reply-to
+         :x-original-authentication-results:x-original-sender:mime-version
+         :references:in-reply-to:message-id:subject:cc:to:from:date
+         :x-beenthere:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=A8XdfEV2Z6/q2HJ6zuqB0UT9Fa/p99/ijROLiGfgd/g=;
+        b=LqpbbcA1GmnY7S8JvKqi0m0v1qPTCNIWC+6AV5H45cpdpj/gaWB4Ok/+xTA0VfxFbZ
+         wq4MQkfhCgsM8mpSkbwtI+l/N7RH8WcgemTf2+O1Whss1MKi3u1LRE1rIyshf9hqndJP
+         8b4i7U5bewwxW/V+0tRLwZZjhe0SIcoCGVXIOR21gFINbPyBVIQydriO5hmyFDqmrO/g
+         x3EMaui9v8Iw97QEPfXs/9zGJpNS4RBn13ceGZQpmCn48TVYJp7jeHWaGZS2p0cYj1OI
+         uEXq8lh9StwHqC3ieT/kqxUckL0lVwQ87DlLKc7lbVDXIvHAjVXOoBkRVNSuasqxLCXw
+         J8mw==
+X-Forwarded-Encrypted: i=2; AJvYcCUVPT/DP+SXUp/ESdsIJS41AhnNsqSjr5bnjrjL1W8h0aswgMK89bqL66j7tRWMHKE8pkbH2w==@lfdr.de
+X-Gm-Message-State: AOJu0YyGMONZf6cOXxj29edPh1z262ULUJEIpoCop3kzfrRwl1yqv2mW
+	7SLDTpPuuWcB0aMOABYYKwqpceLpEVDy/mBamjoeTxJXfh9WlHnP/dTMEBBYjidLssg=
+X-Google-Smtp-Source: AGHT+IFFiHK5d8hAfn2Feaao8DwI7DzbRU4rpYBSsqfBnqyXhlNY1JZIt88i6lVgNejdOI0eUd/mxw==
+X-Received: by 2002:a17:902:ef09:b0:297:c71d:851c with SMTP id d9443c01a7336-29b5cd7b83emr12861885ad.36.1763603261460;
+        Wed, 19 Nov 2025 17:47:41 -0800 (PST)
+X-BeenThere: usb-storage@lists.one-eyed-alien.net; h="Ae8XA+blZZoMcp7GL5mbvO53R61sPeUl4mKreawLCm5Lm8eK6g=="
+Received: by 2002:a17:902:e28d:b0:297:d774:dcb8 with SMTP id
+ d9443c01a7336-29b5b03dd94ls2953645ad.0.-pod-prod-02-us; Wed, 19 Nov 2025
+ 17:47:40 -0800 (PST)
+X-Forwarded-Encrypted: i=2; AJvYcCWiKBTKVpXy3HtunQGNSjURCvAeuiWJ39qJiRRaYNqxEXGxkXrQgX/QCGqjCAdEFhSIkYnz6L2Psimacg==@lists.one-eyed-alien.net
+X-Received: by 2002:a17:903:2342:b0:298:3aa6:c03d with SMTP id d9443c01a7336-29b5cdeb547mr11783335ad.57.1763603259778;
+        Wed, 19 Nov 2025 17:47:39 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1763603259; cv=none;
         d=google.com; s=arc-20240605;
-        b=kKd0vjNc+k7Pn41MOeZ9jaUAz35Zf1OLpRisc6+kfu7/a/DryVyiCr6xDDQ1lhMOJS
-         GVdX9RkYXiQeuY+5t6Ek7JVvqSckocys5jBTxtr4SBHtc1jfqbe3dmZqhY/+iTMoA3fL
-         Nm4gwne6HlC8U+r1dWU+ZzwtB73MMUT+cxkU/8xOZBOcQ68At/1ACIM0BAa8R7xRZ+1e
-         kWZa54nljqIxu1ir0RiGHYMSt7BTqYuzT6w2VN9S3BeMqLa6WLkRwBT+Xm+SsfT+xyc2
-         0xIOtXUwCC5YKTMTHHvtUP7krNoVIXFkn6Nu4tHTZFeSmhrhfcrI5ixzL9OlZvLjuCVu
-         imBA==
+        b=Y3GtuSiJUDTfPDTfwqT4A3sUcKYI8AzJY56tWsMufkevKI49505AoxTsQexhyP2ejx
+         fKpFMOc2mPSNRpVrx072BhHg+yzvcCzDMHxhBMZRnrVV57B0eaGElUmA/RNSlKTCC9+b
+         oiFOwEySgvO0lf85RZXwb919bE2bg3U01t6XICuvcSyiumGnj+D46Rs/GxGI67agN+3e
+         QUHNFZQPt9mnmbZVufFz94U1wQFq4lx+kTdbo37uRoEKKfkgBqPaVCCg2ZpBckzZp4ti
+         14Wdtcg3Nyzgy54Yqpor8hU2Qw7dDiFO3wB3lKD3JMkuqaxqnYLK34yQwM8t+mAdvSfb
+         P5AA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
         h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:dkim-signature;
-        bh=kOefzjf50j/74iGOTPMlZK++sMONcJKR9VFlFhM1mCo=;
-        fh=issbIi7oaKTDKmQ6WUdyRqybdEFlA4KlpNHuceGsAWw=;
-        b=hNQ2K5M7jl/EWw7X6BzUjN2eNTacKnmzB4zkkV6CZkXZLWM64p8UsDrOL4YpZMb1Qu
-         1OfxYMz7ThpmYeiziRk6QBDXj49ZVGludIr3kQGSeNZXnuEiUs5w57ZVF1IS0G1ARBp5
-         xZpUlD3lZNYB5LUbXlTCTs32ewgUzj3Xd3narQPQeGstwwHss/I67JXwP6Aj65Wb4W3o
-         8JGfQik7ungu3njVYJVsBrpvsD6qW+cNk6HnihD/0ilnTxhtWqA+yM29HhHDHMrbsOde
-         kiyos/i5+CtQXciFbkuWQdPb+a+aaWUtc9YJpfXBZHZ2g9dtuOtZKN+GbahOiJzokfUw
-         Irlw==;
+         :message-id:subject:cc:to:from:date:dkim-signature;
+        bh=Qz0Kt9BVZotF+W8b8C03wV9uEpjzU2IZVkSaOcZVd50=;
+        fh=cMnKcpgt0nB56RDA+Ux39db/IizuXZDt+AFuSBTviRQ=;
+        b=ULfGyOOzle8UG2bp0wLjOE8QnmXFsk0Zt6f8+PRvR0eNRspQNlbP1Bg90/eUSTIMjw
+         3DsjyNtmg6GXqKTyKSJ0opsYMELB+obCWOVu/F0P59imQBmasIIEUof1WTY7YNEoLnwj
+         IqI2PtzdXYRgweASZj1rdPf0AjrGC+IVUeBw7H9cwOSKHVyQx+ZqVemQhz3e9CJ8g32z
+         FZPRRV0Y/naf06kADebKIxC0+UhIcqUsp+r377IZMS8cwebMZrwijmQE/LqwNV1tYhBw
+         QRHhiYmD1VkjXFCGZWluzU8QfUWHhvS48+e8Hx2C+6hQLw/WR1GjIpLwqF+MNbBamtx7
+         EGQg==;
         dara=google.com
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@runbox.com header.s=selector1 header.b=PlFDAXm9;
-       spf=pass (google.com: domain of david.laight.linux_spam@runbox.com designates 2a0c:5a00:149::25 as permitted sender) smtp.mailfrom=david.laight.linux_spam@runbox.com;
-       dmarc=fail (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
-Received: from mailtransmit04.runbox.com (mailtransmit04.runbox.com. [2a0c:5a00:149::25])
-        by mx.google.com with ESMTPS id 2adb3069b0e04-5969dbe3041si111533e87.931.2025.11.19.14.42.54
+       dkim=pass header.i=@kernel.org header.s=k20201202 header.b=uF2z7xSs;
+       spf=pass (google.com: domain of kuba@kernel.org designates 172.234.252.31 as permitted sender) smtp.mailfrom=kuba@kernel.org;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=kernel.org
+Received: from sea.source.kernel.org (sea.source.kernel.org. [172.234.252.31])
+        by mx.google.com with ESMTPS id d9443c01a7336-29b5b1e75c9si5726005ad.338.2025.11.19.17.47.39
         for <usb-storage@lists.one-eyed-alien.net>
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 19 Nov 2025 14:42:54 -0800 (PST)
-Received-SPF: pass (google.com: domain of david.laight.linux_spam@runbox.com designates 2a0c:5a00:149::25 as permitted sender) client-ip=2a0c:5a00:149::25;
-Received: from mailtransmit03.runbox ([10.9.9.163] helo=aibo.runbox.com)
-	by mailtransmit04.runbox.com with esmtps  (TLS1.2) tls TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
-	(Exim 4.93)
-	(envelope-from <david.laight.linux_spam@runbox.com>)
-	id 1vLqt4-006yxN-8x; Wed, 19 Nov 2025 23:42:54 +0100
-Received: from [10.9.9.74] (helo=submission03.runbox)
-	by mailtransmit03.runbox with esmtp (Exim 4.86_2)
-	(envelope-from <david.laight.linux_spam@runbox.com>)
-	id 1vLqt3-0000EA-OW; Wed, 19 Nov 2025 23:42:54 +0100
-Received: by submission03.runbox with esmtpsa  [Authenticated ID (1493616)]  (TLS1.2:ECDHE_SECP256R1__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
-	(Exim 4.93)
-	id 1vLqsi-00Fos6-26; Wed, 19 Nov 2025 23:42:32 +0100
-From: david.laight.linux@gmail.com
-To: linux-kernel@vger.kernel.org,
-	linux-usb@vger.kernel.org,
-	usb-storage@lists.one-eyed-alien.net
-Cc: Alan Stern <stern@rowland.harvard.edu>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	David Laight <david.laight.linux@gmail.com>
-Subject: [usb-storage] [PATCH 28/44] drivers/usb/storage: use min() instead of min_t()
-Date: Wed, 19 Nov 2025 22:41:24 +0000
-Message-Id: <20251119224140.8616-29-david.laight.linux@gmail.com>
-X-Mailer: git-send-email 2.39.5
+        Wed, 19 Nov 2025 17:47:39 -0800 (PST)
+Received-SPF: pass (google.com: domain of kuba@kernel.org designates 172.234.252.31 as permitted sender) client-ip=172.234.252.31;
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id E650E43A3A;
+	Thu, 20 Nov 2025 01:47:38 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id EFC38C113D0;
+	Thu, 20 Nov 2025 01:47:34 +0000 (UTC)
+Date: Wed, 19 Nov 2025 17:47:34 -0800
+From: "'Jakub Kicinski' via USB Mass Storage on Linux" <usb-storage@lists.one-eyed-alien.net>
+To: david.laight.linux@gmail.com
+Cc: linux-kernel@vger.kernel.org, Alan Stern <stern@rowland.harvard.edu>,
+ Alexander Viro <viro@zeniv.linux.org.uk>, Alexei Starovoitov
+ <ast@kernel.org>, Andi Shyti <andi.shyti@kernel.org>, Andreas Dilger
+ <adilger.kernel@dilger.ca>, Andrew Lunn <andrew@lunn.ch>, Andrew Morton
+ <akpm@linux-foundation.org>, Andrii Nakryiko <andrii@kernel.org>, Andy
+ Shevchenko <andriy.shevchenko@linux.intel.com>, Ard Biesheuvel
+ <ardb@kernel.org>, Arnaldo Carvalho de Melo <acme@kernel.org>, Bjorn
+ Helgaas <bhelgaas@google.com>, Borislav Petkov <bp@alien8.de>, Christian
+ Brauner <brauner@kernel.org>, Christian =?UTF-8?B?S8O2bmln?=
+ <christian.koenig@amd.com>, Christoph Hellwig <hch@lst.de>, Daniel Borkmann
+ <daniel@iogearbox.net>, Dan Williams <dan.j.williams@intel.com>, Dave
+ Hansen <dave.hansen@linux.intel.com>, Dave Jiang <dave.jiang@intel.com>,
+ David Ahern <dsahern@kernel.org>, David Hildenbrand <david@redhat.com>,
+ Davidlohr Bueso <dave@stgolabs.net>, "David S. Miller"
+ <davem@davemloft.net>, Dennis Zhou <dennis@kernel.org>, Eric Dumazet
+ <edumazet@google.com>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Herbert Xu <herbert@gondor.apana.org.au>, Ingo Molnar <mingo@redhat.com>,
+ Jakub Sitnicki <jakub@cloudflare.com>, "James E.J. Bottomley"
+ <James.Bottomley@HansenPartnership.com>, Jarkko Sakkinen
+ <jarkko@kernel.org>, "Jason A. Donenfeld" <Jason@zx2c4.com>, Jens Axboe
+ <axboe@kernel.dk>, Jiri Slaby <jirislaby@kernel.org>, Johannes Weiner
+ <hannes@cmpxchg.org>, John Allen <john.allen@amd.com>, Jonathan Cameron
+ <jonathan.cameron@huawei.com>, Juergen Gross <jgross@suse.com>, Kees Cook
+ <kees@kernel.org>, KP Singh <kpsingh@kernel.org>, Linus Walleij
+ <linus.walleij@linaro.org>, "Martin K. Petersen"
+ <martin.petersen@oracle.com>, "Matthew Wilcox (Oracle)"
+ <willy@infradead.org>, Mika Westerberg <westeri@kernel.org>, Mike Rapoport
+ <rppt@kernel.org>, Miklos Szeredi <miklos@szeredi.hu>, Namhyung Kim
+ <namhyung@kernel.org>, Neal Cardwell <ncardwell@google.com>,
+ nic_swsd@realtek.com, OGAWA Hirofumi <hirofumi@mail.parknet.co.jp>, Olivia
+ Mackall <olivia@selenic.com>, Paolo Abeni <pabeni@redhat.com>, Paolo
+ Bonzini <pbonzini@redhat.com>, Peter Huewe <peterhuewe@gmx.de>, Peter
+ Zijlstra <peterz@infradead.org>, "Rafael J. Wysocki" <rafael@kernel.org>,
+ Sean Christopherson <seanjc@google.com>, Srinivas Kandagatla
+ <srini@kernel.org>, Stefano Stabellini <sstabellini@kernel.org>, Steven
+ Rostedt <rostedt@goodmis.org>, Tejun Heo <tj@kernel.org>, "Theodore Ts'o"
+ <tytso@mit.edu>, Thomas Gleixner <tglx@linutronix.de>, Tom Lendacky
+ <thomas.lendacky@amd.com>, Willem de Bruijn
+ <willemdebruijn.kernel@gmail.com>, x86@kernel.org, Yury Norov
+ <yury.norov@gmail.com>, amd-gfx@lists.freedesktop.org, bpf@vger.kernel.org,
+ cgroups@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ io-uring@vger.kernel.org, kvm@vger.kernel.org, linux-acpi@vger.kernel.org,
+ linux-block@vger.kernel.org, linux-crypto@vger.kernel.org,
+ linux-cxl@vger.kernel.org, linux-efi@vger.kernel.org,
+ linux-ext4@vger.kernel.org, linux-fsdevel@vger.kernel.org,
+ linux-gpio@vger.kernel.org, linux-i2c@vger.kernel.org,
+ linux-integrity@vger.kernel.org, linux-mm@kvack.org,
+ linux-nvme@lists.infradead.org, linux-pci@vger.kernel.org,
+ linux-perf-users@vger.kernel.org, linux-scsi@vger.kernel.org,
+ linux-serial@vger.kernel.org, linux-trace-kernel@vger.kernel.org,
+ linux-usb@vger.kernel.org, mptcp@lists.linux.dev, netdev@vger.kernel.org,
+ usb-storage@lists.one-eyed-alien.net
+Subject: [usb-storage] Re: [PATCH 00/44] Change a lot of min_t() that might
+ mask high bits
+Message-ID: <20251119174734.5cba3f95@kernel.org>
 In-Reply-To: <20251119224140.8616-1-david.laight.linux@gmail.com>
 References: <20251119224140.8616-1-david.laight.linux@gmail.com>
 MIME-Version: 1.0
-X-Original-Sender: david.laight.linux@gmail.com
-X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@runbox.com header.s=selector1 header.b=PlFDAXm9;       spf=pass
- (google.com: domain of david.laight.linux_spam@runbox.com designates
- 2a0c:5a00:149::25 as permitted sender) smtp.mailfrom=david.laight.linux_spam@runbox.com;
-       dmarc=fail (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
 Content-Type: text/plain; charset="UTF-8"
+X-Original-Sender: kuba@kernel.org
+X-Original-Authentication-Results: mx.google.com;       dkim=pass
+ header.i=@kernel.org header.s=k20201202 header.b=uF2z7xSs;       spf=pass
+ (google.com: domain of kuba@kernel.org designates 172.234.252.31 as permitted
+ sender) smtp.mailfrom=kuba@kernel.org;       dmarc=pass (p=QUARANTINE
+ sp=QUARANTINE dis=NONE) header.from=kernel.org
+X-Original-From: Jakub Kicinski <kuba@kernel.org>
+Reply-To: Jakub Kicinski <kuba@kernel.org>
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
+X-Spam-Checked-In-Group: usb-storage@lists.one-eyed-alien.net
 X-Google-Group-Id: 960895140360
 List-Post: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/post>,
  <mailto:usb-storage@lists.one-eyed-alien.net>
@@ -152,40 +190,16 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-From: David Laight <david.laight.linux@gmail.com>
+On Wed, 19 Nov 2025 22:40:56 +0000 david.laight.linux@gmail.com wrote:
+> I've had to trim the 124 maintainers/lists that get_maintainer.pl finds
+> from 124 to under 100 to be able to send the cover letter.
+> The individual patches only go to the addresses found for the associated files.
+> That reduces the number of emails to a less unsane number.
 
-min_t(unsigned int, a, b) casts an 'unsigned long' to 'unsigned int'.
-Use min(a, b) instead as it promotes any 'unsigned int' to 'unsigned long'
-and so cannot discard significant bits.
-
-In this case the 'unsigned long' value is small enough that the result
-is ok.
-
-Detected by an extra check added to min_t().
-
-Signed-off-by: David Laight <david.laight.linux@gmail.com>
----
- drivers/usb/storage/protocol.c | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
-
-diff --git a/drivers/usb/storage/protocol.c b/drivers/usb/storage/protocol.c
-index 9033e505db7f..0cff54ad90fa 100644
---- a/drivers/usb/storage/protocol.c
-+++ b/drivers/usb/storage/protocol.c
-@@ -139,8 +139,7 @@ unsigned int usb_stor_access_xfer_buf(unsigned char *buffer,
- 		return cnt;
- 
- 	while (sg_miter_next(&miter) && cnt < buflen) {
--		unsigned int len = min_t(unsigned int, miter.length,
--				buflen - cnt);
-+		unsigned int len = min(miter.length, buflen - cnt);
- 
- 		if (dir == FROM_XFER_BUF)
- 			memcpy(buffer + cnt, miter.addr, len);
--- 
-2.39.5
+Please split the networking (9?) patches out to a separate series.
+It will help you with the CC list, and help us to get this applied..
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20251119224140.8616-29-david.laight.linux%40gmail.com.
+To view this discussion visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20251119174734.5cba3f95%40kernel.org.
