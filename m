@@ -1,129 +1,147 @@
-Return-Path: <usb-storage+bncBC72VNFM2YHRBXEV7TEAMGQEMHFUCQA@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBD64ZMV5YYBRBDGQ7TEAMGQETPAIMNQ@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-pl1-x648.google.com (mail-pl1-x648.google.com [IPv6:2607:f8b0:4864:20::648])
-	by mail.lfdr.de (Postfix) with ESMTPS id C21C0C73FB2
-	for <lists+usb-storage@lfdr.de>; Thu, 20 Nov 2025 13:34:38 +0100 (CET)
-Received: by mail-pl1-x648.google.com with SMTP id d9443c01a7336-295915934bfsf15720365ad.0
-        for <lists+usb-storage@lfdr.de>; Thu, 20 Nov 2025 04:34:38 -0800 (PST)
-ARC-Seal: i=2; a=rsa-sha256; t=1763642077; cv=pass;
+Received: from mail-qt1-x847.google.com (mail-qt1-x847.google.com [IPv6:2607:f8b0:4864:20::847])
+	by mail.lfdr.de (Postfix) with ESMTPS id A9E19C749B1
+	for <lists+usb-storage@lfdr.de>; Thu, 20 Nov 2025 15:39:10 +0100 (CET)
+Received: by mail-qt1-x847.google.com with SMTP id d75a77b69052e-4ed782d4c7dsf17048041cf.2
+        for <lists+usb-storage@lfdr.de>; Thu, 20 Nov 2025 06:39:10 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1763649549; cv=pass;
         d=google.com; s=arc-20240605;
-        b=P/V0GEMdxLPaEJiw+EL+SvL4+/264DsEpE0cLE2lmpkissmWmfpi7q1b9oZO9p1h3x
-         A9rKmqu90mfOQLArc24Drh6KaFNJYKbvbD9Tt2a4afj/DCZluXQxVKLD068BSvOz6VDa
-         2TmnJoNnSndWFLd2hYzsqyyoR3BLlFZHl3fVgCPA+M89CrEcAp5i7qOGX1D+jicv1NOo
-         a5hJhXm5TUqj+EKv/OzW7qTNZDYNC6oxaSl3WwQhnLzU7V0tbdUpXm9Zg889a8kQDSkR
-         zto80rFDi83QYOVPHBgaI7+Sqn1CoX+ALZILR0/YDCAL25G5hbbLgfROnCmFmDUfUTc4
-         QW8Q==
+        b=Co0o0ltCIA+qMBImyj+wF7RTtCmgRQgDa18zgqT5zrxFzckDAnXCjxW65jHyYLx0SY
+         Rt2vAnitEgd+oDKJQmaN5iTCZTcKOTxoQ5FAOAQ35Fk3bbx14jOFt8suqbOV5r7Q+Wje
+         V5/OjmZloLAko8UL4qvG/FgFBzzm9Rt54rbkjmvtSYxSgEMJthPpW/DiDZlCINtywAWi
+         JVh+c2L7XmDU0taxhOOTjhrEu9yarQ05zsdwqfjZ1L8vsis3dBd93SrfHAf9IKhSMYx6
+         pTGaHk6fcA+Hwq6IXFmVHMM50CX1UXF4L9c3RQXsplsWTpqbAH5NH43etX4yCLzMXsrQ
+         apYw==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:reply-to:mime-version:message-id
-         :date:subject:cc:to:from:dkim-signature;
-        bh=7/7fqHqg5PYz/WpPVXB8CMXTpwsyn/Cw1tWMsj9btCI=;
-        fh=QtAlAQzXDVbf/ZinNWSJFm2uyi3JWr7EUdL19zvJQNk=;
-        b=ZClq40jyOqHNBO5EZ/YWLazYdnF2/8bnLRu/+ilSiBQlyMBwAktNxvaM9Lo3/Mkya6
-         PGPxzUmrLI0jzrIcTDxJHyq+uFOBPMp5ZmeNcrMa+qWr44bshnrRDKuDDjUnBNnqn0pn
-         E5TxOeYTwgRC/YhNzhydskL48aqqwfJH/21k/LN8S/sM78CQUisP9W0o9RqL3bIzXOoB
-         7Wl6GpBJMCl70ebGK8vo/igFYMtOa2XA7bJsS74qOYYM1U09liS4RKVM7CH3FNhmRgco
-         KYEq0cInydGQAaW2ZQwkUKpB0QrzOyXEf8vbJF6My4P+QfECss6lYKFtdmyNCDJZ4CKP
-         yVzA==;
+         :list-id:mailing-list:precedence:in-reply-to:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date:sender
+         :dkim-signature;
+        bh=dU42+XkFRBRh6RzxTtglbDTZbh9NG+cASDoeuTxtw6M=;
+        fh=ynjLtbgZRH+NV8cuSqqyP6U/U7MICrYp09sXPZ1XouE=;
+        b=RIJBpjwpgQkUshk1ntLgnpENNOIQ6iLjFEDRQlv8Kry+UqYopERMYicGSJ68AiUgJU
+         LghtbtljiF9VnyqsUylQ9g/fuuhBqY54+AHsfsur98rNfvk+8DJLP0cBic3mGJkg31lK
+         n/m+w9dEAMFsfQqhgYoZklMxzWY6evsoRatHxHCpaxUPvzP/Fi8eM5D5yb4l7S2D+caF
+         8/K21SBqg5GyFRJiOUquqwyaa/80CEmzVMdyORm7nhJlQWATyT6ADGhLK2yEqlLVCY2T
+         wqZGVIlrlE0GB6p2fN7UPYok4TH2V/SnVSPKWwoK2YvV2cH2nzWw8YA+rvQN0sa98gqd
+         pPgQ==;
         darn=lfdr.de
 ARC-Authentication-Results: i=2; mx.google.com;
-       spf=pass (google.com: domain of guhuinan@xiaomi.com designates 207.226.244.123 as permitted sender) smtp.mailfrom=guhuinan@xiaomi.com;
-       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=xiaomi.com
+       dkim=pass header.i=@rowland.harvard.edu header.s=google header.b=Gpmb54SX;
+       spf=pass (google.com: domain of stern@g.harvard.edu designates 209.85.220.41 as permitted sender) smtp.mailfrom=stern@g.harvard.edu;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=rowland.harvard.edu;
+       dara=neutral header.i=@lists.one-eyed-alien.net
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1763642077; x=1764246877; darn=lfdr.de;
+        d=lists.one-eyed-alien.net; s=google; t=1763649549; x=1764254349; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:reply-to
-         :x-original-authentication-results:x-original-sender:mime-version
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=7/7fqHqg5PYz/WpPVXB8CMXTpwsyn/Cw1tWMsj9btCI=;
-        b=U74R+qv/6gzl7bmknuA+pb6tCNDYc1eGePsMtZUcg65UpXfybrQXBloUWgrbDxmCAY
-         kqyw75umgXjKzlSDZ5J6nzTlUZtScLfy5xBqWtgf+RYI27V9oOtt5/19VEGHLTQFGV9/
-         J4h2JPsTZB1HtMs+m3+sN4tzenp77a7Dv1wAg=
+         :list-id:mailing-list:precedence:x-original-authentication-results
+         :x-original-sender:in-reply-to:content-disposition:mime-version
+         :references:message-id:subject:cc:to:from:date:sender:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=dU42+XkFRBRh6RzxTtglbDTZbh9NG+cASDoeuTxtw6M=;
+        b=BDVUGheRg3PlAwptzn2O7YVraZSWvfR7SOH+r10V/rCugJs7ot5HvFlezOWmO6QYyd
+         i4ZiDta/S0hrhr9OcKfC/jCFjA7CIY6dqWObsgoyOLqMFEuqDLePkDIIEbda9RkUi9EV
+         DB7Nj4vXa8q5lTHJ4bbLqNjEawbqQr0omjBWI=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1763642077; x=1764246877;
+        d=1e100.net; s=20230601; t=1763649549; x=1764254349;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :x-spam-checked-in-group:list-id:mailing-list:precedence:reply-to
-         :x-original-authentication-results:x-original-sender:mime-version
-         :message-id:date:subject:cc:to:from:x-beenthere:x-gm-message-state
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=7/7fqHqg5PYz/WpPVXB8CMXTpwsyn/Cw1tWMsj9btCI=;
-        b=P6NRRehpT4lbAUI7LXVKijkwAmIj292ntbE7PUYOrPz7UOOOzoyEqpsLuEWFKcxUv+
-         3K3MIEdmb32MSGd64Ich4/Sh9RpdPcy4j9PpeH7mTKn2sjaIup6uR0SYFYtwVMMvw9vc
-         0S5+Xg4ICgB5SDtd9VG7j0LE2tijo1HLRh7diwl+AZU81cAc3hu5KwYx1UEcfKWi1HB0
-         Ue2izjpLFz6r0balDMMJhoLx72CT8owHmdnbg1wp1q7lV1L6XGSb0FnIX0042Lki5US2
-         N0JfSXn5X704VBret5oic3zyXjK803dJrsjIeZ7ilW01MfnHY6xRUEp67ojj3sFwZFVc
-         CFdg==
-X-Forwarded-Encrypted: i=2; AJvYcCWYNCsr+eeIp4kLe00Rn+pOZsb8BUGgx/aXGijvAqp3fYyxBtFDJvu/bbtnIgXqnTcc6PKAjw==@lfdr.de
-X-Gm-Message-State: AOJu0YwMeLeDgqC6tPv91AXBYUWkefl8/H/MA4HHxDlRJ9/URY+XqOlK
-	mFx5sOJKMY8KonY/O4/ZCZsHZjysdzgRrgxNDJkKwhWJSVxIUCP+7sKn79BjgtkXOVs=
-X-Google-Smtp-Source: AGHT+IHS5PeufaiazSLdz69bSME9bu3e2wpcbSyDl7en9CsCRQisXCDPcWWsE/QVSfWBvvnpMbdQ+w==
-X-Received: by 2002:a17:903:46cc:b0:29b:5c78:8bea with SMTP id d9443c01a7336-29b5c788c84mr39142775ad.33.1763642076863;
-        Thu, 20 Nov 2025 04:34:36 -0800 (PST)
-X-BeenThere: usb-storage@lists.one-eyed-alien.net; h="Ae8XA+Z9jAOWvFva9rhTphViaYb7t/BXaTj51E8jrgO0mj/2PA=="
-Received: by 2002:a17:902:9042:b0:268:589:fe0b with SMTP id
- d9443c01a7336-29b5b022969ls7568795ad.0.-pod-prod-06-us; Thu, 20 Nov 2025
- 04:34:35 -0800 (PST)
-X-Forwarded-Encrypted: i=2; AJvYcCXue2O/KhLrecubr8WH+MufhJRRHEEs7yTyhGMHxCenZcmF1P8ETHJZyMBz/TaEjO9BWnaESS+RV7W7sQ==@lists.one-eyed-alien.net
-X-Received: by 2002:a17:903:1b47:b0:24e:3cf2:2453 with SMTP id d9443c01a7336-29b5b15c739mr41661775ad.61.1763642074757;
-        Thu, 20 Nov 2025 04:34:34 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1763642074; cv=none;
+         :x-spam-checked-in-group:list-id:mailing-list:precedence
+         :x-original-authentication-results:x-original-sender:in-reply-to
+         :content-disposition:mime-version:references:message-id:subject:cc
+         :to:from:date:x-gm-gg:x-beenthere:x-gm-message-state:sender:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=dU42+XkFRBRh6RzxTtglbDTZbh9NG+cASDoeuTxtw6M=;
+        b=Cbh2cMVjot98aUrG4gKBDzHzmK5hRU2DbYuJmS9kClAc3ruG88a0tMM76u7osGosKw
+         K4iszwm88W1OEBRa9Dlb865Npaiihh2AFVwcJzmjo75FXAGgQX3XGGt3zlbFIIz6wfUE
+         nI4HxkqveRim0OUOvvdi/IvafHFhBrivW7zOypS6jIcIUbgPkEBcmb+5/FIsUD16CvjI
+         CFhntZRzMTbV3+kHKdMvlClAp+YDKAQcp3hklgGPyeFA8qjpg4oF510iA0lb5Bek1g5s
+         xvzvRrgvrP5GayfWY+RFXmg5psTzYMGmQ1pE4Xi+BAg3f7+dCA0L33I99P5bxsPVdZTB
+         kLKw==
+Sender: usb-storage@lists.one-eyed-alien.net
+X-Forwarded-Encrypted: i=2; AJvYcCV8Icocd8MSrnZmcvjybphNFO2xcQn9dwzsksw/pF+eTrw89iOrbpvr7z8aN9b89RzJ4cGV1w==@lfdr.de
+X-Gm-Message-State: AOJu0Yx5J9BPjCV3vuwyFr/Vt0VaLSWOgia3M+lYMMpLfYa6dK9s+kLO
+	Oule48opKckMaMR1YF1DonT0cjQAZM5oHDxiZ1KVk6m6eS2VGANo6GkTvXOw1yU1YdQ=
+X-Google-Smtp-Source: AGHT+IGP7Z8kL0nTZ33bs3qQ+juB6WMUFYTSfHna6dyZp6jrA0lZeMp2QmbiCsV/pJ5IdUMrORCp0w==
+X-Received: by 2002:ac8:7e95:0:b0:4e6:ebe3:9403 with SMTP id d75a77b69052e-4ee4d6969bamr25082911cf.41.1763649549110;
+        Thu, 20 Nov 2025 06:39:09 -0800 (PST)
+X-BeenThere: usb-storage@lists.one-eyed-alien.net; h="Ae8XA+beRhpxqCugiO9M4gCnYfhTHGHj4Fj5K6fLAqt9bKFELg=="
+Received: by 2002:a05:622a:244:b0:4ed:3036:f1ac with SMTP id
+ d75a77b69052e-4ee48fabdf1ls19333751cf.0.-pod-prod-01-us; Thu, 20 Nov 2025
+ 06:39:08 -0800 (PST)
+X-Forwarded-Encrypted: i=2; AJvYcCVYoIdzhUh/KGhvqCwRbdPz/Ywvo2dE9UmTFvzDJleA/yqY3UIgVmiTBT2eUQZnNvwnnpUPcZgOcIABxg==@lists.one-eyed-alien.net
+X-Received: by 2002:ac8:5a08:0:b0:4ee:bff:7fbf with SMTP id d75a77b69052e-4ee4d3954e5mr25968121cf.4.1763649548048;
+        Thu, 20 Nov 2025 06:39:08 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1763649548; cv=none;
         d=google.com; s=arc-20240605;
-        b=fKHnymRcSczCI+rfz01CJoGuMJUZUBmLN2Afptkwns127UuHvj4SaaCIpUGn9XzvHE
-         5Ykf+q2wNFGh8Vxf8JszPILEBwL65pdtOvqQtlrMyhD7nFvg5DDqxSPKrgsgjjcvhOkm
-         X4Yn4lxlzLqVIgmbfDzl7/M3TweHiZHYTbdBqPAaxk1QzbWbBBasy+PpXf7pYYTcmLSf
-         H5jyHsHNSoMikFb4Rg+LmNX7J9dAP/fhCNBWFeuvaAIKAdpLOyLtAC9oR2ppxe5oDvw2
-         11e1ut2drSNuuHxIFkTGFInVFC6d9NtyftJv03JgTjtxY6Bo9U77vP/p+zshD+AV+Qj2
-         BfUQ==
+        b=fuskamVi3hivMDXWEZiCrokfSEPW24ePkl/WAnShiADgu5pl/F2HHuOw7t5bYxNSII
+         z6JjB0A6WKEON/BXNYWjZ9mg2ukRHMDaNzBJ52/VF7sI5cD8axC2hQcFMbRhPGBv69Lh
+         OCufCjjd8ZbQ4DjbYSMbpjd2fnonv87PvvgDWw1EBDHFa0a+jrKYrA+lNVSDgQzPo0iM
+         g3YbCPTnyoRMGmPfL1hdaT3pNC36V7kIGpaHt2tvucZi725SwkXO5FsheSjXVxpKRp9P
+         Q8mOjT4ADdSDxHMz5RyISp7sQFNDSCysBTpQEKCrbmoSiHl244xWDaiFBR51WSAn1Y2s
+         c/Ng==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from;
-        bh=IDEGSXW3l+CkiMo+wSMLFxaY3Tyw/l1Tehw8Ay7RSxs=;
-        fh=v94FNRvBb47LgOkR97WCva0nH0KLqJ0TgbG7t56OpSA=;
-        b=a9xOPOk2ocdT6C///xuBLT8kp/7a6DvQ87KoJUwlEkI5NidZ9Mb5HHQTycNY5uNOun
-         HwVD9PJgWOoRVyDWEWKr5akK2uQk27wpTJovGtqXY0NI+YcSh1CTlz9SLs+mHQOhkcjB
-         zG3J/Rmw0/2Z9G/qCA6zFnRtrAQtMjmer8PX0BugpQrfgcsHpK+tsuaUAYdH59nbhfsr
-         UvNI1XH3jzyUEW2y6RJPoG4c3cLIioIMMxI//p0fTV0XNNFhmGGGfQO+ptNWqDJ2GX/0
-         LzqRCBxFMAXZz+xj6T6rLxmNhNZKrFf5yGSGdSjuqiPwmKiaP1S4eW3JcjgQTQYLVmBs
-         aSIw==;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:dkim-signature;
+        bh=Tsyge+UTNr06nxUBEgnp5/PyL3z7XzvVYDHeavNl7wg=;
+        fh=lzEmN5nsVrsy3GqCW/Weot5jAdkhoWXLknPkliGUqNI=;
+        b=apSSCMKD3ETmx7q2v7FKcfx4Bc19f357or5+dAZiWqEhKu9cfW8oIDYWeF/u7lJRlz
+         S9kWWwb7+uDXL5bRieM8gVVXWN9b0K71bp+eXrzjrGCIdac4oHqKVOtvycrZRYW3b09J
+         CWMtV1EeIki8pp92KxWUXn6Q1Nh8sDZNfmdVgg5FxHRa8j0aoDmCrriQ8Lwq+TuoJGHY
+         KKdxqnGuBmCwu7YNo66l+vSANvuoQLu5QfACxi7cGvw63JiOMB9lV3AqugN6nTvipm2n
+         jmF32qOSRE9gyXVDqhj/wKtKSt1qzh3Ao7NCC/2k6BwNMCX9Q6tN3k78oVwu8sKAzIZo
+         KqWg==;
         dara=google.com
 ARC-Authentication-Results: i=1; mx.google.com;
-       spf=pass (google.com: domain of guhuinan@xiaomi.com designates 207.226.244.123 as permitted sender) smtp.mailfrom=guhuinan@xiaomi.com;
-       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=xiaomi.com
-Received: from outboundhk.mxmail.xiaomi.com (outboundhk.mxmail.xiaomi.com. [207.226.244.123])
-        by mx.google.com with ESMTP id d9443c01a7336-29b5b1c93e3si12593575ad.252.2025.11.20.04.34.34
-        for <usb-storage@lists.one-eyed-alien.net>;
-        Thu, 20 Nov 2025 04:34:34 -0800 (PST)
-Received-SPF: pass (google.com: domain of guhuinan@xiaomi.com designates 207.226.244.123 as permitted sender) client-ip=207.226.244.123;
-X-CSE-ConnectionGUID: I9S4tjiGQ7WW3GG6Ca6ONQ==
-X-CSE-MsgGUID: JD2+mL9rQqCt5e1vO6uGnA==
-X-IronPort-AV: E=Sophos;i="6.20,213,1758556800"; 
-   d="scan'208";a="158953641"
-From: "'guhuinan' via USB Mass Storage on Linux" <usb-storage@lists.one-eyed-alien.net>
-To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Oliver Neukum
-	<oneukum@suse.com>, Alan Stern <stern@rowland.harvard.edu>
-CC: <linux-usb@vger.kernel.org>, <linux-scsi@vger.kernel.org>,
-	<usb-storage@lists.one-eyed-alien.net>, <linux-kernel@vger.kernel.org>,
-	<stable@vger.kernel.org>, Yu Chen <chenyu45@xiaomi.com>, Owen Gu
-	<guhuinan@xiaomi.com>, Michal Pecio <michal.pecio@gmail.com>
-Subject: [usb-storage] [PATCH v4] usb: uas: fix urb unmapping issue when the
- uas device is remove during ongoing data transfer
-Date: Thu, 20 Nov 2025 20:33:36 +0800
-Message-ID: <20251120123336.3328-1-guhuinan@xiaomi.com>
-X-Mailer: git-send-email 2.43.0
+       dkim=pass header.i=@rowland.harvard.edu header.s=google header.b=Gpmb54SX;
+       spf=pass (google.com: domain of stern@g.harvard.edu designates 209.85.220.41 as permitted sender) smtp.mailfrom=stern@g.harvard.edu;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=rowland.harvard.edu;
+       dara=neutral header.i=@lists.one-eyed-alien.net
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id 6a1803df08f44-8846e598bc4sor18570946d6.12.2025.11.20.06.39.07
+        for <usb-storage@lists.one-eyed-alien.net>
+        (Google Transport Security);
+        Thu, 20 Nov 2025 06:39:08 -0800 (PST)
+Received-SPF: pass (google.com: domain of stern@g.harvard.edu designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+X-Forwarded-Encrypted: i=1; AJvYcCXDcDZRczjXURq1qYsvbAA0GGzao/R0pt24XxaeWIJWu+x8p2FIEQt6ibQwzrNO1XYxIoTlrYKb6ieD/A==@lists.one-eyed-alien.net
+X-Gm-Gg: ASbGncu357dxRtLS2SIuV3cjFqfEiyLNrAffgIoP2jKmLfCEjU13egz/1Nxt2IFw7JJ
+	kgebbGv6nAsXpV1vipT6QldWCuuXpJOtPiaO8CK5cSWQ3RbRWPeYPquxPRtwKgPvhk4Ec8TA/89
+	0JObfaXrn7rgFdSeFIehDlctGeA0WlcwCOxQ2cwnRz/E1+tEv0kcprq21IFLqzYgjNnVHhh5tc8
+	NRnID2yMbuhjEDCUSFqeX9zv3HqRrj4AC21DCmE3jwx2JT1cZQFxQlqGv6UN3xYW8YPFBELI0FJ
+	kHUvaO3WHv/vKgenB9Ra9APPEqro2bKxDrzytX6SMlqbIduTopeoISW5w0O88rOtZ+jlaiMxEVI
+	ikv5qnHwg58dX2f+5JH0BG/GAKI7GsmGuyEe/1W/WPep2+hGc6xcKLQqkQDUjOsXrAfnsinvsYt
+	lLa58cDwBoQN6mjX5tlZcLqzGuFZTOs1PWOVITi0Na
+X-Received: by 2002:ac8:594d:0:b0:4ee:278c:bde7 with SMTP id d75a77b69052e-4ee4d3c049bmr24878881cf.23.1763649547529;
+        Thu, 20 Nov 2025 06:39:07 -0800 (PST)
+Received: from rowland.harvard.edu ([140.247.181.15])
+        by smtp.gmail.com with ESMTPSA id d75a77b69052e-4ee48b45ccesm16629521cf.0.2025.11.20.06.39.06
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 20 Nov 2025 06:39:07 -0800 (PST)
+Date: Thu, 20 Nov 2025 09:39:05 -0500
+From: Alan Stern <stern@rowland.harvard.edu>
+To: David Laight <david.laight.linux@gmail.com>
+Cc: linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org,
+	usb-storage@lists.one-eyed-alien.net,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Subject: Re: [usb-storage] Re: [PATCH 28/44] drivers/usb/storage: use min()
+ instead of min_t()
+Message-ID: <431b212d-e55d-4936-9318-a3fcf64b69af@rowland.harvard.edu>
+References: <20251119224140.8616-1-david.laight.linux@gmail.com>
+ <20251119224140.8616-29-david.laight.linux@gmail.com>
+ <4208129f-a768-44e2-843f-309c50ea362f@rowland.harvard.edu>
+ <20251120091802.0b238c96@pumpkin>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="UTF-8"
-X-Originating-IP: [10.237.8.164]
-X-ClientProxiedBy: BJ-MBX19.mioffice.cn (10.237.8.139) To BJ-MBX05.mioffice.cn
- (10.237.8.125)
-X-Original-Sender: guhuinan@xiaomi.com
-X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
- domain of guhuinan@xiaomi.com designates 207.226.244.123 as permitted sender)
- smtp.mailfrom=guhuinan@xiaomi.com;       dmarc=pass (p=QUARANTINE
- sp=QUARANTINE dis=NONE) header.from=xiaomi.com
-X-Original-From: guhuinan <guhuinan@xiaomi.com>
-Reply-To: guhuinan <guhuinan@xiaomi.com>
+Content-Disposition: inline
+In-Reply-To: <20251120091802.0b238c96@pumpkin>
+X-Original-Sender: stern@rowland.harvard.edu
+X-Original-Authentication-Results: mx.google.com;       dkim=pass
+ header.i=@rowland.harvard.edu header.s=google header.b=Gpmb54SX;
+       spf=pass (google.com: domain of stern@g.harvard.edu designates
+ 209.85.220.41 as permitted sender) smtp.mailfrom=stern@g.harvard.edu;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=rowland.harvard.edu;
+       dara=neutral header.i=@lists.one-eyed-alien.net
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -139,90 +157,41 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-From: Owen Gu <guhuinan@xiaomi.com>
+On Thu, Nov 20, 2025 at 09:18:02AM +0000, David Laight wrote:
+> On Wed, 19 Nov 2025 21:59:42 -0500
+> Alan Stern <stern@rowland.harvard.edu> wrote:
+> 
+> > On Wed, Nov 19, 2025 at 10:41:24PM +0000, david.laight.linux@gmail.com wrote:
+> > > From: David Laight <david.laight.linux@gmail.com>
+> > > 
+> > > min_t(unsigned int, a, b) casts an 'unsigned long' to 'unsigned int'.
+> > > Use min(a, b) instead as it promotes any 'unsigned int' to 'unsigned long'
+> > > and so cannot discard significant bits.
+> > > 
+> > > In this case the 'unsigned long' value is small enough that the result
+> > > is ok.
+> > > 
+> > > Detected by an extra check added to min_t().  
+> > 
+> > In fact, min_t(T, a, b) cannot go wrong as long as all the types are 
+> > unsigned and at least one of a, b has type T or smaller.
+> 
+> That is backwards, both a and b have to have types at least as large
+> as T (or rather values that will fit in T).
+> - which is exactly what people keep getting wrong.
+> Consider:
+> 	u32 a = 4;
+> 	u64 b = 0x100000001ull;
+> then:
+> 	min_t(u32, a, b)
+> has value 1 not 4.
 
-When a UAS device is unplugged during data transfer, there is
-a probability of a system panic occurring. The root cause is
-an access to an invalid memory address during URB callback handling.
-Specifically, this happens when the dma_direct_unmap_sg() function
-is called within the usb_hcd_unmap_urb_for_dma() interface, but the
-sg->dma_address field is 0 and the sg data structure has already been
-freed.
+You are right.  For some reason I was thinking that the comparison took 
+place before the casts, which doesn't make any sense.
 
-The SCSI driver sends transfer commands by invoking uas_queuecommand_lck()
-in uas.c, using the uas_submit_urbs() function to submit requests to USB.
-Within the uas_submit_urbs() implementation, three URBs (sense_urb,
-data_urb, and cmd_urb) are sequentially submitted. Device removal may
-occur at any point during uas_submit_urbs execution, which may result
-in URB submission failure. However, some URBs might have been successfully
-submitted before the failure, and uas_submit_urbs will return the -ENODEV
-error code in this case. The current error handling directly calls
-scsi_done(). In the SCSI driver, this eventually triggers scsi_complete()
-to invoke scsi_end_request() for releasing the sgtable. The successfully
-submitted URBs, when being unlinked to giveback, call
-usb_hcd_unmap_urb_for_dma() in hcd.c, leading to exceptions during sg
-unmapping operations since the sg data structure has already been freed.
-
-This patch modifies the error condition check in the uas_submit_urbs()
-function. When a UAS device is removed but one or more URBs have already
-been successfully submitted to USB, it avoids immediately invoking
-scsi_done() and save the cmnd to devinfo->cmnd array. If the successfully
-submitted URBs is completed before devinfo->resetting being set, then
-the scsi_done() function will be called within uas_try_complete() after
-all pending URB operations are finalized. Otherwise, the scsi_done()
-function will be called within uas_zap_pending(), which is executed after
-usb_kill_anchored_urbs().
-
-The error handling only takes effect when uas_queuecommand_lck() calls
-uas_submit_urbs() and returns the error value -ENODEV . In this case,
-the device is disconnected, and the flow proceeds to uas_disconnect(),
-where uas_zap_pending() is invoked to call uas_try_complete().
-
-Fixes: eb2a86ae8c54 ("USB: UAS: fix disconnect by unplugging a hub")
-Cc: stable@vger.kernel.org
-Signed-off-by: Yu Chen <chenyu45@xiaomi.com>
-Signed-off-by: Owen Gu <guhuinan@xiaomi.com>
-Acked-by: Oliver Neukum <oneukum@suse.com>
----
-v4: Add the fix tag, cc stable and acked-by tag
-v3: Add some commit message.
-v2: Upon uas_submit_urbs() returning -ENODEV despite successful URB
-submission, the cmnd is added to the devinfo->cmnd array before
-exiting uas_queuecommand_lck().
-https://lore.kernel.org/linux-usb/20251015153157.11870-1-guhuinan@xiaomi.com/
-v1: https://lore.kernel.org/linux-usb/20250930045309.21588-1-guhuinan@xiaomi.com/
----
----
- drivers/usb/storage/uas.c | 5 +++++
- 1 file changed, 5 insertions(+)
-
-diff --git a/drivers/usb/storage/uas.c b/drivers/usb/storage/uas.c
-index 03043d567fa1..02fe411567fa 100644
---- a/drivers/usb/storage/uas.c
-+++ b/drivers/usb/storage/uas.c
-@@ -698,6 +698,10 @@ static int uas_queuecommand_lck(struct scsi_cmnd *cmnd)
- 	 * of queueing, no matter how fatal the error
- 	 */
- 	if (err == -ENODEV) {
-+		if (cmdinfo->state & (COMMAND_INFLIGHT | DATA_IN_URB_INFLIGHT |
-+				DATA_OUT_URB_INFLIGHT))
-+			goto out;
-+
- 		set_host_byte(cmnd, DID_NO_CONNECT);
- 		scsi_done(cmnd);
- 		goto zombie;
-@@ -711,6 +715,7 @@ static int uas_queuecommand_lck(struct scsi_cmnd *cmnd)
- 		uas_add_work(cmnd);
- 	}
- 
-+out:
- 	devinfo->cmnd[idx] = cmnd;
- zombie:
- 	spin_unlock_irqrestore(&devinfo->lock, flags);
--- 
-2.43.0
+Alan Stern
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20251120123336.3328-1-guhuinan%40xiaomi.com.
+To view this discussion visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/431b212d-e55d-4936-9318-a3fcf64b69af%40rowland.harvard.edu.
