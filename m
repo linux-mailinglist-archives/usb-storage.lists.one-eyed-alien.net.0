@@ -1,338 +1,133 @@
-Return-Path: <usb-storage+bncBAABB5MR7XEAMGQEASM7HII@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBC72VNFM2YHRBXEV7TEAMGQEMHFUCQA@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-qt1-x845.google.com (mail-qt1-x845.google.com [IPv6:2607:f8b0:4864:20::845])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6BA2EC75805
-	for <lists+usb-storage@lfdr.de>; Thu, 20 Nov 2025 17:59:56 +0100 (CET)
-Received: by mail-qt1-x845.google.com with SMTP id d75a77b69052e-4ee09693109sf26544341cf.3
-        for <lists+usb-storage@lfdr.de>; Thu, 20 Nov 2025 08:59:56 -0800 (PST)
-ARC-Seal: i=3; a=rsa-sha256; t=1763657973; cv=pass;
+Received: from mail-pl1-x648.google.com (mail-pl1-x648.google.com [IPv6:2607:f8b0:4864:20::648])
+	by mail.lfdr.de (Postfix) with ESMTPS id C21C0C73FB2
+	for <lists+usb-storage@lfdr.de>; Thu, 20 Nov 2025 13:34:38 +0100 (CET)
+Received: by mail-pl1-x648.google.com with SMTP id d9443c01a7336-295915934bfsf15720365ad.0
+        for <lists+usb-storage@lfdr.de>; Thu, 20 Nov 2025 04:34:38 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1763642077; cv=pass;
         d=google.com; s=arc-20240605;
-        b=W/SsdDS9qZ4T6Ey8EhL8XirOwrqQnjO7GWKaLt1aZyj0MTOPPE4ye6aZQ8Sdj53Uee
-         qRDCGMBxMKD0F7afsfEOfxPv+cdp4UG5YdrCuWt2ND7FtXnYp+o9etP29+CscfsB47kx
-         gEe+DZejKlxkRgP4SoaPk2AvVaw/TfE2NpBH9LKB97PiEfANlS5gtBtqoWs8JSH5VsA/
-         U3zi2DtI51SGkv0BT/8Jvi8TucPFEi+tyP1nSSdcaws0PGAxckq/OjaDZiefJv6vlcLk
-         8ykRHjE8q+noylCOd0EL2jvR44QdXvO9Npn6K/rPJGx4+DwY/32PFP98jXS8HavyNamF
-         T0Qg==
-ARC-Message-Signature: i=3; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
-        h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:reply-to:mime-version:in-reply-to
-         :content-disposition:references:message-id:subject:cc:to:from:date
-         :dkim-signature;
-        bh=q+o38JItG0lqfFTV+h/6reLYd9Lj43fABQ8PnEsSkFY=;
-        fh=mxKVjCnR48/xqd+jcei6KMVTvzpOl54g6Lxj17z5dLs=;
-        b=embcyBdPq5LgqD6tCDBjjPuLs54KdIY9X7uWp6toMWLUdvERlP7pE7oGfq1Shsl8EY
-         14XkV7+OsbLjsUAEAJLgqiQW2GBmZbZJciN1OKbF+2eJs+U2tSad+2a2bEjzffbuKHaF
-         Dfnh5/RDMCMiSCctgS/0fjePwDOP0XOGEeEkhopH5NHzldDbPYwNn+Lz2TVkn5Ug1Ap2
-         d0XbOGlpNGx9jcyFnrtOrcWoHKAuq60fln/AqQ558fZDop9auOGOqyEiMaFpwWY27DB7
-         nZfRkRI/Lwi6gRNUbELjrsMu4JYr2Q1zoDQHSldukiJuD9nF2WG0+Kd0x1xCgHD9KrUu
-         VYvg==;
-        darn=lfdr.de
-ARC-Authentication-Results: i=3; mx.google.com;
-       dkim=pass header.i=@oracle.com header.s=corp-2025-04-25 header.b=AB4Hlr77;
-       dkim=pass header.i=@oracle.onmicrosoft.com header.s=selector2-oracle-onmicrosoft-com header.b=RLXnG1Za;
-       arc=pass (i=1 spf=pass spfdomain=oracle.com dkim=pass dkdomain=oracle.com dmarc=pass fromdomain=oracle.com);
-       spf=pass (google.com: domain of lorenzo.stoakes@oracle.com designates 205.220.165.32 as permitted sender) smtp.mailfrom=lorenzo.stoakes@oracle.com;
-       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=oracle.com
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1763657973; x=1764262773; darn=lfdr.de;
-        h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:reply-to
-         :x-original-authentication-results:x-original-sender:mime-version
-         :in-reply-to:content-disposition:references:message-id:subject:cc:to
-         :from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=q+o38JItG0lqfFTV+h/6reLYd9Lj43fABQ8PnEsSkFY=;
-        b=ZjOJ9mJeqzdrqbxZduNjf0MPPN5yoJA7dS1rFuoXu3Ja0lOw2+OzJTdzSRavfPie3v
-         sKLoMvZZ4q/q6Evcvxc+xk2QsAn+uL7ItoL+48FMK/YZSr3aaw8cP+Nz1wCJVew74M2D
-         MXLwndm0SWXWeZqSXYJ9NYETzBmicaPcCABcM=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1763657973; x=1764262773;
-        h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:reply-to
-         :x-original-authentication-results:x-original-sender:mime-version
-         :in-reply-to:content-disposition:references:message-id:subject:cc:to
-         :from:date:x-beenthere:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=q+o38JItG0lqfFTV+h/6reLYd9Lj43fABQ8PnEsSkFY=;
-        b=jU0rfw68a0Vh1td9CLBz5bhOOPVk306uXN562BMtlrIbboxff9xCrl5MIzLGUHTVul
-         5y/phxIh3FxV46gHbtdaZ1EfcZYrC9Cb4QO6/DuLL6NJdIIuOJpyGG5FEPD7t2lXVP6w
-         VXaisskz1vnJ2/bSeGLhcophrcZDTkqw6wlSIzGSXj//8ex2BShR01e7Ge4Es2pGKFri
-         tpRxJktjNlV0UK3o+JXbwPzoHVk/odzRAZbsHNeU+t3Catpvp7qamCmpvAW5IOL1EJSN
-         IhCwItKbFqFjDIDuycfEe0nN1o6UogYJOD0Ervqa5lqeUeSHX66zrYRtlUgiAorK/e7D
-         iRaw==
-X-Forwarded-Encrypted: i=3; AJvYcCU/nidnB/fXij9/Cu50DnUs955O9T0GINjd52bKje0zkU4KfEPFrITTG1X2GnwsFG4FgjPCCQ==@lfdr.de
-X-Gm-Message-State: AOJu0YxI4oeh8pUl0fEeCCVCcJi5mB4pgUoB/kUqkAfiav3xzitoUPvg
-	1+H0xfex98DPlLVmEYr8JunLNyEGqSSbWG2MsHaed0rS0Yo8RhUVrkcyQjD+4e1X0b0=
-X-Google-Smtp-Source: AGHT+IG+xN5oJqRh+k0riFSk9oN+owYKP+0eWOFIdXHGrp9dpEkL/5TCWBPA7ZzF50AHWu7foQAAiw==
-X-Received: by 2002:ac8:5f92:0:b0:4ed:67ea:1e5d with SMTP id d75a77b69052e-4ee4961614emr57722691cf.53.1763657973406;
-        Thu, 20 Nov 2025 08:59:33 -0800 (PST)
-X-BeenThere: usb-storage@lists.one-eyed-alien.net; h="Ae8XA+ZClpG0l6zGbgU9peQm1hxVGKLMWer0WkczyGdF15atWg=="
-Received: by 2002:a05:622a:85:b0:4ee:1544:bc7e with SMTP id
- d75a77b69052e-4ee4912073dls21611971cf.1.-pod-prod-07-us; Thu, 20 Nov 2025
- 08:59:32 -0800 (PST)
-X-Forwarded-Encrypted: i=3; AJvYcCVEG7rujihA9VQ2lGWlcSeZRzrIiqAOvZaDr8j1yNmJdF9YhNYk8N/0qajcDXyR9+1LiNQBjaBOjbuByA==@lists.one-eyed-alien.net
-X-Received: by 2002:a05:620a:19a2:b0:8b2:efe7:d818 with SMTP id af79cd13be357-8b327349261mr507687085a.38.1763657972886;
-        Thu, 20 Nov 2025 08:59:32 -0800 (PST)
-Received: by 2002:a05:6808:c0c7:20b0:450:d12c:eb7e with SMTP id 5614622812f47-450eec8db9fmsb6e;
-        Thu, 20 Nov 2025 01:40:09 -0800 (PST)
-X-Forwarded-Encrypted: i=3; AJvYcCVHPEICgr2wItAZt0Q6umYqfazUtREshPHcM2Mo6PkPUbbHbmeW9qpwe0o2GslEbMQHn8hALhixXmVAQA==@lists.one-eyed-alien.net
-X-Received: by 2002:a05:6a20:e211:b0:35d:d477:a7ea with SMTP id adf61e73a8af0-3613b526314mr3461631637.19.1763631607986;
-        Thu, 20 Nov 2025 01:40:07 -0800 (PST)
-ARC-Seal: i=2; a=rsa-sha256; t=1763631607; cv=pass;
-        d=google.com; s=arc-20240605;
-        b=kLDCNjrNa6fs9cVTSZUxkfusJXGTwm3UNSfodXyngEiPxOLVs/Dsq37sAHZdjX1DWG
-         KacoIYrfL6XnPHl9egJBcaa+kF3Yf8OQFJSXNkFaxigE78El/OPQSHks+ECzMNDwbPcK
-         qqSUdvIe2ikGn//lGD6H2jdW+iXJRl1BJQHrmM1XyFD4w0Ga3q4Db7/x3F9Wb7JRk83n
-         Fmm6kIuzOBJmuwjcOIzQXvlAixiA4fBmG/9fAJA0aC0Zx9ADVDgoEP4EqzRC37MX3Um5
-         SD24aWRsBiMdCIWCMClKYIckWX0OYay6w+zZ4mVVtZ8v+ab8Y5gGvU9qANYGl0DfAVDh
-         KJ3g==
+        b=P/V0GEMdxLPaEJiw+EL+SvL4+/264DsEpE0cLE2lmpkissmWmfpi7q1b9oZO9p1h3x
+         A9rKmqu90mfOQLArc24Drh6KaFNJYKbvbD9Tt2a4afj/DCZluXQxVKLD068BSvOz6VDa
+         2TmnJoNnSndWFLd2hYzsqyyoR3BLlFZHl3fVgCPA+M89CrEcAp5i7qOGX1D+jicv1NOo
+         a5hJhXm5TUqj+EKv/OzW7qTNZDYNC6oxaSl3WwQhnLzU7V0tbdUpXm9Zg889a8kQDSkR
+         zto80rFDi83QYOVPHBgaI7+Sqn1CoX+ALZILR0/YDCAL25G5hbbLgfROnCmFmDUfUTc4
+         QW8Q==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
-        h=mime-version:in-reply-to:content-disposition:references:message-id
-         :subject:cc:to:from:date:dkim-signature:dkim-signature;
-        bh=x4fUEt2dY48v08qsyqD9z9bao7UeIcMWh+YtvJ7Wa8M=;
-        fh=oT823zE5/s/rcRgwvFS/ESzC0oGAB0HYlcWSmOnxxD4=;
-        b=iqofa1Ebup5pFyqAru2i06UQbWkWrd13CYewnxeYx8gn49zrXiKpGUdD3lB6ZvyNbe
-         DeyUIDK/tB8d6GdQNmKzXNTERIj63qF9d6BLj4onQdc1anVXV1xBPA/RN4CRxiF2JsIp
-         Fv87+/kxTtjxyhtyHEvVSdh3yQzoqjjII4hj6WKjHU87yghk6xHSTOPBdK7KPVoIfYEt
-         UPHh2qLO/YhKwj9ia3+ThkLSPX/9W1uxGYKJ7Mb+40ZrVwR0h0UkG1nafzIlOWbUvalR
-         0icaQW8EOcpyjb6WD6DSxgPSpwftKgzrl9cQRoTkQ8US9p231OcK4HBFTAo6VzPQ2EHp
-         x8Zw==;
-        dara=google.com
+        h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
+         :list-id:mailing-list:precedence:reply-to:mime-version:message-id
+         :date:subject:cc:to:from:dkim-signature;
+        bh=7/7fqHqg5PYz/WpPVXB8CMXTpwsyn/Cw1tWMsj9btCI=;
+        fh=QtAlAQzXDVbf/ZinNWSJFm2uyi3JWr7EUdL19zvJQNk=;
+        b=ZClq40jyOqHNBO5EZ/YWLazYdnF2/8bnLRu/+ilSiBQlyMBwAktNxvaM9Lo3/Mkya6
+         PGPxzUmrLI0jzrIcTDxJHyq+uFOBPMp5ZmeNcrMa+qWr44bshnrRDKuDDjUnBNnqn0pn
+         E5TxOeYTwgRC/YhNzhydskL48aqqwfJH/21k/LN8S/sM78CQUisP9W0o9RqL3bIzXOoB
+         7Wl6GpBJMCl70ebGK8vo/igFYMtOa2XA7bJsS74qOYYM1U09liS4RKVM7CH3FNhmRgco
+         KYEq0cInydGQAaW2ZQwkUKpB0QrzOyXEf8vbJF6My4P+QfECss6lYKFtdmyNCDJZ4CKP
+         yVzA==;
+        darn=lfdr.de
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@oracle.com header.s=corp-2025-04-25 header.b=AB4Hlr77;
-       dkim=pass header.i=@oracle.onmicrosoft.com header.s=selector2-oracle-onmicrosoft-com header.b=RLXnG1Za;
-       arc=pass (i=1 spf=pass spfdomain=oracle.com dkim=pass dkdomain=oracle.com dmarc=pass fromdomain=oracle.com);
-       spf=pass (google.com: domain of lorenzo.stoakes@oracle.com designates 205.220.165.32 as permitted sender) smtp.mailfrom=lorenzo.stoakes@oracle.com;
-       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=oracle.com
-Received: from mx0a-00069f02.pphosted.com (mx0a-00069f02.pphosted.com. [205.220.165.32])
-        by mx.google.com with ESMTPS id d2e1a72fcca58-7c3f0443ed0si1011785b3a.496.2025.11.20.01.40.07
-        for <usb-storage@lists.one-eyed-alien.net>
-        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Thu, 20 Nov 2025 01:40:07 -0800 (PST)
-Received-SPF: pass (google.com: domain of lorenzo.stoakes@oracle.com designates 205.220.165.32 as permitted sender) client-ip=205.220.165.32;
-Received: from pps.filterd (m0246627.ppops.net [127.0.0.1])
-	by mx0b-00069f02.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5AK7bIis027520;
-	Thu, 20 Nov 2025 09:39:14 GMT
-Received: from phxpaimrmta03.imrmtpd1.prodappphxaev1.oraclevcn.com (phxpaimrmta03.appoci.oracle.com [138.1.37.129])
-	by mx0b-00069f02.pphosted.com (PPS) with ESMTPS id 4aejbq0s9a-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
-	Thu, 20 Nov 2025 09:39:13 +0000 (GMT)
-Received: from pps.filterd (phxpaimrmta03.imrmtpd1.prodappphxaev1.oraclevcn.com [127.0.0.1])
-	by phxpaimrmta03.imrmtpd1.prodappphxaev1.oraclevcn.com (8.18.1.2/8.18.1.2) with ESMTP id 5AK7gVgs003837;
-	Thu, 20 Nov 2025 09:39:13 GMT
-Received: from mw6pr02cu001.outbound.protection.outlook.com (mail-westus2azon11012012.outbound.protection.outlook.com [52.101.48.12])
-	by phxpaimrmta03.imrmtpd1.prodappphxaev1.oraclevcn.com (PPS) with ESMTPS id 4aefybt6cu-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
-	Thu, 20 Nov 2025 09:39:12 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=qumUVLD8P0uKYvJ7uVWudq9i4wKFIjLo5no4cipmWp7FgGDeMROJ9SLikEwdIXLQx3hYL8JWxIRO0+H6BY7R35oh1oyhUMYADamCGTilmDupeWH8oe9SOtk/JIrZiO+nEiMzsI+PC/7Z0RgL85ulIRioCi0/dN1Q1aEihQJg81pMT6SzPAfPZuvLzqgk/6BjBOQt1WnsEQSoD/Prlf9I0AjsAwUqDu//d3vRN2fNOouqkUnNmVzuJmHobEsSCl7DN8Dd4l36Utsq12doFC6kt6xo1FN1wFrn9SGVQB5iBKtECSmH2tzwUKqkvbtABelETM2nhoB5tfnbV/v8rayefQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=x4fUEt2dY48v08qsyqD9z9bao7UeIcMWh+YtvJ7Wa8M=;
- b=EPadCiow1JLm5mXLBKnooPPkY+Dv/TOCMNeKn9m7TdoA5SBor3HvaFzmsge5AZKNn919vjgcqiN2ZqtQgrSMRVGjFOdwGVxqQAZ/52ja1wYxk1Tsd6zXWsFjqma8ePfjVczzT8u3XFzAhYLvwP6egaLb5k5Y90IYroTqesKaUkXN5w+0TEeTtXL82RpGu4HCx6wIkGKLqnprLIC64NTbAum8ztFFuKy92nE0VzBb1LJhH+EHBO7RMcn3ZTQrFTVI1kDV84YPkaEYYsWjIrAkX3tDfK0TX0TY/i7beypYd4SqTNAV6EPpj7Qmf3Xe6J4yUgX1t8z6WELoUtfGK6mhGw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oracle.com; dmarc=pass action=none header.from=oracle.com;
- dkim=pass header.d=oracle.com; arc=none
-Received: from DM4PR10MB8218.namprd10.prod.outlook.com (2603:10b6:8:1cc::16)
- by DS4PPFA043F25E4.namprd10.prod.outlook.com (2603:10b6:f:fc00::d39) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9343.11; Thu, 20 Nov
- 2025 09:38:59 +0000
-Received: from DM4PR10MB8218.namprd10.prod.outlook.com
- ([fe80::2650:55cf:2816:5f2]) by DM4PR10MB8218.namprd10.prod.outlook.com
- ([fe80::2650:55cf:2816:5f2%7]) with mapi id 15.20.9343.009; Thu, 20 Nov 2025
- 09:38:59 +0000
-Date: Thu, 20 Nov 2025 09:38:57 +0000
-From: "'Lorenzo Stoakes' via USB Mass Storage on Linux" <usb-storage@lists.one-eyed-alien.net>
-To: david.laight.linux@gmail.com
-Cc: linux-kernel@vger.kernel.org, Alan Stern <stern@rowland.harvard.edu>,
-        Alexander Viro <viro@zeniv.linux.org.uk>,
-        Alexei Starovoitov <ast@kernel.org>,
-        Andi Shyti <andi.shyti@kernel.org>,
-        Andreas Dilger <adilger.kernel@dilger.ca>,
-        Andrew Lunn <andrew@lunn.ch>,
-        Andrew Morton <akpm@linux-foundation.org>,
-        Andrii Nakryiko <andrii@kernel.org>,
-        Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
-        Ard Biesheuvel <ardb@kernel.org>,
-        Arnaldo Carvalho de Melo <acme@kernel.org>,
-        Bjorn Helgaas <bhelgaas@google.com>, Borislav Petkov <bp@alien8.de>,
-        Christian Brauner <brauner@kernel.org>,
-        Christian =?utf-8?B?S8O2bmln?= <christian.koenig@amd.com>,
-        Christoph Hellwig <hch@lst.de>, Daniel Borkmann <daniel@iogearbox.net>,
-        Dan Williams <dan.j.williams@intel.com>,
-        Dave Hansen <dave.hansen@linux.intel.com>,
-        Dave Jiang <dave.jiang@intel.com>, David Ahern <dsahern@kernel.org>,
-        David Hildenbrand <david@redhat.com>,
-        Davidlohr Bueso <dave@stgolabs.net>,
-        "David S. Miller" <davem@davemloft.net>,
-        Dennis Zhou <dennis@kernel.org>, Eric Dumazet <edumazet@google.com>,
-        Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-        Herbert Xu <herbert@gondor.apana.org.au>,
-        Ingo Molnar <mingo@redhat.com>, Jakub Kicinski <kuba@kernel.org>,
-        Jakub Sitnicki <jakub@cloudflare.com>,
-        "James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>,
-        Jarkko Sakkinen <jarkko@kernel.org>,
-        "Jason A. Donenfeld" <Jason@zx2c4.com>, Jens Axboe <axboe@kernel.dk>,
-        Jiri Slaby <jirislaby@kernel.org>,
-        Johannes Weiner <hannes@cmpxchg.org>, John Allen <john.allen@amd.com>,
-        Jonathan Cameron <jonathan.cameron@huawei.com>,
-        Juergen Gross <jgross@suse.com>, Kees Cook <kees@kernel.org>,
-        KP Singh <kpsingh@kernel.org>,
-        Linus Walleij <linus.walleij@linaro.org>,
-        "Martin K. Petersen" <martin.petersen@oracle.com>,
-        "Matthew Wilcox (Oracle)" <willy@infradead.org>,
-        Mika Westerberg <westeri@kernel.org>, Mike Rapoport <rppt@kernel.org>,
-        Miklos Szeredi <miklos@szeredi.hu>, Namhyung Kim <namhyung@kernel.org>,
-        Neal Cardwell <ncardwell@google.com>, nic_swsd@realtek.com,
-        OGAWA Hirofumi <hirofumi@mail.parknet.co.jp>,
-        Olivia Mackall <olivia@selenic.com>, Paolo Abeni <pabeni@redhat.com>,
-        Paolo Bonzini <pbonzini@redhat.com>, Peter Huewe <peterhuewe@gmx.de>,
-        Peter Zijlstra <peterz@infradead.org>,
-        "Rafael J. Wysocki" <rafael@kernel.org>,
-        Sean Christopherson <seanjc@google.com>,
-        Srinivas Kandagatla <srini@kernel.org>,
-        Stefano Stabellini <sstabellini@kernel.org>,
-        Steven Rostedt <rostedt@goodmis.org>, Tejun Heo <tj@kernel.org>,
-        Theodore Ts'o <tytso@mit.edu>, Thomas Gleixner <tglx@linutronix.de>,
-        Tom Lendacky <thomas.lendacky@amd.com>,
-        Willem de Bruijn <willemdebruijn.kernel@gmail.com>, x86@kernel.org,
-        Yury Norov <yury.norov@gmail.com>, amd-gfx@lists.freedesktop.org,
-        bpf@vger.kernel.org, cgroups@vger.kernel.org,
-        dri-devel@lists.freedesktop.org, io-uring@vger.kernel.org,
-        kvm@vger.kernel.org, linux-acpi@vger.kernel.org,
-        linux-block@vger.kernel.org, linux-crypto@vger.kernel.org,
-        linux-cxl@vger.kernel.org, linux-efi@vger.kernel.org,
-        linux-ext4@vger.kernel.org, linux-fsdevel@vger.kernel.org,
-        linux-gpio@vger.kernel.org, linux-i2c@vger.kernel.org,
-        linux-integrity@vger.kernel.org, linux-mm@kvack.org,
-        linux-nvme@lists.infradead.org, linux-pci@vger.kernel.org,
-        linux-perf-users@vger.kernel.org, linux-scsi@vger.kernel.org,
-        linux-serial@vger.kernel.org, linux-trace-kernel@vger.kernel.org,
-        linux-usb@vger.kernel.org, mptcp@lists.linux.dev,
-        netdev@vger.kernel.org, usb-storage@lists.one-eyed-alien.net
-Subject: [usb-storage] Re: [PATCH 00/44] Change a lot of min_t() that might
- mask high bits
-Message-ID: <6ef2fb97-56a5-4cf1-9dc4-b46fa04cbdae@lucifer.local>
-References: <20251119224140.8616-1-david.laight.linux@gmail.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Disposition: inline
-In-Reply-To: <20251119224140.8616-1-david.laight.linux@gmail.com>
-X-ClientProxiedBy: LO0P123CA0010.GBRP123.PROD.OUTLOOK.COM
- (2603:10a6:600:354::19) To DM4PR10MB8218.namprd10.prod.outlook.com
- (2603:10b6:8:1cc::16)
+       spf=pass (google.com: domain of guhuinan@xiaomi.com designates 207.226.244.123 as permitted sender) smtp.mailfrom=guhuinan@xiaomi.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=xiaomi.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=lists.one-eyed-alien.net; s=google; t=1763642077; x=1764246877; darn=lfdr.de;
+        h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
+         :list-id:mailing-list:precedence:reply-to
+         :x-original-authentication-results:x-original-sender:mime-version
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=7/7fqHqg5PYz/WpPVXB8CMXTpwsyn/Cw1tWMsj9btCI=;
+        b=U74R+qv/6gzl7bmknuA+pb6tCNDYc1eGePsMtZUcg65UpXfybrQXBloUWgrbDxmCAY
+         kqyw75umgXjKzlSDZ5J6nzTlUZtScLfy5xBqWtgf+RYI27V9oOtt5/19VEGHLTQFGV9/
+         J4h2JPsTZB1HtMs+m3+sN4tzenp77a7Dv1wAg=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1763642077; x=1764246877;
+        h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
+         :x-spam-checked-in-group:list-id:mailing-list:precedence:reply-to
+         :x-original-authentication-results:x-original-sender:mime-version
+         :message-id:date:subject:cc:to:from:x-beenthere:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=7/7fqHqg5PYz/WpPVXB8CMXTpwsyn/Cw1tWMsj9btCI=;
+        b=P6NRRehpT4lbAUI7LXVKijkwAmIj292ntbE7PUYOrPz7UOOOzoyEqpsLuEWFKcxUv+
+         3K3MIEdmb32MSGd64Ich4/Sh9RpdPcy4j9PpeH7mTKn2sjaIup6uR0SYFYtwVMMvw9vc
+         0S5+Xg4ICgB5SDtd9VG7j0LE2tijo1HLRh7diwl+AZU81cAc3hu5KwYx1UEcfKWi1HB0
+         Ue2izjpLFz6r0balDMMJhoLx72CT8owHmdnbg1wp1q7lV1L6XGSb0FnIX0042Lki5US2
+         N0JfSXn5X704VBret5oic3zyXjK803dJrsjIeZ7ilW01MfnHY6xRUEp67ojj3sFwZFVc
+         CFdg==
+X-Forwarded-Encrypted: i=2; AJvYcCWYNCsr+eeIp4kLe00Rn+pOZsb8BUGgx/aXGijvAqp3fYyxBtFDJvu/bbtnIgXqnTcc6PKAjw==@lfdr.de
+X-Gm-Message-State: AOJu0YwMeLeDgqC6tPv91AXBYUWkefl8/H/MA4HHxDlRJ9/URY+XqOlK
+	mFx5sOJKMY8KonY/O4/ZCZsHZjysdzgRrgxNDJkKwhWJSVxIUCP+7sKn79BjgtkXOVs=
+X-Google-Smtp-Source: AGHT+IHS5PeufaiazSLdz69bSME9bu3e2wpcbSyDl7en9CsCRQisXCDPcWWsE/QVSfWBvvnpMbdQ+w==
+X-Received: by 2002:a17:903:46cc:b0:29b:5c78:8bea with SMTP id d9443c01a7336-29b5c788c84mr39142775ad.33.1763642076863;
+        Thu, 20 Nov 2025 04:34:36 -0800 (PST)
+X-BeenThere: usb-storage@lists.one-eyed-alien.net; h="Ae8XA+Z9jAOWvFva9rhTphViaYb7t/BXaTj51E8jrgO0mj/2PA=="
+Received: by 2002:a17:902:9042:b0:268:589:fe0b with SMTP id
+ d9443c01a7336-29b5b022969ls7568795ad.0.-pod-prod-06-us; Thu, 20 Nov 2025
+ 04:34:35 -0800 (PST)
+X-Forwarded-Encrypted: i=2; AJvYcCXue2O/KhLrecubr8WH+MufhJRRHEEs7yTyhGMHxCenZcmF1P8ETHJZyMBz/TaEjO9BWnaESS+RV7W7sQ==@lists.one-eyed-alien.net
+X-Received: by 2002:a17:903:1b47:b0:24e:3cf2:2453 with SMTP id d9443c01a7336-29b5b15c739mr41661775ad.61.1763642074757;
+        Thu, 20 Nov 2025 04:34:34 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1763642074; cv=none;
+        d=google.com; s=arc-20240605;
+        b=fKHnymRcSczCI+rfz01CJoGuMJUZUBmLN2Afptkwns127UuHvj4SaaCIpUGn9XzvHE
+         5Ykf+q2wNFGh8Vxf8JszPILEBwL65pdtOvqQtlrMyhD7nFvg5DDqxSPKrgsgjjcvhOkm
+         X4Yn4lxlzLqVIgmbfDzl7/M3TweHiZHYTbdBqPAaxk1QzbWbBBasy+PpXf7pYYTcmLSf
+         H5jyHsHNSoMikFb4Rg+LmNX7J9dAP/fhCNBWFeuvaAIKAdpLOyLtAC9oR2ppxe5oDvw2
+         11e1ut2drSNuuHxIFkTGFInVFC6d9NtyftJv03JgTjtxY6Bo9U77vP/p+zshD+AV+Qj2
+         BfUQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from;
+        bh=IDEGSXW3l+CkiMo+wSMLFxaY3Tyw/l1Tehw8Ay7RSxs=;
+        fh=v94FNRvBb47LgOkR97WCva0nH0KLqJ0TgbG7t56OpSA=;
+        b=a9xOPOk2ocdT6C///xuBLT8kp/7a6DvQ87KoJUwlEkI5NidZ9Mb5HHQTycNY5uNOun
+         HwVD9PJgWOoRVyDWEWKr5akK2uQk27wpTJovGtqXY0NI+YcSh1CTlz9SLs+mHQOhkcjB
+         zG3J/Rmw0/2Z9G/qCA6zFnRtrAQtMjmer8PX0BugpQrfgcsHpK+tsuaUAYdH59nbhfsr
+         UvNI1XH3jzyUEW2y6RJPoG4c3cLIioIMMxI//p0fTV0XNNFhmGGGfQO+ptNWqDJ2GX/0
+         LzqRCBxFMAXZz+xj6T6rLxmNhNZKrFf5yGSGdSjuqiPwmKiaP1S4eW3JcjgQTQYLVmBs
+         aSIw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=pass (google.com: domain of guhuinan@xiaomi.com designates 207.226.244.123 as permitted sender) smtp.mailfrom=guhuinan@xiaomi.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=xiaomi.com
+Received: from outboundhk.mxmail.xiaomi.com (outboundhk.mxmail.xiaomi.com. [207.226.244.123])
+        by mx.google.com with ESMTP id d9443c01a7336-29b5b1c93e3si12593575ad.252.2025.11.20.04.34.34
+        for <usb-storage@lists.one-eyed-alien.net>;
+        Thu, 20 Nov 2025 04:34:34 -0800 (PST)
+Received-SPF: pass (google.com: domain of guhuinan@xiaomi.com designates 207.226.244.123 as permitted sender) client-ip=207.226.244.123;
+X-CSE-ConnectionGUID: I9S4tjiGQ7WW3GG6Ca6ONQ==
+X-CSE-MsgGUID: JD2+mL9rQqCt5e1vO6uGnA==
+X-IronPort-AV: E=Sophos;i="6.20,213,1758556800"; 
+   d="scan'208";a="158953641"
+From: "'guhuinan' via USB Mass Storage on Linux" <usb-storage@lists.one-eyed-alien.net>
+To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Oliver Neukum
+	<oneukum@suse.com>, Alan Stern <stern@rowland.harvard.edu>
+CC: <linux-usb@vger.kernel.org>, <linux-scsi@vger.kernel.org>,
+	<usb-storage@lists.one-eyed-alien.net>, <linux-kernel@vger.kernel.org>,
+	<stable@vger.kernel.org>, Yu Chen <chenyu45@xiaomi.com>, Owen Gu
+	<guhuinan@xiaomi.com>, Michal Pecio <michal.pecio@gmail.com>
+Subject: [usb-storage] [PATCH v4] usb: uas: fix urb unmapping issue when the
+ uas device is remove during ongoing data transfer
+Date: Thu, 20 Nov 2025 20:33:36 +0800
+Message-ID: <20251120123336.3328-1-guhuinan@xiaomi.com>
+X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: DM4PR10MB8218:EE_|DS4PPFA043F25E4:EE_
-X-MS-Office365-Filtering-Correlation-Id: 63b535ed-f831-4444-84b2-08de2818a215
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|7416014|376014|366016|1800799024|7053199007;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?c9/CcJ7O60eQP7KLrCZxQFr3Q8U8cBg+5mO4hB6PRYN1T3QIDxN2grHVLHw6?=
- =?us-ascii?Q?TKs4x3ONPpB5+jtTKf7Nw86mws2Z/yGNS9epYtS0h/Sa4zMJrOeE+8gG+gTk?=
- =?us-ascii?Q?X7MMFaMcSxnD2yQ91Jb/7e+lvUD3OHTA78ZuEb154amMdJrxxuHN5MfUSw3k?=
- =?us-ascii?Q?cRThLzGheaOk/8OyRerEdXw5YyaHgxTelJ/1IxAhFTzU3DpoSBBBh8iIr1im?=
- =?us-ascii?Q?0kq0p1wl+W6yxHWQy3ORLkrRdG4FPwIBbDdzCM/JPLopr8eP0ynpZ+zupbbk?=
- =?us-ascii?Q?KcX+Q/Koof/iVc1kgykBW3pN0ERkdCGalezZMG2ZtcUhpOv0TIv+BY9ifdJA?=
- =?us-ascii?Q?UQSVBHehFiHC+JKj5o+An4G6xWm1kvvsJChPE97KjDHFDol0S4pJnBSzSN9y?=
- =?us-ascii?Q?BBLDy2iiI757oepk8e0MVuTMeQXuz0aJuQyQIC89dRAemyhInQ+xDet5+mQu?=
- =?us-ascii?Q?hM8qv+A7A8HuZHwyApUTTU7uBN3WJJejKDnmD6CqJseHOpzgINLV1lpZHd3r?=
- =?us-ascii?Q?3BwzwMKSc1UnIEilqDMenIyZ1dYa9GIPY68bapQnnZXkiX4fdfic5cPrRLds?=
- =?us-ascii?Q?KOLIrV3KavsouaTCQtaELQjLSQTChUCFtxBPVitIcnWSuoWRmTDtMcHYth+g?=
- =?us-ascii?Q?Qu6fJ8ebIpAoqO4HhOkatNNmHcE4mV1ltApCBQ6qSvFsOvA1rY0JZM2ERsPw?=
- =?us-ascii?Q?gErnb9+gYt3p3YGP1tuAZ2J1oNJjmtyMW9KnbzavtI65FZS3UALs+FlkAHdg?=
- =?us-ascii?Q?OEXmD5Wxn6BBdQXx/lqVKFKoK0gxldZTNkMds24+zAqhEfDmk06ooRdvNraw?=
- =?us-ascii?Q?zSHDA/rGqiP6h+e37GZ4P7qnEZ14pty6bBqY7MOLVXqX6CW3Q/O+x4un5Xe1?=
- =?us-ascii?Q?cC7UYL8WkSba//fEBQAfsrAc1szn7ypZvjpjp07JOEjY9WTUyJYWeJsJbGLB?=
- =?us-ascii?Q?mBomKueBFkZf+hhHnsnRTlvMDwcL2aNh2MCIGKoWMYr7ev7bTZaa/3/jhOEu?=
- =?us-ascii?Q?gUEn8aDdNa0PiFu1oYAN/l3Zv8dj9JSHB+HA1TjKMyNBW48Wc2rcW0y0ZZb7?=
- =?us-ascii?Q?advIteVDFgdwYgsN3+2LZe0XyDoVEaOR+RmlZPY4xmRdkeCM1Wp8ey18lg/A?=
- =?us-ascii?Q?+A1qKGRsNOSvM8+sUsDHLwMNxoKL/cELW3ykuJ7rVr5mib3C65HCOqSU672P?=
- =?us-ascii?Q?Nv+V+WQj0EVMOmr1F3S2cVbLlGyntc/gyJJSSsr7Trm6Xtta6G1Y2sd3AVtb?=
- =?us-ascii?Q?2tkKMThSd4GkywWpuFdXkVYQfBAJGUXNzE7GiXxgSnfE1bUG5FNqjk+Oydy7?=
- =?us-ascii?Q?mcD/FNGceMjf0JSLVv2p9Poj0aG2KCk9pjcpmiX9Hwb3pJf4H99Rzl3l7eNG?=
- =?us-ascii?Q?0wntEwY8uGnW501P1N15JLtk19LGOTCCbRjrvX1KaijWSlGxCcJZFXjEGF/R?=
- =?us-ascii?Q?/kYy7l7qwImf/snQObrGrY181BRdOAYG?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DM4PR10MB8218.namprd10.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(7416014)(376014)(366016)(1800799024)(7053199007);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?kPRWY1LIwS5S+D/L+x8VTm9PTXQwjo2HENrTSiBL4yuumMrLXTWwdbpU5r9W?=
- =?us-ascii?Q?mAkDtwRm/3YlQxL/4xhbbKlRCQbZ3YN5O1+hNdX0w+GbFqpmkztV2OK/rb8N?=
- =?us-ascii?Q?Y2aSRqdtiuBzTC4YnI3KMSvWJIM6146cw3wRVbStas3EG2rGlycuYpOnBlzD?=
- =?us-ascii?Q?agcHk/JxFwpyFQBnRQnDM0F27l6qaCghYvfZZwR4Jm7/26UQPbVAG4z8uz8Y?=
- =?us-ascii?Q?aCpsqMjbqE0jkplok//0MOC8WuvWijf+3o8G2b+SvKi5hja1ehhsoLjFrj+5?=
- =?us-ascii?Q?Wjdm51ZYTEKpUe+Ntir9dvafBLYsftdiZj4ytDlG9aOD2E7op2yOnMaEjZ0V?=
- =?us-ascii?Q?SjRSMp54wNvi2SRmla5MHdwc3reVek6AZBUETf6D0AHSIBIvrsP0DVrjekMY?=
- =?us-ascii?Q?s0z0ddbwPNYnvY1+2P9Fl9xO2GPyHsCRMEs/I7N9vCwxQb2TP/mlLlapd7I4?=
- =?us-ascii?Q?VRVEADyXrgDGTefu9DB5YSEKRAKpYjIT/ciWQydQkYHcs+KFhct4NKkvfViJ?=
- =?us-ascii?Q?4Qvfb9d1Z5VBPDMkn+I2tpE0FHgyiJmLSQBiRuCQrn4Yku7s8z0SwqVOhXkt?=
- =?us-ascii?Q?sjs48IOWIwwNoJs+c/PTJ2IJJp5wn8kOn7nmfbIcAHZ7dwTlQy6zCFtdOIdt?=
- =?us-ascii?Q?t3qYuTZpPvWpMZKt2oMDFtIakSQmy/dia0RPuBPFjiRFiv1MmYtz/uLyCVUV?=
- =?us-ascii?Q?qJ1P933vB6vRc2q9I7j3e6n5pEm5G7i3TOE7Cpd4fXGM2Js3r0XcrdqHJIjS?=
- =?us-ascii?Q?DtHDiiw/Gn655DDunBC7Cgtfnp11N5Ft8TPB8akL5UY9eABrzFrX6yLR10OC?=
- =?us-ascii?Q?Wx8Vhn1OZ8aHYi/swZEAIRCOPyUtWOwvRZn+jwn+cXnFF8/0z0FQ+6wq0MO6?=
- =?us-ascii?Q?dkCY197auRmY0l7h9/OMaVLOTeIIbIH8yRirwWdzayjaE24UeTDjbPxJjDO1?=
- =?us-ascii?Q?qlIHhI2qwHu4jH4cuQPxMsYl4VpX3OHEt2JfDTzPpZJ01FXrahsaDYtGSfud?=
- =?us-ascii?Q?a19fWW2NAL7kQUA6SMzwRNFdlM3uNDJkOyTtCmdPzOLy1vPBjtpop3rMUWfE?=
- =?us-ascii?Q?Q6N1XSY67waBy8146iAJFW6dND3eyb9guJY8b8Bzwp+sWNySrZERyF9t9DzV?=
- =?us-ascii?Q?K8MVFssjKHGbrx+vogdqTcTVFMGJ7XqMc36sO8H5FWY3bf0HZq2dDfafyhyf?=
- =?us-ascii?Q?tyTTG4Fe1bSaXBg70qUqN4TU1Od2A0R+chbpxQS3rBJ/q56J0LZbARFaCwc1?=
- =?us-ascii?Q?NoEUwObIcb/xt/Y3o4mQhMfVOeq8byLQ3hT8SAiF07n58Kx2B5yB7t5aUwFt?=
- =?us-ascii?Q?lyEpocmUmWK+OA7cX+KxrnLCNHjfIAEqqbnp4+rLPBdCRBoKf3c4gUG0iRun?=
- =?us-ascii?Q?nFNKH9Zu7hXkExmVF5VULFttq7mXoKrMWNSJMIQk6lTuujq4FKW43EA5Mbo3?=
- =?us-ascii?Q?Zfdm3MGQYarA55IjxUjCNDkOK+V6KL2sM3fwKAv01J8TuU0SwW0SV1+VlEtl?=
- =?us-ascii?Q?Q2ql1qNK49iz0m6jrBo4Q3zIyTbBma98snvo31b5AXg1BXWg1uCV1qR/1PzL?=
- =?us-ascii?Q?TN8K0SdxFBxk8ffmj0mqmzGEc46NFvfzWecQt8Fv3vrjkAh2qD7joo7UmEbr?=
- =?us-ascii?Q?Hw=3D=3D?=
-X-MS-Exchange-AntiSpam-ExternalHop-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-ExternalHop-MessageData-0: 4mxMIwaVn/X497q5Wi5JUtAxmEf3wjrEIy4nzUFPT/jD42SftGbN4p5Rz70m+EYpEQEGs0Ube3/twWm/2YxPm0y9Rj+w/tHx5SCLNOrWrSAgu5PxK3EhAz68hADb9iyr15uLM04z+boMFb10tzH8KTL0m8PVx8/6ysNDCOLbVsk6+M0jL21n64SujDsSIrDnhnAD5BnY3rCg6OI/nKGLhuyTk3QXTrlCyokW1yvAkBU76PxRpPFxwIywnu5KRUgklBfmb/0Y3cAD2B5ejR9BHj6u0wERyx2PgoRnpi4WOBIXGEqxB8O3b0YEVk3UFk7JHWncl4qAvXIgLMDDXNGIGUvcpvFEcLh9iAz+VL72rSy0X5EfOwGNFYFaIndAmOnqsjD1dyOAgJJ6KOW12S1vwmwXDibM9GtHEA74ckN4Q7ZGxt3yzeHZiN6l7/wtYz25Sw1kDtwHyzH+Ya32rqGa/AtzrwzZW0CxLByYmt6AkzmfDnXXB8ljC1ef8z65/t55/k8eGurdtnDh86qOLtXr4CBZZAW02zh84yi+GU1OF+Dj2BkSEFkWCtYTgfKIqtnk8OljlnwBz0T1weEgkk883Tnb2atFRHMMuIpavc4dBD8=
-X-OriginatorOrg: oracle.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 63b535ed-f831-4444-84b2-08de2818a215
-X-MS-Exchange-CrossTenant-AuthSource: DM4PR10MB8218.namprd10.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 20 Nov 2025 09:38:59.8734
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 4e2c6054-71cb-48f1-bd6c-3a9705aca71b
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 5ItduNliVtAqDKxYryyBeUrZMlHyQ5n8PkmB+iBXaQXZfE2lMdgCPgtX3mDnbFNa6n1HScfGbp2FCwJ2jr6nIo1m2TAzUmSBipCwRwAfUTQ=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DS4PPFA043F25E4
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
- definitions=2025-11-20_03,2025-11-18_02,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 adultscore=0 phishscore=0
- malwarescore=0 suspectscore=0 bulkscore=0 spamscore=0 mlxlogscore=968
- mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2510240000 definitions=main-2511200058
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMTE1MDAzMSBTYWx0ZWRfX95vn5un0vWrF
- LXSaA4un6nZDcqXzzTyXh1Rya2ODVDtY2jYFC5ul8GaDrKsjyFeOh6CSxMoUBlvnNmar3Xu27wg
- gsc53lHYJoB6qXbGF1byFaQTNyPRkaiA8CNYHX4RqgUzM9JPLTWnIHx4Dc/Y8howuQyeTTfQ5qJ
- hOrvyv2SvJJmSX26+/9l5pBpV+35H0GlIMBW0aTjA9PNFi52UhzoRJaTVdFO+YeqpP7/yU7hQiW
- 1ADeC7ToJmcB/dPQh7sN4tYGNo4bFsCGcqAiKWNyMECW3DEbqw7IRM0387GvVUXt2PviLOzO+tm
- 1h1k6/R4z9DCdM74Zzprsg9UpVrIVijIWpR82xvoRAgMaJdzAq11yP23HlPQ+hflsFJAawzPaI1
- +fYVWwkbkfxn+wfOVbpSPgiNxzU/tw==
-X-Proofpoint-ORIG-GUID: bSVoGKRFMO_-YxkV07cOP7-6ZwWd8OSV
-X-Proofpoint-GUID: bSVoGKRFMO_-YxkV07cOP7-6ZwWd8OSV
-X-Authority-Analysis: v=2.4 cv=a+o9NESF c=1 sm=1 tr=0 ts=691ee1c1 b=1 cx=c_pps
- a=WeWmnZmh0fydH62SvGsd2A==:117 a=WeWmnZmh0fydH62SvGsd2A==:17
- a=6eWqkTHjU83fiwn7nKZWdM+Sl24=:19 a=z/mQ4Ysz8XfWz/Q5cLBRGdckG28=:19
- a=lCpzRmAYbLLaTzLvsPZ7Mbvzbb8=:19 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
- a=6UeiqGixMTsA:10 a=GoEa3M9JfhUA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=pGLkceISAAAA:8 a=Wzxjd0fUqIwO4rn60qQA:9 a=CjuIK1q_8ugA:10
-X-Original-Sender: lorenzo.stoakes@oracle.com
-X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@oracle.com header.s=corp-2025-04-25 header.b=AB4Hlr77;
-       dkim=pass header.i=@oracle.onmicrosoft.com header.s=selector2-oracle-onmicrosoft-com
- header.b=RLXnG1Za;       arc=pass (i=1 spf=pass spfdomain=oracle.com
- dkim=pass dkdomain=oracle.com dmarc=pass fromdomain=oracle.com);
-       spf=pass (google.com: domain of lorenzo.stoakes@oracle.com designates
- 205.220.165.32 as permitted sender) smtp.mailfrom=lorenzo.stoakes@oracle.com;
-       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=oracle.com
-X-Original-From: Lorenzo Stoakes <lorenzo.stoakes@oracle.com>
-Reply-To: Lorenzo Stoakes <lorenzo.stoakes@oracle.com>
+Content-Type: text/plain; charset="UTF-8"
+X-Originating-IP: [10.237.8.164]
+X-ClientProxiedBy: BJ-MBX19.mioffice.cn (10.237.8.139) To BJ-MBX05.mioffice.cn
+ (10.237.8.125)
+X-Original-Sender: guhuinan@xiaomi.com
+X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
+ domain of guhuinan@xiaomi.com designates 207.226.244.123 as permitted sender)
+ smtp.mailfrom=guhuinan@xiaomi.com;       dmarc=pass (p=QUARANTINE
+ sp=QUARANTINE dis=NONE) header.from=xiaomi.com
+X-Original-From: guhuinan <guhuinan@xiaomi.com>
+Reply-To: guhuinan <guhuinan@xiaomi.com>
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
+X-Spam-Checked-In-Group: usb-storage@lists.one-eyed-alien.net
 X-Google-Group-Id: 960895140360
 List-Post: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/post>,
  <mailto:usb-storage@lists.one-eyed-alien.net>
@@ -344,194 +139,90 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On Wed, Nov 19, 2025 at 10:40:56PM +0000, david.laight.linux@gmail.com wrote:
-> From: David Laight <david.laight.linux@gmail.com>
->
-> It in not uncommon for code to use min_t(uint, a, b) when one of a or b
-> is 64bit and can have a value that is larger than 2^32;
-> This is particularly prevelant with:
-> 	uint_var = min_t(uint, uint_var, uint64_expression);
->
-> Casts to u8 and u16 are very likely to discard significant bits.
->
-> These can be detected at compile time by changing min_t(), for example:
-> #define CHECK_SIZE(fn, type, val) \
-> 	BUILD_BUG_ON_MSG(sizeof (val) > sizeof (type) && \
-> 		!statically_true(((val) >> 8 * (sizeof (type) - 1)) < 256), \
-> 		fn "() significant bits of '" #val "' may be discarded")
->
-> #define min_t(type, x, y) ({ \
-> 	CHECK_SIZE("min_t", type, x); \
-> 	CHECK_SIZE("min_t", type, y); \
-> 	__cmp_once(min, type, x, y); })
->
-> (and similar changes to max_t() and clamp_t().)
+From: Owen Gu <guhuinan@xiaomi.com>
 
-Have we made sure that the introduction of these don't cause a combinatorial
-explosion like previous min()/max() changes did?
+When a UAS device is unplugged during data transfer, there is
+a probability of a system panic occurring. The root cause is
+an access to an invalid memory address during URB callback handling.
+Specifically, this happens when the dma_direct_unmap_sg() function
+is called within the usb_hcd_unmap_urb_for_dma() interface, but the
+sg->dma_address field is 0 and the sg data structure has already been
+freed.
 
->
-> This shows up some real bugs, some unlikely bugs and some false positives.
-> In most cases both arguments are unsigned type (just different ones)
-> and min_t() can just be replaced by min().
->
-> The patches are all independant and are most of the ones needed to
-> get the x86-64 kernel I build to compile.
-> I've not tried building an allyesconfig or allmodconfig kernel.
+The SCSI driver sends transfer commands by invoking uas_queuecommand_lck()
+in uas.c, using the uas_submit_urbs() function to submit requests to USB.
+Within the uas_submit_urbs() implementation, three URBs (sense_urb,
+data_urb, and cmd_urb) are sequentially submitted. Device removal may
+occur at any point during uas_submit_urbs execution, which may result
+in URB submission failure. However, some URBs might have been successfully
+submitted before the failure, and uas_submit_urbs will return the -ENODEV
+error code in this case. The current error handling directly calls
+scsi_done(). In the SCSI driver, this eventually triggers scsi_complete()
+to invoke scsi_end_request() for releasing the sgtable. The successfully
+submitted URBs, when being unlinked to giveback, call
+usb_hcd_unmap_urb_for_dma() in hcd.c, leading to exceptions during sg
+unmapping operations since the sg data structure has already been freed.
 
-Well I have a beefy box at my disposal so tried thiese for you :)
+This patch modifies the error condition check in the uas_submit_urbs()
+function. When a UAS device is removed but one or more URBs have already
+been successfully submitted to USB, it avoids immediately invoking
+scsi_done() and save the cmnd to devinfo->cmnd array. If the successfully
+submitted URBs is completed before devinfo->resetting being set, then
+the scsi_done() function will be called within uas_try_complete() after
+all pending URB operations are finalized. Otherwise, the scsi_done()
+function will be called within uas_zap_pending(), which is executed after
+usb_kill_anchored_urbs().
 
-Both allyesconfig & allmodconfig works fine for x86-64 (I tried both for good
-measure)
+The error handling only takes effect when uas_queuecommand_lck() calls
+uas_submit_urbs() and returns the error value -ENODEV . In this case,
+the device is disconnected, and the flow proceeds to uas_disconnect(),
+where uas_zap_pending() is invoked to call uas_try_complete().
 
-> I've also not included the patch to minmax.h itself.
->
-> I've tried to put the patches that actually fix things first.
-> The last one is 0009.
->
-> I gave up on fixing sched/fair.c - it is too broken for a single patch!
-> The patch for net/ipv4/tcp.c is also absent because do_tcp_getsockopt()
-> needs multiple/larger changes to make it 'sane'.
+Fixes: eb2a86ae8c54 ("USB: UAS: fix disconnect by unplugging a hub")
+Cc: stable@vger.kernel.org
+Signed-off-by: Yu Chen <chenyu45@xiaomi.com>
+Signed-off-by: Owen Gu <guhuinan@xiaomi.com>
+Acked-by: Oliver Neukum <oneukum@suse.com>
+---
+v4: Add the fix tag, cc stable and acked-by tag
+v3: Add some commit message.
+v2: Upon uas_submit_urbs() returning -ENODEV despite successful URB
+submission, the cmnd is added to the devinfo->cmnd array before
+exiting uas_queuecommand_lck().
+https://lore.kernel.org/linux-usb/20251015153157.11870-1-guhuinan@xiaomi.com/
+v1: https://lore.kernel.org/linux-usb/20250930045309.21588-1-guhuinan@xiaomi.com/
+---
+---
+ drivers/usb/storage/uas.c | 5 +++++
+ 1 file changed, 5 insertions(+)
 
-I guess this isn't broken per se there just retain min_t()/max_t() right?
-
->
-> I've had to trim the 124 maintainers/lists that get_maintainer.pl finds
-> from 124 to under 100 to be able to send the cover letter.
-> The individual patches only go to the addresses found for the associated files.
-> That reduces the number of emails to a less unsane number.
->
-> David Laight (44):
->   x86/asm/bitops: Change the return type of variable__ffs() to unsigned
->     int
->   ext4: Fix saturation of 64bit inode times for old filesystems
->   perf: Fix branch stack callchain limit
->   io_uring/net: Change some dubious min_t()
->   ipc/msg: Fix saturation of percpu counts in msgctl_info()
->   bpf: Verifier, remove some unusual uses of min_t() and max_t()
->   net/core/flow_dissector: Fix cap of __skb_flow_dissect() return value.
->   net: ethtool: Use min3() instead of nested min_t(u16,...)
->   ipv6: __ip6_append_data() don't abuse max_t() casts
->   x86/crypto: ctr_crypt() use min() instead of min_t()
->   arch/x96/kvm: use min() instead of min_t()
->   block: use min() instead of min_t()
->   drivers/acpi: use min() instead of min_t()
->   drivers/char/hw_random: use min3() instead of nested min_t()
->   drivers/char/tpm: use min() instead of min_t()
->   drivers/crypto/ccp: use min() instead of min_t()
->   drivers/cxl: use min() instead of min_t()
->   drivers/gpio: use min() instead of min_t()
->   drivers/gpu/drm/amd: use min() instead of min_t()
->   drivers/i2c/busses: use min() instead of min_t()
->   drivers/net/ethernet/realtek: use min() instead of min_t()
->   drivers/nvme: use min() instead of min_t()
->   arch/x86/mm: use min() instead of min_t()
->   drivers/nvmem: use min() instead of min_t()
->   drivers/pci: use min() instead of min_t()
->   drivers/scsi: use min() instead of min_t()
->   drivers/tty/vt: use umin() instead of min_t(u16, ...) for row/col
->     limits
->   drivers/usb/storage: use min() instead of min_t()
->   drivers/xen: use min() instead of min_t()
->   fs: use min() or umin() instead of min_t()
->   block: bvec.h: use min() instead of min_t()
->   nodemask: use min() instead of min_t()
->   ipc: use min() instead of min_t()
->   bpf: use min() instead of min_t()
->   bpf_trace: use min() instead of min_t()
->   lib/bucket_locks: use min() instead of min_t()
->   lib/crypto/mpi: use min() instead of min_t()
->   lib/dynamic_queue_limits: use max() instead of max_t()
->   mm: use min() instead of min_t()
->   net: Don't pass bitfields to max_t()
->   net/core: Change loop conditions so min() can be used
->   net: use min() instead of min_t()
->   net/netlink: Use umin() to avoid min_t(int, ...) discarding high bits
->   net/mptcp: Change some dubious min_t(int, ...) to min()
->
->  arch/x86/crypto/aesni-intel_glue.c            |  3 +-
->  arch/x86/include/asm/bitops.h                 | 18 +++++-------
->  arch/x86/kvm/emulate.c                        |  3 +-
->  arch/x86/kvm/lapic.c                          |  2 +-
->  arch/x86/kvm/mmu/mmu.c                        |  2 +-
->  arch/x86/mm/pat/set_memory.c                  | 12 ++++----
->  block/blk-iocost.c                            |  6 ++--
->  block/blk-settings.c                          |  2 +-
->  block/partitions/efi.c                        |  3 +-
->  drivers/acpi/property.c                       |  2 +-
->  drivers/char/hw_random/core.c                 |  2 +-
->  drivers/char/tpm/tpm1-cmd.c                   |  2 +-
->  drivers/char/tpm/tpm_tis_core.c               |  4 +--
->  drivers/crypto/ccp/ccp-dev.c                  |  2 +-
->  drivers/cxl/core/mbox.c                       |  2 +-
->  drivers/gpio/gpiolib-acpi-core.c              |  2 +-
->  .../gpu/drm/amd/amdgpu/amdgpu_doorbell_mgr.c  |  4 +--
->  drivers/gpu/drm/amd/amdgpu/amdgpu_vm.c        |  2 +-
->  .../gpu/drm/amd/display/amdgpu_dm/amdgpu_dm.c |  2 +-
->  drivers/i2c/busses/i2c-designware-master.c    |  2 +-
->  drivers/net/ethernet/realtek/r8169_main.c     |  3 +-
->  drivers/nvme/host/pci.c                       |  3 +-
->  drivers/nvme/host/zns.c                       |  3 +-
->  drivers/nvmem/core.c                          |  2 +-
->  drivers/pci/probe.c                           |  3 +-
->  drivers/scsi/hosts.c                          |  2 +-
->  drivers/tty/vt/selection.c                    |  9 +++---
->  drivers/usb/storage/protocol.c                |  3 +-
->  drivers/xen/grant-table.c                     |  2 +-
->  fs/buffer.c                                   |  2 +-
->  fs/exec.c                                     |  2 +-
->  fs/ext4/ext4.h                                |  2 +-
->  fs/ext4/mballoc.c                             |  3 +-
->  fs/ext4/resize.c                              |  2 +-
->  fs/ext4/super.c                               |  2 +-
->  fs/fat/dir.c                                  |  4 +--
->  fs/fat/file.c                                 |  3 +-
->  fs/fuse/dev.c                                 |  2 +-
->  fs/fuse/file.c                                |  8 ++---
->  fs/splice.c                                   |  2 +-
->  include/linux/bvec.h                          |  3 +-
->  include/linux/nodemask.h                      |  9 +++---
->  include/linux/perf_event.h                    |  2 +-
->  include/net/tcp_ecn.h                         |  5 ++--
->  io_uring/net.c                                |  6 ++--
->  ipc/mqueue.c                                  |  4 +--
->  ipc/msg.c                                     |  6 ++--
->  kernel/bpf/core.c                             |  4 +--
->  kernel/bpf/log.c                              |  2 +-
->  kernel/bpf/verifier.c                         | 29 +++++++------------
->  kernel/trace/bpf_trace.c                      |  2 +-
->  lib/bucket_locks.c                            |  2 +-
->  lib/crypto/mpi/mpicoder.c                     |  2 +-
->  lib/dynamic_queue_limits.c                    |  2 +-
->  mm/gup.c                                      |  4 +--
->  mm/memblock.c                                 |  2 +-
->  mm/memory.c                                   |  2 +-
->  mm/percpu.c                                   |  2 +-
->  mm/truncate.c                                 |  3 +-
->  mm/vmscan.c                                   |  2 +-
->  net/core/datagram.c                           |  6 ++--
->  net/core/flow_dissector.c                     |  7 ++---
->  net/core/net-sysfs.c                          |  3 +-
->  net/core/skmsg.c                              |  4 +--
->  net/ethtool/cmis_cdb.c                        |  7 ++---
->  net/ipv4/fib_trie.c                           |  2 +-
->  net/ipv4/tcp_input.c                          |  4 +--
->  net/ipv4/tcp_output.c                         |  5 ++--
->  net/ipv4/tcp_timer.c                          |  4 +--
->  net/ipv6/addrconf.c                           |  8 ++---
->  net/ipv6/ip6_output.c                         |  7 +++--
->  net/ipv6/ndisc.c                              |  5 ++--
->  net/mptcp/protocol.c                          |  8 ++---
->  net/netlink/genetlink.c                       |  9 +++---
->  net/packet/af_packet.c                        |  2 +-
->  net/unix/af_unix.c                            |  4 +--
->  76 files changed, 141 insertions(+), 176 deletions(-)
->
-> --
-> 2.39.5
->
+diff --git a/drivers/usb/storage/uas.c b/drivers/usb/storage/uas.c
+index 03043d567fa1..02fe411567fa 100644
+--- a/drivers/usb/storage/uas.c
++++ b/drivers/usb/storage/uas.c
+@@ -698,6 +698,10 @@ static int uas_queuecommand_lck(struct scsi_cmnd *cmnd)
+ 	 * of queueing, no matter how fatal the error
+ 	 */
+ 	if (err == -ENODEV) {
++		if (cmdinfo->state & (COMMAND_INFLIGHT | DATA_IN_URB_INFLIGHT |
++				DATA_OUT_URB_INFLIGHT))
++			goto out;
++
+ 		set_host_byte(cmnd, DID_NO_CONNECT);
+ 		scsi_done(cmnd);
+ 		goto zombie;
+@@ -711,6 +715,7 @@ static int uas_queuecommand_lck(struct scsi_cmnd *cmnd)
+ 		uas_add_work(cmnd);
+ 	}
+ 
++out:
+ 	devinfo->cmnd[idx] = cmnd;
+ zombie:
+ 	spin_unlock_irqrestore(&devinfo->lock, flags);
+-- 
+2.43.0
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/6ef2fb97-56a5-4cf1-9dc4-b46fa04cbdae%40lucifer.local.
+To view this discussion visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20251120123336.3328-1-guhuinan%40xiaomi.com.
