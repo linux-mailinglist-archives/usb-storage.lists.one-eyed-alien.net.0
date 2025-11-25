@@ -1,208 +1,142 @@
-Return-Path: <usb-storage+bncBDTY5EWUQMEBBMWRSHEQMGQE7LIXW4Y@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBDUONZ6J6MNRBAMUSTEQMGQEHAK7AVY@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-qv1-xf46.google.com (mail-qv1-xf46.google.com [IPv6:2607:f8b0:4864:20::f46])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8F1E9C80F2C
-	for <lists+usb-storage@lfdr.de>; Mon, 24 Nov 2025 15:16:20 +0100 (CET)
-Received: by mail-qv1-xf46.google.com with SMTP id 6a1803df08f44-88044215975sf149852986d6.1
-        for <lists+usb-storage@lfdr.de>; Mon, 24 Nov 2025 06:16:20 -0800 (PST)
-ARC-Seal: i=2; a=rsa-sha256; t=1763993779; cv=pass;
+Received: from mail-pl1-x647.google.com (mail-pl1-x647.google.com [IPv6:2607:f8b0:4864:20::647])
+	by mail.lfdr.de (Postfix) with ESMTPS id 9F72DC8309A
+	for <lists+usb-storage@lfdr.de>; Tue, 25 Nov 2025 02:44:36 +0100 (CET)
+Received: by mail-pl1-x647.google.com with SMTP id d9443c01a7336-297f587dc2esf116621155ad.2
+        for <lists+usb-storage@lfdr.de>; Mon, 24 Nov 2025 17:44:36 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1764035074; cv=pass;
         d=google.com; s=arc-20240605;
-        b=QeNNRkuJqG6KWMZgpbYZZcxl8maXnFI7Y7YgccuxYcV5k4ZIRljqKj/qJUXeAySTcR
-         /YERiO78Cu+XndYGwFwnM2OYEhtVS/9mxGzh1qNtYH8Ken0XwbUyB+uw/x2lX8e/cWi9
-         vf+gcRAlDPm3wnLClcriLkEdUooQ065dxz9h+L88VZ76tvbkwzzm7qI8P21he9Is/+5R
-         25Pu4z8qnlwa4H17wRuRKizeEPaHWtwFQ1/8ls1bY2DjAW1UcALVJfAsFZmMHoGpk4Jd
-         h3TgzNPOsWbh+Ee7n45LaeTkz+cMhkAXtmwG4lK7pWrWZikEODeBKbUVnvP3fzORjDB4
-         ujsw==
+        b=ae0dn9y+G3hiqnyTC2I0a+UmHLqHRlEnUaaAcb0NT/gkFbTxpMyrp5MPFerP/k5geZ
+         dug7wqaMGMO3N0g90YE2W+oURk1ayadoJggKEVpis8M/r7IGP6DnecibA3yrHwITq6TT
+         BAm+iKJP729jLTdtObUQaZBNk+e4jWrkCCA/OY0rimpE+4rdj7a4ql6cieSsUo/8Sfy8
+         SneZVw5FTLs7vfmiT/W1FdRheZg5lAQ0pZhoxyQBORNW7HAZaW2CsAu5ornpxGdONIC8
+         WYVkxgIsKRHIw1WuBtuQOesTI5Z5oKz4fIVtTez/7kMOL8se8oI5F1QhaASIk5JbT7T+
+         ZVUQ==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:reply-to:in-reply-to
-         :content-disposition:mime-version:references:message-id:subject:cc
-         :to:from:date:dkim-signature;
-        bh=V3cetUBMXL/3kEG3mNqE6EeU64jqIvRK/lnUQH0KZnc=;
-        fh=TWNo3VmRijvaJ0Ocvog5qecmav50ZONZB0jvJZTW/NA=;
-        b=kFv4/e0+kbmyLXW/Zu/SbNoXZYs0jMAJsFUIcVlMBN6nSbwXWp2qkxb4UiUVsWWP7G
-         ZPx0T+zt7ueQTJMQNiobj/x3QmN8FTXoKt0Td4ZUhiEyWQIJbBJlDQ9e/iO2zW+GXzNA
-         MwoWSgBysa0gz8+WE3qBx5zqZQIT/Gij0oCYFfw+G6ygZZwB1DhS2UE5m0rezcx2D1lM
-         cvjR3Mww94sPPz160e3d8UJlTHu21MqVsogYnKEbFJCFoP7WE/J0WQj3vC3Z6IsPfstf
-         E39MOJ+DuCvIJLj5yYqPYt99hIurG8+HFsDhrPVgQLuGJ0+lTHUWSumzShhXmGc7Tkrm
-         LCUg==;
+         :list-id:mailing-list:precedence:mime-version:message-id:date
+         :subject:cc:to:from:sender:dkim-signature;
+        bh=qavlHqZxanxD1ZRf6UB/s/keCxVvrmJCRpEcWd7F1CE=;
+        fh=RFdfkooRCAqUgpI9uwIgewlNzzUM09mOmEhdeGgPkFc=;
+        b=OvaBoZNaxzHo9uabESQtISOtddyxsKUTRWUj9HaRATGQlLuD9YU0Ih69dxN06Hiki+
+         ghAcEseBdpOCkOhXdrGXlXpH15qoE4ThXdAXjnqTGZhfwOTqjjroXsAjXTWY5Hd2VGCV
+         /Oc8B+LIADsCXlODWxbJ9JP3LheQZizB8HkBPiiyqzZtVnCkFAajxZE0plhpFCU3A7X5
+         DhGUoy6JU6/riN13vDlnmuiLMjaFJRtuz1DsgyAXnCz3AX/DwdVESaL5hlFpcFXTHHD+
+         9PBEnPDu6MY9V6Jvl54ZRDd3WP47zXe8kJ56tQDhjsYiyBjJxnr23hqlULQEUKfs4OyD
+         /W7g==;
         darn=lfdr.de
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@gondor.apana.org.au header.s=h01 header.b=P87gnIuA;
-       spf=pass (google.com: domain of herbert@gondor.apana.org.au designates 180.181.231.80 as permitted sender) smtp.mailfrom=herbert@gondor.apana.org.au;
-       dmarc=pass (p=REJECT sp=QUARANTINE dis=NONE) header.from=apana.org.au
+       spf=pass (google.com: domain of chenchangcheng@kylinos.cn designates 124.126.103.232 as permitted sender) smtp.mailfrom=chenchangcheng@kylinos.cn
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1763993779; x=1764598579; darn=lfdr.de;
+        d=lists.one-eyed-alien.net; s=google; t=1764035074; x=1764639874; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:reply-to
-         :x-original-authentication-results:x-original-sender:in-reply-to
-         :content-disposition:mime-version:references:message-id:subject:cc
-         :to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=V3cetUBMXL/3kEG3mNqE6EeU64jqIvRK/lnUQH0KZnc=;
-        b=H+05uIzgG0teg96ksC/xmBQtTTQHa/MNXY0fN2DLJ3p6td5NA7/kxQtlUiPkDIOsCn
-         cU4XUXrNdz00Fg0qCJz09y4mGWQg+ueHv/BEBxJPGA6ByHafNMgNMsIiA3cXMxQzN6VW
-         F4rKT2sVpzvdavNcTAzh4P7sD9Wt625Hk4Iig=
+         :list-id:mailing-list:precedence:x-original-authentication-results
+         :x-original-sender:mime-version:message-id:date:subject:cc:to:from
+         :sender:from:to:cc:subject:date:message-id:reply-to;
+        bh=qavlHqZxanxD1ZRf6UB/s/keCxVvrmJCRpEcWd7F1CE=;
+        b=j+8w9iF4mpuRdbYq3f2r6iGyn3uKMTR0bp9yX88Le2w27KjQEuvq68Q9pSQu/UX3H5
+         8luPBuo6IkEpodsrVd+DtNByFH0zBzbtuxBVhO1zOkSQr4sTqt8wi51PM6xJddjQAThU
+         k9XczyDxB/Pb6vK2FaV/lB+CYWfoPIQwsFyWk=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1763993779; x=1764598579;
+        d=1e100.net; s=20230601; t=1764035074; x=1764639874;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:reply-to
-         :x-original-authentication-results:x-original-sender:in-reply-to
-         :content-disposition:mime-version:references:message-id:subject:cc
-         :to:from:date:x-beenthere:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=V3cetUBMXL/3kEG3mNqE6EeU64jqIvRK/lnUQH0KZnc=;
-        b=f0xHQ9+RdbM3Voe/bmxWugXcuwHkbxsrHRQlk1cr/Lq28Y766dDPSSBNOURPfgE9/S
-         G+/d/t8HgLRO33xVHMKjJputS4p9sWp6mgjMHG9pxOFMIZs7D0SOJ/bfPrwLIKNI8fuL
-         q6+9g02ahckJITnKl0/4q2TxbWhw/RPyj2W8Spbstm+25wpRxWDHw8qDnPf2eN9WPQF9
-         usDpLtj3BnHFGHG5xRTBFH35qePFPpEOt7bqE5wY5JCUht3LYVmDH8hthRTpzhcKyQnP
-         i2lOGWNFkcSOQ+IBgd7y/dHN4tgn9MLKQP8W3tljsNPw3unBmIHAB7OtLJLoPcEwUnRw
-         MvYA==
-X-Forwarded-Encrypted: i=2; AJvYcCUUu9O8x4oUgajz9yeZTeCMo6YJTaAygIKeh0W6W6AaVog9GJJlqd8O/ZfpID/03F4DlP3+Lw==@lfdr.de
-X-Gm-Message-State: AOJu0YyoatniF+7NbdjG32yCm8bvTAijQrAhPd50Wm3fRVVcbX+MqT9T
-	5BdTY81GU0fWS9OHJ9QuqukCf4oSK7kC8V8Kc2gkgwIesos1Kh/aQlh0hCbvo3+tNps=
-X-Google-Smtp-Source: AGHT+IH694aUdrompp/fk0TnIsoQptWc3b9zyLul8xR9Y+bTWxpDsHuImFp2IFgm0k3y/vOO+KfvnQ==
-X-Received: by 2002:ad4:5f48:0:b0:882:4a63:63a7 with SMTP id 6a1803df08f44-8847c545834mr178317396d6.60.1763993778990;
-        Mon, 24 Nov 2025 06:16:18 -0800 (PST)
-X-BeenThere: usb-storage@lists.one-eyed-alien.net; h="Ae8XA+a2CWLStarK2oHQKLYld3ptr/TxMQHNnGfHj5qpx7UVzA=="
-Received: by 2002:a05:6214:8008:b0:880:803b:bd47 with SMTP id
- 6a1803df08f44-8846da603d6ls79171866d6.1.-pod-prod-05-us; Mon, 24 Nov 2025
- 06:16:18 -0800 (PST)
-X-Forwarded-Encrypted: i=2; AJvYcCVFS85tSiLjKjG4W/OcmMAkLJiOGo+4dsUbPp0Wni2CWyBOJDAmdx/z1sm+4O3Fg4sw/6PPGTUgwc0eRQ==@lists.one-eyed-alien.net
-X-Received: by 2002:a05:620a:1993:b0:8b2:ec5c:20cf with SMTP id af79cd13be357-8b33d23b365mr1157549985a.9.1763993778355;
-        Mon, 24 Nov 2025 06:16:18 -0800 (PST)
-Received: by 2002:a05:6808:8919:10b0:450:d12c:eb7e with SMTP id 5614622812f47-4511142e36dmsb6e;
-        Mon, 24 Nov 2025 01:51:57 -0800 (PST)
-X-Forwarded-Encrypted: i=2; AJvYcCUmSqcrRVNPJaD/KxHsuHzd6pd9BXVDLctXFdXWR4bQNWbdNPAtLY7Vz/ZWOxWj5jcTmfRylVQBPm3mnQ==@lists.one-eyed-alien.net
-X-Received: by 2002:a05:7022:24a2:b0:119:e569:f261 with SMTP id a92af1059eb24-11c9d70a653mr7752740c88.10.1763977915719;
-        Mon, 24 Nov 2025 01:51:55 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1763977915; cv=none;
+         :x-spam-checked-in-group:list-id:mailing-list:precedence
+         :x-original-authentication-results:x-original-sender:mime-version
+         :message-id:date:subject:cc:to:from:x-beenthere:x-gm-message-state
+         :sender:from:to:cc:subject:date:message-id:reply-to;
+        bh=qavlHqZxanxD1ZRf6UB/s/keCxVvrmJCRpEcWd7F1CE=;
+        b=aPcpSCtz0JfHvmpvhLuokgr+g6SiSJSGOe320hKE5K0CjlKjWuEOs+rron312KixyD
+         mkFX1B3R2ylaYwr2HKlnHJk74vwLO7vOn0MGrVKDtmzuxHYikEvIwjlLNDghPNlqgEwO
+         clyY0HVC3s8QShz9PayD59V0+5oIvG0nmLPvXxFFtWB7G3wVf+YEx9tMGYu05FttfJR4
+         h2OIR0JVmUOQmaLb5GUWVRxdeCeWX7i8gp9UsisU4zoxis1OUFqT0Mdsz2ON12fdWZLS
+         gVsUrlnH+uZ7gO0hS3RVngcHMuLOsw2mMDRJpLmH2E9g6fnQY7fIxgkikOCq7LpR4L/n
+         jqjg==
+Sender: usb-storage@lists.one-eyed-alien.net
+X-Forwarded-Encrypted: i=2; AJvYcCWcnOi3HxtwlNf9f/zBLcB8wS6XwkSqAs0R3IYsHHVNckN+kQRVTXfmfUHXqjHbSTXpPVhQHg==@lfdr.de
+X-Gm-Message-State: AOJu0Ywsnf4sg8VODt7ND/xeY//fE4YdfehnKlibu1QRjD6OF8tnu+uy
+	OCm4BQENafxbRqwOtTAaPMrqgYFLWQJo3xPm8iXDnMTM17wPgNXIfpOaxajO1t8Lodc=
+X-Google-Smtp-Source: AGHT+IFDjy9ULoTKJr6qAj4qQnMjORS4v9lfHNq18oewiGGOl3TWd0gIie5rRE3Ua7OxCSKltXiK7g==
+X-Received: by 2002:a17:903:b84:b0:27e:ef96:c153 with SMTP id d9443c01a7336-29b6bec45b5mr148204105ad.19.1764035074205;
+        Mon, 24 Nov 2025 17:44:34 -0800 (PST)
+X-BeenThere: usb-storage@lists.one-eyed-alien.net; h="Ae8XA+bTFdht3KYtj0rj+pPxK1gvz0NyEHgbZeXx+xS1bP8goA=="
+Received: by 2002:a17:902:bf47:b0:295:3ea0:cf8b with SMTP id
+ d9443c01a7336-29b5b18f03bls34916425ad.1.-pod-prod-02-us; Mon, 24 Nov 2025
+ 17:44:33 -0800 (PST)
+X-Forwarded-Encrypted: i=2; AJvYcCVlw5KBxGI5NcNMzvyHdtaKh5TPSTX2q7yf6ZVTy5i/DLoV8LXMs3XSXq5HX5t/q2A01JYFSkBMfUIvpQ==@lists.one-eyed-alien.net
+X-Received: by 2002:a17:902:dac7:b0:296:1beb:6776 with SMTP id d9443c01a7336-29b6bf9232dmr140239345ad.58.1764035072833;
+        Mon, 24 Nov 2025 17:44:32 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1764035072; cv=none;
         d=google.com; s=arc-20240605;
-        b=Wc0Nor1XlbSFFreFx98ut4hLaQI7YinLD8r3LkN4/iRLjRfrEBW3wlNNXGUQ3JQQlL
-         5B/9pIDAIkEEetCX0FHjpFNhmrHJ8eZy+xYkTL/txTyleyHtOTB4aIXpK6NjUpcKVNQs
-         ZPaFWoD3tHaYrsNCxcTcZXqVWNfKxYhaQwP9FSlPakO19k0TfUMzCCqNHDayxEI/7lP2
-         2/S6werByAYE8ZRXhSUHipCVTjOru3cbP9a0YgH/9Y3cM+Q0eK/YIrxcGGVEEwr2JAZQ
-         Dnv8gxd3q0W+YY4TCwB5fQ7b1Gh4w+TFB/CbcPkxhQNmZjoPdO4VlZzue+vddg3v8enl
-         oGxQ==
+        b=XpirdM3ToJLPvsN9oeLECnAmwJxcdvC1PPVewngmn3AQSwrx39MZAsDGRGy9yPgloa
+         uffsi/hRg5AaTGqCOsDqXnag4Er6UCdw37Bt64v8AGDufHmmWQFoDP28592QbFQz6opK
+         BurVueGpi5YLV5iYL03/cGidKglAdMtwVKq4S6LhtbErdmdZogQoR4s/1pT4rr2SaLL7
+         GEjBbAXjji5xg/hvyCqIqKHFlPkcEYpPZCm33xR3HIumGgTcTrThCxKb1Pdx73PzNbpx
+         40z6FHe16cSjlKYA9q5oHGIM+ZhBifR327PzEREBr1WZ1BEm2X/a/v513UiDNTTIa/PB
+         5yLQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:dkim-signature;
-        bh=B05uJapQfRMGohKkgF1xNVyERBHmagh8Bd3xg1q2NeI=;
-        fh=TfxMEuTP8M0SW8pArcdzQ1NpMV+Zy+f0XmYLEgRZxWo=;
-        b=UbzMxUHYPNVQtI6tYtEed+A0aiIYk8LxX91nlpVBo++nAcLBSOMfzoZaIp/KYtJtLY
-         Qq0/iK3IrqaQ8zewJSTWxDyOj+WBjU41+WBCCyw0Evg4Vcoer7nHv6pMHW1HW/5q5aAP
-         IOC1chFGGjRvP/isT9yLbLprzxvrgDMUSdEZPvj5grltQPIGhND+5OCJzVI7YZHv52Au
-         1MHGBHCdSVNvTwK/rJdPtOIzpilbNhnv8KN0MM8LMChCuXAs3lwDRBdfXrjklczq+w9X
-         SMcQiCcjQ7s66yj4kl2PxZ19Y40g6iVyBw+Z9W0OzQdozMtxNyGt2vvbV+cJV8YXQflF
-         1jvQ==;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from;
+        bh=OB9MiDz3RgNHsMUB/u0gYd5kEOgGn4EApudUVGzUygc=;
+        fh=Bmqs/EG/nEXQgZV8zqV6IwCCH/ZCzleAdC8Qo89lcCE=;
+        b=e3XjadgmXm3YiXRA5TmQ+qNClPA+z2aBYYHyEP53JS0NEBW2nCE2pVsLqY3x5o3fJV
+         CpW9+y91hVI09Ib4O6OWuN97nkXMxPMIE3XZv/IImhmv/eGgtTwSn3EdU95lGzxDHtb3
+         iR9h3UbxHBJuhCZbqfD/7CKmkfcgptvj6c0cx+6q1jzLO1owlQCFt7MlQ03w7UGM2lU2
+         pBsh/yss8bzVOXKfOeiyRqItKEuInbT6tgh8XSSS5JKl+YBGqbe4B1xSv/8T6pflifCU
+         269W0TcOulD2cdst96juZ1C3x7arqE938Bd/nr5hGaB1mWs0xx78GPmHKKh3zrBAP+7E
+         I3AQ==;
         dara=google.com
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@gondor.apana.org.au header.s=h01 header.b=P87gnIuA;
-       spf=pass (google.com: domain of herbert@gondor.apana.org.au designates 180.181.231.80 as permitted sender) smtp.mailfrom=herbert@gondor.apana.org.au;
-       dmarc=pass (p=REJECT sp=QUARANTINE dis=NONE) header.from=apana.org.au
-Received: from abb.hmeau.com (abb.hmeau.com. [180.181.231.80])
-        by mx.google.com with ESMTPS id a92af1059eb24-11ca3a75fe6si8086303c88.280.2025.11.24.01.51.55
+       spf=pass (google.com: domain of chenchangcheng@kylinos.cn designates 124.126.103.232 as permitted sender) smtp.mailfrom=chenchangcheng@kylinos.cn
+Received: from mailgw.kylinos.cn (mailgw.kylinos.cn. [124.126.103.232])
+        by mx.google.com with ESMTPS id 41be03b00d2f7-bd7603e7697si6636546a12.830.2025.11.24.17.44.31
         for <usb-storage@lists.one-eyed-alien.net>
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 24 Nov 2025 01:51:55 -0800 (PST)
-Received-SPF: pass (google.com: domain of herbert@gondor.apana.org.au designates 180.181.231.80 as permitted sender) client-ip=180.181.231.80;
-Received: from loth.rohan.me.apana.org.au ([192.168.167.2])
-	by formenos.hmeau.com with smtp (Exim 4.96 #2 (Debian))
-	id 1vNTCh-005XNj-0w;
-	Mon, 24 Nov 2025 17:49:52 +0800
-Received: by loth.rohan.me.apana.org.au (sSMTP sendmail emulation); Mon, 24 Nov 2025 17:49:51 +0800
-Date: Mon, 24 Nov 2025 17:49:51 +0800
-From: "'Herbert Xu' via USB Mass Storage on Linux" <usb-storage@lists.one-eyed-alien.net>
-To: david.laight.linux@gmail.com
-Cc: linux-kernel@vger.kernel.org, Alan Stern <stern@rowland.harvard.edu>,
-	Alexander Viro <viro@zeniv.linux.org.uk>,
-	Alexei Starovoitov <ast@kernel.org>,
-	Andi Shyti <andi.shyti@kernel.org>,
-	Andreas Dilger <adilger.kernel@dilger.ca>,
-	Andrew Lunn <andrew@lunn.ch>,
-	Andrew Morton <akpm@linux-foundation.org>,
-	Andrii Nakryiko <andrii@kernel.org>,
-	Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
-	Ard Biesheuvel <ardb@kernel.org>,
-	Arnaldo Carvalho de Melo <acme@kernel.org>,
-	Bjorn Helgaas <bhelgaas@google.com>, Borislav Petkov <bp@alien8.de>,
-	Christian Brauner <brauner@kernel.org>,
-	Christian =?iso-8859-1?Q?K=F6nig?= <christian.koenig@amd.com>,
-	Christoph Hellwig <hch@lst.de>,
-	Daniel Borkmann <daniel@iogearbox.net>,
-	Dan Williams <dan.j.williams@intel.com>,
-	Dave Hansen <dave.hansen@linux.intel.com>,
-	Dave Jiang <dave.jiang@intel.com>, David Ahern <dsahern@kernel.org>,
-	David Hildenbrand <david@redhat.com>,
-	Davidlohr Bueso <dave@stgolabs.net>,
-	"David S. Miller" <davem@davemloft.net>,
-	Dennis Zhou <dennis@kernel.org>, Eric Dumazet <edumazet@google.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Ingo Molnar <mingo@redhat.com>, Jakub Kicinski <kuba@kernel.org>,
-	Jakub Sitnicki <jakub@cloudflare.com>,
-	"James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>,
-	Jarkko Sakkinen <jarkko@kernel.org>,
-	"Jason A. Donenfeld" <Jason@zx2c4.com>,
-	Jens Axboe <axboe@kernel.dk>, Jiri Slaby <jirislaby@kernel.org>,
-	Johannes Weiner <hannes@cmpxchg.org>,
-	John Allen <john.allen@amd.com>,
-	Jonathan Cameron <jonathan.cameron@huawei.com>,
-	Juergen Gross <jgross@suse.com>, Kees Cook <kees@kernel.org>,
-	KP Singh <kpsingh@kernel.org>,
-	Linus Walleij <linus.walleij@linaro.org>,
-	"Martin K. Petersen" <martin.petersen@oracle.com>,
-	"Matthew Wilcox (Oracle)" <willy@infradead.org>,
-	Mika Westerberg <westeri@kernel.org>,
-	Mike Rapoport <rppt@kernel.org>, Miklos Szeredi <miklos@szeredi.hu>,
-	Namhyung Kim <namhyung@kernel.org>,
-	Neal Cardwell <ncardwell@google.com>, nic_swsd@realtek.com,
-	OGAWA Hirofumi <hirofumi@mail.parknet.co.jp>,
-	Olivia Mackall <olivia@selenic.com>,
-	Paolo Abeni <pabeni@redhat.com>,
-	Paolo Bonzini <pbonzini@redhat.com>,
-	Peter Huewe <peterhuewe@gmx.de>,
-	Peter Zijlstra <peterz@infradead.org>,
-	"Rafael J. Wysocki" <rafael@kernel.org>,
-	Sean Christopherson <seanjc@google.com>,
-	Srinivas Kandagatla <srini@kernel.org>,
-	Stefano Stabellini <sstabellini@kernel.org>,
-	Steven Rostedt <rostedt@goodmis.org>, Tejun Heo <tj@kernel.org>,
-	Theodore Ts'o <tytso@mit.edu>, Thomas Gleixner <tglx@linutronix.de>,
-	Tom Lendacky <thomas.lendacky@amd.com>,
-	Willem de Bruijn <willemdebruijn.kernel@gmail.com>, x86@kernel.org,
-	Yury Norov <yury.norov@gmail.com>, amd-gfx@lists.freedesktop.org,
-	bpf@vger.kernel.org, cgroups@vger.kernel.org,
-	dri-devel@lists.freedesktop.org, io-uring@vger.kernel.org,
-	kvm@vger.kernel.org, linux-acpi@vger.kernel.org,
-	linux-block@vger.kernel.org, linux-crypto@vger.kernel.org,
-	linux-cxl@vger.kernel.org, linux-efi@vger.kernel.org,
-	linux-ext4@vger.kernel.org, linux-fsdevel@vger.kernel.org,
-	linux-gpio@vger.kernel.org, linux-i2c@vger.kernel.org,
-	linux-integrity@vger.kernel.org, linux-mm@kvack.org,
-	linux-nvme@lists.infradead.org, linux-pci@vger.kernel.org,
-	linux-perf-users@vger.kernel.org, linux-scsi@vger.kernel.org,
-	linux-serial@vger.kernel.org, linux-trace-kernel@vger.kernel.org,
-	linux-usb@vger.kernel.org, mptcp@lists.linux.dev,
-	netdev@vger.kernel.org, usb-storage@lists.one-eyed-alien.net
-Subject: [usb-storage] Re: [PATCH 00/44] Change a lot of min_t() that might
- mask high bits
-Message-ID: <aSQqP6nlqGYOGqcJ@gondor.apana.org.au>
-References: <20251119224140.8616-1-david.laight.linux@gmail.com>
+        Mon, 24 Nov 2025 17:44:32 -0800 (PST)
+Received-SPF: pass (google.com: domain of chenchangcheng@kylinos.cn designates 124.126.103.232 as permitted sender) client-ip=124.126.103.232;
+X-UUID: 4670a1aac9a011f0a38c85956e01ac42-20251125
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.3.6,REQID:67c66d7e-412e-4a53-b9c6-df7e943d76b6,IP:0,UR
+	L:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:r
+	elease,TS:0
+X-CID-META: VersionHash:a9d874c,CLOUDID:16152b78a9394bacbdfe02a23d67e84a,BulkI
+	D:nil,BulkQuantity:0,Recheck:0,SF:102|850|898,TC:nil,Content:0|15|50,EDM:-
+	3,IP:nil,URL:0,File:nil,RT:nil,Bulk:nil,QS:nil,BEC:nil,COL:0,OSI:0,OSA:0,A
+	V:0,LES:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
+X-CID-BVR: 2,SSN|SDN
+X-CID-BAS: 2,SSN|SDN,0,_
+X-CID-FACTOR: TF_CID_SPAM_SNR
+X-CID-RHF: D41D8CD98F00B204E9800998ECF8427E
+X-UUID: 4670a1aac9a011f0a38c85956e01ac42-20251125
+X-User: chenchangcheng@kylinos.cn
+Received: from localhost.localdomain [(10.44.16.150)] by mailgw.kylinos.cn
+	(envelope-from <chenchangcheng@kylinos.cn>)
+	(Generic MTA with TLSv1.3 TLS_AES_256_GCM_SHA384 256/256)
+	with ESMTP id 73763576; Tue, 25 Nov 2025 09:44:26 +0800
+From: Chen Changcheng <chenchangcheng@kylinos.cn>
+To: stern@rowland.harvard.edu,
+	benjamin.tissoires@redhat.com
+Cc: gregkh@linuxfoundation.org,
+	linux-usb@vger.kernel.org,
+	usb-storage@lists.one-eyed-alien.net,
+	linux-kernel@vger.kernel.org,
+	Chen Changcheng <chenchangcheng@kylinos.cn>
+Subject: [usb-storage] [PATCH v3] usb: usb-storage: No additional quirks need
+ to be added to the EL-R12 optical drive.
+Date: Tue, 25 Nov 2025 09:44:22 +0800
+Message-Id: <20251125014422.12721-1-chenchangcheng@kylinos.cn>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
+X-Original-Sender: chenchangcheng@kylinos.cn
+X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
+ domain of chenchangcheng@kylinos.cn designates 124.126.103.232 as permitted
+ sender) smtp.mailfrom=chenchangcheng@kylinos.cn
 Content-Type: text/plain; charset="UTF-8"
-Content-Disposition: inline
-In-Reply-To: <20251119224140.8616-1-david.laight.linux@gmail.com>
-X-Original-Sender: herbert@gondor.apana.org.au
-X-Original-Authentication-Results: mx.google.com;       dkim=pass
- header.i=@gondor.apana.org.au header.s=h01 header.b=P87gnIuA;       spf=pass
- (google.com: domain of herbert@gondor.apana.org.au designates 180.181.231.80
- as permitted sender) smtp.mailfrom=herbert@gondor.apana.org.au;
-       dmarc=pass (p=REJECT sp=QUARANTINE dis=NONE) header.from=apana.org.au
-X-Original-From: Herbert Xu <herbert@gondor.apana.org.au>
-Reply-To: Herbert Xu <herbert@gondor.apana.org.au>
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
+X-Spam-Checked-In-Group: usb-storage@lists.one-eyed-alien.net
 X-Google-Group-Id: 960895140360
 List-Post: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/post>,
  <mailto:usb-storage@lists.one-eyed-alien.net>
@@ -214,183 +148,61 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-On Wed, Nov 19, 2025 at 10:40:56PM +0000, david.laight.linux@gmail.com wrote:
-> From: David Laight <david.laight.linux@gmail.com>
-> 
-> It in not uncommon for code to use min_t(uint, a, b) when one of a or b
-> is 64bit and can have a value that is larger than 2^32;
-> This is particularly prevelant with:
-> 	uint_var = min_t(uint, uint_var, uint64_expression);
-> 
-> Casts to u8 and u16 are very likely to discard significant bits.
-> 
-> These can be detected at compile time by changing min_t(), for example:
-> #define CHECK_SIZE(fn, type, val) \
-> 	BUILD_BUG_ON_MSG(sizeof (val) > sizeof (type) && \
-> 		!statically_true(((val) >> 8 * (sizeof (type) - 1)) < 256), \
-> 		fn "() significant bits of '" #val "' may be discarded")
-> 
-> #define min_t(type, x, y) ({ \
-> 	CHECK_SIZE("min_t", type, x); \
-> 	CHECK_SIZE("min_t", type, y); \
-> 	__cmp_once(min, type, x, y); })
-> 
-> (and similar changes to max_t() and clamp_t().)
-> 
-> This shows up some real bugs, some unlikely bugs and some false positives.
-> In most cases both arguments are unsigned type (just different ones)
-> and min_t() can just be replaced by min().
-> 
-> The patches are all independant and are most of the ones needed to
-> get the x86-64 kernel I build to compile.
-> I've not tried building an allyesconfig or allmodconfig kernel.
-> I've also not included the patch to minmax.h itself.
-> 
-> I've tried to put the patches that actually fix things first.
-> The last one is 0009.
-> 
-> I gave up on fixing sched/fair.c - it is too broken for a single patch!
-> The patch for net/ipv4/tcp.c is also absent because do_tcp_getsockopt()
-> needs multiple/larger changes to make it 'sane'.
-> 
-> I've had to trim the 124 maintainers/lists that get_maintainer.pl finds
-> from 124 to under 100 to be able to send the cover letter.
-> The individual patches only go to the addresses found for the associated files.
-> That reduces the number of emails to a less unsane number.
-> 
-> David Laight (44):
->   x86/asm/bitops: Change the return type of variable__ffs() to unsigned
->     int
->   ext4: Fix saturation of 64bit inode times for old filesystems
->   perf: Fix branch stack callchain limit
->   io_uring/net: Change some dubious min_t()
->   ipc/msg: Fix saturation of percpu counts in msgctl_info()
->   bpf: Verifier, remove some unusual uses of min_t() and max_t()
->   net/core/flow_dissector: Fix cap of __skb_flow_dissect() return value.
->   net: ethtool: Use min3() instead of nested min_t(u16,...)
->   ipv6: __ip6_append_data() don't abuse max_t() casts
->   x86/crypto: ctr_crypt() use min() instead of min_t()
->   arch/x96/kvm: use min() instead of min_t()
->   block: use min() instead of min_t()
->   drivers/acpi: use min() instead of min_t()
->   drivers/char/hw_random: use min3() instead of nested min_t()
->   drivers/char/tpm: use min() instead of min_t()
->   drivers/crypto/ccp: use min() instead of min_t()
->   drivers/cxl: use min() instead of min_t()
->   drivers/gpio: use min() instead of min_t()
->   drivers/gpu/drm/amd: use min() instead of min_t()
->   drivers/i2c/busses: use min() instead of min_t()
->   drivers/net/ethernet/realtek: use min() instead of min_t()
->   drivers/nvme: use min() instead of min_t()
->   arch/x86/mm: use min() instead of min_t()
->   drivers/nvmem: use min() instead of min_t()
->   drivers/pci: use min() instead of min_t()
->   drivers/scsi: use min() instead of min_t()
->   drivers/tty/vt: use umin() instead of min_t(u16, ...) for row/col
->     limits
->   drivers/usb/storage: use min() instead of min_t()
->   drivers/xen: use min() instead of min_t()
->   fs: use min() or umin() instead of min_t()
->   block: bvec.h: use min() instead of min_t()
->   nodemask: use min() instead of min_t()
->   ipc: use min() instead of min_t()
->   bpf: use min() instead of min_t()
->   bpf_trace: use min() instead of min_t()
->   lib/bucket_locks: use min() instead of min_t()
->   lib/crypto/mpi: use min() instead of min_t()
->   lib/dynamic_queue_limits: use max() instead of max_t()
->   mm: use min() instead of min_t()
->   net: Don't pass bitfields to max_t()
->   net/core: Change loop conditions so min() can be used
->   net: use min() instead of min_t()
->   net/netlink: Use umin() to avoid min_t(int, ...) discarding high bits
->   net/mptcp: Change some dubious min_t(int, ...) to min()
-> 
->  arch/x86/crypto/aesni-intel_glue.c            |  3 +-
->  arch/x86/include/asm/bitops.h                 | 18 +++++-------
->  arch/x86/kvm/emulate.c                        |  3 +-
->  arch/x86/kvm/lapic.c                          |  2 +-
->  arch/x86/kvm/mmu/mmu.c                        |  2 +-
->  arch/x86/mm/pat/set_memory.c                  | 12 ++++----
->  block/blk-iocost.c                            |  6 ++--
->  block/blk-settings.c                          |  2 +-
->  block/partitions/efi.c                        |  3 +-
->  drivers/acpi/property.c                       |  2 +-
->  drivers/char/hw_random/core.c                 |  2 +-
->  drivers/char/tpm/tpm1-cmd.c                   |  2 +-
->  drivers/char/tpm/tpm_tis_core.c               |  4 +--
->  drivers/crypto/ccp/ccp-dev.c                  |  2 +-
->  drivers/cxl/core/mbox.c                       |  2 +-
->  drivers/gpio/gpiolib-acpi-core.c              |  2 +-
->  .../gpu/drm/amd/amdgpu/amdgpu_doorbell_mgr.c  |  4 +--
->  drivers/gpu/drm/amd/amdgpu/amdgpu_vm.c        |  2 +-
->  .../gpu/drm/amd/display/amdgpu_dm/amdgpu_dm.c |  2 +-
->  drivers/i2c/busses/i2c-designware-master.c    |  2 +-
->  drivers/net/ethernet/realtek/r8169_main.c     |  3 +-
->  drivers/nvme/host/pci.c                       |  3 +-
->  drivers/nvme/host/zns.c                       |  3 +-
->  drivers/nvmem/core.c                          |  2 +-
->  drivers/pci/probe.c                           |  3 +-
->  drivers/scsi/hosts.c                          |  2 +-
->  drivers/tty/vt/selection.c                    |  9 +++---
->  drivers/usb/storage/protocol.c                |  3 +-
->  drivers/xen/grant-table.c                     |  2 +-
->  fs/buffer.c                                   |  2 +-
->  fs/exec.c                                     |  2 +-
->  fs/ext4/ext4.h                                |  2 +-
->  fs/ext4/mballoc.c                             |  3 +-
->  fs/ext4/resize.c                              |  2 +-
->  fs/ext4/super.c                               |  2 +-
->  fs/fat/dir.c                                  |  4 +--
->  fs/fat/file.c                                 |  3 +-
->  fs/fuse/dev.c                                 |  2 +-
->  fs/fuse/file.c                                |  8 ++---
->  fs/splice.c                                   |  2 +-
->  include/linux/bvec.h                          |  3 +-
->  include/linux/nodemask.h                      |  9 +++---
->  include/linux/perf_event.h                    |  2 +-
->  include/net/tcp_ecn.h                         |  5 ++--
->  io_uring/net.c                                |  6 ++--
->  ipc/mqueue.c                                  |  4 +--
->  ipc/msg.c                                     |  6 ++--
->  kernel/bpf/core.c                             |  4 +--
->  kernel/bpf/log.c                              |  2 +-
->  kernel/bpf/verifier.c                         | 29 +++++++------------
->  kernel/trace/bpf_trace.c                      |  2 +-
->  lib/bucket_locks.c                            |  2 +-
->  lib/crypto/mpi/mpicoder.c                     |  2 +-
->  lib/dynamic_queue_limits.c                    |  2 +-
->  mm/gup.c                                      |  4 +--
->  mm/memblock.c                                 |  2 +-
->  mm/memory.c                                   |  2 +-
->  mm/percpu.c                                   |  2 +-
->  mm/truncate.c                                 |  3 +-
->  mm/vmscan.c                                   |  2 +-
->  net/core/datagram.c                           |  6 ++--
->  net/core/flow_dissector.c                     |  7 ++---
->  net/core/net-sysfs.c                          |  3 +-
->  net/core/skmsg.c                              |  4 +--
->  net/ethtool/cmis_cdb.c                        |  7 ++---
->  net/ipv4/fib_trie.c                           |  2 +-
->  net/ipv4/tcp_input.c                          |  4 +--
->  net/ipv4/tcp_output.c                         |  5 ++--
->  net/ipv4/tcp_timer.c                          |  4 +--
->  net/ipv6/addrconf.c                           |  8 ++---
->  net/ipv6/ip6_output.c                         |  7 +++--
->  net/ipv6/ndisc.c                              |  5 ++--
->  net/mptcp/protocol.c                          |  8 ++---
->  net/netlink/genetlink.c                       |  9 +++---
->  net/packet/af_packet.c                        |  2 +-
->  net/unix/af_unix.c                            |  4 +--
->  76 files changed, 141 insertions(+), 176 deletions(-)
+The optical drive of EL-R12 has the same vid and pid as INIC-3069,
+as follows:
+T:  Bus=02 Lev=02 Prnt=02 Port=01 Cnt=01 Dev#=  3 Spd=5000 MxCh= 0
+D:  Ver= 3.00 Cls=00(>ifc ) Sub=00 Prot=00 MxPS= 9 #Cfgs=  1
+P:  Vendor=13fd ProdID=3940 Rev= 3.10
+S:  Manufacturer=HL-DT-ST
+S:  Product= DVD+-RW GT80N
+S:  SerialNumber=423349524E4E38303338323439202020
+C:* #Ifs= 1 Cfg#= 1 Atr=80 MxPwr=144mA
+I:* If#= 0 Alt= 0 #EPs= 2 Cls=08(stor.) Sub=02 Prot=50 Driver=usb-storage
+E:  Ad=83(I) Atr=02(Bulk) MxPS=1024 Ivl=0ms
+E:  Ad=0a(O) Atr=02(Bulk) MxPS=1024 Ivl=0ms
 
-Patches 10,14,16,37 applied.  Thanks.
+This will result in the optical drive device also adding
+the quirks of US_FL_NO_ATA_1X. When performing an erase operation,
+it will fail, and the reason for the failure is as follows:
+[  388.967742] sr 5:0:0:0: [sr0] tag#0 Send: scmd 0x00000000d20c33a7
+[  388.967742] sr 5:0:0:0: [sr0] tag#0 CDB: ATA command pass through(12)/Blank a1 11 00 00 00 00 00 00 00 00 00 00
+[  388.967773] sr 5:0:0:0: [sr0] tag#0 Done: SUCCESS Result: hostbyte=DID_TARGET_FAILURE driverbyte=DRIVER_OK cmd_age=0s
+[  388.967773] sr 5:0:0:0: [sr0] tag#0 CDB: ATA command pass through(12)/Blank a1 11 00 00 00 00 00 00 00 00 00 00
+[  388.967803] sr 5:0:0:0: [sr0] tag#0 Sense Key : Illegal Request [current]
+[  388.967803] sr 5:0:0:0: [sr0] tag#0 Add. Sense: Invalid field in cdb
+[  388.967803] sr 5:0:0:0: [sr0] tag#0 scsi host busy 1 failed 0
+[  388.967803] sr 5:0:0:0: Notifying upper driver of completion (result 8100002)
+[  388.967834] sr 5:0:0:0: [sr0] tag#0 0 sectors total, 0 bytes done.
+
+For the EL-R12 standard optical drive, all operational commands
+and usage scenarios were tested without adding the IGNORE_RESIDUE quirks,
+and no issues were encountered. It can be reasonably concluded
+that removing the IGNORE_RESIDUE quirks has no impact.
+
+Signed-off-by: Chen Changcheng <chenchangcheng@kylinos.cn>
+---
+ drivers/usb/storage/unusual_uas.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drivers/usb/storage/unusual_uas.h b/drivers/usb/storage/unusual_uas.h
+index 1477e31d7763..939a98c2d3f7 100644
+--- a/drivers/usb/storage/unusual_uas.h
++++ b/drivers/usb/storage/unusual_uas.h
+@@ -98,7 +98,7 @@ UNUSUAL_DEV(0x125f, 0xa94a, 0x0160, 0x0160,
+ 		US_FL_NO_ATA_1X),
+ 
+ /* Reported-by: Benjamin Tissoires <benjamin.tissoires@redhat.com> */
+-UNUSUAL_DEV(0x13fd, 0x3940, 0x0000, 0x9999,
++UNUSUAL_DEV(0x13fd, 0x3940, 0x0000, 0x0309,
+ 		"Initio Corporation",
+ 		"INIC-3069",
+ 		USB_SC_DEVICE, USB_PR_DEVICE, NULL,
+
+base-commit: e9a6fb0bcdd7609be6969112f3fbfcce3b1d4a7c
 -- 
-Email: Herbert Xu <herbert@gondor.apana.org.au>
-Home Page: http://gondor.apana.org.au/~herbert/
-PGP Key: http://gondor.apana.org.au/~herbert/pubkey.txt
+2.25.1
 
 -- 
 You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
 To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/aSQqP6nlqGYOGqcJ%40gondor.apana.org.au.
+To view this discussion visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/20251125014422.12721-1-chenchangcheng%40kylinos.cn.
