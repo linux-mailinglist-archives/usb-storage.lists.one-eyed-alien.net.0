@@ -1,120 +1,141 @@
-Return-Path: <usb-storage+bncBCQPF57GUQHBBHNB3LEQMGQENOJ3YEI@lists.one-eyed-alien.net>
+Return-Path: <usb-storage+bncBDTZTRGMXIFBBJ5J4TEQMGQEK4IY3CI@lists.one-eyed-alien.net>
 X-Original-To: lists+usb-storage@lfdr.de
 Delivered-To: lists+usb-storage@lfdr.de
-Received: from mail-oi1-x246.google.com (mail-oi1-x246.google.com [IPv6:2607:f8b0:4864:20::246])
-	by mail.lfdr.de (Postfix) with ESMTPS id 88E76CAC8AA
-	for <lists+usb-storage@lfdr.de>; Mon, 08 Dec 2025 09:47:28 +0100 (CET)
-Received: by mail-oi1-x246.google.com with SMTP id 5614622812f47-4512e9f2f82sf5243817b6e.3
-        for <lists+usb-storage@lfdr.de>; Mon, 08 Dec 2025 00:47:28 -0800 (PST)
-ARC-Seal: i=2; a=rsa-sha256; t=1765183647; cv=pass;
+Received: from mail-pf1-x445.google.com (mail-pf1-x445.google.com [IPv6:2607:f8b0:4864:20::445])
+	by mail.lfdr.de (Postfix) with ESMTPS id CD206CB216A
+	for <lists+usb-storage@lfdr.de>; Wed, 10 Dec 2025 07:35:21 +0100 (CET)
+Received: by mail-pf1-x445.google.com with SMTP id d2e1a72fcca58-7d24bbb9278sf12572339b3a.0
+        for <lists+usb-storage@lfdr.de>; Tue, 09 Dec 2025 22:35:21 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1765348520; cv=pass;
         d=google.com; s=arc-20240605;
-        b=Z8ta5zekQdMMYXXPLNP+LY2OKbZJR7nfdLiT5DXCoA1JTbBpUg43Ho/YNN8bEhLzZR
-         9zIpQybSHVQ/45Y7XWEDxINNcA2sRQNfvf1wuzPyPIPoGnY9WYU4AGcGXBBfqZxdAwXp
-         J4Dw4u3yZlMVZ7CTXW6lmh5Jn3sm1M7SbgV3KTA8QdQBC9TdlZAC9cJ8+YbAMpOU2fK8
-         8TRALedXjSC6VYDsIg/RX+6oJCSUF26pRjrbDBIPk6DeShFOWk97vrLyVo+azg841ugY
-         i8kS+avVZqI3YQeaIYwGxyIQn7+VWN8D74srMDJrGRQ7bD5G6D6n0OWwgXbK+yTJIQbL
-         kLJA==
+        b=aAi6poHiJK8BGjTfeRpjGapVm0/J/WqD6M53MEmsmYtz/vlmPJQdY8/ZAhODP1Ivki
+         fOhmMy3Ug6pl3qgDHC5eWbL8UG7tPDkxMwj97nNEgnGz0paf3P3yKoN79chuwl8airGO
+         uiD25G2/oh0PgiN1j7abT0Zxf9Y858gKPDo+6Kpg9XPhqmdVlxaaO96ZPeUfSmzdcpwb
+         7cTupQZ8mn1K8QWHHdeKM4aOkEWpfj4NJMx4XVud0ibdmOdFNgtg/WId0WXjtvJUHsob
+         LNSdMa7O2crvEZKK/IYCDUzDHD59xR2Cr+k66nDDUxCmckhcPqD1NcigkHTAtq723iRd
+         zEOQ==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:to:from:subject:message-id:date
-         :mime-version:sender:dkim-signature;
-        bh=8aUz95w9PhVkE+fIOsNNcC8pZgG6TDXbhVWOG5iOOqY=;
-        fh=cnFjv6zV4AVWfJ8IB5p/Zy5cQTMPX1iMA2Mc0FbiJk0=;
-        b=DPvnPRL7IA5pb0o7CCF3AenQuBDjMhrm7gL9HOqs4+TOAETOqCj6CuTSQPPSOmLk37
-         Brqx+7rco0aEEfIjZpKR8Evums4g48UIHX9n6bqBRZtxOHBm9ZSsQ/PF1iFUjPFRO/Qa
-         jpGCYLg2rWzNERnUpbe99V/nV9VbL6olOJQSnljuPqhy4qEuwTtFPDLwS3Wcc7F7fyXY
-         VUDJU4IBujQEkdsTImWXH9d/9sRbKV9OzBnldGrcQiuJBYpThiXlkNhRKbUBOxJxgSMO
-         wjJZgZaZHFxg00obMO5V7ZfTPZWgvqLb12qauQ05JqKUZjpfkBS58dWYkCg0eSOzMh66
-         CehQ==;
+         :list-id:mailing-list:precedence:reply-to:content-transfer-encoding
+         :mime-version:references:in-reply-to:message-id:date:subject:cc:to
+         :from:dkim-signature;
+        bh=gl4l+a4Kj/KVbpohPKuvTyltD0fLxSow4M60FySZWzE=;
+        fh=unZTlxmQnrRS2laJvxvKhtSTgkcav1wnXEn9OXyoqRg=;
+        b=dTX9OVcuvAF30KhmmgphReVukFyicXhst3B4/sSsNk85DDCrde0Xfyv8et10ekhsJX
+         kaFtbjSESih1Xw9AMYioJwfRlWDHAsJu7M6xHHntEgUBcNCswclmBJ5ZFiLrFC2KKCXe
+         U8PeNRLq9Dr3qLpV/j+fFRf4kXZwYXSu7Mv/9jjjrmhovYBMSV5VTm65KBrmso4fLPrY
+         ycr3cyHaaAHl1r4NRnU1wNoyWdCqXiMpRg0CarLrAMUGKjwGG+G5gXarfuh+5hy7S+RG
+         2vigNoRBISag26ULH7w/Mhe97vr/5LuDZZlQEIwiWDVHwmuJr7F8bPcJoy4p7PUy6XWk
+         U3/w==;
         darn=lfdr.de
 ARC-Authentication-Results: i=2; mx.google.com;
-       spf=pass (google.com: domain of 3nja2aqkbaocbhitjuunajyyrm.pxxpundbnalxwcnwc.lxv@m3kw2wvrgufz5godrsrytgd7.apphosting.bounces.google.com designates 209.85.220.77 as permitted sender) smtp.mailfrom=3nJA2aQkbAOcbhiTJUUNaJYYRM.PXXPUNdbNaLXWcNWc.LXV@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com;
-       dmarc=fail (p=NONE sp=NONE dis=NONE) header.from=appspotmail.com
+       dkim=pass header.i=@kernel.org header.s=k20201202 header.b=lfEU8ZKR;
+       spf=pass (google.com: domain of sashal@kernel.org designates 172.234.252.31 as permitted sender) smtp.mailfrom=sashal@kernel.org;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=kernel.org
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=lists.one-eyed-alien.net; s=google; t=1765183647; x=1765788447; darn=lfdr.de;
+        d=lists.one-eyed-alien.net; s=google; t=1765348520; x=1765953320; darn=lfdr.de;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :list-id:mailing-list:precedence:x-original-authentication-results
-         :x-original-sender:to:from:subject:message-id:date:mime-version
-         :sender:from:to:cc:subject:date:message-id:reply-to;
-        bh=8aUz95w9PhVkE+fIOsNNcC8pZgG6TDXbhVWOG5iOOqY=;
-        b=Bw1+1N+TmNNxRA0v6lqtlLNL+5S2vTXG72CxAeFoDZD5n+gWVmsutfTYecgnmJzoRn
-         3/9S4b0+0ONa3qLyVZ3XpZ9SifW2OE1jn4Uc2iqx8p37NsGGAf031nJI6z0/naMe/FG8
-         xW6bYG7jObQxYw7REYKQN458ZRqlLzf9NV4hk=
+         :list-id:mailing-list:precedence:reply-to
+         :x-original-authentication-results:x-original-sender
+         :content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=gl4l+a4Kj/KVbpohPKuvTyltD0fLxSow4M60FySZWzE=;
+        b=R7Bsp8gnMFgbUSU3LQ6CsNNJnvH6ilRRRoBZzWaVATeaa5Of6ItVxACAbMFlq3tXCS
+         KWLZ9kxHpijxs84zXOLVVb5V54iPqUtFluwn1VRXK7Di1iQKL9NVlBEudg0uYskl6JkM
+         HrK0FbtD2+Fr0ZnQD9vSiDNclkRt16Qlk2luM=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1765183647; x=1765788447;
+        d=1e100.net; s=20230601; t=1765348520; x=1765953320;
         h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
-         :x-spam-checked-in-group:list-id:mailing-list:precedence
-         :x-original-authentication-results:x-original-sender:to:from:subject
-         :message-id:date:mime-version:x-beenthere:x-gm-message-state:sender
+         :x-spam-checked-in-group:list-id:mailing-list:precedence:reply-to
+         :x-original-authentication-results:x-original-sender
+         :content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-beenthere:x-gm-message-state
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=8aUz95w9PhVkE+fIOsNNcC8pZgG6TDXbhVWOG5iOOqY=;
-        b=EMVM0h8SNpHXis4yick0z16ok1CBbgrwzwvAh500BxbwzrZVqCa2RiJ/DVbqK6/lkM
-         Fk6MjHdPxitUhEK84qTZ3qR0I6bLOYftgk2aa8h2HfH7lJsWhsHUCqqPs0JOb1Xdsu6j
-         Opy41Ll+GqrZ5sVMbrZVK1Pr4zW65XFgbeHzYencsj120HcNnMJkutAH5BYMVXDKez/7
-         0D+TAHw3WfExibM4ocdVKlKLEJQ6otNVG1IF/ATD0s6FxBC0oTFARlClc+Cwp/Tr3/x1
-         u12cpqRXfhNYcjhnb19ssY+feR8YsgYhqDw87Ilj+ZnMGHFLeygh1Fy3XcoG0pamYpFu
-         /8NQ==
-Sender: usb-storage@lists.one-eyed-alien.net
-X-Forwarded-Encrypted: i=2; AJvYcCVydNiPNv+IriIdScpSI7HIP9HLYy5kF+A2uZCTOh6LL3pOW87HZpEsW3VBuO4q90JKOd5+cw==@lfdr.de
-X-Gm-Message-State: AOJu0Yw9o99SKZ292sRJUSy9ovN1CtQ5sWUt/18D1Zgsk1M5wJH+aRAn
-	lM5BFdSyaWx2I/OyjQeuEq+22QyWv7WjfRxuO0tipyJemzNvqSKJ3piSAivvAXxsqaY=
-X-Google-Smtp-Source: AGHT+IEZEu1eZe/nTxkAP1Bg4NERk1fKcVAputJjpoeM59Ko2PrCdukBXbxp1QhxwEtSAGpMs9LZ+Q==
-X-Received: by 2002:a05:6870:239e:b0:3f5:4172:26 with SMTP id 586e51a60fabf-3f5440cb2a3mr3133217fac.59.1765183646093;
-        Mon, 08 Dec 2025 00:47:26 -0800 (PST)
-X-BeenThere: usb-storage@lists.one-eyed-alien.net; h="AWVwgWar0brPSQ0Vna0M9cNEaHFNRw6Tuh+Vh1OezO1sJak2aw=="
-Received: by 2002:a05:6870:d62a:b0:3ec:7947:3f27 with SMTP id
- 586e51a60fabf-3f508b140fdls2092831fac.0.-pod-prod-01-us; Mon, 08 Dec 2025
- 00:47:25 -0800 (PST)
-X-Forwarded-Encrypted: i=2; AJvYcCVN9Xm7NyJgJZwI+rqBMDmU8xBPXcI+Flvf6GxBllp1CxskMuiTMtbGDIJdgtkSYpX2A65K4CJj9gst7A==@lists.one-eyed-alien.net
-X-Received: by 2002:a05:6808:199a:b0:450:b3ec:c154 with SMTP id 5614622812f47-4539df601fbmr2776875b6e.25.1765183645121;
-        Mon, 08 Dec 2025 00:47:25 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1765183645; cv=none;
+        bh=gl4l+a4Kj/KVbpohPKuvTyltD0fLxSow4M60FySZWzE=;
+        b=B1l8PahfRZ3SK8BqHZHjdqA0sRQ72Af6YPJLJOacFT6Bvoq/9pAOFbWbmWitwaYCgn
+         7SB0X5FZB1a/6GCemtiShgmkiRXW4mo6AN8es/Sz1xZEgkKXlFqvp/SpzYR1vMFRbVzD
+         Deh+r0L+t64ApNSkpRkrjlgtrs8ywMdRKX0JQbhde638/LG2npEe0X/aXzhxfsuKTash
+         ghW5orrmD+SRJ+X3mInryjM8x/FbIwbLitbVl7RSbDHHJvmFEplULETgpcxEs6JnI8bn
+         Sgd+JKJ2Sxd4c+HGseezg9m+NmKqHN5fagrRJfgSoTOxfbvKeym6KbiXXoQjGrxEjhUf
+         3tJA==
+X-Forwarded-Encrypted: i=2; AJvYcCUq+wW+Vwrm3PN61yHhzGwMX5v3Dt1wLeAUlVs3bHCrM9gzBr91W3NHeoZo3NFmo42cGhcoJg==@lfdr.de
+X-Gm-Message-State: AOJu0YyrDCKwKX7qXCGsRaxMAZL/t9Ddw5N9vlQTOxF92OgPe7gZYm+a
+	TG6/bQPD8mZac6scDDis33Rs2vFforJP7B6TAN5HiKcCqg6z7U8mFF93KuIGPGzsbhc=
+X-Google-Smtp-Source: AGHT+IEDTBgK+OKv18qrA1cqwCiKCYKiB04MwMI7E0kn85eohSdM514ZVv72d1ws90dGbFtB3fLchA==
+X-Received: by 2002:a05:6a00:b41:b0:7aa:3642:2173 with SMTP id d2e1a72fcca58-7f22e58a1cdmr1246612b3a.31.1765348519668;
+        Tue, 09 Dec 2025 22:35:19 -0800 (PST)
+X-BeenThere: usb-storage@lists.one-eyed-alien.net; h="AWVwgWZMa+IxMNAeDHp08gsFXCtWBePA2q/3Sm03aB56MwVgOQ=="
+Received: by 2002:aa7:8a0b:0:b0:7a6:a380:fc79 with SMTP id d2e1a72fcca58-7e2681483c1ls6956346b3a.1.-pod-prod-06-us;
+ Tue, 09 Dec 2025 22:35:18 -0800 (PST)
+X-Forwarded-Encrypted: i=2; AJvYcCXhl6Vtq56Nhi8sLF5+V9Stuzd3Y5hKGYdAyP+JbJJj2OcS8QXjcYa1jaRTDYm2AZVg2qHjWf/jUkPwvQ==@lists.one-eyed-alien.net
+X-Received: by 2002:a05:6a00:2e18:b0:7b9:9232:2124 with SMTP id d2e1a72fcca58-7f22dbb6afemr1273657b3a.14.1765348517850;
+        Tue, 09 Dec 2025 22:35:17 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1765348517; cv=none;
         d=google.com; s=arc-20240605;
-        b=IhK1c7ThpFdDWzwMegeaNEa0/6zd1ijthZcbmbE93suj54UHCzqk63V3cMUoD2z5bH
-         MnMOV8cfvQgMwra7b0qbBnCEPLFZcM5ewfFSYBqB2O+GQOAbUoKSxd4Hp36Bn0T7AUMX
-         NMdidRbJRweRE+y5ssXUS0dToVoGzHzjhghrQZwy1zBFMDGmBQMrFUu/K6bug0mNpoTD
-         4V3kciJpRVZUPiPqFloUlT6I+50/+yXU1kQbia63wNevxWrPk8FoFb8IIt0A9/oWiQyj
-         0WXvmdU312Ul/+MPQdAxn6ugXX/bMkZn3oWpKCfUmBEGCX6NDDoRM8qh7nRCGI7dl4Fb
-         iZyQ==
+        b=CHx81h3AsDEpHu38k4HtCxKvlqu9HI93w830wfMF1qI+WLr1Q9Q5MrfYR7pug/8MiW
+         PFmYvgSX7RhKYxA9LDbRyeMdCKfQAOV0TGG2QBENnduwWBzl36dgufGwWTasr1Rlbx9z
+         3QrBpMEPyoVH3L+sHgOKvv3y3VJozlJXEF6qPUYjCzy43UU36bBpvLRnc0vITAdaFwMB
+         +xlrXKyBS6EwR60H6Iffjm3u5aVnTkBnvz8tZXeCD/qOPFCpzcXSGuKPWGjDMSTT2eQR
+         k8NutNZeH2UsPdFXBd+B8L7Qq/6e0JPu7CyNi2LwwuBPcpGahRN1Llz7wx63ZF13qD9f
+         9EYg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
-        h=to:from:subject:message-id:date:mime-version;
-        bh=DGCYqsNkvZTyehNsH8OtSaP7Q2LaD7JciDZVUEAed3Y=;
-        fh=uH5mqBY4UjTkju4jhnNakEE9ecHD+cjHHqrwdvzhNSI=;
-        b=ZvYc1iOoX9+BQRnitGQiCKi3oXcO+gZpJ9UnM9Hr4LmXKBLhUnsnPGa++vL+9StJe5
-         Asl32ShviCzDKbk7PHQ2kMpRoIUfVeizKOiksP9hi/ALhtLOKfTnQzAAXWp4TiGRYi9r
-         F+7+Zwe4ingEoQQ/21/lJ5m5mE/TiUMkYzN4U//1LSSmf2gmquhRv+AqJYXVYobIJz4R
-         F11/yZGKcHwOz1BH9rwwgFXrgCMtq0ZhGeanhP/msN3B5Zf4eGn3vdCZvKTZtTdW5k4f
-         Dl7xqWeU8ro51QoKSjfEZJBGpbGl7goDA8AyU8DpnjndB0hJ5JuBA8xwJrM61w05Fj9W
-         H9Xw==;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:dkim-signature;
+        bh=0UGHJwaFC4Eyz8Lc9Z1tKNQx954fD2wfTNq9fLiTSYw=;
+        fh=zpFZ7AiyVu+wgQl+xYibeWbbPMp92RG48vKRcvVQNOI=;
+        b=IjjU647IPK9LGcNpOUh+x8xZSlSzaqmS75uRVO8OacZgWzI0qU3knaxOM2VRR1Ztr3
+         QqnOBd1nFLVVysu/OsE+c+asa//gFsx09A22CFn2X+b7AqjCsgpMF7YjlPFKK9CtdsK0
+         V/kUs/g71ELZTEL+ChJZV4iTf0WnTi2Q7Dr0gXFGlsDHePynPDlBx8v6STqBKl2Bq4Js
+         7VNic3sSimClEctGiyz4DI96meu38YRHWOKcWpu/2JD42BQL5cn2/tqH56Yl48OuN1Oh
+         tMbWkeCtb2eRrsT9BqoQxPiL9GB/hBfb0A7xThrmh5iJDLseQjkVXIa81LC4XbRjc10J
+         PDyg==;
         dara=google.com
 ARC-Authentication-Results: i=1; mx.google.com;
-       spf=pass (google.com: domain of 3nja2aqkbaocbhitjuunajyyrm.pxxpundbnalxwcnwc.lxv@m3kw2wvrgufz5godrsrytgd7.apphosting.bounces.google.com designates 209.85.220.77 as permitted sender) smtp.mailfrom=3nJA2aQkbAOcbhiTJUUNaJYYRM.PXXPUNdbNaLXWcNWc.LXV@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com;
-       dmarc=fail (p=NONE sp=NONE dis=NONE) header.from=appspotmail.com
-Received: from mail-sor-f77.google.com (mail-sor-f77.google.com. [209.85.220.77])
-        by mx.google.com with SMTPS id 5614622812f47-4537f89e0b6sor3579055b6e.4.2025.12.08.00.47.25
+       dkim=pass header.i=@kernel.org header.s=k20201202 header.b=lfEU8ZKR;
+       spf=pass (google.com: domain of sashal@kernel.org designates 172.234.252.31 as permitted sender) smtp.mailfrom=sashal@kernel.org;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=kernel.org
+Received: from sea.source.kernel.org (sea.source.kernel.org. [172.234.252.31])
+        by mx.google.com with ESMTPS id d2e1a72fcca58-7e2a02517cesi27660800b3a.2.2025.12.09.22.35.17
         for <usb-storage@lists.one-eyed-alien.net>
-        (Google Transport Security);
-        Mon, 08 Dec 2025 00:47:25 -0800 (PST)
-Received-SPF: pass (google.com: domain of 3nja2aqkbaocbhitjuunajyyrm.pxxpundbnalxwcnwc.lxv@m3kw2wvrgufz5godrsrytgd7.apphosting.bounces.google.com designates 209.85.220.77 as permitted sender) client-ip=209.85.220.77;
-X-Forwarded-Encrypted: i=1; AJvYcCUllo3ZS/iIZZpogJC4wRtiAB10K0qyYEcL9h1eFwNo/+VNIz8VzP8sU+N6af3t2qAgsps5KZnLYpzb6w==@lists.one-eyed-alien.net
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 09 Dec 2025 22:35:17 -0800 (PST)
+Received-SPF: pass (google.com: domain of sashal@kernel.org designates 172.234.252.31 as permitted sender) client-ip=172.234.252.31;
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 629AB44350;
+	Wed, 10 Dec 2025 06:35:17 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 89205C19422;
+	Wed, 10 Dec 2025 06:35:15 +0000 (UTC)
+From: "'Sasha Levin' via USB Mass Storage on Linux" <usb-storage@lists.one-eyed-alien.net>
+To: patches@lists.linux.dev,
+	stable@vger.kernel.org
+Cc: Chen Changcheng <chenchangcheng@kylinos.cn>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Sasha Levin <sashal@kernel.org>,
+	stern@rowland.harvard.edu,
+	linux-usb@vger.kernel.org,
+	usb-storage@lists.one-eyed-alien.net
+Subject: [usb-storage] [PATCH AUTOSEL 6.18-5.10] usb: usb-storage: No
+ additional quirks need to be added to the EL-R12 optical drive.
+Date: Wed, 10 Dec 2025 01:34:37 -0500
+Message-ID: <20251210063446.2513466-8-sashal@kernel.org>
+X-Mailer: git-send-email 2.51.0
+In-Reply-To: <20251210063446.2513466-1-sashal@kernel.org>
+References: <20251210063446.2513466-1-sashal@kernel.org>
 MIME-Version: 1.0
-X-Received: by 2002:a05:6820:2293:b0:657:70af:4e21 with SMTP id
- 006d021491bc7-6599a8c3813mr3363688eaf.8.1765183644789; Mon, 08 Dec 2025
- 00:47:24 -0800 (PST)
-Date: Mon, 08 Dec 2025 00:47:24 -0800
-X-Google-Appengine-App-Id: s~syzkaller
-Message-ID: <6936909c.a70a0220.38f243.0099.GAE@google.com>
-Subject: [usb-storage] [syzbot] [usb-storage?] WARNING in usb_stor_msg_common
-From: syzbot <syzbot+4e26f67fa7f5bb2dafcc@syzkaller.appspotmail.com>
-To: gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org, 
-	linux-usb@vger.kernel.org, stern@rowland.harvard.edu, 
-	syzkaller-bugs@googlegroups.com, usb-storage@lists.one-eyed-alien.net
+X-stable: review
+X-Patchwork-Hint: Ignore
+X-stable-base: Linux 6.18
 Content-Type: text/plain; charset="UTF-8"
-X-Original-Sender: syzbot@syzkaller.appspotmail.com
-X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
- domain of 3nja2aqkbaocbhitjuunajyyrm.pxxpundbnalxwcnwc.lxv@m3kw2wvrgufz5godrsrytgd7.apphosting.bounces.google.com
- designates 209.85.220.77 as permitted sender) smtp.mailfrom=3nJA2aQkbAOcbhiTJUUNaJYYRM.PXXPUNdbNaLXWcNWc.LXV@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com;
-       dmarc=fail (p=NONE sp=NONE dis=NONE) header.from=appspotmail.com
+Content-Transfer-Encoding: quoted-printable
+X-Original-Sender: sashal@kernel.org
+X-Original-Authentication-Results: mx.google.com;       dkim=pass
+ header.i=@kernel.org header.s=k20201202 header.b=lfEU8ZKR;       spf=pass
+ (google.com: domain of sashal@kernel.org designates 172.234.252.31 as
+ permitted sender) smtp.mailfrom=sashal@kernel.org;       dmarc=pass
+ (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=kernel.org
+X-Original-From: Sasha Levin <sashal@kernel.org>
+Reply-To: Sasha Levin <sashal@kernel.org>
 Precedence: list
 Mailing-list: list usb-storage@lists.one-eyed-alien.net; contact usb-storage+owners@lists.one-eyed-alien.net
 List-ID: <usb-storage.lists.one-eyed-alien.net>
@@ -130,106 +151,154 @@ List-Subscribe: <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-
 List-Unsubscribe: <mailto:googlegroups-manage+960895140360+unsubscribe@googlegroups.com>,
  <https://groups.google.com/a/lists.one-eyed-alien.net/group/usb-storage/subscribe>
 
-Hello,
+From: Chen Changcheng <chenchangcheng@kylinos.cn>
 
-syzbot found the following issue on:
+[ Upstream commit 955a48a5353f4fe009704a9a4272a3adf627cd35 ]
 
-HEAD commit:    bc04acf4aeca Add linux-next specific files for 20251204
-git tree:       linux-next
-console output: https://syzkaller.appspot.com/x/log.txt?x=10e6bcc2580000
-kernel config:  https://syzkaller.appspot.com/x/.config?x=b9f785244b836412
-dashboard link: https://syzkaller.appspot.com/bug?extid=4e26f67fa7f5bb2dafcc
-compiler:       Debian clang version 20.1.8 (++20250708063551+0c9f909b7976-1~exp1~20250708183702.136), Debian LLD 20.1.8
-syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=110bb01a580000
+The optical drive of EL-R12 has the same vid and pid as INIC-3069,
+as follows:
+T:  Bus=3D02 Lev=3D02 Prnt=3D02 Port=3D01 Cnt=3D01 Dev#=3D  3 Spd=3D5000 Mx=
+Ch=3D 0
+D:  Ver=3D 3.00 Cls=3D00(>ifc ) Sub=3D00 Prot=3D00 MxPS=3D 9 #Cfgs=3D  1
+P:  Vendor=3D13fd ProdID=3D3940 Rev=3D 3.10
+S:  Manufacturer=3DHL-DT-ST
+S:  Product=3D DVD+-RW GT80N
+S:  SerialNumber=3D423349524E4E38303338323439202020
+C:* #Ifs=3D 1 Cfg#=3D 1 Atr=3D80 MxPwr=3D144mA
+I:* If#=3D 0 Alt=3D 0 #EPs=3D 2 Cls=3D08(stor.) Sub=3D02 Prot=3D50 Driver=
+=3Dusb-storage
+E:  Ad=3D83(I) Atr=3D02(Bulk) MxPS=3D1024 Ivl=3D0ms
+E:  Ad=3D0a(O) Atr=3D02(Bulk) MxPS=3D1024 Ivl=3D0ms
 
-Downloadable assets:
-disk image: https://storage.googleapis.com/syzbot-assets/f2d7ef7b5470/disk-bc04acf4.raw.xz
-vmlinux: https://storage.googleapis.com/syzbot-assets/ee299a9cd371/vmlinux-bc04acf4.xz
-kernel image: https://storage.googleapis.com/syzbot-assets/ed3cdf46e7b2/bzImage-bc04acf4.xz
+This will result in the optical drive device also adding
+the quirks of US_FL_NO_ATA_1X. When performing an erase operation,
+it will fail, and the reason for the failure is as follows:
+[  388.967742] sr 5:0:0:0: [sr0] tag#0 Send: scmd 0x00000000d20c33a7
+[  388.967742] sr 5:0:0:0: [sr0] tag#0 CDB: ATA command pass through(12)/Bl=
+ank a1 11 00 00 00 00 00 00 00 00 00 00
+[  388.967773] sr 5:0:0:0: [sr0] tag#0 Done: SUCCESS Result: hostbyte=3DDID=
+_TARGET_FAILURE driverbyte=3DDRIVER_OK cmd_age=3D0s
+[  388.967773] sr 5:0:0:0: [sr0] tag#0 CDB: ATA command pass through(12)/Bl=
+ank a1 11 00 00 00 00 00 00 00 00 00 00
+[  388.967803] sr 5:0:0:0: [sr0] tag#0 Sense Key : Illegal Request [current=
+]
+[  388.967803] sr 5:0:0:0: [sr0] tag#0 Add. Sense: Invalid field in cdb
+[  388.967803] sr 5:0:0:0: [sr0] tag#0 scsi host busy 1 failed 0
+[  388.967803] sr 5:0:0:0: Notifying upper driver of completion (result 810=
+0002)
+[  388.967834] sr 5:0:0:0: [sr0] tag#0 0 sectors total, 0 bytes done.
 
-IMPORTANT: if you fix the issue, please add the following tag to the commit:
-Reported-by: syzbot+4e26f67fa7f5bb2dafcc@syzkaller.appspotmail.com
+For the EL-R12 standard optical drive, all operational commands
+and usage scenarios were tested without adding the IGNORE_RESIDUE quirks,
+and no issues were encountered. It can be reasonably concluded
+that removing the IGNORE_RESIDUE quirks has no impact.
 
-------------[ cut here ]------------
-URB ffff888144371a00 submitted while active
-WARNING: drivers/usb/core/urb.c:380 at 0x0, CPU#1: usb-storage/5993
-Modules linked in:
-CPU: 1 UID: 0 PID: 5993 Comm: usb-storage Not tainted syzkaller #0 PREEMPT(full) 
-Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 10/25/2025
-RIP: 0010:usb_submit_urb+0x7e/0x18d0 drivers/usb/core/urb.c:380
-Code: 89 f0 48 c1 e8 03 42 80 3c 38 00 74 08 4c 89 f7 e8 87 b4 1f fb 49 83 3e 00 74 40 e8 fc 5f b9 fa 48 8d 3d 15 c4 c7 08 48 89 de <67> 48 0f b9 3a b8 f0 ff ff ff eb 11 e8 e1 5f b9 fa eb 05 e8 da 5f
-RSP: 0018:ffffc900034672e0 EFLAGS: 00010293
-RAX: ffffffff87089394 RBX: ffff888144371a00 RCX: ffff88807801bd00
-RDX: 0000000000000000 RSI: ffff888144371a00 RDI: ffffffff8fd057b0
-RBP: ffffc900034674b8 R08: 0000000000000002 R09: 0000000000000000
-R10: ffffc900034673e0 R11: fffff5200068ce87 R12: 0000000000000c00
-R13: ffff8880314b0fc8 R14: ffff888144371a08 R15: dffffc0000000000
-FS:  0000000000000000(0000) GS:ffff888125af0000(0000) knlGS:0000000000000000
-CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
-CR2: 00007ffff7d5bdc8 CR3: 000000007291a000 CR4: 00000000003526f0
-Call Trace:
- <TASK>
- usb_stor_msg_common+0x27c/0x4b0 drivers/usb/storage/transport.c:143
- usb_stor_bulk_transfer_buf+0x151/0x2a0 drivers/usb/storage/transport.c:395
- ene_send_scsi_cmd+0x10d/0x5f0 drivers/usb/storage/ene_ub6250.c:502
- ene_get_card_type drivers/usb/storage/ene_ub6250.c:1843 [inline]
- ene_init+0x14f/0x380 drivers/usb/storage/ene_ub6250.c:2197
- ene_transport+0x39b6/0x4660 drivers/usb/storage/ene_ub6250.c:2310
- usb_stor_invoke_transport+0x10a/0x19c0 drivers/usb/storage/transport.c:611
- usb_stor_control_thread+0x450/0x8e0 drivers/usb/storage/usb.c:462
- kthread+0x711/0x8a0 kernel/kthread.c:463
- ret_from_fork+0x599/0xb30 arch/x86/kernel/process.c:158
- ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:246
- </TASK>
-----------------
-Code disassembly (best guess):
-   0:	89 f0                	mov    %esi,%eax
-   2:	48 c1 e8 03          	shr    $0x3,%rax
-   6:	42 80 3c 38 00       	cmpb   $0x0,(%rax,%r15,1)
-   b:	74 08                	je     0x15
-   d:	4c 89 f7             	mov    %r14,%rdi
-  10:	e8 87 b4 1f fb       	call   0xfb1fb49c
-  15:	49 83 3e 00          	cmpq   $0x0,(%r14)
-  19:	74 40                	je     0x5b
-  1b:	e8 fc 5f b9 fa       	call   0xfab9601c
-  20:	48 8d 3d 15 c4 c7 08 	lea    0x8c7c415(%rip),%rdi        # 0x8c7c43c
-  27:	48 89 de             	mov    %rbx,%rsi
-* 2a:	67 48 0f b9 3a       	ud1    (%edx),%rdi <-- trapping instruction
-  2f:	b8 f0 ff ff ff       	mov    $0xfffffff0,%eax
-  34:	eb 11                	jmp    0x47
-  36:	e8 e1 5f b9 fa       	call   0xfab9601c
-  3b:	eb 05                	jmp    0x42
-  3d:	e8                   	.byte 0xe8
-  3e:	da                   	.byte 0xda
-  3f:	5f                   	pop    %rdi
-
-
+Signed-off-by: Chen Changcheng <chenchangcheng@kylinos.cn>
+Link: https://patch.msgid.link/20251121064020.29332-1-chenchangcheng@kylino=
+s.cn
+Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
-This report is generated by a bot. It may contain errors.
-See https://goo.gl/tpsmEJ for more information about syzbot.
-syzbot engineers can be reached at syzkaller@googlegroups.com.
 
-syzbot will keep track of this issue. See:
-https://goo.gl/tpsmEJ#status for how to communicate with syzbot.
+LLM Generated explanations, may be completely bogus:
 
-If the report is already addressed, let syzbot know by replying with:
-#syz fix: exact-commit-title
+## Summary
 
-If you want syzbot to run the reproducer, reply with:
-#syz test: git://repo/address.git branch-or-commit-hash
-If you attach or paste a git patch, syzbot will apply it before testing.
+**What the commit does:**
+This commit fixes a device conflict where the EL-R12 optical drive (HL-
+DT-ST DVD+-RW GT80N) with firmware revision 3.10 incorrectly receives
+USB quirks intended for the INIC-3069 controller because they share the
+same VID:PID (0x13fd:0x3940). The fix narrows the firmware revision
+range from "all revisions" (0x0000-0x9999) to only revision 3.09
+(0x0309-0x0309).
 
-If you want to overwrite report's subsystems, reply with:
-#syz set subsystems: new-subsystem
-(See the list of subsystem names on the web dashboard)
+**History context:**
+- Original quirk added in 2015 (commit bda13e35d584d) - was marked `Cc:
+  stable@vger.kernel.org # 3.16`
+- IGNORE_RESIDUE added in 2017 (commit 89f23d51defcb) - also marked for
+  stable
+- The quirk entry has existed in stable trees for years
 
-If the report is a duplicate of another one, reply with:
-#syz dup: exact-subject-of-another-report
+## Meets Stable Criteria Assessment
 
-If you want to undo deduplication, reply with:
-#syz undup
+| Criterion | Assessment |
+|-----------|------------|
+| Obviously correct | =E2=9C=85 Yes - simple revision range narrowing |
+| Fixes real bug | =E2=9C=85 Yes - disc erase operations fail completely |
+| Small and contained | =E2=9C=85 Yes - 1 line change |
+| No new features | =E2=9C=85 Yes - just fixes quirk scope |
+| Important issue | =E2=9C=85 Yes - device operations completely fail |
 
--- 
-You received this message because you are subscribed to the Google Groups "USB Mass Storage on Linux" group.
-To unsubscribe from this group and stop receiving emails from it, send an email to usb-storage+unsubscribe@lists.one-eyed-alien.net.
-To view this discussion visit https://groups.google.com/a/lists.one-eyed-alien.net/d/msgid/usb-storage/6936909c.a70a0220.38f243.0099.GAE%40google.com.
+## Risk vs Benefit
+
+**Benefits:**
+- Fixes real functional failure (disc erase operations)
+- Users with EL-R12 optical drives can use them properly
+- Minimal change, low regression risk
+
+**Risks:**
+- Could theoretically affect INIC-3069 devices with firmware versions
+  other than 3.09 if they exist and need these quirks
+- However, the original report was from a specific device/tester, and no
+  evidence suggests other firmware versions need the quirks
+
+**Mitigating factors:**
+- The quirk was originally based on a single reporter's device (Benjamin
+  Tissoires)
+- If multiple firmware versions needed quirks, we'd likely have seen
+  additional reports over the ~10 years since the original quirk was
+  added
+- The commit author thoroughly tested the EL-R12 without the quirks
+
+## Concerns
+
+1. **No explicit Cc: stable tag** - The maintainer didn't explicitly
+   request stable backport
+2. **No Fixes: tag** - No specific commit is pointed to as introducing
+   the bug
+3. **Revision specificity** - We don't have absolute confirmation that
+   0x0309 was the original reporter's exact firmware revision
+
+## Conclusion
+
+This is a standard USB quirk adjustment that fixes a real user-facing
+bug (optical drive operations failing). USB device quirks are routinely
+backported to stable. The change is minimal (single line), surgical, and
+addresses documented hardware compatibility issues. The risk of
+regression is low since the original quirk was based on a single
+reporter's device, and narrowing the scope shouldn't affect other users.
+
+While the lack of a Cc: stable tag is notable, USB quirk fixes of this
+nature are commonly backported because they enable proper hardware
+operation. The fix allows the EL-R12 optical drive to work correctly
+without impacting the original INIC-3069 devices that need the quirks.
+
+**YES**
+
+ drivers/usb/storage/unusual_uas.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drivers/usb/storage/unusual_uas.h b/drivers/usb/storage/unusua=
+l_uas.h
+index 1477e31d77632..b695f5ba9a409 100644
+--- a/drivers/usb/storage/unusual_uas.h
++++ b/drivers/usb/storage/unusual_uas.h
+@@ -98,7 +98,7 @@ UNUSUAL_DEV(0x125f, 0xa94a, 0x0160, 0x0160,
+ 		US_FL_NO_ATA_1X),
+=20
+ /* Reported-by: Benjamin Tissoires <benjamin.tissoires@redhat.com> */
+-UNUSUAL_DEV(0x13fd, 0x3940, 0x0000, 0x9999,
++UNUSUAL_DEV(0x13fd, 0x3940, 0x0309, 0x0309,
+ 		"Initio Corporation",
+ 		"INIC-3069",
+ 		USB_SC_DEVICE, USB_PR_DEVICE, NULL,
+--=20
+2.51.0
+
+--=20
+You received this message because you are subscribed to the Google Groups "=
+USB Mass Storage on Linux" group.
+To unsubscribe from this group and stop receiving emails from it, send an e=
+mail to usb-storage+unsubscribe@lists.one-eyed-alien.net.
+To view this discussion visit https://groups.google.com/a/lists.one-eyed-al=
+ien.net/d/msgid/usb-storage/20251210063446.2513466-8-sashal%40kernel.org.
